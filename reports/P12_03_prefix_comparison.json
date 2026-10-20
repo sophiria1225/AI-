@@ -1,0 +1,99 @@
+{
+  "left_run": "P11_03_ROLES",
+  "right_run": "P12_03_RECENT",
+  "task_id": "2a163ab_1",
+  "shared_positions": [
+    {
+      "call_id": "call_001",
+      "exact_request_equal": true,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_002",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_003",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_004",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_005",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_006",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_007",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_008",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_009",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_010",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    }
+  ],
+  "left_model_calls": 10,
+  "right_model_calls": 27,
+  "first_exact_input_difference": "call_002",
+  "first_input_difference_beyond_transport_ids": "call_003",
+  "first_different_public_action_position": "call_003",
+  "first_partial_history_position": "call_003",
+  "source_hashes": {
+    "left": {
+      "summary.json": "c3d43e47735eb848ce536ccbd80e25f812b2a1a907bbc03237d7fd4434185918",
+      "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+      "usage.json": "d0eae8abd4b0a4977066cd342ab88061fc4f72819458fe8a23e8075df01d0f7a"
+    },
+    "right": {
+      "summary.json": "81d33ee8f3847ab36145282df20e73eec2ca5f48c54f3a8d46842b43a2d549a3",
+      "plan.json": "a48ffa2302fe4db16adf2f512f404c8f6969244f6bdbbdcb43319c7f26494792",
+      "usage.json": "bc5808a66b5370295a2d1f24b30b285c1f8f1f6bad9e9cd1aae41879c4100b75"
+    }
+  },
+  "model_calls_by_analysis": 0,
+  "environment_calls": 0,
+  "scope": "Descriptive alignment until and after traces diverge. Transport IDs are canonicalized only for offline comparison; actual inputs and costs are unchanged. Equal seed does not guarantee equal samples. No same-state intervention or quality-equivalence inference from this single pair.",
+  "script_sha256": "551237dfe20da1194f8967b449c143465d4ac840214159ea5cdf92920ddf67a3"
+}
