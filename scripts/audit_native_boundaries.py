@@ -50,13 +50,15 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12', 'P13'):
+    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
     if plan['phase'] == 'P12':
         sources += ['run_native_recent.py', 'native_recent_window.py', 'native_memory_view.py']
-    if plan['phase'] == 'P13':
+    if plan['phase'] in ('P13', 'P14'):
         sources += ['run_native_generated.py', 'native_focus_memory.py', 'native_memory_view.py']
+    if plan['phase'] == 'P14':
+        sources.append('native_ledger_memory.py')
     for name in sources:
         if sha(Path(__file__).parent / name) != provenance['sources'][name]:
             raise ValueError('use the frozen boundary/history implementation for this audit')

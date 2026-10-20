@@ -1,4 +1,4 @@
-"""P13 FOCUS-based retention baseline on the frozen P11 API execution path.
+"""Generated memory baselines on the frozen P11 API execution path.
 
 Derived from run_native_appworld.py at c72bdf6. Memory input selection,
 its generation costs and provenance differ; original observations remain archived.
@@ -21,6 +21,7 @@ from local_llama import post
 from native_conversation import NativeConversation
 from native_boundary_record import snapshot_boundary
 from native_focus_memory import FocusMemory
+from native_ledger_memory import LedgerMemory
 from run_context_comparison import Bridge, BudgetStop, Inference, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,8 +50,16 @@ def messages_for(task, spans, config):
     ]
 
 
+def make_memory(arm):
+    if arm == "native_focus":
+        return FocusMemory()
+    if arm == "native_ledger":
+        return LedgerMemory()
+    raise ValueError("unknown generated memory arm")
+
+
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P13": "native_focus"}
+    expected = {"P13": "native_focus", "P14": "native_ledger"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
@@ -78,9 +87,10 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "run_context_comparison.py", "context_preservation.py", "local_llama.py",
         "appworld_bridge.py", "model_provenance.py",
     ]
-    if arm == "native_focus":
-        files.append("native_conversation.py")
-    if phase == "P13":
+    if arm == "native_ledger":
+        files.append("native_ledger_memory.py")
+    files.append("native_conversation.py")
+    if phase in ("P13", "P14"):
         files.append("native_boundary_record.py")
     hashes = {}
     for name in files:
@@ -102,7 +112,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     formatting = {}
     boundaries = []
     memory_views = []
-    focus_memory = FocusMemory()
+    memory_controller = make_memory(arm)
     memory_seconds = 0.0
     memory_attempts = 0
     memory_count_rows = []
@@ -163,7 +173,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase != "P13":
+        if phase not in ("P13", "P14"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()
@@ -178,7 +188,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise RuntimeError(response["error"])
         task = response["result"]
         write_json(out / "public_task.json", task)
-        if arm == "native_focus":
+        if arm in ("native_focus", "native_ledger"):
             conversation = NativeConversation(NATIVE_PROMPT, task)
             write_json(out / "conversation_private.json", conversation.messages())
         capture("initial")
@@ -194,7 +204,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 memory_attempts += 1
                 counts_before = len(memory_count_rows)
                 try:
-                    messages, selection = focus_memory.prepare(
+                    messages, selection = memory_controller.prepare(
                         conversation, task, supplied_tools, infer, count_history, config,
                         lambda events: write_json(out / "generated_memory_events.json", events))
                 finally:
@@ -231,7 +241,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 write_json(out / "events.json", events)
                 write_json(out / "progress.json", {
                     "arm": arm, "task_id": task_id, "calls": len(infer.calls),
-                    "tokens": infer.tokens, "turns": len(spans), "compressions": len(focus_memory.events),
+                    "tokens": infer.tokens, "turns": len(spans), "compressions": len(memory_controller.events),
                     "api_requests": api_requests, "exposed_api_schemas": len(catalog.visible)})
 
             rows = dispatch_native_calls(
@@ -274,7 +284,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             "final_success": None, "evaluation": "not_run",
             "known_total_tokens": infer.tokens, "model_calls": len(infer.calls),
             "usage_by_role": roles,
-            "tool_turns": len(spans), "api_requests": api_requests, "compression_events": len(focus_memory.events),
+            "tool_turns": len(spans), "api_requests": api_requests, "compression_events": len(memory_controller.events),
             "format_errors": sum("format_error" in s["observation"] for s in spans.values()),
             "api_bridge_errors": sum("api_error" in s["observation"] for s in spans.values()),
             "unknown_effect_requests": sum(e["effects_unknown"] for e in events),
@@ -289,8 +299,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             "memory_token_count_requests": len(memory_count_rows),
             "memory_token_count_failures": sum(r["status"] != "ok" for r in memory_count_rows),
             "memory_budget_overflows": sum(v["selection"]["history_budget_overflow"] for v in memory_views),
-            "generated_memory_attempts": len(focus_memory.events),
-            "all_retained_early_exits": sum(e["early_all_retained"] for e in focus_memory.events),
+            "generated_memory_attempts": len(memory_controller.events),
+            "all_retained_early_exits": sum(e["early_all_retained"] for e in memory_controller.events),
             "boundary_records": len(boundaries),
             "boundary_capture_attempts": capture_attempts,
             "boundary_capture_seconds": capture_seconds,
