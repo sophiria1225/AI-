@@ -1,4 +1,4 @@
-"""Wait for P7, run two frozen baselines, evaluate offline and publish aggregate progress."""
+"""Run two frozen baselines after their prerequisite, with aggregate-only progress."""
 import argparse
 import datetime
 import hashlib
@@ -16,6 +16,10 @@ ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "sophiria1225/AI-"
 ISSUE = 36
 MARKER = "<!-- harness-native-baseline:P8_batch_v01 -->"
+PHASES = {
+    "P8": {"issue": 36, "arm": "native_full", "batch": "P8_batch_v01", "before": "P7"},
+    "P10": {"issue": 42, "arm": "native_roles", "batch": "P10_batch_v01", "before": "P9"},
+}
 
 
 def check_frozen(frozen):
@@ -25,12 +29,17 @@ def check_frozen(frozen):
 
 
 def public_body(rows, state):
+    phase = state.get("phase", "P8")
+    spec = PHASES[phase]
+    marker = f"<!-- harness-native-baseline:{spec['batch']} -->"
     states = {
-        "waiting": "P7の終了待ち", "running": "実行中", "complete": "2試行の実行・評価処理が終了",
+        "waiting": spec['before'] + "の終了待ち", "running": "実行中", "complete": "2試行の実行・評価処理が終了",
         "prerequisite_failed": "前段の状態を確認するため保留",
         "runtime_error": "実行エラーで停止", "server_lease_too_short": "サーバーの残稼働時間不足で未開始",
     }
-    lines = [MARKER, "P8：公開スキーマ・複数操作を使う全履歴基準", "",
+    title = ("P8：公開スキーマ・複数操作を使う全履歴基準" if phase == "P8" else
+             "P10：要求と結果の役割を保持する標準会話の全履歴基準")
+    lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
     for row in rows:
@@ -47,21 +56,28 @@ def public_body(rows, state):
               "各試行：80 LLM呼び出し・80 API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。",
               "公式APIスキーマを利用した導入基準で、公式エージェントの完全再現・新手法・品質維持の主張ではありません。",
               "評価は終了後の別プロセスで行い、後続のモデル入力には返しません。",
-              "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)"]
+              ("[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)"
+               if phase == "P8" else
+               "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-history-calibration-20261021/docs/experiments/P10_native_history.md)")]
     return "\n".join(lines) + "\n"
 
 
 def publish(body, state):
-    endpoint = f"repos/{REPOSITORY}/issues/{ISSUE}"
+    spec = PHASES[state.get("phase", "P8")]
+    issue = spec["issue"]
+    marker = f"<!-- harness-native-baseline:{spec['batch']} -->"
+    if not body.startswith(marker):
+        raise ValueError("unexpected progress marker")
+    endpoint = f"repos/{REPOSITORY}/issues/{issue}"
     if state.get("comment_id"):
         endpoint = f"repos/{REPOSITORY}/issues/comments/{int(state['comment_id'])}"
         previous = gh_api(endpoint)
-        if (previous.get("issue_url") != f"https://api.github.com/repos/{REPOSITORY}/issues/{ISSUE}"
-                or not previous.get("body", "").startswith(MARKER)):
+        if (previous.get("issue_url") != f"https://api.github.com/repos/{REPOSITORY}/issues/{issue}"
+                or not previous.get("body", "").startswith(marker)):
             raise ValueError("unexpected progress destination")
         result = gh_api(endpoint, method="PATCH", payload={"body": body})
     else:
-        if gh_api(endpoint)["html_url"] != f"https://github.com/{REPOSITORY}/issues/{ISSUE}":
+        if gh_api(endpoint)["html_url"] != f"https://github.com/{REPOSITORY}/issues/{issue}":
             raise ValueError("unexpected Issue identity")
         result = gh_api(endpoint + "/comments", method="POST", payload={"body": body})
     state.update(comment_id=result["id"], comment_url=result["html_url"])
@@ -78,7 +94,10 @@ def main():
     plan = json.loads(args.plan.read_text())
     frozen = json.loads(args.freeze_record.read_text())
     check_frozen(frozen)
-    if plan["batch_id"] != "P8_batch_v01" or len(plan["run_order"]) != 2:
+    phase = plan["phase"]
+    if (phase not in PHASES or plan["batch_id"] != PHASES[phase]["batch"]
+            or len(plan["run_order"]) != 2 or plan['arms'] != [PHASES[phase]['arm']]
+            or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed two-trial plan is supported")
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
@@ -89,7 +108,7 @@ def main():
     state = {
         "status": "waiting", "started_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        "completed": [], "active": None,
+        "completed": [], "active": None, "phase": phase,
     }
     last_publish, last_signature = 0, None
 
@@ -121,9 +140,12 @@ def main():
 
     update()
     started = time.monotonic()
+    prerequisite_path = (
+        storage / "records/memory_probe" / plan["wait_for_probe"] / "status.json"
+        if phase == "P8" else
+        storage / "records/cache_probe" / plan["wait_for_cache_probe"] / "status.json")
     while True:
-        prerequisite = json.loads(
-            (storage / "records/memory_probe" / plan["wait_for_probe"] / "status.json").read_text())
+        prerequisite = json.loads(prerequisite_path.read_text())
         if prerequisite["status"] == "complete":
             break
         if (prerequisite["status"] not in ("waiting", "running")
@@ -148,7 +170,7 @@ def main():
     try:
         state["status"] = "running"
         for task, arm, name in plan["run_order"]:
-            if arm != "native_full":
+            if arm != PHASES[phase]["arm"]:
                 raise ValueError("unexpected baseline arm")
             check_frozen(frozen)
             state["active"] = name

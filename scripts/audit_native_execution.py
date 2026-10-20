@@ -6,6 +6,28 @@ import json
 from pathlib import Path
 
 from summarize_context_pilot import summarize_trial
+from native_conversation import NativeConversation
+
+
+def inspect_history(task, prompt, usage, records, spans, payloads, responses, page_limit):
+    """Check every supplied history against preceding recorded responses/results."""
+    conversation = NativeConversation(prompt, task)
+    by_call = defaultdict(list)
+    for event in records:
+        by_call[event['call']].append(spans[event['span_id']])
+    errors, formatting = [], {}
+    for call in usage:
+        cid = call['id']
+        expected, formatting = conversation.for_model(page_limit)
+        if payloads[cid]['messages'] != expected:
+            errors.append(cid + ': supplied history differs from preceding recorded turns')
+        if call['status'] == 'ok':
+            try:
+                conversation.append(responses[cid]['message'], by_call[cid])
+            except (KeyError, ValueError, TypeError) as error:
+                errors.append(cid + ': cannot reconstruct recorded turn: ' + type(error).__name__)
+                break
+    return {'history_audit_errors': errors, 'last_input_formatting': formatting}
 
 
 def read(path):
@@ -101,14 +123,25 @@ def inspect_operations(usage, records, spans, payloads, responses, summary):
 
 def audit(directory):
     result = summarize_trial(directory)
-    if result['arm'] != 'native_full':
+    if result['arm'] not in ('native_full', 'native_roles'):
         raise ValueError('requires a completed native full-history trial')
     usage = read(directory / 'usage.json')
-    result.update(inspect_operations(
-        usage, read(directory / 'events.json'), read(directory / 'spans.json'),
-        {c['id']: read(directory / c['id'] / 'request.json') for c in usage},
-        {c['id']: read(directory / c['id'] / 'response.json') for c in usage},
-        read(directory / 'summary.json')))
+    records, spans = read(directory / 'events.json'), read(directory / 'spans.json')
+    payloads = {c['id']: read(directory / c['id'] / 'request.json') for c in usage}
+    responses = {c['id']: read(directory / c['id'] / 'response.json') for c in usage}
+    result.update(inspect_operations(usage, records, spans, payloads, responses,
+                                     read(directory / 'summary.json')))
+    if result['arm'] == 'native_roles':
+        from run_native_appworld import NATIVE_PROMPT
+        hashes = read(directory / 'summary.json')['source_hashes']
+        matched = all(hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
+                      == hashes[name] for name in ('native_conversation.py', 'run_native_appworld.py'))
+        if not matched:
+            result['history_audit_errors'] = ['history renderer source differs from frozen execution']
+        else:
+            result.update(inspect_history(read(directory / 'public_task.json'), NATIVE_PROMPT,
+                                         usage, records, spans, payloads, responses,
+                                         read(directory / 'plan.json')['observation_page_characters']))
     result['source_hashes'].update({name: hashlib.sha256((directory / name).read_bytes()).hexdigest()
                                     for name in ('events.json', 'spans.json', 'plan.json')})
     result['scope'] = ('Saved model requests, schemas and ordered dispatch metadata. '
@@ -126,7 +159,8 @@ def main():
     result['script_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'run': result['run_id'], 'usage_audit_errors': result['audit_errors'],
-                      'dispatch_audit_errors': result['dispatch_audit_errors']}))
+                      'dispatch_audit_errors': result['dispatch_audit_errors'],
+                      'history_audit_errors': result.get('history_audit_errors')}))
 
 
 if __name__ == '__main__':

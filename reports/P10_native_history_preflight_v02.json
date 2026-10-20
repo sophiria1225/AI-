@@ -1,0 +1,110 @@
+{
+  "created_at": "2026-10-20T21:05:30.624284+00:00",
+  "source_run": "P8_01_NATIVE",
+  "prefix_calls": 2,
+  "proof": [
+    {
+      "prefix_model_calls": 1,
+      "visible_operations": 1,
+      "round_trip_equal": true,
+      "earlier_messages_unchanged": true,
+      "additional_observation_text": false,
+      "formatting": {
+        "text_fallback_turns": 0,
+        "paged_spans": 0
+      },
+      "supplied_tool_schemas": 102
+    },
+    {
+      "prefix_model_calls": 2,
+      "visible_operations": 3,
+      "round_trip_equal": true,
+      "earlier_messages_unchanged": true,
+      "additional_observation_text": false,
+      "formatting": {
+        "text_fallback_turns": 0,
+        "paged_spans": 0
+      },
+      "supplied_tool_schemas": 102
+    }
+  ],
+  "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "runtime": {
+    "name": "llama.cpp",
+    "release": "v0.7.0",
+    "binary_tag": "b11669",
+    "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+    "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+  },
+  "context_limit": 65536,
+  "source_hashes": {
+    "plan.json": "d99cfc7ea609f0b4360f2857b01742ac8d426cccb55afeae0c295a82c0a4ec65",
+    "public_task.json": "e8568114a49b524b831b7f5ebac9636b7c1e281c0f9cb300b60b2e8bef076aad",
+    "events.json": "61417961cdaa16b7f0f3c6e45d0e06131707f9439f6ffd3db5d12309e0630c2a",
+    "spans.json": "7dbc1de22a699ee5b163e6f28b0eba24f53a842ecf0ed719a355dae4eb9563f2",
+    "call_001/request.json": "44ccd4c534cebc124b160379418955983b24b8f2dc0730a616587c7b2d901289",
+    "call_001/response.json": "13005bcdacf7ada4ca5fc3c731a3c9daa7a1cb1fc89459c75a3ea4b38b5d5261",
+    "call_002/request.json": "6a0d6d2f7b94e187f838a21e804d6b7363d6d71f13856b540ecb3fb81d5088d3",
+    "call_002/response.json": "99836f57d146a821386fd3e7c558012b96252ced19d8c16f4401ceef7ad06f29",
+    "call_003/request.json": "e75c146f16e0364f621d27fb62f6f2d150ce53681172ddbbf73e60b840ab3c6c"
+  },
+  "synthetic_formatting": {
+    "text_fallback_turns": 1,
+    "paged_spans": 0
+  },
+  "model_inference_calls": 0,
+  "environment_requests": 0,
+  "rows": [
+    {
+      "case": "prefix_1_json",
+      "payload_sha256": "6a0d6d2f7b94e187f838a21e804d6b7363d6d71f13856b540ecb3fb81d5088d3",
+      "status": "accepted",
+      "input_tokens": 18211,
+      "template_tokens": 18211,
+      "template_sha256": "31e31d7cbe170a954a9ed9b5e2b4638b3ec69e0e3df7b57b62bebc751b2c5e5f",
+      "fits_with_output_reservation": true
+    },
+    {
+      "case": "prefix_1_roles",
+      "payload_sha256": "cd97d7d7d6a4d80c7c13ef2fe6334586708cabe2c44d1058deb4de649a2d4198",
+      "status": "accepted",
+      "input_tokens": 18222,
+      "template_tokens": 18222,
+      "template_sha256": "72a290a33ce7cf9a3678d61de5df68803bb74fd70d232dc601da3cb0e87b48a8",
+      "fits_with_output_reservation": true
+    },
+    {
+      "case": "prefix_2_json",
+      "payload_sha256": "e75c146f16e0364f621d27fb62f6f2d150ce53681172ddbbf73e60b840ab3c6c",
+      "status": "accepted",
+      "input_tokens": 18575,
+      "template_tokens": 18575,
+      "template_sha256": "7808228d31e57995a4210c7cbeb2278dc10df0357cd9197d8aa771379867ed74",
+      "fits_with_output_reservation": true
+    },
+    {
+      "case": "prefix_2_roles",
+      "payload_sha256": "3d37c4bdbbe6b779fe24824a32351446437b380e4f835131fd563d48655957a7",
+      "status": "accepted",
+      "input_tokens": 18606,
+      "template_tokens": 18606,
+      "template_sha256": "e01a2e431a451095709d740456d0e9234b31af2f70597c59ea04aac8de0c4a63",
+      "fits_with_output_reservation": true
+    },
+    {
+      "case": "synthetic_malformed_arguments",
+      "payload_sha256": "9eed946ac382880eb1823e2eec12ec634317a7049e445aa5cb3805ddcfb10b81",
+      "status": "accepted",
+      "input_tokens": 475,
+      "template_tokens": 475,
+      "template_sha256": "7ae3e911c4a2137f7752a342956e4ca2e8339ff4c6756b41de6640991791c612",
+      "fits_with_output_reservation": true
+    }
+  ],
+  "scope": "Saved public prefix and one synthetic malformed call. No generation, state replay, evaluator access, final quality or speed claim.",
+  "script_hashes": {
+    "inspect_native_history.py": "5f1c3b44bd28b40ffd5e17bf079f95fbb8bc53517c99a9df104d7f39984363c2",
+    "native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3"
+  }
+}
