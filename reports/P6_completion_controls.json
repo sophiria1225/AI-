@@ -1,0 +1,20 @@
+{
+  "tests": {
+    "command": "research-python -m unittest discover -s tests -q",
+    "passed": 188
+  },
+  "attempts": [
+    {
+      "command": "research-python -m pytest -q",
+      "result": "No module named pytest; no tests or inference ran; used repository unittest runner."
+    }
+  ],
+  "sources": [
+    "reports/P6_final_measurements.json",
+    "reports/P6_final_runtime_audit.json"
+  ],
+  "additional_model_calls": 0,
+  "full_raw_traces_public": false,
+  "deck_checks": "materials/20261021_p6/review.json",
+  "visual_checks": "materials/20261021_p6/visual_review.json"
+}

@@ -6,15 +6,13 @@
 
 **R18の監査結果：** 12原典の確認範囲とハッシュを保存し、将来の有用性に基づく圧縮、反例による記憶修正、通信への介入、証拠付き完了判定などの重複を記録しました。凍結済みP5の74操作も再監査し、成果物の更新競合や後段表示器による追加の原文欠落は確認できませんでした。これらを失敗原因と決めつけません。[原典と確認範囲](reports/R18_literature_sources.json)、[操作メタデータの集計](reports/R18_P5_evidence_audit.json)。追加モデル呼び出し0回、監査の8検査を含む全130テスト合格。
 
-**現在：P6の第2課題を実行中。** 第1課題は全履歴だけ成功。対象台帳は76,902トークンで未達となり、実行されなかった操作を「完了」と記録する例を確認しました。[3方式の図・結果・判断](docs/P6_ledger_diagnosis.md)、[続行中の進捗](https://github.com/sophiria1225/AI-/issues/30#issuecomment-6298489780)。FOCUS再実装は時間上限で未達でしたが、履歴を削っていないため忘却の証拠にはしません。[保持規則の診断](docs/P6_retention_diagnosis.md)。
+**P6の全6試行が終了しました。** 開発2課題×3方式、114呼び出し・既知787,520トークン＋費用不明4呼び出し。第1課題の全履歴だけ成功しました。FOCUSの保持生成、台帳の誤完了、入力の再処理を分けて分析しています。[全結果・図・次の判断](docs/P6_findings.md)。品質維持・新手法の有効性は未実証です。
 
-**第2課題の追加診断：** 全履歴と台帳が時間上限で未達。全履歴の入力再処理に約20分、台帳更新に約18分半を使っていました。入力配置と連続更新の影響を、記憶の誤りと切り分けています。[時間内訳・図・次の判断](docs/P6_task2_runtime_diagnosis.md)、[Issue #38](https://github.com/sophiria1225/AI-/issues/38)。情報を削らず入力の並び順だけを変える[P9の校正計画](docs/experiments/P9_prompt_cache_probe.md)を実装しました。基盤改善を新規性とは呼びません。
+**最新の区切り資料（11枚）：** [PDF](materials/20261021_p6/AI_harness_P6_20261021.pdf) / [編集用PowerPoint](materials/20261021_p6/AI_harness_P6_20261021.pptx) / [数値・出典・生成／検証記録](materials/20261021_p6/)。目的、構成図、全6試行、原因候補と次の比較を示しました。
 
-**次の検証：** 公開操作の再生2回で観測と新規保存DBが一致しました。元の全途中状態の復元とは扱わず、まず同じ保存入力に対する記憶生成の3条件×3種を比較します。[P7の事前計画](docs/experiments/P7_memory_input_probe.md)、[Issue #34](https://github.com/sophiria1225/AI-/issues/34)。既存の単純対策で十分かを確かめる校正であり、新規性は未確定です。
+**実行を継続しています。** [P7：記憶生成9呼び出し](https://github.com/sophiria1225/AI-/issues/34#issuecomment-6299401998) → [P8：公開API形式の全履歴2試行](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976) → [P9：固定入力8呼び出しの時間校正](https://github.com/sophiria1225/AI-/issues/38#issuecomment-6300525302)の順にモデルを使います。P7が実行中、P8・P9が待機中です。待機だけで作業を区切らず、終了結果の照合・分析・実装も続けています。
 
-**比較用実行器も校正中：** 公開APIごとのスキーマと複数操作を使う全履歴基準を実装しました。全457 APIの無条件投入は出力余白を含めると64Kを超えるため、公開文書の要求に応じて追加します。保存済み43操作の要求一致、実環境での文書取得・不正操作の未送信を確認。[P8の条件と初案を見送った理由](docs/experiments/P8_native_baseline.md)、[Issue #36](https://github.com/sophiria1225/AI-/issues/36)。P6・P7の終了後に2試行を行う計画で、この形式でのモデル成績はまだありません。
-
-**実行キューを起動済み：** [P6：進行中](https://github.com/sophiria1225/AI-/issues/30#issuecomment-6298489780) → [P7：記憶生成9呼び出しの待機](https://github.com/sophiria1225/AI-/issues/34#issuecomment-6299401998) → [P8：全履歴2試行の待機](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976)。モデル推論を重ねず順に進め、各コメントを自動更新します。前段の実行エラーや稼働時間不足では、その理由を記録して未開始にします。
+P7は、未実行の生成文を退避／未実行と明記するだけで台帳の誤完了が解消するかを調べます。[条件](docs/experiments/P7_memory_input_probe.md)と[出力前に固定した意味確認の規則](docs/experiments/P7_review_protocol.md)。P8は[APIごとのスキーマと複数操作](docs/experiments/P8_native_baseline.md)、P9は[同じ入力内容の配置](docs/experiments/P9_prompt_cache_probe.md)の校正です。単純な対策で足りるかを先に確かめ、基盤の改善を新規性とは呼びません。
 
 **この比較で決めること：** 既存の防御的確認や単純な台帳で足りるなら、追加の独自方式は提案しません。原論文の完全再現や新手法の完成ではなく、必要な技術を絞るための導入比較です。[優先順位](docs/next_actions.md)。
 

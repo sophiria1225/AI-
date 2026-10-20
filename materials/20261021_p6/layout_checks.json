@@ -1,0 +1,1151 @@
+{
+  "pages": 11,
+  "text_boxes": 163,
+  "overflow": [],
+  "font_name": "Arial Unicode MS",
+  "font_path_for_build": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "boxes": [
+    {
+      "slide": 1,
+      "text": "RESEARCH CHECKPOINT / P6",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 1,
+      "text": "品質を保って総トークンを減らすための検証",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 1,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "01",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "独自手法を決める前に、\n既存方式で起きた失敗の機構を確かめる。",
+      "lines": 2,
+      "used_height": 81.84,
+      "box_height": 110
+    },
+    {
+      "slide": 1,
+      "text": "全履歴、先行研究に基づく保持方式、対象台帳を比較。\n完了率だけでなく、実行情報の誤記憶と\n保持判断・入力再処理の費用を分けて調べた。",
+      "lines": 3,
+      "used_height": 87.12,
+      "box_height": 100
+    },
+    {
+      "slide": 1,
+      "text": "得られたのは失敗条件と次の比較。新しいアルゴリズムはまだ選んでいない。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 2,
+      "text": "01 / 目的と現在の位置",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 2,
+      "text": "担当再編を前提にせず、必要な機構を選び直す",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 2,
+      "text": "目標：同じモデルで必要な品質を満たし、全入力＋出力トークンを減らす。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 2,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "02",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "出発点",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "大規模な仕事を分担し、\n途中で仕事・状態を\n引き継ぐ研究を検討。\n既存方式との重複を確認。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 158
+    },
+    {
+      "slide": 2,
+      "text": "見直した理由",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "開発実験では担当間の\n変更衝突を確認できず、\n再編の固有利益を\n裏づけられなかった。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 158
+    },
+    {
+      "slide": 2,
+      "text": "現在の検証",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "情報をどう保持・更新し、\n行動へ渡すかを比較。\n既存の単純方式で足りる\n可能性も検証する。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 158
+    },
+    {
+      "slide": 2,
+      "text": "モデルの外側にある情報・状態・実行制御が対象。ハーネス研究として継続する。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "02 / 実装した構成",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 3,
+      "text": "記憶の更新と、環境で実際に行った操作を分離する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 3,
+      "text": "同じモデル・公開ツール・予算で、作業用の記憶だけを切り替える。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 3,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "03",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "公開の要求・API文書",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "正解・独立評価は渡さない",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 3,
+      "text": "作業役のLLM",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "調査・判断・API要求",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 3,
+      "text": "模擬アプリ環境",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "順序付きの実行と観測",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 3,
+      "text": "作業用の記憶",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "全履歴／FOCUS再実装／台帳",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "変更しない原記録",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "入力・操作・結果・費用",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "終了後の独立評価",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "最終状態の成否のみ集計",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "記憶の生成文、操作の実行、最終タスク成功は、それぞれ別の記録で確認する。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "03 / 実験条件",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "少数の開発課題で、方式を校正する段階",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 4,
+      "text": "AppWorldの公開train入力から2課題を選択。各方式・各課題1回。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 4,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "04",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "条件",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "固定した内容",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "モデル",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "MiniMax M3 IQ4_XS・64K・KV q8_0・同じ推論基盤",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "全履歴",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "原記録を全て作業用入力へ。過去の参照も可能",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "FOCUS再実装",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "将来計画の参照＋防御的保持。原著者の性能再現ではない",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "対象台帳",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "対象・条件・進捗・根拠IDを更新。意味の正しさは未保証",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "共通上限",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "80呼び出し・45万トークン・30分・出力4,096／回",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "全担当・記憶生成・再読込を計上。大規模本実験や一般化の証明とは区別する。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 5,
+      "text": "04 / 結果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 5,
+      "text": "成功と費用を同時に見る",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 5,
+      "text": "費用不明の中断呼び出しは0とせず、「＋不明」として残す。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 5,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "05",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "課題",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "方式",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "呼出",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "既知トークン",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "評価",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "停止理由",
+      "lines": 1,
+      "used_height": 19.14,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "1",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "全履歴",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "13",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "86,742",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "成功",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "完了宣言",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "1",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "FOCUS再実装",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "19",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "132,124＋不明",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "時間上限",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "1",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "対象台帳",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "12",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "76,902",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "完了宣言",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "2",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "対象台帳",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "23",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "151,130＋不明",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "時間上限",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "2",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "全履歴",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "26",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "206,454＋不明",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "時間上限",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "2",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "FOCUS再実装",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "21",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "134,168＋不明",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "時間上限",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 5,
+      "text": "少ないトークンで失敗した結果を「品質を保った削減」とは呼ばない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 6,
+      "text": "05 / 全役割の費用",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 6,
+      "text": "記憶を小さくする判断にも計算が必要",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 6,
+      "text": "記憶生成の費用を除かず、元の実行記録から集計。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 6,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "06",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "06 / 解釈を分ける",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 7,
+      "text": "失敗したという事実だけでは、原因は決まらない",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 7,
+      "text": "推論文の自己説明を、そのまま原因の証明に使わない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 7,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "07",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "保持判断の負担",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "FOCUSの計8更新試行。\n履歴を除いた記録は0回。\n形式不備・生成上限・費用を\n忘却の効果と混ぜない。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 7,
+      "text": "台帳の誤った完了",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "課題1では送信されなかった\n不正な操作を根拠に、\n更新をdoneとした。\nIDの存在だけでは不十分。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 7,
+      "text": "比較基盤の負担",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "課題2の全履歴では\n入力再処理に約20分。\n台帳更新には約18分半。\n同じ時間上限でも\n費用の内訳が異なる。",
+      "lines": 5,
+      "used_height": 118.80000000000001,
+      "box_height": 160
+    },
+    {
+      "slide": 7,
+      "text": "いずれも少数例の観測。新機構の必要性は、単純な対照を超えるかで判断する。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 8,
+      "text": "07 / 第2課題の詳細",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 8,
+      "text": "情報を捨てる前に、実行基盤の無駄を測る",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 8,
+      "text": "中央は入力列の一致の測定。変更後の実時間と品質はまだ測っていない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 8,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 8,
+      "text": "08",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "08 / 次の比較",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 9,
+      "text": "異なる原因を、別の実験で切り分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 9,
+      "text": "P6終了後に順番に実行。以下は計画であり、この資料の結果には含めない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 9,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "09",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "実験",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "変えるもの",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "測るもの",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "P7：同じ記憶入力",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "原入力／未実行部分の退避／未実行記録",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "完了主張と公開の実行証拠",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "P8：強いAPI基準",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "API別スキーマ・複数操作・公開探索",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "最終状態・全費用・形式失敗",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "P9：同じ隣接入力",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "情報は保持し、入力配置だけ変更",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "入力再処理量と実時間",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 51
+    },
+    {
+      "slide": 9,
+      "text": "P7・P9は課題成功を測らない。P8は複数の変更を含み、単一要因の効果ではない。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "09 / 何を成果にしたいか",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 10,
+      "text": "既存方式をつないだだけで終えないための判定",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 10,
+      "text": "現在の成果と、研究の完成時に必要な成果を分ける。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 10,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "10",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "ここまでの成果",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 10,
+      "text": "再現可能な比較・全費用の記録。\n誤完了の記憶、保持判断の負担、\n入力再処理という原因候補の切り分け。\n選ばなかった案と失敗も公開記録へ。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 158
+    },
+    {
+      "slide": 10,
+      "text": "これから必要な成果",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 10,
+      "text": "強い既存方式でも残る機構上の問題。\nその問題を扱う具体的な更新・制御規則。\n同じ予算で単純な対照を超える効果。\n別課題・別モデルでの成立条件と限界。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 158
+    },
+    {
+      "slide": 10,
+      "text": "単純な対策で足りれば独自機構を追加しない。次の結果から研究の中核を絞る。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "10 / 出典と追跡先",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 11,
+      "text": "実験条件・結果・理由をGitHubからたどれる",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 11,
+      "text": "この資料の数値はP6終了時点の集計。完全な実行履歴・認証情報は公開しない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 11,
+      "text": "2026-10-21｜P6導入比較の区切り｜新規性・品質維持は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "11",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "P6の条件と再実装の範囲",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "全6試行の結果と次の判断",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "台帳の誤完了と公開操作の再生",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "第2課題の費用・入力配置の診断",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "独自の技術的中核を選び直した理由",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    }
+  ],
+  "note": "Text bounds checked in the shared layout. Native PowerPoint rendering can vary by installed font."
+}
