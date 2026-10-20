@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-10-20T02:30:21.732056+00:00",
+  "updated_at": "2026-10-20T02:37:40.765984+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "attempted_calls": 11,
-    "calls_with_known_usage": 11,
+    "attempted_calls": 12,
+    "calls_with_known_usage": 12,
     "calls_with_unknown_usage": 0,
-    "known_input_tokens": 50782,
-    "known_output_tokens": 493,
-    "known_total_tokens": 51275,
+    "known_input_tokens": 106775,
+    "known_output_tokens": 501,
+    "known_total_tokens": 107276,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -155,6 +155,36 @@
         "predicted_per_second": 12.418239200123473
       },
       "sampled_peak_rss_bytes": 211145785344,
+      "peak_system_swap_bytes": 0,
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_112642_56000",
+      "ctx_size": 65536,
+      "input_tokens": 55993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 606.9046327919932,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 55866,
+        "prompt_ms": 606248.12,
+        "prompt_per_token_ms": 10.851826155443382,
+        "prompt_per_second": 92.15038885398936,
+        "predicted_n": 8,
+        "predicted_ms": 586.2,
+        "predicted_per_token_ms": 83.74285714285715,
+        "predicted_per_second": 11.941316956670077
+      },
+      "sampled_peak_rss_bytes": 217086214144,
       "peak_system_swap_bytes": 0,
       "sampling": {
         "top_k": 0,

@@ -2,7 +2,7 @@
   "scope": "P2_development_single_baseline_calibration",
   "phase": "P2",
   "version": "P2_mini_v01",
-  "readiness": "requires 64K capacity and final sampling probes before execution",
+  "readiness": "passed",
   "instance_id": "django__django-15957",
   "image": "swebench/sweb.eval.x86_64.django_1776_django-15957@sha256:7e2694f891d96ec8eaef27b746823acaa6dd28d65832b79db2bd18a816b3437e",
   "backend": "llama.cpp",
@@ -38,5 +38,9 @@
       ],
       "timeout_seconds": 180
     }
+  ],
+  "calibration_records": [
+    "records/p2_capacity/20261020_112642_56000/summary.json",
+    "records/p2_probes/20261020_112612_enabled/summary.json"
   ]
 }
