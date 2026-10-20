@@ -72,7 +72,7 @@
         "不完全な要求を実行しない",
         "実問題前に設定を固定"
       ],
-      "progress": "ロード確認に先行して接続と費用管理を実装する。",
+      "progress": "Local llama.cpp adapter, native input-token preflight, usage validation and bounded probes implemented. Seven accounting tests pass; real-model probes await verified weights.",
       "completed_steps": [
         "アダプター実装"
       ]
@@ -94,7 +94,7 @@
         "失敗が成功に書き換わらない",
         "原文ログと終了コードが残る"
       ],
-      "progress": "P1の残課題として優先する。",
+      "progress": "Individual exit status controls passed (4 checks). Public baseline suites pass on both development tasks. Applying the same checks before independent evaluation.",
       "completed_steps": [
         "個別の検査と終了コード記録",
         "成功・失敗・タイムアウトの対照"
@@ -164,7 +164,7 @@
       "id": "R08",
       "title": "近接研究の機能と新規性を本文で照合する",
       "priority": "P1",
-      "status": "todo",
+      "status": "in_progress",
       "why": "状態・責任・判断規則の変更が既存研究と重なるか確認する。",
       "alternatives": "動的生成、文脈結合、部分集中処理を世界初としない。題名だけで差分を確定しない。",
       "steps": [
@@ -178,7 +178,8 @@
         "未確認事項の明記",
         "実装比較への接続"
       ],
-      "progress": "既存文献表を更新する。掲載済みと公開原稿を区別。"
+      "progress": "MaAS and TDAG code revisions pinned and execution paths inspected. GCC v2 methods and budget notation reviewed. APO follow-up and reproduction remain pending.",
+      "completed_steps": []
     }
   ]
 }

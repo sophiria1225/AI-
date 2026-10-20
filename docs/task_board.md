@@ -13,7 +13,7 @@
 | P1 | R05 | MiniMaxで2開発課題の単一基準を測定する | 未着手 | 未同期 |
 | P1 | R06 | 同一モデルで単一と固定分担を比較する | 未着手 | 未同期 |
 | P2 | R07 | 同一途中状態から四条件へ分岐する | 未着手 | 未同期 |
-| P1 | R08 | 近接研究の機能と新規性を本文で照合する | 未着手 | 未同期 |
+| P1 | R08 | 近接研究の機能と新規性を本文で照合する | 進行中 | 未同期 |
 
 GitHub Projectは認証後に作成・同期する。作業定義と投稿内容は準備済み。
 
@@ -35,7 +35,7 @@ Q3_K_L約205GBを取得中。llama.cpp b11669公式ARM64バイナリのハッシ
 
 ## R03 MiniMaxのツール利用とトークン計測を接続する
 
-ロード確認に先行して接続と費用管理を実装する。
+Local llama.cpp adapter, native input-token preflight, usage validation and bounded probes implemented. Seven accounting tests pass; real-model probes await verified weights.
 
 **なぜ行うか**: ツール往復と費用を欠落なく計測する。
 
@@ -43,7 +43,7 @@ Q3_K_L約205GBを取得中。llama.cpp b11669公式ARM64バイナリのハッシ
 
 ## R04 公開テストの失敗を見落とさない実行手順を作る
 
-P1の残課題として優先する。
+Individual exit status controls passed (4 checks). Public baseline suites pass on both development tasks. Applying the same checks before independent evaluation.
 
 **なぜ行うか**: P1で後続コマンドによる失敗隠蔽と、公開検査失敗を残した独立評価合格を観測した。
 
@@ -75,7 +75,7 @@ R06で対象現象を確認した場合に着手。
 
 ## R08 近接研究の機能と新規性を本文で照合する
 
-既存文献表を更新する。掲載済みと公開原稿を区別。
+MaAS and TDAG code revisions pinned and execution paths inspected. GCC v2 methods and budget notation reviewed. APO follow-up and reproduction remain pending.
 
 **なぜ行うか**: 状態・責任・判断規則の変更が既存研究と重なるか確認する。
 

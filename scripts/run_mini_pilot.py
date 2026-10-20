@@ -51,8 +51,12 @@ class OllamaModel:
 
     def query(self, messages, **kwargs):
         prepared = [{k: v for k, v in message.items() if k != 'extra'} for message in messages]
+        wall_left = self.config['max_wall_seconds'] - (time.monotonic() - self.started)
+        if wall_left < 1:
+            stop('wall_limit')
         is_llama = self.config.get('backend') == 'llama.cpp'
-        preflight = local_llama.count_input(self.config, prepared, [BASH_TOOL]) if is_llama else None
+        preflight = local_llama.count_input(self.config, prepared, [BASH_TOOL],
+                                           timeout=min(60, wall_left)) if is_llama else None
         bound = preflight['input_tokens'] if preflight else input_bound(prepared, self.previous)
         remaining = self.config['max_total_tokens'] - self.total_tokens
         if bound + self.config['num_predict'] > min(self.config['num_ctx'], remaining):
@@ -249,11 +253,15 @@ def run(config):
         result = agent.run(task['problem_statement'])
         summary['stop_reason'] = result.get('exit_status','unknown_exit')
         summary['agent_model_queries'] = agent.n_calls
+        summary.update(capture_artifact(container, task['base_commit'], out))
+        summary['artifact_frozen_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         if config.get('visible_checks'):
             summary['visible_checks'] = run_checks(container, config['visible_checks'], out / 'visible_checks',
                 config['max_wall_seconds'] - (time.monotonic() - started))
-        summary.update(capture_artifact(container, task['base_commit'], out))
-        summary['artifact_frozen_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            after_dir = out / 'after_visible_checks'
+            after_dir.mkdir()
+            after = capture_artifact(container, task['base_commit'], after_dir)
+            summary['visible_checks_changed_artifact'] = after['artifact_sha256'] != summary['artifact_sha256']
     except Exception as error:
         summary.update(stop_reason='runner_error', error=repr(error))
     finally:

@@ -38,10 +38,10 @@ def payload_for(config, messages, tools):
     return payload
 
 
-def count_input(config, messages, tools):
+def count_input(config, messages, tools, timeout=60):
     started = time.monotonic()
     payload = payload_for(config, messages, tools)
-    result = post(config, '/v1/chat/completions/input_tokens', payload, 60)
+    result = post(config, '/v1/chat/completions/input_tokens', payload, timeout)
     count = result.get('input_tokens')
     if type(count) is not int or count < 1:
         raise ValueError('invalid input token count')

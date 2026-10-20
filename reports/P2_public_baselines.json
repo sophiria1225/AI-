@@ -1,0 +1,76 @@
+{
+  "scope": "visible pre-change test groups; no model and no hidden test injection",
+  "plan_sha256": "9374fa387d7df625fe82381b2e06af1676c69f8858ddd9b50fbdbf9481d5af32",
+  "tasks": [
+    {
+      "instance_id": "django__django-15380",
+      "base_commit": "71e7c8e73712419626f1c2b6ec036e8559a2d667",
+      "image_head": "41c0949d2e13bdf846ecc58f6ff921e07d6432f9",
+      "source_tree": "0e6b7ad62e5d92b48e4ef3d13103d182d9ad1d22",
+      "image": "swebench/sweb.eval.x86_64.django_1776_django-15380@sha256:8b523d4c313891a8271aa513ff57162d48bcf1a548e741cf9d5a1f1a183c835c",
+      "environment": {
+        "prefix": "/opt/miniconda3/envs/testbed",
+        "python": "3.9.20",
+        "django": "4.1.dev20260813013515"
+      },
+      "checks": [
+        {
+          "id": "public_migration_autodetector_suite",
+          "argv": [
+            "python",
+            "tests/runtests.py",
+            "migrations.test_autodetector",
+            "--settings=test_sqlite",
+            "--parallel=1",
+            "--verbosity=1"
+          ],
+          "status": "passed",
+          "exit_code": 0,
+          "timeout_seconds": 180,
+          "log": "000.log",
+          "log_sha256": "9041791205086eaa76de182547e7ac8ea7a9593f6881b95402bf36667ae20a79",
+          "output_bytes": 455,
+          "output_tail": "Creating test database for alias 'default'...\nTesting against Django installed in '/testbed/django'\nFound 140 test(s).\nSystem check identified no issues (0 silenced).\n............................................................................................................................................\n----------------------------------------------------------------------\nRan 140 tests in 0.330s\n\nOK\nDestroying test database for alias 'default'...\n",
+          "wall_seconds": 3.345425375038758
+        }
+      ],
+      "all_passed": true,
+      "wall_seconds": 3.3455555830150843
+    },
+    {
+      "instance_id": "django__django-15957",
+      "base_commit": "f387d024fc75569d2a4a338bfda76cc2f328f627",
+      "image_head": "cbabf4dd53e89beea8ca3f3deee630fabce23043",
+      "source_tree": "61994be69d4dfa545158f7e887f0673ec281e479",
+      "image": "swebench/sweb.eval.x86_64.django_1776_django-15957@sha256:7e2694f891d96ec8eaef27b746823acaa6dd28d65832b79db2bd18a816b3437e",
+      "environment": {
+        "prefix": "/opt/miniconda3/envs/testbed",
+        "python": "3.9.20",
+        "django": "4.2.dev20260813013928"
+      },
+      "checks": [
+        {
+          "id": "public_prefetch_suite",
+          "argv": [
+            "python",
+            "tests/runtests.py",
+            "prefetch_related",
+            "--settings=test_sqlite",
+            "--parallel=1",
+            "--verbosity=1"
+          ],
+          "status": "passed",
+          "exit_code": 0,
+          "timeout_seconds": 180,
+          "log": "000.log",
+          "log_sha256": "63e474ba881336df11b47856de27827c6aca68d3a941d05f1d1b5398b29841fc",
+          "output_bytes": 514,
+          "output_tail": "Creating test database for alias 'default'...\nTesting against Django installed in '/testbed/django'\nFound 109 test(s).\nCreating test database for alias 'other'...\nSystem check identified no issues (0 silenced).\n.............................................................................................................\n----------------------------------------------------------------------\nRan 109 tests in 1.120s\n\nOK\nDestroying test database for alias 'default'...\nDestroying test database for alias 'other'...\n",
+          "wall_seconds": 4.744157415931113
+        }
+      ],
+      "all_passed": true,
+      "wall_seconds": 4.7442952919518575
+    }
+  ]
+}

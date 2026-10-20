@@ -1,0 +1,17 @@
+{
+  "scope": "Visible checks chosen from public problem statements and repository test modules; no injected hidden tests",
+  "django__django-15380": [
+    {
+      "id": "public_migration_autodetector_suite",
+      "argv": ["python", "tests/runtests.py", "migrations.test_autodetector", "--settings=test_sqlite", "--parallel=1", "--verbosity=1"],
+      "timeout_seconds": 180
+    }
+  ],
+  "django__django-15957": [
+    {
+      "id": "public_prefetch_suite",
+      "argv": ["python", "tests/runtests.py", "prefetch_related", "--settings=test_sqlite", "--parallel=1", "--verbosity=1"],
+      "timeout_seconds": 180
+    }
+  ]
+}
