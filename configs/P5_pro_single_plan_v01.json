@@ -1,0 +1,59 @@
+{
+  "phase": "P5",
+  "frozen_at": "2026-10-20T10:04:15.851920+00:00",
+  "basis_commit": "de2d4b04a5a2c78d5228a7211986e98a0cdb92f9",
+  "scope": "Previously exposed development task; one trial per strategy under a shared configuration; not confirmatory",
+  "trial_id": "P5_PRO_SINGLE_01",
+  "trial_count": 1,
+  "strategy": "single",
+  "max_model_calls": 60,
+  "max_total_input_output_tokens": 600000,
+  "max_wall_seconds": 7200,
+  "config": "configs/P5_pro_common_v01.json",
+  "config_sha256": {
+    "configs/pro_public_runtime_v01.json": "cd94a345a5ca06d23ce1ab47f6f05651c004869cebf9bead9c04dad976b4318f",
+    "configs/pro_environment_feasibility_v01.json": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+    "reports/pro_candidate_image_manifest.json": "2a68876950d5877f0485dc63eb7d389320f71ba5ab2d94fd112d9520e5d0a51a",
+    "configs/P5_pro_common_v01.json": "bccb5f17c521b76fc6abea7397e64c0f68638eca5d8f5e5b7a3d00c3f2227719",
+    "configs/P4_pro_single_v01.json": "32125a37e222dd95a8ec62d3dcedd9e1473876393fe287c0f5d38071154b79fa"
+  },
+  "source_sha256": {
+    "run_pro_pilot.py": "5c5fd31d32f4c51dd604da965cf6ebd08fb468f3b2e29b40d01e6d6c53b5b141",
+    "pro_runtime.py": "8069529982e3377cfc4bd51f033bf939421a447efea1307b6bf85fb6d2bfec53",
+    "repository_runtime.py": "d0c1dba6b146cba129466f0809b6d0a959d8ed5af854a7abf94896c57e8bd5a0",
+    "run_fixed_comparison.py": "654befc83ac991a0c2cfb4ec315a3dcee0545e0fbaf5b4c0af9625dc42230a6d",
+    "experiment_state.py": "e541ed7e640d9b2cf2d285e3687887a7b889060d10e4e95a740234898c4567df",
+    "run_mini_pilot.py": "ba4f48df5505bd89693ed63f960ad9cda6d311009435bd963cc5932b47bcb6dc",
+    "run_e0_pilot.py": "86a17bccf1ce155258aac0c96d64323abc8f7181f2d45277bf8688bc0f70c130",
+    "local_llama.py": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+    "artifact_capture.py": "4adccf4f4308ba98ef2f2ac86f848e89fd2dc8e7dc840bb8ab6a4b4a6d98b768",
+    "container_policy.py": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+    "model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "visible_checks.py": "4ee6a61fe58cc30eb19279662dfc3d0e2a59c3979aac47c203e86b1871fca31d",
+    "prepare_pro_environment.py": "220b9bf211c8b0e577c72b9b459d7f61e917d5d73d7f13f50486783851501f15",
+    "calibrate_pro_runtime.py": "7123a513fd090319bd921874c144002d9d11b44ada98b9b8c4b5a1a1e942bdce",
+    "audit_p2.py": "2cb639e73fd281457b081e44b71895f95fa1b45d04af25750d1a80d596140c7d",
+    "audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162",
+    "evaluate_pro_pilot.py": "5cf4c61f9592f624cbf74396537c5c9182a0e7d7f2257adfd88d10af2eabae83",
+    "evaluate_pro_environment.py": "51c99cf7e583ae2272e260db35ede2ccdbbf9cd7fbe76a4cf7e613c9c9e1ba58",
+    "pro_verifier_result.py": "f924638c0d1b532ea11169557ba3ef4bd9d82a4ed859383845cfb998fab4c1e9",
+    "run_pro_comparison_batch.py": "a96a75aef3bfcf8d96ef21216140e182493dd2cac54fcb6f4499313d2e42bb67"
+  },
+  "runtime_calibration": {
+    "record": "records/pro_runtime/PRO_RUNTIME_01/summary.json",
+    "sha256": "d196adf98280471ed823dcb345096682be550a654080108ece9fe16e697b8eae"
+  },
+  "comparison_baseline": {
+    "config": "configs/P4_pro_single_v01.json",
+    "config_sha256": "32125a37e222dd95a8ec62d3dcedd9e1473876393fe287c0f5d38071154b79fa",
+    "note": "All substantive P4 settings retained except 3600 -> 7200 second wall ceiling for BOTH fresh P5 arms"
+  },
+  "rules": [
+    "Exactly one attempt; preserve errors, unknown usage and unsuccessful task outcomes.",
+    "Both arms use the same common config, model, public instructions, full repository, basic tools and ledger.",
+    "Fixed pair is implementation/validation round robin with shared full worktree, not ownership transfer.",
+    "No P4 trajectory, retrospective analysis or hidden evaluation feedback is added to generator context.",
+    "Freeze the final artifact; one independent evaluation; never choose an earlier candidate using hidden results.",
+    "No model settings, prompts or plans change after either P5 trial has begun."
+  ]
+}
