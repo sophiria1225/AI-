@@ -2,9 +2,15 @@
 
 大規模で相互依存する仕事を、同じモデル・品質条件のもとで、より少ない総入力・出力トークンで完了させるための研究です。分担、情報共有、作業状態の移管、実行単位の再編を比較します。期限は2027年12月です。
 
+**研究の中心を具体化しました：** 情報共有や共同方針だけで十分か、それでも残る負担を減らすために、関連する判断・実行を一担当へ移す必要があるかを、同じ途中状態から比べます。動的な担当変更そのものは既出であり、その追加価値・選択方法・成立条件を狙う研究です。有効性は未実証です。[アプローチと狙う新規性](docs/research_contribution.md)、[四条件の比較仕様](docs/experiments/E1_intervention_contract.md)。
+
+**最初に読む資料（改訂16枚）：** [PDF](materials/20261020_revised/AI_harness_research_20261020.pdf) / [編集できるPowerPoint](materials/20261020_revised/AI_harness_research_20261020.pptx) / [図表・CSV・出典](materials/20261020_revised/)。問い、先行研究との重なり、提案機構、比較設計、実測の意味、反証条件を順に説明します。[Issue #26](https://github.com/sophiria1225/AI-/issues/26)。
+
+実装は状態保存の契約検査を追加しました。一時領域・会話・予算・環境などの宣言された保存物を照合し、不一致を拒否します。12の追加検査、全122テストが合格。実コンテナの完全保存・復元と四条件のLLM実験は次段階で、手法の改善とは数えていません。[検査記録](reports/E1_checkpoint_contract_controls.json)。
+
 **進捗は[Project](https://github.com/users/sophiria1225/projects/1)と[Issues](https://github.com/sophiria1225/AI-/issues)で確認できます。** 10月20日、MiniMax M3 IQ4_XS・KV q8_0の単一／固定2担当の4試行が完了しました。15380は両方式合格、15957は両方式未解決。計105呼び出し・1,113,881トークン、記録監査エラー0でした。全件が予算停止で、品質を保った費用削減や再編の有効性はまだ実証していません。[結果と次の判断](docs/P3_findings.md)、[試行ごとの記録](docs/P3_progress.md)。
 
-**研究説明資料（10月20日・29枚）：** [PDF](materials/20261020/AI_harness_research_20261020.pdf) / [編集できるPowerPoint](materials/20261020/AI_harness_research_20261020.pptx) / [内容・出典・図表CSV](materials/20261020/)。目的、実装済みと提案予定の構成図、実験条件、結果、考察、先行研究、今後の判断をまとめました。P4終了時点の資料で、以後の結果は日付を分けて記録します。
+**以前の進捗資料（P4終了時点・29枚）：** [PDF](materials/20261020/AI_harness_research_20261020.pdf) / [PowerPoint](materials/20261020/AI_harness_research_20261020.pptx) / [出典・図表CSV](materials/20261020/)。過去の区切りとして保存しています。研究の狙いと差分は上の改訂版を先に参照してください。
 
 **最新の比較結果：** [P5の共通条件比較](docs/P5_findings.md)を20:51 JSTに独立評価まで完了しました。Ansibleの固定2担当は580,169トークン、単一は571,839トークンで、双方とも修正差分0・要求0/4合格の未解決でした。計74呼び出し・監査エラー0。[Issue #24](https://github.com/sophiria1225/AI-/issues/24)、[PR #25](https://github.com/sophiria1225/AI-/pull/25)。この結果から担当変更の有効性は示せません。次は研究の差分と、それを検証する比較・状態保存の仕様を明確にします。
 

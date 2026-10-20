@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-10-20T14:28:10.282954+00:00",
+  "test_environment": "Python 3.12 dedicated CI venv; pinned mini-swe-agent vendor reference in ignored worktree directory",
+  "full_suite": {
+    "command": "/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python -m unittest discover -s tests -q",
+    "tests": 122,
+    "failures": 0,
+    "errors": 0
+  },
+  "compileall": "passed",
+  "earlier_environment_failures": [
+    {
+      "context": "system Python 3.9",
+      "errors": 9,
+      "reason": "Unsupported existing annotations and missing dependencies"
+    },
+    {
+      "context": "existing Python 3.12 venv, isolated worktree",
+      "errors": 4,
+      "reason": "mini-swe-agent import path absent"
+    },
+    {
+      "context": "PYTHONPATH only",
+      "errors": 8,
+      "reason": "pinned vendor YAML templates not present at worktree-relative path"
+    }
+  ],
+  "presentation": {
+    "pages": 16,
+    "source_hashes_match": true,
+    "text_overlaps": 0,
+    "numeric_checks": "passed",
+    "links": 10,
+    "visual_review": "completed",
+    "native_powerpoint_rendered": false
+  },
+  "source_sha256": {
+    "scripts/checkpoint_contract.py": "8300e2d4453b4c10960fc81aea57bc4fb87a4195b25626c1a517768c5b16a0b9",
+    "tests/test_checkpoint_contract.py": "81e2ea3b1598092fe80a4df2c0396e9934e3a94c7aae3c1b369379a27eb2693c",
+    "scripts/build_contribution_presentation.py": "f7f36b450685a8847067b69746c9387843383ffa116f87e942b446106f0df5eb",
+    "scripts/review_contribution_presentation.py": "c39e60de8f7e9e6775428bf18ecc727e1eff30ec23b50fc77d3853936ece151d"
+  },
+  "not_claimed": [
+    "Live container snapshot and restore",
+    "Four-arm LLM experiment",
+    "Task-transfer efficacy or novelty established"
+  ]
+}
