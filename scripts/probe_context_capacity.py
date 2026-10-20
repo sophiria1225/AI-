@@ -10,6 +10,7 @@ import time
 import urllib.request
 
 import local_llama
+from model_provenance import LEGACY_SELECTION, check_live_model
 from run_e0_pilot import alarm_handler, save_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,24 +20,30 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--target-tokens', type=int, required=True)
     parser.add_argument('--seed', type=int, default=17)
+    parser.add_argument('--selection', default=LEGACY_SELECTION)
+    parser.add_argument('--base-url', default='http://127.0.0.1:8011')
     args = parser.parse_args()
     runtime = json.loads((ROOT / '.runtime/model_server.json').read_text())
     if runtime['status'] != 'ready' or args.target_tokens > runtime['ctx_size'] - 1024:
         raise ValueError('target requires a ready server and 1024 tokens of reserve')
-    config = {'backend': 'llama.cpp', 'base_url': 'http://127.0.0.1:8011',
-              'model': 'minimax-m3-q3kl', 'num_ctx': runtime['ctx_size'],
+    with urllib.request.urlopen(args.base_url + '/props', timeout=10) as response:
+        props = json.load(response)
+    selection, _, _ = check_live_model(args.selection, runtime, props)
+    config = {'backend': 'llama.cpp', 'base_url': args.base_url,
+              'model': selection['model_alias'], 'model_selection': args.selection,
+              'model_revision': selection['revision'], 'quantization': selection['quantization'],
+              'num_ctx': runtime['ctx_size'],
               'num_predict': 512, 'temperature': 1.0, 'top_p': 0.95,
               'top_k': 0, 'min_p': 0.0, 'repeat_penalty': 1.0,
               'seed': args.seed, 'thinking_mode': 'disabled', 'call_timeout_seconds': 900}
     out = ROOT / 'records/p2_capacity' / (datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + '_' + str(args.target_tokens))
     out.mkdir(parents=True)
     save_json(out / 'config.json', config)
-    with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
-        props = json.load(response)
     save_json(out / 'server_props.json', props)
     save_json(out / 'server_runtime.json', runtime)
+    save_json(out / 'model_selection.json', selection)
     source_hashes = {}
-    for source in ('probe_context_capacity.py', 'local_llama.py'):
+    for source in ('probe_context_capacity.py', 'local_llama.py', 'model_provenance.py'):
         content = (ROOT / 'scripts' / source).read_bytes()
         (out / source).write_bytes(content)
         source_hashes[source] = hashlib.sha256(content).hexdigest()

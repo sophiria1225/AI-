@@ -29,6 +29,7 @@ def main():
         response = item['response']
         calls.append(response)
         capacities.append({'record': str(path.parent.relative_to(ROOT)),
+                           'model': config['model'],
                            'ctx_size': config['num_ctx'],
                            'input_tokens': item['preflight_tokens'],
                            'output_tokens': response['output_tokens'],
@@ -46,6 +47,7 @@ def main():
         item = read(path)
         calls.extend(item['calls'])
         tasks.append({'record': str(path.parent.relative_to(ROOT)),
+                      'model': item['model'],
                       'status': 'finished' if item.get('container_removed') else 'running',
                       'instance_id': item['instance_id'], 'stop_reason': item['stop_reason'],
                       'calls': len(item['calls']), 'total_recorded_tokens': item.get('total_recorded_tokens'),

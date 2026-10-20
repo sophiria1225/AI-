@@ -13,6 +13,9 @@ from pathlib import Path
 import shutil
 import threading
 import urllib.request
+import uuid
+
+from model_provenance import load_selection, local_path, stable_manifest, validate_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -34,9 +37,7 @@ def main():
     parser.add_argument('--workers', type=int, default=2)
     parser.add_argument('--metadata-only', action='store_true')
     args = parser.parse_args()
-    config = json.loads((ROOT / args.config).read_text())
-    if len(config['revision']) != 40:
-        raise ValueError('immutable Hub commit required')
+    config = load_selection(args.config)
     repo, revision, subdir = (config[k] for k in ('repo_id', 'revision', 'subdirectory'))
     url = f'https://huggingface.co/api/models/{repo}/tree/{revision}/{subdir}?recursive=true'
     with urllib.request.urlopen(url, timeout=60) as response:
@@ -49,29 +50,49 @@ def main():
         raise ValueError('SHA256 missing')
     manifest = {'repo_id': repo, 'revision': revision, 'files': files,
                 'total_bytes': sum(f['bytes'] for f in files), 'retrieved_at': now()}
-    write_json(ROOT / 'configs/models/minimax_m3_files.json', manifest)
+    manifest = stable_manifest(config, manifest)
     if args.metadata_only:
         print(json.dumps(manifest), flush=True)
         return
     target = ROOT / 'models' / repo.split('/')[-1] / revision
     target.mkdir(parents=True, exist_ok=True)
-    remaining = sum(f['bytes'] for f in files if not (target / f['path']).exists())
+    remaining = sum(f['bytes'] for f in files
+                    if not (target / f['path']).is_file() or (target / f['path']).stat().st_size != f['bytes'])
     if shutil.disk_usage(target).free < remaining + 100 * 1024**3:
         raise RuntimeError('less than the planned 100 GiB disk reserve after download')
     # Bound the local cache and suppress signed URLs/progress noise in public output.
     os.environ.setdefault('HF_HUB_DISABLE_PROGRESS_BARS', '1')
     os.environ.setdefault('HF_XET_CACHE', str(ROOT / '.runtime/hf_xet'))
     from huggingface_hub import hf_hub_download
-    record_path = ROOT / 'records/models/p2_minimax_download.json'
+    record_path = local_path(config['download_record'])
+    if record_path.exists():
+        previous = json.loads(record_path.read_text())
+        validate_manifest(config, previous['manifest'])
+        if previous['status'] == 'running':
+            raise RuntimeError('a download is marked running; inspect its process before retrying')
+    attempt = ROOT / 'records/models/downloads' / (datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + '_' + uuid.uuid4().hex[:8])
+    attempt.mkdir(parents=True)
+    (attempt / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    (attempt / 'model_provenance.py').write_bytes((ROOT / 'scripts/model_provenance.py').read_bytes())
+    write_json(attempt / 'selection.json', config)
+    if record_path.exists():
+        (attempt / 'previous_record.json').write_bytes(record_path.read_bytes())
     state = {'started_at': now(), 'status': 'running', 'manifest': manifest,
-             'files': {}, 'destination': str(target.relative_to(ROOT))}
+             'files': {}, 'destination': str(target.relative_to(ROOT)),
+             'attempt_record': str((attempt / 'summary.json').relative_to(ROOT)),
+             'selection': args.config, 'pid': os.getpid()}
     lock = threading.Lock()
-    write_json(record_path, state)
+
+    def persist():
+        write_json(attempt / 'summary.json', state)
+        write_json(record_path, state)
+
+    persist()
 
     def download(item):
         with lock:
             state['files'][item['path']] = {'status': 'downloading', 'started_at': now()}
-            write_json(record_path, state)
+            persist()
         try:
             path = Path(hf_hub_download(repo_id=repo, filename=item['path'], revision=revision,
                                        local_dir=target, token=False))
@@ -89,14 +110,19 @@ def main():
             result = {'status': 'failed', 'finished_at': now(), 'error_type': type(error).__name__}
         with lock:
             state['files'][item['path']].update(result)
-            write_json(record_path, state)
+            persist()
             print(json.dumps({'file': item['path'], **result}), flush=True)
         return result['status'] == 'verified'
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, min(args.workers, 4))) as pool:
-        outcomes = list(pool.map(download, files))
-    state.update(status='verified' if all(outcomes) else 'failed', finished_at=now())
-    write_json(record_path, state)
+    try:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, min(args.workers, 4))) as pool:
+            outcomes = list(pool.map(download, files))
+        state.update(status='verified' if all(outcomes) else 'failed', finished_at=now())
+    except BaseException as error:
+        state.update(status='interrupted', error_type=type(error).__name__, finished_at=now())
+        raise
+    finally:
+        persist()
     if not all(outcomes):
         raise SystemExit(1)
 

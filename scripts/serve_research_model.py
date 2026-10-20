@@ -10,6 +10,8 @@ import subprocess
 import time
 import urllib.request
 
+from model_provenance import LEGACY_SELECTION, verified_model
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -41,17 +43,9 @@ def main():
     parser.add_argument('--port', type=int, default=8011)
     parser.add_argument('--max-seconds', type=int, default=7200)
     parser.add_argument('--max-swap-growth-gib', type=float, default=8)
+    parser.add_argument('--selection', default=LEGACY_SELECTION)
     args = parser.parse_args()
-    download = json.loads((ROOT / 'records/models/p2_minimax_download.json').read_text())
-    if download['status'] != 'verified':
-        raise RuntimeError('download must pass every hash before loading')
-    selection = json.loads((ROOT / 'configs/models/minimax_m3_selection.json').read_text())
-    if download['manifest']['revision'] != selection['revision']:
-        raise RuntimeError('model revision mismatch')
-    model = ROOT / download['destination'] / download['manifest']['files'][0]['path']
-    for entry in download['manifest']['files']:
-        if (ROOT / download['destination'] / entry['path']).stat().st_size != entry['bytes']:
-            raise RuntimeError('verified model file size changed')
+    selection, download, model = verified_model(args.selection)
     runtime = json.loads((ROOT / 'records/models/p2_runtime_install.json').read_text())
     if runtime['runtime'] != selection['runtime']:
         raise RuntimeError('runtime provenance mismatch')
@@ -65,8 +59,11 @@ def main():
     out = ROOT / 'records/p2_servers' / stamp
     out.mkdir(parents=True)
     (out / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
+    (out / 'model_provenance.py').write_bytes((ROOT / 'scripts/model_provenance.py').read_bytes())
+    write_json(out / 'selection.json', selection)
+    write_json(out / 'download_record.json', download)
     command = [str(ROOT / runtime['server_path']), '--model', str(model),
-               '--alias', 'minimax-m3-q3kl', '--host', '127.0.0.1', '--port', str(args.port),
+               '--alias', selection['model_alias'], '--host', '127.0.0.1', '--port', str(args.port),
                '--ctx-size', str(args.ctx_size), '--parallel', '1', '--n-gpu-layers', '999',
                '--flash-attn', 'on', '--batch-size', '256', '--ubatch-size', '128',
                '--cache-type-k', 'f16', '--cache-type-v', 'f16', '--cache-ram', '0',
@@ -75,6 +72,8 @@ def main():
     state = {'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
              'status': 'loading', 'command': command, 'ctx_size': args.ctx_size,
              'runtime': selection['runtime'], 'model_revision': selection['revision'],
+             'selection': args.selection, 'model_alias': selection['model_alias'],
+             'quantization': selection['quantization'],
              'record_directory': str(out.relative_to(ROOT)),
              'memory_note': '5-second RSS samples and system swap; RSS is not total unified GPU allocation'}
     stop_requested = False

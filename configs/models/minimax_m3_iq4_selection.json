@@ -1,0 +1,22 @@
+{
+  "repo_id": "bartowski/MiniMax-M3-GGUF",
+  "revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "subdirectory": "MiniMax-M3-IQ4_XS",
+  "quantization": "IQ4_XS",
+  "total_bytes": 229685754592,
+  "author_model": "MiniMaxAI/MiniMax-M3",
+  "license_url": "https://huggingface.co/MiniMaxAI/MiniMax-M3/blob/main/LICENSE",
+  "scope": "text and tool use; vision projector excluded",
+  "reason": "Higher-precision capacity candidate after measured Q3_K_L calibration. Keep model revision and runtime fixed; first validate fit and tool use, then compare frozen development tasks. This is not a claim that IQ4 fixes the observed Q3 task failure.",
+  "runtime": {
+    "name": "llama.cpp",
+    "release": "v0.7.0",
+    "binary_tag": "b11669",
+    "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+    "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+  },
+  "model_alias": "minimax-m3-iq4xs",
+  "file_manifest": "configs/models/minimax_m3_iq4_files.json",
+  "download_record": "records/models/p2_minimax_iq4_download.json"
+}
