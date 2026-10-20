@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-10-20T03:36:39.105635+00:00",
+  "scope": "P3 implementation controls; not model quality or task success",
+  "actual_model_requests": 0,
+  "unit_tests": {
+    "tests": 38,
+    "passed": true,
+    "fresh_environment": ".runtime/p3_ci_venv",
+    "python": "3.12.13",
+    "dependency_file": "requirements-ci.lock.txt",
+    "dependency_sha256": "6c842796ffb22b955e2720e985118b3f65122d7904906588cb41f8a43d13ca0e",
+    "log_sha256": "18c5178281f8a23013e02f4eb45674927a605853623a4c7c55313eddf7baae70",
+    "github_actions_executed": false
+  },
+  "container_control": {
+    "path": "records/p3_controls/20261020_123552_aa70fd",
+    "checks": {
+      "five_real_tools_completed": true,
+      "first_vote_retained_for_unchanged_artifact": true,
+      "new_artifact_invalidates_first_vote": true,
+      "no_early_team_completion": true,
+      "both_vote_on_same_final_artifact": true,
+      "one_shared_synthetic_ledger": true,
+      "operation_and_artifact_records_exist": true
+    },
+    "wall_seconds": 3.8282740419963375,
+    "container_removed": true,
+    "source_hashes": {
+      "check_p3_controls.py": "4429a8bcece6675cf36f4f2c9f50b5f83e3c1bc45e0e623fdc4f68eb0583865c",
+      "run_fixed_comparison.py": "0cebf3dc219e14805e76f2329dd1c54c50724c0b06cb2b026ef95340fa07b2d2",
+      "experiment_state.py": "e541ed7e640d9b2cf2d285e3687887a7b889060d10e4e95a740234898c4567df",
+      "run_mini_pilot.py": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+      "run_e0_pilot.py": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+      "artifact_capture.py": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+      "container_policy.py": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691"
+    }
+  },
+  "limitations": [
+    "Scripted model responses and synthetic token counts; no inference or task quality measured.",
+    "Turn artifacts are observations, not complete process/environment checkpoints.",
+    "Current P3 protocol differs from P2; do not attribute their difference to role partition alone."
+  ],
+  "container_control_history": [
+    "records/p3_controls/20261020_123136_eb661a"
+  ]
+}

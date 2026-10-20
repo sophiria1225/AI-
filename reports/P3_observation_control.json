@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-20T04:06:29.146738+00:00",
+  "scope": "aggregation check using existing scripted responses and real container operations; no model-quality data",
+  "record": "records/p3_controls/20261020_123552_aa70fd",
+  "script_sha256": "11e3aea20ac6bf39fcedd00e9add5c6062cce687802be46eea5c5fa87465d8b3",
+  "observations": {
+    "per_unit": {
+      "implementation": {
+        "calls": 3,
+        "input_tokens": 300,
+        "output_tokens": 60,
+        "unknown_usage_calls": 0,
+        "tools": 3,
+        "tool_nonzero_exits": 0,
+        "tool_timeouts": 0,
+        "observed_artifact_changes": 2,
+        "accepted_completion_votes": 1,
+        "known_total_tokens": 360
+      },
+      "validation": {
+        "calls": 2,
+        "input_tokens": 200,
+        "output_tokens": 40,
+        "unknown_usage_calls": 0,
+        "tools": 2,
+        "tool_nonzero_exits": 0,
+        "tool_timeouts": 0,
+        "observed_artifact_changes": 0,
+        "accepted_completion_votes": 2,
+        "known_total_tokens": 240
+      }
+    },
+    "turns_with_saved_artifact": 5,
+    "format_error_turns": 0,
+    "invalidated_completion_votes": 1,
+    "repeated_identical_commands_after_first": 2,
+    "known_total_tokens": 600,
+    "unknown_usage_calls": 0,
+    "interpretation": "Changes are observed only at turn boundaries. Repeated commands may be necessary after edits; nonzero test exits can be useful observations. These counts do not identify unnecessary work, information loss, or causal task dependencies."
+  },
+  "checks_passed": true
+}

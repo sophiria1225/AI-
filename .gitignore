@@ -1,0 +1,18 @@
+# Large inputs, local environments and complete traces stay on the experiment host.
+/.venv
+/.tools
+/.runtime
+/vendor
+/data
+/models
+/private_eval
+/logs
+/records
+/workspaces
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+# The original handoff is retained locally; public research scope is in docs/.
+docs/reference/

@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-20T03:47:25.419503+00:00",
+  "scope": "two hand-constructed DAG metric controls; no LLM or task-performance reproduction",
+  "source_commit": "1bbfe1e699e6f35d5d422306c9a5bd637da84759",
+  "source_url": "https://raw.githubusercontent.com/tmllab/2025_ICLR_FLOW/1bbfe1e699e6f35d5d422306c9a5bd637da84759/workflow.py",
+  "source_sha256": "db07a2b1eeed225c6ae84461be09cadd3ec09b446ea4fc09575b964e83996bd4",
+  "script_sha256": "f14da061879f5a1b863c509fd518a40f84d3507ebff0870c31c793e47e78e396",
+  "executed_only": [
+    "calculate_average_parallelism",
+    "calculate_dependency_complexity"
+  ],
+  "source_imports_executed": false,
+  "paper_exact_code_revision_confirmed": false,
+  "controls": [
+    {
+      "name": "chain",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "edge_count": 3,
+      "total_degrees": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "paper_degree_std": 0.5,
+      "true_layer_widths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "true_average_parallelism": 1.0,
+      "inspected_code_dependency_complexity": 0.5,
+      "inspected_code_average_parallelism": 1.0
+    },
+    {
+      "name": "complete_forward_dag",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "edge_count": 6,
+      "total_degrees": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "paper_degree_std": 0.0,
+      "true_layer_widths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "true_average_parallelism": 1.0,
+      "inspected_code_dependency_complexity": 0.0,
+      "inspected_code_average_parallelism": 2.0
+    }
+  ],
+  "interpretation": "Degree variation is not monotonic in edge count. This code revision revisits vertices with multiple incoming paths in the parallelism loop. These proxies are not direct observations of true inter-task coupling. This does not invalidate all reported paper results."
+}

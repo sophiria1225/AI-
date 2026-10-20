@@ -1,0 +1,19 @@
+{
+  "repo_id": "bartowski/MiniMax-M3-GGUF",
+  "revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "subdirectory": "MiniMax-M3-Q3_K_L",
+  "quantization": "Q3_K_L",
+  "total_bytes": 204971152128,
+  "author_model": "MiniMaxAI/MiniMax-M3",
+  "license_url": "https://huggingface.co/MiniMaxAI/MiniMax-M3/blob/main/LICENSE",
+  "scope": "text and tool use; vision projector excluded",
+  "reason": "User prefers a large recent non-Flash model. This quantization leaves more working memory than IQ4_XS or Q4_K_M on the measured 256 GiB machine. Quality and usable context still require measurement.",
+  "runtime": {
+    "name": "llama.cpp",
+    "release": "v0.7.0",
+    "binary_tag": "b11669",
+    "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+    "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+  }
+}

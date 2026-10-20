@@ -1,0 +1,46 @@
+{
+  "scope": "P2_development_single_baseline_calibration",
+  "phase": "P2",
+  "version": "P2_mini_v01",
+  "readiness": "passed",
+  "instance_id": "django__django-15957",
+  "image": "swebench/sweb.eval.x86_64.django_1776_django-15957@sha256:7e2694f891d96ec8eaef27b746823acaa6dd28d65832b79db2bd18a816b3437e",
+  "backend": "llama.cpp",
+  "base_url": "http://127.0.0.1:8011",
+  "model": "minimax-m3-q3kl",
+  "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "model_path": "models/MiniMax-M3-GGUF/2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6/MiniMax-M3-Q3_K_L/MiniMax-M3-Q3_K_L-00001-of-00006.gguf",
+  "thinking_mode": "enabled",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "seed": 7,
+  "num_ctx": 65536,
+  "num_predict": 8192,
+  "max_calls": 30,
+  "max_total_tokens": 300000,
+  "max_wall_seconds": 3600,
+  "call_timeout_seconds": 1200,
+  "tool_timeout_seconds": 45,
+  "max_visible_tool_characters": 10000,
+  "visible_checks": [
+    {
+      "id": "public_prefetch_suite",
+      "argv": [
+        "python",
+        "tests/runtests.py",
+        "prefetch_related",
+        "--settings=test_sqlite",
+        "--parallel=1",
+        "--verbosity=1"
+      ],
+      "timeout_seconds": 180
+    }
+  ],
+  "calibration_records": [
+    "records/p2_capacity/20261020_112642_56000/summary.json",
+    "records/p2_probes/20261020_112612_enabled/summary.json"
+  ]
+}

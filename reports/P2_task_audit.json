@@ -1,0 +1,143 @@
+{
+  "updated_at": "2026-10-20T03:14:30.929910+00:00",
+  "scope": "Completed development runs; unknown usage and audit errors remain visible",
+  "completed_runs": 2,
+  "runs": [
+    {
+      "record": "records/p2/20261020_113741_mini_6688ea",
+      "task": "django__django-15380",
+      "model": "minimax-m3-q3kl",
+      "calls": 28,
+      "tools": 28,
+      "input_tokens": 270735,
+      "output_tokens": 12084,
+      "cached_input_tokens": 261825,
+      "known_total_tokens": 282819,
+      "unknown_usage_calls": [],
+      "stop_reason": "conservative_budget_guard",
+      "wall_seconds": 971.2740334590198,
+      "model_call_wall_seconds": 953.1688575418666,
+      "memory": {
+        "samples": 193,
+        "server_record": "records/p2_servers/20261020_112528",
+        "sampled_peak": {
+          "rss_bytes": 217101828096,
+          "system_wired_bytes": 220687597568,
+          "system_compressor_bytes": 158089216,
+          "swap_used_bytes": 0.0
+        },
+        "note": "Approximate task window from start and duration. Five-second samples; RSS is not GPU allocation and system memory includes other processes."
+      },
+      "artifact_sha256": "8a41b4d978f1ad67f98ec1c8c9bc8b8d4fc67b12a1b4ead85d363074ca3d05d1",
+      "artifact_bytes": 4458,
+      "visible_checks_all_passed": false,
+      "evaluation": {
+        "run_id": "20261020_113741_mini_6688ea",
+        "instance_id": "django__django-15380",
+        "evaluation_run_id": "P2_20261020_115811_20261020_113741_mini_6688ea",
+        "artifact_sha256": "8a41b4d978f1ad67f98ec1c8c9bc8b8d4fc67b12a1b4ead85d363074ca3d05d1",
+        "evaluator_commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+        "source_hashes": {
+          "evaluate_frozen_run.py": "980c8adb29da3eb2b509adb35aaf82d757c1ace60c9ff0d3651e20640cfb632f",
+          "container_policy.py": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691"
+        },
+        "image_id": "sha256:8b523d4c313891a8271aa513ff57162d48bcf1a548e741cf9d5a1f1a183c835c",
+        "started_at": "2026-10-20T02:58:11.251913+00:00",
+        "evaluation_status": "completed",
+        "resolved": false,
+        "infra_failure": false,
+        "patch_applied": true,
+        "test_counts": {
+          "FAIL_TO_PASS": {
+            "success": 0,
+            "failure": 1
+          },
+          "PASS_TO_PASS": {
+            "success": 126,
+            "failure": 7
+          },
+          "FAIL_TO_FAIL": {
+            "success": 0,
+            "failure": 0
+          },
+          "PASS_TO_FAIL": {
+            "success": 0,
+            "failure": 0
+          }
+        },
+        "evaluation_seconds": 31.677940333029255
+      },
+      "errors": []
+    },
+    {
+      "record": "records/p2/20261020_115912_mini_acf0fa",
+      "task": "django__django-15957",
+      "model": "minimax-m3-q3kl",
+      "calls": 25,
+      "tools": 25,
+      "input_tokens": 261864,
+      "output_tokens": 8891,
+      "cached_input_tokens": 248985,
+      "known_total_tokens": 270755,
+      "unknown_usage_calls": [],
+      "stop_reason": "conservative_budget_guard",
+      "wall_seconds": 790.009489707998,
+      "model_call_wall_seconds": 773.5602220373694,
+      "memory": {
+        "samples": 158,
+        "server_record": "records/p2_servers/20261020_112528",
+        "sampled_peak": {
+          "rss_bytes": 217105137664,
+          "system_wired_bytes": 221133275136,
+          "system_compressor_bytes": 158089216,
+          "swap_used_bytes": 0.0
+        },
+        "note": "Approximate task window from start and duration. Five-second samples; RSS is not GPU allocation and system memory includes other processes."
+      },
+      "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "artifact_bytes": 0,
+      "visible_checks_all_passed": true,
+      "evaluation": {
+        "run_id": "20261020_115912_mini_acf0fa",
+        "instance_id": "django__django-15957",
+        "evaluation_run_id": "P2_20261020_121252_20261020_115912_mini_acf0fa",
+        "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evaluator_commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+        "source_hashes": {
+          "evaluate_frozen_run.py": "980c8adb29da3eb2b509adb35aaf82d757c1ace60c9ff0d3651e20640cfb632f",
+          "container_policy.py": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691"
+        },
+        "image_id": "sha256:7e2694f891d96ec8eaef27b746823acaa6dd28d65832b79db2bd18a816b3437e",
+        "started_at": "2026-10-20T03:12:52.612832+00:00",
+        "evaluation_status": "completed",
+        "resolved": false,
+        "infra_failure": false,
+        "patch_applied": true,
+        "test_counts": {
+          "FAIL_TO_PASS": {
+            "success": 0,
+            "failure": 4
+          },
+          "PASS_TO_PASS": {
+            "success": 89,
+            "failure": 0
+          },
+          "FAIL_TO_FAIL": {
+            "success": 0,
+            "failure": 0
+          },
+          "PASS_TO_FAIL": {
+            "success": 0,
+            "failure": 0
+          }
+        },
+        "evaluation_seconds": 33.14069000002928
+      },
+      "errors": []
+    }
+  ],
+  "pending": [],
+  "audit_errors": 0,
+  "unknown_usage_calls": 0,
+  "known_task_tokens": 553574
+}

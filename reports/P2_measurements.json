@@ -1,0 +1,491 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-10-20T04:14:11.029723+00:00",
+  "scope": "P2 local calibration and development; not held-out research results",
+  "accounting": {
+    "recorded_calls": 76,
+    "calls_with_known_usage": 75,
+    "calls_with_unknown_usage": 1,
+    "requests_without_response_record": [],
+    "known_input_tokens": 726060,
+    "known_output_tokens": 21965,
+    "known_total_tokens": 748025,
+    "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
+  },
+  "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
+  "accounting_by_runtime": [
+    {
+      "model": "minimax-m3-q3kl",
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "contexts": [
+        8192,
+        16384,
+        32768,
+        65536
+      ],
+      "purposes": [
+        "development_task",
+        "interface_calibration",
+        "synthetic_capacity"
+      ],
+      "records": [
+        "records/p2_probes/20261020_111428_enabled",
+        "records/p2_probes/20261020_112612_enabled",
+        "records/p2_capacity/20261020_111506_6000",
+        "records/p2_capacity/20261020_111648_14000",
+        "records/p2_capacity/20261020_112020_28000",
+        "records/p2_capacity/20261020_112642_56000",
+        "records/p2/20261020_113741_mini_6688ea",
+        "records/p2/20261020_115912_mini_acf0fa"
+      ],
+      "recorded_calls": 65,
+      "known_input_tokens": 639374,
+      "known_output_tokens": 21476,
+      "unknown_usage_calls": 0,
+      "known_total_tokens": 660850
+    },
+    {
+      "model": "minimax-m3-iq4xs",
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "contexts": [
+        8192,
+        32768,
+        65536
+      ],
+      "purposes": [
+        "interface_calibration",
+        "synthetic_capacity"
+      ],
+      "records": [
+        "records/p2_probes/20261020_124839_enabled",
+        "records/p2_probes/20261020_125858_enabled",
+        "records/p2_capacity/20261020_125342_28000"
+      ],
+      "recorded_calls": 6,
+      "known_input_tokens": 29344,
+      "known_output_tokens": 223,
+      "unknown_usage_calls": 1,
+      "known_total_tokens": 29567
+    },
+    {
+      "model": "minimax-m3-iq4xs",
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "contexts": [
+        65536
+      ],
+      "purposes": [
+        "interface_calibration",
+        "synthetic_capacity"
+      ],
+      "records": [
+        "records/p2_probes/20261020_130318_enabled",
+        "records/p2_capacity/20261020_130359_56000"
+      ],
+      "recorded_calls": 5,
+      "known_input_tokens": 57342,
+      "known_output_tokens": 266,
+      "unknown_usage_calls": 0,
+      "known_total_tokens": 57608
+    }
+  ],
+  "runtime_group_note": "Cost inventory across calibration contexts and task purposes, not a quality comparison. Early records used the captured f16/f16 server command. Unknown usage is not zero cost.",
+  "probes": [
+    {
+      "record": "records/p2_probes/20261020_111428_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-q3kl",
+        "num_ctx": 8192,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": true,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1615
+    },
+    {
+      "record": "records/p2_probes/20261020_112612_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-q3kl",
+        "num_ctx": 65536,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": true,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1668
+    },
+    {
+      "record": "records/p2_probes/20261020_124839_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-iq4xs",
+        "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+        "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+        "quantization": "IQ4_XS",
+        "num_ctx": 8192,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": false,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1584
+    },
+    {
+      "record": "records/p2_probes/20261020_125858_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-iq4xs",
+        "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+        "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+        "quantization": "IQ4_XS",
+        "num_ctx": 65536,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {},
+      "error": "RuntimeError('probe usage unknown; inspect raw record')",
+      "calls": 1,
+      "known_total_tokens": 0
+    },
+    {
+      "record": "records/p2_probes/20261020_130318_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-iq4xs",
+        "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+        "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+        "quantization": "IQ4_XS",
+        "cache_type_k": "q8_0",
+        "cache_type_v": "q8_0",
+        "num_ctx": 65536,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": false,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1607
+    }
+  ],
+  "capacity": [
+    {
+      "record": "records/p2_capacity/20261020_111506_6000",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 8192,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "input_tokens": 5993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 49.19215241703205,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 5866,
+        "prompt_ms": 48658.875,
+        "prompt_per_token_ms": 8.295069041936584,
+        "prompt_per_second": 120.5535475285855,
+        "predicted_n": 8,
+        "predicted_ms": 524.548,
+        "predicted_per_token_ms": 74.93542857142857,
+        "predicted_per_second": 13.34482259011568
+      },
+      "sampled_peak_rss_bytes": 206671101952,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 40,
+        "min_p": 0.05,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_111648_14000",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 16384,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "input_tokens": 14000,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 123.53189125005156,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 14000,
+        "prompt_ms": 123008.481,
+        "prompt_per_token_ms": 8.786320071428571,
+        "prompt_per_second": 113.81329064619537,
+        "predicted_n": 8,
+        "predicted_ms": 505.364,
+        "predicted_per_token_ms": 72.19485714285715,
+        "predicted_per_second": 13.851402157652702
+      },
+      "sampled_peak_rss_bytes": 208178593792,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 40,
+        "min_p": 0.05,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_112020_28000",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 32768,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "input_tokens": 27975,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 266.15131233399734,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 27975,
+        "prompt_ms": 265552.686,
+        "prompt_per_token_ms": 9.492499946380697,
+        "prompt_per_second": 105.34632664193802,
+        "predicted_n": 8,
+        "predicted_ms": 563.687,
+        "predicted_per_token_ms": 80.52671428571429,
+        "predicted_per_second": 12.418239200123473
+      },
+      "sampled_peak_rss_bytes": 211145785344,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_112642_56000",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 65536,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "input_tokens": 55993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 606.9046327919932,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 55866,
+        "prompt_ms": 606248.12,
+        "prompt_per_token_ms": 10.851826155443382,
+        "prompt_per_second": 92.15038885398936,
+        "predicted_n": 8,
+        "predicted_ms": 586.2,
+        "predicted_per_token_ms": 83.74285714285715,
+        "predicted_per_second": 11.941316956670077
+      },
+      "sampled_peak_rss_bytes": 217105137664,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_125342_28000",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 32768,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "input_tokens": 27975,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 241.60059349995572,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 27975,
+        "prompt_ms": 241106.015,
+        "prompt_per_token_ms": 8.618624307417337,
+        "prompt_per_second": 116.02779797924163,
+        "predicted_n": 8,
+        "predicted_ms": 458.69,
+        "predicted_per_token_ms": 65.52714285714286,
+        "predicted_per_second": 15.260851555516798
+      },
+      "sampled_peak_rss_bytes": 235850498048,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_130359_56000",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 65536,
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "input_tokens": 55993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 560.539616834023,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 55866,
+        "prompt_ms": 559866.109,
+        "prompt_per_token_ms": 10.021589320874952,
+        "prompt_per_second": 99.78457188591852,
+        "predicted_n": 8,
+        "predicted_ms": 605.87,
+        "predicted_per_token_ms": 86.55285714285715,
+        "predicted_per_second": 11.553633617772789
+      },
+      "sampled_peak_rss_bytes": 237132955648,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    }
+  ],
+  "tasks": [
+    {
+      "record": "records/p2/20261020_113741_mini_6688ea",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 65536,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "status": "finished",
+      "instance_id": "django__django-15380",
+      "stop_reason": "conservative_budget_guard",
+      "calls": 28,
+      "total_recorded_tokens": 282819,
+      "usage_complete": true,
+      "wall_seconds": 971.2740334590198,
+      "artifact_sha256": "8a41b4d978f1ad67f98ec1c8c9bc8b8d4fc67b12a1b4ead85d363074ca3d05d1",
+      "visible_checks_all_passed": false
+    },
+    {
+      "record": "records/p2/20261020_115912_mini_acf0fa",
+      "model": "minimax-m3-q3kl",
+      "ctx_size": 65536,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "status": "finished",
+      "instance_id": "django__django-15957",
+      "stop_reason": "conservative_budget_guard",
+      "calls": 25,
+      "total_recorded_tokens": 270755,
+      "usage_complete": true,
+      "wall_seconds": 790.009489707998,
+      "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "visible_checks_all_passed": true
+    }
+  ]
+}
