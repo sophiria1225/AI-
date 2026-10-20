@@ -32,6 +32,7 @@ from artifact_capture import capture_artifact
 from container_policy import POLICY, create_task_container
 from run_e0_pilot import alarm_handler, input_bound, model_call, save_json, tool_command, verify_task_environment
 import local_llama
+from model_provenance import LEGACY_SELECTION, check_live_model
 from visible_checks import run_checks
 
 MINI_COMMIT = '04d809ceab9df28f9adaed044884180159172930'
@@ -193,6 +194,8 @@ At most ''' + str(config['max_calls']) + ''' model calls and ''' + str(config['m
 
 
 def run(config):
+    if config.get('phase') == 'P2' and config.get('readiness') != 'passed':
+        raise RuntimeError('P2 model calibration must pass before a task run')
     commit = subprocess.check_output(['git', '-C', str(VENDOR), 'rev-parse', 'HEAD'], text=True).strip()
     if commit != MINI_COMMIT or subprocess.check_output(['git', '-C', str(VENDOR), 'status', '--porcelain']):
         raise RuntimeError('pinned mini-swe-agent checkout changed')
@@ -204,22 +207,12 @@ def run(config):
         with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
             props = json.load(response)
         runtime = json.loads((ROOT / '.runtime/model_server.json').read_text())
-        if runtime['status'] != 'ready' or runtime['ctx_size'] != config['num_ctx']:
-            raise RuntimeError('supervised context configuration differs from experiment')
-        if (props['default_generation_settings']['n_ctx'] != config['num_ctx']
-                or props['total_slots'] != 1 or props['model_alias'] != config['model']):
-            raise RuntimeError('live server settings differ from experiment')
-        selection = json.loads((ROOT / 'configs/models/minimax_m3_selection.json').read_text())
-        if runtime['runtime'] != selection['runtime']:
-            raise RuntimeError('supervised runtime differs from pinned selection')
-        expected_build = selection['runtime']['binary_tag'] + '-' + selection['runtime']['commit'][:9]
-        if props['build_info'] != expected_build:
-            raise RuntimeError('live server build differs from pinned selection')
-        if pathlib.Path(props.get('model_path', '')).resolve() != (ROOT / config['model_path']).resolve():
-            raise RuntimeError('server model path differs from pinned configuration')
-        verified = json.loads((ROOT / 'records/models/p2_minimax_download.json').read_text())
-        if verified['status'] != 'verified' or verified['manifest']['revision'] != config['model_revision']:
-            raise RuntimeError('selected model download is not verified')
+        selection, verified, model_path = check_live_model(
+            config.get('model_selection', LEGACY_SELECTION), runtime, props, config['num_ctx'])
+        if (model_path.resolve() != (ROOT / config['model_path']).resolve()
+                or selection['model_alias'] != config['model']
+                or selection['revision'] != config['model_revision']):
+            raise RuntimeError('task model identity differs from verified selection')
     else:
         with urllib.request.urlopen('http://127.0.0.1:11434/api/tags', timeout=10) as response:
             model = next(m for m in json.load(response)['models'] if m['name'] == config['model'])
@@ -230,7 +223,7 @@ def run(config):
     out = ROOT / 'records' / phase.lower() / stamp
     out.mkdir(parents=True)
     sources = ['run_mini_pilot.py','run_e0_pilot.py','container_policy.py','artifact_capture.py',
-               'local_llama.py','visible_checks.py']
+               'local_llama.py','visible_checks.py','model_provenance.py']
     hashes = {}
     for source in sources:
         content = (ROOT / 'scripts' / source).read_bytes()
@@ -240,6 +233,8 @@ def run(config):
     if config.get('backend') == 'llama.cpp':
         save_json(out / 'server_props.json', props)
         save_json(out / 'server_runtime.json', runtime)
+        save_json(out / 'model_selection.json', selection)
+        save_json(out / 'model_download_record.json', verified)
     save_json(out / 'public_task.json', task)
     templates = make_templates(config)
     save_json(out / 'mini_templates.json', templates)
