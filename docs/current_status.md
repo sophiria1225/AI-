@@ -7,7 +7,7 @@
 - Q3の開発2課題が終了。計53呼び出し553,574トークンで、独立評価はいずれも不合格。15380は公開検査7エラー、15957は差分0で未解決。記録監査はエラー0。64K枠不足やswapによる停止ではなかった。[実測と解釈](P2_progress.md)。
 - IQ4_XS・64K・KV q8_0の開発2課題を完了。15380は公開140テスト・独立評価とも合格。15957は再現テスト追加だけで機能は未修正、独立評価は不合格。計58呼び出し556,225トークン、記録監査エラー0。[Issue #9](https://github.com/sophiria1225/AI-/issues/9)、[PR #12](https://github.com/sophiria1225/AI-/pull/12)。次のP3開発比較へこの設定を使うが、本実験のモデル採用と一般的な優位性は未確定。IQ4/f16の容量失敗と素のJSON形式失敗も保持した。
 - P3の4試行の条件を固定し実行中。15380は単一26呼び出し283,176トークン・固定2担当27呼び出し275,008トークンで、両方とも公開検査と独立評価が合格、監査エラー0。どちらも完了宣言なしの予算停止だった。P3-03（15957・固定2担当）を16:26 JSTに開始。[PR #13](https://github.com/sophiria1225/AI-/pull/13)、[経過](P3_progress.md)、[仕様](experiments/P3_fixed_partition.md)。時間とキャッシュ条件も保存し、各1回の結果から品質維持や削減効果は確定しない。
-- 主課題の公開12候補と3件の基点コードの調査を完了し、[PR #14](https://github.com/sophiria1225/AI-/pull/14)をmainへ反映した。主実験への採用はまだ0件。次にPro V2とTheAgentCompanyの条件を調査し、Proの固定版642件からNodeBBの閲覧済み38件を除いた604件の公開入力を準備した。[PR #17](https://github.com/sophiria1225/AI-/pull/17)、[Issue #16](https://github.com/sophiria1225/AI-/issues/16)。正解閲覧の経緯・除外理由も記録し、別環境でのモデル実験はまだ始めていない。
+- 主課題の公開12候補と3件の基点コードの調査を完了し、[PR #14](https://github.com/sophiria1225/AI-/pull/14)をmainへ反映した。Pro V2でも、NodeBBの閲覧済み38件を除いた604件から、規則を先に固定して12候補を確認し、3候補の21ファイルを点検した。[PR #17](https://github.com/sophiria1225/AI-/pull/17)はmainへ反映済み。最初の追加環境候補はAnsibleのYAML・信頼情報・vault処理。正式な主課題採用はまだ0件で、[Issue #18](https://github.com/sophiria1225/AI-/issues/18)、[PR #19](https://github.com/sophiria1225/AI-/pull/19)でP3完了後の起動・評価器の正負対照を準備中。正解閲覧の経緯、除外理由、採用しない候補も記録した。
 - 公開検査を個別に記録する処理を実装し、2開発課題の元コードでも動作を確認。条件は[P2計画](experiments/P2_minimax_baseline.md)。
 - 元の研究コードと記録は変更していない。新しい実装と実験はこのリポジトリで行う。
 
