@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-10-20T03:40:12.220790+00:00",
+  "scope": "planning calculation only, not an adopted sample size or measured effect",
+  "assumptions": [
+    "one Bernoulli outcome per method per independent task",
+    "true paired quality difference is zero",
+    "one-sided alpha 0.05 and power 0.80",
+    "normal approximation with externally assumed discordance probability",
+    "repository dependence, multiplicity and learning costs not included"
+  ],
+  "formula": "ceil((z_(1-alpha)+z_power)^2 * q / margin^2)",
+  "rows": [
+    {
+      "discordance_probability": 0.1,
+      "quality_margin": 0.03,
+      "approximate_independent_tasks": 687
+    },
+    {
+      "discordance_probability": 0.1,
+      "quality_margin": 0.05,
+      "approximate_independent_tasks": 248
+    },
+    {
+      "discordance_probability": 0.1,
+      "quality_margin": 0.1,
+      "approximate_independent_tasks": 62
+    },
+    {
+      "discordance_probability": 0.2,
+      "quality_margin": 0.03,
+      "approximate_independent_tasks": 1374
+    },
+    {
+      "discordance_probability": 0.2,
+      "quality_margin": 0.05,
+      "approximate_independent_tasks": 495
+    },
+    {
+      "discordance_probability": 0.2,
+      "quality_margin": 0.1,
+      "approximate_independent_tasks": 124
+    },
+    {
+      "discordance_probability": 0.3,
+      "quality_margin": 0.03,
+      "approximate_independent_tasks": 2061
+    },
+    {
+      "discordance_probability": 0.3,
+      "quality_margin": 0.05,
+      "approximate_independent_tasks": 742
+    },
+    {
+      "discordance_probability": 0.3,
+      "quality_margin": 0.1,
+      "approximate_independent_tasks": 186
+    }
+  ]
+}
