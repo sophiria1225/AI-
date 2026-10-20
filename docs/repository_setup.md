@@ -56,3 +56,5 @@ sh scripts/with_container_env.sh .venv/bin/python scripts/prepare_fixed_data.py 
 `tracking/tasks.json`がIssueとProjectの更新元です。`sync_tracking.py`は既存Issueを固定IDで照合し、重複作成を避けます。人の補足コメントを削除しません。既存Projectの項目や他のIssueには触れません。
 
 GitHub CLIのログインは利用者がブラウザーで行います。ログイン後に作業ブランチをpushし、`python3 scripts/sync_tracking.py --publish`を実行します。認証情報はリポジトリに保存しません。
+
+同期はIssueを先に保存してからProjectへ登録します。Projectの権限だけが不足した場合も、作成済みIssueのリンクを保持して再開できます。`--publish --issues-only`はIssueだけを同期します。同じ固定IDが複数Issueに見つかった場合は停止します。Project権限失敗後の再試行で重複しない対照検査を実装済みですが、2026年10月20日時点では未認証のため実際のリモート同期は未検証です。

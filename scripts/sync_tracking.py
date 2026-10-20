@@ -58,30 +58,11 @@ def save_links(links):
     LINKS.write_text(json.dumps(links, ensure_ascii=False, indent=2) + '\n')
 
 
-def publish(data, links):
-    gh('auth', 'status')
+def publish_issues(data, links):
+    """Save each Issue before Project work, so missing Project scope is recoverable."""
     repo = data['repository']
-    owner = repo.split('/')[0]
     existing = gh('issue', 'list', '--repo', repo, '--state', 'all', '--limit', 200,
                   '--json', 'number,title,url,body,state', json_output=True)
-    projects = gh('project', 'list', '--owner', owner, '--limit', 100, '--format', 'json', json_output=True)
-    project = next((p for p in projects['projects'] if p['title'] == data['project_title']), None)
-    if not project:
-        project = gh('project', 'create', '--owner', owner, '--title', data['project_title'],
-                     '--format', 'json', json_output=True)
-    links['project'] = {k: project[k] for k in ('id', 'number', 'url', 'title')}
-    save_links(links)
-    gh('project', 'link', project['number'], '--owner', owner, '--repo', repo)
-    fields = gh('project', 'field-list', project['number'], '--owner', owner,
-                '--format', 'json', json_output=True)['fields']
-    status_field = next(f for f in fields if f['name'] == 'Status')
-    options = {v['name'].lower(): v['id'] for v in status_field['options']}
-    todo = options.get('todo') or options.get('to do')
-    if not todo or not options.get('in progress') or not options.get('done'):
-        raise RuntimeError('project status options require an explicit mapping')
-    items = gh('project', 'item-list', project['number'], '--owner', owner,
-               '--limit', 500, '--format', 'json', json_output=True)['items']
-    item_by_url = {i.get('content', {}).get('url'): i for i in items}
     for task in data['tasks']:
         marker = f"<!-- harness-task:{task['id']} -->"
         matches = [i for i in existing if marker in (i.get('body') or '')]
@@ -99,6 +80,37 @@ def publish(data, links):
             issue = {'number': int(url.rsplit('/', 1)[-1]), 'url': url, 'state': 'OPEN'}
         links.setdefault('issues', {})[task['id']] = {'number': issue['number'], 'url': issue['url']}
         save_links(links)
+        if task['status'] == 'done' and issue['state'] == 'OPEN':
+            gh('issue', 'close', issue['number'], '--repo', repo, '--reason', 'completed')
+        print(json.dumps({'task': task['id'], 'issue': issue['url'], 'status': task['status']}, ensure_ascii=False), flush=True)
+
+
+def publish_project(data, links):
+    repo = data['repository']
+    owner = repo.split('/')[0]
+    projects = gh('project', 'list', '--owner', owner, '--limit', 100, '--format', 'json', json_output=True)
+    matches = [p for p in projects['projects'] if p['title'] == data['project_title']]
+    if len(matches) > 1:
+        raise RuntimeError('multiple Projects have the requested title; preserve them')
+    project = matches[0] if matches else None
+    if not project:
+        project = gh('project', 'create', '--owner', owner, '--title', data['project_title'],
+                     '--format', 'json', json_output=True)
+    links['project'] = {k: project[k] for k in ('id', 'number', 'url', 'title')}
+    save_links(links)
+    gh('project', 'link', project['number'], '--owner', owner, '--repo', repo)
+    fields = gh('project', 'field-list', project['number'], '--owner', owner,
+                '--format', 'json', json_output=True)['fields']
+    status_field = next(f for f in fields if f['name'] == 'Status')
+    options = {v['name'].lower(): v['id'] for v in status_field['options']}
+    todo = options.get('todo') or options.get('to do')
+    if not todo or not options.get('in progress') or not options.get('done'):
+        raise RuntimeError('project status options require an explicit mapping')
+    items = gh('project', 'item-list', project['number'], '--owner', owner,
+               '--limit', 500, '--format', 'json', json_output=True)['items']
+    item_by_url = {i.get('content', {}).get('url'): i for i in items}
+    for task in data['tasks']:
+        issue = links['issues'][task['id']]
         item = item_by_url.get(issue['url'])
         if not item:
             item = gh('project', 'item-add', project['number'], '--owner', owner,
@@ -107,21 +119,27 @@ def publish(data, links):
                   'done': options['done']}[task['status']]
         gh('project', 'item-edit', '--id', item['id'], '--project-id', project['id'],
            '--field-id', status_field['id'], '--single-select-option-id', option)
-        if task['status'] == 'done' and issue['state'] == 'OPEN':
-            gh('issue', 'close', issue['number'], '--repo', repo, '--reason', 'completed')
-        print(json.dumps({'task': task['id'], 'issue': issue['url'], 'status': task['status']}, ensure_ascii=False), flush=True)
+    print(json.dumps({'project': project['url'], 'items_synced': len(data['tasks'])}, ensure_ascii=False), flush=True)
+
+
+def publish(data, links, issues_only=False):
+    gh('auth', 'status')
+    publish_issues(data, links)
+    if not issues_only:
+        publish_project(data, links)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--publish', action='store_true')
+    parser.add_argument('--issues-only', action='store_true', help='Publish Issues without requiring Project scope')
     args = parser.parse_args()
     data = json.loads((ROOT / 'tracking/tasks.json').read_text())
     links = json.loads(LINKS.read_text()) if LINKS.exists() else {}
     render(data, links)
     if args.publish:
         try:
-            publish(data, links)
+            publish(data, links, issues_only=args.issues_only)
         finally:
             render(data, links)
     print('Rendered docs/task_board.md')
