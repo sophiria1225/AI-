@@ -12,6 +12,8 @@
 
 **比較用実行器も校正中：** 公開APIごとのスキーマと複数操作を使う全履歴基準を実装しました。全457 APIの無条件投入は出力余白を含めると64Kを超えるため、公開文書の要求に応じて追加します。保存済み43操作の要求一致、実環境での文書取得・不正操作の未送信を確認。[P8の条件と初案を見送った理由](docs/experiments/P8_native_baseline.md)、[Issue #36](https://github.com/sophiria1225/AI-/issues/36)。P6・P7の終了後に2試行を行う計画で、この形式でのモデル成績はまだありません。
 
+**実行キューを起動済み：** [P6：進行中](https://github.com/sophiria1225/AI-/issues/30#issuecomment-6298489780) → [P7：記憶生成9呼び出しの待機](https://github.com/sophiria1225/AI-/issues/34#issuecomment-6299401998) → [P8：全履歴2試行の待機](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976)。モデル推論を重ねず順に進め、各コメントを自動更新します。前段の実行エラーや稼働時間不足では、その理由を記録して未開始にします。
+
 **この比較で決めること：** 既存の防御的確認や単純な台帳で足りるなら、追加の独自方式は提案しません。原論文の完全再現や新手法の完成ではなく、必要な技術を絞るための導入比較です。[優先順位](docs/next_actions.md)。
 
 **10月20日時点の説明資料（16枚）：** [PDF](materials/20261020_revised/AI_harness_research_20261020.pdf) / [編集できるPowerPoint](materials/20261020_revised/AI_harness_research_20261020.pptx) / [図表・CSV・出典](materials/20261020_revised/)。[当時のアプローチ](docs/research_contribution.md)と[四条件の比較仕様](docs/experiments/E1_intervention_contract.md)を含め、構想の履歴として保持します。現在の新規性が確定した資料ではありません。
