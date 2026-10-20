@@ -1,17 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T06:06:51.756367+00:00",
+  "updated_at": "2026-10-20T06:18:27.127870+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "recorded_calls": 108,
-    "calls_with_known_usage": 107,
+    "recorded_calls": 134,
+    "calls_with_known_usage": 133,
     "calls_with_unknown_usage": 1,
-    "requests_without_response_record": [
-      "records/p2/20261020_150628_mini_03a2f3/call_003_single/request.json"
-    ],
-    "known_input_tokens": 994927,
-    "known_output_tokens": 26878,
-    "known_total_tokens": 1021805,
+    "requests_without_response_record": [],
+    "known_input_tokens": 1270102,
+    "known_output_tokens": 34148,
+    "known_total_tokens": 1304250,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -89,11 +87,11 @@
         "records/p2/20261020_145730_mini_a386c6",
         "records/p2/20261020_150628_mini_03a2f3"
       ],
-      "recorded_calls": 37,
-      "known_input_tokens": 326209,
-      "known_output_tokens": 5179,
+      "recorded_calls": 63,
+      "known_input_tokens": 601384,
+      "known_output_tokens": 12449,
       "unknown_usage_calls": 0,
-      "known_total_tokens": 331388
+      "known_total_tokens": 613833
     }
   ],
   "runtime_group_note": "Cost inventory across calibration contexts and task purposes, not a quality comparison. Early records used the captured f16/f16 server command. Unknown usage is not zero cost.",
@@ -514,15 +512,15 @@
       "ctx_size": 65536,
       "cache_type_k": "q8_0",
       "cache_type_v": "q8_0",
-      "status": "running",
+      "status": "finished",
       "instance_id": "django__django-15957",
-      "stop_reason": "initializing",
-      "calls": 2,
-      "total_recorded_tokens": 3270,
+      "stop_reason": "conservative_budget_guard",
+      "calls": 28,
+      "total_recorded_tokens": 285715,
       "usage_complete": true,
-      "wall_seconds": null,
-      "artifact_sha256": null,
-      "visible_checks_all_passed": null
+      "wall_seconds": 590.7590909169521,
+      "artifact_sha256": "a331469478a965b6ea6ec9682ff9b7f53d99c4083d592ea60c8e11dfd5fc36c5",
+      "visible_checks_all_passed": false
     }
   ]
 }
