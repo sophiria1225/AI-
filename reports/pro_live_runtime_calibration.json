@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-10-20T09:04:44.901262+00:00",
+  "status": "completed",
+  "model_calls": 0,
+  "policy": {
+    "network_mode": "none",
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_opt": [
+      "no-new-privileges:true"
+    ],
+    "mem_limit": "4g",
+    "nano_cpus": 1000000000,
+    "pids_limit": 256
+  },
+  "config_sha256": "cd94a345a5ca06d23ce1ab47f6f05651c004869cebf9bead9c04dad976b4318f",
+  "steps": [
+    {
+      "name": "python_and_workdir",
+      "exit_code": 0,
+      "status_known": true
+    },
+    {
+      "name": "nonzero",
+      "exit_code": 13,
+      "status_known": true
+    },
+    {
+      "name": "new_file",
+      "exit_code": 0,
+      "status_known": true
+    }
+  ],
+  "source_sha256": {
+    "calibrate_pro_runtime.py": "7123a513fd090319bd921874c144002d9d11b44ada98b9b8c4b5a1a1e942bdce",
+    "pro_runtime.py": "8069529982e3377cfc4bd51f033bf939421a447efea1307b6bf85fb6d2bfec53",
+    "repository_runtime.py": "d0c1dba6b146cba129466f0809b6d0a959d8ed5af854a7abf94896c57e8bd5a0",
+    "run_e0_pilot.py": "86a17bccf1ce155258aac0c96d64323abc8f7181f2d45277bf8688bc0f70c130",
+    "artifact_capture.py": "4adccf4f4308ba98ef2f2ac86f848e89fd2dc8e7dc840bb8ab6a4b4a6d98b768",
+    "visible_checks.py": "4ee6a61fe58cc30eb19279662dfc3d0e2a59c3979aac47c203e86b1871fca31d",
+    "prepare_pro_environment.py": "220b9bf211c8b0e577c72b9b459d7f61e917d5d73d7f13f50486783851501f15"
+  },
+  "container_id": "d483a2e04f7f7028f45dc02385c1145aea62eaaa4d5d6d48e7db0eb7bded9d5b",
+  "captured_new_file": {
+    "artifact_sha256": "1e8a2800f9f276b1a211b35faa3f81e846ffd23177e48da4365d3986351c00e1",
+    "artifact_bytes": 200,
+    "artifact_manifest": "artifact_manifest.json"
+  },
+  "clean_artifact": {
+    "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "artifact_bytes": 0,
+    "artifact_manifest": "artifact_manifest.json"
+  },
+  "visible_checks": {
+    "checks": [
+      {
+        "id": "public_yaml_and_core_filter_tests",
+        "argv": [
+          "python3",
+          "-m",
+          "pytest",
+          "-q",
+          "test/units/parsing/yaml",
+          "test/units/plugins/filter/test_core.py"
+        ],
+        "status": "passed",
+        "exit_code": 0,
+        "timeout_seconds": 180,
+        "log": "000.log",
+        "log_sha256": "2f690ba615019f100c03298f0a7a4a57e2a1912b6dfb552759e527b8a0bd2324",
+        "output_bytes": 981,
+        "output_tail": "============================= test session starts ==============================\nplatform linux -- Python 3.11.13, pytest-8.4.0, pluggy-1.6.0\nrootdir: /app\nconfigfile: pyproject.toml\nplugins: anyio-4.10.0, rerunfailures-15.1, mock-3.14.1\ncollected 131 items\n\ntest/units/parsing/yaml/test_dumper.py ................                  [ 12%]\ntest/units/parsing/yaml/test_errors.py ................................. [ 37%]\n                                                                         [ 37%]\ntest/units/parsing/yaml/test_loader.py ................................. [ 62%]\n..............                                                           [ 73%]\ntest/units/parsing/yaml/test_objects.py ....................             [ 88%]\ntest/units/parsing/yaml/test_vault.py .....                              [ 92%]\ntest/units/plugins/filter/test_core.py ..........                        [100%]\n\n============================= 131 passed in 1.38s ==============================\n",
+        "wall_seconds": 4.1411354169249535
+      }
+    ],
+    "all_passed": true,
+    "wall_seconds": 4.141276624985039
+  },
+  "after_public_checks": {
+    "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "artifact_bytes": 0,
+    "artifact_manifest": "artifact_manifest.json"
+  },
+  "container_removed": true,
+  "wall_seconds": 6.54093004099559,
+  "record": "records/pro_runtime/PRO_RUNTIME_01",
+  "summary_sha256": "d196adf98280471ed823dcb345096682be550a654080108ece9fe16e697b8eae",
+  "interpretation": "No model inference. Tool exit status, new-file capture, restoration and 131 existing public tests passed. Existing tests do not establish new requirement completion. Public sources and selection rationale are in pro_public_runtime_review.json."
+}

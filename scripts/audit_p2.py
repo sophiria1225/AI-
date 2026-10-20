@@ -11,12 +11,12 @@ def read(path):
     return json.loads(path.read_text())
 
 
-def memory_window(run, summary):
+def memory_window(run, summary, *, root=ROOT):
     runtime_path = run / 'server_runtime.json'
     if not runtime_path.exists() or not summary.get('started_at'):
         return None
     runtime = read(runtime_path)
-    path = ROOT / runtime['record_directory'] / 'memory.jsonl'
+    path = root / runtime['record_directory'] / 'memory.jsonl'
     start = datetime.datetime.fromisoformat(summary['started_at'])
     end = start + datetime.timedelta(seconds=summary['wall_seconds'])
     samples = []
@@ -34,7 +34,7 @@ def memory_window(run, summary):
                     'RSS is not GPU allocation and system memory includes other processes.'}
 
 
-def audit_run(run):
+def audit_run(run, *, root=ROOT):
     summary, config = read(run / 'summary.json'), read(run / 'config.json')
     errors, unknown = [], []
     inputs = outputs = cached = 0
@@ -98,13 +98,13 @@ def audit_run(run):
     evaluation = read(run / 'final_evaluation_summary.json') if (run / 'final_evaluation_summary.json').exists() else None
     if evaluation and evaluation['artifact_sha256'] != summary['artifact_sha256']:
         errors.append('evaluation used another artifact')
-    return {'record': str(run.relative_to(ROOT)), 'task': config['instance_id'], 'model': config['model'],
+    return {'record': str(run.relative_to(root)), 'task': config['instance_id'], 'model': config['model'],
             'calls': len(summary['calls']), 'tools': len(summary['tools']),
             'input_tokens': inputs, 'output_tokens': outputs, 'cached_input_tokens': cached,
             'known_total_tokens': total, 'unknown_usage_calls': unknown,
             'stop_reason': summary['stop_reason'], 'wall_seconds': summary['wall_seconds'],
             'model_call_wall_seconds': sum(c.get('wall_seconds', 0) for c in summary['calls']),
-            'memory': memory_window(run, summary),
+            'memory': memory_window(run, summary, root=root),
             'artifact_sha256': summary.get('artifact_sha256'), 'artifact_bytes': summary.get('artifact_bytes'),
             'visible_checks_all_passed': summary.get('visible_checks', {}).get('all_passed'),
             'evaluation': evaluation, 'errors': errors}

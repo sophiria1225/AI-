@@ -94,9 +94,14 @@ def private_bundle(storage, plan):
     return target, manifest
 
 
-def make_archive(bundle, plan, phase, repository_path):
-    if phase not in ("negative_control", "reference_control"):
+def make_archive(bundle, plan, phase, repository_path, *, candidate_patch=None):
+    if phase not in ("negative_control", "reference_control", "candidate_evaluation"):
         raise ValueError("Unknown verifier phase")
+    if phase == "candidate_evaluation":
+        if not isinstance(candidate_patch, bytes) or len(candidate_patch) > MAX_FILE_BYTES:
+            raise ValueError("Candidate must be bounded patch bytes")
+    elif candidate_patch is not None:
+        raise ValueError("Candidate patch is not allowed in a calibration control")
     if repository_path not in ("/app", "/testbed"):
         raise ValueError("Unexpected repository location")
     if not re.fullmatch(r"[0-9a-f]{40}", plan["base_commit"]):
@@ -109,6 +114,8 @@ def make_archive(bundle, plan, phase, repository_path):
     )
     if phase == "reference_control":
         script += "git apply --check /solution/gold_patch.diff\ngit apply /solution/gold_patch.diff\n"
+    elif phase == "candidate_evaluation" and candidate_patch:
+        script += "git apply --check /research/candidate.patch\ngit apply /research/candidate.patch\n"
     script += "exec bash /tests/test.sh\n"
     buffer = io.BytesIO()
     with tarfile.open(fileobj=buffer, mode="w") as archive:
@@ -122,6 +129,8 @@ def make_archive(bundle, plan, phase, repository_path):
         entries = [(name, (bundle / name).read_bytes()) for name in PRIVATE_FILES
                    if phase == "reference_control" or not name.startswith("solution/")]
         entries.append(("research/run.sh", script.encode()))
+        if phase == "candidate_evaluation":
+            entries.append(("research/candidate.patch", candidate_patch))
         for name, raw in entries:
             # Entries are constructed from the constant allowlist and our own script.
             info = tarfile.TarInfo(name)
@@ -187,7 +196,7 @@ def retain_verifier_artifacts(container, record, limit=MAX_LOG_BYTES):
     return retained
 
 
-def evaluate(client, plan, bundle, phase, repository_path, record):
+def evaluate(client, plan, bundle, phase, repository_path, record, *, candidate_patch=None):
     name = "harness_pro_" + phase + "_" + record.parent.name
     container = client.containers.create(
         image=plan["image"], name=name, entrypoint=[], command=["bash", "/research/run.sh"],
@@ -204,11 +213,12 @@ def evaluate(client, plan, bundle, phase, repository_path, record):
         if (container.attrs.get("Mounts") or host.get("Privileged") or host.get("CapAdd")
                 or host["NetworkMode"] != "bridge"):
             raise ValueError("Unexpected verifier isolation")
-        archive = make_archive(bundle, plan, phase, repository_path)
+        archive = make_archive(bundle, plan, phase, repository_path, candidate_patch=candidate_patch)
         if not container.put_archive("/", archive):
             raise ValueError("Could not copy verifier into its isolated container")
         container.start()
-        timeout = next(p["timeout_seconds"] for p in plan["phases"] if p["id"] == phase)
+        timeout_phase = "reference_control" if phase == "candidate_evaluation" else phase
+        timeout = next(p["timeout_seconds"] for p in plan["phases"] if p["id"] == timeout_phase)
         while True:
             container.reload()
             if not container.attrs["State"]["Running"]:
@@ -234,7 +244,8 @@ def evaluate(client, plan, bundle, phase, repository_path, record):
         if result["status"] == "timeout":
             return result
         result.update(assess_artifacts(record, bundle, result["exit_code"], result["oom_killed"]))
-        result["expected_outcome_observed"] = expected_control(result, phase)
+        if phase != "candidate_evaluation":
+            result["expected_outcome_observed"] = expected_control(result, phase)
         result["status"] = "completed"
     except Exception as error:
         result["error"] = repr(error)
