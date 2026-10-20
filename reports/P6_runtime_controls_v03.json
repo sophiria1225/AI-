@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-20T18:42:45.449336+00:00",
+  "unit_tests_passed": 156,
+  "new_runtime_controls": 9,
+  "compileall": "passed",
+  "source_hashes": {
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/appworld_bridge.py": "45b0f3e17984831f93f74859a1dffae35effb3eff0b6967cfb3cd0dd78233bdd",
+    "scripts/run_context_comparison.py": "d32f78bb51a96a40eb83c65e97777b991f5c02491c42f20703f89d977ceec105",
+    "scripts/evaluate_context_trial.py": "993670d699d58d24211be30f61cda113c99c7244ffe87b86b16d623c967c3fa4",
+    "scripts/run_context_batch.py": "35c891367afa1e5e10bdfe967d27b64df591d12be690c4a74f0481b0d6e08bc1",
+    "scripts/watch_context_pilot.py": "3a9ffc3f6b4735ff3ff268bca8dfe4709d03ee3142f8390f7913b67cf4639fb0",
+    "scripts/summarize_context_pilot.py": "06a7dd3547607fb9093b442681a6f1bef13bb0bd9ea930b0de358e79509bf90c",
+    "configs/P6_context_plan_v03.json": "d9195d966666a810c823f99c43ccb0cbf2d057034cfc7273d7ad5265dc0e0784",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "scripts/audit_context_runtime.py": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+  },
+  "changes": "Only stop classification, deadline accounting, event snapshots and progress/audit records. Experiment parameters and prompts are unchanged; no retry of the two finished trials.",
+  "old_frozen_records_modified": false,
+  "unknown_usage_policy": "Keep null usage and report known totals as lower bounds. No zero replacement, free retry or time-limit extension.",
+  "scope": "Implementation regression checks and frozen four-condition continuation, not new-method validation."
+}

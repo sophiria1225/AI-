@@ -18,10 +18,10 @@ ISSUE = 30
 MARKER = "<!-- harness-batch:P6_v02 -->"
 
 
-def public_body(rows, finished=False):
-    lines = [MARKER, "P6自動進捗：AppWorldの学習用2課題・3方式・各1回", "",
-             "| 課題 | 方式 | 状態 | 呼び出し | 記録済みトークン | 圧縮 | 公式評価 |",
-             "|---|---|---|---:|---:|---:|---|"]
+def public_body(rows, finished=False, marker=MARKER):
+    lines = [marker, "P6自動進捗：AppWorldの学習用2課題・3方式・各1回", "",
+             "| 課題 | 方式 | 状態 | 呼び出し | 既知トークン | 費用不明の呼出 | 記録済圧縮 | 公式評価 |",
+             "|---|---|---|---:|---:|---:|---:|---|"]
     for row in rows:
         arm = {"full": "全履歴", "focus": "防御的圧縮の再実装", "ledger": "対象台帳"}[row["arm"]]
         status = {"pending": "待機", "running": "実行中", "finished": "実行終了",
@@ -30,10 +30,17 @@ def public_body(rows, finished=False):
         if outcome is not None and type(outcome) is not bool:
             raise ValueError("Boolean evaluation required")
         outcome_text = "未確定" if outcome is None else ("成功" if outcome else "未達")
+        if row.get("stop_reason") in ("wall_limit", "wall_limit_during_count",
+                                      "wall_limit_during_model_call"):
+            status += "・時間上限"
+        elif row.get("stop_reason") == "runtime_error":
+            status += "・実行エラー"
         lines.append(f"| {int(row['task_number'])} | {arm} | {status} | "
                      f"{int(row.get('calls', 0))} | {int(row.get('tokens', 0)):,} | "
+                     f"{int(row.get('unknown_usage_calls', 0))} | "
                      f"{int(row.get('compressions', 0))} | {outcome_text} |")
     lines += ["", "実行・圧縮・台帳作成の全呼び出しを計上。公式評価は実行終了後の別プロセスで行い、モデルへ返しません。",
+              "費用不明の呼び出しがある行では、既知トークンは総費用の下限です。実行中の呼び出しは完了後に反映します。",
               "各実行は最大80呼び出し・45万トークン・30分。基盤異常を自動再試行しません。",
               "導入用の少数観察で、新規性・品質維持・一般的な費用削減を確定する実験ではありません。",
               "[固定仕様](https://github.com/sophiria1225/AI-/blob/research/context-preservation-20261021/docs/experiments/P6_context_preservation.md)",
@@ -43,13 +50,13 @@ def public_body(rows, finished=False):
     return "\n".join(lines) + "\n"
 
 
-def publish(body, state):
+def publish(body, state, marker=MARKER):
     endpoint = f"repos/{REPOSITORY}/issues/{ISSUE}"
     if state.get("comment_id"):
         endpoint = f"repos/{REPOSITORY}/issues/comments/{int(state['comment_id'])}"
         existing = gh_api(endpoint)
         if (existing.get("issue_url") != f"https://api.github.com/repos/{REPOSITORY}/issues/{ISSUE}"
-                or not existing.get("body", "").startswith(MARKER)):
+                or not existing.get("body", "").startswith(marker)):
             raise ValueError("progress comment is outside authorized Issue or marker")
         result = gh_api(endpoint, method="PATCH", payload={"body": body})
     else:
@@ -71,11 +78,24 @@ def collect(storage, schedule, observer):
             value = json.loads(progress.read_text())
             row.update(status="running", calls=value["calls"], tokens=value["tokens"],
                        compressions=value["compressions"])
+        usage = directory / "usage.json"
+        if usage.exists():
+            calls = json.loads(usage.read_text())
+            row.update(status="running", calls=len(calls),
+                       tokens=sum(c["input_tokens"] + c["output_tokens"]
+                                  for c in calls if c["status"] == "ok"),
+                       unknown_usage_calls=sum(c["status"] != "ok" for c in calls))
+        compression_path = directory / "compressions.json"
+        if compression_path.exists():
+            row["compressions"] = len(json.loads(compression_path.read_text()))
         summary = directory / "summary.json"
         if summary.exists():
             value = json.loads(summary.read_text())
             row.update(status="finished", calls=value["model_calls"],
-                       tokens=value["known_total_tokens"], compressions=value["compression_events"])
+                       tokens=value["known_total_tokens"], compressions=value["compression_events"],
+                       stop_reason=value["stop_reason"],
+                       unknown_usage_calls=sum(r["unknown_usage"]
+                                               for r in value["usage_by_role"].values()))
             evaluation = directory / "evaluation.json"
             failure = observer / (run_id + "_evaluation_error.json")
             if not evaluation.exists() and not failure.exists():
@@ -103,11 +123,16 @@ def collect(storage, schedule, observer):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--storage-root", type=Path, required=True)
+    parser.add_argument("--batch-id", default="P6_batch_v02")
     parser.add_argument("--publish", action="store_true")
     args = parser.parse_args()
     storage = args.storage_root.resolve()
-    batch = storage / "records/context_pilot/P6_batch_v02"
-    schedule = json.loads((batch / "plan.json").read_text())["run_order"]
+    if not args.batch_id.startswith("P6_") or not args.batch_id.replace("_", "").isalnum():
+        raise ValueError("expected a safe P6 batch ID")
+    batch = storage / "records/context_pilot" / args.batch_id
+    plan = json.loads((batch / "plan.json").read_text())
+    schedule = plan.get("prior_run_order", []) + plan["run_order"]
+    marker = f"<!-- harness-batch:{args.batch_id} -->"
     observer = batch / "observer"
     observer.mkdir(exist_ok=False)
     state = {"status": "running"}
@@ -122,12 +147,12 @@ def main():
         finished = (batch_state["status"] != "running"
                     or time.monotonic() - started > 14400)
         signature = [(r["status"], r.get("success")) for r in rows]
-        body = public_body(rows, finished)
+        body = public_body(rows, finished, marker)
         (observer / "progress.md").write_text(body)
         if args.publish and (signature != last_signature or finished
                              or time.monotonic() - last_publish > 300):
             try:
-                publish(body, state)
+                publish(body, state, marker)
                 state.pop("publish_error", None)
             except (ValueError, RuntimeError, subprocess.TimeoutExpired) as error:
                 state["publish_error"] = type(error).__name__

@@ -1,0 +1,154 @@
+{
+  "run_id": "P6_01_FOCUS_V02",
+  "task_id": "07b42fd_1",
+  "arm": "focus",
+  "stop_reason": "runtime_error",
+  "declared_complete": false,
+  "known_total_tokens": 132124,
+  "usage_by_role": {
+    "agent": {
+      "calls": 7,
+      "input_tokens": 38972,
+      "output_tokens": 1142,
+      "unknown_usage": 0
+    },
+    "focus": {
+      "calls": 12,
+      "input_tokens": 70496,
+      "output_tokens": 21514,
+      "unknown_usage": 1
+    }
+  },
+  "model_calls": 19,
+  "tool_turns": 7,
+  "compression_events": 4,
+  "format_errors": 2,
+  "api_bridge_errors": 0,
+  "wall_seconds": 1800.8828404169763,
+  "evaluation": {
+    "official_success": false,
+    "pass_count": 1,
+    "fail_count": 4,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 1,
+  "peak_input_tokens": 6685,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "22beb77233e7c5fe72afc748ec89fc736feeb6b542aa57fbc6d429f42018dabc",
+    "usage": "f4868291c377d0fa70fbc745b5654eb3c0ed83df32ed7414fed575bab45b8183",
+    "evaluation": "10625bfb3705683025655c9024953ddef5398a2c7b2659b18e176ce36cbe7a4e"
+  },
+  "compression_audit": [
+    {
+      "index": 1,
+      "first_call": "call_004",
+      "calls": 3,
+      "input_span_count": 3,
+      "recorded": true,
+      "status": "ok",
+      "recorded_before_matches_request": true,
+      "output_span_count": 3,
+      "selection_removed_spans": 0,
+      "known_tokens": 22827,
+      "unknown_usage_calls": 0,
+      "wall_seconds": 290.20935441798065,
+      "length_stops": 0,
+      "structural_errors": {
+        "unparseable_arguments": 0,
+        "unavailable_references": 0,
+        "duplicate_reference_lists": 0
+      }
+    },
+    {
+      "index": 2,
+      "first_call": "call_008",
+      "calls": 3,
+      "input_span_count": 4,
+      "recorded": true,
+      "status": "invalid_keep_original",
+      "recorded_before_matches_request": false,
+      "output_span_count": 4,
+      "selection_removed_spans": 0,
+      "known_tokens": 22810,
+      "unknown_usage_calls": 0,
+      "wall_seconds": 275.0694017079659,
+      "length_stops": 0,
+      "structural_errors": {
+        "unparseable_arguments": 0,
+        "unavailable_references": 5,
+        "duplicate_reference_lists": 0
+      }
+    },
+    {
+      "index": 3,
+      "first_call": "call_012",
+      "calls": 2,
+      "input_span_count": 5,
+      "recorded": true,
+      "status": "invalid_keep_original",
+      "recorded_before_matches_request": false,
+      "output_span_count": 5,
+      "selection_removed_spans": 0,
+      "known_tokens": 20588,
+      "unknown_usage_calls": 0,
+      "wall_seconds": 505.7804602080723,
+      "length_stops": 1,
+      "structural_errors": {
+        "unparseable_arguments": 1,
+        "unavailable_references": 3,
+        "duplicate_reference_lists": 0
+      }
+    },
+    {
+      "index": 4,
+      "first_call": "call_015",
+      "calls": 3,
+      "input_span_count": 6,
+      "recorded": true,
+      "status": "ok",
+      "recorded_before_matches_request": true,
+      "output_span_count": 6,
+      "selection_removed_spans": 0,
+      "known_tokens": 25785,
+      "unknown_usage_calls": 0,
+      "wall_seconds": 406.78369562502485,
+      "length_stops": 0,
+      "structural_errors": {
+        "unparseable_arguments": 0,
+        "unavailable_references": 0,
+        "duplicate_reference_lists": 0
+      }
+    },
+    {
+      "index": 5,
+      "first_call": "call_019",
+      "calls": 1,
+      "input_span_count": 7,
+      "recorded": false,
+      "status": "missing_event",
+      "recorded_before_matches_request": null,
+      "output_span_count": null,
+      "selection_removed_spans": null,
+      "known_tokens": 0,
+      "unknown_usage_calls": 1,
+      "wall_seconds": 3.0006419169949368,
+      "length_stops": 0,
+      "structural_errors": {
+        "unparseable_arguments": 0,
+        "unavailable_references": 0,
+        "duplicate_reference_lists": 0
+      }
+    }
+  ],
+  "call_seconds_by_role": {
+    "agent": 316.3207067908952,
+    "focus": 1480.8435538760386
+  },
+  "runtime_artifact_findings": {
+    "before_snapshot_mismatches": 2,
+    "missing_compression_records": 1
+  },
+  "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+  "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+}

@@ -57,7 +57,7 @@ def main():
     args = parser.parse_args()
     config = json.loads(args.plan.read_text())
     trials, pending = [], []
-    for task, arm, run_id in config["run_order"]:
+    for task, arm, run_id in config.get("prior_run_order", []) + config["run_order"]:
         directory = args.storage_root / "records/context_pilot" / run_id
         if (directory / "summary.json").exists():
             trials.append(summarize_trial(directory))
