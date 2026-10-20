@@ -1,0 +1,16 @@
+{
+  "phase": "P11_selection",
+  "version": 1,
+  "dataset": "AppWorld",
+  "runtime_version": "0.1.3.post1",
+  "split": "train",
+  "prior_instruction_exposed_scenarios": ["07b42fd", "229360a", "22cc237", "27e1026"],
+  "count": 4,
+  "rule": "Read train IDs only. Exclude the four previously instruction-exposed scenarios, sort remaining scenario IDs lexicographically, take the first four, and use variant _1. Do not replace a selection based on its instruction, state, model outcome or evaluator.",
+  "input_fields": ["instruction"],
+  "forbidden_selection_inputs": ["solution", "ground_truth", "evaluation", "difficulty", "database_contents", "model_outcome"],
+  "private_packet": "records/task_selection/P11_public_train_v01",
+  "scope": "Additional development observations, not an independent confirmatory test or a representative benchmark score. Related variants of all exposed scenarios remain outside untouched confirmation.",
+  "model_runs_authorized_by_this_plan": 0,
+  "followup": "Characterize public requirements after selection. Freeze execution and memory comparisons separately after P10 interface calibration; preserve all selected outcomes, including weak-scope or infeasible cases."
+}
