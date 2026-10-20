@@ -1,0 +1,45 @@
+{
+  "phase": "P7",
+  "run_id": "P7_01",
+  "source_run_id": "P6_01_LEDGER_V03",
+  "source_call_id": "call_009",
+  "source_request_sha256": "48a3d3fbd6721d6afebd11f4ab44acc822eda94f1e69ac6e5b6275bdecf0392f",
+  "source_plan_sha256": "d9195d966666a810c823f99c43ccb0cbf2d057034cfc7273d7ad5265dc0e0784",
+  "wait_for_batch": "P6_batch_v03",
+  "max_wait_seconds": 10800,
+  "first_seed": 43,
+  "order": [
+    "raw",
+    "quarantine",
+    "execution_tag",
+    "quarantine",
+    "execution_tag",
+    "raw",
+    "execution_tag",
+    "raw",
+    "quarantine"
+  ],
+  "max_total_tokens": 150000,
+  "max_wall_seconds": 3600,
+  "expected_unexecuted_spans": 1,
+  "scope": "Development calibration of a pure memory transformation at one selected failure input. No task execution, causal final-success claim or new algorithm.",
+  "selection_reason": "First memory update following the observed unexecuted malformed action in P6 task 1. This is selected after observing failure and is not held-out confirmation.",
+  "variants": {
+    "raw": "Original request messages unchanged. First seed matches the recorded request payload.",
+    "quarantine": "Remove only assistant text and malformed action from the unexecuted span; retain its format error, ID and archive reference.",
+    "execution_tag": "Keep all original content and add the mechanically checked non-dispatch fact to that span."
+  },
+  "measurement": [
+    "Schema and available-source validation, not semantic truth.",
+    "done records supported solely by the unexecuted span are a review indicator, not an automatic error label.",
+    "All call usage, including unknown usage, is retained.",
+    "Semantic unsupported-completion review requires an explicit codebook and is separate from automated output."
+  ],
+  "limitations": [
+    "One post-selected state and three seeds; no general success-rate inference.",
+    "Quarantine changes both content and length. The tag condition retains content but adds a small amount of metadata.",
+    "No hidden evaluator or target list is passed to memory generation.",
+    "The original P6 trials are not retried or replaced.",
+    "Case IDs are transport metadata; a fixed seed is not a guarantee of identical output."
+  ]
+}
