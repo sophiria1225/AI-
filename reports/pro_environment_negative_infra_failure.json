@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-20T08:41:37.817496+00:00",
+  "record": "records/pro_environment/PRO_ENV_04/negative_control",
+  "summary": {
+    "started_at": "2026-10-20T08:31:20.704748+00:00",
+    "phase": "negative_control",
+    "status": "error",
+    "source_sha256": "7d208c163cc5ad51fe1fef483f926c5a5c7bdc687e80c33ca9cfc65c3e586944",
+    "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+    "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "model_calls": 0,
+    "private_contents_displayed": false,
+    "private_manifest_sha256": "d36099b686d9b8b12e4cf9a437bd7e4b802620ec6f9e575b171a705e6a01b496",
+    "private_file_count": 6,
+    "container_id": "0c8bfab5ee89cf89e453d2c5999abd187a2d8472f1f3b00d0d8e904be1a65d8a",
+    "reward": null,
+    "sampled_peak_cgroup_memory_bytes": 168415232,
+    "memory_samples": 84,
+    "last_sampled_cpu_total_usage_ns": 250515418000,
+    "exit_code": 1,
+    "oom_killed": false,
+    "logs": {
+      "bytes": 981,
+      "sha256": "290bb62f1894fae0c347d8c9ed53490ff64d59425ac6b6df6674a15705647c79"
+    },
+    "error": "ValueError('Verifier process failed; private raw log retained')",
+    "wall_seconds": 252.806075249915,
+    "container_removed": true,
+    "total_wall_seconds": 255.15980208304245
+  },
+  "diagnosis_scope": "Only structural/private-log categories were inspected. No reference patch, test content, or test names were displayed. Nonzero verifier exit with missing expected test results is not accepted as a valid task failure.",
+  "limitation": "The process log was retained but detailed run-script stdout/stderr/output artifacts were not copied before container removal, so the underlying collection/runtime cause remains undetermined.",
+  "change": "Always retain four fixed verifier artifacts privately before judging exit code; preserve missing reward as missing, not zero.",
+  "tests": {
+    "passed": 19,
+    "log_sha256": "6bc421e2331bfee84b1fe195a768da995afdbaf75209e837e424c5231c6d98b7"
+  },
+  "next_attempt": "PRO_ENV_05, same plan and benchmark version, diagnostic retention changed before rerun"
+}

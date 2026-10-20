@@ -1,13 +1,16 @@
 import io
+import json
 from pathlib import Path
 import sys
 import tarfile
 import tempfile
+import types
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from evaluate_pro_environment import (
-    PRIVATE_FILES, make_archive, reward_from_archive, validate_private_paths,
+    PRIVATE_FILES, VERIFIER_ARTIFACTS, make_archive, retain_verifier_artifacts,
+    reward_from_archive, validate_private_paths,
 )
 
 
@@ -61,6 +64,27 @@ class ProVerifierIsolationTests(unittest.TestCase):
                         self.reward_archive(b"", symlink=True)):
             with self.assertRaises(ValueError):
                 reward_from_archive(archive)
+
+    def test_failure_diagnostics_are_private_and_missing_is_not_a_reward(self):
+        requested = []
+        def get_archive(path):
+            requested.append(path)
+            if path.endswith("reward.txt"):
+                error = RuntimeError("not found")
+                error.status_code = 404
+                raise error
+            return (chunk for chunk in [b"synthetic private diagnostic"]), {}
+        with tempfile.TemporaryDirectory() as temporary:
+            result = retain_verifier_artifacts(types.SimpleNamespace(get_archive=get_archive), Path(temporary))
+            self.assertEqual(requested, ["/logs/verifier/" + name for name in VERIFIER_ARTIFACTS])
+            self.assertEqual(result["reward.txt"], {"status": "missing"})
+            self.assertNotIn("synthetic private diagnostic", json.dumps(result))
+            self.assertEqual(len(list(Path(temporary).glob("private_*.tar"))), 3)
+
+    def test_diagnostic_retention_limit_is_enforced(self):
+        container = types.SimpleNamespace(get_archive=lambda path: ((x for x in [b"abcd"]), {}))
+        with tempfile.TemporaryDirectory() as temporary, self.assertRaises(ValueError):
+            retain_verifier_artifacts(container, Path(temporary), limit=3)
 
 
 if __name__ == "__main__":

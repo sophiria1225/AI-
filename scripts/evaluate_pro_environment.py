@@ -20,6 +20,9 @@ PRIVATE_FILES = (
 )
 MAX_FILE_BYTES = 20 * 1024**2
 MAX_LOG_BYTES = 100 * 1024**2
+VERIFIER_ARTIFACTS = (
+    "run-script-stdout.txt", "run-script-stderr.txt", "output.json", "reward.txt",
+)
 
 
 def validate_private_paths(paths):
@@ -153,6 +156,36 @@ def save_logs(container, destination):
     return {"bytes": total, "sha256": sha(destination)}
 
 
+def retain_verifier_artifacts(container, record, limit=MAX_LOG_BYTES):
+    """Keep fixed diagnostic paths privately, including on nonzero exit.
+
+    Archives are never unpacked onto the host. Their contents and test labels
+    are not included in the public metadata report.
+    """
+    retained = {}
+    for name in VERIFIER_ARTIFACTS:
+        try:
+            stream, _ = container.get_archive("/logs/verifier/" + name)
+        except Exception as error:
+            if getattr(error, "status_code", None) == 404:
+                retained[name] = {"status": "missing"}
+                continue
+            raise
+        destination = record / ("private_" + name + ".tar")
+        total = 0
+        try:
+            with destination.open("xb") as output:
+                for chunk in stream:
+                    total += len(chunk)
+                    if total > limit:
+                        raise ValueError("Private verifier artifact exceeds retention limit")
+                    output.write(chunk)
+        finally:
+            stream.close()
+        retained[name] = {"status": "retained", "archive_bytes": total, "sha256": sha(destination)}
+    return retained
+
+
 def evaluate(client, plan, bundle, phase, repository_path, record):
     name = "harness_pro_" + phase + "_" + record.parent.name
     container = client.containers.create(
@@ -195,6 +228,7 @@ def evaluate(client, plan, bundle, phase, repository_path, record):
         container.reload()
         result["exit_code"] = container.attrs["State"]["ExitCode"]
         result["oom_killed"] = container.attrs["State"].get("OOMKilled")
+        result["private_artifacts"] = retain_verifier_artifacts(container, record)
         result["logs"] = save_logs(container, record / "verifier.log")
         if result["status"] == "timeout":
             return result
