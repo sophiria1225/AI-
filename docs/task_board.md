@@ -6,7 +6,7 @@
 
 | 優先 | ID | 作業 | 状態 | GitHub |
 |---|---|---|---|---|
-| P0 | R01 | 研究コードと記録をGitHubへ移管する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/1) |
+| P0 | R01 | 研究コードと記録をGitHubへ移管する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/1) |
 | P0 | R02 | MiniMax M3の固定版を取得しロードする | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/2) |
 | P0 | R03 | MiniMaxのツール利用とトークン計測を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/3) |
 | P0 | R04 | 公開テストの失敗を見落とさない実行手順を作る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/4) |
@@ -21,7 +21,7 @@
 
 ## R01 研究コードと記録をGitHubへ移管する
 
-本人認証が完了し、research/p2-minimax-baselineをsophiria1225/AI-へpush済み。Issue・専用Project・PRを作成中。変更先をこのリポジトリだけに制限し、公開完了後に新規実験を再開する。
+研究ブランチと作業別5ブランチをsophiria1225/AI-へpushし、Issue 10件・専用Project・PR #11を作成。IssueとProjectの状態一致、GitHub Actions成功を確認。コード・集計・判断理由を公開し、重みと独立評価データはローカルに保持。GitHubの変更先はこのリポジトリだけに制限した。
 
 **なぜ行うか**: 実装・判断・結果を一か所で追跡し、研究を再開可能にする。
 

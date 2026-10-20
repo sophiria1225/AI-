@@ -2,7 +2,7 @@
 
 2026年10月20日：GitHubへの移管とP2を開始。[作業ボード](task_board.md)を進捗の入口とする。
 
-- `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHub認証と初回pushが完了し、GitHub Actionsも成功。[Issues](https://github.com/sophiria1225/AI-/issues)と[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。変更先は`sophiria1225/AI-`だけに制限する。
+- `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
 - MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。
 - Q3の開発2課題が終了。計53呼び出し553,574トークンで、独立評価はいずれも不合格。15380は公開検査7エラー、15957は差分0で未解決。記録監査はエラー0。64K枠不足やswapによる停止ではなかった。[実測と解釈](P2_progress.md)。
 - IQ4_XS約230GBは全6ファイル照合済み。64K・KV f16はMetalメモリ不足とHTTP 500で不適合。別設定の64K・KV q8_0は55,993入力を560.54秒で処理し、抽出・計数が一致、swap 0だった。native tool接続は合格、素のJSON形式は不合格。Q3との純粋な重み精度比較とはしない。ユーザーの指示に従いGitHubへの初回公開を先に完了し、実課題はその後に開始する。
