@@ -1,0 +1,31 @@
+{
+  "reviewed_at": "2026-10-20T19:10:53.598824+00:00",
+  "commit": "42b5bcf3cd334fee33f0c37c02070a9f5807add5",
+  "sources": [
+    {
+      "path": "experiments/code/simplified/function_calling_agent.py",
+      "url": "https://github.com/StonyBrookNLP/appworld/blob/42b5bcf3cd334fee33f0c37c02070a9f5807add5/experiments/code/simplified/function_calling_agent.py",
+      "sha256": "dd9099bff129e8fbf97e77e6f8679c3395a8c82c9db0cdded31b9e2b3ac72b7f",
+      "bytes": 9818
+    },
+    {
+      "path": "experiments/code/simplified/react_code_agent.py",
+      "url": "https://github.com/StonyBrookNLP/appworld/blob/42b5bcf3cd334fee33f0c37c02070a9f5807add5/experiments/code/simplified/react_code_agent.py",
+      "sha256": "4b80c27e61b5d04859c447fa47e525025f2c10044a8799ffad650f42fbfc5963",
+      "bytes": 9659
+    },
+    {
+      "path": "experiments/code/simplified/agent.py",
+      "url": "https://github.com/StonyBrookNLP/appworld/blob/42b5bcf3cd334fee33f0c37c02070a9f5807add5/experiments/code/simplified/agent.py",
+      "sha256": "e48934f66a23d00e32babbf8759343d21c277cc722e874b1d25e2a9bfc8fe017",
+      "bytes": 6221
+    }
+  ],
+  "scope": "Read-only source review; no official agent installation, execution, score reproduction or external repository modification.",
+  "findings": [
+    "Official function-calling agent exposes selected API schemas and permits multiple tool calls per step.",
+    "Its optional ground_truth API selection enables label access; it must not be used for a non-oracle comparison.",
+    "Official ReAct code agent supports code execution; README documents variable reuse across calls.",
+    "Current P6 uses one generic API wrapper per response and is only an interface calibration, not an equivalent strong official baseline."
+  ]
+}

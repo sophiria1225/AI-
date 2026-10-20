@@ -1,0 +1,16 @@
+{
+  "purpose": "Calibrate public-prefix replay before any same-state memory intervention.",
+  "source_run_id": "P6_01_LEDGER_V03",
+  "prefix_turns": 7,
+  "selection_reason": "The second memory update follows the first malformed, unexecuted action. Use exactly the prefix supplied to that update, not a successful later suffix.",
+  "run_ids": ["P6_PREFIX_01_A", "P6_PREFIX_01_B"],
+  "model_calls": 0,
+  "rules": [
+    "Replay only recorded public API requests in fresh simulated worlds.",
+    "Malformed arguments reproduce the format error and are not sent to the world.",
+    "Stop immediately if an observed response differs.",
+    "Compare the two NEW frozen database states after the prefix.",
+    "Do not claim original checkpoint identity: no original database checkpoint was saved at turn 7.",
+    "No evaluator, gold target list, model response regeneration or parameter changes."
+  ]
+}

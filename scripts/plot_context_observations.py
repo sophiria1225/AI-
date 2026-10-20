@@ -17,6 +17,7 @@ def main():
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--storage-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--task-id")
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     schedule = plan.get("prior_run_order", []) + plan["run_order"]
@@ -24,6 +25,8 @@ def main():
     rows, points, unfinished = [], [], []
     tasks = list(dict.fromkeys(t for t, _, _ in schedule))
     for task, arm, name in schedule:
+        if args.task_id and task != args.task_id:
+            continue
         trial = args.storage_root / "records/context_pilot" / name
         if not (trial / "summary.json").exists():
             unfinished.append(name)
@@ -77,13 +80,17 @@ def main():
     axes[1].set_title("作業が進む間に費用がどこで増えたか")
     axes[1].legend(frameon=False, fontsize=8)
     figure.suptitle("P6 情報保持方式の導入観察：終了した試行のみ", fontsize=15)
-    figure.supxlabel("学習用2課題・各方式1回。費用不明は総額の下限。成功率の一般化・品質維持・新規性は未確定。", fontsize=9)
+    shown_tasks = len({r["task_number"] for r in rows})
+    figure.supxlabel(f"この図は学習用{shown_tasks}課題・各方式1回。費用不明は総額の下限。"
+                     "成功率の一般化・品質維持・新規性は未確定。", fontsize=9)
     for extension in ("png", "svg", "pdf"):
         figure.savefig(args.output_dir / f"cost_and_progress.{extension}", dpi=160,
                        metadata={"Creator": "plot_context_observations.py"})
+    svg = args.output_dir / "cost_and_progress.svg"
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
     plt.close(figure)
     with (args.output_dir / "call_costs.csv").open("w") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(points[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(points[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(points)
     (args.output_dir / "measurements.json").write_text(json.dumps({
