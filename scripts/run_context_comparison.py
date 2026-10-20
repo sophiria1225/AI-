@@ -86,15 +86,24 @@ class Inference:
 
     def call(self, role, messages, tools):
         elapsed = time.monotonic() - self.started
+        if len(self.calls) >= self.config["max_calls"]:
+            raise BudgetStop("call_limit")
+        if elapsed >= self.config["max_wall_seconds"]:
+            raise BudgetStop("wall_limit")
         cfg = dict(self.config["model"])
         cfg["temperature"] = (self.config["draft_temperature"] if role == "focus"
                               else self.config["agent_temperature"])
         # Compression calls must not shift the executor's random seed schedule.
         cfg["seed"] = self.config["seed"] + sum(c["role"] == role for c in self.calls)
         cfg["num_predict"] = self.config["max_output_tokens"]
-        predicted = count_input(cfg, messages, tools)["input_tokens"]
-        if len(self.calls) >= self.config["max_calls"]:
-            raise BudgetStop("call_limit")
+        try:
+            predicted = count_input(cfg, messages, tools, timeout=min(
+                60, self.config["max_wall_seconds"] - elapsed))["input_tokens"]
+        except TimeoutError:
+            if time.monotonic() - self.started >= self.config["max_wall_seconds"]:
+                raise BudgetStop("wall_limit_during_count")
+            raise
+        elapsed = time.monotonic() - self.started
         if elapsed >= self.config["max_wall_seconds"]:
             raise BudgetStop("wall_limit")
         if predicted + cfg["num_predict"] > cfg["num_ctx"]:
@@ -112,10 +121,15 @@ class Inference:
                "cached_input_tokens": response.get("cached_input_tokens"),
                "wall_seconds": response["wall_seconds"],
                "finish_reason": response.get("done_reason"),
+               "timeout_scope": response.get("timeout_scope"),
+               "error_kind": response.get("error_kind"),
                "predicted_input_tokens": predicted}
         self.calls.append(row)
         write_json(self.output / "usage.json", self.calls)
         if response["status"] != "ok":
+            if (response.get("error_kind") == "timeout"
+                    and response.get("timeout_scope") == "run_wall"):
+                raise BudgetStop("wall_limit_during_model_call")
             raise RuntimeError("model failure; usage unknown, no free retry")
         if response["input_tokens"] != predicted:
             raise RuntimeError("preflight and terminal input counts differ")
@@ -155,6 +169,32 @@ def compress(mode, infer, task, spans, selected, ledger, config):
         return available[-config["ledger_recent_spans"]:], value, {
             "items": len(value["items"]), "semantics_verified": False}
     raise ValueError("unknown compression arm")
+
+
+def recorded_compression(mode, infer, task, spans, selected, ledger, config, events):
+    """Keep immutable before/after snapshots, including interrupted attempts."""
+    before = list(selected)
+    before_calls, before_tokens = len(infer.calls), infer.tokens
+    event = {"turn": len(spans), "visible_before": list(before)}
+    try:
+        selected, ledger, detail = compress(
+            mode, infer, task, spans, selected, ledger, config)
+        event.update(status="ok", detail=detail)
+    except (ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
+        selected = list(before)
+        event.update(status="invalid_keep_original", error=str(error))
+    except Exception as error:
+        event.update(status="aborted", error_type=type(error).__name__,
+                     stop_reason=str(error))
+        raise
+    finally:
+        event.update(visible_after=list(selected), calls=len(infer.calls) - before_calls,
+                     tokens=infer.tokens - before_tokens,
+                     unknown_usage_calls=sum(c["status"] != "ok"
+                                             for c in infer.calls[before_calls:]))
+        events.append(event)
+        write_json(infer.output / "compressions.json", events)
+    return selected, ledger, event["status"] == "invalid_keep_original"
 
 
 def run(config, mode, task_id, run_id, storage, appworld_root, python):
@@ -199,26 +239,11 @@ def run(config, mode, task_id, run_id, storage, appworld_root, python):
             memory = render_memory(spans, selected, ledger, config["observation_page_characters"])
             if (mode != "full" and len(spans) > last_compression_turn
                     and infer.memory_tokens(memory) > config["compression_trigger_tokens"]):
-                before = list(selected)
-                before_calls = len(infer.calls)
-                before_tokens = infer.tokens
-                event = {"turn": len(spans), "visible_before": before}
-                try:
-                    selected, ledger, detail = compress(
-                        mode, infer, task, spans, selected, ledger, config)
-                    event.update(status="ok", detail=detail)
-                except (ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
-                    # A malformed compressor never silently loses evidence.
-                    selected = before
-                    event.update(status="invalid_keep_original", error=str(error))
-                    format_errors += 1
-                event.update(visible_after=list(selected),
-                             calls=len(infer.calls) - before_calls,
-                             tokens=infer.tokens - before_tokens)
-                compression_events.append(event)
+                selected, ledger, invalid = recorded_compression(
+                    mode, infer, task, spans, selected, ledger, config, compression_events)
+                format_errors += int(invalid)
                 last_compression_turn = len(spans)
                 memory = render_memory(spans, selected, ledger, config["observation_page_characters"])
-                write_json(output / "compressions.json", compression_events)
             message = infer.call("agent", [
                 {"role": "system", "content": AGENT_PROMPT},
                 {"role": "user", "content": compact({"task": task,

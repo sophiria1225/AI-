@@ -1,0 +1,95 @@
+{
+  "plan_sha256": "0fbec5d288f57cb0293a904db07e7c6c60cb2823a4ec751270433e534b809a18",
+  "trials": [
+    {
+      "run_id": "P6_01_FULL_V02",
+      "task_id": "07b42fd_1",
+      "arm": "full",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 86742,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "input_tokens": 84810,
+          "output_tokens": 1932,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 13,
+      "tool_turns": 13,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 588.0651349161053,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 5,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 8099,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "de48d8759518cdfa5c5f1e98b5382ecc510db7c5f7a720c884c1f5f327e51455",
+        "usage": "bc452c6bc2526a767997b259841f17266d12047ff627ecba2f2b361cbf287a69",
+        "evaluation": "d00b9f83a9a7575ce4728b0e8ce5cbeea08e85516f828c0dacac3a6087f689d2"
+      }
+    },
+    {
+      "run_id": "P6_01_FOCUS_V02",
+      "task_id": "07b42fd_1",
+      "arm": "focus",
+      "stop_reason": "runtime_error",
+      "declared_complete": false,
+      "known_total_tokens": 132124,
+      "usage_by_role": {
+        "agent": {
+          "calls": 7,
+          "input_tokens": 38972,
+          "output_tokens": 1142,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 12,
+          "input_tokens": 70496,
+          "output_tokens": 21514,
+          "unknown_usage": 1
+        }
+      },
+      "model_calls": 19,
+      "tool_turns": 7,
+      "compression_events": 4,
+      "format_errors": 2,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1800.8828404169763,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 4,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 6685,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "22beb77233e7c5fe72afc748ec89fc736feeb6b542aa57fbc6d429f42018dabc",
+        "usage": "f4868291c377d0fa70fbc745b5654eb3c0ed83df32ed7414fed575bab45b8183",
+        "evaluation": "10625bfb3705683025655c9024953ddef5398a2c7b2659b18e176ce36cbe7a4e"
+      }
+    }
+  ],
+  "pending": [
+    "P6_01_LEDGER_V02",
+    "P6_02_LEDGER_V02",
+    "P6_02_FULL_V02",
+    "P6_02_FOCUS_V02"
+  ],
+  "total_model_calls": 32,
+  "known_total_tokens": 218866,
+  "unknown_usage_calls": 1,
+  "audit_errors": 0,
+  "scope": "Two development scenarios, one seed per arm; no new method, no confirmatory claim.",
+  "exclusions": "No task instructions, API response bodies, model reasoning or evaluator details exported."
+}

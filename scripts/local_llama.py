@@ -81,6 +81,10 @@ def model_call(config, messages, out, remaining_wall, tools):
               'message': {'role': 'assistant', 'content': ''}, 'backend': 'llama.cpp'}
     started = time.monotonic()
     timeout = max(1, min(config['call_timeout_seconds'], int(remaining_wall)))
+    record.update(timeout_seconds=timeout,
+                  timeout_scope=('run_wall' if remaining_wall <= config['call_timeout_seconds']
+                                 else 'call'),
+                  error_kind=None)
     signal.alarm(timeout)
     try:
         raw = post(config, '/v1/chat/completions', payload, timeout)
@@ -88,6 +92,9 @@ def model_call(config, messages, out, remaining_wall, tools):
         record.update(parse_response(raw))
     except Exception as error:
         record['error'] = repr(error)
+        record['error_kind'] = ('timeout' if isinstance(error, TimeoutError)
+                                or isinstance(getattr(error, 'reason', None), TimeoutError)
+                                else 'request_or_response')
     finally:
         signal.alarm(0)
         record['wall_seconds'] = time.monotonic() - started
