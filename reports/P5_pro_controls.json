@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-20T10:03:33.002410+00:00",
+  "model_calls": 0,
+  "host_control_tests": 102,
+  "result": "passed",
+  "log_sha256": "aa6100e3511cb0bf009e0d11db8fcb53fe47444783371cae93163cdc795e2b02",
+  "new_controls": [
+    "phase/strategy and one-attempt constraint",
+    "P4 input/model/tool/token settings unchanged; both P5 arms use 7200 seconds",
+    "shared ledger, alternating identity, peer observation delivery",
+    "artifact changes invalidate earlier completion votes",
+    "global call exhaustion prevents another worker call",
+    "batch refuses unequal arm configs or edited plan before any execution"
+  ],
+  "source_sha256": {
+    "run_pro_pilot.py": "5c5fd31d32f4c51dd604da965cf6ebd08fb468f3b2e29b40d01e6d6c53b5b141",
+    "run_pro_comparison_batch.py": "a96a75aef3bfcf8d96ef21216140e182493dd2cac54fcb6f4499313d2e42bb67"
+  },
+  "test_sha256": "34e6b3e7ccf3a88a1a79bbedca198b9ab860c0ea58766b05597b79a39138dc7c",
+  "time_ceiling_review": {
+    "basis": "P3 fixed-pair development observations",
+    "rows": [
+      {
+        "task": "django__django-15380",
+        "tokens": 275008,
+        "wall_seconds": 2274.539552250062,
+        "linear_600k_seconds": 4962.487387094329
+      },
+      {
+        "task": "django__django-15957",
+        "tokens": 275531,
+        "wall_seconds": 2324.115696416935,
+        "linear_600k_seconds": 5061.025502938548
+      }
+    ],
+    "interpretation": "Simple scaling across tasks is only a planning estimate; it does not establish the new task duration.",
+    "decision": "Both P5 arms use 7200 seconds; P4 is retained as earlier observation and not treated as a matched 7200-second control."
+  },
+  "config_differences_from_P4": {
+    "phase": {
+      "before": "P4",
+      "after": "P5"
+    },
+    "max_wall_seconds": {
+      "before": 3600,
+      "after": 7200
+    },
+    "frozen_at": {
+      "before": "2026-10-20T09:04:33.570534+00:00",
+      "after": "2026-10-20T10:03:33.002410+00:00"
+    },
+    "version": {
+      "before": "P4_Pro_single_v01",
+      "after": "P5_Pro_common_v01"
+    },
+    "scope": {
+      "before": "One Pro development single-agent observation; not a comparative effectiveness result",
+      "after": "One development task with single and fixed pair; one trial each, no confirmatory claim"
+    }
+  }
+}
