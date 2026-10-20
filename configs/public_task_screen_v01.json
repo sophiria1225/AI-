@@ -1,0 +1,32 @@
+{
+  "frozen_at": "2026-10-20T06:57:14.392695+00:00",
+  "dataset": "princeton-nlp/SWE-bench_Verified",
+  "dataset_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+  "scope": "Public-statement screening only; no model experiments",
+  "public_inputs_sha256": "7dc6efab410f92544dca6ec03d0b1e28f3a748417e3e6dbc59a53c96665d3f92",
+  "registry_snapshot": "configs/public_task_screen_registry_v01.json",
+  "registry_sha256": "e55cbc8d89ae90e2e492e9736636d9ffed50cbeeca5112788360250e83fc0973",
+  "seed": "public-dependency-screen-20261020-v01",
+  "ranking": "sha256(seed + NUL + dataset_revision + NUL + instance_id), ascending within repository",
+  "per_repository": 2,
+  "repositories": [
+    "matplotlib/matplotlib",
+    "pydata/xarray",
+    "pytest-dev/pytest",
+    "scikit-learn/scikit-learn",
+    "sphinx-doc/sphinx",
+    "sympy/sympy"
+  ],
+  "classification": [
+    "continue_public_code_review",
+    "localized_control",
+    "defer"
+  ],
+  "model_runs_authorized_by_plan": 0,
+  "rules": [
+    "No gold or evaluator columns or model results in selection",
+    "Record every reviewed candidate and reasons for deferral",
+    "Public-statement suitability is not proof of a large interdependent implementation",
+    "Preserve this pool if no suitable task is found; expand under a separate recorded plan"
+  ]
+}
