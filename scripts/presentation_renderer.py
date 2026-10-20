@@ -44,7 +44,9 @@ def wrap(text, width, size):
     return lines
 
 
-def render(slides, output, font_path, font_name="Arial Unicode MS"):
+def render(slides, output, font_path, font_name="Arial Unicode MS", *,
+           stem="AI_harness_research_20261020",
+           title="AIハーネス研究 中間報告 2026-10-20"):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     pdfmetrics.registerFont(TTFont(FONT, str(font_path)))
@@ -61,11 +63,11 @@ def render(slides, output, font_path, font_name="Arial Unicode MS"):
         raise ValueError("\n".join(errors))
     prs = Presentation()
     prs.slide_width, prs.slide_height = Pt(WIDTH), Pt(HEIGHT)
-    prs.core_properties.title = "AIハーネス研究 中間報告 2026-10-20"
+    prs.core_properties.title = title
     prs.core_properties.subject = "目的・アーキテクチャ・実験・考察・今後の検証"
     prs.core_properties.author = "AIハーネス研究"
     prs.core_properties.keywords = "開発観察;総トークン;オーケストレーション;未検証の仮説"
-    pdf = canvas.Canvas(str(output/"AI_harness_research_20261020.pdf"),
+    pdf = canvas.Canvas(str(output/(stem + ".pdf")),
                         pagesize=(WIDTH, HEIGHT), invariant=1)
     pdf.setTitle(prs.core_properties.title)
     pdf.setAuthor(prs.core_properties.author)
@@ -195,7 +197,7 @@ def render(slides, output, font_path, font_name="Arial Unicode MS"):
         slide.notes_slide.notes_text_frame.text = "\n\n".join(filter(None, notes))
         pdf.showPage()
     pdf.save()
-    prs.save(output/"AI_harness_research_20261020.pptx")
+    prs.save(output/(stem + ".pptx"))
     (output/"slides.json").write_text(json.dumps(slides, ensure_ascii=False, indent=2)+"\n")
     (output/"layout_checks.json").write_text(json.dumps({
         "pages": len(slides), "text_boxes": len(measurements), "overflow": [],

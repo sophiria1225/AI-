@@ -1,0 +1,91 @@
+{
+  "run_id": "P6_02_FOCUS_V03",
+  "planned_drafts_per_cycle": 3,
+  "threshold": 0.3,
+  "required_citation_count": 1,
+  "cycles": [
+    {
+      "cycle": 1,
+      "input_spans": 12,
+      "recorded_draft_calls": 1,
+      "certificate_after_draft": null,
+      "prefix_blocker": "invalid_draft_before_certificate",
+      "later_recorded_calls": 0,
+      "later_calls_known_tokens": 0,
+      "later_unknown_usage_calls": 0,
+      "later_recorded_call_seconds": 0,
+      "recorded_selection_matches_certificate": null,
+      "call_hashes": [
+        {
+          "id": "call_013",
+          "request_sha256": "ead71f8f84ec5ba08a48bce99341cf42f553eed381a0cfebc356cebae3b99c66",
+          "response_sha256": "1fc99597b51c30cea8f36573a72519f2032d0054dc1bef88fb0d883bb8c7b38a"
+        }
+      ]
+    },
+    {
+      "cycle": 2,
+      "input_spans": 13,
+      "recorded_draft_calls": 3,
+      "certificate_after_draft": null,
+      "prefix_blocker": "invalid_draft_before_certificate",
+      "later_recorded_calls": 0,
+      "later_calls_known_tokens": 0,
+      "later_unknown_usage_calls": 0,
+      "later_recorded_call_seconds": 0,
+      "recorded_selection_matches_certificate": null,
+      "call_hashes": [
+        {
+          "id": "call_015",
+          "request_sha256": "b069f08cd01c7472202de44d38597d7eecc30cf5714eb7761a76e7572e2f7565",
+          "response_sha256": "2c85c0b7a2a290745d2f291fed2b440811b19a5213fc7080c434e269db861bd9"
+        },
+        {
+          "id": "call_016",
+          "request_sha256": "d586ded28d33a30d0c416ca6c442a24fca0ab41ebcf9a2d74a99cec51d2eb562",
+          "response_sha256": "e82ad283ca2ce1b7926b67c9dc721d47578a4253963441807921ffd5684846cc"
+        },
+        {
+          "id": "call_017",
+          "request_sha256": "efeded8141818c6060e8afeafe7dfe9f7de1c58e9ba6f2390e8325bf1a3692f3",
+          "response_sha256": "d74744773e722b1d8cbcfab7904998159865610f7af30076e08c794b41102ce2"
+        }
+      ]
+    },
+    {
+      "cycle": 3,
+      "input_spans": 14,
+      "recorded_draft_calls": 2,
+      "certificate_after_draft": null,
+      "prefix_blocker": "invalid_draft_before_certificate",
+      "later_recorded_calls": 0,
+      "later_calls_known_tokens": 0,
+      "later_unknown_usage_calls": 0,
+      "later_recorded_call_seconds": 0,
+      "recorded_selection_matches_certificate": null,
+      "call_hashes": [
+        {
+          "id": "call_019",
+          "request_sha256": "7b3b5bdb95b9c8953ec8ffd13188bba920395f0746a0138b44c6ee4cc8f23a40",
+          "response_sha256": "367359f117426cc8127e7a6a657a7a4633c2499c69f145af50ad3ed1d03c2f8b"
+        },
+        {
+          "id": "call_020",
+          "request_sha256": "de65fe8755b6835d8edc181e36fb205ba37abb7358001874906da693dea17ce0",
+          "response_sha256": "51cc27566b45bf9fec52045ae8a28e23c4f397817de9f75d5abd4ecfe18cef85"
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "summary.json": "30741cbf3c565b2516a98dc02fad4834ecd17ec373865206a1a0e2c9b4b6ca70",
+    "plan.json": "d9195d966666a810c823f99c43ccb0cbf2d057034cfc7273d7ad5265dc0e0784",
+    "usage.json": "a720f25c98d158dbb389220a651da9edfd31e2692008299ef0b58d8708ed39da",
+    "compressions.json": "4a936a27eeec00828ae74025f5a5d4fa2518c304bc231eff330b140bb9bf3131"
+  },
+  "retention_module_sha256": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+  "scope": "Certificate concerns one retention decision only. Later measured call costs are candidates for omission, not measured end-to-end savings. Future seeds, numerical cache effects, new actions and final success are not reproduced. Invalid prefixes are never silently repaired.",
+  "script_sha256": "d600f49ea6bc2e9cecb14f807cab76dca4cc2ae829e951fdc185307f00d3aeb0",
+  "inference_calls": 0,
+  "environment_actions": 0
+}

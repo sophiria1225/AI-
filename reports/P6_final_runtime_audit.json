@@ -1,0 +1,633 @@
+{
+  "trials": [
+    {
+      "run_id": "P6_01_FULL_V02",
+      "task_id": "07b42fd_1",
+      "arm": "full",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 86742,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "input_tokens": 84810,
+          "output_tokens": 1932,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 13,
+      "tool_turns": 13,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 588.0651349161053,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 5,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 8099,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "de48d8759518cdfa5c5f1e98b5382ecc510db7c5f7a720c884c1f5f327e51455",
+        "usage": "bc452c6bc2526a767997b259841f17266d12047ff627ecba2f2b361cbf287a69",
+        "evaluation": "d00b9f83a9a7575ce4728b0e8ce5cbeea08e85516f828c0dacac3a6087f689d2"
+      },
+      "compression_audit": [],
+      "call_seconds_by_role": {
+        "agent": 584.6325666679768
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 0,
+        "missing_compression_records": 0
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    },
+    {
+      "run_id": "P6_01_FOCUS_V02",
+      "task_id": "07b42fd_1",
+      "arm": "focus",
+      "stop_reason": "runtime_error",
+      "declared_complete": false,
+      "known_total_tokens": 132124,
+      "usage_by_role": {
+        "agent": {
+          "calls": 7,
+          "input_tokens": 38972,
+          "output_tokens": 1142,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 12,
+          "input_tokens": 70496,
+          "output_tokens": 21514,
+          "unknown_usage": 1
+        }
+      },
+      "model_calls": 19,
+      "tool_turns": 7,
+      "compression_events": 4,
+      "format_errors": 2,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1800.8828404169763,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 4,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 6685,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "22beb77233e7c5fe72afc748ec89fc736feeb6b542aa57fbc6d429f42018dabc",
+        "usage": "f4868291c377d0fa70fbc745b5654eb3c0ed83df32ed7414fed575bab45b8183",
+        "evaluation": "10625bfb3705683025655c9024953ddef5398a2c7b2659b18e176ce36cbe7a4e"
+      },
+      "compression_audit": [
+        {
+          "index": 1,
+          "first_call": "call_004",
+          "calls": 3,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 3,
+          "selection_removed_spans": 0,
+          "known_tokens": 22827,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 290.20935441798065,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 2,
+          "first_call": "call_008",
+          "calls": 3,
+          "input_span_count": 4,
+          "recorded": true,
+          "status": "invalid_keep_original",
+          "recorded_before_matches_request": false,
+          "output_span_count": 4,
+          "selection_removed_spans": 0,
+          "known_tokens": 22810,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 275.0694017079659,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 5,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 3,
+          "first_call": "call_012",
+          "calls": 2,
+          "input_span_count": 5,
+          "recorded": true,
+          "status": "invalid_keep_original",
+          "recorded_before_matches_request": false,
+          "output_span_count": 5,
+          "selection_removed_spans": 0,
+          "known_tokens": 20588,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 505.7804602080723,
+          "length_stops": 1,
+          "structural_errors": {
+            "unparseable_arguments": 1,
+            "unavailable_references": 3,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 4,
+          "first_call": "call_015",
+          "calls": 3,
+          "input_span_count": 6,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 6,
+          "selection_removed_spans": 0,
+          "known_tokens": 25785,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 406.78369562502485,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 5,
+          "first_call": "call_019",
+          "calls": 1,
+          "input_span_count": 7,
+          "recorded": false,
+          "status": "missing_event",
+          "recorded_before_matches_request": null,
+          "output_span_count": null,
+          "selection_removed_spans": null,
+          "known_tokens": 0,
+          "unknown_usage_calls": 1,
+          "wall_seconds": 3.0006419169949368,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        }
+      ],
+      "call_seconds_by_role": {
+        "agent": 316.3207067908952,
+        "focus": 1480.8435538760386
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 2,
+        "missing_compression_records": 1
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    },
+    {
+      "run_id": "P6_01_LEDGER_V03",
+      "task_id": "07b42fd_1",
+      "arm": "ledger",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 76902,
+      "usage_by_role": {
+        "agent": {
+          "calls": 9,
+          "input_tokens": 44388,
+          "output_tokens": 5696,
+          "unknown_usage": 0
+        },
+        "ledger": {
+          "calls": 3,
+          "input_tokens": 22793,
+          "output_tokens": 4025,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 12,
+      "tool_turns": 9,
+      "compression_events": 3,
+      "format_errors": 1,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1013.4607349999715,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 2,
+        "fail_count": 3,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 8810,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "f2f7fc658ddd5033ff8dab685ed4aa6ba1ffc8ae2a8cc53a8a554c5431c64090",
+        "usage": "1f067443e69cf6c4a506c13b0f5ffeee55fd23f9bd04321cb88b8b04ab98dfe3",
+        "evaluation": "51d45f589dadba753c9933b31fa5fcfb5f069fcf43d54953a9cdeb376f516d3b"
+      },
+      "compression_audit": [
+        {
+          "index": 1,
+          "first_call": "call_004",
+          "calls": 1,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 1,
+          "known_tokens": 7225,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 101.92266045801807,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 2,
+          "first_call": "call_009",
+          "calls": 1,
+          "input_span_count": 6,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 4,
+          "known_tokens": 10216,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 152.64423175004777,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 3,
+          "first_call": "call_011",
+          "calls": 1,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 1,
+          "known_tokens": 9377,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 161.0190345410956,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        }
+      ],
+      "call_seconds_by_role": {
+        "agent": 594.8773671659874,
+        "ledger": 415.58592674916144
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 0,
+        "missing_compression_records": 0
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    },
+    {
+      "run_id": "P6_02_LEDGER_V03",
+      "task_id": "22cc237_1",
+      "arm": "ledger",
+      "stop_reason": "wall_limit_during_model_call",
+      "declared_complete": false,
+      "known_total_tokens": 151130,
+      "usage_by_role": {
+        "agent": {
+          "calls": 18,
+          "input_tokens": 87645,
+          "output_tokens": 3219,
+          "unknown_usage": 1
+        },
+        "ledger": {
+          "calls": 5,
+          "input_tokens": 48317,
+          "output_tokens": 11949,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 23,
+      "tool_turns": 17,
+      "compression_events": 5,
+      "format_errors": 0,
+      "api_bridge_errors": 1,
+      "wall_seconds": 1801.0988670829684,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 3,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 12697,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "d47961a7ba07a5e95975f97dd0825ff14f679c46895292093a3654fdd05fd071",
+        "usage": "28dcdd6b8b0c0c7ba51cc370ad17175b6823da0f649d1beda038a8d46e7896cc",
+        "evaluation": "bfc1c696ebb3a597ec2ae13e67b1030ddb33ee0a3dff68de00b11e636a565f31"
+      },
+      "compression_audit": [
+        {
+          "index": 1,
+          "first_call": "call_010",
+          "calls": 1,
+          "input_span_count": 9,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 7,
+          "known_tokens": 8847,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 154.45145587495063,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 2,
+          "first_call": "call_016",
+          "calls": 1,
+          "input_span_count": 7,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 5,
+          "known_tokens": 9657,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 180.85902904090472,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 3,
+          "first_call": "call_018",
+          "calls": 1,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 1,
+          "known_tokens": 11525,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 233.56014779093675,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 4,
+          "first_call": "call_020",
+          "calls": 1,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 1,
+          "known_tokens": 15675,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 287.55563275003806,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 5,
+          "first_call": "call_022",
+          "calls": 1,
+          "input_span_count": 3,
+          "recorded": true,
+          "status": "ok",
+          "recorded_before_matches_request": true,
+          "output_span_count": 2,
+          "selection_removed_spans": 1,
+          "known_tokens": 14562,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 252.69722783390898,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        }
+      ],
+      "call_seconds_by_role": {
+        "agent": 688.1817677911604,
+        "ledger": 1109.1234932907391
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 0,
+        "missing_compression_records": 0
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    },
+    {
+      "run_id": "P6_02_FULL_V03",
+      "task_id": "22cc237_1",
+      "arm": "full",
+      "stop_reason": "wall_limit_during_model_call",
+      "declared_complete": false,
+      "known_total_tokens": 206454,
+      "usage_by_role": {
+        "agent": {
+          "calls": 26,
+          "input_tokens": 199396,
+          "output_tokens": 7058,
+          "unknown_usage": 1
+        }
+      },
+      "model_calls": 26,
+      "tool_turns": 25,
+      "compression_events": 0,
+      "format_errors": 2,
+      "api_bridge_errors": 1,
+      "wall_seconds": 1800.1958917499287,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 3,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 17682,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "29dc36e16d56998e4b82d913ac69df88561b058eaf6db4f148bd9414948ed443",
+        "usage": "e5674a9c6a439100a5dd3cfa16be675ca8bd87aa99a642bdbebe97c2f52a72c4",
+        "evaluation": "a94333f5dc9336e59ca4049520b11575f7d756857e7b1705567601a94e15c6a3"
+      },
+      "compression_audit": [],
+      "call_seconds_by_role": {
+        "agent": 1796.6202159159584
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 0,
+        "missing_compression_records": 0
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    },
+    {
+      "run_id": "P6_02_FOCUS_V03",
+      "task_id": "22cc237_1",
+      "arm": "focus",
+      "stop_reason": "wall_limit_during_model_call",
+      "declared_complete": false,
+      "known_total_tokens": 134168,
+      "usage_by_role": {
+        "agent": {
+          "calls": 15,
+          "input_tokens": 63760,
+          "output_tokens": 2419,
+          "unknown_usage": 1
+        },
+        "focus": {
+          "calls": 6,
+          "input_tokens": 49662,
+          "output_tokens": 18327,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 21,
+      "tool_turns": 14,
+      "compression_events": 3,
+      "format_errors": 3,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1800.195737458067,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 3,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 8488,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "30741cbf3c565b2516a98dc02fad4834ecd17ec373865206a1a0e2c9b4b6ca70",
+        "usage": "a720f25c98d158dbb389220a651da9edfd31e2692008299ef0b58d8708ed39da",
+        "evaluation": "abb050bf8a6285163cf5fb96bd1c8a717e09ade56616f974808ff18e4156d8ec"
+      },
+      "compression_audit": [
+        {
+          "index": 1,
+          "first_call": "call_013",
+          "calls": 1,
+          "input_span_count": 12,
+          "recorded": true,
+          "status": "invalid_keep_original",
+          "recorded_before_matches_request": true,
+          "output_span_count": 12,
+          "selection_removed_spans": 0,
+          "known_tokens": 11861,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 306.18541683396325,
+          "length_stops": 1,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 2,
+          "first_call": "call_015",
+          "calls": 3,
+          "input_span_count": 13,
+          "recorded": true,
+          "status": "invalid_keep_original",
+          "recorded_before_matches_request": true,
+          "output_span_count": 13,
+          "selection_removed_spans": 0,
+          "known_tokens": 32551,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 522.3295466259588,
+          "length_stops": 0,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 5,
+            "duplicate_reference_lists": 0
+          }
+        },
+        {
+          "index": 3,
+          "first_call": "call_019",
+          "calls": 2,
+          "input_span_count": 14,
+          "recorded": true,
+          "status": "invalid_keep_original",
+          "recorded_before_matches_request": true,
+          "output_span_count": 14,
+          "selection_removed_spans": 0,
+          "known_tokens": 23577,
+          "unknown_usage_calls": 0,
+          "wall_seconds": 463.19869500026107,
+          "length_stops": 1,
+          "structural_errors": {
+            "unparseable_arguments": 0,
+            "unavailable_references": 0,
+            "duplicate_reference_lists": 0
+          }
+        }
+      ],
+      "call_seconds_by_role": {
+        "agent": 504.7765192501247,
+        "focus": 1291.713658460183
+      },
+      "runtime_artifact_findings": {
+        "before_snapshot_mismatches": 0,
+        "missing_compression_records": 0
+      },
+      "audit_scope": "Structural call and memory metadata only. No reasoning, task text, evaluator content or semantic target-correctness inspection.",
+      "audit_script_sha256": "fea924abc1062868338c17728e1377025a0536753f16f60b1f4767dc2b9dc9f1"
+    }
+  ],
+  "scope": "Structural runtime audit only; old v02 artifacts are not overwritten."
+}
