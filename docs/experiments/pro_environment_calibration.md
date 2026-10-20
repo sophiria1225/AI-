@@ -36,4 +36,23 @@ sh /Users/tp26013/AI-/scripts/with_container_env.sh \
 
 準備・起動確認が通った後、別の新しい環境で空差分と参照修正を評価する。V2の検査ファイルと参照修正は固定版から機械的に評価側へ取得し、本文を研究者・生成側へ表示しない。実行ログと評価入力も生成側へ戻さない。
 
-この評価処理はまだ実装・実行していない。正負対照と使用資源が確認できて初めて、追加モデル試行の条件を決める。旧Verifiedの評価コードやV1の課題用イメージへ置き換えてV2と呼ばない。
+`scripts/evaluate_pro_environment.py`へ評価側の処理を実装した。固定した6ファイルだけを取得し、Git blobとSHAを照合する。空差分用のコンテナへ参照修正はコピーしない。rewardの欠損・非数値・非二値を0点へ変換せず、評価エラーとして保持する。評価用tarのパスをホストへ展開せず、所定の小さなrewardファイルだけを読み取る。
+
+4つの追加検査で、空差分側への参照修正の不在、許可ファイル・phaseの制限、不明rewardの拒否、tarの不正パス・リンクの拒否を確認した。実際の評価ファイル取得と正負対照はまだ実行していない。
+
+準備が通った同じrun-idで、次を順に実行する。正負対照にはそれぞれ新しいコンテナを用い、原記録を上書きしない。
+
+```bash
+sh /Users/tp26013/AI-/scripts/with_container_env.sh \
+  /Users/tp26013/AI-/.venv/bin/python scripts/evaluate_pro_environment.py \
+  --storage-root /Users/tp26013/AI- --run-id PRO_ENV_01 --phase negative_control
+sh /Users/tp26013/AI-/scripts/with_container_env.sh \
+  /Users/tp26013/AI-/.venv/bin/python scripts/evaluate_pro_environment.py \
+  --storage-root /Users/tp26013/AI- --run-id PRO_ENV_01 --phase reference_control
+```
+
+正負対照と使用資源が確認できて初めて、追加モデル試行の条件を決める。旧Verifiedの評価コードやV1の課題用イメージへ置き換えてV2と呼ばない。
+
+## 容量の読み取り確認
+
+準備処理の容量取得だけを確認し、VM内35,025,260,544バイト、ホスト315,944,472,576バイトの空きを観測した。実行中のP3を止めず、イメージ取得や新しいコンテナは実行していない。取得直前にもう一度測る。[記録](../../reports/pro_storage_readonly_probe.json)。
