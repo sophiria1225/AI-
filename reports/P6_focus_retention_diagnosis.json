@@ -1,0 +1,128 @@
+{
+  "run_id": "P6_01_FOCUS_V02",
+  "reference_run_id": "P6_01_FULL_V02",
+  "planned_rollouts": 3,
+  "retention_minimum": 1,
+  "cycles": [
+    {
+      "first_call": "call_004",
+      "calls_observed": 3,
+      "parseable_drafts": 3,
+      "available_spans": 3,
+      "forward_kept_lower_bound": 3,
+      "additional_rescued_lower_bound": 0,
+      "retained_lower_bound_after_ignoring_nonhistory_ids": 3,
+      "nonhistory_reference_count": 0,
+      "already_all_retained": true,
+      "earliest_observed_draft_proving_all_retained": 1,
+      "later_completed_calls_after_all_retained": 2,
+      "scope": "Post-hoc keep-set bound; no claim of an executed optimized agent."
+    },
+    {
+      "first_call": "call_008",
+      "calls_observed": 3,
+      "parseable_drafts": 3,
+      "available_spans": 4,
+      "forward_kept_lower_bound": 3,
+      "additional_rescued_lower_bound": 1,
+      "retained_lower_bound_after_ignoring_nonhistory_ids": 4,
+      "nonhistory_reference_count": 4,
+      "already_all_retained": true,
+      "earliest_observed_draft_proving_all_retained": 1,
+      "later_completed_calls_after_all_retained": 2,
+      "scope": "Post-hoc keep-set bound; no claim of an executed optimized agent."
+    },
+    {
+      "first_call": "call_012",
+      "calls_observed": 2,
+      "parseable_drafts": 1,
+      "available_spans": 5,
+      "forward_kept_lower_bound": 3,
+      "additional_rescued_lower_bound": 2,
+      "retained_lower_bound_after_ignoring_nonhistory_ids": 5,
+      "nonhistory_reference_count": 3,
+      "already_all_retained": true,
+      "earliest_observed_draft_proving_all_retained": 1,
+      "later_completed_calls_after_all_retained": 1,
+      "scope": "Post-hoc keep-set bound; no claim of an executed optimized agent."
+    },
+    {
+      "first_call": "call_015",
+      "calls_observed": 3,
+      "parseable_drafts": 3,
+      "available_spans": 6,
+      "forward_kept_lower_bound": 3,
+      "additional_rescued_lower_bound": 3,
+      "retained_lower_bound_after_ignoring_nonhistory_ids": 6,
+      "nonhistory_reference_count": 0,
+      "already_all_retained": true,
+      "earliest_observed_draft_proving_all_retained": 2,
+      "later_completed_calls_after_all_retained": 1,
+      "scope": "Post-hoc keep-set bound; no claim of an executed optimized agent."
+    },
+    {
+      "first_call": "call_019",
+      "calls_observed": 1,
+      "parseable_drafts": 0,
+      "available_spans": 7,
+      "forward_kept_lower_bound": 0,
+      "additional_rescued_lower_bound": 0,
+      "retained_lower_bound_after_ignoring_nonhistory_ids": 0,
+      "nonhistory_reference_count": 0,
+      "already_all_retained": false,
+      "earliest_observed_draft_proving_all_retained": null,
+      "later_completed_calls_after_all_retained": 0,
+      "scope": "Post-hoc keep-set bound; no claim of an executed optimized agent."
+    }
+  ],
+  "agent_prefix_comparison": [
+    {
+      "agent_turn": 1,
+      "request_equal": true,
+      "public_operations_equal": true
+    },
+    {
+      "agent_turn": 2,
+      "request_equal": true,
+      "public_operations_equal": true
+    },
+    {
+      "agent_turn": 3,
+      "request_equal": true,
+      "public_operations_equal": true
+    },
+    {
+      "agent_turn": 4,
+      "request_equal": true,
+      "public_operations_equal": true
+    },
+    {
+      "agent_turn": 5,
+      "request_equal": true,
+      "public_operations_equal": true
+    },
+    {
+      "agent_turn": 6,
+      "request_equal": true,
+      "public_operations_equal": false
+    },
+    {
+      "agent_turn": 7,
+      "request_equal": false,
+      "public_operations_equal": false
+    }
+  ],
+  "source_hashes": {
+    "usage": "ea8cc92065c0f33f928ee6e97cb2dd3a77d81bd94f0490f4ef582bb9dbad7f1a",
+    "reference_usage": "8e32bb9353c8199e331a33847d293b4ed7be4472d22ca9a071bdca33ceb8c258",
+    "plan": "0cc19889a4cf56e79374836d5faa48a35415f39c294c019f3d7f4be634138a12",
+    "script": "8a43693690603af46026f77691810ad44345cd86357cc3d6824f3b688f4d84bc"
+  },
+  "limitations": [
+    "Invalid IDs are ignored only in this diagnosis; original results and execution are unchanged.",
+    "Parse failures are not guessed or repaired; surviving references give only a lower bound.",
+    "A matching prefix does not establish deterministic future replay or general algorithm superiority.",
+    "No semantic accuracy, target coverage or hidden evaluation content is inspected.",
+    "Monotone early termination is an implementation optimization candidate, not a novel research principle."
+  ]
+}
