@@ -1,0 +1,47 @@
+{
+  "model": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "num_ctx": 65536,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "phase": "P9",
+  "version": "P9_prompt_cache_probe_v01",
+  "run_id": "P9_01",
+  "progress_issue": 38,
+  "source_run_id": "P6_02_FULL_V03",
+  "sources": [
+    {
+      "call_id": "call_024",
+      "sha256": "66306563b846ec733f5d085723125c426bac72570a907ec3b5b41be1d6e81742"
+    },
+    {
+      "call_id": "call_025",
+      "sha256": "e849596775b36778dc5a82628df262558a1032da820db2401ca7ad6976948092"
+    }
+  ],
+  "order": [
+    "original",
+    "archive_last",
+    "archive_last",
+    "original"
+  ],
+  "max_calls": 8,
+  "max_total_tokens": 150000,
+  "max_wall_seconds": 1800,
+  "output_tokens_per_call": 1,
+  "wait_for_batch": "P8_batch_v01",
+  "max_wait_seconds": 14400,
+  "server_lease_end_utc": "2026-10-20T22:43:18.265316+00:00",
+  "source_selection": "Last two successfully completed adjacent requests of the P6 second-task full-history development trial. Chosen after inspecting prefill timing; no held-out claim.",
+  "changes": "Only memory JSON key order differs between variants. Every pair uses cache_prompt=false then true, common max_tokens=1, same source sampling settings.",
+  "scope": "Input processing calibration, no AppWorld operation or evaluator. Equal parsed JSON values do not guarantee equal model behavior. Not a new method or quality-preserving token reduction."
+}
