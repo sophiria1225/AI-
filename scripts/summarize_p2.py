@@ -40,6 +40,7 @@ def main():
                            'timings': response.get('timings'),
                            'sampled_peak_rss_bytes': server['sampled_peak_rss_bytes'],
                            'peak_system_swap_bytes': server['peak_system_swap_bytes'],
+                           'memory_scope': 'entire associated server lifetime so far, not isolated to this probe',
                            'sampling': {k: config.get(k, v) for k, v in
                                         [('top_k', 40), ('min_p', 0.05), ('repeat_penalty', 1.0)]},
                            'sampling_note': 'Missing keys in early records use the pinned server defaults.'})

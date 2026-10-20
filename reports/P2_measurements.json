@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T03:14:30.993448+00:00",
+  "updated_at": "2026-10-20T03:50:18.274523+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "recorded_calls": 65,
-    "calls_with_known_usage": 65,
+    "recorded_calls": 69,
+    "calls_with_known_usage": 69,
     "calls_with_unknown_usage": 0,
     "requests_without_response_record": [],
-    "known_input_tokens": 639374,
-    "known_output_tokens": 21476,
-    "known_total_tokens": 660850,
+    "known_input_tokens": 640743,
+    "known_output_tokens": 21691,
+    "known_total_tokens": 662434,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -72,6 +72,40 @@
       "error": null,
       "calls": 4,
       "known_total_tokens": 1668
+    },
+    {
+      "record": "records/p2_probes/20261020_124839_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-iq4xs",
+        "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+        "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+        "quantization": "IQ4_XS",
+        "num_ctx": 8192,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": false,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1584
     }
   ],
   "capacity": [
@@ -99,6 +133,7 @@
       },
       "sampled_peak_rss_bytes": 206671101952,
       "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
         "top_k": 40,
         "min_p": 0.05,
@@ -130,6 +165,7 @@
       },
       "sampled_peak_rss_bytes": 208178593792,
       "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
         "top_k": 40,
         "min_p": 0.05,
@@ -161,6 +197,7 @@
       },
       "sampled_peak_rss_bytes": 211145785344,
       "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
         "top_k": 0,
         "min_p": 0.0,
@@ -192,6 +229,7 @@
       },
       "sampled_peak_rss_bytes": 217105137664,
       "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
         "top_k": 0,
         "min_p": 0.0,
