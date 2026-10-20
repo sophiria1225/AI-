@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from model_provenance import check_live_model, load_selection, stable_manifest, verified_model
+from model_provenance import check_live_model, load_selection, stable_manifest, verified_model, runtime_cache_types
 
 
 class ModelProvenanceControls(unittest.TestCase):
@@ -95,6 +95,27 @@ class ModelProvenanceControls(unittest.TestCase):
         props['model_alias'] = 'fixture-q3'
         with self.assertRaisesRegex(ValueError, 'live model settings'):
             check_live_model(self.name, runtime, props, 8192, self.root)
+
+    def test_cache_mismatch_cannot_authorize_task(self):
+        _, _, model = verified_model(self.name, self.root)
+        runtime = {'status': 'ready', 'runtime': self.config['runtime'],
+                   'model_revision': 'a' * 40, 'ctx_size': 8192,
+                   'command': ['server', '--cache-type-k', 'q8_0', '--cache-type-v', 'q8_0']}
+        props = {'default_generation_settings': {'n_ctx': 8192}, 'total_slots': 1,
+                 'model_alias': 'fixture-iq4', 'build_info': 'b1-' + 'd' * 9, 'model_path': str(model)}
+        check_live_model(self.name, runtime, props, 8192, self.root, expected_cache=('q8_0', 'q8_0'))
+        with self.assertRaisesRegex(ValueError, 'KV cache differs'):
+            check_live_model(self.name, runtime, props, 8192, self.root, expected_cache=('f16', 'f16'))
+
+    def test_cache_record_and_command_must_agree(self):
+        runtime = {'command': ['server', '--cache-type-k', 'q8_0', '--cache-type-v', 'q8_0'], 'cache_type_k': 'f16'}
+        with self.assertRaisesRegex(ValueError, 'KV cache fields disagree'):
+            runtime_cache_types(runtime)
+
+    def test_cache_flag_must_be_unambiguous(self):
+        for command in (['server'], ['server', '--cache-type-k', 'f16', '--cache-type-k', 'q8_0', '--cache-type-v', 'f16']):
+            with self.assertRaises(ValueError):
+                runtime_cache_types({'command': command})
 
 
 if __name__ == '__main__':

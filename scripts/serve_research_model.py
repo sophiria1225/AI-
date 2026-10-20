@@ -15,6 +15,20 @@ from model_provenance import LEGACY_SELECTION, verified_model
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def poll_backend_error(path, offset=0, carry=''):
+    """Catch fatal compute failures even when /health still returns ok."""
+    with path.open('rb') as source:
+        source.seek(offset)
+        content = carry + source.read(1024 * 1024).decode('utf-8', errors='replace')
+        position = source.tell()
+    fatal = ('kIOGPUCommandBufferCallbackErrorOutOfMemory',
+             'backend is in error state from a previous command buffer failure',
+             'decode() failed: Compute error.')
+    failure = next((line[:500] for line in content.splitlines()
+                    if any(marker in line for marker in fatal)), None)
+    return failure, position, content[-512:]
+
+
 def write_json(path, value):
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(value, indent=2) + '\n')
@@ -44,6 +58,8 @@ def main():
     parser.add_argument('--max-seconds', type=int, default=7200)
     parser.add_argument('--max-swap-growth-gib', type=float, default=8)
     parser.add_argument('--selection', default=LEGACY_SELECTION)
+    parser.add_argument('--cache-type-k', choices=['f16', 'q8_0'], default='f16')
+    parser.add_argument('--cache-type-v', choices=['f16', 'q8_0'], default='f16')
     args = parser.parse_args()
     selection, download, model = verified_model(args.selection)
     runtime = json.loads((ROOT / 'records/models/p2_runtime_install.json').read_text())
@@ -66,7 +82,7 @@ def main():
                '--alias', selection['model_alias'], '--host', '127.0.0.1', '--port', str(args.port),
                '--ctx-size', str(args.ctx_size), '--parallel', '1', '--n-gpu-layers', '999',
                '--flash-attn', 'on', '--batch-size', '256', '--ubatch-size', '128',
-               '--cache-type-k', 'f16', '--cache-type-v', 'f16', '--cache-ram', '0',
+               '--cache-type-k', args.cache_type_k, '--cache-type-v', args.cache_type_v, '--cache-ram', '0',
                '--ctx-checkpoints', '1', '--jinja', '--reasoning-format', 'deepseek',
                '--no-context-shift', '--no-webui', '--log-timestamps']
     state = {'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -74,6 +90,7 @@ def main():
              'runtime': selection['runtime'], 'model_revision': selection['revision'],
              'selection': args.selection, 'model_alias': selection['model_alias'],
              'quantization': selection['quantization'],
+             'cache_type_k': args.cache_type_k, 'cache_type_v': args.cache_type_v,
              'record_directory': str(out.relative_to(ROOT)),
              'memory_note': '5-second RSS samples and system swap; RSS is not total unified GPU allocation'}
     stop_requested = False
@@ -92,6 +109,7 @@ def main():
         peak_rss = 0
         peak_swap = baseline['swap_used_bytes'] or 0
         was_ready = False
+        log_offset, log_carry = 0, ''
         started = time.monotonic()
         try:
             while process.poll() is None:
@@ -102,6 +120,12 @@ def main():
                 elapsed = time.monotonic() - started
                 state.update(wall_seconds=elapsed, sampled_peak_rss_bytes=peak_rss,
                              peak_system_swap_bytes=peak_swap)
+                failure, log_offset, log_carry = poll_backend_error(out / 'server.log', log_offset, log_carry)
+                if failure:
+                    state.update(status='failed', stop_reason='backend_compute_error', backend_error=failure)
+                    write_json(out / 'summary.json', state)
+                    write_json(ROOT / '.runtime/model_server.json', state)
+                    break
                 if state['status'] == 'loading':
                     try:
                         with urllib.request.urlopen(f'http://127.0.0.1:{args.port}/health', timeout=1) as response:

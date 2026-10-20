@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T03:56:01.701475+00:00",
+  "at": "2026-10-20T04:03:19.318824+00:00",
   "scope": "Recorded Q3 conditions versus prepared IQ4; no model inference",
   "pairs": [
     {
@@ -10,15 +10,17 @@
         "model",
         "model_path",
         "model_selection",
-        "readiness"
+        "readiness",
+        "readiness_limitations",
+        "readiness_scope"
       ],
       "unexpected_changed_fields": [],
       "identical_agent_templates": true,
-      "IQ4_readiness": "pending",
+      "IQ4_readiness": "failed",
       "source_comparison": {
         "run_mini_pilot.py": {
           "baseline_sha256": "92fc6f1d70e952ff4b3ef01ba01db5b901fdf9d68b76f20ebcc2dd0d095f6491",
-          "current_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+          "current_sha256": "c7b7b9935dc420f3c1c175c7f5520cde17c1ea2d1c6016db0bd50f11a7b7161e",
           "identical": false
         },
         "run_e0_pilot.py": {
@@ -59,15 +61,17 @@
         "model",
         "model_path",
         "model_selection",
-        "readiness"
+        "readiness",
+        "readiness_limitations",
+        "readiness_scope"
       ],
       "unexpected_changed_fields": [],
       "identical_agent_templates": true,
-      "IQ4_readiness": "pending",
+      "IQ4_readiness": "failed",
       "source_comparison": {
         "run_mini_pilot.py": {
           "baseline_sha256": "92fc6f1d70e952ff4b3ef01ba01db5b901fdf9d68b76f20ebcc2dd0d095f6491",
-          "current_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+          "current_sha256": "c7b7b9935dc420f3c1c175c7f5520cde17c1ea2d1c6016db0bd50f11a7b7161e",
           "identical": false
         },
         "run_e0_pilot.py": {
@@ -101,7 +105,7 @@
       "passed": true
     }
   ],
-  "runner_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+  "runner_sha256": "c7b7b9935dc420f3c1c175c7f5520cde17c1ea2d1c6016db0bd50f11a7b7161e",
   "checker_sha256": "11ebdb2a9f73499c94ce3bcba8c932bdbcd0db0fef9bcf577bd50416fd95d627",
   "passed": true
 }
