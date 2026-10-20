@@ -13,6 +13,7 @@ import time
 import urllib.request
 
 from prepare_pro_environment import ROOT, read, require_p3_complete, sha, validate_image
+from pro_verifier_result import assess_artifacts, expected_control
 
 PRIVATE_FILES = (
     "tests/test.sh", "tests/run_script.sh", "tests/parser.py",
@@ -232,17 +233,8 @@ def evaluate(client, plan, bundle, phase, repository_path, record):
         result["logs"] = save_logs(container, record / "verifier.log")
         if result["status"] == "timeout":
             return result
-        if result["exit_code"] != 0 or result["oom_killed"]:
-            raise ValueError("Verifier process failed; private raw log retained")
-        stream, _ = container.get_archive("/logs/verifier/reward.txt")
-        data = bytearray()
-        for chunk in stream:
-            data.extend(chunk)
-            if len(data) > 1024**2:
-                raise ValueError("Reward archive exceeds limit")
-        result["reward"] = reward_from_archive(bytes(data))
-        expected = 0.0 if phase == "negative_control" else 1.0
-        result["expected_outcome_observed"] = result["reward"] == expected
+        result.update(assess_artifacts(record, bundle, result["exit_code"], result["oom_killed"]))
+        result["expected_outcome_observed"] = expected_control(result, phase)
         result["status"] = "completed"
     except Exception as error:
         result["error"] = repr(error)
@@ -262,6 +254,8 @@ def main():
     parser.add_argument("--storage-root", type=Path, required=True)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--phase", choices=["negative_control", "reference_control"], required=True)
+    parser.add_argument("--assess-only", action="store_true",
+                        help="Assess retained artifacts once without repeating container execution")
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.run_id):
         raise ValueError("Invalid run identifier")
@@ -274,15 +268,27 @@ def main():
         raise ValueError("Preparation did not complete with this frozen plan")
     if sha(ROOT / "configs/pro_environment_feasibility_v01.json") != preparation["plan_sha256"]:
         raise ValueError("Source plan changed since preparation")
+    if args.assess_only:
+        return assess_retained_control(storage, run, plan, args.phase)
     if args.phase == "reference_control":
         prior = read(run / "negative_control/summary.json")
         if prior.get("status") != "completed" or prior.get("expected_outcome_observed") is not True:
-            raise ValueError("Negative control has not passed")
+            correction = read(run / "negative_control/assessment.json")
+            if (correction.get("status") != "completed"
+                    or correction.get("expected_outcome_observed") is not True
+                    or correction.get("original_summary_sha256") != sha(run / "negative_control/summary.json")
+                    or correction.get("plan_sha256") != preparation["plan_sha256"]):
+                raise ValueError("Negative control has not passed")
+            for name in ("private_output.json.tar", "private_reward.txt.tar"):
+                if correction["artifact_hashes"][name] != sha(run / "negative_control" / name):
+                    raise ValueError("Assessed negative-control artifact changed")
     record = run / args.phase
     record.mkdir(exist_ok=False)
     (record / "evaluate_pro_environment.py").write_bytes(Path(__file__).read_bytes())
+    (record / "pro_verifier_result.py").write_bytes((ROOT / "scripts/pro_verifier_result.py").read_bytes())
     result = {"started_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
               "phase": args.phase, "status": "error", "source_sha256": sha(Path(__file__)),
+              "result_parser_sha256": sha(ROOT / "scripts/pro_verifier_result.py"),
               "plan_sha256": preparation["plan_sha256"], "image": plan["image"],
               "model_calls": 0, "private_contents_displayed": False}
     started = time.monotonic()
@@ -305,6 +311,45 @@ def main():
         (record / "summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
         print(json.dumps(result, ensure_ascii=False))
     return result["status"] == "completed" and result.get("expected_outcome_observed") is True
+
+
+def assess_retained_control(storage, run, plan, phase):
+    record = run / phase
+    destination = record / "assessment.json"
+    if destination.exists():
+        raise ValueError("Assessment already recorded; do not overwrite it")
+    summary = read(record / "summary.json")
+    if (summary.get("image") != plan["image"] or summary.get("phase") != phase
+            or summary.get("plan_sha256") != sha(run / "plan.json")
+            or summary.get("source_sha256") != sha(record / "evaluate_pro_environment.py")
+            or not summary.get("container_removed")):
+        raise ValueError("Existing control provenance is incomplete")
+    require_p3_complete(storage)
+    bundle, _ = private_bundle(storage, plan)
+    if summary["private_manifest_sha256"] != sha(bundle / "manifest.json"):
+        raise ValueError("Existing verifier input changed")
+    artifact_hashes = {}
+    for name in ("output.json", "reward.txt"):
+        path = record / ("private_" + name + ".tar")
+        digest = sha(path)
+        if summary["private_artifacts"][name]["sha256"] != digest:
+            raise ValueError("Retained verifier output changed")
+        artifact_hashes[path.name] = digest
+    result = assess_artifacts(record, bundle, summary["exit_code"], summary["oom_killed"])
+    result.update(status="completed", expected_outcome_observed=expected_control(result, phase),
+                  original_summary_sha256=sha(record / "summary.json"),
+                  original_controller_status=summary["status"], phase=phase,
+                  plan_sha256=summary["plan_sha256"], artifact_hashes=artifact_hashes,
+                  assessed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  assessment_code_sha256=sha(Path(__file__)),
+                  result_parser_sha256=sha(ROOT / "scripts/pro_verifier_result.py"),
+                  no_reexecution=True, model_calls=0, private_test_labels_displayed=False)
+    (record / "assessment_code.py").write_bytes(Path(__file__).read_bytes())
+    (record / "assessment_result_parser.py").write_bytes((ROOT / "scripts/pro_verifier_result.py").read_bytes())
+    with destination.open("x") as output:
+        output.write(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result))
+    return result["expected_outcome_observed"]
 
 
 if __name__ == "__main__":
