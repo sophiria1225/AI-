@@ -35,6 +35,54 @@
       "future_access_rule": "Read version-pinned README/metadata; project public columns before any dataset row display. Do not use previewed solutions for task selection.",
       "automated_selector_enforcement": "prepare_pro_public_inputs.py rejects a screening plan that fails to exclude a recorded repository; no Pro trial is scheduled",
       "subsequently_observed_revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50"
+    },
+    {
+      "dataset": "AppWorld",
+      "runtime_version": "0.1.3.post1",
+      "data_manifest": "reports/P11_public_task_selection.json",
+      "instruction_exposures": [
+        {
+          "when": "P6 selection, 2026-10-21",
+          "scope": "first twelve sorted train tasks, four scenarios; two variant-one tasks used in P6/P8/P10 development",
+          "scenario_ids": [
+            "07b42fd",
+            "229360a",
+            "22cc237",
+            "27e1026"
+          ],
+          "read_fields": [
+            "instruction"
+          ],
+          "source_plan": "configs/P6_context_plan_v02.json"
+        },
+        {
+          "when": "2026-10-20T21:17:10.300845+00:00",
+          "scope": "next four scenarios selected by IDs before reading instructions, variant one only",
+          "scenario_ids": [
+            "287e338",
+            "29caf6f",
+            "2a163ab",
+            "302c169"
+          ],
+          "read_fields": [
+            "instruction"
+          ],
+          "source_plan": "configs/P11_public_task_selection_v01.json"
+        }
+      ],
+      "exclude_scenarios_from_untouched_confirmation": [
+        "07b42fd",
+        "229360a",
+        "22cc237",
+        "27e1026",
+        "287e338",
+        "29caf6f",
+        "2a163ab",
+        "302c169"
+      ],
+      "generator_exposure": "Only current task and its own public observations; no cross-task evaluation or solution injection. P11 model execution not started.",
+      "future_access_rule": "Use the train ID list and public instruction field only for this selection. Do not invoke difficulty filters, read solution/ground-truth files, or select by outcomes. Keep all related variants outside untouched confirmation.",
+      "scope_note": "Researcher has reviewed development outcomes for P6/P8; these tasks are not an untouched test set. This registry is not proof of model pretraining cleanliness."
     }
   ]
 }
