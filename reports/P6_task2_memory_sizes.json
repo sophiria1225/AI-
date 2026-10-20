@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-10-20T20:12:17.575502+00:00",
+  "trials": [
+    {
+      "run_id": "P6_02_LEDGER_V03",
+      "trigger_tokens": 4096,
+      "updates": [
+        {
+          "first_call": "call_010",
+          "last_call": "call_010",
+          "next_call": "call_011",
+          "after_memory_tokens": 2863,
+          "after_above_trigger": false,
+          "source_hashes": {
+            "before": "5163e54006f9885cb33afe618dd1e2b375c884c86f6468b16ba1068d6cb7484b",
+            "after": "c1027f0fede172bfd515537ef520c76602e90c2bfa8ae779291144dd3bdc0fb8"
+          },
+          "before_memory_tokens": 4974,
+          "before_span_count": 9,
+          "before_ledger_items": 0,
+          "after_span_count": 2,
+          "after_ledger_items": 9
+        },
+        {
+          "first_call": "call_016",
+          "last_call": "call_016",
+          "next_call": "call_017",
+          "after_memory_tokens": 2755,
+          "after_above_trigger": false,
+          "source_hashes": {
+            "before": "4716f7f69b4bed21ed3de4a22928139fa895aa45340bfee9844d8eb9a4e8e3c6",
+            "after": "104ae4e06b4f517ab0944dcd10c411b706a8b8a50b3d3057c1ebb7e766389d68"
+          },
+          "before_memory_tokens": 5408,
+          "before_span_count": 7,
+          "before_ledger_items": 9,
+          "after_span_count": 2,
+          "after_ledger_items": 10
+        },
+        {
+          "first_call": "call_018",
+          "last_call": "call_018",
+          "next_call": "call_019",
+          "after_memory_tokens": 6597,
+          "after_above_trigger": true,
+          "source_hashes": {
+            "before": "15bcf6908d9675395444c2d9491c8a9dd5c56d80993022a0679970ab75fb38bf",
+            "after": "061f1bf0cb54e5ef168e1f13222872836f859332d04072cf3cef74889cf58d9f"
+          },
+          "before_memory_tokens": 6587,
+          "before_span_count": 3,
+          "before_ledger_items": 10,
+          "after_span_count": 2,
+          "after_ledger_items": 11
+        },
+        {
+          "first_call": "call_020",
+          "last_call": "call_020",
+          "next_call": "call_021",
+          "after_memory_tokens": 9365,
+          "after_above_trigger": true,
+          "source_hashes": {
+            "before": "e0066510e3ba6c25653cc683ffff5174a5207d766a156ef29202e90f480db4aa",
+            "after": "fd5d5320779f868d7c0c55384991f05898dff9ceabf85a050391a439c56fca36"
+          },
+          "before_memory_tokens": 10488,
+          "before_span_count": 3,
+          "before_ledger_items": 11,
+          "after_span_count": 2,
+          "after_ledger_items": 12
+        },
+        {
+          "first_call": "call_022",
+          "last_call": "call_022",
+          "next_call": "call_023",
+          "after_memory_tokens": 6017,
+          "after_above_trigger": true,
+          "source_hashes": {
+            "before": "44f80735499e48aae79c30999f712e4341acf8ed7dde45aea23917b1de259218",
+            "after": "8d83ad13ec964679dc708c0186268a837c12fb7ab6ced02d3b5c8d2a16adcb61"
+          },
+          "before_memory_tokens": 9814,
+          "before_span_count": 3,
+          "before_ledger_items": 12,
+          "after_span_count": 2,
+          "after_ledger_items": 12
+        }
+      ],
+      "source_hashes": {
+        "usage.json": "28dcdd6b8b0c0c7ba51cc370ad17175b6823da0f649d1beda038a8d46e7896cc",
+        "plan.json": "d9195d966666a810c823f99c43ccb0cbf2d057034cfc7273d7ad5265dc0e0784"
+      },
+      "scope": "Before and next-executor memory inputs; no new action between them. Absent next request is unmeasured, not zero. Sizes are not semantic correctness."
+    }
+  ],
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "model_alias": "minimax-m3-iq4xs",
+    "quantization": "IQ4_XS",
+    "runtime_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab"
+  },
+  "script_sha256": "5d05eb0fdfaceb997aefc5983b30f72a86e684ff6e7760f8842778e65526ec7c",
+  "model_inference_calls": 0,
+  "api_execution_calls": 0,
+  "evaluators_loaded": false,
+  "template_and_tokenize_requests": 10,
+  "scope": "Memory sizes immediately before and after a completed compression. No new environment action intervenes. Missing next input is unmeasured, not zero. Unknown usage remains unknown."
+}

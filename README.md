@@ -8,6 +8,8 @@
 
 **現在：P6の第2課題を実行中。** 第1課題は全履歴だけ成功。対象台帳は76,902トークンで未達となり、実行されなかった操作を「完了」と記録する例を確認しました。[3方式の図・結果・判断](docs/P6_ledger_diagnosis.md)、[続行中の進捗](https://github.com/sophiria1225/AI-/issues/30#issuecomment-6298489780)。FOCUS再実装は時間上限で未達でしたが、履歴を削っていないため忘却の証拠にはしません。[保持規則の診断](docs/P6_retention_diagnosis.md)。
 
+**第2課題の追加診断：** 全履歴と台帳が時間上限で未達。全履歴の入力再処理に約20分、台帳更新に約18分半を使っていました。入力配置と連続更新の影響を、記憶の誤りと切り分けています。[時間内訳・図・次の判断](docs/P6_task2_runtime_diagnosis.md)、[Issue #38](https://github.com/sophiria1225/AI-/issues/38)。情報を削らず入力の並び順だけを変える[P9の校正計画](docs/experiments/P9_prompt_cache_probe.md)を実装しました。基盤改善を新規性とは呼びません。
+
 **次の検証：** 公開操作の再生2回で観測と新規保存DBが一致しました。元の全途中状態の復元とは扱わず、まず同じ保存入力に対する記憶生成の3条件×3種を比較します。[P7の事前計画](docs/experiments/P7_memory_input_probe.md)、[Issue #34](https://github.com/sophiria1225/AI-/issues/34)。既存の単純対策で十分かを確かめる校正であり、新規性は未確定です。
 
 **比較用実行器も校正中：** 公開APIごとのスキーマと複数操作を使う全履歴基準を実装しました。全457 APIの無条件投入は出力余白を含めると64Kを超えるため、公開文書の要求に応じて追加します。保存済み43操作の要求一致、実環境での文書取得・不正操作の未送信を確認。[P8の条件と初案を見送った理由](docs/experiments/P8_native_baseline.md)、[Issue #36](https://github.com/sophiria1225/AI-/issues/36)。P6・P7の終了後に2試行を行う計画で、この形式でのモデル成績はまだありません。

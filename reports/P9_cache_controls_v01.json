@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-10-20T20:15:18.386630+00:00",
+  "unit_tests_passed": 182,
+  "new_measurement_controls": 5,
+  "compileall": "passed",
+  "request_controls": [
+    {
+      "call_id": "call_024",
+      "variant": "original",
+      "input_tokens": 16558,
+      "parsed_values_equal": true
+    },
+    {
+      "call_id": "call_024",
+      "variant": "archive_last",
+      "input_tokens": 16558,
+      "parsed_values_equal": true
+    },
+    {
+      "call_id": "call_025",
+      "variant": "original",
+      "input_tokens": 17682,
+      "parsed_values_equal": true
+    },
+    {
+      "call_id": "call_025",
+      "variant": "archive_last",
+      "input_tokens": 17682,
+      "parsed_values_equal": true
+    }
+  ],
+  "preflight_inference_calls": 0,
+  "preflight_token_count_requests": 4,
+  "environment_actions": 0,
+  "source_hashes": {
+    "scripts/probe_prompt_cache.py": "f006e0d827ede1a7d2624f6d99a9e70ee975f40851f6b21c865be11210f759f7",
+    "scripts/audit_context_costs.py": "5d05eb0fdfaceb997aefc5983b30f72a86e684ff6e7760f8842778e65526ec7c",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "scripts/run_context_comparison.py": "d32f78bb51a96a40eb83c65e97777b991f5c02491c42f20703f89d977ceec105",
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/watch_pro_comparison.py": "0d67b4018bf4576a91a9f5ae8582392b4d381d20b6f935e4bbe45845183cde23",
+    "scripts/summarize_pro_comparison.py": "8f4085f9ae80bf9249b56ed3fdae6b74fa02a016e22fffb37b0a9453a1b9d48b",
+    "scripts/summarize_pro_pilot.py": "f51dbfeea6b1fe353512cfb317710da03ce716e6c67aa3232c4faba97b86f338",
+    "scripts/audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162",
+    "scripts/experiment_state.py": "e541ed7e640d9b2cf2d285e3687887a7b889060d10e4e95a740234898c4567df",
+    "configs/P9_prompt_cache_probe_v01.json": "9b4c9b483e3cf4f9b2bbea197bc66ab9bc58f000a41fcd366d94a028a8aa7724",
+    "docs/experiments/P9_prompt_cache_probe.md": "1759f4972778c3c65d67d7d9cd51603dc108d6e7b5acce06b9176c5b55a8ff4e"
+  },
+  "earlier_analysis": "Initial layout endpoint check: 2 requests; exploratory cost/token analyses: 196+10+10 requests; final reproducible analyses: 196+10. All are template/tokenization only, no model generation. The initial report version is retained in ignored records/runtime_audit/P6_COST_01.",
+  "preflight_failures": [
+    {
+      "attempt": "P9_PREFLIGHT_01",
+      "cause": "Default system python3 does not support the imported Python 3.10+ union syntax. Command stopped during import before any inference or token counting.",
+      "correction": "Use the existing research Python virtual environment for the probe and controls.",
+      "inference_calls": 0,
+      "api_calls": 0
+    }
+  ],
+  "python": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "scope": "Fixed input timing only; no task-quality or new-method claim."
+}
