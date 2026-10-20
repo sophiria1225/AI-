@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T04:14:11.029723+00:00",
+  "updated_at": "2026-10-20T06:18:27.127870+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "recorded_calls": 76,
-    "calls_with_known_usage": 75,
+    "recorded_calls": 134,
+    "calls_with_known_usage": 133,
     "calls_with_unknown_usage": 1,
     "requests_without_response_record": [],
-    "known_input_tokens": 726060,
-    "known_output_tokens": 21965,
-    "known_total_tokens": 748025,
+    "known_input_tokens": 1270102,
+    "known_output_tokens": 34148,
+    "known_total_tokens": 1304250,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -77,18 +77,21 @@
         65536
       ],
       "purposes": [
+        "development_task",
         "interface_calibration",
         "synthetic_capacity"
       ],
       "records": [
         "records/p2_probes/20261020_130318_enabled",
-        "records/p2_capacity/20261020_130359_56000"
+        "records/p2_capacity/20261020_130359_56000",
+        "records/p2/20261020_145730_mini_a386c6",
+        "records/p2/20261020_150628_mini_03a2f3"
       ],
-      "recorded_calls": 5,
-      "known_input_tokens": 57342,
-      "known_output_tokens": 266,
+      "recorded_calls": 63,
+      "known_input_tokens": 601384,
+      "known_output_tokens": 12449,
       "unknown_usage_calls": 0,
-      "known_total_tokens": 57608
+      "known_total_tokens": 613833
     }
   ],
   "runtime_group_note": "Cost inventory across calibration contexts and task purposes, not a quality comparison. Early records used the captured f16/f16 server command. Unknown usage is not zero cost.",
@@ -443,7 +446,7 @@
         "predicted_per_token_ms": 86.55285714285715,
         "predicted_per_second": 11.553633617772789
       },
-      "sampled_peak_rss_bytes": 237132955648,
+      "sampled_peak_rss_bytes": 237132972032,
       "peak_system_swap_bytes": 0,
       "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
@@ -486,6 +489,38 @@
       "wall_seconds": 790.009489707998,
       "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "visible_checks_all_passed": true
+    },
+    {
+      "record": "records/p2/20261020_145730_mini_a386c6",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 65536,
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "status": "finished",
+      "instance_id": "django__django-15380",
+      "stop_reason": "LimitsExceeded",
+      "calls": 30,
+      "total_recorded_tokens": 270510,
+      "usage_complete": true,
+      "wall_seconds": 421.8537299169693,
+      "artifact_sha256": "3ce80bfcfc339c4d162d4b2f56780611dd72865425e59acefbb110e2306f13cb",
+      "visible_checks_all_passed": true
+    },
+    {
+      "record": "records/p2/20261020_150628_mini_03a2f3",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 65536,
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "status": "finished",
+      "instance_id": "django__django-15957",
+      "stop_reason": "conservative_budget_guard",
+      "calls": 28,
+      "total_recorded_tokens": 285715,
+      "usage_complete": true,
+      "wall_seconds": 590.7590909169521,
+      "artifact_sha256": "a331469478a965b6ea6ec9682ff9b7f53d99c4083d592ea60c8e11dfd5fc36c5",
+      "visible_checks_all_passed": false
     }
   ]
 }
