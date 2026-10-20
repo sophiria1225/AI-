@@ -19,7 +19,7 @@
 | P1 | R11 | 追加課題を公開情報だけで点検し採否理由を残す | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/15) |
 | P1 | R12 | 広い作業依存を持つ主課題の候補と実行条件を調べる | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/16) |
 | P1 | R13 | Pro V2の1環境で起動と独立評価の正負対照を確認する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/18) |
-| P1 | R14 | Pro V2を共通実行器へ接続し初回単一試行を校正する | 進行中 | 未同期 |
+| P1 | R14 | Pro V2を共通実行器へ接続し初回単一試行を校正する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/20) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 

@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-20T08:53:36.182597+00:00",
+  "scope": "Public base-revision test/runtime review; no reference patch or hidden test names used",
+  "base_commit": "6198c7377f545207218fe8eb2e3cfa9673ff8f5e",
+  "paths_selected_from": "Previously saved public base tree and public YAML/filter requirements",
+  "files": [
+    {
+      "path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/ansible/ansible/6198c7377f545207218fe8eb2e3cfa9673ff8f5e/pyproject.toml",
+      "bytes": 3567,
+      "git_blob": "36035530920a5f182c11ad361fe1d582a9652a94",
+      "sha256": "5255850900d53050d5746263dd9b1777d9dcd33608b1f8627828465cd6ecb128"
+    },
+    {
+      "path": "test/units/conftest.py",
+      "url": "https://raw.githubusercontent.com/ansible/ansible/6198c7377f545207218fe8eb2e3cfa9673ff8f5e/test/units/conftest.py",
+      "bytes": 3555,
+      "git_blob": "35fac71d2b9ceaaa4016343eca80e789a64eab8e",
+      "sha256": "22ded2c7d913e1eca9c82104667e65da37a857a5fb467239ac6c1f96937e5e7d"
+    },
+    {
+      "path": "test/units/plugins/filter/test_core.py",
+      "url": "https://raw.githubusercontent.com/ansible/ansible/6198c7377f545207218fe8eb2e3cfa9673ff8f5e/test/units/plugins/filter/test_core.py",
+      "bytes": 1769,
+      "git_blob": "cd51d4d8b3db62655a37ca89754dbe14a18d9eb3",
+      "sha256": "a88c314e92e2826e0fe9962ed2863c7226a4f30a0fc2cf3abba1a8284af659ae"
+    },
+    {
+      "path": "test/units/parsing/yaml/test_loader.py",
+      "url": "https://raw.githubusercontent.com/ansible/ansible/6198c7377f545207218fe8eb2e3cfa9673ff8f5e/test/units/parsing/yaml/test_loader.py",
+      "bytes": 18813,
+      "git_blob": "15d630bb50ee81882b1430a09011b1c761b650fc",
+      "sha256": "d238786acbb8f4ae55b62c781ecd6faf77ce1fb228e30651a56a9f6b0fadbad7"
+    },
+    {
+      "path": "test/units/parsing/yaml/test_dumper.py",
+      "url": "https://raw.githubusercontent.com/ansible/ansible/6198c7377f545207218fe8eb2e3cfa9673ff8f5e/test/units/parsing/yaml/test_dumper.py",
+      "bytes": 5142,
+      "git_blob": "5e268f34168c8f27cf66fa16846a99dad2d89221",
+      "sha256": "044c98392b14c80ebd92946a82d9d99dfe84aa24407193ce5d06d5d80ad1f1d3"
+    }
+  ],
+  "candidate_check": [
+    "python3",
+    "-m",
+    "pytest",
+    "-q",
+    "test/units/parsing/yaml",
+    "test/units/plugins/filter/test_core.py"
+  ],
+  "candidate_check_status": "not_executed",
+  "reason": "Existing public loader/dumper and filter tests exercise affected interfaces; they are not a full requirements oracle.",
+  "alternative": "Do not select tests from the private verifier or remove detailed official requirements."
+}
