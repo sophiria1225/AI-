@@ -1,0 +1,85 @@
+{
+  "scope": "execution control fixtures; not model quality",
+  "environment": {
+    "prefix": "/opt/miniconda3/envs/testbed",
+    "python": "3.9.20",
+    "django": "4.1.dev20260813013515"
+  },
+  "assertions": {
+    "old_compound_shell_reports_zero": true,
+    "separate_statuses_preserved": true,
+    "later_success_does_not_overwrite_failure": true,
+    "failure_exit_is_three": true
+  },
+  "checks": {
+    "checks": [
+      {
+        "id": "pass",
+        "argv": [
+          "python",
+          "-c",
+          "print(\"CONTROL_PASS\")"
+        ],
+        "status": "passed",
+        "exit_code": 0,
+        "timeout_seconds": 59,
+        "log": "000.log",
+        "log_sha256": "867cf632bb2f23b0090f6315ba3a3a4c56295eefa20bc066b040f1b25bb33c65",
+        "output_bytes": 13,
+        "output_tail": "CONTROL_PASS\n",
+        "wall_seconds": 0.19949404092039913
+      },
+      {
+        "id": "fail",
+        "argv": [
+          "python",
+          "-c",
+          "import sys; print(\"CONTROL_FAIL\"); sys.exit(3)"
+        ],
+        "status": "failed",
+        "exit_code": 3,
+        "timeout_seconds": 59,
+        "log": "001.log",
+        "log_sha256": "16048cc1575e810a6df17474a4587c7a59f8bfd3574b64be5946ee04f4d1bf36",
+        "output_bytes": 13,
+        "output_tail": "CONTROL_FAIL\n",
+        "wall_seconds": 0.196156750083901
+      },
+      {
+        "id": "pass_after_fail",
+        "argv": [
+          "python",
+          "-c",
+          "print(\"CONTROL_PASS_LATER\")"
+        ],
+        "status": "passed",
+        "exit_code": 0,
+        "timeout_seconds": 59,
+        "log": "002.log",
+        "log_sha256": "7655964f687edda73d62a0851c0e7a7eb8c2c2c8e9e444ab6b68f6b8b6298d0c",
+        "output_bytes": 19,
+        "output_tail": "CONTROL_PASS_LATER\n",
+        "wall_seconds": 0.19664312503300607
+      },
+      {
+        "id": "timeout",
+        "argv": [
+          "python",
+          "-c",
+          "import time; time.sleep(5)"
+        ],
+        "status": "timeout",
+        "exit_code": 124,
+        "timeout_seconds": 1,
+        "log": "003.log",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output_bytes": 0,
+        "output_tail": "",
+        "wall_seconds": 1.0527574579464272
+      }
+    ],
+    "all_passed": false,
+    "wall_seconds": 1.6462182080140337
+  },
+  "source_sha256": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19"
+}
