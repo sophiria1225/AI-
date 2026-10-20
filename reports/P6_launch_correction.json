@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-20T17:01:49.287346+00:00",
+  "failed_run": "P6_01_FULL",
+  "model_calls": 0,
+  "tokens": 0,
+  "cause": "CLI resolved venv/bin/python symlink to base interpreter; AppWorld module unavailable. The earlier direct bridge control retained the venv path.",
+  "fix": "Preserve the venv executable pathname with absolute(), not resolve().",
+  "plan_changes": "Only version/run IDs; tasks, methods, prompts and budget unchanged.",
+  "source_hashes": {
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/appworld_bridge.py": "45b0f3e17984831f93f74859a1dffae35effb3eff0b6967cfb3cd0dd78233bdd",
+    "scripts/run_context_comparison.py": "da42809b0c20fafd1a7fc14e7ef277d70fd4f2985a9659424dbca29e2b0ae2d9",
+    "scripts/evaluate_context_trial.py": "0836599f3b25bf7262a69e32af4fc48bc05c671e4b4deb320551afe65120c5d3",
+    "configs/P6_context_plan_v02.json": "0fbec5d288f57cb0293a904db07e7c6c60cb2823a4ec751270433e534b809a18"
+  }
+}

@@ -315,7 +315,7 @@ def main():
     signal.signal(signal.SIGALRM, timeout)
     summary = run(json.loads(Path(args.plan).read_text()), args.arm, args.task_id,
                   args.run_id, args.storage_root.resolve(), args.appworld_root.resolve(),
-                  args.appworld_python.resolve())
+                  args.appworld_python.absolute())
     return summary["stop_reason"] != "runtime_error"
 
 
