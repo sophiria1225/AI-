@@ -7,7 +7,7 @@
       "id": "R01",
       "title": "研究コードと記録をGitHubへ移管する",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "blocked",
       "why": "実装・判断・結果を一か所で追跡し、研究を再開可能にする。",
       "alternatives": "実験だけを先行すると記録が散在する。モデル本体と正解データのGit登録は容量と評価隔離のため採用しない。",
       "steps": [
@@ -22,7 +22,7 @@
         "ProjectとIssueが対応する",
         "正解が生成側へ混入しない"
       ],
-      "progress": "研究ブランチへ移管し、原記録1,279件が一致。依存の固定と別ディレクトリでのソース・4 CLI・データ再構成を確認。GitHub CLI未認証のためpush・Issue・Projectは未反映。",
+      "progress": "コード・記録・45件のローカル検査・投稿内容を準備済み。GitHub本人認証待ちのためpush・Issue・Projectは未反映。ユーザーの指示で公開を先行し、新規実験の開始を保留。認証完了後に公開を再開する。",
       "completed_steps": [
         "cloneと研究ブランチ作成",
         "既存コード・文書・原記録の移管",
