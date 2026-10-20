@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T03:50:18.274523+00:00",
+  "updated_at": "2026-10-20T03:58:08.552440+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "recorded_calls": 69,
-    "calls_with_known_usage": 69,
+    "recorded_calls": 70,
+    "calls_with_known_usage": 70,
     "calls_with_unknown_usage": 0,
     "requests_without_response_record": [],
-    "known_input_tokens": 640743,
-    "known_output_tokens": 21691,
-    "known_total_tokens": 662434,
+    "known_input_tokens": 668718,
+    "known_output_tokens": 21699,
+    "known_total_tokens": 690417,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -228,6 +228,38 @@
         "predicted_per_second": 11.941316956670077
       },
       "sampled_peak_rss_bytes": 217105137664,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_125342_28000",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 32768,
+      "input_tokens": 27975,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 241.60059349995572,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 27975,
+        "prompt_ms": 241106.015,
+        "prompt_per_token_ms": 8.618624307417337,
+        "prompt_per_second": 116.02779797924163,
+        "predicted_n": 8,
+        "predicted_ms": 458.69,
+        "predicted_per_token_ms": 65.52714285714286,
+        "predicted_per_second": 15.260851555516798
+      },
+      "sampled_peak_rss_bytes": 235850498048,
       "peak_system_swap_bytes": 0,
       "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {
