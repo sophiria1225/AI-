@@ -10,9 +10,9 @@
 
 **最新の区切り資料（11枚）：** [PDF](materials/20261021_p6/AI_harness_P6_20261021.pdf) / [編集用PowerPoint](materials/20261021_p6/AI_harness_P6_20261021.pptx) / [数値・出典・生成／検証記録](materials/20261021_p6/)。目的、構成図、全6試行、原因候補と次の比較を示しました。
 
-**実行を継続しています。** [P7：記憶生成9呼び出し](https://github.com/sophiria1225/AI-/issues/34#issuecomment-6299401998) → [P8：公開API形式の全履歴2試行](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976) → [P9：固定入力8呼び出しの時間校正](https://github.com/sophiria1225/AI-/issues/38#issuecomment-6300525302)の順にモデルを使います。P7が実行中、P8・P9が待機中です。待機だけで作業を区切らず、終了結果の照合・分析・実装も続けています。
+**P7も終了し、P8を実行中です。** 同じ入力から9回・82,412トークンで台帳を生成し、32件の完了項目を公開操作と照合しました。原入力は3出力全て、「未実行」の追記は3出力中2に、実行証拠のない操作完了が残りました。未実行文を退避した条件は適合2出力では確認されず、1出力は形式不備。[結果・図・判定方法・限界](docs/P7_findings.md)。1状態・助手1者の探索的確認で、最終タスク成功や新規性は未検証です。
 
-P7は、未実行の生成文を退避／未実行と明記するだけで台帳の誤完了が解消するかを調べます。[条件](docs/experiments/P7_memory_input_probe.md)と[出力前に固定した意味確認の規則](docs/experiments/P7_review_protocol.md)。P8は[APIごとのスキーマと複数操作](docs/experiments/P8_native_baseline.md)、P9は[同じ入力内容の配置](docs/experiments/P9_prompt_cache_probe.md)の校正です。単純な対策で足りるかを先に確かめ、基盤の改善を新規性とは呼びません。
+[P8：公開API形式の全履歴2試行](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976) → [P9：固定入力8呼び出しの時間校正](https://github.com/sophiria1225/AI-/issues/38#issuecomment-6300525302)の順で実験を続けます。[台帳更新の費用回収の条件](docs/P6_memory_update_costs.md)と[実行証拠に関する先行研究の追加照合](docs/runtime_evidence_overlap_20261021.md)も保存しました。基盤改善と独自技術を区別し、選択理由と採用しなかった案を更新します。
 
 **この比較で決めること：** 既存の防御的確認や単純な台帳で足りるなら、追加の独自方式は提案しません。原論文の完全再現や新手法の完成ではなく、必要な技術を絞るための導入比較です。[優先順位](docs/next_actions.md)。
 
