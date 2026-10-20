@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-20T09:13:13.228929+00:00",
+  "scope": "Previously exposed Pro development observations; no comparative quality or reorganization claim",
+  "runs": [
+    {
+      "record": "records/pro_pilot/P4_PRO_01",
+      "status": "running",
+      "recorded_calls": 15,
+      "recorded_tokens": 100851
+    }
+  ],
+  "analysis_source_sha256": {
+    "summarize_pro_pilot.py": "f51dbfeea6b1fe353512cfb317710da03ce716e6c67aa3232c4faba97b86f338",
+    "analyze_p3_timeline.py": "9816f3b7394c13b59920aad7023ef9959c2441786a7c8754c8064c781527960a",
+    "summarize_p3.py": "11e3aea20ac6bf39fcedd00e9add5c6062cce687802be46eea5c5fa87465d8b3",
+    "audit_p2.py": "2cb639e73fd281457b081e44b71895f95fa1b45d04af25750d1a80d596140c7d",
+    "audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162"
+  },
+  "limitations": [
+    "Changed files, repeated commands and later calls do not establish causal task dependency or unnecessary work.",
+    "Existing public tests passing is not proof of requirement completion.",
+    "Final artifact timing is retrospective and is not an available online stopping oracle.",
+    "New task, larger budget and runtime differ from P3; do not attribute cross-phase differences to orchestration."
+  ]
+}
