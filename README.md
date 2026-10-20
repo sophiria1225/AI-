@@ -4,7 +4,7 @@
 
 **進捗は[Project](https://github.com/users/sophiria1225/projects/1)と[Issues](https://github.com/sophiria1225/AI-/issues)で確認できます。** 10月20日、MiniMax M3 IQ4_XS・KV q8_0の単一／固定2担当の4試行が完了しました。15380は両方式合格、15957は両方式未解決。計105呼び出し・1,113,881トークン、記録監査エラー0でした。全件が予算停止で、品質を保った費用削減や再編の有効性はまだ実証していません。[結果と次の判断](docs/P3_findings.md)、[試行ごとの記録](docs/P3_progress.md)。
 
-主課題の選定では、最初の公開12候補の調査に加え、[PR #17](https://github.com/sophiria1225/AI-/pull/17)でPro V2の別の12候補・基点コード21ファイルを点検しました。理由を残してAnsibleのYAML処理を最初の追加環境候補に選び、[PR #19](https://github.com/sophiria1225/AI-/pull/19)で起動・評価器の正負対照を進めています。最初の取得後、DockerのID形式を仮定した検査で停止し、記録を残して修正中です。正式な主課題の採用は未確定です。
+主課題の選定では、最初の公開12候補の調査に加え、[PR #17](https://github.com/sophiria1225/AI-/pull/17)でPro V2の別の12候補・基点コード21ファイルを点検しました。理由を残してAnsibleのYAML処理を最初の追加環境候補に選び、[PR #19](https://github.com/sophiria1225/AI-/pull/19)で起動・評価器の正負対照を進めています。3回の導入チェックの失敗と修正を残し、4回目で起動確認が通りました。現在は独立評価の正負対照を実行しています。正式な主課題の採用は未確定です。
 
 | 読みたいもの | 場所 |
 |---|---|

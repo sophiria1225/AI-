@@ -1,0 +1,148 @@
+{
+  "at": "2026-10-20T08:33:22.501083+00:00",
+  "scope": "One Pro V2 development environment; no model trial or main-task adoption",
+  "preparation_trials": [
+    {
+      "record": "records/pro_environment/PRO_ENV_01",
+      "started_at": "2026-10-20T08:16:04.933111+00:00",
+      "status": "error",
+      "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+      "source_sha256": "6b86c12c1063db451cf98f915e945da3914e8308e8d01f2bdf5c964c3a51d288",
+      "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "model_calls": 0,
+      "reference_or_hidden_tests_read": false,
+      "space_before": {
+        "host_free_bytes": 315935014912,
+        "vm_free_bytes": 35115212800
+      },
+      "error": "ValueError('Image configuration differs from the inspected manifest')",
+      "wall_seconds": 29.598068375024013
+    },
+    {
+      "record": "records/pro_environment/PRO_ENV_02",
+      "started_at": "2026-10-20T08:23:23.242162+00:00",
+      "status": "error",
+      "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+      "source_sha256": "260b621a025cecee7a3b6ec667308195cad0f601d262ca63904dc17322a041f4",
+      "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "model_calls": 0,
+      "reference_or_hidden_tests_read": false,
+      "space_before": {
+        "host_free_bytes": 313808928768,
+        "vm_free_bytes": 32915431424
+      },
+      "image_identity": {
+        "local_image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "identity_kind": "manifest_digest_with_matching_descriptor",
+        "manifest_digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "manifest_configuration_digest": "sha256:99c415e0be8730aac426a17fa6cf55f92c04145fe8a9d05e755e8adce1849bfb",
+        "descriptor": {
+          "mediaType": "application/vnd.oci.image.manifest.v1+json",
+          "digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+          "size": 4469
+        }
+      },
+      "image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "docker_inspect_reported_size_bytes": 760395006,
+      "space_after_pull": {
+        "host_free_bytes": 313808920576,
+        "vm_free_bytes": 32915431424
+      },
+      "error": "ValueError('Probe process failed; raw logs retained')",
+      "wall_seconds": 33.48531462508254
+    },
+    {
+      "record": "records/pro_environment/PRO_ENV_03",
+      "started_at": "2026-10-20T08:26:45.317145+00:00",
+      "status": "error",
+      "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+      "source_sha256": "48e83f443c6422a01f7fac949468469857b7c388fa1a0c9944f016f613346dd2",
+      "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "model_calls": 0,
+      "reference_or_hidden_tests_read": false,
+      "space_before": {
+        "host_free_bytes": 313806983168,
+        "vm_free_bytes": 32915415040
+      },
+      "image_identity": {
+        "local_image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "identity_kind": "manifest_digest_with_matching_descriptor",
+        "manifest_digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "manifest_configuration_digest": "sha256:99c415e0be8730aac426a17fa6cf55f92c04145fe8a9d05e755e8adce1849bfb",
+        "descriptor": {
+          "mediaType": "application/vnd.oci.image.manifest.v1+json",
+          "digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+          "size": 4469
+        }
+      },
+      "image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "docker_inspect_reported_size_bytes": 760395006,
+      "space_after_pull": {
+        "host_free_bytes": 313806970880,
+        "vm_free_bytes": 32915415040
+      },
+      "error": "ValueError('Cannot establish unpacked root filesystem apparent size')",
+      "wall_seconds": 9.42106704111211
+    },
+    {
+      "record": "records/pro_environment/PRO_ENV_04",
+      "started_at": "2026-10-20T08:30:33.924372+00:00",
+      "status": "completed",
+      "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+      "source_sha256": "220b9bf211c8b0e577c72b9b459d7f61e917d5d73d7f13f50486783851501f15",
+      "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "model_calls": 0,
+      "reference_or_hidden_tests_read": false,
+      "space_before": {
+        "host_free_bytes": 313803448320,
+        "vm_free_bytes": 32915415040
+      },
+      "image_identity": {
+        "local_image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "identity_kind": "manifest_digest_with_matching_descriptor",
+        "manifest_digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "manifest_configuration_digest": "sha256:99c415e0be8730aac426a17fa6cf55f92c04145fe8a9d05e755e8adce1849bfb",
+        "descriptor": {
+          "mediaType": "application/vnd.oci.image.manifest.v1+json",
+          "digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+          "size": 4469
+        }
+      },
+      "image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "docker_inspect_reported_size_bytes": 760395006,
+      "space_after_pull": {
+        "host_free_bytes": 313803436032,
+        "vm_free_bytes": 32915415040
+      },
+      "probe": {
+        "status": "passed",
+        "python": "3.11.13",
+        "machine": "x86_64",
+        "repository_path": "/app",
+        "base_commit": "6198c7377f545207218fe8eb2e3cfa9673ff8f5e",
+        "rootfs_visible_apparent_bytes": 929291410,
+        "rootfs_apparent_measurement_complete": false,
+        "rootfs_apparent_bytes": null,
+        "uncompressed_rootfs_tar_bytes": 929775104,
+        "export_note": "Stream counted and discarded; includes tar headers/padding; not physical disk allocation",
+        "stdout_sha256": "bdb0a3c8ac5ff7bfaafbbfafcb162e63a2929486e4498f0f5c0d212910faa047",
+        "sampled_peak_cgroup_memory_bytes": 263774208,
+        "memory_samples": 3,
+        "wall_seconds": 14.467124584014527,
+        "scope": "Bounded history/location probes; not a proof against all possible data leakage"
+      },
+      "space_after_probe": {
+        "host_free_bytes": 313803329536,
+        "vm_free_bytes": 32915415040
+      },
+      "wall_seconds": 15.806082208058797
+    }
+  ],
+  "controls": [],
+  "interpretation": [
+    "First three preparation failures are retained, not replaced by the fourth success.",
+    "PRO_ENV_04 reused already-pulled layers; its duration is not first-download time.",
+    "Rootfs tar bytes include archive overhead and differ from physical disk allocation.",
+    "du was incomplete under the fixed capability policy; rootfs_apparent_bytes remains unknown."
+  ]
+}
