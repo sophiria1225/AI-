@@ -1,0 +1,78 @@
+{
+  "left_run": "P11_02_ROLES",
+  "right_run": "P12_02_RECENT",
+  "task_id": "29caf6f_1",
+  "shared_positions": [
+    {
+      "call_id": "call_001",
+      "exact_request_equal": true,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_002",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_003",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_004",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false
+    },
+    {
+      "call_id": "call_005",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": false,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_006",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": true,
+      "right_uses_partial_history": true
+    },
+    {
+      "call_id": "call_007",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "public_actions_equal": true,
+      "right_uses_partial_history": true
+    }
+  ],
+  "left_model_calls": 7,
+  "right_model_calls": 7,
+  "first_exact_input_difference": "call_002",
+  "first_input_difference_beyond_transport_ids": "call_005",
+  "first_different_public_action_position": "call_005",
+  "first_partial_history_position": "call_005",
+  "source_hashes": {
+    "left": {
+      "summary.json": "4111da47e99680e99d05f91a547e5cadd554ef2a85157d92c391797c01f1a6bc",
+      "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+      "usage.json": "5fcd4b2b60181d97b7c365f40df14d08435460754b03f5285fece8cc6b2b6ccf"
+    },
+    "right": {
+      "summary.json": "b945cadec550c1b67a47241400efaadba24fc5b245c9013e45bb06c27c150605",
+      "plan.json": "a48ffa2302fe4db16adf2f512f404c8f6969244f6bdbbdcb43319c7f26494792",
+      "usage.json": "0a708b4f7d8bc035d412659370452fbd93fb516490d1f0b513825076a4691579"
+    }
+  },
+  "model_calls_by_analysis": 0,
+  "environment_calls": 0,
+  "scope": "Descriptive alignment until and after traces diverge. Transport IDs are canonicalized only for offline comparison; actual inputs and costs are unchanged. Equal seed does not guarantee equal samples. No same-state intervention or quality-equivalence inference from this single pair.",
+  "script_sha256": "551237dfe20da1194f8967b449c143465d4ac840214159ea5cdf92920ddf67a3"
+}

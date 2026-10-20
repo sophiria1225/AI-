@@ -1,0 +1,108 @@
+{
+  "run_id": "P12_02_RECENT",
+  "task_id": "29caf6f_1",
+  "arm": "native_recent",
+  "stop_reason": "agent_declared_complete",
+  "declared_complete": true,
+  "known_total_tokens": 73220,
+  "usage_by_role": {
+    "agent": {
+      "calls": 7,
+      "input_tokens": 72001,
+      "output_tokens": 1219,
+      "unknown_usage": 0
+    }
+  },
+  "model_calls": 7,
+  "tool_turns": 13,
+  "compression_events": 3,
+  "format_errors": 0,
+  "api_bridge_errors": 0,
+  "wall_seconds": 227.22365329205059,
+  "evaluation": {
+    "official_success": true,
+    "pass_count": 8,
+    "fail_count": 0,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 0,
+  "peak_input_tokens": 12160,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "b945cadec550c1b67a47241400efaadba24fc5b245c9013e45bb06c27c150605",
+    "usage": "0a708b4f7d8bc035d412659370452fbd93fb516490d1f0b513825076a4691579",
+    "evaluation": "fa7c8cd8f5f4f0ced7fc0c7f2a59c8480466154fd9333a5a1be5b555e53e409d"
+  },
+  "counts": {
+    "recorded_operations": 13,
+    "api_requests_sent": 13,
+    "unknown_effect_requests": 0,
+    "returned_api_results_without_detected_error": 12,
+    "public_schemas_added": 47,
+    "inner_execution_errors": 1,
+    "multiple_call_responses": 5
+  },
+  "calls": [
+    {
+      "call_id": "call_001",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 11,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_002",
+      "requested_tool_calls": 3,
+      "recorded_operations": 3,
+      "supplied_schemas": 58,
+      "api_requests_sent": 3
+    },
+    {
+      "call_id": "call_003",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 58,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_004",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 58,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_005",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 58,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_006",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 58,
+      "api_requests_sent": 1
+    },
+    {
+      "call_id": "call_007",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 58,
+      "api_requests_sent": 1
+    }
+  ],
+  "dispatch_audit_errors": [],
+  "memory_audit_errors": [],
+  "memory_selection_attempts": 7,
+  "memory_selection_seconds": 0.10189962317235768,
+  "memory_token_count_requests": 16,
+  "memory_token_count_failures": 0,
+  "memory_budget_overflows": 0,
+  "model_calls_by_auditor": 0,
+  "environment_operations": 0,
+  "final_evaluations": 0,
+  "scope": "Deterministic replay of recorded history selections, tokenizer-input hashes, actual model inputs, operations and costs. No hidden task state or replayed actions.",
+  "auditor_sha256": "4c63b8eceb3ae13899111bdeaa816f5340d07d29ee5828b64a58575d29ec1a8c"
+}
