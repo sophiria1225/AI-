@@ -1,0 +1,55 @@
+{
+  "record_id": "P11_BOUNDARY_01",
+  "source_script_sha256": "9bac4bddc0296cb514728a71e1679d72f9f9bf8b5752c20f1b63b6e6e55211fe",
+  "model_calls": 0,
+  "public_documentation_calls": 2,
+  "final_evaluations": 0,
+  "ground_truth_loaded": false,
+  "boundary_records": [
+    {
+      "id": "initial",
+      "files": 14,
+      "new_object_bytes": 14830,
+      "wall_seconds": 0.001448625000193715,
+      "manifest_sha256": "e938029c57ad150ce36006b666f7a6566ad6a101ac1d4d6d23ae40537808279e"
+    },
+    {
+      "id": "call_001",
+      "files": 14,
+      "new_object_bytes": 0,
+      "wall_seconds": 0.0012150409165769815,
+      "manifest_sha256": "ca28221ba6db9cbeacd36ed7701dfaa9720afb2fe5b87f58c14087c4ee7e816f"
+    },
+    {
+      "id": "call_002",
+      "files": 14,
+      "new_object_bytes": 0,
+      "wall_seconds": 0.0011546669993549585,
+      "manifest_sha256": "1a5ce7e8cc1591b14c8699f0d852030242e793aaaa6804ce3abcb874d69bf4a2"
+    }
+  ],
+  "verifications": [
+    {
+      "files_verified": 14,
+      "captured_file_bytes": 14830,
+      "scope": "DB change files and harness records at a synchronous boundary. Not Python/RNG/process state; full restoration equivalence is unverified."
+    },
+    {
+      "files_verified": 14,
+      "captured_file_bytes": 14830,
+      "scope": "DB change files and harness records at a synchronous boundary. Not Python/RNG/process state; full restoration equivalence is unverified."
+    },
+    {
+      "files_verified": 14,
+      "captured_file_bytes": 14830,
+      "scope": "DB change files and harness records at a synchronous boundary. Not Python/RNG/process state; full restoration equivalence is unverified."
+    },
+    {
+      "files_verified": 14,
+      "captured_file_bytes": 14830,
+      "scope": "DB change files and harness records at a synchronous boundary. Not Python/RNG/process state; full restoration equivalence is unverified."
+    }
+  ],
+  "wall_seconds": 3.427176041994244,
+  "scope": "Actual API-boundary DB file capture and post-close byte verification. No restore, resumed action equivalence, or full process checkpoint claim."
+}

@@ -1,0 +1,79 @@
+{
+  "appworld_version": "0.1.3.post1",
+  "task_ids": [
+    "287e338_1",
+    "29caf6f_1",
+    "2a163ab_1",
+    "302c169_1"
+  ],
+  "selection_rule": "Precommitted P11 public task selection: next four previously unexposed train scenarios in sorted ID order, variant _1; never replace based on outcomes.",
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "model": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "num_ctx": 65536,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "seed": 42,
+  "agent_temperature": 1.0,
+  "draft_temperature": 0.7,
+  "max_output_tokens": 4096,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "observation_page_characters": 24000,
+  "phase": "P11",
+  "version": "P11_additional_baseline_v01",
+  "batch_id": "P11_batch_v01",
+  "arms": [
+    "native_roles"
+  ],
+  "max_api_requests": 80,
+  "max_wait_seconds": 10800,
+  "server_lease_end_utc": "2026-10-21T01:48:58.113011+00:00",
+  "server_lease_basis": "Identical server command restarted after P10 complete and empty model slot; bounded --max-seconds14400. Per-trial evaluation180sec plus180sec reserve, no start below8100sec remaining.",
+  "run_order": [
+    [
+      "287e338_1",
+      "native_roles",
+      "P11_01_ROLES"
+    ],
+    [
+      "29caf6f_1",
+      "native_roles",
+      "P11_02_ROLES"
+    ],
+    [
+      "2a163ab_1",
+      "native_roles",
+      "P11_03_ROLES"
+    ],
+    [
+      "302c169_1",
+      "native_roles",
+      "P11_04_ROLES"
+    ]
+  ],
+  "source_comparison_plan_sha256": "63171ecfe4905cea4d9e34a064a674e18da93904669b4e32345992897cfbbdb2",
+  "scope": "Four selected development scenarios, one seed each, fixed P10 full-history baseline. No memory-method comparison or confirmatory claim.",
+  "discovery_policy": "Initially api_docs and supervisor schemas. A requested app description exposes that public app; individual API documentation exposes that API. New schemas apply on the next model response. No answer-based selection or silent top-k pruning.",
+  "interpretation": [
+    "Same model, prompt, discovery, history renderer and per-trial limits as P10.",
+    "Native roles chosen for standard explicit action/result correspondence after both development tasks passed; P8 was cheaper in logical tokens, and is not suppressed.",
+    "API-boundary DB/harness capture is offline-only; its time, failure and bytes are recorded. No Python/RNG/process restoration claim.",
+    "All four preselected scenarios remain; independent evaluation stays offline and never feeds later generation.",
+    "This finite additional baseline is followed by same-interface memory comparisons, not repeated baseline tuning."
+  ],
+  "history_representation": "Append-only public assistant content/calls and tool observations; no reasoning replay. Same archive page size. Invalid argument turns use text fallback preserving raw calls and actual results.",
+  "source_selection_sha256": "b1d693f9b8af7549417e62deb9200f6aac06fa2d4f50afe805d77e2e72863058",
+  "wait_for_native_batch": "P10_batch_v01",
+  "max_checkpoint_new_bytes_per_boundary": 134217728,
+  "max_checkpoint_object_bytes": 536870912
+}

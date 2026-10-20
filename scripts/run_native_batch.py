@@ -1,4 +1,4 @@
-"""Run two frozen baselines after their prerequisite, with aggregate-only progress."""
+"""Run a fixed calibration batch after its prerequisite, with aggregate progress."""
 import argparse
 import datetime
 import hashlib
@@ -17,8 +17,9 @@ REPOSITORY = "sophiria1225/AI-"
 ISSUE = 36
 MARKER = "<!-- harness-native-baseline:P8_batch_v01 -->"
 PHASES = {
-    "P8": {"issue": 36, "arm": "native_full", "batch": "P8_batch_v01", "before": "P7"},
-    "P10": {"issue": 42, "arm": "native_roles", "batch": "P10_batch_v01", "before": "P9"},
+    "P8": {"issue": 36, "arm": "native_full", "batch": "P8_batch_v01", "before": "P7", "trials": 2},
+    "P10": {"issue": 42, "arm": "native_roles", "batch": "P10_batch_v01", "before": "P9", "trials": 2},
+    "P11": {"issue": 44, "arm": "native_roles", "batch": "P11_batch_v01", "before": "P10", "trials": 4},
 }
 
 
@@ -28,17 +29,32 @@ def check_frozen(frozen):
             raise RuntimeError("frozen source changed: " + name)
 
 
+def validate_schedule(plan):
+    phase = plan["phase"]
+    if (phase not in PHASES or plan["batch_id"] != PHASES[phase]["batch"]
+            or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
+            or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
+        raise ValueError("only the fixed calibration schedule is supported")
+    if phase == "P11":
+        selected = json.loads((ROOT / 'reports/P11_public_task_selection.json').read_text())
+        ids = [row['task_id'] for row in selected['selected']]
+        if (plan['task_ids'] != ids or [row[0] for row in plan['run_order']] != ids
+                or len({row[2] for row in plan['run_order']}) != len(ids)):
+            raise ValueError('P11 must preserve the preselected four scenarios and order')
+
+
 def public_body(rows, state):
     phase = state.get("phase", "P8")
     spec = PHASES[phase]
     marker = f"<!-- harness-native-baseline:{spec['batch']} -->"
     states = {
-        "waiting": spec['before'] + "の終了待ち", "running": "実行中", "complete": "2試行の実行・評価処理が終了",
+        "waiting": spec['before'] + "の終了待ち", "running": "実行中", "complete": f"{spec['trials']}試行の実行・評価処理が終了",
         "prerequisite_failed": "前段の状態を確認するため保留",
         "runtime_error": "実行エラーで停止", "server_lease_too_short": "サーバーの残稼働時間不足で未開始",
     }
-    title = ("P8：公開スキーマ・複数操作を使う全履歴基準" if phase == "P8" else
-             "P10：要求と結果の役割を保持する標準会話の全履歴基準")
+    title = {"P8": "P8：公開スキーマ・複数操作を使う全履歴基準",
+             "P10": "P10：要求と結果の役割を保持する標準会話の全履歴基準",
+             "P11": "P11：選定済みの追加4シナリオを同じ全履歴基準で観察"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -56,9 +72,9 @@ def public_body(rows, state):
               "各試行：80 LLM呼び出し・80 API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。",
               "公式APIスキーマを利用した導入基準で、公式エージェントの完全再現・新手法・品質維持の主張ではありません。",
               "評価は終了後の別プロセスで行い、後続のモデル入力には返しません。",
-              ("[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)"
-               if phase == "P8" else
-               "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-history-calibration-20261021/docs/experiments/P10_native_history.md)")]
+              {"P8": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)",
+               "P10": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-history-calibration-20261021/docs/experiments/P10_native_history.md)",
+               "P11": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-development-20261021/docs/experiments/P11_additional_baseline.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -95,10 +111,7 @@ def main():
     frozen = json.loads(args.freeze_record.read_text())
     check_frozen(frozen)
     phase = plan["phase"]
-    if (phase not in PHASES or plan["batch_id"] != PHASES[phase]["batch"]
-            or len(plan["run_order"]) != 2 or plan['arms'] != [PHASES[phase]['arm']]
-            or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
-        raise ValueError("only the fixed two-trial plan is supported")
+    validate_schedule(plan)
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
     observer = out / "observer"
@@ -140,10 +153,12 @@ def main():
 
     update()
     started = time.monotonic()
-    prerequisite_path = (
-        storage / "records/memory_probe" / plan["wait_for_probe"] / "status.json"
-        if phase == "P8" else
-        storage / "records/cache_probe" / plan["wait_for_cache_probe"] / "status.json")
+    prerequisite_dir, prerequisite_id = {
+        "P8": ("memory_probe", plan.get("wait_for_probe")),
+        "P10": ("cache_probe", plan.get("wait_for_cache_probe")),
+        "P11": ("context_pilot", plan.get("wait_for_native_batch")),
+    }[phase]
+    prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
         prerequisite = json.loads(prerequisite_path.read_text())
         if prerequisite["status"] == "complete":
@@ -163,7 +178,8 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + 180:
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase == "P11" else 180
+    if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)
         return 1
