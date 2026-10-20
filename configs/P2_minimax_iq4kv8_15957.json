@@ -2,7 +2,7 @@
   "scope": "P2_development_runtime_candidate_not_weight_only_ablation",
   "phase": "P2",
   "version": "P2_runtime_candidate_v01",
-  "readiness": "pending",
+  "readiness": "passed",
   "instance_id": "django__django-15957",
   "image": "swebench/sweb.eval.x86_64.django_1776_django-15957@sha256:7e2694f891d96ec8eaef27b746823acaa6dd28d65832b79db2bd18a816b3437e",
   "backend": "llama.cpp",
@@ -39,11 +39,15 @@
       "timeout_seconds": 180
     }
   ],
-  "calibration_records": [],
+  "calibration_records": [
+    "records/p2_probes/20261020_130318_enabled/summary.json",
+    "records/p2_capacity/20261020_130359_56000/summary.json"
+  ],
   "model_selection": "configs/models/minimax_m3_iq4_selection.json",
-  "readiness_scope": "IQ4 weights with q8_0 KV cache; native tools and capacity require calibration",
+  "readiness_scope": "Native function transport, usage/termination checks and synthetic context capacity; not task quality or reliable plain JSON",
   "readiness_limitations": [
-    "Changes both weight precision and KV precision relative to Q3/f16; cannot isolate weight quantization effect"
+    "Changes both weight precision and KV precision relative to Q3/f16; cannot isolate weight quantization effect",
+    "Plain JSON probe failed because of Markdown fences; no raw JSON output parser is used for native tool calls."
   ],
   "cache_type_k": "q8_0",
   "cache_type_v": "q8_0"

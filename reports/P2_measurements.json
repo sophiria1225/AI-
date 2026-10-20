@@ -1,17 +1,15 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T04:05:10.465644+00:00",
+  "updated_at": "2026-10-20T04:14:11.029723+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "recorded_calls": 75,
-    "calls_with_known_usage": 74,
+    "recorded_calls": 76,
+    "calls_with_known_usage": 75,
     "calls_with_unknown_usage": 1,
-    "requests_without_response_record": [
-      "records/p2_capacity/20261020_130359_56000/request.json"
-    ],
-    "known_input_tokens": 670067,
-    "known_output_tokens": 21957,
-    "known_total_tokens": 692024,
+    "requests_without_response_record": [],
+    "known_input_tokens": 726060,
+    "known_output_tokens": 21965,
+    "known_total_tokens": 748025,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -79,16 +77,18 @@
         65536
       ],
       "purposes": [
-        "interface_calibration"
+        "interface_calibration",
+        "synthetic_capacity"
       ],
       "records": [
-        "records/p2_probes/20261020_130318_enabled"
+        "records/p2_probes/20261020_130318_enabled",
+        "records/p2_capacity/20261020_130359_56000"
       ],
-      "recorded_calls": 4,
-      "known_input_tokens": 1349,
-      "known_output_tokens": 258,
+      "recorded_calls": 5,
+      "known_input_tokens": 57342,
+      "known_output_tokens": 266,
       "unknown_usage_calls": 0,
-      "known_total_tokens": 1607
+      "known_total_tokens": 57608
     }
   ],
   "runtime_group_note": "Cost inventory across calibration contexts and task purposes, not a quality comparison. Early records used the captured f16/f16 server command. Unknown usage is not zero cost.",
@@ -410,6 +410,40 @@
         "predicted_per_second": 15.260851555516798
       },
       "sampled_peak_rss_bytes": 235850498048,
+      "peak_system_swap_bytes": 0,
+      "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_130359_56000",
+      "model": "minimax-m3-iq4xs",
+      "ctx_size": 65536,
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "input_tokens": 55993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 560.539616834023,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 55866,
+        "prompt_ms": 559866.109,
+        "prompt_per_token_ms": 10.021589320874952,
+        "prompt_per_second": 99.78457188591852,
+        "predicted_n": 8,
+        "predicted_ms": 605.87,
+        "predicted_per_token_ms": 86.55285714285715,
+        "predicted_per_second": 11.553633617772789
+      },
+      "sampled_peak_rss_bytes": 237132955648,
       "peak_system_swap_bytes": 0,
       "memory_scope": "entire associated server lifetime so far, not isolated to this probe",
       "sampling": {

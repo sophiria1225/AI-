@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-20T04:14:10.995345+00:00",
+  "status": "passed_for_native_tool_development",
+  "scope": "Native function transport, usage/termination checks and synthetic context capacity; not task quality or reliable plain JSON",
+  "native_checks": {
+    "json_count_matches": true,
+    "tool_request_count_matches": true,
+    "valid_tool_request": true,
+    "tool_result_count_matches": true,
+    "tool_result_used": true,
+    "intentional_length_count_matches": true,
+    "length_detected": true
+  },
+  "plain_json_check": false,
+  "capacity_input_tokens": 55993,
+  "capacity_output_tokens": 8,
+  "capacity_wall_seconds": 560.539616834023,
+  "model": "minimax-m3-iq4xs",
+  "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "context": 65536,
+  "cache_type_k": "q8_0",
+  "cache_type_v": "q8_0",
+  "sampled_peak_rss_bytes": 237132955648,
+  "peak_system_swap_bytes": 0,
+  "memory_scope": "server lifetime through this report, sampled every five seconds; RSS is not total GPU allocation",
+  "records": [
+    "records/p2_probes/20261020_130318_enabled/summary.json",
+    "records/p2_capacity/20261020_130359_56000/summary.json"
+  ],
+  "prior_failed_configuration": "IQ4 with f16 KV at 64K, preserved separately",
+  "task_quality": "not measured yet"
+}
