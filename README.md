@@ -2,7 +2,9 @@
 
 大規模で相互依存する仕事を、同じモデル・品質条件のもとで、より少ない総入力・出力トークンで完了させるための研究です。分担、情報共有、作業状態の移管、実行単位の再編を比較します。期限は2027年12月です。
 
-**進捗は[Project](https://github.com/users/sophiria1225/projects/1)と[Issues](https://github.com/sophiria1225/AI-/issues)で確認できます。** MiniMax M3 IQ4_XS・KV q8_0の2開発課題が終了しました。15380は合格、15957は未解決で、計58呼び出し・556,225トークンです。Q3/f16の2件未解決も保持し、少数試行から一般的な優位性は決めません。次は同じIQ4/q8設定で単一と固定2担当の挙動を比較します。再編方式の有効性と、品質を保った費用削減はまだ実証していません。
+**進捗は[Project](https://github.com/users/sophiria1225/projects/1)と[Issues](https://github.com/sophiria1225/AI-/issues)で確認できます。** 10月20日、MiniMax M3 IQ4_XS・KV q8_0の単一／固定2担当の4試行が完了しました。15380は両方式合格、15957は両方式未解決。計105呼び出し・1,113,881トークン、記録監査エラー0でした。全件が予算停止で、品質を保った費用削減や再編の有効性はまだ実証していません。[結果と次の判断](docs/P3_findings.md)、[試行ごとの記録](docs/P3_progress.md)。
+
+主課題の選定では、最初の公開12候補の調査に加え、[PR #17](https://github.com/sophiria1225/AI-/pull/17)でPro V2の別の12候補・基点コード21ファイルを点検しました。理由を残してAnsibleのYAML処理を最初の追加環境候補に選び、[PR #19](https://github.com/sophiria1225/AI-/pull/19)で起動・評価器の正負対照を進めています。最初の取得後、DockerのID形式を仮定した検査で停止し、記録を残して修正中です。正式な主課題の採用は未確定です。
 
 | 読みたいもの | 場所 |
 |---|---|
@@ -10,7 +12,7 @@
 | なぜこのモデルか、他候補を後順位にした理由 | [モデル選定](docs/model_selection.md) |
 | 判断と失敗の履歴 | [意思決定記録](docs/decision_log.md) |
 | 今回の実験条件 | [P2計画](docs/experiments/P2_minimax_baseline.md) |
-| 次の単一・固定分担比較 | [P3仕様](docs/experiments/P3_fixed_partition.md)、[制御検証](reports/P3_controls.json) |
+| 単一・固定分担比較 | [P3実行記録](docs/P3_progress.md)、[P3仕様](docs/experiments/P3_fixed_partition.md)、[制御検証](reports/P3_controls.json) |
 | MiniMaxの実機測定 | [検証の経過](docs/P2_progress.md)、[費用・容量の集計](reports/P2_measurements.json) |
 | 研究の背景・目的 | [研究仕様](docs/research_brief.md) |
 | 以前の実測結果 | [P1検証](docs/P1_verification_results.md)、[初期検証](docs/initial_verification_results.md) |
