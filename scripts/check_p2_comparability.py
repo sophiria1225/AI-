@@ -1,4 +1,5 @@
-"""Check the prepared Q3/IQ4 conditions without starting model inference."""
+"""Check prepared Q3/IQ4 conditions, with distinct reports for KV variants."""
+import argparse
 import ast
 import datetime
 import hashlib
@@ -33,22 +34,35 @@ def core_definitions(path):
             if isinstance(node, (ast.FunctionDef, ast.ClassDef)) and node.name in names}
 
 
-def compare_configs(left, right):
+def compare_configs(left, right, allowed_changes=None):
+    allowed = ALLOWED_CHANGES if allowed_changes is None else allowed_changes
     changed = sorted(k for k in left.keys() | right.keys() if left.get(k) != right.get(k))
     return {'changed_config_fields': changed,
-            'unexpected_changed_fields': sorted(set(changed) - ALLOWED_CHANGES),
+            'unexpected_changed_fields': sorted(set(changed) - allowed),
             'identical_agent_templates': make_templates(left) == make_templates(right)}
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--variant', choices=['iq4_f16', 'iq4_q8'], default='iq4_f16')
+    args = parser.parse_args()
+    runtime_candidate = args.variant == 'iq4_q8'
+    allowed = ALLOWED_CHANGES | (
+        {'scope', 'version', 'cache_type_k', 'cache_type_v'} if runtime_candidate else set())
+    stem = 'P2_minimax_iq4kv8' if runtime_candidate else 'P2_minimax_iq4'
     pairs = []
     current = ROOT / 'scripts/run_mini_pilot.py'
     for task, baseline in BASELINES.items():
         directory = ROOT / 'records/p2' / baseline
         original = read(directory / 'config.json')
-        prepared = read(ROOT / f'configs/P2_minimax_iq4_{task}.json')
+        prepared = read(ROOT / f'configs/{stem}_{task}.json')
         pair = {'task': task, 'Q3_record': str(directory.relative_to(ROOT)),
-                **compare_configs(original, prepared), 'IQ4_readiness': prepared['readiness']}
+                **compare_configs(original, prepared, allowed),
+                'IQ4_readiness': prepared['readiness'],
+                'KV_formats': {'baseline': [original.get('cache_type_k', 'f16'),
+                                             original.get('cache_type_v', 'f16')],
+                               'candidate': [prepared.get('cache_type_k', 'f16'),
+                                             prepared.get('cache_type_v', 'f16')]}}
         old_hashes = read(directory / 'summary.json')['source_hashes']
         pair['source_comparison'] = {
             name: {'baseline_sha256': value, 'current_sha256': sha(ROOT / 'scripts' / name),
@@ -69,9 +83,14 @@ def main():
         pairs.append(pair)
     report = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'scope': 'Recorded Q3 conditions versus prepared IQ4; no model inference',
+              'variant': args.variant,
+              'interpretation': ('Changes both weights and KV precision; cannot isolate weight quantization'
+                                 if runtime_candidate else 'KV format is retained; task quality is not inferred'),
               'pairs': pairs, 'runner_sha256': sha(current),
               'checker_sha256': sha(Path(__file__)), 'passed': all(p['passed'] for p in pairs)}
-    path = ROOT / 'reports/P2_quantization_comparability.json'
+    filename = ('P2_runtime_comparability.json' if runtime_candidate
+                else 'P2_quantization_comparability.json')
+    path = ROOT / 'reports' / filename
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'report': str(path.relative_to(ROOT)), 'passed': report['passed']}))
     return report['passed']
