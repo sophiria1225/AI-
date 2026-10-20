@@ -1,0 +1,86 @@
+{
+  "trials": [
+    {
+      "run_id": "P6_01_FULL_V02",
+      "counts": {
+        "generic_api_actions": 13,
+        "same_decoded_request": 13,
+        "different_decoded_request": 0,
+        "would_need_additional_tool_discovery": 2
+      },
+      "spans_sha256": "2797be3f4102ff7fda1a482664816def1e745719e5222ae42a637bd9657d6c3f",
+      "api_requests_sent": 0,
+      "inference_calls": 0
+    },
+    {
+      "run_id": "P6_01_FOCUS_V02",
+      "counts": {
+        "generic_api_actions": 7,
+        "same_decoded_request": 7,
+        "different_decoded_request": 0,
+        "would_need_additional_tool_discovery": 1
+      },
+      "spans_sha256": "297bd32688cb7cfb18272dc1ba1a532790b50b994380401e9350f17a384acbbe",
+      "api_requests_sent": 0,
+      "inference_calls": 0
+    },
+    {
+      "run_id": "P6_01_LEDGER_V03",
+      "counts": {
+        "generic_api_actions": 9,
+        "same_decoded_request": 8,
+        "different_decoded_request": 0,
+        "malformed_original_arguments": 1
+      },
+      "spans_sha256": "174ccb0adbca737fbf797f256c49c4cdc0255fd74a583ea07592b0bd789429ea",
+      "api_requests_sent": 0,
+      "inference_calls": 0
+    },
+    {
+      "run_id": "P6_02_LEDGER_V03",
+      "counts": {
+        "generic_api_actions": 16,
+        "same_decoded_request": 15,
+        "different_decoded_request": 0,
+        "would_need_additional_tool_discovery": 4,
+        "both_reject_arguments": 1,
+        "archive_requests": 1
+      },
+      "spans_sha256": "48df2c742da28b8f2086e873c5938790afe1f50209bc5449a42287c1c7525911",
+      "api_requests_sent": 0,
+      "inference_calls": 0
+    }
+  ],
+  "pending": [
+    "P6_02_FULL_V03",
+    "P6_02_FOCUS_V03"
+  ],
+  "public_schema_hashes": {
+    "api_docs/function_calling/amazon.json": "641103cdbfa64da0832bf73b7db4e846bcf99f649bf10641d508d2e006a67f5b",
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/function_calling/api_docs.json": "5b08688dd5b4dec208f4251b5c33269b3049517c7c4451fd98d49c67477e291e",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/function_calling/file_system.json": "68b087cb4c15677e87e772448a28eca85e01ebf4fdfeec313696d0778f068ad5",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/function_calling/gmail.json": "4a0ee65205fb5e5363d24f7e9e5ba8884063b23f2a28e5d7b7da4829e3974553",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/function_calling/phone.json": "afd6a33ebf9ea91aeb738f840bc607e5af57b86c944f96c9d871467ef6d225a9",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/function_calling/simple_note.json": "53414bc70fbece5ba2ce5f1e6f5a50a41084704a410ce45597130350ab773a3f",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/function_calling/splitwise.json": "d52b852f982c9a4ccd1eb453a5cb035af8128875eab9fa85b0fbbe8606cc16b2",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/function_calling/spotify.json": "7194c0cc18a48e479f65192ba732e098174498ccc904cdb2dfa4d371e365d9c3",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/function_calling/supervisor.json": "e9b6c983f7b92686d530349e7d4d7afb8a3332e24ff2219789e6380d8c136ce9",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/function_calling/todoist.json": "88b67e50dec1f6ae8dc3ac82a5a1a0d9ec91e11ea004fe9bdeeca0572de90086",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/function_calling/venmo.json": "dc69706b9c8ccc59fa8e28740abe36c35d3fc2cf3dca37cdd501ad413f37f615",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "script_sha256": "bab4c836a7c4e36e7555a49d45673b3bbdf8437d69449e83ace19937f089adce",
+  "scope": "Saved argument mapping only. Extra tool discovery can change trajectories; this does not establish stronger agent quality or identical future behavior.",
+  "adapter_sha256": "401aed3d4e2d22201e84dc2268b466bdaaa234abb19ec3d4da1fa4276b6ceb31",
+  "discovery_policy": "Only individual show_api_doc requests expose tools; preserved first candidate, not selected for execution."
+}
