@@ -1,13 +1,13 @@
 # 現在の状態
 
-2026年10月20日：GitHubへの移管とP2が完了し、P3の固定比較を実行中。[作業ボード](task_board.md)を進捗の入口とする。
+2026年10月20日：GitHubへの移管・P2・P3の4試行が完了。追加課題の環境を検証中。[作業ボード](task_board.md)を進捗の入口とする。
 
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
 - MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。
 - Q3の開発2課題が終了。計53呼び出し553,574トークンで、独立評価はいずれも不合格。15380は公開検査7エラー、15957は差分0で未解決。記録監査はエラー0。64K枠不足やswapによる停止ではなかった。[実測と解釈](P2_progress.md)。
 - IQ4_XS・64K・KV q8_0の開発2課題を完了。15380は公開140テスト・独立評価とも合格。15957は再現テスト追加だけで機能は未修正、独立評価は不合格。計58呼び出し556,225トークン、記録監査エラー0。[Issue #9](https://github.com/sophiria1225/AI-/issues/9)、[PR #12](https://github.com/sophiria1225/AI-/pull/12)。次のP3開発比較へこの設定を使うが、本実験のモデル採用と一般的な優位性は未確定。IQ4/f16の容量失敗と素のJSON形式失敗も保持した。
-- P3の4試行中3試行が完了。15380は単一283,176・固定2担当275,008トークンで両方合格。15957の固定2担当は275,531トークンで再現テスト追加にとどまり、独立評価は不合格だった。3試行とも監査エラー0・完了宣言なしの予算停止。最後のP3-04（15957・単一）を17:06 JSTに開始。[PR #13](https://github.com/sophiria1225/AI-/pull/13)、[経過](P3_progress.md)、[仕様](experiments/P3_fixed_partition.md)。時間とキャッシュ条件も保存し、各1回の結果から品質維持や削減効果は確定しない。
-- 主課題の公開12候補と3件の基点コードの調査を完了し、[PR #14](https://github.com/sophiria1225/AI-/pull/14)をmainへ反映した。Pro V2でも、NodeBBの閲覧済み38件を除いた604件から、規則を先に固定して12候補を確認し、3候補の21ファイルを点検した。[PR #17](https://github.com/sophiria1225/AI-/pull/17)はmainへ反映済み。最初の追加環境候補はAnsibleのYAML・信頼情報・vault処理。正式な主課題採用はまだ0件で、[Issue #18](https://github.com/sophiria1225/AI-/issues/18)、[PR #19](https://github.com/sophiria1225/AI-/pull/19)でP3完了後の起動・評価器の正負対照を準備中。正解閲覧の経緯、除外理由、採用しない候補も記録した。
+- P3の4試行が完了。15380は単一283,176・固定2担当275,008トークンで両方合格。15957は固定2担当275,531トークンで再現テストのみ、単一280,166トークンで差分なし、両方未解決。計105呼び出し・1,113,881トークン、監査エラー0・全件完了宣言なしの予算停止。[PR #13](https://github.com/sophiria1225/AI-/pull/13)、[結果と判断](P3_findings.md)、[経過](P3_progress.md)。少数の予算停止試行から品質維持や費用削減は確定しない。
+- 主課題の公開12候補と3件の基点コードの調査を完了し、[PR #14](https://github.com/sophiria1225/AI-/pull/14)をmainへ反映した。Pro V2でも、NodeBBの閲覧済み38件を除いた604件から、規則を先に固定して12候補を確認し、3候補の21ファイルを点検した。[PR #17](https://github.com/sophiria1225/AI-/pull/17)はmainへ反映済み。最初の追加環境候補はAnsibleのYAML・信頼情報・vault処理。正式な主課題採用はまだ0件で、[Issue #18](https://github.com/sophiria1225/AI-/issues/18)、[PR #19](https://github.com/sophiria1225/AI-/pull/19)で起動・評価器の正負対照を進める。PRO_ENV_01は取得後のID照合で停止した。固定manifest digestは一致しており、Dockerが返すID形式の扱いを修正中。コンテナと正負対照はまだ未実行。正解閲覧の経緯、除外理由、採用しない候補も記録した。
 - 公開検査を個別に記録する処理を実装し、2開発課題の元コードでも動作を確認。条件は[P2計画](experiments/P2_minimax_baseline.md)。
 - 元の研究コードと記録は変更していない。新しい実装と実験はこのリポジトリで行う。
 
