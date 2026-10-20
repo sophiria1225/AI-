@@ -5,12 +5,13 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 import types
 import unittest
 from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from prepare_pro_environment import check_space, completed_trials, validate_image, validate_probe, GIB, PROBE
+from prepare_pro_environment import check_space, completed_trials, measure_export, validate_image, validate_probe, GIB, PROBE
 
 
 class ProEnvironmentGateTests(unittest.TestCase):
@@ -87,7 +88,6 @@ class ProEnvironmentGateTests(unittest.TestCase):
                            ("task_id_commit_present", True),
                            ("task_id_commit_probe", {"exit_code": None, "timed_out": True}),
                            ("unreachable", {"exit_code": None, "stdout": "", "timed_out": True}),
-                           ("rootfs_apparent_bytes", {"exit_code": 1, "stdout": "0\t/"}),
                            ("head", {"exit_code": 0, "stdout": "other"})]:
             changed = copy.deepcopy(probe)
             changed[key] = value
@@ -137,6 +137,15 @@ class ProEnvironmentGateTests(unittest.TestCase):
         self.assertTrue(result["timed_out"])
         self.assertEqual(result["stdout"], "partial result")
         self.assertEqual(result["stderr"], "partial error")
+
+    def test_export_measurement_preserves_limits_and_counts_all_chunks(self):
+        self.assertEqual(measure_export(iter([b"ab", b"c"]), time.monotonic() + 5, limit=3), 3)
+        with self.assertRaises(ValueError):
+            measure_export(iter([b"ab", b"cd"]), time.monotonic() + 5, limit=3)
+        with self.assertRaises(ValueError):
+            measure_export(iter([]), time.monotonic() + 5)
+        with self.assertRaises(TimeoutError):
+            measure_export(iter([b"a"]), time.monotonic() - 1)
 
 
 if __name__ == "__main__":

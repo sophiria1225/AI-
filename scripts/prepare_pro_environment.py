@@ -162,9 +162,22 @@ def validate_probe(probe, plan):
         raise ValueError("Potential solution/evaluator exposure in the image")
     if probe["unreachable"]["stdout"]:
         raise ValueError("Unreachable Git objects require inspection before model use")
-    size = probe["rootfs_apparent_bytes"]
-    if size["exit_code"] != 0 or not re.fullmatch(r"[1-9][0-9]*\s+/", size["stdout"]):
-        raise ValueError("Cannot establish unpacked root filesystem apparent size")
+    # A cap-dropped root cannot necessarily enumerate OS cache directories.
+    # Preserve du's result as incomplete, and measure a full uncompressed
+    # export through the external Docker controller without widening caps.
+
+
+def measure_export(chunks, deadline, limit=16 * GIB):
+    total = 0
+    for chunk in chunks:
+        total += len(chunk)
+        if total > limit:
+            raise ValueError("Root filesystem export exceeded measurement limit")
+        if time.monotonic() > deadline:
+            raise TimeoutError("Root filesystem export exceeded probe deadline")
+    if total == 0:
+        raise ValueError("Root filesystem export was empty")
+    return total
 
 
 def probe_image(client, plan, name, record):
@@ -178,6 +191,7 @@ def probe_image(client, plan, name, record):
     )
     peak, samples = None, 0
     started = time.monotonic()
+    runtime = {"container_id": container.id, "status": "error"}
     try:
         container.reload()
         host = container.attrs["HostConfig"]
@@ -204,16 +218,39 @@ def probe_image(client, plan, name, record):
             raise ValueError("Probe process failed; raw logs retained")
         probe = json.loads(raw)
         validate_probe(probe, plan)
+        stream = container.export(chunk_size=1024**2)
+        try:
+            export_bytes = measure_export(stream, started + 120)
+        finally:
+            stream.close()
+        size = probe["rootfs_apparent_bytes"]
+        size_match = re.fullmatch(r"([1-9][0-9]*)\s+/", size.get("stdout", ""))
+        visible_bytes = int(size_match[1]) if size_match else None
+        complete_size = size.get("exit_code") == 0 and visible_bytes is not None
+        runtime["status"] = "passed"
         return {"status": "passed", "python": probe["python"], "machine": probe["machine"],
                 "repository_path": probe["roots"][0], "base_commit": probe["head"]["stdout"],
-                "rootfs_apparent_bytes": int(probe["rootfs_apparent_bytes"]["stdout"].split()[0]),
+                "rootfs_visible_apparent_bytes": visible_bytes,
+                "rootfs_apparent_measurement_complete": complete_size,
+                "rootfs_apparent_bytes": visible_bytes if complete_size else None,
+                "uncompressed_rootfs_tar_bytes": export_bytes,
+                "export_note": "Stream counted and discarded; includes tar headers/padding; not physical disk allocation",
                 "stdout_sha256": hashlib.sha256(raw).hexdigest(),
                 "sampled_peak_cgroup_memory_bytes": peak, "memory_samples": samples,
                 "wall_seconds": time.monotonic() - started,
                 "scope": "Bounded history/location probes; not a proof against all possible data leakage"}
     finally:
         # Remove only the exact container created by this invocation.
-        container.remove(force=True)
+        runtime.update(wall_seconds=time.monotonic() - started,
+                       sampled_peak_cgroup_memory_bytes=peak, memory_samples=samples)
+        try:
+            container.remove(force=True)
+            runtime["container_removed"] = True
+        except Exception as error:
+            runtime.update(status="error", cleanup_error=repr(error))
+            raise
+        finally:
+            (record / "probe_runtime.json").write_text(json.dumps(runtime, indent=2) + "\n")
 
 
 def main():
