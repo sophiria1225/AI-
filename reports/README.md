@@ -5,3 +5,5 @@
 既存の結果は[初期検証](../docs/initial_verification_results.md)と[P1検証](../docs/P1_verification_results.md)を参照する。今後の結果は実際の実行・評価を終えた単位で追加する。
 
 [P2_measurements.json](P2_measurements.json)は接続、容量校正、開発課題を分けて集計する。`scripts/summarize_p2.py`で原記録から生成する。容量校正の情報抽出成功は、コード修正能力の評価には含めない。失敗した呼び出しの使用量が不明なら、その件数を残し、費用ゼロとしない。
+
+[P2_task_audit.json](P2_task_audit.json)は終了したコード課題について、サーバーの原使用量、事前計数、実際の要求設定、保存したソース、凍結パッチ、評価対象を照合する。`pending`は実行中で、監査済み件数には含めない。課題の合否と監査エラーは別の項目である。
