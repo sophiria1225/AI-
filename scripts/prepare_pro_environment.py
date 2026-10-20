@@ -86,10 +86,31 @@ def validate_image(image, plan, manifest):
     attrs = image.attrs
     if plan["image"] not in attrs.get("RepoDigests", []):
         raise ValueError("Pulled image does not match the pinned repository digest")
-    if image.id != manifest["config"]["digest"]:
-        raise ValueError("Image configuration differs from the inspected manifest")
+    target_digest = plan["image"].split("@", 1)[1]
+    descriptor = attrs.get("Descriptor")
+    if descriptor is not None and (
+        descriptor.get("digest") != target_digest
+        or descriptor.get("mediaType") not in (
+            "application/vnd.oci.image.manifest.v1+json",
+            "application/vnd.docker.distribution.manifest.v2+json",
+        )
+    ):
+        raise ValueError("Local image descriptor differs from the pinned single-platform manifest")
+    if image.id == manifest["config"]["digest"]:
+        identity_kind = "configuration_digest"
+    elif descriptor is not None and image.id == target_digest:
+        # Observed with this engine's containerd image store. Bind the local
+        # target to the immutable manifest, rather than treating its ID as a
+        # configuration digest or accepting any ID with a plausible tag.
+        identity_kind = "manifest_digest_with_matching_descriptor"
+    else:
+        raise ValueError("Image ID is neither the pinned configuration nor the verified manifest")
     if attrs.get("Architecture") != "amd64" or attrs.get("Os") != "linux":
         raise ValueError("Unexpected image platform")
+    return {"local_image_id": image.id, "identity_kind": identity_kind,
+            "manifest_digest": target_digest,
+            "manifest_configuration_digest": manifest["config"]["digest"],
+            "descriptor": descriptor}
 
 
 PROBE = r'''
@@ -109,6 +130,7 @@ if len(roots) == 1:
     result["unreachable"] = call("git", "-C", root, "fsck", "--no-reflogs", "--unreachable")
     result["private_locations_present"] = [p for p in ("/solution", "/tests/test_patch.patch", "/tests/config.json")
                                           if pathlib.Path(p).exists()]
+    result["rootfs_apparent_bytes"] = call("du", "--apparent-size", "-s", "-x", "--block-size=1", "/")
 print(json.dumps(result))
 '''
 
@@ -127,6 +149,9 @@ def validate_probe(probe, plan):
         raise ValueError("Potential solution/evaluator exposure in the image")
     if probe["unreachable"]["stdout"]:
         raise ValueError("Unreachable Git objects require inspection before model use")
+    size = probe["rootfs_apparent_bytes"]
+    if size["exit_code"] != 0 or not re.fullmatch(r"[1-9][0-9]*\s+/", size["stdout"]):
+        raise ValueError("Cannot establish unpacked root filesystem apparent size")
 
 
 def probe_image(client, plan, name, record):
@@ -168,6 +193,7 @@ def probe_image(client, plan, name, record):
         validate_probe(probe, plan)
         return {"status": "passed", "python": probe["python"], "machine": probe["machine"],
                 "repository_path": probe["roots"][0], "base_commit": probe["head"]["stdout"],
+                "rootfs_apparent_bytes": int(probe["rootfs_apparent_bytes"]["stdout"].split()[0]),
                 "stdout_sha256": hashlib.sha256(raw).hexdigest(),
                 "sampled_peak_cgroup_memory_bytes": peak, "memory_samples": samples,
                 "wall_seconds": time.monotonic() - started,
@@ -217,9 +243,11 @@ def main():
                 if time.monotonic() - started > 900:
                     raise TimeoutError("Image preparation exceeded 900 seconds")
         image = client.images.get(plan["image"])
-        validate_image(image, plan, manifest)
+        result["image_identity"] = validate_image(image, plan, manifest)
         result["image_id"] = image.id
-        result["uncompressed_image_bytes"] = image.attrs["Size"]
+        # Engine/storage implementations do not necessarily report unpacked
+        # snapshot bytes here. Preserve the raw field and measure separately.
+        result["docker_inspect_reported_size_bytes"] = image.attrs["Size"]
         result["space_after_pull"] = free_space(storage, docker_root)
         check_space(result["space_after_pull"])
         result["probe"] = probe_image(client, plan, "harness_pro_probe_" + args.run_id, record)

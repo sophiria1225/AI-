@@ -4,10 +4,11 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import types
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from prepare_pro_environment import check_space, completed_trials, validate_probe, GIB
+from prepare_pro_environment import check_space, completed_trials, validate_image, validate_probe, GIB
 
 
 class ProEnvironmentGateTests(unittest.TestCase):
@@ -75,11 +76,13 @@ class ProEnvironmentGateTests(unittest.TestCase):
         probe = {"roots": ["/app"], "machine": "x86_64", "python": "3.x",
                  **{key: {"exit_code": 0, "stdout": "", "stderr": ""}
                     for key in ("head", "status", "refs", "stash", "unreachable")},
-                 "task_id_commit_present": False, "private_locations_present": []}
+                 "task_id_commit_present": False, "private_locations_present": [],
+                 "rootfs_apparent_bytes": {"exit_code": 0, "stdout": "1000\t/", "stderr": ""}}
         probe["head"]["stdout"] = "base"
         validate_probe(probe, {"base_commit": "base"})
         for key, value in [("private_locations_present", ["/solution"]),
                            ("task_id_commit_present", True),
+                           ("rootfs_apparent_bytes", {"exit_code": 1, "stdout": "0\t/"}),
                            ("head", {"exit_code": 0, "stdout": "other"})]:
             changed = copy.deepcopy(probe)
             changed[key] = value
@@ -90,6 +93,34 @@ class ProEnvironmentGateTests(unittest.TestCase):
         check_space({"host_free_bytes": 20 * GIB, "vm_free_bytes": 15 * GIB})
         with self.assertRaises(ValueError):
             check_space({"host_free_bytes": 20 * GIB, "vm_free_bytes": 15 * GIB - 1})
+
+    def test_config_id_and_bound_manifest_id_are_distinguished(self):
+        plan = {"image": "registry/image@sha256:manifest"}
+        manifest = {"config": {"digest": "sha256:configuration"}}
+        attrs = {"RepoDigests": [plan["image"]], "Architecture": "amd64", "Os": "linux"}
+        classic = types.SimpleNamespace(id="sha256:configuration", attrs=attrs)
+        self.assertEqual(validate_image(classic, plan, manifest)["identity_kind"], "configuration_digest")
+        attrs = copy.deepcopy(attrs)
+        attrs["Descriptor"] = {"digest": "sha256:manifest", "mediaType": "application/vnd.oci.image.manifest.v1+json"}
+        modern = types.SimpleNamespace(id="sha256:manifest", attrs=attrs)
+        self.assertEqual(validate_image(modern, plan, manifest)["identity_kind"],
+                         "manifest_digest_with_matching_descriptor")
+
+    def test_unbound_or_conflicting_image_identity_is_rejected(self):
+        plan = {"image": "registry/image@sha256:manifest"}
+        manifest = {"config": {"digest": "sha256:configuration"}}
+        attrs = {"RepoDigests": [plan["image"]], "Architecture": "amd64", "Os": "linux"}
+        for identity, descriptor in [
+            ("sha256:manifest", None),
+            ("sha256:other", {"digest": "sha256:manifest", "mediaType": "application/vnd.oci.image.manifest.v1+json"}),
+            ("sha256:configuration", {"digest": "sha256:other", "mediaType": "application/vnd.oci.image.manifest.v1+json"}),
+            ("sha256:manifest", {"digest": "sha256:manifest", "mediaType": "application/vnd.oci.image.index.v1+json"}),
+        ]:
+            changed = copy.deepcopy(attrs)
+            if descriptor is not None:
+                changed["Descriptor"] = descriptor
+            with self.subTest(identity=identity, descriptor=descriptor), self.assertRaises(ValueError):
+                validate_image(types.SimpleNamespace(id=identity, attrs=changed), plan, manifest)
 
 
 if __name__ == "__main__":

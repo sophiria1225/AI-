@@ -56,3 +56,15 @@ sh /Users/tp26013/AI-/scripts/with_container_env.sh \
 ## 容量の読み取り確認
 
 準備処理の容量取得だけを確認し、VM内35,025,260,544バイト、ホスト315,944,472,576バイトの空きを観測した。実行中のP3を止めず、イメージ取得や新しいコンテナは実行していない。取得直前にもう一度測る。[記録](../../reports/pro_storage_readonly_probe.json)。
+
+## PRO_ENV_01の停止と修正
+
+P3の全4試行が評価・監査まで終わった後、17:16 JSTに初回準備を開始した。固定digestの取得には成功したが、29.60秒後、ローカルのimage IDをmanifest内のconfig digestと同一だとした検査で停止した。コンテナ起動、評価情報の取得、モデル呼び出しは0である。原記録を`records/pro_environment/PRO_ENV_01`へ保持し、成功結果へ書き換えない。
+
+[Docker API 1.54の仕様](https://docs.docker.com/reference/api/engine/version/v1.54/)では`Id`をconfig由来と説明しているが、この実機のDocker 29.5.2・containerd image storeではmanifest digestが返った。`RepoDigests`、`Descriptor.digest`、`Id`はいずれも事前固定したmanifestと一致し、linux/amd64だった。仕様文だけでこの実測差を説明したことにはせず、両方を[失敗・診断記録](../../reports/pro_environment_identity_failure.json)へ残す。
+
+修正後は、固定config digestとの一致、または固定manifest・単一プラットフォームのDescriptor・RepoDigestの一致を確認する。任意のIDを受け入れる案、チェックの削除、別イメージやDocker更新は採用しない。未知のIDや矛盾するDescriptor、indexを誤って受け入れない2件の回帰テストを追加した。起動制御8件・評価隔離4件・既存のPro抽出3件、計15件が合格した。
+
+`docker inspect`の`Size`は760,395,006バイトで、圧縮層の合計に近い。これを展開容量と呼んでいた項目名も修正する。[Docker 29の更新記録](https://docs.docker.com/engine/release-notes/29)にはsnapshot使用量の報告に関する修正がある。今回はエンジン報告値、VMの空き容量、起動後のルートファイルシステムの見かけのバイト数を分けて保存する。空き容量の差分には共有層・管理情報・時点差があり、単独の非圧縮サイズと同一視しない。
+
+次は修正コードを記録して`PRO_ENV_02`へ進む。同じ固定イメージ・課題・評価計画を維持し、初回の失敗は削除しない。取得済み層を再利用するため、2回目の準備時間を初回ダウンロード時間と混ぜない。

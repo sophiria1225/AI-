@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-20T08:22:27.930482+00:00",
+  "failed_attempt": "records/pro_environment/PRO_ENV_01",
+  "failure": {
+    "started_at": "2026-10-20T08:16:04.933111+00:00",
+    "status": "error",
+    "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+    "source_sha256": "6b86c12c1063db451cf98f915e945da3914e8308e8d01f2bdf5c964c3a51d288",
+    "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "model_calls": 0,
+    "reference_or_hidden_tests_read": false,
+    "p3_completion": [
+      {
+        "trial_id": "P3-01",
+        "run": "records/p3/20261020_153145_single_e3832c",
+        "artifact_sha256": "3ce80bfcfc339c4d162d4b2f56780611dd72865425e59acefbb110e2306f13cb",
+        "resolved": true
+      },
+      {
+        "trial_id": "P3-02",
+        "run": "records/p3/20261020_154133_fixed_pair_86bf4d",
+        "artifact_sha256": "ce3acb34cf793999092f422477f49a7b396cca9dcd050dd7d310f258f97624a2",
+        "resolved": true
+      },
+      {
+        "trial_id": "P3-03",
+        "run": "records/p3/20261020_162601_fixed_pair_5c59de",
+        "artifact_sha256": "c8ca8c68f200b616c99332e7d91cf91c50aa75b489e5aa6abee0324f30eb7e0b",
+        "resolved": false
+      },
+      {
+        "trial_id": "P3-04",
+        "run": "records/p3/20261020_170626_single_af590d",
+        "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resolved": false
+      }
+    ],
+    "space_before": {
+      "host_free_bytes": 315935014912,
+      "vm_free_bytes": 35115212800
+    },
+    "error": "ValueError('Image configuration differs from the inspected manifest')",
+    "wall_seconds": 29.598068375024013
+  },
+  "docker_engine": "29.5.2",
+  "api": "1.54",
+  "driver": "overlayfs",
+  "driver_status": [
+    [
+      "driver-type",
+      "io.containerd.snapshotter.v1"
+    ]
+  ],
+  "identity": {
+    "local_image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "identity_kind": "manifest_digest_with_matching_descriptor",
+    "manifest_digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "manifest_configuration_digest": "sha256:99c415e0be8730aac426a17fa6cf55f92c04145fe8a9d05e755e8adce1849bfb",
+    "descriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "size": 4469
+    }
+  },
+  "docker_inspect_reported_size_bytes": 760395006,
+  "space_after_failed_preparation": {
+    "host_free_bytes": 313810067456,
+    "vm_free_bytes": 32915431424
+  },
+  "api_spec": {
+    "url": "https://docs.docker.com/reference/api/engine/version/v1.54.yaml",
+    "sha256": "a0cf45b9601f37d83240b1cef658f3b88c9674bcef508bf904feb48151b1c3ab"
+  },
+  "interpretation": "The API description calls Id a config digest; this actual containerd store returns the manifest digest. Accept only an exact matching single-platform Descriptor plus RepoDigest, or the pinned config digest. Size is retained as the engine report, not called unpacked bytes.",
+  "reference_or_hidden_tests_read": false,
+  "model_calls": 0,
+  "next_attempt": "PRO_ENV_02 with corrected identity validation; same fixed image and task plan",
+  "validation": {
+    "unit_tests_passed": 15,
+    "breakdown": {
+      "preparation": 8,
+      "verifier": 4,
+      "public_selection_existing": 3
+    },
+    "log_sha256": "981c5aecad39659898434fcd2a30d62f3388bd9e2eff4ce9916d79f5a42889b7",
+    "preparation_source_sha256": "260b621a025cecee7a3b6ec667308195cad0f601d262ca63904dc17322a041f4"
+  }
+}
