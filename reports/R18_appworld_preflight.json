@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-10-20T16:36:48.016595+00:00",
+  "version": "0.1.3.post1",
+  "requires_python": "<4.0,>=3.11",
+  "wheel_sha256": "db77f8003982502383a50fa2974983894bd1c54f64e2fd3f7e1540d5edd037eb",
+  "wheel_bytes": 625317,
+  "wheel_url": "https://files.pythonhosted.org/packages/14/3e/eafcf0e41369c2c9e7409b5f12e02345b21d6d7d579e3e34018d5aa3b3d2/appworld-0.1.3.post1-py3-none-any.whl",
+  "mode": "read package source only, no install or dataset download",
+  "methods": {
+    "appworld/download.py:download_data": {
+      "first_line": 14,
+      "last_line": 35,
+      "source_sha256": "2e3a8fb40ceb51e6ceae7c312bcfd6990807876f0f695dad4c61df4df38ee9c9"
+    },
+    "appworld/environment.py:_save_state": {
+      "first_line": 691,
+      "last_line": 718,
+      "source_sha256": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9"
+    },
+    "appworld/environment.py:_load_state": {
+      "first_line": 720,
+      "last_line": 738,
+      "source_sha256": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9"
+    },
+    "appworld/environment.py:save_state": {
+      "first_line": 740,
+      "last_line": 746,
+      "source_sha256": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9"
+    },
+    "appworld/environment.py:load_state": {
+      "first_line": 748,
+      "last_line": 754,
+      "source_sha256": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9"
+    },
+    "appworld/serve/environment.py:save_state": {
+      "first_line": 178,
+      "last_line": 184,
+      "source_sha256": "8518ee939ed9355cd2bdd43b59e930544f9814eb84d9724e598b1b1c9379067d"
+    },
+    "appworld/serve/environment.py:load_state": {
+      "first_line": 188,
+      "last_line": 191,
+      "source_sha256": "8518ee939ed9355cd2bdd43b59e930544f9814eb84d9724e598b1b1c9379067d"
+    }
+  },
+  "checked_scope": "Static source inspection of official wheel; no package installation, data download, or benchmark execution.",
+  "pypi_metadata_sha256": "bbf8ca9d1133016f270475ff6b0319a3b4d5c338d7c6e56b395d58f7f942f781",
+  "observations": [
+    {
+      "kind": "dependency_mismatch",
+      "package_requirement": "pydantic<2.0.0,>=1.9.0",
+      "existing_CI_environment": "pydantic 2.14.1",
+      "decision": "Use a separate environment if adopted; do not modify the P3/P5 environment."
+    },
+    {
+      "kind": "checkpoint_scope",
+      "observed": "_save_state delegates to database save functions; load_state closes APIs, loads DBs and executes a preamble. No user-namespace serialization/restore appears in these inspected methods.",
+      "limit": "Static inspection only, not a runtime restore test or a claim about all AppWorld versions.",
+      "decision": "Verify interpreter variables, files, random state, history and budget separately before claiming same-state replay."
+    },
+    {
+      "kind": "download_destination",
+      "observed": "download_data removes an existing path_store.data before downloading data-0.1.0.bundle.",
+      "decision": "Only invoke under a new dedicated APPWORLD_ROOT; do not use the AI- repository root with its existing data directory."
+    }
+  ],
+  "planned_runtime_root": "/Users/tp26013/AI-/.runtime/appworld/r18_probe_01",
+  "new_model_calls": 0,
+  "private_task_or_solution_content_read": false,
+  "package_or_data_installed": false,
+  "exact_FOCUS_runtime_match": "not_verified"
+}

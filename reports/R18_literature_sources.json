@@ -1,0 +1,283 @@
+{
+  "scope": "Primary sources inspected for overlap screening; neither exhaustive search nor confirmed novelty. Reading depth is explicit.",
+  "search_date_local": "2026-10-21",
+  "timezone": "Asia/Tokyo",
+  "source_count": 12,
+  "full_text_committed": false,
+  "sources": [
+    {
+      "id": "focus",
+      "url": "https://arxiv.org/html/2609.37590v1",
+      "resolved_url": "https://arxiv.org/html/2609.37590v1",
+      "status": "saved",
+      "bytes": 737559,
+      "sha256": "e34df881f65d00e880e539ae99b61714f45aff5ee8bd7e19d46c5f1e608600e0",
+      "path": "records/sources/20261021_technical_core/focus.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2609.37590v1"
+      ],
+      "reading_depth": "method_and_selected_appendices",
+      "inspected_sections": [
+        "sections 3, 4.1–4.4; Algorithm 1",
+        "A.2 assumptions; A.9; A.10 reported failure/success cases",
+        "PDF pp.5 Algorithm 1, 20 Figure 4 threshold, 29–31 A.9 and A.10"
+      ],
+      "comparison_note": "Future-dependent span selection and defensive verification overlap with generic decision-preserving memory.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false,
+      "additional_snapshots": {
+        "checked_at": "2026-10-20T16:32:17.766854+00:00",
+        "sources": [
+          {
+            "url": "https://arxiv.org/abs/2609.37590v1",
+            "resolved_url": "https://arxiv.org/abs/2609.37590v1",
+            "sha256": "ed4f7429c3c9f337d1c486330e9900b0dbee2eeb3a1d0455f538be71fc7be96b",
+            "bytes": 42697,
+            "path": "records/sources/20261021_technical_core/focus_abs.html"
+          },
+          {
+            "url": "https://arxiv.org/pdf/2609.37590v1",
+            "resolved_url": "https://arxiv.org/pdf/2609.37590v1",
+            "sha256": "28ee0ffb0a2ffccf247d4a9328d7b94e27abfe9a4733782e9096b1203e9036d6",
+            "bytes": 970750,
+            "path": "records/sources/20261021_technical_core/focus_pdf.pdf"
+          }
+        ]
+      },
+      "author_reported_status": "Preprint. Under Review (arXiv abstract; publisher acceptance not independently verified).",
+      "reproduction_readiness": {
+        "draft_rollouts": 3,
+        "utility_threshold_figure4": 0.3,
+        "appworld_trigger_tokens": 4096,
+        "failure_scenario_id_in_appendix": "ff58e36",
+        "exact_failure_instance_and_raw_trajectory": "not_obtained",
+        "author_implementation": "not_located_in_inspected_paper_links_or_title_search",
+        "same_model_reproduction": false,
+        "note": "N=3 and tau=0.3 retain any span cited at least once, before rescue. This arithmetic is not a novel algorithm. Broad code unavailability is not established."
+      }
+    },
+    {
+      "id": "receiver_relative",
+      "url": "https://arxiv.org/html/2610.03769",
+      "resolved_url": "https://arxiv.org/html/2610.03769",
+      "status": "saved",
+      "bytes": 1167227,
+      "sha256": "0f644fe71b5119e8d778003fa433207f5e9e1c367b48efe1070a3c1c600ac2bc",
+      "path": "records/sources/20261021_technical_core/receiver_relative.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2610.03769v1"
+      ],
+      "reading_depth": "method_and_selected_appendices",
+      "inspected_sections": [
+        "abstract; sections 2–4 excerpts",
+        "fixed-message replay; C.6 selector/static ablations"
+      ],
+      "comparison_note": "Content recovery versus emitted action and cost-aware communication selection are already treated.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "wicer",
+      "url": "https://arxiv.org/html/2605.07068v1",
+      "resolved_url": "https://arxiv.org/html/2605.07068v1",
+      "status": "saved",
+      "bytes": 437787,
+      "sha256": "511871e2bc78a7bebb2b24a683cdbc1a1a9c374adfafe8882ce3ec66b9335276",
+      "path": "records/sources/20261021_technical_core/wicer.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2605.07068v1"
+      ],
+      "reading_depth": "method_excerpt",
+      "inspected_sections": [
+        "section 7.1 Algorithm 1; 7.2; limitations headings"
+      ],
+      "comparison_note": "Diagnostic questions, accumulated preservation constraints and memory recompilation overlap with generic counterexample-guided repair.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "coagent",
+      "url": "https://arxiv.org/html/2606.15376",
+      "resolved_url": "https://arxiv.org/html/2606.15376",
+      "status": "saved",
+      "bytes": 264013,
+      "sha256": "e4490150dddda178aaf0dc53b76e30d2cd9478e68a489168533065cb1222d51b",
+      "path": "records/sources/20261021_technical_core/coagent.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2606.15376v1"
+      ],
+      "reading_depth": "method_and_assumptions",
+      "inspected_sections": [
+        "sections 2–5 excerpts",
+        "A1–A3; MTPO; example of notification livelock"
+      ],
+      "comparison_note": "Semantic repair and ordering are conditional on stated assumptions; do not claim unconditional guarantees.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "cordon",
+      "url": "https://arxiv.org/html/2606.17573",
+      "resolved_url": "https://arxiv.org/html/2606.17573",
+      "status": "saved",
+      "bytes": 373494,
+      "sha256": "baeff371d1a9c1579fd84604b1c2333ac29d40673562c1f48a3b743a2cb44509",
+      "path": "records/sources/20261021_technical_core/cordon.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2606.17573v1"
+      ],
+      "reading_depth": "abstract_and_introduction",
+      "inspected_sections": [
+        "abstract; introduction"
+      ],
+      "comparison_note": "Transaction framing alone is not a new contribution. Detailed algorithm comparison remains open.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "e2_explainer",
+      "url": "https://arxiv.org/html/2608.12921v2",
+      "resolved_url": "https://arxiv.org/html/2608.12921v2",
+      "status": "saved",
+      "bytes": 416982,
+      "sha256": "fcc14783c84fd92e359bc962d18075ce730d1c18c7b2c9d28be678fd82a286f6",
+      "path": "records/sources/20261021_technical_core/e2_explainer.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2608.12921v2"
+      ],
+      "reading_depth": "method_excerpt",
+      "inspected_sections": [
+        "abstract; intervention masking; budgeted topology selection and projection excerpts"
+      ],
+      "comparison_note": "Causal probing of communication and budgeted graph selection are existing concepts.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "edge",
+      "url": "https://arxiv.org/html/2609.01360v1",
+      "resolved_url": "https://arxiv.org/html/2609.01360v1",
+      "status": "saved",
+      "bytes": 1904781,
+      "sha256": "c4d423ec11a9255380455020a46f8ab8431ca3a6428d5d5e2f98bb38f445a5f4",
+      "path": "records/sources/20261021_technical_core/edge.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2609.01360v1"
+      ],
+      "reading_depth": "method_excerpt",
+      "inspected_sections": [
+        "interventional validation; fixed tool observations; direct-effect scope"
+      ],
+      "comparison_note": "Controlled error interventions exist; frozen observations are a limited estimand, not proof of an invalid paper.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "incremental_consistency",
+      "url": "https://arxiv.org/html/2609.24090",
+      "resolved_url": "https://arxiv.org/html/2609.24090",
+      "status": "saved",
+      "bytes": 189101,
+      "sha256": "ace829e56ee65097e5543b90ef167a969d2f1bc6beb749bfd6c80a98f5986afe",
+      "path": "records/sources/20261021_technical_core/incremental_consistency.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2609.24090v1"
+      ],
+      "reading_depth": "abstract_and_introduction",
+      "inspected_sections": [
+        "abstract; introduction; method table of contents"
+      ],
+      "comparison_note": "Field dependencies and semantic result reuse are already explicit; full method not yet compared.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "iml",
+      "url": "https://arxiv.org/html/2602.13937",
+      "resolved_url": "https://arxiv.org/html/2602.13937",
+      "status": "saved",
+      "bytes": 312171,
+      "sha256": "6b7a96c8248bb9eb5cf836899e2f8fbeb12abce45abaefda49ff1b2702feed90",
+      "path": "records/sources/20261021_technical_core/iml.html",
+      "retrieved_at": "2026-10-20T16:12:26.133707+00:00",
+      "html_version_identifiers": [
+        "2602.13937v2"
+      ],
+      "reading_depth": "version_discrepancy_unresolved",
+      "inspected_sections": [
+        "search abstract and HTML title"
+      ],
+      "comparison_note": "Search title and current HTML title differ. Not used as a verified functional comparison.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "ect",
+      "url": "https://arxiv.org/html/2608.23623v1",
+      "resolved_url": "https://arxiv.org/html/2608.23623v1",
+      "status": "saved",
+      "bytes": 131434,
+      "sha256": "b91e3514d7e1ff66d227a50766c4ce5a98d6e5009aa6aaa09b894cd6fd6f8567",
+      "path": "records/sources/20261021_technical_core/ect.html",
+      "retrieved_at": "2026-10-20T16:23:49.995165+00:00",
+      "html_version_identifiers": [
+        "2608.23623v1"
+      ],
+      "reading_depth": "method_and_trust_boundary",
+      "inspected_sections": [
+        "abstract; related work; contract/ledger/certificate; verification Algorithm 1"
+      ],
+      "comparison_note": "Trusted required slots and deterministic scope/replay checks already support completion gates.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "crown_qa",
+      "url": "https://arxiv.org/html/2608.04591v1",
+      "resolved_url": "https://arxiv.org/html/2608.04591v1",
+      "status": "saved",
+      "bytes": 471127,
+      "sha256": "8bc076a262fa951f3852be522a35521f0aa47929687a157d4893f1fb7e989de5",
+      "path": "records/sources/20261021_technical_core/crown_qa.html",
+      "retrieved_at": "2026-10-20T16:23:49.995165+00:00",
+      "html_version_identifiers": [
+        "2608.04591v1"
+      ],
+      "reading_depth": "formulation_and_method",
+      "inspected_sections": [
+        "task formulation; failure modes; benchmark construction; scope-and-coverage elicitation"
+      ],
+      "comparison_note": "Unknown versus certified absence conditioned on coverage is already evaluated.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    },
+    {
+      "id": "meclear",
+      "url": "https://arxiv.org/html/2609.09115v1",
+      "resolved_url": "https://arxiv.org/html/2609.09115v1",
+      "status": "saved",
+      "bytes": 434692,
+      "sha256": "da8240d978581f3fbb6defbd2dca7f93506f37b762e6cb3ba7c7bb60a699b11f",
+      "path": "records/sources/20261021_technical_core/meclear.html",
+      "retrieved_at": "2026-10-20T16:23:49.995165+00:00",
+      "html_version_identifiers": [
+        "2609.09115v1"
+      ],
+      "reading_depth": "method_excerpt",
+      "inspected_sections": [
+        "problem formulation; local screening; cooperative attribution; evaluation details excerpt"
+      ],
+      "comparison_note": "Single-record deletion blind spots and coalition-based memory interventions already studied.",
+      "formal_venue": "not_verified",
+      "implementation_reproduced": false
+    }
+  ]
+}
