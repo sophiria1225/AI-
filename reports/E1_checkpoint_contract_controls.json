@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-20T14:22:31.186360+00:00",
+  "scope": "Synthetic declared-artifact contract controls; no live container capture or LLM experiment",
+  "command": "python3 -m unittest discover -s tests -p 'test_checkpoint_contract.py' -v",
+  "tests_run": 12,
+  "passed": 12,
+  "failures": 0,
+  "errors": 0,
+  "test_names": [
+    "test_matching_files_and_metadata_pass_without_claiming_live_restore",
+    "test_conversation_and_patch_alone_are_insufficient",
+    "test_missing_scratch_coverage_rejected",
+    "test_declared_file_missing_rejected",
+    "test_content_tampering_detected",
+    "test_path_escape_and_symlink_rejected",
+    "test_pending_tool_or_model_rejected",
+    "test_unknown_cost_and_live_inputs_rejected",
+    "test_budget_reset_or_environment_change_detected",
+    "test_different_valid_restored_content_rejected",
+    "test_inconsistent_cache_and_invalid_budget_rejected",
+    "test_different_manifest_structure_rejected"
+  ],
+  "source_sha256": {
+    "scripts/checkpoint_contract.py": "8300e2d4453b4c10960fc81aea57bc4fb87a4195b25626c1a517768c5b16a0b9",
+    "tests/test_checkpoint_contract.py": "81e2ea3b1598092fe80a4df2c0396e9934e3a94c7aae3c1b369379a27eb2693c"
+  },
+  "live_capture_implemented": false,
+  "E1_four_arm_experiment_run": false,
+  "limitation": "Adapter scope declarations and file hashes are checked; omitted writable locations and opaque payload semantics are not inferred."
+}

@@ -1,0 +1,133 @@
+{
+  "cutoff": "P5 completed; E1 checkpoint contract synthetic controls only",
+  "source_sha256": {
+    "reports/P3_measurements.json": "4d9ac689c6ce986c06e41090cf6394a0ada63a2c3138500b7f15fd52c022c841",
+    "reports/P5_pro_measurements.json": "bb62c018ba4ef671a09daf06a96b5ba956f0e5d8f614fdd019b781a0841b9623",
+    "docs/research_contribution.md": "3ad2c3de0f56eb6b990ea5de1f2e5d0fcccff8dd55382191c8afc35112cc2d11",
+    "docs/experiments/E1_intervention_contract.md": "6892e5f463ea3ff0573a72f771a51aa576ab907763730a7554bcd003d083d9c5",
+    "docs/related_work_matrix.md": "23e5df04d62ff807c843af29bfccfa522b906d3cc94061baf6fb6cdde13bb394",
+    "reports/E1_checkpoint_contract_controls.json": "348f96d951a225a862a0a80d274c1d284fbb4ba5b7f1d7cc09f0ff292f6ec7fa"
+  },
+  "observations": [
+    {
+      "phase": "P3",
+      "task": "django__django-15380",
+      "strategy": "single",
+      "total_tokens": 283176,
+      "resolved": true,
+      "wall_seconds": 469.70196133304853,
+      "token_budget": 300000
+    },
+    {
+      "phase": "P3",
+      "task": "django__django-15380",
+      "strategy": "fixed_pair",
+      "total_tokens": 275008,
+      "resolved": true,
+      "wall_seconds": 2274.539552250062,
+      "token_budget": 300000
+    },
+    {
+      "phase": "P3",
+      "task": "django__django-15957",
+      "strategy": "fixed_pair",
+      "total_tokens": 275531,
+      "resolved": false,
+      "wall_seconds": 2324.115696416935,
+      "token_budget": 300000
+    },
+    {
+      "phase": "P3",
+      "task": "django__django-15957",
+      "strategy": "single",
+      "total_tokens": 280166,
+      "resolved": false,
+      "wall_seconds": 506.8231483749114,
+      "token_budget": 300000
+    },
+    {
+      "phase": "P5",
+      "task": "Ansible",
+      "strategy": "fixed_pair",
+      "total_tokens": 580169,
+      "resolved": false,
+      "wall_seconds": 5050.034664333914,
+      "token_budget": 600000
+    },
+    {
+      "phase": "P5",
+      "task": "Ansible",
+      "strategy": "single",
+      "total_tokens": 571839,
+      "resolved": false,
+      "wall_seconds": 509.6158057920402,
+      "token_budget": 600000
+    }
+  ],
+  "references": [
+    [
+      "S1",
+      "研究のアプローチ・貢献・反証条件",
+      "自分たちの設計仕様",
+      "https://github.com/sophiria1225/AI-/blob/main/docs/research_contribution.md"
+    ],
+    [
+      "S2",
+      "Flow",
+      "ICLR 2025／本文・固定コードの一部",
+      "https://proceedings.iclr.cc/paper_files/paper/2025/file/ba84da6921f3040b74ee163aa7451f53-Paper-Conference.pdf"
+    ],
+    [
+      "S3",
+      "MaAS",
+      "ICML 2025／本文・固定コードの一部",
+      "https://proceedings.mlr.press/v267/zhang25bi.html"
+    ],
+    [
+      "S4",
+      "Puppeteer",
+      "NeurIPS 2025／著者原稿・固定コードの一部",
+      "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f1320d2e2842169c6fc89dcbd80e94d0-Abstract-Conference.html"
+    ],
+    [
+      "S5",
+      "Asynchronous Partial Overlay",
+      "JAIR 2006／原論文・改良論文の一部",
+      "https://jair.org/index.php/jair/article/view/10451"
+    ],
+    [
+      "S6",
+      "AgentGraph",
+      "AAAI 2026 Demonstration Track／掲載3ページ",
+      "https://ojs.aaai.org/index.php/AAAI/article/download/42393/46354"
+    ],
+    [
+      "S7",
+      "WinnowRAG",
+      "EMNLP 2025／掲載概要・書誌",
+      "https://aclanthology.org/2025.emnlp-main.587/"
+    ],
+    [
+      "S8",
+      "Calibration Is Not Control",
+      "著者公開原稿／正式採録未確認",
+      "https://arxiv.org/html/2606.21399v1"
+    ],
+    [
+      "S9",
+      "P3・P5の観察と限界",
+      "自分たちの開発実験／各条件1試行",
+      "https://github.com/sophiria1225/AI-/blob/main/docs/P5_findings.md"
+    ],
+    [
+      "S10",
+      "E1の介入・保存復元仕様",
+      "設計と契約検査／LLMによる四条件比較は未実施",
+      "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/E1_intervention_contract.md"
+    ]
+  ],
+  "notes": [
+    "Do not pool P3/P5 outcomes or interpret small token differences as savings.",
+    "No task transfer policy or four-arm efficacy experiment has been run."
+  ]
+}
