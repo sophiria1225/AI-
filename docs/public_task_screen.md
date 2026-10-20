@@ -49,3 +49,15 @@ Astropyでは過去に一部の正解を研究者が閲覧しているため、�
 | sympy-20154 | partitionsの生成器が辞書を再利用し、保持した出力が変わる。copy案が書かれている | 局所対照。性能と参照共有のトレードオフはあるが、今回の大規模作業の主根拠にはしない |
 
 次は継続候補3件の**問題時点の公開コードだけ**を読み、経路・状態・検査の関係を確認する。最新ブランチや修正後のコミットを読む案は、調査中に解決策を知る可能性があるため採用しない。まだコンテナを取得せず、元コードの調査結果を先に残す。問題文だけで全12件を不採用にしたり、3件を大規模課題だと確定したりしない。
+
+## 継続候補の基点コードを確認した結果
+
+3課題の基点コミットから8ファイル、計566,811バイトを読み取り、[URL・SHA・取得記録](../reports/public_task_base_sources_v01.json)を保存した。外部リポジトリは変更せず、コードは実行していない。以下は静的な経路確認であり、再現・修正成功や必要変更量の測定ではない。
+
+**xarray-7393**：`Dataset._stack_once`は索引を生成した後、その索引から座標変数を作り直している。`PandasMultiIndex.stack`には元の座標dtypeを保持する処理が既にある。そのため「情報が最初から保存されていない」とは決められず、索引アダプターから値を取得する経路も調べる必要がある。データと型メタデータの対応を追う開発候補として残すが、広い作業分担が必要な主課題とは確定しない。[Datasetの基点コード](https://github.com/pydata/xarray/blob/41fef6f1352be994cd90056d47440fe9aa4c068f/xarray/core/dataset.py#L4495)、[索引の基点コード](https://github.com/pydata/xarray/blob/41fef6f1352be994cd90056d47440fe9aa4c068f/xarray/core/indexes.py#L687)。
+
+**pytest-7236**：`--pdb`時にtearDownを後の段階へ移す処理と、保存したtearDownを呼ぶ処理は、ともに`TestCaseFunction`内にある。runnerやskipとの接続はあるものの、中心となる更新は同じクラス内で済む可能性が高い。公開文だけの「複数機構をまたぐ候補」から、主課題としては後順位・局所対照寄りへ判断を更新する。修正パッチを見て変更量を数えた判断ではない。[基点コード](https://github.com/pytest-dev/pytest/blob/c98bc4cd3d687fe9b392d8eecd905627191d4f06/src/_pytest/unittest.py#L118)。
+
+**scikit-learn-25232**：初期補完でSimpleImputerを生成する呼び出しがあり、公開引数の定義・検証と値の伝達をそろえる必要がある。また、その後に補完統計のNaNから有効な特徴を選ぶ処理があり、要求にあるNaNのfill_valueと整合するかは別途確認が必要。APIと補完状態の整合を調べる開発候補に残す。ただし、既存コードは限られた処理へ集まっており、大規模な分担作業と断定しない。[初期補完の基点コード](https://github.com/scikit-learn/scikit-learn/blob/f7eea978097085a6781a0e92fc14ba7712a52d75/sklearn/impute/_iterative.py#L565)、[SimpleImputerの基点コード](https://github.com/scikit-learn/scikit-learn/blob/f7eea978097085a6781a0e92fc14ba7712a52d75/sklearn/impute/_base.py#L272)。
+
+今回の調査だけで大規模な依存作業の主課題は確定しなかった。xarrayとscikit-learnは追加の開発候補、pytestは局所対照候補とする。小さな課題へ分担を強制して再編の必要性を作る案は採用しない。次の主課題調査では、より広い変更要求や文書・実行をまたぐ環境を別の候補群として確認する。12件の結果からSWE-bench系列全体が不適切とは一般化しない。
