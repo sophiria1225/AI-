@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-10-20T23:01:58.227723+00:00",
+  "phase": "P14 pre-inference controls",
+  "unit_tests_passed": 238,
+  "compileall": "passed",
+  "model_calls": 0,
+  "environment_operations": 0,
+  "failures": [
+    {
+      "control": "generated runner source snapshot",
+      "cause": "Broad variable rename also changed the native_focus_memory.py literal",
+      "fix": "Restore the actual source filename; source capture tests pass"
+    },
+    {
+      "control": "ledger costs and recorded-input replay",
+      "cause": "FOCUS-only conversation initialization bypassed the ledger controller",
+      "fix": "Initialize native conversation for both eligible generated-memory arms; ledger call, cost and input replay verified"
+    }
+  ],
+  "remaining": "Live tokenizer preflight and sufficient server lease are pending; no P14 trial has started."
+}

@@ -8,9 +8,8 @@ from appworld_native_tools import NativeCatalog
 from audit_native_execution import inspect_operations
 from inspect_appworld_api_schemas import load_public_tools
 from native_conversation import NativeConversation
-from native_focus_memory import FocusMemory
 from run_context_comparison import BudgetStop
-from run_native_generated import NATIVE_PROMPT
+from run_native_generated import NATIVE_PROMPT, make_memory
 from summarize_context_pilot import summarize_trial
 
 
@@ -25,11 +24,14 @@ def read(path, default=None):
 def audit(directory, data_root):
     result = summarize_trial(directory)
     summary, plan = read(directory / 'summary.json'), read(directory / 'plan.json')
-    if result['arm'] != 'native_focus':
-        raise ValueError('expected completed native FOCUS adaptation')
+    if result['arm'] not in ('native_focus', 'native_ledger'):
+        raise ValueError('expected completed generated-memory adaptation')
     provenance = read(directory / 'provenance.json')
-    for name in ('run_native_generated.py', 'native_focus_memory.py', 'native_memory_view.py',
-                 'native_conversation.py', 'analyze_focus_shortcircuit.py', 'context_preservation.py'):
+    sources = ['run_native_generated.py', 'native_focus_memory.py', 'native_memory_view.py',
+               'native_conversation.py', 'analyze_focus_shortcircuit.py', 'context_preservation.py']
+    if result['arm'] == 'native_ledger':
+        sources.append('native_ledger_memory.py')
+    for name in sources:
         if hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest() != provenance['sources'][name]:
             raise ValueError('use the frozen memory implementation')
     tools, source_hashes, _ = load_public_tools(data_root)
@@ -79,7 +81,7 @@ def audit(directory, data_root):
         return record['tokens']
 
     task = read(directory / 'public_task.json')
-    conversation, controller, replay = NativeConversation(NATIVE_PROMPT, task), FocusMemory(), Replay()
+    conversation, controller, replay = NativeConversation(NATIVE_PROMPT, task), make_memory(result['arm']), Replay()
     try:
         while attempted < summary['memory_selection_attempts']:
             attempted += 1

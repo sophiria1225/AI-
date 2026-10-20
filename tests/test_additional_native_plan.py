@@ -13,7 +13,8 @@ class AdditionalNativePlanControls(unittest.TestCase):
     def test_memory_comparisons_preserve_all_tasks_budgets_and_api_access(self):
         previous = json.loads((ROOT / 'configs/P11_additional_baseline_v01.json').read_text())
         for filename, prerequisite in [('P12_recent_window_v01.json', 'P11_batch_v01'),
-                                       ('P13_native_focus_v01.json', 'P12_batch_v01')]:
+                                       ('P13_native_focus_v01.json', 'P12_batch_v01'),
+                                       ('P14_native_ledger_v01.json', 'P13_batch_v01')]:
             actual = json.loads((ROOT / 'configs' / filename).read_text())
             validate_schedule(actual)
             for key in ('task_ids', 'appworld_version', 'model_selection', 'model', 'seed',
