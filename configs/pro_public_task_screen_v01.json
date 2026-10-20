@@ -1,0 +1,31 @@
+{
+  "frozen_at": "2026-10-20T07:30:50.387752+00:00",
+  "dataset": "ScaleAI/SWE-bench_Pro",
+  "dataset_revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50",
+  "scope": "Public request screening only; candidate tasks are development-only after review",
+  "public_inputs_sha256": "c0913aa802df7c79735c7a5258a2c4b44efde362e57cb3aa74be919603c3d51e",
+  "exposure_registry": "configs/benchmark_exposure_registry.json",
+  "exposure_registry_sha256": "312fd9fab3fd809dd0f4485b21663a9af0caebb62033183e7a993988fbe0698a",
+  "seed": "pro-public-dependency-screen-20261020-v01",
+  "ranking": "Ascending sha256(seed + NUL + dataset_revision + NUL + kind + NUL + identifier); kind repo for repository, task for task ID",
+  "expected_rows": 604,
+  "expected_repositories": 10,
+  "repository_count": 6,
+  "per_repository": 2,
+  "classification": [
+    "continue_public_code_review",
+    "localized_control",
+    "defer"
+  ],
+  "model_runs_authorized_by_plan": 0,
+  "images_downloaded_by_plan": 0,
+  "rules": [
+    "Commit the selection rule and candidate IDs before reading their task text",
+    "No gold, tests, HARD flags, patch size, or model scores in ranking",
+    "Two tasks from six repositories bounds review cost; preserve four repositories outside this review",
+    "Record all selected tasks including unsuitable and uncertain cases; expand only under a new plan",
+    "Multiple mentioned subsystems alone do not prove coupled work or need for reorganization",
+    "Public descriptions can include prescribed interfaces and detailed fixes; record this limitation",
+    "Review of public statements does not adopt a task for the main experiment or guarantee runnable images"
+  ]
+}
