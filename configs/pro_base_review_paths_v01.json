@@ -1,0 +1,56 @@
+{
+  "scope": "Initial source paths from public requirements and base tree; no evaluation or fixing commit files",
+  "requests": [
+    {
+      "candidate_number": 1,
+      "paths": [
+        "src/api/common/EntityClient.ts",
+        "src/api/worker/rest/DefaultEntityRestCache.ts",
+        "src/api/worker/rest/EntityRestClient.ts",
+        "src/api/worker/crypto/CryptoFacade.ts",
+        "src/api/worker/facades/lazy/MailFacade.ts",
+        "src/api/worker/search/MailIndexer.ts",
+        "src/mail/model/InboxRuleHandler.ts"
+      ]
+    },
+    {
+      "candidate_number": 3,
+      "paths": [
+        "internal/config/authentication.go",
+        "internal/cmd/grpc.go",
+        "internal/server/authn/server.go"
+      ]
+    },
+    {
+      "candidate_number": 12,
+      "paths": [
+        "lib/ansible/plugins/filter/core.py",
+        "lib/ansible/_internal/_yaml/_dumper.py",
+        "lib/ansible/_internal/_yaml/_loader.py",
+        "lib/ansible/_internal/_yaml/_constructor.py",
+        "lib/ansible/_internal/_templating/_marker_behaviors.py",
+        "lib/ansible/_internal/_templating/_jinja_plugins.py"
+      ]
+    }
+  ],
+  "follow_up": {
+    "reason": "Follow definitions of authentication startup and template argument marker handling from inspected base files",
+    "requests": [
+      {
+        "candidate_number": 3,
+        "paths": [
+          "internal/cmd/authn.go",
+          "internal/cleanup/cleanup.go"
+        ]
+      },
+      {
+        "candidate_number": 12,
+        "paths": [
+          "lib/ansible/_internal/_templating/_jinja_bits.py",
+          "lib/ansible/_internal/_templating/_jinja_common.py",
+          "lib/ansible/template/__init__.py"
+        ]
+      }
+    ]
+  }
+}

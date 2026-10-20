@@ -1,0 +1,30 @@
+{
+  "dataset": "ScaleAI/SWE-bench_Pro",
+  "revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50",
+  "file": "data/default/test-00000-of-00001.parquet",
+  "size": 6511689,
+  "sha256": "1067f72c1f43bbc578276888625db3b836cebb535546c9eaf824c5d5dd104a7f",
+  "download_url": "https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro/resolve/2d52cb3df914a3fcf80c7f66738b3a88ae37fc50/data/default/test-00000-of-00001.parquet",
+  "private_file": "private_eval/pro_v2/2d52cb3df914a3fcf80c7f66738b3a88ae37fc50/test.parquet",
+  "public_file": "data/pro_v2/2d52cb3df914a3fcf80c7f66738b3a88ae37fc50/screening_inputs.jsonl",
+  "public_columns": [
+    "repo",
+    "instance_id",
+    "base_commit",
+    "problem_statement",
+    "requirements",
+    "interface",
+    "repo_language",
+    "docker_image",
+    "version"
+  ],
+  "generator_text_columns": [
+    "problem_statement",
+    "requirements",
+    "interface"
+  ],
+  "screening_excluded_repositories": [
+    "NodeBB/NodeBB"
+  ],
+  "scope": "Prepare public-only screening inputs; no task selection, environment execution or model calls"
+}

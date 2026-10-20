@@ -1,0 +1,83 @@
+{
+  "frozen_at": "2026-10-20T07:43:04.457870+00:00",
+  "scope": "One development environment feasibility check; no model trial or main benchmark adoption",
+  "dataset_revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50",
+  "official_code_revision": "66f92766bba642462d4bbe5479e83f91f9211862",
+  "instance_id": "instance_ansible__ansible-1c06c46cc14324df35ac4f39a45fb3ccd602195d-v0f01c69f1e2528b935359cfe578530722bca2c59",
+  "base_commit": "6198c7377f545207218fe8eb2e3cfa9673ff8f5e",
+  "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+  "platform": "linux/amd64",
+  "prerequisites": [
+    "P3-01 through P3-04 completed and independently evaluated with no unresolved infrastructure or accounting error",
+    "No concurrent model trial or other workload in the research VM",
+    "At least 15 GiB free in research VM and 20 GiB on host before pull; recheck after unpacking"
+  ],
+  "container": {
+    "cpus": 1,
+    "memory_gib": 4,
+    "pids_limit": 256,
+    "cap_drop": [
+      "ALL"
+    ],
+    "no_new_privileges": true,
+    "host_mounts": false,
+    "credentials": false
+  },
+  "phases": [
+    {
+      "id": "image",
+      "purpose": "Pull only this digest and measure unpacked size and remaining storage",
+      "model_calls": 0
+    },
+    {
+      "id": "probe",
+      "purpose": "Check CPU compatibility, Python, repo path, base revision, clean state and sanitized history",
+      "network": "none",
+      "timeout_seconds": 120
+    },
+    {
+      "id": "negative_control",
+      "purpose": "Apply no agent patch and run the official V2 verifier in a fresh container",
+      "network": "bridge",
+      "timeout_seconds": 3000,
+      "expected": "unresolved"
+    },
+    {
+      "id": "reference_control",
+      "purpose": "Apply reference patch mechanically in a separate fresh evaluator container; never display its text to researcher or generator",
+      "network": "bridge",
+      "timeout_seconds": 3000,
+      "expected": "resolved"
+    }
+  ],
+  "evaluation_isolation": {
+    "private_files": [
+      "tests/test.sh",
+      "tests/run_script.sh",
+      "tests/parser.py",
+      "tests/config.json",
+      "tests/test_patch.patch",
+      "solution/gold_patch.diff"
+    ],
+    "private_files_not_available_to_generator": true,
+    "raw_logs_local_only": true,
+    "public_report": "hashes, sizes, status, duration, resource measurements, reward and infrastructure classification only"
+  },
+  "failure_policy": "Retain all attempts. Do not repeat a task failure until it passes; record and diagnose infrastructure failure before a new explicitly versioned attempt.",
+  "local_adaptation": "Use existing isolated Colima/Docker executor rather than Modal/Harbor; record container policy differences. This is not reproduction of published model scores.",
+  "selection_reason": "Candidate 12 has coupled filter, loader, dumper and template contracts; Python also reduces new runtime integration work.",
+  "alternatives_not_selected_now": {
+    "candidate_1": "Keep as a subsequent cross-language dependency candidate; introduces a different toolchain before local V2 evaluation works.",
+    "candidate_3": "Common flag propagation appears mostly one-way, making it a useful control but weaker main mechanism candidate.",
+    "all_images": "Unnecessary storage and setup work before one environment is validated.",
+    "v1_evaluator": "Different release and evaluation contract; cannot use it for V2 results."
+  },
+  "success_criteria": [
+    "Immutable image and public input parity verified",
+    "Probe matches intended base commit and exposes no unwanted history or host access",
+    "Empty patch unresolved and reference patch resolved, without silently excluding failures",
+    "Time, CPU, memory, unpacked image size and free space recorded"
+  ],
+  "main_experiment_adopted": false,
+  "model_runs_authorized_by_this_plan": 0
+}

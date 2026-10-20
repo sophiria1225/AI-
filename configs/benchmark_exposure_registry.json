@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-10-20T07:09:03.211757+00:00",
+  "datasets": [
+    {
+      "dataset": "ScaleAI/SWE-bench_Pro",
+      "revision_at_preview": "not pinned; metadata audit follows",
+      "researcher_preview_exposures": [
+        {
+          "source": "https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro",
+          "mechanism": "The dataset landing page automatically included row previews while checking the official release.",
+          "fields_visible": [
+            "patch",
+            "test_patch",
+            "fail_to_pass",
+            "pass_to_pass"
+          ],
+          "repository": "NodeBB/NodeBB",
+          "instance_id_prefixes": [
+            "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac",
+            "instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5",
+            "instance_NodeBB__NodeBB-05f2236193f407cf8e2072757fbd6bb170bc13f0",
+            "instance_NodeBB__NodeBB-087e6020e490b4a1759f38c1ad03869511928263",
+            "instance_NodeBB__NodeBB-0c81642997ea1d827dbd02c311db9d4976112cd4",
+            "instance_NodeBB__NodeBB-0e07f3c9bace416cbab078a30eae972868c0a8a3",
+            "instance_NodeBB__NodeBB-0f788b8eaa4bba3c142d171fd941d015c53b65fc",
+            "instance_NodeBB__NodeBB-1ea9481af6125ffd6da0592ed439aa62af0bca11"
+          ],
+          "note": "Rows were partial previews, including a truncated final ID. No claim that the entire patch or all rows were inspected."
+        }
+      ],
+      "exclude_repositories_from_untouched_confirmation": [
+        "NodeBB/NodeBB"
+      ],
+      "generator_exposure": false,
+      "future_access_rule": "Read version-pinned README/metadata; project public columns before any dataset row display. Do not use previewed solutions for task selection.",
+      "automated_selector_enforcement": "prepare_pro_public_inputs.py rejects a screening plan that fails to exclude a recorded repository; no Pro trial is scheduled",
+      "subsequently_observed_revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50"
+    }
+  ]
+}
