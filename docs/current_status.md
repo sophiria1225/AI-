@@ -1,6 +1,6 @@
 # 現在の状態
 
-2026年10月20日：GitHubへの移管とP2を開始。[作業ボード](task_board.md)を進捗の入口とする。
+2026年10月20日：GitHubへの移管とP2が完了し、P3の固定比較を実行中。[作業ボード](task_board.md)を進捗の入口とする。
 
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
 - MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。
