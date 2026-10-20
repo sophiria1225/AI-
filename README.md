@@ -6,7 +6,7 @@
 
 **研究説明資料（10月20日・29枚）：** [PDF](materials/20261020/AI_harness_research_20261020.pdf) / [編集できるPowerPoint](materials/20261020/AI_harness_research_20261020.pptx) / [内容・出典・図表CSV](materials/20261020/)。目的、実装済みと提案予定の構成図、実験条件、結果、考察、先行研究、今後の判断をまとめました。P4終了時点の資料で、以後の結果は日付を分けて記録します。
 
-**現在実行中：** 10月20日19:10 JSTから[P5の共通条件比較](docs/experiments/P5_pro_comparison.md)を開始しました。Ansibleを固定2担当→単一の順に各1回、双方60呼び出し・60万トークン・最大120分で実行します。[Issue #24](https://github.com/sophiria1225/AI-/issues/24)、[PR #25](https://github.com/sophiria1225/AI-/pull/25)で追跡できます。条件・順序・ソースを開始前に固定し、片方の結果を後続のモデル入力へ戻しません。結果は未確定です。
+**最新の比較結果：** [P5の共通条件比較](docs/P5_findings.md)を20:51 JSTに独立評価まで完了しました。Ansibleの固定2担当は580,169トークン、単一は571,839トークンで、双方とも修正差分0・要求0/4合格の未解決でした。計74呼び出し・監査エラー0。[Issue #24](https://github.com/sophiria1225/AI-/issues/24)、[PR #25](https://github.com/sophiria1225/AI-/pull/25)。この結果から担当変更の有効性は示せません。次は研究の差分と、それを検証する比較・状態保存の仕様を明確にします。
 
 **最新の追加観察：** [PR #21](https://github.com/sophiria1225/AI-/pull/21)でAnsible候補を共通実行器へ接続し、単一試行`P4_PRO_01`を独立評価まで完了しました。38呼び出し・586,166トークン、調査と一時的な再現確認を行いましたが、修正パッチは0バイト。要求4テストは未達、既存21テストは合格です。記録監査エラー0。自動再編の有効性はまだ確認していません。[結果と考察](docs/P4_findings.md)、[条件と選択理由](docs/experiments/Pro_first_pilot.md)、[集計](reports/P4_pro_measurements.json)。
 
