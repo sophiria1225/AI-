@@ -43,3 +43,19 @@ APOは原論文の前提・4.1節も確認した。既知の有限領域と制�
 実装への示唆として、移管時の停止境界・版ID・遅延出力対策は共通の基盤機能として扱う。これらを追加しただけでは新規性としない。2012年のImproving APO本文、保証の全証明、実装再現は未完了である。
 
 GCCの追加検索で[ImprintLab/git-context-controller](https://github.com/ImprintLab/git-context-controller)などの実装候補を見つけた。確認時のdefault branchはdev、作成日は2026年7月24日。READMEのv2という名前だけでは、論文v2の評価コードと同一だと確認できない。論文の著者提供HTMLから対応する実装の明示的リンクは確認できておらず、公式再現コードとしてまだ採用しない。GitHubの名称・機能が似ていることと、論文の手法・予算・実験条件を再現することは区別する。候補のAPI取得記録は`records/sources/20261020_near_work/gcc_candidate_repository.json`に保存した。
+
+## 実行中の構成変更に直接近い追加候補
+
+2026年10月20日確認。下表は本文確認とコード読み取りであり、性能の再現ではない。
+
+| 研究・掲載先 | 確認した機構 | 本研究への影響・残る確認 |
+|---|---|---|
+| [Multi-Agent Collaboration via Evolving Orchestration](https://proceedings.neurips.cc/paper_files/paper/2025/hash/f1320d2e2842169c6fc89dcbd80e94d0-Abstract-Conference.html)、NeurIPS 2025 | 状態更新のたびに中央方策が次の担当を選ぶ。品質と費用を用いた学習、トークン費用の分析もある。著者原稿v2の2節・付録A.1–2を確認 | 「実行途中に選ぶ」「費用を減らす」は既出。進行した作業・成果物・更新責任を移す効果が、担当選択だけを超えるか比較する |
+| [DynTaskMAS](https://ojs.aaai.org/index.php/ICAPS/article/view/36130)、ICAPS 2025、35(1):288–296 | 動的な依存グラフ、非同期実行、共有文脈、実行中のワークフロー調整。著者原稿v1のIII–IV節を確認 | 「依存に応じて作業構成を変える」も既出。候補生成・評価関数の具体実装は未確認。複数GPUの並列時間改善を、今回の直列実行・全入力出力費用へ置き換えない |
+| [Benefits and Limitations of Communication in Multi-Agent Reasoning](https://www.mhahn.info/bibtexbrowser.php?bib=hahn.bib&key=anonymous2026benefits)、著者書誌でICLR 2026を確認 | 著者原稿v2の2–3節で、限定したTransformerモデルと課題における通信・計算・深さの関係を確認 | 理論上のグラフの大きさ・深さは、履歴の再入力を含む今回の総トークンと同一ではない。実リポジトリの作業移管に対する保証として引用しない |
+
+Puppeteerの論文が示す公式ブランチを`b24e6e6bd00bb04d317e0447cb7acb1e4973c83a`へ固定し、`ReasoningPath.step`を読んだ。行動後にglobal_infoを更新してpolicy.forwardを呼ぶ経路と、複数担当を選び分岐する経路がある。「一回だけ構成を選ぶ方式」として比較しない。この公開コード版が掲載実験の正確な版であることは未確認。[固定版の実行経路](https://github.com/OpenBMB/ChatDev/blob/b24e6e6bd00bb04d317e0447cb7acb1e4973c83a/puppeteer/inference/reasoning/path.py)。
+
+取得原本・コード7ファイル・ハッシュは`records/sources/20261020_runtime_reorganization/`へ保存した。掲載PDFと公開原稿の全文一致、学習費用を含む完全な費用監査、コード実行は未実施。DynTaskMASの掲載ページはブラウザで確認できたが、ローカル取得は失敗した。通信の論文はOpenReview本文を取得できず、2026年7月14日付の著者原稿v2を読んだ。[Puppeteer本文](https://arxiv.org/html/2505.19591v2)、[DynTaskMAS本文](https://arxiv.org/html/2503.07675v1)、[通信の本文](https://arxiv.org/html/2510.13903v2)。
+
+次の実装では、固定分担と共有だけの対照を先に作り、その後の動的方式の比較候補にPuppeteerを加える。依存グラフだけの動的化も差分として扱わない。各論文の全基盤を直ちに移植する案は、まだ分担による現象を観測しておらず、モデル・ツール・予算も変わってしまうため先行させない。現在のQ3単一方式の2失敗は、移管方式が必要である証拠にはならない。
