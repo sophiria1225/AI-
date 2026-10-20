@@ -1,0 +1,168 @@
+{
+  "updated_at": "2026-10-20T02:30:21.732056+00:00",
+  "scope": "P2 local calibration and development; not held-out research results",
+  "accounting": {
+    "attempted_calls": 11,
+    "calls_with_known_usage": 11,
+    "calls_with_unknown_usage": 0,
+    "known_input_tokens": 50782,
+    "known_output_tokens": 493,
+    "known_total_tokens": 51275,
+    "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
+  },
+  "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
+  "probes": [
+    {
+      "record": "records/p2_probes/20261020_111428_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-q3kl",
+        "num_ctx": 8192,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": true,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1615
+    },
+    {
+      "record": "records/p2_probes/20261020_112612_enabled",
+      "config": {
+        "backend": "llama.cpp",
+        "base_url": "http://127.0.0.1:8011",
+        "model": "minimax-m3-q3kl",
+        "num_ctx": 65536,
+        "num_predict": 2048,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0,
+        "seed": 7,
+        "thinking_mode": "enabled",
+        "call_timeout_seconds": 360
+      },
+      "assertions": {
+        "json_count_matches": true,
+        "json_value": true,
+        "tool_request_count_matches": true,
+        "valid_tool_request": true,
+        "tool_result_count_matches": true,
+        "tool_result_used": true,
+        "intentional_length_count_matches": true,
+        "length_detected": true
+      },
+      "error": null,
+      "calls": 4,
+      "known_total_tokens": 1668
+    }
+  ],
+  "capacity": [
+    {
+      "record": "records/p2_capacity/20261020_111506_6000",
+      "ctx_size": 8192,
+      "input_tokens": 5993,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 49.19215241703205,
+      "timings": {
+        "cache_n": 127,
+        "prompt_n": 5866,
+        "prompt_ms": 48658.875,
+        "prompt_per_token_ms": 8.295069041936584,
+        "prompt_per_second": 120.5535475285855,
+        "predicted_n": 8,
+        "predicted_ms": 524.548,
+        "predicted_per_token_ms": 74.93542857142857,
+        "predicted_per_second": 13.34482259011568
+      },
+      "sampled_peak_rss_bytes": 206671101952,
+      "peak_system_swap_bytes": 0,
+      "sampling": {
+        "top_k": 40,
+        "min_p": 0.05,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_111648_14000",
+      "ctx_size": 16384,
+      "input_tokens": 14000,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 123.53189125005156,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 14000,
+        "prompt_ms": 123008.481,
+        "prompt_per_token_ms": 8.786320071428571,
+        "prompt_per_second": 113.81329064619537,
+        "predicted_n": 8,
+        "predicted_ms": 505.364,
+        "predicted_per_token_ms": 72.19485714285715,
+        "predicted_per_second": 13.851402157652702
+      },
+      "sampled_peak_rss_bytes": 208178593792,
+      "peak_system_swap_bytes": 0,
+      "sampling": {
+        "top_k": 40,
+        "min_p": 0.05,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    },
+    {
+      "record": "records/p2_capacity/20261020_112020_28000",
+      "ctx_size": 32768,
+      "input_tokens": 27975,
+      "output_tokens": 8,
+      "count_matches": true,
+      "retrieved_exact_value": true,
+      "status": "ok",
+      "error": null,
+      "wall_seconds": 266.15131233399734,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 27975,
+        "prompt_ms": 265552.686,
+        "prompt_per_token_ms": 9.492499946380697,
+        "prompt_per_second": 105.34632664193802,
+        "predicted_n": 8,
+        "predicted_ms": 563.687,
+        "predicted_per_token_ms": 80.52671428571429,
+        "predicted_per_second": 12.418239200123473
+      },
+      "sampled_peak_rss_bytes": 211145785344,
+      "peak_system_swap_bytes": 0,
+      "sampling": {
+        "top_k": 0,
+        "min_p": 0.0,
+        "repeat_penalty": 1.0
+      },
+      "sampling_note": "Missing keys in early records use the pinned server defaults."
+    }
+  ],
+  "tasks": []
+}

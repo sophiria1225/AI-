@@ -27,6 +27,8 @@ def payload_for(config, messages, tools):
     clean = [{k: v for k, v in m.items() if k in allowed} for m in messages]
     payload = {'model': config['model'], 'messages': clean, 'stream': False,
                'temperature': config['temperature'], 'top_p': config.get('top_p', 0.95),
+               'top_k': config.get('top_k', 0), 'min_p': config.get('min_p', 0.0),
+               'repeat_penalty': config.get('repeat_penalty', 1.0),
                'seed': config['seed'], 'max_tokens': config['num_predict'],
                'cache_prompt': config.get('cache_prompt', True),
                'reasoning_format': 'deepseek',

@@ -10,6 +10,7 @@
 | なぜこのモデルか、他候補を後順位にした理由 | [モデル選定](docs/model_selection.md) |
 | 判断と失敗の履歴 | [意思決定記録](docs/decision_log.md) |
 | 今回の実験条件 | [P2計画](docs/experiments/P2_minimax_baseline.md) |
+| MiniMaxの実機測定 | [検証の経過](docs/P2_progress.md)、[費用・容量の集計](reports/P2_measurements.json) |
 | 研究の背景・目的 | [研究仕様](docs/research_brief.md) |
 | 以前の実測結果 | [P1検証](docs/P1_verification_results.md)、[初期検証](docs/initial_verification_results.md) |
 | 公開する集計・検証証跡 | [reports](reports/) |

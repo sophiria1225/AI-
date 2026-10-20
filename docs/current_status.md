@@ -3,8 +3,9 @@
 2026年10月20日：GitHubへの移管とP2を開始。[作業ボード](task_board.md)を進捗の入口とする。
 
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHub CLI未認証のためpush・Issue・Projectは未反映。
-- MiniMax M3 Q3_K_Lの固定版約205GBを取得中。6ファイルのハッシュを保存し、llama.cpp b11669公式バイナリを検証済み。ロード・推論は未実施。
-- ツール往復の計測と、公開検査の終了コード保持を実装する。条件は[P2計画](experiments/P2_minimax_baseline.md)。
+- MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。
+- 8K入力枠で約6Kの入力処理が成功。16K以降へ段階的に拡張中。実コード課題の品質はまだ未測定。[進行中の結果](P2_progress.md)。
+- 公開検査を個別に記録する処理を実装し、2開発課題の元コードでも動作を確認。条件は[P2計画](experiments/P2_minimax_baseline.md)。
 - 元の研究コードと記録は変更していない。新しい実装と実験はこのリポジトリで行う。
 
 ## P1終了時点の履歴

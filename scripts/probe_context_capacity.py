@@ -1,6 +1,7 @@
 """Synthetic context-capacity calibration, not evidence of real-task ability."""
 import argparse
 import datetime
+import hashlib
 import json
 from pathlib import Path
 import random
@@ -25,9 +26,21 @@ def main():
     config = {'backend': 'llama.cpp', 'base_url': 'http://127.0.0.1:8011',
               'model': 'minimax-m3-q3kl', 'num_ctx': runtime['ctx_size'],
               'num_predict': 512, 'temperature': 1.0, 'top_p': 0.95,
-              'seed': args.seed, 'thinking_mode': 'disabled', 'call_timeout_seconds': 600}
+              'top_k': 0, 'min_p': 0.0, 'repeat_penalty': 1.0,
+              'seed': args.seed, 'thinking_mode': 'disabled', 'call_timeout_seconds': 900}
     out = ROOT / 'records/p2_capacity' / (datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + '_' + str(args.target_tokens))
     out.mkdir(parents=True)
+    save_json(out / 'config.json', config)
+    with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
+        props = json.load(response)
+    save_json(out / 'server_props.json', props)
+    save_json(out / 'server_runtime.json', runtime)
+    source_hashes = {}
+    for source in ('probe_context_capacity.py', 'local_llama.py'):
+        content = (ROOT / 'scripts' / source).read_bytes()
+        (out / source).write_bytes(content)
+        source_hashes[source] = hashlib.sha256(content).hexdigest()
+    save_json(out / 'source_hashes.json', source_hashes)
     rng = random.Random(args.seed)
     rows = [f'asset-{i:06d}: token={rng.getrandbits(64):016x}; batch={rng.randrange(1000000)}; zone={rng.randrange(64)}'
             for i in range(args.target_tokens)]
@@ -52,10 +65,9 @@ def main():
             high = middle - 1
     messages = messages_for(low)
     count = local_llama.count_input(config, messages, None)
-    save_json(out / 'config.json', config)
     save_json(out / 'input_sizing.json', counts)
     save_json(out / 'preflight.json', count)
-    result = local_llama.model_call(config, messages, out, 600, tools=None)
+    result = local_llama.model_call(config, messages, out, config['call_timeout_seconds'], tools=None)
     summary = {'scope': 'distinct synthetic records for memory/API calibration only',
                'target_tokens': args.target_tokens, 'preflight_tokens': count['input_tokens'],
                'source_records': low + 1,

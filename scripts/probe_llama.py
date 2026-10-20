@@ -1,6 +1,7 @@
 """Bounded model integration probes, separate from benchmark task scores."""
 import argparse
 import datetime
+import hashlib
 import json
 from pathlib import Path
 import signal
@@ -29,11 +30,19 @@ def main():
         raise RuntimeError('supervised server is not ready')
     config = {'backend': 'llama.cpp', 'base_url': args.base_url, 'model': 'minimax-m3-q3kl',
               'num_ctx': runtime['ctx_size'], 'num_predict': 2048, 'temperature': 1.0,
-              'top_p': 0.95, 'seed': 7, 'thinking_mode': args.mode, 'call_timeout_seconds': 360}
+              'top_p': 0.95, 'top_k': 0, 'min_p': 0.0, 'repeat_penalty': 1.0,
+              'seed': 7, 'thinking_mode': args.mode, 'call_timeout_seconds': 360}
     out = ROOT / 'records/p2_probes' / (datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + '_' + args.mode)
     out.mkdir(parents=True)
     save_json(out / 'config.json', config)
     save_json(out / 'server_props.json', props)
+    save_json(out / 'server_runtime.json', runtime)
+    source_hashes = {}
+    for source in ('probe_llama.py', 'local_llama.py'):
+        content = (ROOT / 'scripts' / source).read_bytes()
+        (out / source).write_bytes(content)
+        source_hashes[source] = hashlib.sha256(content).hexdigest()
+    save_json(out / 'source_hashes.json', source_hashes)
     results = []
     assertions = {}
     total = 0

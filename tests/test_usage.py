@@ -54,6 +54,9 @@ class UsageControls(unittest.TestCase):
         self.assertEqual(result['messages'][0]['reasoning_content'], 'reason')
         self.assertNotIn('extra', result['messages'][0])
         self.assertEqual(result['chat_template_kwargs']['thinking_mode'], 'enabled')
+        self.assertEqual(result['top_k'], 0)
+        self.assertEqual(result['min_p'], 0.0)
+        self.assertEqual(result['repeat_penalty'], 1.0)
 
 
 if __name__ == '__main__':

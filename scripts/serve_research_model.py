@@ -24,9 +24,15 @@ def memory_sample(pid):
     swap = subprocess.check_output(['sysctl', '-n', 'vm.swapusage'], text=True).strip()
     match = re.search(r'used\s*=\s*([0-9.]+)([MG])', swap)
     used = float(match[1]) * (1024**2 if match[2] == 'M' else 1024**3) if match else None
+    vm = subprocess.check_output(['vm_stat'], text=True)
+    page = int(re.search(r'page size of (\d+) bytes', vm)[1])
+    fields = {name: int(value) for name, value in re.findall(r'^([^:\n]+):\s+(\d+)\.', vm, re.M)}
     return {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'rss_bytes': int(rss) * 1024 if rss else None, 'swap_used_bytes': used,
-            'swap_raw': swap}
+            'swap_raw': swap, 'system_wired_bytes': fields['Pages wired down'] * page,
+            'system_compressor_bytes': fields['Pages occupied by compressor'] * page,
+            'system_free_bytes': fields['Pages free'] * page,
+            'vm_stat_raw': vm}
 
 
 def main():
@@ -58,6 +64,7 @@ def main():
     stamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
     out = ROOT / 'records/p2_servers' / stamp
     out.mkdir(parents=True)
+    (out / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     command = [str(ROOT / runtime['server_path']), '--model', str(model),
                '--alias', 'minimax-m3-q3kl', '--host', '127.0.0.1', '--port', str(args.port),
                '--ctx-size', str(args.ctx_size), '--parallel', '1', '--n-gpu-layers', '999',

@@ -28,8 +28,11 @@ def main():
     if result_file.exists():
         raise RuntimeError('evaluation already recorded; refusing to overwrite')
     commit = subprocess.check_output(['git', '-C', str(ROOT / 'vendor/SWE-bench'), 'rev-parse', 'HEAD'], text=True).strip()
-    if commit != PIN:
+    dirty = subprocess.check_output(['git', '-C', str(ROOT / 'vendor/SWE-bench'), 'status', '--porcelain'])
+    if commit != PIN or dirty:
         raise RuntimeError('evaluator checkout revision differs from the pinned version')
+    if not Path(evaluation.__file__).resolve().is_relative_to((ROOT / 'vendor/SWE-bench').resolve()):
+        raise RuntimeError('imported evaluator is outside the pinned checkout')
     state = json.loads((run / 'summary.json').read_text())
     if not state.get('artifact_frozen_at') or not state.get('artifact_sha256'):
         raise ValueError('run has no explicitly frozen final artifact')
@@ -41,20 +44,32 @@ def main():
     task = json.loads((ROOT / 'private_eval' / private[state['instance_id']]).read_text())[0]
     if task['instance_id'] != state['instance_id']:
         raise ValueError('evaluation task mismatch')
+    spec = make_test_spec(task)
+    config = json.loads((run / 'config.json').read_text())
+    client = docker.from_env(timeout=60)
+    generator_image = client.images.get(config['image']).id
+    if client.images.get(spec.image).id != generator_image:
+        raise RuntimeError('evaluation and generation images differ')
     lock = run / 'evaluation.started.json'
     started_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
     with lock.open('x') as handle:
         json.dump({'started_at': started_at, 'artifact_sha256': state['artifact_sha256']}, handle)
+    source_hashes = {}
+    for source in ('evaluate_frozen_run.py', 'container_policy.py'):
+        content = (ROOT / 'scripts' / source).read_bytes()
+        (run / ('evaluation_' + source)).write_bytes(content)
+        source_hashes[source] = hashlib.sha256(content).hexdigest()
     evaluation.create_container = evaluator_create_container
     run_id = 'P2_' + datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + '_' + run.name
     record = {'run_id': run.name, 'instance_id': state['instance_id'], 'evaluation_run_id': run_id,
               'artifact_sha256': state['artifact_sha256'], 'evaluator_commit': commit,
+              'source_hashes': source_hashes, 'image_id': generator_image,
               'started_at': started_at, 'evaluation_status': 'error', 'resolved': None}
     started = time.monotonic()
     try:
         prediction = {'instance_id': task['instance_id'], 'model_name_or_path': state['model'],
                       'model_patch': patch.decode()}
-        report = evaluation.run_instance(make_test_spec(task), prediction, docker.from_env(timeout=60),
+        report = evaluation.run_instance(spec, prediction, client,
                                          run_id, timeout=180, skip_patch=not bool(patch.strip()))
         if report:
             task_id, reports = report

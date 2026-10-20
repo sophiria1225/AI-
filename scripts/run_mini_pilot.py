@@ -203,6 +203,18 @@ def run(config):
     if config.get('backend') == 'llama.cpp':
         with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
             props = json.load(response)
+        runtime = json.loads((ROOT / '.runtime/model_server.json').read_text())
+        if runtime['status'] != 'ready' or runtime['ctx_size'] != config['num_ctx']:
+            raise RuntimeError('supervised context configuration differs from experiment')
+        if (props['default_generation_settings']['n_ctx'] != config['num_ctx']
+                or props['total_slots'] != 1 or props['model_alias'] != config['model']):
+            raise RuntimeError('live server settings differ from experiment')
+        selection = json.loads((ROOT / 'configs/models/minimax_m3_selection.json').read_text())
+        if runtime['runtime'] != selection['runtime']:
+            raise RuntimeError('supervised runtime differs from pinned selection')
+        expected_build = selection['runtime']['binary_tag'] + '-' + selection['runtime']['commit'][:9]
+        if props['build_info'] != expected_build:
+            raise RuntimeError('live server build differs from pinned selection')
         if pathlib.Path(props.get('model_path', '')).resolve() != (ROOT / config['model_path']).resolve():
             raise RuntimeError('server model path differs from pinned configuration')
         verified = json.loads((ROOT / 'records/models/p2_minimax_download.json').read_text())
@@ -225,6 +237,9 @@ def run(config):
         (out / source).write_bytes(content)
         hashes[source] = hashlib.sha256(content).hexdigest()
     save_json(out / 'config.json', config)
+    if config.get('backend') == 'llama.cpp':
+        save_json(out / 'server_props.json', props)
+        save_json(out / 'server_runtime.json', runtime)
     save_json(out / 'public_task.json', task)
     templates = make_templates(config)
     save_json(out / 'mini_templates.json', templates)
