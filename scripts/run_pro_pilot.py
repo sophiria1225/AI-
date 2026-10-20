@@ -27,10 +27,35 @@ class ProEnvironment(SharedEnvironment):
                          'environment_adapter': 'pro_shared_public_worktree'}}
 
 
+def trial_units(plan):
+    phase = plan.get('phase', 'P4')
+    expected = {'P4': ('single',), 'P5': ('single', 'fixed_pair')}
+    if plan.get('trial_count') != 1 or phase not in expected or plan.get('strategy') not in expected[phase]:
+        raise ValueError('Expected one P4 single or P5 single/fixed-pair development trial')
+    return ('single',) if plan['strategy'] == 'single' else ('implementation', 'validation')
+
+
+def require_same_conditions(plan, config):
+    """P5 extends the wall ceiling for BOTH arms; all other conditions stay fixed."""
+    if plan.get('phase', 'P4') != 'P5':
+        return
+    reference = plan['comparison_baseline']
+    path = ROOT / reference['config']
+    if sha(path) != reference['config_sha256']:
+        raise ValueError('Baseline configuration changed')
+    baseline = json.loads(path.read_text())
+    if baseline.get('max_wall_seconds') != 3600 or config.get('max_wall_seconds') != 7200:
+        raise ValueError('P5 must use the predeclared 7200-second ceiling for both arms')
+    metadata = {'scope', 'phase', 'version', 'frozen_at', 'max_wall_seconds'}
+    changed = {k for k in set(config) | set(baseline)
+               if k not in config or k not in baseline or config[k] != baseline[k]}
+    if changed - metadata:
+        raise ValueError('Comparison changes substantive conditions: ' + ', '.join(sorted(changed-metadata)))
+
+
 def prepare(plan_path, storage):
     plan = json.loads(plan_path.read_text())
-    if plan.get('trial_count') != 1 or plan.get('strategy') != 'single':
-        raise ValueError('This plan allows exactly one single-agent development trial')
+    trial_units(plan)
     for path, expected in plan['config_sha256'].items():
         if sha(ROOT / path) != expected:
             raise ValueError('Frozen configuration changed: ' + path)
@@ -38,11 +63,12 @@ def prepare(plan_path, storage):
         if sha(ROOT / 'scripts' / name) != expected:
             raise ValueError('Frozen source changed: ' + name)
     config = json.loads((ROOT / plan['config']).read_text())
-    if (config['phase'] != 'P4' or config['backend'] != 'llama.cpp'
+    if (config['phase'] != plan.get('phase', 'P4') or config['backend'] != 'llama.cpp'
             or config['max_calls'] != plan['max_model_calls']
             or config['max_total_tokens'] != plan['max_total_input_output_tokens']
             or config['max_wall_seconds'] != plan['max_wall_seconds']):
         raise ValueError('Model configuration and plan differ')
+    require_same_conditions(plan, config)
     require_controls(storage, config)
     calibrated = storage / plan['runtime_calibration']['record']
     if sha(calibrated) != plan['runtime_calibration']['sha256']:
@@ -69,15 +95,43 @@ def prepare(plan_path, storage):
     return plan, config, task, vendor
 
 
+def run_schedule(agents, model, env, completion, out, base_commit, summary, budget,
+                 trial_id, *, artifact_options):
+    """Reuse the P3 round-robin protocol, with one shared ledger and worktree."""
+    units = tuple(agents)
+    turn = 0
+    while not completion.complete:
+        unit = units[turn % len(units)]
+        turn += 1
+        model.unit = env.unit = unit
+        event = run_turn(agents[unit], env, completion, out, base_commit, turn,
+                         artifact_options=artifact_options)
+        summary['turns'].append({k: v for k, v in event.items() if k not in ('visible_content', 'operations')})
+        for other, agent in agents.items():
+            if other != unit:
+                agent.add_messages({'role': 'user', 'content':
+                                    'Peer observations in the shared worktree:\n' +
+                                    json.dumps(event, ensure_ascii=False)})
+            agent.save(agent.config.output_path)
+        summary['completion'] = completion.snapshot()
+        save_json(out / 'summary.json', summary)
+        print(json.dumps({'trial': trial_id, 'turn': turn, 'unit': unit,
+                          'tokens': budget.total_tokens, 'complete': completion.complete}), flush=True)
+        active = agents[unit]
+        if 0 < active.config.max_consecutive_format_errors <= active.n_consecutive_format_errors:
+            raise ProtocolStop('repeated_format_error')
+
+
 def execute(plan_path, storage):
     plan, config, task, vendor = prepare(plan_path, storage)
+    units = trial_units(plan)
     out = storage / 'records/pro_pilot' / plan['trial_id']
     out.mkdir(parents=True, exist_ok=False)  # A failed start also consumes this ID.
     (out / 'plan.json').write_bytes(plan_path.read_bytes())
     save_json(out / 'config.json', config)
     save_json(out / 'public_task.json', task)
     summary = {
-        'run_id': plan['trial_id'], 'phase': 'P4', 'strategy': 'single',
+        'run_id': plan['trial_id'], 'phase': config['phase'], 'strategy': plan['strategy'],
         'instance_id': task['instance_id'], 'model': config['model'],
         'mini_commit': MINI_COMMIT, 'plan_sha256': sha(plan_path),
         'source_hashes': plan['source_sha256'], 'calls': [], 'tools': [], 'turns': [],
@@ -93,7 +147,8 @@ def execute(plan_path, storage):
         'max_calls', 'max_total_tokens', 'num_ctx', 'num_predict', 'max_wall_seconds')})
     runtime = runtime_for(config, {})
     options = {'workdir': runtime['workdir'], 'python_path': runtime['python']}
-    agent = container = None
+    container = None
+    agents = {}
     try:
         with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
             props = json.load(response)
@@ -116,28 +171,20 @@ def execute(plan_path, storage):
         initial_dir = out / 'artifact_versions/initial'
         initial_dir.mkdir(parents=True)
         initial = capture_artifact(container, task['base_commit'], initial_dir, **options)
-        completion = CompletionState(('single',), initial['artifact_sha256'])
+        completion = CompletionState(units, initial['artifact_sha256'])
         env = ProEnvironment(container, config, out, summary, started)
-        templates = templates_for(config, 'single', False, vendor=vendor)
-        save_json(out / 'unit_templates.json', {'single': templates})
-        model = SharedModel(config, templates['model'], out, summary, started, budget)
-        agent = DefaultAgent(model, env, **templates['agent'], output_path=out/'trajectory_single.json')
-        agent.extra_template_vars['task'] = task_text(task)
-        agent.add_messages(
-            {'role': 'system', 'content': agent._render_template(agent.config.system_template)},
-            {'role': 'user', 'content': agent._render_template(agent.config.instance_template)})
-        turn = 0
-        while not completion.complete:
-            turn += 1
-            event = run_turn(agent, env, completion, out, task['base_commit'], turn, artifact_options=options)
-            summary['turns'].append({k: v for k, v in event.items() if k not in ('visible_content', 'operations')})
-            agent.save(agent.config.output_path)
-            summary['completion'] = completion.snapshot()
-            save_json(out / 'summary.json', summary)
-            print(json.dumps({'trial': plan['trial_id'], 'turn': turn,
-                              'tokens': budget.total_tokens, 'complete': completion.complete}), flush=True)
-            if 0 < agent.config.max_consecutive_format_errors <= agent.n_consecutive_format_errors:
-                raise ProtocolStop('repeated_format_error')
+        templates = {unit: templates_for(config, unit, len(units) == 2, vendor=vendor) for unit in units}
+        save_json(out / 'unit_templates.json', templates)
+        model = SharedModel(config, templates[units[0]]['model'], out, summary, started, budget)
+        for unit in units:
+            agent = DefaultAgent(model, env, **templates[unit]['agent'], output_path=out/f'trajectory_{unit}.json')
+            agent.extra_template_vars['task'] = task_text(task)
+            agent.add_messages(
+                {'role': 'system', 'content': agent._render_template(agent.config.system_template)},
+                {'role': 'user', 'content': agent._render_template(agent.config.instance_template)})
+            agents[unit] = agent
+        run_schedule(agents, model, env, completion, out, task['base_commit'], summary,
+                     budget, plan['trial_id'], artifact_options=options)
         summary['stop_reason'] = 'submitted'
     except ProtocolStop as error:
         summary['stop_reason'] = error.reason
@@ -148,7 +195,7 @@ def execute(plan_path, storage):
     finally:
         summary.update(total_recorded_tokens=budget.total_tokens, usage_complete=budget.usage_complete,
                        budget=budget.snapshot())
-        if agent is not None:
+        for agent in agents.values():
             agent.save(agent.config.output_path)
         if container is not None:
             try:

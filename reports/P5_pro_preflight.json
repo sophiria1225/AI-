@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-20T10:04:15.851920+00:00",
+  "model_calls": 0,
+  "batch_plan_sha256": "a74c9bda57d79a2baaea4a06c604b28b0c298866fe55001a9c6bf7aef02cea3d",
+  "trials": [
+    {
+      "strategy": "fixed_pair",
+      "trial_id": "P5_PRO_PAIR_01",
+      "plan": "configs/P5_pro_fixed_pair_plan_v01.json",
+      "plan_sha256": "fbb775860f3a7b057df6f2fbeb2746db8e7e7c21c70e8785521704d686238c59"
+    },
+    {
+      "strategy": "single",
+      "trial_id": "P5_PRO_SINGLE_01",
+      "plan": "configs/P5_pro_single_plan_v01.json",
+      "plan_sha256": "75512a769d0f6cf561a78f3072e0a93798c1e28f649a2a70a6174ffdac29154d"
+    }
+  ],
+  "validation": "Both frozen trial plans passed full prepare() before any model execution",
+  "common_config_sha256": "bccb5f17c521b76fc6abea7397e64c0f68638eca5d8f5e5b7a3d00c3f2227719",
+  "source_count": 20,
+  "server_record": "records/p2_servers/20261020_190238",
+  "server_status": "ready",
+  "configuration_equal": true
+}
