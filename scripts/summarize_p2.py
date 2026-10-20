@@ -31,6 +31,8 @@ def main():
         capacities.append({'record': str(path.parent.relative_to(ROOT)),
                            'model': config['model'],
                            'ctx_size': config['num_ctx'],
+                           'cache_type_k': config.get('cache_type_k', 'f16'),
+                           'cache_type_v': config.get('cache_type_v', 'f16'),
                            'input_tokens': item['preflight_tokens'],
                            'output_tokens': response['output_tokens'],
                            'count_matches': item['count_matches'],

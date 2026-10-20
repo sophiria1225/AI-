@@ -186,7 +186,8 @@ def run(config, strategy):
     with urllib.request.urlopen(config['base_url'] + '/props', timeout=10) as response:
         props = json.load(response)
     runtime = json.loads((ROOT / '.runtime/model_server.json').read_text())
-    selection, download, path = check_live_model(config['model_selection'], runtime, props, config['num_ctx'])
+    selection, download, path = check_live_model(config['model_selection'], runtime, props, config['num_ctx'],
+        expected_cache=(config.get('cache_type_k', 'f16'), config.get('cache_type_v', 'f16')))
     if path.resolve() != (ROOT / config['model_path']).resolve() or selection['model_alias'] != config['model'] or selection['revision'] != config['model_revision']:
         raise RuntimeError('task model identity differs from verified selection')
     tasks = [json.loads(line) for line in (ROOT / 'data/verified_public_inputs.jsonl').read_text().splitlines()]

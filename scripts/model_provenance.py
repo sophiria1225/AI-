@@ -103,7 +103,23 @@ def verified_model(name=LEGACY_SELECTION, root=ROOT):
     return config, record, model
 
 
-def check_live_model(name, runtime, props, expected_ctx=None, root=ROOT):
+def runtime_cache_types(runtime):
+    command = runtime['command']
+    actual = []
+    for flag, key in (('--cache-type-k', 'cache_type_k'), ('--cache-type-v', 'cache_type_v')):
+        if command.count(flag) != 1:
+            raise ValueError('supervised command must specify each KV cache type once')
+        index = command.index(flag)
+        if index + 1 >= len(command):
+            raise ValueError('missing supervised KV cache value')
+        value = command[index + 1]
+        if value not in ('f16', 'q8_0') or runtime.get(key, value) != value:
+            raise ValueError('supervised KV cache fields disagree')
+        actual.append(value)
+    return tuple(actual)
+
+
+def check_live_model(name, runtime, props, expected_ctx=None, root=ROOT, expected_cache=None):
     config, record, model = verified_model(name, root)
     if runtime.get('status') != 'ready' or runtime['runtime'] != config['runtime']:
         raise ValueError('supervised model/runtime is not the selected ready instance')
@@ -114,6 +130,8 @@ def check_live_model(name, runtime, props, expected_ctx=None, root=ROOT):
         raise ValueError('live model settings differ from selection')
     if expected_ctx is not None and runtime['ctx_size'] != expected_ctx:
         raise ValueError('live context differs from experiment')
+    if expected_cache is not None and runtime_cache_types(runtime) != tuple(expected_cache):
+        raise ValueError('supervised KV cache differs from experiment')
     build = config['runtime']['binary_tag'] + '-' + config['runtime']['commit'][:9]
     if props['build_info'] != build or Path(props.get('model_path', '')).resolve() != model.resolve():
         raise ValueError('live model path or build differs from verified selection')

@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-20T04:02:19.622530+00:00",
+  "scope": "IQ4 f16 64K inference failure and supervisor controls, not task performance",
+  "failed_server": "records/p2_servers/20261020_125839",
+  "failed_probe": "records/p2_probes/20261020_125858_enabled",
+  "first_fatal_log_line": "0.08.199.978 E error: Insufficient Memory (00000008:kIOGPUCommandBufferCallbackErrorOutOfMemory)",
+  "observed_health_ready": true,
+  "inference_succeeded": false,
+  "sampled_peak_rss_bytes": 239917613056,
+  "peak_system_swap_bytes": 0,
+  "usage_unknown_calls": 1,
+  "diagnosis": "Metal command-buffer out-of-memory reported during warmup; first 190-token request returned HTTP 500. Host swap=0 did not imply GPU memory suitability.",
+  "control_tests": {
+    "server_failure_guard": 4,
+    "model_provenance_including_KV": 10
+  },
+  "source_sha256": {
+    "serve_research_model.py": "baad459236c8389d98d778e6fe65278ff8a2fa9cc571d28a00ee215a003a43a7",
+    "model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3"
+  },
+  "next_candidate": {
+    "context": 65536,
+    "cache_type_k": "q8_0",
+    "cache_type_v": "q8_0",
+    "same_model_weights": true,
+    "pure_weight_quantization_comparison_to_Q3": false
+  },
+  "historical_log_replay": [
+    {
+      "server_record": "records/p2_servers/20261020_111402",
+      "model": "minimax-m3-q3kl",
+      "context": 8192,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_111629",
+      "model": "minimax-m3-q3kl",
+      "context": 16384,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_111925",
+      "model": "minimax-m3-q3kl",
+      "context": 32768,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_112528",
+      "model": "minimax-m3-q3kl",
+      "context": 65536,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_124750",
+      "model": "minimax-m3-iq4xs",
+      "context": 8192,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_125017",
+      "model": "minimax-m3-iq4xs",
+      "context": 32768,
+      "detected_fatal": null
+    },
+    {
+      "server_record": "records/p2_servers/20261020_125839",
+      "model": "minimax-m3-iq4xs",
+      "context": 65536,
+      "detected_fatal": "0.08.199.978 E error: Insufficient Memory (00000008:kIOGPUCommandBufferCallbackErrorOutOfMemory)"
+    }
+  ]
+}

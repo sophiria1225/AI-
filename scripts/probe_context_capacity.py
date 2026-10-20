@@ -10,7 +10,7 @@ import time
 import urllib.request
 
 import local_llama
-from model_provenance import LEGACY_SELECTION, check_live_model
+from model_provenance import LEGACY_SELECTION, check_live_model, runtime_cache_types
 from run_e0_pilot import alarm_handler, save_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,9 +29,11 @@ def main():
     with urllib.request.urlopen(args.base_url + '/props', timeout=10) as response:
         props = json.load(response)
     selection, _, _ = check_live_model(args.selection, runtime, props)
+    cache_k, cache_v = runtime_cache_types(runtime)
     config = {'backend': 'llama.cpp', 'base_url': args.base_url,
               'model': selection['model_alias'], 'model_selection': args.selection,
               'model_revision': selection['revision'], 'quantization': selection['quantization'],
+              'cache_type_k': cache_k, 'cache_type_v': cache_v,
               'num_ctx': runtime['ctx_size'],
               'num_predict': 512, 'temperature': 1.0, 'top_p': 0.95,
               'top_k': 0, 'min_p': 0.0, 'repeat_penalty': 1.0,

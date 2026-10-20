@@ -208,7 +208,8 @@ def run(config):
             props = json.load(response)
         runtime = json.loads((ROOT / '.runtime/model_server.json').read_text())
         selection, verified, model_path = check_live_model(
-            config.get('model_selection', LEGACY_SELECTION), runtime, props, config['num_ctx'])
+            config.get('model_selection', LEGACY_SELECTION), runtime, props, config['num_ctx'],
+            expected_cache=(config.get('cache_type_k', 'f16'), config.get('cache_type_v', 'f16')))
         if (model_path.resolve() != (ROOT / config['model_path']).resolve()
                 or selection['model_alias'] != config['model']
                 or selection['revision'] != config['model_revision']):

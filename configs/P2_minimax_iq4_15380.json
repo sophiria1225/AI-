@@ -2,7 +2,7 @@
   "scope": "P2_development_single_baseline_calibration",
   "phase": "P2",
   "version": "P2_mini_v01",
-  "readiness": "pending",
+  "readiness": "failed",
   "instance_id": "django__django-15380",
   "image": "swebench/sweb.eval.x86_64.django_1776_django-15380@sha256:8b523d4c313891a8271aa513ff57162d48bcf1a548e741cf9d5a1f1a183c835c",
   "backend": "llama.cpp",
@@ -39,6 +39,15 @@
       "timeout_seconds": 180
     }
   ],
-  "calibration_records": [],
-  "model_selection": "configs/models/minimax_m3_iq4_selection.json"
+  "calibration_records": [
+    "records/p2_probes/20261020_124839_enabled/summary.json",
+    "records/p2_capacity/20261020_125342_28000/summary.json",
+    "records/p2_probes/20261020_125858_enabled/summary.json"
+  ],
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "readiness_scope": "64K context with f16 KV cache is unavailable in the measured configuration",
+  "readiness_limitations": [
+    "Metal out-of-memory during 64K warmup; short generation returned HTTP 500",
+    "8K unconstrained JSON response included Markdown fences"
+  ]
 }
