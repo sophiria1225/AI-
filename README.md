@@ -14,6 +14,8 @@
 
 [P8：公開API形式の全履歴2試行](https://github.com/sophiria1225/AI-/issues/36#issuecomment-6300052976) → [P9：固定入力8呼び出しの時間校正](https://github.com/sophiria1225/AI-/issues/38#issuecomment-6300525302)の順で実験を続けます。[台帳更新の費用回収の条件](docs/P6_memory_update_costs.md)と[実行証拠に関する先行研究の追加照合](docs/runtime_evidence_overlap_20261021.md)も保存しました。基盤改善と独自技術を区別し、選択理由と採用しなかった案を更新します。
 
+**進行中の追加確認：** P8の第1課題は7呼び出し・117,027トークンで合格し、第2課題を実行中です。呼び出し減少を総費用削減とは扱いません。続く[P10の固定計画](docs/experiments/P10_native_history.md)では、標準的なassistant/tool履歴を同じ開発2課題で確認します。[Issue #42](https://github.com/sophiria1225/AI-/issues/42)。入力互換性と記録保持の検査は完了し、全201テスト合格。通常の接続を独自手法に数えず、この確認後に基準を固定します。
+
 **この比較で決めること：** 既存の防御的確認や単純な台帳で足りるなら、追加の独自方式は提案しません。原論文の完全再現や新手法の完成ではなく、必要な技術を絞るための導入比較です。[優先順位](docs/next_actions.md)。
 
 **10月20日時点の説明資料（16枚）：** [PDF](materials/20261020_revised/AI_harness_research_20261020.pdf) / [編集できるPowerPoint](materials/20261020_revised/AI_harness_research_20261020.pptx) / [図表・CSV・出典](materials/20261020_revised/)。[当時のアプローチ](docs/research_contribution.md)と[四条件の比較仕様](docs/experiments/E1_intervention_contract.md)を含め、構想の履歴として保持します。現在の新規性が確定した資料ではありません。

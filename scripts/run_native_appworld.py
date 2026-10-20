@@ -12,6 +12,7 @@ from appworld_native_tools import NativeCatalog, dispatch_native_calls
 from context_preservation import AGENT_PROMPT, compact, page_span, render_memory
 from inspect_appworld_api_schemas import load_public_tools
 from model_provenance import check_live_model
+from native_conversation import NativeConversation
 from run_context_comparison import Bridge, BudgetStop, Inference, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,10 +42,13 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    if (config["phase"] != "P8" or config["arms"] != ["native_full"]
-            or task_id not in config["task_ids"] or not run_id.startswith("P8_")
+    expected = {"P8": "native_full", "P10": "native_roles"}
+    phase = config["phase"]
+    if (phase not in expected or config["arms"] != [expected.get(phase)]
+            or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
             or not run_id.replace("_", "").isalnum()):
         raise ValueError("outside the fixed native-baseline plan")
+    arm = expected[phase]
     world_output = appworld_root / "experiments/outputs" / run_id
     if world_output.exists():
         raise FileExistsError("refusing to replace an existing world")
@@ -65,6 +69,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "run_context_comparison.py", "context_preservation.py", "local_llama.py",
         "appworld_bridge.py", "model_provenance.py",
     ]
+    if arm == "native_roles":
+        files.append("native_conversation.py")
     hashes = {}
     for name in files:
         path = ROOT / "scripts" / name
@@ -73,7 +79,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     write_json(out / "provenance.json", {
         "sources": hashes, "public_schema_hashes": schema_hashes,
         "runtime": runtime, "props": props, "python": str(python),
-        "task_id": task_id, "arm": "native_full",
+        "task_id": task_id, "arm": arm,
         "spec_sha256": sha(appworld_root / "data/tasks" / task_id / "specs.json"),
     })
     infer = Inference(config, out)
@@ -81,6 +87,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     spans, events = {}, []
     api_requests, peak_tools = 0, len(catalog.tools())
     complete, reason = False, "not_started"
+    conversation = None
+    formatting = {}
     try:
         response = bridge.request({"op": "init", "task_id": task_id,
                                    "experiment": run_id, "seed": config["seed"]})
@@ -88,14 +96,21 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise RuntimeError(response["error"])
         task = response["result"]
         write_json(out / "public_task.json", task)
+        if arm == "native_roles":
+            conversation = NativeConversation(NATIVE_PROMPT, task)
         while not complete:
             if api_requests >= config["max_api_requests"]:
                 raise BudgetStop("api_request_limit")
             supplied_tools = catalog.tools()
             peak_tools = max(peak_tools, len(supplied_tools))
-            message = infer.call("agent", messages_for(task, spans, config), supplied_tools)
+            if conversation is None:
+                messages = messages_for(task, spans, config)
+            else:
+                messages, formatting = conversation.for_model(config["observation_page_characters"])
+            message = infer.call("agent", messages, supplied_tools)
             call_id = infer.calls[-1]["id"]
             first = True
+            current_spans = []
 
             def record(row):
                 nonlocal api_requests, complete, first
@@ -104,6 +119,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                     "id": sid, "assistant": (message.get("content") or "") if first else "",
                     "action": row["action"], "observation": row["observation"]}
                 first = False
+                current_spans.append(spans[sid])
                 api_requests += int(row["api_request_sent"])
                 complete = complete or bool(row["observation"].get("declared_complete"))
                 events.append({
@@ -115,7 +131,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 write_json(out / "spans.json", spans)
                 write_json(out / "events.json", events)
                 write_json(out / "progress.json", {
-                    "arm": "native_full", "task_id": task_id, "calls": len(infer.calls),
+                    "arm": arm, "task_id": task_id, "calls": len(infer.calls),
                     "tokens": infer.tokens, "turns": len(spans), "compressions": 0,
                     "api_requests": api_requests, "exposed_api_schemas": len(catalog.visible)})
 
@@ -126,6 +142,10 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 remaining_api_calls=config["max_api_requests"] - api_requests,
                 may_continue=lambda: time.monotonic() - infer.started < config["max_wall_seconds"],
                 on_record=record)
+            if conversation is not None:
+                conversation.append(message, current_spans)
+                write_json(out / "conversation_private.json", conversation.messages())
+                _, formatting = conversation.for_model(config["observation_page_characters"])
             if any(r.get("effects_unknown") for r in rows):
                 raise RuntimeError("API request has unknown effects; no retry")
         reason = "agent_declared_complete"
@@ -142,7 +162,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             write_json(out / "close_error.json", {"type": type(exc).__name__, "message": str(exc)})
         known = [c for c in infer.calls if c["status"] == "ok"]
         summary = {
-            "run_id": run_id, "task_id": task_id, "arm": "native_full",
+            "run_id": run_id, "task_id": task_id, "arm": arm,
             "stop_reason": reason, "declared_complete": complete,
             "final_success": None, "evaluation": "not_run",
             "known_total_tokens": infer.tokens, "model_calls": len(infer.calls),
@@ -159,6 +179,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             "wall_seconds": time.monotonic() - infer.started,
             "finished_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "source_hashes": hashes,
+            "history_formatting": formatting,
         }
         write_json(out / "summary.json", summary)
         print(json.dumps(summary), flush=True)
