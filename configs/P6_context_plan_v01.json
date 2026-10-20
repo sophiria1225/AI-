@@ -1,0 +1,58 @@
+{
+  "phase": "P6",
+  "version": "P6_context_plan_v01",
+  "scope": "Development calibration, two AppWorld train scenarios, one seed each; no new method or confirmatory inference",
+  "appworld_version": "0.1.3.post1",
+  "task_ids": ["07b42fd_1", "22cc237_1"],
+  "selection_rule": "From the first 12 sorted public train instructions: first all-target scenario and first cross-app set reconciliation scenario; take _1 only. No solution, metadata, evaluator or model outcome used.",
+  "arms": ["full", "focus", "ledger"],
+  "run_order": [
+    ["07b42fd_1", "full", "P6_01_FULL"],
+    ["07b42fd_1", "focus", "P6_01_FOCUS"],
+    ["07b42fd_1", "ledger", "P6_01_LEDGER"],
+    ["22cc237_1", "ledger", "P6_02_LEDGER"],
+    ["22cc237_1", "full", "P6_02_FULL"],
+    ["22cc237_1", "focus", "P6_02_FOCUS"]
+  ],
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "model": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "num_ctx": 65536,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "seed": 42,
+  "agent_temperature": 1.0,
+  "draft_temperature": 0.7,
+  "max_output_tokens": 4096,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "compression_trigger_tokens": 4096,
+  "focus_rollouts": 3,
+  "focus_threshold": 0.3,
+  "ledger_recent_spans": 2,
+  "observation_page_characters": 24000,
+  "interpretation": [
+    "FOCUS adaptation, not reproduction of original model, tokenizer, agent or reported scores",
+    "Appendix A.9 joint planning and rescue in each of three draft calls; rescued union is kept regardless of frequency",
+    "Native function calling and public assistant content; internal model reasoning is not compressed into visible spans",
+    "All arms can read immutable archived spans and repeat public API queries at counted cost",
+    "Ledger is model-extracted from visible observations; source checks are not semantic verification",
+    "Final official evaluation runs only after frozen execution and is never returned to generation",
+    "No claim of same-intermediate-state causal effect; runs begin from fresh identical task databases"
+  ],
+  "decision_rules": [
+    "If simple ledger or existing defensive compression suffices, do not invent an additional mechanism",
+    "If no compression occurs, the trial does not test the memory mechanism",
+    "If full history also fails, classify task/tool/budget failure before attributing failure to compression",
+    "Report every executed trial including infrastructure, unknown usage and incomplete failures"
+  ]
+}
