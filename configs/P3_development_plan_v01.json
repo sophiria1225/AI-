@@ -1,0 +1,65 @@
+{
+  "frozen_at": "2026-10-20T06:28:53.258114+00:00",
+  "basis_commit": "11779a16bbf54ef62e777caadc0b579fc954cfec",
+  "scope": "Four development observations; not a confirmatory quality-preservation claim",
+  "trial_count": 4,
+  "max_total_model_calls": 120,
+  "max_total_input_output_tokens": 1200000,
+  "per_trial_max_wall_seconds": 3600,
+  "model": "minimax-m3-iq4xs",
+  "cache_type_k": "q8_0",
+  "cache_type_v": "q8_0",
+  "trials": [
+    {
+      "trial_id": "P3-01",
+      "task": "django__django-15380",
+      "strategy": "single",
+      "config": "configs/P3_minimax_iq4kv8_15380.json"
+    },
+    {
+      "trial_id": "P3-02",
+      "task": "django__django-15380",
+      "strategy": "fixed_pair",
+      "config": "configs/P3_minimax_iq4kv8_15380.json"
+    },
+    {
+      "trial_id": "P3-03",
+      "task": "django__django-15957",
+      "strategy": "fixed_pair",
+      "config": "configs/P3_minimax_iq4kv8_15957.json"
+    },
+    {
+      "trial_id": "P3-04",
+      "task": "django__django-15957",
+      "strategy": "single",
+      "config": "configs/P3_minimax_iq4kv8_15957.json"
+    }
+  ],
+  "config_sha256": {
+    "configs/P3_minimax_iq4kv8_15380.json": "e6d1f99ea91cb9cbd3b17167098f5cc3b598190acc56873d4a41d6670dc7f60f",
+    "configs/P3_minimax_iq4kv8_15957.json": "67006852bbef181f9d4ed919a438062b20edde3d80e795baf725e62239c689fd"
+  },
+  "source_sha256": {
+    "run_fixed_comparison.py": "516d74d27a5889635910f3604e1c06d9746facbdc360da165a4a1163740288ab",
+    "experiment_state.py": "e541ed7e640d9b2cf2d285e3687887a7b889060d10e4e95a740234898c4567df",
+    "run_mini_pilot.py": "c7b7b9935dc420f3c1c175c7f5520cde17c1ea2d1c6016db0bd50f11a7b7161e",
+    "run_e0_pilot.py": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+    "local_llama.py": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+    "artifact_capture.py": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+    "container_policy.py": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+    "model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "visible_checks.py": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19",
+    "run_planned_p3.py": "78553e4004ef525ff9d59f1d744e017deb2f68638213ad343689b87091fcc203",
+    "audit_p2.py": "6cff47dd5152cb31fb2ec53226aee23d7c6efbafcdb01562b056ab376895f8c6",
+    "audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162"
+  },
+  "rules": [
+    "One trial per listed task and strategy; no retries to obtain a favorable outcome.",
+    "Both strategies use the same task config, one shared token budget, public tools and evaluator.",
+    "Order is opposite across the two tasks, fixed before P3 model outcomes.",
+    "Runtime, accounting or finalization failures are retained and halt the remaining plan for diagnosis. Any replacement plan is recorded separately.",
+    "An unresolved task with valid execution is an outcome, not grounds for a configuration change.",
+    "No hidden evaluation results are supplied to subsequent generators.",
+    "All tasks are previously exposed development tasks; no non-inferiority or general cost-reduction claim from four trials."
+  ]
+}
