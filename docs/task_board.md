@@ -20,7 +20,7 @@
 | P1 | R12 | 広い作業依存を持つ主課題の候補と実行条件を調べる | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/16) |
 | P1 | R13 | Pro V2の1環境で起動と独立評価の正負対照を確認する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/18) |
 | P1 | R14 | Pro V2を共通実行器へ接続し初回単一試行を校正する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/20) |
-| P1 | R15 | 目的・構成・実験結果を図表付き中間資料にする | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/22) |
+| P1 | R15 | 目的・構成・実験結果を図表付き中間資料にする | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/22) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -138,7 +138,7 @@ P4_PRO_01を独立評価まで完了。38呼び出し586,166トークン、448.5
 
 ## R15 目的・構成・実験結果を図表付き中間資料にする
 
-P4終了時点の中間資料29枚をPPTX/PDFで作成。構成図2枚、P3/P4実測グラフ4種、CSV、再生成コード、出典ハッシュを同梱。全29ページを表示確認し、全文抽出・数値照合・出典一致・文字の重なり0を確認。PPTXは編集可能な本文・表・図形として生成し、ネイティブPowerPoint描画は未確認。PR #23でmainへの反映を進める。
+29枚のPPTX/PDF、構成図2枚、実測グラフ4種、CSV、再生成コードと出典ハッシュを作成。全29ページのPDF表示、全文、正確な数値、元集計のSHA一致、文字重複0を確認。ネイティブPowerPoint描画は未確認のためPDFを基準表示とする。PR #23へ公開し、次の同条件Ansible固定2担当観察の設計に戻った。資料はP4終了時点の区切りとして固定し、後続結果を混ぜない。
 
 **なぜ行うか**: 研究の目的、実装済みの範囲、実測、未検証の提案、次の判断を一つの資料で確認できるようにする。
 

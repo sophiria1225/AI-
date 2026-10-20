@@ -2,6 +2,8 @@
 
 2026年10月20日：GitHubへの移管・P2・P3の4試行・AnsibleのP4単一観察が完了。[作業ボード](task_board.md)を進捗の入口とする。
 
+**中間資料を作成：** [29枚のPDF・PowerPoint・図表CSV](../materials/20261020/)。P4終了を区切りに目的、構成、実験、結果、考察、先行研究、次の判断を説明する。全ページの表示と数値を確認した。後続の結果は別記録にする。
+
 最新の追加成果：P4_PRO_01を独立評価まで完了。38呼び出し586,166トークン、448.53秒で予算停止。調査と一時的な再現を行ったが修正パッチは0B、要求0/4・既存21/21で未解決。記録監査エラー0。[結果と考察](P4_findings.md)。R14を完了し、中間説明資料へ目的・構成・実測・限界をまとめる。自動再編の追加価値はまだ未実証。以下には過去の導入経緯を時点の記録として残す。
 
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
