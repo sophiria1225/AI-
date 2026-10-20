@@ -1,0 +1,218 @@
+{
+  "scope": "Component reproduction checks; a full fresh Python environment and VM have not been rebuilt",
+  "checks": [
+    {
+      "record": "records/environment/tool_bootstrap/20261020_112909/summary.json",
+      "status": "installed",
+      "prefix": ".runtime/container_tools_validation",
+      "offline": true,
+      "downloads": [
+        {
+          "tool": "colima",
+          "sha256": "980ad8bf61a4ca370243f4cb41401a61276dcd2c2502bee7b9b86f9250169f34",
+          "bytes": 15656320,
+          "published_digest_verified": true
+        },
+        {
+          "tool": "lima",
+          "sha256": "9e9eacce88f37e185c346bad73aa6136f738d8cdf8c3bb23cd42b071824bc66e",
+          "bytes": 38328082,
+          "published_digest_verified": true
+        },
+        {
+          "tool": "buildx",
+          "sha256": "85989b895add5f119c1ccf8eada2f6892fc33ccf16bd8917638eae404ef26344",
+          "bytes": 65462960,
+          "published_digest_verified": true
+        },
+        {
+          "tool": "docker",
+          "sha256": "c640fd61d9ba801e0ea282fd0df344d6943efd1994c7454537707cdb7a3d3e0b",
+          "bytes": 19651556,
+          "published_digest_verified": false
+        }
+      ],
+      "versions": [
+        {
+          "tool": "colima",
+          "exit_code": 0,
+          "stdout": "colima version v0.10.3\ngit commit: 00f6c297e92a82c04a4ab507db0a61435650d7e8\n",
+          "stderr": ""
+        },
+        {
+          "tool": "lima",
+          "exit_code": 0,
+          "stdout": "limactl version 2.2.1\n",
+          "stderr": ""
+        },
+        {
+          "tool": "docker",
+          "exit_code": 0,
+          "stdout": "Docker version 29.9.0, build f415da8\n",
+          "stderr": ""
+        },
+        {
+          "tool": "buildx",
+          "exit_code": 0,
+          "stdout": "github.com/docker/buildx v0.38.0 0dbe87f36ed472fe36b6796c3f70b4210a731fc5\n",
+          "stderr": ""
+        }
+      ],
+      "error": null
+    },
+    {
+      "record": "records/environment/repository_bootstrap/20261020_113108/summary.json",
+      "status": "verified",
+      "destination": ".runtime/repository_validation",
+      "repositories": [
+        {
+          "path": "vendor/mini-swe-agent",
+          "existed": false,
+          "commit": "04d809ceab9df28f9adaed044884180159172930",
+          "remote": "https://github.com/SWE-agent/mini-swe-agent.git",
+          "clean": true,
+          "matches": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "record": "records/environment/repository_bootstrap/20261020_113109/summary.json",
+      "status": "verified",
+      "destination": ".",
+      "repositories": [
+        {
+          "path": "vendor/mini-swe-agent",
+          "existed": true,
+          "commit": "04d809ceab9df28f9adaed044884180159172930",
+          "remote": "https://github.com/SWE-agent/mini-swe-agent.git",
+          "clean": true,
+          "matches": true
+        },
+        {
+          "path": "vendor/SWE-bench",
+          "existed": true,
+          "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+          "remote": "https://github.com/SWE-bench/SWE-bench.git",
+          "clean": true,
+          "matches": true
+        },
+        {
+          "path": "vendor/swe-bench-tasks",
+          "existed": true,
+          "commit": "3d07b464b7b311a0cbfb5ed5b2d8a3b96f84a33d",
+          "remote": "https://github.com/SWE-bench/swe-bench-tasks.git",
+          "clean": true,
+          "matches": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "record": "records/environment/data_bootstrap/20261020_113219/summary.json",
+      "status": "prepared",
+      "destination": ".runtime/data_validation",
+      "dataset_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+      "public_columns": [
+        "repo",
+        "instance_id",
+        "base_commit",
+        "problem_statement",
+        "created_at",
+        "version",
+        "environment_setup_commit"
+      ],
+      "tasks": [
+        {
+          "instance_id": "django__django-15380",
+          "checks": {
+            "repo": true,
+            "instance_id": true,
+            "base_commit": true,
+            "created_at": true,
+            "version": true,
+            "environment_setup_commit": true,
+            "gold_patch": true,
+            "test_patch": true,
+            "FAIL_TO_PASS": true,
+            "PASS_TO_PASS": true
+          },
+          "result": "created"
+        },
+        {
+          "instance_id": "django__django-15957",
+          "checks": {
+            "repo": true,
+            "instance_id": true,
+            "base_commit": true,
+            "created_at": true,
+            "version": true,
+            "environment_setup_commit": true,
+            "gold_patch": true,
+            "test_patch": true,
+            "FAIL_TO_PASS": true,
+            "PASS_TO_PASS": true
+          },
+          "result": "created"
+        }
+      ],
+      "error": null,
+      "dataset_sha256": "a45b1fe4e2f0c8390b2b2938ac83e92ed5979000856808f3679c07812e9e6dcd",
+      "rows": 500,
+      "public_result": "created"
+    },
+    {
+      "record": "records/environment/data_bootstrap/20261020_113229/summary.json",
+      "status": "prepared",
+      "destination": ".",
+      "dataset_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+      "public_columns": [
+        "repo",
+        "instance_id",
+        "base_commit",
+        "problem_statement",
+        "created_at",
+        "version",
+        "environment_setup_commit"
+      ],
+      "tasks": [
+        {
+          "instance_id": "django__django-15380",
+          "checks": {
+            "repo": true,
+            "instance_id": true,
+            "base_commit": true,
+            "created_at": true,
+            "version": true,
+            "environment_setup_commit": true,
+            "gold_patch": true,
+            "test_patch": true,
+            "FAIL_TO_PASS": true,
+            "PASS_TO_PASS": true
+          },
+          "result": "verified_existing"
+        },
+        {
+          "instance_id": "django__django-15957",
+          "checks": {
+            "repo": true,
+            "instance_id": true,
+            "base_commit": true,
+            "created_at": true,
+            "version": true,
+            "environment_setup_commit": true,
+            "gold_patch": true,
+            "test_patch": true,
+            "FAIL_TO_PASS": true,
+            "PASS_TO_PASS": true
+          },
+          "result": "verified_existing"
+        }
+      ],
+      "error": null,
+      "dataset_sha256": "a45b1fe4e2f0c8390b2b2938ac83e92ed5979000856808f3679c07812e9e6dcd",
+      "rows": 500,
+      "public_result": "verified_existing"
+    }
+  ]
+}

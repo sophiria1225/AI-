@@ -1,0 +1,51 @@
+{
+  "platform": "Darwin",
+  "machine": "arm64",
+  "tools": [
+    {
+      "tool": "colima",
+      "version": "v0.10.3",
+      "url": "https://github.com/abiosoft/colima/releases/download/v0.10.3/colima-Darwin-arm64",
+      "bytes": 15656320,
+      "sha256": "980ad8bf61a4ca370243f4cb41401a61276dcd2c2502bee7b9b86f9250169f34",
+      "published_digest_verified": true,
+      "filename": "colima-Darwin-arm64",
+      "kind": "binary",
+      "destination": "bin/colima"
+    },
+    {
+      "tool": "lima",
+      "version": "v2.2.1",
+      "url": "https://github.com/lima-vm/lima/releases/download/v2.2.1/lima-2.2.1-Darwin-arm64.tar.gz",
+      "bytes": 38328082,
+      "sha256": "9e9eacce88f37e185c346bad73aa6136f738d8cdf8c3bb23cd42b071824bc66e",
+      "published_digest_verified": true,
+      "filename": "lima-2.2.1-Darwin-arm64.tar.gz",
+      "kind": "lima_archive",
+      "destination": "."
+    },
+    {
+      "tool": "buildx",
+      "version": "v0.38.0",
+      "url": "https://github.com/docker/buildx/releases/download/v0.38.0/buildx-v0.38.0.darwin-arm64",
+      "bytes": 65462960,
+      "sha256": "85989b895add5f119c1ccf8eada2f6892fc33ccf16bd8917638eae404ef26344",
+      "published_digest_verified": true,
+      "filename": "buildx-v0.38.0.darwin-arm64",
+      "kind": "binary",
+      "destination": "lib/docker/cli-plugins/docker-buildx"
+    },
+    {
+      "tool": "docker",
+      "version": "29.9.0",
+      "url": "https://download.docker.com/mac/static/stable/aarch64/docker-29.9.0.tgz",
+      "bytes": 19651556,
+      "sha256": "c640fd61d9ba801e0ea282fd0df344d6943efd1994c7454537707cdb7a3d3e0b",
+      "published_digest_verified": false,
+      "filename": "docker-29.9.0.tgz",
+      "kind": "docker_archive",
+      "destination": "bin/docker"
+    }
+  ],
+  "provenance": "Pinned from the recorded official downloads; Docker SHA-256 is a local content pin, not a verified vendor checksum."
+}

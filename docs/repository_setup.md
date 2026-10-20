@@ -13,7 +13,26 @@ sh scripts/with_container_env.sh .venv/bin/python scripts/check_visible_controls
 
 依存ソースのコミットとデータの版は`configs/dependencies.json`、Python環境は`requirements.lock.txt`に保存しています。正解を含む原本は`private_eval/`、生成用の公開入力は`data/verified_public_inputs.jsonl`です。後者は公開課題の許可した列だけを取り出しています。
 
-新しいチェックアウトでは、Python 3.12系の仮想環境、固定版の3リポジトリ、固定版データ、コンテナ環境が必要です。現在のシンボリックリンクに対して仮想環境を作り直すコマンドは実行しないでください。`install_local_container_tools.py`は以前取得した配布メタデータを使う初回導入用のスクリプトで、Gitからの単独cloneだけでは完結しません。完全な新規環境の自動構築は今後の作業です。
+## 新しいチェックアウトで準備する
+
+Python 3.12.13を前提とします。以下は新しいチェックアウト用です。既存の実験機では先の確認手順を使い、シンボリックリンクの仮想環境を作り直さないでください。
+
+```bash
+python3.12 scripts/bootstrap_repositories.py
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.lock.txt
+.venv/bin/python scripts/install_local_container_tools.py
+.venv/bin/python scripts/prepare_fixed_data.py
+sh scripts/with_container_env.sh .tools/bin/colima start --profile harness-e0 --cpus 4 --memory 8 --disk 40 --arch aarch64 --vm-type vz --mount none --binfmt --activate=false --ssh-config=false
+sh scripts/with_container_env.sh .venv/bin/python scripts/prepare_fixed_data.py --pull-images
+.venv/bin/python scripts/check_dependencies.py
+```
+
+依存ソースはコミットを指定して取得し、既存の異なる作業ツリーをresetしません。コンテナ用CLIは`configs/container_tools.json`で配布URL・サイズ・ハッシュを固定し、新しいディレクトリへ導入します。Docker CLIのハッシュは初回取得物の内容固定で、配布元チェックサムとの照合とは区別しています。既存ツールの上書きは拒否します。
+
+データ準備は500件の公開入力を許可した7列へ限定し、2開発課題の正解・評価スクリプトは`private_eval/`へ保存します。参照するtask-repoの版と、パッチ・検査ラベルの対応を機械照合します。`--pull-images`を付けた場合だけ、2件の固定ダイジェストのイメージを取得します。
+
+別の空ディレクトリへの依存ソース1件の取得、4 CLIの照合・展開・版表示、全公開入力と2評価ファイルの再構成を実機で確認しました。既存データとの構造的一致も確認しています。この検証は新しいVMとPython環境を含む全工程の再実行ではありません。VMのOS・エンジン版も新しい実験機で記録してください。
 
 ## MiniMax M3を起動する
 

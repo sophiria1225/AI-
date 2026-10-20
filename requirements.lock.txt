@@ -63,7 +63,8 @@ shellingham==1.5.4
 six==1.17.0
 smmap==5.0.3
 soupsieve==3.0.3
--e git+https://github.com/SWE-bench/SWE-bench.git@02e7a74ffd0b707aab73d203fe87bdc7c76afc8e#egg=swebench
+# Checkout is pinned and checked by configs/dependencies.json and bootstrap_repositories.py.
+-e ./vendor/SWE-bench
 synchronicity==0.12.6
 tenacity==9.2.1
 toml==0.10.2
