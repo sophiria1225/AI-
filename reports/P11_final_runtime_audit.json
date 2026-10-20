@@ -1,0 +1,694 @@
+{
+  "checked_at": "2026-10-20T22:18:43.825203+00:00",
+  "trials": [
+    {
+      "run_id": "P11_01_ROLES",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 102888,
+      "wall_seconds": 290.6169219170697,
+      "roles": {
+        "agent": {
+          "calls": 6,
+          "known_usage_calls": 6,
+          "unknown_usage_calls": 0,
+          "input_tokens": 101567,
+          "output_tokens": 1321,
+          "cached_input_tokens": 78153,
+          "processed_input_tokens": 23414,
+          "timing_calls": 6,
+          "prompt_seconds": 205.912604,
+          "decode_seconds": 81.289717,
+          "call_wall_seconds": 287.51199750136584
+        }
+      },
+      "operations": {
+        "format_errors": 0,
+        "bridge_errors": 0,
+        "api_execution_errors": 0,
+        "archive_reads": 0,
+        "documentation_requests": 2,
+        "multiple_call_format_rejections": 0
+      },
+      "calls": [
+        {
+          "id": "call_001",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 2893,
+          "output_tokens": 74,
+          "predicted_input_tokens": 2893,
+          "wall_seconds": 26.127367875073105,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "1d04d1377c528d5031afe6b22df264f67b3e746ac950fc68099e66c8576e78fd",
+            "response.json": "02fa710b2502c4a92aa1d5679d0a3968577b1824340565bdadc2c613b39c5616"
+          },
+          "cached_input_tokens": 0,
+          "processed_input_tokens": 2893,
+          "prompt_seconds": 21.852041,
+          "decode_seconds": 4.266141999999999
+        },
+        {
+          "id": "call_002",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 18217,
+          "output_tokens": 123,
+          "predicted_input_tokens": 18217,
+          "wall_seconds": 160.90841024997644,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "3c6245f7a02693cd197b8860c0bdde9b3d07baadbc2e3be42c67b2757ce9a0ad",
+            "response.json": "ff9738cf377568df443f8aced2dc00350cc4dfc8fc2f1bd189aaa93f9a6dec06"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 17468,
+          "prompt_seconds": 153.268614,
+          "decode_seconds": 7.586463
+        },
+        {
+          "id": "call_003",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 19005,
+          "output_tokens": 60,
+          "predicted_input_tokens": 19005,
+          "wall_seconds": 11.814409292070195,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "ec72117a4cf3ddcb098b0c441411acd2da866c6a2f290fce2408a27867a30fe5",
+            "response.json": "6bc70e9ccca6300c75bb01714ecf289de908ceee6d110244ba8d61b8d5cd8e9a"
+          },
+          "cached_input_tokens": 18216,
+          "processed_input_tokens": 789,
+          "prompt_seconds": 8.087721,
+          "decode_seconds": 3.667547
+        },
+        {
+          "id": "call_004",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 19206,
+          "output_tokens": 168,
+          "predicted_input_tokens": 19206,
+          "wall_seconds": 12.573987167095765,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "e6ff66e93dffff6506c781c60962e0b14ba675a362aa46f0c635d4cfed3a22be",
+            "response.json": "cbef91ee3dc0d39a1e1e92390ca78e48f1b150b54e8c30d3de88140f31839432"
+          },
+          "cached_input_tokens": 19004,
+          "processed_input_tokens": 202,
+          "prompt_seconds": 2.222585,
+          "decode_seconds": 10.291635
+        },
+        {
+          "id": "call_005",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 20980,
+          "output_tokens": 433,
+          "predicted_input_tokens": 20980,
+          "wall_seconds": 44.021353542106226,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "e8491994d356f05f5d8f869a5e99a3237b91329965e9a48ebdd8c12a0bc31cfd",
+            "response.json": "1c35acdc85883563646a216015afcdc05b193b39fabb6b9c1e34e37795b59347"
+          },
+          "cached_input_tokens": 19205,
+          "processed_input_tokens": 1775,
+          "prompt_seconds": 17.179418000000002,
+          "decode_seconds": 26.778364
+        },
+        {
+          "id": "call_006",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 21266,
+          "output_tokens": 463,
+          "predicted_input_tokens": 21266,
+          "wall_seconds": 32.06646937504411,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "761ae9a987e6af9c7cc25d353516a5a565bb1305d97404af39a431b1a0e60504",
+            "response.json": "4de829d974255a9af2b634ed83c3c6a7fe9484f967120a7d29a9cd7391b68347"
+          },
+          "cached_input_tokens": 20979,
+          "processed_input_tokens": 287,
+          "prompt_seconds": 3.302225,
+          "decode_seconds": 28.699565999999997
+        }
+      ],
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "24f9d215850921bc5d427dac25f9946539c6e0c702d72ccc2d584e7e8e56ad52",
+        "usage.json": "04faea0f0f06d5ee8e951508e462637b35ead047ec170cefd930b9cdc39a56b6",
+        "spans.json": "f9f66b174e4ef7ae9663bf958ae93bdfcb036982b867e2b33fd33cd22bc11ba1",
+        "events.json": "12567659ae42a6af7e41e107f3beb0b64268bb9a33a074d793ae3119dcc62ede",
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+      }
+    },
+    {
+      "run_id": "P11_02_ROLES",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 83083,
+      "wall_seconds": 224.06096650008112,
+      "roles": {
+        "agent": {
+          "calls": 7,
+          "known_usage_calls": 7,
+          "unknown_usage_calls": 0,
+          "input_tokens": 81770,
+          "output_tokens": 1313,
+          "cached_input_tokens": 64923,
+          "processed_input_tokens": 16847,
+          "timing_calls": 7,
+          "prompt_seconds": 141.385048,
+          "decode_seconds": 79.219636,
+          "call_wall_seconds": 220.87796300137416
+        }
+      },
+      "operations": {
+        "format_errors": 0,
+        "bridge_errors": 0,
+        "api_execution_errors": 1,
+        "archive_reads": 0,
+        "documentation_requests": 2,
+        "multiple_call_format_rejections": 0
+      },
+      "calls": [
+        {
+          "id": "call_001",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 2918,
+          "output_tokens": 130,
+          "predicted_input_tokens": 2918,
+          "wall_seconds": 24.109077875036746,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "9eb5e6ddab4275bfb3ee9acb53ab2bd51346bbbf6bbea1d256df4e9915b961cb",
+            "response.json": "b3b50b46e7b7399d170436acccd8bb546b9b7b30d584c12fe7eb1d17c53a163b"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 2169,
+          "prompt_seconds": 16.554012999999998,
+          "decode_seconds": 7.5454099999999995
+        },
+        {
+          "id": "call_002",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 11039,
+          "output_tokens": 87,
+          "predicted_input_tokens": 11039,
+          "wall_seconds": 90.0111735840328,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "0fc3892f0fd4bc7b15cef0a0ea8068c67fdaf8d45b0af5314360afe97dc1adc5",
+            "response.json": "d468a77418c0806bff8b08e64ef32135ec9b7a182acc43a16e55e9c2b999ea91"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 10290,
+          "prompt_seconds": 84.778601,
+          "decode_seconds": 5.193912999999999
+        },
+        {
+          "id": "call_003",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 11586,
+          "output_tokens": 95,
+          "predicted_input_tokens": 11586,
+          "wall_seconds": 10.884322291938588,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "01ce30a5024e55bd9a6adc0f3fa4802239f11a1bab748a24121a18b43806fe57",
+            "response.json": "eb70078d40451112ebbe92040a25164da4f103b7d05ecf4817d7926acb864449"
+          },
+          "cached_input_tokens": 11038,
+          "processed_input_tokens": 548,
+          "prompt_seconds": 5.140148,
+          "decode_seconds": 5.703466000000001
+        },
+        {
+          "id": "call_004",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 11966,
+          "output_tokens": 295,
+          "predicted_input_tokens": 11966,
+          "wall_seconds": 21.12953595793806,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "70ad2a1746fcd5a0f1e8456457e003ad66658ae285e67a05dca0c49e532deff5",
+            "response.json": "3a8ba91fdb1b93c5ed4f79f6cbe5fc75840b5dcab9a4d25c0e5c20254a291c92"
+          },
+          "cached_input_tokens": 11585,
+          "processed_input_tokens": 381,
+          "prompt_seconds": 3.424659,
+          "decode_seconds": 17.662595
+        },
+        {
+          "id": "call_005",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 13656,
+          "output_tokens": 380,
+          "predicted_input_tokens": 13656,
+          "wall_seconds": 38.58472379203886,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "76f4fa4a843c2e0fceba74706ef99bd816b87da4cbf818f66006689d038b843e",
+            "response.json": "3b2ecddfd7eb2ddc943fa85d5d6ad8b34734e1634cf89eba0b468bf64bff5649"
+          },
+          "cached_input_tokens": 11965,
+          "processed_input_tokens": 1691,
+          "prompt_seconds": 15.363758,
+          "decode_seconds": 23.175275000000003
+        },
+        {
+          "id": "call_006",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 15183,
+          "output_tokens": 243,
+          "predicted_input_tokens": 15183,
+          "wall_seconds": 28.74870429118164,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "ffb0608995a8ea20c1da52defd33843900665f98a5ebdf6dd949cf2339566a79",
+            "response.json": "d9553ded4f5745c9f9173552f4f6139e87d7dbe73455c58d9907ee3407766fd1"
+          },
+          "cached_input_tokens": 13655,
+          "processed_input_tokens": 1528,
+          "prompt_seconds": 13.819137000000001,
+          "decode_seconds": 14.882667
+        },
+        {
+          "id": "call_007",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 15422,
+          "output_tokens": 83,
+          "predicted_input_tokens": 15422,
+          "wall_seconds": 7.41042520920746,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "5499b5a102f5c9a173b63e983dc12eba4ee166fa4342bcdbeec88be1b9fd5b62",
+            "response.json": "ce2e8753432407ef352f2d6d65f96b994e6f4c1e6825b629d145443330f803b7"
+          },
+          "cached_input_tokens": 15182,
+          "processed_input_tokens": 240,
+          "prompt_seconds": 2.304732,
+          "decode_seconds": 5.056310000000001
+        }
+      ],
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "4111da47e99680e99d05f91a547e5cadd554ef2a85157d92c391797c01f1a6bc",
+        "usage.json": "5fcd4b2b60181d97b7c365f40df14d08435460754b03f5285fece8cc6b2b6ccf",
+        "spans.json": "f509e4a2a6c6effef67afec4b4a9a5074c33e684e452f5af49c3e15034a2896d",
+        "events.json": "bd1c92a4f85d180d07bedca596e47553a228c888e38f95045f5e3f8f59b63caa",
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+      }
+    },
+    {
+      "run_id": "P11_03_ROLES",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 203066,
+      "wall_seconds": 597.4932463751175,
+      "roles": {
+        "agent": {
+          "calls": 10,
+          "known_usage_calls": 10,
+          "unknown_usage_calls": 0,
+          "input_tokens": 199851,
+          "output_tokens": 3215,
+          "cached_input_tokens": 156526,
+          "processed_input_tokens": 43325,
+          "timing_calls": 10,
+          "prompt_seconds": 391.92309500000005,
+          "decode_seconds": 201.25555,
+          "call_wall_seconds": 593.7911454990972
+        }
+      },
+      "operations": {
+        "format_errors": 0,
+        "bridge_errors": 0,
+        "api_execution_errors": 0,
+        "archive_reads": 0,
+        "documentation_requests": 3,
+        "multiple_call_format_rejections": 0
+      },
+      "calls": [
+        {
+          "id": "call_001",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 2903,
+          "output_tokens": 176,
+          "predicted_input_tokens": 2903,
+          "wall_seconds": 26.788949541049078,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "6bc99130be5812d2cdc1a7782957476c22bc09e71c689e63be16757a25b44f0d",
+            "response.json": "0e595d24ca61f9552fe1a2ce713b180ca4c30756191a621e2afdceb701430bb1"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 2154,
+          "prompt_seconds": 16.537289,
+          "decode_seconds": 10.242704
+        },
+        {
+          "id": "call_002",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 11894,
+          "output_tokens": 185,
+          "predicted_input_tokens": 11894,
+          "wall_seconds": 100.76999233290553,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "462a58b7eb9591a043a8dfc1f728eddb452a64411de9cca98798c2f7f159730a",
+            "response.json": "0176df2aead11646ae3313b5b213e17fc09c364f4bd93a4e889f9cf88162aede"
+          },
+          "cached_input_tokens": 1174,
+          "processed_input_tokens": 10720,
+          "prompt_seconds": 89.57008400000001,
+          "decode_seconds": 11.161975
+        },
+        {
+          "id": "call_003",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 17849,
+          "output_tokens": 135,
+          "predicted_input_tokens": 17849,
+          "wall_seconds": 156.48181720799766,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "0a9bdfdcf87cc7d11f48419d47aaab17eacbb14b8d3905e94fe50803cf3dbb98",
+            "response.json": "4833dfe533d8859c27f1540b8de8df4adefd4cbcd6336d1f5a984b1758a30fec"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 17100,
+          "prompt_seconds": 148.06921,
+          "decode_seconds": 8.354287000000001
+        },
+        {
+          "id": "call_004",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 18246,
+          "output_tokens": 166,
+          "predicted_input_tokens": 18246,
+          "wall_seconds": 14.206810249947011,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "f527a67582d1ef8d855e3c836d99bcb72568994238c33444f1e762d41b35f576",
+            "response.json": "02806e5681e6d91071cbf840d08dcb37f4df24d55f5576f24eff0402d15e0ea9"
+          },
+          "cached_input_tokens": 17848,
+          "processed_input_tokens": 398,
+          "prompt_seconds": 3.896267,
+          "decode_seconds": 10.248292
+        },
+        {
+          "id": "call_005",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 18506,
+          "output_tokens": 165,
+          "predicted_input_tokens": 18506,
+          "wall_seconds": 12.768231458030641,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "98dbdb4ad0e4b116b8fb6c6d3c0790be0dfaaec3a7591491e1c31a3ef90626c8",
+            "response.json": "09fecbe28dfbb98d66861eeaf32976e0fb2c82190df2891622d2bbe1137bc24f"
+          },
+          "cached_input_tokens": 18245,
+          "processed_input_tokens": 261,
+          "prompt_seconds": 2.528988,
+          "decode_seconds": 10.176452999999999
+        },
+        {
+          "id": "call_006",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 19204,
+          "output_tokens": 237,
+          "predicted_input_tokens": 19204,
+          "wall_seconds": 21.477857417194173,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "837da86cb68ca7c2b68ec3562910690c6567c7243f3456df5ebe490c9119858e",
+            "response.json": "fb3799b8994d205bf751651a71982f27f524faebb9a3e3b4dfa5132f8f82278f"
+          },
+          "cached_input_tokens": 18505,
+          "processed_input_tokens": 699,
+          "prompt_seconds": 6.89742,
+          "decode_seconds": 14.516556000000001
+        },
+        {
+          "id": "call_007",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 22932,
+          "output_tokens": 456,
+          "predicted_input_tokens": 22932,
+          "wall_seconds": 64.72979408409446,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "e1ffad12c9df68e15c8845f07c0eba9c4a416067817c4a5484517737a70fb3f6",
+            "response.json": "d43d779333310f747b2ce32f0b4d9c80a38d087b0eca3d64418d65617b03ac4b"
+          },
+          "cached_input_tokens": 19203,
+          "processed_input_tokens": 3729,
+          "prompt_seconds": 36.297443,
+          "decode_seconds": 28.362239000000002
+        },
+        {
+          "id": "call_008",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 26697,
+          "output_tokens": 732,
+          "predicted_input_tokens": 26697,
+          "wall_seconds": 85.30119299981743,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "f76d42cf455b35fa56e95db9165e46eeba740d35482ee1580af6c4e2f8a66e1c",
+            "response.json": "21836617fe6cea92c783c2429981669e63637d81c12f7aef192d1fef22d457e2"
+          },
+          "cached_input_tokens": 22931,
+          "processed_input_tokens": 3766,
+          "prompt_seconds": 38.983241,
+          "decode_seconds": 46.24201600000001
+        },
+        {
+          "id": "call_009",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 30427,
+          "output_tokens": 822,
+          "predicted_input_tokens": 30427,
+          "wall_seconds": 93.65617420803756,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "4f76f5638e9327edcad0c86c8cb3dc92620e42b45d4c6b1c31807fc2d11cbd34",
+            "response.json": "53a09eb731240812413f21a7148701f34305b95a2fca0ce0a26035dbc5e270bf"
+          },
+          "cached_input_tokens": 26696,
+          "processed_input_tokens": 3731,
+          "prompt_seconds": 40.632076999999995,
+          "decode_seconds": 52.93791
+        },
+        {
+          "id": "call_010",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 31193,
+          "output_tokens": 141,
+          "predicted_input_tokens": 31193,
+          "wall_seconds": 17.610326000023633,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "85aa65690305310e132807b74e2d56fcbd9288b74fe3275d0e6e3c81b278767f",
+            "response.json": "54cedf023c4ddfe086ea291abf1268ea29bdc0b7df56993cb7797dd54cd6e07e"
+          },
+          "cached_input_tokens": 30426,
+          "processed_input_tokens": 767,
+          "prompt_seconds": 8.511076,
+          "decode_seconds": 9.013118
+        }
+      ],
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "c3d43e47735eb848ce536ccbd80e25f812b2a1a907bbc03237d7fd4434185918",
+        "usage.json": "d0eae8abd4b0a4977066cd342ab88061fc4f72819458fe8a23e8075df01d0f7a",
+        "spans.json": "52df29733c47e2513d584397fbad1a3aa094cf307382833733ac8cd6965fc3ba",
+        "events.json": "f0de8260cda3fd2589646f8df0e06a8bc86ec5f47a591843e57e657f6ae2e71e",
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+      }
+    },
+    {
+      "run_id": "P11_04_ROLES",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 51318,
+      "wall_seconds": 189.91706245788373,
+      "roles": {
+        "agent": {
+          "calls": 6,
+          "known_usage_calls": 6,
+          "unknown_usage_calls": 0,
+          "input_tokens": 49871,
+          "output_tokens": 1447,
+          "cached_input_tokens": 37597,
+          "processed_input_tokens": 12274,
+          "timing_calls": 6,
+          "prompt_seconds": 100.43450200000002,
+          "decode_seconds": 86.29918599999999,
+          "call_wall_seconds": 186.89642525021918
+        }
+      },
+      "operations": {
+        "format_errors": 0,
+        "bridge_errors": 0,
+        "api_execution_errors": 0,
+        "archive_reads": 0,
+        "documentation_requests": 1,
+        "multiple_call_format_rejections": 0
+      },
+      "calls": [
+        {
+          "id": "call_001",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 2908,
+          "output_tokens": 95,
+          "predicted_input_tokens": 2908,
+          "wall_seconds": 22.135083875153214,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "7a625371ee83178e8d2117a7a9590083457b08bccd51dd5d798e44ecd748a9f8",
+            "response.json": "43823db13a6ec0cb51c1e675918d9e751ca31aa1b92a7660b53374c2f7194d69"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 2159,
+          "prompt_seconds": 16.622949000000002,
+          "decode_seconds": 5.503253
+        },
+        {
+          "id": "call_002",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 8398,
+          "output_tokens": 36,
+          "predicted_input_tokens": 8398,
+          "wall_seconds": 63.90029266709462,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "79e0eecb7c844fa0bb681091cd1e551cbb82e5424f5ea2af81466fbfa7949035",
+            "response.json": "a9e9302538f5709676ecb13fe3a35b1199a989d179366fa4aa15aa7d6bf7ad2f"
+          },
+          "cached_input_tokens": 749,
+          "processed_input_tokens": 7649,
+          "prompt_seconds": 61.784003,
+          "decode_seconds": 2.08854
+        },
+        {
+          "id": "call_003",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 8708,
+          "output_tokens": 57,
+          "predicted_input_tokens": 8708,
+          "wall_seconds": 6.273528749821708,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "39ab811abd2c5056d0f0b87cba3bd195f0c0a1be54b9a3235dc40159f26bf267",
+            "response.json": "fd52f77dfb72f15edc9acb77cccaf69a71fa1bfd28578227fbe7b9d74d4fb401"
+          },
+          "cached_input_tokens": 8397,
+          "processed_input_tokens": 311,
+          "prompt_seconds": 2.902011,
+          "decode_seconds": 3.3427890000000002
+        },
+        {
+          "id": "call_004",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 8899,
+          "output_tokens": 156,
+          "predicted_input_tokens": 8899,
+          "wall_seconds": 11.098018542164937,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "ad5835c8d794bd48b3df20b226138b25dc3263763b10f1beb64cb62f318f88d2",
+            "response.json": "50de1537aeab8dcc758965b9b5ccf55507d19a79f6e251ffc3a5176700105597"
+          },
+          "cached_input_tokens": 8707,
+          "processed_input_tokens": 192,
+          "prompt_seconds": 1.826682,
+          "decode_seconds": 9.241693
+        },
+        {
+          "id": "call_005",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 10098,
+          "output_tokens": 885,
+          "predicted_input_tokens": 10098,
+          "wall_seconds": 63.78183129103854,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "12f62fc2cb4f4576a1d91ed3bab672e7d7b92a0e94685a597bed19caf9377c05",
+            "response.json": "b04392ff7844299d8a0208a5537e6630e52ee10b329b68490a6de5000818f8c1"
+          },
+          "cached_input_tokens": 8898,
+          "processed_input_tokens": 1200,
+          "prompt_seconds": 10.675902,
+          "decode_seconds": 53.073079
+        },
+        {
+          "id": "call_006",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 10860,
+          "output_tokens": 218,
+          "predicted_input_tokens": 10860,
+          "wall_seconds": 19.707670124946162,
+          "finish_reason": "tool_calls",
+          "source_hashes": {
+            "request.json": "6c1e62f45dafa90972138954a5237cfcb54c57b1d863c69d27f69ac3cbcdb0a2",
+            "response.json": "01b41db1e49b17982da5426c1a177d51aba497fbb18185998c5dac3a9ef17bb8"
+          },
+          "cached_input_tokens": 10097,
+          "processed_input_tokens": 763,
+          "prompt_seconds": 6.622955,
+          "decode_seconds": 13.049832
+        }
+      ],
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "e182ffd127e383dc686466a326bbd791a41a6ee5baeac202a60cf99ffd914cad",
+        "usage.json": "65b80896fd85e052472a9f583bec9d1f2cfa44c82378940e9b7c70714928cec0",
+        "spans.json": "3c253d64bacc5ae46afd3b973d65ccdba0a49e6074202a143c69ea4cfafeda18",
+        "events.json": "95b6fef6951ef7666b5ff1e1b63ca0d694e6551848d6fc531ea38f5f3e14a7e6",
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+      }
+    }
+  ],
+  "model_identity": null,
+  "script_sha256": "5d05eb0fdfaceb997aefc5983b30f72a86e684ff6e7760f8842778e65526ec7c",
+  "model_inference_calls": 0,
+  "api_execution_calls": 0,
+  "evaluators_loaded": false,
+  "template_and_tokenize_requests": 0,
+  "scope": "Recorded timing, cost and structural errors. Key-order alternative has equal parsed values; input prefix lengths are not measured cache hits, speedup or evidence of unchanged model behavior. Unknown terminal usage remains unknown."
+}
