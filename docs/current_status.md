@@ -5,7 +5,7 @@
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
 - MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。
 - Q3の開発2課題が終了。計53呼び出し553,574トークンで、独立評価はいずれも不合格。15380は公開検査7エラー、15957は差分0で未解決。記録監査はエラー0。64K枠不足やswapによる停止ではなかった。[実測と解釈](P2_progress.md)。
-- IQ4_XS約230GBは全6ファイル照合済み。64K・KV f16はMetalメモリ不足とHTTP 500で不適合。別設定の64K・KV q8_0は55,993入力を560.54秒で処理し、抽出・計数が一致、swap 0だった。native tool接続は合格、素のJSON形式は不合格。Q3との純粋な重み精度比較とはしない。GitHub初回公開完了後、14:57 JSTに15380の実課題測定を開始。[Issue #9](https://github.com/sophiria1225/AI-/issues/9)で状態を更新する。
+- IQ4_XSの64K・KV f16はメモリ不足で不適合。64K・KV q8_0で容量確認後、15380の実課題が公開140テスト・独立評価とも合格した（30呼び出し、270,510トークン、約422秒）。15957を同じ条件で測定中。[Issue #9](https://github.com/sophiria1225/AI-/issues/9)と[PR #12](https://github.com/sophiria1225/AI-/pull/12)へ更新する。Q3とは重みとKVの両方が異なり、一般的な品質優位性は未確定。素のJSON形式失敗は保持する。
 - `research/fixed-partition-protocol`で、P3の共有予算・2担当の逐次実行・成果物の版に結びつけた完了確認・監査を実装。全38テストと実コンテナ7項目を確認した。P3の実モデル比較はまだ行っていない。[仕様](experiments/P3_fixed_partition.md)、[制御検証](../reports/P3_controls.json)。
 - 公開検査を個別に記録する処理を実装し、2開発課題の元コードでも動作を確認。条件は[P2計画](experiments/P2_minimax_baseline.md)。
 - 元の研究コードと記録は変更していない。新しい実装と実験はこのリポジトリで行う。
