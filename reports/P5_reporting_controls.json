@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-20T10:15:58.907006+00:00",
+  "scope": "Analysis-only controls; no additional model calls or frozen runtime changes",
+  "command": "python -m unittest discover -s tests -v",
+  "tests": 106,
+  "result": "passed",
+  "new_reporting_cases": 4,
+  "log_sha256": "de559f21f2cfa40027bf134c61e2af20d90d4470833b2fc6941dd41deb3520dd",
+  "frozen_runtime_sources_changed": 0,
+  "P4_report_unchanged": true,
+  "notes": [
+    "Only the predeclared P5 trials are collected.",
+    "Missing trial and evaluation-pending states are not converted to failures or zero-cost results.",
+    "P4 cannot stand in for the matched P5 control."
+  ]
+}

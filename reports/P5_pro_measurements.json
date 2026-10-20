@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-20T10:16:10.437832+00:00",
+  "scope": "P5 predeclared one-task development comparison only; no confirmatory effect estimate",
+  "batch_id": "P5_01",
+  "batch_plan_sha256": "a74c9bda57d79a2baaea4a06c604b28b0c298866fe55001a9c6bf7aef02cea3d",
+  "batch_status": "running",
+  "comparison_status": "in_progress",
+  "batch_error": null,
+  "configuration_match": null,
+  "recorded_calls_so_far": 10,
+  "recorded_tokens_so_far": 56318,
+  "errors": [],
+  "runs": [
+    {
+      "trial_id": "P5_PRO_PAIR_01",
+      "strategy": "fixed_pair",
+      "record": "records/pro_pilot/P5_PRO_PAIR_01",
+      "recorded_calls": 10,
+      "recorded_tokens": 56318,
+      "usage_complete": true,
+      "started_at": "2026-10-20T10:10:02.732525+00:00",
+      "stage": "running",
+      "result": null
+    },
+    {
+      "trial_id": "P5_PRO_SINGLE_01",
+      "strategy": "single",
+      "record": "records/pro_pilot/P5_PRO_SINGLE_01",
+      "stage": "not_started",
+      "result": null
+    }
+  ],
+  "analysis_source_sha256": {
+    "summarize_pro_comparison.py": "8f4085f9ae80bf9249b56ed3fdae6b74fa02a016e22fffb37b0a9453a1b9d48b",
+    "summarize_pro_pilot.py": "f51dbfeea6b1fe353512cfb317710da03ce716e6c67aa3232c4faba97b86f338",
+    "analyze_p3_timeline.py": "9816f3b7394c13b59920aad7023ef9959c2441786a7c8754c8064c781527960a",
+    "summarize_p3.py": "11e3aea20ac6bf39fcedd00e9add5c6062cce687802be46eea5c5fa87465d8b3",
+    "audit_p2.py": "2cb639e73fd281457b081e44b71895f95fa1b45d04af25750d1a80d596140c7d",
+    "audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162"
+  },
+  "limitations": [
+    "One previously exposed task and one trial per arm; no quality equivalence or general efficiency claim.",
+    "Unstarted and pending trials have no outcome; running token counts are partial known usage.",
+    "Both P5 arms share 7200 seconds. P4 used 3600 seconds and is not the matched control.",
+    "One physical model slot; prompt cache reuse and wall time depend on the schedule.",
+    "Private evaluation counts are researcher outputs and are not passed to the subsequent generator.",
+    "Final artifact timing is retrospective; repeat reads or edits alone do not establish wasted work or dependency."
+  ]
+}
