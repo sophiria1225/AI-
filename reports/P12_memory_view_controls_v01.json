@@ -1,0 +1,51 @@
+{
+  "source_run_id": "P10_01_ROLES",
+  "source_call_id": "call_009",
+  "source_request_sha256": "65185c35167f3a0e11b3d08deab43b6dd64954719386648b135548831760413b",
+  "source_script_sha256": "56ee6561b72e3cfb604e8455b27d59ef74f4c7d52a2271122c6a8810de2fbf44",
+  "memory_view_sha256": "f95d0ccd6020e7a43277126c64433ab0d4655f3cbd51551f77a954a47a25ce00",
+  "cases": [
+    {
+      "case": "all",
+      "input_tokens": 19828,
+      "requested_spans": 9,
+      "retained_spans": 9,
+      "retained_turns": 8,
+      "extra_spans_for_complete_turn": 0,
+      "request_sha256": "65185c35167f3a0e11b3d08deab43b6dd64954719386648b135548831760413b"
+    },
+    {
+      "case": "recent_two_spans",
+      "input_tokens": 15635,
+      "requested_spans": 2,
+      "retained_spans": 2,
+      "retained_turns": 2,
+      "extra_spans_for_complete_turn": 0,
+      "request_sha256": "af40f9a23ef8c8e2ade27cdf444445d50c98a11d9e55a6e42df170762018e888"
+    },
+    {
+      "case": "partial_multi_call",
+      "input_tokens": 15634,
+      "requested_spans": 1,
+      "retained_spans": 2,
+      "retained_turns": 1,
+      "extra_spans_for_complete_turn": 1,
+      "request_sha256": "e9c96fb08243081b35c656328f37de24c7cee5826342ef8991328c5506964843"
+    },
+    {
+      "case": "empty_with_empty_ledger",
+      "input_tokens": 15262,
+      "requested_spans": 0,
+      "retained_spans": 0,
+      "retained_turns": 0,
+      "extra_spans_for_complete_turn": 0,
+      "request_sha256": "7353920bce305b810387b9290a493626702d613469ac33b8e3e82a01f42d6156"
+    }
+  ],
+  "token_count_requests": 4,
+  "model_calls": 0,
+  "environment_requests": 0,
+  "final_evaluations": 0,
+  "all_retained_exact_match": true,
+  "scope": "Template/count conformance on one saved prefix. No removed-history prompt is used for generation; not a savings or quality result."
+}

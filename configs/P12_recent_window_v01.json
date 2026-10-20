@@ -1,0 +1,81 @@
+{
+  "appworld_version": "0.1.3.post1",
+  "task_ids": [
+    "287e338_1",
+    "29caf6f_1",
+    "2a163ab_1",
+    "302c169_1"
+  ],
+  "selection_rule": "Precommitted P11 public task selection: next four previously unexposed train scenarios in sorted ID order, variant _1; never replace based on outcomes.",
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "model": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "num_ctx": 65536,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "seed": 42,
+  "agent_temperature": 1.0,
+  "draft_temperature": 0.7,
+  "max_output_tokens": 4096,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "observation_page_characters": 24000,
+  "phase": "P12",
+  "version": "P12_recent_window_v01",
+  "batch_id": "P12_batch_v01",
+  "arms": [
+    "native_recent"
+  ],
+  "max_api_requests": 80,
+  "max_wait_seconds": 10800,
+  "server_lease_end_utc": "2026-10-21T01:48:58.113011+00:00",
+  "server_lease_basis": "Identical server command restarted after P10 complete and empty model slot; bounded --max-seconds14400. Per-trial evaluation180sec plus180sec reserve, no start below8100sec remaining.",
+  "run_order": [
+    [
+      "287e338_1",
+      "native_recent",
+      "P12_01_RECENT"
+    ],
+    [
+      "29caf6f_1",
+      "native_recent",
+      "P12_02_RECENT"
+    ],
+    [
+      "2a163ab_1",
+      "native_recent",
+      "P12_03_RECENT"
+    ],
+    [
+      "302c169_1",
+      "native_recent",
+      "P12_04_RECENT"
+    ]
+  ],
+  "source_comparison_plan_sha256": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+  "scope": "Same four development scenarios, deterministic recent-history baseline versus recorded P11 full history. One seed; no new method or confirmatory quality claim.",
+  "discovery_policy": "Initially api_docs and supervisor schemas. A requested app description exposes that public app; individual API documentation exposes that API. New schemas apply on the next model response. No answer-based selection or silent top-k pruning.",
+  "interpretation": [
+    "Same model, public API discovery, action/result grouping, task order, seed and per-trial budgets as P11.",
+    "The history budget is a prechosen 4096-token proxy over serialized post-task messages, not the full model context or a hard limit when one whole turn is larger.",
+    "No LLM is called for memory selection; tokenizer requests, failures, selection time and boundary capture remain counted.",
+    "Do not replace the selected scenarios or tune the window after outcomes. No task or hidden evaluator supplies an oracle target list.",
+    "This is a standard recent-memory and archive-read baseline; a successful result would not establish novelty.",
+    "Partial-history archive notes are part of this mechanism comparison; no isolated effect of token deletion is claimed."
+  ],
+  "history_representation": "Original standard-role turns remain archived. Full input if history proxy fits4096; otherwise retain newest complete turns until first excess, with at least one turn. Removed spans remain readable. Extra archive metadata is counted in the history proxy and actual input.",
+  "source_selection_sha256": "b1d693f9b8af7549417e62deb9200f6aac06fa2d4f50afe805d77e2e72863058",
+  "wait_for_native_batch": "P11_batch_v01",
+  "max_checkpoint_new_bytes_per_boundary": 134217728,
+  "max_checkpoint_object_bytes": 536870912,
+  "history_budget_tokens": 4096
+}
