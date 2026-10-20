@@ -35,5 +35,13 @@
     "passed": 19,
     "log_sha256": "6bc421e2331bfee84b1fe195a768da995afdbaf75209e837e424c5231c6d98b7"
   },
-  "next_attempt": "PRO_ENV_05, same plan and benchmark version, diagnostic retention changed before rerun"
+  "next_attempt": "PRO_ENV_05, same plan and benchmark version, diagnostic retention changed before rerun",
+  "subsequent_correction": {
+    "at": "2026-10-20T08:59:03.818811+00:00",
+    "record": "records/pro_environment/PRO_ENV_05/negative_control/assessment.json",
+    "finding": "The repeated diagnostic run had all required results. Exit 1 was a valid failed test result, not automatically an infrastructure error. The previous inference that results were missing was unsupported.",
+    "original_run_limit": "PRO_ENV_04 lacks detailed archived test output; its original error is retained and not silently reclassified.",
+    "original_summary_preserved": true,
+    "diagnostic_repeat_assessed_without_reexecution": true
+  }
 }
