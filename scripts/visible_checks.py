@@ -11,7 +11,7 @@ import time
 from run_e0_pilot import TASK_ENV
 
 
-def run_checks(container, checks, out, remaining_wall):
+def run_checks(container, checks, out, remaining_wall, *, workdir='/testbed', environment=None):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=False)
     results = []
@@ -31,7 +31,8 @@ def run_checks(container, checks, out, remaining_wall):
             item.update(timeout_seconds=timeout, started_monotonic=time.monotonic())
             command = ['timeout', '--signal=TERM', '--kill-after=2s', str(timeout), *argv]
             try:
-                execution = container.exec_run(command, workdir='/testbed', environment=TASK_ENV)
+                execution = container.exec_run(command, workdir=workdir,
+                                               environment=TASK_ENV if environment is None else environment)
                 raw = execution.output
                 filename = f'{index:03d}.log'
                 (out / filename).write_bytes(raw)

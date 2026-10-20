@@ -6,12 +6,13 @@ import pathlib
 CAPTURE_SCRIPT = r'''
 import hashlib, json, pathlib, subprocess, sys
 base = sys.argv[1]
+workdir = sys.argv[2]
 def git(*args):
-    return subprocess.check_output(['git', *args], cwd='/testbed')
+    return subprocess.check_output(['git', *args], cwd=workdir)
 untracked = git('ls-files', '--others', '--exclude-standard', '-z').decode().split('\0')
 excluded, include = [], []
 for name in filter(None, untracked):
-    path = pathlib.Path('/testbed') / name
+    path = pathlib.Path(workdir) / name
     reason = None
     if pathlib.PurePosixPath(name).parts[0] == '.harness_notes':
         reason = 'reserved_working_notes'
@@ -36,15 +37,16 @@ for name in filter(None, untracked):
     else:
         include.append(name)
 for name in include:
-    subprocess.run(['git', 'add', '-N', '--', name], cwd='/testbed', check=True)
+    subprocess.run(['git', 'add', '-N', '--', name], cwd=workdir, check=True)
 print(json.dumps({'excluded': excluded, 'included_new_files': include}))
 '''
 
 
-def capture_artifact(container, base_commit, out):
+def capture_artifact(container, base_commit, out, *,
+                     workdir='/testbed', python_path='/opt/miniconda3/envs/testbed/bin/python'):
     result = container.exec_run(
-        ['/opt/miniconda3/envs/testbed/bin/python', '-c', CAPTURE_SCRIPT, base_commit],
-        workdir='/testbed')
+        [python_path, '-c', CAPTURE_SCRIPT, base_commit, workdir],
+        workdir=workdir)
     if result.exit_code != 0:
         raise RuntimeError('artifact discovery or git add failed: ' + result.output.decode(errors='replace'))
     manifest = json.loads(result.output)
@@ -55,7 +57,7 @@ def capture_artifact(container, base_commit, out):
             diagnostic_dir = out / 'excluded_diagnostics'
             diagnostic_dir.mkdir(exist_ok=True)
             destination = diagnostic_dir / (item['sha256'] + '.tar')
-            stream, _ = container.get_archive('/testbed/' + item['path'])
+            stream, _ = container.get_archive(workdir.rstrip('/') + '/' + item['path'])
             with destination.open('wb') as target:
                 for chunk in stream:
                     target.write(chunk)
@@ -64,7 +66,7 @@ def capture_artifact(container, base_commit, out):
             item['archive_path'] = None
             item['archive_note'] = 'metadata retained; notes or diagnostic above 16 MiB'
     artifact = container.exec_run(
-        ['git', 'diff', '--binary', base_commit, '--', '.', *exclusions], workdir='/testbed')
+        ['git', 'diff', '--binary', base_commit, '--', '.', *exclusions], workdir=workdir)
     if artifact.exit_code != 0:
         raise RuntimeError('could not capture final artifact')
     (out / 'artifact_manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

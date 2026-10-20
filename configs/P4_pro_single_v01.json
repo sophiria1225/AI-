@@ -1,0 +1,78 @@
+{
+  "scope": "One Pro development single-agent observation; not a comparative effectiveness result",
+  "phase": "P4",
+  "version": "P4_Pro_single_v01",
+  "readiness": "passed",
+  "instance_id": "instance_ansible__ansible-1c06c46cc14324df35ac4f39a45fb3ccd602195d-v0f01c69f1e2528b935359cfe578530722bca2c59",
+  "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+  "backend": "llama.cpp",
+  "base_url": "http://127.0.0.1:8011",
+  "model": "minimax-m3-iq4xs",
+  "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "model_path": "models/MiniMax-M3-GGUF/2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6/MiniMax-M3-IQ4_XS/MiniMax-M3-IQ4_XS-00001-of-00006.gguf",
+  "thinking_mode": "enabled",
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "seed": 7,
+  "num_ctx": 65536,
+  "num_predict": 8192,
+  "max_calls": 60,
+  "max_total_tokens": 600000,
+  "max_wall_seconds": 3600,
+  "call_timeout_seconds": 1200,
+  "tool_timeout_seconds": 45,
+  "max_visible_tool_characters": 10000,
+  "visible_checks": [
+    {
+      "id": "public_yaml_and_core_filter_tests",
+      "argv": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q",
+        "test/units/parsing/yaml",
+        "test/units/plugins/filter/test_core.py"
+      ],
+      "timeout_seconds": 180
+    }
+  ],
+  "calibration_records": [
+    "records/p2_probes/20261020_130318_enabled/summary.json",
+    "records/p2_capacity/20261020_130359_56000/summary.json"
+  ],
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "readiness_scope": "Native function transport, usage/termination checks and synthetic context capacity; not task quality or reliable plain JSON",
+  "readiness_limitations": [
+    "Changes both weight precision and KV precision relative to Q3/f16; cannot isolate weight quantization effect",
+    "Plain JSON probe failed because of Markdown fences; no raw JSON output parser is used for native tool calls."
+  ],
+  "cache_type_k": "q8_0",
+  "cache_type_v": "q8_0",
+  "base_commit": "6198c7377f545207218fe8eb2e3cfa9673ff8f5e",
+  "dataset_revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50",
+  "frozen_at": "2026-10-20T09:04:33.570534+00:00",
+  "environment_plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+  "public_inputs": "data/pro_v2/2d52cb3df914a3fcf80c7f66738b3a88ae37fc50/screening_inputs.jsonl",
+  "public_inputs_sha256": "c0913aa802df7c79735c7a5258a2c4b44efde362e57cb3aa74be919603c3d51e",
+  "environment_controls": {
+    "negative": {
+      "record": "records/pro_environment/PRO_ENV_05/negative_control/assessment.json",
+      "sha256": "d33a4a3f992338f5e9bcfcdbae2c0a14b045094af3e1835bc93826b750877fb3"
+    },
+    "reference": {
+      "record": "records/pro_environment/PRO_ENV_05/reference_control/summary.json",
+      "sha256": "612aaec9108e73f6400ead722bf719aeda67b6b4acd0c573b6c148c794a361dc"
+    }
+  },
+  "repository_runtime": {
+    "workdir": "/app",
+    "python": "/usr/local/bin/python3",
+    "environment": {
+      "PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "PYTHONPATH": "/app/lib:/app"
+    }
+  }
+}

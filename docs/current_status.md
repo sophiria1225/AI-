@@ -1,8 +1,8 @@
 # 現在の状態
 
-2026年10月20日：GitHubへの移管・P2・P3の4試行が完了。Ansible追加環境の正負対照も確認できた。[作業ボード](task_board.md)を進捗の入口とする。
+2026年10月20日：GitHubへの移管・P2・P3の4試行・AnsibleのP4単一観察が完了。[作業ボード](task_board.md)を進捗の入口とする。
 
-最新の追加成果：PRO_ENV_05では空差分が対象4件不合格・既存21件合格、参照修正が25件全合格。終了1を一律に基盤エラーとした誤判定を保存出力から訂正し、元記録は維持した。評価時間は約250/253秒、モデル呼び出し0。[実施記録](experiments/pro_environment_calibration.md)。R13を完了し、R14 / [Issue #20](https://github.com/sophiria1225/AI-/issues/20)で公開ツール経路と検査を校正する。以下には導入中の経緯も残す。
+最新の追加成果：P4_PRO_01を独立評価まで完了。38呼び出し586,166トークン、448.53秒で予算停止。調査と一時的な再現を行ったが修正パッチは0B、要求0/4・既存21/21で未解決。記録監査エラー0。[結果と考察](P4_findings.md)。R14を完了し、中間説明資料へ目的・構成・実測・限界をまとめる。自動再編の追加価値はまだ未実証。以下には過去の導入経緯を時点の記録として残す。
 
 - `research/p2-minimax-baseline`へコード・文書・既存原記録を移管。GitHubへ研究ブランチと作業別5ブランチをpushし、[PR #11](https://github.com/sophiria1225/AI-/pull/11)、[Issue 10件](https://github.com/sophiria1225/AI-/issues)、[専用Project](https://github.com/users/sophiria1225/projects/1)を作成。状態の同期とGitHub Actions成功を確認した。変更先は`sophiria1225/AI-`だけに制限する。
 - MiniMax M3 Q3_K_Lの固定版約205GBを取得・全ファイル照合済み。llama.cpp b11669でロードし、短い生成・ツール往復・使用量計測の8確認が合格。

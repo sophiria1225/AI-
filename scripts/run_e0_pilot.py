@@ -5,6 +5,7 @@ import hashlib
 import json
 import pathlib
 import signal
+import shlex
 import time
 import urllib.request
 import uuid
@@ -13,6 +14,7 @@ import docker
 
 from container_policy import POLICY, create_task_container
 from artifact_capture import capture_artifact
+from repository_runtime import runtime_for
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TASK_ENV = {
@@ -115,13 +117,14 @@ def model_call(config, messages, out, remaining_wall, tools=None):
 def tool_command(container, command, config, out, remaining_wall):
     started = time.monotonic()
     timeout = max(1, min(config['tool_timeout_seconds'], int(remaining_wall)))
-    shell = 'set -o pipefail\ntest -x /opt/miniconda3/envs/testbed/bin/python || exit 125\n' + command
-    record = {'command': command, 'timeout_seconds': timeout, 'environment': TASK_ENV,
+    runtime = runtime_for(config, TASK_ENV)
+    shell = 'set -o pipefail\ntest -x ' + shlex.quote(runtime['python']) + ' || exit 125\n' + command
+    record = {'command': command, 'timeout_seconds': timeout, 'environment': runtime['environment'],
               'setup_method': 'explicit_environment_path', 'pipefail': True}
     try:
         exec_id = container.client.api.exec_create(container.id,
             ['timeout', '--signal=TERM', '--kill-after=2s', str(timeout), '/bin/bash', '-c', shell],
-            workdir='/testbed', environment=TASK_ENV)['Id']
+            workdir=runtime['workdir'], environment=runtime['environment'])['Id']
         output_stream = container.client.api.exec_start(exec_id, stream=True)
         kept = bytearray()
         total_bytes = 0

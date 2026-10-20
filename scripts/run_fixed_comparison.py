@@ -118,14 +118,14 @@ class SharedEnvironment:
         return output
 
     def get_template_vars(self, **kwargs):
-        return {'cwd': '/testbed'}
+        return {'cwd': self.config.get('repository_runtime', {}).get('workdir', '/testbed')}
 
     def serialize(self):
         return {'info': {'container_policy': POLICY, 'environment_adapter': 'p3_shared_worktree'}}
 
 
-def templates_for(config, unit, pair):
-    templates = make_templates(config)
+def templates_for(config, unit, pair, *, vendor=None):
+    templates = make_templates(config, vendor=vendor)
     extra = '\n## Work allocation\n\n' + ROLES[unit]
     if pair:
         extra += ('\nCompletion is a vote for the current worktree version. Both workers must agree on '
@@ -145,7 +145,7 @@ def templates_for(config, unit, pair):
     return templates
 
 
-def run_turn(agent, env, completion, out, base_commit, turn_number):
+def run_turn(agent, env, completion, out, base_commit, turn_number, *, artifact_options=None):
     """One model step; preserve a public event and artifact-bound completion."""
     start = len(agent.messages)
     env.turn_outputs = []
@@ -160,7 +160,7 @@ def run_turn(agent, env, completion, out, base_commit, turn_number):
     directory = out / 'artifact_versions' / f'{turn_number:03d}'
     directory.mkdir(parents=True)
     began = time.monotonic()
-    captured = capture_artifact(env.container, base_commit, directory)
+    captured = capture_artifact(env.container, base_commit, directory, **(artifact_options or {}))
     changed = completion.observe_artifact(captured['artifact_sha256'])
     vote = len(env.turn_outputs) == 1 and env.turn_outputs[0]['completion_requested']
     if vote:
@@ -200,7 +200,8 @@ def run(config, strategy):
     out = ROOT / 'records/p3' / stamp
     out.mkdir(parents=True)
     sources = ['run_fixed_comparison.py', 'experiment_state.py', 'run_mini_pilot.py', 'run_e0_pilot.py',
-               'local_llama.py', 'artifact_capture.py', 'container_policy.py', 'model_provenance.py', 'visible_checks.py']
+               'local_llama.py', 'artifact_capture.py', 'container_policy.py', 'model_provenance.py',
+               'visible_checks.py', 'repository_runtime.py']
     hashes = {}
     for source in sources:
         content = (ROOT / 'scripts' / source).read_bytes()
