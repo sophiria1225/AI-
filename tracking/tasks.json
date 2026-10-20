@@ -33,7 +33,7 @@
       "id": "R02",
       "title": "MiniMax M3の固定版を取得しロードする",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "why": "大型・非Flash候補を256GiB環境で検証する。",
       "alternatives": "IQ4_XSとQ4_K_Mは作業メモリの余裕が小さく後続。Hy3は比較候補。27Bのみでは強い単一基準を確認できない。",
       "steps": [
@@ -48,10 +48,13 @@
         "ロード結果と失敗理由の保存",
         "広告上の仕様と実測の区別"
       ],
-      "progress": "Q3_K_L約205GBを取得中。llama.cpp b11669公式ARM64バイナリのハッシュと起動を確認。推論未実施。",
+      "progress": "全6ファイル照合、8K入力枠でロード成功（ready検出15.08秒）。短文生成約17〜18 tokens/s、観測swap 0。長文容量の確認はR03で継続。",
       "completed_steps": [
         "モデル版・量子化・ハッシュ固定",
-        "公式実行バイナリを照合"
+        "公式実行バイナリを照合",
+        "6ファイル取得と検証",
+        "短い入力でロードと生成",
+        "RSS・swap・時間を記録"
       ]
     },
     {
@@ -72,9 +75,11 @@
         "不完全な要求を実行しない",
         "実問題前に設定を固定"
       ],
-      "progress": "Local llama.cpp adapter, native input-token preflight, usage validation and bounded probes implemented. Seven accounting tests pass; real-model probes await verified weights.",
+      "progress": "実モデル4呼び出し・8確認が全合格。総1,615トークン、事前計数と実使用量が一致。6K入力の容量校正を実行中。",
       "completed_steps": [
-        "アダプター実装"
+        "アダプター実装",
+        "JSON・ツール要求・結果利用を校正",
+        "生成打ち切りと使用量欠落を検出"
       ]
     },
     {
@@ -94,7 +99,7 @@
         "失敗が成功に書き換わらない",
         "原文ログと終了コードが残る"
       ],
-      "progress": "Individual exit status controls passed (4 checks). Public baseline suites pass on both development tasks. Applying the same checks before independent evaluation.",
+      "progress": "個別終了コードの対照4確認に合格。2開発課題の元コードで公開検査が合格。修正後にも同じ検査を適用する。",
       "completed_steps": [
         "個別の検査と終了コード記録",
         "成功・失敗・タイムアウトの対照"
@@ -178,7 +183,7 @@
         "未確認事項の明記",
         "実装比較への接続"
       ],
-      "progress": "MaAS and TDAG code revisions pinned and execution paths inspected. GCC v2 methods and budget notation reviewed. APO follow-up and reproduction remain pending.",
+      "progress": "MaAS・TDAGのコード版と実行経路、GCC v2の方法・予算を確認。APO原論文とCompAPOの後続論文を確認中。再現実験は未実施。",
       "completed_steps": []
     }
   ]

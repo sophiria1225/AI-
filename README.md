@@ -13,6 +13,7 @@
 | 研究の背景・目的 | [研究仕様](docs/research_brief.md) |
 | 以前の実測結果 | [P1検証](docs/P1_verification_results.md)、[初期検証](docs/initial_verification_results.md) |
 | 公開する集計・検証証跡 | [reports](reports/) |
+| このMacでの再開と環境の構成 | [環境手順](docs/repository_setup.md) |
 
 ## 実装と記録
 

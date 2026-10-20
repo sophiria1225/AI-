@@ -7,7 +7,7 @@
 | 優先 | ID | 作業 | 状態 | GitHub |
 |---|---|---|---|---|
 | P0 | R01 | 研究コードと記録をGitHubへ移管する | 進行中 | 未同期 |
-| P0 | R02 | MiniMax M3の固定版を取得しロードする | 進行中 | 未同期 |
+| P0 | R02 | MiniMax M3の固定版を取得しロードする | 完了 | 未同期 |
 | P0 | R03 | MiniMaxのツール利用とトークン計測を接続する | 進行中 | 未同期 |
 | P0 | R04 | 公開テストの失敗を見落とさない実行手順を作る | 進行中 | 未同期 |
 | P1 | R05 | MiniMaxで2開発課題の単一基準を測定する | 未着手 | 未同期 |
@@ -27,7 +27,7 @@ clone、research/p2-minimax-baseline作成、47ファイルと原記録の移管
 
 ## R02 MiniMax M3の固定版を取得しロードする
 
-Q3_K_L約205GBを取得中。llama.cpp b11669公式ARM64バイナリのハッシュと起動を確認。推論未実施。
+全6ファイル照合、8K入力枠でロード成功（ready検出15.08秒）。短文生成約17〜18 tokens/s、観測swap 0。長文容量の確認はR03で継続。
 
 **なぜ行うか**: 大型・非Flash候補を256GiB環境で検証する。
 
@@ -35,7 +35,7 @@ Q3_K_L約205GBを取得中。llama.cpp b11669公式ARM64バイナリのハッシ
 
 ## R03 MiniMaxのツール利用とトークン計測を接続する
 
-Local llama.cpp adapter, native input-token preflight, usage validation and bounded probes implemented. Seven accounting tests pass; real-model probes await verified weights.
+実モデル4呼び出し・8確認が全合格。総1,615トークン、事前計数と実使用量が一致。6K入力の容量校正を実行中。
 
 **なぜ行うか**: ツール往復と費用を欠落なく計測する。
 
@@ -43,7 +43,7 @@ Local llama.cpp adapter, native input-token preflight, usage validation and boun
 
 ## R04 公開テストの失敗を見落とさない実行手順を作る
 
-Individual exit status controls passed (4 checks). Public baseline suites pass on both development tasks. Applying the same checks before independent evaluation.
+個別終了コードの対照4確認に合格。2開発課題の元コードで公開検査が合格。修正後にも同じ検査を適用する。
 
 **なぜ行うか**: P1で後続コマンドによる失敗隠蔽と、公開検査失敗を残した独立評価合格を観測した。
 
@@ -75,7 +75,7 @@ R06で対象現象を確認した場合に着手。
 
 ## R08 近接研究の機能と新規性を本文で照合する
 
-MaAS and TDAG code revisions pinned and execution paths inspected. GCC v2 methods and budget notation reviewed. APO follow-up and reproduction remain pending.
+MaAS・TDAGのコード版と実行経路、GCC v2の方法・予算を確認。APO原論文とCompAPOの後続論文を確認中。再現実験は未実施。
 
 **なぜ行うか**: 状態・責任・判断規則の変更が既存研究と重なるか確認する。
 

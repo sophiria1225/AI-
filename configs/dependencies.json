@@ -1,0 +1,14 @@
+{
+  "python": "3.12.13",
+  "repositories": [
+    {"directory":"vendor/mini-swe-agent","url":"https://github.com/SWE-agent/mini-swe-agent.git","commit":"04d809ceab9df28f9adaed044884180159172930"},
+    {"directory":"vendor/SWE-bench","url":"https://github.com/SWE-bench/SWE-bench.git","commit":"02e7a74ffd0b707aab73d203fe87bdc7c76afc8e"},
+    {"directory":"vendor/swe-bench-tasks","url":"https://github.com/SWE-bench/swe-bench-tasks.git","commit":"3d07b464b7b311a0cbfb5ed5b2d8a3b96f84a33d"}
+  ],
+  "dataset": {
+    "repo_id":"princeton-nlp/SWE-bench_Verified",
+    "revision":"c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+    "private_parquet_sha256":"a45b1fe4e2f0c8390b2b2938ac83e92ed5979000856808f3679c07812e9e6dcd"
+  },
+  "local_migration_note":"This experiment host initially reuses symlinked dependencies from the previous workspace. New code and runtime installation live in this repository. Do not recreate a venv through an existing symlink."
+}

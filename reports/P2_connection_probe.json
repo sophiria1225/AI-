@@ -1,0 +1,148 @@
+{
+  "scope": "connection/calibration fixtures, not task performance",
+  "config": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-q3kl",
+    "num_ctx": 8192,
+    "num_predict": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "seed": 7,
+    "thinking_mode": "enabled",
+    "call_timeout_seconds": 360
+  },
+  "calls": [
+    {
+      "status": "ok",
+      "input_tokens": 190,
+      "output_tokens": 48,
+      "backend": "llama.cpp",
+      "cached_input_tokens": 0,
+      "done_reason": "stop",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 190,
+        "prompt_ms": 2324.562,
+        "prompt_per_token_ms": 12.234536842105262,
+        "prompt_per_second": 81.73582808288185,
+        "predicted_n": 48,
+        "predicted_ms": 2626.299,
+        "predicted_per_token_ms": 55.87870212765957,
+        "predicted_per_second": 17.895905987855915
+      },
+      "usage_details": {
+        "completion_tokens": 48,
+        "prompt_tokens": 190,
+        "total_tokens": 238,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "wall_seconds": 4.952881167060696,
+      "name": "json"
+    },
+    {
+      "status": "ok",
+      "input_tokens": 433,
+      "output_tokens": 109,
+      "backend": "llama.cpp",
+      "cached_input_tokens": 161,
+      "done_reason": "tool_calls",
+      "timings": {
+        "cache_n": 161,
+        "prompt_n": 272,
+        "prompt_ms": 2887.213,
+        "prompt_per_token_ms": 10.614753676470588,
+        "prompt_per_second": 94.20849795287012,
+        "predicted_n": 109,
+        "predicted_ms": 6142.548,
+        "predicted_per_token_ms": 56.87544444444444,
+        "predicted_per_second": 17.58228018730989
+      },
+      "usage_details": {
+        "completion_tokens": 109,
+        "prompt_tokens": 433,
+        "total_tokens": 542,
+        "prompt_tokens_details": {
+          "cached_tokens": 161
+        }
+      },
+      "wall_seconds": 9.03268200007733,
+      "name": "tool_request"
+    },
+    {
+      "status": "ok",
+      "input_tokens": 582,
+      "output_tokens": 64,
+      "backend": "llama.cpp",
+      "cached_input_tokens": 541,
+      "done_reason": "stop",
+      "timings": {
+        "cache_n": 541,
+        "prompt_n": 41,
+        "prompt_ms": 624.695,
+        "prompt_per_token_ms": 15.236463414634148,
+        "prompt_per_second": 65.63202842987377,
+        "predicted_n": 64,
+        "predicted_ms": 3686.78,
+        "predicted_per_token_ms": 58.520317460317465,
+        "predicted_per_second": 17.088082283184782
+      },
+      "usage_details": {
+        "completion_tokens": 64,
+        "prompt_tokens": 582,
+        "total_tokens": 646,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "wall_seconds": 4.315279957954772,
+      "name": "tool_result"
+    },
+    {
+      "status": "ok",
+      "input_tokens": 188,
+      "output_tokens": 1,
+      "backend": "llama.cpp",
+      "cached_input_tokens": 161,
+      "done_reason": "length",
+      "timings": {
+        "cache_n": 161,
+        "prompt_n": 27,
+        "prompt_ms": 657.253,
+        "prompt_per_token_ms": 24.342703703703705,
+        "prompt_per_second": 41.080071144597284,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "usage_details": {
+        "completion_tokens": 1,
+        "prompt_tokens": 188,
+        "total_tokens": 189,
+        "prompt_tokens_details": {
+          "cached_tokens": 161
+        }
+      },
+      "wall_seconds": 0.6591169580351561,
+      "name": "intentional_length"
+    }
+  ],
+  "assertions": {
+    "json_count_matches": true,
+    "json_value": true,
+    "tool_request_count_matches": true,
+    "valid_tool_request": true,
+    "tool_result_count_matches": true,
+    "tool_result_used": true,
+    "intentional_length_count_matches": true,
+    "length_detected": true
+  },
+  "known_total_tokens": 1615,
+  "usage_complete": true,
+  "error": null,
+  "wall_seconds": 18.975183542002924,
+  "record_directory": "records/p2_probes/20261020_111428_enabled"
+}

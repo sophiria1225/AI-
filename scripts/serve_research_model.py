@@ -85,6 +85,7 @@ def main():
         state['baseline'] = baseline
         peak_rss = 0
         peak_swap = baseline['swap_used_bytes'] or 0
+        was_ready = False
         started = time.monotonic()
         try:
             while process.poll() is None:
@@ -100,6 +101,7 @@ def main():
                         with urllib.request.urlopen(f'http://127.0.0.1:{args.port}/health', timeout=1) as response:
                             healthy = json.load(response).get('status') == 'ok'
                         if healthy:
+                            was_ready = True
                             state.update(status='ready', load_wall_seconds=elapsed)
                             print(json.dumps({'status': 'ready', 'seconds': elapsed, 'path': str(out)}), flush=True)
                     except Exception:
@@ -134,7 +136,8 @@ def main():
             write_json(ROOT / '.runtime/model_server.json', state)
             print(json.dumps({'status': state['status'], 'reason': state['stop_reason'],
                               'exit_code': state['exit_code'], 'path': str(out)}), flush=True)
+    return was_ready and state['stop_reason'] in ('requested_stop', 'supervisor_time_limit')
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(0 if main() else 1)
