@@ -1,0 +1,189 @@
+"""Run the public-schema full-history baseline; final evaluation stays separate."""
+import argparse
+import datetime
+import hashlib
+import json
+from pathlib import Path
+import signal
+import time
+import urllib.request
+
+from appworld_native_tools import NativeCatalog, dispatch_native_calls
+from context_preservation import AGENT_PROMPT, compact, page_span, render_memory
+from inspect_appworld_api_schemas import load_public_tools
+from model_provenance import check_live_model
+from run_context_comparison import Bridge, BudgetStop, Inference, write_json
+
+ROOT = Path(__file__).resolve().parents[1]
+NATIVE_PROMPT = AGENT_PROMPT.replace(
+    "Use appworld_api to look up API documentation and then call APIs.",
+    "Use the supplied app__api functions. Request app descriptions or individual API "
+    "documentation through api_docs functions; the requested public schemas become "
+    "available on your NEXT response.").replace(
+    "Choose one tool call per response.",
+    "You may choose multiple independent tool calls per response. They execute in "
+    "listed order; do not use an earlier call's unknown result as a later argument. "
+    "After declaring task completion, remaining calls are not executed.").replace(
+    "Call supervisor.complete_task", "Call supervisor__complete_task")
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def messages_for(task, spans, config):
+    return [
+        {"role": "system", "content": NATIVE_PROMPT},
+        {"role": "user", "content": compact({
+            "task": task, "memory": json.loads(render_memory(
+                spans, list(spans), None, config["observation_page_characters"]))})},
+    ]
+
+
+def run(config, task_id, run_id, storage, appworld_root, python):
+    if (config["phase"] != "P8" or config["arms"] != ["native_full"]
+            or task_id not in config["task_ids"] or not run_id.startswith("P8_")
+            or not run_id.replace("_", "").isalnum()):
+        raise ValueError("outside the fixed native-baseline plan")
+    world_output = appworld_root / "experiments/outputs" / run_id
+    if world_output.exists():
+        raise FileExistsError("refusing to replace an existing world")
+    out = storage / "records/context_pilot" / run_id
+    out.mkdir(parents=True, exist_ok=False)
+    write_json(out / "plan.json", config)
+    runtime = json.loads((storage / ".runtime/model_server.json").read_text())
+    with urllib.request.urlopen(config["model"]["base_url"] + "/props", timeout=10) as response:
+        props = json.load(response)
+    check_live_model(config["model_selection"], runtime, props, root=storage,
+                     expected_ctx=config["model"]["num_ctx"], expected_cache=("q8_0", "q8_0"))
+    tools, schema_hashes, _ = load_public_tools(appworld_root / "data")
+    catalog = NativeCatalog(tools)
+    snapshot = out / "source"
+    snapshot.mkdir()
+    files = [
+        "run_native_appworld.py", "appworld_native_tools.py", "inspect_appworld_api_schemas.py",
+        "run_context_comparison.py", "context_preservation.py", "local_llama.py",
+        "appworld_bridge.py", "model_provenance.py",
+    ]
+    hashes = {}
+    for name in files:
+        path = ROOT / "scripts" / name
+        (snapshot / name).write_bytes(path.read_bytes())
+        hashes[name] = sha(path)
+    write_json(out / "provenance.json", {
+        "sources": hashes, "public_schema_hashes": schema_hashes,
+        "runtime": runtime, "props": props, "python": str(python),
+        "task_id": task_id, "arm": "native_full",
+        "spec_sha256": sha(appworld_root / "data/tasks" / task_id / "specs.json"),
+    })
+    infer = Inference(config, out)
+    bridge = Bridge(python, appworld_root, out)
+    spans, events = {}, []
+    api_requests, peak_tools = 0, len(catalog.tools())
+    complete, reason = False, "not_started"
+    try:
+        response = bridge.request({"op": "init", "task_id": task_id,
+                                   "experiment": run_id, "seed": config["seed"]})
+        if not response["ok"]:
+            raise RuntimeError(response["error"])
+        task = response["result"]
+        write_json(out / "public_task.json", task)
+        while not complete:
+            if api_requests >= config["max_api_requests"]:
+                raise BudgetStop("api_request_limit")
+            supplied_tools = catalog.tools()
+            peak_tools = max(peak_tools, len(supplied_tools))
+            message = infer.call("agent", messages_for(task, spans, config), supplied_tools)
+            call_id = infer.calls[-1]["id"]
+            first = True
+
+            def record(row):
+                nonlocal api_requests, complete, first
+                sid = f"s{len(spans) + 1}"
+                spans[sid] = {
+                    "id": sid, "assistant": (message.get("content") or "") if first else "",
+                    "action": row["action"], "observation": row["observation"]}
+                first = False
+                api_requests += int(row["api_request_sent"])
+                complete = complete or bool(row["observation"].get("declared_complete"))
+                events.append({
+                    "turn": len(spans), "call": call_id, "span_id": sid,
+                    "api_request_sent": row["api_request_sent"], "new_tools": row["new_tools"],
+                    "effects_unknown": row.get("effects_unknown", False),
+                    "declared_complete": complete})
+                # Persist each result before the next operation in the same model response.
+                write_json(out / "spans.json", spans)
+                write_json(out / "events.json", events)
+                write_json(out / "progress.json", {
+                    "arm": "native_full", "task_id": task_id, "calls": len(infer.calls),
+                    "tokens": infer.tokens, "turns": len(spans), "compressions": 0,
+                    "api_requests": api_requests, "exposed_api_schemas": len(catalog.visible)})
+
+            rows = dispatch_native_calls(
+                message, catalog, bridge,
+                lambda sid, offset: page_span(
+                    spans, sid, offset, config["observation_page_characters"]),
+                remaining_api_calls=config["max_api_requests"] - api_requests,
+                may_continue=lambda: time.monotonic() - infer.started < config["max_wall_seconds"],
+                on_record=record)
+            if any(r.get("effects_unknown") for r in rows):
+                raise RuntimeError("API request has unknown effects; no retry")
+        reason = "agent_declared_complete"
+    except BudgetStop as exc:
+        reason = str(exc)
+    except Exception as exc:
+        reason = "runtime_error"
+        write_json(out / "error.json", {"type": type(exc).__name__, "message": str(exc)})
+    finally:
+        try:
+            bridge.close()
+        except Exception as exc:
+            reason = "runtime_error"
+            write_json(out / "close_error.json", {"type": type(exc).__name__, "message": str(exc)})
+        known = [c for c in infer.calls if c["status"] == "ok"]
+        summary = {
+            "run_id": run_id, "task_id": task_id, "arm": "native_full",
+            "stop_reason": reason, "declared_complete": complete,
+            "final_success": None, "evaluation": "not_run",
+            "known_total_tokens": infer.tokens, "model_calls": len(infer.calls),
+            "usage_by_role": {"agent": {
+                "calls": len(infer.calls),
+                "input_tokens": sum(c["input_tokens"] for c in known),
+                "output_tokens": sum(c["output_tokens"] for c in known),
+                "unknown_usage": len(infer.calls) - len(known)}},
+            "tool_turns": len(spans), "api_requests": api_requests, "compression_events": 0,
+            "format_errors": sum("format_error" in s["observation"] for s in spans.values()),
+            "api_bridge_errors": sum("api_error" in s["observation"] for s in spans.values()),
+            "unknown_effect_requests": sum(e["effects_unknown"] for e in events),
+            "peak_supplied_tools": peak_tools,
+            "wall_seconds": time.monotonic() - infer.started,
+            "finished_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "source_hashes": hashes,
+        }
+        write_json(out / "summary.json", summary)
+        print(json.dumps(summary), flush=True)
+    return summary
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--plan", type=Path, required=True)
+    parser.add_argument("--task-id", required=True)
+    parser.add_argument("--run-id", required=True)
+    parser.add_argument("--storage-root", type=Path, required=True)
+    parser.add_argument("--appworld-root", type=Path, required=True)
+    parser.add_argument("--appworld-python", type=Path, required=True)
+    args = parser.parse_args()
+
+    def timeout(_signum, _frame):
+        raise TimeoutError("local inference deadline")
+
+    signal.signal(signal.SIGALRM, timeout)
+    result = run(json.loads(args.plan.read_text()), args.task_id, args.run_id,
+                 args.storage_root.resolve(), args.appworld_root.resolve(),
+                 args.appworld_python.absolute())
+    return 0 if result["stop_reason"] != "runtime_error" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
