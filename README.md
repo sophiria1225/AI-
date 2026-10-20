@@ -2,7 +2,7 @@
 
 大規模で相互依存する仕事を、同じモデル・品質条件のもとで、より少ない総入力・出力トークンで完了させるための研究です。分担、情報共有、作業状態の移管、実行単位の再編を比較します。期限は2027年12月です。
 
-**現在は強い単一エージェントの校正段階です。** MiniMax M3 Q3_K_Lを最初の非Flash候補として導入しています。既存の2モデル×2開発課題の結果は、いずれも1課題成功・1課題失敗でした。再編方式の有効性はまだ実証していません。
+**現在はモデルの校正と固定分担比較の準備段階です。** MiniMax M3 Q3_K_Lは64K入力枠の校正を通過しましたが、開発2課題は計553,574トークンで両方未解決でした。IQ4_XSを取得し、容量と同じ条件での品質を次に測ります。単一・固定2担当の共通実行器も実装し、制御を検査しました。再編方式の有効性はまだ実証していません。
 
 | 読みたいもの | 場所 |
 |---|---|
@@ -10,6 +10,7 @@
 | なぜこのモデルか、他候補を後順位にした理由 | [モデル選定](docs/model_selection.md) |
 | 判断と失敗の履歴 | [意思決定記録](docs/decision_log.md) |
 | 今回の実験条件 | [P2計画](docs/experiments/P2_minimax_baseline.md) |
+| 次の単一・固定分担比較 | [P3仕様](docs/experiments/P3_fixed_partition.md)、[制御検証](reports/P3_controls.json) |
 | MiniMaxの実機測定 | [検証の経過](docs/P2_progress.md)、[費用・容量の集計](reports/P2_measurements.json) |
 | 研究の背景・目的 | [研究仕様](docs/research_brief.md) |
 | 以前の実測結果 | [P1検証](docs/P1_verification_results.md)、[初期検証](docs/initial_verification_results.md) |
