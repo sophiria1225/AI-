@@ -1,0 +1,3433 @@
+{
+  "pages": 29,
+  "text_boxes": 489,
+  "overflow": [],
+  "font_name": "Arial Unicode MS",
+  "font_path_for_build": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "boxes": [
+    {
+      "slide": 1,
+      "text": "RESEARCH PROGRESS  /  2026.10.20",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 1,
+      "text": "AIハーネスの実行制御を検証する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 1,
+      "text": "対象リポジトリ：sophiria1225/AI-｜到達点：P4_PRO_01の独立評価完了",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "01",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "品質を保ちながら、仕事の完了までに使う\n全担当の総トークンを減らす。",
+      "lines": 2,
+      "used_height": 87.12,
+      "box_height": 106
+    },
+    {
+      "slide": 1,
+      "text": "分担・情報共有・作業状態の引き継ぎを、\n同じモデルと計算予算でどう設計するか。",
+      "lines": 2,
+      "used_height": 63.36,
+      "box_height": 82
+    },
+    {
+      "slide": 1,
+      "text": "今回の報告",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 28
+    },
+    {
+      "slide": 1,
+      "text": "目的・構成・実測・考察",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 1,
+      "text": "実験の区切り",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 28
+    },
+    {
+      "slide": 1,
+      "text": "基準方式 + Ansible初回",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 1,
+      "text": "研究期限",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 28
+    },
+    {
+      "slide": 1,
+      "text": "2027年12月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 2,
+      "text": "01 / 現在地",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 2,
+      "text": "測れる基盤はできた。再編の利益はこれから確かめる",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 2,
+      "text": "実装・運用の成果と、学術的に証明できたことを分ける。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 2,
+      "text": "出典 S1–S4：研究仕様、P3/P4測定・考察。各課題・方式は1試行。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "02",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "できたこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "大型モデルの実機運用\n単一／固定2担当の実行\n全呼び出しの費用記録\n最終成果物の独立評価",
+      "lines": 4,
+      "used_height": 100.32000000000001,
+      "box_height": 166
+    },
+    {
+      "slide": 2,
+      "text": "今回観測したこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "P3：2課題 × 2方式\n同じ課題で合格／未解決\nP4：調査は進んだが\n修正パッチを作れず",
+      "lines": 4,
+      "used_height": 100.32000000000001,
+      "box_height": 166
+    },
+    {
+      "slide": 2,
+      "text": "まだ言えないこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 2,
+      "text": "品質を保った費用削減\n分担や集約の一般的優位\n新規性の確定\n別領域への一般化",
+      "lines": 4,
+      "used_height": 100.32000000000001,
+      "box_height": 166
+    },
+    {
+      "slide": 2,
+      "text": "次の一歩：構成を変える価値がある局面を、強い基準方式から探す。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "02 / 背景",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 3,
+      "text": "仕事全体の整合性を、モデルの外側で支える",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 3,
+      "text": "対象は一回の回答より長い、調査・実装・検査・修正の連続。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 3,
+      "text": "出典 S1。下図は問題設定の説明であり、観測済みの因果関係ではない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "03",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "要求を読む",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "資料・仕様",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "調べて決める",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "関連コード・条件",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "変更する",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "成果物・状態",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "検査して戻す",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "結果・未解決事項",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 3,
+      "text": "分担で扱う範囲を小さくする",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 3,
+      "text": "担当ごとの調査・判断・文脈を整理する。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 43
+    },
+    {
+      "slide": 3,
+      "text": "分担後にも整合が必要",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 3,
+      "text": "前提の共有、変更の往復、履歴の再入力。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 43
+    },
+    {
+      "slide": 4,
+      "text": "03 / 目的",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "品質を条件に、仕事全体の総トークンを減らす",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 4,
+      "text": "節約だけを目的にせず、未完了や失敗も含めて評価する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 4,
+      "text": "出典 S1・S8：研究仕様と確認評価の検討。式は目標の定式化で、達成済みではない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "04",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "最小化：E [ C全担当・全制御 ]",
+      "lines": 1,
+      "used_height": 38.28,
+      "box_height": 45
+    },
+    {
+      "slide": 4,
+      "text": "制約：品質が基準方式から許容差 δ を超えて下がらない",
+      "lines": 1,
+      "used_height": 30.360000000000003,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "測る量",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "今回の定義",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "費用 C",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "すべての入力＋出力。キャッシュ対象の入力も含む。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "品質 Q",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "凍結した最終成果物の独立評価。未完了は成功にしない。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "補助指標",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "実時間、メモリ、往復修正、移管費用、不要な変更。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "品質許容差 δ・必要課題数・確認用課題は未確定。非有意差は同等性ではない。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 5,
+      "text": "04 / 研究の順序",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 5,
+      "text": "現象を観測してから、再編と選択器を作る",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 5,
+      "text": "自動集約を先に完成させると、本当に必要な機構を見失う。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 5,
+      "text": "出典 S1・S5：研究仕様と作業ボード。青緑＝実施、黄＝未実証／今後。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "05",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "01",
+      "lines": 1,
+      "used_height": 42.24,
+      "box_height": 49
+    },
+    {
+      "slide": 5,
+      "text": "基盤・評価器",
+      "lines": 1,
+      "used_height": 26.400000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 5,
+      "text": "状態／費用／成果物",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 61
+    },
+    {
+      "slide": 5,
+      "text": "実施済み",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 28
+    },
+    {
+      "slide": 5,
+      "text": "02",
+      "lines": 1,
+      "used_height": 42.24,
+      "box_height": 49
+    },
+    {
+      "slide": 5,
+      "text": "単一・固定分担",
+      "lines": 1,
+      "used_height": 26.400000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 5,
+      "text": "失敗と調整の観察",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 61
+    },
+    {
+      "slide": 5,
+      "text": "実施中",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 28
+    },
+    {
+      "slide": 5,
+      "text": "03",
+      "lines": 1,
+      "used_height": 42.24,
+      "box_height": 49
+    },
+    {
+      "slide": 5,
+      "text": "同一状態の分岐",
+      "lines": 1,
+      "used_height": 26.400000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 5,
+      "text": "整理／調整／移管",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 61
+    },
+    {
+      "slide": 5,
+      "text": "これから",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 28
+    },
+    {
+      "slide": 5,
+      "text": "04",
+      "lines": 1,
+      "used_height": 42.24,
+      "box_height": 49
+    },
+    {
+      "slide": 5,
+      "text": "対応の自動選択",
+      "lines": 1,
+      "used_height": 26.400000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 5,
+      "text": "利益と費用を予測",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 61
+    },
+    {
+      "slide": 5,
+      "text": "効果があれば",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 28
+    },
+    {
+      "slide": 5,
+      "text": "今は「構成比較に適した課題と、切り分け可能な失敗」を確認している。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 6,
+      "text": "05 / 実装済みアーキテクチャ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 6,
+      "text": "1つのモデルを、単一または固定2担当で共有する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 6,
+      "text": "実験条件・全体予算・成果物の版を、共通の実行器で管理する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 6,
+      "text": "出典 S6：run_fixed_comparison.py / run_pro_pilot.py / artifact_capture.py / experim",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "06",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "固定した公開入力",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "要求・コード・予算",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "共通の実行制御",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "単一  または  実装役 ↔ 検証役",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "ローカルLLM",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "MiniMax M3 IQ4 / 1スロット",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "共通ツールと隔離環境",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "読取・変更・検査 / repo全体",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 37
+    },
+    {
+      "slide": 6,
+      "text": "記録・成果物・完了判定",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "全入力＋出力 / 差分 / 版ID",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 37
+    },
+    {
+      "slide": 6,
+      "text": "公開の検査結果",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "実行中に利用できる",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 37
+    },
+    {
+      "slide": 6,
+      "text": "最終成果物を凍結",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "停止時の1候補を提出",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 6,
+      "text": "独立した最終評価",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 6,
+      "text": "追加テスト / 生成への返却なし",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 24
+    },
+    {
+      "slide": 6,
+      "text": "記録・差分は保存済み。\n状態復元と分岐比較は\nこれから。",
+      "lines": 3,
+      "used_height": 63.36,
+      "box_height": 73
+    },
+    {
+      "slide": 7,
+      "text": "06 / 提案予定のアーキテクチャ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 7,
+      "text": "実行中の状態から、次の対応を選ぶハーネスへ",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 7,
+      "text": "黄の部分は計画段階。自動再編の効果を示す実験はまだ行っていない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 7,
+      "text": "出典 S1・S7：研究仕様と四条件分岐タスク。モデル重みの融合ではない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "07",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "観測するもの",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 7,
+      "text": "未完了作業・根拠・変更\n検査・履歴・残り予算",
+      "lines": 2,
+      "used_height": 40.92,
+      "box_height": 51
+    },
+    {
+      "slide": 7,
+      "text": "対応を選ぶ",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 7,
+      "text": "続行／整理／中央調整／移管",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 51
+    },
+    {
+      "slide": 7,
+      "text": "状態を引き継ぐ",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 7,
+      "text": "作業・文脈・更新責任\n移管費用も計上",
+      "lines": 2,
+      "used_height": 40.92,
+      "box_height": 51
+    },
+    {
+      "slide": 7,
+      "text": "共通の実行・検証へ戻る",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 7,
+      "text": "同じモデル、基本ツール、公開入力、全体予算を保つ",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "観測 → 対応 → 再観測",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 43
+    },
+    {
+      "slide": 7,
+      "text": "学習器は、状態によって有効な対応が変わり、単純規則では足りない場合に検討。",
+      "lines": 1,
+      "used_height": 22.044,
+      "box_height": 31
+    },
+    {
+      "slide": 8,
+      "text": "07 / 次に切り分けたい効果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 8,
+      "text": "情報を整理する効果と、実行単位を変える効果を分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 8,
+      "text": "同じ会話・ファイル・環境・成果物・残予算を保存して分岐する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 8,
+      "text": "出典 S7。四条件比較は設計段階。中央調整と移管が機能的に同じなら差分を主張しない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 8,
+      "text": "08",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 8,
+      "text": "分岐",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "変えるもの",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "保つもの",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "A 継続",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "変更なし",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "現在の担当・文脈・更新範囲",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "B 情報整理",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "必要根拠と現在状態を整理",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "担当・更新範囲",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "C 中央調整",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "共同方針を決めて返す",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "元の担当が実行",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "D 作業移管",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "関連する判断と実行を集める",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "モデル・ツール・総予算",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 38
+    },
+    {
+      "slide": 8,
+      "text": "DがB・Cを超えた場合にだけ、実行単位を変える追加価値を検討する。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 9,
+      "text": "08 / 機材とモデル",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 9,
+      "text": "大型モデルを1つ共有し、担当ごとの履歴を切り替える",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 9,
+      "text": "実機の256GiBはメモリ。保存領域の容量とは別に測定した。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 9,
+      "text": "出典 S9・S3：モデル選定、実機記録、P4の5秒間隔サンプル。GiB＝2^30バイト。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "09",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "項目",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "採用中の開発条件",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "Mac Studio",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "M3 Ultra / CPU 28 / メモリ 256GiB",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "モデル",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "MiniMax M3 IQ4_XS / 重み 213.91GiB",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "推論",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "llama.cpp b11669 / KV q8_0 / 入力枠 65,536",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "複数担当",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "同じモデルへ逐次入力。重みを担当数倍にしない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "P4の実測",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "サーバーRSS最大約219.9GiB / 観測swap 0",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 33
+    },
+    {
+      "slide": 9,
+      "text": "複数担当の検証は可能。ただし、この構成から物理並列の高速化は主張しない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "09 / 選定理由",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 10,
+      "text": "モデルの大きさより、必要な入力長で測定できること",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 10,
+      "text": "大型・非Flashという希望と、実際の容量・接続・実課題の結果を合わせた判断。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 10,
+      "text": "出典 S9。未測定の候補を劣ると判断した表ではない。一般的な最強モデルの選定でもない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "10",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "候補",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "確認結果・優先順位の理由",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "M3 IQ4_XS + q8 KV",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "64Kとツール往復が動作。P3/P4の共通モデルとして採用。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "同じIQ4 + f16 KV",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "64KでMetalメモリ不足。失敗記録を保ち別設定に分離。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "M3 Q3_K_L",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "動作済み。比較記録を保持。Q3対IQ4はKV条件も異なる。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "M3 Q4_K_M",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "重みだけで約243GiB。長い入力と作業領域の余裕が小さい。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "別系列・小型モデル",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "比較候補として残す。今はハーネス条件を先に固定する。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "本実験のモデルは未確定。2課題の成績や量子化名だけで一般的な優位は決めない。",
+      "lines": 1,
+      "used_height": 21.912000000000003,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "10 / 実験の積み重ね",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 11,
+      "text": "実行基盤の検証から、構成差の観察へ進んだ",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 11,
+      "text": "条件が異なる段階を一つの成功率にまとめない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 11,
+      "text": "出典 S10・S2–S4。呼び出し数は実問題の当該試行のみ。校正・失敗した導入は別記録。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "11",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "段階",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "目的",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "実行規模",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "到達点",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P0 / E0 / P1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "接続・評価・単一基準",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P1：2モデル×2課題",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "公開／独立評価を分離",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P2 Q3",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "大型モデルの実行適合",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "2課題 / 53呼出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "独立評価0/2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P2 IQ4/q8",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "容量と開発課題品質",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "2課題 / 58呼出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "独立評価1/2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P3",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "単一と固定2担当",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "2課題×2方式 / 105呼出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "両方式で同じ成否",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "P4",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "広い依存候補の単一観察",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "Ansible 1課題 / 38呼出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "未解決・修正差分なし",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "ここまでの成果は、方法の改善率ではなく、比較の基盤と失敗の観測記録。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 12,
+      "text": "11 / P3の設計",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 12,
+      "text": "モデル・ツール・総予算をそろえ、工程分担を比べた",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 12,
+      "text": "同じDjangoの開発2課題を、単一／固定2担当で各1回。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 12,
+      "text": "出典 S2：P3固定計画・測定。両担当とも全作業ツリーを読取・変更できる。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 12,
+      "text": "12",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 12,
+      "text": "単一エージェント",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 12,
+      "text": "1つの履歴で調査・実装・検査\n外部ツールと全リポジトリを利用\n完了判定と費用を共通管理",
+      "lines": 3,
+      "used_height": 79.2,
+      "box_height": 142
+    },
+    {
+      "slide": 12,
+      "text": "固定2担当",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 12,
+      "text": "実装役と検証役の別履歴\n交互に実行し、同じ作業ツリーを共有\n排他的な責任の移管は行わない",
+      "lines": 3,
+      "used_height": 79.2,
+      "box_height": 142
+    },
+    {
+      "slide": 12,
+      "text": "共通上限：30呼び出し / 300,000入力＋出力 / 3,600秒 / 同じM3 IQ4/q8",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 13,
+      "text": "12 / P3の結果①",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 13,
+      "text": "総トークンは近いが、全件が予算停止だった",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 13,
+      "text": "15380は両方式合格、15957は両方式未解決。各棒は1試行。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 13,
+      "text": "出典 S2・P3_data.csv。バーは0起点。反復がないため誤差棒や有意差は示さない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 13,
+      "text": "13",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 13,
+      "text": "少し少ない消費を「品質を保った費用削減」とは扱わない。完了宣言は全4件0回。",
+      "lines": 1,
+      "used_height": 22.044,
+      "box_height": 31
+    },
+    {
+      "slide": 14,
+      "text": "13 / P3の結果②",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 14,
+      "text": "論理トークンが近くても、実時間は大きく違った",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 14,
+      "text": "単一履歴と交互の2履歴で、キャッシュの利用条件も違う。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 14,
+      "text": "出典 S2・P3_data.csv。一つの物理スロットで逐次実行。キャッシュは入力の内数。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 14,
+      "text": "14",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 14,
+      "text": "2担当が常に遅いとは言えない。物理構成とキャッシュを含む、この実行条件での観測。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 15,
+      "text": "14 / P3の考察",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 15,
+      "text": "解けない原因を、分担や受け渡しのせいにしない",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 15,
+      "text": "成果物と操作を調べ、次の研究へ使える観測か判断した。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 15,
+      "text": "出典 S2：P3_findings.md。局所修正の成功を大規模・相互依存作業の実証にしない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 15,
+      "text": "15",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 15,
+      "text": "課題",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "単一",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "固定2担当",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "15380\n同時改名",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "機能修正 / 合格\n857バイトの差分",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "機能修正＋テスト / 合格\n2,678バイトの差分",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "15957\nprefetchの制限",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "修正差分なし / 未解決\n公開既存検査は合格",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "再現テストのみ / 未解決\n追加検査に3エラー",
+      "lines": 2,
+      "used_height": 47.52,
+      "box_height": 63
+    },
+    {
+      "slide": 15,
+      "text": "両方式で機能修正に至らない失敗はある。\nこの結果だけでは、更新責任を集める必要性を特定できない。",
+      "lines": 2,
+      "used_height": 55.440000000000005,
+      "box_height": 63
+    },
+    {
+      "slide": 16,
+      "text": "15 / 主課題を選ぶ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 16,
+      "text": "正解の変更箇所を使わず、公開要求から候補を選ぶ",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 16,
+      "text": "大きなリポジトリであることと、複数作業の依存が強いことは別。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 16,
+      "text": "出典 S11：公開課題選定・Pro候補・基点コードの確認。すべて開発用の閲覧台帳に記録。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 16,
+      "text": "16",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 16,
+      "text": "最初の12候補",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 16,
+      "text": "6リポジトリ × 2件\n公開要求を先に固定抽出\n局所修正が中心だった\n主課題の採用は保留",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 16,
+      "text": "Proの追加12候補",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 16,
+      "text": "604候補から規則で抽出\n3候補の21ファイル確認\nメール復号・YAML等の\n関係を公開コードで検討",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 16,
+      "text": "Ansibleを先に導入",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 16,
+      "text": "YAML・信頼情報・vault\nの条件を扱う実行候補\n固定基点と評価器を確認\n正式な主課題採用は未定",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 16,
+      "text": "小課題を不自然に分割して、集約が必要な状況を作らない。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 17,
+      "text": "16 / 評価器の確認",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 17,
+      "text": "未修正は落ち、参照修正は通ることを先に確かめた",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 17,
+      "text": "モデルの失敗と、評価基盤の失敗を区別するための正負対照。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 17,
+      "text": "出典 S12・S3：PRO_ENV_05 / P4独立評価。参照修正・追加テストの内容は生成側へ渡さない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 17,
+      "text": "17",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 17,
+      "text": "投入した成果物",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "要求を確認する4テスト",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "既存動作の21テスト",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "空の差分（負対照）",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "0合格 / 4不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "21合格 / 0不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "参照修正（正対照）",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "4合格 / 0不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "21合格 / 0不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "P4の凍結成果物",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "0合格 / 4不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "21合格 / 0不合格",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 45
+    },
+    {
+      "slide": 17,
+      "text": "導入時の3失敗と、終了コード1を基盤エラーにした誤判定も保存。\n残した出力から訂正し、元の結果は上書きしなかった。",
+      "lines": 2,
+      "used_height": 50.160000000000004,
+      "box_height": 65
+    },
+    {
+      "slide": 18,
+      "text": "17 / P4の設計",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 18,
+      "text": "YAML処理の複数の条件を、単一方式でまず観察する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 18,
+      "text": "Ansible 1開発課題・1試行。P3から課題と上限が変わるため、直接の手法比較にはしない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 18,
+      "text": "出典 S3・S4。下図は公開要求に登場する関係で、実証済みの因果グラフではない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 18,
+      "text": "18",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 18,
+      "text": "YAMLの入口・出口",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 18,
+      "text": "from_yaml / from_yaml_all\nto_yaml / to_nice_yaml",
+      "lines": 2,
+      "used_height": 40.92,
+      "box_height": 63
+    },
+    {
+      "slide": 18,
+      "text": "保持すべき情報",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 18,
+      "text": "信頼情報・由来情報\n文字列・コンテナ",
+      "lines": 2,
+      "used_height": 40.92,
+      "box_height": 63
+    },
+    {
+      "slide": 18,
+      "text": "暗号化とテンプレート",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 18,
+      "text": "vaultの出力条件\n未定義値等の扱い",
+      "lines": 2,
+      "used_height": 40.92,
+      "box_height": 63
+    },
+    {
+      "slide": 18,
+      "text": "上限 60呼び出し / 600,000トークン / 3,600秒",
+      "lines": 1,
+      "used_height": 33.0,
+      "box_height": 36
+    },
+    {
+      "slide": 18,
+      "text": "公開要求3項目をすべて入力。19ソースと条件を実行前に固定。",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 30
+    },
+    {
+      "slide": 18,
+      "text": "情報が不足した設定にせず、公開要求を保ったまま挙動を測る。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 19,
+      "text": "18 / P4の経過",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 19,
+      "text": "調査から再現確認へ進んだが、修正には届かなかった",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 19,
+      "text": "最初の再現確認より前に404,067トークンを使用。修正成果物は最後まで0バイト。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 19,
+      "text": "出典 S3・S4・P4_timeline.csv。一時領域の再現スクリプトは操作記録に保存。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 19,
+      "text": "19",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 19,
+      "text": "読む作業を一律に無駄とは判定しない。調査から変更へ移る条件は、次の検証候補。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "19 / P4の結果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 20,
+      "text": "入力の繰り返しが総トークンの大半を占めた",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 20,
+      "text": "実行 448.53秒 / 38呼び出し / 586,166総トークン",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 20,
+      "text": "出典 S3。キャッシュ対象559,572は入力583,040の内数。課金額や実計算量とは別の指標。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 20,
+      "text": "20",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 20,
+      "text": "入力",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "出力",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "最終成果物",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "独立評価",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "583,040",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "3,126",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "0バイト",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "未解決：要求0/4",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 20,
+      "text": "公開既存131件の合格、再現スクリプトの終了0だけでは要求を満たしたとは言えない。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 21,
+      "text": "20 / 解釈",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 21,
+      "text": "分かったことと、原因として未確認のこと",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 21,
+      "text": "失敗も費用へ含め、実装の問題と研究仮説を混ぜない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 21,
+      "text": "出典 S2–S4。内部推論文から原因を断定する分析は行っていない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 21,
+      "text": "21",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 21,
+      "text": "観測できたこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 21,
+      "text": "同じモデルで両構成を測れる\n公開検査と独立評価が食い違う\nP4は予算停止で機能修正なし\n計測欠損・形式エラーはなかった",
+      "lines": 4,
+      "used_height": 105.60000000000001,
+      "box_height": 162
+    },
+    {
+      "slide": 21,
+      "text": "これから切り分けること",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 21,
+      "text": "基準方式の調査・停止方針の影響\n本当に必要な作業間の調整\n情報整理だけで改善できる範囲\n実行単位変更の固有の追加価値",
+      "lines": 4,
+      "used_height": 105.60000000000001,
+      "box_height": 162
+    },
+    {
+      "slide": 21,
+      "text": "単一の失敗を、複数担当や集約の必要性の証拠へ読み替えない。",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 31
+    },
+    {
+      "slide": 22,
+      "text": "21 / 先行研究と新規性",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 22,
+      "text": "「動的に担当を変える」だけでは、既に研究がある",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 22,
+      "text": "本文と固定コードを照合中。完全再現と新規性の確定は未完了。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 22,
+      "text": "出典 L1–L4・S13。各研究の原理の要約であり、同条件の性能比較ではない。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 22,
+      "text": "22",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 22,
+      "text": "近接研究",
+      "lines": 1,
+      "used_height": 20.064,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "既に扱われていること",
+      "lines": 1,
+      "used_height": 20.064,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "今回さらに検証したいこと",
+      "lines": 1,
+      "used_height": 20.064,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "MaAS / ICML 2025",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "課題に応じた構成・費用配分",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "全工程の品質条件と費用",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "TDAG / NN 2025",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "動的な分解・担当生成",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "進行した作業状態の移管",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "Flow / ICLR 2025",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "実行中の作業・担当更新",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "共有・中央調整を超える効果",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "Puppeteer / NeurIPS 2025",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "状態に応じた担当選択",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "移管の利益と費用を含む比較",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 38
+    },
+    {
+      "slide": 22,
+      "text": "狙うのは有効条件と機構の説明。再編・分岐実験・利益予測そのものを世界初としない。",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 31
+    },
+    {
+      "slide": 23,
+      "text": "22 / 次の検証",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 23,
+      "text": "分担の観察 → 同一状態の対照 → 必要なら自動選択",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 23,
+      "text": "前段で現象が残らなければ、次の複雑な機能へ進まない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 23,
+      "text": "出典 S1・S5・S7。後続の具体的な試行条件は、開始前に別計画として固定する。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 23,
+      "text": "23",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 23,
+      "text": "順序",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "行うこと",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "進める条件",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "1",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "同条件の工程分担・強い基準の点検",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "観測可能な調整・状態不整合がある",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "2",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "同一状態から継続／整理／調整／移管",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "復元と予算の比較が成立する",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "単純規則と利益予測を比べる",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "局面により有効な対応が変わる",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "4",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "未使用課題・別モデルで確認する",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "品質条件・主要指標・必要件数を固定",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 42
+    },
+    {
+      "slide": 23,
+      "text": "並行して決める：主課題、依存の分類、品質許容差、必要件数、最も近い比較実装。",
+      "lines": 1,
+      "used_height": 22.044,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "23 / 研究期限まで",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 24,
+      "text": "2027年夏の初回投稿を目標に、段階ごとに判断する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 24,
+      "text": "12月は修論・成果物の完成期限。採録時期は査読に依存する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 24,
+      "text": "出典 S1・S5：研究の現方針を基にした予定。結果により手法と件数を見直す。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 24,
+      "text": "24",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 24,
+      "text": "時期",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "重点",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "残す成果物",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "2026年10–12月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "主課題・基準方式・現象の確認",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "選定理由、条件、失敗分析",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "2027年1–4月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "同一状態の比較・機構の分析",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "分岐データ、効果と費用",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "2027年5–6月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "確認評価と論文の主張を固定",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "主要図表、限界、再現手順",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "2027年7–8月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "執筆・初回投稿",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "IEICE論文誌を主候補に原稿",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "2027年9–12月",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "追加検証・査読対応・修論",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "コード、設定、最終発表",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 24,
+      "text": "再編が効かない場合も記録する。ただし、否定結果だけで論文化できるとは保証しない。",
+      "lines": 1,
+      "used_height": 21.384,
+      "box_height": 31
+    },
+    {
+      "slide": 25,
+      "text": "24 / 何を目指すか",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 25,
+      "text": "どの状態に、どの構成が必要かを説明できる研究へ",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 25,
+      "text": "到達目標は、平均スコアの上昇だけではない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 25,
+      "text": "研究コード・記録・Issue・PR・専用Project：sophiria1225/AI-",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 25,
+      "text": "25",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 25,
+      "text": "学術的な成果",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 25,
+      "text": "情報整理で十分な条件\n中央調整が有効な条件\n移管が役立つ／害になる条件\n品質と費用の根拠",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 25,
+      "text": "技術的な成果",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 25,
+      "text": "状態を扱う共通ハーネス\n同じ途中状態の比較基盤\n費用を含む選択規則\n再実行できる記録と設定",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 25,
+      "text": "現在の課題",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 25,
+      "text": "強い基準でも残る現象\n近接研究との差分\n主課題と確認評価\n一般化できる範囲",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 160
+    },
+    {
+      "slide": 25,
+      "text": "「誰に何を渡し、どこで判断・実行をまとめるか」を、実測に基づいて決める。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 26,
+      "text": "付録 A / 正確な実測値",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 26,
+      "text": "P3の4試行を比較するためのデータ",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 26,
+      "text": "下記は開発観察。入力キャッシュは全入力の内数で、費用から差し引かない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 26,
+      "text": "出典 S2・materials/20261020/P3_data.csv。完全な集計はreports/に保存。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 26,
+      "text": "26",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 26,
+      "text": "課題・方式",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "呼出",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "入力",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "出力",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "合計",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "秒",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "評価",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "15380 単一",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "26",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "277,892",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "5,284",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "283,176",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "469.70",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "合格",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "15380 2担当",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "27",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "269,358",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "5,650",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "275,008",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "2274.54",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "合格",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "15957 単一",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "25",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "274,364",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "5,802",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "280,166",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "506.82",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "未解決",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "15957 2担当",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "27",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "270,474",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "5,057",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "275,531",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "2324.12",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "未解決",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 40
+    },
+    {
+      "slide": 26,
+      "text": "全4試行が予算停止。合計105呼び出し・1,113,881トークン。独立な課題数は2。",
+      "lines": 1,
+      "used_height": 21.78,
+      "box_height": 31
+    },
+    {
+      "slide": 27,
+      "text": "付録 B / 再現性",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 27,
+      "text": "固定したものと、原記録のたどり方",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 27,
+      "text": "公開可能な集計・コードと、実験機上に保持するデータを区別する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 27,
+      "text": "出典 S6・S14。下記は短縮表記。完全なSHA-256・コミットは設定とdata_sources.jsonへ。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 27,
+      "text": "27",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 27,
+      "text": "対象",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "固定版／記録",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "推論基盤",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "llama.cpp 620d2225… / mini-swe-agent 04d809ce…",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "P3計画",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "configs/P3_development_plan_v01.json / ce33553f…",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "P4計画",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "configs/P4_pro_single_plan_v01.json / 64701ea1…",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "Proデータ・実行環境",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "HF 2d52cb3d… / V2 image sha256:2ee62346…",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "公開するもの",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "集計・理由・設定・図表CSV・資料生成コード",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "ローカルに保持",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "モデル重み・完全な履歴・独立評価の追加テスト",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 24
+    },
+    {
+      "slide": 27,
+      "text": "GitHubの変更先はAI-のみ。Issueと専用Projectに状態を継続記録する。",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 43
+    },
+    {
+      "slide": 28,
+      "text": "付録 C / 記録へのリンク",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 28,
+      "text": "数値・図表・判断の出典",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 28,
+      "text": "資料の数値は記録済みの集計から生成。詳細は各リンクと発表者ノートへ。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 28,
+      "text": "リンクはGitHub上の記録。資料作成時点の元データSHAはdata_sources.jsonに保存。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 28,
+      "text": "28",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 28,
+      "text": "S1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "研究の目的・評価の基準  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "P3比較の実測と考察  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S3–S4",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "P4実測・公開操作の分析  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S5–S7",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "作業ボード・実装・分岐計画  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S8–S10",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "品質条件・モデル選定・以前の実測  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S11–S12",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "主課題選定と評価器の校正  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "S13–S14",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 30
+    },
+    {
+      "slide": 28,
+      "text": "先行研究比較と固定計画  ↗",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 30
+    },
+    {
+      "slide": 29,
+      "text": "付録 D / 近接研究の原典",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 29,
+      "text": "新規性の確認に使っている主な文献",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 29,
+      "text": "下記の正式掲載研究と著者実装を比較。方法全体の再現はまだ行っていない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 29,
+      "text": "本文・実装の確認範囲と未確認事項はdocs/related_work_matrix.mdに記録。",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 29,
+      "text": "29",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 29,
+      "text": "L1",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 32
+    },
+    {
+      "slide": 29,
+      "text": "MaAS: Multi-agent Architecture Search via Agentic Supernet ↗",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 29,
+      "text": "ICML 2025 / PMLR 267",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 29,
+      "text": "L2",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 32
+    },
+    {
+      "slide": 29,
+      "text": "TDAG: Dynamic Task Decomposition and Agent Generation ↗",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 29,
+      "text": "Neural Networks 185, 107200 (2025)",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 29,
+      "text": "L3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 32
+    },
+    {
+      "slide": 29,
+      "text": "Flow: Modularized Agentic Workflow Automation ↗",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 29,
+      "text": "ICLR 2025",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 29,
+      "text": "L4",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 32
+    },
+    {
+      "slide": 29,
+      "text": "Multi-Agent Collaboration via Evolving Orchestration ↗",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 34
+    },
+    {
+      "slide": 29,
+      "text": "NeurIPS 2025",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    }
+  ],
+  "note": "Text bounds checked in the shared layout. Native PowerPoint rendering can vary by installed font."
+}

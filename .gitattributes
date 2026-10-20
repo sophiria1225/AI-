@@ -1,0 +1,10 @@
+# Rendered documents are binary even when a PDF uses ASCII-encoded streams.
+materials/**/*.pdf binary
+materials/**/*.pptx binary
+materials/**/*.png binary
+materials/**/*.csv -text whitespace=cr-at-eol
+# Keep the plotting library's SVG output and Markdown hard breaks unchanged.
+materials/**/*.svg linguist-generated=true whitespace=-blank-at-eol
+materials/**/transcript.md linguist-generated=true whitespace=-blank-at-eol,-blank-at-eof
+materials/**/slides.json linguist-generated=true
+materials/**/layout_checks.json linguist-generated=true

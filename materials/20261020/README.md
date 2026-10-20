@@ -12,6 +12,8 @@ P4のAnsible初回単一試行を独立評価まで終えた時点の説明資�
 
 PowerPointの本文・表・アーキテクチャ図は編集可能。実測グラフは画像として挿入し、別途SVG・PDF・CSVを添付した。PDFは日本語フォントを埋め込んだ閲覧用。PowerPointの表示はインストールされているフォントに依存するため、共有時の基準表示はPDFとする。
 
+![実装済みのアーキテクチャ](figures/architecture_implemented.png)
+
 ## 内容
 
 | ページ | 内容 |
@@ -38,6 +40,7 @@ PowerPointの本文・表・アーキテクチャ図は編集可能。実測グ�
 python3.12 -m venv .runtime/reporting-venv
 .runtime/reporting-venv/bin/python -m pip install -r materials/20261020/requirements.txt
 .runtime/reporting-venv/bin/python scripts/build_research_presentation.py
+.runtime/reporting-venv/bin/python scripts/review_research_presentation.py --preview-dir .runtime/presentation-review
 ```
 
 Mac上の`Arial Unicode.ttf`を使用した。フォント本体は配布しない。他環境では`--font /path/to/cjk-font.ttf --font-name "Font Family"`で日本語TrueTypeフォントを指定する。改行と文字枠の高さは自動確認するが、別フォントで再生成した場合も全ページを目視確認する。
