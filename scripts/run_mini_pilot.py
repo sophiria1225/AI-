@@ -162,8 +162,8 @@ class RestrictedEnvironment:
         return {'info': {'container_policy': POLICY, 'environment_adapter': 'explicit_testbed_path'}}
 
 
-def make_templates(config):
-    templates = yaml.safe_load((VENDOR / 'src/minisweagent/config/benchmarks/swebench.yaml').read_text())
+def make_templates(config, *, vendor=None):
+    templates = yaml.safe_load(((VENDOR if vendor is None else vendor) / 'src/minisweagent/config/benchmarks/swebench.yaml').read_text())
     # Preserve the upstream workflow; align modification rights and submission with E0.
     instance = templates['agent']['instance_template']
     instance = instance.replace('make changes to non-test files', 'make changes to relevant source and test files')
@@ -176,6 +176,9 @@ def make_templates(config):
 - Put temporary reproduction scripts and notes under /tmp or .harness_notes. Do not commit changes.
 
 ''' + instance[end:]
+    if config.get('repository_runtime'):
+        instance = instance.replace('Work in /testbed.', 'Work in ' + config['repository_runtime']['workdir'] + '.')
+        instance = instance.replace('already installed testbed Python environment', 'already installed Python environment')
     instance = instance.replace("- If a tool isn't available, you can also install it", '- Network installation is unavailable; use installed tools.')
     instance = instance[:instance.index('## Submission')] + '''## Submission
 
@@ -224,7 +227,7 @@ def run(config):
     out = ROOT / 'records' / phase.lower() / stamp
     out.mkdir(parents=True)
     sources = ['run_mini_pilot.py','run_e0_pilot.py','container_policy.py','artifact_capture.py',
-               'local_llama.py','visible_checks.py','model_provenance.py']
+               'local_llama.py','visible_checks.py','model_provenance.py','repository_runtime.py']
     hashes = {}
     for source in sources:
         content = (ROOT / 'scripts' / source).read_bytes()
