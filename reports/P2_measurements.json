@@ -1,13 +1,17 @@
 {
-  "updated_at": "2026-10-20T02:37:40.765984+00:00",
+  "schema_version": 2,
+  "updated_at": "2026-10-20T02:59:39.533051+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
-    "attempted_calls": 12,
-    "calls_with_known_usage": 12,
+    "recorded_calls": 42,
+    "calls_with_known_usage": 42,
     "calls_with_unknown_usage": 0,
-    "known_input_tokens": 106775,
-    "known_output_tokens": 501,
-    "known_total_tokens": 107276,
+    "requests_without_response_record": [
+      "records/p2/20261020_115912_mini_acf0fa/call_003_single/request.json"
+    ],
+    "known_input_tokens": 381217,
+    "known_output_tokens": 12684,
+    "known_total_tokens": 393901,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
@@ -184,7 +188,7 @@
         "predicted_per_token_ms": 83.74285714285715,
         "predicted_per_second": 11.941316956670077
       },
-      "sampled_peak_rss_bytes": 217086214144,
+      "sampled_peak_rss_bytes": 217102286848,
       "peak_system_swap_bytes": 0,
       "sampling": {
         "top_k": 0,
@@ -194,5 +198,30 @@
       "sampling_note": "Missing keys in early records use the pinned server defaults."
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "record": "records/p2/20261020_113741_mini_6688ea",
+      "status": "finished",
+      "instance_id": "django__django-15380",
+      "stop_reason": "conservative_budget_guard",
+      "calls": 28,
+      "total_recorded_tokens": 282819,
+      "usage_complete": true,
+      "wall_seconds": 971.2740334590198,
+      "artifact_sha256": "8a41b4d978f1ad67f98ec1c8c9bc8b8d4fc67b12a1b4ead85d363074ca3d05d1",
+      "visible_checks_all_passed": false
+    },
+    {
+      "record": "records/p2/20261020_115912_mini_acf0fa",
+      "status": "running",
+      "instance_id": "django__django-15957",
+      "stop_reason": "initializing",
+      "calls": 2,
+      "total_recorded_tokens": 3806,
+      "usage_complete": true,
+      "wall_seconds": null,
+      "artifact_sha256": null,
+      "visible_checks_all_passed": null
+    }
+  ]
 }

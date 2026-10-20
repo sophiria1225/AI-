@@ -46,6 +46,7 @@ def main():
         item = read(path)
         calls.extend(item['calls'])
         tasks.append({'record': str(path.parent.relative_to(ROOT)),
+                      'status': 'finished' if item.get('container_removed') else 'running',
                       'instance_id': item['instance_id'], 'stop_reason': item['stop_reason'],
                       'calls': len(item['calls']), 'total_recorded_tokens': item.get('total_recorded_tokens'),
                       'usage_complete': item['usage_complete'],
@@ -53,10 +54,15 @@ def main():
                       'artifact_sha256': item.get('artifact_sha256'),
                       'visible_checks_all_passed': item.get('visible_checks', {}).get('all_passed')})
     known = [c for c in calls if type(c.get('input_tokens')) is int and type(c.get('output_tokens')) is int]
-    report = {'updated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    without_response = [str(p.relative_to(ROOT))
+                        for group in ('p2', 'p2_probes', 'p2_capacity')
+                        for p in (ROOT / 'records' / group).rglob('request.json')
+                        if not (p.parent / 'response.json').exists()]
+    report = {'schema_version': 2, 'updated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'scope': 'P2 local calibration and development; not held-out research results',
-              'accounting': {'attempted_calls': len(calls), 'calls_with_known_usage': len(known),
+              'accounting': {'recorded_calls': len(calls), 'calls_with_known_usage': len(known),
                              'calls_with_unknown_usage': len(calls) - len(known),
+                             'requests_without_response_record': without_response,
                              'known_input_tokens': sum(c['input_tokens'] for c in known),
                              'known_output_tokens': sum(c['output_tokens'] for c in known),
                              'known_total_tokens': sum(c['input_tokens'] + c['output_tokens'] for c in known),
