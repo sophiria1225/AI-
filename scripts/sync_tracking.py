@@ -10,6 +10,44 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 LINKS = ROOT / 'tracking/github_links.json'
 LABELS = {'todo': '未着手', 'in_progress': '進行中', 'blocked': '待ち', 'done': '完了'}
+ALLOWED_REPOSITORY = 'sophiria1225/AI-'
+ALLOWED_PROJECT_TITLE = 'AIハーネス研究 2026–2027'
+
+
+def check_repository_scope(data):
+    if data.get('repository') != ALLOWED_REPOSITORY:
+        raise RuntimeError('GitHub writes are restricted to ' + ALLOWED_REPOSITORY)
+    if data.get('project_title') != ALLOWED_PROJECT_TITLE:
+        raise RuntimeError('Only the dedicated AI- research Project may be updated')
+
+
+def check_project_scope(project):
+    """Fail closed if a dedicated Project later acquires unrelated content."""
+    query = '''query($id: ID!) {
+      node(id: $id) { ... on ProjectV2 {
+        repositories(first: 100) { nodes { nameWithOwner } pageInfo { hasNextPage } }
+        items(first: 100) {
+          nodes { content {
+            ... on Issue { repository { nameWithOwner } }
+            ... on PullRequest { repository { nameWithOwner } }
+          } }
+          pageInfo { hasNextPage }
+        }
+      } }
+    }'''
+    result = gh('api', 'graphql', '-f', 'query=' + query, '-f', 'id=' + project['id'],
+                json_output=True)
+    node = result.get('data', {}).get('node')
+    if not node or 'repositories' not in node or 'items' not in node:
+        raise RuntimeError('Unable to verify Project scope')
+    for connection in (node['repositories'], node['items']):
+        if connection['pageInfo']['hasNextPage']:
+            raise RuntimeError('Project scope exceeds the verified page; no Project changes')
+    repos = [r['nameWithOwner'] for r in node['repositories']['nodes']]
+    repos += [(item.get('content') or {}).get('repository', {}).get('nameWithOwner')
+              for item in node['items']['nodes']]
+    if any(repo != ALLOWED_REPOSITORY for repo in repos):
+        raise RuntimeError('Project contains content outside ' + ALLOWED_REPOSITORY)
 
 
 def gh(*args, json_output=False):
@@ -60,6 +98,7 @@ def save_links(links):
 
 def publish_issues(data, links):
     """Save each Issue before Project work, so missing Project scope is recoverable."""
+    check_repository_scope(data)
     repo = data['repository']
     existing = gh('issue', 'list', '--repo', repo, '--state', 'all', '--limit', 200,
                   '--json', 'number,title,url,body,state', json_output=True)
@@ -86,6 +125,7 @@ def publish_issues(data, links):
 
 
 def publish_project(data, links):
+    check_repository_scope(data)
     repo = data['repository']
     owner = repo.split('/')[0]
     projects = gh('project', 'list', '--owner', owner, '--limit', 100, '--format', 'json', json_output=True)
@@ -96,6 +136,7 @@ def publish_project(data, links):
     if not project:
         project = gh('project', 'create', '--owner', owner, '--title', data['project_title'],
                      '--format', 'json', json_output=True)
+    check_project_scope(project)
     links['project'] = {k: project[k] for k in ('id', 'number', 'url', 'title')}
     save_links(links)
     gh('project', 'link', project['number'], '--owner', owner, '--repo', repo)
@@ -123,6 +164,7 @@ def publish_project(data, links):
 
 
 def publish(data, links, issues_only=False):
+    check_repository_scope(data)
     gh('auth', 'status')
     publish_issues(data, links)
     if not issues_only:

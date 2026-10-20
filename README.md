@@ -2,7 +2,7 @@
 
 大規模で相互依存する仕事を、同じモデル・品質条件のもとで、より少ない総入力・出力トークンで完了させるための研究です。分担、情報共有、作業状態の移管、実行単位の再編を比較します。期限は2027年12月です。
 
-**現在はGitHubへの初回公開を優先し、その後に開発課題を測定します。** MiniMax M3 Q3_K_Lの2課題は計553,574トークンで両方未解決でした。IQ4_XSの64K・KV f16はGPUメモリ不足でしたが、KV q8_0では55,993入力の容量確認とnative tool接続が通りました。素のJSON形式の失敗は保持しています。単一・固定2担当の共通実行器も実装済みで、再編方式の有効性はまだ実証していません。
+**進捗は[Project](https://github.com/users/sophiria1225/projects/1)と[Issues](https://github.com/sophiria1225/AI-/issues)で確認できます。** MiniMax M3 Q3_K_Lの2課題は計553,574トークンで両方未解決でした。IQ4_XSの64K・KV f16はGPUメモリ不足でしたが、KV q8_0では55,993入力の容量確認とnative tool接続が通りました。素のJSON形式の失敗は保持しています。次はIQ4/q8の実課題測定です。単一・固定2担当の共通実行器も実装済みで、再編方式の有効性はまだ実証していません。
 
 | 読みたいもの | 場所 |
 |---|---|
@@ -23,12 +23,12 @@
 
 モデル重み、元データ、コンテナ、仮想環境、完全な会話履歴はローカルに保持します。`records/`は実験機上の原記録で、過去の文書にある同ディレクトリへのリンクは実験機で閲覧できます。独立評価の正解・追加テストは`private_eval/`へ分離し、生成側のコンテナには渡しません。配布元のライセンスと引用条件は、それぞれのモデル・データに従います。
 
-GitHubのIssue・Projectは認証後に同期します。未同期の作業を作成済みとして表示しません。
+GitHubの変更先は **sophiria1225/AI-だけ**です。専用ProjectにはこのリポジトリのIssueだけを登録します。[作業ルール](AGENTS.md)と同期処理の制限を共通に守り、検証結果と次の作業を更新します。
 
 ```bash
 # 進捗文書を生成する（ネットワーク書き込みなし）
 python3 scripts/sync_tracking.py
-# GitHub認証後、IssueとProjectを更新する
+# AI-のIssueと専用Projectを更新する（GitHub認証が必要）
 python3 scripts/sync_tracking.py --publish
 # 固定版モデルを取得し、SHA-256を照合する
 .venv/bin/python scripts/download_research_model.py

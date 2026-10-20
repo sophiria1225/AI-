@@ -23,7 +23,8 @@ class TrackingRecovery(unittest.TestCase):
         self.task = {'id': 'R01', 'title': 'fixture', 'priority': 'P0', 'status': 'in_progress',
                      'steps': ['work'], 'acceptance': ['check'], 'why': 'purpose',
                      'alternatives': 'reason', 'progress': 'running'}
-        self.data = {'repository': 'fixture/repo', 'project_title': 'fixture project',
+        self.data = {'repository': sync.ALLOWED_REPOSITORY,
+                     'project_title': sync.ALLOWED_PROJECT_TITLE,
                      'updated_at': '2026-10-20', 'tasks': [self.task]}
         self.links = {}
         self.existing = [{'number': 99, 'title': 'human issue', 'body': 'Do not alter',
@@ -68,6 +69,31 @@ class TrackingRecovery(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'multiple issues'):
             sync.publish(self.data, self.links)
         self.assertFalse(any(c[0] == 'issue' and c[1] in ('create', 'edit', 'close') for c in self.calls))
+
+    def test_other_repository_is_rejected_before_any_request(self):
+        self.data['repository'] = 'fixture/other'
+        with self.assertRaisesRegex(RuntimeError, 'restricted'):
+            sync.publish(self.data, self.links)
+        self.assertEqual(self.calls, [])
+
+    def test_project_with_other_repository_is_rejected(self):
+        result = {'data': {'node': {
+            'repositories': {'nodes': [{'nameWithOwner': 'fixture/other'}],
+                             'pageInfo': {'hasNextPage': False}},
+            'items': {'nodes': [], 'pageInfo': {'hasNextPage': False}}}}}
+        with patch.object(sync, 'gh', return_value=result):
+            with self.assertRaisesRegex(RuntimeError, 'outside'):
+                sync.check_project_scope({'id': 'fixture-project'})
+
+    def test_dedicated_project_is_allowed(self):
+        result = {'data': {'node': {
+            'repositories': {'nodes': [{'nameWithOwner': sync.ALLOWED_REPOSITORY}],
+                             'pageInfo': {'hasNextPage': False}},
+            'items': {'nodes': [{'content': {'repository': {
+                'nameWithOwner': sync.ALLOWED_REPOSITORY}}}],
+                'pageInfo': {'hasNextPage': False}}}}}
+        with patch.object(sync, 'gh', return_value=result):
+            sync.check_project_scope({'id': 'fixture-project'})
 
 
 if __name__ == '__main__':

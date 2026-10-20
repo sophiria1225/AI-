@@ -6,22 +6,22 @@
 
 | 優先 | ID | 作業 | 状態 | GitHub |
 |---|---|---|---|---|
-| P0 | R01 | 研究コードと記録をGitHubへ移管する | 待ち | 未同期 |
-| P0 | R02 | MiniMax M3の固定版を取得しロードする | 完了 | 未同期 |
-| P0 | R03 | MiniMaxのツール利用とトークン計測を接続する | 完了 | 未同期 |
-| P0 | R04 | 公開テストの失敗を見落とさない実行手順を作る | 完了 | 未同期 |
-| P1 | R05 | MiniMaxで2開発課題の単一基準を測定する | 完了 | 未同期 |
-| P1 | R06 | 同一モデルで単一と固定分担を比較する | 進行中 | 未同期 |
-| P2 | R07 | 同一途中状態から四条件へ分岐する | 未着手 | 未同期 |
-| P1 | R08 | 近接研究の機能と新規性を本文で照合する | 進行中 | 未同期 |
-| P1 | R09 | MiniMax M3 IQ4_XSの容量と開発課題品質を測る | 進行中 | 未同期 |
-| P2 | R10 | 確認評価の品質条件・課題分割・必要件数を固定する | 進行中 | 未同期 |
+| P0 | R01 | 研究コードと記録をGitHubへ移管する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/1) |
+| P0 | R02 | MiniMax M3の固定版を取得しロードする | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/2) |
+| P0 | R03 | MiniMaxのツール利用とトークン計測を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/3) |
+| P0 | R04 | 公開テストの失敗を見落とさない実行手順を作る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/4) |
+| P1 | R05 | MiniMaxで2開発課題の単一基準を測定する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/5) |
+| P1 | R06 | 同一モデルで単一と固定分担を比較する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/6) |
+| P2 | R07 | 同一途中状態から四条件へ分岐する | 未着手 | [Issue](https://github.com/sophiria1225/AI-/issues/7) |
+| P1 | R08 | 近接研究の機能と新規性を本文で照合する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/8) |
+| P1 | R09 | MiniMax M3 IQ4_XSの容量と開発課題品質を測る | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/9) |
+| P2 | R10 | 確認評価の品質条件・課題分割・必要件数を固定する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/10) |
 
-GitHub Projectは認証後に作成・同期する。作業定義と投稿内容は準備済み。
+[GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
 ## R01 研究コードと記録をGitHubへ移管する
 
-コード・記録・45件のローカル検査・投稿内容を準備済み。GitHub本人認証待ちのためpush・Issue・Projectは未反映。ユーザーの指示で公開を先行し、新規実験の開始を保留。認証完了後に公開を再開する。
+本人認証が完了し、research/p2-minimax-baselineをsophiria1225/AI-へpush済み。Issue・専用Project・PRを作成中。変更先をこのリポジトリだけに制限し、公開完了後に新規実験を再開する。
 
 **なぜ行うか**: 実装・判断・結果を一か所で追跡し、研究を再開可能にする。
 
