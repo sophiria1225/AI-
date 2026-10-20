@@ -50,11 +50,13 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12'):
+    if plan['phase'] not in ('P11', 'P12', 'P13'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
     if plan['phase'] == 'P12':
         sources += ['run_native_recent.py', 'native_recent_window.py', 'native_memory_view.py']
+    if plan['phase'] == 'P13':
+        sources += ['run_native_generated.py', 'native_focus_memory.py', 'native_memory_view.py']
     for name in sources:
         if sha(Path(__file__).parent / name) != provenance['sources'][name]:
             raise ValueError('use the frozen boundary/history implementation for this audit')
@@ -65,10 +67,12 @@ def audit(trial, appworld_root, allow_running=False):
             trial / usage[0]['id'] / 'request.json')['tools']} - {'read_span'}
     errors, rows, seen_objects, prior_dbs = [], [], set(), None
     reconstructed_calls = 0
+    expected_boundaries = [0] + [i for i, call in enumerate(usage, 1) if call['role'] == 'agent']
     for position, entry in enumerate(index):
         cid = entry['id']
         count = 0 if cid == 'initial' else int(cid.removeprefix('call_'))
-        if (position == 0 and cid != 'initial') or count != position:
+        if ((position == 0 and cid != 'initial') or position >= len(expected_boundaries)
+                or count != expected_boundaries[position]):
             errors.append('published boundary sequence is not contiguous')
         path = trial / 'boundaries/manifests' / (cid + '.json')
         if sha(path) != entry['manifest_sha256']:
@@ -96,9 +100,10 @@ def audit(trial, appworld_root, allow_running=False):
                 errors.append(cid + ': immutable harness input differs: ' + name)
         while reconstructed_calls < count:
             call_id = usage[reconstructed_calls]['id']
-            response = read(trial / call_id / 'response.json')['message']
-            call_spans = [spans[row['span_id']] for row in events if row['call'] == call_id]
-            conversation.append(response, call_spans)
+            if usage[reconstructed_calls]['role'] == 'agent':
+                response = read(trial / call_id / 'response.json')['message']
+                call_spans = [spans[row['span_id']] for row in events if row['call'] == call_id]
+                conversation.append(response, call_spans)
             reconstructed_calls += 1
         if captured('conversation_private.json') != conversation.messages():
             errors.append(cid + ': captured conversation differs from actual responses/results')
@@ -130,7 +135,7 @@ def audit(trial, appworld_root, allow_running=False):
         if len(index) != summary['boundary_records']:
             errors.append('summary boundary count differs')
         if summary['stop_reason'] == 'agent_declared_complete':
-            if len(index) != summary['model_calls'] + 1:
+            if len(index) != len(expected_boundaries):
                 errors.append('completed execution is missing boundary records')
             output_dbs = appworld_root / 'experiments/outputs' / trial.name / 'tasks' / provenance['task_id'] / 'dbs'
             actual = {'dbs/' + p.name: sha(p) for p in output_dbs.iterdir() if p.is_file()}

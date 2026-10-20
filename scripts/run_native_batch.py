@@ -21,6 +21,7 @@ PHASES = {
     "P10": {"issue": 42, "arm": "native_roles", "batch": "P10_batch_v01", "before": "P9", "trials": 2},
     "P11": {"issue": 44, "arm": "native_roles", "batch": "P11_batch_v01", "before": "P10", "trials": 4},
     "P12": {"issue": 48, "arm": "native_recent", "batch": "P12_batch_v01", "before": "P11", "trials": 4},
+    "P13": {"issue": 51, "arm": "native_focus", "batch": "P13_batch_v01", "before": "P12", "trials": 4},
 }
 
 
@@ -36,7 +37,7 @@ def validate_schedule(plan):
             or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
             or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed calibration schedule is supported")
-    if phase in ("P11", "P12"):
+    if phase in ("P11", "P12", "P13"):
         selected = json.loads((ROOT / 'reports/P11_public_task_selection.json').read_text())
         ids = [row['task_id'] for row in selected['selected']]
         if (plan['task_ids'] != ids or [row[0] for row in plan['run_order']] != ids
@@ -56,7 +57,8 @@ def public_body(rows, state):
     title = {"P8": "P8：公開スキーマ・複数操作を使う全履歴基準",
              "P10": "P10：要求と結果の役割を保持する標準会話の全履歴基準",
              "P11": "P11：選定済みの追加4シナリオを同じ全履歴基準で観察",
-             "P12": "P12：同じ4シナリオで直近履歴の保持と原文再読を比較"}[phase]
+             "P12": "P12：同じ4シナリオで直近履歴の保持と原文再読を比較",
+             "P13": "P13：同じ接続でFOCUSに基づく保持方式と全費用を比較"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -77,7 +79,8 @@ def public_body(rows, state):
               {"P8": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)",
                "P10": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-history-calibration-20261021/docs/experiments/P10_native_history.md)",
                "P11": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-development-20261021/docs/experiments/P11_additional_baseline.md)",
-               "P12": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-observations-20261021/docs/experiments/P12_recent_window.md)"}[phase]]
+               "P12": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-observations-20261021/docs/experiments/P12_recent_window.md)",
+               "P13": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-focus-comparison-20261021/docs/experiments/P13_native_focus.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -161,6 +164,7 @@ def main():
         "P10": ("cache_probe", plan.get("wait_for_cache_probe")),
         "P11": ("context_pilot", plan.get("wait_for_native_batch")),
         "P12": ("context_pilot", plan.get("wait_for_native_batch")),
+        "P13": ("context_pilot", plan.get("wait_for_native_batch")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
@@ -182,7 +186,7 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12") else 180
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)
@@ -197,6 +201,7 @@ def main():
             update(True)
             command = [
                 sys.executable, str(ROOT / "scripts" / (
+                    "run_native_generated.py" if phase == "P13" else
                     "run_native_recent.py" if phase == "P12" else "run_native_appworld.py")),
                 "--plan", str(args.plan.absolute()), "--task-id", task, "--run-id", name,
                 "--storage-root", str(storage),

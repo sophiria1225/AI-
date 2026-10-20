@@ -10,21 +10,23 @@ from run_native_batch import validate_schedule, public_body
 
 
 class AdditionalNativePlanControls(unittest.TestCase):
-    def test_recent_comparison_preserves_all_tasks_budgets_and_api_access(self):
+    def test_memory_comparisons_preserve_all_tasks_budgets_and_api_access(self):
         previous = json.loads((ROOT / 'configs/P11_additional_baseline_v01.json').read_text())
-        actual = json.loads((ROOT / 'configs/P12_recent_window_v01.json').read_text())
-        validate_schedule(actual)
-        for key in ('task_ids', 'appworld_version', 'model_selection', 'model', 'seed',
-                    'agent_temperature', 'max_calls', 'max_api_requests', 'max_total_tokens',
-                    'max_wall_seconds', 'max_output_tokens', 'observation_page_characters',
-                    'discovery_policy', 'max_checkpoint_object_bytes',
-                    'max_checkpoint_new_bytes_per_boundary', 'source_selection_sha256'):
-            self.assertEqual(previous[key], actual[key], key)
-        self.assertEqual(actual['wait_for_native_batch'], 'P11_batch_v01')
-        self.assertEqual(actual['history_budget_tokens'], 4096)
-        import hashlib
-        self.assertEqual(actual['source_comparison_plan_sha256'], hashlib.sha256(
-            (ROOT / 'configs/P11_additional_baseline_v01.json').read_bytes()).hexdigest())
+        for filename, prerequisite in [('P12_recent_window_v01.json', 'P11_batch_v01'),
+                                       ('P13_native_focus_v01.json', 'P12_batch_v01')]:
+            actual = json.loads((ROOT / 'configs' / filename).read_text())
+            validate_schedule(actual)
+            for key in ('task_ids', 'appworld_version', 'model_selection', 'model', 'seed',
+                        'agent_temperature', 'max_calls', 'max_api_requests', 'max_total_tokens',
+                        'max_wall_seconds', 'max_output_tokens', 'observation_page_characters',
+                        'discovery_policy', 'max_checkpoint_object_bytes',
+                        'max_checkpoint_new_bytes_per_boundary', 'source_selection_sha256'):
+                self.assertEqual(previous[key], actual[key], (filename, key))
+            self.assertEqual(actual['wait_for_native_batch'], prerequisite)
+            self.assertEqual(actual['history_budget_tokens'], 4096)
+            import hashlib
+            self.assertEqual(actual['source_comparison_plan_sha256'], hashlib.sha256(
+                (ROOT / 'configs/P11_additional_baseline_v01.json').read_bytes()).hexdigest())
 
     def test_execution_budget_and_interface_match_the_selected_baseline(self):
         previous = json.loads((ROOT / 'configs/P10_native_history_v01.json').read_text())

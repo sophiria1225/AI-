@@ -1,0 +1,86 @@
+{
+  "appworld_version": "0.1.3.post1",
+  "task_ids": [
+    "287e338_1",
+    "29caf6f_1",
+    "2a163ab_1",
+    "302c169_1"
+  ],
+  "selection_rule": "Precommitted P11 public task selection: next four previously unexposed train scenarios in sorted ID order, variant _1; never replace based on outcomes.",
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "model": {
+    "backend": "llama.cpp",
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "num_ctx": 65536,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "seed": 42,
+  "agent_temperature": 1.0,
+  "draft_temperature": 0.7,
+  "max_output_tokens": 4096,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "observation_page_characters": 24000,
+  "phase": "P13",
+  "version": "P13_native_focus_v01",
+  "batch_id": "P13_batch_v01",
+  "arms": [
+    "native_focus"
+  ],
+  "max_api_requests": 80,
+  "max_wait_seconds": 10800,
+  "server_lease_end_utc": "2026-10-21T01:48:58.113011+00:00",
+  "server_lease_basis": "Identical server command restarted after P10 complete and empty model slot; bounded --max-seconds14400. Per-trial evaluation180sec plus180sec reserve, no start below8100sec remaining.",
+  "run_order": [
+    [
+      "287e338_1",
+      "native_focus",
+      "P13_01_FOCUS"
+    ],
+    [
+      "29caf6f_1",
+      "native_focus",
+      "P13_02_FOCUS"
+    ],
+    [
+      "2a163ab_1",
+      "native_focus",
+      "P13_03_FOCUS"
+    ],
+    [
+      "302c169_1",
+      "native_focus",
+      "P13_04_FOCUS"
+    ]
+  ],
+  "source_comparison_plan_sha256": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+  "scope": "Existing FOCUS-based adaptation on same four development tasks, with a certified retention early exit. One seed, no original-score reproduction or new-method claim.",
+  "discovery_policy": "Initially api_docs and supervisor schemas. A requested app description exposes that public app; individual API documentation exposes that API. New schemas apply on the next model response. No answer-based selection or silent top-k pruning.",
+  "interpretation": [
+    "Same original task, model, public API discovery, executor prompt, budgets and task order as P11/P12.",
+    "Memory drafts have temperature0.7 and at most3 calls; executor temperature1.0. Role-specific seed schedules already separate memory and agent roles.",
+    "Citations from at least ceil(3*0.3)=1 draft and rescued observations are retained. Any selected operation retains its original whole response group.",
+    "Stop drafting only when all visible spans are already guaranteed retained, including invalid-future-output fallback. This is a conventional safe shortcut, not novelty.",
+    "Public API schemas currently visible to the executor are also supplied as inert data to the memory role and fully charged. Only submit_selection is callable by that role.",
+    "The 4096-token history proxy triggers at most one update before each agent call. Selection has no forced size target; unchanged or oversized memory still counts.",
+    "Malformed drafts keep original history. Exhausted budget or model failures stop; all costs are retained. No real environment action is replayed by the memory role.",
+    "All four tasks remain included regardless of P11/P12 outcomes; source code and conditions are frozen before the first P13 generation."
+  ],
+  "history_representation": "Original native turns remain archived. FOCUS selects visible spans and whole-turn closure preserves requests/results. The original task and externally exposed API schemas remain available. Raw observations can be re-read using read_span.",
+  "source_selection_sha256": "b1d693f9b8af7549417e62deb9200f6aac06fa2d4f50afe805d77e2e72863058",
+  "wait_for_native_batch": "P12_batch_v01",
+  "max_checkpoint_new_bytes_per_boundary": 134217728,
+  "max_checkpoint_object_bytes": 536870912,
+  "history_budget_tokens": 4096,
+  "focus_rollouts": 3,
+  "focus_threshold": 0.3,
+  "focus_early_exit": "all_retained_certificate"
+}

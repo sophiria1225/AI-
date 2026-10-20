@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-10-20T22:35:41.031058+00:00",
+  "phase": "P13 pre-inference implementation controls",
+  "model_calls": 0,
+  "environment_operations": 0,
+  "failures": [
+    {
+      "control": "generated driver offline memory replay",
+      "observed": "Saved selection retained_span_ids changed after a later observation was appended.",
+      "cause": "A mutable list was shared between controller state and prior memory view.",
+      "fix": "Copy retained IDs and replace rather than extend the selected list.",
+      "verification": "Regression preserves prior selection; recorded drafts/inputs/costs replay exactly."
+    },
+    {
+      "control": "generated driver boundary audit",
+      "observed": "Auditor expected a DB boundary after every model call, including inert memory drafts.",
+      "cause": "Final count still used full-history model_calls+1 assumption.",
+      "fix": "Use initial plus executor-call boundaries; retain all draft costs in each saved prefix.",
+      "verification": "Synthetic two operations plus one draft produce boundaries at total-call counts0/1/3 with audit0."
+    }
+  ],
+  "remaining": "No live P13 run has occurred; controls do not establish task success or memory semantics."
+}
