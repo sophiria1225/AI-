@@ -69,7 +69,8 @@ def main():
         "known_total_tokens": sum(t["known_total_tokens"] for t in trials),
         "unknown_usage_calls": sum(t["unknown_usage_calls"] for t in trials),
         "audit_errors": sum(len(t["audit_errors"]) for t in trials),
-        "scope": "Two development scenarios, one seed per arm; no new method, no confirmatory claim.",
+        "scope": (f"{len(config['task_ids'])} development scenarios, one seed per arm; "
+                  "no new method, no confirmatory claim."),
         "exclusions": "No task instructions, API response bodies, model reasoning or evaluator details exported.",
     }
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")

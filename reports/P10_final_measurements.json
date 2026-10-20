@@ -1,0 +1,84 @@
+{
+  "plan_sha256": "63171ecfe4905cea4d9e34a064a674e18da93904669b4e32345992897cfbbdb2",
+  "trials": [
+    {
+      "run_id": "P10_01_ROLES",
+      "task_id": "07b42fd_1",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 156301,
+      "usage_by_role": {
+        "agent": {
+          "calls": 9,
+          "input_tokens": 155461,
+          "output_tokens": 840,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 9,
+      "tool_turns": 10,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 246.21422358299606,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 5,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 19828,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "201f4e9cf38ddfe5cd0e6c463a5dc21730a0170f956f4f1bad95cfc2f1189f73",
+        "usage": "50c462cc86ff85e68e41c17bee4809f6cf640f76361255ec536eff6818b50bfd",
+        "evaluation": "c2030800e0d3cad3e4321e58b72759513bf3097d8ddbe8ae913d231e1912b6ba"
+      }
+    },
+    {
+      "run_id": "P10_02_ROLES",
+      "task_id": "22cc237_1",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 181950,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "input_tokens": 177464,
+          "output_tokens": 4486,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 10,
+      "tool_turns": 25,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 517.2653838749975,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 4,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 24858,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "e2b3a61b354d9c864d39830d3908e820cee0e1955dc89e0e1e25950eabd0dfee",
+        "usage": "c6a2737b6131cb1491696eb74d3ebcce857ae51f735873aaf06528709c70854c",
+        "evaluation": "282062b137f2838e1a24d81c0d28e720e0a8e3d52ae6a5451579d19abcb282ba"
+      }
+    }
+  ],
+  "pending": [],
+  "total_model_calls": 19,
+  "known_total_tokens": 338251,
+  "unknown_usage_calls": 0,
+  "audit_errors": 0,
+  "scope": "Two development scenarios, one seed per arm; no new method, no confirmatory claim.",
+  "exclusions": "No task instructions, API response bodies, model reasoning or evaluator details exported."
+}

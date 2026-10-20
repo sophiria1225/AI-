@@ -13,6 +13,7 @@ from context_preservation import AGENT_PROMPT, compact, page_span, render_memory
 from inspect_appworld_api_schemas import load_public_tools
 from model_provenance import check_live_model
 from native_conversation import NativeConversation
+from native_boundary_record import snapshot_boundary
 from run_context_comparison import Bridge, BudgetStop, Inference, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +43,7 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P8": "native_full", "P10": "native_roles"}
+    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
@@ -71,6 +72,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     ]
     if arm == "native_roles":
         files.append("native_conversation.py")
+    if phase == "P11":
+        files.append("native_boundary_record.py")
     hashes = {}
     for name in files:
         path = ROOT / "scripts" / name
@@ -89,6 +92,47 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     complete, reason = False, "not_started"
     conversation = None
     formatting = {}
+    boundaries = []
+    capture_attempts, capture_seconds = 0, 0.0
+
+    def capture_files_at_boundary(checkpoint_id):
+        dbs = world_output / "tasks" / task_id / "dbs"
+        entries = list(dbs.iterdir())
+        if not entries or any(not p.is_file() or p.is_symlink() for p in entries):
+            raise ValueError("unexpected AppWorld saved DB directory")
+        capture_files = {"dbs/" + p.name: p for p in entries}
+        for name in ("plan.json", "provenance.json", "public_task.json", "spans.json",
+                     "events.json", "usage.json", "conversation_private.json"):
+            if (out / name).exists():
+                capture_files["harness/" + name] = out / name
+        remaining = config["max_checkpoint_object_bytes"] - sum(
+            row["new_object_bytes"] for row in boundaries)
+        if remaining <= 0:
+            raise BudgetStop("checkpoint_storage_limit")
+        elapsed = time.monotonic() - infer.started
+        state = {"run_id": run_id, "task_id": task_id, "arm": arm,
+                 "model_calls": len(infer.calls), "known_total_tokens": infer.tokens,
+                 "api_requests": api_requests, "span_ids": list(spans),
+                 "visible_api_schemas": sorted(catalog.visible),
+                 "declared_complete": complete, "elapsed_wall_seconds": elapsed,
+                 "remaining_tokens": config["max_total_tokens"] - infer.tokens,
+                 "remaining_wall_seconds_before_capture": max(0, config["max_wall_seconds"] - elapsed),
+                 "rng_and_process_state_captured": False}
+        saved = snapshot_boundary(out / "boundaries", checkpoint_id, capture_files, state,
+                                  min(remaining, config["max_checkpoint_new_bytes_per_boundary"]))
+        boundaries.append(saved)
+        write_json(out / "boundary_index.json", boundaries)
+
+    def capture(checkpoint_id):
+        nonlocal capture_attempts, capture_seconds
+        if phase != "P11":
+            return
+        capture_attempts += 1
+        started_capture = time.monotonic()
+        try:
+            capture_files_at_boundary(checkpoint_id)
+        finally:
+            capture_seconds += time.monotonic() - started_capture
     try:
         response = bridge.request({"op": "init", "task_id": task_id,
                                    "experiment": run_id, "seed": config["seed"]})
@@ -98,6 +142,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         write_json(out / "public_task.json", task)
         if arm == "native_roles":
             conversation = NativeConversation(NATIVE_PROMPT, task)
+            write_json(out / "conversation_private.json", conversation.messages())
+        capture("initial")
         while not complete:
             if api_requests >= config["max_api_requests"]:
                 raise BudgetStop("api_request_limit")
@@ -148,6 +194,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 _, formatting = conversation.for_model(config["observation_page_characters"])
             if any(r.get("effects_unknown") for r in rows):
                 raise RuntimeError("API request has unknown effects; no retry")
+            capture(call_id)
         reason = "agent_declared_complete"
     except BudgetStop as exc:
         reason = str(exc)
@@ -180,6 +227,12 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             "finished_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "source_hashes": hashes,
             "history_formatting": formatting,
+            "boundary_records": len(boundaries),
+            "boundary_capture_attempts": capture_attempts,
+            "boundary_capture_seconds": capture_seconds,
+            "boundary_new_object_bytes": sum(row["new_object_bytes"] for row in boundaries),
+            "boundary_object_bytes_on_disk": sum(p.stat().st_size for p in
+                                                  (out / "boundaries/objects").glob("*") if p.is_file()),
         }
         write_json(out / "summary.json", summary)
         print(json.dumps(summary), flush=True)
