@@ -2,7 +2,7 @@
 
 2026年10月20日：P5の同条件比較まで完了。研究の差分を[アプローチ仕様](research_contribution.md)と[改訂16枚の資料](../materials/20261020_revised/)に具体化した。[作業ボード](task_board.md)を進捗の入口とする。
 
-**現在の中心：** 情報整理・共同方針・判断実行の担当変更を同じ状態から比較し、担当変更の追加価値がある範囲を調べる。Flow、Puppeteer、AgentGraph、WinnowRAG等との重なりを明記し、動的再編や融合だけを新規性にしない。[Issue #26](https://github.com/sophiria1225/AI-/issues/26)。担当変更の性能・品質条件下の費用削減は未実証。
+**現在の中心：** 情報整理・共同方針・判断実行の担当変更を同じ状態から比較し、担当変更の追加価値がある範囲を調べる。Flow、Puppeteer、AgentGraph、WinnowRAG等との重なりを明記し、動的再編や融合だけを新規性にしない。[Issue #26](https://github.com/sophiria1225/AI-/issues/26)、[PR #27](https://github.com/sophiria1225/AI-/pull/27)。担当変更の性能・品質条件下の費用削減は未実証。
 
 **続けた実装：** 宣言された会話・作業管理・予算・完了状態・ファイル・ツール環境の契約検査。内容変更、一時領域の不足、実行中操作、予算リセット等を拒否する12検査が通り、専用Python 3.12環境で全122テストが合格した。実コンテナの全状態の捕捉や再開は未実装。[介入と保存仕様](experiments/E1_intervention_contract.md)、[制御記録](../reports/E1_checkpoint_contract_controls.json)。
 
