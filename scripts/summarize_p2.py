@@ -15,9 +15,28 @@ def main():
     probes = []
     capacities = []
     tasks = []
+    runtime_groups = {}
+
+    def record_calls(items, config, purpose, record):
+        calls.extend(items)
+        key = (config['model'], config.get('cache_type_k', 'f16'), config.get('cache_type_v', 'f16'))
+        group = runtime_groups.setdefault(key, {'model': key[0], 'cache_type_k': key[1], 'cache_type_v': key[2],
+            'contexts': set(), 'purposes': set(), 'records': [], 'recorded_calls': 0,
+            'known_input_tokens': 0, 'known_output_tokens': 0, 'unknown_usage_calls': 0})
+        group['contexts'].add(config['num_ctx'])
+        group['purposes'].add(purpose)
+        group['records'].append(record)
+        group['recorded_calls'] += len(items)
+        for item in items:
+            if type(item.get('input_tokens')) is int and type(item.get('output_tokens')) is int:
+                group['known_input_tokens'] += item['input_tokens']
+                group['known_output_tokens'] += item['output_tokens']
+            else:
+                group['unknown_usage_calls'] += 1
+
     for path in sorted((ROOT / 'records/p2_probes').glob('*/summary.json')):
         item = read(path)
-        calls.extend(item['calls'])
+        record_calls(item['calls'], item['config'], 'interface_calibration', str(path.parent.relative_to(ROOT)))
         probes.append({'record': str(path.parent.relative_to(ROOT)),
                        'config': item['config'], 'assertions': item['assertions'],
                        'error': item['error'], 'calls': len(item['calls']),
@@ -27,7 +46,7 @@ def main():
         config = read(path.parent / 'config.json')
         server = read(ROOT / item['server_record'] / 'summary.json')
         response = item['response']
-        calls.append(response)
+        record_calls([response], config, 'synthetic_capacity', str(path.parent.relative_to(ROOT)))
         capacities.append({'record': str(path.parent.relative_to(ROOT)),
                            'model': config['model'],
                            'ctx_size': config['num_ctx'],
@@ -48,9 +67,13 @@ def main():
                            'sampling_note': 'Missing keys in early records use the pinned server defaults.'})
     for path in sorted((ROOT / 'records/p2').glob('*/summary.json')):
         item = read(path)
-        calls.extend(item['calls'])
+        config = read(path.parent / 'config.json')
+        record_calls(item['calls'], config, 'development_task', str(path.parent.relative_to(ROOT)))
         tasks.append({'record': str(path.parent.relative_to(ROOT)),
                       'model': item['model'],
+                      'ctx_size': config['num_ctx'],
+                      'cache_type_k': config.get('cache_type_k', 'f16'),
+                      'cache_type_v': config.get('cache_type_v', 'f16'),
                       'status': 'finished' if item.get('container_removed') else 'running',
                       'instance_id': item['instance_id'], 'stop_reason': item['stop_reason'],
                       'calls': len(item['calls']), 'total_recorded_tokens': item.get('total_recorded_tokens'),
@@ -63,6 +86,10 @@ def main():
                         for group in ('p2', 'p2_probes', 'p2_capacity')
                         for p in (ROOT / 'records' / group).rglob('request.json')
                         if not (p.parent / 'response.json').exists()]
+    for group in runtime_groups.values():
+        group['contexts'] = sorted(group['contexts'])
+        group['purposes'] = sorted(group['purposes'])
+        group['known_total_tokens'] = group['known_input_tokens'] + group['known_output_tokens']
     report = {'schema_version': 2, 'updated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'scope': 'P2 local calibration and development; not held-out research results',
               'accounting': {'recorded_calls': len(calls), 'calls_with_known_usage': len(known),
@@ -75,6 +102,9 @@ def main():
                                      'Token-count endpoints do not generate and are not added as model calls. '
                                      'Runs without a terminal summary may still be in progress.'},
               'memory_note': 'RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.',
+              'accounting_by_runtime': list(runtime_groups.values()),
+              'runtime_group_note': 'Cost inventory across calibration contexts and task purposes, not a quality comparison. '
+                                    'Early records used the captured f16/f16 server command. Unknown usage is not zero cost.',
               'probes': probes, 'capacity': capacities, 'tasks': tasks}
     out = ROOT / 'reports/P2_measurements.json'
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

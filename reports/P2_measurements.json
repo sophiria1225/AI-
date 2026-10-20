@@ -1,18 +1,97 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-10-20T04:04:01.033073+00:00",
+  "updated_at": "2026-10-20T04:05:10.465644+00:00",
   "scope": "P2 local calibration and development; not held-out research results",
   "accounting": {
     "recorded_calls": 75,
     "calls_with_known_usage": 74,
     "calls_with_unknown_usage": 1,
-    "requests_without_response_record": [],
+    "requests_without_response_record": [
+      "records/p2_capacity/20261020_130359_56000/request.json"
+    ],
     "known_input_tokens": 670067,
     "known_output_tokens": 21957,
     "known_total_tokens": 692024,
     "note": "All generated reasoning and cached logical input are included. Token-count endpoints do not generate and are not added as model calls. Runs without a terminal summary may still be in progress."
   },
   "memory_note": "RSS sampled every 5 seconds, not total unified GPU allocation; swap is system-wide.",
+  "accounting_by_runtime": [
+    {
+      "model": "minimax-m3-q3kl",
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "contexts": [
+        8192,
+        16384,
+        32768,
+        65536
+      ],
+      "purposes": [
+        "development_task",
+        "interface_calibration",
+        "synthetic_capacity"
+      ],
+      "records": [
+        "records/p2_probes/20261020_111428_enabled",
+        "records/p2_probes/20261020_112612_enabled",
+        "records/p2_capacity/20261020_111506_6000",
+        "records/p2_capacity/20261020_111648_14000",
+        "records/p2_capacity/20261020_112020_28000",
+        "records/p2_capacity/20261020_112642_56000",
+        "records/p2/20261020_113741_mini_6688ea",
+        "records/p2/20261020_115912_mini_acf0fa"
+      ],
+      "recorded_calls": 65,
+      "known_input_tokens": 639374,
+      "known_output_tokens": 21476,
+      "unknown_usage_calls": 0,
+      "known_total_tokens": 660850
+    },
+    {
+      "model": "minimax-m3-iq4xs",
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
+      "contexts": [
+        8192,
+        32768,
+        65536
+      ],
+      "purposes": [
+        "interface_calibration",
+        "synthetic_capacity"
+      ],
+      "records": [
+        "records/p2_probes/20261020_124839_enabled",
+        "records/p2_probes/20261020_125858_enabled",
+        "records/p2_capacity/20261020_125342_28000"
+      ],
+      "recorded_calls": 6,
+      "known_input_tokens": 29344,
+      "known_output_tokens": 223,
+      "unknown_usage_calls": 1,
+      "known_total_tokens": 29567
+    },
+    {
+      "model": "minimax-m3-iq4xs",
+      "cache_type_k": "q8_0",
+      "cache_type_v": "q8_0",
+      "contexts": [
+        65536
+      ],
+      "purposes": [
+        "interface_calibration"
+      ],
+      "records": [
+        "records/p2_probes/20261020_130318_enabled"
+      ],
+      "recorded_calls": 4,
+      "known_input_tokens": 1349,
+      "known_output_tokens": 258,
+      "unknown_usage_calls": 0,
+      "known_total_tokens": 1607
+    }
+  ],
+  "runtime_group_note": "Cost inventory across calibration contexts and task purposes, not a quality comparison. Early records used the captured f16/f16 server command. Unknown usage is not zero cost.",
   "probes": [
     {
       "record": "records/p2_probes/20261020_111428_enabled",
@@ -345,6 +424,9 @@
     {
       "record": "records/p2/20261020_113741_mini_6688ea",
       "model": "minimax-m3-q3kl",
+      "ctx_size": 65536,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
       "status": "finished",
       "instance_id": "django__django-15380",
       "stop_reason": "conservative_budget_guard",
@@ -358,6 +440,9 @@
     {
       "record": "records/p2/20261020_115912_mini_acf0fa",
       "model": "minimax-m3-q3kl",
+      "ctx_size": 65536,
+      "cache_type_k": "f16",
+      "cache_type_v": "f16",
       "status": "finished",
       "instance_id": "django__django-15957",
       "stop_reason": "conservative_budget_guard",
