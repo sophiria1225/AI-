@@ -116,8 +116,16 @@ def validate_image(image, plan, manifest):
 PROBE = r'''
 import json, pathlib, platform, subprocess, sys
 def call(*args):
-    r = subprocess.run(args, capture_output=True, text=True, timeout=30)
-    return {"exit_code": r.returncode, "stdout": r.stdout.strip(), "stderr": r.stderr.strip()}
+    try:
+        r = subprocess.run(args, capture_output=True, text=True, timeout=30)
+        return {"exit_code": r.returncode, "stdout": r.stdout.strip(), "stderr": r.stderr.strip()}
+    except subprocess.TimeoutExpired as e:
+        def text(v):
+            return v.decode(errors="replace") if isinstance(v, bytes) else (v or "")
+        return {"exit_code": None, "stdout": text(e.stdout).strip(),
+                "stderr": text(e.stderr).strip(), "timed_out": True}
+    except OSError as e:
+        return {"exit_code": None, "stdout": "", "stderr": repr(e), "process_start_failed": True}
 roots = [p for p in ("/app", "/testbed") if pathlib.Path(p, ".git").exists()]
 result = {"python": platform.python_version(), "machine": platform.machine(), "roots": roots}
 if len(roots) == 1:
@@ -126,8 +134,10 @@ if len(roots) == 1:
     result["status"] = call("git", "-C", root, "status", "--porcelain")
     result["refs"] = call("git", "-C", root, "for-each-ref", "--format=%(refname) %(objectname)")
     result["stash"] = call("git", "-C", root, "stash", "list")
-    result["task_id_commit_present"] = call("git", "-C", root, "cat-file", "-e", sys.argv[1] + "^{commit}")["exit_code"] == 0
-    result["unreachable"] = call("git", "-C", root, "fsck", "--no-reflogs", "--unreachable")
+    result["task_id_commit_probe"] = call("git", "-C", root, "cat-file", "-e", sys.argv[1] + "^{commit}")
+    code = result["task_id_commit_probe"]["exit_code"]
+    result["task_id_commit_present"] = (code == 0) if code in (0, 128) else None
+    result["unreachable"] = call("git", "-C", root, "fsck", "--connectivity-only", "--no-reflogs", "--unreachable")
     result["private_locations_present"] = [p for p in ("/solution", "/tests/test_patch.patch", "/tests/config.json")
                                           if pathlib.Path(p).exists()]
     result["rootfs_apparent_bytes"] = call("du", "--apparent-size", "-s", "-x", "--block-size=1", "/")
@@ -145,6 +155,9 @@ def validate_probe(probe, plan):
         raise ValueError("Image base commit differs from selected task")
     if probe["status"]["stdout"] or probe["stash"]["stdout"]:
         raise ValueError("Image contains unexpected changes or stashes")
+    if (type(probe.get("task_id_commit_present")) is not bool
+            or probe["task_id_commit_probe"]["exit_code"] not in (0, 128)):
+        raise ValueError("Cannot determine whether the task commit is present")
     if probe["task_id_commit_present"] or probe["private_locations_present"]:
         raise ValueError("Potential solution/evaluator exposure in the image")
     if probe["unreachable"]["stdout"]:

@@ -2,13 +2,15 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 import tempfile
 import types
 import unittest
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from prepare_pro_environment import check_space, completed_trials, validate_image, validate_probe, GIB
+from prepare_pro_environment import check_space, completed_trials, validate_image, validate_probe, GIB, PROBE
 
 
 class ProEnvironmentGateTests(unittest.TestCase):
@@ -77,11 +79,14 @@ class ProEnvironmentGateTests(unittest.TestCase):
                  **{key: {"exit_code": 0, "stdout": "", "stderr": ""}
                     for key in ("head", "status", "refs", "stash", "unreachable")},
                  "task_id_commit_present": False, "private_locations_present": [],
+                 "task_id_commit_probe": {"exit_code": 128, "stdout": "", "stderr": "Not a valid object name"},
                  "rootfs_apparent_bytes": {"exit_code": 0, "stdout": "1000\t/", "stderr": ""}}
         probe["head"]["stdout"] = "base"
         validate_probe(probe, {"base_commit": "base"})
         for key, value in [("private_locations_present", ["/solution"]),
                            ("task_id_commit_present", True),
+                           ("task_id_commit_probe", {"exit_code": None, "timed_out": True}),
+                           ("unreachable", {"exit_code": None, "stdout": "", "timed_out": True}),
                            ("rootfs_apparent_bytes", {"exit_code": 1, "stdout": "0\t/"}),
                            ("head", {"exit_code": 0, "stdout": "other"})]:
             changed = copy.deepcopy(probe)
@@ -121,6 +126,17 @@ class ProEnvironmentGateTests(unittest.TestCase):
                 changed["Descriptor"] = descriptor
             with self.subTest(identity=identity, descriptor=descriptor), self.assertRaises(ValueError):
                 validate_image(types.SimpleNamespace(id=identity, attrs=changed), plan, manifest)
+
+    def test_probe_timeout_preserves_partial_output_without_claiming_success(self):
+        namespace = {}
+        exec(PROBE.split("roots =", 1)[0], namespace)
+        timeout = subprocess.TimeoutExpired(["git", "fsck"], 30, output=b"partial result", stderr=b"partial error")
+        with mock.patch.object(namespace["subprocess"], "run", side_effect=timeout):
+            result = namespace["call"]("git", "fsck")
+        self.assertIsNone(result["exit_code"])
+        self.assertTrue(result["timed_out"])
+        self.assertEqual(result["stdout"], "partial result")
+        self.assertEqual(result["stderr"], "partial error")
 
 
 if __name__ == "__main__":

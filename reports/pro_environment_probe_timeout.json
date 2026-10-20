@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-20T08:26:37.511257+00:00",
+  "failed_attempt": "records/pro_environment/PRO_ENV_02",
+  "preparation": {
+    "started_at": "2026-10-20T08:23:23.242162+00:00",
+    "status": "error",
+    "plan_sha256": "ea0305b83653bce565037feff21aa653001ea79510e891e90ce19c42597bf8d9",
+    "source_sha256": "260b621a025cecee7a3b6ec667308195cad0f601d262ca63904dc17322a041f4",
+    "image": "ghcr.io/scaleapi/swe-bench_pro-v2@sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "model_calls": 0,
+    "reference_or_hidden_tests_read": false,
+    "p3_completion": [
+      {
+        "trial_id": "P3-01",
+        "run": "records/p3/20261020_153145_single_e3832c",
+        "artifact_sha256": "3ce80bfcfc339c4d162d4b2f56780611dd72865425e59acefbb110e2306f13cb",
+        "resolved": true
+      },
+      {
+        "trial_id": "P3-02",
+        "run": "records/p3/20261020_154133_fixed_pair_86bf4d",
+        "artifact_sha256": "ce3acb34cf793999092f422477f49a7b396cca9dcd050dd7d310f258f97624a2",
+        "resolved": true
+      },
+      {
+        "trial_id": "P3-03",
+        "run": "records/p3/20261020_162601_fixed_pair_5c59de",
+        "artifact_sha256": "c8ca8c68f200b616c99332e7d91cf91c50aa75b489e5aa6abee0324f30eb7e0b",
+        "resolved": false
+      },
+      {
+        "trial_id": "P3-04",
+        "run": "records/p3/20261020_170626_single_af590d",
+        "artifact_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resolved": false
+      }
+    ],
+    "space_before": {
+      "host_free_bytes": 313808928768,
+      "vm_free_bytes": 32915431424
+    },
+    "image_identity": {
+      "local_image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "identity_kind": "manifest_digest_with_matching_descriptor",
+      "manifest_digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+      "manifest_configuration_digest": "sha256:99c415e0be8730aac426a17fa6cf55f92c04145fe8a9d05e755e8adce1849bfb",
+      "descriptor": {
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "digest": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+        "size": 4469
+      }
+    },
+    "image_id": "sha256:2ee62346a660d4329f1b4126ecadd02291a0ffca97939c478fbe2b4683dc3e5e",
+    "docker_inspect_reported_size_bytes": 760395006,
+    "space_after_pull": {
+      "host_free_bytes": 313808920576,
+      "vm_free_bytes": 32915431424
+    },
+    "error": "ValueError('Probe process failed; raw logs retained')",
+    "wall_seconds": 33.48531462508254
+  },
+  "diagnosis": "git fsck --no-reflogs --unreachable exceeded the per-command 30 second timeout; exception prevented probe JSON output. Container was removed. No model or private evaluation inputs used.",
+  "stderr_sha256": "bc415aa9cd2b5cc807696a4a39408d7c78b5d669e917f4f515a02e514cea7098",
+  "change": "Use --connectivity-only for reachability without scanning blob contents. Retain command timeouts and partial output as unsuccessful observations rather than aborting all structured output. Unknown task-commit probe cannot count as absent.",
+  "source": "https://git-scm.com/docs/git-fsck",
+  "not_adopted": [
+    "Skip reachability check",
+    "Extend timeout without identifying which check was slow",
+    "Classify timeout as clean history"
+  ],
+  "tests": {
+    "passed": 16,
+    "preparation": 9,
+    "verifier": 4,
+    "public_selection": 3,
+    "log_sha256": "117211ddeb83ac08bf898638e5ac8aa9ab80337e181ec2c33e0a7623e9e86c06"
+  },
+  "next_attempt": "PRO_ENV_03; same plan/image/resources; no model performance retry"
+}
