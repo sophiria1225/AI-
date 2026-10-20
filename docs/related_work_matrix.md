@@ -41,3 +41,5 @@ APOは原論文の前提・4.1節も確認した。既知の有限領域と制�
 さらに、*Completeness and Performance of the APO Algorithm*（JAIR 33、223–258、2008）の概要と6.1節を確認した。原APOの一部の場合に停止しない問題を示し、CompAPOへ修正している。仲介対象全体の確保と、古いセッションの遅延メッセージを区別するIDも扱う。arXivへの登録は2014年で、掲載年とは異なる。従って原APOの保証を無条件に引用せず、版と前提を区別する。[著者提供の掲載原稿](https://arxiv.org/pdf/1401.3450)、[書誌・DOI](https://arxiv.org/abs/1401.3450)。
 
 実装への示唆として、移管時の停止境界・版ID・遅延出力対策は共通の基盤機能として扱う。これらを追加しただけでは新規性としない。2012年のImproving APO本文、保証の全証明、実装再現は未完了である。
+
+GCCの追加検索で[ImprintLab/git-context-controller](https://github.com/ImprintLab/git-context-controller)などの実装候補を見つけた。確認時のdefault branchはdev、作成日は2026年7月24日。READMEのv2という名前だけでは、論文v2の評価コードと同一だと確認できない。論文の著者提供HTMLから対応する実装の明示的リンクは確認できておらず、公式再現コードとしてまだ採用しない。GitHubの名称・機能が似ていることと、論文の手法・予算・実験条件を再現することは区別する。候補のAPI取得記録は`records/sources/20261020_near_work/gcc_candidate_repository.json`に保存した。
