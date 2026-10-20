@@ -19,7 +19,7 @@
 | P1 | R11 | 追加課題を公開情報だけで点検し採否理由を残す | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/15) |
 | P1 | R12 | 広い作業依存を持つ主課題の候補と実行条件を調べる | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/16) |
 | P1 | R13 | Pro V2の1環境で起動と独立評価の正負対照を確認する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/18) |
-| P1 | R14 | Pro V2を共通実行器へ接続し初回単一試行を校正する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/20) |
+| P1 | R14 | Pro V2を共通実行器へ接続し初回単一試行を校正する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/20) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -129,7 +129,7 @@ PRO_ENV_05で正負対照を確認。空差分は要求4件不合格・既存21�
 
 ## R14 Pro V2を共通実行器へ接続し初回単一試行を校正する
 
-R13の正負対照が成立。PR #21で共通実行経路を接続し、PRO_RUNTIME_01で実ツール・非ゼロ終了・新規ファイル保存・復元を確認。公開基点131テスト合格、ホスト97制御テスト合格。P4_PRO_01は同じIQ4/q8モデルで1課題1回、上限60呼び出し・600,000トークン・3,600秒の単一観察として実行前に固定する。理由・代替案・旧課題と直接比較しない制約をdocs/experiments/Pro_first_pilot.mdへ記録。 P4_PRO_01 started at 18:10 JST under frozen plan 64701ea17fddc2a2b7c62d490fada7f576c2250f4289df9ece187e62a2a0c166; final evaluation is pending.
+P4_PRO_01を独立評価まで完了。38呼び出し586,166トークン、448.53秒、予算停止。調査と一時的再現を行ったが最終パッチ0B。公開既存131件は合格、独立評価は要求0/4・既存21/21で未解決。監査エラー0、形式エラー0、タイムアウト0。初回再現までの費用、再現処理の不備、キャッシュ・停止条件をdocs/P4_findings.mdへ記録。自動再編の必要性は未確認。次は中間資料へ成果と未実証事項を整理し、同条件の工程分担観察を別計画として検討する。
 
 **なぜ行うか**: 大規模な作業依存の候補を、共通の費用・状態・成果物管理で測る準備が必要。既存のDjango専用パスを新しい課題へ誤用しない。
 

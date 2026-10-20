@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-20T09:21:29.260326+00:00",
+  "record": "records/pro_pilot/P4_PRO_01",
+  "scope": "Manual review of public tool commands and one public reproduction output; no model reasoning or hidden test contents displayed",
+  "reviewed_tools": 38,
+  "first_reproduction_tool": "tool_032",
+  "first_reproduction_turn": 32,
+  "tokens_before_first_reproduction": 404067,
+  "tokens_through_first_reproduction": 429153,
+  "retained_repository_artifact_bytes": 0,
+  "reproduction_location": "/tmp/repro/repro.py",
+  "visible_output_truncations": 1,
+  "first_request_contains_all_three_public_fields": true,
+  "thinking_enabled_shape_check": {
+    "first_32_responses_have_nonempty_reasoning_field": true,
+    "reasoning_text_displayed": false
+  },
+  "findings": [
+    "First 31 tool commands inspect or search public source/tests; the first reproduction is tool 032.",
+    "No repository source or test was changed. The temporary reproduction source is retained in the tool-command record.",
+    "The reproduction observes missing trust/origin information for its first case. It subscripts a generator in another case, and lacks VaultSecretsContext for a vault case. These errors do not establish that all intended requirements were tested.",
+    "Caught errors let the reproduction exit 0. Public base checks also pass without the requested implementation. Neither implies task completion.",
+    "No format errors, tool timeouts or accounting errors were observed. Four nonzero tool exits include absent grep matches, an incorrect file path and a pipe exit 141.",
+    "Input accounts for 583040 of 586166 tokens. Cached input 559572 is included in logical token cost; it is not additional cost or a logical-token discount."
+  ],
+  "limits": [
+    "No conclusion that all reading was unnecessary or that a particular prompt, model, or dependency caused the failure.",
+    "No current evidence that work ownership transfer is required.",
+    "Single previously exposed task with changed budget cannot establish general efficiency or noninferiority."
+  ],
+  "evidence_sha256": {
+    "summary.json": "8b29dd807150bb511fd64511c9ed4c0082379298b04dd18a9ec7b518af334b3f",
+    "tool_032/result.json": "60cde1de2210056a9666a89f1db0eed206a530f8bccae7e309e48cdd87886284",
+    "tool_033/result.json": "5b4d61a41037043ca0f8556db5669b76d56a47427e972cb9c92aed13d66e8a0a"
+  }
+}
