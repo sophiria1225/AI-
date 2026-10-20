@@ -1,9 +1,10 @@
 {
-  "at": "2026-10-20T03:15:14.782648+00:00",
-  "scope": "Configuration and prompt comparison before IQ4 capacity validation; no model inference",
+  "at": "2026-10-20T03:56:01.701475+00:00",
+  "scope": "Recorded Q3 conditions versus prepared IQ4; no model inference",
   "pairs": [
     {
       "task": "15380",
+      "Q3_record": "records/p2/20261020_113741_mini_6688ea",
       "changed_config_fields": [
         "calibration_records",
         "model",
@@ -11,11 +12,48 @@
         "model_selection",
         "readiness"
       ],
+      "unexpected_changed_fields": [],
       "identical_agent_templates": true,
-      "IQ4_readiness": "pending"
+      "IQ4_readiness": "pending",
+      "source_comparison": {
+        "run_mini_pilot.py": {
+          "baseline_sha256": "92fc6f1d70e952ff4b3ef01ba01db5b901fdf9d68b76f20ebcc2dd0d095f6491",
+          "current_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+          "identical": false
+        },
+        "run_e0_pilot.py": {
+          "baseline_sha256": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+          "current_sha256": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+          "identical": true
+        },
+        "container_policy.py": {
+          "baseline_sha256": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+          "current_sha256": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+          "identical": true
+        },
+        "artifact_capture.py": {
+          "baseline_sha256": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+          "current_sha256": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+          "identical": true
+        },
+        "local_llama.py": {
+          "baseline_sha256": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+          "current_sha256": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+          "identical": true
+        },
+        "visible_checks.py": {
+          "baseline_sha256": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19",
+          "current_sha256": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19",
+          "identical": true
+        }
+      },
+      "unchanged_inference_environment_template_definitions": true,
+      "runner_change_note": "The runner file differs: the model-specific startup provenance check was generalized, a readiness guard and extra provenance records were added. The inference adapter, environment adapter, templates, and other previously captured sources are compared here. This is a source/configuration audit, not proof of numerical equivalence.",
+      "passed": true
     },
     {
       "task": "15957",
+      "Q3_record": "records/p2/20261020_115912_mini_acf0fa",
       "changed_config_fields": [
         "calibration_records",
         "model",
@@ -23,9 +61,47 @@
         "model_selection",
         "readiness"
       ],
+      "unexpected_changed_fields": [],
       "identical_agent_templates": true,
-      "IQ4_readiness": "pending"
+      "IQ4_readiness": "pending",
+      "source_comparison": {
+        "run_mini_pilot.py": {
+          "baseline_sha256": "92fc6f1d70e952ff4b3ef01ba01db5b901fdf9d68b76f20ebcc2dd0d095f6491",
+          "current_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+          "identical": false
+        },
+        "run_e0_pilot.py": {
+          "baseline_sha256": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+          "current_sha256": "eefe424460723d21020dd2f8b1d246b26ba00f7b8ffb93690c339767cf4c4d22",
+          "identical": true
+        },
+        "container_policy.py": {
+          "baseline_sha256": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+          "current_sha256": "dd188671ff9698ecea8ab58921313015ecf79cb50c247ad18598e61624c8c691",
+          "identical": true
+        },
+        "artifact_capture.py": {
+          "baseline_sha256": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+          "current_sha256": "92eb1464b7bc525cef582a11f7f3ba6aacdf897649550f7a27a2c35cc31bd387",
+          "identical": true
+        },
+        "local_llama.py": {
+          "baseline_sha256": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+          "current_sha256": "c68054486e31741cc8a39ae866227a28f001bcde600a5beae4045e7ae6616f0d",
+          "identical": true
+        },
+        "visible_checks.py": {
+          "baseline_sha256": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19",
+          "current_sha256": "dc125d2f21d41a3141fcbbeb3fadb18356e1946c505f2bd039bbf576ce885d19",
+          "identical": true
+        }
+      },
+      "unchanged_inference_environment_template_definitions": true,
+      "runner_change_note": "The runner file differs: the model-specific startup provenance check was generalized, a readiness guard and extra provenance records were added. The inference adapter, environment adapter, templates, and other previously captured sources are compared here. This is a source/configuration audit, not proof of numerical equivalence.",
+      "passed": true
     }
   ],
-  "runner_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad"
+  "runner_sha256": "1f3ca2ea6e7628bb9337b146246f3ed71895a5d7fd38acfbe8a0dce7fcd409ad",
+  "checker_sha256": "11ebdb2a9f73499c94ce3bcba8c932bdbcd0db0fef9bcf577bd50416fd95d627",
+  "passed": true
 }
