@@ -30,6 +30,32 @@ NATIVE_PROMPT = AGENT_PROMPT.replace(
     "Call supervisor.complete_task", "Call supervisor__complete_task")
 
 
+GENERAL_GUIDANCE = """
+Environment usage rules (ordinary baseline guidance):
+Get the current simulated date and time using phone__get_current_date_and_time;
+do not use your own clock. Use full time intervals when a request names a period.
+People described by a relationship are found in the phone contact list.
+The file system in a task is the file_system app, not the host operating system.
+For a paginated list, follow page_index until you have covered the relevant
+results. A full first page does not show that the list is exhausted.
+When calling supervisor__complete_task for an action request rather than a
+question, omit answer (or use null). For a question, supply only the requested
+number, entity or value, without an explanatory sentence. Use status=fail if you
+cannot complete the task; do not mark unfinished work successful.
+"""
+
+
+def system_prompt_for(config):
+    """P24 adds only documented generic instructions; legacy prompts stay fixed."""
+    if config['phase'] == 'P24':
+        if config.get('general_guidance_version') != 'appworld_public_rules_v1':
+            raise ValueError('P24 requires its fixed public guidance version')
+        return NATIVE_PROMPT + GENERAL_GUIDANCE
+    if 'general_guidance_version' in config:
+        raise ValueError('do not add P24 guidance to a previous experiment')
+    return NATIVE_PROMPT
+
+
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -44,13 +70,14 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles", "P23": "native_compute"}
+    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles", "P23": "native_compute", "P24": "native_guided"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
             or not run_id.replace("_", "").isalnum()):
         raise ValueError("outside the fixed native-baseline plan")
     arm = expected[phase]
+    system_prompt = system_prompt_for(config)
     use_compute = arm == 'native_compute'
     if use_compute != ('ordinary_compute' in config):
         raise ValueError('ordinary compute needs its explicit arm and controls')
@@ -74,9 +101,9 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "run_context_comparison.py", "context_preservation.py", "local_llama.py",
         "appworld_bridge.py", "model_provenance.py",
     ]
-    if arm in ("native_roles", "native_compute"):
+    if arm in ("native_roles", "native_compute", "native_guided"):
         files.append("native_conversation.py")
-    if phase in ("P11", "P18", "P22", "P23"):
+    if phase in ("P11", "P18", "P22", "P23", "P24"):
         files.append("native_boundary_record.py")
     if use_compute:
         files += ['native_compute_session.py', 'native_data_compute.py', 'container_data_python.py']
@@ -136,7 +163,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase not in ("P11", "P18", "P22", "P23"):
+        if phase not in ("P11", "P18", "P22", "P23", "P24"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()
@@ -151,8 +178,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise RuntimeError(response["error"])
         task = response["result"]
         write_json(out / "public_task.json", task)
-        if arm in ("native_roles", "native_compute"):
-            conversation = NativeConversation(NATIVE_PROMPT, task)
+        if arm in ("native_roles", "native_compute", "native_guided"):
+            conversation = NativeConversation(system_prompt, task)
             write_json(out / "conversation_private.json", conversation.messages())
         capture("initial")
         while not complete:

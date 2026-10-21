@@ -1,0 +1,106 @@
+{
+  "run_id": "P22_04_ROLES",
+  "task_id": "771d8fc_1",
+  "arm": "native_roles",
+  "stop_reason": "agent_declared_complete",
+  "declared_complete": true,
+  "known_total_tokens": 74335,
+  "usage_by_role": {
+    "agent": {
+      "calls": 7,
+      "input_tokens": 70406,
+      "output_tokens": 3929,
+      "unknown_usage": 0
+    }
+  },
+  "model_calls": 7,
+  "tool_turns": 30,
+  "compression_events": 0,
+  "format_errors": 0,
+  "api_bridge_errors": 0,
+  "wall_seconds": 392.67700583301485,
+  "evaluation": {
+    "official_success": true,
+    "pass_count": 6,
+    "fail_count": 0,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 0,
+  "peak_input_tokens": 16397,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "bd0ee2da0a1626463c828644d78770dcee3d28dd4e7a578e1245a20873acb92a",
+    "usage": "7211ccf17c8fa1f38e8050388f7c5b7206d227e8c4bef89511a35a768471a9cf",
+    "evaluation": "0d9f1a07af5770d79f6cfdfbe88b797fab50b4724b8583b251c79e2afe262f09",
+    "events.json": "206cf190e3edc5e1c951a707882604baec3ad21cd9ea633e854dc73b9f7d152d",
+    "spans.json": "9a10b6f5402c944ee9310f2e2f4c47e6aae59ee604210a59573bdc0accdedf2d",
+    "plan.json": "921925fc0f26a30eddcff18d69b640342ce164caf3ea81375aa6e0402cd0fee7"
+  },
+  "counts": {
+    "recorded_operations": 30,
+    "api_requests_sent": 30,
+    "unknown_effect_requests": 0,
+    "returned_api_results_without_detected_error": 30,
+    "public_schemas_added": 30,
+    "multiple_call_responses": 3
+  },
+  "calls": [
+    {
+      "call_id": "call_001",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 11,
+      "api_requests_sent": 1
+    },
+    {
+      "call_id": "call_002",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 41,
+      "api_requests_sent": 1
+    },
+    {
+      "call_id": "call_003",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 41,
+      "api_requests_sent": 1
+    },
+    {
+      "call_id": "call_004",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 41,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_005",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 41,
+      "api_requests_sent": 2
+    },
+    {
+      "call_id": "call_006",
+      "requested_tool_calls": 22,
+      "recorded_operations": 22,
+      "supplied_schemas": 41,
+      "api_requests_sent": 22
+    },
+    {
+      "call_id": "call_007",
+      "requested_tool_calls": 1,
+      "recorded_operations": 1,
+      "supplied_schemas": 41,
+      "api_requests_sent": 1
+    }
+  ],
+  "dispatch_audit_errors": [],
+  "history_audit_errors": [],
+  "last_input_formatting": {
+    "text_fallback_turns": 0,
+    "paged_spans": 0
+  },
+  "scope": "Saved model requests, schemas and ordered dispatch metadata. Transport acceptance is not semantic or final task success. No environment execution or model inference; no payload text exported.",
+  "script_sha256": "0b709f17a70edd4bb9404bd6aef185af7461a7af19c997a2176cb862dac5109b"
+}

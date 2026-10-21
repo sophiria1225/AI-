@@ -1,0 +1,30 @@
+{
+  "run_id": "P22_05_ROLES",
+  "status": "finished",
+  "repeated_requests": [
+    {
+      "public_api": "file_system__show_directory",
+      "previous_span_id": "s7",
+      "current_span_id": "s12",
+      "current_call_id": "call_007",
+      "previous_call_id": "call_005",
+      "prior_result_predates_current_call": true,
+      "previous_span_retained": true,
+      "same_recorded_observation": false
+    }
+  ],
+  "count": 1,
+  "same_call_repeats": 0,
+  "prior_receipt_not_retained": 0,
+  "same_observation_and_prior_not_retained": 0,
+  "source_hashes": {
+    "events.json": "5959c6ba26e54f50859f07c0949e766a376bacbb67c5414d3915dfe8d817ccf4",
+    "spans.json": "512c87f01d2ffa36307153cdcce421e9041be523be9230cb90aa4a2132e8b4da",
+    "provenance.json": "cb88176027f545e7107cd328a2a8700ba5ae9483cbd70c1130f7a5831d68df7c"
+  },
+  "script_sha256": "b9be108094ddc66afe0b29b40a848b238ac05dcc07d6f85dcc72b31687f139e2",
+  "model_calls": 0,
+  "environment_calls": 0,
+  "evaluator_loaded": false,
+  "scope": "Exactly equal public API name and parsed arguments; receipts compared only for equality. No argument values or per-secret hashes exported. Repetition is not automatically unnecessary or caused by forgetting: state and validity may change. A missing original receipt does not establish that its information is absent from other retained turns, a ledger or the accessible archive."
+}

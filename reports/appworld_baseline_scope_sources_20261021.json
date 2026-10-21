@@ -61,5 +61,20 @@
   "new_model_calls": 0,
   "environment_requests": 0,
   "reserved_instruction_reads": 0,
-  "demos_opened": false
+  "demos_opened": false,
+  "installed_code_execution_inspection": {
+    "checked_at": "2026-10-21T12:07:08.136647+00:00",
+    "version": "0.1.3.post1",
+    "source_sha256": {
+      "environment.py": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9",
+      "common/safety_guard.py": "fa105c1bc55bc9fc3dba70f414bdfcb43e05fcede06e63477ceb712037044da7"
+    },
+    "review_scope": "environment.execute lines458-550 and SafetyGuard syntax checks; source inspection only",
+    "findings": [
+      "Official execution can run whole code cells and return cell output; native receipt computation cannot invoke environment APIs from generated code.",
+      "Syntax checks and patched unsafe functions are present; this read is not a container-isolation test or complete security audit."
+    ],
+    "model_calls": 0,
+    "generated_code_executions": 0
+  }
 }
