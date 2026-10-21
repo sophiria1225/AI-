@@ -46,8 +46,8 @@ cannot complete the task; do not mark unfinished work successful.
 
 
 def system_prompt_for(config):
-    """P24 adds only documented generic instructions; legacy prompts stay fixed."""
-    if config['phase'] == 'P24':
+    """P24/P25 use identical public guidance; legacy prompts stay fixed."""
+    if config['phase'] in ('P24', 'P25'):
         if config.get('general_guidance_version') != 'appworld_public_rules_v1':
             raise ValueError('P24 requires its fixed public guidance version')
         return NATIVE_PROMPT + GENERAL_GUIDANCE
@@ -70,7 +70,7 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles", "P23": "native_compute", "P24": "native_guided"}
+    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles", "P23": "native_compute", "P24": "native_guided", "P25": "native_guided"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
@@ -103,7 +103,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     ]
     if arm in ("native_roles", "native_compute", "native_guided"):
         files.append("native_conversation.py")
-    if phase in ("P11", "P18", "P22", "P23", "P24"):
+    if phase in ("P11", "P18", "P22", "P23", "P24", "P25"):
         files.append("native_boundary_record.py")
     if use_compute:
         files += ['native_compute_session.py', 'native_data_compute.py', 'container_data_python.py']
@@ -163,7 +163,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase not in ("P11", "P18", "P22", "P23", "P24"):
+        if phase not in ("P11", "P18", "P22", "P23", "P24", "P25"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()

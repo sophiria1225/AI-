@@ -556,6 +556,8 @@ Rules e4e1687; implementation 6463767; all 16 completed runs, 70 query groups: 4
 
 2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。
 
+P24 fully audited. P25 keeps all four P18 tasks, order, model and budgets; exactly the same generic guidance as P24. 408 tests and compileall passed; 304 source files frozen. Server idle with 18,282 seconds remaining at preflight, against 8,100 required; rechecked at launch. No real P25 execution yet. See reports/P25_activation_v01.json, reports/P25_execution_controls_v01.json and D129.
+
 **なぜ行うか**: 取得後の欠落・API上限の観測を、通常の時刻・列挙・完了案内をそろえた基準でも確認し、独自機構の必要性と切り分ける。
 
 **他候補の扱い**: 失敗２件だけの選択、正解件数の提示、上限増加、計算道具と指示の同時変更、未閲覧12確認シナリオの先行消費はしない。
