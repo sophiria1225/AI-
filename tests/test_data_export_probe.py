@@ -1,4 +1,5 @@
 import json
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -7,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from data_export_probe import extract_case, inputs, schedule
 from evaluate_data_export_probe import check_csv, expected_from_observations, evaluate
+from run_data_export_probe import store_frozen_file
 
 
 class ExportProbeTests(unittest.TestCase):
@@ -35,11 +37,25 @@ class ExportProbeTests(unittest.TestCase):
         plan = {'run_id': 'P20_01', 'variants': ['literal_csv', 'data_program'],
                 'seeds': [51, 52, 53], 'max_calls': 6}
         rows = schedule(plan)
+        self.assertEqual(rows, schedule(dict(plan, run_id='P21_01')))
         self.assertEqual(len(rows), 6)
         for seed in plan['seeds']:
             self.assertEqual({r['variant'] for r in rows if r['seed'] == seed}, set(plan['variants']))
         with self.assertRaises(ValueError):
             schedule(dict(plan, seeds=[51, 52, 54]))
+
+    def test_archival_preserves_frozen_bytes_and_rejects_mutation(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source, dest = Path(temp)/'source.json', Path(temp)/'saved.json'
+            data = b'{"seeds":[51,52,53], "cap":8192}\n'
+            source.write_bytes(data)
+            digest = hashlib.sha256(data).hexdigest()
+            store_frozen_file(source, dest, digest)
+            self.assertEqual(dest.read_bytes(), data)
+            source.write_text('{"seeds":[51,52,53], "cap":4096}')
+            with self.assertRaisesRegex(ValueError, 'changed before archival'):
+                store_frozen_file(source, dest, digest)
+            self.assertEqual(dest.read_bytes(), data)
 
     def test_csv_checks_missing_extra_duplicates_and_artist_order(self):
         expected = {('A, song', ('First', 'Second')), ('Other', ('Third',))}

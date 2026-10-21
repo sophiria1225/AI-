@@ -1,4 +1,4 @@
-"""Prepare and freeze the P20 diagnostic without any model or environment call."""
+"""Prepare and freeze an export diagnostic without model/environment calls."""
 import argparse
 import ast
 import json
@@ -47,9 +47,10 @@ if __name__ == '__main__':
     manifest['input_sha256'] = sha(out/'input.json')
     (out/'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
     paths = local_dependencies(['scripts/prepare_data_export_probe.py', 'scripts/run_data_export_probe.py',
-                                'scripts/data_python.py', 'scripts/evaluate_data_export_probe.py'])
+                                'scripts/data_python.py', 'scripts/evaluate_data_export_probe_v02.py',
+                                'scripts/audit_export_generation.py'])
     paths += [plan['model_matches'], 'configs/models/minimax_m3_iq4_selection.json']
-    frozen = {'phase': 'P20', 'plan_sha256': sha(a.plan), 'input_sha256': manifest['input_sha256'],
+    frozen = {'phase': plan['phase'], 'plan_sha256': sha(a.plan), 'input_sha256': manifest['input_sha256'],
               'input_manifest_sha256': sha(out/'manifest.json'),
               'source_hashes': {path: sha(ROOT/path) for path in paths}, 'schedule': order,
               'model_calls': 0, 'environment_requests': 0, 'reserved_task_reads': 0,
