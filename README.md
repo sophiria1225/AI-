@@ -31,6 +31,8 @@ P20の[全結果](docs/P20_findings.md)を保存しました。P21は19:08 JST�
 
 実際に起きた記憶生成の失敗を監査し、基準実装の不整合を修正しました。[P17の固定比較](docs/experiments/P17_ledger_contract.md)は同じ４入力×２版×新しい２seed＝16生成を終了。形式の整合は確認できましたが、全対象を確認したという曖昧な完了と、要求側だけの引用が残りました。**この修正を新規性や意味上の安全性とは呼びません。** 全体実行への接続は準備済みですが、新たな台帳性能試験を自動開始する判断はしていません。[採否・代案を選ばなかった理由](docs/P17_findings.md)。
 
+P21の待機中に、以前予約した６開発シナリオの[公開要求だけを確認](docs/experiments/P22_development_preparation.md)しました。次のモデル実行は、P21の全結果を閉じてから条件を決めます。
+
 確認用の12シナリオは要求文を未閲覧のまま保留しています。[開発との分離](docs/letter_scenario_reservation_20261021.md)と[少数評価で主張できる範囲](docs/letter_evaluation_scope_20261021.md)を記録しました。方式と評価条件を固定してから使います。
 
 [取得後の欠落と既存研究の境界](docs/export_mechanism_review_20261021.md)も確認中です。CodeAct、VeriGuard、AgentTrailsとの重なりと、原典を読んだ範囲を記録しました。
