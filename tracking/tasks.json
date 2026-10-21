@@ -1245,14 +1245,17 @@
         "全４件を実行し、成否と全費用を監査",
         "残る問題・採否・次の比較を記録"
       ],
-      "completed_steps": [],
+      "completed_steps": [
+        "P18の成功例を含む全４件・同一指示と予算を固定",
+        "P24全件の監査後に実行器・起動判断を固定"
+      ],
       "acceptance": [
         "一般指示を新規手法と呼ばない",
         "P24の凍結作業木を変更しない",
         "全件終了前に残りの条件を変更しない",
         "実行前に十分なモデルサーバー期限を確認する"
       ],
-      "progress": "2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。"
+      "progress": "2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。\n\nP24 fully audited. P25 keeps all four P18 tasks, order, model and budgets; exactly the same generic guidance as P24. 408 tests and compileall passed; 304 source files frozen. Server idle with 18,282 seconds remaining at preflight, against 8,100 required; rechecked at launch. No real P25 execution yet. See reports/P25_activation_v01.json, reports/P25_execution_controls_v01.json and D129."
     }
   ]
 }
