@@ -1,0 +1,16 @@
+{
+  "phase": "P18_selection",
+  "version": 1,
+  "dataset": "AppWorld",
+  "runtime_version": "0.1.3.post1",
+  "split": "train",
+  "prior_instruction_exposed_scenarios": ["07b42fd", "229360a", "22cc237", "27e1026", "287e338", "29caf6f", "2a163ab", "302c169"],
+  "count": 4,
+  "rule": "Read train IDs only. Exclude all eight instruction-exposed scenarios, sort remaining scenario IDs lexicographically, take the first four, variant _1. Keep every selected task regardless of instruction, apparent difficulty or later result.",
+  "input_fields": ["instruction"],
+  "forbidden_selection_inputs": ["solution", "ground_truth", "evaluation", "difficulty", "database_contents", "model_outcome"],
+  "private_packet": "records/task_selection/P18_public_train_v01",
+  "scope": "Additional development observations to find natural need for a harness mechanism after P16 no-go; not independent confirmation, a representative benchmark score, or proof of novelty.",
+  "model_runs_authorized_by_this_plan": 0,
+  "followup": "Characterize public requirements after selection, then freeze a full-history baseline run using the P11 model, public API access and budgets. Do not automatically apply P16's rejected candidate or turn P17's own adapter correction into a proposed method."
+}

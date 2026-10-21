@@ -43,7 +43,7 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles"}
+    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
@@ -72,7 +72,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     ]
     if arm == "native_roles":
         files.append("native_conversation.py")
-    if phase == "P11":
+    if phase in ("P11", "P18"):
         files.append("native_boundary_record.py")
     hashes = {}
     for name in files:
@@ -125,7 +125,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase != "P11":
+        if phase not in ("P11", "P18"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()
