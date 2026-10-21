@@ -16,13 +16,13 @@
 | 準備中：原稿 | あらまし・本文の骨格と原典照合した書誌を保存。日本語PDFの描画は確認済み。結果の確定、著者情報、公式IEICEクラスによる４ページ確認は未完了。 |
 
 進捗は [Project](https://github.com/users/sophiria1225/projects/1)、[新規性 #70](https://github.com/sophiria1225/AI-/issues/70)、[実験 #71](https://github.com/sophiria1225/AI-/issues/71)、[原稿 #72](https://github.com/sophiria1225/AI-/issues/72)へ同期します。
-P16の[自動進捗コメント](https://github.com/sophiria1225/AI-/issues/71#issuecomment-6308459958)に完了数と費用を記録しています。
+実行中のP17は[自動進捗コメント](https://github.com/sophiria1225/AI-/issues/71#issuecomment-6309957974)に完了数と費用を記録しています。
 
 ## 今回の判断と次の作業
 
 **拒否要求の用途別表示を、今月のレターの主提案として進める案は見送りました。** 元入力で対象の誤りが確認できず、修復実験へ進める前提を満たさなかったためです。形式不適合は誤り０の成功出力には数えていません。[採否の全記録](docs/P16_findings.md)。
 
-次は、実際に起きた記憶生成の失敗を監査し、基準実装の不整合を修正します。空出典を許すツール定義と拒否する受取側が食い違っていたため、この影響を除いて比較し直す必要があります。[P17の固定比較](docs/experiments/P17_ledger_contract.md)では、同じ４入力×２版×新しい２seed＝16生成で校正します。**この修正を新規性とは呼びません。** 近接研究との差と有効性が確認できる主張は、まだ確定していません。
+実際に起きた記憶生成の失敗を監査し、基準実装の不整合を修正しました。現在P17の16生成を実行中です。空出典を許すツール定義と拒否する受取側が食い違っていたため、この影響を除いて比較し直す必要があります。[P17の固定比較](docs/experiments/P17_ledger_contract.md)では、同じ４入力×２版×新しい２seed＝16生成で校正します。**この修正を新規性とは呼びません。** 近接研究との差と有効性が確認できる主張は、まだ確定していません。
 
 [内容判定前の採否基準](docs/letter_candidate_gate_20261021.md)、[近接研究](docs/letter_related_work_addendum_20261021.md)、[実装レベルの重複](docs/letter_implementation_overlap_20261021.md)、[次の校正理由](docs/memory_contract_correction_20261021.md)。
 
