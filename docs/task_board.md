@@ -40,7 +40,7 @@
 | P0 | R32 | 10月末レターの新規性を一つに絞り、今週の比較を固定する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/70) |
 | P0 | R33 | レター候補機構の限定比較・悪影響・原記録を検証する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/71) |
 | P0 | R34 | ２段組４ページのレター原稿を完成し10月31日投稿へ備える | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/72) |
-| P0 | R35 | 台帳の宣言・受取制約を修正し、P17で基準を再校正する | 進行中 | 未同期 |
+| P0 | R35 | 台帳の宣言・受取制約を修正し、P17で基準を再校正する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/83) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
