@@ -1,0 +1,50 @@
+% 2026-10-21: Content outline only. No official class file acquired yet.
+% Not a submission-ready manuscript. TBD fields must be replaced by audited evidence.
+% Author names, affiliations and outcome numbers have not been invented.
+
+\section{まえがき}
+ツールを利用するLLMエージェントでは，作業履歴を記憶へ変換し，
+後続の判断に利用する．このとき，操作の提案と実行結果は区別する必要がある．
+記憶抽出時の幻覚を扱うHaluMem\cite{halumem}，
+実行状態を管理するLedger\cite{ledger}，
+記録の成熟状態に応じて利用を制御するMemTX\cite{memtx}が提案されている．
+本稿では，送信前に拒否された要求を記憶更新と修復の両方に利用する場合に着目する．
+要求本文を残すと誤った完了記憶を作る可能性がある一方，
+一律に除くと要求を修正する情報も失う可能性がある．
+この両者を同じ保存状態から比較する．
+% TODO: State the specific additional finding after the primary experiment.
+
+\section{対象と表示規則}
+実行イベントを要求$p$，送信記録$d$，返却結果$o$で表す．
+本稿の対象は，実行器が送信前拒否を確認した$d=0$のイベントに限定する．
+送信後の応答消失や部分的な作用を$d=0$とみなさない．
+記憶更新用の表示$V_m$と修復用の表示$V_r$を分け，
+$V_m$には拒否の記録と参照を，$V_r$には未送信と明記した要求本文も含める．
+これは内容の真偽や仕事全体の完了を保証する規則ではない．
+% TODO: Add one architecture figure showing runtime, memory writer, repair reader.
+
+\section{実験}
+元入力，未送信の明記，両用途からの退避，用途別表示を比較する．
+同一モデル・保存状態・予算を使い，記憶生成と修復の両方を費用へ含める．
+自然に発生した拒否と，公開実行履歴から作る制御条件を分ける．
+未実行操作の完了記憶，修復要求，形式不備，総トークンを評価する．
+同じ状態の反復を独立課題として数えない．
+% TODO: Freeze cases, seeds, budget and semantic review before the primary run.
+% TODO: Insert audited sample counts, outcomes and uncertainty.
+% TODO: Add one compact results table, including controls and negative outcomes.
+
+\section{考察とむすび}
+% TODO: Replace with measured conclusions, nearest-prior difference and limits.
+現時点では方式の追加価値と一般性は未確定である．
+状態の明記や単純退避で十分な場合も含め，
+記憶更新と修復へ要求を渡す条件を検討する．
+
+\begin{thebibliography}{9}
+% These are identification placeholders, not finalized IEICE bibliography entries.
+\bibitem{halumem} HaluMem: Evaluating hallucinations in memory systems of agents,
+arXiv:2511.03506v1.
+\bibitem{ledger} Turning interaction history into execution state:
+A runtime layer for long-horizon coding agents, arXiv:2608.00808v1.
+\bibitem{memtx} MemTX: Transactional belief commit for stateful agent memory,
+arXiv:2607.23929v1.
+\end{thebibliography}
