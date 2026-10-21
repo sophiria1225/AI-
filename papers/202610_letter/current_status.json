@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P20: six fixed outputs comparing literal CSV and restricted data-transformation code on the same public observations; running; no content analysis before all six finish",
+  "current_experiment": "P21 preparation: same observations, model, seeds and output forms; increase output cap from 4096 to 8192 for both arms",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -27,14 +27,14 @@
   ],
   "current_guide": "README.md",
   "last_completed_experiment": {
-    "phase": "P18",
-    "calls": 49,
-    "known_tokens": 1017215,
+    "phase": "P20",
+    "calls": 6,
+    "known_tokens": 80367,
     "unknown_usage_calls": 0,
-    "successful_tasks": 2,
-    "tasks": 4,
-    "decision": "Known observation-to-export omission found; compare ordinary data computation before proposing extra verification. No P19 auto-start.",
-    "results": "../../docs/P18_findings.md"
+    "submitted_outputs": 0,
+    "output_cap_stops": 6,
+    "decision": "No content-quality comparison possible. Preserve all failures and test 8192-token sensitivity as P21.",
+    "results": "../../docs/P20_findings.md"
   },
   "latest_presentation": "../../materials/20261021_p18/AI_harness_P18_20261021.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md"
