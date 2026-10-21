@@ -9,6 +9,7 @@ import pymupdf
 def inspect(folder, images=None):
     manifest=json.loads((folder/'build_manifest.json').read_text())
     layout=json.loads((folder/'layout_checks.json').read_text())
+    slides=json.loads((folder/'slides.json').read_text())
     pdf=folder/'AI_harness_progress_20261022.pdf'
     errors=[]
     with pymupdf.open(pdf) as doc:
@@ -16,7 +17,12 @@ def inspect(folder, images=None):
         for i,page in enumerate(doc,1):
             if abs(page.rect.width-960)>1 or abs(page.rect.height-540)>1:errors.append(f'size:{i}')
             text=page.get_text()
-            if len(text)<30 or '\ufffd' in text:errors.append(f'text:{i}')
+            if i==1 and slides[0].get('cover'):
+                expected=slides[0]['title'].replace('<br>','')
+                if ''.join(text.split())!=''.join(expected.split()):errors.append('title-only-cover')
+            elif len(text)<30:
+                errors.append(f'text:{i}')
+            if '\ufffd' in text:errors.append(f'text:{i}')
             for b in page.get_text('dict')['blocks']:
                 if b['type']!=0:continue
                 for line in b['lines']:
