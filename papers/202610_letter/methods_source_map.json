@@ -1,0 +1,47 @@
+{
+  "status": "method_fragment_only_not_submission_manuscript",
+  "updated_at": "2026-10-22",
+  "fragment": "methods_handoff.tex",
+  "novel_method_claim": false,
+  "official_four_page_fit_verified": false,
+  "scope": "Prespecified development comparisons P31 and P32; independent of their outcome interpretation.",
+  "sources": {
+    "conditions": [
+      "configs/P31_handoff_factors_v01.json",
+      "configs/P32_handoff_factors_v01.json"
+    ],
+    "implementation": [
+      "scripts/handoff_factors.py",
+      "scripts/run_handoff_factors.py"
+    ],
+    "evaluation": [
+      "scripts/analyze_handoff_factors.py"
+    ],
+    "selection_rationale": [
+      "docs/experiments/P31_handoff_factors.md",
+      "docs/experiments/P32_later_handoff.md"
+    ]
+  },
+  "still_required": [
+    "A central contribution that survives comparison with the closest prior work",
+    "Complete cohort analysis and uncertainty appropriate to the small sample",
+    "An independent confirmation design, if justified by development results",
+    "Verified official template, author information and final four-page layout"
+  ],
+  "source_sha256": {
+    "configs/P31_handoff_factors_v01.json": "fe7bf00599ae70e3d8937ac64e313663b2fcbb4a0bd41dd51b91c6bc178a739a",
+    "configs/P32_handoff_factors_v01.json": "3225de28086f8c773cf4f70d247175f440b24c5ad38004b781045388498dd636",
+    "scripts/handoff_factors.py": "0f620dce91eff19a211a45dcafe145702ee16b6a507b02c0ca02bf5803a3fcd2",
+    "scripts/run_handoff_factors.py": "6b3e737bd4d6eafb5c96fef873655d99af36b29c8460259f7bf5ea2d2493973a",
+    "scripts/analyze_handoff_factors.py": "70cbbf569d62a46fae837b5806da838026a4ad346f23e2ff6c056d8b7a6d49f8",
+    "docs/experiments/P31_handoff_factors.md": "e2098b2ead5b5af6a7f7db27e9d5e4a4ea65afe907e8a1b48fa3255242baf066",
+    "docs/experiments/P32_later_handoff.md": "e0668cf48eb51150ea1428c051367d20c2d360151888c1d8258d20022d0a7dfd"
+  },
+  "rendering_check": {
+    "class": "jsarticle",
+    "pages": 2,
+    "official_layout": false,
+    "visual_review": "Both pages inspected; Japanese and formulas render; underfull vbox noted, no overfull warning.",
+    "pdf_sha256": "188aa896ce93c0297eba9effd468d75504a43c3fe0b76efee792738796612204"
+  }
+}
