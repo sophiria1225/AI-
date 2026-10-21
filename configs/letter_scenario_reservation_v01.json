@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "recorded_date": "2026-10-21",
+  "dataset": "AppWorld",
+  "official_split": "train",
+  "expected_total_scenarios": 30,
+  "previously_exposed": ["07b42fd", "229360a", "22cc237", "27e1026", "287e338", "29caf6f", "2a163ab", "302c169"],
+  "p18_fixed_development": ["34d9492", "3c13f5a", "60d0b5b", "6104387"],
+  "rule": "Use train IDs only. Exclude the previous eight scenarios and all four fixed P18 scenarios. Sort the remaining 18 scenario IDs lexicographically. Reserve the first six as further development, and the last twelve as untouched confirmation. Every variant of a scenario stays in its group; if confirmation runs are authorized by a later frozen experiment plan, use variant 1 for every scenario.",
+  "additional_development_scenarios": 6,
+  "reserved_confirmation_scenarios": 12,
+  "instruction_access_during_reservation": false,
+  "forbidden_selection_inputs": ["instruction", "difficulty", "solution", "evaluation", "database_contents", "model_result"],
+  "release_condition": "Before any reserved instruction or execution is inspected, freeze the proposed mechanism, closest feasible baselines, model, seed list, budgets, primary endpoint, exclusions and analysis. No pilot on the reserved group. Report every scheduled outcome. Any later tuning on its results retires that group as confirmation.",
+  "scope": "Internal scenario separation within official train, not official hidden-test performance, cross-app generalization, proof of training-data absence or a power calculation. No model runs are scheduled by this reservation."
+}
