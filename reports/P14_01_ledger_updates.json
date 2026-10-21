@@ -1,0 +1,95 @@
+{
+  "run_id": "P14_01_LEDGER",
+  "updates": [
+    {
+      "update": 1,
+      "status": "ok",
+      "known_tokens": 17091,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 1,
+      "original_spans_after": 1,
+      "removed_spans": 0,
+      "ledger_items": 5,
+      "item_status_counts": {
+        "pending": 4,
+        "uncertain": 1
+      }
+    },
+    {
+      "update": 2,
+      "status": "ok",
+      "known_tokens": 17763,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 2,
+      "original_spans_after": 2,
+      "removed_spans": 0,
+      "ledger_items": 6,
+      "item_status_counts": {
+        "pending": 4,
+        "uncertain": 1,
+        "done": 1
+      }
+    },
+    {
+      "update": 3,
+      "status": "ok",
+      "known_tokens": 18653,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 3,
+      "original_spans_after": 2,
+      "removed_spans": 1,
+      "ledger_items": 7,
+      "item_status_counts": {
+        "pending": 3,
+        "done": 3,
+        "uncertain": 1
+      }
+    },
+    {
+      "update": 4,
+      "status": "ok",
+      "known_tokens": 18240,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 3,
+      "original_spans_after": 2,
+      "removed_spans": 1,
+      "ledger_items": 8,
+      "item_status_counts": {
+        "pending": 3,
+        "done": 4,
+        "uncertain": 1
+      }
+    },
+    {
+      "update": 5,
+      "status": "aborted",
+      "known_tokens": 0,
+      "unknown_usage_calls": 1,
+      "original_spans_before": 3,
+      "original_spans_after": 3,
+      "removed_spans": 0,
+      "ledger_items": 8,
+      "item_status_counts": {
+        "pending": 3,
+        "done": 4,
+        "uncertain": 1
+      }
+    }
+  ],
+  "update_status_counts": {
+    "ok": 4,
+    "aborted": 1
+  },
+  "updates_removing_original_spans": 2,
+  "executor_inputs_with_removed_turns": 2,
+  "executor_inputs_with_memory_note": 4,
+  "known_memory_tokens": 71747,
+  "unknown_memory_usage_calls": 1,
+  "source_hashes": {
+    "summary.json": "f3e5fe9db9c4a72ca5896fcb03f8ceb710d437c8c0e6aa8c98cb61934db06360",
+    "generated_memory_events.json": "754088a318d2d18f83c3efb0d8d36765dfce45afcabe6c0ee9a86849e6f4c1e6",
+    "memory_views.json": "59906208eaaa05b3b6b952b80681f54008a461ae31c36a0f1be64a80d8b28ec3"
+  },
+  "scope": "Completed-run structural counts only. Done labels and references are not semantic proof. No generation or environment execution.",
+  "script_sha256": "c7461f0d83a137e77eb3c64511b2ec60e874563bd453aa2ac257de6cb082ee2e"
+}
