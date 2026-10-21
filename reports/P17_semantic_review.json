@@ -1,0 +1,409 @@
+{
+  "run_id": "P17_01",
+  "review_complete": true,
+  "reviewer": "one assistant; exploratory, not independent human review",
+  "timing": "Fixed before P17 generation. The input tasks and the legacy contract are known development data after P16.",
+  "counts": {
+    "outputs": 16,
+    "valid_outputs": 15,
+    "items": 140,
+    "done_items": 102
+  },
+  "groups": [
+    {
+      "condition": "recorded",
+      "variant": "legacy",
+      "seeds": [
+        47,
+        48
+      ],
+      "calls": 8,
+      "schema_valid": 7,
+      "known_tokens": 156569,
+      "unknown_usage_calls": 0,
+      "reviewed_outputs": 8,
+      "valid_reviewed_outputs": 7,
+      "outputs_with_unsupported_done_action": 0,
+      "outputs_with_unsupported_or_ambiguous_done": 1,
+      "unsupported_done_action_items": 0,
+      "ambiguous_done_items": 1,
+      "done_items": 36,
+      "all_item_labels": {
+        "not_a_completion_claim": 10,
+        "supported_action_completion": 17,
+        "supported_observation_or_analysis": 32,
+        "ambiguous": 1
+      }
+    },
+    {
+      "condition": "recorded",
+      "variant": "aligned",
+      "seeds": [
+        47,
+        48
+      ],
+      "calls": 8,
+      "schema_valid": 8,
+      "known_tokens": 160788,
+      "unknown_usage_calls": 0,
+      "reviewed_outputs": 8,
+      "valid_reviewed_outputs": 8,
+      "outputs_with_unsupported_done_action": 0,
+      "outputs_with_unsupported_or_ambiguous_done": 2,
+      "unsupported_done_action_items": 0,
+      "ambiguous_done_items": 3,
+      "done_items": 66,
+      "all_item_labels": {
+        "supported_observation_or_analysis": 35,
+        "supported_action_completion": 30,
+        "ambiguous": 3,
+        "not_a_completion_claim": 12
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "case_id": "case_03_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_010",
+      "schema_valid": true,
+      "items": 17,
+      "done_items": 16,
+      "all_item_labels": {
+        "supported_observation_or_analysis": 9,
+        "supported_action_completion": 6,
+        "ambiguous": 1,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_observation_or_analysis": 9,
+        "supported_action_completion": 6,
+        "ambiguous": 1
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 1,
+      "seed": 47
+    },
+    {
+      "case_id": "case_01_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_002",
+      "schema_valid": true,
+      "items": 7,
+      "done_items": 3,
+      "all_item_labels": {
+        "not_a_completion_claim": 4,
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 2
+      },
+      "done_item_labels": {
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 2
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    },
+    {
+      "case_id": "case_01_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_001",
+      "schema_valid": true,
+      "items": 6,
+      "done_items": 3,
+      "all_item_labels": {
+        "not_a_completion_claim": 3,
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 2
+      },
+      "done_item_labels": {
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 2
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    },
+    {
+      "case_id": "case_04_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_015",
+      "schema_valid": true,
+      "items": 5,
+      "done_items": 4,
+      "all_item_labels": {
+        "supported_action_completion": 4,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_action_completion": 4
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_03_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_011",
+      "schema_valid": true,
+      "items": 19,
+      "done_items": 17,
+      "all_item_labels": {
+        "ambiguous": 2,
+        "supported_observation_or_analysis": 10,
+        "supported_action_completion": 6,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "ambiguous": 2,
+        "supported_observation_or_analysis": 9,
+        "supported_action_completion": 6
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 2,
+      "seed": 48
+    },
+    {
+      "case_id": "case_02_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_008",
+      "schema_valid": true,
+      "items": 8,
+      "done_items": 7,
+      "all_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_03_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_009",
+      "schema_valid": true,
+      "items": 9,
+      "done_items": 8,
+      "all_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3,
+        "ambiguous": 1,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3,
+        "ambiguous": 1
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 1,
+      "seed": 47
+    },
+    {
+      "case_id": "case_02_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_007",
+      "schema_valid": true,
+      "items": 6,
+      "done_items": 5,
+      "all_item_labels": {
+        "supported_observation_or_analysis": 4,
+        "supported_action_completion": 1,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_observation_or_analysis": 4,
+        "supported_action_completion": 1
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_03_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_012",
+      "schema_valid": false,
+      "items": 0,
+      "done_items": 0,
+      "all_item_labels": {},
+      "done_item_labels": {},
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_04_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_014",
+      "schema_valid": true,
+      "items": 9,
+      "done_items": 7,
+      "all_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3,
+        "not_a_completion_claim": 2
+      },
+      "done_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    },
+    {
+      "case_id": "case_01_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_004",
+      "schema_valid": true,
+      "items": 16,
+      "done_items": 1,
+      "all_item_labels": {
+        "not_a_completion_claim": 1,
+        "supported_observation_or_analysis": 15
+      },
+      "done_item_labels": {
+        "supported_observation_or_analysis": 1
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_01_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_003",
+      "schema_valid": true,
+      "items": 7,
+      "done_items": 4,
+      "all_item_labels": {
+        "not_a_completion_claim": 3,
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 3
+      },
+      "done_item_labels": {
+        "supported_action_completion": 1,
+        "supported_observation_or_analysis": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_02_recorded",
+      "variant": "legacy",
+      "condition": "recorded",
+      "call_id": "call_006",
+      "schema_valid": true,
+      "items": 9,
+      "done_items": 8,
+      "all_item_labels": {
+        "supported_observation_or_analysis": 5,
+        "supported_action_completion": 3,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_observation_or_analysis": 5,
+        "supported_action_completion": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    },
+    {
+      "case_id": "case_04_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_016",
+      "schema_valid": true,
+      "items": 8,
+      "done_items": 8,
+      "all_item_labels": {
+        "supported_action_completion": 5,
+        "supported_observation_or_analysis": 3
+      },
+      "done_item_labels": {
+        "supported_action_completion": 5,
+        "supported_observation_or_analysis": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 48
+    },
+    {
+      "case_id": "case_04_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_013",
+      "schema_valid": true,
+      "items": 6,
+      "done_items": 4,
+      "all_item_labels": {
+        "supported_action_completion": 4,
+        "supported_observation_or_analysis": 1,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_action_completion": 4
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    },
+    {
+      "case_id": "case_02_recorded",
+      "variant": "aligned",
+      "condition": "recorded",
+      "call_id": "call_005",
+      "schema_valid": true,
+      "items": 8,
+      "done_items": 7,
+      "all_item_labels": {
+        "supported_observation_or_analysis": 4,
+        "supported_action_completion": 3,
+        "not_a_completion_claim": 1
+      },
+      "done_item_labels": {
+        "supported_observation_or_analysis": 4,
+        "supported_action_completion": 3
+      },
+      "unsupported_done_action": 0,
+      "ambiguous_done": 0,
+      "seed": 47
+    }
+  ],
+  "calls": 16,
+  "known_total_tokens": 317357,
+  "unknown_usage_calls": 0,
+  "annotation_seal": {
+    "sealed_at": "2026-10-21T07:58:46.909785+00:00",
+    "annotation_count": 140,
+    "annotations_sha256": "f9f4b5699e7dabb81a7c19af57682fa506dea347f14a88d4e8613d4ef84fcb97",
+    "manifest_sha256": "8fd1b1445027c3431ab2dcd68a8beed5a5bbe96cb97c1154b4c75ad78b63b800",
+    "rubric_sha256": "c8d515611fad2c47ce3b99d98fb7f1983c100bbd279af3d6bee9118c53b0fada",
+    "mapping_sha256": "dc2bbe5b57f7d42fe3fa90a71219f7adaadbe8872e015c79d6ee67e5e2a27052",
+    "scope": "Completeness and hashes checked before aggregate mapping is read. Hash lock does not independently certify reviewer blinding or label correctness."
+  },
+  "structural_audit_sha256": "c8980701a794d788919a1c6bc3c1256dd05c5276cdcaaca997988c03ca485ab6",
+  "scope": "Four known development inputs, two paired seeds per interface. Schema calibration of our baseline, not new-method efficacy or final task success. Invalid outputs and unknown costs remain separate; no independent human labels."
+}
