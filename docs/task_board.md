@@ -44,7 +44,7 @@
 | P0 | R36 | 未使用４シナリオを全履歴基準で観察し、自然な失敗と費用を調べる | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/86) |
 | P1 | R37 | 既存の再取得後保持を同じ履歴予算の単純対照として検証する | 未着手 | [Issue](https://github.com/sophiria1225/AI-/issues/93) |
 | P0 | R38 | P20：同じ取得済みデータで直接書出と計算コードを比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/95) |
-| P0 | R39 | P21：書出比較の出力上限を8192へ拡張して感度を測る | 進行中 | 未同期 |
+| P0 | R39 | P21：書出比較の出力上限を8192へ拡張して感度を測る | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/99) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
