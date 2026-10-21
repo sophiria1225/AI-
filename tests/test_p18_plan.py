@@ -37,7 +37,7 @@ class P18Controls(unittest.TestCase):
                            {'status': 'running', 'phase': 'P18'})
         self.assertNotIn('PRIVATE', body)
 
-    def run_fixture(self, root, phase):
+    def run_fixture(self, root, phase, *, config_updates=None, response_messages=None):
         storage, world = root/'storage', root/'world'
         (storage/'.runtime').mkdir(parents=True)
         (storage/'.runtime/model_server.json').write_text('{}')
@@ -69,20 +69,21 @@ class P18Controls(unittest.TestCase):
                 index = len(self.calls)
                 requests.append((role, messages, tools))
                 self.calls.append({'id': f'call_{index+1:03d}', 'role': role, 'status': 'ok',
-                                   'input_tokens': 10, 'output_tokens': 1})
+                                   'input_tokens': 10, 'output_tokens': 1, 'predicted_input_tokens': 10})
                 self.tokens += 11
-                message = {'role': 'assistant', 'content': '', 'tool_calls': [
+                message = copy.deepcopy(response_messages[index]) if response_messages is not None else {'role': 'assistant', 'content': '', 'tool_calls': [
                     {'id': f'c{index}', 'type': 'function',
                      'function': {'name': names[index], 'arguments': '{}'}}]}
                 call = self.output/self.calls[-1]['id']
                 call.mkdir()
                 (call/'request.json').write_text(json.dumps({'messages': messages, 'tools': tools}))
-                (call/'response.json').write_text(json.dumps({'message': message}))
+                (call/'response.json').write_text(json.dumps({**self.calls[-1], 'message': message}))
                 (self.output/'usage.json').write_text(json.dumps(self.calls))
                 return message
 
         config = json.loads((ROOT/'configs/P18_additional_baseline_v01.json').read_text())
         config.update(phase=phase, task_ids=['dev'])
+        config.update(config_updates or {})
         with patch.object(runner, 'Bridge', Bridge), patch.object(runner, 'Inference', Inference), \
              patch.object(runner, 'check_live_model'), patch.object(runner, 'load_public_tools', return_value=(tools, {}, None)), \
              patch.object(runner.urllib.request, 'urlopen', return_value=io.BytesIO(b'{}')), \

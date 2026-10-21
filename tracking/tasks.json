@@ -1149,6 +1149,33 @@
         "準備と全体実験・新規性を区別する"
       ],
       "progress": "2026-10-21。選択した観測の集合化・集計を固定Pythonコンテナで実測し、既知の例外も返却。約0.26秒・0.23秒、両方片付け済み。全378検査・構文検査合格。作成タイムアウト後の所有コンテナ確認も補正。P22凍結49ファイル変更０、モデル呼出し０、課題環境要求０。全体実行は未設定。docs/native_data_compute_preparation_20261021.md、reports/native_data_compute_preflight_20261021.json。"
+    },
+    {
+      "id": "R43",
+      "title": "通常計算対照の実行記録と監査を接続する",
+      "priority": "P1",
+      "status": "done",
+      "why": "取得済み観測を処理する通常Pythonを全体実行で比較できるようにし、計算費用・失敗・入力範囲を追跡する。専用機構を弱い対照だけで評価しないための準備。",
+      "alternatives": "P22途中への追加、計算を無料扱いする比較、APIとローカル計算の混同、未確認の新規性の主張は採らない。対象課題と実行計画はP22全件分析後に固定する。",
+      "steps": [
+        "任意接続の実行器を作り既定動作を維持",
+        "応答前の観測だけを渡し全計算の費用と失敗を記録",
+        "模擬全体実行と監査で不整合を確認",
+        "未実行の比較と今後の選定条件を記録"
+      ],
+      "completed_steps": [
+        "任意接続の実行器を作り既定動作を維持",
+        "応答前の観測だけを渡し全計算の費用と失敗を記録",
+        "模擬全体実行と監査で不整合を確認",
+        "未実行の比較と今後の選定条件を記録"
+      ],
+      "acceptance": [
+        "P22凍結ソースを変更しない",
+        "モデルの同一応答中の未来の観測を渡さない",
+        "通常Pythonの出力を独立した正解や完了扱いにしない",
+        "開始可能な課題計画を分析前に作らない"
+      ],
+      "progress": "2026-10-21. Prepared optional execution and accounting; 383 tests pass. Two real Python containers in mock-model/mock-app fixtures: 0.255 and 0.256 seconds; four saved boundaries each, zero audit discrepancies. Real LLM/AppWorld calls: 0. No P23 batch plan or automatic launch. See docs/native_compute_runner_preparation_20261021.md and reports/native_compute_runner_preflight_20261021.json."
     }
   ]
 }

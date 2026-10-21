@@ -50,9 +50,11 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22'):
+    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
+    if plan['phase'] == 'P23':
+        sources += ['native_compute_session.py', 'native_data_compute.py', 'container_data_python.py']
     if plan['phase'] == 'P12':
         sources += ['run_native_recent.py', 'native_recent_window.py', 'native_memory_view.py']
     if plan['phase'] in ('P13', 'P14', 'P19'):
@@ -68,7 +70,7 @@ def audit(trial, appworld_root, allow_running=False):
     initial_visible = None
     if usage:
         initial_visible = {tool['function']['name'] for tool in read(
-            trial / usage[0]['id'] / 'request.json')['tools']} - {'read_span'}
+            trial / usage[0]['id'] / 'request.json')['tools']} - {'read_span', 'compute_data'}
     errors, rows, seen_objects, prior_dbs = [], [], set(), None
     reconstructed_calls = 0
     expected_boundaries = [0] + [i for i, call in enumerate(usage, 1) if call['role'] == 'agent']
@@ -99,6 +101,16 @@ def audit(trial, appworld_root, allow_running=False):
             default = {} if name == 'spans.json' else []
             if captured(name, default) != expected:
                 errors.append(cid + ': captured execution prefix differs: ' + name)
+        if plan['phase'] == 'P23':
+            all_compute = read(trial/'compute_records.json') if (trial/'compute_records.json').exists() else []
+            prefix_compute = [r for r in all_compute if r['call_id'] in prefix_ids]
+            if captured('compute_records.json', []) != prefix_compute:
+                errors.append(cid + ': captured computation records differ')
+            state_compute = manifest['state'].get('ordinary_compute', {})
+            if (state_compute.get('attempts') != len(prefix_compute)
+                    or state_compute.get('executions') != sum(r['execution_started'] for r in prefix_compute)
+                    or abs(state_compute.get('wall_seconds', -1) - sum(r['wall_seconds'] for r in prefix_compute)) > 1e-8):
+                errors.append(cid + ': captured computation costs differ')
         for name in ('plan.json', 'provenance.json', 'public_task.json'):
             if manifest['files']['harness/' + name]['sha256'] != sha(trial / name):
                 errors.append(cid + ': immutable harness input differs: ' + name)

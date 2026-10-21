@@ -117,6 +117,8 @@ def dispatch_native_calls(message, catalog, bridge, read_archive, *, remaining_a
                         raise RuntimeError('compute tool exposed without its executor')
                     try:
                         row['observation'] = compute_data(decoded)
+                        if row['observation'].get('computation_status') == 'harness_error':
+                            blocked = 'ordinary computation harness failed'
                     except (ValueError, KeyError, TypeError) as exc:
                         row['observation'] = {'compute_input_error': str(exc)}
                 elif sent >= remaining_api_calls:
