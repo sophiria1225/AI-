@@ -24,13 +24,15 @@ def read(path, default=None):
 def audit(directory, data_root):
     result = summarize_trial(directory)
     summary, plan = read(directory / 'summary.json'), read(directory / 'plan.json')
-    if result['arm'] not in ('native_focus', 'native_ledger'):
+    if result['arm'] not in ('native_focus', 'native_ledger', 'native_ledger_aligned'):
         raise ValueError('expected completed generated-memory adaptation')
     provenance = read(directory / 'provenance.json')
     sources = ['run_native_generated.py', 'native_focus_memory.py', 'native_memory_view.py',
                'native_conversation.py', 'analyze_focus_shortcircuit.py', 'context_preservation.py']
-    if result['arm'] == 'native_ledger':
+    if result['arm'] in ('native_ledger', 'native_ledger_aligned'):
         sources.append('native_ledger_memory.py')
+    if result['arm'] == 'native_ledger_aligned':
+        sources += ['aligned_ledger_memory.py', 'ledger_contract.py']
     for name in sources:
         if hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest() != provenance['sources'][name]:
             raise ValueError('use the frozen memory implementation')

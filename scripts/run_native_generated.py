@@ -22,6 +22,7 @@ from native_conversation import NativeConversation
 from native_boundary_record import snapshot_boundary
 from native_focus_memory import FocusMemory
 from native_ledger_memory import LedgerMemory
+from aligned_ledger_memory import AlignedLedgerMemory
 from run_context_comparison import Bridge, BudgetStop, Inference, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,11 +56,13 @@ def make_memory(arm):
         return FocusMemory()
     if arm == "native_ledger":
         return LedgerMemory()
+    if arm == "native_ledger_aligned":
+        return AlignedLedgerMemory()
     raise ValueError("unknown generated memory arm")
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P13": "native_focus", "P14": "native_ledger"}
+    expected = {"P13": "native_focus", "P14": "native_ledger", "P19": "native_ledger_aligned"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
@@ -87,10 +90,12 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "run_context_comparison.py", "context_preservation.py", "local_llama.py",
         "appworld_bridge.py", "model_provenance.py",
     ]
-    if arm == "native_ledger":
+    if arm in ("native_ledger", "native_ledger_aligned"):
         files.append("native_ledger_memory.py")
+    if arm == "native_ledger_aligned":
+        files += ["aligned_ledger_memory.py", "ledger_contract.py"]
     files.append("native_conversation.py")
-    if phase in ("P13", "P14"):
+    if phase in ("P13", "P14", "P19"):
         files.append("native_boundary_record.py")
     hashes = {}
     for name in files:
@@ -173,7 +178,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase not in ("P13", "P14"):
+        if phase not in ("P13", "P14", "P19"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()
@@ -188,7 +193,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise RuntimeError(response["error"])
         task = response["result"]
         write_json(out / "public_task.json", task)
-        if arm in ("native_focus", "native_ledger"):
+        if arm in ("native_focus", "native_ledger", "native_ledger_aligned"):
             conversation = NativeConversation(NATIVE_PROMPT, task)
             write_json(out / "conversation_private.json", conversation.messages())
         capture("initial")
