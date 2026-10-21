@@ -1,0 +1,64 @@
+{
+  "phase": "P31_prefix_characterization",
+  "at": "2026-10-21T18:06:30.795951+00:00",
+  "all_four_attempted": true,
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "boundary_manifest_sha256": "fb57df6f5f7b3ea3c2bc931a294cac16eafd86f86ab9758c7bff28b19bb92f91",
+      "status": "counted",
+      "binding_types": {
+        "module": 1,
+        "str": 1
+      },
+      "top_level_container_entries_with_aliases": 0,
+      "user_bindings": 2,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "boundary_manifest_sha256": "143166b6643a284fea055ea23b3c63757c4b042830b98a073c96f0b4b3e3043f",
+      "status": "counted",
+      "binding_types": {
+        "list": 1,
+        "module": 1
+      },
+      "top_level_container_entries_with_aliases": 9,
+      "user_bindings": 2,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "boundary_manifest_sha256": "6923bfef0030cdd2767d1ba5d08df7ffbec176d4bdadad07627e0cc8b9ed61b8",
+      "status": "counted",
+      "binding_types": {
+        "dict": 3,
+        "list": 2
+      },
+      "top_level_container_entries_with_aliases": 79,
+      "user_bindings": 5,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "boundary_manifest_sha256": "7e8ac5d597fda1bac57b91e37615384b3a6710b0436598633f58d7976a8fe7fe",
+      "status": "counted",
+      "binding_types": {
+        "list": 1,
+        "module": 1
+      },
+      "top_level_container_entries_with_aliases": 9,
+      "user_bindings": 2,
+      "container_removed": true
+    }
+  ],
+  "model_calls": 0,
+  "live_api_requests": 0,
+  "wall_seconds": 1.3968945420347154,
+  "selection_or_running_branches_changed": false,
+  "scope": "Counts bindings and top-level container sizes only. Aliases may double count. No variable names, values, credentials, semantic relevance or future correctness are inferred.",
+  "source_hashes": {
+    "scripts/inspect_handoff_prefix_state.py": "00c77fd8da20c629daece341cc360c98155237e2f0571a24e1c1ff5c04e820d3",
+    "configs/P31_handoff_factors_v01.json": "fe7bf00599ae70e3d8937ac64e313663b2fcbb4a0bd41dd51b91c6bc178a739a"
+  }
+}
