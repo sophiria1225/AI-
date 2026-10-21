@@ -22,7 +22,8 @@ def audit(trial):
             errors.append('saved source differs: '+name)
     plan=read(trial/'plan.json')
     sources=['run_code_appworld.py','code_agent_interface.py','native_conversation.py']
-    if plan['phase']=='P28': sources+=['run_code_control_appworld.py','code_runtime_prompts.py']
+    if plan['phase'] in ('P28','P29'): sources+=['run_code_control_appworld.py','code_runtime_prompts.py']
+    if plan['phase']=='P29': sources+=['run_stateful_code_appworld.py','stateful_code_prompts.py','persistent_api_python.py']
     for name in sources:
         if sha(Path(__file__).parent/name)!=summary['source_hashes'][name]:
             raise ValueError('use the frozen code/history implementation')
@@ -31,6 +32,14 @@ def audit(trial):
     if plan['phase']=='P28':
         from code_runtime_prompts import control_system_prompt
         prompt=control_system_prompt(plan)
+    session=None
+    if plan['phase']=='P29':
+        from stateful_code_prompts import stateful_system_prompt
+        prompt=stateful_system_prompt(plan)
+        session=read(trial/'python_session/session_private.json')
+        if (session!=summary['python_session'] or session['status']!='closed'
+            or not session['container_removed'] or session['process_memory_checkpointed']):
+            errors.append('task-local interpreter lifecycle differs')
     history=NativeConversation(prompt,read(trial/'public_task.json'))
     prior={};programs=0;program_api=0
     for call in usage:
@@ -70,7 +79,14 @@ def audit(trial):
                     errors.append(call['id']+': code API accounting differs')
                 if execution['status']!=row['observation'].get('status'):
                     errors.append(call['id']+': code result status differs')
-                if not execution['container_removed'] or len(execution.get('controls',{}))!=14 or not all(execution.get('controls',{}).values()):
+                if session is not None:
+                    if (execution.get('session_id')!=session['session_id']
+                        or execution.get('program_index')!=programs
+                        or packet.get('program_index')!=programs
+                        or not execution.get('persistent_namespace')
+                        or any(r.get('program_index')!=programs for r in requests)):
+                        errors.append(call['id']+': persistent program/session identity differs')
+                if ((session is None and not execution['container_removed']) or len(execution.get('controls',{}))!=14 or not all(execution.get('controls',{}).values())):
                     errors.append(call['id']+': isolation/cleanup was not verified')
                 refs=row['observation'].get('api_receipts',[])
                 if [x['span_id'] for x in refs]!=[x[0]['span_id'] for x in inner]:
@@ -79,6 +95,8 @@ def audit(trial):
             inner=[]
         if inner: errors.append(call['id']+': unpaired program API operations')
         for e in this: prior[e['span_id']]=spans[e['span_id']]
+    if session is not None and len(session['programs'])!=programs:
+        errors.append('persistent session program count differs')
     if sum(int(e['api_request_sent']) for e in events)!=summary['api_requests'] or program_api!=summary['api_requests']:
         errors.append('total API accounting differs')
     if history.messages()!=read(trial/'conversation_private.json'):

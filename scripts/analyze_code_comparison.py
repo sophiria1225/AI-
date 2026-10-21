@@ -13,6 +13,9 @@ from diagnose_p25_public_traces import sent_rows, photos, export_counts
 from summarize_context_pilot import summarize_trial
 
 ROOT=Path(__file__).resolve().parents[1]
+CODE_PLANS={'P27':'configs/P27_code_comparison_v01.json',
+            'P28':'configs/P28_code_clarification_v01.json',
+            'P29':'configs/P29_stateful_code_v01.json'}
 
 
 def read(p):return json.loads(p.read_text())
@@ -22,7 +25,7 @@ def put(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
 
 def budget(trial):
     plan,summary,usage,events=[read(trial/n) for n in ('plan.json','summary.json','usage.json','events.json')]
-    if plan['phase']!='P27' or summary['arm']!='code_guided':raise ValueError('wrong code cohort')
+    if plan['phase'] not in CODE_PLANS or summary['arm']!='code_guided':raise ValueError('wrong code cohort')
     if plan['max_api_requests']!=plan['api_budget_by_task'][summary['task_id']]:raise ValueError('per-task cap differs')
     rows=[timing_row(u,read(trial/u['id']/'response.json')) for u in usage]
     known=[r for r in rows if r['status']=='ok'];timed=[r for r in rows if r['timing_available']]
@@ -59,11 +62,11 @@ def require_complete(storage,plan):
         if (s['task_id'],s['arm'],s['run_id'])!=(task,arm,rid):raise ValueError('trial identity changed')
 
 
-def analyze(storage,root):
-    plan=read(root/'configs/P27_code_comparison_v01.json');require_complete(storage,plan)
-    destination=root/'reports/P27_comparison.json'
+def analyze(storage,root,phase='P27'):
+    plan=read(root/CODE_PLANS[phase]);require_complete(storage,plan)
+    destination=root/f'reports/{phase}_comparison.json'
     if destination.exists():raise FileExistsError('preserve completed analysis')
-    inputs=['configs/P27_code_comparison_v01.json','reports/P18_P25_paired_comparison.json',
+    inputs=[CODE_PLANS[phase],'reports/P18_P25_paired_comparison.json',
             'reports/P26_photo_budget_summary.json','reports/P26_budget_diagnostics.json',
             'reports/P26_interpretation.json','reports/P25_interpretation.json']
     original=read(root/inputs[1]);p26=read(root/inputs[2])['trials'][0];b26=read(root/inputs[3])['trials'][0]
@@ -112,11 +115,11 @@ def analyze(storage,root):
     for arm in ('baseline','code'):
         totals[arm]={k:sum(r[arm][k] for r in pairs) for k in TOTAL_KEYS}
         totals[arm].update(successes=sum(r[arm]['success'] for r in pairs),trials=4)
-    for path,data in [('reports/P27_budget_diagnostics.json',dict(phase='P27',trials=budgets)),
-                      ('reports/P27_public_trace_diagnostics.json',dict(phase='P27',trials=diagnoses,all_four_read=True))]:
+    for path,data in [(f'reports/{phase}_budget_diagnostics.json',dict(phase=phase,trials=budgets)),
+                      (f'reports/{phase}_public_trace_diagnostics.json',dict(phase=phase,trials=diagnoses,all_four_read=True))]:
         data.update(model_calls=0,environment_requests=0,evaluator_contents_read=False)
         put(root/path,data);inputs.append(path)
-    result=dict(phase='P27',all_four_reviewed=True,pairs=pairs,totals=totals,
+    result=dict(phase=phase,all_four_reviewed=True,pairs=pairs,totals=totals,
         outcome_counts=dict(Counter(p['outcome'] for p in pairs)),
         source_hashes={name:sha(root/name) for name in inputs},script_sha256=sha(Path(__file__)),
         new_model_calls=0,environment_requests=0,novelty_established=False,
@@ -124,10 +127,28 @@ def analyze(storage,root):
             'Python control flow, schema access and visible output differ; not a language-only intervention.',
             'P27 inherited a native discovery-policy description in the configuration. Actual code updates schemas within each program, as specified in the P27 protocol and code guide. This metadata discrepancy is retained, not silently corrected in the frozen run.',
             'Fresh variables between code programs, unlike a persistent CodeAct interpreter.','A standard code interface is not a proposed novel method.'])
+    if phase in ('P28','P29'):
+        previous_phase='P27' if phase=='P28' else 'P28'
+        source=f'reports/{previous_phase}_comparison.json';previous=read(root/source)
+        if not previous['all_four_reviewed'] or [r['task_id'] for r in previous['pairs']]!=[r['task_id'] for r in pairs]:
+            raise ValueError('previous stage is not the same complete cohort')
+        result['previous_phase']=previous_phase
+        result['previous_totals']=previous['totals']['code']
+        result['adjacent_pairs']=[dict(task_id=now['task_id'],before=old['code'],after=now['code'])
+                                  for old,now in zip(previous['pairs'],pairs,strict=True)]
+        result['source_hashes'][source]=sha(root/source)
+        result['limitations']=[
+            'Four already observed development cases, one seed; no confirmatory or general causal claim.',
+            'Common native baseline: photo P26 (160 API); other tasks P25 (80 API).',
+            'P28 adds only supplied-callable guidance to fresh Python; P29 retains task-local Python state and describes that capability.',
+            'Stateful program memory is not fully captured/restored at checkpoints.' if phase=='P29' else 'Fresh Python state is reset between programs.',
+            'Ordinary code-agent calibration, not a proposed novel method.',
+            'Server/cache initial conditions and interpreter lifetimes affect time; do not isolate causal latency from totals.']
     put(destination,result)
     print(json.dumps(dict(totals=totals,outcome_counts=result['outcome_counts'])))
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--storage-root',type=Path,required=True);p.add_argument('--repo-root',type=Path,default=ROOT)
-    a=p.parse_args();analyze(a.storage_root,a.repo_root)
+    p.add_argument('--phase',choices=tuple(CODE_PLANS),default='P27')
+    a=p.parse_args();analyze(a.storage_root,a.repo_root,a.phase)
