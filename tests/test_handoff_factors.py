@@ -11,10 +11,10 @@ from handoff_factors import ARMS, handoff_conversation, replay_environment, spli
 from native_conversation import NativeConversation
 
 
-def conversation():
+def conversation(turns=4):
     task={'instruction':'synthetic task'}
     c=NativeConversation('public system',task)
-    for n in range(4):
+    for n in range(turns):
         calls=[{'id':f't{n}-{i}','type':'function','function':{'name':'run_python','arguments':'{}'}} for i in range(2)]
         c.append({'role':'assistant','content':f'public {n}','tool_calls':calls},
                  [{'id':f's{n}-{i}','assistant':'','action':call['function'],
@@ -37,6 +37,18 @@ def replay_fixture():
 
 
 class HandoffFactorTests(unittest.TestCase):
+    def test_later_boundary_requires_eight_complete_turns(self):
+        task,c=conversation(8)
+        full,meta=handoff_conversation(c.messages(),task,'full_keep',8)
+        recent,_=handoff_conversation(c.messages(),task,'recent_keep',8)
+        self.assertEqual(len(split_turns(full.messages())),8)
+        self.assertEqual(len(split_turns(recent.messages())),1)
+        self.assertEqual(recent.messages()[2:],c.messages()[-3:])
+        self.assertEqual(meta['source_turns'],8)
+        for boundary in (4,7,9):
+            with self.assertRaises(ValueError):
+                handoff_conversation(c.messages(),task,'full_keep',boundary)
+
     def test_history_removal_preserves_complete_multi_call_turn_and_task(self):
         task,c=conversation();original=c.messages()
         recent,meta=handoff_conversation(original,task,'recent_keep')

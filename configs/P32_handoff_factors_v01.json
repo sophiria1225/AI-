@@ -1,0 +1,28 @@
+{
+  "phase": "P32",
+  "batch_id": "P32_batch_v01",
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE",
+    "P29_03_CODE",
+    "P29_04_CODE"
+  ],
+  "boundary_after_model_calls": 8,
+  "recent_complete_turns": 1,
+  "arms": [
+    "full_keep",
+    "recent_keep",
+    "full_reset",
+    "recent_reset"
+  ],
+  "order_rule": "Rotate the four listed arms by zero, one, two, three places for tasks one through four.",
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "selection_rule": "All four original P29 development trajectories, eighth model-response boundary. Selected from the low runtime-binding counts at the fixed fourth boundary, before complete P31 outcomes. Do not replace an ineligible state. Not an adaptive policy or independent extra tasks.",
+  "runtime_rule": "Keep reconstructs recorded Python prefix with inert saved API replies. Reset begins a fresh namespace once. All later calls persist in both conditions. The model receives an accurate condition-specific runtime notice.",
+  "environment_rule": "Re-execute recorded prefix APIs in a fresh isolated simulated world. Require exact public observations, discovered schemas and saved DB bytes before continuation. No environment effects are duplicated in the original world.",
+  "budget_rule": "Continuation limits are identical in all cells. Original prefix API usage is charged against the original task API cap. Prefix reconstruction is separate experimental setup, recorded per cell and not claimed to be deployment-free. Continuation seed starts at original seed plus eight."
+}

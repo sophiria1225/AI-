@@ -1,4 +1,4 @@
-"""Whole-cohort aggregate audit for the fixed P31 continuation comparison."""
+"""Whole-cohort aggregate audit for the prespecified continuation comparisons."""
 import argparse
 import collections
 import hashlib
@@ -71,8 +71,9 @@ def trial_row(trial, source_plan, source_id):
          ('summary.json','evaluation.json','events.json','spans.json','usage.json','setup.json','source_identity.json','plan.json','factor_plan.json')}}
 
 
-def analyze(storage,root):
-    plan=read(root/'configs/P31_handoff_factors_v01.json')
+def analyze(storage,root,phase='P31'):
+    if phase not in ('P31','P32'):raise ValueError('unknown phase')
+    plan=read(root/f'configs/{phase}_handoff_factors_v01.json')
     status=read(storage/'records/context_pilot'/plan['batch_id']/'status.json')
     if status['status']!='complete' or len(status['completed'])!=16:
         raise ValueError('wait for all 16 continuations and independent evaluations')
@@ -81,7 +82,7 @@ def analyze(storage,root):
     for number,source in enumerate(plan['source_runs'],1):
         task_rows=[]
         for arm in ARMS:
-            rid=f'P31_{number:02d}_{arm.upper()}'
+            rid=f'{phase}_{number:02d}_{arm.upper()}'
             row=trial_row(storage/'records/context_pilot'/rid,source_plan,source)
             if row['task_id']!=source_plan['task_ids'][number-1] or row['arm']!=arm:
                 raise ValueError('cell identity differs')
@@ -102,23 +103,28 @@ def analyze(storage,root):
         delta=(int(cells['recent_keep']['success'])-int(cells['full_keep']['success'])
               -int(cells['recent_reset']['success'])+int(cells['full_reset']['success']))
         differences.append({'task_id':task,'success_interaction':delta})
-    return {'phase':'P31','all_sixteen_reviewed':True,'audit_errors':[], 'rows':rows,'totals':totals,
+    source_names=[f'configs/{phase}_handoff_factors_v01.json',f'reports/{phase}_activation_v01.json',
+                  f'reports/{phase}_prefix_checks.json','reports/P29_comparison.json','reports/P30_recorded_replay.json']
+    if phase=='P32':source_names.append('reports/P31_comparison.json')
+    return {'phase':phase,'boundary_after_model_calls':plan['boundary_after_model_calls'],
+        'all_sixteen_reviewed':True,'audit_errors':[], 'rows':rows,'totals':totals,
         'per_task_interactions':differences,'mean_success_interaction':sum(r['success_interaction'] for r in differences)/4,
         'novel_method_claim':False,'full_process_equivalence_claim':False,
-        'limitations':['Four known development tasks, one seed, fixed early boundary; descriptive results only.',
+        'limitations':['Four known development tasks, one seed, a fixed prespecified boundary; descriptive results only.',
+          'Different boundaries reuse the same four tasks and have different continuation seeds; not independent replications.',
           'A one-time restart includes an accurate runtime-availability notice.',
           'Reconstruction is separate experimental setup; no deployment efficiency or arbitrary heap equivalence claim.',
           'All cells can retrieve archived public receipts; recent history is not irreversible evidence deletion.',
           'This comparison is not evidence that changing task ownership or multi-agent reorganization improves outcomes.'],
-        'source_hashes':{n:sha(root/n) for n in ('configs/P31_handoff_factors_v01.json','reports/P31_activation_v01.json',
-                                              'reports/P31_prefix_checks.json','reports/P29_comparison.json','reports/P30_recorded_replay.json')}}
+        'source_hashes':{n:sha(root/n) for n in source_names}}
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--storage-root',type=Path,required=True)
-    parser.add_argument('--repo-root',type=Path,default=ROOT);args=parser.parse_args()
-    target=args.repo_root/'reports/P31_comparison.json'
+    parser.add_argument('--repo-root',type=Path,default=ROOT)
+    parser.add_argument('--phase',choices=('P31','P32'),default='P31');args=parser.parse_args()
+    target=args.repo_root/f'reports/{args.phase}_comparison.json'
     if target.exists():raise FileExistsError('preserve previous whole-cohort report')
-    result=analyze(args.storage_root,args.repo_root)
+    result=analyze(args.storage_root,args.repo_root,args.phase)
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result['totals']))

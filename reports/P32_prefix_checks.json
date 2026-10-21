@@ -1,0 +1,982 @@
+{
+  "phase": "P32_prefix_preflight",
+  "at": "2026-10-21T18:14:41.899754+00:00",
+  "all_four_attempted": true,
+  "all_observable_prefixes_match": true,
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "task_id": "34d9492_1",
+      "status": "matched_observable_prefix",
+      "boundary_manifest_sha256": "2de2c894b847fa19fe23dbcb8427f033a1359d8192e40a2ab6dafdbd372bf356",
+      "model_calls": 0,
+      "evaluator_invocations": 0,
+      "environment": {
+        "api_requests": 12,
+        "observation_matches": 12,
+        "db_files_match": true,
+        "unknown_effect_requests": 0,
+        "full_process_restore_claim": false,
+        "db_files": 13
+      },
+      "python": {
+        "programs": 8,
+        "api_requests_sent": 0,
+        "checks": [
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "9bc6406f67d2de2edd0028c465ac1f0b496796f0e0eb24b05ef824a44a74d811",
+            "actual_stdout_sha256": "9bc6406f67d2de2edd0028c465ac1f0b496796f0e0eb24b05ef824a44a74d811",
+            "program": "call_001_01",
+            "source_sha256": {
+              "programs/call_001_01/input_private.json": "0664e21218044f476638364d0c33818f6ac4824898f10259663f16395611c3ea",
+              "programs/call_001_01/result_private.json": "76fca59dada3150a21dbe65089597aee50191cb837cc3c28c71f83d8cf880aea",
+              "programs/call_001_01/wire_private.jsonl": "fbae60ac2a3cba9d2ca279e46ab41927e9e2c9f6de85108e6902395c0110917d"
+            },
+            "replay_wall_seconds": 0.1744355841074139
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 6,
+            "matched_requests": 6,
+            "recorded_dispatched_requests": 6,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "05e88f67dce7f3b50520d2d9d20f3f653e20ff20fe325bb44fb8ad2d1e2d789a",
+            "actual_stdout_sha256": "05e88f67dce7f3b50520d2d9d20f3f653e20ff20fe325bb44fb8ad2d1e2d789a",
+            "program": "call_002_01",
+            "source_sha256": {
+              "programs/call_002_01/input_private.json": "644a9851ae5d9952c6a3a48d3a416bd7f185b35b3c17c52d4b91a5223dc30ca7",
+              "programs/call_002_01/result_private.json": "ea9a0758786acad9d38130f99b22e9d4bc310f05265de65ac1a29c25f7741b18",
+              "programs/call_002_01/wire_private.jsonl": "c192863e85702de01e726e4d7cca6fca76441dc53d3a02d3632de902d04f2dee"
+            },
+            "replay_wall_seconds": 0.0035520000383257866
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 0,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "839fdda274ded474433d92bdd4da7404256b32623a3ac546ea4b0f1d8b4a735f",
+            "actual_stdout_sha256": "839fdda274ded474433d92bdd4da7404256b32623a3ac546ea4b0f1d8b4a735f",
+            "program": "call_003_01",
+            "source_sha256": {
+              "programs/call_003_01/input_private.json": "da47967a21f2c9ec8e74402b4ae27931bbaf75a5a5bf05662c79a73232dc8fa8",
+              "programs/call_003_01/result_private.json": "fcbd6963fdeceaaca29e0b7f57fb19c3c17d549457d6c590224881573e65c4b4",
+              "programs/call_003_01/wire_private.jsonl": "38d3a366e519e17edc57bf45c2b4c007317de209028fce91da52e8411b134f69"
+            },
+            "replay_wall_seconds": 0.01845283294096589
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "c4f48dbb6b11e6c35f8af7180cecd0e35cdeb850999a4697a822a37e1676ec0e",
+            "actual_stdout_sha256": "c4f48dbb6b11e6c35f8af7180cecd0e35cdeb850999a4697a822a37e1676ec0e",
+            "program": "call_004_01",
+            "source_sha256": {
+              "programs/call_004_01/input_private.json": "83a5529d8fa934b1742e8199abada42044c0f55401855b54180b95a75c06a327",
+              "programs/call_004_01/result_private.json": "8bb498c4aaff5da5a256a49dca44acaf9837fb988db75b3ef89f32855957acc2",
+              "programs/call_004_01/wire_private.jsonl": "4193bd143d5f4f7f96cfc6eb4baa33250ec2251dbfef8d192760f7353675342c"
+            },
+            "replay_wall_seconds": 0.015642291866242886
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "619ca5c3c269d4d5042ec1988ebc46ba1d4064ab4125905c28541ef1604aa76b",
+            "actual_stdout_sha256": "619ca5c3c269d4d5042ec1988ebc46ba1d4064ab4125905c28541ef1604aa76b",
+            "program": "call_005_01",
+            "source_sha256": {
+              "programs/call_005_01/input_private.json": "d41380ab788e8d58c090c080c2fdd49f19829c863fad336c4126b8acdbb169ac",
+              "programs/call_005_01/result_private.json": "11c93d13421d32efad1fcd2561bd20752aa4fad41c96a54c58de0d6267356fef",
+              "programs/call_005_01/wire_private.jsonl": "9e6caf946c48dc08bf6a480ca416c52d6c20975930813b01f55cf691fcd02c3d"
+            },
+            "replay_wall_seconds": 0.017896125093102455
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "daeed7785cd39f7fc13c47c25c30244d0e527105b0559eecfe326b741acd302e",
+            "actual_stdout_sha256": "daeed7785cd39f7fc13c47c25c30244d0e527105b0559eecfe326b741acd302e",
+            "program": "call_006_01",
+            "source_sha256": {
+              "programs/call_006_01/input_private.json": "d1baf38e01118bec6a4a2a45461aa93f24ab8d19eec2540dcca27c1ae341edd8",
+              "programs/call_006_01/result_private.json": "5ede3f9f721641a855244b7b04d8fea2961ac6d54fc56257ce5c87450b2b0e31",
+              "programs/call_006_01/wire_private.jsonl": "12313aabe7614b460b29a113c3dc563e8339811364516336749a2c41373cfa3f"
+            },
+            "replay_wall_seconds": 0.01776591595262289
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "0be240fd009ff6c0a4f08d1bc0db7b90b14eaf66404281239c225c8a592ceb71",
+            "actual_stdout_sha256": "0be240fd009ff6c0a4f08d1bc0db7b90b14eaf66404281239c225c8a592ceb71",
+            "program": "call_007_01",
+            "source_sha256": {
+              "programs/call_007_01/input_private.json": "09275774064264b33464021af20dcc3a19ccf1b55a706eb8ccbb5dc0fa3c1152",
+              "programs/call_007_01/result_private.json": "263d505f6f8f2fdab4b69bff4b03004eaab4840aba02c77a40db189cedea3005",
+              "programs/call_007_01/wire_private.jsonl": "3db1b2829e715d0d2660cf049860020b7a7b35dbfe0a7d8abee17c78c316e42b"
+            },
+            "replay_wall_seconds": 0.018985375063493848
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "21b6d668011b634c604be53a7ac2e3c6a4a39827b9422f8866979191b540aaf7",
+            "actual_stdout_sha256": "21b6d668011b634c604be53a7ac2e3c6a4a39827b9422f8866979191b540aaf7",
+            "program": "call_008_01",
+            "source_sha256": {
+              "programs/call_008_01/input_private.json": "cb6943af776b4e5549687ede2e2ecba661cd604805b382a2ad6f39cf9a2230cd",
+              "programs/call_008_01/result_private.json": "313fd0eb842bd39f285b4c38ac14d1d60323b3c724b94519a40af9783e69f791",
+              "programs/call_008_01/wire_private.jsonl": "9449bceaf01ae24fb75ab4e56dcdf5eb00728c8e117369cbbabeb70fca83bfc0"
+            },
+            "replay_wall_seconds": 0.01754283392801881
+          }
+        ]
+      },
+      "wall_seconds": 3.697024832945317,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "task_id": "3c13f5a_1",
+      "status": "matched_observable_prefix",
+      "boundary_manifest_sha256": "de4a9e08e93e66cfdc5a42865a4f497be8feebf7b762e5f2ccaa112289d52008",
+      "model_calls": 0,
+      "evaluator_invocations": 0,
+      "environment": {
+        "api_requests": 8,
+        "observation_matches": 8,
+        "db_files_match": true,
+        "unknown_effect_requests": 0,
+        "full_process_restore_claim": false,
+        "db_files": 13
+      },
+      "python": {
+        "programs": 8,
+        "api_requests_sent": 0,
+        "checks": [
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "295317e7c71285dd0069f048ab88c662a3bfb02f9281818c3d4dca24178db6ae",
+            "actual_stdout_sha256": "295317e7c71285dd0069f048ab88c662a3bfb02f9281818c3d4dca24178db6ae",
+            "program": "call_001_01",
+            "source_sha256": {
+              "programs/call_001_01/input_private.json": "029e1d4594d87b42d3974f4ddaab050b0bf0fa06b1796338e8e27ec173d14e64",
+              "programs/call_001_01/result_private.json": "f624772e422442dfd0924cdbf53ac44e8cf0de16d4a9b14eab19b939b7a4866c",
+              "programs/call_001_01/wire_private.jsonl": "0ee731528c628cd746fffcbb3c33e2543d790ba2d94546f14212b3029e0b6e6e"
+            },
+            "replay_wall_seconds": 0.1737837919499725
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "0b83425103aed49e54866a6479ad7fa9562e8819bb2361c25175776d9dda986f",
+            "actual_stdout_sha256": "0b83425103aed49e54866a6479ad7fa9562e8819bb2361c25175776d9dda986f",
+            "program": "call_002_01",
+            "source_sha256": {
+              "programs/call_002_01/input_private.json": "d25c2972c25c7c8895564f26304590d0ed91099c83534f7227620e44303c90e9",
+              "programs/call_002_01/result_private.json": "629a9dc522daa701aa2c888f624b91961ac902c08f99aee8d63badfd0c7b496c",
+              "programs/call_002_01/wire_private.jsonl": "7c7840efbab6cf43fa7d8d2de5bfeef99d7654f630e2faaf5b29f4f8d50cd27a"
+            },
+            "replay_wall_seconds": 0.0176065422128886
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "494a4a7924daae0e067c382135df2d0a29836dc7beb77b11227f21a82bc440e6",
+            "actual_stdout_sha256": "494a4a7924daae0e067c382135df2d0a29836dc7beb77b11227f21a82bc440e6",
+            "program": "call_003_01",
+            "source_sha256": {
+              "programs/call_003_01/input_private.json": "053b92ac367136cc8d8a65ae075777773bc04a8049abb13cd19ef4f188fabd9c",
+              "programs/call_003_01/result_private.json": "e74a8e9a1cb6308be8cdb7eaa75aab80558b2787b634d495677cb414f4e323b7",
+              "programs/call_003_01/wire_private.jsonl": "f830deb62d929a7ab363c6340b53b106669e08db0f82ded6e3d0b42e5004636c"
+            },
+            "replay_wall_seconds": 0.017786083975806832
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 2,
+            "matched_requests": 2,
+            "recorded_dispatched_requests": 2,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "1aecec96abd480606b3915f0440c08df75c20292c3e51476c32c9765c98e71d9",
+            "actual_stdout_sha256": "1aecec96abd480606b3915f0440c08df75c20292c3e51476c32c9765c98e71d9",
+            "program": "call_004_01",
+            "source_sha256": {
+              "programs/call_004_01/input_private.json": "4a80c9e86d1ddf6ba91dbe0919fd14452f05df19a37324b7b7cc4c69716534a1",
+              "programs/call_004_01/result_private.json": "3a68a39a8a16009554f00039e0dc58afff62300fec80bd3254e74120a4b3dfbc",
+              "programs/call_004_01/wire_private.jsonl": "f9a8a0dd6bc78fa53e76d7f81f2dec3cc9ee4a0059ec1bc85ea8a93f3e640f50"
+            },
+            "replay_wall_seconds": 0.017767749959602952
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "c69cb73ac97d48c7b7c1b93497016312dd4c83328c8075f41150bb0c6095f0c5",
+            "actual_stdout_sha256": "c69cb73ac97d48c7b7c1b93497016312dd4c83328c8075f41150bb0c6095f0c5",
+            "program": "call_005_01",
+            "source_sha256": {
+              "programs/call_005_01/input_private.json": "25a9ee7fcfa566c1319558114d71f3f38f7ba697dbb5df319147a75c44108a57",
+              "programs/call_005_01/result_private.json": "4c3cd237919e7a75dbcfc77025e4d26bea25be97526b51ab43600e7fe3028155",
+              "programs/call_005_01/wire_private.jsonl": "fb9f1e4b22f0a0ae5401b750ad8524a73461e5f9f8add0aafe6de38a801afddd"
+            },
+            "replay_wall_seconds": 0.013306000037118793
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "521538159aa460e21564325a66fb0a250c5a1b15eddab8ea02d8159f80f4c4c0",
+            "actual_stdout_sha256": "521538159aa460e21564325a66fb0a250c5a1b15eddab8ea02d8159f80f4c4c0",
+            "program": "call_006_01",
+            "source_sha256": {
+              "programs/call_006_01/input_private.json": "6f2b3bfb69a062d921bf341f45079307b46e15a9e6c6bbdb767359cf75886714",
+              "programs/call_006_01/result_private.json": "bdf244dfadefbff6c868154a08796d7c9fec1240b30c0c767c076731ac559dc8",
+              "programs/call_006_01/wire_private.jsonl": "505f0c820fd2e43ffc0b03212fa991f830ffedd52e3d587ed7b9db5630183a55"
+            },
+            "replay_wall_seconds": 0.02954866597428918
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 0,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "program": "call_007_01",
+            "source_sha256": {
+              "programs/call_007_01/input_private.json": "35d4073b046cf8bde06d1529986c4921098632a7261d2f8c15a5c754effa0fbb",
+              "programs/call_007_01/result_private.json": "f2e8de5bb7df553422aa6145bf5dcb6b0cec1bbed1c6db80a389b5c6e194d4ef",
+              "programs/call_007_01/wire_private.jsonl": "6da43e7335d09a75190609bedbed179b0a5bec6fd5f27817d843e4fe42ca5190"
+            },
+            "replay_wall_seconds": 0.017601999919861555
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "d64b73265bb7d7254deaa062cb23972ace16e6f2f01df456a9e6e6a8cbb902bb",
+            "actual_stdout_sha256": "d64b73265bb7d7254deaa062cb23972ace16e6f2f01df456a9e6e6a8cbb902bb",
+            "program": "call_008_01",
+            "source_sha256": {
+              "programs/call_008_01/input_private.json": "47d6ae9c57dc2f577eacabf5286c0b257e9e3b9d3f8c7a9055d5ab8c2b605d46",
+              "programs/call_008_01/result_private.json": "459521d695f8944d8ea8405d1597125ebe4661fb92d8d8128e041ef19815dbd8",
+              "programs/call_008_01/wire_private.jsonl": "09e9407bce5ccc8e8ba781eae19115e0ea8cda7618a2f4836c384d5430a5b68c"
+            },
+            "replay_wall_seconds": 0.032657792093232274
+          }
+        ]
+      },
+      "wall_seconds": 3.7129697499331087,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "task_id": "60d0b5b_1",
+      "status": "matched_observable_prefix",
+      "boundary_manifest_sha256": "56050f91ff214806dfe2c9ae0446ccac336b17a5b9b542c1af23acec909a1b7b",
+      "model_calls": 0,
+      "evaluator_invocations": 0,
+      "environment": {
+        "api_requests": 13,
+        "observation_matches": 13,
+        "db_files_match": true,
+        "unknown_effect_requests": 0,
+        "full_process_restore_claim": false,
+        "db_files": 13
+      },
+      "python": {
+        "programs": 8,
+        "api_requests_sent": 0,
+        "checks": [
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 2,
+            "matched_requests": 2,
+            "recorded_dispatched_requests": 2,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "ef3f88f3c76d3e1448f6552d6f4ac3debd5fb8d975b1d7ae7e974f5fa084c1af",
+            "actual_stdout_sha256": "ef3f88f3c76d3e1448f6552d6f4ac3debd5fb8d975b1d7ae7e974f5fa084c1af",
+            "program": "call_001_01",
+            "source_sha256": {
+              "programs/call_001_01/input_private.json": "592e6e9d41e8818dd6ed6af4b62e2e8a6c1706b3f57ecf8ba17e8355889507b7",
+              "programs/call_001_01/result_private.json": "40a1b77a75a1efa5fa5c811f1867a5b1ce552dd95b3f51a932df9be9339cd28c",
+              "programs/call_001_01/wire_private.jsonl": "b7a2a4ed00e3067eef0c424b73a633fa305f826797d7868c56f33eb471f0a709"
+            },
+            "replay_wall_seconds": 0.17354270908981562
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 2,
+            "matched_requests": 2,
+            "recorded_dispatched_requests": 2,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "448e5e0763472a5b959d809f729811a2676ba256cf8a15fb25065f82faa01ea3",
+            "actual_stdout_sha256": "448e5e0763472a5b959d809f729811a2676ba256cf8a15fb25065f82faa01ea3",
+            "program": "call_002_01",
+            "source_sha256": {
+              "programs/call_002_01/input_private.json": "a86b951b3b6fa956caa108b4753a6013481311bd01585a9cecf66a00386a0c30",
+              "programs/call_002_01/result_private.json": "fee105b193c8af67a4e86271ab5d51ccf33ed790f4beb99e766f065a61ff2e1a",
+              "programs/call_002_01/wire_private.jsonl": "573350e86b6861ab436e8e4ee1f23d16303827a16bd3c9859fa5697b473f6f32"
+            },
+            "replay_wall_seconds": 0.018477708799764514
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 2,
+            "matched_requests": 2,
+            "recorded_dispatched_requests": 2,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "fd558e0873017fadc6e7537446924df55fef19a145a14ca5ee0ebccc7be9e480",
+            "actual_stdout_sha256": "fd558e0873017fadc6e7537446924df55fef19a145a14ca5ee0ebccc7be9e480",
+            "program": "call_003_01",
+            "source_sha256": {
+              "programs/call_003_01/input_private.json": "08c744d7fbbbff29345a3eb6d0425ba46e74e080f7d95a36ee673e926b7f4025",
+              "programs/call_003_01/result_private.json": "63938d059f10b75d9929a4fda3bd8ffce411878b058f172baf2d83103f52d2de",
+              "programs/call_003_01/wire_private.jsonl": "b7aa6fa7eae008d3d90599d5dca26a731795c7ff3535dc77252cda2ce4402784"
+            },
+            "replay_wall_seconds": 0.025648167124018073
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 0,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "c885b456fb9dde25c3aa2fece4446208c5cb36b4be80e7571c0a2da407b1fba7",
+            "actual_stdout_sha256": "c885b456fb9dde25c3aa2fece4446208c5cb36b4be80e7571c0a2da407b1fba7",
+            "program": "call_004_01",
+            "source_sha256": {
+              "programs/call_004_01/input_private.json": "0a2371b77709510716dfb11dc7aed9b4de8796ec1d255e7ab7c834987e80413e",
+              "programs/call_004_01/result_private.json": "96bbf7f6a99032f4c9ca8b3c8504cf7736f25222c2a34312ae57c78c18fcc3bb",
+              "programs/call_004_01/wire_private.jsonl": "adaee72fad82456b5426b1cc0cf7a2bebbbf5ffb8e9747fb6289ac0ac2e66228"
+            },
+            "replay_wall_seconds": 0.012841208139434457
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "083b349dbb64c6973a272adb9ef35ddbaac10f23c3c989477228b574238621d9",
+            "actual_stdout_sha256": "083b349dbb64c6973a272adb9ef35ddbaac10f23c3c989477228b574238621d9",
+            "program": "call_005_01",
+            "source_sha256": {
+              "programs/call_005_01/input_private.json": "fbf9d09b7b181829ec9282748af27cd8eaa170423d0ee4c2b6664b856cee5566",
+              "programs/call_005_01/result_private.json": "b3ba419c4777a40b7ddc52599d93a513182f304b8f0d74e083ac0fbac4dfd074",
+              "programs/call_005_01/wire_private.jsonl": "81916bd7aafdfd62bf4fea4f36cc8ccfb2672c81c1b44958c9b4bd8e0c90f3ea"
+            },
+            "replay_wall_seconds": 0.01742116711102426
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "f25175b1700b4a00ccd8a5e41d8c4c718c22872b1f3f58e5015209aab243136e",
+            "actual_stdout_sha256": "f25175b1700b4a00ccd8a5e41d8c4c718c22872b1f3f58e5015209aab243136e",
+            "program": "call_006_01",
+            "source_sha256": {
+              "programs/call_006_01/input_private.json": "3ddf2904dc7307bac13039ed0eb2a284befca36824d44f33a6fb0e5324a06850",
+              "programs/call_006_01/result_private.json": "996ae47941fccca721004d09f53f8b2ddf1912f9c93ff2e349c8d0662247e44f",
+              "programs/call_006_01/wire_private.jsonl": "eff6000f74a9030ba79d4ea21e55f19bc181ce43c1d6e2281924ac46a7af524d"
+            },
+            "replay_wall_seconds": 0.014917250024154782
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 4,
+            "matched_requests": 4,
+            "recorded_dispatched_requests": 4,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "f649a4ae3bac1999bb23c90150f5d55306eaefe00286f290c91b842678d6757b",
+            "actual_stdout_sha256": "f649a4ae3bac1999bb23c90150f5d55306eaefe00286f290c91b842678d6757b",
+            "program": "call_007_01",
+            "source_sha256": {
+              "programs/call_007_01/input_private.json": "e690241bb13e7520a20741022f5cc41d5f421c61f314dbfbe9fd7bbed416f1d8",
+              "programs/call_007_01/result_private.json": "e644a4fd23bfb0a1b105c1f212e1073379c9bec4850056458879da129df300f2",
+              "programs/call_007_01/wire_private.jsonl": "f5d13b1ece898460ad73697132f9bbe9882e76ba3edb5c4e0773b2d8c7cb7201"
+            },
+            "replay_wall_seconds": 0.019994083093479276
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "e828b218feb255de2da7e21afaf66c406627489c3797c76349012ce6e86058bf",
+            "actual_stdout_sha256": "e828b218feb255de2da7e21afaf66c406627489c3797c76349012ce6e86058bf",
+            "program": "call_008_01",
+            "source_sha256": {
+              "programs/call_008_01/input_private.json": "cae80294549eb9f14326a330c6d32a2f86d74bea085b9773dd6bc9208dd8fa84",
+              "programs/call_008_01/result_private.json": "986e934c359c7901ed81d831a6e7abc2493c9b6a0ce2e3bd0f4b12898352fd53",
+              "programs/call_008_01/wire_private.jsonl": "6e02a235c71b4c0899ffc4f84fe8baecf877053d3ef7af3b5c2f725e15ec5812"
+            },
+            "replay_wall_seconds": 0.011325750034302473
+          }
+        ]
+      },
+      "wall_seconds": 3.739538334077224,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "task_id": "6104387_1",
+      "status": "matched_observable_prefix",
+      "boundary_manifest_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "model_calls": 0,
+      "evaluator_invocations": 0,
+      "environment": {
+        "api_requests": 18,
+        "observation_matches": 18,
+        "db_files_match": true,
+        "unknown_effect_requests": 0,
+        "full_process_restore_claim": false,
+        "db_files": 13
+      },
+      "python": {
+        "programs": 8,
+        "api_requests_sent": 0,
+        "checks": [
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 3,
+            "matched_requests": 3,
+            "recorded_dispatched_requests": 3,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "d2bb04520c5fb6cc7c6d76bdadf42796314580ceb3cb74e3b60090e1df0cdc3b",
+            "actual_stdout_sha256": "d2bb04520c5fb6cc7c6d76bdadf42796314580ceb3cb74e3b60090e1df0cdc3b",
+            "program": "call_001_01",
+            "source_sha256": {
+              "programs/call_001_01/input_private.json": "c51887084702b3d2266886e79206f20da7b2fc0d69971089c69ecd204146bb8c",
+              "programs/call_001_01/result_private.json": "7372569fcacbab914e2e97a6ad3131829003658c5d787cdebd6b3fa6d38eafc1",
+              "programs/call_001_01/wire_private.jsonl": "56bd5d3a000f92f854b374f49f13a9b56dc1f79e7ac5a64a1db2772fcfdebfeb"
+            },
+            "replay_wall_seconds": 0.20437279203906655
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 6,
+            "matched_requests": 6,
+            "recorded_dispatched_requests": 6,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "d5b799a5024b51b87e0825958695b225b80b2d55e2c72da76235ca35dbeadcc9",
+            "actual_stdout_sha256": "d5b799a5024b51b87e0825958695b225b80b2d55e2c72da76235ca35dbeadcc9",
+            "program": "call_002_01",
+            "source_sha256": {
+              "programs/call_002_01/input_private.json": "38d2ce4d5905298d6028459112af5473a868266b2a9792645ab06f25e813f419",
+              "programs/call_002_01/result_private.json": "ad36062cb0d47c841e6d3c31e4206f13bbe1bcddc8ce13416d481eff65367fd3",
+              "programs/call_002_01/wire_private.jsonl": "280417e2c051bb80c4f3766766caa94fe553f2e2fb0ad92d5e06bb5fb53b34f8"
+            },
+            "replay_wall_seconds": 0.017832583049312234
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "1fd8bdc762d4fa5b22956ac7a90ccbc92af5a7f4f409e66748ec9e46c0d081cb",
+            "actual_stdout_sha256": "1fd8bdc762d4fa5b22956ac7a90ccbc92af5a7f4f409e66748ec9e46c0d081cb",
+            "program": "call_003_01",
+            "source_sha256": {
+              "programs/call_003_01/input_private.json": "814bd84038c2d519d7759d86285f95fd8a4b6bcd8f51eb1ae56d466df728be56",
+              "programs/call_003_01/result_private.json": "259bde8b73346e1eb4d82b2de266b8f3018d5c56528dd0831a3d5e939668c146",
+              "programs/call_003_01/wire_private.jsonl": "b714672778a8971886b170298f3a044935dd57d491db790bd1542c6ec8bc7ebd"
+            },
+            "replay_wall_seconds": 0.020997541025280952
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 0,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "program": "call_004_01",
+            "source_sha256": {
+              "programs/call_004_01/input_private.json": "ccd25e336519f8a9239d4b33a258cc213bdd75c3dc9ca17d757bf1e81b254229",
+              "programs/call_004_01/result_private.json": "0cfa6289b87fb6ebcceec758c9e4f30b319a9637e5786e0989ede9c80c7b55cf",
+              "programs/call_004_01/wire_private.jsonl": "f7b18d87b7348bb84c0630a108949790d9282427a88bc06442cb01025cc4fea6"
+            },
+            "replay_wall_seconds": 0.01760066719725728
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "400654f25a1cdf856326ea25f687b94b31b3976affd405ac1b679b3abc9118ad",
+            "actual_stdout_sha256": "400654f25a1cdf856326ea25f687b94b31b3976affd405ac1b679b3abc9118ad",
+            "program": "call_005_01",
+            "source_sha256": {
+              "programs/call_005_01/input_private.json": "9f0a19542f9788819777d3c47d41247c8dcc39a31bdec7f6c466cbb9c94a9071",
+              "programs/call_005_01/result_private.json": "8ea8dac3a798481f72a4097eba9d1c2271304ace8b9eb415afd8fbb3fc2ea046",
+              "programs/call_005_01/wire_private.jsonl": "3e7d7f52aa1d470dac114238a118ec1674334e920b9d7a314c2dfb1c471753f6"
+            },
+            "replay_wall_seconds": 0.011990708066150546
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 1,
+            "matched_requests": 1,
+            "recorded_dispatched_requests": 1,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "d2d44cd07929f5c3fd0462d11d2ce243d3f7f89627a3c9a11e0fc0869a083349",
+            "actual_stdout_sha256": "d2d44cd07929f5c3fd0462d11d2ce243d3f7f89627a3c9a11e0fc0869a083349",
+            "program": "call_006_01",
+            "source_sha256": {
+              "programs/call_006_01/input_private.json": "07fe1d57f7c21b5d3c3a5363bdf8fba899a6b2f16bf801e5c3d4d6e11a6ade41",
+              "programs/call_006_01/result_private.json": "6ce0fe0af19d1092ca47cd8398002db4cb0b671558a3a81bf3238ad6b20d7a00",
+              "programs/call_006_01/wire_private.jsonl": "078a5a9458b33619a0ec753cc075ec61ded352723cbfbe07ba3464d67c94bee2"
+            },
+            "replay_wall_seconds": 0.023419957840815187
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 3,
+            "matched_requests": 3,
+            "recorded_dispatched_requests": 3,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "43b6b24f238b9f349bc93d689102278a791ede166606a780edbfa1762734ad56",
+            "actual_stdout_sha256": "43b6b24f238b9f349bc93d689102278a791ede166606a780edbfa1762734ad56",
+            "program": "call_007_01",
+            "source_sha256": {
+              "programs/call_007_01/input_private.json": "cf1035ec4f045c7bde6d5929858914b376b95e1c76cc8f994d3f70f5198308d9",
+              "programs/call_007_01/result_private.json": "042a993af731a2d5e6b923af99d7d5a90ac99ec89b23e7699982accc06b9f74f",
+              "programs/call_007_01/wire_private.jsonl": "b4ba62a63be9d24f0e89ab6b100d0c3b4ea4ff8926125305bf2eb8a641d3be6c"
+            },
+            "replay_wall_seconds": 0.01901350007392466
+          },
+          {
+            "checks": {
+              "request_sequence": true,
+              "status": true,
+              "stdout": true,
+              "stdout_truncated": true,
+              "error": true,
+              "declared_complete": true,
+              "unknown_effects": true,
+              "no_live_api_dispatch": true
+            },
+            "observable_prefix_matches": true,
+            "recorded_requests": 3,
+            "matched_requests": 3,
+            "recorded_dispatched_requests": 3,
+            "api_requests_sent": 0,
+            "mismatch_kind": null,
+            "expected_stdout_sha256": "0e6dd228662e6febfcc71a07855ccee481b23858a45282d17a561b3b10e6ce7c",
+            "actual_stdout_sha256": "0e6dd228662e6febfcc71a07855ccee481b23858a45282d17a561b3b10e6ce7c",
+            "program": "call_008_01",
+            "source_sha256": {
+              "programs/call_008_01/input_private.json": "e0ae46f92c3c086c7473f483a26556aece9b1b4055a9f4a8af2abbb677532736",
+              "programs/call_008_01/result_private.json": "82352c57cb38ff800066e09db10c45adbe015aaf12bb2026a2d8e67fc7f3b3e8",
+              "programs/call_008_01/wire_private.jsonl": "819d66e3956b0c2b35170d558f574cfb789c4c8514fbdfa030ccb17ae09e29e4"
+            },
+            "replay_wall_seconds": 0.02315149991773069
+          }
+        ]
+      },
+      "wall_seconds": 3.937485417118296,
+      "container_removed": true
+    }
+  ],
+  "model_calls": 0,
+  "evaluator_invocations": 0,
+  "setup_api_requests": 51,
+  "wall_seconds": 15.089990624925122,
+  "full_process_equivalence_claim": false,
+  "source_hashes": {
+    "scripts/handoff_factors.py": "0f620dce91eff19a211a45dcafe145702ee16b6a507b02c0ca02bf5803a3fcd2",
+    "scripts/run_handoff_factors.py": "6b3e737bd4d6eafb5c96fef873655d99af36b29c8460259f7bf5ea2d2493973a",
+    "scripts/preflight_handoff_prefixes.py": "17a6617eec833cbdb55eb3217b1fa1532b94a2eaa96bf4e8078b8b3e94d29ced",
+    "configs/P32_handoff_factors_v01.json": "3225de28086f8c773cf4f70d247175f440b24c5ad38004b781045388498dd636",
+    "reports/P30_recorded_replay.json": "33dc4a57db273e91e5aaf3c884763eda9f420bf5d9fa3ff426d7c28649cc3127",
+    "scripts/later_handoff_sources.py": "35922983507346befb20d240caf2bf8345ac67b13916843542eb7aabe415e647"
+  },
+  "scope": "Original world never changed. Public API observations, discovered schemas, saved DB bytes and recorded Python request/output correspondence only."
+}

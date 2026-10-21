@@ -1,0 +1,73 @@
+{
+  "phase": "P32_prefix_characterization",
+  "at": "2026-10-21T18:15:14.650370+00:00",
+  "all_four_attempted": true,
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "boundary_manifest_sha256": "2de2c894b847fa19fe23dbcb8427f033a1359d8192e40a2ab6dafdbd372bf356",
+      "status": "counted",
+      "binding_types": {
+        "dict": 1,
+        "list": 1,
+        "module": 1,
+        "str": 2
+      },
+      "top_level_container_entries_with_aliases": 44,
+      "user_bindings": 5,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "boundary_manifest_sha256": "de4a9e08e93e66cfdc5a42865a4f497be8feebf7b762e5f2ccaa112289d52008",
+      "status": "counted",
+      "binding_types": {
+        "list": 1,
+        "module": 1,
+        "str": 1
+      },
+      "top_level_container_entries_with_aliases": 30,
+      "user_bindings": 3,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "boundary_manifest_sha256": "56050f91ff214806dfe2c9ae0446ccac336b17a5b9b542c1af23acec909a1b7b",
+      "status": "counted",
+      "binding_types": {
+        "dict": 5,
+        "int": 1,
+        "list": 3,
+        "str": 1
+      },
+      "top_level_container_entries_with_aliases": 84,
+      "user_bindings": 10,
+      "container_removed": true
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "boundary_manifest_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "status": "counted",
+      "binding_types": {
+        "dict": 1,
+        "list": 7,
+        "module": 1,
+        "str": 1
+      },
+      "top_level_container_entries_with_aliases": 35,
+      "user_bindings": 10,
+      "container_removed": true
+    }
+  ],
+  "model_calls": 0,
+  "live_api_requests": 0,
+  "wall_seconds": 1.8240366659592837,
+  "selection_or_running_branches_changed": false,
+  "scope": "Binding and top-level container counts only; aliases may double count. Names, values, credentials, relevance and future correctness are not inferred.",
+  "source_hashes": {
+    "scripts/inspect_later_handoff_state.py": "b4e0ce679c7a4351f2515f667e3acbfd4a9c121f95ff9e0995c84d2f42ee9538",
+    "scripts/inspect_handoff_prefix_state.py": "00c77fd8da20c629daece341cc360c98155237e2f0571a24e1c1ff5c04e820d3",
+    "scripts/later_handoff_sources.py": "35922983507346befb20d240caf2bf8345ac67b13916843542eb7aabe415e647",
+    "configs/P32_handoff_factors_v01.json": "3225de28086f8c773cf4f70d247175f440b24c5ad38004b781045388498dd636"
+  }
+}

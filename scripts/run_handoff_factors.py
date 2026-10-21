@@ -78,6 +78,9 @@ def prepare_sources(storage, root):
 
 
 def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, run_id):
+    boundary_call=prepared['prefix']['manifest']['state']['model_calls']
+    if plan['phase'] not in ('P31','P32') or boundary_call!=plan['boundary_after_model_calls']:
+        raise ValueError('wrong prespecified boundary or phase')
     trial = storage/'records/context_pilot'/run_id
     if trial.exists(): raise FileExistsError('preserve every prior branch')
     appworld = storage/'.runtime/appworld/r18_probe_01'
@@ -88,7 +91,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
     config = copy.deepcopy(source_plan)
     for field in ('max_calls','max_total_tokens','max_wall_seconds'):
         config[field] = plan[field]
-    config.update(phase='P31', seed=source_plan['seed']+BOUNDARY_CALL,
+    config.update(phase=plan['phase'], seed=source_plan['seed']+boundary_call,
                   max_api_requests=source_plan['api_budget_by_task'][task_id])
     write_json(trial/'plan.json', config)
     write_json(trial/'factor_plan.json', plan)
@@ -125,7 +128,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
                 raise ValueError('reconstructed Python prefix differs')
         if time.monotonic()-setup_started > plan['max_setup_seconds']:
             raise TimeoutError('reconstruction exceeded setup deadline')
-        conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm)
+        conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm,boundary_call)
         write_json(trial/'conversation_private.json', conversation.messages())
         setup.update(status='matched_observable_prefix',wall_seconds=time.monotonic()-setup_started)
         write_json(trial/'setup.json', setup)
@@ -213,15 +216,17 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
 
 def publish_status(status,output):
     from watch_pro_comparison import gh_api
-    marker='<!-- harness-handoff-factor:P31_batch_v01 -->'
-    lines=[marker,'P31：会話履歴 × Python作業状態の固定地点比較',
+    phase=status['phase']
+    issue_number={'P31':145,'P32':150}[phase]
+    marker=f'<!-- harness-handoff-factor:{phase}_batch_v01 -->'
+    lines=[marker,f'{phase}：会話履歴 × Python作業状態の固定地点比較',
            '',f"状態: {status['status']} / 完了 {len(status['completed'])}/16 / 実行中 {status['active'] or 'なし'}",'',
            '| 課題番号 | 条件 | 最終成功 | 後続生成 | 既知token | 後続API |',
            '|---|---|---:|---:|---:|---:|']
     for row in status['rows']:
         lines.append(f"| {row['run_id'].split('_')[1]} | {row['arm']} | {row.get('success','未評価')} | {row['model_calls']} | {row['known_total_tokens']:,} | {row['api_requests']} |")
     lines+=['','共通前半・環境再構成の費用は別に全件記録。全16件の監査前に効果を確定しない。',
-            '既知４課題・１seed・４応答後。完全プロセス復元／新規方式／再編の有効性の証明ではない。']
+            f"既知４課題・１seed・{status['boundary_after_model_calls']}応答後。完全プロセス復元／新規方式／再編の有効性の証明ではない。"]
     body='\n'.join(lines)
     (output/'progress.md').write_text(body+'\n')
     try:
@@ -229,28 +234,36 @@ def publish_status(status,output):
             endpoint=f"repos/sophiria1225/AI-/issues/comments/{int(status['comment_id'])}"
             old=gh_api(endpoint)
             if (not old.get('body','').startswith(marker)
-                    or old.get('issue_url')!='https://api.github.com/repos/sophiria1225/AI-/issues/145'):
+                    or old.get('issue_url')!=f'https://api.github.com/repos/sophiria1225/AI-/issues/{issue_number}'):
                 raise ValueError('progress destination differs')
             result=gh_api(endpoint,method='PATCH',payload={'body':body})
         else:
-            issue=gh_api('repos/sophiria1225/AI-/issues/145')
-            if issue['html_url']!='https://github.com/sophiria1225/AI-/issues/145':
+            issue=gh_api(f'repos/sophiria1225/AI-/issues/{issue_number}')
+            if issue['html_url']!=f'https://github.com/sophiria1225/AI-/issues/{issue_number}':
                 raise ValueError('Issue identity differs')
-            result=gh_api('repos/sophiria1225/AI-/issues/145/comments',method='POST',payload={'body':body})
+            result=gh_api(f'repos/sophiria1225/AI-/issues/{issue_number}/comments',method='POST',payload={'body':body})
         status.update(comment_id=result['id'],comment_url=result['html_url'])
         status.pop('publish_error',None)
     except Exception as exc:
         status['publish_error']=type(exc).__name__
 
 
-def run(storage, root, publish=False):
-    plan, source_plan, tools, schemas, prepared = prepare_sources(storage,root)
-    checked=read(root/'reports/P31_prefix_checks.json')
+def run(storage, root, publish=False, phase='P31'):
+    if phase=='P31':
+        plan, source_plan, tools, schemas, prepared = prepare_sources(storage,root)
+    elif phase=='P32':
+        from later_handoff_sources import prepare_later_sources
+        previous=read(root/'reports/P31_comparison.json')
+        if not previous['all_sixteen_reviewed'] or previous['audit_errors']:
+            raise ValueError('wait for the whole P31 review')
+        plan, source_plan, tools, schemas, prepared = prepare_later_sources(storage,root)
+    else:raise ValueError('unknown phase')
+    checked=read(root/f'reports/{phase}_prefix_checks.json')
     if not checked['all_four_attempted'] or not checked['all_observable_prefixes_match']:
         raise ValueError('all four fixed-prefix preflights must pass')
     for name,digest in checked['source_hashes'].items():
         if sha(root/name)!=digest:raise ValueError('preflight source changed')
-    freeze = read(root/'reports/P31_activation_v01.json')
+    freeze = read(root/f'reports/{phase}_activation_v01.json')
     for name,digest in freeze['source_hashes'].items():
         if sha(root/name)!=digest: raise ValueError('frozen implementation or plan changed')
     if freeze['source_boundaries'] != [p['boundary_manifest_sha256'] for p in prepared]:
@@ -265,13 +278,14 @@ def run(storage, root, publish=False):
     write_json(output/'frozen_plan.json',plan)
     write_json(output/'activation.json',freeze)
     rows=[]
-    status={'status':'running','phase':'P31','started_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    status={'status':'running','phase':phase,'boundary_after_model_calls':plan['boundary_after_model_calls'],
+            'started_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'completed':[],'rows':rows,'active':None,
             'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()}
     for number,item in enumerate(prepared,1):
         arms=list(ARMS[number-1:]+ARMS[:number-1])
         for arm in arms:
-            rid=f'P31_{number:02d}_{arm.upper()}'
+            rid=f'{phase}_{number:02d}_{arm.upper()}'
             status.update(active=rid,updated_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
             if publish:publish_status(status,output)
             write_json(output/'status.json',status)
@@ -303,7 +317,8 @@ def run(storage, root, publish=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--storage-root',type=Path,required=True)
-    parser.add_argument('--repo-root',type=Path,default=ROOT);parser.add_argument('--publish',action='store_true');args=parser.parse_args()
+    parser.add_argument('--repo-root',type=Path,default=ROOT);parser.add_argument('--publish',action='store_true')
+    parser.add_argument('--phase',choices=('P31','P32'),default='P31');args=parser.parse_args()
     def timeout(*_): raise TimeoutError('bounded local inference timeout')
     signal.signal(signal.SIGALRM,timeout)
-    raise SystemExit(run(args.storage_root,args.repo_root,args.publish))
+    raise SystemExit(run(args.storage_root,args.repo_root,args.publish,args.phase))

@@ -12,14 +12,18 @@ from run_context_comparison import Bridge, write_json
 from run_handoff_factors import prepare_sources, sha, ROOT
 
 
-def run(storage, root, output, report):
-    plan, source_plan, tools, schemas, prepared = prepare_sources(storage, root)
+def run(storage, root, output, report, phase='P31'):
+    if phase=='P31':plan, source_plan, tools, schemas, prepared = prepare_sources(storage, root)
+    elif phase=='P32':
+        from later_handoff_sources import prepare_later_sources
+        plan, source_plan, tools, schemas, prepared = prepare_later_sources(storage, root)
+    else:raise ValueError('unknown phase')
     if output.exists() or report.exists(): raise FileExistsError('preserve preflight records')
     output.mkdir(parents=True)
     rows=[];started=time.monotonic()
     appworld=storage/'.runtime/appworld/r18_probe_01'
     for number, item in enumerate(prepared,1):
-        prefix=item['prefix'];task_id=item['task_id'];rid=f'P31_PREFIX_V01_{number:02d}'
+        prefix=item['prefix'];task_id=item['task_id'];rid=f'{phase}_PREFIX_V01_{number:02d}'
         out=output/rid;out.mkdir()
         world=appworld/'experiments/outputs'/rid
         if world.exists():raise FileExistsError('preserve original world')
@@ -54,15 +58,16 @@ def run(storage, root, output, report):
             row['wall_seconds']=time.monotonic()-at
             row['container_removed']=session.state['container_removed'] if session else None
             write_json(out/'summary.json',row);rows.append(row)
-    result={'phase':'P31_prefix_preflight','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    source_names=['scripts/handoff_factors.py','scripts/run_handoff_factors.py','scripts/preflight_handoff_prefixes.py',
+                  f'configs/{phase}_handoff_factors_v01.json','reports/P30_recorded_replay.json']
+    if phase=='P32':source_names.append('scripts/later_handoff_sources.py')
+    result={'phase':phase+'_prefix_preflight','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'all_four_attempted':len(rows)==4,
             'all_observable_prefixes_match':all(r['status']=='matched_observable_prefix' for r in rows),
             'rows':rows,'model_calls':0,'evaluator_invocations':0,
             'setup_api_requests':sum(r.get('environment',{}).get('api_requests',0) for r in rows),
             'wall_seconds':time.monotonic()-started,'full_process_equivalence_claim':False,
-            'source_hashes':{name:sha(root/name) for name in (
-                'scripts/handoff_factors.py','scripts/run_handoff_factors.py','scripts/preflight_handoff_prefixes.py',
-                'configs/P31_handoff_factors_v01.json','reports/P30_recorded_replay.json')},
+            'source_hashes':{name:sha(root/name) for name in source_names},
             'scope':'Original world never changed. Public API observations, discovered schemas, saved DB bytes and recorded Python request/output correspondence only.'}
     write_json(output/'summary.json',result);write_json(report,result)
     print({k:result[k] for k in ('all_four_attempted','all_observable_prefixes_match','setup_api_requests','wall_seconds')})
@@ -71,5 +76,5 @@ def run(storage, root, output, report):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--storage-root',type=Path,required=True)
     parser.add_argument('--repo-root',type=Path,default=ROOT);parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--report',type=Path,required=True);a=parser.parse_args()
-    run(a.storage_root,a.repo_root,a.output,a.report)
+    parser.add_argument('--report',type=Path,required=True);parser.add_argument('--phase',choices=('P31','P32'),default='P31');a=parser.parse_args()
+    run(a.storage_root,a.repo_root,a.output,a.report,a.phase)
