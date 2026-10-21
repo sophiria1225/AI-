@@ -16,3 +16,13 @@ P16の記録通り条件では、４入力とも３回のリクエストは同�
 llama.cppの[公式サーバー説明](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md)も、キャッシュ利用とバッチサイズの差による非決定性を明記している。したがって、固定seedなのに出力が違うこと自体を新規発見とはしない。現在の実行版における具体的な原因の同定は別の確認が必要。
 
 検索で見つかったContext Compaction Provenance (CCP) LabはSSRNの本文取得がHTTP 403だった。検索断片だけで具体的方式や優劣を確定せず、今回の本文比較の根拠には使わない。
+
+## 費用の詳細と、同じ問題だと断定しない範囲
+
+同日16時台に確認範囲を追加した。SelfCompact付録C/Dは要約役を含む全呼び出しの費用と、初回入力・キャッシュ読取の別料金も扱う。したがって「要約費用を含めた」「キャッシュ料金を分けた」だけでは差にならない。一方、今回の単一スロットで記録した実際の再処理量と、その論文の費用近似は同一ではなく、別環境の数値をそのまま移さない。[原典付録C/D](https://arxiv.org/html/2606.23525v1#A3)。
+
+Compression Costの3.3〜3.5節・5.3節には、失った状態の再取得、履歴に依存する状態、保持する項目の選択と内容の妥当性を分ける比較がある。後から参照された項目で選ぶ条件は分析用であり、オンライン方式の実性能に混ぜない。本研究でも、再取得が増えたという観察だけを独自の機構にしない。[原典](https://arxiv.org/html/2608.16370v1)。
+
+実装側でも[Hermesの公式説明](https://github.com/NousResearch/hermes-agent/blob/main/website/docs/developer-guide/micro-compaction.md)は、履歴の書換えがキャッシュを壊す費用、処理頻度、一定以上の削減を待つ規則を明示する。これは開発資料であり査読論文とは区別するが、単に閾値を設ける案の重複確認に使える。今回は冒頭、動作、Prompt caching節を読んだ。コード全体の再現や同一設定での性能比較はしていない。
+
+[When KV Cache Reuse Fails in Multi-Agent Systems](https://arxiv.org/abs/2601.08343)は要旨までを確認した。複数候補を評価するjudgeの候補間相互作用が対象で、今回の台帳役への切替と同じ原因だとは扱わない。HTMLを取得しただけで本文精読済みとは記録しない。追加の取得記録は[こちら](../reports/memory_cost_followup_sources_20261021.json)。
