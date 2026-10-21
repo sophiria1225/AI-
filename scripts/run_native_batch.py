@@ -24,6 +24,7 @@ PHASES = {
     "P13": {"issue": 51, "arm": "native_focus", "batch": "P13_batch_v01", "before": "P12", "trials": 4},
     "P14": {"issue": 54, "arm": "native_ledger", "batch": "P14_batch_v01", "before": "P13", "trials": 4},
     "P18": {"issue": 86, "arm": "native_roles", "batch": "P18_batch_v01", "before": "P17", "trials": 4},
+    "P22": {"issue": 102, "arm": "native_roles", "batch": "P22_batch_v01", "before": "P21", "trials": 6},
 }
 
 
@@ -39,13 +40,34 @@ def validate_schedule(plan):
             or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
             or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed calibration schedule is supported")
-    if phase in ("P11", "P12", "P13", "P14", "P18"):
-        selection_file = 'reports/P18_public_task_selection.json' if phase == 'P18' else 'reports/P11_public_task_selection.json'
+    if phase in ("P11", "P12", "P13", "P14", "P18", "P22"):
+        selection_file = ('reports/'+phase+'_public_task_selection.json' if phase in ('P18', 'P22')
+                          else 'reports/P11_public_task_selection.json')
         selected = json.loads((ROOT / selection_file).read_text())
         ids = [row['task_id'] for row in selected['selected']]
         if (plan['task_ids'] != ids or [row[0] for row in plan['run_order']] != ids
                 or len({row[2] for row in plan['run_order']}) != len(ids)):
-            raise ValueError('the additional baseline must preserve the four scenarios and order')
+            raise ValueError('the additional baseline must preserve selected scenarios and order')
+        if phase == 'P22':
+            reservation = json.loads((ROOT/'reports/letter_scenario_reservation_20261021.json').read_text())
+            if (ids != [sid+'_1' for sid in reservation['further_development']]
+                    or set(ids) & set(reservation['reserved_variant_one_tasks'])):
+                raise ValueError('P22 must stay within the six reserved development scenarios')
+
+
+def check_p22_activation(plan):
+    """Preparation must not silently schedule generation before P21 review."""
+    if plan['phase'] != 'P22':
+        return
+    record = json.loads((ROOT/'reports/P22_activation_v01.json').read_text())
+    primary = ROOT/'reports/P21_export_diagnostic_summary.json'
+    if (record.get('decision') != 'run_six_full_history_development_tasks'
+            or not record.get('why') or not record.get('alternatives')
+            or hashlib.sha256(primary.read_bytes()).hexdigest() != record.get('p21_primary_sha256')):
+        raise ValueError('P22 needs an explicit decision tied to the completed P21 evaluation')
+    result = json.loads(primary.read_text())
+    if result['phase'] != 'P21' or result['model_calls'] != 6 or result['audit_errors']:
+        raise ValueError('P21 primary review is incomplete')
 
 
 def public_body(rows, state):
@@ -63,7 +85,8 @@ def public_body(rows, state):
              "P12": "P12：同じ4シナリオで直近履歴の保持と原文再読を比較",
              "P13": "P13：同じ接続でFOCUSに基づく保持方式と全費用を比較",
              "P14": "P14：通常の作業台帳と全更新費用を比較",
-             "P18": "P18：未使用の４開発シナリオを全履歴基準で観察"}[phase]
+             "P18": "P18：未使用の４開発シナリオを全履歴基準で観察",
+             "P22": "P22：予約済みの６開発シナリオを全履歴基準で観察"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -87,7 +110,8 @@ def public_body(rows, state):
                "P12": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-observations-20261021/docs/experiments/P12_recent_window.md)",
                "P13": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-focus-comparison-20261021/docs/experiments/P13_native_focus.md)",
                "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p14-ledger-execution-20261021/docs/experiments/P14_native_ledger.md)",
-               "P18": "[事前仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P18_unseen_development.md)"}[phase]]
+               "P18": "[事前仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P18_unseen_development.md)",
+               "P22": "[事前仕様と実行条件](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P22_development_preparation.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -125,6 +149,7 @@ def main():
     check_frozen(frozen)
     phase = plan["phase"]
     validate_schedule(plan)
+    check_p22_activation(plan)
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
     observer = out / "observer"
@@ -174,6 +199,7 @@ def main():
         "P13": ("context_pilot", plan.get("wait_for_native_batch")),
         "P14": ("context_pilot", plan.get("wait_for_native_batch")),
         "P18": ("event_view_probe", plan.get("wait_for_contract_probe")),
+        "P22": ("data_export_probe", plan.get("wait_for_export_probe")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
@@ -200,14 +226,14 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    if phase == "P18":
+    if phase in ("P18", "P22"):
         from run_event_view_probe import lease_remaining
         runtime = json.loads((storage / '.runtime/model_server.json').read_text())
         command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
         live_remaining, live_end = lease_remaining(runtime, command, datetime.datetime.now(datetime.timezone.utc))
         remaining = min(remaining, live_remaining)
         state['checked_server_lease_end_utc'] = live_end
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18") else 180
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)
