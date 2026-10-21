@@ -27,6 +27,7 @@ PHASES = {
     "P22": {"issue": 102, "arm": "native_roles", "batch": "P22_batch_v01", "before": "P21", "trials": 6},
     "P24": {"issue": 115, "arm": "native_guided", "batch": "P24_batch_v01", "before": "P22", "trials": 6},
     "P25": {"issue": 120, "arm": "native_guided", "batch": "P25_batch_v01", "before": "P24", "trials": 4},
+    "P26": {"issue": 128, "arm": "native_guided", "batch": "P26_batch_v01", "before": "P25", "trials": 1},
 }
 
 
@@ -135,6 +136,38 @@ def check_p25_activation(plan):
         raise ValueError('P25 must not consume reserved confirmation tasks')
 
 
+def check_p26_activation(plan):
+    """One post-hoc budget diagnostic, never a task-specific prompt repair."""
+    if plan['phase'] != 'P26':
+        return
+    from run_native_appworld import system_prompt_for, GENERAL_GUIDANCE
+    from compare_generic_guidance import MATCHED_KEYS
+    record = json.loads((ROOT/'reports/P26_activation_v01.json').read_text())
+    if (record.get('decision') != 'one_photo_case_api_ceiling_160'
+            or not record.get('why') or not record.get('alternatives')
+            or record.get('guidance_sha256') != hashlib.sha256(GENERAL_GUIDANCE.encode()).hexdigest()):
+        raise ValueError('P26 requires its reviewed decision and unchanged guidance')
+    for path, expected in record['prerequisite_sha256'].items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != expected:
+            raise ValueError('P26 prerequisite changed: '+path)
+    old = json.loads((ROOT/'configs/P25_guidance_transfer_v01.json').read_text())
+    previous = json.loads((ROOT/'reports/P25_guidance_transfer_summary.json').read_text())
+    review = json.loads((ROOT/'reports/P25_interpretation.json').read_text())
+    if (previous['pending'] or previous['audit_errors'] or len(previous['trials']) != 4
+            or not review['all_four_reviewed']):
+        raise ValueError('P25 full review is incomplete')
+    if (plan['task_ids'] != old['task_ids'][:1]
+            or plan['run_order'] != [[old['task_ids'][0], 'native_guided', 'P26_01_GUIDED']]
+            or plan['max_api_requests'] != 160
+            or plan['wait_for_native_batch'] != old['batch_id']):
+        raise ValueError('P26 is only the first prior case with API ceiling 160')
+    for key in MATCHED_KEYS:
+        if key not in ('task_ids', 'max_api_requests') and plan[key] != old[key]:
+            raise ValueError('P26 must preserve P25: '+key)
+    if system_prompt_for(plan) != system_prompt_for(old) or 'ordinary_compute' in plan:
+        raise ValueError('P26 does not change the prompt or computation interface')
+
+
 def public_body(rows, state):
     phase = state.get("phase", "P8")
     spec = PHASES[phase]
@@ -153,7 +186,8 @@ def public_body(rows, state):
              "P18": "P18：未使用の４開発シナリオを全履歴基準で観察",
              "P22": "P22：予約済みの６開発シナリオを全履歴基準で観察",
              "P24": "P24：公式の一般指示を補い、同じ６開発課題で比較",
-             "P25": "P25：同じ一般指示をP18の全４開発課題へ適用"}[phase]
+             "P25": "P25：同じ一般指示をP18の全４開発課題へ適用",
+             "P26": "P26：写真整理１件のAPI上限だけを80から160へ変更"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -168,7 +202,7 @@ def public_body(rows, state):
                      f"{int(row.get('api_requests', 0))} | "
                      f"{int(row.get('tokens', 0)):,} | {int(row.get('unknown_usage_calls', 0))} | {result} |")
     lines += ["", states[state["status"]],
-              "各試行：80 LLM呼び出し・80 API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。",
+              f"各試行：80 LLM呼び出し・{160 if phase == 'P26' else 80} API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。",
               "公式APIスキーマを利用した導入基準で、公式エージェントの完全再現・新手法・品質維持の主張ではありません。",
               "評価は終了後の別プロセスで行い、後続のモデル入力には返しません。",
               {"P8": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)",
@@ -180,7 +214,8 @@ def public_body(rows, state):
                "P18": "[事前仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P18_unseen_development.md)",
                "P22": "[事前仕様と実行条件](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P22_development_preparation.md)",
                "P24": "[一般指示の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P24_generic_guidance.md)",
-               "P25": "[４件の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P25_guidance_transfer.md)"}[phase]]
+               "P25": "[４件の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P25_guidance_transfer.md)",
+               "P26": "[１件の予算診断](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P26_photo_budget.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -221,6 +256,7 @@ def main():
     check_p22_activation(plan)
     check_p24_activation(plan)
     check_p25_activation(plan)
+    check_p26_activation(plan)
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
     observer = out / "observer"
@@ -273,6 +309,7 @@ def main():
         "P22": ("data_export_probe", plan.get("wait_for_export_probe")),
         "P24": ("context_pilot", plan.get("wait_for_native_batch")),
         "P25": ("context_pilot", plan.get("wait_for_native_batch")),
+        "P26": ("context_pilot", plan.get("wait_for_native_batch")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
@@ -299,14 +336,14 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    if phase in ("P18", "P22", "P24", "P25"):
+    if phase in ("P18", "P22", "P24", "P25", "P26"):
         from run_event_view_probe import lease_remaining
         runtime = json.loads((storage / '.runtime/model_server.json').read_text())
         command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
         live_remaining, live_end = lease_remaining(runtime, command, datetime.datetime.now(datetime.timezone.utc))
         remaining = min(remaining, live_remaining)
         state['checked_server_lease_end_utc'] = live_end
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25") else 180
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25", "P26") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)

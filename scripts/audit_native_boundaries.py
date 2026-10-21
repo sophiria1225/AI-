@@ -50,7 +50,7 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23', 'P24', 'P25'):
+    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23', 'P24', 'P25', 'P26'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
     if plan['phase'] == 'P23':
