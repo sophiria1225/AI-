@@ -1,0 +1,40 @@
+{
+  "run_id": "P24_01_GUIDED",
+  "status": "finished",
+  "repeated_requests": [
+    {
+      "public_api": "spotify__show_song_reviews",
+      "previous_span_id": "s8",
+      "current_span_id": "s12",
+      "current_call_id": "call_007",
+      "previous_call_id": "call_005",
+      "prior_result_predates_current_call": true,
+      "previous_span_retained": true,
+      "same_recorded_observation": true
+    },
+    {
+      "public_api": "spotify__show_song_reviews",
+      "previous_span_id": "s9",
+      "current_span_id": "s15",
+      "current_call_id": "call_007",
+      "previous_call_id": "call_005",
+      "prior_result_predates_current_call": true,
+      "previous_span_retained": true,
+      "same_recorded_observation": true
+    }
+  ],
+  "count": 2,
+  "same_call_repeats": 0,
+  "prior_receipt_not_retained": 0,
+  "same_observation_and_prior_not_retained": 0,
+  "source_hashes": {
+    "events.json": "5c9f03b27e5c94ce00ff6ca0dffb770761ecb106f6696e85974732b5127ac9be",
+    "spans.json": "9b9ae3df6f844e56ecc6d4d88d4cca4fc24236d099e3e199f556ec7de25ffa49",
+    "provenance.json": "e478f10e12d0d2c3531d4c13caea348cdd921d5a839055f46d63615256d5d2cf"
+  },
+  "script_sha256": "7dd56d4f524918c0c1cd9e0b1bc02eff907c8d2b228e8931f4365b35be1616c4",
+  "model_calls": 0,
+  "environment_calls": 0,
+  "evaluator_loaded": false,
+  "scope": "Exactly equal public API name and parsed arguments; receipts compared only for equality. No argument values or per-secret hashes exported. Repetition is not automatically unnecessary or caused by forgetting: state and validity may change. A missing original receipt does not establish that its information is absent from other retained turns, a ledger or the accessible archive."
+}

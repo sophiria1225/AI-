@@ -1,0 +1,124 @@
+{
+  "phase": "P24",
+  "kind": "posthoc_public_trace_diagnostics",
+  "all_six_reviewed": true,
+  "findings": {
+    "1": {
+      "playlist_rows": 4,
+      "playlist_song_ids": 22,
+      "liked_song_ids": 16,
+      "liked_page_counts": [
+        5,
+        5,
+        5,
+        1
+      ],
+      "observed_intersection": 11,
+      "review_queries": 13,
+      "unique_songs_queried": 11,
+      "new_reviews": 8,
+      "review_updates": 3,
+      "observed_intersection_not_acted": 0,
+      "actions_outside_observed_intersection": 0,
+      "limitation": "The intersection is reconstructed after execution from public observations, not a hidden target or runtime contract."
+    },
+    "2": {
+      "approval_count": 10,
+      "same_approval_ids": true,
+      "same_explicit_non_auth_approval_arguments": true,
+      "baseline_answer_supplied": true,
+      "guided_answer_supplied": false,
+      "contact_queries": 8,
+      "limitation": "Approval arguments match and the completion answer was omitted, but no isolated completion-only replay or hidden-test diagnosis was performed."
+    },
+    "3": {
+      "environment_clock_calls": 1,
+      "environment_clock_spans": [
+        "s8"
+      ],
+      "show_file_calls": 7,
+      "string_contents": 7,
+      "binary_label_20_character_contents": 1,
+      "completion_calls": 1,
+      "limitation": "Clock use and successful completion co-occur. No per-instruction causal effect or PDF decoding mechanism is inferred."
+    },
+    "4": {
+      "text": {
+        "page_counts": [
+          10,
+          0
+        ],
+        "observed": 10,
+        "delete_requests": 10,
+        "observed_not_requested": 0,
+        "unobserved_requested": 0
+      },
+      "voice": {
+        "page_counts": [
+          12,
+          0
+        ],
+        "observed": 12,
+        "delete_requests": 12,
+        "observed_not_requested": 0,
+        "unobserved_requested": 0
+      }
+    },
+    "5": {
+      "compressions_sent": 4,
+      "delete_original_flags": 4,
+      "directory_reads": 4,
+      "non_json_directory_observations": 1,
+      "subsequent_directory_read": true,
+      "limitation": "A non-JSON directory response is retained, not silently counted as an empty directory or a successful read."
+    },
+    "6": {
+      "playlist_page_counts": [
+        8
+      ],
+      "requested_page_limits": [
+        20
+      ],
+      "observed_unique_songs": 57,
+      "examined_unique_songs": 56,
+      "observed_songs_not_examined": 1,
+      "answer_matches_maximum_in_observations": true,
+      "limitation": "Eight rows are below the requested limit of twenty. Observed coverage is described; no unseen database population was read."
+    }
+  },
+  "source_hashes": {
+    "P24_01": {
+      "public_task.json": "9bc4daaf97230227b6806d4644311564428555b1d21e9f877667e17786a148d0",
+      "spans.json": "9b9ae3df6f844e56ecc6d4d88d4cca4fc24236d099e3e199f556ec7de25ffa49"
+    },
+    "P24_02": {
+      "public_task.json": "49066039a87eaedceb52003c16f9f23b7cb917bd650d6f610f909e26f2040f89",
+      "spans.json": "5eabacf44239dd6308ddfc9012bfe1b9cdc0d1b966373ee61a0bb3130a277041"
+    },
+    "P24_03": {
+      "public_task.json": "2bf368f2667903e175daef63819e21f2d06fe89053524845b3d220ac77a579ea",
+      "spans.json": "a3b2725e738ff4796a559fd96e6e18ecf7bca2fa40a908aca17b1e35888aecea"
+    },
+    "P24_04": {
+      "public_task.json": "7c1a62ad4a094a2954ea2a56e20e72548d7a5b66d1a5276e953ef931b31f4b8e",
+      "spans.json": "0695358b77f5696ce4de7d731d101a39678f899f07c176619711760b3fdf776d"
+    },
+    "P24_05": {
+      "public_task.json": "4441d76a55df4034f5663b022c529823566d06417a257a7003953762064ca2ef",
+      "spans.json": "9ca6e33278ec9f9cdec0db102f7175ea437827795bff6322fb58a94759022254"
+    },
+    "P24_06": {
+      "public_task.json": "b4399cb05bc7f2b6a26633cb2202e41729a5ee736dff3754304a0b144efbc486",
+      "spans.json": "81d4827c17053a6e0a21ddb5c354c78d2d605685dbfa32dbb367a41eece15c5f"
+    },
+    "P22_02": {
+      "public_task.json": "49066039a87eaedceb52003c16f9f23b7cb917bd650d6f610f909e26f2040f89",
+      "spans.json": "6ca68dbbc85527bdcb3efe63d37a952ca11694b47148085546ed8f4bbd55256c"
+    }
+  },
+  "script_sha256": "68ece928880d73ec59f201ed39eb04337764a50b4be4ab2a7e596dde447983e4",
+  "model_calls": 0,
+  "environment_calls": 0,
+  "hidden_evaluator_details_read": false,
+  "purpose": "Descriptive behavior checks, not causal attribution, a learned mechanism, or a runtime oracle."
+}

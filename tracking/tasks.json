@@ -1182,7 +1182,7 @@
       "id": "R44",
       "title": "P24：公式の一般指示を補った６件の基準比較",
       "priority": "P0",
-      "status": "in_progress",
+      "status": "done",
       "why": "P22の失敗には公式で案内される時刻取得・列挙終了・完了形式との違いがあり、それを独自機構の必要性と誤認しないため。",
       "alternatives": "正解集合を与えるゲート、失敗例だけの選別、私的な課題日時の直接入力、一律の予算増加は採らない。通常Python対照は今回の観測機構と直結しないため後順位。",
       "steps": [
@@ -1193,7 +1193,9 @@
       ],
       "completed_steps": [
         "公式の一般指示と全P22分析に基づき差分を固定",
-        "同じ６件・モデル・予算で実行器と監査を検証"
+        "同じ６件・モデル・予算で実行器と監査を検証",
+        "固定作業木から全６件を実行し、全終了後に観測を分析",
+        "旧基準との差・費用・通常対策で残る機構を記録"
       ],
       "acceptance": [
         "既知の指示を新規性としない",
@@ -1201,7 +1203,7 @@
         "デモ・隠し評価・確認群を生成へ使わない",
         "生成中に指示・予算・課題を変更しない"
       ],
-      "progress": "P22全件終了・監査後に採用。公式42b5bcfの一般指示だけを確認し、デモ未取得。現在は接続・事前検査中、追加モデル呼出し０。P23は通常計算の接続準備までで本課題の生成なし。\n\n実行接続・固定条件・改変検出を含む全387検査、構文検査合格。模擬実行で変更はシステム指示のみ、元の公開課題・道具・履歴・操作は一致。実課題の生成は未開始。\n\n21:40 JSTに固定作業木06e535cから全６件を開始。PR116の両CI通過、387検査、291固定ファイル・実サーバー期限の検査合格。自動進捗: https://github.com/sophiria1225/AI-/issues/115#issuecomment-6316143254。全件終了後の監査待機処理も起動済み。\n\n全件終了前に対照比較の集計器を準備。改善・悪化を残し、使用量不明時は正確な総トークン差を計算しない。404検査合格、P24固定291ファイル変更０。実行中の結果本文は未閲覧。reports/P24_comparison_preparation_20261021.json。"
+      "progress": "P22全件終了・監査後に採用。公式42b5bcfの一般指示だけを確認し、デモ未取得。現在は接続・事前検査中、追加モデル呼出し０。P23は通常計算の接続準備までで本課題の生成なし。\n\n実行接続・固定条件・改変検出を含む全387検査、構文検査合格。模擬実行で変更はシステム指示のみ、元の公開課題・道具・履歴・操作は一致。実課題の生成は未開始。\n\n21:40 JSTに固定作業木06e535cから全６件を開始。PR116の両CI通過、387検査、291固定ファイル・実サーバー期限の検査合格。自動進捗: https://github.com/sophiria1225/AI-/issues/115#issuecomment-6316143254。全件終了後の監査待機処理も起動済み。\n\n全件終了前に対照比較の集計器を準備。改善・悪化を残し、使用量不明時は正確な総トークン差を計算しない。404検査合格、P24固定291ファイル変更０。実行中の結果本文は未閲覧。reports/P24_comparison_preparation_20261021.json。\n\nP24 complete 2026-10-21T13:37:52Z: 6/6 success; 59 calls, 1,018,781 tokens, 192 APIs, zero unknown usage and technical audit discrepancies. Four improvements and two retained successes. Public trace review: task 6 read details for 56 of 57 observed songs despite a correct final answer. All eight milestone PDF pages reviewed; no independent novel mechanism established. 405 tests pass. docs/P24_findings.md; materials/20261021_p24/."
     },
     {
       "id": "R45",
@@ -1229,6 +1231,28 @@
         "既知の規則を独自方式や完全性証明と呼ばない"
       ],
       "progress": "2026-10-21。SearchOS、CFRC等の原典を確認。16件の公開履歴を対象とする事後分析の規則を固定。解析・結果は未実施。docs/collection_scope_review_20261021.md、docs/experiments/collection_frontier_audit_20261021.md。\n\nRules e4e1687; implementation 6463767; all 16 completed runs, 70 query groups: 41 terminal-like, 27 no terminal observed, 2 unclassified. A naive no-terminal rule also flags 5/10 successful tasks (3/10 after excluding groups followed by a same-app write). It flags 2/6 failures, only one of which declared completion. Do not adopt an unconditional all-pages completion gate. All 397 tests pass; 291 frozen P24 files unchanged. No new model/environment calls. See docs/collection_frontier_findings_20261021.md."
+    },
+    {
+      "id": "R46",
+      "title": "P25：同じ一般指示でP18の全４件を再比較する",
+      "priority": "P0",
+      "status": "in_progress",
+      "why": "取得後の欠落・API上限の観測を、通常の時刻・列挙・完了案内をそろえた基準でも確認し、独自機構の必要性と切り分ける。",
+      "alternatives": "失敗２件だけの選択、正解件数の提示、上限増加、計算道具と指示の同時変更、未閲覧12確認シナリオの先行消費はしない。",
+      "steps": [
+        "P18の成功例を含む全４件・同一指示と予算を固定",
+        "P24全件の監査後に実行器・起動判断を固定",
+        "全４件を実行し、成否と全費用を監査",
+        "残る問題・採否・次の比較を記録"
+      ],
+      "completed_steps": [],
+      "acceptance": [
+        "一般指示を新規手法と呼ばない",
+        "P24の凍結作業木を変更しない",
+        "全件終了前に残りの条件を変更しない",
+        "実行前に十分なモデルサーバー期限を確認する"
+      ],
+      "progress": "2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。"
     }
   ]
 }
