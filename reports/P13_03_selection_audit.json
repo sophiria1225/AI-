@@ -1,0 +1,91 @@
+{
+  "run_id": "P13_03_FOCUS_RECOVERY01",
+  "task_id": "2a163ab_1",
+  "arm": "native_focus",
+  "stop_reason": "wall_limit_during_model_call",
+  "declared_complete": false,
+  "known_total_tokens": 130492,
+  "usage_by_role": {
+    "agent": {
+      "calls": 4,
+      "input_tokens": 50956,
+      "output_tokens": 792,
+      "unknown_usage": 0
+    },
+    "focus": {
+      "calls": 5,
+      "input_tokens": 63338,
+      "output_tokens": 15406,
+      "unknown_usage": 1
+    }
+  },
+  "model_calls": 9,
+  "tool_turns": 11,
+  "compression_events": 3,
+  "format_errors": 0,
+  "api_bridge_errors": 0,
+  "wall_seconds": 1800.7123060000595,
+  "evaluation": {
+    "official_success": false,
+    "pass_count": 1,
+    "fail_count": 5,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 1,
+  "peak_input_tokens": 18310,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "f54a6be7cdc875665a1db836dec47c8eb493c337792d1f39369aba61368c1a43",
+    "usage": "039ae09ed6de6449c4c990f831dd998aa6e32ae2016e90f9f906a24bbfc6616a",
+    "evaluation": "5adb73b983214f120bb5a6ca81cd215e586cd694f2e01588b2eeae7d279593f5"
+  },
+  "counts": {
+    "recorded_operations": 11,
+    "api_requests_sent": 11,
+    "unknown_effect_requests": 0,
+    "returned_api_results_without_detected_error": 11,
+    "public_schemas_added": 84,
+    "multiple_call_responses": 4
+  },
+  "calls": [
+    {
+      "call_id": "call_001",
+      "requested_tool_calls": 3,
+      "recorded_operations": 3,
+      "supplied_schemas": 11,
+      "api_requests_sent": 3
+    },
+    {
+      "call_id": "call_002",
+      "requested_tool_calls": 3,
+      "recorded_operations": 3,
+      "supplied_schemas": 65,
+      "api_requests_sent": 3
+    },
+    {
+      "call_id": "call_004",
+      "requested_tool_calls": 3,
+      "recorded_operations": 3,
+      "supplied_schemas": 95,
+      "api_requests_sent": 3
+    },
+    {
+      "call_id": "call_008",
+      "requested_tool_calls": 2,
+      "recorded_operations": 2,
+      "supplied_schemas": 95,
+      "api_requests_sent": 2
+    }
+  ],
+  "dispatch_audit_errors": [],
+  "memory_audit_errors": [],
+  "memory_events": 3,
+  "all_retained_early_exits": 0,
+  "memory_selection_seconds": 1328.429789916845,
+  "memory_token_count_requests": 7,
+  "model_calls_by_auditor": 0,
+  "environment_operations": 0,
+  "final_evaluations": 0,
+  "scope": "Replay of recorded drafts, trigger counts, selection, public schema and executor inputs. Recorded preflight/time stop is a disposition, not remeasured runtime. Memory semantics and final truth are not certified by structural replay.",
+  "auditor_sha256": "9b9461b10b4e7c54529191c3a603dcaa2c491bc3fa95b29dfb934e5abf1b4188"
+}

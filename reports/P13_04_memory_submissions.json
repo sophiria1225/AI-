@@ -1,0 +1,56 @@
+{
+  "run_id": "P13_04_FOCUS",
+  "status": "finished",
+  "completed_memory_events": 1,
+  "calls": [
+    {
+      "id": "call_006",
+      "role": "focus",
+      "status": "ok",
+      "input_tokens": 9733,
+      "output_tokens": 735,
+      "done_reason": "tool_calls",
+      "recorded_event_status": "ok",
+      "tool_calls": 1,
+      "content_characters": 0,
+      "reasoning_characters": 1633,
+      "cited_ids": 4,
+      "unavailable_citations": 0,
+      "unavailable_plan_step_labels": 0,
+      "distinct_valid_citations": 4,
+      "visible_spans": 8,
+      "all_visible_spans_cited": false,
+      "format": "structurally_valid_not_semantically_verified"
+    },
+    {
+      "id": "call_007",
+      "role": "focus",
+      "status": "ok",
+      "input_tokens": 9733,
+      "output_tokens": 1520,
+      "done_reason": "tool_calls",
+      "recorded_event_status": "ok",
+      "tool_calls": 1,
+      "content_characters": 819,
+      "reasoning_characters": 3825,
+      "cited_ids": 8,
+      "unavailable_citations": 0,
+      "unavailable_plan_step_labels": 0,
+      "distinct_valid_citations": 8,
+      "visible_spans": 8,
+      "all_visible_spans_cited": true,
+      "format": "structurally_valid_not_semantically_verified"
+    }
+  ],
+  "model_calls": 0,
+  "environment_operations": 0,
+  "evaluator_accessed": false,
+  "source_hashes": {
+    "usage.json": "8fc7bfb5c80dde052e254bf3d960d31ba771faac5e41129fcfc612a3e587908a",
+    "generated_memory_events.json": "50647a6c5510d80221347dec09b260ab7c5a707ba8153554990771a7912878ec",
+    "call_006/response.json": "5ac0699c349d2ba89b4b2f6245cbe5c05744edd2835824235a5e72b123a09cc3",
+    "call_007/response.json": "afc8a171cb0ddc5601ff8c605f1c3db90d9d0e2d181f3e28b88d0a3b53931626"
+  },
+  "script_sha256": "bc77eb5ddbe726320ddafbbbd6e65caa12df31990e2edd66d726bb0a895a9b9d",
+  "scope": "Format and source-ID validity of recorded memory submissions; no generated text, citation values, arguments or reasoning exported. Character counts do not establish reasoning quality or a cause of final task failure."
+}

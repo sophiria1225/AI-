@@ -1,0 +1,201 @@
+{
+  "plan_sha256": "f64092bf47e68d4e957926bfaa17ee2dc17a39d77eee75f53b9dd89ca3ccd6aa",
+  "trials": [
+    {
+      "run_id": "P13_01_FOCUS",
+      "task_id": "287e338_1",
+      "arm": "native_focus",
+      "stop_reason": "wall_limit_during_model_call",
+      "declared_complete": false,
+      "known_total_tokens": 135159,
+      "usage_by_role": {
+        "agent": {
+          "calls": 5,
+          "input_tokens": 58369,
+          "output_tokens": 400,
+          "unknown_usage": 1
+        },
+        "focus": {
+          "calls": 4,
+          "input_tokens": 66105,
+          "output_tokens": 10285,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 9,
+      "tool_turns": 4,
+      "compression_events": 4,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1800.5313615831546,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 1,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 18730,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "9f01ae65dc1476b5ca16036f55e5fcd1f223a7a61bc7081f184d618a4f0fcd4c",
+        "usage": "919c9cca46987af83328ae81670567645d77a4e177be62092dc31257b6ea9b40",
+        "evaluation": "de9179d279527c2aecbe23ebb5c4d649f1bc89064a4ceb8d8444a636f97f73ce"
+      }
+    },
+    {
+      "run_id": "P13_02_FOCUS",
+      "task_id": "29caf6f_1",
+      "arm": "native_focus",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 128357,
+      "usage_by_role": {
+        "agent": {
+          "calls": 7,
+          "input_tokens": 81735,
+          "output_tokens": 1219,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 3,
+          "input_tokens": 39707,
+          "output_tokens": 5696,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 10,
+      "tool_turns": 13,
+      "compression_events": 3,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1231.5322211249731,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 8,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 15387,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "65bf751e4f4ce2993e8036cafbabf309e6dd4f4a3218bd6cc62765f839d198c2",
+        "usage": "31ff9d88f5ba5df1011d2ee0fa794c37d355c487cf2b6446734697363442fcd0",
+        "evaluation": "9242ab29b23d9dd45ca0beb0dbce1e848a47d85583722fd107002e26ee1d9fb0"
+      }
+    },
+    {
+      "run_id": "P13_03_FOCUS_RECOVERY01",
+      "task_id": "2a163ab_1",
+      "arm": "native_focus",
+      "stop_reason": "wall_limit_during_model_call",
+      "declared_complete": false,
+      "known_total_tokens": 130492,
+      "usage_by_role": {
+        "agent": {
+          "calls": 4,
+          "input_tokens": 50956,
+          "output_tokens": 792,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 5,
+          "input_tokens": 63338,
+          "output_tokens": 15406,
+          "unknown_usage": 1
+        }
+      },
+      "model_calls": 9,
+      "tool_turns": 11,
+      "compression_events": 3,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1800.7123060000595,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 1,
+        "fail_count": 5,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 1,
+      "peak_input_tokens": 18310,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "f54a6be7cdc875665a1db836dec47c8eb493c337792d1f39369aba61368c1a43",
+        "usage": "039ae09ed6de6449c4c990f831dd998aa6e32ae2016e90f9f906a24bbfc6616a",
+        "evaluation": "5adb73b983214f120bb5a6ca81cd215e586cd694f2e01588b2eeae7d279593f5"
+      }
+    },
+    {
+      "run_id": "P13_04_FOCUS",
+      "task_id": "302c169_1",
+      "arm": "native_focus",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 73039,
+      "usage_by_role": {
+        "agent": {
+          "calls": 6,
+          "input_tokens": 49871,
+          "output_tokens": 1447,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 19466,
+          "output_tokens": 2255,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 8,
+      "tool_turns": 9,
+      "compression_events": 1,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 487.8374417501036,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 8,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 10860,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "b7b25d9988cc61f7b0f08890f65a4c5ac8bcf3e0c78f507a41b4e3b6dc8d7117",
+        "usage": "8fc7bfb5c80dde052e254bf3d960d31ba771faac5e41129fcfc612a3e587908a",
+        "evaluation": "708ecc4f2a4c7a0671118e9c3330824336bd8ab0ffdebd908b31c0cc40ad6ca0"
+      }
+    }
+  ],
+  "pending": [],
+  "total_model_calls": 36,
+  "known_total_tokens": 467047,
+  "unknown_usage_calls": 2,
+  "audit_errors": 0,
+  "scope": "Four development scenarios, one completed outcome per arm. Task3 restarted from initial state after confirmed external interruption. Unknown call usage remains unknown; not a confirmatory or novel-method result.",
+  "exclusions": "No task text, prompts, API result content, reasoning or evaluator traces exported.",
+  "additional_audit_sources": {
+    "reports/P13_01_selection_audit.json": "a4a53e6776919bf958c0c5f71d511615728f81b00efcd4b0e53cdf69fbc9234f",
+    "reports/P13_01_boundary_audit.json": "c0ed254e0846f6e3c34d9f056bc84b9ca30dea98343582cf88a8da9785de6d9a",
+    "reports/P13_02_selection_audit.json": "0b471435f828c0716e468495e3c6444d7680c3aa994da619fd591d7186f3ae86",
+    "reports/P13_02_boundary_audit.json": "335e89464426ca04d9df941864c51f70cdebbb56b1bdf518682e73638343113c",
+    "reports/P13_03_selection_audit.json": "cb9a021c173e50d2d90517e633aff1b543b95b9fd8d46388e0716ff143dbed9e",
+    "reports/P13_03_boundary_audit.json": "eece46aed238cd258d36689191ad90d0bd6f84d06e410282eecffac725269aee",
+    "reports/P13_04_selection_audit.json": "e462253919dd5a8faa138fc7b6f9a7689d4a8fb5c94d97f35e82e7d0747a287a",
+    "reports/P13_04_boundary_audit.json": "d00e20b87265ffaeda228ce693d6bf343038b4fb3b1e4a7935e1a008777f23eb"
+  },
+  "interrupted_attempt": {
+    "completed_calls": 4,
+    "incomplete_requests": 1,
+    "known_total_tokens": 52285,
+    "recorded_unknown_usage_calls": 0,
+    "incomplete_request_usage": "unknown; request existence alone does not prove execution",
+    "source_hashes": {
+      "usage.json": "2356718ecec7348de9c258692c15cafd2a3441a6235d5b9328443e5a0e3aea5b",
+      "call_005/request.json": "77b09c5b1e34b85b5d753080c5e65aa3cf32e77031b269e1ba607489a9497208"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 """Build the P11-P13 milestone from audited aggregates, including unknown costs."""
 import argparse
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -37,7 +38,7 @@ def totals(measured):
 
 
 def figures(data):
-    plt.rcParams.update({'font.family': 'Hiragino Sans', 'font.size': 14,
+    plt.rcParams.update({'font.family': ['Hiragino Sans', 'DejaVu Sans'], 'font.size': 14,
                          'axes.spines.top': False, 'axes.spines.right': False})
     fig, axes = plt.subplots(1, 2, figsize=(13.2, 4.5), layout='constrained')
     colors = ['#286b8a', '#bd732a', '#6c8d55']
@@ -86,7 +87,7 @@ def build(measured, data, interruption, submissions):
     card(s, 40, 175, 280, 250, '全情報を保持',
          '必要な根拠を参照できる。\n一方で、入力が増えて\n費用や上限が問題になる。', body_size=18)
     card(s, 340, 175, 280, 250, '履歴を削る',
-         '各回の入力を減らせる。\nただし再取得や再作業で\n全体費用が増える場合がある。', body_size=18)
+         '各回の入力を減らせる。\n再取得や再作業で、\n全体費用が増える\n場合もある。', body_size=18)
     card(s, 640, 175, 280, 250, '保持をAIに選ばせる',
          '将来必要な情報を選ぶ。\n選択自体にも推論費用と\n誤り・形式不備が生じ得る。', body_size=18)
     banner(s, '目的：一定の品質条件の下で総入力＋出力を減らす。キャッシュの速度改善とは別。', size=15.5)
@@ -101,7 +102,10 @@ def build(measured, data, interruption, submissions):
     node(s, 680, 324, 240, 100, '原記録・保存点', '原文再読・費用・DB差分')
     node(s, 40, 324, 240, 100, '終了後の独立評価', '最終状態を別プロセスで検査')
     arrow(s, 800, 264, 800, 322); arrow(s, 680, 374, 622, 374)
-    arrow(s, 480, 324, 480, 266); arrow(s, 340, 374, 282, 374, dashed=True)
+    arrow(s, 480, 324, 480, 266)
+    arrow(s, 800, 424, 800, 438, dashed=True, end=False)
+    arrow(s, 800, 438, 160, 438, dashed=True, end=False)
+    arrow(s, 160, 438, 160, 426, dashed=True)
     banner(s, 'モデルの重みではなく、渡す情報・ツール実行・保持・費用管理を設計している。', size=16)
 
     s = slide('03 / 比較した三条件', '基本接続・モデル・課題をそろえて保持だけを比較',
@@ -114,7 +118,7 @@ def build(measured, data, interruption, submissions):
     banner(s, '各課題：45万総トークン、30分、80 LLM呼出・80 API要求。両予算の下で比較。', size=16)
 
     s = slide('04 / 全成否と費用', '不成功・不明費用も含めた4課題の比較',
-              '中断した追加試行の支出は次頁で別記。未知費用を0と置かない。', footer)
+              '中断した追加試行の支出は後の頁で別記。未知費用を0と置かない。', footer)
     table(s, ['条件', '成功', '既知総トークン', 'LLM呼出', '費用不明'], [
         [label, f"{d['successes']}/4", ('≥' if d['unknown'] else '') + f"{d['tokens']:,}",
          str(d['calls']), str(d['unknown'])] for label, d in zip(LABELS, data)
@@ -146,7 +150,7 @@ def build(measured, data, interruption, submissions):
     banner(s, '次の対照は通常の台帳。単純な対策で足りれば、独自機構を追加する根拠は弱い。', size=16)
 
     s = slide('08 / FOCUS適合版の制約', '保持する内容と、保持判断の実装費用を分ける',
-              '最初の2課題の例。全課題の結果と監査はリンク先に保存する。', footer)
+              f"全11更新で履歴削除０。保持費用は既知{p13['memory_tokens']:,}＋不明１呼び出し。", footer)
     table(s, ['観測', '解釈の範囲'], [
         ['課題1：保持4回で76,390トークン', '3回が形式不備、適合1回は全保持'],
         ['課題2：保持3回で45,403トークン', '全3回が適合し全保持。最終成功'],
@@ -156,9 +160,9 @@ def build(measured, data, interruption, submissions):
     banner(s, '形式不備や遅い適合版を利用して、原方式が劣る・新方式が必要と結論しない。', size=16)
 
     s = slide('09 / 新規性の現在地', '新規性は、既存部品の接続だけではまだ成立しない',
-              '今回の成果物と、論文の中核としてまだ不足するものを区別する。', footer)
+              '再編案で更新競合を観測できず、既存方式でも残る問題の確認へ戻した。', footer)
     card(s, 40, 176, 420, 250, 'できたこと',
-         '強い基本接続と再計算できる記録。\n全費用・再取得・形式不備の分離。\n失敗と中断も残す比較実装。\n現在の方式が負担を生む箇所の観測。', body_size=18)
+         '比較用の基本接続と再計算できる記録。\n全費用・再取得・形式不備の分離。\n失敗と中断も残す比較実装。\n次に検証すべき問題の絞り込み。', body_size=18)
     card(s, 500, 176, 420, 250, 'まだ必要なこと',
          '強い既存方式でも残る機構の問題。\nその問題に対応する独自の更新規則。\n同じ品質・予算で通常対照を超える効果。\n別課題・別モデルでの成立条件。', body_size=18)
     banner(s, '独自手法の採用は未確定。単なる要約・台帳・キャッシュ改善を新しい名前で包まない。', size=15.5)
@@ -171,7 +175,7 @@ def build(measured, data, interruption, submissions):
         ['固定コーパスの大規模調査', '約10万文書を維持し、取得後の保持・再取得も測る'],
         ['機構を一つに絞る', '単純対照でも残る問題がなければ候補を再検討'],
     ], [250, 630], y=174, row_h=55, size=16)
-    banner(s, 'BrowseComp-Plusは配布確認まで。正式採用・評価器の動作・主実験の成功は未確定。', size=15.5)
+    banner(s, 'BrowseComp-Plusは導入検証中。正式採用・独立評価器の動作・主実験の成功は未確定。', size=15.5)
 
     s = slide('11 / 出典・再現と進捗', '資料の数値から実験条件・選定理由へ戻れる',
               '原文・認証値・正解・モデルの推論本文は公開せず、集計と出典ハッシュを公開。', footer)
@@ -194,7 +198,7 @@ def main():
     sources = [f'reports/P{i}_final_measurements.json' for i in (11, 12, 13)] + [
         'reports/P13_interruption_20261021.json', 'reports/P13_01_memory_submissions.json',
         'reports/P13_02_memory_submissions.json', 'reports/P12_03_reacquisition.json',
-        'docs/P13_findings.md', 'docs/P13_recovery.md']
+        'docs/P13_findings.md', 'docs/P13_recovery.md', 'reports/P13_retention_summary.json']
     measured = [json.loads((ROOT / p).read_text()) for p in sources[:3]]
     identities = [[r['task_id'] for r in m['trials']] for m in measured]
     if any(ids != identities[0] for ids in identities):
@@ -204,6 +208,10 @@ def main():
     submissions = [json.loads((ROOT / p).read_text()) for p in sources[4:6]]
     (OUTPUT / 'figures').mkdir(parents=True, exist_ok=True)
     figures(data)
+    with (OUTPUT/'figures/cohort_totals.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=['condition']+list(data[0]))
+        writer.writeheader()
+        writer.writerows({'condition': label, **row} for label, row in zip(LABELS, data))
     build(measured, data, interruption, submissions)
     render(SLIDES, OUTPUT, args.font, stem=STEM, title='AIハーネス研究 P11〜P13の結果と次の判断')
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
