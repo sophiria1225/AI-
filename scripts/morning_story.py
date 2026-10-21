@@ -143,6 +143,44 @@ def cost_chart(handoff, diagnostics):
     return svg(s, '入力の短縮と後続全体のトークン費用の違い。左右は別スケール', 365)
 
 
+def orchestration_costs():
+    s=text(15, 27, '費用が積み上がる経路の例（研究する問題の模式図）', 23, MUTED)
+    for i,(title,sub,excess) in enumerate([
+        ('情報取得','検索・API','同じ結果を再取得'),
+        ('情報共有','履歴・担当間通信','不要な情報も入力'),
+        ('AI呼び出し','判断・担当への依頼','同じ判断を反復'),
+        ('実行','計算・操作','済んだ処理を再実行'),
+        ('検証・停止','確認・修正','不要な追加確認'),
+    ]):
+        x=110+225*i
+        s+=f'<circle cx="{x}" cy="118" r="40" fill="#e0ebe5"/>'
+        s+=text(x,127,str(i+1),28,TEAL,'middle',True)
+        s+=text(x,196,title,25,INK,'middle',True)
+        s+=text(x,235,sub,20,MUTED,'middle')
+        s+=text(x,295,excess,21,RUST,'middle')
+        if i<4:s+=arrow(x+48,118,x+177,118)
+    s+=text(15,352,'減らしたいのは、成果に必要な処理を除いた余分な費用。必要性の判定が研究課題。',22,bold=True)
+    return svg(s,'取得・共有・AI呼び出し・実行・検証で生じ得る余分な費用',380)
+
+
+def quality_cost_target():
+    s=text(15,25,'目標を表す概念図・実測ではない',21,MUTED)
+    s+='<path d="M140 310 H1050 M140 310 V60" fill="none" stroke="#596c79" stroke-width="2"/>'
+    s+=text(20,99,'性能',24,bold=True)
+    s+=text(20,132,'高い',19,MUTED)
+    s+=text(670,352,'仕事全体の費用 →',24,bold=True)
+    s+='<line x1="150" y1="133" x2="1045" y2="133" stroke="#91a0aa" stroke-width="2" stroke-dasharray="7 7"/>'
+    s+='<circle cx="910" cy="133" r="12" fill="#596c79"/>'
+    s+=text(910,102,'基準方式',24,MUTED,'middle',True)
+    s+='<circle cx="400" cy="133" r="14" fill="#167a78"/>'
+    s+=text(400,102,'目指す位置',25,TEAL,'middle',True)
+    s+=arrow(873,133,435,133)
+    s+=text(655,182,'性能を保ちながら費用を減らす',24,TEAL,'middle',True)
+    s+=text(205,250,'性能：要求を満たす完了率・成果物の正しさ',22)
+    s+=text(205,287,'費用：全AIトークンを主指標、操作回数・時間も記録',22)
+    return svg(s,'品質を保って総費用を下げる研究目標。実測値を示すグラフではない',380)
+
+
 def build_story_slides(handoff, diagnostics, later_handoff=None):
     if not handoff or not diagnostics or not diagnostics.get('all_sixteen_reviewed'):
         raise ValueError('The revised narrative requires the complete audited P31 cohort and diagnostics')
@@ -154,9 +192,25 @@ def build_story_slides(handoff, diagnostics, later_handoff=None):
         return '<div class="diagram story-diagram">'+content+'</div>'
     p31 = [('実験仕様', LINK+'docs/experiments/P31_handoff_factors.md')]
     results = [('全16実行の結果', LINK+'reports/P31_comparison.json'), ('結果の解釈', LINK+'docs/P31_findings.md')]
-    add('', 'AIハーネスにおける<br>作業状態の引き継ぎと継続実行', '',
-        '今回の実験内容に合わせた進捗報告の題目です。研究全体の最終題目や採択済みの新手法名ではありません。表紙には題名のみを表示します。', cover=True)
-    add('背景：任せたい仕事', 'AIに、調査から実際の処理まで任せたい',
+    objective=[('ユーザーと確認した研究目的',LINK+'docs/research_objective_20261022.md')]
+    add('', 'AIオーケストレーションにおける<br>性能維持と実行コスト削減のための<br>ハーネス制御', '',
+        '性能を維持しながら情報処理・実行の総費用を減らすという主目的を表す進捗報告の題目です。性能維持や費用削減を達成済みという意味ではありません。表紙は題名のみです。', cover=True)
+    add('背景と問題：性能と費用', '性能向上に役立つ処理にも、費用がかかる',
+        '<p class="lead">AIの能力と分担を活用して、複雑な仕事を任せたい。<br>取得・共有・実行・検証を増やす過程で、重複や不要な処理も生じ得る。</p>'+diagram(orchestration_costs()),
+        'ここは研究の背景です。すべてのオーケストレーションが性能と費用を必ず増やすという一般的な実測主張ではありません。調査や検証が多いだけで無駄と決めず、必要な処理と避けられる処理を区別することが課題です。現状の比較では複数担当間の重複調査は未測定です。',objective)
+    add('研究目的', '性能を維持し、仕事全体の実行費用を減らす',
+        '<p class="lead"><strong>ハーネスが必要な情報と処理を残し、不要な取得・共有・実行を削減する。</strong></p>'+diagram(quality_cost_target()),
+        'ここで性能は最終タスクの品質です。モデル自体を弱くして費用を減らすことが主題ではありません。品質維持を制約として総費用を最小化します。図は目標であり達成結果ではありません。履歴保持、結果再利用、担当再編、停止制御は目的を達成する手段の候補です。',objective)
+    add('評価方針：何をもって改善とするか', '性能を保てたかを確認してから、削減量を比べる',
+        '<table class="story-table"><thead><tr><th>評価すること</th><th>確認する内容</th></tr></thead><tbody>'
+        '<tr><td>タスクの性能</td><td>完了率・成果物の正しさを、同じ課題の強い基準と比較</td></tr>'
+        '<tr><td>総費用</td><td>取得・共有・制御・検証・失敗を含む、全入力＋全出力</td></tr>'
+        '<tr><td>削減の副作用</td><td>必要情報の欠落、再取得・再実行の増加、品質低下</td></tr>'
+        '<tr><td>維持と言える範囲</td><td>許容差と評価手順を事前に定め、ばらつきも確認</td></tr></tbody></table>'
+        '<p class="body"><strong>一回の入力や呼び出し回数が減っても、仕事全体が高くつけば削減ではない。</strong></p>',
+        '数式ではmin E[C_total(H)] subject to Q(H) >= Q(H_ref)-deltaです。deltaは結果を見て品質低下を許容するために選びません。現在の４課題各１回では、品質が維持されたという統計的な証明はできません。API回数と時間は別の単位として記録し、無根拠にトークンへ加算しません。キャッシュによる実際の計算費用も区別します。',objective,
+        takeaway='現在の実験は、費用を減らすつもりの操作が逆効果になる条件を調べる段階。')
+    add('現在の検証に使う仕事', '複数工程の仕事で、削減の影響を測る',
         '<p class="lead">たとえば写真整理では、方法を答えるだけでなく、<br>対象を調べて移動し、要求どおりに終えたか確かめる必要がある。</p>'+diagram(photo_workflow()),
         '社会背景は、AIへ一問一答だけでなく、複数工程を含む仕事を委ねたいという要求です。写真整理は今回の実験に含む仕事を簡略化した説明です。市場規模や導入率は主張しません。企業業務やリポジトリ変更にも複数工程はありますが、今回そこまで検証したとは述べません。',
         [('複数アプリの仕事を評価するAppWorld', 'https://arxiv.org/abs/2407.18901')])
@@ -167,20 +221,20 @@ def build_story_slides(handoff, diagnostics, later_handoff=None):
     add('技術背景：何を引き継ぐのか', 'AIの作業状態は、三つの場所に分かれる',
         '<p class="lead">「履歴が残る」「変数が残る」「操作の結果が残る」は、それぞれ違う。</p>'+diagram(three_states()),
         '会話履歴はモデルへ渡すメッセージ、変数はPython実行環境内の値、アプリ状態はファイルや模擬アプリのDBです。例の変数名や内容は具体的な実験前半に必ず存在したという主張ではありません。初期化条件でも環境を元に戻さないことが、この比較の重要な前提です。', p31)
-    add('研究目的と仮説', '変数を残せば、会話履歴は減らせるか',
+    add('今回の検証課題', '変数を残せば、会話履歴は減らせるか',
         '<div class="two"><div class="col"><h3>期待する利点</h3><p class="body">取得・計算した値を再利用すれば、長い過去の会話を毎回渡す費用を減らせるかもしれない。</p></div>'
         '<div class="col"><h3>確かめる必要がある点</h3><p class="body">値だけでは、その用途、未完了の作業、使うAPIが伝わらず、調べ直しが増えるかもしれない。</p></div></div>',
         '目的は、仕事の継続に必要な情報を特定し、成功を保ちながら入力と再取得の総費用を減らせる構成を明らかにすることです。どちらの仮説が成立するかを先に決めません。変数の保持自体は先行研究にあります。', p31,
-        takeaway='目的：継続に必要な状態を特定し、完了率と総費用の関係を明らかにする。')
+        takeaway='全体目的との関係：入力を減らしても、性能低下や再取得で高くつかないかを測る。')
     add('実験システムの構成', 'ハーネスが、入力と作業状態を管理する',
         '<p class="lead">同じAIにPythonコードを生成させ、模擬アプリを操作する。<br>今回変更するのは、再開時に渡す会話と、Python状態の保持方法。</p>'+diagram(harness_architecture()),
         'モデルの重みは変更しません。ハーネスがモデル入力を組み、生成コードを隔離環境で実行し、その結果を次の入力へ戻します。APIはアプリを読む・変更する操作窓口です。一つのコード実行で複数APIを呼べるので、モデル呼出数とAPI数は別です。今回の主比較では作業役は一つです。',
         [('コード実行型の既存研究：CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'), *p31])
-    add('当初の再編研究との関係', 'まず、引き継ぐ状態の影響を切り分ける',
-        '<div class="two"><div class="col"><span class="badge wait">研究全体の目標</span><h3>仕事の依存に応じて<br>担当・作業範囲を組み替える</h3><p class="body">再編には、会話や変数、未完了作業の引き継ぎが伴う。</p></div>'
-        '<div class="col"><span class="badge">現在の実験</span><h3>担当は固定し、<br>残す会話と変数だけ変える</h3><p class="body">再編後の差を、単なる情報の欠落や整理の効果と取り違えないため。</p></div></div>',
-        '当初の実行単位再編から、今は前提となる状態引き継ぎの比較へ範囲を絞っています。これは元の研究目標の達成報告ではありません。複数担当の集約や更新責任の移管の効果は未測定です。今月の論文の主張も、得られた証拠に合わせて絞る必要があります。', p31,
-        takeaway='現在測っているもの：一つの作業役が途中から再開するときの、状態保持の効果。')
+    add('研究全体と現在の実験', '入力削減が、別の費用を増やしていないか調べる',
+        '<div class="two"><div class="col"><span class="badge">全体の研究対象</span><h3>情報取得・共有・呼び出し・<br>実行・検証の必要性を制御</h3><p class="body">担当再編や結果再利用も、性能を保って費用を減らすための手段。</p></div>'
+        '<div class="col"><span class="badge">今、測っている一部分</span><h3>担当を固定し、<br>残す会話と変数を変える</h3><p class="body">入力を減らした結果、必要情報の再取得や失敗が増えないかを調べる。</p></div></div>',
+        '全体目的を引き継ぎだけへ変更していません。今は局所比較へ絞っており、複数担当の通信・重複調査の削減、取得前の不要情報排除は未測定です。最初の担当再編案も手段の候補で、再編そのものが最終目的ではありません。資料ではこの階層が抜けていたことを訂正します。',objective,
+        takeaway='未測定：複数担当間の重複調査・通信の削減、不要な情報を取得前に除く効果。')
     add('実験の前提①：何を解かせるか', '復元できる模擬アプリで、四つの仕事を行う',
         '<p class="lead">AppWorldの既知の開発課題を使用。要求を読ませ、ツールで実際に操作させる。</p>'
         '<table class="story-table"><thead><tr><th>仕事</th><th>必要な工程</th><th>最後に確認すること</th></tr></thead><tbody>'
@@ -224,7 +278,7 @@ def build_story_slides(handoff, diagnostics, later_handoff=None):
         '<p class="lead">A と B では、同じ変数を保持している。変えたのは再開時の会話の量。</p>'+table,
         '全16分岐を示しています。Aの成功２件がBでは未達でした。一方、初期化したCとDはともに返金だけ成功です。４件各１回なので、成功率の一般的な差や統計的に確かな交互作用は主張できません。未達は要求未達であり、すべてが幻覚や情報欠落という意味ではありません。', results,
         takeaway='今回の４課題・この予算では、「変数を残すから会話を減らせる」とは言えない。')
-    add('結果②：費用', '入力を短くして始めても、総費用は増えた',
+    add('結果②：費用', '入力を短くしても、総費用は増えた',
         '<p class="lead">A と B の比較。直近だけにすると最初の入力は短くなるが、継続全体では逆転した。</p>'+diagram(cost_chart(handoff, diagnostics))+
         '<p class="small muted">単位：トークン。左右は別の尺度。実行準備の再生費用は別記。</p>',
         '左は各課題の再開直後１回だけの入力トークンの合計、右は再開後に終了するまでの全入力と全出力の合計で、左右の軸は別です。どちらも４課題合計。AとBには使用量不明の呼出しはありません。CとDには各１件の使用量不明があり、全条件の費用表は補足に残します。総費用には失敗した実行も含みます。',
@@ -238,26 +292,26 @@ def build_story_slides(handoff, diagnostics, later_handoff=None):
         '同じAPI名とJSON引数が前半にあった要求を数えます。応答の変化や確認の必要性があるため、すべて無駄とは扱いません。返金のBでは、公開API仕様が未ロードの操作を要求したエラーもありました。これだけを全未達の原因とはしません。変数一覧やAPI通知は既存技術なので、普通の対照として追加する必要があります。',
         [('集計の定義と全件診断', LINK+'reports/P31_program_diagnostics.json')],
         takeaway='観測と仮説を分ける。現段階では、失敗原因も解決策の有効性も確定していない。')
-    add('既存との差分と新規性', '独自性を狙うのは、引き継ぐ情報の選び方',
-        '<table class="story-table"><thead><tr><th>既存研究にある機能</th><th>今回の位置づけ</th></tr></thead><tbody>'
-        '<tr><td>CodeAct：コード実行と状態の保持</td><td>比較基準として実装。これ自体は新提案にしない</td></tr>'
-        '<tr><td>CaveAgent等：実行状態と履歴の分離・通知</td><td>変数一覧や通知も、既存の対照として比べる必要</td></tr>'
-        '<tr><td>文脈圧縮：残す情報と費用の評価</td><td>入力削減だけでなく、後の再取得費用まで測る</td></tr></tbody></table>'
-        '<p class="body"><strong>狙う成果：</strong>作業状態と次の処理に応じて、残す履歴を選ぶ規則。<br><strong>現状：</strong>その規則の実装・既存方式を上回る効果は、まだ確立していない。</p>',
-        '新規性の候補は、状態が何か残っているかだけではなく、次の操作に必要な情報を識別し、保持や再取得を選択する具体的な規則と、その効果です。ただしこの一般的な言い方にも先行研究があり、未調整課題で既存の通知・要約方式を上回る追加価値を示すまでは新規性を確定できません。今回の交差比較そのものを独自技術とはしません。',
-        [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'), ('CaveAgent v4', 'https://arxiv.org/html/2601.01569v4'), ('近接研究の照合', LINK+'docs/runtime_state_overlap_20261022.md')])
-    add('次の実験と判断', 'まず、作業が進んだ地点でも確かめる',
-        '<div class="three"><div class="col"><div class="n">1</div><h3>８回目から再開</h3><p class="body">同じ４課題・四条件を、後の地点で比較する。</p><span class="badge">'+('全件終了・別途分析' if later_handoff else '追加実験を実行中')+'</span></div>'
-        '<div class="col"><div class="n">2</div><h3>通常の通知と比較</h3><p class="body">変数一覧やAPI案内だけで十分か。追加する情報を一つずつ分ける。</p><span class="badge wait">次の比較候補</span></div>'
-        '<div class="col"><div class="n">3</div><h3>規則を固定して確認</h3><p class="body">効果が残る場合に選択規則を作り、未調整課題で比較する。</p><span class="badge wait">未実施</span></div></div>',
-        '４回目の境界には残っているユーザー変数が少ないという測定を受け、P31全結果を見る前に８回目を固定しました。同じ課題を使うので独立した４件の追加ではありません。境界間はseed列も異なるため純粋な時期の因果効果は主張しません。次の通知比較は候補で、結果を見てから条件を記録・固定し、現在の実験には混ぜません。',
-        [('８応答後の事前仕様', LINK+'docs/experiments/P32_later_handoff.md'), ('進行状況', 'https://github.com/sophiria1225/AI-/issues/150')],
-        takeaway='同じ課題で失敗を直せたことと、未調整の仕事でも通用することを分けて確認する。')
-    add('現状と限界', '確認できたのは、少数課題での引き継ぎの弱点',
-        '<div class="two"><div class="col"><h3>ここまでの成果</h3><p class="body">同じ途中状態から比較できる基盤。<br>会話と変数を分けた16実行。<br>入力短縮と総費用が逆転した事例。</p></div>'
-        '<div class="col"><h3>まだ不足する証拠</h3><p class="body">既知４課題・１モデル・各１回。<br>独自の選択規則と、その改善効果。<br>未調整課題・担当再編への適用。</p></div></div>',
-        '少数の開発課題で得た探索結果です。成功差を一般化したり、現在のAI全般や大規模業務の限界と呼んだりしません。未閲覧の12シナリオは、方式と比較条件を固定するまで保持します。取得情報や作業分担をすべて自由に変えるエンドツーエンド再編評価とは区別します。', results,
-        takeaway='研究の狙い：何を残せば、何を省いても仕事を継続できるかを説明する。')
+    add('既存との差分と新規性', '必要な処理を残して、何を省けるかを判断する',
+        '<table class="story-table"><thead><tr><th>既存の道具・方式</th><th>研究で確かめる追加価値</th></tr></thead><tbody>'
+        '<tr><td>履歴圧縮・選択</td><td>省いた情報の再取得まで含め、総費用を下げられるか</td></tr>'
+        '<tr><td>コード実行・状態保持・通知</td><td>既存の再利用でも残る、余分な取得・実行を減らせるか</td></tr>'
+        '<tr><td>分担・検証・停止の制御</td><td>必要な調査や確認を維持したまま、重複を避けられるか</td></tr></tbody></table>'
+        '<p class="body"><strong>狙う差分：</strong>不要な処理が生じる条件と、それを回避する具体的な判断規則。<br><strong>現状：</strong>独自方式と改善効果は未確立。目的を見送る判断はしていない。</p>',
+        '品質を保った費用削減は目的で、それだけを新規性とはしません。一般的な道具が既存でも、具体的な状態観測、判断規則、成立条件、追加費用込みの効果に研究上の差が残る可能性はあります。近接方式を十分に強い比較相手として扱い、同等なら優位を主張しません。表の全部を今月実装するという計画ではなく、具体的な一つの削減対象へ絞ります。',
+        [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'), ('近接研究の照合', LINK+'docs/runtime_state_overlap_20261022.md'), *objective])
+    add('次の実験と判断', '削減対象を一つ決め、性能維持と総費用を比べる',
+        '<div class="three"><div class="col"><div class="n">1</div><h3>費用の発生箇所を分析</h3><p class="body">入力の再利用、再取得、呼び出し・実行の反復を分ける。</p><span class="badge">'+('４・８応答後とも全件終了' if later_handoff else '８応答後は実行中')+'</span></div>'
+        '<div class="col"><div class="n">2</div><h3>省く判断を固定する</h3><p class="body">必要な処理を残せる根拠と、通常方式との差を明記する。</p><span class="badge wait">対象・規則は未確定</span></div>'
+        '<div class="col"><div class="n">3</div><h3>未調整課題で確認</h3><p class="body">品質の許容差を先に決め、制御費用込みの削減を測る。</p><span class="badge wait">未実施</span></div></div>',
+        'P32は元の４課題の８応答後を比較し、全16件終了しました。P31と同じ課題で、時点間はseed列も異なるため純粋な時期の効果ではありません。変数一覧やAPI通知は通常の対照候補ですが、それを次の主題と自動決定しません。どの費用を減らすためか、必要な処理を落とさないかを先に定義します。',
+        [('８応答後の事前仕様', LINK+'docs/experiments/P32_later_handoff.md'), ('進捗記録', 'https://github.com/sophiria1225/AI-/issues/150'), *objective],
+        takeaway='新しい実験には「削減する費用・守る性能・既存の対照・採否基準」を対応させる。')
+    add('現状と限界', '費用削減の落とし穴は見えた。改善方式はこれから',
+        '<div class="two"><div class="col"><h3>ここまでの成果</h3><p class="body">同じ途中状態から比較できる基盤。<br>入力短縮と総費用が逆転した事例。<br>再取得の発生を追える実行記録。</p></div>'
+        '<div class="col"><h3>まだ不足する証拠</h3><p class="body">性能を維持した総費用の削減。<br>既存方式に対する独自規則の追加価値。<br>未調整課題・複数担当への適用。</p></div></div>',
+        '４既知課題、１モデル、各条件各境界１試行の探索です。同じ課題を別境界で試しても独立課題数を増やしません。一般的な品質維持や費用削減を達成したという意味ではありません。未閲覧の12シナリオは方式・比較を固定してから使います。',results,
+        takeaway='研究の主目的は、ハーネスの情報・実行制御で、性能を保ちながら総費用を減らすこと。')
     add('月末投稿までの進め方', '10月23日に、論文の主張と主要結果を絞る',
         '<div class="timeline"><div><div class="date">10/23</div><h3>主要結果・あらまし</h3><p class="small">追加比較を閉じ、既存との差を一つに絞る。</p></div>'
         '<div><div class="date">10/25</div><h3>確認実験を終了</h3><p class="small">不足する対照と未調整課題の確認を優先する。</p></div>'
@@ -266,7 +320,8 @@ def build_story_slides(handoff, diagnostics, later_handoff=None):
         '新規性の成立と未調整課題の結果は未確定で、投稿に間に合うことを保証できる状況ではありません。採録は査読に依存します。実験を延々と増やすのではなく、10月23日に中心となる主張を判断し、25日以降はその裏付けに限定して原稿を完成させます。公式４ページ組版と著者情報も未完了です。',
         [('原稿の状態', LINK+'papers/202610_letter/current_status.json')],
         takeaway='今優先すること：説明可能な一つの結果と、既存方式に対する追加価値を固める。')
-    figures = {'task_workflow': photo_workflow(), 'handoff_problem': missing_context(), 'three_states': three_states(),
+    figures = {'orchestration_costs':orchestration_costs(),'quality_cost_target':quality_cost_target(),
+               'task_workflow': photo_workflow(), 'handoff_problem': missing_context(), 'three_states': three_states(),
                'experiment_architecture': harness_architecture(), 'fork_protocol': fork_protocol(),
                'input_vs_total_cost': cost_chart(handoff, diagnostics)}
     return slides, figures
