@@ -1,0 +1,33 @@
+{
+  "phase": "P21",
+  "run_id": "P21_01",
+  "source_run": "P18_04_ROLES",
+  "input_root": "records/data_export_inputs/P21_v01",
+  "output_root": "records/data_export_probe/P21_01",
+  "model_matches": "configs/P18_additional_baseline_v01.json",
+  "variants": [
+    "literal_csv",
+    "data_program"
+  ],
+  "seeds": [
+    51,
+    52,
+    53
+  ],
+  "temperature": 1.0,
+  "max_calls": 6,
+  "max_output_tokens": 8192,
+  "max_total_tokens": 250000,
+  "max_wall_seconds": 5400,
+  "publish_issue": 99,
+  "scope": "Follow-up budget sensitivity after all six P20 outputs hit the 4096 output cap. Same known development state, public inputs, model, instructions, seeds and order; both arms now get 8192 output tokens. Not new independent tasks, not a novel method or end-to-end success comparison.",
+  "evaluation": "After all six generations: interpret code without environment access; compare every CSV with task-specific analyst-derived public observation union. Include format, program and budget failures. No free retry or target-count hints.",
+  "limitations": [
+    "Both arms receive a common structured observation packet, not the original full conversation. Do not infer a causal effect by comparing against the original P18 output alone.",
+    "Interpreter capabilities and prompt overhead differ as the intended output mechanism; record all input and output costs.",
+    "The restricted interpreter is not a general Python agent. Unsupported code cannot establish that ordinary CodeAct would fail.",
+    "No account operation, model-generated CSV, missing title, target count, hidden evaluation or reserved task is provided as input.",
+    "P20 failures and costs are retained separately. This post-hoc budget choice is not a prespecified confirmatory study; no automatic further cap doubling if submissions remain absent."
+  ],
+  "call_timeout_seconds": 1200
+}

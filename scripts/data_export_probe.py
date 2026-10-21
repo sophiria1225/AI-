@@ -1,4 +1,4 @@
-"""Common public-data inputs and fixed conditions for the P20 diagnostic."""
+"""Common public-data inputs for the P20/P21 export diagnostics."""
 import hashlib
 import json
 from pathlib import Path
@@ -87,9 +87,9 @@ def submission(message, variant):
 
 
 def schedule(plan):
-    if (plan['run_id'] != 'P20_01' or plan['variants'] != ['literal_csv', 'data_program']
+    if (plan['run_id'] not in ('P20_01', 'P21_01') or plan['variants'] != ['literal_csv', 'data_program']
             or plan['seeds'] != [51, 52, 53] or plan['max_calls'] != 6):
-        raise ValueError('unexpected fixed P20 design')
+        raise ValueError('unexpected fixed export design')
     rows = []
     for index, seed in enumerate(plan['seeds']):
         variants = plan['variants'][index % 2:] + plan['variants'][:index % 2]

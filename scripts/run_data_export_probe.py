@@ -1,6 +1,7 @@
-"""Generate all fixed P20 submissions before executing or judging any of them."""
+"""Generate all fixed export submissions before executing or judging them."""
 import argparse
 import datetime as dt
+import hashlib
 import json
 from pathlib import Path
 import signal
@@ -17,13 +18,22 @@ from watch_pro_comparison import gh_api
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'sophiria1225/AI-'
-MARKER = '<!-- harness-data-export:P20_01 -->'
+ISSUES = {'P20': 95, 'P21': 99}
+
+
+def store_frozen_file(source, destination, expected):
+    data = source.read_bytes()
+    if hashlib.sha256(data).hexdigest() != expected:
+        raise ValueError('frozen file changed before archival')
+    destination.write_bytes(data)
 
 
 def publish(state, rows, issue_id):
-    if issue_id != 95:
-        raise ValueError('P20 progress is restricted to the research Issue')
-    body = '\n'.join([MARKER, 'P20：同じ取得済み情報からの直接書出と計算コード', '',
+    phase = state['phase']
+    if phase not in ISSUES or issue_id != ISSUES[phase]:
+        raise ValueError('progress is restricted to the matching research Issue')
+    marker = f'<!-- harness-data-export:{phase}_01 -->'
+    body = '\n'.join([marker, f'{phase}：同じ取得済み情報からの直接書出と計算コード', '',
         '１開発局面×２方式×３seed。新規方式・CodeAct完全再現・最終タスク成功の評価ではありません。',
         '全６出力の生成が終わってから内容を照合します。', '',
         '| Variant | Seed | Submission valid | Known tokens |', '|---|---:|---|---:|'] +
@@ -34,7 +44,7 @@ def publish(state, rows, issue_id):
     if state.get('comment_id'):
         endpoint = f'repos/{REPOSITORY}/issues/comments/{state["comment_id"]}'
         old = gh_api(endpoint)
-        if old.get('issue_url') != 'https://api.github.com/'+issue or not old.get('body', '').startswith(MARKER):
+        if old.get('issue_url') != 'https://api.github.com/'+issue or not old.get('body', '').startswith(marker):
             raise ValueError('unexpected progress comment')
         result = gh_api(endpoint, method='PATCH', payload={'body': body})
     else:
@@ -54,6 +64,8 @@ def main():
     p.add_argument('--publish', action='store_true')
     a = p.parse_args()
     plan, frozen = json.loads(a.plan.read_text()), json.loads(a.freeze_record.read_text())
+    if plan['phase'] not in ISSUES or plan['run_id'] != plan['phase']+'_01':
+        raise ValueError('unexpected phase/run identity')
     order = schedule(plan)
     source = a.storage_root/plan['input_root']
     if sha(a.plan) != frozen['plan_sha256'] or sha(source/'input.json') != frozen['input_sha256']:
@@ -68,6 +80,8 @@ def main():
     config.update(seed=plan['seeds'][0], agent_temperature=plan['temperature'],
                   max_calls=plan['max_calls'], max_total_tokens=plan['max_total_tokens'],
                   max_wall_seconds=plan['max_wall_seconds'], max_output_tokens=plan['max_output_tokens'])
+    if 'call_timeout_seconds' in plan:
+        config['model']['call_timeout_seconds'] = plan['call_timeout_seconds']
     runtime = json.loads((a.storage_root/'.runtime/model_server.json').read_text())
     command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
     remaining, lease_end = lease_remaining(runtime, command, dt.datetime.now(dt.timezone.utc))
@@ -79,8 +93,10 @@ def main():
                      expected_ctx=config['model']['num_ctx'], expected_cache=('q8_0', 'q8_0'))
     out = a.storage_root/plan['output_root']
     out.mkdir(parents=True, exist_ok=False)
-    for name, value in [('plan.json', plan), ('freeze_record.json', frozen), ('schedule.json', order),
-                        ('input_private.json', case), ('input_manifest.json', json.loads((source/'manifest.json').read_text()))]:
+    store_frozen_file(a.plan, out/'plan.json', frozen['plan_sha256'])
+    store_frozen_file(source/'input.json', out/'input_private.json', frozen['input_sha256'])
+    store_frozen_file(source/'manifest.json', out/'input_manifest.json', frozen['input_manifest_sha256'])
+    for name, value in [('freeze_record.json', frozen), ('schedule.json', order)]:
         write_json(out/name, value)
     write_json(out/'provenance.json', {'runtime': runtime, 'props': props, 'config': config,
                'server_lease_end_utc': lease_end,
@@ -90,7 +106,7 @@ def main():
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes((ROOT/name).read_bytes())
     infer = Inference(config, out)
-    rows, state = [], {'status': 'preflight', 'started_at': dt.datetime.now(dt.timezone.utc).isoformat()}
+    rows, state = [], {'phase': plan['phase'], 'status': 'preflight', 'started_at': dt.datetime.now(dt.timezone.utc).isoformat()}
 
     def update():
         state.update(known_total_tokens=infer.tokens, model_calls=len(infer.calls),

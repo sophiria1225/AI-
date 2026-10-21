@@ -131,7 +131,7 @@ def evaluate(directory, original_plan):
                'complete_exports': sum(r['variant'] == variant and r['complete_export'] for r in rows),
                'known_tokens': sum(r['known_tokens'] for r in rows if r['variant'] == variant)}
               for variant in plan['variants']]
-    return {'phase': 'P20', 'plan_sha256': frozen['plan_sha256'], 'input_sha256': frozen['input_sha256'],
+    return {'phase': plan['phase'], 'plan_sha256': frozen['plan_sha256'], 'input_sha256': frozen['input_sha256'],
             'expected_unique_public_pairs': len(expected), 'outputs': rows, 'groups': groups,
             'model_calls': len(usage), 'known_total_tokens': state['known_total_tokens'],
             'unknown_usage_calls': 0, 'audit_errors': [], 'evaluator_source_sha256': sha(Path(__file__)),
