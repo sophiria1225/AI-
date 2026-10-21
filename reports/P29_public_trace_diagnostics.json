@@ -1,0 +1,185 @@
+{
+  "phase": "P29",
+  "trials": [
+    {
+      "run_id": "P29_01_CODE",
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 2,
+        "api_docs__show_api_doc": 9,
+        "supervisor__show_account_passwords": 1,
+        "file_system__login": 1,
+        "file_system__show_directory": 2,
+        "file_system__show_file": 43,
+        "phone__login": 2,
+        "phone__get_current_date_and_time": 1,
+        "file_system__create_directory": 3,
+        "file_system__move_file": 42,
+        "supervisor__complete_task": 1
+      },
+      "code_programs": 21,
+      "program_status_counts": {
+        "ok": 18,
+        "execution_error": 3
+      },
+      "program_wall_seconds": 1.700569043168798,
+      "stdout_truncated_programs": 0,
+      "unparsed_inner_error_count": {
+        "format_error": 2
+      },
+      "source_sha256": {
+        "spans.json": "6caff222196df4f422143528a863de36bdce3516cabedeacde1b304c66224ff1",
+        "events.json": "613235e6b7ea42396a755c123afc326be21e852c502c7da9cd8dfd60cff49396",
+        "summary.json": "0244ec2264d7ccaade5a3ce28bd40a632845680d94b95cf079c20dd512240fae"
+      },
+      "photo_counts": {
+        "directory_snapshots": [
+          {
+            "span_id": "s18",
+            "listed_paths": 42,
+            "paths_with_metadata": 42,
+            "paths_with_move_receipt": 0
+          },
+          {
+            "span_id": "s127",
+            "listed_paths": 45,
+            "paths_with_metadata": 0,
+            "paths_with_move_receipt": 0
+          }
+        ],
+        "unique_metadata_paths": 42,
+        "move_requests": 42,
+        "move_requests_with_json_message": 42,
+        "unique_moved_source_paths": 42,
+        "read_paths_without_move_receipt": 42,
+        "move_sources_without_metadata": 42,
+        "unclassified_observations": {},
+        "scope": "Each listing is kept separately because it may refer to a different directory or time. Receipts do not by themselves establish destination correctness or a lower API bound."
+      }
+    },
+    {
+      "run_id": "P29_02_CODE",
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 3,
+        "file_system__show_directory": 2,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_doc": 6,
+        "file_system__login": 1,
+        "phone__login": 1,
+        "phone__get_current_date_and_time": 1,
+        "file_system__show_file": 1,
+        "phone__show_contact_relationships": 2,
+        "phone__search_contacts": 1,
+        "venmo__login": 1,
+        "venmo__create_payment_request": 3,
+        "supervisor__complete_task": 1
+      },
+      "code_programs": 21,
+      "program_status_counts": {
+        "ok": 19,
+        "execution_error": 2
+      },
+      "program_wall_seconds": 0.9085607915185392,
+      "stdout_truncated_programs": 0,
+      "unparsed_inner_error_count": {
+        "format_error": 2
+      },
+      "source_sha256": {
+        "spans.json": "cc4f3678b780d253a77a66098a81dbfcd0f0156d8ba2dfeb5f6eeeeabb6a48cd",
+        "events.json": "c30f4d6966d0dc44f42eb1e394b5aa08db5cc5833cb2d873028ff2fa2064a71f",
+        "summary.json": "70909161b086e3074900e6ffded0ce9218309c4fbfa99a6fa67c12502185f17c"
+      }
+    },
+    {
+      "run_id": "P29_03_CODE",
+      "sent_api_counts": {
+        "supervisor__show_active_task": 1,
+        "api_docs__show_api_descriptions": 1,
+        "api_docs__show_api_doc": 3,
+        "supervisor__show_account_passwords": 1,
+        "supervisor__show_profile": 1,
+        "venmo__login": 1,
+        "venmo__show_sent_payment_requests": 4,
+        "venmo__show_venmo_balance": 1,
+        "venmo__create_transaction": 1,
+        "supervisor__complete_task": 1
+      },
+      "code_programs": 10,
+      "program_status_counts": {
+        "ok": 9,
+        "execution_error": 1
+      },
+      "program_wall_seconds": 0.5523000410757959,
+      "stdout_truncated_programs": 0,
+      "unparsed_inner_error_count": {
+        "format_error": 1
+      },
+      "source_sha256": {
+        "spans.json": "a9e3b64ba6881290be5d8a1d9f400c73cccd95434587dac48374906e2b39578f",
+        "events.json": "6a919c7947e0ad83938f412e73b7d0609e18d45aad57c05a54441f84e244d73c",
+        "summary.json": "056a38d635060fda69ad52c84658650f312f3e8f963f8ea11cd0d3daacdc2429"
+      }
+    },
+    {
+      "run_id": "P29_04_CODE",
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 3,
+        "api_docs__show_api_doc": 7,
+        "supervisor__show_account_passwords": 1,
+        "spotify__login": 1,
+        "spotify__show_song_library": 2,
+        "spotify__show_album_library": 2,
+        "spotify__show_playlist_library": 2,
+        "spotify__show_album": 6,
+        "spotify__show_playlist": 6,
+        "spotify__show_song": 50
+      },
+      "code_programs": 11,
+      "program_status_counts": {
+        "ok": 9,
+        "execution_error": 2
+      },
+      "program_wall_seconds": 1.0683002504520118,
+      "stdout_truncated_programs": 0,
+      "unparsed_inner_error_count": {
+        "format_error": 1,
+        "not_executed": 1
+      },
+      "source_sha256": {
+        "spans.json": "147dc0a3950d6daf88ffc6cf3c70197fbffeca8000ba6148aa40ab1e04037c17",
+        "events.json": "1aa3558e2f99bf62e40cd6033900540d2a98b44bf96786cc59f814dc8b3fb951",
+        "summary.json": "3abb1a5167ef5f4b60805d992ddc340680760a7afcfdc926cbf71aedb9d3cebc"
+      },
+      "song_coverage": {
+        "source_unique_id_counts": {
+          "song": 12,
+          "album": 24,
+          "playlist": 41
+        },
+        "page_counts": {
+          "song": [
+            12,
+            0
+          ],
+          "album": [
+            6,
+            0
+          ],
+          "playlist": [
+            6,
+            0
+          ]
+        },
+        "observed_union_ids": 72,
+        "observed_metadata_ids": 54,
+        "writes": [],
+        "rereads": [],
+        "unclassified_observations": {},
+        "scope": "Observed union and exact title/artist strings, not hidden population. Every export attempt is retained; identical reread content alone is not proof of target-path identity."
+      }
+    }
+  ],
+  "all_four_read": true,
+  "model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_contents_read": false
+}
