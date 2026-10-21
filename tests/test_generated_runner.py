@@ -82,7 +82,8 @@ class GeneratedRunnerControls(unittest.TestCase):
             if fail_second_count and len(count_requests) == 2:
                 raise TimeoutError('fixture tokenizer failure')
             return {'tokens': [0] * (100 if len(count_requests) == 1 else 5000)}
-        config = {'phase': phase, 'arms': ['native_focus' if phase == 'P13' else 'native_ledger'], 'task_ids': ['dev'],
+        arms = {'P13': 'native_focus', 'P14': 'native_ledger', 'P19': 'native_ledger_aligned'}
+        config = {'phase': phase, 'arms': [arms[phase]], 'task_ids': ['dev'],
                   'model_selection': 'fixture', 'model': {'base_url': 'http://unused', 'num_ctx': 65536},
                   'seed': 42, 'max_total_tokens': 1000, 'max_calls': 80, 'max_api_requests': 80,
                   'max_wall_seconds': 1800, 'max_checkpoint_object_bytes': 10000000,
@@ -141,6 +142,33 @@ class GeneratedRunnerControls(unittest.TestCase):
             self.assertEqual(audited['dispatch_audit_errors'], [])
             self.assertEqual(audited['memory_audit_errors'], [])
             self.assertEqual(audit_boundaries(trial, Path(tmp) / 'world')['audit_errors'], [])
+
+    def test_aligned_contract_runtime_replays_exact_inputs_costs_and_boundaries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            result, sent, requests, task, tools = self.execute(Path(tmp), phase='P19')
+            self.assertEqual(result['arm'], 'native_ledger_aligned')
+            self.assertEqual(result['stop_reason'], 'agent_declared_complete')
+            self.assertEqual(result['known_total_tokens'], 33)
+            self.assertEqual(result['usage_by_role']['ledger']['calls'], 1)
+            self.assertEqual([c['api'] for c in sent], ['show_app_descriptions', 'complete_task'])
+            trial = Path(tmp) / 'storage/records/context_pilot/P19_FIXTURE'
+            provenance = json.loads((trial / 'provenance.json').read_text())
+            self.assertIn('aligned_ledger_memory.py', provenance['sources'])
+            self.assertIn('ledger_contract.py', provenance['sources'])
+            with patch.object(auditor, 'load_public_tools', return_value=(tools, {}, None)):
+                audited = auditor.audit(trial, Path('/unused'))
+            self.assertEqual(audited['audit_errors'], [])
+            self.assertEqual(audited['dispatch_audit_errors'], [])
+            self.assertEqual(audited['memory_audit_errors'], [])
+            self.assertEqual(audit_boundaries(trial, Path(tmp) / 'world')['audit_errors'], [])
+            # A changed submitted schema must be detected without rerunning a model.
+            payload = trial / 'call_002/request.json'
+            value = json.loads(payload.read_text())
+            value['tools'][0]['function']['parameters']['properties']['items']['items']['properties']['source_ids']['minItems'] = 0
+            payload.write_text(json.dumps(value))
+            with patch.object(auditor, 'load_public_tools', return_value=(tools, {}, None)):
+                changed = auditor.audit(trial, Path('/unused'))
+            self.assertTrue(any('input or role differs' in e for e in changed['memory_audit_errors']))
 
 
 if __name__ == '__main__':
