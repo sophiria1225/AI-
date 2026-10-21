@@ -1,0 +1,24 @@
+{
+  "phase": "P22_preparation",
+  "checked_at": "2026-10-21T10:34:37.428986+00:00",
+  "unit_tests_passed": 368,
+  "model_calls": 0,
+  "environment_requests": 0,
+  "P21_frozen_source_changes": [],
+  "checks": [
+    "P22 IDs and order match all six reserved development scenarios; confirmation substitutions rejected",
+    "Activation requires explicit recorded decision and hash of complete P21 primary review",
+    "Synthetic messages, actions, model/API counts and boundary capture match P11 baseline",
+    "Final synthetic DB matches captured state",
+    "Public progress stays in Issue 102 and does not include task text"
+  ],
+  "initial_test_failure": "The first fixture assertion compared full run summaries, including intentionally different run IDs and measured wall times. It was corrected to compare actual messages/actions/costs/boundary counts; no model experiment or observed outcome changed.",
+  "source_sha256": {
+    "scripts/run_native_batch.py": "62f88e7d051dccb05a3b47838e54a519744617fe64fe5ecd70c3db5af3acffc6",
+    "scripts/run_native_appworld.py": "d351be131619ba425810e68c1c2d8f7f748e889b20d7c9a3f38c02949d20dafe",
+    "scripts/audit_native_boundaries.py": "8084b37a6d9183bbddc206babde58d6f5dcd60ff93bb56b460daba579380229c",
+    "tests/test_p22_preparation.py": "fb2b1d60c7b4618f278ec9aaa8bcac5a65c53d77ad51e1918226965b86cfb6fe"
+  },
+  "test_log_sha256": "ae1099b8076b1e96d0fb028d954e9e76a3fecc6f7007479ba0421abd013c7f5a",
+  "scope": "Prepared support only. P22 generation plan, activation record and live lease have not been fixed. No automatic model run."
+}
