@@ -23,6 +23,7 @@ PHASES = {
     "P12": {"issue": 48, "arm": "native_recent", "batch": "P12_batch_v01", "before": "P11", "trials": 4},
     "P13": {"issue": 51, "arm": "native_focus", "batch": "P13_batch_v01", "before": "P12", "trials": 4},
     "P14": {"issue": 54, "arm": "native_ledger", "batch": "P14_batch_v01", "before": "P13", "trials": 4},
+    "P18": {"issue": 86, "arm": "native_roles", "batch": "P18_batch_v01", "before": "P17", "trials": 4},
 }
 
 
@@ -38,8 +39,9 @@ def validate_schedule(plan):
             or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
             or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed calibration schedule is supported")
-    if phase in ("P11", "P12", "P13", "P14"):
-        selected = json.loads((ROOT / 'reports/P11_public_task_selection.json').read_text())
+    if phase in ("P11", "P12", "P13", "P14", "P18"):
+        selection_file = 'reports/P18_public_task_selection.json' if phase == 'P18' else 'reports/P11_public_task_selection.json'
+        selected = json.loads((ROOT / selection_file).read_text())
         ids = [row['task_id'] for row in selected['selected']]
         if (plan['task_ids'] != ids or [row[0] for row in plan['run_order']] != ids
                 or len({row[2] for row in plan['run_order']}) != len(ids)):
@@ -60,7 +62,8 @@ def public_body(rows, state):
              "P11": "P11：選定済みの追加4シナリオを同じ全履歴基準で観察",
              "P12": "P12：同じ4シナリオで直近履歴の保持と原文再読を比較",
              "P13": "P13：同じ接続でFOCUSに基づく保持方式と全費用を比較",
-             "P14": "P14：通常の作業台帳と全更新費用を比較"}[phase]
+             "P14": "P14：通常の作業台帳と全更新費用を比較",
+             "P18": "P18：未使用の４開発シナリオを全履歴基準で観察"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -83,7 +86,8 @@ def public_body(rows, state):
                "P11": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-development-20261021/docs/experiments/P11_additional_baseline.md)",
                "P12": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-observations-20261021/docs/experiments/P12_recent_window.md)",
                "P13": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-focus-comparison-20261021/docs/experiments/P13_native_focus.md)",
-               "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p14-ledger-execution-20261021/docs/experiments/P14_native_ledger.md)"}[phase]]
+               "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p14-ledger-execution-20261021/docs/experiments/P14_native_ledger.md)",
+               "P18": "[事前仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P18_unseen_development.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -169,10 +173,16 @@ def main():
         "P12": ("context_pilot", plan.get("wait_for_native_batch")),
         "P13": ("context_pilot", plan.get("wait_for_native_batch")),
         "P14": ("context_pilot", plan.get("wait_for_native_batch")),
+        "P18": ("event_view_probe", plan.get("wait_for_contract_probe")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
-        prerequisite = json.loads(prerequisite_path.read_text())
+        try:
+            prerequisite = json.loads(prerequisite_path.read_text())
+        except json.JSONDecodeError:
+            # A different process may be replacing this short status file.
+            time.sleep(1)
+            continue
         if prerequisite["status"] == "complete":
             break
         if (prerequisite["status"] not in ("waiting", "running")
@@ -190,7 +200,14 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14") else 180
+    if phase == "P18":
+        from run_event_view_probe import lease_remaining
+        runtime = json.loads((storage / '.runtime/model_server.json').read_text())
+        command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
+        live_remaining, live_end = lease_remaining(runtime, command, datetime.datetime.now(datetime.timezone.utc))
+        remaining = min(remaining, live_remaining)
+        state['checked_server_lease_end_utc'] = live_end
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)
