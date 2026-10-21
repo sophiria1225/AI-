@@ -1,0 +1,1263 @@
+{
+  "pages": 11,
+  "text_boxes": 179,
+  "overflow": [],
+  "font_name": "Arial Unicode MS",
+  "font_path_for_build": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "boxes": [
+    {
+      "slide": 1,
+      "text": "RESEARCH CHECKPOINT / P11–P14",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 1,
+      "text": "何を作り、何が分かり、何を論文で問うか",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 1,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "01",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "AIの作業状態を、後の担当へ\n正しく、少ない費用で渡したい。",
+      "lines": 2,
+      "used_height": 84.48,
+      "box_height": 110
+    },
+    {
+      "slide": 1,
+      "text": "通常台帳までの４条件比較を完了。\n今月末の２ページレターに向け、問題を一つに絞る。\n次の問い：未実行の要求を、記憶と修復へどう渡すか。",
+      "lines": 3,
+      "used_height": 83.16000000000001,
+      "box_height": 118
+    },
+    {
+      "slide": 1,
+      "text": "今回の結果は既存方式の開発比較。次の機構の有効性は、これから判定する。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 2,
+      "text": "01 / 目的とアーキテクチャ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 2,
+      "text": "研究対象は、モデルの外側の情報・実行境界",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 2,
+      "text": "共通モデル、共通ツール、独立評価。保持と引き継ぎの仕組みを操作する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 2,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "02",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "要求・公開API仕様",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "正解・追加評価は隔離",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 2,
+      "text": "実行役のLLM",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "調査・操作・完了判断",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 2,
+      "text": "実行器 → 模擬環境",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "引数検査・送信・返却",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 2,
+      "text": "後続へ渡す作業状態",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "全履歴／直近／生成記憶",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 46
+    },
+    {
+      "slide": 2,
+      "text": "原記録・保存点",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "根拠・送信状態・総費用",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 46
+    },
+    {
+      "slide": 2,
+      "text": "終了後の独立評価",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "最終状態を別に検査",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 46
+    },
+    {
+      "slide": 2,
+      "text": "目標：最終品質を保つ費用削減。台帳の形式適合や参照IDだけで正しさを保証しない。",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "02 / 比較設計",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 3,
+      "text": "同じ４課題、同じモデル、同じ打ち切り条件",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 3,
+      "text": "各課題45万総トークン・30分・80 LLM呼出・80 API要求。M3、単一スロット。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 3,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "03",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "条件",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "保持するもの",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "費用に含むもの",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "全履歴 P11",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "元の応答・観測を保持",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "過去の履歴の再入力",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "直近履歴 P12",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "4K目安・元の応答単位",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "原文再読・再取得",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "FOCUS適合版 P13",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "計画引用＋保持の救済",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "草案生成・無効提出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "通常台帳 P14",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "出典付き項目＋直近履歴",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "台帳生成・無効提出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 38
+    },
+    {
+      "slide": 3,
+      "text": "P14は一般的なLLM生成台帳。論文「Ledger」の決定的な実行状態方式とは異なる。",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 31
+    },
+    {
+      "slide": 4,
+      "text": "03 / 全体結果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "失敗と使用量不明を含めた４条件の比較",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 4,
+      "text": "４件・１試行なので、方式の一般的な優劣や品質同等性の証明ではない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 4,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "04",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "条件",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "成功",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "既知総トークン",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "呼出",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "不明使用量",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "全履歴",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "4/4",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "440,355",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "29",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "0",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "直近履歴",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "3/4",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "627,363",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "45",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "0",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "FOCUS適合版",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "2/4",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "≥467,047",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "36",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "2",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "通常台帳",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "2/4",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "≥483,251",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "37",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "2",
+      "lines": 1,
+      "used_height": 23.76,
+      "box_height": 37
+    },
+    {
+      "slide": 4,
+      "text": "全担当・制御の費用を合計。実行役だけの削減を、そのままシステムの節約としない。",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 31
+    },
+    {
+      "slide": 5,
+      "text": "04 / グラフ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 5,
+      "text": "短い入力と、仕事全体の低費用は同じではない",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 5,
+      "text": "保持生成・再取得・時間切れを含む。時間は独立評価を除く。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 5,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "05",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "P13の別途中中断：既知52,285＋使用量不明１件。上図の完了４試行とは別に保存。",
+      "lines": 1,
+      "used_height": 17.16,
+      "box_height": 25
+    },
+    {
+      "slide": 6,
+      "text": "05 / 台帳の内訳",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 6,
+      "text": "台帳を作る費用と、履歴を落とす効果を分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 6,
+      "text": "適合した台帳の項目が、意味的にもすべて正しいと判定したものではない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 6,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "06",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "課題",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "結果",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "更新 適合/不正/中断",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "台帳の既知費用",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "削除した更新",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "4/0/1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "71,747＋不明",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "成功",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "2/1/0",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "40,406",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "2",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "3",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "未達",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "1/2/1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "62,548＋不明",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "1",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "4",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "成功",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "0/1/0",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "11,195",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "0",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 36
+    },
+    {
+      "slide": 6,
+      "text": "台帳生成：既知185,896トークン。無効な提出は原履歴を維持し、費用は算入。",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 7,
+      "text": "06 / 考察と限界",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 7,
+      "text": "既存方式をつないだ比較から、独自性はまだ言えない",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 7,
+      "text": "タイムアウト、形式不備、履歴の変化、単一スロットの再入力が混在する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 7,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "07",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 7,
+      "text": "今回、確認できたこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "共通接続と全費用の監査。\n通常台帳で原履歴の削除が発生。\n保存点・最終状態との対応を検査。\n失敗を含む比較と具体的な制約。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 162
+    },
+    {
+      "slide": 7,
+      "text": "これだけでは言えないこと",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 7,
+      "text": "生成台帳は一般に劣るという結論。\n要約が唯一の失敗原因であること。\n大規模タスクや別モデルへの一般化。\n新規アルゴリズムの有効性。",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 162
+    },
+    {
+      "slide": 7,
+      "text": "この４件の結果を、提案方式の本評価へ流用して成功としない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 8,
+      "text": "07 / 新規性の候補と先行研究",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 8,
+      "text": "狙う差は、誤完了の抑制と修復情報の両立",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 8,
+      "text": "一般的な状態タグ・出典管理・用途別の記憶アクセスは、既に研究されている。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 8,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 8,
+      "text": "08",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 8,
+      "text": "近接研究／単純な対策",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "既にある点・今回確かめる点",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "HaluMem",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "記憶の幻覚・未確認情報の評価が既存",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "Ledger / Cordon",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "観測と試行済み要求、実行境界の管理が既存",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "MemTX",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "用途や状態に応じた読み分けも既存",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "今回の限定した問い",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "拒否要求を隠す利益と、修復材料を失う損失を測る",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 8,
+      "text": "追加価値が残るかは未確定。名称変更や部品の接続を新規性の根拠にしない。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 9,
+      "text": "08 / 次の制御実験",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 9,
+      "text": "同じ拒否要求を、記憶と修復へ分けて渡す候補",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 9,
+      "text": "図は提案候補。P16はまず記憶側24生成だけを測り、採否を判断する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 9,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "09",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 9,
+      "text": "送信前に拒否した要求",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 9,
+      "text": "実行器の送信０記録で確定",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 9,
+      "text": "記憶更新への表示",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 9,
+      "text": "拒否・参照IDを保持",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 9,
+      "text": "修復への表示",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 9,
+      "text": "未送信の原要求を参照",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 9,
+      "text": "比較：元入力／未送信タグ／両用途から退避／用途別表示。\nP16：４課題×記録通り・人工拒否×３表示＝24生成。\n未知の引数による人工条件。自然な失敗率や仕事全体",
+      "lines": 3,
+      "used_height": 75.24000000000001,
+      "box_height": 100
+    },
+    {
+      "slide": 9,
+      "text": "元入力で再現しない・タグで十分・修復損失がない場合は、追加機構の主張を見直す。",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 10,
+      "text": "09 / 投稿までの成果物",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 10,
+      "text": "今週に実験とあらまし、月末までに投稿を完了する",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 10,
+      "text": "暫定投稿先：和文論文誌D・研究速報・人工知能（D140803 知識の共有・再利用）。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 10,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "10",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 10,
+      "text": "期限",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "完成させるもの",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "10/23",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "限定実験の採否・主結果・あらまし",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "10/25",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "必要な追加確認・数値と主張の固定",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "10/29〜30",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "２段組２ページ原稿・図表・著者情報・最終点検",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "10/31",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "投稿完了。採録日とは分けて管理",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 10,
+      "text": "結果が裏づける範囲へ主張を絞る。改善率と新規性を先に決めてデータを合わせない。",
+      "lines": 1,
+      "used_height": 19.8,
+      "box_height": 31
+    },
+    {
+      "slide": 11,
+      "text": "10 / 根拠・詳細",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 11,
+      "text": "数値、選定理由、棄却条件をGitHubから確認できる",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 11,
+      "text": "原文、模擬認証値、モデル推論、評価正解は公開しない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 11,
+      "text": "2026-10-21｜P11〜P14：４開発課題・各条件１試行｜新規性・一般的優位は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "11",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 11,
+      "text": "４条件とP14の全結果",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "機構候補と近接研究の重複",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "P16の固定条件・採否基準",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "投稿分野・期限・採用しなかった候補",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    },
+    {
+      "slide": 11,
+      "text": "あらまし・本文骨格の準備状況",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 35
+    }
+  ],
+  "note": "Text bounds checked in the shared layout. Native PowerPoint rendering can vary by installed font."
+}
