@@ -211,7 +211,39 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
     return summary
 
 
-def run(storage, root):
+def publish_status(status,output):
+    from watch_pro_comparison import gh_api
+    marker='<!-- harness-handoff-factor:P31_batch_v01 -->'
+    lines=[marker,'P31：会話履歴 × Python作業状態の固定地点比較',
+           '',f"状態: {status['status']} / 完了 {len(status['completed'])}/16 / 実行中 {status['active'] or 'なし'}",'',
+           '| 課題番号 | 条件 | 最終成功 | 後続生成 | 既知token | 後続API |',
+           '|---|---|---:|---:|---:|---:|']
+    for row in status['rows']:
+        lines.append(f"| {row['run_id'].split('_')[1]} | {row['arm']} | {row.get('success','未評価')} | {row['model_calls']} | {row['known_total_tokens']:,} | {row['api_requests']} |")
+    lines+=['','共通前半・環境再構成の費用は別に全件記録。全16件の監査前に効果を確定しない。',
+            '既知４課題・１seed・４応答後。完全プロセス復元／新規方式／再編の有効性の証明ではない。']
+    body='\n'.join(lines)
+    (output/'progress.md').write_text(body+'\n')
+    try:
+        if status.get('comment_id'):
+            endpoint=f"repos/sophiria1225/AI-/issues/comments/{int(status['comment_id'])}"
+            old=gh_api(endpoint)
+            if (not old.get('body','').startswith(marker)
+                    or old.get('issue_url')!='https://api.github.com/repos/sophiria1225/AI-/issues/145'):
+                raise ValueError('progress destination differs')
+            result=gh_api(endpoint,method='PATCH',payload={'body':body})
+        else:
+            issue=gh_api('repos/sophiria1225/AI-/issues/145')
+            if issue['html_url']!='https://github.com/sophiria1225/AI-/issues/145':
+                raise ValueError('Issue identity differs')
+            result=gh_api('repos/sophiria1225/AI-/issues/145/comments',method='POST',payload={'body':body})
+        status.update(comment_id=result['id'],comment_url=result['html_url'])
+        status.pop('publish_error',None)
+    except Exception as exc:
+        status['publish_error']=type(exc).__name__
+
+
+def run(storage, root, publish=False):
     plan, source_plan, tools, schemas, prepared = prepare_sources(storage,root)
     checked=read(root/'reports/P31_prefix_checks.json')
     if not checked['all_four_attempted'] or not checked['all_observable_prefixes_match']:
@@ -241,12 +273,14 @@ def run(storage, root):
         for arm in arms:
             rid=f'P31_{number:02d}_{arm.upper()}'
             status.update(active=rid,updated_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
+            if publish:publish_status(status,output)
             write_json(output/'status.json',status)
             result=run_branch(storage,root,plan,source_plan,tools,schemas,item,arm,rid)
             row={k:result[k] for k in ('run_id','task_id','arm','stop_reason','model_calls','known_total_tokens',
                                       'unknown_usage_calls','api_requests','prefix_api_requests','wall_seconds')}
             if result['setup']['status']!='matched_observable_prefix':
                 rows.append(row);status.update(status='stopped_setup_mismatch',active=None)
+                if publish:publish_status(status,output)
                 write_json(output/'status.json',status)
                 return 1
             evaluation=subprocess.run([str(storage/'.runtime/appworld/venv/bin/python'),
@@ -255,19 +289,21 @@ def run(storage, root):
             (output/f'{rid}_evaluation.log').write_text(evaluation.stdout+evaluation.stderr)
             if evaluation.returncode:
                 rows.append(row);status.update(status='stopped_evaluation_error',active=None)
+                if publish:publish_status(status,output)
                 write_json(output/'status.json',status);return 1
             row['success']=read(storage/'records/context_pilot'/rid/'evaluation.json')['official_success']
             rows.append(row);status['completed'].append(rid)
             write_json(output/'status.json',status)
             print(json.dumps(row),flush=True)
     status.update(status='complete',active=None,finished_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
+    if publish:publish_status(status,output)
     write_json(output/'status.json',status)
     return 0
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--storage-root',type=Path,required=True)
-    parser.add_argument('--repo-root',type=Path,default=ROOT);args=parser.parse_args()
+    parser.add_argument('--repo-root',type=Path,default=ROOT);parser.add_argument('--publish',action='store_true');args=parser.parse_args()
     def timeout(*_): raise TimeoutError('bounded local inference timeout')
     signal.signal(signal.SIGALRM,timeout)
-    raise SystemExit(run(args.storage_root,args.repo_root))
+    raise SystemExit(run(args.storage_root,args.repo_root,args.publish))

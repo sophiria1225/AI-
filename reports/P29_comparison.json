@@ -1,0 +1,312 @@
+{
+  "phase": "P29",
+  "all_four_reviewed": true,
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "baseline": {
+        "task_id": "34d9492_1",
+        "run_id": "P26_01_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 16,
+        "known_total_tokens": 361169,
+        "unknown_usage_calls": 0,
+        "api_requests": 97,
+        "output_limit_finishes": 1,
+        "execution_wall_seconds": 1598.6095467498526
+      },
+      "code": {
+        "task_id": "34d9492_1",
+        "run_id": "P29_01_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 21,
+        "known_total_tokens": 209299,
+        "unknown_usage_calls": 0,
+        "api_requests": 107,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 570.4688860420138
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "baseline": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P25_02_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 8,
+        "known_total_tokens": 181220,
+        "unknown_usage_calls": 0,
+        "api_requests": 16,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 384.85404845909216
+      },
+      "code": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P29_02_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 21,
+        "known_total_tokens": 224588,
+        "unknown_usage_calls": 0,
+        "api_requests": 24,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 338.37560908310115
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "baseline": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P25_03_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 6,
+        "known_total_tokens": 69547,
+        "unknown_usage_calls": 0,
+        "api_requests": 8,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 190.74317966680974
+      },
+      "code": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P29_03_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 10,
+        "known_total_tokens": 84818,
+        "unknown_usage_calls": 0,
+        "api_requests": 15,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 282.90377804194577
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "6104387_1",
+      "baseline": {
+        "task_id": "6104387_1",
+        "run_id": "P25_04_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 12,
+        "known_total_tokens": 370343,
+        "unknown_usage_calls": 0,
+        "api_requests": 75,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 1075.560141790891
+      },
+      "code": {
+        "task_id": "6104387_1",
+        "run_id": "P29_04_CODE",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 11,
+        "known_total_tokens": 121330,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 481.0247477090452
+      },
+      "outcome": "worsened"
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "model_calls": 42,
+      "known_total_tokens": 982279,
+      "unknown_usage_calls": 0,
+      "api_requests": 196,
+      "output_limit_finishes": 1,
+      "execution_wall_seconds": 3249.7669166666456,
+      "successes": 4,
+      "trials": 4
+    },
+    "code": {
+      "model_calls": 63,
+      "known_total_tokens": 640035,
+      "unknown_usage_calls": 0,
+      "api_requests": 226,
+      "output_limit_finishes": 0,
+      "execution_wall_seconds": 1672.7730208761059,
+      "successes": 3,
+      "trials": 4
+    }
+  },
+  "outcome_counts": {
+    "both_success": 3,
+    "worsened": 1
+  },
+  "source_hashes": {
+    "configs/P29_stateful_code_v01.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+    "reports/P18_P25_paired_comparison.json": "d32546c75e715493a505ed05cf50468a40ef4edbd61bf8f6dbb28b9bcd475bb8",
+    "reports/P26_photo_budget_summary.json": "5fdbe8bcaedeb93c666246fcdf4766cf360b4de1ce1969f88548a347b08fe425",
+    "reports/P26_budget_diagnostics.json": "52c4dc8cbfc95577e1ee9ddff1e486a029d020093df7c8ad0cc7db4f131b3a9b",
+    "reports/P26_interpretation.json": "9ede046fc4f3fa30b4381beef7473d21b895e36bbeffaa7d9135523f050a7ff8",
+    "reports/P25_interpretation.json": "cc98a1845d800a5d96fcb7085ecd6118b28e8ded3d59d7d970515f035782fb38",
+    "reports/P29_01_CODE_execution_audit.json": "8eb68f6a15d00ba218dd6b18db5f1c63a1cffa8811a5683812c87a0984276a2e",
+    "reports/P29_01_CODE_boundary_audit.json": "98ebc62af9f21c07adc9227ad58d46a9e3033957b86b98dceb07cf7d1bdb97c0",
+    "reports/P29_02_CODE_execution_audit.json": "b0ffbf494bbd68ba4b8b3ca9eccddec8d37b0b1de89e9dd6c6b6d51a99bac2b2",
+    "reports/P29_02_CODE_boundary_audit.json": "96f10e4b47dc1abe17a423f97d647647ab50bf579f5042a136d7ff642ffe2378",
+    "reports/P29_03_CODE_execution_audit.json": "0fc91283eccf9acb78f1d22f8afc98d1b22076ea5fe6bc4dd6d34287628fe199",
+    "reports/P29_03_CODE_boundary_audit.json": "2b18e34e2c328a683376895a2da1333d578337a888f4583a7c03cb7c33300d3d",
+    "reports/P29_04_CODE_execution_audit.json": "1a49a3c33b9365d154673788b09983282699927e70d682206aa1474f62ef6ac2",
+    "reports/P29_04_CODE_boundary_audit.json": "e828f7cf547ef16d1116fbac600f7bf18441cff35a21874f2a57a37a24ed1c4b",
+    "reports/P29_budget_diagnostics.json": "6c56cdf0bfa28141e88f089baa28227e8bce287a332e3b79284c9db51456a5a3",
+    "reports/P29_public_trace_diagnostics.json": "9849ca0baf1a7a8527859f141e617756709522073246ce8e8e9f67ec32b5c791",
+    "reports/P28_comparison.json": "ff849ab0f83e381b91830964b29b0c937f6a3897a7c27d559a31385e0596881b"
+  },
+  "script_sha256": "3d596b12dc060f6c00e6d10fcf8016f9a7c97814d9fdc052f519e4b39ade21d2",
+  "new_model_calls": 0,
+  "environment_requests": 0,
+  "novelty_established": false,
+  "limitations": [
+    "Four already observed development cases, one seed; no confirmatory or general causal claim.",
+    "Common native baseline: photo P26 (160 API); other tasks P25 (80 API).",
+    "P28 adds only supplied-callable guidance to fresh Python; P29 retains task-local Python state and describes that capability.",
+    "Stateful program memory is not fully captured/restored at checkpoints.",
+    "Ordinary code-agent calibration, not a proposed novel method.",
+    "Server/cache initial conditions and interpreter lifetimes affect time; do not isolate causal latency from totals."
+  ],
+  "previous_phase": "P28",
+  "previous_totals": {
+    "model_calls": 65,
+    "known_total_tokens": 618382,
+    "unknown_usage_calls": 0,
+    "api_requests": 229,
+    "output_limit_finishes": 0,
+    "execution_wall_seconds": 1705.7473065010272,
+    "successes": 3,
+    "trials": 4
+  },
+  "adjacent_pairs": [
+    {
+      "task_id": "34d9492_1",
+      "before": {
+        "task_id": "34d9492_1",
+        "run_id": "P28_01_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 14,
+        "known_total_tokens": 134387,
+        "unknown_usage_calls": 0,
+        "api_requests": 102,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 496.4907088750042
+      },
+      "after": {
+        "task_id": "34d9492_1",
+        "run_id": "P29_01_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 21,
+        "known_total_tokens": 209299,
+        "unknown_usage_calls": 0,
+        "api_requests": 107,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 570.4688860420138
+      }
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "before": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P28_02_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 23,
+        "known_total_tokens": 218993,
+        "unknown_usage_calls": 0,
+        "api_requests": 26,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 326.79144229204394
+      },
+      "after": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P29_02_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 21,
+        "known_total_tokens": 224588,
+        "unknown_usage_calls": 0,
+        "api_requests": 24,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 338.37560908310115
+      }
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "before": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P28_03_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 12,
+        "known_total_tokens": 81974,
+        "unknown_usage_calls": 0,
+        "api_requests": 21,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 193.86639829189517
+      },
+      "after": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P29_03_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 10,
+        "known_total_tokens": 84818,
+        "unknown_usage_calls": 0,
+        "api_requests": 15,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 282.90377804194577
+      }
+    },
+    {
+      "task_id": "6104387_1",
+      "before": {
+        "task_id": "6104387_1",
+        "run_id": "P28_04_CODE",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 16,
+        "known_total_tokens": 183028,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 688.5987570420839
+      },
+      "after": {
+        "task_id": "6104387_1",
+        "run_id": "P29_04_CODE",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 11,
+        "known_total_tokens": 121330,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 481.0247477090452
+      }
+    }
+  ]
+}

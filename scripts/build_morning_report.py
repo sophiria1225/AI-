@@ -165,6 +165,37 @@ def state_lifetime_diagram():
     return svg(s,h=340,label='プログラム間で変数を初期化する条件と課題内で保持する条件の違い')
 
 
+def handoff_diagram():
+    s=txt(20,28,'共通の途中地点：各課題の４応答後',25,weight=700)
+    for y,w in [(78,245),(108,215),(138,185)]:
+        s+=f'<path d="M35 {y} h{w} v20 h-18 l-8 10 v-10 h-{w-26} z" fill="#dfe9e5"/>'
+    s+=txt(40,204,'会話履歴',24,weight=700)+txt(40,235,'全部 ／ 直近１ターン',20)
+    s+=txt(370,141,'{ 変数・関数 }',33,TEAL,700)+txt(370,204,'Pythonの作業状態',24,weight=700)
+    s+=txt(370,235,'保持 ／ 一回初期化',20)
+    s+='<path d="M840 97 v44 a95 24 0 0 0 190 0 V97" fill="#e6e8eb" stroke="#7d8b96" stroke-width="2"/>'
+    s+='<ellipse cx="935" cy="97" rx="95" ry="24" fill="#eef0f2" stroke="#7d8b96" stroke-width="2"/>'
+    s+=txt(935,204,'環境の状態',24,weight=700,anchor='middle')+txt(935,235,'全条件で同じ',20,anchor='middle')
+    s+=line(20,272,1090,272,color='#cbd4cc',width=1)
+    for x,label in [(20,'全履歴 ＋ 保持'),(300,'直近 ＋ 保持'),(580,'全履歴 ＋ 初期化'),(860,'直近 ＋ 初期化')]:
+        s+=circle(x+14,322,10,TEAL if '保持' in label else ORANGE)+txt(x+36,330,label,20,weight=700)
+    s+=txt(20,383,'同じ後続予算：16生成・12万token・８分。原記録への再アクセスは全条件で可能。',21)
+    return svg(s,h=415,label='会話履歴とPython作業状態を二要因に分け、環境を固定した四条件の引き継ぎ比較')
+
+
+def handoff_result_chart(data):
+    s=txt(440,35,'会話：全部',25,weight=700,anchor='middle')+txt(840,35,'会話：直近だけ',25,weight=700,anchor='middle')
+    for y,runtime,label in [(105,'keep','変数を保持'),(267,'reset','変数を初期化')]:
+        s+=txt(5,y+25,label,25,TEAL if runtime=='keep' else ORANGE,700)
+        for x,history in [(440,'full'),(840,'recent')]:
+            arm=history+'_'+runtime;v=data['totals'][arm]
+            for i,r in enumerate([r for r in data['rows'] if r['arm']==arm]):
+                s+=circle(x-92+i*44,y,12,TEAL if r['success'] else '#ddd9cf')
+            s+=txt(x+85,y+12,f'{v["successes"]}/4',34,TEAL,700)
+            s+=txt(x,y+53,f'{v["known_total_tokens"]:,} token ／ {v["api_requests"]} API',21,anchor='middle')
+    s+=line(235,196,1080,196,color='#cbd4cc',width=1)
+    return svg(s,h=365,label='同じ途中状態からの四条件の成功件数と後続トークン・API費用')
+
+
 def control_table(stages):
     names=[('P27','初期接続'),('P28','関数説明を補足'),('P29','説明＋変数保持')]
     rows='<table class="compact"><thead><tr><th>課題</th>'+''.join('<th>'+label+'</th>' for _,label in names)+'</tr></thead><tbody>'
@@ -234,15 +265,20 @@ def build(root, output, draft=False):
             if not result.get('all_four_reviewed') or len(result['pairs'])!=4:
                 raise ValueError(phase+' is not fully reviewed')
             stages[phase]=result
+    handoff=None
+    if (root/'reports/P31_comparison.json').exists():
+        handoff=e.read('reports/P31_comparison.json')
+        if not handoff.get('all_sixteen_reviewed') or len(handoff['rows'])!=16:
+            raise ValueError('P31 requires all sixteen continuations')
     timestamp=dt.datetime.now(JST).strftime('%Y-%m-%d %H:%M JST')
     slides=[]
     def add(section,title,body,notes,refs=(),dark=False,takeaway=None):
         slides.append(dict(section=section,title=title,body=body,notes=notes,refs=refs,dark=dark,takeaway=takeaway))
 
-    add('RESEARCH PROGRESS / 2026.10.22', 'AIの仕事を完了へつなぐ<br>ハーネス設計の検証',
-        '<p class="lead">情報保持・操作形式・実行予算が、<br>最終成果と計算費用に与える影響を調べる。</p>'
+    add('RESEARCH PROGRESS / 2026.10.22', 'AIハーネスの実行単位再編へ<br>引き継ぐ状態を検証する',
+        '<p class="lead">会話履歴と実行中の作業状態を分け、<br>どの情報を残すと仕事を継続できるか調べる。</p>'
         '<div class="three"><div class="col"><span class="badge">対象</span><h3>状態を変える<br>複数工程の仕事</h3></div>'
-        '<div class="col"><span class="badge">現在地</span><h3>通常方式を校正し、<br>追加技術の必要性を検証</h3></div>'
+        '<div class="col"><span class="badge">現在地</span><h3>通常方式の比較から、<br>引き継ぎの条件比較へ</h3></div>'
         '<div class="col"><span class="badge warn">投稿目標</span><h3>10月31日<br>IEICE・４ページ</h3></div></div>',
         '題目は進捗報告用の仮題です。研究目的はモデルの外側の情報と実行の設計です。普通のコード実行や指示改善を新技術とは扱いません。採録ではなく投稿完了が期限です。',dark=True)
     add('01 / 社会背景','必要なのは、複数の工程を最後まで終えること',
@@ -261,7 +297,7 @@ def build(root, output, draft=False):
         [('研究と評価の範囲',LINK+'docs/letter_evaluation_scope_20261021.md')],takeaway='目標：条件をそろえた比較で、必要な機構と不要な追加処理を示す。')
     add('04 / 当初案と現在地','「作業の再編」の前に、通常方式の失敗を確かめる',
         '<div class="two"><div class="col"><span class="badge wait">当初の新提案候補・未評価</span><h3>作業間依存に応じた実行単位の再編</h3><p class="body">分担の継続・情報共有・中央調整・作業集約を、同じ途中状態から比較する。</p></div>'
-        '<div class="col"><span class="badge">現在の実験</span><h3>情報保持とデータ処理の比較基準を整える</h3><p class="body">単一役、一般指示、API予算、コード実行を確認し、追加機構が必要な現象を探す。</p></div></div>',
+        '<div class="col"><span class="badge">現在の実験</span><h3>引き継ぎで残す状態を分けて比較</h3><p class="body">通常方式の調整を終え、会話を減らす影響が変数の保持で変わるかを、同じ地点から確かめる。</p></div></div>',
         '当初案の研究目的は引き継いでいますが、今ある実験はその仮説を直接実証していません。作業再編を実装済みの提案として紹介しません。基準の弱さで見かけの新規性を作らないために現在の対照を実施しています。',
         [('現在の成果と未確定事項',LINK+'README.md')],takeaway='現在の結果だけで、マルチエージェント再編の有効性は主張できない。')
     add('05 / 既存との差分','既にある機能を、独自の技術と数えない',
@@ -274,8 +310,8 @@ def build(root, output, draft=False):
         [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'),('近接研究と確認範囲',LINK+'docs/output_access_review_20261021.md'),('実行状態の原典照合',LINK+'docs/runtime_state_overlap_20261022.md')])
     add('06 / 新提案技術の現在地','独自方式の有効性は、まだ確立していない',
         '<div class="two"><div class="col"><span class="badge">実装・確認済み</span><h3>比較と原因分析の基盤</h3><p class="body">公開APIの接続／状態保存と再生／全費用の記録／独立評価／コード実行型。</p><p class="small muted subtle">いずれも、それだけを新規性とはしない。</p></div>'
-        '<div class="col"><span class="badge warn">追加で示す必要がある</span><h3>既存方式では残る問題と、固有の改善</h3><p class="body">新しい操作規則を一つ固定し、強い比較相手・同じ予算・未調整課題で確かめる。</p></div></div>',
-        '独自方式が確立したように見せるスライドは作りません。技術の組合せ自体ではなく、既存にない規則や説明可能な新しい知見が必要です。P16の候補は観測根拠がなく見送っています。',
+        '<div class="col"><span class="badge warn">研究仮説・未確立</span><h3>持っている作業状態に応じて、引き継ぐ履歴を変える</h3><p class="body">保持状態と履歴削減の関係が残れば、選択規則を固定し、強い基準・同じ予算・未調整課題で確認する。</p></div></div>',
+        '仮説はまだ制御方式として確立していません。CaveAgentは既に実行状態と意味履歴を分けており、状態に応じるという表現だけでは差分になりません。固定地点の交差比較で条件が残るかを先に確認します。P16の候補は観測根拠がなく見送っています。',
         [('見送った候補と理由',LINK+'docs/P16_findings.md'),('原稿の現状',LINK+'papers/202610_letter/current_status.json')],
         takeaway='今の成果は検証基盤と切り分け。新規性・採録可能性の証明はこれから。')
     add('07 / 実験環境','同じモデル・同じ環境で、構成差を比較する',
@@ -343,6 +379,24 @@ def build(root, output, draft=False):
             'この表には全４件の評価・監査が終了した段階だけを載せる。課題の選び直しや失敗の自動再試行はしていない。状態保持を追加して改善しても、既存原理の校正の結果である。後続の固定比較と未調整課題で確認するまで、一般的な優位は主張しない。',
             [(phase+'の全比較',LINK+'reports/'+phase+'_comparison.json') for phase in stages],
             takeaway='追加の仕組みが必要かを決めるため、通常方式を十分にした状態で比べる。')
+    add('14c / 引き継ぎの実験設計','履歴を減らす影響は、変数が残るかで変わるか',
+        '<div class="diagram tight">'+handoff_diagram()+'</div>',
+        '固定４応答後を全４課題で使います。最終成否から都合のよい地点を選びません。模擬世界を別に再構成し、API返却・公開スキーマ・保存DBを照合します。Pythonは記録済み応答で再生しますが、全プロセスの完全な同一性は保証しません。環境再構成と後続の費用を分離し、状態初期化はモデルにも正確に知らせます。',
+        [('事前仕様と採らなかった案',LINK+'docs/experiments/P31_handoff_factors.md')],
+        takeaway='二要因の比較は効果を切り分ける手段。この設計だけを新規性とはしない。')
+    if handoff:
+        unknown=sum(v['unknown_usage_calls'] for v in handoff['totals'].values())
+        add('14d / 引き継ぎの比較結果','同じ途中状態から、全16分岐を評価する',
+            '<div class="diagram tight">'+handoff_result_chart(handoff)+'</div><p class="small muted">● 成功 ／ 淡色 未達。各４既知課題・１seed。数値は後続のみ。'+
+            (f'トークン不明 {unknown} 呼出を含むため既知分の下限。' if unknown else 'トークン不明０。')+'</p>',
+            '主表には後続費用を示しますが、環境再構成・Python再生の費用も元の報告へ保存しています。４件の少数比較で一般的な優位は断定しません。８分の後続制限と早い固定境界に依存し、作業責任の移管やマルチエージェントの集約を直接評価したものでもありません。',
+            [('全16件・費用・監査',LINK+'reports/P31_comparison.json')],
+            takeaway='履歴と作業状態の組合せを観測。新しい選択方式の有効性は別の検証が必要。')
+    else:
+        add('14d / 引き継ぎ比較の進捗','全16分岐の結果がそろうまで、効果は未確定',
+            '<div class="two"><div><h3>用意したもの</h3><p class="body">４条件の切り替え、費用の分離、同じ前半の照合、独立した最終評価。</p></div><div><h3>まだ確定していないもの</h3><p class="body">全件の効果差、失敗の内訳、選択規則へ進む根拠。</p></div></div>',
+            'このページは全16件の集計が公開されていない場合の表示です。未実行・前提確認中・実行中・監査待ちを成功結果へ置き換えません。最新の具体的な状態はIssueと研究記録を参照してください。',
+            [('引き継ぎ比較・Issue145','https://github.com/sophiria1225/AI-/issues/145')])
     add('15 / 考察','失敗の観測と、追加機構の必要性は分ける',
         '<div class="three"><div class="col"><h3>指示で解消する失敗</h3><p class="body">元の低成績だけでは、記憶・ゲート・分担変更が必要だとはいえない。</p></div><div class="col"><h3>予算で止まる処理</h3><p class="body">未完了をすべて情報欠落やハルシネーションへまとめない。</p></div><div class="col"><h3>正解でも残る未確認</h3><p class="body">57曲中56曲の詳細取得で正解した例。正解と網羅的な確認は別。</p></div></div>',
         '57曲の例は未確認の１曲が誤答を起こした実例ではありません。公開一覧には曲の長さがなく、未確認を一覧で既に読めたとみなすこともできません。これだけで全取得を強制する制御を提案するのは早計です。',
@@ -352,7 +406,7 @@ def build(root, output, draft=False):
         'この研究では12シナリオを調整から分離し、要求文を未閲覧にしています。ただしモデルの学習汚染がないことや公式テストと同じことを意味しません。実装を完成させただけで論文の中心結果ができたとは扱いません。',
         [('確認用シナリオの分離',LINK+'docs/letter_scenario_reservation_20261021.md')],takeaway='未閲覧12シナリオは、方式・閾値・比較条件を固定してから使う。')
     add('17 / 今後の実験','次は、通常方式でも残る一つの問題に絞る',
-        '<div class="three"><div class="col"><div class="n">1</div><h3>コード型との比較を閉じる</h3><p class="body">失敗だけでなく成功・全費用・実装差を確認する。</p></div><div class="col"><div class="n">2</div><h3>新しい規則を一つ固定</h3><p class="body">既存研究との機能差、適用条件、悪影響の比較を定める。</p></div><div class="col"><div class="n">3</div><h3>未調整課題で確認</h3><p class="body">同じ予算の強い基準、単純規則、提案を比較する。</p></div></div>',
+        '<div class="three"><div class="col"><div class="n">1</div><h3>引き継ぎ比較を閉じる</h3><p class="body">履歴・変数・再取得の関係と、費用・失敗を確認する。</p></div><div class="col"><div class="n">2</div><h3>選択規則が必要か判断</h3><p class="body">一律に保持すれば十分か。状態に応じる利益が残るか。</p></div><div class="col"><div class="n">3</div><h3>未調整課題で確認</h3><p class="body">差分が成立する規則だけを、同じ予算の基準と比較する。</p></div></div>',
         '新規性を探すために無制限に実験を増やす計画ではありません。次の比較から残る現象を一つ選び、機構と評価を固定します。追加価値がなければ提案の優位を主張しない判断も必要です。',
         [('今後の判断と課題',LINK+'docs/task_board.md')],takeaway='成果の形：新しい制御規則、または条件を切り分けた新しい実証知見。')
     add('18 / レターの日程と判断','月末投稿へ、10月23日に中心となる主張を固定する',
@@ -408,7 +462,13 @@ def build(root, output, draft=False):
             for phase,data in stages.items():
                 for row in data['pairs']:
                     d=row['code'];w.writerow([phase,row['task_id'],d['success'],d['known_total_tokens'],d['model_calls'],d['api_requests']])
-    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),
+    (figures/'handoff_design.svg').write_text(handoff_diagram()+'\n')
+    if handoff:
+        (figures/'handoff_results.svg').write_text(handoff_result_chart(handoff)+'\n')
+        with (figures/'handoff_results.csv').open('w') as f:
+            keys=['task_id','arm','success','known_total_tokens','unknown_usage_calls','api_requests','setup_api_requests','setup_wall_seconds','continuation_wall_seconds']
+            w=csv.DictWriter(f,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(handoff['rows'])
+    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,
         source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
         artifacts={str(p.relative_to(output)):sha(p) for p in output.rglob('*') if p.is_file() and p.name!='build_manifest.json'})
