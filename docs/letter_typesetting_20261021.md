@@ -3,8 +3,9 @@
 2026年10月21日。対象は暫定的に和文論文誌Dの研究速報、標準２ページ。
 実験の新規性と結果はまだ確定していないため、組版準備の完了を投稿原稿の完成とは扱わない。
 
-公式テンプレートは[配布ページ](https://www.ieice.org/jpn/shiori/template.html)から案内された
+公式LaTeXテンプレートは[公式配布一覧](https://www.ieice.org/ftp/tex/ieicej/LaTeX2e/)の
 [ieicej3.4b.zip](https://www.ieice.org/ftp/tex/ieicej/LaTeX2e/ieicej3.4b.zip)を使う。
+Wordの配布案内は[別ページ](https://www.ieice.org/jpn/shiori/template.html)にあり、両者を混同しない。
 Macからの直接取得がHTTP 403となったため、許可された当リポジトリのGitHub Actionsから
 同じ公開配布先への取得を一度試す。認証情報は使わず、URL・日時・ハッシュまたは失敗内容を保存する。
 
