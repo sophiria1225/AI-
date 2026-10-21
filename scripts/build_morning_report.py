@@ -313,8 +313,8 @@ def build(root, output, draft=False):
         '<tr><td>CodeAct / ICML 2024</td><td>Pythonで行動を統合し、実行結果から修正</td><td>通常コード型の比較相手</td></tr>'
         '<tr><td>FOCUS / 著者公開原稿</td><td>今後の作業に必要な情報の選択・保持</td><td>共通環境向けに接続した比較</td></tr>'
         '<tr><td>SelfCompact / 著者公開原稿</td><td>コンテキスト整理とキャッシュ費用</td><td>費用の差を新原理としない</td></tr>'
-        '<tr><td>CaveAgent / Runtime Semantics</td><td>実行状態の保持・共有、保持有無の比較</td><td>変数保持や比較自体は既出</td></tr></tbody></table>',
-        'CodeActは正式会議録を確認済みです。他の近接原稿は公開状態や確認範囲を文献記録に残しています。ここは機能の重なりの整理で、全方式の完全再現や網羅的な新規性調査の完了を意味しません。',
+        '<tr><td>CaveAgent / Runtime Contracts</td><td>状態の保持・共有、一時移管・通知の比較</td><td>保持と可視性だけでも既出</td></tr></tbody></table>',
+        'CodeActは正式会議録を確認済みです。CaveAgent v4とRuntime Contracts v3も確認し、変数の一時保持と名前の通知まで先行研究に含まれることを記録しました。公開原稿と正式採録は区別します。ここは機能の重なりの整理で、全方式の完全再現や網羅的な新規性調査の完了を意味しません。',
         [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'),('近接研究と確認範囲',LINK+'docs/output_access_review_20261021.md'),('実行状態の原典照合',LINK+'docs/runtime_state_overlap_20261022.md')])
     add('06 / 新提案技術の現在地','独自方式の有効性は、まだ確立していない',
         '<div class="two"><div class="col"><span class="badge">実装・確認済み</span><h3>比較と原因分析の基盤</h3><p class="body">公開APIの接続／状態保存と再生／全費用の記録／独立評価／コード実行型。</p><p class="small muted subtle">いずれも、それだけを新規性とはしない。</p></div>'
