@@ -176,7 +176,8 @@ def run(config, query_id, run_id, storage, client):
         'started_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'sources': {name: digest(snapshot / name) for name in SOURCES},
         'runtime': runtime, 'props': props, 'corpus_ready': client.ready,
-        'retriever_startup_seconds_shared_batch': client.startup_seconds,
+        'retriever_startup_seconds': client.startup_seconds,
+        'retriever_scope': 'one persistent process per trial, not per tool call',
         'retriever_startup_in_episode_wall_budget': False,
         'answer_or_label_files_opened': False,
     })
