@@ -78,12 +78,13 @@ def run_program(source, observations, *, storage_root, record_dir, timeout=10):
     record_dir = Path(record_dir)
     record_dir.mkdir(parents=True, exist_ok=False)
     name = 'harness-export-' + uuid.uuid4().hex
-    created, process = False, None
+    created, creation_attempted, process = False, False, None
     result = {'status': 'not_started', 'image': selection['image'],
               'timeout': False, 'oom_killed': False, 'container_exit_code': None,
               'container_removed': False, 'host_mounts': 0, 'network': 'none'}
     started = time.monotonic()
     try:
+        creation_attempted = True
         creation = subprocess.run(command + [
             'create', '--name', name, '--label', 'harness.export-purpose=bounded-python-comparator',
             '--platform', selection['platform'], '--network', 'none', '--read-only',
@@ -134,10 +135,27 @@ def run_program(source, observations, *, storage_root, record_dir, timeout=10):
         if process and process.poll() is None:
             process.kill()
             process.communicate(timeout=5)
-        if created:
-            removal = subprocess.run(command+['rm', '-f', name], capture_output=True, timeout=30)
-            result['container_removed'] = removal.returncode == 0
-            (record_dir/'removal_stderr.txt').write_bytes(removal.stderr)
+        try:
+            if creation_attempted and not created:
+                # The create client can time out after the daemon created the
+                # container. Only remove this invocation's UUID and owned label.
+                check = subprocess.run(command+['inspect', name], capture_output=True, timeout=15)
+                if check.returncode == 0:
+                    found = json.loads(check.stdout)[0]
+                    if found['Config'].get('Labels', {}).get('harness.export-purpose') != 'bounded-python-comparator':
+                        raise RuntimeError('refusing to clean a container without the owned label')
+                    created = True
+                elif b'No such object' not in check.stderr and b'No such container' not in check.stderr:
+                    raise RuntimeError('container absence could not be confirmed')
+            if created:
+                removal = subprocess.run(command+['rm', '-f', name], capture_output=True, timeout=30)
+                result['container_removed'] = removal.returncode == 0
+                (record_dir/'removal_stderr.txt').write_bytes(removal.stderr)
+                if removal.returncode:
+                    raise RuntimeError('owned container cleanup failed')
+        except Exception as exc:
+            result.update(status='harness_error', cleanup_error_type=type(exc).__name__)
+            (record_dir/'cleanup_error_private.txt').write_text(str(exc))
         result['wall_seconds'] = time.monotonic()-started
         for filename in ('stdout_private.txt', 'stderr_private.txt'):
             path = record_dir/filename

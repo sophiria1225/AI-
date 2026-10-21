@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-10-21T11:37:42.862148+00:00",
+  "fixture_only": true,
+  "model_calls": 0,
+  "task_contents_read": 0,
+  "rows": [
+    {
+      "name": "calculation",
+      "passed": true,
+      "status": "ok",
+      "wall_seconds": 0.2552870830986649,
+      "container_removed": true,
+      "controls": {
+        "pinned_reference": true,
+        "pinned_image_id": true,
+        "network_none": true,
+        "readonly_root": true,
+        "no_host_mounts": true,
+        "unprivileged": true,
+        "nonroot": true,
+        "drop_caps": true,
+        "no_new_privileges": true,
+        "memory_limit": true,
+        "cpu_limit": true,
+        "process_limit": true,
+        "no_daemon_logs": true,
+        "owned_label": true
+      },
+      "environment_requests": 0,
+      "source_sha256": "8bdbdb29239409eefa1e535d0d4ce5e8b14b7eeb9c261dc95125304b50e12ea4"
+    },
+    {
+      "name": "known_error",
+      "passed": true,
+      "status": "execution_error",
+      "wall_seconds": 0.2348419171757996,
+      "container_removed": true,
+      "controls": {
+        "pinned_reference": true,
+        "pinned_image_id": true,
+        "network_none": true,
+        "readonly_root": true,
+        "no_host_mounts": true,
+        "unprivileged": true,
+        "nonroot": true,
+        "drop_caps": true,
+        "no_new_privileges": true,
+        "memory_limit": true,
+        "cpu_limit": true,
+        "process_limit": true,
+        "no_daemon_logs": true,
+        "owned_label": true
+      },
+      "environment_requests": 0,
+      "source_sha256": "a3ab82e0fd61adc932aa9ed7452ccb9bb603fa9f460f91b1f10647afd7f94df1"
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/native_data_compute.py": "f5fd6277753c3b75a4a5403ad8a7c99a05c1a499e6eac0be12b4ce8f5f461e52",
+    "scripts/container_data_python.py": "2c8972dcda7a378dbf3805d8e5ce316a20fb2e2b7a54aae33b0b268600aff958",
+    "scripts/appworld_native_tools.py": "23795305a4b1986a09fa94addfe1b68bd743f17b24270da1a7ca23afbf6ef82e"
+  },
+  "scope": "Ordinary calculation comparator preparation, no new-method or end-to-end result. Performed concurrently with P22 using a 1-CPU/256MiB container; no additional model loaded.",
+  "frozen_p22_source_files_checked": 49,
+  "frozen_p22_source_changes": [],
+  "unit_tests_passed": 378,
+  "compileall": "pass",
+  "test_log_sha256": "87252a8f770c3ee2cb292bfc9b3786215e039809a40a6012ff9b268167b33eee",
+  "source_hashes": {
+    "tests/test_native_data_compute.py": "5e304e908ecb4d27942da21e44d9eeefc0b6860c299a5ec89c416bce59f5a01b"
+  }
+}
