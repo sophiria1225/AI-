@@ -405,6 +405,30 @@ def build(root, output, draft=False):
             '<div class="two"><div><h3>用意したもの</h3><p class="body">４条件の切り替え、費用の分離、同じ前半の照合、独立した最終評価。</p></div><div><h3>まだ確定していないもの</h3><p class="body">全件の効果差、失敗の内訳、選択規則へ進む根拠。</p></div></div>',
             'このページは全16件の集計が公開されていない場合の表示です。未実行・前提確認中・実行中・監査待ちを成功結果へ置き換えません。最新の具体的な状態はIssueと研究記録を参照してください。',
             [('引き継ぎ比較・Issue145','https://github.com/sophiria1225/AI-/issues/145')])
+    if handoff:
+        arms=['full_keep','recent_keep','full_reset','recent_reset']
+        tasks=list(dict.fromkeys(r['task_id'] for r in handoff['rows']))
+        labels=['写真整理','共有・依頼','返金','曲情報の書出']
+        cells={(r['task_id'],r['arm']):r for r in handoff['rows']}
+        table='<table><thead><tr><th>課題</th><th>全履歴＋保持</th><th>直近＋保持</th><th>全履歴＋初期化</th><th>直近＋初期化</th></tr></thead><tbody>'
+        for task,label in zip(tasks,labels):
+            table+='<tr><td>'+label+'</td>'+''.join('<td class="'+('teal' if cells[task,a]['success'] else 'muted')+'">'+('成功' if cells[task,a]['success'] else '未達')+'</td>' for a in arms)+'</tr>'
+        table+='</tbody></table>'
+        add('14f / 課題ごとの結果','成功した課題も、全条件で止まった課題も残す',table+
+            '<p class="body">未達12件の停止理由：トークン予算７件、API上限３件、時間上限２件。</p>',
+            '各セルは１回の実行です。未達の停止理由は実行を止めた直接の理由で、そこまでに予算を消費した根本原因ではありません。全条件で未達の課題も除かずに報告します。観測誤読や推論の失敗を、この表だけで特定したとは扱いません。',
+            [('全16件と停止理由',LINK+'reports/P31_comparison.json')],
+            takeaway='失敗をすべて情報欠落やハルシネーションにまとめず、経過と予算を確認する。')
+        full=handoff['totals']['full_keep'];recent=handoff['totals']['recent_keep']
+        change=100*(recent['known_total_tokens']/full['known_total_tokens']-1)
+        add('14g / 今回の考察','変数を残すだけでは、会話短縮を補えなかった',
+            '<div class="two"><div class="col"><span class="badge">観測できたこと</span><h3>保持したまま会話を短縮</h3>'+
+            f'<p class="body">成功：{full["successes"]}/4 → {recent["successes"]}/4<br>後続トークン：{full["known_total_tokens"]:,} → {recent["known_total_tokens"]:,}<br>総量は {change:.1f}% 増加。</p>'+
+            '<p class="small muted">この２条件の使用量不明は０。</p></div>'+
+            '<div class="col"><span class="badge warn">まだ仮説の部分</span><h3>状態の存在と、利用は別</h3><p class="body">値を保持していても、何を取得済みで、どう使うかが伝わらない可能性。原因は軌跡と追加対照で確認する。</p></div></div>',
+            '今回の早い境界・４既知課題・１seedでは、変数を保持すれば履歴を短縮できるという期待は支持されませんでした。総費用も減っていません。ただし変数が少ない地点、状態一覧を自動提示しない実装、短い後続予算に依存する結果です。CaveAgentや状態保持一般への反証ではありません。二要因の比較だけを新規アルゴリズムとも扱いません。',
+            [('結果と考察',LINK+'docs/P31_findings.md'),('既存との重なり',LINK+'docs/runtime_state_overlap_20261022.md')],
+            takeaway='次の焦点：保持されている値が、継続時に実際に利用される条件を調べる。')
     if later_handoff:
         unknown=sum(v['unknown_usage_calls'] for v in later_handoff['totals'].values())
         add('14e / 作業が進んだ地点での比較','８応答後でも、同じ４条件・後続予算で調べる',
@@ -442,7 +466,7 @@ def build(root, output, draft=False):
 
     # Present the research question and the newest comparison before calibration history.
     by_key={s['section'].split('/')[0].strip():s for s in slides}
-    main_keys=['RESEARCH PROGRESS','01','02','03','04','05','06','07','14c','14d','14e','16','17','18','19']
+    main_keys=['RESEARCH PROGRESS','01','02','03','04','05','06','07','14c','14d','14f','14g','14e','16','17','18','19']
     ordered=[by_key[k] for k in main_keys if k in by_key]
     remaining=[s for s in slides if s['section'].split('/')[0].strip() not in main_keys]
     main_pages=len(ordered)
