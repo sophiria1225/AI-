@@ -1,0 +1,24 @@
+{
+  "phase": "P20",
+  "run_id": "P20_01",
+  "source_run": "P18_04_ROLES",
+  "input_root": "records/data_export_inputs/P20_v01",
+  "output_root": "records/data_export_probe/P20_01",
+  "model_matches": "configs/P18_additional_baseline_v01.json",
+  "variants": ["literal_csv", "data_program"],
+  "seeds": [51, 52, 53],
+  "temperature": 1.0,
+  "max_calls": 6,
+  "max_output_tokens": 4096,
+  "max_total_tokens": 250000,
+  "max_wall_seconds": 5400,
+  "publish_issue": 95,
+  "scope": "Post hoc, fixed-evidence export diagnostic on one previously observed development failure. Two new conditions, three seeds; not independent tasks, not a CodeAct reproduction, not a novel method or end-to-end success comparison.",
+  "evaluation": "After all six generations: interpret code without environment access; compare every CSV with task-specific analyst-derived public observation union. Include format, program and budget failures. No free retry or target-count hints.",
+  "limitations": [
+    "Both arms receive a common structured observation packet, not the original full conversation. Do not infer a causal effect by comparing against the original P18 output alone.",
+    "Interpreter capabilities and prompt overhead differ as the intended output mechanism; record all input and output costs.",
+    "The restricted interpreter is not a general Python agent. Unsupported code cannot establish that ordinary CodeAct would fail.",
+    "No account operation, model-generated CSV, missing title, target count, hidden evaluation or reserved task is provided as input."
+  ]
+}
