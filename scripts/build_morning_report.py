@@ -191,7 +191,8 @@ def handoff_result_chart(data):
             for i,r in enumerate([r for r in data['rows'] if r['arm']==arm]):
                 s+=circle(x-92+i*44,y,12,TEAL if r['success'] else '#ddd9cf')
             s+=txt(x+85,y+12,f'{v["successes"]}/4',34,TEAL,700)
-            s+=txt(x,y+53,f'{v["known_total_tokens"]:,} token ／ {v["api_requests"]} API',21,anchor='middle')
+            mark='*' if v['unknown_usage_calls'] else ''
+            s+=txt(x,y+53,f'{v["known_total_tokens"]:,}{mark} token ／ {v["api_requests"]} API',21,anchor='middle')
     s+=line(235,196,1080,196,color='#cbd4cc',width=1)
     return svg(s,h=365,label='同じ途中状態からの四条件の成功件数と後続トークン・API費用')
 
@@ -229,14 +230,16 @@ ul{padding-left:1.1em;margin:16px 0 0}li{padding-left:5px;margin-bottom:11px}.di
 table{border-collapse:collapse;width:100%;font-size:21px;line-height:1.5;margin-top:24px}th{font-weight:700;text-align:left;border-bottom:2px solid #748b88;padding:11px 15px;background:#e8eee7}td{border-bottom:1px solid #ced7cd;padding:14px 15px}td.num{text-align:right;font-variant-numeric:tabular-nums}th:first-child,td:first-child{padding-left:6px}.compact td,.compact th{padding-top:10px;padding-bottom:10px;font-size:19px}
 .big{font-size:88px;font-weight:800;line-height:1.05;letter-spacing:-3px}.metric{padding-top:22px}.metric .caption{margin-top:14px;font-size:23px;line-height:1.5}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:45px}.timeline>div{border-top:5px solid var(--teal);padding-top:18px}.date{font-size:36px;font-weight:800;color:var(--teal);margin-bottom:14px}.progressbar{height:8px;width:100%;position:absolute;bottom:0;left:0;background:#cfd9d0}.progressbar i{display:block;height:100%;background:var(--teal)}
 .subtle{border-top:1px solid #c5d1c8;margin-top:20px;padding-top:17px}.notes{display:none}#nav{position:fixed;right:20px;bottom:14px;display:flex;gap:7px;align-items:center;background:#102333e8;color:#fff;padding:8px 13px;border-radius:8px;z-index:10;font-size:14px}button{border:1px solid #7c9a9e;background:transparent;color:inherit;border-radius:4px;padding:5px 11px;cursor:pointer}#speaker{position:fixed;left:30px;bottom:30px;max-width:820px;background:#142a3ef0;color:white;padding:24px;font-size:20px;line-height:1.6;z-index:20;border-radius:9px;display:none}body.present .slide{display:none;margin:0;box-shadow:none}body.present .slide.active{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale,1));transform-origin:center}body.overview .slide{display:block}body.overview #nav{position:fixed}
-@media print{@page{size:1280px 720px;margin:0}html,body{background:white}.slide,body.present .slide,body.present .slide.active{display:block!important;position:relative!important;top:auto!important;left:auto!important;transform:none!important;margin:0!important;box-shadow:none!important;break-after:page;page-break-after:always}.slide:last-of-type{break-after:auto;page-break-after:auto}#nav,#speaker{display:none!important}}
+.slide.cover{display:flex;align-items:center;justify-content:center;padding:70px}.slide.cover h1{font-size:57px;line-height:1.65;letter-spacing:0;text-align:center}.story-table{font-size:21px;margin-top:24px}.story-table td,.story-table th{padding-top:12px;padding-bottom:12px}.factor-table{font-size:24px;margin-top:35px}.factor-table td{padding-top:24px;padding-bottom:24px}.factor-table b{font-size:32px;color:var(--teal);margin-right:10px}.factor-table th{font-size:22px}.results-table td:not(:first-child){text-align:center}.results-table th{text-align:center}.results-table th:first-child{text-align:left}.ok{color:var(--teal);font-weight:700}.miss{color:var(--muted)}.story-diagram svg{max-height:365px}body.present .slide.cover.active{display:flex}body.on-cover #nav{opacity:0;transition:opacity .2s}body.on-cover #nav:hover,body.on-cover #nav:focus-within{opacity:1}
+.results-table{margin-top:16px}.results-table th,.results-table td{padding-top:7px;padding-bottom:7px}
+@media print{@page{size:1280px 720px;margin:0}html,body{background:white}.slide,body.present .slide,body.present .slide.active{display:block!important;position:relative!important;top:auto!important;left:auto!important;transform:none!important;margin:0!important;box-shadow:none!important;break-after:page;page-break-after:always}.slide:last-of-type{break-after:auto;page-break-after:auto}#nav,#speaker{display:none!important}.slide.cover,body.present .slide.cover.active{display:flex!important}}
 '''
 
 SCRIPT=r'''
 const slides=[...document.querySelectorAll('.slide')];let current=Math.max(0,Math.min(slides.length-1,(+location.hash.slice(1)||1)-1));
-const label=document.querySelector('#count');function fit(){document.body.style.setProperty('--scale',Math.min(innerWidth/1280,innerHeight/720));}function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));label.textContent=`${current+1} / ${slides.length}`;history.replaceState(null,'','#'+(current+1));document.querySelector('#speaker').innerHTML=slides[current].querySelector('.notes').innerHTML;fit();}
+const label=document.querySelector('#count');function fit(){document.body.style.setProperty('--scale',Math.min(innerWidth/1280,innerHeight/720));}function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));document.body.classList.toggle("on-cover",slides[current].classList.contains("cover"));label.textContent=`${current+1} / ${slides.length}`;history.replaceState(null,'','#'+(current+1));document.querySelector('#speaker').innerHTML=slides[current].querySelector('.notes').innerHTML;fit();}
 document.querySelector('#prev').onclick=()=>show(current-1);document.querySelector('#next').onclick=()=>show(current+1);document.querySelector('#all').onclick=()=>{document.body.classList.toggle('present');document.body.classList.toggle('overview');};document.querySelector('#note').onclick=()=>{let e=document.querySelector('#speaker');e.style.display=e.style.display==='block'?'none':'block';};document.querySelector('#print').onclick=()=>print();addEventListener('resize',fit);addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key==='n')document.querySelector('#note').click();if(e.key==='o')document.querySelector('#all').click();});
-document.fonts.ready.then(()=>{document.body.className='overview';const errors=[];slides.forEach((s,i)=>{const a=s.getBoundingClientRect();for(const e of s.querySelectorAll('h1,h2,.lead,.body,.two,.three,.diagram,.takeaway,table,.timeline,.footer')){const b=e.getBoundingClientRect();if(b.left<a.left+30||b.right>a.right-30||b.bottom>a.bottom-15||b.top<a.top+20)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'outside-slide'});}const footer=s.querySelector('.footer');const f=footer.getBoundingClientRect();for(const e of s.children){if(e===footer||e.classList.contains('notes')||e.classList.contains('progressbar'))continue;const b=e.getBoundingClientRect();if(b.height&&b.bottom>f.top-8)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'overlaps-footer'});}const take=s.querySelector('.takeaway');if(take){const t=take.getBoundingClientRect();for(const e of s.children){if(e===take||e===footer||e.classList.contains('notes')||e.classList.contains('progressbar'))continue;const b=e.getBoundingClientRect();if(b.height&&b.bottom>t.top-12)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'overlaps-takeaway'});}}});const el=document.createElement('script');el.id='layout-checks';el.type='application/json';el.textContent=JSON.stringify({pages:slides.length,errors});document.body.appendChild(el);document.body.className='present';show(current);});
+document.fonts.ready.then(()=>{document.body.className='overview';const errors=[];slides.forEach((s,i)=>{const a=s.getBoundingClientRect();for(const e of s.querySelectorAll('h1,h2,.lead,.body,.two,.three,.diagram,.takeaway,table,.timeline,.footer')){const b=e.getBoundingClientRect();if(b.left<a.left+30||b.right>a.right-30||b.bottom>a.bottom-15||b.top<a.top+20)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'outside-slide'});}const footer=s.querySelector('.footer');if(!footer)return;const f=footer.getBoundingClientRect();for(const e of s.children){if(e===footer||e.classList.contains('notes')||e.classList.contains('progressbar'))continue;const b=e.getBoundingClientRect();if(b.height&&b.bottom>f.top-8)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'overlaps-footer'});}const take=s.querySelector('.takeaway');if(take){const t=take.getBoundingClientRect();for(const e of s.children){if(e===take||e===footer||e.classList.contains('notes')||e.classList.contains('progressbar'))continue;const b=e.getBoundingClientRect();if(b.height&&b.bottom>t.top-12)errors.push({slide:i+1,tag:e.className||e.tagName,reason:'overlaps-takeaway'});}}});const el=document.createElement('script');el.id='layout-checks';el.type='application/json';el.textContent=JSON.stringify({pages:slides.length,errors});document.body.appendChild(el);document.body.className='present';show(current);});
 '''
 
 
@@ -396,7 +399,7 @@ def build(root, output, draft=False):
         unknown=sum(v['unknown_usage_calls'] for v in handoff['totals'].values())
         add('14d / 引き継ぎの比較結果','同じ途中状態から、全16分岐を評価する',
             '<div class="diagram tight">'+handoff_result_chart(handoff)+'</div><p class="small muted">● 成功 ／ 淡色 未達。各４既知課題・１seed。数値は後続のみ。'+
-            (f'トークン不明 {unknown} 呼出を含むため既知分の下限。' if unknown else 'トークン不明０。')+'</p>',
+            (f'＊：使用量不明あり（全体で {unknown} 呼出）。表示は既知分。' if unknown else 'トークン不明０。')+'</p>',
             '主表には後続費用を示しますが、環境再構成・Python再生の費用も元の報告へ保存しています。４件の少数比較で一般的な優位は断定しません。８分の後続制限と早い固定境界に依存し、作業責任の移管やマルチエージェントの集約を直接評価したものでもありません。',
             [('全16件・費用・監査',LINK+'reports/P31_comparison.json')],
             takeaway='履歴と作業状態の組合せを観測。新しい選択方式の有効性は別の検証が必要。')
@@ -433,7 +436,7 @@ def build(root, output, draft=False):
         unknown=sum(v['unknown_usage_calls'] for v in later_handoff['totals'].values())
         add('14e / 作業が進んだ地点での比較','８応答後でも、同じ４条件・後続予算で調べる',
             '<div class="diagram tight">'+handoff_result_chart(later_handoff)+'</div><p class="small muted">同じ４課題の別地点。新しい４課題ではない。後続費用のみ。'+
-            (f'トークン不明 {unknown} 呼出を含むため既知分の下限。' if unknown else 'トークン不明０。')+'</p>',
+            (f'＊：使用量不明あり（全体で {unknown} 呼出）。表示は既知分。' if unknown else 'トークン不明０。')+'</p>',
             '４応答後の状態量が少なかったため、P31全16結果を見る前に８応答後を固定しました。全４前半を復元し、公開返却・保存DB・Pythonを照合済み。変数数は5/3/10/10ですが、意味的な重要性の指標ではありません。時点間では状態だけでなく後続seed列も違うため、時期だけの因果効果とは言いません。各境界内の四条件ではseed列と予算をそろえています。',
             [('全16件の結果',LINK+'reports/P32_comparison.json'),('事前の選定理由',LINK+'docs/experiments/P32_later_handoff.md')],
             takeaway='２時点×16分岐でも、独立した対象は既知の４課題。一般化には別の確認が必要。')
@@ -464,20 +467,25 @@ def build(root, output, draft=False):
         '目的は、同じモデルにどの情報と責任を持たせ、どこを実行基盤が担うべきかを明らかにすることです。次の実験で研究上の差を一つに絞ります。通常機能を繋いだ実装を、そのまま新規技術として発表しません。',dark=True,
         takeaway='目指すのは、構成が効く条件と壊れる条件を説明できるハーネス研究。')
 
-    # Present the research question and the newest comparison before calibration history.
+    # The revised main story starts with a concrete task, before experiment IDs.
+    from morning_story import build_story_slides
+    diagnostics=e.read('reports/P31_program_diagnostics.json')
     by_key={s['section'].split('/')[0].strip():s for s in slides}
-    main_keys=['RESEARCH PROGRESS','01','02','03','04','05','06','07','14c','14d','14f','14g','14e','16','17','18','19']
-    ordered=[by_key[k] for k in main_keys if k in by_key]
-    remaining=[s for s in slides if s['section'].split('/')[0].strip() not in main_keys]
+    ordered,story_figures=build_story_slides(handoff,diagnostics,later_handoff)
+    remaining=[by_key[k] for k in ('07','14d','14b','12','11') if k in by_key]
     main_pages=len(ordered)
     for i,s in enumerate(ordered[1:],1):
-        s['section']=f'{i:02d} / '+s['section'].split('/',1)[1].strip()
+        s['section']=f'{i:02d} / '+s['section']
     for i,s in enumerate(remaining,1):
         s['section']=f'補足 {i:02d} / '+s['section'].split('/',1)[1].strip()
     slides=ordered+remaining
     output.mkdir(parents=True,exist_ok=True)
     parts=[]
     for i,s in enumerate(slides,1):
+        if s.get('cover'):
+            parts.append(f'<section class="slide dark cover" id="slide-{i}"><h1>{s["title"]}</h1>'+
+                         f'<div class="notes">{esc(s["notes"])}</div></section>')
+            continue
         refs=' ／ '.join(f'<a href="{esc(url)}">{esc(label)}</a>' for label,url in s['refs']) or f'研究進捗報告 / {timestamp}'
         parts.append(f'<section class="slide'+(' dark' if s['dark'] else '')+f'" id="slide-{i}"><div class="eyebrow">{s["section"]}</div>'+
             (f'<h1>{s["title"]}</h1>' if i==1 else f'<h2>{s["title"]}</h2>')+s['body']+
@@ -493,14 +501,22 @@ def build(root, output, draft=False):
     (output/'README.md').write_text(
         '# 10月22日朝の進捗報告資料\n\n生成時刻：'+timestamp+'。'+
         ('レイアウト確認版。最終配布版ではありません。' if draft else '生成時点の監査済み集計を反映しています。')+'\n\n'
-        '- [PDF・全'+str(len(slides))+'枚](AI_harness_progress_20261022.pdf)：本編'+str(main_pages)+'枚、残りは過去比較の補足。\n'
+        '- [PDF・全'+str(len(slides))+'枚](AI_harness_progress_20261022.pdf)：本編'+str(main_pages)+'枚、残りは実行条件・過去比較の補足。\n'
         '- [HTMLスライド](index.html)：ダウンロードしてブラウザーで開くと、ネット接続なしで表示できます。GitHubの通常表示ではHTMLのソースが見えます。\n'
         '- [説明用メモ](speaker_notes.md)：各ページの説明と、数値の読み方・限界。\n'
         '- [図と集計データ](figures/)／[出典と生成記録](build_manifest.json)。\n\n'
         'HTMLの操作：左右キーで移動、Oで一覧、Nで説明メモ。印刷時はスライド単位になります。\n\n'
-        '社会背景、技術背景、目的、当初案と現在地、既存との差、実装、比較実験、結果、考察、限界、次の作業、月末投稿の日程を説明します。通常機能の実装と独自性の成立は区別します。\n')
+        'ユーザーの指摘を受け、表紙は題名だけにし、本文を具体例から作り直しました。実験番号を先に並べず、問題・研究目的・前提・操作・比較理由・結果を順に説明します。\n\n'
+        '| PDFのページ | 内容 |\n|---|---|\n'
+        '| 1 | 題名のみ |\n| 2–4 | 写真整理の例、途中再開の問題、会話・変数・アプリ状態の区別 |\n'
+        '| 5–7 | 研究目的、アーキテクチャ、当初の再編研究との関係 |\n'
+        '| 8–12 | 対象の４課題、共通条件、分岐手順、四条件を比べる理由 |\n'
+        '| 13–15 | 全課題の成否、入力と総費用のグラフ、観測と仮説 |\n'
+        '| 16–19 | 既存との差・未確定の新規性、次の実験、限界、投稿予定 |\n'
+        '| 20–24 | 計算環境、全条件の費用、過去の基準調整 |\n\n'
+        '現在の結果は４既知課題・１モデル・各条件１回の探索実験です。担当再編や独自の制御方式の有効性を示した成果ではありません。進行中の実験の部分結果は含めません。\n')
     figures=output/'figures';figures.mkdir(exist_ok=True)
-    for name,content in [('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('state_lifetime',state_lifetime_diagram()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
+    for name,content in list(story_figures.items())+[('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('state_lifetime',state_lifetime_diagram()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
         (figures/(name+'.svg')).write_text(content+'\n')
     with (figures/'guidance_success.csv').open('w') as f:
         w=csv.writer(f);w.writerow(['task_group','arm','successes','tasks','known_tokens','unknown_calls'])
@@ -531,7 +547,7 @@ def build(root, output, draft=False):
             keys=['task_id','arm','success','known_total_tokens','unknown_usage_calls','api_requests','setup_api_requests','setup_wall_seconds','continuation_wall_seconds']
             w=csv.DictWriter(f,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(later_handoff['rows'])
     manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),main_pages=main_pages,p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,p32_included=later_handoff is not None,
-        source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
+        source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),story_sha256=sha(root/'scripts/morning_story.py'),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
         artifacts={str(p.relative_to(output)):sha(p) for p in output.rglob('*') if p.is_file() and p.name!='build_manifest.json'})
     (output/'build_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
