@@ -46,6 +46,7 @@
 | P0 | R38 | P20：同じ取得済みデータで直接書出と計算コードを比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/95) |
 | P0 | R39 | P21：書出比較の出力上限を8192へ拡張して感度を測る | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/99) |
 | P0 | R40 | P22：予約済み６開発課題で次の機構比較を準備 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/102) |
+| P1 | R41 | 通常Pythonの比較環境を隔離して検証 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/105) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -481,3 +482,11 @@ P18の全件診断後に選択。比較仕様と実行環境を準備中。ま�
 **なぜ行うか**: P18の１つの書出状態だけへ方式を合わせ込まず、別の要求・実行構造を残す。P21結果を踏まえて次の生成条件を固定するため、待機中に公開要求だけを確認する。
 
 **他候補の扱い**: 曲の書出に似た課題だけ選ぶ、確認用12件へ先に触れる、別モデルを同時ロードする、生成条件を決めずに６件を開始する案は採らない。
+
+## R41 通常Pythonの比較環境を隔離して検証
+
+公式Python3.12.15 arm64をmanifest digest固定で取得。５種類の実確認を実施、372単体検査合格。設定表記による初期拒否と期限時の記録訂正も保存。モデル呼出し０、課題環境要求０。P21主評価は変更なし。docs/standard_python_preflight_20261021.md、reports/standard_python_preflight_20261021.json。
+
+**なぜ行うか**: 制限付きのデータ言語だけを比較に使うと、言語制約を通常計算の限界と誤認する可能性があるため。
+
+**他候補の扱い**: 既存SWE-benchのデータ入りイメージ、ホスト上の直接実行、P21主評価の途中変更は採らない。コード実行自体を新規性にはしない。
