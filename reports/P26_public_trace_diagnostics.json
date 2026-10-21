@@ -1,0 +1,182 @@
+{
+  "phase": "P26",
+  "all_one_reviewed": true,
+  "trials": [
+    {
+      "run_id": "P25_01_GUIDED",
+      "sent_counts": {
+        "file_system__show_file": 42,
+        "file_system__move_file": 27,
+        "supervisor__show_active_task": 1,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_doc": 2,
+        "file_system__create_directory": 3,
+        "file_system__show_directory": 2,
+        "file_system__login": 1,
+        "api_docs__show_api_descriptions": 1
+      },
+      "not_sent_spans": [
+        "s42",
+        "s82"
+      ],
+      "text_failure_spans": [
+        "s7"
+      ],
+      "photo_counts": {
+        "directory_snapshots": [
+          {
+            "span_id": "s8",
+            "listed_paths": 42,
+            "paths_with_metadata": 42,
+            "paths_with_move_receipt": 27
+          }
+        ],
+        "unique_metadata_paths": 42,
+        "move_requests": 27,
+        "move_requests_with_json_message": 27,
+        "unique_moved_source_paths": 27,
+        "read_paths_without_move_receipt": 15,
+        "move_sources_without_metadata": 0,
+        "unclassified_observations": {
+          "file_system__show_directory": 1
+        },
+        "scope": "Each listing is kept separately because it may refer to a different directory or time. Receipts do not by themselves establish destination correctness or a lower API bound."
+      },
+      "model_calls": 11,
+      "known_total_tokens": 185739,
+      "wall_seconds": 1283.1161225000396,
+      "official_success": false,
+      "source_sha256": {
+        "spans.json": "a0b600e2f93cd672d067eb5c1160d3ae337deee77d0bbeaeee4125a416e58009",
+        "events.json": "21566867a331317d5dff514340985ec7ec178a1d875d44f17f09d2f0f7e5de73",
+        "summary.json": "2590d2d67004ad902e4cde183ce1a0a72915d06c45c22fee7cea1035b2f588d8",
+        "evaluation.json": "2c94c12fb32909ccb6f20d0676fbb5fcc115e3ec69f38b5e5095740230564178"
+      },
+      "call_file_sha256": {
+        "call_001/request.json": "dc6804902e27950beb9b752f057e007d5e7de54ab409da6d7340f6e40c7a89ef",
+        "call_001/response.json": "e88e2ff217647dc6aea27d4ca96c5c59be9982c7e82246441b961ebf3a1e6381",
+        "call_002/request.json": "8782ef43747c47bd6e0ef995fd8a934698faf30dfd99a7d356296636b538fc50",
+        "call_002/response.json": "984252ecfcb899104fba4938b6f6a54303814714a38c861f905964fbc5d87418",
+        "call_003/request.json": "9b39597b213c59c669fb5a6084eb0fda9726b72a1384fcc98b1c904a03e3099a",
+        "call_003/response.json": "48e93308019ee0fe81ff3676405bfd46db86bf682670e090dac710da82c796a8",
+        "call_004/request.json": "2c88fbd533cb997571e74513fbd1dc705999227ac7f1fe789d0cfec41b03456c",
+        "call_004/response.json": "0d597d0a855708e4d966a972b31223dbc6fa8bfb2b091908007e0856c90a43b8",
+        "call_005/request.json": "93a0d4de3a5bfc9fcdae0b79157aa9f80ba61ec4c1182c0d81daa3408da0d315",
+        "call_005/response.json": "ac02c705c6fa71f15603b3de0a5ed7b2249d247cb687bfae289da68e29ac3b85",
+        "call_006/request.json": "0c95f6613bb4d6f8739c656106150f6f3370cd15bd56a6fe330537e8ac0fc86a",
+        "call_006/response.json": "be0a06587464fe3a6d731f8f9283c65d12f82696cd72929e311b50f92300970a",
+        "call_007/request.json": "f5e7d9061f33c6ba233e87d0a41b383225d885830d0b1558a61d469aa349bb89",
+        "call_007/response.json": "4a721694e94de8e1af779b91fdf88408392e5e8b7f48e4852be379d939704b04",
+        "call_008/request.json": "33efb200db8a5992432d9f9e0a5a3e123df2788cf2620d61602ecd116aadbbc7",
+        "call_008/response.json": "1a17422861edd8f2832d90a927ade3a76d33597c63574044f1a40d908f1fd93a",
+        "call_009/request.json": "bb421a873bd108e4c237c289ef1e561bc42c71e2e835754bd8bc60266afeb92a",
+        "call_009/response.json": "49ab65ced62c2fd89c94cc636dc953775c997d4c53d97035cdc9bb13f6d05702",
+        "call_010/request.json": "0eeebfa23d5d43a69083eb9f18eaee1ba642533b162bb236328f28c11abeaa99",
+        "call_010/response.json": "b5e70f0ce4ff271a5f45fabc2bd22f323ba38b0ba5c8d38384824f4acafbeaf6",
+        "call_011/request.json": "120ce73c5f9b6da89f4bcd1b24c85c183c826ba012e1dd10601aa2e3eec48055",
+        "call_011/response.json": "9b46686e52fe2649346440163af1d4ed9447022da79f4383ee6b2803529c513c"
+      }
+    },
+    {
+      "run_id": "P26_01_GUIDED",
+      "sent_counts": {
+        "file_system__show_file": 42,
+        "file_system__move_file": 42,
+        "supervisor__show_active_task": 1,
+        "supervisor__complete_task": 1,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_doc": 2,
+        "file_system__create_directory": 3,
+        "file_system__show_directory": 3,
+        "file_system__login": 1,
+        "api_docs__show_api_descriptions": 1
+      },
+      "not_sent_spans": [
+        "s42"
+      ],
+      "text_failure_spans": [
+        "s7"
+      ],
+      "photo_counts": {
+        "directory_snapshots": [
+          {
+            "span_id": "s8",
+            "listed_paths": 42,
+            "paths_with_metadata": 42,
+            "paths_with_move_receipt": 42
+          },
+          {
+            "span_id": "s97",
+            "listed_paths": 42,
+            "paths_with_metadata": 0,
+            "paths_with_move_receipt": 0
+          }
+        ],
+        "unique_metadata_paths": 42,
+        "move_requests": 42,
+        "move_requests_with_json_message": 42,
+        "unique_moved_source_paths": 42,
+        "read_paths_without_move_receipt": 0,
+        "move_sources_without_metadata": 0,
+        "unclassified_observations": {
+          "file_system__show_directory": 1
+        },
+        "scope": "Each listing is kept separately because it may refer to a different directory or time. Receipts do not by themselves establish destination correctness or a lower API bound."
+      },
+      "model_calls": 16,
+      "known_total_tokens": 361169,
+      "wall_seconds": 1598.6095467498526,
+      "official_success": true,
+      "source_sha256": {
+        "spans.json": "661da3a6d5b0ccb788f49c79cece719b84ebd9f7969a6aa8c835db64a30105b7",
+        "events.json": "8e41015a7183dbe9ed64f7b36976736f501e813fb2687ca547f92440f001cbf4",
+        "summary.json": "4c63fd9bada0f0b8636255bb0ff319916163d6370075461e5403fbfc4ee0ebf2",
+        "evaluation.json": "fb803060af020821825ed75a9dff6cb6aa801a25a8e2eea3f910708fdd84b84f"
+      },
+      "call_file_sha256": {
+        "call_001/request.json": "dc6804902e27950beb9b752f057e007d5e7de54ab409da6d7340f6e40c7a89ef",
+        "call_001/response.json": "ad297847045d56fb4d035acf912c8ed9df87e777d801dd0f1960cf326faf2a4c",
+        "call_002/request.json": "ff49c51ffab9277c42a22e47b430c9430a34f29e0f3627f38aa9073abb2f0f73",
+        "call_002/response.json": "f34685f2d52da6cc051c1272b85ddce291663a4c850d3a83d275a9de0741097f",
+        "call_003/request.json": "e78e0c3edfd653022bc1188f63729f8bbf009faa069f0885b4586c77faedbcc9",
+        "call_003/response.json": "f1c91a5cd6e8e76ddf85a0b2deda8158a6df9431e5e741905cfd5ff2ec35da23",
+        "call_004/request.json": "86985e5a55ea4fb3913b8f89e8765f008ea4c5f47f4a63878fa05bda32345524",
+        "call_004/response.json": "19d3699bf3b0918df2875c5d10179b4ea3bd3a779c9218d6c959e3316a7c34b1",
+        "call_005/request.json": "bcbfd662c30110d7f841a57eeed02e4fa5207b2bcbd345fee4758730799c7f60",
+        "call_005/response.json": "d82d9df8e27bf208817933e77b3c5057e97c02944d61ecfa2ee6f69eda4e62e2",
+        "call_006/request.json": "098d6bdc41b1289c0da217ee3ae345af2cbd7a789f9187bbe2193f9b975e13a9",
+        "call_006/response.json": "7d38cdcfb14371476e65271aff883955b255f2dccbd617631e15cf95194cbda1",
+        "call_007/request.json": "a375a91f639a828301eb55184317cf9e91842ebe4760b3393dbb784bc2287658",
+        "call_007/response.json": "a8decc47ee4d798a667a9a5ad1ad04e0668c591d391a03d47da974ce2f59493c",
+        "call_008/request.json": "c783cb69a06ac6b07e0e2e984039ae817469911fc299a7fbd8cc5b845eff20fa",
+        "call_008/response.json": "28e13e48b614d76a6ea9459565b94d96bcd7c7b10609e4c6a97f9a75cae314bf",
+        "call_009/request.json": "c1eeb361db9a5d66157aab2ce520b6f9b61f022edaee0be39a2ab8d3e8192c2f",
+        "call_009/response.json": "424c96038dc09baba13a20783f4877cecdba38d4449e4ce22e1f3225f0427da4",
+        "call_010/request.json": "bbc111170ae976af633108173c900e602a76171c500cf98334715813902b60b6",
+        "call_010/response.json": "a40900cb59831e51d450bcfa7f9a64d025e88b7de45d468d530a75eed082c420",
+        "call_011/request.json": "200460ec3ef574397c74cdbb0233549c6298b8e93a54ee60eeed84b8309d7fde",
+        "call_011/response.json": "b62cb1f3458e7e8ed7f1febe69b8e14eacb52bcf1774c046b0bd7eb8fcbc5833",
+        "call_012/request.json": "76482c31f0f50ddedc30b71d2740ea9546100779401926d5c174284738c024ac",
+        "call_012/response.json": "fb866870d41934e5b5a7c9209f354faff1f2eae735bebeeb13370dab49313a94",
+        "call_013/request.json": "ca4f52aa90699eb60eef2298b1ca9df76e866c2b2125404e292c8cb2b0abf6c8",
+        "call_013/response.json": "2e435787e0dea03aab3732b3a61893910fb6b8133520957a30ff54dde7ce3d43",
+        "call_014/request.json": "bd9b6706f02e52735c9c0ef0d06bed3b9a1a1df302d81c78c761449cea30456e",
+        "call_014/response.json": "a3599275020993f8e3b19b24bb6b7d2e5fc2cf1f22c5204e3420dc6cb8677fed",
+        "call_015/request.json": "319405861bc90aba467952fa29765ea5f0c9e5f7d3013446203252b5ae1ecb03",
+        "call_015/response.json": "4cddef3f842a02b0a12ba5959f4d60e4fa995537a94b7758f513912f39752c09",
+        "call_016/request.json": "3ce39082bdd93edd41a5475346fe94f737a963e5bacf94f5134bd2c5096f778c",
+        "call_016/response.json": "637bc8e76df3a5fc58776749f7ab92fa7e2b90b294c1927dcf14a30f1a214498"
+      }
+    }
+  ],
+  "identical_prefix": {
+    "model_requests": 1,
+    "public_model_messages": 0,
+    "sent_api_action_and_observation": 80
+  },
+  "model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_contents_read": false,
+  "script_sha256": "733bd4b08a49f72622f1ca7ed9afa4131bd469ea018a4a71aa63f813cffa17a8",
+  "scope": "One previously observed case and seed. Same seed does not guarantee the same path. Increasing the cap is not a proposed method or evidence of improved success at equal cost. Only public content/tool calls are compared; no model reasoning is exported."
+}

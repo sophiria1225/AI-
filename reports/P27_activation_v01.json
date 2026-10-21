@@ -1,0 +1,32 @@
+{
+  "phase": "P27",
+  "decision": "all_four_known_tasks_with_code_api_interface",
+  "why": "P26 completed at the expanded API cap. Ordinary read-compute-act code is needed before claiming that structured handoff or a special verifier adds value.",
+  "alternatives": [
+    "Do not treat calculation-only P23 as full CodeAct.",
+    "Do not add target counts, correct IDs, scope-specific gates or higher token limits.",
+    "Do not use reserved confirmation tasks or retain only failed prior cases.",
+    "Do not call standard Python execution a novel technique."
+  ],
+  "guidance_sha256": "69527df82b37820a11ed48eb2d0f8ed195194f8b960dba793ef57b48e0fc1309",
+  "code_guide_sha256": "3db57abe5f6ac96f81c59c06286323ad1045b727ceed3dc11ee4e91b7178a6e3",
+  "system_prompt_sha256": "8efb98bb1476f7cf0035a48286815cbfdfaef50329902a9b46952d9264f2a681",
+  "prerequisite_sha256": {
+    "configs/P25_guidance_transfer_v01.json": "2e150aac960c3d8c54ca5f1d733281f14fe40332f0f7bc2c8fa86511cd2b69be",
+    "configs/P26_photo_budget_v01.json": "a1a9e331ba717ec2fbb56ba12c180648030eeb37297a8870f8daef637e4a20e3",
+    "reports/P25_guidance_transfer_summary.json": "1103ef2381dbebb7e504880c9fa6083d5e888dea4493ee69835f2aa37e6fba66",
+    "reports/P25_interpretation.json": "cc98a1845d800a5d96fcb7085ecd6118b28e8ded3d59d7d970515f035782fb38",
+    "reports/P26_photo_budget_summary.json": "5fdbe8bcaedeb93c666246fcdf4766cf360b4de1ce1969f88548a347b08fe425",
+    "reports/P26_budget_diagnostics.json": "52c4dc8cbfc95577e1ee9ddff1e486a029d020093df7c8ad0cc7db4f131b3a9b",
+    "reports/P26_public_trace_diagnostics.json": "7668a561516fb567f8c788a8f1154846b47cde6de999b3750dbaabeb0d17bfbf",
+    "reports/P26_interpretation.json": "9ede046fc4f3fa30b4381beef7473d21b895e36bbeffaa7d9135523f050a7ff8",
+    "reports/P26_01_GUIDED_execution_audit.json": "f9971114be84be77921c57ae73fb4f1e8eca79b652e46feef1e9a912ab35dcc3",
+    "reports/P26_01_GUIDED_boundary_audit.json": "52a4bda74931aa7bc5fbf47b13e034d35bea3e6327359c6055f66a3791b63a49",
+    "docs/P26_findings.md": "b55f327ecdff9e719882688ffd109a7a13e228c398b2ab660be75ef89cfc4afa",
+    "docs/experiments/P27_code_execution.md": "055ef36f7d6bdadb82e20c81abb7976f8606f8d3d6f7d81fa7c5391efd4ac9e8",
+    "configs/python_export_image_v01.json": "3ad79853993b23e94f8287e5d0b842d14321881ce6d59e387e16ea3c081e10c2",
+    "reports/P27_container_preflight.json": "3b1f18b77bab2e28fe8cff1b2edbd780f97398450e4b9e7c98be667711e4315a"
+  },
+  "new_model_calls": 0,
+  "reserved_confirmation_instruction_reads": 0
+}

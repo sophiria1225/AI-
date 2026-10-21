@@ -28,6 +28,7 @@ PHASES = {
     "P24": {"issue": 115, "arm": "native_guided", "batch": "P24_batch_v01", "before": "P22", "trials": 6},
     "P25": {"issue": 120, "arm": "native_guided", "batch": "P25_batch_v01", "before": "P24", "trials": 4},
     "P26": {"issue": 128, "arm": "native_guided", "batch": "P26_batch_v01", "before": "P25", "trials": 1},
+    "P27": {"issue": 132, "arm": "code_guided", "batch": "P27_batch_v01", "before": "P26", "trials": 4},
 }
 
 
@@ -43,8 +44,8 @@ def validate_schedule(plan):
             or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
             or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed calibration schedule is supported")
-    if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25"):
-        selection_file = ('reports/P18_public_task_selection.json' if phase == 'P25' else
+    if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25", "P27"):
+        selection_file = ('reports/P18_public_task_selection.json' if phase in ('P25','P27') else
                           'reports/P22_public_task_selection.json' if phase == 'P24' else
                           'reports/'+phase+'_public_task_selection.json' if phase in ('P18', 'P22')
                           else 'reports/P11_public_task_selection.json')
@@ -168,6 +169,44 @@ def check_p26_activation(plan):
         raise ValueError('P26 does not change the prompt or computation interface')
 
 
+def check_p27_activation(plan):
+    """Start the full code-action contrast only after the prior cap diagnostic."""
+    if plan['phase'] != 'P27':
+        return
+    from run_native_appworld import GENERAL_GUIDANCE
+    from compare_generic_guidance import MATCHED_KEYS
+    from run_code_appworld import code_system_prompt
+    from code_agent_interface import CODE_GUIDE
+    record = json.loads((ROOT/'reports/P27_activation_v01.json').read_text())
+    if (record.get('decision') != 'all_four_known_tasks_with_code_api_interface'
+            or not record.get('why') or not record.get('alternatives')
+            or record.get('guidance_sha256') != hashlib.sha256(GENERAL_GUIDANCE.encode()).hexdigest()
+            or record.get('code_guide_sha256') != hashlib.sha256(CODE_GUIDE.encode()).hexdigest()
+            or record.get('system_prompt_sha256') != hashlib.sha256(code_system_prompt().encode()).hexdigest()):
+        raise ValueError('P27 requires reviewed fixed instructions')
+    for path, expected in record['prerequisite_sha256'].items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != expected:
+            raise ValueError('P27 prerequisite changed: '+path)
+    previous=json.loads((ROOT/'reports/P26_photo_budget_summary.json').read_text())
+    review=json.loads((ROOT/'reports/P26_interpretation.json').read_text())
+    if previous['pending'] or previous['audit_errors'] or not review['all_one_reviewed']:
+        raise ValueError('P26 full review is incomplete')
+    old=json.loads((ROOT/'configs/P25_guidance_transfer_v01.json').read_text())
+    for key in MATCHED_KEYS:
+        if plan[key] != old[key]:
+            raise ValueError('P27 must preserve P25: '+key)
+    expected={task:160 if i==0 else 80 for i,task in enumerate(old['task_ids'])}
+    if (plan.get('api_budget_by_task') != expected
+            or plan.get('wait_for_native_batch') != 'P26_batch_v01'
+            or plan.get('general_guidance_version') != old['general_guidance_version']
+            or plan.get('code_interface_version') != 'public_api_python_v1'
+            or 'ordinary_compute' in plan):
+        raise ValueError('P27 only changes the declared code interface with matched task budgets')
+    reserved=json.loads((ROOT/'reports/letter_scenario_reservation_20261021.json').read_text())
+    if set(plan['task_ids']) & set(reserved['reserved_variant_one_tasks']):
+        raise ValueError('P27 must not consume reserved confirmation tasks')
+
+
 def public_body(rows, state):
     phase = state.get("phase", "P8")
     spec = PHASES[phase]
@@ -187,7 +226,8 @@ def public_body(rows, state):
              "P22": "P22：予約済みの６開発シナリオを全履歴基準で観察",
              "P24": "P24：公式の一般指示を補い、同じ６開発課題で比較",
              "P25": "P25：同じ一般指示をP18の全４開発課題へ適用",
-             "P26": "P26：写真整理１件のAPI上限だけを80から160へ変更"}[phase]
+             "P26": "P26：写真整理１件のAPI上限だけを80から160へ変更",
+             "P27": "P27：公開APIの取得・計算・次の操作をPythonで接続する通常方式"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -202,7 +242,8 @@ def public_body(rows, state):
                      f"{int(row.get('api_requests', 0))} | "
                      f"{int(row.get('tokens', 0)):,} | {int(row.get('unknown_usage_calls', 0))} | {result} |")
     lines += ["", states[state["status"]],
-              f"各試行：80 LLM呼び出し・{160 if phase == 'P26' else 80} API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。",
+              ("各試行：80 LLM呼び出し・45万トークン・30分以内。写真整理は160 API、他３件は80 API。内側APIも個別計上し、失敗の自動再試行はしません。" if phase=='P27' else
+               f"各試行：80 LLM呼び出し・{160 if phase == 'P26' else 80} API要求・45万トークン・30分以内。未知費用は0とせず、失敗を自動再試行しません。"),
               "公式APIスキーマを利用した導入基準で、公式エージェントの完全再現・新手法・品質維持の主張ではありません。",
               "評価は終了後の別プロセスで行い、後続のモデル入力には返しません。",
               {"P8": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/appworld-api-calibration-20261021/docs/experiments/P8_native_baseline.md)",
@@ -215,7 +256,8 @@ def public_body(rows, state):
                "P22": "[事前仕様と実行条件](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P22_development_preparation.md)",
                "P24": "[一般指示の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P24_generic_guidance.md)",
                "P25": "[４件の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P25_guidance_transfer.md)",
-               "P26": "[１件の予算診断](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P26_photo_budget.md)"}[phase]]
+               "P26": "[１件の予算診断](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P26_photo_budget.md)",
+               "P27": "[コード実行型の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P27_code_execution.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -257,6 +299,7 @@ def main():
     check_p24_activation(plan)
     check_p25_activation(plan)
     check_p26_activation(plan)
+    check_p27_activation(plan)
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
     observer = out / "observer"
@@ -310,6 +353,7 @@ def main():
         "P24": ("context_pilot", plan.get("wait_for_native_batch")),
         "P25": ("context_pilot", plan.get("wait_for_native_batch")),
         "P26": ("context_pilot", plan.get("wait_for_native_batch")),
+        "P27": ("context_pilot", plan.get("wait_for_native_batch")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
@@ -336,14 +380,14 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    if phase in ("P18", "P22", "P24", "P25", "P26"):
+    if phase in ("P18", "P22", "P24", "P25", "P26", "P27"):
         from run_event_view_probe import lease_remaining
         runtime = json.loads((storage / '.runtime/model_server.json').read_text())
         command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
         live_remaining, live_end = lease_remaining(runtime, command, datetime.datetime.now(datetime.timezone.utc))
         remaining = min(remaining, live_remaining)
         state['checked_server_lease_end_utc'] = live_end
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25", "P26") else 180
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24", "P25", "P26", "P27") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)
@@ -358,6 +402,7 @@ def main():
             update(True)
             command = [
                 sys.executable, str(ROOT / "scripts" / (
+                    "run_code_appworld.py" if phase == "P27" else
                     "run_native_generated.py" if phase in ("P13", "P14") else
                     "run_native_recent.py" if phase == "P12" else "run_native_appworld.py")),
                 "--plan", str(args.plan.absolute()), "--task-id", task, "--run-id", name,
