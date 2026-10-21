@@ -1,0 +1,16 @@
+{
+  "version": "browsecomp_development_selection_v01",
+  "dataset": "Tevatron/browsecomp-plus",
+  "revision": "144cff8e35b5eaef7e526346aa60774a9deb941f",
+  "split": "test",
+  "expected_unique_ids": 830,
+  "development_count": 12,
+  "ranking": "ascending SHA256(UTF8(salt + NUL + query_id)), then query_id",
+  "salt": "AI-harness:BrowseComp-Plus:development:v01",
+  "input_columns_before_selection": ["query_id"],
+  "corpus_revision": "b27b02bc3e45511b8b82a13e6f90ce761df726f6",
+  "corpus_size_expected": 100195,
+  "scope": "Twelve development questions for setup and failure observation; not a confirmatory sample. Remaining IDs are unused candidates, not a certified independent test split.",
+  "rejection_policy": "Stop on wrong count, duplicate/invalid IDs or revision mismatch. Never replace a selected question based on contents, observed outcomes or positive-document labels.",
+  "information_boundary": "Select IDs before reading/decrypting query text. Executor receives selected ID/query only and independent full-corpus search/open tools. Answer, evidence and gold-document labels remain evaluator-only."
+}
