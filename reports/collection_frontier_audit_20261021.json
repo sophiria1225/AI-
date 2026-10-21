@@ -1,0 +1,1631 @@
+{
+  "kind": "descriptive_public_collection_frontier_audit",
+  "plan_sha256": "cecd3987e1c6be109d398944a6e47ffbc9be2aa51827b638d3125cd0102a6792",
+  "policy_sha256": "1f9313c02053d813ee40fa21e31b51202f20ca6c9239ef5e87e76888602236c9",
+  "script_sha256": "c700dc6e3dd14bc04a2ab31929f11480a0005cf18dd4a7c402501c49503909d9",
+  "schema_hashes": {
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "trials": [
+    {
+      "run_id": "P10_01_ROLES",
+      "task_id": "07b42fd_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "aaf404b7963fe98a5fa1a7a3bb0835a3685c2faffc38a67af9c7eccc1dbd255a",
+        "measurement": "fa24153ac4ffb8df7f401b542ef59a173909348491870424cf3a8c99cad3593b"
+      },
+      "paginated_calls": 2,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "spotify__search_artists",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s5",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s6",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "spotify": 4,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 1
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P10_02_ROLES",
+      "task_id": "22cc237_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "b7d97dd986ddda4a070fd549274a529e0dc4ca9e3e89a574712be371b2cafac4",
+        "measurement": "fa24153ac4ffb8df7f401b542ef59a173909348491870424cf3a8c99cad3593b"
+      },
+      "paginated_calls": 12,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "simple_note__search_notes",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s8",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q002",
+          "api": "venmo__show_transactions",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s9",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            },
+            {
+              "span_id": "s12",
+              "page_index": 1,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q003",
+          "api": "venmo__show_transactions",
+          "epoch": 1,
+          "status": "inconclusive_response",
+          "pages": [],
+          "unclassified_span_ids": [
+            "s13"
+          ],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q004",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s14",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q005",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s15",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q006",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s16",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q007",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s17",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q008",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s18",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q009",
+          "api": "venmo__show_transactions",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s19",
+              "page_index": 0,
+              "count": 4,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q010",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s20",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q011",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s21",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [
+        {
+          "span_id": "s13",
+          "api": "venmo__show_transactions",
+          "reason": "non_list_response"
+        }
+      ],
+      "potential_write_requests": {
+        "simple_note": 1,
+        "venmo": 4,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "no_terminal_observed": 9,
+        "inconclusive_response": 1,
+        "contiguous_terminal_observed": 1
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": true
+    },
+    {
+      "run_id": "P11_01_ROLES",
+      "task_id": "287e338_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "f9f66b174e4ef7ae9663bf958ae93bdfcb036982b867e2b33fd33cd22bc11ba1",
+        "measurement": "f5f538bc19c80a0e058ef0d1eefa6f604df8ee97a03c5fbe5cb1088ce0238e01"
+      },
+      "paginated_calls": 2,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "spotify__show_recommendations",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s5",
+              "page_index": 0,
+              "count": 20,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s6",
+              "page_index": 1,
+              "count": 1,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "spotify": 1,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 1
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P11_02_ROLES",
+      "task_id": "29caf6f_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "f509e4a2a6c6effef67afec4b4a9a5074c33e684e452f5af49c3e15034a2896d",
+        "measurement": "f5f538bc19c80a0e058ef0d1eefa6f604df8ee97a03c5fbe5cb1088ce0238e01"
+      },
+      "paginated_calls": 4,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "phone__search_text_messages",
+          "epoch": 0,
+          "status": "inconclusive_response",
+          "pages": [],
+          "unclassified_span_ids": [
+            "s5"
+          ],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "phone__search_contacts",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s8",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q003",
+          "api": "simple_note__search_notes",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s9",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q004",
+          "api": "phone__search_text_messages",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s10",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [
+        {
+          "span_id": "s5",
+          "api": "phone__search_text_messages",
+          "reason": "non_list_response"
+        }
+      ],
+      "potential_write_requests": {
+        "phone": 2,
+        "simple_note": 1,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "inconclusive_response": 1,
+        "no_terminal_observed": 3
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": true
+    },
+    {
+      "run_id": "P11_03_ROLES",
+      "task_id": "2a163ab_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "52df29733c47e2513d584397fbad1a3aa094cf307382833733ac8cd6965fc3ba",
+        "measurement": "f5f538bc19c80a0e058ef0d1eefa6f604df8ee97a03c5fbe5cb1088ce0238e01"
+      },
+      "paginated_calls": 4,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "phone__search_contacts",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s11",
+              "page_index": 0,
+              "count": 3,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q002",
+          "api": "venmo__show_social_feed",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s12",
+              "page_index": 0,
+              "count": 20,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s13",
+              "page_index": 1,
+              "count": 20,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s14",
+              "page_index": 2,
+              "count": 20,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "phone": 1,
+        "venmo": 5,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 1,
+        "no_terminal_observed": 1
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P11_04_ROLES",
+      "task_id": "302c169_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "3c253d64bacc5ae46afd3b973d65ccdba0a49e6074202a143c69ea4cfafeda18",
+        "measurement": "f5f538bc19c80a0e058ef0d1eefa6f604df8ee97a03c5fbe5cb1088ce0238e01"
+      },
+      "paginated_calls": 1,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "phone__show_alarms",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s4",
+              "page_index": 0,
+              "count": 7,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "phone": 5,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 1
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P18_01_ROLES",
+      "task_id": "34d9492_1",
+      "official_success": false,
+      "declared_complete": false,
+      "stop_reason": "api_request_limit",
+      "source_hashes": {
+        "spans": "c529c7517c2ea99e6ebaf95760e71f3753483b05d6fca1b33deb16e5effc4583",
+        "measurement": "b2a9da82595a91f91c44a4b7c9da366a6526deb803276cb9d75d9158d41aaa02"
+      },
+      "paginated_calls": 0,
+      "groups": [],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "file_system": 32
+      },
+      "group_status_counts": {},
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P18_02_ROLES",
+      "task_id": "3c13f5a_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "164c5bd7a80b2000363e5759d8b165a4f9b571b55d6191cdd7bb411372e0b5f5",
+        "measurement": "b2a9da82595a91f91c44a4b7c9da366a6526deb803276cb9d75d9158d41aaa02"
+      },
+      "paginated_calls": 5,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "venmo__search_friends",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s10",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "phone__search_contacts",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s14",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q003",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s17",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q004",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s18",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q005",
+          "api": "venmo__search_users",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s19",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "file_system": 2,
+        "venmo": 4,
+        "phone": 1,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "no_terminal_observed": 5
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": true
+    },
+    {
+      "run_id": "P18_03_ROLES",
+      "task_id": "60d0b5b_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "5e1466bf24aa0a6c13bbcfe8f37c65935e21a655ed0d96e5572a56890fc302a9",
+        "measurement": "b2a9da82595a91f91c44a4b7c9da366a6526deb803276cb9d75d9158d41aaa02"
+      },
+      "paginated_calls": 2,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "venmo__search_users",
+          "epoch": 2,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s5",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "venmo__show_sent_payment_requests",
+          "epoch": 2,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s6",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "venmo": 3,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "no_terminal_observed": 2
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P18_04_ROLES",
+      "task_id": "6104387_1",
+      "official_success": false,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "caada98e81d0af8402f22f8d5f0228495e55c5846f31a1526d54437dae26ab7b",
+        "measurement": "b2a9da82595a91f91c44a4b7c9da366a6526deb803276cb9d75d9158d41aaa02"
+      },
+      "paginated_calls": 6,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "spotify__show_song_library",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s6",
+              "page_index": 0,
+              "count": 12,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s9",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "spotify__show_album_library",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s7",
+              "page_index": 0,
+              "count": 6,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s10",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q003",
+          "api": "spotify__show_playlist_library",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s8",
+              "page_index": 0,
+              "count": 6,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s11",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "spotify": 2,
+        "file_system": 3,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 3
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P22_01_ROLES",
+      "task_id": "692c77d_1",
+      "official_success": false,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "40d9c5eb36a8c4834530f4835fcc91c05f6cd36334c6f82f393604f8232ebebe",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 28,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "spotify__show_liked_playlists",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s4",
+              "page_index": 0,
+              "count": 4,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s7",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q003",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s8",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q004",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s9",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q005",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s10",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q006",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s11",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q007",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s12",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q008",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s13",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q009",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s14",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q010",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s15",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q011",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s16",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q012",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s17",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q013",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s18",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q014",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s19",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q015",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s20",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q016",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s21",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q017",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s22",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q018",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s23",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q019",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s24",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q020",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s25",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q021",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s26",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q022",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s27",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q023",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s28",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q024",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s29",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q025",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s30",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q026",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s31",
+              "page_index": 0,
+              "count": 0,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q027",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s32",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q028",
+          "api": "spotify__show_song_reviews",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s33",
+              "page_index": 0,
+              "count": 1,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "spotify": 28,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 28
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P22_02_ROLES",
+      "task_id": "6ea6792_1",
+      "official_success": false,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "6ca68dbbc85527bdcb3efe63d37a952ca11694b47148085546ed8f4bbd55256c",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 5,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "venmo__show_received_payment_requests",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s5",
+              "page_index": 0,
+              "count": 20,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s10",
+              "page_index": 1,
+              "count": 6,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s11",
+              "page_index": 2,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "phone__search_contacts",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s8",
+              "page_index": 0,
+              "count": 3,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q003",
+          "api": "phone__search_contacts",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s9",
+              "page_index": 0,
+              "count": 8,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "venmo": 11,
+        "phone": 1,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 3
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P22_03_ROLES",
+      "task_id": "76f2c72_1",
+      "official_success": false,
+      "declared_complete": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "source_hashes": {
+        "spans": "0a115a7c861aeeb663f3b97d4ef22ba56bc89f309b65310144709a993ec2bd5f",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 6,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "gmail__show_inbox_threads",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s32",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q002",
+          "api": "simple_note__search_notes",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s33",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q003",
+          "api": "gmail__show_inbox_threads",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s34",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q004",
+          "api": "simple_note__search_notes",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s35",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q005",
+          "api": "gmail__show_inbox_threads",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s37",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        },
+        {
+          "group_id": "q006",
+          "api": "gmail__show_inbox_threads",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s38",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "file_system": 2,
+        "gmail": 1,
+        "simple_note": 1
+      },
+      "group_status_counts": {
+        "no_terminal_observed": 6
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": true
+    },
+    {
+      "run_id": "P22_04_ROLES",
+      "task_id": "771d8fc_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "9a10b6f5402c944ee9310f2e2f4c47e6aae59ee604210a59573bdc0accdedf2d",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 4,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "phone__search_text_messages",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s4",
+              "page_index": 0,
+              "count": 10,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s6",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        },
+        {
+          "group_id": "q002",
+          "api": "phone__search_voice_messages",
+          "epoch": 1,
+          "status": "contiguous_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s5",
+              "page_index": 0,
+              "count": 12,
+              "page_limit": 20
+            },
+            {
+              "span_id": "s7",
+              "page_index": 1,
+              "count": 0,
+              "page_limit": 20
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": true
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "phone": 23,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "contiguous_terminal_observed": 2
+      },
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P22_05_ROLES",
+      "task_id": "7d7fbf6_1",
+      "official_success": true,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "512c87f01d2ffa36307153cdcce421e9041be523be9230cb90aa4a2132e8b4da",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 0,
+      "groups": [],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "file_system": 5,
+        "supervisor": 1
+      },
+      "group_status_counts": {},
+      "any_no_terminal": false,
+      "any_no_terminal_without_later_app_write": false
+    },
+    {
+      "run_id": "P22_06_ROLES",
+      "task_id": "82e2fac_1",
+      "official_success": false,
+      "declared_complete": true,
+      "stop_reason": "agent_declared_complete",
+      "source_hashes": {
+        "spans": "3e0b5e0784a87a875ccdd7dd3da33d6adb9742050f06aa23b435b19f991b4f11",
+        "measurement": "f6e7594fa8cc65a8564f5fdae47baf0516f65b5e4f142b12b3f2525553656e4a"
+      },
+      "paginated_calls": 1,
+      "groups": [
+        {
+          "group_id": "q001",
+          "api": "spotify__show_playlist_library",
+          "epoch": 1,
+          "status": "no_terminal_observed",
+          "pages": [
+            {
+              "span_id": "s4",
+              "page_index": 0,
+              "count": 5,
+              "page_limit": 5
+            }
+          ],
+          "unclassified_span_ids": [],
+          "later_same_app_write": false
+        }
+      ],
+      "unclassified_calls": [],
+      "potential_write_requests": {
+        "spotify": 1,
+        "supervisor": 1
+      },
+      "group_status_counts": {
+        "no_terminal_observed": 1
+      },
+      "any_no_terminal": true,
+      "any_no_terminal_without_later_app_write": true
+    }
+  ],
+  "strata": [
+    {
+      "official_success": true,
+      "tasks": 10,
+      "with_paginated_calls": 9,
+      "with_any_no_terminal": 5,
+      "with_no_terminal_without_later_app_write": 3,
+      "unclassified_calls": 2
+    },
+    {
+      "official_success": false,
+      "tasks": 6,
+      "with_paginated_calls": 5,
+      "with_any_no_terminal": 2,
+      "with_no_terminal_without_later_app_write": 2,
+      "unclassified_calls": 0
+    }
+  ],
+  "total_groups": 70,
+  "model_calls": 0,
+  "environment_calls": 0,
+  "hidden_evaluator_details_read": false,
+  "limitations": [
+    "Terminal observations are not a proof of complete enumeration.",
+    "Task relevance, cross-app mutation, external changes and stable order are unverified.",
+    "Already observed development cases; not a diagnostic accuracy or causal estimate."
+  ]
+}

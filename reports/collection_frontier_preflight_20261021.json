@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-21T12:57:25.806605+00:00",
+  "tests": 397,
+  "tests_passed": true,
+  "focused_adversarial_tests": 10,
+  "compile_passed": true,
+  "analysis_rule_commit": "e4e1687",
+  "implementation_commit": "6463767",
+  "audit_sha256": "f957cd70e0e4e7ff9ff5b82f6617170064a473cb53321fc708c7a29bcb77deaa",
+  "unclassified_response_shapes": {
+    "P10_02_ROLES/s13": "non_json_text",
+    "P11_02_ROLES/s5": "non_json_text"
+  },
+  "live_P24_frozen_files_checked": 291,
+  "live_P24_frozen_files_changed": [],
+  "model_calls": 0,
+  "environment_calls": 0,
+  "notes": [
+    "An extra shape probe initially assumed JSON and stopped on a plain-text error. The actual audit handles this as unclassified; no rows were dropped.",
+    "A documentation-generation heredoc failed to parse with a UTF-8 error before executing. Replaced by a separate documentation patch; experiment and analysis results unchanged."
+  ]
+}

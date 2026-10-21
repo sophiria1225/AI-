@@ -50,7 +50,7 @@
 | P1 | R42 | 取得済み観測への通常Python対照の接続を準備 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/110) |
 | P1 | R43 | 通常計算対照の実行記録と監査を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/112) |
 | P0 | R44 | P24：公式の一般指示を補った６件の基準比較 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/115) |
-| P0 | R45 | 既観測16課題でページ取得の未完と過剰介入を点検 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/117) |
+| P0 | R45 | 既観測16課題でページ取得の未完と過剰介入を点検 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/117) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -540,6 +540,8 @@ P22全件終了・監査後に採用。公式42b5bcfの一般指示だけを確�
 ## R45 既観測16課題でページ取得の未完と過剰介入を点検
 
 2026-10-21。SearchOS、CFRC等の原典を確認。16件の公開履歴を対象とする事後分析の規則を固定。解析・結果は未実施。docs/collection_scope_review_20261021.md、docs/experiments/collection_frontier_audit_20261021.md。
+
+Rules e4e1687; implementation 6463767; all 16 completed runs, 70 query groups: 41 terminal-like, 27 no terminal observed, 2 unclassified. A naive no-terminal rule also flags 5/10 successful tasks (3/10 after excluding groups followed by a same-app write). It flags 2/6 failures, only one of which declared completion. Do not adopt an unconditional all-pages completion gate. All 397 tests pass; 291 frozen P24 files unchanged. No new model/environment calls. See docs/collection_frontier_findings_20261021.md.
 
 **なぜ行うか**: 未取得部分があることと課題失敗を混同せず、新機構の必要性を成功例でも反証するため。
 
