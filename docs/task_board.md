@@ -52,6 +52,7 @@
 | P0 | R44 | P24：公式の一般指示を補った６件の基準比較 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/115) |
 | P0 | R45 | 既観測16課題でページ取得の未完と過剰介入を点検 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/117) |
 | P0 | R46 | P25：同じ一般指示でP18の全４件を再比較する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/120) |
+| P0 | R47 | レターの主比較に向け、通常計算と情報アクセスの条件を整理 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/124) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -563,3 +564,11 @@ P25 started 2026-10-21T14:01:40Z (23:01 JST) from frozen commit 79f66ca8731415b4
 **なぜ行うか**: 取得後の欠落・API上限の観測を、通常の時刻・列挙・完了案内をそろえた基準でも確認し、独自機構の必要性と切り分ける。
 
 **他候補の扱い**: 失敗２件だけの選択、正解件数の提示、上限増加、計算道具と指示の同時変更、未閲覧12確認シナリオの先行消費はしない。
+
+## R47 レターの主比較に向け、通常計算と情報アクセスの条件を整理
+
+2026-10-21。EACL 2026の正式掲載本文、LROの公開文書、HEARTの要旨・導入を確認。compute_dataには結果をAPI引数へ再転記する境界が残る。P25は固定条件で実行中、本文未閲覧。次の実モデル実験は未設定。docs/output_access_review_20261021.md、reports/output_processing_sources_20261021.json。
+
+**なぜ行うか**: 通常のコード処理や無料の追加データを独自機構の効果へ含めず、P25で残る問題に必要な主比較を一つ選ぶ。
+
+**他候補の扱い**: 同じデータへアクセスできない弱い対照、参照渡しの改名、未取得データの無料追加、P25途中結果に合わせた条件変更は採らない。
