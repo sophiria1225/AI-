@@ -7,6 +7,16 @@ from pathlib import Path
 from analyze_native_pair import canonical_transport_ids, public_actions, read
 
 
+def history_effects(selection):
+    retained, original = selection['retained_turns'], selection['original_turns']
+    if type(retained) is not int or type(original) is not int or not 0 <= retained <= original:
+        raise ValueError('inconsistent retained/original turn counts')
+    return {'right_has_memory_note': selection['memory_note_added'],
+            'right_uses_partial_history': retained < original,
+            'right_retained_original_turns': retained,
+            'right_available_original_turns': original}
+
+
 def compare(left, right):
     ls, rs = read(left/'summary.json'), read(right/'summary.json')
     if ls['task_id'] != rs['task_id']:
@@ -29,7 +39,7 @@ def compare(left, right):
                      'both_responses_known':comparable,
                      'public_actions_equal':public_actions(ma['message'])==public_actions(mb['message'])
                                              if comparable else None,
-                     'right_uses_partial_history':views[b['id']]['selection']['memory_note_added'],
+                     **history_effects(views[b['id']]['selection']),
                      'input_output_sha256':{label:{n:hashlib.sha256((folder/call/n).read_bytes()).hexdigest()
                                                    for n in ('request.json','response.json')}
                                             for label,folder,call in (('left',left,a['id']),('right',right,b['id']))}})
@@ -37,6 +47,7 @@ def compare(left, right):
     return {'left_run':left.name,'right_run':right.name,'shared_positions':rows,
             'first_input_difference_beyond_transport_ids':first('request_equal_ignoring_transport_ids',False),
             'first_different_public_action_position':first('public_actions_equal',False),
+            'first_memory_note_position':first('right_has_memory_note',True),
             'first_partial_history_position':first('right_uses_partial_history',True),
             'left_total_calls':len(lu),'right_total_calls':len(ru),
             'source_hashes':{label:{n:hashlib.sha256((folder/n).read_bytes()).hexdigest()
