@@ -9,9 +9,10 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
+from matplotlib.lines import Line2D
 
 
-def load_rows(paths, labels):
+def load_rows(paths, labels, *, allow_lower_bounds=False):
     if len(paths) != len(labels):
         raise ValueError('one label per measurement file is required')
     rows, expected = [], None
@@ -24,7 +25,8 @@ def load_rows(paths, labels):
             raise ValueError('task order and identities must match')
         expected = ids
         for i, row in enumerate(measured['trials'], 1):
-            if row['evaluation'] is None or row['audit_errors'] or row['unknown_usage_calls']:
+            if (row['evaluation'] is None or row['audit_errors'] or
+                    (row['unknown_usage_calls'] and not allow_lower_bounds)):
                 raise ValueError('unknown usage or evaluation cannot be plotted as complete costs')
             role_costs = {name: role['input_tokens'] + role['output_tokens']
                           for name, role in row['usage_by_role'].items()}
@@ -33,6 +35,8 @@ def load_rows(paths, labels):
             rows.append({'task_number': i, 'condition': label, 'run_id': row['run_id'],
                          'success': row['evaluation']['official_success'],
                          'total_tokens': row['known_total_tokens'],
+                         'unknown_usage_calls': row['unknown_usage_calls'],
+                         'cost_status': 'lower_bound' if row['unknown_usage_calls'] else 'complete',
                          'agent_tokens': role_costs.get('agent', 0),
                          'memory_tokens': sum(v for k, v in role_costs.items() if k != 'agent'),
                          'model_calls': row['model_calls'], 'wall_seconds': row['wall_seconds'],
@@ -46,15 +50,17 @@ if __name__ == '__main__':
     parser.add_argument('--labels', nargs='+', required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--title', required=True)
+    parser.add_argument('--allow-lower-bounds', action='store_true',
+                        help='Explicitly mark unknown usage; never impute zero or exact total cost')
     args = parser.parse_args()
-    rows = load_rows(args.measurements, args.labels)
+    rows = load_rows(args.measurements, args.labels, allow_lower_bounds=args.allow_lower_bounds)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     with (args.output_dir / 'comparison.csv').open('w') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator='\n')
         writer.writeheader(); writer.writerows(rows)
     plt.rcParams.update({'font.family': 'Hiragino Sans', 'font.size': 10,
                          'axes.spines.top': False, 'axes.spines.right': False})
-    fig, axes = plt.subplots(1, 2, figsize=(13.5, 6.4), layout='constrained')
+    fig, axes = plt.subplots(1, 2, figsize=(13.5, 7.0), layout='constrained')
     colors = ['#286b8a', '#bd732a', '#6c8d55', '#865b95']
     width = 0.74 / len(args.labels)
     for c, label in enumerate(args.labels):
@@ -65,7 +71,11 @@ if __name__ == '__main__':
             for ax, value in zip(axes, [row['total_tokens']/1000, row['wall_seconds']/60]):
                 ax.barh(y, value, height=width*.88, color=colors[c % len(colors)],
                         hatch=hatch, edgecolor='#555555', linewidth=.4)
-                text = f"{row['total_tokens']:,}" if ax is axes[0] else f"{value:.2f}分"
+                unknown = ax is axes[0] and row['unknown_usage_calls']
+                text = (('≥' if unknown else '') + f"{row['total_tokens']:,}" if ax is axes[0]
+                        else f"{value:.2f}分")
+                if unknown:
+                    ax.plot(value, y, marker='>', color='#222222', markersize=6)
                 ax.text(value + (3 if ax is axes[0] else .16), y,
                         text + ('  未達' if not row['success'] else ''),
                         va='center', fontsize=9)
@@ -81,9 +91,13 @@ if __name__ == '__main__':
     handles = [Patch(facecolor=colors[i % len(colors)], label=label)
                for i, label in enumerate(args.labels)]
     handles.append(Patch(facecolor='white', edgecolor='#555555', hatch='///', label='独立評価で未達'))
+    if any(row['unknown_usage_calls'] for row in rows):
+        handles.append(Line2D([], [], color='#222222', marker='>', linestyle='none',
+                              label='不明費用あり：棒は既知の下限'))
     axes[1].legend(handles=handles, loc='lower right', frameon=False, fontsize=9)
     fig.suptitle(args.title, fontsize=16)
-    fig.supxlabel('同じ4開発課題・各1試行。固定seedでも軌跡の同一性は保証しない。\n'
+    fig.supxlabel('同じ4開発課題の採用試行。中断した追加試行は別表へ費用を保持。\n'
+                  '費用不明の棒は下限。各方式に総トークンと時間の両方の上限がある。\n'
                   '品質同等性・統計的優位・大規模長期作業への有効性は未検証。', fontsize=10)
     for ext in ('png', 'pdf', 'svg'):
         fig.savefig(args.output_dir / ('comparison.' + ext), dpi=170,
@@ -94,6 +108,8 @@ if __name__ == '__main__':
     (args.output_dir / 'sources.json').write_text(json.dumps({
         'sources': {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in args.measurements},
         'script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        'conditions': args.labels, 'repeats_per_condition': 1,
-        'unknown_usage_calls': 0, 'failed_trials_included': True}, ensure_ascii=False, indent=2) + '\n')
+        'conditions': args.labels, 'selected_trials_per_task_condition': 1,
+        'unknown_usage_calls': sum(r['unknown_usage_calls'] for r in rows),
+        'unknown_cost_representation': 'known lower bound; no imputation',
+        'failed_trials_included': True}, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'plotted_trials': len(rows)}))
