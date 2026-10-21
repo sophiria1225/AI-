@@ -145,9 +145,42 @@ def bar_chart(rows, baseline='既存API型', other='コード実行型'):
             v=r[a]['known_total_tokens'];w=650*v/maximum;yy=y+j*28
             s+=f'<rect x="210" y="{yy}" width="{w:.2f}" height="20" rx="3" fill="{color}"/>'
             mark='成功' if r[a]['success'] else '未達'
-            s+=txt(226+w,yy+17,f'{v:,}  {mark}',17,color)
+            s+=txt(226+w,yy+17,f'{v:,}  {mark}',17,NAVY if a=='baseline' else color)
     s+=txt(210,399,f'灰：{baseline}　青緑：{other}。全４件・各１seed。',18)
     return svg(s,h=425,label='同じ四課題でAPI呼出型とコード型の全トークンと最終成否を比較')
+
+
+def state_lifetime_diagram():
+    s=txt(5,24,'比較で変える場所：プログラムの間の状態',24,weight=700)
+    for y,title,color,keep in [(95,'毎回初期化',ORANGE,False),(245,'課題内で保持',TEAL,True)]:
+        s+=txt(5,y+9,title,23,color,700)
+        for x,label in [(310,'取得'),(610,'計算'),(910,'操作')]:
+            s+=circle(x,y,32,'#e1eae2' if keep else '#eee2da')+txt(x,y+7,label,21,color,700,'middle')
+        for left,right in [(350,570),(650,870)]:
+            s+=line(left,y,right,y,color,3,arrow=keep,dash=not keep)
+            if not keep:
+                mid=(left+right)/2
+                s+=line(mid-9,y-9,mid+9,y+9,ORANGE,4)+line(mid-9,y+9,mid+9,y-9,ORANGE,4)
+        s+=txt(610,y+65,'変数が消える：元観測の再読・再取得・再計算が必要' if not keep else '変数・関数が残る：取得した値を後の操作へ使える',20,anchor='middle')
+    return svg(s,h=340,label='プログラム間で変数を初期化する条件と課題内で保持する条件の違い')
+
+
+def control_table(stages):
+    names=[('P27','初期接続'),('P28','関数説明を補足'),('P29','説明＋変数保持')]
+    rows='<table class="compact"><thead><tr><th>課題</th>'+''.join('<th>'+label+'</th>' for _,label in names)+'</tr></thead><tbody>'
+    for i,label in enumerate(['写真整理','共有・依頼','返金','曲情報の書出']):
+        rows+='<tr><td>'+label+'</td>'
+        for phase,_ in names:
+            if phase not in stages:rows+='<td class="muted">未集計</td>';continue
+            r=stages[phase]['pairs'][i]['code']
+            rows+='<td>'+('成功' if r['success'] else '未達')+' ／ '+num(r['known_total_tokens'])+'</td>'
+        rows+='</tr>'
+    rows+='<tr><td><strong>成功数 / 全費用</strong></td>'
+    for phase,_ in names:
+        if phase not in stages:rows+='<td class="muted">未集計</td>';continue
+        t=stages[phase]['totals']['code']
+        rows+='<td><strong>'+str(t['successes'])+'/4 ／ '+num(t['known_total_tokens'])+'</strong></td>'
+    return rows+'</tr></tbody></table>'
 
 
 STYLE = r'''
@@ -193,6 +226,14 @@ def build(root, output, draft=False):
         code=e.read('reports/P27_comparison.json')
         if not code.get('all_four_reviewed') or len(code['pairs'])!=4:
             raise ValueError('P27 is not fully reviewed')
+    stages={} if code is None else {'P27':code}
+    for phase in ('P28','P29'):
+        name=f'reports/{phase}_comparison.json'
+        if (root/name).exists():
+            result=e.read(name)
+            if not result.get('all_four_reviewed') or len(result['pairs'])!=4:
+                raise ValueError(phase+' is not fully reviewed')
+            stages[phase]=result
     timestamp=dt.datetime.now(JST).strftime('%Y-%m-%d %H:%M JST')
     slides=[]
     def add(section,title,body,notes,refs=(),dark=False,takeaway=None):
@@ -228,9 +269,9 @@ def build(root, output, draft=False):
         '<tr><td>CodeAct / ICML 2024</td><td>Pythonで行動を統合し、実行結果から修正</td><td>通常コード型の比較相手</td></tr>'
         '<tr><td>FOCUS / 著者公開原稿</td><td>今後の作業に必要な情報の選択・保持</td><td>共通環境向けに接続した比較</td></tr>'
         '<tr><td>SelfCompact / 著者公開原稿</td><td>コンテキスト整理とキャッシュ費用</td><td>費用の差を新原理としない</td></tr>'
-        '<tr><td>ECT・CFRC / 著者公開原稿</td><td>証跡・残作業・引き継ぎ時の制御</td><td>参照・契約の追加だけでは弱い</td></tr></tbody></table>',
+        '<tr><td>CaveAgent / Runtime Semantics</td><td>実行状態の保持・共有、保持有無の比較</td><td>変数保持や比較自体は既出</td></tr></tbody></table>',
         'CodeActは正式会議録を確認済みです。他の近接原稿は公開状態や確認範囲を文献記録に残しています。ここは機能の重なりの整理で、全方式の完全再現や網羅的な新規性調査の完了を意味しません。',
-        [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'),('近接研究と確認範囲',LINK+'docs/output_access_review_20261021.md'),('契約・完全性の重複',LINK+'docs/collection_scope_review_20261021.md')])
+        [('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html'),('近接研究と確認範囲',LINK+'docs/output_access_review_20261021.md'),('実行状態の原典照合',LINK+'docs/runtime_state_overlap_20261022.md')])
     add('06 / 新提案技術の現在地','独自方式の有効性は、まだ確立していない',
         '<div class="two"><div class="col"><span class="badge">実装・確認済み</span><h3>比較と原因分析の基盤</h3><p class="body">公開APIの接続／状態保存と再生／全費用の記録／独立評価／コード実行型。</p><p class="small muted subtle">いずれも、それだけを新規性とはしない。</p></div>'
         '<div class="col"><span class="badge warn">追加で示す必要がある</span><h3>既存方式では残る問題と、固有の改善</h3><p class="body">新しい操作規則を一つ固定し、強い比較相手・同じ予算・未調整課題で確かめる。</p></div></div>',
@@ -283,15 +324,25 @@ def build(root, output, draft=False):
         'これはCodeActと同種の既存原理を共通環境へ接続した比較対象です。Python内で公開APIを取得し、集合やCSVとして処理して次のAPIへ渡せます。１プログラム内の複数APIを１件と数えず、全費用と記録を残します。コード間の変数は保持しない実装差があります。',
         [('実装仕様と原方式との差',LINK+'docs/experiments/P27_code_execution.md'),('CodeAct', 'https://proceedings.mlr.press/v235/wang24h.html')])
     if code:
-        add('14 / コード実行型の結果','同じ４課題で、成否と全費用を照合する',
+        add('14 / 初期のコード実行型','初期接続は3/4。通常API基準の4/4に届かない',
             '<div class="diagram">'+bar_chart(code['pairs'])+'</div>',
-            code.get('speaker_summary','全４課題終了後に費用と最終評価を照合した。既知課題１seedの開発比較で、通常コード実行の原理を新規性とはしない。'),
+            'P27の全４課題を監査した。コード型は3/4、比較相手は4/4。費用が減った失敗を効率改善とは呼ばない。全件で最初のプログラムにインポートエラーがあり、返金では21プログラムがAPI未到達。曲の書出では同じ一覧の再取得と、消えた変数の参照があった。ここから説明と変数保持を分ける次の比較へ進んだ。',
             [('全結果と実装差',LINK+'docs/P27_findings.md')])
     else:
         add('14 / コード実行型の結果','全４件の評価・監査が終わるまで、結論を留保する',
             '<div class="two"><div class="col"><span class="badge">固定済み</span><h3>４既知課題・１seed</h3><p class="body">写真は160 API、他３件は80 API。<br>モデル・トークン・時間は比較相手と同じ。</p></div><div class="col"><span class="badge wait">この資料の集計時点</span><h3>確定した比較報告は未収録</h3><p class="body">実行中・監査中の数字を、完成した成績へ置き換えない。</p></div></div>',
             'このページは全４件を監査した報告がまだない場合の表示です。資料の生成時点とGitHubの実行状態を確認します。未収録を失敗ゼロや成功扱いにはしません。',
             [('自動進捗・Issue132','https://github.com/sophiria1225/AI-/issues/132')],takeaway='確定済みの全件報告が保存されたら、直前の生成時にこのページへ反映する。')
+    if code:
+        add('14a / 次の比較で変える場所','関数の説明と、変数を残す効果を分ける',
+            '<p class="small">先に説明だけを補い、その後に課題内の状態保持を比較。モデル・課題・API上限は維持。</p><div class="diagram tight">'+state_lifetime_diagram()+'</div>',
+            'P27では提供済み関数の探索と状態の再取得が観測された。P28は関数が既に定義されているとだけ補足し、変数は毎回初期化する。P29はその説明を保ち、状態保持とその正確な案内を加える。いずれも通常方式であり、CodeActやCaveAgentと同じ原理を新提案とはしない。',
+            [('説明だけの条件',LINK+'docs/experiments/P28_code_clarification.md'),('状態保持の範囲',LINK+'docs/experiments/P29_stateful_preparation.md')])
+        add('14b / 条件を分けた比較結果','同じ４課題の全結果を、成功と費用で見る',
+            control_table(stages)+'<p class="small muted">数値＝全入力＋全出力トークン。各１seedの開発比較。未集計は未実行・実行中・監査待ちを含む。</p>',
+            'この表には全４件の評価・監査が終了した段階だけを載せる。課題の選び直しや失敗の自動再試行はしていない。状態保持を追加して改善しても、既存原理の校正の結果である。後続の固定比較と未調整課題で確認するまで、一般的な優位は主張しない。',
+            [(phase+'の全比較',LINK+'reports/'+phase+'_comparison.json') for phase in stages],
+            takeaway='追加の仕組みが必要かを決めるため、通常方式を十分にした状態で比べる。')
     add('15 / 考察','失敗の観測と、追加機構の必要性は分ける',
         '<div class="three"><div class="col"><h3>指示で解消する失敗</h3><p class="body">元の低成績だけでは、記憶・ゲート・分担変更が必要だとはいえない。</p></div><div class="col"><h3>予算で止まる処理</h3><p class="body">未完了をすべて情報欠落やハルシネーションへまとめない。</p></div><div class="col"><h3>正解でも残る未確認</h3><p class="body">57曲中56曲の詳細取得で正解した例。正解と網羅的な確認は別。</p></div></div>',
         '57曲の例は未確認の１曲が誤答を起こした実例ではありません。公開一覧には曲の長さがなく、未確認を一覧で既に読めたとみなすこともできません。これだけで全取得を強制する制御を提案するのは早計です。',
@@ -338,7 +389,7 @@ def build(root, output, draft=False):
         'HTMLの操作：左右キーで移動、Oで一覧、Nで説明メモ。印刷時はスライド単位になります。\n\n'
         '社会背景、技術背景、目的、当初案と現在地、既存との差、実装、比較実験、結果、考察、限界、次の作業、月末投稿の日程を説明します。通常機能の実装と独自性の成立は区別します。\n')
     figures=output/'figures';figures.mkdir(exist_ok=True)
-    for name,content in [('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
+    for name,content in [('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('state_lifetime',state_lifetime_diagram()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
         (figures/(name+'.svg')).write_text(content+'\n')
     with (figures/'guidance_success.csv').open('w') as f:
         w=csv.writer(f);w.writerow(['task_group','arm','successes','tasks','known_tokens','unknown_calls'])
@@ -351,7 +402,13 @@ def build(root, output, draft=False):
             for row in code['pairs']:
                 for arm in ('baseline','code'):
                     d=row[arm];w.writerow([row['task_id'],arm,d['success'],d['model_calls'],d['api_requests'],d['known_total_tokens'],d['unknown_usage_calls'],d['execution_wall_seconds']])
-    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,
+    if stages:
+        with (figures/'code_state_controls.csv').open('w') as f:
+            w=csv.writer(f);w.writerow(['phase','task_id','success','tokens','calls','api_requests'])
+            for phase,data in stages.items():
+                for row in data['pairs']:
+                    d=row['code'];w.writerow([phase,row['task_id'],d['success'],d['known_total_tokens'],d['model_calls'],d['api_requests']])
+    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),
         source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
         artifacts={str(p.relative_to(output)):sha(p) for p in output.rglob('*') if p.is_file() and p.name!='build_manifest.json'})

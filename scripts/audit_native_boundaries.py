@@ -50,13 +50,15 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23', 'P24', 'P25', 'P26', 'P27', 'P28'):
+    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23', 'P24', 'P25', 'P26', 'P27', 'P28', 'P29'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
-    if plan['phase'] in ('P27','P28'):
+    if plan['phase'] in ('P27','P28','P29'):
         sources += ['run_code_appworld.py', 'code_agent_interface.py', 'container_api_python.py']
-    if plan['phase'] == 'P28':
+    if plan['phase'] in ('P28','P29'):
         sources += ['run_code_control_appworld.py', 'code_runtime_prompts.py']
+    if plan['phase'] == 'P29':
+        sources += ['run_stateful_code_appworld.py','stateful_code_prompts.py','persistent_api_python.py']
     if plan['phase'] == 'P23':
         sources += ['native_compute_session.py', 'native_data_compute.py', 'container_data_python.py']
     if plan['phase'] == 'P12':
@@ -70,7 +72,7 @@ def audit(trial, appworld_root, allow_running=False):
     for name in sources:
         if sha(Path(__file__).parent / name) != provenance['sources'][name]:
             raise ValueError('use the frozen boundary/history implementation for this audit')
-    if plan['phase'] in ('P27','P28'):
+    if plan['phase'] in ('P27','P28','P29'):
         from run_code_appworld import code_system_prompt
         prompt = code_system_prompt()
         if plan['phase'] == 'P28':
@@ -78,12 +80,15 @@ def audit(trial, appworld_root, allow_running=False):
             prompt = control_system_prompt(plan)
     else:
         prompt = system_prompt_for(plan)
+    if plan['phase'] == 'P29':
+        from stateful_code_prompts import stateful_system_prompt
+        prompt=stateful_system_prompt(plan)
     conversation = NativeConversation(prompt, read(trial / 'public_task.json'))
     initial_visible = None
     if usage:
         initial_visible = {tool['function']['name'] for tool in read(
             trial / usage[0]['id'] / 'request.json')['tools']} - {'read_span', 'compute_data'}
-    if plan['phase'] in ('P27','P28'):
+    if plan['phase'] in ('P27','P28','P29'):
         from inspect_appworld_api_schemas import load_public_tools
         from appworld_native_tools import NativeCatalog
         initial_visible = NativeCatalog(load_public_tools(appworld_root/'data')[0]).visible
@@ -117,6 +122,12 @@ def audit(trial, appworld_root, allow_running=False):
             default = {} if name == 'spans.json' else []
             if captured(name, default) != expected:
                 errors.append(cid + ': captured execution prefix differs: ' + name)
+        if plan['phase'] == 'P29':
+            session=captured('python_session_private.json')
+            if (session is None or session.get('process_memory_checkpointed') is not False
+                    or manifest['state'].get('python_namespace_retained_within_task') is not True
+                    or manifest['state'].get('python_process_memory_checkpointed') is not False):
+                errors.append(cid + ': task-local state metadata differs')
         if plan['phase'] == 'P23':
             all_compute = read(trial/'compute_records.json') if (trial/'compute_records.json').exists() else []
             prefix_compute = [r for r in all_compute if r['call_id'] in prefix_ids]

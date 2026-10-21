@@ -9,7 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from analyze_code_comparison import require_complete
+from analyze_code_comparison import require_complete, CODE_PLANS
 
 ROOT = Path(__file__).resolve().parents[1]
 ERROR_TYPES = {'SyntaxError','IndentationError','TabError','NameError','KeyError',
@@ -62,9 +62,9 @@ def classify(usage, events, spans, programs):
             'error_type_scope':'Exception name only; no raw message, credentials, code or arguments.'}
 
 
-def analyze(storage,root):
-    plan=read(root/'configs/P27_code_comparison_v01.json');require_complete(storage,plan)
-    destination=root/'reports/P27_program_diagnostics.json'
+def analyze(storage,root,phase='P27'):
+    plan=read(root/CODE_PLANS[phase]);require_complete(storage,plan)
+    destination=root/f'reports/{phase}_program_diagnostics.json'
     if destination.exists():raise FileExistsError('preserve completed diagnostics')
     rows=[]
     for task,arm,rid in plan['run_order']:
@@ -77,7 +77,7 @@ def analyze(storage,root):
         r['source_sha256']={n:sha(t/n) for n in ('usage.json','events.json','spans.json')}
         r['program_result_sha256']={str(p.relative_to(t)):sha(p) for p in sorted((t/'programs').glob('*/result_private.json'))}
         rows.append(r)
-    data={'phase':'P27','all_four_reviewed':True,'trials':rows,
+    data={'phase':phase,'all_four_reviewed':True,'trials':rows,
           'model_calls_added':0,'api_requests_added':0,'evaluator_contents_read':False,
           'causal_interpretation':False,'script_sha256':sha(Path(__file__))}
     destination.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
@@ -87,4 +87,5 @@ def analyze(storage,root):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--storage-root',type=Path,required=True)
-    p.add_argument('--repo-root',type=Path,default=ROOT);a=p.parse_args();analyze(a.storage_root,a.repo_root)
+    p.add_argument('--repo-root',type=Path,default=ROOT);p.add_argument('--phase',choices=tuple(CODE_PLANS),default='P27')
+    a=p.parse_args();analyze(a.storage_root,a.repo_root,a.phase)
