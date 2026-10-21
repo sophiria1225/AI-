@@ -1,0 +1,202 @@
+{
+  "basis": "Completed P11 records used as existing-data control for the budget analyzer; no new inference or experiment.",
+  "tests_passed": 322,
+  "plan_sha256": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+  "trials": [
+    {
+      "run_id": "P11_01_ROLES",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "limits": {
+        "max_calls": 80,
+        "max_api_requests": 80,
+        "max_total_tokens": 450000,
+        "max_wall_seconds": 1800,
+        "max_output_tokens": 4096
+      },
+      "model_calls": 6,
+      "api_requests": 7,
+      "known_total_tokens": 102888,
+      "unknown_usage_calls": 0,
+      "unused_token_capacity_based_on_known_usage": 347112,
+      "unused_capacity_is_exact": true,
+      "peak_known_input_tokens": 21266,
+      "wall_seconds": 290.6169219170697,
+      "wall_seconds_over_limit": 0,
+      "max_api_requests_in_one_response": 2,
+      "responses_sending_multiple_api_requests": 1,
+      "output_limit_finishes": 0,
+      "timed_calls": 6,
+      "cached_input_tokens_in_timed_calls": 78153,
+      "processed_input_tokens_in_timed_calls": 23414,
+      "prefill_seconds_in_timed_calls": 205.91260400000002,
+      "decode_seconds_in_timed_calls": 81.289717,
+      "call_wall_seconds_known": 287.51199750136584,
+      "call_wall_seconds_unknown": 0,
+      "source_sha256": {
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+        "summary.json": "24f9d215850921bc5d427dac25f9946539c6e0c702d72ccc2d584e7e8e56ad52",
+        "usage.json": "04faea0f0f06d5ee8e951508e462637b35ead047ec170cefd930b9cdc39a56b6",
+        "events.json": "12567659ae42a6af7e41e107f3beb0b64268bb9a33a074d793ae3119dcc62ede"
+      },
+      "response_sha256": {
+        "call_001": "02fa710b2502c4a92aa1d5679d0a3968577b1824340565bdadc2c613b39c5616",
+        "call_002": "ff9738cf377568df443f8aced2dc00350cc4dfc8fc2f1bd189aaa93f9a6dec06",
+        "call_003": "6bc70e9ccca6300c75bb01714ecf289de908ceee6d110244ba8d61b8d5cd8e9a",
+        "call_004": "cbef91ee3dc0d39a1e1e92390ca78e48f1b150b54e8c30d3de88140f31839432",
+        "call_005": "1c35acdc85883563646a216015afcdc05b193b39fabb6b9c1e34e37795b59347",
+        "call_006": "4de829d974255a9af2b634ed83c3c6a7fe9484f967120a7d29a9cd7391b68347"
+      }
+    },
+    {
+      "run_id": "P11_02_ROLES",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "limits": {
+        "max_calls": 80,
+        "max_api_requests": 80,
+        "max_total_tokens": 450000,
+        "max_wall_seconds": 1800,
+        "max_output_tokens": 4096
+      },
+      "model_calls": 7,
+      "api_requests": 13,
+      "known_total_tokens": 83083,
+      "unknown_usage_calls": 0,
+      "unused_token_capacity_based_on_known_usage": 366917,
+      "unused_capacity_is_exact": true,
+      "peak_known_input_tokens": 15422,
+      "wall_seconds": 224.06096650008112,
+      "wall_seconds_over_limit": 0,
+      "max_api_requests_in_one_response": 3,
+      "responses_sending_multiple_api_requests": 5,
+      "output_limit_finishes": 0,
+      "timed_calls": 7,
+      "cached_input_tokens_in_timed_calls": 64923,
+      "processed_input_tokens_in_timed_calls": 16847,
+      "prefill_seconds_in_timed_calls": 141.38504799999998,
+      "decode_seconds_in_timed_calls": 79.21963600000001,
+      "call_wall_seconds_known": 220.87796300137416,
+      "call_wall_seconds_unknown": 0,
+      "source_sha256": {
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+        "summary.json": "4111da47e99680e99d05f91a547e5cadd554ef2a85157d92c391797c01f1a6bc",
+        "usage.json": "5fcd4b2b60181d97b7c365f40df14d08435460754b03f5285fece8cc6b2b6ccf",
+        "events.json": "bd1c92a4f85d180d07bedca596e47553a228c888e38f95045f5e3f8f59b63caa"
+      },
+      "response_sha256": {
+        "call_001": "b3b50b46e7b7399d170436acccd8bb546b9b7b30d584c12fe7eb1d17c53a163b",
+        "call_002": "d468a77418c0806bff8b08e64ef32135ec9b7a182acc43a16e55e9c2b999ea91",
+        "call_003": "eb70078d40451112ebbe92040a25164da4f103b7d05ecf4817d7926acb864449",
+        "call_004": "3a8ba91fdb1b93c5ed4f79f6cbe5fc75840b5dcab9a4d25c0e5c20254a291c92",
+        "call_005": "3b2ecddfd7eb2ddc943fa85d5d6ad8b34734e1634cf89eba0b468bf64bff5649",
+        "call_006": "d9553ded4f5745c9f9173552f4f6139e87d7dbe73455c58d9907ee3407766fd1",
+        "call_007": "ce2e8753432407ef352f2d6d65f96b994e6f4c1e6825b629d145443330f803b7"
+      }
+    },
+    {
+      "run_id": "P11_03_ROLES",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "limits": {
+        "max_calls": 80,
+        "max_api_requests": 80,
+        "max_total_tokens": 450000,
+        "max_wall_seconds": 1800,
+        "max_output_tokens": 4096
+      },
+      "model_calls": 10,
+      "api_requests": 19,
+      "known_total_tokens": 203066,
+      "unknown_usage_calls": 0,
+      "unused_token_capacity_based_on_known_usage": 246934,
+      "unused_capacity_is_exact": true,
+      "peak_known_input_tokens": 31193,
+      "wall_seconds": 597.4932463751175,
+      "wall_seconds_over_limit": 0,
+      "max_api_requests_in_one_response": 4,
+      "responses_sending_multiple_api_requests": 5,
+      "output_limit_finishes": 0,
+      "timed_calls": 10,
+      "cached_input_tokens_in_timed_calls": 156526,
+      "processed_input_tokens_in_timed_calls": 43325,
+      "prefill_seconds_in_timed_calls": 391.923095,
+      "decode_seconds_in_timed_calls": 201.25555,
+      "call_wall_seconds_known": 593.7911454990972,
+      "call_wall_seconds_unknown": 0,
+      "source_sha256": {
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+        "summary.json": "c3d43e47735eb848ce536ccbd80e25f812b2a1a907bbc03237d7fd4434185918",
+        "usage.json": "d0eae8abd4b0a4977066cd342ab88061fc4f72819458fe8a23e8075df01d0f7a",
+        "events.json": "f0de8260cda3fd2589646f8df0e06a8bc86ec5f47a591843e57e657f6ae2e71e"
+      },
+      "response_sha256": {
+        "call_001": "0e595d24ca61f9552fe1a2ce713b180ca4c30756191a621e2afdceb701430bb1",
+        "call_002": "0176df2aead11646ae3313b5b213e17fc09c364f4bd93a4e889f9cf88162aede",
+        "call_003": "4833dfe533d8859c27f1540b8de8df4adefd4cbcd6336d1f5a984b1758a30fec",
+        "call_004": "02806e5681e6d91071cbf840d08dcb37f4df24d55f5576f24eff0402d15e0ea9",
+        "call_005": "09fecbe28dfbb98d66861eeaf32976e0fb2c82190df2891622d2bbe1137bc24f",
+        "call_006": "fb3799b8994d205bf751651a71982f27f524faebb9a3e3b4dfa5132f8f82278f",
+        "call_007": "d43d779333310f747b2ce32f0b4d9c80a38d087b0eca3d64418d65617b03ac4b",
+        "call_008": "21836617fe6cea92c783c2429981669e63637d81c12f7aef192d1fef22d457e2",
+        "call_009": "53a09eb731240812413f21a7148701f34305b95a2fca0ce0a26035dbc5e270bf",
+        "call_010": "54cedf023c4ddfe086ea291abf1268ea29bdc0b7df56993cb7797dd54cd6e07e"
+      }
+    },
+    {
+      "run_id": "P11_04_ROLES",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "limits": {
+        "max_calls": 80,
+        "max_api_requests": 80,
+        "max_total_tokens": 450000,
+        "max_wall_seconds": 1800,
+        "max_output_tokens": 4096
+      },
+      "model_calls": 6,
+      "api_requests": 9,
+      "known_total_tokens": 51318,
+      "unknown_usage_calls": 0,
+      "unused_token_capacity_based_on_known_usage": 398682,
+      "unused_capacity_is_exact": true,
+      "peak_known_input_tokens": 10860,
+      "wall_seconds": 189.91706245788373,
+      "wall_seconds_over_limit": 0,
+      "max_api_requests_in_one_response": 4,
+      "responses_sending_multiple_api_requests": 1,
+      "output_limit_finishes": 0,
+      "timed_calls": 6,
+      "cached_input_tokens_in_timed_calls": 37597,
+      "processed_input_tokens_in_timed_calls": 12274,
+      "prefill_seconds_in_timed_calls": 100.434502,
+      "decode_seconds_in_timed_calls": 86.299186,
+      "call_wall_seconds_known": 186.89642525021918,
+      "call_wall_seconds_unknown": 0,
+      "source_sha256": {
+        "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367",
+        "summary.json": "e182ffd127e383dc686466a326bbd791a41a6ee5baeac202a60cf99ffd914cad",
+        "usage.json": "65b80896fd85e052472a9f583bec9d1f2cfa44c82378940e9b7c70714928cec0",
+        "events.json": "95b6fef6951ef7666b5ff1e1b63ca0d694e6551848d6fc531ea38f5f3e14a7e6"
+      },
+      "response_sha256": {
+        "call_001": "43823db13a6ec0cb51c1e675918d9e751ca31aa1b92a7660b53374c2f7194d69",
+        "call_002": "a9e9302538f5709676ecb13fe3a35b1199a989d179366fa4aa15aa7d6bf7ad2f",
+        "call_003": "fd52f77dfb72f15edc9acb77cccaf69a71fa1bfd28578227fbe7b9d74d4fb401",
+        "call_004": "50de1537aeab8dcc758965b9b5ccf55507d19a79f6e251ffc3a5176700105597",
+        "call_005": "b04392ff7844299d8a0208a5537e6630e52ee10b329b68490a6de5000818f8c1",
+        "call_006": "01b41db1e49b17982da5426c1a177d51aba497fbb18185998c5dac3a9ef17bb8"
+      }
+    }
+  ],
+  "new_model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_contents_read": false,
+  "frozen_P18_dependencies_unchanged": 41,
+  "scope": "Budget accounting only; not a new algorithm, causal attribution or a lower bound on required task cost.",
+  "analysis_source_sha256": {
+    "scripts/analyze_native_budget.py": "be92b8668ad6aa34dc479879fd058d7e03908c523067f7f3f130612026f01575",
+    "scripts/audit_inference_costs.py": "b2251c40cbef2c872863f344ebed9195e0f3bb5bbbefe46c2f95a1003965ff1b",
+    "tests/test_native_budget_analysis.py": "80753a664a2d127ba9069dd17d6d7596df82fa98fb1e686b5b6685afcd1900b6"
+  }
+}
