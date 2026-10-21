@@ -1,0 +1,112 @@
+{
+  "phase": "P22",
+  "kind": "posthoc_public_trace_diagnostics",
+  "all_six_reviewed": true,
+  "findings": {
+    "1": {
+      "liked_playlists_observed": 4,
+      "selected_unique_songs": 27,
+      "reviewed_song_ids": 27,
+      "new_reviews_sent": 22,
+      "review_updates_sent": 5,
+      "selected_songs_without_rating_request": 0,
+      "rating_requests_outside_observed_selection": 0,
+      "playlist_library_calls": 0,
+      "liked_song_calls": 0,
+      "limitation": "Observed selection was processed; whether it equals the requested set is unestablished."
+    },
+    "2": {
+      "contact_rows": 11,
+      "observed_pending_requests": 26,
+      "pending_page_counts": [
+        20,
+        6,
+        0
+      ],
+      "eligible_in_observations": 10,
+      "approved": 10,
+      "observed_eligible_not_approved": 0,
+      "approvals_outside_observed_eligible": 0,
+      "answer_supplied_for_action_request": true,
+      "limitation": "Completion answer conflicts with public API guidance. It is not proven to be the only cause of failure."
+    },
+    "3": {
+      "environment_clock_calls": 0,
+      "task_datetime_in_initial_input": false,
+      "completion_calls": 0,
+      "limitation": "A documented environment clock was available through discovery but not invoked. Do not replace it with the host clock or claim that no clock existed."
+    },
+    "4": {
+      "text": {
+        "page_counts": [
+          10,
+          0
+        ],
+        "observed": 10,
+        "deletion_requests": 10,
+        "observed_not_requested": 0,
+        "unobserved_requested": 0
+      },
+      "voice": {
+        "page_counts": [
+          12,
+          0
+        ],
+        "observed": 12,
+        "deletion_requests": 12,
+        "observed_not_requested": 0,
+        "unobserved_requested": 0
+      }
+    },
+    "5": {
+      "compressions_sent": 4,
+      "delete_original_flags": 4,
+      "subsequent_directory_read": true,
+      "limitation": "Compression API performs the requested directory removal with its delete flag; absence of a separate delete call is not an omission."
+    },
+    "6": {
+      "playlist_page_counts": [
+        5
+      ],
+      "explicit_page_limit": false,
+      "explicit_next_page_calls": 0,
+      "observed_unique_songs": 35,
+      "examined_songs": 35,
+      "observed_songs_not_examined": 0,
+      "observed_maximum": 15,
+      "answer_matches_maximum_in_observations": true,
+      "limitation": "Default limit is five. A full first page alone does not establish exhaustive enumeration. No unseen global maximum was read or supplied."
+    }
+  },
+  "source_hashes": {
+    "1": {
+      "public_task.json": "9bc4daaf97230227b6806d4644311564428555b1d21e9f877667e17786a148d0",
+      "spans.json": "40d9c5eb36a8c4834530f4835fcc91c05f6cd36334c6f82f393604f8232ebebe"
+    },
+    "2": {
+      "public_task.json": "49066039a87eaedceb52003c16f9f23b7cb917bd650d6f610f909e26f2040f89",
+      "spans.json": "6ca68dbbc85527bdcb3efe63d37a952ca11694b47148085546ed8f4bbd55256c"
+    },
+    "3": {
+      "public_task.json": "2bf368f2667903e175daef63819e21f2d06fe89053524845b3d220ac77a579ea",
+      "spans.json": "0a115a7c861aeeb663f3b97d4ef22ba56bc89f309b65310144709a993ec2bd5f"
+    },
+    "4": {
+      "public_task.json": "7c1a62ad4a094a2954ea2a56e20e72548d7a5b66d1a5276e953ef931b31f4b8e",
+      "spans.json": "9a10b6f5402c944ee9310f2e2f4c47e6aae59ee604210a59573bdc0accdedf2d"
+    },
+    "5": {
+      "public_task.json": "4441d76a55df4034f5663b022c529823566d06417a257a7003953762064ca2ef",
+      "spans.json": "512c87f01d2ffa36307153cdcce421e9041be523be9230cb90aa4a2132e8b4da"
+    },
+    "6": {
+      "public_task.json": "b4399cb05bc7f2b6a26633cb2202e41729a5ee736dff3754304a0b144efbc486",
+      "spans.json": "3e0b5e0784a87a875ccdd7dd3da33d6adb9742050f06aa23b435b19f991b4f11"
+    }
+  },
+  "script_sha256": "6f829177cb36d64e57f355bdc06eecdf236cfa6319bb37cc1eebfcb44bd05d9b",
+  "model_calls": 0,
+  "environment_calls": 0,
+  "hidden_evaluator_details_read": false,
+  "purpose": "Describe observable behavior, not assign definitive causal error labels or create an execution oracle."
+}

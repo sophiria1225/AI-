@@ -25,6 +25,7 @@ PHASES = {
     "P14": {"issue": 54, "arm": "native_ledger", "batch": "P14_batch_v01", "before": "P13", "trials": 4},
     "P18": {"issue": 86, "arm": "native_roles", "batch": "P18_batch_v01", "before": "P17", "trials": 4},
     "P22": {"issue": 102, "arm": "native_roles", "batch": "P22_batch_v01", "before": "P21", "trials": 6},
+    "P24": {"issue": 115, "arm": "native_guided", "batch": "P24_batch_v01", "before": "P22", "trials": 6},
 }
 
 
@@ -40,19 +41,20 @@ def validate_schedule(plan):
             or len(plan["run_order"]) != PHASES[phase]['trials'] or plan['arms'] != [PHASES[phase]['arm']]
             or any(row[1] != PHASES[phase]['arm'] for row in plan['run_order'])):
         raise ValueError("only the fixed calibration schedule is supported")
-    if phase in ("P11", "P12", "P13", "P14", "P18", "P22"):
-        selection_file = ('reports/'+phase+'_public_task_selection.json' if phase in ('P18', 'P22')
+    if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24"):
+        selection_file = ('reports/P22_public_task_selection.json' if phase == 'P24' else
+                          'reports/'+phase+'_public_task_selection.json' if phase in ('P18', 'P22')
                           else 'reports/P11_public_task_selection.json')
         selected = json.loads((ROOT / selection_file).read_text())
         ids = [row['task_id'] for row in selected['selected']]
         if (plan['task_ids'] != ids or [row[0] for row in plan['run_order']] != ids
                 or len({row[2] for row in plan['run_order']}) != len(ids)):
             raise ValueError('the additional baseline must preserve selected scenarios and order')
-        if phase == 'P22':
+        if phase in ('P22', 'P24'):
             reservation = json.loads((ROOT/'reports/letter_scenario_reservation_20261021.json').read_text())
             if (ids != [sid+'_1' for sid in reservation['further_development']]
                     or set(ids) & set(reservation['reserved_variant_one_tasks'])):
-                raise ValueError('P22 must stay within the six reserved development scenarios')
+                raise ValueError('P22/P24 must stay within the six development scenarios')
 
 
 def check_p22_activation(plan):
@@ -68,6 +70,36 @@ def check_p22_activation(plan):
     result = json.loads(primary.read_text())
     if result['phase'] != 'P21' or result['model_calls'] != 6 or result['audit_errors']:
         raise ValueError('P21 primary review is incomplete')
+
+
+def check_p24_activation(plan):
+    """Do not turn a generic instruction contrast into a changed tool/budget run."""
+    if plan['phase'] != 'P24':
+        return
+    from run_native_appworld import system_prompt_for
+    system_prompt_for(plan)
+    record = json.loads((ROOT/'reports/P24_activation_v01.json').read_text())
+    if (record.get('decision') != 'run_six_with_generic_official_guidance'
+            or not record.get('why') or not record.get('alternatives')):
+        raise ValueError('P24 needs a reviewed decision')
+    for path, expected in record['prerequisite_sha256'].items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != expected:
+            raise ValueError('P24 prerequisite changed')
+    result = json.loads((ROOT/'reports/P22_additional_baseline_summary.json').read_text())
+    diagnosis = json.loads((ROOT/'reports/P22_public_trace_diagnostics.json').read_text())
+    if (result['pending'] or result['audit_errors'] or len(result['trials']) != 6
+            or not diagnosis['all_six_reviewed']):
+        raise ValueError('P22 full review is incomplete')
+    old = json.loads((ROOT/'configs/P22_additional_baseline_v01.json').read_text())
+    for key in ('model', 'model_selection', 'task_ids', 'seed', 'agent_temperature',
+                'max_calls', 'max_api_requests', 'max_wall_seconds', 'max_total_tokens',
+                'max_output_tokens', 'observation_page_characters',
+                'history_representation', 'discovery_policy',
+                'max_checkpoint_new_bytes_per_boundary', 'max_checkpoint_object_bytes'):
+        if plan[key] != old[key]:
+            raise ValueError('P24 must preserve P22: ' + key)
+    if 'ordinary_compute' in plan:
+        raise ValueError('P24 does not add a computation tool')
 
 
 def public_body(rows, state):
@@ -86,7 +118,8 @@ def public_body(rows, state):
              "P13": "P13：同じ接続でFOCUSに基づく保持方式と全費用を比較",
              "P14": "P14：通常の作業台帳と全更新費用を比較",
              "P18": "P18：未使用の４開発シナリオを全履歴基準で観察",
-             "P22": "P22：予約済みの６開発シナリオを全履歴基準で観察"}[phase]
+             "P22": "P22：予約済みの６開発シナリオを全履歴基準で観察",
+             "P24": "P24：公式の一般指示を補い、同じ６開発課題で比較"}[phase]
     lines = [marker, title, "",
              "| 課題 | 状態 | LLM呼出 | API要求 | 既知トークン | 使用量不明 | 独立評価 |",
              "|---|---|---:|---:|---:|---:|---|"]
@@ -111,7 +144,8 @@ def public_body(rows, state):
                "P13": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-focus-comparison-20261021/docs/experiments/P13_native_focus.md)",
                "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p14-ledger-execution-20261021/docs/experiments/P14_native_ledger.md)",
                "P18": "[事前仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P18_unseen_development.md)",
-               "P22": "[事前仕様と実行条件](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P22_development_preparation.md)"}[phase]]
+               "P22": "[事前仕様と実行条件](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P22_development_preparation.md)",
+               "P24": "[一般指示の比較仕様](https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P24_generic_guidance.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 
@@ -150,6 +184,7 @@ def main():
     phase = plan["phase"]
     validate_schedule(plan)
     check_p22_activation(plan)
+    check_p24_activation(plan)
     out = storage / "records/context_pilot" / plan["batch_id"]
     out.mkdir(exist_ok=False)
     observer = out / "observer"
@@ -200,6 +235,7 @@ def main():
         "P14": ("context_pilot", plan.get("wait_for_native_batch")),
         "P18": ("event_view_probe", plan.get("wait_for_contract_probe")),
         "P22": ("data_export_probe", plan.get("wait_for_export_probe")),
+        "P24": ("context_pilot", plan.get("wait_for_native_batch")),
     }[phase]
     prerequisite_path = storage / "records" / prerequisite_dir / prerequisite_id / "status.json"
     while True:
@@ -226,14 +262,14 @@ def main():
         return 1
     lease_end = datetime.datetime.fromisoformat(plan["server_lease_end_utc"])
     remaining = (lease_end - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-    if phase in ("P18", "P22"):
+    if phase in ("P18", "P22", "P24"):
         from run_event_view_probe import lease_remaining
         runtime = json.loads((storage / '.runtime/model_server.json').read_text())
         command = subprocess.check_output(['ps', '-p', str(runtime['supervisor_pid']), '-o', 'command='], text=True)
         live_remaining, live_end = lease_remaining(runtime, command, datetime.datetime.now(datetime.timezone.utc))
         remaining = min(remaining, live_remaining)
         state['checked_server_lease_end_utc'] = live_end
-    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22") else 180
+    evaluation_reserve = 180 * (len(plan["run_order"]) + 1) if phase in ("P11", "P12", "P13", "P14", "P18", "P22", "P24") else 180
     if remaining < len(plan["run_order"]) * plan["max_wall_seconds"] + evaluation_reserve:
         state["status"] = "server_lease_too_short"
         update(True)

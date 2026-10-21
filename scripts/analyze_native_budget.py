@@ -19,8 +19,8 @@ def digest(path):
 def trial_budget(directory):
     plan, summary, usage, events = [read(directory / name) for name in
                                     ('plan.json', 'summary.json', 'usage.json', 'events.json')]
-    if summary['arm'] != 'native_roles' or plan['arms'] != ['native_roles']:
-        raise ValueError('requires the unchanged full-history native baseline')
+    if summary['arm'] not in ('native_roles', 'native_guided') or plan['arms'] != [summary['arm']]:
+        raise ValueError('requires a native full-history baseline')
     required = ('max_calls', 'max_api_requests', 'max_total_tokens', 'max_wall_seconds',
                 'max_output_tokens')
     if any(type(plan[k]) is not int or plan[k] <= 0 for k in required):

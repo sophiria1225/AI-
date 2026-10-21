@@ -10,7 +10,7 @@ from pathlib import Path
 
 from native_boundary_record import verify_boundary
 from native_conversation import NativeConversation
-from run_native_appworld import NATIVE_PROMPT
+from run_native_appworld import system_prompt_for
 
 
 def read(path):
@@ -50,7 +50,7 @@ def audit(trial, appworld_root, allow_running=False):
     events = read(trial / 'events.json') if (trial / 'events.json').exists() else []
     spans = read(trial / 'spans.json') if (trial / 'spans.json').exists() else {}
     plan, provenance = read(trial / 'plan.json'), read(trial / 'provenance.json')
-    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23'):
+    if plan['phase'] not in ('P11', 'P12', 'P13', 'P14', 'P18', 'P19', 'P22', 'P23', 'P24'):
         raise ValueError('requires a boundary-recorded native trial')
     sources = ['run_native_appworld.py', 'native_conversation.py', 'native_boundary_record.py']
     if plan['phase'] == 'P23':
@@ -66,7 +66,7 @@ def audit(trial, appworld_root, allow_running=False):
     for name in sources:
         if sha(Path(__file__).parent / name) != provenance['sources'][name]:
             raise ValueError('use the frozen boundary/history implementation for this audit')
-    conversation = NativeConversation(NATIVE_PROMPT, read(trial / 'public_task.json'))
+    conversation = NativeConversation(system_prompt_for(plan), read(trial / 'public_task.json'))
     initial_visible = None
     if usage:
         initial_visible = {tool['function']['name'] for tool in read(

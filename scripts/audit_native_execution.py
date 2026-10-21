@@ -130,7 +130,7 @@ def inspect_operations(usage, records, spans, payloads, responses, summary, allo
 
 def audit(directory):
     result = summarize_trial(directory)
-    if result['arm'] not in ('native_full', 'native_roles', 'native_compute'):
+    if result['arm'] not in ('native_full', 'native_roles', 'native_compute', 'native_guided'):
         raise ValueError('requires a completed native full-history trial')
     usage = read(directory / 'usage.json')
     records, spans = read(directory / 'events.json'), read(directory / 'spans.json')
@@ -139,15 +139,16 @@ def audit(directory):
     result.update(inspect_operations(usage, records, spans, payloads, responses,
                                      read(directory / 'summary.json'),
                                      allow_compute=result['arm'] == 'native_compute'))
-    if result['arm'] in ('native_roles', 'native_compute'):
-        from run_native_appworld import NATIVE_PROMPT
+    if result['arm'] in ('native_roles', 'native_compute', 'native_guided'):
+        from run_native_appworld import system_prompt_for
         hashes = read(directory / 'summary.json')['source_hashes']
         matched = all(hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
                       == hashes[name] for name in ('native_conversation.py', 'run_native_appworld.py'))
         if not matched:
             result['history_audit_errors'] = ['history renderer source differs from frozen execution']
         else:
-            result.update(inspect_history(read(directory / 'public_task.json'), NATIVE_PROMPT,
+            result.update(inspect_history(read(directory / 'public_task.json'),
+                                         system_prompt_for(read(directory / 'plan.json')),
                                          usage, records, spans, payloads, responses,
                                          read(directory / 'plan.json')['observation_page_characters']))
     if result['arm'] == 'native_compute':

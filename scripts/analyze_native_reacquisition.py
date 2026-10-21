@@ -55,7 +55,7 @@ if __name__ == '__main__':
         views = read('memory_views.json')
         source_names.append('memory_views.json')
     else:
-        if read('provenance.json')['arm'] != 'native_roles':
+        if read('provenance.json')['arm'] not in ('native_roles', 'native_guided'):
             raise ValueError('missing memory selection record')
         source_names.append('provenance.json')
         calls = list(dict.fromkeys(e['call'] for e in events))
