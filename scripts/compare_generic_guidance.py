@@ -23,6 +23,24 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def check_execution_measurement(audit, measurement, trial):
+    """Execution audits add three trace digests to the shared summary digests."""
+    for key in ('evaluation', 'known_total_tokens', 'model_calls', 'unknown_usage_calls'):
+        if audit[key] != measurement[key]:
+            raise ValueError('execution audit does not match measurement: '+key)
+    shared = measurement['source_hashes']
+    names = {'summary', 'usage', 'evaluation', 'events.json', 'spans.json', 'plan.json'}
+    if set(shared) != {'summary', 'usage', 'evaluation'} or set(audit['source_hashes']) != names:
+        raise ValueError('unexpected or missing audit source names')
+    if any(audit['source_hashes'][k] != v for k,v in shared.items()):
+        raise ValueError('execution audit shared source mismatch')
+    # Hash the completed files without interpreting their payloads.
+    for name, expected in audit['source_hashes'].items():
+        path = trial / (name if name.endswith('.json') else name+'.json')
+        if digest(path) != expected:
+            raise ValueError('completed source changed: '+name)
+
+
 def arm_rows(plan, summary, budget):
     if summary.get('pending') or summary.get('audit_errors'):
         raise ValueError('execution summary is pending or inconsistent')
@@ -131,9 +149,9 @@ def main():
                     raise ValueError('technical audit mismatch')
                 if kind == 'execution' and (audit['dispatch_audit_errors'] or audit['history_audit_errors']):
                     raise ValueError('dispatch or history audit failure')
-                if kind == 'execution' and any(audit[k] != measurements[rid][k] for k in (
-                        'source_hashes','evaluation','known_total_tokens','model_calls','unknown_usage_calls')):
-                    raise ValueError('execution audit does not match measurement')
+                if kind == 'execution':
+                    check_execution_measurement(audit, measurements[rid],
+                        args.storage_root/'records/context_pilot'/rid)
                 sources[str(p.relative_to(args.repo_root))] = digest(p)
     report = compare(*values)
     report.update(kind='P22_P24_paired_development_comparison', source_hashes=sources,

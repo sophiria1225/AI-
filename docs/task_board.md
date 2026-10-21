@@ -49,8 +49,9 @@
 | P1 | R41 | 通常Pythonの比較環境を隔離して検証 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/105) |
 | P1 | R42 | 取得済み観測への通常Python対照の接続を準備 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/110) |
 | P1 | R43 | 通常計算対照の実行記録と監査を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/112) |
-| P0 | R44 | P24：公式の一般指示を補った６件の基準比較 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/115) |
+| P0 | R44 | P24：公式の一般指示を補った６件の基準比較 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/115) |
 | P0 | R45 | 既観測16課題でページ取得の未完と過剰介入を点検 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/117) |
+| P0 | R46 | P25：同じ一般指示でP18の全４件を再比較する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/120) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -535,6 +536,8 @@ P22全件終了・監査後に採用。公式42b5bcfの一般指示だけを確�
 
 全件終了前に対照比較の集計器を準備。改善・悪化を残し、使用量不明時は正確な総トークン差を計算しない。404検査合格、P24固定291ファイル変更０。実行中の結果本文は未閲覧。reports/P24_comparison_preparation_20261021.json。
 
+P24 complete 2026-10-21T13:37:52Z: 6/6 success; 59 calls, 1,018,781 tokens, 192 APIs, zero unknown usage and technical audit discrepancies. Four improvements and two retained successes. Public trace review: task 6 read details for 56 of 57 observed songs despite a correct final answer. All eight milestone PDF pages reviewed; no independent novel mechanism established. 405 tests pass. docs/P24_findings.md; materials/20261021_p24/.
+
 **なぜ行うか**: P22の失敗には公式で案内される時刻取得・列挙終了・完了形式との違いがあり、それを独自機構の必要性と誤認しないため。
 
 **他候補の扱い**: 正解集合を与えるゲート、失敗例だけの選別、私的な課題日時の直接入力、一律の予算増加は採らない。通常Python対照は今回の観測機構と直結しないため後順位。
@@ -548,3 +551,11 @@ Rules e4e1687; implementation 6463767; all 16 completed runs, 70 query groups: 4
 **なぜ行うか**: 未取得部分があることと課題失敗を混同せず、新機構の必要性を成功例でも反証するため。
 
 **他候補の扱い**: 最終失敗例だけを使う、全ページ取得を直ちに強制する、正解集合をDBから与える、実行中のP24を変更する案は採らない。
+
+## R46 P25：同じ一般指示でP18の全４件を再比較する
+
+2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。
+
+**なぜ行うか**: 取得後の欠落・API上限の観測を、通常の時刻・列挙・完了案内をそろえた基準でも確認し、独自機構の必要性と切り分ける。
+
+**他候補の扱い**: 失敗２件だけの選択、正解件数の提示、上限増加、計算道具と指示の同時変更、未閲覧12確認シナリオの先行消費はしない。

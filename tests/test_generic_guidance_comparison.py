@@ -7,7 +7,7 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from compare_generic_guidance import compare, MATCHED_KEYS
+from compare_generic_guidance import compare, MATCHED_KEYS, check_execution_measurement, digest
 
 
 def fixture():
@@ -32,6 +32,30 @@ def fixture():
 
 
 class GuidanceComparisonTests(unittest.TestCase):
+    def test_extended_audit_hashes_bind_to_actual_completed_sources(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            names=('summary','usage','evaluation','events.json','spans.json','plan.json')
+            hashes={}
+            for name in names:
+                p=root/(name if name.endswith('.json') else name+'.json')
+                p.write_text('{}')
+                hashes[name]=digest(p)
+            m=dict(evaluation={'official_success':True},known_total_tokens=1,
+                   model_calls=1,unknown_usage_calls=0,
+                   source_hashes={k:hashes[k] for k in names[:3]})
+            audit=copy.deepcopy(m);audit['source_hashes']=hashes
+            check_execution_measurement(audit,m,root)
+            wrong=copy.deepcopy(audit);wrong['source_hashes']['usage']='changed'
+            with self.assertRaisesRegex(ValueError,'shared source mismatch'):
+                check_execution_measurement(wrong,m,root)
+            wrong=copy.deepcopy(audit);del wrong['source_hashes']['spans.json']
+            with self.assertRaisesRegex(ValueError,'missing audit source'):
+                check_execution_measurement(wrong,m,root)
+            (root/'events.json').write_text('{"changed":true}')
+            with self.assertRaisesRegex(ValueError,'completed source changed'):
+                check_execution_measurement(audit,m,root)
+
     def test_improvements_and_regressions_preserved(self):
         r=compare(*fixture())
         self.assertEqual(r['outcome_counts'],{'worsened':1,'improved':1})
