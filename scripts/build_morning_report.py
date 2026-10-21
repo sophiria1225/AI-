@@ -283,7 +283,7 @@ def build(root, output, draft=False):
     def add(section,title,body,notes,refs=(),dark=False,takeaway=None):
         slides.append(dict(section=section,title=title,body=body,notes=notes,refs=refs,dark=dark,takeaway=takeaway))
 
-    add('RESEARCH PROGRESS / 2026.10.22', 'AIハーネスの実行単位再編へ<br>引き継ぐ状態を検証する',
+    add('RESEARCH PROGRESS / 2026.10.22', 'AIハーネスの引き継ぎで<br>何を残すべきか',
         '<p class="lead">会話履歴と実行中の作業状態を分け、<br>どの情報を残すと仕事を継続できるか調べる。</p>'
         '<div class="three"><div class="col"><span class="badge">対象</span><h3>状態を変える<br>複数工程の仕事</h3></div>'
         '<div class="col"><span class="badge">現在地</span><h3>通常方式の比較から、<br>引き継ぎの条件比較へ</h3></div>'
@@ -297,16 +297,16 @@ def build(root, output, draft=False):
         '<div class="diagram">'+loop_diagram()+'</div>',
         'ハーネスは入力の構成、ツール実行、状態・履歴の保持、検証と停止を接続する基盤と定義します。現在は主に単一実行役と補助処理の比較です。複数作業役の再編効果を測った成果ではありません。',
         [('CoALA：記憶・行動・意思決定の構成','https://arxiv.org/abs/2309.02427')])
-    add('03 / 目的','同じモデルで、何を外側の設計で改善できるか',
+    add('03 / 今回の問い','作業状態が残れば、渡す会話は減らせるか',
         '<div class="three"><div class="col"><div class="n">01</div><h3>完了できるか</h3><p class="body">要件を満たす最終状態を、実行とは別に評価する。</p></div>'
         '<div class="col"><div class="n">02</div><h3>費用に見合うか</h3><p class="body">記憶生成・調整・失敗も含め、トークンと時間を測る。</p></div>'
         '<div class="col"><div class="n">03</div><h3>なぜ変わったか</h3><p class="body">指示、情報保持、操作形式、予算を切り分ける。</p></div></div>',
         '成功率だけが高くても、予算や情報が増えていれば内部機構の効果とはいえません。全費用と失敗を含め、同じ課題の対応比較をします。',
         [('研究と評価の範囲',LINK+'docs/letter_evaluation_scope_20261021.md')],takeaway='目標：条件をそろえた比較で、必要な機構と不要な追加処理を示す。')
-    add('04 / 当初案と現在地','「作業の再編」の前に、通常方式の失敗を確かめる',
+    add('04 / 当初案と現在地','再編の効果と、引き継ぎの効果を分けたい',
         '<div class="two"><div class="col"><span class="badge wait">当初の新提案候補・未評価</span><h3>作業間依存に応じた実行単位の再編</h3><p class="body">分担の継続・情報共有・中央調整・作業集約を、同じ途中状態から比較する。</p></div>'
-        '<div class="col"><span class="badge">現在の実験</span><h3>引き継ぎで残す状態を分けて比較</h3><p class="body">通常方式の調整を終え、会話を減らす影響が変数の保持で変わるかを、同じ地点から確かめる。</p></div></div>',
-        '当初案の研究目的は引き継いでいますが、今ある実験はその仮説を直接実証していません。作業再編を実装済みの提案として紹介しません。基準の弱さで見かけの新規性を作らないために現在の対照を実施しています。',
+        '<div class="col"><span class="badge">現在の実験</span><h3>担当を変えず、残す状態を比較</h3><p class="body">再編時には会話や変数の持ち方も変わる。まずその影響を、同じ地点・担当・継続予算で調べる。</p></div></div>',
+        '当初案の研究目的は引き継いでいますが、今ある実験はその仮説を直接実証していません。担当範囲と会話・変数を同時に変えると、成績差がどちらから生じたか判断しにくいため、引き継ぐ状態の比較を先行しています。これを再編の有効性を示した結果とは扱いません。',
         [('現在の成果と未確定事項',LINK+'README.md')],takeaway='現在の結果だけで、マルチエージェント再編の有効性は主張できない。')
     add('05 / 既存との差分','既にある機能を、独自の技術と数えない',
         '<table class="compact"><thead><tr><th>先行研究・仕組み</th><th>既に扱われていること</th><th>今回の扱い</th></tr></thead><tbody>'
@@ -419,7 +419,7 @@ def build(root, output, draft=False):
             '８応答後の全４地点で公開返却51件・保存DB各13ファイル・Python32プログラムが一致しました。P31の全16結果を見る前に追加地点を固定しています。ここは準備の説明で、P32の全件結果を含んでいません。最新の実行状況はIssue150。',
             [('８応答後の仕様',LINK+'docs/experiments/P32_later_handoff.md'),('実行状況','https://github.com/sophiria1225/AI-/issues/150')],
             takeaway='会話の短縮と変数の保持の効果を測る。担当再編の有効性はまだ直接測っていない。')
-    add('15 / 考察','失敗の観測と、追加機構の必要性は分ける',
+    add('15 / これまでの考察','失敗の観測と、追加機構の必要性は分ける',
         '<div class="three"><div class="col"><h3>指示で解消する失敗</h3><p class="body">元の低成績だけでは、記憶・ゲート・分担変更が必要だとはいえない。</p></div><div class="col"><h3>予算で止まる処理</h3><p class="body">未完了をすべて情報欠落やハルシネーションへまとめない。</p></div><div class="col"><h3>正解でも残る未確認</h3><p class="body">57曲中56曲の詳細取得で正解した例。正解と網羅的な確認は別。</p></div></div>',
         '57曲の例は未確認の１曲が誤答を起こした実例ではありません。公開一覧には曲の長さがなく、未確認を一覧で既に読めたとみなすこともできません。これだけで全取得を強制する制御を提案するのは早計です。',
         [('成功と網羅性',LINK+'docs/P24_findings.md'),('一律の全取得を採らない理由',LINK+'docs/collection_frontier_findings_20261021.md')],takeaway='改善を確認できた要因から順に閉じ、残る問題にだけ新しい処理を加える。')
@@ -440,6 +440,17 @@ def build(root, output, draft=False):
         '目的は、同じモデルにどの情報と責任を持たせ、どこを実行基盤が担うべきかを明らかにすることです。次の実験で研究上の差を一つに絞ります。通常機能を繋いだ実装を、そのまま新規技術として発表しません。',dark=True,
         takeaway='目指すのは、構成が効く条件と壊れる条件を説明できるハーネス研究。')
 
+    # Present the research question and the newest comparison before calibration history.
+    by_key={s['section'].split('/')[0].strip():s for s in slides}
+    main_keys=['RESEARCH PROGRESS','01','02','03','04','05','06','07','14c','14d','14e','16','17','18','19']
+    ordered=[by_key[k] for k in main_keys if k in by_key]
+    remaining=[s for s in slides if s['section'].split('/')[0].strip() not in main_keys]
+    main_pages=len(ordered)
+    for i,s in enumerate(ordered[1:],1):
+        s['section']=f'{i:02d} / '+s['section'].split('/',1)[1].strip()
+    for i,s in enumerate(remaining,1):
+        s['section']=f'補足 {i:02d} / '+s['section'].split('/',1)[1].strip()
+    slides=ordered+remaining
     output.mkdir(parents=True,exist_ok=True)
     parts=[]
     for i,s in enumerate(slides,1):
@@ -458,7 +469,7 @@ def build(root, output, draft=False):
     (output/'README.md').write_text(
         '# 10月22日朝の進捗報告資料\n\n生成時刻：'+timestamp+'。'+
         ('レイアウト確認版。最終配布版ではありません。' if draft else '生成時点の監査済み集計を反映しています。')+'\n\n'
-        '- [PDF・全'+str(len(slides))+'枚](AI_harness_progress_20261022.pdf)：そのまま閲覧・共有。\n'
+        '- [PDF・全'+str(len(slides))+'枚](AI_harness_progress_20261022.pdf)：本編'+str(main_pages)+'枚、残りは過去比較の補足。\n'
         '- [HTMLスライド](index.html)：ダウンロードしてブラウザーで開くと、ネット接続なしで表示できます。GitHubの通常表示ではHTMLのソースが見えます。\n'
         '- [説明用メモ](speaker_notes.md)：各ページの説明と、数値の読み方・限界。\n'
         '- [図と集計データ](figures/)／[出典と生成記録](build_manifest.json)。\n\n'
@@ -495,7 +506,7 @@ def build(root, output, draft=False):
         with (figures/'later_handoff_results.csv').open('w') as f:
             keys=['task_id','arm','success','known_total_tokens','unknown_usage_calls','api_requests','setup_api_requests','setup_wall_seconds','continuation_wall_seconds']
             w=csv.DictWriter(f,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(later_handoff['rows'])
-    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,p32_included=later_handoff is not None,
+    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),main_pages=main_pages,p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,p32_included=later_handoff is not None,
         source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
         artifacts={str(p.relative_to(output)):sha(p) for p in output.rglob('*') if p.is_file() and p.name!='build_manifest.json'})
