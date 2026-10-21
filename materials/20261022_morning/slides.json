@@ -1,0 +1,390 @@
+[
+  {
+    "section": "RESEARCH PROGRESS / 2026.10.22",
+    "title": "AIハーネスの引き継ぎで<br>何を残すべきか",
+    "body": "<p class=\"lead\">会話履歴と実行中の作業状態を分け、<br>どの情報を残すと仕事を継続できるか調べる。</p><div class=\"three\"><div class=\"col\"><span class=\"badge\">対象</span><h3>状態を変える<br>複数工程の仕事</h3></div><div class=\"col\"><span class=\"badge\">現在地</span><h3>通常方式の比較から、<br>引き継ぎの条件比較へ</h3></div><div class=\"col\"><span class=\"badge warn\">投稿目標</span><h3>10月31日<br>IEICE・４ページ</h3></div></div>",
+    "notes": "題目は進捗報告用の仮題です。研究目的はモデルの外側の情報と実行の設計です。普通のコード実行や指示改善を新技術とは扱いません。採録ではなく投稿完了が期限です。",
+    "refs": [],
+    "dark": true,
+    "takeaway": null
+  },
+  {
+    "section": "01 / 社会背景",
+    "title": "必要なのは、複数の工程を最後まで終えること",
+    "body": "<p class=\"lead\">調べる・計算する・変更する・確かめる。<br>一つずつ正しくても、全体の要件が残ることがある。</p><div class=\"diagram tight\"><svg role=\"img\" aria-label=\"複数工程をつないで仕事を完了する\" viewBox=\"0 0 1120 360\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><circle cx=\"143\" cy=\"160\" r=\"69\" fill=\"#e9efea\" stroke=\"none\" stroke-width=\"3\"/><g fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M110 120h46l18 18v64h-64z M156 120v20h18 M122 155h35 M122 170h35 M122 185h26\"/></g><text x=\"143\" y=\"270\" font-size=\"29\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">情報を集める</text><text x=\"143\" y=\"310\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">文書・要求・観測</text><circle cx=\"553\" cy=\"160\" r=\"69\" fill=\"#e9efea\" stroke=\"none\" stroke-width=\"3\"/><g fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m524 145-22 18 22 18m42-36 22 18-22 18m-14-43-14 60\"/></g><text x=\"553\" y=\"270\" font-size=\"29\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">処理して変更する</text><text x=\"553\" y=\"310\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">コード・API・ファイル</text><circle cx=\"963\" cy=\"160\" r=\"69\" fill=\"#e9efea\" stroke=\"none\" stroke-width=\"3\"/><g fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M923 135h64v62h-64z m12 26 12 12 28-31\"/></g><text x=\"963\" y=\"270\" font-size=\"29\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">完了を確かめる</text><text x=\"963\" y=\"310\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">要件と最終状態</text><line x1=\"235\" y1=\"160\" x2=\"438\" y2=\"160\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"648\" y1=\"160\" x2=\"850\" y2=\"160\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/></svg></div>",
+    "notes": "例は資料調査、帳票の集計、ファイル整理などです。市場規模や普及率を主張するスライドではなく、なぜ最終状態の評価が必要かを説明します。AppWorldも複数アプリの操作と最終状態・意図しない変更を評価します。",
+    "refs": [
+      [
+        "AppWorld：複数アプリ・最終状態による評価",
+        "https://arxiv.org/abs/2407.18901"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "02 / 技術背景",
+    "title": "モデルの外側にも、結果を変える設計がある",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"LLMとツールと状態を接続するハーネスの循環\" viewBox=\"0 0 1120 435\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><defs><marker id=\"flowarrow\" markerUnits=\"userSpaceOnUse\" markerWidth=\"24\" markerHeight=\"18\" refX=\"10\" refY=\"4\" viewBox=\"0 0 10 8\" orient=\"auto\"><path d=\"M0 0L10 4L0 8\" fill=\"#167a78\"/></marker></defs><path d=\"M275 92 C470 4 699 4 845 92\" fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" marker-end=\"url(#flowarrow)\"/><path d=\"M976 120 C1130 220 890 410 620 315\" fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" marker-end=\"url(#flowarrow)\"/><path d=\"M480 315 C230 415 25 260 150 120\" fill=\"none\" stroke=\"#167a78\" stroke-width=\"5\" marker-end=\"url(#flowarrow)\"/><circle cx=\"220\" cy=\"120\" r=\"66\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"220\" y=\"129\" font-size=\"27\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">LLM</text><text x=\"220\" y=\"220\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">次に何をするか</text><circle cx=\"910\" cy=\"120\" r=\"66\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"910\" y=\"129\" font-size=\"27\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">ツール</text><text x=\"910\" y=\"220\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">読取・計算・変更</text><circle cx=\"550\" cy=\"302\" r=\"66\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"550\" y=\"311\" font-size=\"27\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">状態・履歴</text><text x=\"550\" y=\"402\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">何が分かり、何が終わったか</text><text x=\"558\" y=\"119\" font-size=\"28\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">ハーネスが制御する範囲</text><text x=\"558\" y=\"164\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">入力の構成・操作・状態保存・検証・停止</text></svg></div>",
+    "notes": "ハーネスは入力の構成、ツール実行、状態・履歴の保持、検証と停止を接続する基盤と定義します。現在は主に単一実行役と補助処理の比較です。複数作業役の再編効果を測った成果ではありません。",
+    "refs": [
+      [
+        "CoALA：記憶・行動・意思決定の構成",
+        "https://arxiv.org/abs/2309.02427"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "03 / 今回の問い",
+    "title": "作業状態が残れば、渡す会話は減らせるか",
+    "body": "<div class=\"three\"><div class=\"col\"><div class=\"n\">01</div><h3>完了できるか</h3><p class=\"body\">要件を満たす最終状態を、実行とは別に評価する。</p></div><div class=\"col\"><div class=\"n\">02</div><h3>費用に見合うか</h3><p class=\"body\">記憶生成・調整・失敗も含め、トークンと時間を測る。</p></div><div class=\"col\"><div class=\"n\">03</div><h3>なぜ変わったか</h3><p class=\"body\">指示、情報保持、操作形式、予算を切り分ける。</p></div></div>",
+    "notes": "成功率だけが高くても、予算や情報が増えていれば内部機構の効果とはいえません。全費用と失敗を含め、同じ課題の対応比較をします。",
+    "refs": [
+      [
+        "研究と評価の範囲",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/letter_evaluation_scope_20261021.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "目標：条件をそろえた比較で、必要な機構と不要な追加処理を示す。"
+  },
+  {
+    "section": "04 / 当初案と現在地",
+    "title": "再編の効果と、引き継ぎの効果を分けたい",
+    "body": "<div class=\"two\"><div class=\"col\"><span class=\"badge wait\">当初の新提案候補・未評価</span><h3>作業間依存に応じた実行単位の再編</h3><p class=\"body\">分担の継続・情報共有・中央調整・作業集約を、同じ途中状態から比較する。</p></div><div class=\"col\"><span class=\"badge\">現在の実験</span><h3>担当を変えず、残す状態を比較</h3><p class=\"body\">再編時には会話や変数の持ち方も変わる。まずその影響を、同じ地点・担当・継続予算で調べる。</p></div></div>",
+    "notes": "当初案の研究目的は引き継いでいますが、今ある実験はその仮説を直接実証していません。担当範囲と会話・変数を同時に変えると、成績差がどちらから生じたか判断しにくいため、引き継ぐ状態の比較を先行しています。これを再編の有効性を示した結果とは扱いません。",
+    "refs": [
+      [
+        "現在の成果と未確定事項",
+        "https://github.com/sophiria1225/AI-/blob/main/README.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "現在の結果だけで、マルチエージェント再編の有効性は主張できない。"
+  },
+  {
+    "section": "05 / 既存との差分",
+    "title": "既にある機能を、独自の技術と数えない",
+    "body": "<table class=\"compact\"><thead><tr><th>先行研究・仕組み</th><th>既に扱われていること</th><th>今回の扱い</th></tr></thead><tbody><tr><td>CodeAct / ICML 2024</td><td>Pythonで行動を統合し、実行結果から修正</td><td>通常コード型の比較相手</td></tr><tr><td>FOCUS / 著者公開原稿</td><td>今後の作業に必要な情報の選択・保持</td><td>共通環境向けに接続した比較</td></tr><tr><td>SelfCompact / 著者公開原稿</td><td>コンテキスト整理とキャッシュ費用</td><td>費用の差を新原理としない</td></tr><tr><td>CaveAgent / Runtime Contracts</td><td>状態の保持・共有、一時移管・通知の比較</td><td>保持と可視性だけでも既出</td></tr></tbody></table>",
+    "notes": "CodeActは正式会議録を確認済みです。CaveAgent v4とRuntime Contracts v3も確認し、変数の一時保持と名前の通知まで先行研究に含まれることを記録しました。公開原稿と正式採録は区別します。ここは機能の重なりの整理で、全方式の完全再現や網羅的な新規性調査の完了を意味しません。",
+    "refs": [
+      [
+        "CodeAct",
+        "https://proceedings.mlr.press/v235/wang24h.html"
+      ],
+      [
+        "近接研究と確認範囲",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/output_access_review_20261021.md"
+      ],
+      [
+        "実行状態の原典照合",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/runtime_state_overlap_20261022.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "06 / 新提案技術の現在地",
+    "title": "独自方式の有効性は、まだ確立していない",
+    "body": "<div class=\"two\"><div class=\"col\"><span class=\"badge\">実装・確認済み</span><h3>比較と原因分析の基盤</h3><p class=\"body\">公開APIの接続／状態保存と再生／全費用の記録／独立評価／コード実行型。</p><p class=\"small muted subtle\">いずれも、それだけを新規性とはしない。</p></div><div class=\"col\"><span class=\"badge warn\">研究仮説・未確立</span><h3>持っている作業状態に応じて、引き継ぐ履歴を変える</h3><p class=\"body\">保持状態と履歴削減の関係が残れば、選択規則を固定し、強い基準・同じ予算・未調整課題で確認する。</p></div></div>",
+    "notes": "仮説はまだ制御方式として確立していません。CaveAgentは既に実行状態と意味履歴を分けており、状態に応じるという表現だけでは差分になりません。固定地点の交差比較で条件が残るかを先に確認します。P16の候補は観測根拠がなく見送っています。",
+    "refs": [
+      [
+        "見送った候補と理由",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P16_findings.md"
+      ],
+      [
+        "原稿の現状",
+        "https://github.com/sophiria1225/AI-/blob/main/papers/202610_letter/current_status.json"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "今の成果は検証基盤と切り分け。新規性・採録可能性の証明はこれから。"
+  },
+  {
+    "section": "07 / 実験環境",
+    "title": "同じモデル・同じ環境で、構成差を比較する",
+    "body": "<div class=\"two\"><div><table class=\"compact\"><tbody><tr><td>計算機</td><td>Mac Studio / M3 Ultra<br>256 GiB RAM</td></tr><tr><td>モデル</td><td>MiniMax-M3 / IQ4_XS<br>重み約229.7 GB・版固定</td></tr><tr><td>推論</td><td>llama.cpp / 64K context<br>KV q8・１スロット</td></tr></tbody></table></div><div><table class=\"compact\"><tbody><tr><td>環境</td><td>AppWorld 0.1.3.post1<br>復元可能な模擬アプリ</td></tr><tr><td>全体実行の上限</td><td>45万token・80生成・30分</td></tr><tr><td>引き継ぎ後の上限</td><td>12万token・16生成・８分</td></tr><tr><td>評価</td><td>終了後の別プロセス<br>正解をモデルへ戻さない</td></tr></tbody></table></div></div>",
+    "notes": "現物の計測は256 GiBのメモリで、最初の相談にあったSSD256GBという申告とは区別します。重みは229.7GBの保存サイズで、ピーク推論メモリではありません。１スロットの実験なので物理並列化の速度向上を示していません。全体実行と固定境界からの継続実験では上限が異なり、両者の費用を直接同じ試行と扱いません。１生成の出力上限は4,096 token。",
+    "refs": [
+      [
+        "モデル・版と選定理由",
+        "https://github.com/sophiria1225/AI-/blob/main/configs/models/minimax_m3_iq4_selection.json"
+      ],
+      [
+        "実行条件",
+        "https://github.com/sophiria1225/AI-/blob/main/configs/P27_code_comparison_v01.json"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "08 / 引き継ぎの実験設計",
+    "title": "履歴を減らす影響は、変数が残るかで変わるか",
+    "body": "<div class=\"diagram tight\"><svg role=\"img\" aria-label=\"会話履歴とPython作業状態を二要因に分け、環境を固定した四条件の引き継ぎ比較\" viewBox=\"0 0 1120 415\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"20\" y=\"28\" font-size=\"25\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">共通の途中地点：各課題の４応答後</text><path d=\"M35 78 h245 v20 h-18 l-8 10 v-10 h-219 z\" fill=\"#dfe9e5\"/><path d=\"M35 108 h215 v20 h-18 l-8 10 v-10 h-189 z\" fill=\"#dfe9e5\"/><path d=\"M35 138 h185 v20 h-18 l-8 10 v-10 h-159 z\" fill=\"#dfe9e5\"/><text x=\"40\" y=\"204\" font-size=\"24\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">会話履歴</text><text x=\"40\" y=\"235\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">全部 ／ 直近１ターン</text><text x=\"370\" y=\"141\" font-size=\"33\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">{ 変数・関数 }</text><text x=\"370\" y=\"204\" font-size=\"24\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">Pythonの作業状態</text><text x=\"370\" y=\"235\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">保持 ／ 一回初期化</text><path d=\"M840 97 v44 a95 24 0 0 0 190 0 V97\" fill=\"#e6e8eb\" stroke=\"#7d8b96\" stroke-width=\"2\"/><ellipse cx=\"935\" cy=\"97\" rx=\"95\" ry=\"24\" fill=\"#eef0f2\" stroke=\"#7d8b96\" stroke-width=\"2\"/><text x=\"935\" y=\"204\" font-size=\"24\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">環境の状態</text><text x=\"935\" y=\"235\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">全条件で同じ</text><line x1=\"20\" y1=\"272\" x2=\"1090\" y2=\"272\" stroke=\"#cbd4cc\" stroke-width=\"1\"/><circle cx=\"34\" cy=\"322\" r=\"10\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><text x=\"56\" y=\"330\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">全履歴 ＋ 保持</text><circle cx=\"314\" cy=\"322\" r=\"10\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><text x=\"336\" y=\"330\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">直近 ＋ 保持</text><circle cx=\"594\" cy=\"322\" r=\"10\" fill=\"#c95c33\" stroke=\"none\" stroke-width=\"3\"/><text x=\"616\" y=\"330\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">全履歴 ＋ 初期化</text><circle cx=\"874\" cy=\"322\" r=\"10\" fill=\"#c95c33\" stroke=\"none\" stroke-width=\"3\"/><text x=\"896\" y=\"330\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">直近 ＋ 初期化</text><text x=\"20\" y=\"383\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">同じ後続予算：16生成・12万token・８分。原記録への再アクセスは全条件で可能。</text></svg></div>",
+    "notes": "固定４応答後を全４課題で使います。最終成否から都合のよい地点を選びません。模擬世界を別に再構成し、API返却・公開スキーマ・保存DBを照合します。Pythonは記録済み応答で再生しますが、全プロセスの完全な同一性は保証しません。環境再構成と後続の費用を分離し、状態初期化はモデルにも正確に知らせます。",
+    "refs": [
+      [
+        "事前仕様と採らなかった案",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P31_handoff_factors.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "二要因の比較は効果を切り分ける手段。この設計だけを新規性とはしない。"
+  },
+  {
+    "section": "09 / 引き継ぎの比較結果",
+    "title": "同じ途中状態から、全16分岐を評価する",
+    "body": "<div class=\"diagram tight\"><svg role=\"img\" aria-label=\"同じ途中状態からの四条件の成功件数と後続トークン・API費用\" viewBox=\"0 0 1120 365\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"440\" y=\"35\" font-size=\"25\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">会話：全部</text><text x=\"840\" y=\"35\" font-size=\"25\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">会話：直近だけ</text><text x=\"5\" y=\"130\" font-size=\"25\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">変数を保持</text><circle cx=\"348\" cy=\"105\" r=\"12\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"392\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"436\" cy=\"105\" r=\"12\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"480\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><text x=\"525\" y=\"117\" font-size=\"34\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">2/4</text><text x=\"440\" y=\"158\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">332,236 token ／ 187 API</text><circle cx=\"748\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"792\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"836\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"880\" cy=\"105\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><text x=\"925\" y=\"117\" font-size=\"34\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">0/4</text><text x=\"840\" y=\"158\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">416,022 token ／ 196 API</text><text x=\"5\" y=\"292\" font-size=\"25\" fill=\"#c95c33\" font-weight=\"700\" text-anchor=\"start\">変数を初期化</text><circle cx=\"348\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"392\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"436\" cy=\"267\" r=\"12\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"480\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><text x=\"525\" y=\"279\" font-size=\"34\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">1/4</text><text x=\"440\" y=\"320\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">316,491 token ／ 176 API</text><circle cx=\"748\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"792\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"836\" cy=\"267\" r=\"12\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"880\" cy=\"267\" r=\"12\" fill=\"#ddd9cf\" stroke=\"none\" stroke-width=\"3\"/><text x=\"925\" y=\"279\" font-size=\"34\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">1/4</text><text x=\"840\" y=\"320\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">392,787 token ／ 144 API</text><line x1=\"235\" y1=\"196\" x2=\"1080\" y2=\"196\" stroke=\"#cbd4cc\" stroke-width=\"1\"/></svg></div><p class=\"small muted\">● 成功 ／ 淡色 未達。各４既知課題・１seed。数値は後続のみ。トークン不明 2 呼出を含むため既知分の下限。</p>",
+    "notes": "主表には後続費用を示しますが、環境再構成・Python再生の費用も元の報告へ保存しています。４件の少数比較で一般的な優位は断定しません。８分の後続制限と早い固定境界に依存し、作業責任の移管やマルチエージェントの集約を直接評価したものでもありません。",
+    "refs": [
+      [
+        "全16件・費用・監査",
+        "https://github.com/sophiria1225/AI-/blob/main/reports/P31_comparison.json"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "履歴と作業状態の組合せを観測。新しい選択方式の有効性は別の検証が必要。"
+  },
+  {
+    "section": "10 / 次の地点の準備",
+    "title": "８応答後の前提確認も済ませ、全件結果を待つ",
+    "body": "<div class=\"two\"><div class=\"col\"><h3>なぜ追加するか</h3><p class=\"body\">４応答後では、３課題にユーザー変数が２つだけ。状態が蓄積した地点も同じ規則で調べる。</p></div><div class=\"col\"><h3>何を固定したか</h3><p class=\"body\">元の全４軌跡の８応答後。<br>同じ４条件・16生成・12万token・８分。<br>失敗した地点だけを選ばない。</p></div></div>",
+    "notes": "８応答後の全４地点で公開返却51件・保存DB各13ファイル・Python32プログラムが一致しました。P31の全16結果を見る前に追加地点を固定しています。ここは準備の説明で、P32の全件結果を含んでいません。最新の実行状況はIssue150。",
+    "refs": [
+      [
+        "８応答後の仕様",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P32_later_handoff.md"
+      ],
+      [
+        "実行状況",
+        "https://github.com/sophiria1225/AI-/issues/150"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "会話の短縮と変数の保持の効果を測る。担当再編の有効性はまだ直接測っていない。"
+  },
+  {
+    "section": "11 / 現在の限界",
+    "title": "まだ言えないことを、実験結果の隣に置く",
+    "body": "<div class=\"two\"><div><h3>一般性の限界</h3><ul class=\"body\"><li>主に１モデル・各条件１seed。</li><li>既知の少数開発課題を繰り返し利用。</li><li>別モデル・別分野への転用は未確認。</li></ul></div><div><h3>技術的主張の限界</h3><ul class=\"body\"><li>再編の固有効果は未測定。</li><li>通常コード型にも提示方法などの実装差。</li><li>独自方式の新規性・有効性は未確定。</li></ul></div></div>",
+    "notes": "この研究では12シナリオを調整から分離し、要求文を未閲覧にしています。ただしモデルの学習汚染がないことや公式テストと同じことを意味しません。実装を完成させただけで論文の中心結果ができたとは扱いません。",
+    "refs": [
+      [
+        "確認用シナリオの分離",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/letter_scenario_reservation_20261021.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "未閲覧12シナリオは、方式・閾値・比較条件を固定してから使う。"
+  },
+  {
+    "section": "12 / 今後の実験",
+    "title": "次は、通常方式でも残る一つの問題に絞る",
+    "body": "<div class=\"three\"><div class=\"col\"><div class=\"n\">1</div><h3>引き継ぎ比較を閉じる</h3><p class=\"body\">履歴・変数・再取得の関係と、費用・失敗を確認する。</p></div><div class=\"col\"><div class=\"n\">2</div><h3>選択規則が必要か判断</h3><p class=\"body\">一律に保持すれば十分か。状態に応じる利益が残るか。</p></div><div class=\"col\"><div class=\"n\">3</div><h3>未調整課題で確認</h3><p class=\"body\">差分が成立する規則だけを、同じ予算の基準と比較する。</p></div></div>",
+    "notes": "新規性を探すために無制限に実験を増やす計画ではありません。次の比較から残る現象を一つ選び、機構と評価を固定します。追加価値がなければ提案の優位を主張しない判断も必要です。",
+    "refs": [
+      [
+        "今後の判断と課題",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/task_board.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "成果の形：新しい制御規則、または条件を切り分けた新しい実証知見。"
+  },
+  {
+    "section": "13 / レターの日程と判断",
+    "title": "月末投稿へ、10月23日に中心となる主張を固定する",
+    "body": "<div class=\"timeline\"><div><div class=\"date\">10/23</div><h3>主比較・あらまし</h3><p class=\"small\">主張、最も近い先行研究、主要図表を決める。</p></div><div><div class=\"date\">10/25</div><h3>追加確認を終了</h3><p class=\"small\">必要な対照と限界確認に絞り、機能追加を止める。</p></div><div><div class=\"date\">10/29–30</div><h3>４ページ原稿</h3><p class=\"small\">本文・図・引用・公式様式・著者情報を確認する。</p></div><div><div class=\"date\">10/31</div><h3>投稿完了</h3><p class=\"small\">採録時期は査読に依存。投稿と採録を区別する。</p></div></div>",
+    "notes": "現時点では中心となる新規性と確認結果が未確定なので、間に合うとは保証できません。公式IEICEクラスの取得と実際の４ページ組版、著者情報も未完了です。10月23日に新規性と主要結果が固まらなければ、予定は高リスクになります。",
+    "refs": [
+      [
+        "投稿準備の現状",
+        "https://github.com/sophiria1225/AI-/blob/main/papers/202610_letter/current_status.json"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "現状：投稿準備は高リスク。新規性と確認実験が、日程の最も大きな制約。"
+  },
+  {
+    "section": "14 / 進捗報告の結論",
+    "title": "作った基盤と、論文に必要な成果を区別する",
+    "body": "<div class=\"two\"><div class=\"col\"><h3>ここまでに得られたもの</h3><p class=\"body\">比較可能な実行基盤。<br>一般指示・完了形式・API上限の切り分け。<br>普通のコード実行を含む比較相手。</p></div><div class=\"col\"><h3>これから得るべきもの</h3><p class=\"body\">既存方式を超える必要性。<br>新しい規則または実証知見。<br>同じ予算・未調整課題での裏づけ。</p></div></div>",
+    "notes": "目的は、同じモデルにどの情報と責任を持たせ、どこを実行基盤が担うべきかを明らかにすることです。次の実験で研究上の差を一つに絞ります。通常機能を繋いだ実装を、そのまま新規技術として発表しません。",
+    "refs": [],
+    "dark": true,
+    "takeaway": "目指すのは、構成が効く条件と壊れる条件を説明できるハーネス研究。"
+  },
+  {
+    "section": "補足 01 / 実験の進め方",
+    "title": "実験を増やす前に、次へ進む根拠を確認する",
+    "body": "<table class=\"compact\"><thead><tr><th>切り分けたいこと</th><th>比較</th><th>ここまでの判断</th></tr></thead><tbody><tr><td>履歴を減らす利益</td><td>全履歴／直近／保持／台帳</td><td>今回の設定では品質と総費用を両立せず</td></tr><tr><td>通常の環境案内の不足</td><td>一般指示の前後</td><td>同じ６件：2→6成功、別４件：2→3成功</td></tr><tr><td>完了形式の影響</td><td>同じ状態＋回答あり／省略</td><td>既知１課題で合否が変化</td></tr><tr><td>API上限の影響</td><td>写真整理１件：80／160</td><td>最初の80操作は同じ、追加操作で成功</td></tr><tr><td>値の受け渡しの負担</td><td>個別API／取得から操作までのコード</td><td>全４件の結果・監査を確認済み</td></tr></tbody></table>",
+    "notes": "実験番号は追跡のために残しますが、説明では問いを中心に整理します。成功した課題も残し、未閲覧12シナリオを調整に使わないことを固定しています。",
+    "refs": [
+      [
+        "実験と判断の全記録",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/decision_log.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 02 / 履歴保持の比較結果",
+    "title": "入力が短くても、システム全体が安くなるとは限らない",
+    "body": "<table class=\"compact\"><thead><tr><th>保持方法</th><th>成功</th><th>全役割の既知トークン</th><th>実行時間</th></tr></thead><tbody><tr><td>全履歴</td><td>4/4</td><td class=\"num\">440,355</td><td class=\"num\">21.7分</td></tr><tr><td>直近履歴</td><td>3/4</td><td class=\"num\">627,363</td><td class=\"num\">29.1分</td></tr><tr><td>FOCUSに基づく保持</td><td>2/4</td><td class=\"num\">467,047 ＋不明</td><td class=\"num\">88.7分</td></tr><tr><td>旧・作業台帳</td><td>2/4</td><td class=\"num\">483,251 ＋不明</td><td class=\"num\">84.6分</td></tr></tbody></table><p class=\"small subtle\">旧台帳は出典の形式契約に不整合があり、後に修正。<br>FOCUSは共通環境向けの接続で、原論文の完全再現ではない。</p>",
+    "notes": "４課題１seedの結果です。FOCUSの途中中断試行52,285既知トークン＋不明１要求は表の完了cohortとは別に保存しています。全履歴との一般的な順位は主張しません。旧台帳には実装上の不整合があるため、保持という原理の限界と断定しません。",
+    "refs": [
+      [
+        "費用内訳と限界",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P11_P14_inference_costs.md"
+      ],
+      [
+        "台帳の修正比較",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P17_findings.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 03 / 通常指示をそろえた結果",
+    "title": "新機構を入れる前に、基準の成績が変わった",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"一般指示追加前後の成功件数、六課題で二から六、四課題で二から三\" viewBox=\"0 0 1120 365\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"30\" y=\"25\" font-size=\"26\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">同じ６開発課題</text><text x=\"30\" y=\"90\" font-size=\"22\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">従来の指示</text><circle cx=\"53\" cy=\"129\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"111\" cy=\"129\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"169\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"227\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"285\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"343\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><text x=\"480\" y=\"137\" font-size=\"36\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">2/6</text><text x=\"30\" y=\"196\" font-size=\"22\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">一般指示を補足</text><circle cx=\"53\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"111\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"169\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"227\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"285\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"343\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><text x=\"480\" y=\"243\" font-size=\"36\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">6/6</text><text x=\"625\" y=\"25\" font-size=\"26\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">別の４開発課題</text><text x=\"625\" y=\"90\" font-size=\"22\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">従来の指示</text><circle cx=\"648\" cy=\"129\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"706\" cy=\"129\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"764\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"822\" cy=\"129\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><text x=\"1075\" y=\"137\" font-size=\"36\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">2/4</text><text x=\"625\" y=\"196\" font-size=\"22\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">一般指示を補足</text><circle cx=\"648\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"706\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"764\" cy=\"235\" r=\"16\" fill=\"#167a78\" stroke=\"none\" stroke-width=\"3\"/><circle cx=\"822\" cy=\"235\" r=\"16\" fill=\"#dedbd1\" stroke=\"none\" stroke-width=\"3\"/><text x=\"1075\" y=\"243\" font-size=\"36\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">3/4</text><text x=\"30\" y=\"335\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">同じモデル・課題・予算。時刻・全ページ・連絡先・完了形式などを一括で案内。</text></svg></div>",
+    "notes": "公式の一般案内にある時刻、連絡先、全ページ、行動課題の完了形式等を補いました。複数の案内を一括で追加したため、個々の文の因果効果は分離していません。これを新方式の成功率とは呼びません。",
+    "refs": [
+      [
+        "６課題：全結果",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P24_findings.md"
+      ],
+      [
+        "４課題：全結果",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P25_findings.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 04 / 完了形式だけの対照",
+    "title": "同じ成果物でも、完了APIの形式で合否が変わった",
+    "body": "<table><thead><tr><th>記録済み前半の再生</th><th>回答文あり</th><th>回答文を省略</th></tr></thead><tbody><tr><td>一般指示を補う前の操作系列</td><td class=\"rust\">未達</td><td class=\"teal\">成功</td></tr><tr><td>一般指示を補った後の操作系列</td><td class=\"rust\">未達</td><td class=\"teal\">成功</td></tr></tbody></table><div class=\"two\"><div><h3>４条件とも、完了直前のDBは同一</h3><p class=\"small\">公開返却と保存状態のハッシュを照合。<br>LLM追加０、模擬API要求118。</p></div><div><h3>公開仕様に沿った影響</h3><p class=\"small\">行動依頼では回答文を省く規則がある。<br>評価器の不具合や独自手法の効果とはしない。</p></div></div>",
+    "notes": "同じ１課題について２前半×２完了形式の４セルを事前に固定しました。４独立課題の実験ではありません。元の結果を置き換えたり、合格する回答を探索したりしていません。",
+    "refs": [
+      [
+        "事前条件・全結果",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/completion_replay_findings_20261021.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 05 / API予算だけの対照",
+    "title": "写真整理の残り15件は、追加操作で完了した",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"写真42件のうち上限80では27件、160では42件移動\" viewBox=\"0 0 1120 370\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"5\" y=\"68\" font-size=\"25\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">上限80：未達</text><text x=\"5\" y=\"106\" font-size=\"18\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">80 API / 185,739 token</text><rect x=\"367\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"411\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"455\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"499\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"543\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"587\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"631\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"675\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"719\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"763\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"807\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"851\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"895\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"939\" y=\"45\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"367\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"411\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"455\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"499\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"543\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"587\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"631\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"675\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"719\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"763\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"807\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"851\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"895\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"939\" y=\"79\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"367\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"411\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"455\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"499\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"543\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"587\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"631\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"675\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"719\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"763\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"807\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"851\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"895\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><rect x=\"939\" y=\"113\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#e1dcd1\"/><text x=\"1088\" y=\"104\" font-size=\"29\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">27/42</text><text x=\"5\" y=\"218\" font-size=\"25\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">上限160：成功</text><text x=\"5\" y=\"256\" font-size=\"18\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">97 API / 361,169 token</text><rect x=\"367\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"411\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"455\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"499\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"543\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"587\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"631\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"675\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"719\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"763\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"807\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"851\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"895\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"939\" y=\"195\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"367\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"411\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"455\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"499\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"543\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"587\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"631\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"675\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"719\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"763\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"807\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"851\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"895\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"939\" y=\"229\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"367\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"411\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"455\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"499\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"543\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"587\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"631\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"675\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"719\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"763\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"807\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"851\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"895\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><rect x=\"939\" y=\"263\" width=\"30\" height=\"23\" rx=\"4\" fill=\"#167a78\"/><text x=\"1088\" y=\"254\" font-size=\"29\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"end\">42/42</text><text x=\"367\" y=\"337\" font-size=\"18\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">■ 移動の返却あり　　淡色：移動の返却なし</text></svg></div>",
+    "notes": "同じモデル・指示・道具・seedです。最初の80 APIの名前、引数、返却が一致しています。42件の個別読取りと移動が全戦略の最小費用だとは考えません。１既知課題の事後診断で、追加予算の一般的な効果や最適値は示していません。",
+    "refs": [
+      [
+        "１件の全結果・費用・限界",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P26_findings.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 06 / 新しく接続した比較アーキテクチャ",
+    "title": "コード内で、取得した値を次の操作へ渡す",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"ネイティブAPI呼出とコード実行型のデータ経路比較\" viewBox=\"0 0 1120 420\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"5\" y=\"26\" font-size=\"23\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">上：モデルが個々のAPI引数を出力</text><circle cx=\"85\" cy=\"93\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"85\" y=\"101\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">LLM</text><circle cx=\"345\" cy=\"93\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"345\" y=\"101\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">読取API</text><circle cx=\"625\" cy=\"93\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"625\" y=\"101\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">LLM</text><circle cx=\"940\" cy=\"93\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"940\" y=\"101\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">更新API</text><line x1=\"129\" y1=\"93\" x2=\"299\" y2=\"93\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"390\" y1=\"93\" x2=\"579\" y2=\"93\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"670\" y1=\"93\" x2=\"894\" y2=\"93\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><text x=\"490\" y=\"150\" font-size=\"19\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">取得した値を、履歴から次の引数へ</text><line x1=\"5\" y1=\"183\" x2=\"1115\" y2=\"183\" stroke=\"#d7ddd7\" stroke-width=\"1\"/><text x=\"5\" y=\"224\" font-size=\"23\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">下：コード内で取得→計算→操作をつなぐ</text><circle cx=\"85\" cy=\"306\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"85\" y=\"314\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">LLM</text><rect x=\"235\" y=\"252\" width=\"655\" height=\"108\" rx=\"54\" fill=\"#e8eee7\"/><text x=\"337\" y=\"312\" font-size=\"22\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">call_api()</text><text x=\"565\" y=\"312\" font-size=\"22\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">集合・計算</text><text x=\"785\" y=\"312\" font-size=\"22\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">call_api()</text><line x1=\"129\" y1=\"306\" x2=\"235\" y2=\"306\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"423\" y1=\"306\" x2=\"479\" y2=\"306\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"649\" y1=\"306\" x2=\"705\" y2=\"306\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><circle cx=\"1015\" cy=\"306\" r=\"44\" fill=\"#e8eee7\" stroke=\"none\" stroke-width=\"3\"/><text x=\"1015\" y=\"314\" font-size=\"20\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"middle\">結果</text><line x1=\"890\" y1=\"306\" x2=\"966\" y2=\"306\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><text x=\"563\" y=\"399\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">Python内で値を保持。各APIの費用と結果は別々に記録する。</text></svg></div>",
+    "notes": "これはCodeActと同種の既存原理を共通環境へ接続した比較対象です。Python内で公開APIを取得し、集合やCSVとして処理して次のAPIへ渡せます。１プログラム内の複数APIを１件と数えず、全費用と記録を残します。コード間の変数は保持しない実装差があります。",
+    "refs": [
+      [
+        "実装仕様と原方式との差",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P27_code_execution.md"
+      ],
+      [
+        "CodeAct",
+        "https://proceedings.mlr.press/v235/wang24h.html"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 07 / 初期のコード実行型",
+    "title": "初期接続は3/4。通常API基準の4/4に届かない",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"同じ四課題でAPI呼出型とコード型の全トークンと最終成否を比較\" viewBox=\"0 0 1120 425\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"5\" y=\"23\" font-size=\"23\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">全入力＋全出力トークン（小さいほど少ない）</text><text x=\"0\" y=\"89\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">写真整理</text><rect x=\"210\" y=\"65\" width=\"633.90\" height=\"20\" rx=\"3\" fill=\"#91a0aa\"/><text x=\"859.898440094723\" y=\"82\" font-size=\"17\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">361,169  成功</text><rect x=\"210\" y=\"93\" width=\"328.54\" height=\"20\" rx=\"3\" fill=\"#167a78\"/><text x=\"554.5409741779918\" y=\"110\" font-size=\"17\" fill=\"#167a78\" font-weight=\"500\" text-anchor=\"start\">187,189  成功</text><text x=\"0\" y=\"166\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">共有・依頼</text><rect x=\"210\" y=\"142\" width=\"318.06\" height=\"20\" rx=\"3\" fill=\"#91a0aa\"/><text x=\"544.0646049743076\" y=\"159\" font-size=\"17\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">181,220  成功</text><rect x=\"210\" y=\"170\" width=\"453.30\" height=\"20\" rx=\"3\" fill=\"#167a78\"/><text x=\"679.297348674067\" y=\"187\" font-size=\"17\" fill=\"#167a78\" font-weight=\"500\" text-anchor=\"start\">258,270  成功</text><text x=\"0\" y=\"243\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">返金</text><rect x=\"210\" y=\"219\" width=\"122.06\" height=\"20\" rx=\"3\" fill=\"#91a0aa\"/><text x=\"348.06400553000867\" y=\"236\" font-size=\"17\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">69,547  成功</text><rect x=\"210\" y=\"247\" width=\"599.34\" height=\"20\" rx=\"3\" fill=\"#167a78\"/><text x=\"825.343446480695\" y=\"264\" font-size=\"17\" fill=\"#167a78\" font-weight=\"500\" text-anchor=\"start\">341,481  成功</text><text x=\"0\" y=\"320\" font-size=\"21\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">曲情報の書出</text><rect x=\"210\" y=\"296\" width=\"650.00\" height=\"20\" rx=\"3\" fill=\"#91a0aa\"/><text x=\"876.0\" y=\"313\" font-size=\"17\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">370,343  成功</text><rect x=\"210\" y=\"324\" width=\"311.09\" height=\"20\" rx=\"3\" fill=\"#167a78\"/><text x=\"537.0949849193855\" y=\"341\" font-size=\"17\" fill=\"#167a78\" font-weight=\"500\" text-anchor=\"start\">177,249  未達</text><text x=\"210\" y=\"399\" font-size=\"18\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">灰：既存API型　青緑：コード実行型。全４件・各１seed。</text></svg></div>",
+    "notes": "P27の全４課題を監査した。コード型は3/4、比較相手は4/4。費用が減った失敗を効率改善とは呼ばない。全件で最初のプログラムにインポートエラーがあり、返金では21プログラムがAPI未到達。曲の書出では同じ一覧の再取得と、消えた変数の参照があった。ここから説明と変数保持を分ける次の比較へ進んだ。",
+    "refs": [
+      [
+        "全結果と実装差",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P27_findings.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 08 / 次の比較で変える場所",
+    "title": "関数の説明と、変数を残す効果を分ける",
+    "body": "<p class=\"small\">先に説明だけを補い、その後に課題内の状態保持を比較。モデル・課題・API上限は維持。</p><div class=\"diagram tight\"><svg role=\"img\" aria-label=\"プログラム間で変数を初期化する条件と課題内で保持する条件の違い\" viewBox=\"0 0 1120 340\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"5\" y=\"24\" font-size=\"24\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">比較で変える場所：プログラムの間の状態</text><text x=\"5\" y=\"104\" font-size=\"23\" fill=\"#c95c33\" font-weight=\"700\" text-anchor=\"start\">毎回初期化</text><circle cx=\"310\" cy=\"95\" r=\"32\" fill=\"#eee2da\" stroke=\"none\" stroke-width=\"3\"/><text x=\"310\" y=\"102\" font-size=\"21\" fill=\"#c95c33\" font-weight=\"700\" text-anchor=\"middle\">取得</text><circle cx=\"610\" cy=\"95\" r=\"32\" fill=\"#eee2da\" stroke=\"none\" stroke-width=\"3\"/><text x=\"610\" y=\"102\" font-size=\"21\" fill=\"#c95c33\" font-weight=\"700\" text-anchor=\"middle\">計算</text><circle cx=\"910\" cy=\"95\" r=\"32\" fill=\"#eee2da\" stroke=\"none\" stroke-width=\"3\"/><text x=\"910\" y=\"102\" font-size=\"21\" fill=\"#c95c33\" font-weight=\"700\" text-anchor=\"middle\">操作</text><line x1=\"350\" y1=\"95\" x2=\"570\" y2=\"95\" stroke=\"#c95c33\" stroke-width=\"3\" stroke-dasharray=\"8 7\"/><line x1=\"451.0\" y1=\"86\" x2=\"469.0\" y2=\"104\" stroke=\"#c95c33\" stroke-width=\"4\"/><line x1=\"451.0\" y1=\"104\" x2=\"469.0\" y2=\"86\" stroke=\"#c95c33\" stroke-width=\"4\"/><line x1=\"650\" y1=\"95\" x2=\"870\" y2=\"95\" stroke=\"#c95c33\" stroke-width=\"3\" stroke-dasharray=\"8 7\"/><line x1=\"751.0\" y1=\"86\" x2=\"769.0\" y2=\"104\" stroke=\"#c95c33\" stroke-width=\"4\"/><line x1=\"751.0\" y1=\"104\" x2=\"769.0\" y2=\"86\" stroke=\"#c95c33\" stroke-width=\"4\"/><text x=\"610\" y=\"160\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">変数が消える：元観測の再読・再取得・再計算が必要</text><text x=\"5\" y=\"254\" font-size=\"23\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"start\">課題内で保持</text><circle cx=\"310\" cy=\"245\" r=\"32\" fill=\"#e1eae2\" stroke=\"none\" stroke-width=\"3\"/><text x=\"310\" y=\"252\" font-size=\"21\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"middle\">取得</text><circle cx=\"610\" cy=\"245\" r=\"32\" fill=\"#e1eae2\" stroke=\"none\" stroke-width=\"3\"/><text x=\"610\" y=\"252\" font-size=\"21\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"middle\">計算</text><circle cx=\"910\" cy=\"245\" r=\"32\" fill=\"#e1eae2\" stroke=\"none\" stroke-width=\"3\"/><text x=\"910\" y=\"252\" font-size=\"21\" fill=\"#167a78\" font-weight=\"700\" text-anchor=\"middle\">操作</text><line x1=\"350\" y1=\"245\" x2=\"570\" y2=\"245\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><line x1=\"650\" y1=\"245\" x2=\"870\" y2=\"245\" stroke=\"#167a78\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><text x=\"610\" y=\"310\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"middle\">変数・関数が残る：取得した値を後の操作へ使える</text></svg></div>",
+    "notes": "P27では提供済み関数の探索と状態の再取得が観測された。P28は関数が既に定義されているとだけ補足し、変数は毎回初期化する。P29はその説明を保ち、状態保持とその正確な案内を加える。いずれも通常方式であり、CodeActやCaveAgentと同じ原理を新提案とはしない。",
+    "refs": [
+      [
+        "説明だけの条件",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P28_code_clarification.md"
+      ],
+      [
+        "状態保持の範囲",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P29_stateful_preparation.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": null
+  },
+  {
+    "section": "補足 09 / 条件を分けた比較結果",
+    "title": "同じ４課題の全結果を、成功と費用で見る",
+    "body": "<table class=\"compact\"><thead><tr><th>課題</th><th>初期接続</th><th>関数説明を補足</th><th>説明＋変数保持</th></tr></thead><tbody><tr><td>写真整理</td><td>成功 ／ 187,189</td><td>成功 ／ 134,387</td><td>成功 ／ 209,299</td></tr><tr><td>共有・依頼</td><td>成功 ／ 258,270</td><td>成功 ／ 218,993</td><td>成功 ／ 224,588</td></tr><tr><td>返金</td><td>成功 ／ 341,481</td><td>成功 ／ 81,974</td><td>成功 ／ 84,818</td></tr><tr><td>曲情報の書出</td><td>未達 ／ 177,249</td><td>未達 ／ 183,028</td><td>未達 ／ 121,330</td></tr><tr><td><strong>成功数 / 全費用</strong></td><td><strong>3/4 ／ 964,189</strong></td><td><strong>3/4 ／ 618,382</strong></td><td><strong>3/4 ／ 640,035</strong></td></tr></tbody></table><p class=\"small muted\">数値＝全入力＋全出力トークン。各１seedの開発比較。未集計は未実行・実行中・監査待ちを含む。</p>",
+    "notes": "この表には全４件の評価・監査が終了した段階だけを載せる。課題の選び直しや失敗の自動再試行はしていない。状態保持を追加して改善しても、既存原理の校正の結果である。後続の固定比較と未調整課題で確認するまで、一般的な優位は主張しない。",
+    "refs": [
+      [
+        "P27の全比較",
+        "https://github.com/sophiria1225/AI-/blob/main/reports/P27_comparison.json"
+      ],
+      [
+        "P28の全比較",
+        "https://github.com/sophiria1225/AI-/blob/main/reports/P28_comparison.json"
+      ],
+      [
+        "P29の全比較",
+        "https://github.com/sophiria1225/AI-/blob/main/reports/P29_comparison.json"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "追加の仕組みが必要かを決めるため、通常方式を十分にした状態で比べる。"
+  },
+  {
+    "section": "補足 10 / これまでの考察",
+    "title": "失敗の観測と、追加機構の必要性は分ける",
+    "body": "<div class=\"three\"><div class=\"col\"><h3>指示で解消する失敗</h3><p class=\"body\">元の低成績だけでは、記憶・ゲート・分担変更が必要だとはいえない。</p></div><div class=\"col\"><h3>予算で止まる処理</h3><p class=\"body\">未完了をすべて情報欠落やハルシネーションへまとめない。</p></div><div class=\"col\"><h3>正解でも残る未確認</h3><p class=\"body\">57曲中56曲の詳細取得で正解した例。正解と網羅的な確認は別。</p></div></div>",
+    "notes": "57曲の例は未確認の１曲が誤答を起こした実例ではありません。公開一覧には曲の長さがなく、未確認を一覧で既に読めたとみなすこともできません。これだけで全取得を強制する制御を提案するのは早計です。",
+    "refs": [
+      [
+        "成功と網羅性",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/P24_findings.md"
+      ],
+      [
+        "一律の全取得を採らない理由",
+        "https://github.com/sophiria1225/AI-/blob/main/docs/collection_frontier_findings_20261021.md"
+      ]
+    ],
+    "dark": false,
+    "takeaway": "改善を確認できた要因から順に閉じ、残る問題にだけ新しい処理を加える。"
+  }
+]
