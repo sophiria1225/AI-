@@ -1,0 +1,156 @@
+{
+  "plan_sha256": "f45bf21f18429744e164597b9071cee5f2ea690b917ac043cae5055cd943dfe7",
+  "trials": [
+    {
+      "run_id": "P18_01_ROLES",
+      "task_id": "34d9492_1",
+      "arm": "native_roles",
+      "stop_reason": "api_request_limit",
+      "declared_complete": false,
+      "known_total_tokens": 294726,
+      "usage_by_role": {
+        "agent": {
+          "calls": 19,
+          "input_tokens": 276947,
+          "output_tokens": 17779,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 19,
+      "tool_turns": 86,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1369.170985542005,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 3,
+        "fail_count": 2,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 28096,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "f632a149944d8a4cdea9bfe9b0c5ef0359a77d05405031dd18954bcb6ab4d306",
+        "usage": "85937f96163de53924b501afdea29ad1a6c1beabb3ebf04b514fc4c5d91379bb",
+        "evaluation": "cd8989ac7dae3ba82188f5ec5b08172e5bf4901b065bc9bbc5899e99bab136dd"
+      }
+    },
+    {
+      "run_id": "P18_02_ROLES",
+      "task_id": "3c13f5a_1",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 297442,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "input_tokens": 292985,
+          "output_tokens": 4457,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 13,
+      "tool_turns": 23,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 747.3428036659025,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 6,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 31512,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "b7334c3bafc9f056de40c52146cad15a0c5a018083f54a7a3e7a963c8b93c130",
+        "usage": "adb0c9ff30a591a67a8c2073cbfaa3d1c09b86442f32115b7e481d9ec21853f8",
+        "evaluation": "3c0acbff947868dfb94aa30bc0fb7599616f6a5dc9d3e3e0dfa8888adacb363b"
+      }
+    },
+    {
+      "run_id": "P18_03_ROLES",
+      "task_id": "60d0b5b_1",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 67858,
+      "usage_by_role": {
+        "agent": {
+          "calls": 6,
+          "input_tokens": 66795,
+          "output_tokens": 1063,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 6,
+      "tool_turns": 8,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 193.49709762493148,
+      "evaluation": {
+        "official_success": true,
+        "pass_count": 7,
+        "fail_count": 0,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 14154,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "a03b15ea44214ae18c5eedb5cdae7e936ce6f44d3f882fc3c1b286bcdb351eb2",
+        "usage": "cc2c3858210ff2919dafc406fc064049d95630998620f3ac6816b7af8db0722c",
+        "evaluation": "eac983bdd49211644a40bab0118c88499a42d18606ae17dfbae47631726e5108"
+      }
+    },
+    {
+      "run_id": "P18_04_ROLES",
+      "task_id": "6104387_1",
+      "arm": "native_roles",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "known_total_tokens": 357189,
+      "usage_by_role": {
+        "agent": {
+          "calls": 11,
+          "input_tokens": 346925,
+          "output_tokens": 10264,
+          "unknown_usage": 0
+        }
+      },
+      "model_calls": 11,
+      "tool_turns": 76,
+      "compression_events": 0,
+      "format_errors": 0,
+      "api_bridge_errors": 0,
+      "wall_seconds": 1103.0827302502003,
+      "evaluation": {
+        "official_success": false,
+        "pass_count": 7,
+        "fail_count": 3,
+        "evaluation_returned_to_model": false
+      },
+      "unknown_usage_calls": 0,
+      "peak_input_tokens": 42849,
+      "audit_errors": [],
+      "source_hashes": {
+        "summary": "403629528a160ea1f0593e425a31f1056a0b58dc8ae514d37866b35a0b6f4daf",
+        "usage": "c8551867aac01950754d30eb0bce1d47090237193e46f573dc3ad3c8d4fab2d4",
+        "evaluation": "42ae23bdc2593cfb96bed4bc113f35fefa6fdbd4e11b863484f684d9333b0299"
+      }
+    }
+  ],
+  "pending": [],
+  "total_model_calls": 49,
+  "known_total_tokens": 1017215,
+  "unknown_usage_calls": 0,
+  "audit_errors": 0,
+  "scope": "4 development scenarios, one seed per arm; no new method, no confirmatory claim.",
+  "exclusions": "No task instructions, API response bodies, model reasoning or evaluator details exported."
+}
