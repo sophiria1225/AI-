@@ -46,6 +46,7 @@ def main():
     (args.output/'rubric.json').write_text(json.dumps(rubric,indent=2)+'\n')
     (args.output/'manifest.json').write_text(json.dumps({'counts':counts,
         'rubric_sha256':hashlib.sha256(args.rubric.read_bytes()).hexdigest(),
+        'prepared_rubric_sha256':hashlib.sha256((args.output/'rubric.json').read_bytes()).hexdigest(),
         'results_sha256':hashlib.sha256((args.run/'results.json').read_bytes()).hexdigest(),
         'packets_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in args.output.glob('review_*.json')},
         'scope':'View labels masked; prepared event condition may be visible. All packets stay local.'},indent=2)+'\n')
