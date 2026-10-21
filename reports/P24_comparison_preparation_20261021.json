@@ -9,5 +9,16 @@
   "live_P24_results_read": false,
   "model_calls": 0,
   "environment_calls": 0,
-  "script_sha256": "806cd2e1eb79f1226f1d387dbd4adcce8056ccaa0319e129d6a1dea760a62780"
+  "script_sha256": "806cd2e1eb79f1226f1d387dbd4adcce8056ccaa0319e129d6a1dea760a62780",
+  "followup_checks": [
+    {
+      "checked_at": "2026-10-21T13:24:11.980830+00:00",
+      "failed_ci_run": 39607159471,
+      "cause": "Additional P22 analysis was appended to a launch-prerequisite document whose original bytes are fixed.",
+      "fix": "Move extra analysis to a separate document; restore exact original P22 findings. Do not change activation digests or weaken checks.",
+      "tests": 404,
+      "all_passed": true,
+      "live_execution_changed": false
+    }
+  ]
 }
