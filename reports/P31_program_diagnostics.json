@@ -1,0 +1,1891 @@
+{
+  "phase": "P31",
+  "all_sixteen_reviewed": true,
+  "kind": "posthoc_closed_cohort_diagnostics",
+  "rows": [
+    {
+      "model_calls": 10,
+      "call_flags": {
+        "no_api_dispatched": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 10
+      },
+      "program_error_types": {},
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_01_FULL_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "full_keep",
+      "known_input_tokens": 103778,
+      "known_output_tokens": 3753,
+      "first_continuation_input_tokens": 5926,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "50b84d02973befa1c1ba68a5c9b986e782132956b7c50b32c7821f0b3cb41dd8",
+        "programs/call_002_01/result_private.json": "9d999c59f8e221122dfbbd58b51cfb8ccf6c153540cf89494d649dc3f1496bd4",
+        "programs/call_003_01/result_private.json": "93328237f04c02233b00c9e0ab3809fdfc78720a9d4c518adeca242f2594bce7",
+        "programs/call_004_01/result_private.json": "1dab69ee6058c0e8e771cd28ff155a0a8b101603876ed481c087be338ad04da1",
+        "programs/call_005_01/result_private.json": "3a1be3f6bb0f4d175b3d722b9b4e1e5b9221081e428dc9a3a10c0a1244afbaa9",
+        "programs/call_006_01/result_private.json": "3d15db01d1a1f8b40d954a59f876381cb49093b949b73859b84828112d2eed59",
+        "programs/call_007_01/result_private.json": "ea4dc24abbb3c7b8d02936e0fde37fa0f291fec175147e647496031250a0b08f",
+        "programs/call_008_01/result_private.json": "ce26a96d6c679caff2a8c79612761c65f0bc99a2506082fca2b5466a35d000d9",
+        "programs/call_009_01/result_private.json": "51963fcf9809c3f0ebc4721ac8fe2fb6b6d82df5a97141c9f53d9590566adbb2",
+        "programs/call_010_01/result_private.json": "2ba0cf04fc3d5b32574c7ee1f92346820a66a2e9f2bc4d66555e302126d5eb00"
+      },
+      "source_sha256": {
+        "events.json": "a028655db2af4ee66dbd5f921892277fa935d9e52c655612abde04b7f437e673",
+        "spans.json": "a404ce6d226d2481a5646c7388323fb5c113ae21990eeb1e032e310538dea847",
+        "usage.json": "646941febb629a397e1f0012e3a6b2b18ab30661f113809fc934687b6ca70cc1",
+        "prefix_events.json": "357976ad7734920dcaf23ab7af4ef4d5a19cf1a41c1a362ffc244838a5e0625a",
+        "prefix_spans.json": "ed8906b69e0859c619c4c4c68e95862ad4b182da12574e4dae4d2fc4c5a4cde1"
+      }
+    },
+    {
+      "model_calls": 14,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "program_error": 2,
+        "no_api_dispatched": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_013",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_014",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "execution_error": 2,
+        "ok": 12
+      },
+      "program_error_types": {
+        "RuntimeError": 1,
+        "TypeError": 1
+      },
+      "program_errors_after_api_dispatch": 1,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 3,
+      "matching_request_api_names": {
+        "api_docs__show_api_doc": 3
+      },
+      "same_public_observation_as_last_prefix_request": 3,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_01_RECENT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "recent_keep",
+      "known_input_tokens": 111269,
+      "known_output_tokens": 5576,
+      "first_continuation_input_tokens": 3214,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "e3ddb74563c3de3d567ab577672065dfe01d13b820e9241b53bbdf77ed32e44b",
+        "programs/call_002_01/result_private.json": "f1fb416f7c45493bca1a3160b5f747e7354fc7d9a381428ccbfb6b5996494e7e",
+        "programs/call_003_01/result_private.json": "33ccd894465eedc1d340269d65c64b3d4c2762469cda0538c0bfa15e99f54f87",
+        "programs/call_004_01/result_private.json": "a5b19155b4ec2a840e93a3d3a707cc666998f23eecd7b3aa5d3c40202accb0dc",
+        "programs/call_005_01/result_private.json": "8fafbd84330168aa55e009d9c418a2c17b8c92b94235a54a4926ac8d2096fb20",
+        "programs/call_006_01/result_private.json": "1a5fa00145facde6f2331d47fb10b12147892eeb351bf7c3419f68b01b72a3f4",
+        "programs/call_007_01/result_private.json": "e0fecadf68fdcf35eeaf5cfa401eb21d63b024846936abd3400ed3219df217e8",
+        "programs/call_008_01/result_private.json": "0f2d4b7422d62b12e9e9c225ca13b14818cafb3a83583f26d6091933d6c30dae",
+        "programs/call_009_01/result_private.json": "b56bff2962631c9ccad8eb8ddd9ba2e7e2c2ebe130c57e556b44ad627a17535a",
+        "programs/call_010_01/result_private.json": "e69420fe9771863aa9471296722193fea5675de1463fe6265a1f096471ca8b6e",
+        "programs/call_011_01/result_private.json": "e72f07121cd819a9c607d33ec56176287e9bcd282b5d382a5547cbc6678e122c",
+        "programs/call_012_01/result_private.json": "ad0ff939ee1c126c82e9866c57dce145be69adc479772446903b1bf4f8ed6633",
+        "programs/call_013_01/result_private.json": "f3382bed65e33e02ac7a133123b613ee930117b24eae3167629c2e43cee7f145",
+        "programs/call_014_01/result_private.json": "d72559b64411280caf4ec92614e034fe79a246f874b8cc1a5bc2fc5b19af33e5"
+      },
+      "source_sha256": {
+        "events.json": "7e2f9f6b1cdc6a37b5a36d197369c91921008520a3e216b419d0ce402d9cc3f6",
+        "spans.json": "0af88bad42c189a40088112403db09b4d4bf8db61b13c3c8339ec83f060af797",
+        "usage.json": "5e80134458239d4873fd666f2ce9ade2d4fa3c0b86905dfd9038d46530d20900",
+        "prefix_events.json": "357976ad7734920dcaf23ab7af4ef4d5a19cf1a41c1a362ffc244838a5e0625a",
+        "prefix_spans.json": "ed8906b69e0859c619c4c4c68e95862ad4b182da12574e4dae4d2fc4c5a4cde1"
+      }
+    },
+    {
+      "model_calls": 9,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "no_api_dispatched": 3,
+        "program_error": 1,
+        "no_program_executed": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [
+            "inner_schema_rejected",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [
+            "no_api_dispatched",
+            "no_program_executed"
+          ],
+          "sent_api": 0,
+          "programs": 0
+        }
+      ],
+      "program_status_counts": {
+        "ok": 7,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "other_error": 1
+      },
+      "program_errors_after_api_dispatch": 1,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_01_FULL_RESET",
+      "task_id": "34d9492_1",
+      "arm": "full_reset",
+      "known_input_tokens": 73543,
+      "known_output_tokens": 5361,
+      "first_continuation_input_tokens": 5933,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "29d1e94d0435e9871e4883b977cd0808d3c8f730d86b1506506e72855a3ef13f",
+        "programs/call_002_01/result_private.json": "6ece25e5541ec49297aa6c5c56d1d24d7960696b0fa9636a5f8959ed75bfd105",
+        "programs/call_003_01/result_private.json": "567110fe6b1abb138c4f998a8c80c2e7aa6a10110052a117fae3a8eb6a9babd9",
+        "programs/call_004_01/result_private.json": "809ecc429fc53622cce81b464d43fc31a7427896f4611ba9b5eced6573dc9ecc",
+        "programs/call_005_01/result_private.json": "b18508a757e30dda2a0ffa827b6f51cebeda06d3ca804071d8d2e5dbd365233e",
+        "programs/call_006_01/result_private.json": "9d1d30ff8e4abc327cc28b3c36ca930651cfdf77e9e2630779ee221fde20343b",
+        "programs/call_007_01/result_private.json": "521ae2467fd94cbaa626f05dec754e6854df928dc5cb8af9ab43932de6ba4c94",
+        "programs/call_008_01/result_private.json": "9f523bac76c56bac20ae859c9873546bdabe5833408c04a19743e165968c1ce6"
+      },
+      "source_sha256": {
+        "events.json": "10aa037063e05f60289947367ebaec7aa41dcdb83c59baffa39e58d94fc79b65",
+        "spans.json": "30b9049e76119e05eb93c1c2d3a11763bdabfe3900c3aa60e7c52a9ad5a24904",
+        "usage.json": "aefc1ca65a5f85a4a6a56cb838bd57e7143387a4147b20e59959c19cbb4cf5a6",
+        "prefix_events.json": "357976ad7734920dcaf23ab7af4ef4d5a19cf1a41c1a362ffc244838a5e0625a",
+        "prefix_spans.json": "ed8906b69e0859c619c4c4c68e95862ad4b182da12574e4dae4d2fc4c5a4cde1"
+      }
+    },
+    {
+      "model_calls": 12,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "program_error": 1,
+        "no_api_dispatched": 2,
+        "no_program_executed": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 42,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [
+            "no_api_dispatched",
+            "no_program_executed"
+          ],
+          "sent_api": 0,
+          "programs": 0
+        }
+      ],
+      "program_status_counts": {
+        "ok": 10,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 5,
+      "matching_request_api_names": {
+        "api_docs__show_api_descriptions": 1,
+        "api_docs__show_api_doc": 4
+      },
+      "same_public_observation_as_last_prefix_request": 5,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_01_RECENT_RESET",
+      "task_id": "34d9492_1",
+      "arm": "recent_reset",
+      "known_input_tokens": 70994,
+      "known_output_tokens": 4063,
+      "first_continuation_input_tokens": 3221,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "9383eca8e1217a245e965caae04f31e925fc55a1f8901b664b7deef0872e731e",
+        "programs/call_002_01/result_private.json": "98a49f4db947a7ad546eb4d50df0bba5c8214795d06ba2cde2e9466951372e97",
+        "programs/call_003_01/result_private.json": "f6d0c5b5a0b4809dbd3aca703bf3ec0314e0bcc0654a32321cfbffbecd9803b4",
+        "programs/call_004_01/result_private.json": "87bc9d960c3199e831c6f85f2dfe3677c65165678d085642e063557b77cb973d",
+        "programs/call_005_01/result_private.json": "5e29ca1d7033d0a90773fd18ac361cd333de28abb1754f9da0913e0789981cde",
+        "programs/call_006_01/result_private.json": "9f8f792d0830fecafdfd5feb0ebc63d2bd12282b96436c434c3777fb09e66943",
+        "programs/call_007_01/result_private.json": "409d933d309a38ca5bdeb761506ea719073d9a5905e5d800c29a6e31f45f2fc1",
+        "programs/call_008_01/result_private.json": "d88d737ddf2198046bb3415393e244ce31463188f444482b3aa8d8b0be332e04",
+        "programs/call_009_01/result_private.json": "a481fb2fc1a0fe2b24834b9c92a8a49ba4d106ef5331c11886fbea60d60be4af",
+        "programs/call_010_01/result_private.json": "ffa7d9edbeb7e732c2e73fb30f23e29a065604265a34a906a24a5cedd50156e2",
+        "programs/call_011_01/result_private.json": "f4200c6e016b646c8c7cd6189be63787063032de500920ae8360e6b87279720a"
+      },
+      "source_sha256": {
+        "events.json": "bd134297ad0d0e8587873c9683c1c4e869656bb8e469806952fc9b1b40cd7c4a",
+        "spans.json": "cae31419cca129565654ebc57e5bea2d5a67d31c1c1a33eee4620070dd020afd",
+        "usage.json": "23f2aa380ab931903d0cd9fc09a328abdf31225a8268b619f33db19a48195a55",
+        "prefix_events.json": "357976ad7734920dcaf23ab7af4ef4d5a19cf1a41c1a362ffc244838a5e0625a",
+        "prefix_spans.json": "ed8906b69e0859c619c4c4c68e95862ad4b182da12574e4dae4d2fc4c5a4cde1"
+      }
+    },
+    {
+      "model_calls": 11,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "program_error": 1,
+        "no_api_dispatched": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 10,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 1,
+      "matching_request_api_names": {
+        "file_system__show_directory": 1
+      },
+      "same_public_observation_as_last_prefix_request": 1,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_keep",
+      "known_input_tokens": 104212,
+      "known_output_tokens": 1378,
+      "first_continuation_input_tokens": 5115,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "7781d8deaf8ad3df082d1aa1fa9e5cd85d8bc90db0ca27cca0c14b03d18d3a9b",
+        "programs/call_002_01/result_private.json": "e5383b9655b8db3bb70724ae1e3ebc4784ba3ace288ddf0b75626e92c1b4b151",
+        "programs/call_003_01/result_private.json": "77e353dc85bc8aa4843e34480725d7b1f2102cc7c0a287b1691935cda3772d20",
+        "programs/call_004_01/result_private.json": "bdf74cb5a2ac3c277541fe637a87c3cbf9f6594763172fca44f1d93d0b9188ca",
+        "programs/call_005_01/result_private.json": "d934f96d6661fa2ae9d48cb37429e41ff6ccb35732217e3f5a8a823e18e5c53b",
+        "programs/call_006_01/result_private.json": "9aff07922757da9e360d8fb221da0e9ee77315ece6dec5dba494e8c0a7b4a4f2",
+        "programs/call_007_01/result_private.json": "ae6737abbbdd950dd047f56cf9eb64f312fdc54ed16c3f6cd131bc19307efcab",
+        "programs/call_008_01/result_private.json": "a6ac2c42bfb5c990c0282e3de0a35136f712d411cd5abf61b47a18ea3863edd1",
+        "programs/call_009_01/result_private.json": "ec651b58fdce10d93039b22be3a3c04e92668ad71eaf0ca5e37905f59fd211de",
+        "programs/call_010_01/result_private.json": "43f300bdf2e6ee39932deb4bf2e5cd0a28744461cc8ce444f97e0aee31e6c451",
+        "programs/call_011_01/result_private.json": "a8a15d6a66ba6a26c48013d179cb572814540b9ecfc5b39a2eb58718bcc40208"
+      },
+      "source_sha256": {
+        "events.json": "15856d16c55d73b8f2e6798c98c3bc6919d615464153078a634e5a7c69ed258e",
+        "spans.json": "3c792aa8ee1116ae19a7c211a8f0f64ce3f18e5609ca69977896fb831c07221f",
+        "usage.json": "2334f9d53579eeb054e8e94366c90018df3a78d0ac92b08012495d364e908080",
+        "prefix_events.json": "d4705b5c677b78e839ee07a7413b8178ca53ed533d54cd011d490ca5572cba49",
+        "prefix_spans.json": "146238149e33957a722dd56ed0c2cea2d9eba3edf7e77eb355045f3400ea5cfd"
+      }
+    },
+    {
+      "model_calls": 15,
+      "call_flags": {
+        "program_error": 3,
+        "no_api_dispatched": 3,
+        "inner_schema_rejected": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_013",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_014",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_015",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 12,
+        "execution_error": 3
+      },
+      "program_error_types": {
+        "SyntaxError": 1,
+        "RuntimeError": 2
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 2,
+      "matching_request_api_names": {
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_descriptions": 1
+      },
+      "same_public_observation_as_last_prefix_request": 2,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_02_RECENT_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "recent_keep",
+      "known_input_tokens": 107398,
+      "known_output_tokens": 1898,
+      "first_continuation_input_tokens": 3422,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "849a49a7b11f1d2d9165a060bd5ce42ad99e9bd13e1b0becddbf95f9242ee81d",
+        "programs/call_002_01/result_private.json": "c6f9a7790603ef19ef0e5ec9799c1249f68a52f4eac4394a5fca390266215887",
+        "programs/call_003_01/result_private.json": "ed54bacbe3148800614473636be40f97944a80417d42de31ab0d33e34e5570a9",
+        "programs/call_004_01/result_private.json": "c04c175bd0cee48ae9d5b20cfe453860a60faa00151573ad7a83aab5f85595f6",
+        "programs/call_005_01/result_private.json": "7167d5fd8daa1bdc730c78639f304e9c86decf3235a7b7976cc98230eef8e2bd",
+        "programs/call_006_01/result_private.json": "1d9f78161a3b44c5418b2e10873dac064223ea75d75abe3bc5e6f8a63ce7a5b4",
+        "programs/call_007_01/result_private.json": "62a8124d98e552289c04ef2ec39cb63093da518fc66984a44ca266b5addd6079",
+        "programs/call_008_01/result_private.json": "9ab90bf3fc450860dd7d2bfbf2098ddc595299000a0a003d18c7bcb4e61629f1",
+        "programs/call_009_01/result_private.json": "a606485bafb667a2352331dd2bc2dd5f65ed9d46ed5cfb3fac1d77078f174aeb",
+        "programs/call_010_01/result_private.json": "a640b56d01080637e2207167f6ca935238cdebf2ea5771f0885b1131a316218f",
+        "programs/call_011_01/result_private.json": "1d53f2cb0464809c145ae20a68b76501911bae0da0d24235ec77bc0fe4cee01e",
+        "programs/call_012_01/result_private.json": "032355d7b9dc5f4aecc7567e7b418fe5c99603b44a89be7c3bd3f193bc98a7da",
+        "programs/call_013_01/result_private.json": "6f4cebd5d7dc81ce8a6eeb4b39906db9a14592c51f62598dca2c74dd283473cf",
+        "programs/call_014_01/result_private.json": "93d672123c5e678dbf18092aed5ce207413926c3ebfb40719671dcd0b6c6e26a",
+        "programs/call_015_01/result_private.json": "231aa9009a404686fae80e149ae94e6325b28938e471458a00c29bfc847c3582"
+      },
+      "source_sha256": {
+        "events.json": "e0408dc210d2c7809398214fa8a0b0931afa85c06d9abf8f94eea7fbc714afdc",
+        "spans.json": "cd3eb88f5340b85ccd27efd645975a24e190c5fe864babade319f0f326ab0b00",
+        "usage.json": "77a723fac3873b93abe678b4b4a2d05110dc1add24f93d50157859723a8fd1de",
+        "prefix_events.json": "d4705b5c677b78e839ee07a7413b8178ca53ed533d54cd011d490ca5572cba49",
+        "prefix_spans.json": "146238149e33957a722dd56ed0c2cea2d9eba3edf7e77eb355045f3400ea5cfd"
+      }
+    },
+    {
+      "model_calls": 11,
+      "call_flags": {
+        "inner_schema_rejected": 2,
+        "program_error": 2,
+        "no_api_dispatched": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 9,
+        "execution_error": 2
+      },
+      "program_error_types": {
+        "RuntimeError": 2
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_02_FULL_RESET",
+      "task_id": "3c13f5a_1",
+      "arm": "full_reset",
+      "known_input_tokens": 111536,
+      "known_output_tokens": 1532,
+      "first_continuation_input_tokens": 5122,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "4fff7f53e8c79f5b476ecf477a04525e27d73c2d0a6568f48446672e5338517c",
+        "programs/call_002_01/result_private.json": "0c462d5f118a45059f429a283be6728dd5db599308af0664ffd407b4b4a5cb05",
+        "programs/call_003_01/result_private.json": "5835196cfbba7c9d362c350116dd92d291908db7f3dae5a995b087c501311eca",
+        "programs/call_004_01/result_private.json": "d4f4004500b05b3f6e48688ffae7b14dbb018eff29017e8ea1b858eb28cbff8a",
+        "programs/call_005_01/result_private.json": "0769a790293fdd72caef969b6b7812c0c56ae2510bbdc9fe6e9aceb606071df4",
+        "programs/call_006_01/result_private.json": "cc187413f41c70701433caeea62c6a337d3853ffa5e6b53a8b6044fdcce671f0",
+        "programs/call_007_01/result_private.json": "ceda8e9b2b6ff1de96206971c8c6bfbb64eefb2d346b5d972e85a046ee9919a8",
+        "programs/call_008_01/result_private.json": "701f4660f1101bfff295dd1468ffafb52282fd8bf52fafe9fe997f21d283692a",
+        "programs/call_009_01/result_private.json": "128d0628b836c71f7eaeb14757b16fae0be35fc20d35c37b5a6be945782c4f4d",
+        "programs/call_010_01/result_private.json": "8a269c44cda69c9fa605ed63a8d579f43005435ffb24886cddc000e70aa04161",
+        "programs/call_011_01/result_private.json": "dd239ed5c4a63606956c11e8f141575e0719440be4301927f3cc035de727975e"
+      },
+      "source_sha256": {
+        "events.json": "4e94e8771c96e100d1a41ef60e56bae78ede42a89fbd6c854492e4892745c05a",
+        "spans.json": "b1432427b6b3f58550134b9a16e2c63b9d4c3fbac511650e539637747d3b9a0c",
+        "usage.json": "9ba029b3c06813570e8db4d857eeded14edc4b061880b2de43449ac2bcd27660",
+        "prefix_events.json": "d4705b5c677b78e839ee07a7413b8178ca53ed533d54cd011d490ca5572cba49",
+        "prefix_spans.json": "146238149e33957a722dd56ed0c2cea2d9eba3edf7e77eb355045f3400ea5cfd"
+      }
+    },
+    {
+      "model_calls": 12,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "program_error": 1,
+        "no_api_dispatched": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 11,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 1,
+      "matching_request_api_names": {
+        "supervisor__show_account_passwords": 1
+      },
+      "same_public_observation_as_last_prefix_request": 1,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_02_RECENT_RESET",
+      "task_id": "3c13f5a_1",
+      "arm": "recent_reset",
+      "known_input_tokens": 113121,
+      "known_output_tokens": 1670,
+      "first_continuation_input_tokens": 3429,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "582ca7cb91b9c9075988a4280943fb8d762ec8d8bee68b144f46b036e38d2415",
+        "programs/call_002_01/result_private.json": "d6922cea72c67e49632d80ccae2e575503c15c62fb86223ca9a5aa3c9228a269",
+        "programs/call_003_01/result_private.json": "a445d175cce1b7ce948c956ca1309c522a35a803c1fa9728fcc191ba5b0d32cd",
+        "programs/call_004_01/result_private.json": "d1e0dd8c0547ef271e7a60f3de58e2cbdca37a0a74f94c3f508ab392b0105e42",
+        "programs/call_005_01/result_private.json": "0aba80dfe59e23f93e14ac98eeda8878564dabe466ff70f47ac2eee5a1d689bb",
+        "programs/call_006_01/result_private.json": "77a008637c772098174346c2d725b6593444b7648db8fa2e4a5b85adab336634",
+        "programs/call_007_01/result_private.json": "1a0d039a4b9bdbb13eebfd66a8d9c8dd4d80e6053848d8cbdc5d2dc64ce57cd6",
+        "programs/call_008_01/result_private.json": "6010f50a874621863b3035ff4bcc1991859aff9c560608e9efa24cc1c2336cdb",
+        "programs/call_009_01/result_private.json": "9c8ed1f8541196b88a91f40690c4abd23fdadb2b43e702172e02fc3bbffd6548",
+        "programs/call_010_01/result_private.json": "1070a5a5b250a52178d5cec59d4d89949bb5da08b0cdada88cea3d22a146af5f",
+        "programs/call_011_01/result_private.json": "47dd283ffb875c8c9a2b47121151aea107b9b5529bba0e71d62c65cfc17e28c6",
+        "programs/call_012_01/result_private.json": "bb2b15faf317baabc95640862621bdb3b9aa9bf8062e11daa98fce0c3c4113d9"
+      },
+      "source_sha256": {
+        "events.json": "cb6b43b92641d976dcb4402356910eaa26991e6f41d2ba5a450a575a3ebf711c",
+        "spans.json": "860ec371f4484d5645374267cdfc90c3d2f793ec6869c9961792276cb9c64ec5",
+        "usage.json": "67e6e350324c206050623ca16fdea13713665c7a1d6165f833130d23649197bb",
+        "prefix_events.json": "d4705b5c677b78e839ee07a7413b8178ca53ed533d54cd011d490ca5572cba49",
+        "prefix_spans.json": "146238149e33957a722dd56ed0c2cea2d9eba3edf7e77eb355045f3400ea5cfd"
+      }
+    },
+    {
+      "model_calls": 6,
+      "call_flags": {},
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 6
+      },
+      "program_error_types": {},
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_03_FULL_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "full_keep",
+      "known_input_tokens": 66286,
+      "known_output_tokens": 1935,
+      "first_continuation_input_tokens": 5901,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "227ef6ddf699c7be097eb2287a0000061e242ca652cf8937627866043b08aa62",
+        "programs/call_002_01/result_private.json": "50d1aa49c9b187456182e5b6f97e80d7c46f5028efb62ab5384e335fe2b15116",
+        "programs/call_003_01/result_private.json": "c1bbc5fae538285b0112b97d43f772175df64aecc28698bb943c9da80d9983e6",
+        "programs/call_004_01/result_private.json": "18f4d1269c93e1a724c2adb4da430394cfb03360da774ebd889b6affbd1d9b80",
+        "programs/call_005_01/result_private.json": "11c1cc7c86f97e928f01ac34cdc8e4928ade47e29fdb98434e419a037bd11dde",
+        "programs/call_006_01/result_private.json": "811155ea91e3338cc7273bc3ab7fd025a7a322d92ab4c8fd2c27d39e36e0b055"
+      },
+      "source_sha256": {
+        "events.json": "fd09847590f70657d8f2086749550718ed55b984e8c35308c755bbc13a2d5660",
+        "spans.json": "693391e1705703148b6e281c262425fa2421f50dbdfccf2a9051167424206cde",
+        "usage.json": "4273c60073bb11e66ad26c678508055c8dcd9e92d5afcb38862fd7fa464a9712",
+        "prefix_events.json": "5f9fefc4b5c06535e2ae88cfdb2c0e77df8e790f6c652b014fda799a2d318052",
+        "prefix_spans.json": "eeef4b64be905558d96a1487c37c5d7525616853a076b236f7081224bdd590b8"
+      }
+    },
+    {
+      "model_calls": 13,
+      "call_flags": {
+        "inner_schema_rejected": 1,
+        "program_error": 1,
+        "no_api_dispatched": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [
+            "inner_schema_rejected",
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_013",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 12,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 4,
+      "matching_request_api_names": {
+        "api_docs__show_api_descriptions": 1,
+        "api_docs__show_api_doc": 2,
+        "supervisor__show_account_passwords": 1
+      },
+      "same_public_observation_as_last_prefix_request": 4,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_03_RECENT_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "recent_keep",
+      "known_input_tokens": 102126,
+      "known_output_tokens": 2749,
+      "first_continuation_input_tokens": 3047,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "5811a3df0a26bfbf6850731dd8d7b1ea99177ead0a90be5ec1deb45941764279",
+        "programs/call_002_01/result_private.json": "4b163bbc9a5c618e035d7823295bedbb6ff582959543dc21c6f396789ea403b2",
+        "programs/call_003_01/result_private.json": "c5370881c5443a29475b4ad4d8ea4d0b004f857e058865b61d4d282c813d6f2f",
+        "programs/call_004_01/result_private.json": "8fb73c2b0ca72f720251afc745323c09ac327df96d336dc29c4bc60cb1883ac3",
+        "programs/call_005_01/result_private.json": "b30fbb9beea00a39426e601ce2075a9f860280e7af0cd795c530d4bde5b7ff53",
+        "programs/call_006_01/result_private.json": "fff968c17a7384ee0679683a20ecc31fe6197d5c6619894566348f9ad8cffadb",
+        "programs/call_007_01/result_private.json": "5f4f1e53bba42770f95f74f086cd0a16528db71af9d5ab68411cbf97fffa9594",
+        "programs/call_008_01/result_private.json": "8538d476964462af56da188ba11c54429e96cade2d6069a0a6527bc9330effc2",
+        "programs/call_009_01/result_private.json": "f9716e11733e72168f0c8113bf465b83a5a406c6818251a47a665bf7225110ac",
+        "programs/call_010_01/result_private.json": "d1462f0947214faebdd640d7aa0ab847c8f8f5c6aa57a13b3d28a8140f8c0e44",
+        "programs/call_011_01/result_private.json": "861f90ef0519b370beba257d2812e28791472f1c8198560739609d7893266a7f",
+        "programs/call_012_01/result_private.json": "c5eb3e6ada472937134b6328dddf715fc948a8b2f34c12680c47ef8ea6b4aaf2",
+        "programs/call_013_01/result_private.json": "1bd7e8904dc11e122e3e1a8dc805d84083562ae9700738672cc70957b766467f"
+      },
+      "source_sha256": {
+        "events.json": "5ae35c27cb2196d599cc39119a622a20bdeb90eda19b2bd8491016e5b162a742",
+        "spans.json": "fec89875ce8e7695116935847e3293315cd97a6deddc4bcebab1428b016380ab",
+        "usage.json": "47e5e65de43fd40f0798fd97b6b47dcc8ea6f69d59c763945e5e7da1e5731075",
+        "prefix_events.json": "5f9fefc4b5c06535e2ae88cfdb2c0e77df8e790f6c652b014fda799a2d318052",
+        "prefix_spans.json": "eeef4b64be905558d96a1487c37c5d7525616853a076b236f7081224bdd590b8"
+      }
+    },
+    {
+      "model_calls": 6,
+      "call_flags": {
+        "no_api_dispatched": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 6
+      },
+      "program_error_types": {},
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_03_FULL_RESET",
+      "task_id": "60d0b5b_1",
+      "arm": "full_reset",
+      "known_input_tokens": 61451,
+      "known_output_tokens": 1113,
+      "first_continuation_input_tokens": 5908,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "c10600204a931e4f47756b365f930f4d02f72e25e3a2febe41358cc6d107d0f9",
+        "programs/call_002_01/result_private.json": "3588f5e35dd1943f347598abc139f4fffe166aea51ba01b5f4df27505ba22125",
+        "programs/call_003_01/result_private.json": "6b6d56a3d555721269520432c80226f97c9c3999367e62152d53a169ded72438",
+        "programs/call_004_01/result_private.json": "61360f6d6b53d98de503bab17c63729046e80d96defe017b37d27b1b99478ec3",
+        "programs/call_005_01/result_private.json": "b401d1273602afa8c669a3bc86954233a251f934f73256b4e6b2e22459a461b7",
+        "programs/call_006_01/result_private.json": "3d81edc5969ac7e396d315ce70ff257ce1af66c2c0b728a9bcdb93153497a421"
+      },
+      "source_sha256": {
+        "events.json": "d8d936b724912e55ea0988089bcf0dd1b040399fedea3b894ef915c2566a90b3",
+        "spans.json": "1d015074550a0ca9eab939cc99ee6bd44cd9a89862cbc0e212ccdb932ab04126",
+        "usage.json": "486f5ca5304b17c7db0cf09f7a4d5025fabf140eada3d09e0a2b9ba055ad6b32",
+        "prefix_events.json": "5f9fefc4b5c06535e2ae88cfdb2c0e77df8e790f6c652b014fda799a2d318052",
+        "prefix_spans.json": "eeef4b64be905558d96a1487c37c5d7525616853a076b236f7081224bdd590b8"
+      }
+    },
+    {
+      "model_calls": 10,
+      "call_flags": {},
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 5,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 10
+      },
+      "program_error_types": {},
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 3,
+      "matching_request_api_names": {
+        "api_docs__show_api_descriptions": 1,
+        "api_docs__show_api_doc": 2
+      },
+      "same_public_observation_as_last_prefix_request": 3,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_03_RECENT_RESET",
+      "task_id": "60d0b5b_1",
+      "arm": "recent_reset",
+      "known_input_tokens": 86163,
+      "known_output_tokens": 3081,
+      "first_continuation_input_tokens": 3054,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "ab7b992f50c3b1e5471256774b9de516b654d0824e435414aa567ad65b264288",
+        "programs/call_002_01/result_private.json": "6ec5a8b1122c423bcc6dffd2366c9dbc5b809bf9fce0f93e031edf474fe1c437",
+        "programs/call_003_01/result_private.json": "3d7d2c5d9cf9cf9f862f3ee89f2a431249c82db4e41e74e213fc6db4e49a7845",
+        "programs/call_004_01/result_private.json": "d6921d42518ca576bb8bd6f329ff0a05ad06b1e4c2a9f6560b77cb2c495b3904",
+        "programs/call_005_01/result_private.json": "ec856171804e9a27ee18c0787670347ab96850b864ca55849680968448f41209",
+        "programs/call_006_01/result_private.json": "db86be9da3b87aa4f127ca49588e8ba0bb32ec8699494ec6a49b6cc255138d4f",
+        "programs/call_007_01/result_private.json": "9edba02afbc59671270c897d7d65f04589b62d68d4de65985a9e9c3558e933ff",
+        "programs/call_008_01/result_private.json": "166753377038dc67820ee1ef004b1d883b0bc379a272a2ff79f9dae9a5dd6daf",
+        "programs/call_009_01/result_private.json": "b86ea8a9c4c3d426979e2552b487053957409c52cc5cf214ab12fe34c338340f",
+        "programs/call_010_01/result_private.json": "0393c528c0bbffe59d0f5531e8f9b2b6e1a584c406f177d102ac363005a83626"
+      },
+      "source_sha256": {
+        "events.json": "de5637aaad5a2d1c59e88e36bb54d4479fda9413e253b309003471c907cb77fd",
+        "spans.json": "d70e6264dd773a7b3dd64ccdcaf290c4b6625b25853aff91dfc71e91c8170280",
+        "usage.json": "cf33630f1f7f76178b24bfa5d7cc392832dc5681d2e455edeaa1467a85077cfd",
+        "prefix_events.json": "5f9fefc4b5c06535e2ae88cfdb2c0e77df8e790f6c652b014fda799a2d318052",
+        "prefix_spans.json": "eeef4b64be905558d96a1487c37c5d7525616853a076b236f7081224bdd590b8"
+      }
+    },
+    {
+      "model_calls": 5,
+      "call_flags": {
+        "program_error": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 60,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 4,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 1,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "full_keep",
+      "known_input_tokens": 48434,
+      "known_output_tokens": 2460,
+      "first_continuation_input_tokens": 8586,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "3d6e7611fbb6b81917c076b1511ccea9ecd8d5f4db12a30ff121a6f93e77dfc5",
+        "programs/call_002_01/result_private.json": "15d06f34bddd0f5cd80dc6037d477a807b28dcc84b5416f96d3a2384b7d53a91",
+        "programs/call_003_01/result_private.json": "72da311a02d019818eb2d1e338e2db5b3640aa7e20a69489ee913bb49a051a93",
+        "programs/call_004_01/result_private.json": "c151f3bfb6e867da2b04c59116093fe1e4c16f1f1eff59c6635f34815853f53c",
+        "programs/call_005_01/result_private.json": "b2ba545de93f06f263075b323bd5114213e4d223eb6076e112bf083070ae559c"
+      },
+      "source_sha256": {
+        "events.json": "b5f8f711bda5a4685b8e6888391a76d09ada2da7aa422d539bc8f0de280fb776",
+        "spans.json": "99d0682bd13a9b2ddcaec908f8e72c9c6722aa3cd0a05c369227857ade4f42c2",
+        "usage.json": "da97eb71c472988df320fa34058925e7656acb146c73352026b5bdfa130ffb78",
+        "prefix_events.json": "c387a8018087d7258fe7d124086eb9c1eff62f45fc8ffd408157befed42fe62e",
+        "prefix_spans.json": "fd1935bb3cbbdea84d5f0481d59742c2387a668c970ebb59d04e550cf7c3c300"
+      }
+    },
+    {
+      "model_calls": 10,
+      "call_flags": {
+        "no_api_dispatched": 3,
+        "program_error": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 4,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 57,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 8,
+        "execution_error": 2
+      },
+      "program_error_types": {
+        "other_error": 1,
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 2,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 2,
+      "matching_request_api_names": {
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_descriptions": 1
+      },
+      "same_public_observation_as_last_prefix_request": 2,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_04_RECENT_KEEP",
+      "task_id": "6104387_1",
+      "arm": "recent_keep",
+      "known_input_tokens": 81993,
+      "known_output_tokens": 3013,
+      "first_continuation_input_tokens": 3084,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "65e31e45ac1e2a9222db794d8b663b3781b8a83559bf0300430576dc0ccbfaea",
+        "programs/call_002_01/result_private.json": "79e8fd89bd7b2ecbc7d7681fa3d80677e05a20b5788048a25680d67213379c3a",
+        "programs/call_003_01/result_private.json": "5fdaa4b78aba9b04bde4439c56892096e75b0fdb9a1f76c695b62991d7de6dc4",
+        "programs/call_004_01/result_private.json": "bca4a0f1148722d48acfb8545e883056b04f389d59f4bc3a503cbc21a1433e1a",
+        "programs/call_005_01/result_private.json": "146beec57343b3f5c95b54a2693eddeabb919baf95a80e8743b412b2c6c9c592",
+        "programs/call_006_01/result_private.json": "dea2d88d299fe574837405aa4e8b2ab174c0de151a3e931470780fd5710f4f69",
+        "programs/call_007_01/result_private.json": "fe13f746acf1d2a8e5675b87a03be6252e1b959c2f75ff8d29d5e1d88acb51a1",
+        "programs/call_008_01/result_private.json": "bafaca22662e0d2a567f3753329d5d924310e32083c34573b7912f5026b78b6a",
+        "programs/call_009_01/result_private.json": "80e68310015c3916add134ed2958dad035814985da7b557c34de4c41e5505884",
+        "programs/call_010_01/result_private.json": "8440b0840fff7dc29d5e768cbf751f7d6c7fd18a16f56493e6ed26dfbbe47139"
+      },
+      "source_sha256": {
+        "events.json": "1c286bcac725a02b48bb6207ec20bad87be598f856a51689cfee4c2ae8fc84fc",
+        "spans.json": "4d21de62cbc993e9748c889a5d6c1af7d58389638798f465ec14e36d504c9969",
+        "usage.json": "4c0e013c6ca4af92558f298cc8ac4c060c7c71eaa7211cea87263e4398396135",
+        "prefix_events.json": "c387a8018087d7258fe7d124086eb9c1eff62f45fc8ffd408157befed42fe62e",
+        "prefix_spans.json": "fd1935bb3cbbdea84d5f0481d59742c2387a668c970ebb59d04e550cf7c3c300"
+      }
+    },
+    {
+      "model_calls": 6,
+      "call_flags": {
+        "program_error": 1
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 2,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [
+            "program_error"
+          ],
+          "sent_api": 62,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "ok": 5,
+        "execution_error": 1
+      },
+      "program_error_types": {
+        "RuntimeError": 1
+      },
+      "program_errors_after_api_dispatch": 1,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 0,
+      "matching_request_api_names": {},
+      "same_public_observation_as_last_prefix_request": 0,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_04_FULL_RESET",
+      "task_id": "6104387_1",
+      "arm": "full_reset",
+      "known_input_tokens": 59332,
+      "known_output_tokens": 2623,
+      "first_continuation_input_tokens": 8593,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "c451d00b22bdb6fe7e7353cb4708d38ff3a97df06b31041a481ea5d38ea23833",
+        "programs/call_002_01/result_private.json": "9021b7590b8fe0326a1cfedd157903437cb4b9b031cc53a27b1726ab851c1fed",
+        "programs/call_003_01/result_private.json": "8e6d5ddac5f15c8a93a6999676bc542a5a3812f424932d1520d18289afb60db4",
+        "programs/call_004_01/result_private.json": "5b6e6c4a68b6ef2fe8305ff097f66f45f2059a8ced395dd482286de437bd3e4f",
+        "programs/call_005_01/result_private.json": "369b7afc8b7195e518b6844b66e7e15da38b29b3057fa1a89ae8c2ee8debfa9b",
+        "programs/call_006_01/result_private.json": "220646a060300f41d368fd7e7608fad278aaf73161d1e1c2663e89bd7a7eebc1"
+      },
+      "source_sha256": {
+        "events.json": "aaa4da5cf62eda31df64d75f2b7a5b4a9021d007a56f8c4cd84d498ce75e6b97",
+        "spans.json": "13a35d6931873ca50e7cf6fc7c5be2ab881f2d5c22ca1c494e2963779c84135d",
+        "usage.json": "acd921263d56ca46744c902767f6107a33f4a3b40e71e7b3cb5dd456e0fc93b6",
+        "prefix_events.json": "c387a8018087d7258fe7d124086eb9c1eff62f45fc8ffd408157befed42fe62e",
+        "prefix_spans.json": "fd1935bb3cbbdea84d5f0481d59742c2387a668c970ebb59d04e550cf7c3c300"
+      }
+    },
+    {
+      "model_calls": 15,
+      "call_flags": {
+        "program_error": 1,
+        "no_api_dispatched": 2
+      },
+      "call_rows": [
+        {
+          "call_id": "call_001",
+          "flags": [
+            "program_error",
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        },
+        {
+          "call_id": "call_002",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_003",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_004",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_005",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_006",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_007",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_008",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_009",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_010",
+          "flags": [],
+          "sent_api": 3,
+          "programs": 1
+        },
+        {
+          "call_id": "call_011",
+          "flags": [],
+          "sent_api": 14,
+          "programs": 1
+        },
+        {
+          "call_id": "call_012",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_013",
+          "flags": [],
+          "sent_api": 1,
+          "programs": 1
+        },
+        {
+          "call_id": "call_014",
+          "flags": [],
+          "sent_api": 29,
+          "programs": 1
+        },
+        {
+          "call_id": "call_015",
+          "flags": [
+            "no_api_dispatched"
+          ],
+          "sent_api": 0,
+          "programs": 1
+        }
+      ],
+      "program_status_counts": {
+        "execution_error": 1,
+        "ok": 14
+      },
+      "program_error_types": {
+        "NameError": 1
+      },
+      "program_errors_after_api_dispatch": 0,
+      "flag_counts_overlap": true,
+      "error_type_scope": "Exception name only; no raw message, credentials, code or arguments.",
+      "requests_matching_prefix": 6,
+      "matching_request_api_names": {
+        "api_docs__show_api_descriptions": 1,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_doc": 4
+      },
+      "same_public_observation_as_last_prefix_request": 6,
+      "different_public_observation_from_last_prefix_request": 0,
+      "unnecessary_request_claim": false,
+      "run_id": "P31_04_RECENT_RESET",
+      "task_id": "6104387_1",
+      "arm": "recent_reset",
+      "known_input_tokens": 110169,
+      "known_output_tokens": 3526,
+      "first_continuation_input_tokens": 3091,
+      "program_result_sha256": {
+        "programs/call_001_01/result_private.json": "df663234a45d8ec783c23390edd0adb7ca1a201e7f5f6310f36156402532adbc",
+        "programs/call_002_01/result_private.json": "2b298ac5b7974867dfa7531668122865723bdf54ead8b4e76349cd07657e5940",
+        "programs/call_003_01/result_private.json": "1a8b52235b03008b8699fef40830347a2a7f957229b3ddd8309746f9835c3e32",
+        "programs/call_004_01/result_private.json": "968eb1f1a39bf42bd1c1f32d91e3688b1f6230ab7ecc952bad6b1d6eb373b92d",
+        "programs/call_005_01/result_private.json": "4f57a654ac432218af7e1ba56e15fae2111e6f79988c3c6b2b733ab6bb976ad0",
+        "programs/call_006_01/result_private.json": "c1aeea9253ea71a248befd5285ee9e1d0bc648919779ab122d1df04fcc470271",
+        "programs/call_007_01/result_private.json": "83c5c00bbd157e4b58d8346e00e15ec5f6765bce4cd7b0a5d74453d46b800c83",
+        "programs/call_008_01/result_private.json": "10662ae2e3a3b46b7abc2f32c06e243cc1bac30b20a1b76196afde26a2bb34ba",
+        "programs/call_009_01/result_private.json": "477d4a7c5133de2dd9774fc2484721c1471abff1e6dfe27d4d33d3e739658e59",
+        "programs/call_010_01/result_private.json": "678e4a400b0c7bbceaabeb023326f32ed5488145f38eb53cd661f72b4e4957fe",
+        "programs/call_011_01/result_private.json": "e234bafa236fe50a86149f460a4d32d1f6e421bbea80e5fc762a4a1fc1276221",
+        "programs/call_012_01/result_private.json": "9804a4b1b7ca5b3666d3296fdaf8db571f0a7fb7177457aaf7a43d1f04a0a9bb",
+        "programs/call_013_01/result_private.json": "7a5474e928401c2e29dd4b2d69d77a60812ae36540784033921dbc16503f51af",
+        "programs/call_014_01/result_private.json": "4f67acaefed30e6a80328b94267ec5823dec621b8b52df46b72dae43fd68c222",
+        "programs/call_015_01/result_private.json": "db04007817ce95e490dc2960e0b41f7d34e8e6442e5d5aec7ccb67d3c4fe448a"
+      },
+      "source_sha256": {
+        "events.json": "ec1fe9ae7692ea77f76ce242447331bf741d5b417cca7628c6f92111e8d35d2d",
+        "spans.json": "61b8e2603d6a6d7c8657d4c93b7c3b7d5e035ca31bc6a971c022a96b7f24ed3a",
+        "usage.json": "18a9bd166ebb7783aa9d6b58ceca030153a98f78c784974b313cbbc2ea0da7f3",
+        "prefix_events.json": "c387a8018087d7258fe7d124086eb9c1eff62f45fc8ffd408157befed42fe62e",
+        "prefix_spans.json": "fd1935bb3cbbdea84d5f0481d59742c2387a668c970ebb59d04e550cf7c3c300"
+      }
+    }
+  ],
+  "model_calls_added": 0,
+  "api_requests_added": 0,
+  "evaluator_contents_read": false,
+  "novel_method_claim": false,
+  "causal_remedy_identified": false,
+  "request_match_scope": "Exact API name and parsed JSON arguments; aliases are not normalized. Includes writes. Compares to the last equal request in the prefix; changed observations can be legitimate.",
+  "comparison_sha256": "09c73b92b75b20075b809248f968854bb18e5c0847af8d2a58b96620c024c981",
+  "script_sha256": "09c66da78fb0a50a5263f5ea9d6c20df407bde84433eebcfc72076da5b3c1e18",
+  "classifier_sha256": "03c77ad7ceb999f87431fc280dc01d58c55db1904239f3a6562673f34524077c"
+}
