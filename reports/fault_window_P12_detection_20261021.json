@@ -1,0 +1,160 @@
+{
+  "created_at_utc": "2026-10-21T08:37:53.072906+00:00",
+  "trials": [
+    {
+      "run_id": "P12_01_RECENT",
+      "pin_candidates_newest_first": [],
+      "events": [],
+      "fault_events": 0,
+      "changed_result_unpins": 0,
+      "source_hashes": {
+        "spans.json": "da36d2f7deb8fde670ea3e6b8243adbad5d4f3ef13d66c0791aa3873b9ff262d",
+        "events.json": "b398b288fd2f2e9626ffe22daebb913859d020c7871a79ee172b06d070797ba6",
+        "memory_views.json": "def9ab78403c77329e8bc66b290badfd41d6ca8632ab0c71c3b1061a247807f8"
+      }
+    },
+    {
+      "run_id": "P12_02_RECENT",
+      "pin_candidates_newest_first": [],
+      "events": [],
+      "fault_events": 0,
+      "changed_result_unpins": 0,
+      "source_hashes": {
+        "spans.json": "c63ee85ebf7ed1c726c3c17a4c904be8cdaa3deff9606864249ef0f9e682b536",
+        "events.json": "bd1c92a4f85d180d07bedca596e47553a228c888e38f95045f5e3f8f59b63caa",
+        "memory_views.json": "817b79758764abc29928352fa9176973965207a0f8aeb6d8682bcc41ecdaef17"
+      }
+    },
+    {
+      "run_id": "P12_03_RECENT",
+      "pin_candidates_newest_first": [
+        {
+          "span_id": "s46",
+          "public_api": "phone__get_current_date_and_time",
+          "last_request_index": 45,
+          "first_fault_call": "call_006"
+        },
+        {
+          "span_id": "s44",
+          "public_api": "supervisor__show_account_passwords",
+          "last_request_index": 43,
+          "first_fault_call": "call_007"
+        }
+      ],
+      "events": [
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s14",
+          "previous_span_id": "s9",
+          "call": "call_006",
+          "public_api": "phone__get_current_date_and_time"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s15",
+          "previous_span_id": "s4",
+          "call": "call_007",
+          "public_api": "supervisor__show_account_passwords"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s21",
+          "previous_span_id": "s14",
+          "call": "call_011",
+          "public_api": "phone__get_current_date_and_time"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s23",
+          "previous_span_id": "s15",
+          "call": "call_012",
+          "public_api": "supervisor__show_account_passwords"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s28",
+          "previous_span_id": "s21",
+          "call": "call_015",
+          "public_api": "phone__get_current_date_and_time"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s29",
+          "previous_span_id": "s23",
+          "call": "call_016",
+          "public_api": "supervisor__show_account_passwords"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s36",
+          "previous_span_id": "s28",
+          "call": "call_019",
+          "public_api": "phone__get_current_date_and_time"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s44",
+          "previous_span_id": "s29",
+          "call": "call_024",
+          "public_api": "supervisor__show_account_passwords"
+        },
+        {
+          "kind": "omitted_identical_receipt_reacquired",
+          "span_id": "s46",
+          "previous_span_id": "s36",
+          "call": "call_026",
+          "public_api": "phone__get_current_date_and_time"
+        }
+      ],
+      "fault_events": 9,
+      "changed_result_unpins": 0,
+      "source_hashes": {
+        "spans.json": "35ae332a0d7f974c8e0c05646b9242ebdf7bd9fb0608d1862707a9e7b1ba61b8",
+        "events.json": "aead37c7b38939a562254a70fe99b27362592926a1c7a567d8c65543e3846ff8",
+        "memory_views.json": "ba9f8500cbd7ba18a0ec4c40ad45e55873b2d8f9b583ea458baff4b23c7eef86"
+      }
+    },
+    {
+      "run_id": "P12_04_RECENT",
+      "pin_candidates_newest_first": [],
+      "events": [],
+      "fault_events": 0,
+      "changed_result_unpins": 0,
+      "source_hashes": {
+        "spans.json": "2f1551fec26bb17986540c626d730d85d6070ba8178b41b24a247ec3ea1a35da",
+        "events.json": "95b6fef6951ef7666b5ff1e1b63ca0d694e6551848d6fc531ea38f5f3e14a7e6",
+        "memory_views.json": "2171c6cbeb88827c65eb8b95460d327c4a5bf1d75ec2b97f7f219107693cea04"
+      }
+    }
+  ],
+  "public_schema_hashes": {
+    "api_docs/function_calling/amazon.json": "641103cdbfa64da0832bf73b7db4e846bcf99f649bf10641d508d2e006a67f5b",
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/function_calling/api_docs.json": "5b08688dd5b4dec208f4251b5c33269b3049517c7c4451fd98d49c67477e291e",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/function_calling/file_system.json": "68b087cb4c15677e87e772448a28eca85e01ebf4fdfeec313696d0778f068ad5",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/function_calling/gmail.json": "4a0ee65205fb5e5363d24f7e9e5ba8884063b23f2a28e5d7b7da4829e3974553",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/function_calling/phone.json": "afd6a33ebf9ea91aeb738f840bc607e5af57b86c944f96c9d871467ef6d225a9",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/function_calling/simple_note.json": "53414bc70fbece5ba2ce5f1e6f5a50a41084704a410ce45597130350ab773a3f",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/function_calling/splitwise.json": "d52b852f982c9a4ccd1eb453a5cb035af8128875eab9fa85b0fbbe8606cc16b2",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/function_calling/spotify.json": "7194c0cc18a48e479f65192ba732e098174498ccc904cdb2dfa4d371e365d9c3",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/function_calling/supervisor.json": "e9b6c983f7b92686d530349e7d4d7afb8a3332e24ff2219789e6380d8c136ce9",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/function_calling/todoist.json": "88b67e50dec1f6ae8dc3ac82a5a1a0d9ec91e11ea004fe9bdeeca0572de90086",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/function_calling/venmo.json": "dc69706b9c8ccc59fa8e28740abe36c35d3fc2cf3dca37cdd501ad413f37f615",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "module_sha256": "f1e532fb2e48592fda3fefdef072459ae7aa0893a7f01105f1bace37e97be8f1",
+  "model_calls": 0,
+  "tokenizer_requests": 0,
+  "environment_calls": 0,
+  "evaluator_read": false,
+  "scope": "Detection replay on completed P12 trajectories only. No counterfactual agent execution, retention selection, or success/cost effect measured. No P18 partial trajectory or reserved instructions read. Only IDs and public API names exported."
+}
