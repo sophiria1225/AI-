@@ -38,3 +38,5 @@ ZIP本体は保存されず、失敗manifestをArtifactから回収した。
 17時台には[公式Word配布一覧](https://www.ieice.org/jpn/shiori/template.html)の情報・システムソサイエティ／レターから、[DのWordファイル](https://www.ieice.org/jpn/shiori/jd/iss_lettertemplete.docx)を確認した。LaTeXに限定せず投稿用様式を取得する候補だったが、この経路もMacからの１回の取得がHTTP 403となった。Web読取器ではバイナリ形式非対応で、内容は読めていない。[失敗記録](../reports/ieice_word_template_fetch_20261021.json)を残し、取得成功・公式組版確認とはしない。再試行を繰り返さず、４ページの主張と実験を優先する。
 
 16時台の追加確認では、[公式の研究会案内](https://www.ieice.org/jpn_r/event/kenkyukai/index.html?id=teishutu)が、和文技報と和文論文誌で `ieicej.cls` を共用すると説明し、[3.4aの別配布先](https://www.ieice.org/jpn_r/event/kenkyukai/assets/files/ieicej3.4a.zip)へリンクしていた。この別の公開経路もMacからはHTTP 403だった。取得は１回で打ち切り、失敗をローカルの `.runtime/letter_tex/ieicej34a_official_20261021/error.json` に保存した。3.4aを3.4bと同じ版と扱わず、取得できたことにもしない。認証の回避や非公式なクラスの代用は行っていない。
+
+22時台に[OverleafのIEICE名義テンプレート](https://www.overleaf.com/latex/templates/template-for-ieice-journals-technical-reports/kxtxxvzpzgkg)も確認した。表示は2019年のv3.2で、レターのマクロ例を確認できるが、現行3.4bと同じとは扱えない。「テンプレートを開く」はログイン画面へ移り、クラスのダウンロード・新しい外部プロジェクトの作成はしていない。最新版と公式ページ数の確認を、この古い公開例で完了扱いにしない。
