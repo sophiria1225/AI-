@@ -14,11 +14,12 @@ def put(root,name,value):
 
 class HandoffAnalysisTests(unittest.TestCase):
     def test_no_partial_cohort_can_become_comparison(self):
-        with tempfile.TemporaryDirectory() as d:
-            root=Path(d)
-            put(root,'configs/P31_handoff_factors_v01.json',{'batch_id':'batch'})
-            put(root,'records/context_pilot/batch/status.json',{'status':'running','completed':list(range(15))})
-            with self.assertRaisesRegex(ValueError,'all 16'):analyze(root,root)
+        for phase in ('P31','P32'):
+            with self.subTest(phase=phase), tempfile.TemporaryDirectory() as d:
+                root=Path(d)
+                put(root,f'configs/{phase}_handoff_factors_v01.json',{'batch_id':'batch'})
+                put(root,'records/context_pilot/batch/status.json',{'status':'running','completed':list(range(15))})
+                with self.assertRaisesRegex(ValueError,'all 16'):analyze(root,root,phase)
 
     def fixture(self,root):
         span={'id':'s1','action':None,'observation':{'format_error':'no call'}}

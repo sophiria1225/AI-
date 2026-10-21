@@ -29,12 +29,12 @@ def split_turns(messages):
     return turns
 
 
-def handoff_conversation(messages, task, arm):
+def handoff_conversation(messages, task, arm, boundary_call=BOUNDARY_CALL):
     if arm not in ARMS:
         raise ValueError('unknown factor cell')
     turns = split_turns(messages)
-    if len(turns) != BOUNDARY_CALL:
-        raise ValueError('only the fixed fourth-response boundary')
+    if boundary_call not in (4,8) or len(turns) != boundary_call:
+        raise ValueError('only the prespecified fourth/eighth-response boundary')
     history, runtime = arm.split('_')
     notice = ('\nOne-time handoff: the simulated environment and public API schema set '
               'are unchanged. All prior public API receipts remain available through '
@@ -62,20 +62,21 @@ def boundary_object(trial, manifest, name):
     return json.loads((trial/'boundaries/objects'/entry['sha256']).read_text())
 
 
-def prefix_at_fixed_boundary(trial):
+def prefix_at_fixed_boundary(trial, boundary_call=BOUNDARY_CALL):
     from native_boundary_record import verify_boundary
-    checkpoint = f'call_{BOUNDARY_CALL:03d}'
+    if boundary_call not in (4,8):raise ValueError('only prespecified boundaries')
+    checkpoint = f'call_{boundary_call:03d}'
     verify_boundary(trial/'boundaries', checkpoint)
     manifest = json.loads((trial/'boundaries/manifests'/f'{checkpoint}.json').read_text())
     state = manifest['state']
-    if state['model_calls'] != BOUNDARY_CALL or state['declared_complete']:
+    if state['model_calls'] != boundary_call or state['declared_complete']:
         raise ValueError('fixed boundary is not an eligible unfinished state')
     result = {'manifest': manifest, 'checkpoint_id': checkpoint}
     for name in ('spans', 'events', 'usage', 'conversation_private', 'public_task'):
         result[name] = boundary_object(trial, manifest, 'harness/'+name+'.json')
-    if len(result['usage']) != BOUNDARY_CALL or any(c['status'] != 'ok' for c in result['usage']):
+    if len(result['usage']) != boundary_call or any(c['status'] != 'ok' for c in result['usage']):
         raise ValueError('source prefix has unknown model usage')
-    if len(split_turns(result['conversation_private'])) != BOUNDARY_CALL:
+    if len(split_turns(result['conversation_private'])) != boundary_call:
         raise ValueError('source public conversation boundary differs')
     if any(e['effects_unknown'] for e in result['events']):
         raise ValueError('source API effect is unknown')
