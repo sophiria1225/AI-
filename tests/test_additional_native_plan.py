@@ -14,7 +14,7 @@ class AdditionalNativePlanControls(unittest.TestCase):
         previous = json.loads((ROOT / 'configs/P11_additional_baseline_v01.json').read_text())
         for filename, prerequisite in [('P12_recent_window_v01.json', 'P11_batch_v01'),
                                        ('P13_native_focus_v01.json', 'P12_batch_v01'),
-                                       ('P14_native_ledger_v01.json', 'P13_batch_v01')]:
+                                       ('P14_native_ledger_v01.json', 'P13_recovery_v01')]:
             actual = json.loads((ROOT / 'configs' / filename).read_text())
             validate_schedule(actual)
             for key in ('task_ids', 'appworld_version', 'model_selection', 'model', 'seed',
@@ -24,6 +24,14 @@ class AdditionalNativePlanControls(unittest.TestCase):
                         'max_checkpoint_new_bytes_per_boundary', 'source_selection_sha256'):
                 self.assertEqual(previous[key], actual[key], (filename, key))
             self.assertEqual(actual['wait_for_native_batch'], prerequisite)
+            if filename == 'P14_native_ledger_v01.json':
+                recovery = json.loads((ROOT / 'configs/P13_recovery_v01.json').read_text())
+                original = json.loads((ROOT / 'configs/P13_native_focus_v01.json').read_text())
+                self.assertEqual([row[:2] for row in recovery['cohort']],
+                                 [row[:2] for row in original['run_order']])
+                self.assertEqual(recovery['cohort'][:2], original['run_order'][:2])
+                self.assertEqual(recovery['cohort'][3], original['run_order'][3])
+                self.assertEqual(recovery['cohort'][2][2], 'P13_03_FOCUS_RECOVERY01')
             self.assertEqual(actual['history_budget_tokens'], 4096)
             import hashlib
             self.assertEqual(actual['source_comparison_plan_sha256'], hashlib.sha256(

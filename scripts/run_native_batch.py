@@ -83,7 +83,7 @@ def public_body(rows, state):
                "P11": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-development-20261021/docs/experiments/P11_additional_baseline.md)",
                "P12": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p11-observations-20261021/docs/experiments/P12_recent_window.md)",
                "P13": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-focus-comparison-20261021/docs/experiments/P13_native_focus.md)",
-               "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/native-ledger-comparison-20261021/docs/experiments/P14_native_ledger.md)"}[phase]]
+               "P14": "[事前仕様](https://github.com/sophiria1225/AI-/blob/research/p14-ledger-execution-20261021/docs/experiments/P14_native_ledger.md)"}[phase]]
     return "\n".join(lines) + "\n"
 
 

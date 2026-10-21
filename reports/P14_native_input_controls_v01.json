@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-10-21T03:19:40.023364+00:00",
+  "cases": [
+    {
+      "task_number": 1,
+      "source_run": "P11_01_ROLES",
+      "source_next_call": "call_006",
+      "input_tokens": 18779,
+      "reserved_output": 4096,
+      "fits_context": true,
+      "request_sha256": "139d278d71223d71dda29d1adb63659a1b5474aaaa81ff82221ac118f485de06",
+      "source_usage_sha256": "04faea0f0f06d5ee8e951508e462637b35ead047ec170cefd930b9cdc39a56b6"
+    },
+    {
+      "task_number": 2,
+      "source_run": "P11_02_ROLES",
+      "source_next_call": "call_007",
+      "input_tokens": 13953,
+      "reserved_output": 4096,
+      "fits_context": true,
+      "request_sha256": "ff524c5744dc57f64c0d89890d3b0b29debb90cf4fd52f690d132939758611b8",
+      "source_usage_sha256": "5fcd4b2b60181d97b7c365f40df14d08435460754b03f5285fece8cc6b2b6ccf"
+    },
+    {
+      "task_number": 3,
+      "source_run": "P11_03_ROLES",
+      "source_next_call": "call_010",
+      "input_tokens": 28666,
+      "reserved_output": 4096,
+      "fits_context": true,
+      "request_sha256": "567e0ed37170ef3ff53fe300e772f8a6587bfe5f81df7fc498cf520ea8caa0cb",
+      "source_usage_sha256": "d0eae8abd4b0a4977066cd342ab88061fc4f72819458fe8a23e8075df01d0f7a"
+    },
+    {
+      "task_number": 4,
+      "source_run": "P11_04_ROLES",
+      "source_next_call": "call_006",
+      "input_tokens": 9807,
+      "reserved_output": 4096,
+      "fits_context": true,
+      "request_sha256": "0b9c22b263a3d9ed2c1fb6773388840c51d37c844acf98913f02751021bc4457",
+      "source_usage_sha256": "65b80896fd85e052472a9f583bec9d1f2cfa44c82378940e9b7c70714928cec0"
+    }
+  ],
+  "token_count_requests": 4,
+  "model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_accessed": false,
+  "plan_sha256": "b4e6e9b1b0074738e7a9e114f15b533fedd69005b5f19e0e34a0b7d9ed2b2bae",
+  "source_hashes": {
+    "inspect_native_ledger_inputs.py": "41c7ca876c551b455902de8dc0eabf44e14c33d66683e841fcf45de8b0fdfb79",
+    "native_ledger_memory.py": "07bedde65eb0d37d075dcab233621b8795f7eb7125004ace362c18e9ad1f2635",
+    "context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c"
+  },
+  "scope": "Four saved full-history input prefixes. No selected-memory generation, continuation, measured savings or proof every future input will fit."
+}

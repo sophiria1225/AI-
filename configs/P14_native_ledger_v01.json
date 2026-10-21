@@ -37,8 +37,8 @@
   ],
   "max_api_requests": 80,
   "max_wait_seconds": 10800,
-  "server_lease_end_utc": "2026-10-21T01:48:58.113011+00:00",
-  "server_lease_basis": "Identical server command restarted after P10 complete and empty model slot; bounded --max-seconds14400. Per-trial evaluation180sec plus180sec reserve, no start below8100sec remaining.",
+  "server_lease_end_utc": "2026-10-21T06:36:09.058914+00:00",
+  "server_lease_basis": "Same server settings restarted at 2026-10-21T02:36:09.058914+00:00 after confirmed process loss, bounded14400sec; start only if8100sec remain. P13 cohort continuation is tracked in P13_recovery_v01; no change to task identities, parameters or order.",
   "run_order": [
     [
       "287e338_1",
@@ -75,7 +75,7 @@
   ],
   "history_representation": "Original native turns stay archived. Incremental ledger tracks observed targets, conditions and progress; recent original turns and fallible ledger are given to executor. read_span stays available.",
   "source_selection_sha256": "b1d693f9b8af7549417e62deb9200f6aac06fa2d4f50afe805d77e2e72863058",
-  "wait_for_native_batch": "P13_batch_v01",
+  "wait_for_native_batch": "P13_recovery_v01",
   "max_checkpoint_new_bytes_per_boundary": 134217728,
   "max_checkpoint_object_bytes": 536870912,
   "history_budget_tokens": 4096,
