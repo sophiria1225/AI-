@@ -27,7 +27,10 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     plan = read(args.plan)
-    if read(args.storage_root / 'records/context_pilot/P13_batch_v01/status.json')['status'] != 'complete':
+    prerequisite = plan['wait_for_native_batch']
+    if prerequisite not in ('P13_batch_v01', 'P13_recovery_v01'):
+        raise ValueError('unexpected P13 completion prerequisite')
+    if read(args.storage_root / 'records/context_pilot' / prerequisite / 'status.json')['status'] != 'complete':
         raise ValueError('wait for P13 completion before additional tokenizer requests')
     runtime = read(args.storage_root / '.runtime/model_server.json')
     with urllib.request.urlopen(plan['model']['base_url'] + '/props', timeout=10) as response:
