@@ -470,9 +470,10 @@ def build(root, output, draft=False):
     # The revised main story starts with a concrete task, before experiment IDs.
     from morning_story import build_story_slides
     diagnostics=e.read('reports/P31_program_diagnostics.json')
+    e.hashes['docs/research_objective_20261022.md']=sha(root/'docs/research_objective_20261022.md')
     by_key={s['section'].split('/')[0].strip():s for s in slides}
     ordered,story_figures=build_story_slides(handoff,diagnostics,later_handoff)
-    remaining=[by_key[k] for k in ('07','14d','14b','12','11') if k in by_key]
+    remaining=[by_key[k] for k in ('07','14d','14e','14b','12','11') if k in by_key]
     main_pages=len(ordered)
     for i,s in enumerate(ordered[1:],1):
         s['section']=f'{i:02d} / '+s['section']
@@ -506,15 +507,11 @@ def build(root, output, draft=False):
         '- [説明用メモ](speaker_notes.md)：各ページの説明と、数値の読み方・限界。\n'
         '- [図と集計データ](figures/)／[出典と生成記録](build_manifest.json)。\n\n'
         'HTMLの操作：左右キーで移動、Oで一覧、Nで説明メモ。印刷時はスライド単位になります。\n\n'
-        'ユーザーの指摘を受け、表紙は題名だけにし、本文を具体例から作り直しました。実験番号を先に並べず、問題・研究目的・前提・操作・比較理由・結果を順に説明します。\n\n'
-        '| PDFのページ | 内容 |\n|---|---|\n'
-        '| 1 | 題名のみ |\n| 2–4 | 写真整理の例、途中再開の問題、会話・変数・アプリ状態の区別 |\n'
-        '| 5–7 | 研究目的、アーキテクチャ、当初の再編研究との関係 |\n'
-        '| 8–12 | 対象の４課題、共通条件、分岐手順、四条件を比べる理由 |\n'
-        '| 13–15 | 全課題の成否、入力と総費用のグラフ、観測と仮説 |\n'
-        '| 16–19 | 既存との差・未確定の新規性、次の実験、限界、投稿予定 |\n'
-        '| 20–24 | 計算環境、全条件の費用、過去の基準調整 |\n\n'
-        '現在の結果は４既知課題・１モデル・各条件１回の探索実験です。担当再編や独自の制御方式の有効性を示した成果ではありません。進行中の実験の部分結果は含めません。\n')
+        '**主目的は、ハーネスによって不要な情報取得・共有・AI呼び出し・実行を削減し、タスクの性能を維持することです。** 履歴・状態の引き継ぎ比較は、そのための局所検証として位置づけ直しました。表紙は題名のみです。\n\n'
+        '冒頭で、費用が発生する経路、性能維持と総費用削減の目標、改善の判定方法を説明します。その後、具体例・現在の検証範囲・実験の前提・比較理由・結果へ進みます。\n\n'
+        '| PDFのページ | 内容 |\n|---|---|\n'+
+        '\n'.join(f'| {i} | '+('補足：' if i>main_pages else '')+s['title'].replace('<br>',' ')+' |' for i,s in enumerate(slides,1))+'\n\n'
+        '現在の結果は４既知課題・１モデル・各条件各境界１回の探索実験です。品質を保った費用削減、担当再編や独自制御方式の有効性は未確立です。全件監査された結果のみを含めます。\n')
     figures=output/'figures';figures.mkdir(exist_ok=True)
     for name,content in list(story_figures.items())+[('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('state_lifetime',state_lifetime_diagram()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
         (figures/(name+'.svg')).write_text(content+'\n')
