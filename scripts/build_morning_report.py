@@ -35,6 +35,8 @@ class Evidence:
         data=json.loads(p.read_text())
         for name, expected in data.get('source_hashes',{}).items():
             p=self.root/name
+            if name.startswith(('reports/', 'configs/', 'docs/')) and not p.is_file():
+                raise ValueError('missing public source '+name)
             if p.is_file() and sha(p)!=expected:
                 raise ValueError('changed source '+name)
         if data.get('pending') or data.get('audit_errors'):
@@ -76,7 +78,11 @@ def scope_diagram():
 
 
 def loop_diagram():
-    s=f'<path d="M275 92 C470 4 699 4 845 92 M970 164 C1060 270 760 380 620 315 M480 315 C300 376 80 195 155 172" fill="none" stroke="{TEAL}" stroke-width="7" marker-end="url(#arrow)"/>'
+    s=f'<defs><marker id="flowarrow" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="18" refX="10" refY="4" viewBox="0 0 10 8" orient="auto"><path d="M0 0L10 4L0 8" fill="{TEAL}"/></marker></defs>'
+    for path in ['M275 92 C470 4 699 4 845 92',
+                 'M976 120 C1130 220 890 410 620 315',
+                 'M480 315 C230 415 25 260 150 120']:
+        s+=f'<path d="{path}" fill="none" stroke="{TEAL}" stroke-width="5" marker-end="url(#flowarrow)"/>'
     for x,y,label,sub in [(220,120,'LLM','次に何をするか'),(910,120,'ツール','読取・計算・変更'),(550,302,'状態・履歴','何が分かり、何が終わったか')]:
         s+=circle(x,y,66,'#e8eee7')+txt(x,y+9,label,27,weight=700,anchor='middle')
         s+=txt(x,y+100,sub,21,anchor='middle')
@@ -192,8 +198,8 @@ def build(root, output, draft=False):
     def add(section,title,body,notes,refs=(),dark=False,takeaway=None):
         slides.append(dict(section=section,title=title,body=body,notes=notes,refs=refs,dark=dark,takeaway=takeaway))
 
-    add('RESEARCH PROGRESS / 2026.10.22', 'AIハーネスは、<br>どこに判断を残すべきか',
-        '<p class="lead">情報の保持・受け渡し・実行方法を変え、<br>仕事の完了と総費用への影響を調べる。</p>'
+    add('RESEARCH PROGRESS / 2026.10.22', 'AIの仕事を完了へつなぐ<br>ハーネス設計の検証',
+        '<p class="lead">情報保持・操作形式・実行予算が、<br>最終成果と計算費用に与える影響を調べる。</p>'
         '<div class="three"><div class="col"><span class="badge">対象</span><h3>状態を変える<br>複数工程の仕事</h3></div>'
         '<div class="col"><span class="badge">現在地</span><h3>通常方式を校正し、<br>追加技術の必要性を検証</h3></div>'
         '<div class="col"><span class="badge warn">投稿目標</span><h3>10月31日<br>IEICE・４ページ</h3></div></div>',
@@ -322,6 +328,15 @@ def build(root, output, draft=False):
     (output/'speaker_notes.md').write_text('# 10月22日 朝の進捗報告・説明用メモ\n\n生成：'+timestamp+('\nレイアウト確認版。最終版ではない。' if draft else '')+'\n\n'+
         '\n\n'.join(f'## {i:02d} {s["title"].replace("<br>"," ")}\n\n{s["notes"]}' for i,s in enumerate(slides,1))+'\n')
     (output/'slides.json').write_text(json.dumps(slides,ensure_ascii=False,indent=2)+'\n')
+    (output/'README.md').write_text(
+        '# 10月22日朝の進捗報告資料\n\n生成時刻：'+timestamp+'。'+
+        ('レイアウト確認版。最終配布版ではありません。' if draft else '生成時点の監査済み集計を反映しています。')+'\n\n'
+        '- [PDF・全'+str(len(slides))+'枚](AI_harness_progress_20261022.pdf)：そのまま閲覧・共有。\n'
+        '- [HTMLスライド](index.html)：ダウンロードしてブラウザーで開くと、ネット接続なしで表示できます。GitHubの通常表示ではHTMLのソースが見えます。\n'
+        '- [説明用メモ](speaker_notes.md)：各ページの説明と、数値の読み方・限界。\n'
+        '- [図と集計データ](figures/)／[出典と生成記録](build_manifest.json)。\n\n'
+        'HTMLの操作：左右キーで移動、Oで一覧、Nで説明メモ。印刷時はスライド単位になります。\n\n'
+        '社会背景、技術背景、目的、当初案と現在地、既存との差、実装、比較実験、結果、考察、限界、次の作業、月末投稿の日程を説明します。通常機能の実装と独自性の成立は区別します。\n')
     figures=output/'figures';figures.mkdir(exist_ok=True)
     for name,content in [('work_scope',scope_diagram()),('harness_loop',loop_diagram()),('code_architecture',architecture()),('photo_budget',photo_chart()),('guidance_success',guidance_chart(p6,p4))]:
         (figures/(name+'.svg')).write_text(content+'\n')
@@ -329,6 +344,13 @@ def build(root, output, draft=False):
         w=csv.writer(f);w.writerow(['task_group','arm','successes','tasks','known_tokens','unknown_calls'])
         for group,p in [('six',p6),('four',p4)]:
             for arm,v in p['totals'].items():w.writerow([group,arm,v['successes'],v['trials'],v['known_total_tokens'],v['unknown_usage_calls']])
+    if code:
+        (figures/'code_comparison.svg').write_text(bar_chart(code['pairs'])+'\n')
+        with (figures/'code_comparison.csv').open('w') as f:
+            w=csv.writer(f);w.writerow(['task_id','arm','success','model_calls','api_requests','known_tokens','unknown_calls','wall_seconds'])
+            for row in code['pairs']:
+                for arm in ('baseline','code'):
+                    d=row[arm];w.writerow([row['task_id'],arm,d['success'],d['model_calls'],d['api_requests'],d['known_total_tokens'],d['unknown_usage_calls'],d['execution_wall_seconds']])
     manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,
         source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
