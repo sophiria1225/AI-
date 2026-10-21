@@ -1,0 +1,61 @@
+{
+  "run_id": "P14_02_LEDGER",
+  "updates": [
+    {
+      "update": 1,
+      "status": "ok",
+      "known_tokens": 13444,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 9,
+      "original_spans_after": 2,
+      "removed_spans": 7,
+      "ledger_items": 4,
+      "item_status_counts": {
+        "pending": 4
+      }
+    },
+    {
+      "update": 2,
+      "status": "invalid_keep_original",
+      "known_tokens": 13411,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 4,
+      "original_spans_after": 4,
+      "removed_spans": 0,
+      "ledger_items": 4,
+      "item_status_counts": {
+        "pending": 4
+      }
+    },
+    {
+      "update": 3,
+      "status": "ok",
+      "known_tokens": 13551,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 5,
+      "original_spans_after": 3,
+      "removed_spans": 2,
+      "ledger_items": 4,
+      "item_status_counts": {
+        "done": 3,
+        "pending": 1
+      }
+    }
+  ],
+  "update_status_counts": {
+    "ok": 2,
+    "invalid_keep_original": 1
+  },
+  "updates_removing_original_spans": 2,
+  "executor_inputs_with_removed_turns": 3,
+  "executor_inputs_with_memory_note": 3,
+  "known_memory_tokens": 40406,
+  "unknown_memory_usage_calls": 0,
+  "source_hashes": {
+    "summary.json": "e129cc134e2e41bd2bbada636fc9a54f74f5d538652ae0c1bba39bc529a71d3f",
+    "generated_memory_events.json": "76817ebb5e01fceee66633f0d643337cb3fac71579495855a27ef64c0598285d",
+    "memory_views.json": "7b858aa03cfd9e35cc5fac38c553889d9c784fcc95c286f9af44f1dd00c12a0c"
+  },
+  "scope": "Completed-run structural counts only. Done labels and references are not semantic proof. No generation or environment execution.",
+  "script_sha256": "c7461f0d83a137e77eb3c64511b2ec60e874563bd453aa2ac257de6cb082ee2e"
+}
