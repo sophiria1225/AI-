@@ -265,11 +265,19 @@ def build(root, output, draft=False):
             if not result.get('all_four_reviewed') or len(result['pairs'])!=4:
                 raise ValueError(phase+' is not fully reviewed')
             stages[phase]=result
-    handoff=None
+    handoff=None;later_handoff=None
     if (root/'reports/P31_comparison.json').exists():
         handoff=e.read('reports/P31_comparison.json')
         if not handoff.get('all_sixteen_reviewed') or len(handoff['rows'])!=16:
             raise ValueError('P31 requires all sixteen continuations')
+    if (root/'reports/P32_comparison.json').exists():
+        later_handoff=e.read('reports/P32_comparison.json')
+        if not later_handoff.get('all_sixteen_reviewed') or len(later_handoff['rows'])!=16:
+            raise ValueError('P32 requires all sixteen continuations')
+    later_prefix=e.read('reports/P32_prefix_checks.json')
+    later_state=e.read('reports/P32_prefix_characterization.json')
+    if not later_prefix['all_observable_prefixes_match'] or any(r['status']!='counted' for r in later_state['rows']):
+        raise ValueError('later-boundary preparation is not verified')
     timestamp=dt.datetime.now(JST).strftime('%Y-%m-%d %H:%M JST')
     slides=[]
     def add(section,title,body,notes,refs=(),dark=False,takeaway=None):
@@ -316,8 +324,8 @@ def build(root, output, draft=False):
         takeaway='今の成果は検証基盤と切り分け。新規性・採録可能性の証明はこれから。')
     add('07 / 実験環境','同じモデル・同じ環境で、構成差を比較する',
         '<div class="two"><div><table class="compact"><tbody><tr><td>計算機</td><td>Mac Studio / M3 Ultra<br>256 GiB RAM</td></tr><tr><td>モデル</td><td>MiniMax-M3 / IQ4_XS<br>重み約229.7 GB・版固定</td></tr><tr><td>推論</td><td>llama.cpp / 64K context<br>KV q8・１スロット</td></tr></tbody></table></div>'
-        '<div><table class="compact"><tbody><tr><td>環境</td><td>AppWorld 0.1.3.post1<br>復元可能な模擬アプリ</td></tr><tr><td>１課題の上限</td><td>45万token・80 LLM呼出<br>30分・出力4,096 token</td></tr><tr><td>評価</td><td>終了後の別プロセス<br>正解をモデルへ戻さない</td></tr></tbody></table></div></div>',
-        '現物の計測は256 GiBのメモリで、最初の相談にあったSSD256GBという申告とは区別します。重みは229.7GBの保存サイズで、ピーク推論メモリではありません。１スロットの実験なので物理並列化の速度向上を示していません。',
+        '<div><table class="compact"><tbody><tr><td>環境</td><td>AppWorld 0.1.3.post1<br>復元可能な模擬アプリ</td></tr><tr><td>全体実行の上限</td><td>45万token・80生成・30分</td></tr><tr><td>引き継ぎ後の上限</td><td>12万token・16生成・８分</td></tr><tr><td>評価</td><td>終了後の別プロセス<br>正解をモデルへ戻さない</td></tr></tbody></table></div></div>',
+        '現物の計測は256 GiBのメモリで、最初の相談にあったSSD256GBという申告とは区別します。重みは229.7GBの保存サイズで、ピーク推論メモリではありません。１スロットの実験なので物理並列化の速度向上を示していません。全体実行と固定境界からの継続実験では上限が異なり、両者の費用を直接同じ試行と扱いません。１生成の出力上限は4,096 token。',
         [('モデル・版と選定理由',LINK+'configs/models/minimax_m3_iq4_selection.json'),('実行条件',LINK+'configs/P27_code_comparison_v01.json')])
     add('08 / 実験の進め方','実験を増やす前に、次へ進む根拠を確認する',
         '<table class="compact"><thead><tr><th>切り分けたいこと</th><th>比較</th><th>ここまでの判断</th></tr></thead><tbody>'
@@ -397,6 +405,20 @@ def build(root, output, draft=False):
             '<div class="two"><div><h3>用意したもの</h3><p class="body">４条件の切り替え、費用の分離、同じ前半の照合、独立した最終評価。</p></div><div><h3>まだ確定していないもの</h3><p class="body">全件の効果差、失敗の内訳、選択規則へ進む根拠。</p></div></div>',
             'このページは全16件の集計が公開されていない場合の表示です。未実行・前提確認中・実行中・監査待ちを成功結果へ置き換えません。最新の具体的な状態はIssueと研究記録を参照してください。',
             [('引き継ぎ比較・Issue145','https://github.com/sophiria1225/AI-/issues/145')])
+    if later_handoff:
+        unknown=sum(v['unknown_usage_calls'] for v in later_handoff['totals'].values())
+        add('14e / 作業が進んだ地点での比較','８応答後でも、同じ４条件・後続予算で調べる',
+            '<div class="diagram tight">'+handoff_result_chart(later_handoff)+'</div><p class="small muted">同じ４課題の別地点。新しい４課題ではない。後続費用のみ。'+
+            (f'トークン不明 {unknown} 呼出を含むため既知分の下限。' if unknown else 'トークン不明０。')+'</p>',
+            '４応答後の状態量が少なかったため、P31全16結果を見る前に８応答後を固定しました。全４前半を復元し、公開返却・保存DB・Pythonを照合済み。変数数は5/3/10/10ですが、意味的な重要性の指標ではありません。時点間では状態だけでなく後続seed列も違うため、時期だけの因果効果とは言いません。各境界内の四条件ではseed列と予算をそろえています。',
+            [('全16件の結果',LINK+'reports/P32_comparison.json'),('事前の選定理由',LINK+'docs/experiments/P32_later_handoff.md')],
+            takeaway='２時点×16分岐でも、独立した対象は既知の４課題。一般化には別の確認が必要。')
+    else:
+        add('14e / 次の地点の準備','８応答後の前提確認も済ませ、全件結果を待つ',
+            '<div class="two"><div class="col"><h3>なぜ追加するか</h3><p class="body">４応答後では、３課題にユーザー変数が２つだけ。状態が蓄積した地点も同じ規則で調べる。</p></div><div class="col"><h3>何を固定したか</h3><p class="body">元の全４軌跡の８応答後。<br>同じ４条件・16生成・12万token・８分。<br>失敗した地点だけを選ばない。</p></div></div>',
+            '８応答後の全４地点で公開返却51件・保存DB各13ファイル・Python32プログラムが一致しました。P31の全16結果を見る前に追加地点を固定しています。ここは準備の説明で、P32の全件結果を含んでいません。最新の実行状況はIssue150。',
+            [('８応答後の仕様',LINK+'docs/experiments/P32_later_handoff.md'),('実行状況','https://github.com/sophiria1225/AI-/issues/150')],
+            takeaway='会話の短縮と変数の保持の効果を測る。担当再編の有効性はまだ直接測っていない。')
     add('15 / 考察','失敗の観測と、追加機構の必要性は分ける',
         '<div class="three"><div class="col"><h3>指示で解消する失敗</h3><p class="body">元の低成績だけでは、記憶・ゲート・分担変更が必要だとはいえない。</p></div><div class="col"><h3>予算で止まる処理</h3><p class="body">未完了をすべて情報欠落やハルシネーションへまとめない。</p></div><div class="col"><h3>正解でも残る未確認</h3><p class="body">57曲中56曲の詳細取得で正解した例。正解と網羅的な確認は別。</p></div></div>',
         '57曲の例は未確認の１曲が誤答を起こした実例ではありません。公開一覧には曲の長さがなく、未確認を一覧で既に読めたとみなすこともできません。これだけで全取得を強制する制御を提案するのは早計です。',
@@ -468,7 +490,12 @@ def build(root, output, draft=False):
         with (figures/'handoff_results.csv').open('w') as f:
             keys=['task_id','arm','success','known_total_tokens','unknown_usage_calls','api_requests','setup_api_requests','setup_wall_seconds','continuation_wall_seconds']
             w=csv.DictWriter(f,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(handoff['rows'])
-    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,
+    if later_handoff:
+        (figures/'later_handoff_results.svg').write_text(handoff_result_chart(later_handoff)+'\n')
+        with (figures/'later_handoff_results.csv').open('w') as f:
+            keys=['task_id','arm','success','known_total_tokens','unknown_usage_calls','api_requests','setup_api_requests','setup_wall_seconds','continuation_wall_seconds']
+            w=csv.DictWriter(f,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(later_handoff['rows'])
+    manifest=dict(generated_at=timestamp,draft=draft,pages=len(slides),p27_included=code is not None,code_control_phases=list(stages),p31_included=handoff is not None,p32_included=later_handoff is not None,
         source_sha256=e.hashes,builder_sha256=sha(Path(__file__)),
         scope='Progress report. Known development cases, standard comparators and unestablished novel contribution.',
         artifacts={str(p.relative_to(output)):sha(p) for p in output.rglob('*') if p.is_file() and p.name!='build_manifest.json'})
