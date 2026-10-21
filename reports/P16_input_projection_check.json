@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-10-21T06:08:27.156068+00:00",
+  "reason": "Confirm the final serialized memory input preserves execution tags and hides selected text as specified, rather than checking projection objects alone.",
+  "scope": "Reconstruction of fixed prepared inputs; terminal structural audit separately matches them to actual requests. No generated ledger content inspected.",
+  "rows": [
+    {
+      "case_id": "case_01_rejected_before_dispatch",
+      "variant": "execution_tag",
+      "selected": 1,
+      "tags_visible": 1,
+      "assistant_hidden": 0,
+      "action_hidden": 0,
+      "paged": 0,
+      "prepared_messages_sha256": "25e2989895f112e1b105b0b37eed353f27df389fb2d8287cc0ec466f897f0fca"
+    },
+    {
+      "case_id": "case_01_rejected_before_dispatch",
+      "variant": "quarantine",
+      "selected": 1,
+      "tags_visible": 1,
+      "assistant_hidden": 1,
+      "action_hidden": 1,
+      "paged": 0,
+      "prepared_messages_sha256": "0128f28492fdd31042aef4cfd94f7659225b1b88fb1144dbaac18c00fa1c7522"
+    },
+    {
+      "case_id": "case_02_rejected_before_dispatch",
+      "variant": "execution_tag",
+      "selected": 1,
+      "tags_visible": 1,
+      "assistant_hidden": 0,
+      "action_hidden": 0,
+      "paged": 0,
+      "prepared_messages_sha256": "2b79b23b5e82cfc5688b08a1f40f1a6cc5047648b2755ee3ee0e05fe2a06468b"
+    },
+    {
+      "case_id": "case_02_rejected_before_dispatch",
+      "variant": "quarantine",
+      "selected": 1,
+      "tags_visible": 1,
+      "assistant_hidden": 1,
+      "action_hidden": 1,
+      "paged": 0,
+      "prepared_messages_sha256": "324044ff1d7e87feb1bad87cab625629687e2373172f6644755ab590383d75c0"
+    },
+    {
+      "case_id": "case_03_rejected_before_dispatch",
+      "variant": "execution_tag",
+      "selected": 4,
+      "tags_visible": 4,
+      "assistant_hidden": 0,
+      "action_hidden": 0,
+      "paged": 0,
+      "prepared_messages_sha256": "6e2e0bfdf4258b7887eb05fbfffe113bf1f0e1fdcc277f8f5001817623af6b03"
+    },
+    {
+      "case_id": "case_03_rejected_before_dispatch",
+      "variant": "quarantine",
+      "selected": 4,
+      "tags_visible": 4,
+      "assistant_hidden": 4,
+      "action_hidden": 4,
+      "paged": 0,
+      "prepared_messages_sha256": "1dfc8c884b57ee375e70445a8ca38c447cf7de32a9bd78927f03c8e94a85c667"
+    },
+    {
+      "case_id": "case_04_rejected_before_dispatch",
+      "variant": "execution_tag",
+      "selected": 4,
+      "tags_visible": 4,
+      "assistant_hidden": 0,
+      "action_hidden": 0,
+      "paged": 0,
+      "prepared_messages_sha256": "f00aef113c0919d361bd082766e156ca691a58b814102c068e9207ff0680301e"
+    },
+    {
+      "case_id": "case_04_rejected_before_dispatch",
+      "variant": "quarantine",
+      "selected": 4,
+      "tags_visible": 4,
+      "assistant_hidden": 4,
+      "action_hidden": 4,
+      "paged": 0,
+      "prepared_messages_sha256": "443363294d89edaffd137f0e949c5341066b5af81aa197721eaa0fbcf920aa96"
+    }
+  ],
+  "additional_model_calls": 0,
+  "source_hashes": {
+    "scripts/execution_event_views.py": "6ce220754f74bb44d1aaed0a8c9760ee39b86af0ee3b5d920b28cf061e7e68fb",
+    "scripts/native_ledger_memory.py": "07bedde65eb0d37d075dcab233621b8795f7eb7125004ace362c18e9ad1f2635",
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/run_event_view_probe.py": "a5e4397b5a076244dbe45ac2a3b35030485b75d49f2fe7a1a6875055681bdc11"
+  }
+}
