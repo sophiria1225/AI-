@@ -1,0 +1,429 @@
+{
+  "all_four_reviewed": true,
+  "trials": [
+    {
+      "run_id": "P27_01_CODE",
+      "programs": 20,
+      "programs_selecting_prior_receipts": 0,
+      "programs_importing_subprocess": 0,
+      "first_program_with_api_dispatch": 2,
+      "request_counts": {
+        "api_docs__show_api_descriptions": {
+          "requests": 2,
+          "distinct_exact_arguments": 2
+        },
+        "api_docs__show_api_doc": {
+          "requests": 6,
+          "distinct_exact_arguments": 6
+        },
+        "supervisor__show_account_passwords": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__login": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "phone__get_current_date_and_time": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__show_directory": {
+          "requests": 2,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__show_file": {
+          "requests": 43,
+          "distinct_exact_arguments": 42
+        },
+        "file_system__create_directory": {
+          "requests": 3,
+          "distinct_exact_arguments": 3
+        },
+        "file_system__move_file": {
+          "requests": 42,
+          "distinct_exact_arguments": 42
+        },
+        "supervisor__complete_task": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        }
+      },
+      "source_sha256": {
+        "events.json": "f63374b5b85fa48dc266064da9e4348379cb2d354a9d70c2cddd19af011b0b92",
+        "spans.json": "a94326bb1875c480acd234afc0b9eae96bcf403642e51538a5af67cb54ff5ec7"
+      },
+      "program_sha256": {
+        "programs/call_001_01/input_private.json": "97deaa1d8d9a7fcb6e2aad2f9308e18ab2e35ef9cdcb52d5781608b531aa2a45",
+        "programs/call_001_01/result_private.json": "7ef605062af5fcf808fbbb0041172685c6c409f64e58f9938e064d7c0ed1a439",
+        "programs/call_002_01/input_private.json": "5c0fcb13df44d85f23c798155b2989e4cbffcaab20dedc542b987becbe399f71",
+        "programs/call_002_01/result_private.json": "8a978817f992aa583065529511a5ffeb00b06bb27ec082d613eb270616fc98e8",
+        "programs/call_003_01/input_private.json": "a2eba4cd86bfdc888255dc3f0fb842a9fbaa012be1d9d3ae2709227a10b7ed39",
+        "programs/call_003_01/result_private.json": "e142623e911f4c63ed519e8478b1031860d8086834787b04bfe517f5bd92f3f1",
+        "programs/call_004_01/input_private.json": "5640ec429d38b5218a320fb988f104818d4734d23b810d6ebda1cb2be470890c",
+        "programs/call_004_01/result_private.json": "81c4808df53525fe59ad4ef39bedf1b316fb874a7b37bc6cc387cf4df3f7f943",
+        "programs/call_005_01/input_private.json": "e350fdae11ef652b9e43aeb3592fac34b95a9556f57f69f5991db575272e2d43",
+        "programs/call_005_01/result_private.json": "19fb3a7ab753691be42dd3d8513e8dabd86fb441d65432b21db1bbb003967e1b",
+        "programs/call_006_01/input_private.json": "2082e7f6ac5e36440763d6db9ccfcd0b9cc6e977c57c06aa6261e3c221b15289",
+        "programs/call_006_01/result_private.json": "7946c7ce6af6e92111a954314df7721916bcb128eb41761f8365766a86fed8bc",
+        "programs/call_007_01/input_private.json": "11dbfa48ef0264326d460c1f8424c35308422615bf16f874dbe484cc694ecf80",
+        "programs/call_007_01/result_private.json": "667e78cb13d5ecc55af7786831e340a2e9fcaa1e5a58005e821353a40bb6cf2d",
+        "programs/call_008_01/input_private.json": "b714978e8684f8021d7e4bb2a244af569ce7fafbcdb95d48421060215965f5cd",
+        "programs/call_008_01/result_private.json": "d04d7111669d75dcffa193c0db900351705298db8021a9b3f2c9e233b4d47b41",
+        "programs/call_009_01/input_private.json": "fd671d9ba9a3bf0474807c496099fcefa74dd712d3c6c4848cca376ff124e077",
+        "programs/call_009_01/result_private.json": "ad6fe5f8e6119293884960ef00bb099d8ac487b025dd5512b589c5dcd2d7b17d",
+        "programs/call_010_01/input_private.json": "999e5f645c811d7a453677eaccc59d2e44ad57f2b8e24fead40bce503bbb60fe",
+        "programs/call_010_01/result_private.json": "70b34cd5b7397e492368e855abddd3c773067f0cd2a8783ebc4810bffdbb806f",
+        "programs/call_011_01/input_private.json": "f05a2a658f162cce067a13690eb11861370933bf1473daffa1124303c77defd9",
+        "programs/call_011_01/result_private.json": "856b15db9c9e797a7b6aceb5af06fd43a286dff529728792791b82b53004220d",
+        "programs/call_012_01/input_private.json": "8e2594fa0065fa0865d3e8d1415e97dc82c63ac47e0b3347a6f3ed0408088af2",
+        "programs/call_012_01/result_private.json": "0f96f0ecf1d527a9a8dec767590c9f1ae251c94c0adee7a8c425cdc4980a5580",
+        "programs/call_013_01/input_private.json": "381e5d17a9e051056e91432db4e814d7a8554c46788c3101a6f66813f112293e",
+        "programs/call_013_01/result_private.json": "3b5af2c4a395302b3c22ecaae591f2b2017f7d60942e816ee14838e0cdb53b8b",
+        "programs/call_014_01/input_private.json": "3306a0b5860e5fb982665a3afd059725930b01874084e9c8ed65f3eaafc4bb56",
+        "programs/call_014_01/result_private.json": "2a56671c1026e32f50a11b22d34ff4790ddd619f0865fd1163f8d6e3da1e859f",
+        "programs/call_015_01/input_private.json": "e6c1b9593f930e5b8314ee10fd525e059a9bf8b6cf0522490038d40295b064e3",
+        "programs/call_015_01/result_private.json": "fa952a08afbe82dffb98501807311e8aa14b26d7c6b735c90cb8ca944cdb045a",
+        "programs/call_016_01/input_private.json": "6166d8915c432fe4fa89ed10f8cfaf775fb1f4140e99f60d903bb5df8394757b",
+        "programs/call_016_01/result_private.json": "9c4b72035ff2ef0f74167e0c1d689291bc48a0f0e19f240fdd0599ff6033d471",
+        "programs/call_017_01/input_private.json": "2c42691c81f2298cc9c521cf011ee30e18b66ff8b0dc51c773ae3c0b1d7fafe8",
+        "programs/call_017_01/result_private.json": "8557a7cd7e952cf589cf00d4ea3066189db6d8343116fc23f6a0acf8efdbd692",
+        "programs/call_018_01/input_private.json": "0b9763636b38922dd69bdd4721fdd7ad80723aab28207d745d22d866bf7f3826",
+        "programs/call_018_01/result_private.json": "01017398e578424f6e7acead48f5844fca0d43f4e0d40ba6388a5c2ddbef7933",
+        "programs/call_019_01/input_private.json": "f7cd6747c27a4493cc035f8f78492f3a14dc3df988b62e23285c2999cfd11aa8",
+        "programs/call_019_01/result_private.json": "878a1a0c8bd0d624c2e1076ab8b6814318b72b118a605e5866700754b10ec946",
+        "programs/call_020_01/input_private.json": "e2c3206c6376ad753838d7654859d68d5d33b8e58c4a356ec7a7d92d02b8631d",
+        "programs/call_020_01/result_private.json": "4ca0381c150046632f978bffb1bd5c3c5ca24bf282c58cc9d2664d0a3ae4ae12"
+      }
+    },
+    {
+      "run_id": "P27_02_CODE",
+      "programs": 27,
+      "programs_selecting_prior_receipts": 0,
+      "programs_importing_subprocess": 0,
+      "first_program_with_api_dispatch": 4,
+      "request_counts": {
+        "api_docs__show_api_descriptions": {
+          "requests": 3,
+          "distinct_exact_arguments": 3
+        },
+        "api_docs__show_api_doc": {
+          "requests": 6,
+          "distinct_exact_arguments": 6
+        },
+        "supervisor__show_account_passwords": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__login": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__show_directory": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "file_system__show_file": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "phone__login": {
+          "requests": 2,
+          "distinct_exact_arguments": 2
+        },
+        "phone__show_contact_relationships": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "phone__search_contacts": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "venmo__login": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "venmo__create_payment_request": {
+          "requests": 3,
+          "distinct_exact_arguments": 3
+        },
+        "venmo__show_sent_payment_requests": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "supervisor__complete_task": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        }
+      },
+      "source_sha256": {
+        "events.json": "e6783c9fff404ee53203dfc7f206951d9a3291ef80d3b5b0bd87b463ee152dfe",
+        "spans.json": "832043303df3f04a5921b511c2d7534d2a3351c37d67007d3e3a2f5801b39d50"
+      },
+      "program_sha256": {
+        "programs/call_001_01/input_private.json": "45cc7e8618ed2daa91b67abc5d0bb8402db64aa65ea0e188b314c7b8eb16f508",
+        "programs/call_001_01/result_private.json": "5f6d8760ec2b224ac3638b7548961bed6d56982dd74db9b2970b21e7a594c037",
+        "programs/call_002_01/input_private.json": "d3df4f10ac7cd652dca3d92b4aa4b17bfb377b4b22db35406bc62d8e4ea8290f",
+        "programs/call_002_01/result_private.json": "88ca726135445fc05ca62917344f996228e117036ef4efd5f21e01ee121a656c",
+        "programs/call_003_01/input_private.json": "c767122f4755e4fd83b7a35d62431edc75f4524bf0ba9926d89c64a1cca56b37",
+        "programs/call_003_01/result_private.json": "c48bc38314c8d88310763b54b6d9d61e75423513baa1dd910b1a8d56d0ed14eb",
+        "programs/call_004_01/input_private.json": "c7a21fdb8b9f6a589425b28150d55896d635a82a9f17e19998e0c36304a08a76",
+        "programs/call_004_01/result_private.json": "ad3bda789ff4807f1374e46925b013f6ab3a95cdeb6acf7b9fa13b1a34fd7bc7",
+        "programs/call_005_01/input_private.json": "03d705076ce6ea0600caf4f484411f768d6d1d4308ff4614158f9a39e1b2eb45",
+        "programs/call_005_01/result_private.json": "81d3cec2e96e9bfede2fc2312b0d163fb9632eec3d93f2e5dea5e0da3cfeeff0",
+        "programs/call_006_01/input_private.json": "eff95cb7ed8bbb0d1a4fcc5191321433037c5d943c1086db00c6f7eeb84bfdb2",
+        "programs/call_006_01/result_private.json": "59ac777765383ee08cf33c575317baf82245e47b33a84a1f180a8d326f14fb66",
+        "programs/call_007_01/input_private.json": "92a02913e8a6e5313426d6854bd270a8042e49d1c172f9d4ef273b7de89ddc1e",
+        "programs/call_007_01/result_private.json": "b96b98548caf68e395eae27338d1561b40c3898bc738a7bbe40f3c561e97c166",
+        "programs/call_008_01/input_private.json": "d064e00be6ad49ea3425b191d919a0f0d16b39cdec0c1a0e190a39040fcc4a7f",
+        "programs/call_008_01/result_private.json": "98188285d00c9cbcb093f1891017241309c59ec32b2d7c98c40fb31e6738183d",
+        "programs/call_009_01/input_private.json": "63615893707acdb244b0f3570839415d0d19a0912e5dbb715b32e349c27dc7fb",
+        "programs/call_009_01/result_private.json": "d15d74c66c55a5e3c6a450e9fa03db4d233abf6e8cd32a49f9c372b85d590085",
+        "programs/call_010_01/input_private.json": "39083fe4e4a43730d6b345e009ef82d4a04eda6d5769a311139dcf8edd876954",
+        "programs/call_010_01/result_private.json": "16d4194be19e9e3ffb601d9a295e78d74c6007aca32cfa84f21e4a1fce219bef",
+        "programs/call_011_01/input_private.json": "6c6790a69a5e52c6155018eab111dc66d4e22415575b6f47c2352cdd98d0e849",
+        "programs/call_011_01/result_private.json": "280707653df7e987204f36a80c3f07b4fe8346074f06b2722480ac60814664b4",
+        "programs/call_012_01/input_private.json": "761d310b0fdb2ad4826688bf520732839fa548ed34c2994de043375f2527adb4",
+        "programs/call_012_01/result_private.json": "2f4e544a166f310f8d8761c29bb95b8c00a344ed35e171b9270b89daeb65e031",
+        "programs/call_013_01/input_private.json": "77141da8ca952a56612030ea130417aba20c2c8000062cc9ce42a5ca6bf0e5be",
+        "programs/call_013_01/result_private.json": "dd0def40191fca3ee6865fa1df3f3075111b6a113ea2e405bbf89a43d91445c1",
+        "programs/call_014_01/input_private.json": "f2fe952f16bec3a03ba32e88904ffc3f4634b7a56a855848a58144208bef4c1d",
+        "programs/call_014_01/result_private.json": "6855082dd99692de624e01448e98fd32f98fe40ec705af8160c67126e1cdeac6",
+        "programs/call_015_01/input_private.json": "972f5db1dbd1b486a21cc0007318d6b7df60822f7e45ac17f27cb851dce3d8dd",
+        "programs/call_015_01/result_private.json": "3204553ff64d483449d1830a334d69c9af5bc21bf74cf3abd45654f54ad09cf9",
+        "programs/call_016_01/input_private.json": "a4de398be651ca839b460f05860d98dfbcee4b2d457916b946f12cf262f3ad37",
+        "programs/call_016_01/result_private.json": "21ea5b17648369107b39a276067d658811b8f1cda7485c1a1b8ee7dbe90c837f",
+        "programs/call_017_01/input_private.json": "7b43d7eeb42a706a2ba293c17780c7c4e2c1cccd6f5d6312d7f01f3135749bda",
+        "programs/call_017_01/result_private.json": "5efb578214cae637711d034a255a3e7b9284ebb3a8018002534523b67e38f374",
+        "programs/call_018_01/input_private.json": "bf890beaa5c503b75ac232a97d5b3846b74a3531c73155998dc859a4e0f3be42",
+        "programs/call_018_01/result_private.json": "f5596b9d592124f2246ad1c8a0b28ace4de58161b28415a2548cddd3b65f3ebf",
+        "programs/call_019_01/input_private.json": "bda623e826908d58af3f8898068f7b4d7e018bd42a8841962ac02c05170aa3d4",
+        "programs/call_019_01/result_private.json": "098175041229f9f52946843b87f0ffa52c29138d94860c20eb4b19e5940f66b9",
+        "programs/call_020_01/input_private.json": "1e41ab30e6920c3b1ade5d19b74be206fab06c502d729b966aa66739ab69e04d",
+        "programs/call_020_01/result_private.json": "53ee42d080f772dac7689c86192759e7441fd4e9c1a936960330e32ae47ec939",
+        "programs/call_021_01/input_private.json": "426b6df85bef8bb45cd9f5e8868d3799a24724fe831d5ff1c2cc5d279571dddb",
+        "programs/call_021_01/result_private.json": "79eba9f2e8140d434f65ee17e4f566d3ab133b78f40dbc885aae32bbf8b206a7",
+        "programs/call_022_01/input_private.json": "a17dc6672fc876a28e18d47231374d6f3ba68041937b42c6e64e2ed6fdb31e33",
+        "programs/call_022_01/result_private.json": "a5445299417ea67c6833ad6e566a075e5d40929aa5804ee10d51ba7ce74e8bd1",
+        "programs/call_023_01/input_private.json": "5422ba152b64432337b2cba38c7438bc118c407f5253e22c55efed933af259e6",
+        "programs/call_023_01/result_private.json": "582e351e50b4351b0ec7d7edd6d3e5e2ca78479f6a9a07d8b28889ca4dafeb76",
+        "programs/call_024_01/input_private.json": "b48aa6354a5b373804bdeb5f366a76a6d848d3fd71eae139ff9180ffa6395e6c",
+        "programs/call_024_01/result_private.json": "6dbeca70b20c07c119de1ae2e7e045bc9175f120a5f2ccde50b71d419103f88c",
+        "programs/call_025_01/input_private.json": "2721a12491a46546b5443a4b5a52c872ec8e3c4393b9cc02fc46f773f001354e",
+        "programs/call_025_01/result_private.json": "9823a32d8d561b7abe85d6622126becd7d40156d04c789eb43e58480b5694add",
+        "programs/call_026_01/input_private.json": "3879a51ae91f377e1ac350d37976c17560090a6ad60f420c529064895439eb85",
+        "programs/call_026_01/result_private.json": "86dbed2f4e030e317709d011815bda3650ca767b7d8a9a1a1e97226467df4fee",
+        "programs/call_027_01/input_private.json": "8e5d56cf9aa071861bbe7f4e5f0b7bb1618dfd91498b710350458cc9c38bbda0",
+        "programs/call_027_01/result_private.json": "7e7b231e242c9f6adf507cb5a1d89ac968736c3df16b9aa05a77715c69988fb6"
+      }
+    },
+    {
+      "run_id": "P27_03_CODE",
+      "programs": 32,
+      "programs_selecting_prior_receipts": 0,
+      "programs_importing_subprocess": 16,
+      "first_program_with_api_dispatch": 22,
+      "request_counts": {
+        "api_docs__show_api_descriptions": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "supervisor__show_profile": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "supervisor__show_account_passwords": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "venmo__show_account": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "api_docs__show_api_doc": {
+          "requests": 4,
+          "distinct_exact_arguments": 4
+        },
+        "venmo__login": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "venmo__show_sent_payment_requests": {
+          "requests": 5,
+          "distinct_exact_arguments": 5
+        },
+        "venmo__create_transaction": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "supervisor__complete_task": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        }
+      },
+      "source_sha256": {
+        "events.json": "e0e5ffbf170063ae1d9009b693f51467fb7c76295c00121e06fac2c6fe4a3649",
+        "spans.json": "5e740aa2c4f8113684219c55dac6f1165223c3545a664d15c228ea7ea49700ef"
+      },
+      "program_sha256": {
+        "programs/call_001_01/input_private.json": "472df1943f636a5b69f667b4d2859e3e8869f44617bebf28aa194566b2611f88",
+        "programs/call_001_01/result_private.json": "006aeeda615e8ab9901dcfba1ea17e7b97b23da0fdf0c5e96e4942504a70c7d3",
+        "programs/call_002_01/input_private.json": "960203596796701aa87186fc2563f3b8a054c3d15a7c986f2f7562769d757994",
+        "programs/call_002_01/result_private.json": "afd6a315711e417193d74da914ba2e4dcbcce74fb767b5ead769285d3be218fb",
+        "programs/call_003_01/input_private.json": "aabac034e7bb35730cf1a27c068e46fc51f57c63d0abf7a9eb71fd709c182a4a",
+        "programs/call_003_01/result_private.json": "60f9f965f780fca72a55cbdd8d017060e768f56ff643057ecca043b3f3d18220",
+        "programs/call_004_01/input_private.json": "434a69642181c192cffdfaa29ad5abc3e0eea84b068b625427bc670241251c3f",
+        "programs/call_004_01/result_private.json": "b56f0cb7723a9f10a41def662e31d46e844a41eceb2146055eeea4244593d518",
+        "programs/call_005_01/input_private.json": "8d2fe066fc198d2e0afe5d6293a04063c4c10b927fec37cf923061cc758e60fd",
+        "programs/call_005_01/result_private.json": "5e8b0dae959f4d8cd891595fd7018cece080f6b5c24f3eec3a16f97445c364bf",
+        "programs/call_006_01/input_private.json": "7144465b7c0076dd8c731c8862a90148ea7e436d7086cd196312929cb5bc981e",
+        "programs/call_006_01/result_private.json": "7c93372c36b5514bb159c9c2ee47468d38844d5eefbde7c288432b39e4e7ae5c",
+        "programs/call_007_01/input_private.json": "811c710b83fc46cf2e0f3be89bd928097453273ff4670ff5db58168fc5077e7b",
+        "programs/call_007_01/result_private.json": "13c0968e3a5cfe351c92ca0c2e6a8ea422a1210f9949cbdb5f3ddacab826afc8",
+        "programs/call_008_01/input_private.json": "5a0da29fd4b581865f7265e455814ec7d6de359497b8b12f389e9340b731f7c5",
+        "programs/call_008_01/result_private.json": "5cc0f8027346ad5ebda512a1809a4b2bd765d43b0de01730c085d3513928bdb1",
+        "programs/call_009_01/input_private.json": "35b0afd4d1aaace66f7fe3f4c4dcfa722106bcdf54d9fec19f515931506b4a95",
+        "programs/call_009_01/result_private.json": "a6ad22faaea096968444c30abf009a0318f1a34325364003e55533042d38785f",
+        "programs/call_010_01/input_private.json": "dad47419954102c018dfca6563825717ae0dcbf196dc23fb31d00bf0dc6cffe6",
+        "programs/call_010_01/result_private.json": "05731c922ca3a934a7d525ebddb003ee89f5495ecda0c2b22c821bbe164126ca",
+        "programs/call_011_01/input_private.json": "1cc738c27927d58278d47e7df3aa96b55a3f90e983aa8f4b32fb94c2b325468d",
+        "programs/call_011_01/result_private.json": "75c9491649b48f5a38bcf458744eccbd864519119404ec04a33ce719a1968970",
+        "programs/call_012_01/input_private.json": "170e7194ee34c366a3c5074c0ebe60492cfa6b0a30a5b48abb4c71cf0231aee6",
+        "programs/call_012_01/result_private.json": "0cc9da9e52c5fec76fc0b48643ef4dff3a0c6bc80942fb35db47f6178e331c46",
+        "programs/call_013_01/input_private.json": "0b41c2c860f11a25802dbf562c6dd2501b10999c22b24dbb9a74a752562adf74",
+        "programs/call_013_01/result_private.json": "de5a9b898203513b2e332c739ff3a45b4ae04ec25fadb759e0122b825348bff8",
+        "programs/call_014_01/input_private.json": "8f4d26f00ebd3039a1216562ae73ef1070375f20e1029d34fe7af923d4398728",
+        "programs/call_014_01/result_private.json": "16e94b9b5e0bfc3910696d806b5a60972ef628d4e85e91ae13dc883758a62039",
+        "programs/call_015_01/input_private.json": "05c961db54239f45e0bcb14b34f1a6bedde117bc3737359d3b55e0118323c376",
+        "programs/call_015_01/result_private.json": "980901b9c2514c9602051eb67d95aa9bc4e61e12b213f51f200f84b1dfc0a4a9",
+        "programs/call_016_01/input_private.json": "86566c6c4bfb7f709706ace0502c391aa40f74778a59b59fd0d03d0bf25f1431",
+        "programs/call_016_01/result_private.json": "75cc7c6338a0808cbe90ff0de73097e290eb129008565f16f0d3c581201354b8",
+        "programs/call_017_01/input_private.json": "446ec8de5dc2a642ee3ed2e1caec818b4d2eef70b2864201f821f790f9a1d552",
+        "programs/call_017_01/result_private.json": "0c43702c16be63bf63745dc7ecd06045347713c018eaa188b74e0cc7a1c5105f",
+        "programs/call_018_01/input_private.json": "d620863feefe47b18db2c43ca2f0211efb85ba401f2877235004558d7b3ad709",
+        "programs/call_018_01/result_private.json": "41311e93cddfbfa1f10481408a2f8271016bdc068681d42c80895d01b74afcdf",
+        "programs/call_019_01/input_private.json": "69f2373f5d82dfc57b7740c1b8bf6a85c8e4618406aaf6c8bccf433232aefd03",
+        "programs/call_019_01/result_private.json": "6b8784a916837d7b1259dadc713c32473ec1e47aff4524adb6b3dbbd30103bbc",
+        "programs/call_020_01/input_private.json": "668853da18d450239184e9cee625505dd862a39417180ff07c25b045f3638dbf",
+        "programs/call_020_01/result_private.json": "06c62b2aa6f6941d2696e3a01333adbc4d34eec8ebfa73e31448abdfb45f2000",
+        "programs/call_021_01/input_private.json": "a3e44d38ba02245a04eb704991b3d6550200b4a0f609405ade6a9e7abe480156",
+        "programs/call_021_01/result_private.json": "139ef0ca77c0c617e1cf0f6493b49ae17a19b7aa1327b30a0a2e59557bccc7be",
+        "programs/call_022_01/input_private.json": "5432e93623c43df8804de56ca034cefde026d4880e3111deee90671ca9b65ad9",
+        "programs/call_022_01/result_private.json": "cc7abbfe0affbad5a0b21d4e21fc65471098bdf16312af7e520d9449c2f16f91",
+        "programs/call_023_01/input_private.json": "d12f402fbf41538fc1ef77010310440c9cc5bd5b118a7690eb3e81c1b3fb1073",
+        "programs/call_023_01/result_private.json": "503b6a9d9d3b5ca13127a024c2b95ed5b9d11a3122dec7fe3576ed2a2c397e62",
+        "programs/call_024_01/input_private.json": "93aff1fd1f913cd9d2c85cefceefce7689c6a99d231e2a5b9b3ea218f967b741",
+        "programs/call_024_01/result_private.json": "8d5b7d3c2c52d95e4c538dcfa0443ae66e6dec7db06aa79b1e2f78c217d6f459",
+        "programs/call_025_01/input_private.json": "f5f0213f9f477e8c660d10374ab1ac4764a31b1e9a12cad4cd534f4145f35921",
+        "programs/call_025_01/result_private.json": "5c83a845702c2a8b9746b1f424be18e2df368dbefc8977957f795e97c2063fa0",
+        "programs/call_026_01/input_private.json": "eb40ce08c696ed263bc26700088a752f3309448933b790a19b2d069202cbcfee",
+        "programs/call_026_01/result_private.json": "855d864621cd2e4deaf9dd8832b21414d442e638303a706740a50c72c8cad2fc",
+        "programs/call_027_01/input_private.json": "c0014d6a6b461851a75221696eb33b3ecc2bfb446f3b7090a8c01b1db1745abf",
+        "programs/call_027_01/result_private.json": "b4116ae14c9f1d67b6dd2faaec46673428e59d22b4f839bc2b5445615b605a5f",
+        "programs/call_028_01/input_private.json": "e15549f79d248017ea8019116c052e523738d007133fa333c702bdfba91dd864",
+        "programs/call_028_01/result_private.json": "04bb2a28b1ec805391c9a44cb728326c58205e4ead90e0be990a6547416989f7",
+        "programs/call_029_01/input_private.json": "3ebd800c01c14da02a30553ce2f3ab9aa90f02be2f974337e23cf26295dd118e",
+        "programs/call_029_01/result_private.json": "e7f411b38bb69e2779fa87bda0932dda67b84c4267a904feb5452def0c42dd30",
+        "programs/call_030_01/input_private.json": "67abc851be3d45593529a58b4a3d9dfacbbc136811fb33a649411bcf116c7c81",
+        "programs/call_030_01/result_private.json": "0cf2d212bd0fa8aa4c295d1b5c2cbd02945f0b22e9bb1bb890dd82ec5cb1f4b2",
+        "programs/call_031_01/input_private.json": "21a00a2204f81280a57e3211fde80d31649698df9fb0daa8a7419549aa5dac84",
+        "programs/call_031_01/result_private.json": "99106bb8c2d20747040df8f8e69df9bf172732480dfbdb07540db25caa23aee9",
+        "programs/call_032_01/input_private.json": "05463a02eae632e6edf2559a3790372a8eac71d53839b6c04e9000e0b938a284",
+        "programs/call_032_01/result_private.json": "0134debe2424a1915e495aad845655744c78984fe4e06d75ea5b772d6570654e"
+      }
+    },
+    {
+      "run_id": "P27_04_CODE",
+      "programs": 21,
+      "programs_selecting_prior_receipts": 0,
+      "programs_importing_subprocess": 4,
+      "first_program_with_api_dispatch": 8,
+      "request_counts": {
+        "api_docs__show_api_descriptions": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "api_docs__show_api_doc": {
+          "requests": 9,
+          "distinct_exact_arguments": 8
+        },
+        "supervisor__show_account_passwords": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "spotify__login": {
+          "requests": 1,
+          "distinct_exact_arguments": 1
+        },
+        "spotify__show_song_library": {
+          "requests": 5,
+          "distinct_exact_arguments": 1
+        },
+        "spotify__show_album_library": {
+          "requests": 5,
+          "distinct_exact_arguments": 1
+        },
+        "spotify__show_playlist_library": {
+          "requests": 10,
+          "distinct_exact_arguments": 2
+        },
+        "spotify__show_song": {
+          "requests": 48,
+          "distinct_exact_arguments": 48
+        }
+      },
+      "source_sha256": {
+        "events.json": "364c9b7fd640fc0b20ec5ef8e03abd62676244c5be5dd0d63ff0f8a80c2422b6",
+        "spans.json": "9691573310275abc9295bc120a061179d4aaa1a24a9a460797338816840751b0"
+      },
+      "program_sha256": {
+        "programs/call_001_01/input_private.json": "493be4c0a396ff076c63fa4d523d87b36c26f0b6f5622a03f5de430cc686e66d",
+        "programs/call_001_01/result_private.json": "c3b34bd463c8328949d5a0dea6ea8feb994d796462887118a595e0add6dbf492",
+        "programs/call_002_01/input_private.json": "4490076fa3de9e10254a8944fc7264861eded11615b96c6bbf870b249eec6d6e",
+        "programs/call_002_01/result_private.json": "1339ccc2c9960cd0e165ff999707e5325953ad9b99ed38438d871f87bfec1fa9",
+        "programs/call_003_01/input_private.json": "8b73e55b6375e3959de0410114e3f73eb1bc262c834a5855382abd4fd0203588",
+        "programs/call_003_01/result_private.json": "5d57a86776285ab333dc4c2ea9108b26e86f1244384a9b038871dafcce22cf7f",
+        "programs/call_004_01/input_private.json": "e549a5d4c3a8a993a466519c826687ae767b034f6924fe1b70331e51c92a6338",
+        "programs/call_004_01/result_private.json": "c5fd3bf43c1be921384ee926673704f123dd2f442c810b7891307f0f9678f4cf",
+        "programs/call_005_01/input_private.json": "67df6ab49aa92a1e25eb913f640d688d55e3f0ea17c97e78df7a7b251122b150",
+        "programs/call_005_01/result_private.json": "936c471d144adfa100ba5bd1b4dd7a767933a871a04400fb2be8a867a2783f01",
+        "programs/call_006_01/input_private.json": "8e5a8e5cd999a35bc80301a7b25182732ee7e6f24e05039b3006cd4dc56b4089",
+        "programs/call_006_01/result_private.json": "2b194e7a99104cb70941bd580e2209484fb4b2c0a272c801f5c475fdb5ab9935",
+        "programs/call_007_01/input_private.json": "bc2ea398597ff9faaea5bfde0e7ff3b2e8bb7b9b0346cdba3c0cd1fa1c85bc19",
+        "programs/call_007_01/result_private.json": "e6fc53a61bd3f5cebcb9603b9c609c41339caa33f9345cd0c1715a9a500c1d69",
+        "programs/call_008_01/input_private.json": "896716f38da7ba564edd935041af284045bec760c5a0e2f9caaf1368e672ed49",
+        "programs/call_008_01/result_private.json": "69e5b52d90be688dab0333d4b34994f19010e31f3bd8c7d4d915632f799e4b71",
+        "programs/call_009_01/input_private.json": "dd031c83354eb92d2bb3238ea7aa8bd2813f32d40350146f0ebeeae53c3f50b0",
+        "programs/call_009_01/result_private.json": "81ff95eccf1a43bdf76afb36de7d6c3bbbc652cf4c6f291e045de4752e1ed78f",
+        "programs/call_010_01/input_private.json": "3d275d9e77cf59a7b9151a36710118501e1db1741fb49cf549a8e693c07d67fa",
+        "programs/call_010_01/result_private.json": "8f7785c8da68382318bdf8d676e1094cde70f877b6a7e07638d2f34345875504",
+        "programs/call_011_01/input_private.json": "f27ae602a902f3599ecdae1db7cf2341f21dbecf870132382afd9d4e9570966d",
+        "programs/call_011_01/result_private.json": "2386c6552c34b1299b1d07958ea2f8fc9c88b14a66a07ebb58899f702b5976ec",
+        "programs/call_012_01/input_private.json": "b5335a98e90664cdfa8c6c0e420f3e099ed58a343700d12acf9bb7e828be5738",
+        "programs/call_012_01/result_private.json": "ba49a767149eb7eb0787c9dc03c14cda90d121011c5977d66bda195d8fcadbae",
+        "programs/call_013_01/input_private.json": "9d632c2e34db6c1575f1f8486e9ff68444b132dbca3da78a2ea50627101e1277",
+        "programs/call_013_01/result_private.json": "b09cd9cc1d4970e0c99366c53b62040abeae166c8279d355ed9bda5e117fd0a4",
+        "programs/call_014_01/input_private.json": "f86e49cc2b3334c08eefb810ff75102a1ece4ad613e86636001e6d6f714a6d2f",
+        "programs/call_014_01/result_private.json": "c89368eb56d18a133379d4c4b62899457803d80ec188bc627ee479bb8480c832",
+        "programs/call_015_01/input_private.json": "707d61decd6050e04fcb792ec52b986c6e31e3d8a5a381396c5fb9b5295aff73",
+        "programs/call_015_01/result_private.json": "f4fc410a544662301ba9b24c99bc43c73f7f05ad48b1deb50a88e28f6b63ac8f",
+        "programs/call_016_01/input_private.json": "5bf98c64d46b806a1d8ac04a5d446cc9fbb3e32463096299bf1d0e3b723fa3c1",
+        "programs/call_016_01/result_private.json": "8f213ae95c889da8ee71e736d2650cbb943f1949600e4d7f8518ae8dd3d56229",
+        "programs/call_017_01/input_private.json": "f8dc3d497b69dd4424d7e331ae69217541c8db436a0afe77fb219a84a7d4906a",
+        "programs/call_017_01/result_private.json": "9c9c7a187cdb22da7d7ca70ebd4c32d0c356b11fee713c979c51daba470fbc02",
+        "programs/call_018_01/input_private.json": "0fffe594c92e0000f7f2d5597aead3dad1b39b0b71f8d8a4286718844ceef973",
+        "programs/call_018_01/result_private.json": "913654bde806bd58bba71cd19f1d5993f126fb75f13c67336ae97732c2859517",
+        "programs/call_019_01/input_private.json": "96c813780a97f6f3f88682b084e29e92760aca85c352e32aaae94d86d6de3fd8",
+        "programs/call_019_01/result_private.json": "b28837449ee7c8a86bc26de2416750c04e6c493569d81721dc2c60bee7d123e1",
+        "programs/call_020_01/input_private.json": "3276c402204eb15eebc578cc87202be4f30a0a822eb0a1faef148e5bb89f0d40",
+        "programs/call_020_01/result_private.json": "59897531069a368f64aae7e81909a9590665f8f4a2d7f1d85d4c7d461e4e0bcb",
+        "programs/call_021_01/input_private.json": "bc1d3f957f98768ef7505aaa12a6cf0d2823897712f4a810ff926aacb4398186",
+        "programs/call_021_01/result_private.json": "c6a83b518a9a01afd0f0d403a9d166c20853a457663f16697ac6089ca3769b5d"
+      }
+    }
+  ],
+  "model_calls_added": 0,
+  "api_requests_added": 0,
+  "scope": "Post-hoc structural counts. Exact request repetition is not automatically redundant or safe to cache. No source/code/argument values are published.",
+  "script_sha256": "637d14512d292c340be6880d0963cf60ebc3795370039ea7840b8b281c769418"
+}

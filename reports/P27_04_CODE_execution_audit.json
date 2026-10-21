@@ -1,0 +1,43 @@
+{
+  "run_id": "P27_04_CODE",
+  "task_id": "6104387_1",
+  "arm": "code_guided",
+  "stop_reason": "api_request_limit",
+  "declared_complete": false,
+  "known_total_tokens": 177249,
+  "usage_by_role": {
+    "agent": {
+      "calls": 21,
+      "input_tokens": 169020,
+      "output_tokens": 8229,
+      "unknown_usage": 0
+    }
+  },
+  "model_calls": 21,
+  "tool_turns": 102,
+  "compression_events": 0,
+  "format_errors": 0,
+  "api_bridge_errors": 0,
+  "wall_seconds": 630.8821200001985,
+  "evaluation": {
+    "official_success": false,
+    "pass_count": 0,
+    "fail_count": 10,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 0,
+  "peak_input_tokens": 15540,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "ed436a9760b3a9a96f7722b40e49e2a5680d6e532d2dd8e82abbc30325222a37",
+    "usage": "8694ab03e35895304cc3972b2805335655c2eeb8234c567f760f314e50d17dcc",
+    "evaluation": "1cf4bee5cb367d41669871cac350e409865824cdb88e6dde963530b803207643",
+    "spans.json": "9691573310275abc9295bc120a061179d4aaa1a24a9a460797338816840751b0",
+    "events.json": "364c9b7fd640fc0b20ec5ef8e03abd62676244c5be5dd0d63ff0f8a80c2422b6",
+    "plan.json": "8611e39a9a24ab8a4253ea5bfe8cb7a0e6f5cb3555f032c3863a3f6d7db2103e"
+  },
+  "code_audit_errors": [],
+  "program_executions": 21,
+  "api_requests": 80,
+  "scope": "Saved public input/history, code-to-API correspondence, budgets and container controls. No proof of semantic correctness."
+}
