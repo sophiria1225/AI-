@@ -1,0 +1,185 @@
+{
+  "phase": "P25",
+  "trials": [
+    {
+      "run_id": "P25_01_GUIDED",
+      "sent_counts": {
+        "file_system__show_file": 42,
+        "file_system__move_file": 27,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_doc": 2,
+        "supervisor__show_active_task": 1,
+        "file_system__show_directory": 2,
+        "api_docs__show_api_descriptions": 1,
+        "file_system__login": 1,
+        "file_system__create_directory": 3
+      },
+      "not_sent_spans": [
+        "s42",
+        "s82"
+      ],
+      "text_failure_spans": [
+        "s7"
+      ],
+      "completion_answer_supplied": [],
+      "source_sha256": {
+        "public_task.json": "f6253dae38e28f196675347898edaea147130570c049a8da0df376a9d2300948",
+        "spans.json": "a0b600e2f93cd672d067eb5c1160d3ae337deee77d0bbeaeee4125a416e58009",
+        "events.json": "21566867a331317d5dff514340985ec7ec178a1d875d44f17f09d2f0f7e5de73",
+        "summary.json": "2590d2d67004ad902e4cde183ce1a0a72915d06c45c22fee7cea1035b2f588d8"
+      },
+      "photo_counts": {
+        "directory_snapshots": [
+          {
+            "span_id": "s8",
+            "listed_paths": 42,
+            "paths_with_metadata": 42,
+            "paths_with_move_receipt": 27
+          }
+        ],
+        "unique_metadata_paths": 42,
+        "move_requests": 27,
+        "move_requests_with_json_message": 27,
+        "unique_moved_source_paths": 27,
+        "read_paths_without_move_receipt": 15,
+        "move_sources_without_metadata": 0,
+        "unclassified_observations": {
+          "file_system__show_directory": 1
+        },
+        "scope": "Each listing is kept separately because it may refer to a different directory or time. Receipts do not by themselves establish destination correctness or a lower API bound."
+      }
+    },
+    {
+      "run_id": "P25_02_GUIDED",
+      "sent_counts": {
+        "api_docs__show_api_descriptions": 3,
+        "phone__search_contacts": 1,
+        "supervisor__show_active_task": 1,
+        "venmo__create_payment_request": 3,
+        "venmo__login": 1,
+        "file_system__login": 1,
+        "supervisor__complete_task": 1,
+        "phone__get_current_date_and_time": 1,
+        "file_system__show_file": 1,
+        "supervisor__show_account_passwords": 1,
+        "phone__login": 1,
+        "file_system__show_directory": 1
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [],
+      "completion_answer_supplied": [
+        false
+      ],
+      "source_sha256": {
+        "public_task.json": "f7521e031ecfc6b8f7a5fde8a5d505f5f6b22b8152c64ef37e42d8348c85fff9",
+        "spans.json": "8687d69aaa1810ab17261007dd3a3463de3b11cfc7715361b3256f0c014bf5b9",
+        "events.json": "3d608451ec73dbfb5ba0185a606859d2520bcbef100947b1fb41655585b27e4b",
+        "summary.json": "887f681539b0b42dc973d71fd54df7058ab26d86b605cd5eb7f711b1634c86a1"
+      }
+    },
+    {
+      "run_id": "P25_03_GUIDED",
+      "sent_counts": {
+        "venmo__login": 1,
+        "api_docs__show_api_descriptions": 1,
+        "supervisor__show_account_passwords": 1,
+        "venmo__create_transaction": 1,
+        "venmo__show_sent_payment_requests": 1,
+        "supervisor__show_payment_cards": 1,
+        "venmo__search_users": 1,
+        "supervisor__complete_task": 1
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [],
+      "completion_answer_supplied": [
+        false
+      ],
+      "source_sha256": {
+        "public_task.json": "b1eda08441b558973ee2bffd124387a11216fdfb2ad83122778734932d3daa1a",
+        "spans.json": "724a7dc4140014dff2ff4632ed748ba337af5c498108ad632ffc365d226b91e0",
+        "events.json": "a939e84d867b25df1b8d8f01742a45aaad78b1f423b565151baf05438c8fb89a",
+        "summary.json": "1c3a3b03bcc62e9e4a16d27bb061fb2ec1010eb6fd92bcb25bb77ad71bebf0c9"
+      }
+    },
+    {
+      "run_id": "P25_04_GUIDED",
+      "sent_counts": {
+        "spotify__login": 1,
+        "supervisor__complete_task": 1,
+        "spotify__show_song_library": 2,
+        "spotify__show_song": 60,
+        "file_system__login": 1,
+        "file_system__create_directory": 1,
+        "api_docs__show_api_descriptions": 2,
+        "spotify__show_playlist_library": 2,
+        "spotify__show_album_library": 2,
+        "supervisor__show_account_passwords": 1,
+        "spotify__delete_account": 1,
+        "file_system__create_file": 1
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [],
+      "completion_answer_supplied": [
+        false
+      ],
+      "source_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "6ebfbdaa21dc07ac762b183c98f0ded5a9df6677697ccafb605972bd1b751ef9",
+        "events.json": "ac380497eb2713eaeb3afc876ec043775d58fdb2ec7348bb717fb570c1f8fab7",
+        "summary.json": "0effc66e43126d2f011af59d403a5b0e1df754f5c8fc0760fc763fdd0b335ffe"
+      },
+      "song_coverage": {
+        "source_unique_id_counts": {
+          "song": 12,
+          "album": 24,
+          "playlist": 41
+        },
+        "page_counts": {
+          "song": [
+            12,
+            0
+          ],
+          "album": [
+            6,
+            0
+          ],
+          "playlist": [
+            6,
+            0
+          ]
+        },
+        "observed_union_ids": 72,
+        "observed_metadata_ids": 72,
+        "writes": [
+          {
+            "span_id": "s73",
+            "api": "file_system__create_file",
+            "json_message_receipt": true,
+            "content_sha256": "dac97347a18a5c3f454c582c230c3db3459c8a18864f4428a88bb3a6020e517b",
+            "observed_union_ids": 72,
+            "known_metadata_ids": 72,
+            "observed_ids_without_metadata": 0,
+            "status": "compared_to_observed_metadata",
+            "rows": 72,
+            "unique_pairs": 72,
+            "duplicate_rows": 0,
+            "known_unique_pairs": 72,
+            "matching_pairs": 72,
+            "missing_known_pairs": 0,
+            "unmatched_pairs": 0,
+            "all_observed_ids_have_metadata": true
+          }
+        ],
+        "rereads": [],
+        "unclassified_observations": {},
+        "scope": "Observed union and exact title/artist strings, not hidden population. Every export attempt is retained; identical reread content alone is not proof of target-path identity."
+      }
+    }
+  ],
+  "all_four_read": true,
+  "script_sha256": "e41eb494406ca44cb25d485ec4c58dcb1f15216ffe05263af74b7658f07c3dda",
+  "model_calls": 0,
+  "environment_calls": 0,
+  "evaluator_contents_read": false,
+  "scope": "Post-hoc analyst checks. No automatic verifier, private task state, or model reasoning."
+}
