@@ -1,0 +1,128 @@
+{
+  "left_run": "P11_01_ROLES",
+  "right_run": "P13_01_FOCUS",
+  "shared_positions": [
+    {
+      "executor_position": 1,
+      "left_call_id": "call_001",
+      "right_call_id": "call_001",
+      "exact_request_equal": true,
+      "request_equal_ignoring_transport_ids": true,
+      "both_responses_known": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "1d04d1377c528d5031afe6b22df264f67b3e746ac950fc68099e66c8576e78fd",
+          "response.json": "02fa710b2502c4a92aa1d5679d0a3968577b1824340565bdadc2c613b39c5616"
+        },
+        "right": {
+          "request.json": "1d04d1377c528d5031afe6b22df264f67b3e746ac950fc68099e66c8576e78fd",
+          "response.json": "1da2c7c57d29f3539cfc1e16b31d0ae5b6e6b258e26d56659ec82b26118e29e0"
+        }
+      }
+    },
+    {
+      "executor_position": 2,
+      "left_call_id": "call_002",
+      "right_call_id": "call_003",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "both_responses_known": true,
+      "public_actions_equal": false,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "3c6245f7a02693cd197b8860c0bdde9b3d07baadbc2e3be42c67b2757ce9a0ad",
+          "response.json": "ff9738cf377568df443f8aced2dc00350cc4dfc8fc2f1bd189aaa93f9a6dec06"
+        },
+        "right": {
+          "request.json": "b3e0f2ad82b99e5240727e844e4fc7f8ccc72b5ab73341df13cd1683563ddebb",
+          "response.json": "76d1fb49f057444b1c996016a09d5a06ee415d175d1c2acdab14fecb5be789c8"
+        }
+      }
+    },
+    {
+      "executor_position": 3,
+      "left_call_id": "call_003",
+      "right_call_id": "call_005",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "both_responses_known": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "ec72117a4cf3ddcb098b0c441411acd2da866c6a2f290fce2408a27867a30fe5",
+          "response.json": "6bc70e9ccca6300c75bb01714ecf289de908ceee6d110244ba8d61b8d5cd8e9a"
+        },
+        "right": {
+          "request.json": "6fc70049ee9f0b82a87af0d3d22bac5c601ef25958e9da27d8b4c20a539f6b48",
+          "response.json": "6da6ef2627cf0be7e954b020fc2071f827c66473ce86a1cbe67f9b2f91b9da21"
+        }
+      }
+    },
+    {
+      "executor_position": 4,
+      "left_call_id": "call_004",
+      "right_call_id": "call_007",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "both_responses_known": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "e6ff66e93dffff6506c781c60962e0b14ba675a362aa46f0c635d4cfed3a22be",
+          "response.json": "cbef91ee3dc0d39a1e1e92390ca78e48f1b150b54e8c30d3de88140f31839432"
+        },
+        "right": {
+          "request.json": "4146d0863de4b2a271c855c4214af3e751c8bbb7bdb343c8e1afb7a1332bb32c",
+          "response.json": "fe89b903cdf7abf0d1b467a644c7b4c5932a45084d43e04eb27cf8b9b827e1e6"
+        }
+      }
+    },
+    {
+      "executor_position": 5,
+      "left_call_id": "call_005",
+      "right_call_id": "call_009",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "both_responses_known": false,
+      "public_actions_equal": null,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "e8491994d356f05f5d8f869a5e99a3237b91329965e9a48ebdd8c12a0bc31cfd",
+          "response.json": "1c35acdc85883563646a216015afcdc05b193b39fabb6b9c1e34e37795b59347"
+        },
+        "right": {
+          "request.json": "6790d2522d5e06540139b509e734ff2315bb85e72b10cefbdacdb7ec1352f1f0",
+          "response.json": "9726b7af21c8d5f4db2e4e55ba807231d74a2e0389023a414145edef531897a9"
+        }
+      }
+    }
+  ],
+  "first_input_difference_beyond_transport_ids": 3,
+  "first_different_public_action_position": 2,
+  "first_partial_history_position": null,
+  "left_total_calls": 6,
+  "right_total_calls": 9,
+  "source_hashes": {
+    "left": {
+      "summary.json": "24f9d215850921bc5d427dac25f9946539c6e0c702d72ccc2d584e7e8e56ad52",
+      "usage.json": "04faea0f0f06d5ee8e951508e462637b35ead047ec170cefd930b9cdc39a56b6",
+      "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+    },
+    "right": {
+      "summary.json": "9f01ae65dc1476b5ca16036f55e5fcd1f223a7a61bc7081f184d618a4f0fcd4c",
+      "usage.json": "919c9cca46987af83328ae81670567645d77a4e177be62092dc31257b6ea9b40",
+      "plan.json": "a7bc9a300f84c753b54ef217598efbe6ed4560de79694ee6a96216a53bb79216"
+    }
+  },
+  "model_calls": 0,
+  "environment_operations": 0,
+  "evaluator_accessed": false,
+  "scope": "Descriptive executor-position alignment only. Memory calls remain in full accounting; unknown responses are not equal successes. Offline ID normalization does not change actual inputs, costs, cache or establish same-state causality.",
+  "script_sha256": "00dc2c90c614868aecbf4aa6c988d143128138cdb070417bf0019c9294e70012"
+}

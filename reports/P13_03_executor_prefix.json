@@ -1,0 +1,108 @@
+{
+  "left_run": "P11_03_ROLES",
+  "right_run": "P13_03_FOCUS_RECOVERY01",
+  "shared_positions": [
+    {
+      "executor_position": 1,
+      "left_call_id": "call_001",
+      "right_call_id": "call_001",
+      "exact_request_equal": true,
+      "request_equal_ignoring_transport_ids": true,
+      "both_responses_known": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "6bc99130be5812d2cdc1a7782957476c22bc09e71c689e63be16757a25b44f0d",
+          "response.json": "0e595d24ca61f9552fe1a2ce713b180ca4c30756191a621e2afdceb701430bb1"
+        },
+        "right": {
+          "request.json": "6bc99130be5812d2cdc1a7782957476c22bc09e71c689e63be16757a25b44f0d",
+          "response.json": "3cb7a757c03dfcd6b80fa275f6d27ed5fe2d41993013f44dea0ad1e036e11000"
+        }
+      }
+    },
+    {
+      "executor_position": 2,
+      "left_call_id": "call_002",
+      "right_call_id": "call_002",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "both_responses_known": true,
+      "public_actions_equal": true,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "462a58b7eb9591a043a8dfc1f728eddb452a64411de9cca98798c2f7f159730a",
+          "response.json": "0176df2aead11646ae3313b5b213e17fc09c364f4bd93a4e889f9cf88162aede"
+        },
+        "right": {
+          "request.json": "311e49b83c7c529f789f1e024f81d4677b9a57db8422b5335717b9df05fbef36",
+          "response.json": "f7b22c2967755a248f4a12c0920c80f03adc9028639298e0d8197a42c2fb8a8a"
+        }
+      }
+    },
+    {
+      "executor_position": 3,
+      "left_call_id": "call_003",
+      "right_call_id": "call_004",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": true,
+      "both_responses_known": true,
+      "public_actions_equal": false,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "0a9bdfdcf87cc7d11f48419d47aaab17eacbb14b8d3905e94fe50803cf3dbb98",
+          "response.json": "4833dfe533d8859c27f1540b8de8df4adefd4cbcd6336d1f5a984b1758a30fec"
+        },
+        "right": {
+          "request.json": "128782a0818149751436391229babe891d89f8d6e6d350e5437d52ed32bf0657",
+          "response.json": "568963c284fce42769b80bb4327d0f6dfa9047c05ce869f602fb8afc89228a31"
+        }
+      }
+    },
+    {
+      "executor_position": 4,
+      "left_call_id": "call_004",
+      "right_call_id": "call_008",
+      "exact_request_equal": false,
+      "request_equal_ignoring_transport_ids": false,
+      "both_responses_known": true,
+      "public_actions_equal": false,
+      "right_uses_partial_history": false,
+      "input_output_sha256": {
+        "left": {
+          "request.json": "f527a67582d1ef8d855e3c836d99bcb72568994238c33444f1e762d41b35f576",
+          "response.json": "02806e5681e6d91071cbf840d08dcb37f4df24d55f5576f24eff0402d15e0ea9"
+        },
+        "right": {
+          "request.json": "f2cf4f95db5c06dbf159517890efead8353c615332794b62947b5ecadcdfa18b",
+          "response.json": "297f9e16643e6a0819607e116e6f15d853081924a52ec7c26e1838b6c625b196"
+        }
+      }
+    }
+  ],
+  "first_input_difference_beyond_transport_ids": 4,
+  "first_different_public_action_position": 3,
+  "first_partial_history_position": null,
+  "left_total_calls": 10,
+  "right_total_calls": 9,
+  "source_hashes": {
+    "left": {
+      "summary.json": "c3d43e47735eb848ce536ccbd80e25f812b2a1a907bbc03237d7fd4434185918",
+      "usage.json": "d0eae8abd4b0a4977066cd342ab88061fc4f72819458fe8a23e8075df01d0f7a",
+      "plan.json": "e00b6defc489a937577decfd2a1420aee3aef76059b20101a2cfc97e84844367"
+    },
+    "right": {
+      "summary.json": "f54a6be7cdc875665a1db836dec47c8eb493c337792d1f39369aba61368c1a43",
+      "usage.json": "039ae09ed6de6449c4c990f831dd998aa6e32ae2016e90f9f906a24bbfc6616a",
+      "plan.json": "a7bc9a300f84c753b54ef217598efbe6ed4560de79694ee6a96216a53bb79216"
+    }
+  },
+  "model_calls": 0,
+  "environment_operations": 0,
+  "evaluator_accessed": false,
+  "scope": "Descriptive executor-position alignment only. Memory calls remain in full accounting; unknown responses are not equal successes. Offline ID normalization does not change actual inputs, costs, cache or establish same-state causality.",
+  "script_sha256": "00dc2c90c614868aecbf4aa6c988d143128138cdb070417bf0019c9294e70012"
+}
