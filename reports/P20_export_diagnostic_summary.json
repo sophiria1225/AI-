@@ -1,0 +1,115 @@
+{
+  "phase": "P20",
+  "plan_sha256": "a96112742193eb56bad0055619b972c6e29ebf7de845dea68ef39eeff563a114",
+  "input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+  "expected_unique_public_pairs": 72,
+  "outputs": [
+    {
+      "variant": "literal_csv",
+      "seed": 51,
+      "call_id": "call_001",
+      "known_tokens": 13240,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 0.00013116700574755669
+    },
+    {
+      "variant": "data_program",
+      "seed": 51,
+      "call_id": "call_002",
+      "known_tokens": 13549,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 7.191719487309456e-05
+    },
+    {
+      "variant": "data_program",
+      "seed": 52,
+      "call_id": "call_003",
+      "known_tokens": 13549,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 6.75420742481947e-05
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 52,
+      "call_id": "call_004",
+      "known_tokens": 13240,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 7.225014269351959e-05
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 53,
+      "call_id": "call_005",
+      "known_tokens": 13240,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 7.129088044166565e-05
+    },
+    {
+      "variant": "data_program",
+      "seed": 53,
+      "call_id": "call_006",
+      "known_tokens": 13549,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 8.35831742733717e-05
+    }
+  ],
+  "groups": [
+    {
+      "variant": "literal_csv",
+      "outputs": 3,
+      "complete_exports": 0,
+      "known_tokens": 39720
+    },
+    {
+      "variant": "data_program",
+      "outputs": 3,
+      "complete_exports": 0,
+      "known_tokens": 40647
+    }
+  ],
+  "model_calls": 6,
+  "known_total_tokens": 80367,
+  "unknown_usage_calls": 0,
+  "audit_errors": [],
+  "evaluator_source_sha256": "2bd6927ba8be251e08d9dd98b55771e1a1494af31571bc46c83b994b04b5de61",
+  "environment_requests": 0,
+  "hidden_evaluator_loaded": false,
+  "reserved_tasks_read": 0,
+  "scope": "Post hoc, fixed-evidence export diagnostic on one previously observed development failure. Two new conditions, three seeds; not independent tasks, not a CodeAct reproduction, not a novel method or end-to-end success comparison.",
+  "limitations": [
+    "Both arms receive a common structured observation packet, not the original full conversation. Do not infer a causal effect by comparing against the original P18 output alone.",
+    "Interpreter capabilities and prompt overhead differ as the intended output mechanism; record all input and output costs.",
+    "The restricted interpreter is not a general Python agent. Unsupported code cannot establish that ordinary CodeAct would fail.",
+    "No account operation, model-generated CSV, missing title, target count, hidden evaluation or reserved task is provided as input."
+  ]
+}
