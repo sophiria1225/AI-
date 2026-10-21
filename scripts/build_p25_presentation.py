@@ -62,8 +62,8 @@ def figures(pair):
         ax.set_xlim(0,max(maximum*1.35,1))
         ax.set_yticks(range(4),[f'課題{i}' for i in range(1,5)] if ax is axes[0] else [])
         ax.invert_yaxis(); ax.set_xlabel(label); ax.grid(axis='x',alpha=.15); ax.set_axisbelow(True)
-    axes[0].legend(loc='lower right',fontsize=9)
-    fig.suptitle('同じ４開発課題・同じ上限：P24と同じ一般指示を転用',fontsize=16)
+    fig.suptitle('同じ４開発課題・同じ上限：P24と同じ一般指示を転用\n'
+                 '灰：P18（旧基準）　青緑：P25（一般指示あり）',fontsize=13)
     unknown = sum(pair['totals'][arm]['unknown_usage_calls'] for arm in ('baseline','guided'))
     fig.supxlabel(f'各条件１seed。使用量不明 {unknown} 呼出し。取得・計算・書込みの新しい道具は追加していない。',fontsize=10)
     for ext in ('png','pdf','svg'): fig.savefig(out/('paired_costs.'+ext),dpi=180)

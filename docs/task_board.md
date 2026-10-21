@@ -1,6 +1,6 @@
 # 研究の作業ボード
 
-更新日: 2026-10-21
+更新日: 2026-10-22
 
 番号はIssueに対応する固定ID。前段の結果に応じて段階的に進める。
 
@@ -51,9 +51,10 @@
 | P1 | R43 | 通常計算対照の実行記録と監査を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/112) |
 | P0 | R44 | P24：公式の一般指示を補った６件の基準比較 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/115) |
 | P0 | R45 | 既観測16課題でページ取得の未完と過剰介入を点検 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/117) |
-| P0 | R46 | P25：同じ一般指示でP18の全４件を再比較する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/120) |
-| P0 | R47 | レターの主比較に向け、通常計算と情報アクセスの条件を整理 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/124) |
-| P1 | R48 | 記録済み操作を再実行し、完了時の回答形式の影響を切り分ける | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/126) |
+| P0 | R46 | P25：同じ一般指示でP18の全４件を再比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/120) |
+| P0 | R47 | レターの主比較に向け、通常計算と情報アクセスの条件を整理 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/124) |
+| P1 | R48 | 記録済み操作を再実行し、完了時の回答形式の影響を切り分ける | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/126) |
+| P1 | R49 | P26：写真整理でAPI上限だけを変え、残る未完了を診断する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/128) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -556,11 +557,7 @@ Rules e4e1687; implementation 6463767; all 16 completed runs, 70 query groups: 4
 
 ## R46 P25：同じ一般指示でP18の全４件を再比較する
 
-2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。
-
-P24 fully audited. P25 keeps all four P18 tasks, order, model and budgets; exactly the same generic guidance as P24. 408 tests and compileall passed; 304 source files frozen. Server idle with 18,282 seconds remaining at preflight, against 8,100 required; rechecked at launch. No real P25 execution yet. See reports/P25_activation_v01.json, reports/P25_execution_controls_v01.json and D129.
-
-P25 started 2026-10-21T14:01:40Z (23:01 JST) from frozen commit 79f66ca8731415b4e8cb59009dd3bf305908ed0a after both PR122 CI checks passed. 304 hashes unchanged; live remaining lease 17,895 seconds. All-four postrun technical audit queued; no interpretation of partial outputs. Progress: https://github.com/sophiria1225/AI-/issues/120#issuecomment-6317982682
+2026-10-21 23:51 JSTに全４件終了。旧2/4→3/4、37生成・806,849トークン・179 API、不明０、全監査不一致０。CSVは観測済み72件と一致し、写真整理は42件取得・27件移動でAPI上限。docs/P25_findings.mdと６枚資料materials/20261021_p25/を作成し全ページ確認。一般指示の転用であり、新規方式の効果ではない。
 
 **なぜ行うか**: 取得後の欠落・API上限の観測を、通常の時刻・列挙・完了案内をそろえた基準でも確認し、独自機構の必要性と切り分ける。
 
@@ -568,7 +565,7 @@ P25 started 2026-10-21T14:01:40Z (23:01 JST) from frozen commit 79f66ca8731415b4
 
 ## R47 レターの主比較に向け、通常計算と情報アクセスの条件を整理
 
-2026-10-21。EACL 2026の正式掲載本文、LROの公開文書、HEARTの要旨・導入を確認。compute_dataには結果をAPI引数へ再転記する境界が残る。P25は固定条件で実行中、本文未閲覧。次の実モデル実験は未設定。docs/output_access_review_20261021.md、reports/output_processing_sources_20261021.json。
+P25の全４件を確認し、通常Pythonや専用ゲートの一括追加は採らないと判断。CSV欠落は今回残らず、残る写真整理はAPI上限で停止。次はAPI上限だけ80→160の１件診断を準備し、観測した個別手順の費用と他の手順の可能性を分ける。普通の計算・参照渡し・文献上の一般原理を独自性にしない。docs/P25_findings.md。
 
 **なぜ行うか**: 通常のコード処理や無料の追加データを独自機構の効果へ含めず、P25で残る問題に必要な主比較を一つ選ぶ。
 
@@ -576,8 +573,16 @@ P25 started 2026-10-21T14:01:40Z (23:01 JST) from frozen commit 79f66ca8731415b4
 
 ## R48 記録済み操作を再実行し、完了時の回答形式の影響を切り分ける
 
-2026-10-21、４条件と元記録・コードのハッシュをconfigs/completion_replay_v01.jsonへ固定。全413検査合格。原ディスパッチ実装を再利用し、回答以外の引数を保持する。P25全件終了後にのみ実行。実API再実行０、LLM追加０。docs/experiments/completion_replay_20261021.md。
+2026-10-21 23:52 JST、固定４条件全て終了。元の公開返却・完了前DBのハッシュが一致し、全４条件の保存DBも同一。P22/P24どちらの前半でも回答ありは不合格、省略は合格。LLM０・模擬API118。公開仕様の影響であり、評価器の誤り・新方式の有効性とはしない。docs/completion_replay_findings_20261021.md。
 
 **なぜ行うか**: P22/P24課題2は承認対象と明示された引数が同じなのに最終成否が異なる。主張の前に、前半操作と完了引数を分離して確認する。
 
 **他候補の扱い**: 新しい回答の生成や合格するまでの再試行、評価器本文を読む診断は採らない。新方式の実績には加算せず、P25終了後に４条件を各１回だけ行う。
+
+## R49 P26：写真整理でAPI上限だけを変え、残る未完了を診断する
+
+2026-10-22、P25全結果から１件の開発診断を選定した。API上限80→160、他の生成条件は維持する。まだ実モデル実行は開始していない。主張・方式を決めるまで確認用12シナリオは未閲覧のまま。
+
+**なぜ行うか**: P18とP25の写真整理はいずれも42件取得・27件移動で80 APIに達した。専用機構を提案する前に、この実験上の制約を変えたときの結果を確認する。
+
+**他候補の扱い**: 正解件数に合わせた上限、モデルや指示の同時変更、成功までの自動倍増、成功時だけ採る方法は使わない。新手法や一般性能の実験には数えない。

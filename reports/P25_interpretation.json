@@ -1,0 +1,30 @@
+{
+  "all_four_reviewed": true,
+  "source_sha256": {
+    "docs/P25_findings.md": "986a2fd48b2631511c5c640f8d241d36e6cb5e7f375f7ad6b0739581d4dc3e68",
+    "reports/P25_public_trace_diagnostics.json": "dbe17f86a5352d04bf315070eb5dd9e57c511055460957e10d3af54edcac8f78",
+    "reports/P18_P25_paired_comparison.json": "d32546c75e715493a505ed05cf50468a40ef4edbd61bf8f6dbb28b9bcd475bb8",
+    "docs/completion_replay_findings_20261021.md": "a41e05ac4ddb7bf083e63d2ea15feb0b2f2875075c305012097c19610cd4c1d0",
+    "reports/completion_replay_results_20261021.json": "fd53f10c4f8a1ac3e308c357255780a5443a3e4ef978db8ef61fab105e7d07e0"
+  },
+  "headline": "一般指示の転用で 2/4 → 3/4。\nCSVの欠落は解消し、写真整理はAPI上限で停止。",
+  "task_labels": [
+    "01 写真の整理",
+    "02 費用の分担",
+    "03 返金",
+    "04 曲一覧・退会"
+  ],
+  "findings": [
+    {
+      "title": "取得後の欠落と予算を区別",
+      "text": "曲一覧：観測済み72件とCSV72行が一致。\n以前の１行欠落は今回再現しなかった。\n写真：42件取得、27件移動、15件未処理。\n80 API到達で次の移動を送れなかった。\n個別手順の費用を、全手順の下限にしない。"
+    },
+    {
+      "title": "完了形式だけの影響も確認",
+      "text": "P22/P24の操作前半を４条件で再実行。\n返却・完了直前の保存状態は原記録と一致。\nどちらの前半でも、回答ありは不合格、\n回答を省略すると合格だった。\n公開仕様の確認であり、新方式ではない。"
+    }
+  ],
+  "interpretation_limit": "１seedの校正・１状態の介入。再発率、一般性、新規性を確定した結果ではない。",
+  "next_title": "残る制約と、レターの主張を絞る",
+  "decision_text": "次：写真整理１件で、API上限だけ80→160に変える開発診断を準備。\nモデル・指示・他予算は固定。結果に合わせて上限を増やし続けない。\n独自の技術・知見は未確立。確認用12シナリオは未閲覧のまま保持。\n10/23の主比較・あらまし確定は厳しい。月末投稿の達成はまだ断定できない。"
+}

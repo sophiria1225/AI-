@@ -1,0 +1,206 @@
+{
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "baseline": {
+        "task_id": "34d9492_1",
+        "run_id": "P18_01_ROLES",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 19,
+        "known_total_tokens": 294726,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 1369.170985542005
+      },
+      "guided": {
+        "task_id": "34d9492_1",
+        "run_id": "P25_01_GUIDED",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 11,
+        "known_total_tokens": 185739,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 1,
+        "execution_wall_seconds": 1283.1161225000396
+      },
+      "outcome": "both_failure"
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "baseline": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P18_02_ROLES",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 13,
+        "known_total_tokens": 297442,
+        "unknown_usage_calls": 0,
+        "api_requests": 23,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 747.3428036659025
+      },
+      "guided": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P25_02_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 8,
+        "known_total_tokens": 181220,
+        "unknown_usage_calls": 0,
+        "api_requests": 16,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 384.85404845909216
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "baseline": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P18_03_ROLES",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 6,
+        "known_total_tokens": 67858,
+        "unknown_usage_calls": 0,
+        "api_requests": 8,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 193.49709762493148
+      },
+      "guided": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P25_03_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 6,
+        "known_total_tokens": 69547,
+        "unknown_usage_calls": 0,
+        "api_requests": 8,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 190.74317966680974
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "6104387_1",
+      "baseline": {
+        "task_id": "6104387_1",
+        "run_id": "P18_04_ROLES",
+        "success": false,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 11,
+        "known_total_tokens": 357189,
+        "unknown_usage_calls": 0,
+        "api_requests": 76,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 1103.0827302502003
+      },
+      "guided": {
+        "task_id": "6104387_1",
+        "run_id": "P25_04_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 12,
+        "known_total_tokens": 370343,
+        "unknown_usage_calls": 0,
+        "api_requests": 75,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 1075.560141790891
+      },
+      "outcome": "improved"
+    }
+  ],
+  "outcome_counts": {
+    "both_failure": 1,
+    "both_success": 2,
+    "improved": 1
+  },
+  "totals": {
+    "baseline": {
+      "model_calls": 49,
+      "known_total_tokens": 1017215,
+      "unknown_usage_calls": 0,
+      "api_requests": 187,
+      "output_limit_finishes": 0,
+      "execution_wall_seconds": 3413.093617083039,
+      "successes": 2,
+      "trials": 4,
+      "tokens_exact": true
+    },
+    "guided": {
+      "model_calls": 37,
+      "known_total_tokens": 806849,
+      "unknown_usage_calls": 0,
+      "api_requests": 179,
+      "output_limit_finishes": 1,
+      "execution_wall_seconds": 2934.2734924168326,
+      "successes": 3,
+      "trials": 4,
+      "tokens_exact": true
+    }
+  },
+  "exact_total_token_delta": -210366,
+  "matched_condition_keys": [
+    "model",
+    "model_selection",
+    "task_ids",
+    "seed",
+    "agent_temperature",
+    "max_calls",
+    "max_api_requests",
+    "max_wall_seconds",
+    "max_total_tokens",
+    "max_output_tokens",
+    "observation_page_characters",
+    "history_representation",
+    "discovery_policy",
+    "max_checkpoint_new_bytes_per_boundary",
+    "max_checkpoint_object_bytes"
+  ],
+  "limitations": [
+    "Four already observed development scenarios, one seed per arm.",
+    "Instruction bundle contrast, not isolated sentence-level attribution.",
+    "Known tokens are lower bounds when a call has unknown usage.",
+    "No novel-method efficacy or confirmatory generalization claim."
+  ],
+  "kind": "P18_P25_paired_development_comparison",
+  "source_hashes": {
+    "configs/P18_additional_baseline_v01.json": "f45bf21f18429744e164597b9071cee5f2ea690b917ac043cae5055cd943dfe7",
+    "configs/P25_guidance_transfer_v01.json": "2e150aac960c3d8c54ca5f1d733281f14fe40332f0f7bc2c8fa86511cd2b69be",
+    "reports/P18_additional_baseline_summary.json": "b2a9da82595a91f91c44a4b7c9da366a6526deb803276cb9d75d9158d41aaa02",
+    "reports/P25_guidance_transfer_summary.json": "1103ef2381dbebb7e504880c9fa6083d5e888dea4493ee69835f2aa37e6fba66",
+    "reports/P18_budget_diagnostics.json": "8f05aede575d58626e4926b7a918611869d7e8dfa9b44083cba29702cc9de07b",
+    "reports/P25_budget_diagnostics.json": "1a7035940d3806b4d3fc13367ba86e0f4fa2e2474ed21aab4ae13b21a483dc61",
+    "reports/P18_01_ROLES_execution_audit.json": "b551e1d4e85e911bbe209a1dfd943b1cf2ee9381710da709ddead2f081dab6bf",
+    "reports/P18_01_ROLES_boundary_audit.json": "9f5c98ea2692d873dde4f8868d77e9801fa76ba26772de637dcbdd315840c73f",
+    "reports/P18_02_ROLES_execution_audit.json": "ed5befd37d2508c4f7b9f7fd56137b3f67c5ab2d5ebdd6d6030e35d38c8fb69a",
+    "reports/P18_02_ROLES_boundary_audit.json": "1c820573ebfad68da1a4227ba92eaae620d9f47804b751aa3a753a71201a2535",
+    "reports/P18_03_ROLES_execution_audit.json": "226b9290e067929c195e55b7e6620391bdb2470c97821ee5c2ad42d7892df7b5",
+    "reports/P18_03_ROLES_boundary_audit.json": "95398f09665f1c821c460a77840c2bf356d60ae2bfb42635f4b88a0d11f9d3a2",
+    "reports/P18_04_ROLES_execution_audit.json": "3e104f6009312022f5e093b2efdacd005a18d43cb64910c2101f2f62ee672e85",
+    "reports/P18_04_ROLES_boundary_audit.json": "75abf225faebb50bcda3e1cd4182f7de83ca0c549e31caad9ab2db77667805fe",
+    "reports/P25_01_GUIDED_execution_audit.json": "d54c051a229a27427206cf28fd68d7058b934c6c1b8ad434abb73960a6aed6cb",
+    "reports/P25_01_GUIDED_boundary_audit.json": "7824babc15e42fbfb49fab3c32f55e05536c88a776f8127a4ea96a3e7aa93709",
+    "reports/P25_02_GUIDED_execution_audit.json": "aed33dbc6c2387d80a5d5e99161dfa9f9dd87afc06b8d51bf33cf963804045fa",
+    "reports/P25_02_GUIDED_boundary_audit.json": "52befb92af863182f7f3ab82f09375b98d6bf3be3e079ad153c01876a7aaa400",
+    "reports/P25_03_GUIDED_execution_audit.json": "77ca169711d90d6807d6ef1716bebbf8f3379c732b48a676cac8a8728c370fae",
+    "reports/P25_03_GUIDED_boundary_audit.json": "e7bb230aba528f89a9bcf28f7878e6106e6440ecab944ce1fe756d9b2d1b4303",
+    "reports/P25_04_GUIDED_execution_audit.json": "099f6a32816f95fac3cea692c773b6481697a06c7224be94b6427015ffd47c9c",
+    "reports/P25_04_GUIDED_boundary_audit.json": "3f59a82bd243ae1abb5dcf91ca40b7d02e166aa16d2c5c9a61d9ff0de54b4b8e"
+  },
+  "script_sha256": "389d08b5f8199ec2211d2cea74b18449f835aabae269df04a323ee8b6d36f47a",
+  "dependency_sha256": "acb3f1fe23dcdd2d6935d276221206b37070c66b2c9b2b0381c75a63f4268f39",
+  "additional_model_calls": 0,
+  "environment_calls": 0
+}
