@@ -1,0 +1,17 @@
+{
+  "phase": "P17",
+  "run_id": "P17_01",
+  "input_root": "records/event_view_probe/P16_inputs_v01",
+  "case_ids": ["case_01_recorded", "case_02_recorded", "case_03_recorded", "case_04_recorded"],
+  "variants": ["legacy", "aligned"],
+  "seeds": [47, 48],
+  "max_calls": 16,
+  "max_total_tokens": 500000,
+  "max_wall_seconds": 10800,
+  "max_output_tokens": 4096,
+  "temperature": 1.0,
+  "memory_model_matches": "configs/P14_native_ledger_v01.json",
+  "output_root": "records/event_view_probe/P17_01",
+  "publish_issue": 71,
+  "scope": "Baseline contract calibration after P16. Four fixed recorded prefixes, two interface variants, two new paired seeds. No efficacy, novelty, repair or final task success claim."
+}
