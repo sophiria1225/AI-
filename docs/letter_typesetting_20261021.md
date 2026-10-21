@@ -40,3 +40,5 @@ ZIP本体は保存されず、失敗manifestをArtifactから回収した。
 16時台の追加確認では、[公式の研究会案内](https://www.ieice.org/jpn_r/event/kenkyukai/index.html?id=teishutu)が、和文技報と和文論文誌で `ieicej.cls` を共用すると説明し、[3.4aの別配布先](https://www.ieice.org/jpn_r/event/kenkyukai/assets/files/ieicej3.4a.zip)へリンクしていた。この別の公開経路もMacからはHTTP 403だった。取得は１回で打ち切り、失敗をローカルの `.runtime/letter_tex/ieicej34a_official_20261021/error.json` に保存した。3.4aを3.4bと同じ版と扱わず、取得できたことにもしない。認証の回避や非公式なクラスの代用は行っていない。
 
 22時台に[OverleafのIEICE名義テンプレート](https://www.overleaf.com/latex/templates/template-for-ieice-journals-technical-reports/kxtxxvzpzgkg)も確認した。表示は2019年のv3.2で、レターのマクロ例を確認できるが、現行3.4bと同じとは扱えない。「テンプレートを開く」はログイン画面へ移り、クラスのダウンロード・新しい外部プロジェクトの作成はしていない。最新版と公式ページ数の確認を、この古い公開例で完了扱いにしない。
+
+23時台には、論文誌との同時査読を案内する[MIRU2026の公式投稿ページ](https://miru-committee.github.io/miru2026/author/submission/)から公開のLaTeX配布を取得できた。ただし、収録クラスは`miru2026j.cls`で、ヘッダーはIPSJクラスからの改変を明記している。`ieicej.cls`は含まれず、IEICE論文誌の現行様式を得たことにはならない。別の４ページ規定を論文誌へ流用する案は採らず、クラスの実行・転載も行わない。[取得・不採用の記録](../reports/miru_template_scope_20261021.json)。同じIEICE配布先への再試行を繰り返したものではない。

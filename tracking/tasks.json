@@ -1256,6 +1256,30 @@
         "実行前に十分なモデルサーバー期限を確認する"
       ],
       "progress": "2026-10-21。P24全件終了前に次の候補範囲だけを記録。docs/experiments/P25_guidance_transfer.md。P25の実行・新しい課題の閲覧は０。P24全件の監査・解釈後に起動判断を固定する。\n\nP24 fully audited. P25 keeps all four P18 tasks, order, model and budgets; exactly the same generic guidance as P24. 408 tests and compileall passed; 304 source files frozen. Server idle with 18,282 seconds remaining at preflight, against 8,100 required; rechecked at launch. No real P25 execution yet. See reports/P25_activation_v01.json, reports/P25_execution_controls_v01.json and D129.\n\nP25 started 2026-10-21T14:01:40Z (23:01 JST) from frozen commit 79f66ca8731415b4e8cb59009dd3bf305908ed0a after both PR122 CI checks passed. 304 hashes unchanged; live remaining lease 17,895 seconds. All-four postrun technical audit queued; no interpretation of partial outputs. Progress: https://github.com/sophiria1225/AI-/issues/120#issuecomment-6317982682"
+    },
+    {
+      "id": "R47",
+      "title": "レターの主比較に向け、通常計算と情報アクセスの条件を整理",
+      "priority": "P0",
+      "status": "in_progress",
+      "why": "通常のコード処理や無料の追加データを独自機構の効果へ含めず、P25で残る問題に必要な主比較を一つ選ぶ。",
+      "alternatives": "同じデータへアクセスできない弱い対照、参照渡しの改名、未取得データの無料追加、P25途中結果に合わせた条件変更は採らない。",
+      "steps": [
+        "正式掲載のツール返却処理論文と外部保存方式の確認範囲を記録",
+        "既存compute_dataの取得・計算・書込みの境界を確認",
+        "P25の全結果後に残る問題と必要な一比較を固定"
+      ],
+      "completed_steps": [
+        "正式掲載のツール返却処理論文と外部保存方式の確認範囲を記録",
+        "既存compute_dataの取得・計算・書込みの境界を確認"
+      ],
+      "acceptance": [
+        "文献の一般機能を独自性へ数えない",
+        "原典の版・本文確認範囲・未再現箇所を残す",
+        "全体実行と取得後の局所比較を区別する",
+        "主張が未確立なら期限に合わせて成立したと報告しない"
+      ],
+      "progress": "2026-10-21。EACL 2026の正式掲載本文、LROの公開文書、HEARTの要旨・導入を確認。compute_dataには結果をAPI引数へ再転記する境界が残る。P25は固定条件で実行中、本文未閲覧。次の実モデル実験は未設定。docs/output_access_review_20261021.md、reports/output_processing_sources_20261021.json。"
     }
   ]
 }
