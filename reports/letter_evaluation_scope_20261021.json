@@ -1,0 +1,58 @@
+{
+  "kind": "planning arithmetic, not experiment results",
+  "assumption": "Independent identically distributed Bernoulli regression events; not established for deterministic AppWorld train selection. Regression = baseline succeeds and candidate fails.",
+  "formula": "P(no regressions | p)=(1-p)^n; upper p=1-alpha^(1/n)",
+  "rows": [
+    {
+      "independent_scenarios_assumed": 4,
+      "observed_regressions_assumed": 0,
+      "one_sided_alpha": 0.05,
+      "exact_upper_regression_probability": 0.5271291954984121
+    },
+    {
+      "independent_scenarios_assumed": 12,
+      "observed_regressions_assumed": 0,
+      "one_sided_alpha": 0.05,
+      "exact_upper_regression_probability": 0.22092219194555585
+    },
+    {
+      "independent_scenarios_assumed": 18,
+      "observed_regressions_assumed": 0,
+      "one_sided_alpha": 0.05,
+      "exact_upper_regression_probability": 0.1533175539572782
+    },
+    {
+      "independent_scenarios_assumed": 30,
+      "observed_regressions_assumed": 0,
+      "one_sided_alpha": 0.05,
+      "exact_upper_regression_probability": 0.09503385285530419
+    },
+    {
+      "independent_scenarios_assumed": 59,
+      "observed_regressions_assumed": 0,
+      "one_sided_alpha": 0.05,
+      "exact_upper_regression_probability": 0.049507609888227
+    }
+  ],
+  "paired_delta": "This is a regression-event bound, not an exact confidence interval for the difference in success rates; improvement probability also matters.",
+  "minimum_zero_regression_counts": {
+    "upper_at_most_0.10": 29,
+    "upper_at_most_0.05": 59
+  },
+  "runtime_arithmetic": {
+    "reserved_scenarios": 12,
+    "methods": 2,
+    "repetitions": 1,
+    "max_seconds_per_trial": 1800,
+    "sum_trial_time_caps_hours": 12,
+    "not_included": [
+      "evaluation",
+      "setup",
+      "server warm-up",
+      "review",
+      "second model"
+    ]
+  },
+  "adopted_quality_margin": null,
+  "confirmatory_experiment_launched": false
+}
