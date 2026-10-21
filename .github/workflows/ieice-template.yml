@@ -1,0 +1,58 @@
+name: Fetch official IEICE template
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-template:
+    if: github.repository == 'sophiria1225/AI-'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch the public official archive once and record provenance
+        run: |
+          python3 - <<'PY'
+          from datetime import datetime, timezone
+          import hashlib
+          from io import BytesIO
+          import json
+          from pathlib import Path
+          import urllib.request
+          import zipfile
+
+          url = 'https://www.ieice.org/ftp/tex/ieicej/LaTeX2e/ieicej3.4b.zip'
+          out = Path('official-template')
+          out.mkdir()
+          report = {'url': url, 'requested_at': datetime.now(timezone.utc).isoformat(),
+                    'status': 'started', 'max_bytes': 5 * 1024 * 1024,
+                    'scope': 'Public official distribution; no credentials, no execution or extraction.'}
+          try:
+              request = urllib.request.Request(url, headers={'User-Agent': 'AI-harness-research-template-check/1.0'})
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  report.update(http_status=response.status, final_url=response.url)
+                  if urllib.parse.urlparse(response.url).hostname not in ('www.ieice.org', 'ieice.org'):
+                      raise ValueError('unexpected download host')
+                  data = response.read(report['max_bytes'] + 1)
+              if len(data) > report['max_bytes']:
+                  raise ValueError('archive exceeds the fixed limit')
+              with zipfile.ZipFile(BytesIO(data)) as archive:
+                  if archive.testzip() is not None:
+                      raise ValueError('ZIP CRC check failed')
+                  report['members'] = archive.namelist()
+              report.update(status='downloaded', bytes=len(data), sha256=hashlib.sha256(data).hexdigest())
+              (out / 'ieicej3.4b.zip').write_bytes(data)
+          except Exception as error:
+              report.update(status='failed', error_type=type(error).__name__, error=str(error))
+              raise
+          finally:
+              (out / 'manifest.json').write_text(json.dumps(report, indent=2) + '\n')
+          PY
+      - name: Preserve archive or failure record
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: official-ieice-template
+          path: official-template/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
