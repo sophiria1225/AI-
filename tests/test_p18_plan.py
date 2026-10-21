@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT/'scripts'))
 from context_preservation import function
 from run_native_batch import PHASES, public_body, validate_schedule
 import run_native_appworld as runner
+from audit_native_boundaries import audit as audit_boundaries
 
 
 class P18Controls(unittest.TestCase):
@@ -61,17 +62,24 @@ class P18Controls(unittest.TestCase):
             def close(self): pass
 
         class Inference:
-            def __init__(self, *args):
+            def __init__(self, config, output):
                 self.started, self.calls, self.tokens = time.monotonic(), [], 0
+                self.output = output
             def call(self, role, messages, tools):
                 index = len(self.calls)
                 requests.append((role, messages, tools))
                 self.calls.append({'id': f'call_{index+1:03d}', 'role': role, 'status': 'ok',
                                    'input_tokens': 10, 'output_tokens': 1})
                 self.tokens += 11
-                return {'role': 'assistant', 'content': '', 'tool_calls': [
+                message = {'role': 'assistant', 'content': '', 'tool_calls': [
                     {'id': f'c{index}', 'type': 'function',
                      'function': {'name': names[index], 'arguments': '{}'}}]}
+                call = self.output/self.calls[-1]['id']
+                call.mkdir()
+                (call/'request.json').write_text(json.dumps({'messages': messages, 'tools': tools}))
+                (call/'response.json').write_text(json.dumps({'message': message}))
+                (self.output/'usage.json').write_text(json.dumps(self.calls))
+                return message
 
         config = json.loads((ROOT/'configs/P18_additional_baseline_v01.json').read_text())
         config.update(phase=phase, task_ids=['dev'])
@@ -92,6 +100,18 @@ class P18Controls(unittest.TestCase):
                 self.assertEqual(old[0][key], new[0][key], key)
             self.assertEqual(new[0]['boundary_records'], 3)
             self.assertEqual(new[0]['known_total_tokens'], 22)
+            trial = root/'new/storage/records/context_pilot/P18_FIXTURE'
+            world = root/'new/world'
+            checked = audit_boundaries(trial, world)
+            self.assertEqual(checked['audit_errors'], [])
+            self.assertTrue(checked['final_db_files_match'])
+            self.assertEqual([row['model_calls'] for row in checked['boundary_records']], [0, 1, 2])
+            db = world/'experiments/outputs/P18_FIXTURE/tasks/dev/dbs/fixture.jsonl'
+            db.write_text('changed after execution')
+            checked = audit_boundaries(trial, world)
+            self.assertFalse(checked['final_db_files_match'])
+            self.assertIn('final captured DB files differ from submitted environment state',
+                          checked['audit_errors'])
 
 
 if __name__ == '__main__':
