@@ -34,7 +34,7 @@ def read(path):
     return json.loads(path.read_text())
 
 
-def inspect_operations(usage, records, spans, payloads, responses, summary):
+def inspect_operations(usage, records, spans, payloads, responses, summary, allow_compute=False):
     errors, counts, by_call, seen = [], Counter(), defaultdict(list), set()
     for event in records:
         sid = event['span_id']
@@ -72,6 +72,13 @@ def inspect_operations(usage, records, spans, payloads, responses, summary):
             else:
                 # Accepted transport is not a claim of task or semantic success.
                 counts['returned_api_results_without_detected_error'] += 1
+        elif allow_compute and (span.get('action') or {}).get('name') == 'compute_data':
+            counts['local_compute_results'] += 1
+            if (obs.get('computation_status') not in ('ok', 'input_error', 'not_executed',
+                    'timeout', 'memory_limit', 'execution_error', 'harness_error')
+                    or obs.get('environment_state_changed') is not False
+                    or obs.get('declared_complete')):
+                errors.append('invalid ordinary-compute observation')
         else:
             counts['local_archive_results'] += 1
             if (span.get('action') or {}).get('name') != 'read_span':
@@ -123,15 +130,16 @@ def inspect_operations(usage, records, spans, payloads, responses, summary):
 
 def audit(directory):
     result = summarize_trial(directory)
-    if result['arm'] not in ('native_full', 'native_roles'):
+    if result['arm'] not in ('native_full', 'native_roles', 'native_compute'):
         raise ValueError('requires a completed native full-history trial')
     usage = read(directory / 'usage.json')
     records, spans = read(directory / 'events.json'), read(directory / 'spans.json')
     payloads = {c['id']: read(directory / c['id'] / 'request.json') for c in usage}
     responses = {c['id']: read(directory / c['id'] / 'response.json') for c in usage}
     result.update(inspect_operations(usage, records, spans, payloads, responses,
-                                     read(directory / 'summary.json')))
-    if result['arm'] == 'native_roles':
+                                     read(directory / 'summary.json'),
+                                     allow_compute=result['arm'] == 'native_compute'))
+    if result['arm'] in ('native_roles', 'native_compute'):
         from run_native_appworld import NATIVE_PROMPT
         hashes = read(directory / 'summary.json')['source_hashes']
         matched = all(hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
@@ -142,6 +150,9 @@ def audit(directory):
             result.update(inspect_history(read(directory / 'public_task.json'), NATIVE_PROMPT,
                                          usage, records, spans, payloads, responses,
                                          read(directory / 'plan.json')['observation_page_characters']))
+    if result['arm'] == 'native_compute':
+        from audit_native_compute import inspect_compute
+        result.update(inspect_compute(directory, usage, records, spans))
     result['source_hashes'].update({name: hashlib.sha256((directory / name).read_bytes()).hexdigest()
                                     for name in ('events.json', 'spans.json', 'plan.json')})
     result['scope'] = ('Saved model requests, schemas and ordered dispatch metadata. '
@@ -160,7 +171,8 @@ def main():
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'run': result['run_id'], 'usage_audit_errors': result['audit_errors'],
                       'dispatch_audit_errors': result['dispatch_audit_errors'],
-                      'history_audit_errors': result.get('history_audit_errors')}))
+                      'history_audit_errors': result.get('history_audit_errors'),
+                      'compute_audit_errors': result.get('compute_audit_errors')}))
 
 
 if __name__ == '__main__':

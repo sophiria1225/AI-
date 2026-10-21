@@ -14,6 +14,7 @@ from inspect_appworld_api_schemas import load_public_tools
 from model_provenance import check_live_model
 from native_conversation import NativeConversation
 from native_boundary_record import snapshot_boundary
+from native_compute_session import NativeComputeSession
 from run_context_comparison import Bridge, BudgetStop, Inference, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,13 +44,16 @@ def messages_for(task, spans, config):
 
 
 def run(config, task_id, run_id, storage, appworld_root, python):
-    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles"}
+    expected = {"P8": "native_full", "P10": "native_roles", "P11": "native_roles", "P18": "native_roles", "P22": "native_roles", "P23": "native_compute"}
     phase = config["phase"]
     if (phase not in expected or config["arms"] != [expected.get(phase)]
             or task_id not in config["task_ids"] or not run_id.startswith(phase + "_")
             or not run_id.replace("_", "").isalnum()):
         raise ValueError("outside the fixed native-baseline plan")
     arm = expected[phase]
+    use_compute = arm == 'native_compute'
+    if use_compute != ('ordinary_compute' in config):
+        raise ValueError('ordinary compute needs its explicit arm and controls')
     world_output = appworld_root / "experiments/outputs" / run_id
     if world_output.exists():
         raise FileExistsError("refusing to replace an existing world")
@@ -62,7 +66,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
     check_live_model(config["model_selection"], runtime, props, root=storage,
                      expected_ctx=config["model"]["num_ctx"], expected_cache=("q8_0", "q8_0"))
     tools, schema_hashes, _ = load_public_tools(appworld_root / "data")
-    catalog = NativeCatalog(tools)
+    catalog = NativeCatalog(tools, enable_compute=use_compute)
     snapshot = out / "source"
     snapshot.mkdir()
     files = [
@@ -70,10 +74,12 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "run_context_comparison.py", "context_preservation.py", "local_llama.py",
         "appworld_bridge.py", "model_provenance.py",
     ]
-    if arm == "native_roles":
+    if arm in ("native_roles", "native_compute"):
         files.append("native_conversation.py")
-    if phase in ("P11", "P18", "P22"):
+    if phase in ("P11", "P18", "P22", "P23"):
         files.append("native_boundary_record.py")
+    if use_compute:
+        files += ['native_compute_session.py', 'native_data_compute.py', 'container_data_python.py']
     hashes = {}
     for name in files:
         path = ROOT / "scripts" / name
@@ -84,8 +90,11 @@ def run(config, task_id, run_id, storage, appworld_root, python):
         "runtime": runtime, "props": props, "python": str(python),
         "task_id": task_id, "arm": arm,
         "spec_sha256": sha(appworld_root / "data/tasks" / task_id / "specs.json"),
+        **({'ordinary_compute_image_config_sha256': sha(ROOT/'configs/python_export_image_v01.json')}
+           if use_compute else {}),
     })
     infer = Inference(config, out)
+    computation = NativeComputeSession(config['ordinary_compute'], storage_root=storage, output=out) if use_compute else None
     bridge = Bridge(python, appworld_root, out)
     spans, events = {}, []
     api_requests, peak_tools = 0, len(catalog.tools())
@@ -102,7 +111,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise ValueError("unexpected AppWorld saved DB directory")
         capture_files = {"dbs/" + p.name: p for p in entries}
         for name in ("plan.json", "provenance.json", "public_task.json", "spans.json",
-                     "events.json", "usage.json", "conversation_private.json"):
+                     "events.json", "usage.json", "conversation_private.json", "compute_records.json"):
             if (out / name).exists():
                 capture_files["harness/" + name] = out / name
         remaining = config["max_checkpoint_object_bytes"] - sum(
@@ -118,6 +127,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                  "remaining_tokens": config["max_total_tokens"] - infer.tokens,
                  "remaining_wall_seconds_before_capture": max(0, config["max_wall_seconds"] - elapsed),
                  "rng_and_process_state_captured": False}
+        if computation is not None:
+            state['ordinary_compute'] = computation.summary()
         saved = snapshot_boundary(out / "boundaries", checkpoint_id, capture_files, state,
                                   min(remaining, config["max_checkpoint_new_bytes_per_boundary"]))
         boundaries.append(saved)
@@ -125,7 +136,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
 
     def capture(checkpoint_id):
         nonlocal capture_attempts, capture_seconds
-        if phase not in ("P11", "P18", "P22"):
+        if phase not in ("P11", "P18", "P22", "P23"):
             return
         capture_attempts += 1
         started_capture = time.monotonic()
@@ -140,7 +151,7 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             raise RuntimeError(response["error"])
         task = response["result"]
         write_json(out / "public_task.json", task)
-        if arm == "native_roles":
+        if arm in ("native_roles", "native_compute"):
             conversation = NativeConversation(NATIVE_PROMPT, task)
             write_json(out / "conversation_private.json", conversation.messages())
         capture("initial")
@@ -153,8 +164,12 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 messages = messages_for(task, spans, config)
             else:
                 messages, formatting = conversation.for_model(config["observation_page_characters"])
+            if computation is not None:
+                computation.before_response(spans)
             message = infer.call("agent", messages, supplied_tools)
             call_id = infer.calls[-1]["id"]
+            if computation is not None:
+                computation.bind_response(call_id)
             first = True
             current_spans = []
 
@@ -186,8 +201,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
                 lambda sid, offset: page_span(
                     spans, sid, offset, config["observation_page_characters"]),
                 remaining_api_calls=config["max_api_requests"] - api_requests,
-                may_continue=lambda: time.monotonic() - infer.started < config["max_wall_seconds"],
-                on_record=record)
+                may_continue=lambda: time.monotonic() - infer.started < config["max_wall_seconds"] and not (computation and computation.fatal),
+                on_record=record, compute_data=computation.invoke if computation else None)
             if conversation is not None:
                 conversation.append(message, current_spans)
                 write_json(out / "conversation_private.json", conversation.messages())
@@ -195,6 +210,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             if any(r.get("effects_unknown") for r in rows):
                 raise RuntimeError("API request has unknown effects; no retry")
             capture(call_id)
+            if computation is not None and computation.fatal:
+                raise RuntimeError('ordinary computation harness failed; no further dispatch')
         reason = "agent_declared_complete"
     except BudgetStop as exc:
         reason = str(exc)
@@ -234,6 +251,8 @@ def run(config, task_id, run_id, storage, appworld_root, python):
             "boundary_object_bytes_on_disk": sum(p.stat().st_size for p in
                                                   (out / "boundaries/objects").glob("*") if p.is_file()),
         }
+        if computation is not None:
+            summary['ordinary_compute'] = computation.summary()
         write_json(out / "summary.json", summary)
         print(json.dumps(summary), flush=True)
     return summary

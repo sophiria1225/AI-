@@ -48,6 +48,7 @@
 | P0 | R40 | P22：予約済み６開発課題で次の機構比較を準備 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/102) |
 | P1 | R41 | 通常Pythonの比較環境を隔離して検証 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/105) |
 | P1 | R42 | 取得済み観測への通常Python対照の接続を準備 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/110) |
+| P1 | R43 | 通常計算対照の実行記録と監査を接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/112) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -509,3 +510,11 @@ P21の全結果・補助評価後に、既存基準のまま６件を実行す�
 **なぜ行うか**: 計算手段を持たない基準だけに対して専用機構の有効性を主張しないため、普通の集合・集計処理を利用できる対照を準備する。
 
 **他候補の扱い**: ホスト直接exec、正解付きの計算結果、P22への途中追加、コード実行自体を新規性とする案は採らない。P22全件分析後に全体比較を選定する。
+
+## R43 通常計算対照の実行記録と監査を接続する
+
+2026-10-21. Prepared optional execution and accounting; 383 tests pass. Two real Python containers in mock-model/mock-app fixtures: 0.255 and 0.256 seconds; four saved boundaries each, zero audit discrepancies. Real LLM/AppWorld calls: 0. No P23 batch plan or automatic launch. See docs/native_compute_runner_preparation_20261021.md and reports/native_compute_runner_preflight_20261021.json.
+
+**なぜ行うか**: 取得済み観測を処理する通常Pythonを全体実行で比較できるようにし、計算費用・失敗・入力範囲を追跡する。専用機構を弱い対照だけで評価しないための準備。
+
+**他候補の扱い**: P22途中への追加、計算を無料扱いする比較、APIとローカル計算の混同、未確認の新規性の主張は採らない。対象課題と実行計画はP22全件分析後に固定する。

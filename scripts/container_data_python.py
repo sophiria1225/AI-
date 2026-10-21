@@ -67,12 +67,17 @@ def _limit_cli_output():
     resource.setrlimit(resource.RLIMIT_FSIZE, (OUTPUT_LIMIT, OUTPUT_LIMIT))
 
 
-def run_program(source, observations, *, storage_root, record_dir, timeout=10):
+def prepare_payload(source, observations, timeout=10):
     if type(source) is not str or len(source) > 20000 or not 0 < timeout <= 30:
         raise ValueError('source or timeout limit')
     payload = json.dumps({'code': source, 'observations': observations}, allow_nan=False).encode()
     if len(payload) > 1048576:
         raise ValueError('input byte limit')
+    return payload
+
+
+def run_program(source, observations, *, storage_root, record_dir, timeout=10):
+    payload = prepare_payload(source, observations, timeout)
     selection = json.loads((ROOT/'configs/python_export_image_v01.json').read_text())
     command = docker_command(Path(storage_root))
     record_dir = Path(record_dir)

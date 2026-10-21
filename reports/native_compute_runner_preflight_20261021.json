@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-10-21T11:58:09.514277+00:00",
+  "fixture_only": true,
+  "real_model_calls": 0,
+  "real_appworld_operations": 0,
+  "actual_container_executions_total": 2,
+  "initial_fixture": {
+    "checked_at": "2026-10-21T11:55:01.776634+00:00",
+    "fixture_only": true,
+    "real_model_calls": 0,
+    "real_appworld_operations": 0,
+    "mock_model_calls": 3,
+    "mock_usage_tokens_are_synthetic": true,
+    "actual_container_executions": 1,
+    "ordinary_compute": {
+      "attempts": 1,
+      "executions": 1,
+      "wall_seconds": 0.2548570411745459,
+      "status_counts": {
+        "ok": 1
+      },
+      "fatal_harness_error": false,
+      "environment_api_requests": 0,
+      "scope": "Ordinary model-provided Python; not independent task verification."
+    },
+    "expected_result_matched": true,
+    "all_audit_errors": {
+      "audit_errors": [],
+      "dispatch_audit_errors": [],
+      "history_audit_errors": [],
+      "compute_audit_errors": []
+    },
+    "boundary_audit_errors": [],
+    "boundaries": 4,
+    "p22_frozen_files_checked": 49,
+    "p22_unchanged": true,
+    "tests_passed": 382,
+    "test_log_sha256": "68b2f8ed92bcea48a3b72e68a52a2f213eb0aeec418a5f7e2ffd51ad473fba46",
+    "source_hashes": {
+      "scripts/native_compute_session.py": "77231352e5a99fb93c0ecd49741b93690ad77e118f1d0bf5549e99c6288c5f8f",
+      "scripts/run_native_appworld.py": "ec76f000ee3d5af62f4bc592360791b347927e0c24ac53d4108f6a7e5ef85460",
+      "scripts/audit_native_compute.py": "61ae01832a56638c6b19fc88386ce87d4032fbbd4999d006bb0ae724daea13cc",
+      "scripts/audit_native_execution.py": "1e1489719f6cc969cd7cd02e2411343ac7690421c25cd28abd730c809daec4c6",
+      "scripts/audit_native_boundaries.py": "4a5ef8857ca21803134e709469f73b6f25cca69b07cb12dc63cdb35b95aa7a42",
+      "scripts/appworld_native_tools.py": "5d055d1013ba0a82c1fbb1dc3a7595d22e7602b927f1bc8f0261819dd9f3f446",
+      "tests/test_native_compute_runner.py": "22076c27eb1690d1bc010a997c4b68f4576f806b8351649af7cd5d75d5fa931b"
+    },
+    "scope": "Ordinary calculation and accounting integration. No benchmark efficacy, novelty or actual generation run."
+  },
+  "final_fixture": {
+    "ordinary_compute": {
+      "attempts": 1,
+      "executions": 1,
+      "wall_seconds": 0.25646524992771447,
+      "status_counts": {
+        "ok": 1
+      },
+      "fatal_harness_error": false,
+      "environment_api_requests": 0,
+      "scope": "Ordinary model-provided Python; not independent task verification."
+    },
+    "expected_result_matched": true,
+    "audit_errors": {
+      "audit_errors": [],
+      "dispatch_audit_errors": [],
+      "history_audit_errors": [],
+      "compute_audit_errors": []
+    },
+    "boundary_audit_errors": [],
+    "boundaries": 4
+  },
+  "final_tests_passed": 383,
+  "final_test_log_sha256": "c9459c9ff69d8a799436800d86c59b93d184b491d951b68f7a566e027202ac2f",
+  "initial_test_log_retained": false,
+  "initial_test_log_note": "Generic log path was replaced by final suite output before archival; original recorded hash retained, not presented as an available file. Fixture records from both versions retained.",
+  "source_hashes": {
+    "scripts/native_compute_session.py": "f1cf7ef6e8240a8dea7eabca079e2ab9c18660fae36cf0a2ecf98da350594be2",
+    "scripts/run_native_appworld.py": "ec76f000ee3d5af62f4bc592360791b347927e0c24ac53d4108f6a7e5ef85460",
+    "scripts/audit_native_compute.py": "363bb53a2c4038bfe080a575527d88096dfb2f755558e27fabe4e272a6181106",
+    "scripts/audit_native_execution.py": "1e1489719f6cc969cd7cd02e2411343ac7690421c25cd28abd730c809daec4c6",
+    "scripts/audit_native_boundaries.py": "4a5ef8857ca21803134e709469f73b6f25cca69b07cb12dc63cdb35b95aa7a42",
+    "scripts/appworld_native_tools.py": "5d055d1013ba0a82c1fbb1dc3a7595d22e7602b927f1bc8f0261819dd9f3f446",
+    "scripts/container_data_python.py": "94704acd4a3f030662d190d9f6f51efb313bbd8c27807f01899fb6a19652c291",
+    "tests/test_native_compute_runner.py": "bcc3a41cd4f1ff510a1b1eae6d3100a7d33f51cd154a1101daed12ad1c8699d0"
+  },
+  "scope": "Ordinary computation integration only; no efficacy or new-method claim."
+}
