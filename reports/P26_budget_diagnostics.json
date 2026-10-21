@@ -1,0 +1,70 @@
+{
+  "phase": "P26",
+  "trials": [
+    {
+      "run_id": "P26_01_GUIDED",
+      "stop_reason": "agent_declared_complete",
+      "declared_complete": true,
+      "limits": {
+        "max_calls": 80,
+        "max_api_requests": 160,
+        "max_total_tokens": 450000,
+        "max_wall_seconds": 1800,
+        "max_output_tokens": 4096
+      },
+      "model_calls": 16,
+      "api_requests": 97,
+      "known_total_tokens": 361169,
+      "unknown_usage_calls": 0,
+      "unused_token_capacity_based_on_known_usage": 88831,
+      "unused_capacity_is_exact": true,
+      "peak_known_input_tokens": 38664,
+      "wall_seconds": 1598.6095467498526,
+      "wall_seconds_over_limit": 0,
+      "max_api_requests_in_one_response": 23,
+      "responses_sending_multiple_api_requests": 11,
+      "output_limit_finishes": 1,
+      "timed_calls": 16,
+      "cached_input_tokens_in_timed_calls": 301988,
+      "processed_input_tokens_in_timed_calls": 39960,
+      "prefill_seconds_in_timed_calls": 390.554497,
+      "decode_seconds_in_timed_calls": 1202.544672,
+      "call_wall_seconds_known": 1593.9771744974423,
+      "call_wall_seconds_unknown": 0,
+      "source_sha256": {
+        "plan.json": "a1a9e331ba717ec2fbb56ba12c180648030eeb37297a8870f8daef637e4a20e3",
+        "summary.json": "4c63fd9bada0f0b8636255bb0ff319916163d6370075461e5403fbfc4ee0ebf2",
+        "usage.json": "77e808ecc7b0956d3686c5643d5431b432ef9997fbff4054ca9c45609c6d7d37",
+        "events.json": "8e41015a7183dbe9ed64f7b36976736f501e813fb2687ca547f92440f001cbf4"
+      },
+      "response_sha256": {
+        "call_001": "ad297847045d56fb4d035acf912c8ed9df87e777d801dd0f1960cf326faf2a4c",
+        "call_002": "f34685f2d52da6cc051c1272b85ddce291663a4c850d3a83d275a9de0741097f",
+        "call_003": "f1c91a5cd6e8e76ddf85a0b2deda8158a6df9431e5e741905cfd5ff2ec35da23",
+        "call_004": "19d3699bf3b0918df2875c5d10179b4ea3bd3a779c9218d6c959e3316a7c34b1",
+        "call_005": "d82d9df8e27bf208817933e77b3c5057e97c02944d61ecfa2ee6f69eda4e62e2",
+        "call_006": "7d38cdcfb14371476e65271aff883955b255f2dccbd617631e15cf95194cbda1",
+        "call_007": "a8decc47ee4d798a667a9a5ad1ad04e0668c591d391a03d47da974ce2f59493c",
+        "call_008": "28e13e48b614d76a6ea9459565b94d96bcd7c7b10609e4c6a97f9a75cae314bf",
+        "call_009": "424c96038dc09baba13a20783f4877cecdba38d4449e4ce22e1f3225f0427da4",
+        "call_010": "a40900cb59831e51d450bcfa7f9a64d025e88b7de45d468d530a75eed082c420",
+        "call_011": "b62cb1f3458e7e8ed7f1febe69b8e14eacb52bcf1774c046b0bd7eb8fcbc5833",
+        "call_012": "fb866870d41934e5b5a7c9209f354faff1f2eae735bebeeb13370dab49313a94",
+        "call_013": "2e435787e0dea03aab3732b3a61893910fb6b8133520957a30ff54dde7ce3d43",
+        "call_014": "a3599275020993f8e3b19b24bb6b7d2e5fc2cf1f22c5204e3420dc6cb8677fed",
+        "call_015": "4cddef3f842a02b0a12ba5959f4d60e4fa995537a94b7758f513912f39752c09",
+        "call_016": "637bc8e76df3a5fc58776749f7ab92fa7e2b90b294c1927dcf14a30f1a214498"
+      }
+    }
+  ],
+  "plan_sha256": "a1a9e331ba717ec2fbb56ba12c180648030eeb37297a8870f8daef637e4a20e3",
+  "batch_status_sha256": "d25d828b74b95fcc0a2a5da7ca57ab28d65e48c7edd17ccebc8679b1b4e87cb4",
+  "analysis_source_sha256": {
+    "analyze_native_budget.py": "5489e6a9637857c1eb98ee1522f741e1d82642b74b2acd10c6598406545f169f",
+    "audit_inference_costs.py": "b2251c40cbef2c872863f344ebed9195e0f3bb5bbbefe46c2f95a1003965ff1b"
+  },
+  "model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_contents_read": false,
+  "scope": "Descriptive budget use, not a proof of minimum task cost or a causal failure label. Unused tokens do not imply a legal next call: input plus output reservation may not fit. Unknown usage stays unknown; server timings do not include all execution overhead. API calls within one response are counted individually. No task text, arguments, observations, reasoning or private evaluator details exported."
+}
