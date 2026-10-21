@@ -4,6 +4,7 @@ import datetime as dt
 import json
 from pathlib import Path
 import shlex
+import signal
 import subprocess
 import time
 import urllib.request
@@ -21,6 +22,11 @@ ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'sophiria1225/AI-'
 ISSUE = 71
 MARKER = '<!-- harness-event-view-probe:P16_01 -->'
+
+
+def inference_deadline(signum, frame):
+    """Let model_call persist unknown usage instead of SIGALRM killing the run."""
+    raise TimeoutError('local inference deadline')
 
 
 def schedule(plan, manifest):
@@ -100,6 +106,7 @@ def publish(text, state):
 
 
 def main():
+    signal.signal(signal.SIGALRM, inference_deadline)
     p = argparse.ArgumentParser()
     p.add_argument('--storage-root', type=Path, required=True)
     p.add_argument('--plan', type=Path, required=True)

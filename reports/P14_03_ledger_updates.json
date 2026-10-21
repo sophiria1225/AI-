@@ -1,0 +1,74 @@
+{
+  "run_id": "P14_03_LEDGER",
+  "updates": [
+    {
+      "update": 1,
+      "status": "ok",
+      "known_tokens": 16580,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 6,
+      "original_spans_after": 3,
+      "removed_spans": 3,
+      "ledger_items": 7,
+      "item_status_counts": {
+        "pending": 7
+      }
+    },
+    {
+      "update": 2,
+      "status": "invalid_keep_original",
+      "known_tokens": 22802,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 8,
+      "original_spans_after": 8,
+      "removed_spans": 0,
+      "ledger_items": 7,
+      "item_status_counts": {
+        "pending": 7
+      }
+    },
+    {
+      "update": 3,
+      "status": "invalid_keep_original",
+      "known_tokens": 23166,
+      "unknown_usage_calls": 0,
+      "original_spans_before": 12,
+      "original_spans_after": 12,
+      "removed_spans": 0,
+      "ledger_items": 7,
+      "item_status_counts": {
+        "pending": 7
+      }
+    },
+    {
+      "update": 4,
+      "status": "aborted",
+      "known_tokens": 0,
+      "unknown_usage_calls": 1,
+      "original_spans_before": 13,
+      "original_spans_after": 13,
+      "removed_spans": 0,
+      "ledger_items": 7,
+      "item_status_counts": {
+        "pending": 7
+      }
+    }
+  ],
+  "update_status_counts": {
+    "ok": 1,
+    "invalid_keep_original": 2,
+    "aborted": 1
+  },
+  "updates_removing_original_spans": 1,
+  "executor_inputs_with_removed_turns": 4,
+  "executor_inputs_with_memory_note": 4,
+  "known_memory_tokens": 62548,
+  "unknown_memory_usage_calls": 1,
+  "source_hashes": {
+    "summary.json": "cf9dc8690da213fc8a40a7afb991acc07bd094e97ee3ed0dd3739dac207e5746",
+    "generated_memory_events.json": "3e99e93401e1e9f186fc6f47053caa7172edd849f8a07ea1bff74d1451c110a6",
+    "memory_views.json": "88c6fa191fd82d833f11e5681cc503f23a3862ae92d96248ccd705aa1cc24b4b"
+  },
+  "scope": "Completed-run structural counts only. Done labels and references are not semantic proof. No generation or environment execution.",
+  "script_sha256": "c7461f0d83a137e77eb3c64511b2ec60e874563bd453aa2ac257de6cb082ee2e"
+}

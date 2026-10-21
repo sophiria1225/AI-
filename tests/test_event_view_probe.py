@@ -1,15 +1,46 @@
 import copy
 import datetime as dt
 import json
+import signal
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from run_event_view_probe import lease_remaining, messages_for, schedule, structural_outcome
+from run_event_view_probe import inference_deadline, lease_remaining, messages_for, schedule, structural_outcome
+from run_context_comparison import Inference
 
 
 class ProbeTests(unittest.TestCase):
+    def test_deadline_preserves_unknown_usage_and_stops_without_retry(self):
+        config = {'model': {'model': 'test', 'temperature': 1, 'seed': 46,
+                            'num_predict': 100, 'num_ctx': 1000, 'call_timeout_seconds': 600},
+                  'seed': 46, 'agent_temperature': 1, 'draft_temperature': .7,
+                  'max_calls': 2, 'max_wall_seconds': 21600, 'max_output_tokens': 100,
+                  'max_total_tokens': 1000}
+        old = signal.signal(signal.SIGALRM, inference_deadline)
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                inference = Inference(config, Path(directory))
+                def alarm(*args, **kwargs):
+                    signal.raise_signal(signal.SIGALRM)
+                with patch('run_context_comparison.count_input', return_value={'input_tokens': 10}), \
+                        patch('local_llama.post', side_effect=alarm) as request:
+                    with self.assertRaisesRegex(RuntimeError, 'usage unknown'):
+                        inference.call('ledger', [{'role': 'user', 'content': 'test'}], [])
+                    self.assertEqual(request.call_count, 1)
+                usage = json.loads((Path(directory)/'usage.json').read_text())
+                response = json.loads((Path(directory)/'call_001/response.json').read_text())
+                self.assertIsNone(usage[0]['input_tokens'])
+                self.assertIsNone(usage[0]['output_tokens'])
+                self.assertEqual(response['error_kind'], 'timeout')
+                self.assertEqual(response['timeout_scope'], 'call')
+        finally:
+            signal.alarm(0)
+            signal.signal(signal.SIGALRM, old)
+
     def test_normal_event_inputs_are_identical_across_views(self):
         case = {'task': {'instruction': 'finish'}, 'tools': [],
                 'spans': {'s1': {'id': 's1', 'assistant': 'proposed',
