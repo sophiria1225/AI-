@@ -1,0 +1,20 @@
+{
+  "phase": "P16",
+  "run_id": "P16_01",
+  "source_runs": ["P11_01_ROLES", "P11_02_ROLES", "P11_03_ROLES", "P11_04_ROLES"],
+  "selection_rule": "Last model response containing an application tool in each fixed P11 trajectory; exclude api_docs, supervisor and archive tools. Use only the prefix through that response. Never read evaluation files.",
+  "conditions": ["recorded", "rejected_before_dispatch"],
+  "variants": ["raw", "execution_tag", "quarantine"],
+  "first_seed": 46,
+  "max_calls": 24,
+  "max_total_tokens": 1000000,
+  "max_wall_seconds": 21600,
+  "max_output_tokens": 4096,
+  "temperature": 1.0,
+  "unknown_parameter": "__p16_unknown_parameter__",
+  "wait_for_batch": "P14_batch_v01",
+  "max_wait_seconds": 7200,
+  "memory_model_matches": "configs/P14_native_ledger_v01.json",
+  "output_root": "records/event_view_probe/P16_01",
+  "scope": "Four development tasks, two event conditions each, one seed per memory view. Controlled input experiment, not natural failure frequency or end-to-end success."
+}
