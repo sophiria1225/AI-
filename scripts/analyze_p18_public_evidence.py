@@ -43,6 +43,7 @@ def recorded_operations(spans, events):
 def photo_counts(spans, events):
     sent = {e['span_id'] for e in events if e['api_request_sent']}
     listed, read, moved = set(), [], []
+    aliases, canonical_moved, unmapped_moves = {}, [], 0
     for sid, span in spans.items():
         if sid not in sent:
             continue
@@ -51,14 +52,27 @@ def photo_counts(spans, events):
             listed.update(value)
         if name == 'file_system__show_file' and isinstance(value, dict) and 'path' in value:
             read.append(value['path'])
+            requested_path = args_of(span)['file_path']
+            if requested_path in aliases and aliases[requested_path] != value['path']:
+                raise ValueError('recorded path alias changed identity')
+            aliases[requested_path] = value['path']
         if name == 'file_system__move_file' and isinstance(value, dict) and 'message' in value:
-            moved.append(args_of(span)['source_file_path'])
+            requested_path = args_of(span)['source_file_path']
+            moved.append(requested_path)
+            canonical = aliases.get(requested_path, requested_path if requested_path in listed else None)
+            if canonical is None:
+                unmapped_moves += 1
+            else:
+                canonical_moved.append(canonical)
     return {'listed_unique_paths': len(listed), 'successful_metadata_reads': len(read),
             'unique_metadata_paths': len(set(read)), 'listed_without_metadata': len(listed-set(read)),
             'move_requests_with_json_receipt': len(moved), 'unique_moved_source_paths': len(set(moved)),
-            'listed_without_move_receipt': len(listed-set(moved)),
+            'unique_canonical_moved_source_paths': len(set(canonical_moved)),
+            'unmapped_move_source_paths': unmapped_moves,
+            'listed_without_move_receipt': len(listed-set(canonical_moved)) if not unmapped_moves else None,
             'individual_read_and_move_count_for_this_strategy': 2*len(listed),
             'scope': 'Counts of this individual-file strategy, not a minimum over all possible strategies. '
+                     'Path aliases use earlier successful public metadata receipts, not host filesystem expansion. '
                      'JSON receipt counts alone do not establish correct destination or final success.'}
 
 

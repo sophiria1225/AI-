@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from analyze_p18_public_evidence import song_coverage, recorded_operations
+from analyze_p18_public_evidence import song_coverage, recorded_operations, photo_counts
 
 
 def fixture(csv_text):
@@ -51,6 +51,26 @@ class EvidenceDiagnosisTests(unittest.TestCase):
         r = recorded_operations(s, events)
         self.assertNotIn('file_system__create_file', r['sent_counts'])
         self.assertEqual(r['not_sent_spans'], ['s4'])
+
+    def test_move_alias_uses_earlier_metadata_receipt_and_excludes_unsent(self):
+        entries = [
+            ('file_system__show_directory', {}, ['/user/photos/a', '/user/photos/b']),
+            ('file_system__show_file', {'file_path': '~/photos/a'}, {'path': '/user/photos/a'}),
+            ('file_system__move_file', {'source_file_path': '~/photos/a'}, {'message': 'moved'}),
+            ('file_system__move_file', {'source_file_path': '/user/photos/b'}, {'message': 'not sent'}),
+        ]
+        spans = {f's{i}': {'action': {'name': name, 'arguments': args},
+                           'observation': {'observation': json.dumps(obs)}}
+                 for i, (name, args, obs) in enumerate(entries, 1)}
+        events = [{'span_id': s, 'api_request_sent': s != 's4'} for s in spans]
+        result = photo_counts(spans, events)
+        self.assertEqual(result['listed_without_move_receipt'], 1)
+        self.assertEqual(result['unmapped_move_source_paths'], 0)
+        self.assertEqual(result['move_requests_with_json_receipt'], 1)
+        spans['s3']['action']['arguments']['source_file_path'] = '~/unknown'
+        result = photo_counts(spans, events)
+        self.assertIsNone(result['listed_without_move_receipt'])
+        self.assertEqual(result['unmapped_move_source_paths'], 1)
 
 
 if __name__ == '__main__':

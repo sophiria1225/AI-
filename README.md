@@ -39,6 +39,8 @@ P18は16:55頃に開始し、17:53頃に全４件を終了しました。49生�
 
 ## 最新資料と結果
 
+P18補助集計の[パス別名の訂正](docs/P18_path_alias_correction_20261021.md)を保存しました。実験成否・費用・曲の欠落・説明資料の数値は変わりません。
+
 **最新：P18終了時の説明資料・６枚：** [PDF](materials/20261021_p18/AI_harness_P18_20261021.pdf)／[編集用PowerPoint](materials/20261021_p18/AI_harness_P18_20261021.pptx)／[全結果・次の判断](docs/P18_findings.md)／[図表・CSV](materials/20261021_p18/figures/)。目的、構成図、全成否・費用、取得後の欠落、次の対照をまとめました。６枚は進捗説明用で、投稿原稿の４ページとは別です。
 
 **P17終了時の説明資料・６枚：** [PDF](materials/20261021_p17/AI_harness_P17_20261021.pdf)／[編集用PowerPoint](materials/20261021_p17/AI_harness_P17_20261021.pptx)／[全結果・採否・限界](docs/P17_findings.md)。
