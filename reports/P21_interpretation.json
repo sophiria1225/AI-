@@ -1,0 +1,36 @@
+{
+  "primary_results_finalized": true,
+  "finalized_at": "2026-10-21T10:59:57.616949+00:00",
+  "headline": "直接CSVは２／３、計算コードは１／３が完全な書出。\n残り３件は上限停止。コード方式の優位性は示せない。",
+  "interpretation_points": [
+    "提出できた３件は、公開観測から求めた72行と一致。",
+    "唯一の提出コードは４つの入力変換にも適合した。",
+    "残る失敗は未提出であり、言語制限による実行失敗ではない。",
+    "１つの開発状態の反復から、一般性能や新規性は主張しない。"
+  ],
+  "next_action": "この１件で上限拡張や指示調整を繰り返さない。\n予約した別の６開発課題を、既存の全履歴基準で観察する。\n通常構成でも残る失敗から、必要な変更規則を一つ絞る。\n確認用12シナリオは、方式の固定まで未閲覧で残す。",
+  "decision": "Advance to six preselected full-history development tasks, not another export-specific cap or prompt sweep.",
+  "adopted": [
+    "Retain normal program computation as an established comparator; do not claim it as our novel method.",
+    "Keep all P20/P21 failures and costs, including non-submissions.",
+    "Run P22 unchanged full-history baseline and per-task budget from P11/P18."
+  ],
+  "not_adopted": [
+    {
+      "option": "Further automatic output-cap doubling",
+      "reason": "Submissions now exist and all submitted artifacts are correct; repeated tuning on one known state would not establish a new harness mechanism."
+    },
+    {
+      "option": "Standard-Python rerun of this batch",
+      "reason": "The one submitted program already passes the restricted runtime and four checks. No unsupported-syntax failure was observed. Keep the prepared runtime for a future strong comparator."
+    },
+    {
+      "option": "Disable thinking and declare a new method",
+      "reason": "Official mode is an ordinary model configuration. Local template compatibility is checked but performance is not; not needed to explain current submitted outputs."
+    },
+    {
+      "option": "Treat three seeds as three independent tasks or re-run original account deletion",
+      "reason": "This diagnostic is one public-data export state, without environment actions. No end-to-end improvement is demonstrated."
+    }
+  ]
+}

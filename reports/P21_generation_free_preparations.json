@@ -1,0 +1,81 @@
+{
+  "thinking_template": {
+    "checked_at": "2026-10-21T10:28:28.994163+00:00",
+    "official_model_card": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+    "template_sha256": "c56d1f3ab70881b0e2ed8f51fa6de435d37b84d6c804ebb19a0ec4986fa5ffa9",
+    "template_characters": 11751,
+    "model_alias": "minimax-m3-iq4xs",
+    "build_info": "b11669-620d2225c",
+    "rows": [
+      {
+        "mode": "enabled",
+        "generation_requests": 0,
+        "http_status": 200,
+        "result_keys": [
+          "prompt"
+        ],
+        "prompt_sha256": "2b3d90e9ae029547346237c3ef7c7393f314cd3ce1b2d05146ff05fd4d28b5b9",
+        "characters": 877,
+        "has_mode_statement": true
+      },
+      {
+        "mode": "adaptive",
+        "generation_requests": 0,
+        "http_status": 200,
+        "result_keys": [
+          "prompt"
+        ],
+        "prompt_sha256": "6e24a72868df5b6bc4b4f254a48a7e92260e8af8c42703f695fa94e251ed63a8",
+        "characters": 888,
+        "has_mode_statement": true
+      },
+      {
+        "mode": "disabled",
+        "generation_requests": 0,
+        "http_status": 200,
+        "result_keys": [
+          "prompt"
+        ],
+        "prompt_sha256": "349b0d74e5818373e59828632922330dc1adc2d309debd39f021390155641071",
+        "characters": 815,
+        "has_mode_statement": true
+      }
+    ],
+    "model_generation_requests": 0,
+    "scope": "Template rendering only, generic synthetic input. No model decoding, no P21 content read, no active experiment settings changed.",
+    "official_card_snapshot": {
+      "revision": "f0e1c1e04d40177e4673a22097036854f536e9c0",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3/resolve/f0e1c1e04d40177e4673a22097036854f536e9c0/README.md",
+      "bytes": 5122,
+      "sha256": "6148856dbf8be26dcf3f9b913be0252c38454e852108fdab01212fe965f3e327"
+    }
+  },
+  "analyst_reference_size": {
+    "phase": "P21_reference_size",
+    "checked_at": "2026-10-21T10:35:56.920339+00:00",
+    "input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+    "public_pairs": 72,
+    "counts": [
+      {
+        "form": "plain_csv",
+        "characters": 2806,
+        "utf8_bytes": 2806,
+        "tokens": 734,
+        "sha256": "a103a31cc8039da2e4005fa20184ba3f9af32506f012e261630c9a82d0f403e4"
+      },
+      {
+        "form": "json_content_argument",
+        "characters": 2893,
+        "utf8_bytes": 2893,
+        "tokens": 738,
+        "sha256": "16cb488c7a7e14ca1d7d82f9b235e31da20ca0920fe6c9b26ebe9c6e645fd6cd"
+      }
+    ],
+    "model_calls": 0,
+    "tokenization_requests": 2,
+    "model_generation_content_read": false,
+    "scope": "Analyst-built canonical valid export from public observations, tokenized without generation. Not a minimum representation, not a sampled model response, not counting reasoning or tool-call delimiters. Never supplied to P21 generators."
+  },
+  "not_used_in_generation": true,
+  "decision": "Neither reference content nor changed thinking setting was supplied to P21. No further same-state generation planned."
+}

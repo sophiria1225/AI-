@@ -1,0 +1,131 @@
+{
+  "phase": "P21",
+  "plan_sha256": "166b93651f4404eb67516da424c1e14c64fe4a58d360a4053f9fe776bb74867e",
+  "input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+  "expected_unique_public_pairs": 72,
+  "outputs": [
+    {
+      "variant": "literal_csv",
+      "seed": 51,
+      "call_id": "call_001",
+      "known_tokens": 17336,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 0.00015424983575940132
+    },
+    {
+      "variant": "data_program",
+      "seed": 51,
+      "call_id": "call_002",
+      "known_tokens": 17645,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 8.862488903105259e-05
+    },
+    {
+      "variant": "data_program",
+      "seed": 52,
+      "call_id": "call_003",
+      "known_tokens": 17201,
+      "schema_valid": true,
+      "program_executed": true,
+      "program_steps": 6110,
+      "csv_valid": true,
+      "complete_export": true,
+      "error_type": null,
+      "rows": 72,
+      "unique_rows": 72,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0,
+      "evaluation_seconds": 0.004241417162120342
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 52,
+      "call_id": "call_004",
+      "known_tokens": 15157,
+      "schema_valid": true,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": true,
+      "complete_export": true,
+      "error_type": null,
+      "rows": 72,
+      "unique_rows": 72,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0,
+      "evaluation_seconds": 0.00020537502132356167
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 53,
+      "call_id": "call_005",
+      "known_tokens": 15123,
+      "schema_valid": true,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": true,
+      "complete_export": true,
+      "error_type": null,
+      "rows": 72,
+      "unique_rows": 72,
+      "missing": 0,
+      "extra": 0,
+      "duplicates": 0,
+      "evaluation_seconds": 0.0001887078396975994
+    },
+    {
+      "variant": "data_program",
+      "seed": 53,
+      "call_id": "call_006",
+      "known_tokens": 17645,
+      "schema_valid": false,
+      "program_executed": false,
+      "program_steps": null,
+      "csv_valid": false,
+      "complete_export": false,
+      "error_type": "ValueError",
+      "evaluation_seconds": 9.091710671782494e-05
+    }
+  ],
+  "groups": [
+    {
+      "variant": "literal_csv",
+      "outputs": 3,
+      "complete_exports": 2,
+      "known_tokens": 47616
+    },
+    {
+      "variant": "data_program",
+      "outputs": 3,
+      "complete_exports": 1,
+      "known_tokens": 52491
+    }
+  ],
+  "model_calls": 6,
+  "known_total_tokens": 100107,
+  "unknown_usage_calls": 0,
+  "audit_errors": [],
+  "evaluator_source_sha256": "a34fde540f3afbd87393c79d799fb374a613ca7acb267d6f534808c23f42ab92",
+  "environment_requests": 0,
+  "hidden_evaluator_loaded": false,
+  "reserved_tasks_read": 0,
+  "scope": "Follow-up budget sensitivity after all six P20 outputs hit the 4096 output cap. Same known development state, public inputs, model, instructions, seeds and order; both arms now get 8192 output tokens. Not new independent tasks, not a novel method or end-to-end success comparison.",
+  "limitations": [
+    "Both arms receive a common structured observation packet, not the original full conversation. Do not infer a causal effect by comparing against the original P18 output alone.",
+    "Interpreter capabilities and prompt overhead differ as the intended output mechanism; record all input and output costs.",
+    "The restricted interpreter is not a general Python agent. Unsupported code cannot establish that ordinary CodeAct would fail.",
+    "No account operation, model-generated CSV, missing title, target count, hidden evaluation or reserved task is provided as input.",
+    "P20 failures and costs are retained separately. This post-hoc budget choice is not a prespecified confirmatory study; no automatic further cap doubling if submissions remain absent."
+  ]
+}

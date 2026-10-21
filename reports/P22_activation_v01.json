@@ -1,0 +1,40 @@
+{
+  "decided_at": "2026-10-21T11:03:55.256578+00:00",
+  "decision": "run_six_full_history_development_tasks",
+  "p21_primary_sha256": "b7b94153aff9fb641ef721833237d106d67e10c656a77aff598f87c9bbc3b865",
+  "p21_supplementary_sha256": "5afbc165710a7df7302bc5fd23f1a346c5292311248fce5276ab3f8b939b6e5a",
+  "why": "P21 submissions were all correct and the program arm showed no advantage. One known export state does not justify a new harness mechanism. Observe all six already selected development scenarios under the unchanged baseline before selecting a targeted mechanism.",
+  "alternatives": [
+    {
+      "option": "Further cap or prompt sweep on same export",
+      "reason": "Would tune one known state; current submitted artifacts are correct."
+    },
+    {
+      "option": "Promote code execution or completion gate as novel method",
+      "reason": "Known mechanisms; no observed need beyond ordinary computation established."
+    },
+    {
+      "option": "Start a memory/merge comparison on all six now",
+      "reason": "Relevant failure mechanism has not been observed on these tasks; creates uninterpretable additional factors."
+    },
+    {
+      "option": "Use 12 reserved confirmation tasks",
+      "reason": "Would spend the untouched comparison set during method selection."
+    }
+  ],
+  "kept_settings": [
+    "Same model, quantization, 64K, q8 KV, thinking enabled, temperature, seed and per-task budgets as P11/P18",
+    "Full public history and API discovery; no model-generated memory or new completion gate",
+    "All six tasks retained; separate final evaluation never supplied to the model"
+  ],
+  "server_renewal": {
+    "before_previous_lease_end": "2026-10-21T13:00:13.003907+00:00",
+    "after_all_p21_generation": true,
+    "new_started_at": "2026-10-21T10:59:56.519086+00:00",
+    "new_lease_end": "2026-10-21T18:59:56.519086+00:00",
+    "config_unchanged": true,
+    "reason": "Remaining prior lease was shorter than six maximum-length tasks plus evaluation reserve."
+  },
+  "reserved_confirmation_instruction_reads": 0,
+  "new_model_calls_at_decision": 0
+}
