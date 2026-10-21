@@ -17,6 +17,7 @@
 
 進捗は [Project](https://github.com/users/sophiria1225/projects/1)、[新規性 #70](https://github.com/sophiria1225/AI-/issues/70)、[実験 #71](https://github.com/sophiria1225/AI-/issues/71)、[原稿 #72](https://github.com/sophiria1225/AI-/issues/72)へ同期します。
 実行中のP17は[自動進捗コメント](https://github.com/sophiria1225/AI-/issues/71#issuecomment-6309957974)に完了数と費用を記録しています。
+続くP18は[未使用４シナリオの観察](docs/experiments/P18_unseen_development.md)を準備済みで、P17終了後に同じ全履歴基準を実行します。[P18の自動進捗](https://github.com/sophiria1225/AI-/issues/86#issuecomment-6310367235)。選定は要求内容・結果を見る前のID順で固定し、成功した課題も含めて記録します。
 
 ## 今回の判断と次の作業
 
@@ -25,6 +26,8 @@
 実際に起きた記憶生成の失敗を監査し、基準実装の不整合を修正しました。現在P17の16生成を実行中です。空出典を許すツール定義と拒否する受取側が食い違っていたため、この影響を除いて比較し直す必要があります。[P17の固定比較](docs/experiments/P17_ledger_contract.md)では、同じ４入力×２版×新しい２seed＝16生成で校正します。**この修正を新規性とは呼びません。** 近接研究との差と有効性が確認できる主張は、まだ確定していません。
 
 [内容判定前の採否基準](docs/letter_candidate_gate_20261021.md)、[近接研究](docs/letter_related_work_addendum_20261021.md)、[実装レベルの重複](docs/letter_implementation_overlap_20261021.md)、[次の校正理由](docs/memory_contract_correction_20261021.md)。
+
+既存記録の[推論費用の監査](docs/P11_P14_inference_costs.md)も追加しました。入力トークンの減少と、キャッシュを使えず再処理した入力・記憶生成の増加を分けています。異なる実行経路の集計なので、キャッシュの因果効果や新規性の証明にはしません。
 
 ## 最新資料と結果
 
