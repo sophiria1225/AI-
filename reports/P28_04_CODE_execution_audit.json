@@ -1,0 +1,43 @@
+{
+  "run_id": "P28_04_CODE",
+  "task_id": "6104387_1",
+  "arm": "code_guided",
+  "stop_reason": "api_request_limit",
+  "declared_complete": false,
+  "known_total_tokens": 183028,
+  "usage_by_role": {
+    "agent": {
+      "calls": 16,
+      "input_tokens": 174176,
+      "output_tokens": 8852,
+      "unknown_usage": 0
+    }
+  },
+  "model_calls": 16,
+  "tool_turns": 97,
+  "compression_events": 0,
+  "format_errors": 0,
+  "api_bridge_errors": 0,
+  "wall_seconds": 688.5987570420839,
+  "evaluation": {
+    "official_success": false,
+    "pass_count": 0,
+    "fail_count": 10,
+    "evaluation_returned_to_model": false
+  },
+  "unknown_usage_calls": 0,
+  "peak_input_tokens": 18051,
+  "audit_errors": [],
+  "source_hashes": {
+    "summary": "ac84400ac73ad8c751c5434bbb477a90e660be9fa590983dd1a17cf6bd2ed5d9",
+    "usage": "9a87e3d2cc79ff814c8948a7e2cec90376f363872f0ab311b39a3eb4f7f21575",
+    "evaluation": "658d8230e8162f2e6505472a85043df0066d60d31df1f2a8f124dd2d3ab2dfc3",
+    "spans.json": "f1e39a5beca187af8865d3b0cdbe302b77c8cc7aebde0e49b2959ad145ec81e6",
+    "events.json": "8ba08a3ea4c83415e8e808bbff026dac4db31a0eb861dc4a21bd16251aaefa24",
+    "plan.json": "a23958d35560be4b7ed86801bf50ba32208d44017a285ef1f695f51e5e135afe"
+  },
+  "code_audit_errors": [],
+  "program_executions": 16,
+  "api_requests": 80,
+  "scope": "Saved public input/history, code-to-API correspondence, budgets and container controls. No proof of semantic correctness."
+}
