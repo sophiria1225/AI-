@@ -20,11 +20,18 @@ def audit(trial):
     for name,expected in summary['source_hashes'].items():
         if sha(trial/'source'/name)!=expected:
             errors.append('saved source differs: '+name)
-    for name in ('run_code_appworld.py','code_agent_interface.py','native_conversation.py'):
+    plan=read(trial/'plan.json')
+    sources=['run_code_appworld.py','code_agent_interface.py','native_conversation.py']
+    if plan['phase']=='P28': sources+=['run_code_control_appworld.py','code_runtime_prompts.py']
+    for name in sources:
         if sha(Path(__file__).parent/name)!=summary['source_hashes'][name]:
             raise ValueError('use the frozen code/history implementation')
     usage=read(trial/'usage.json');events=read(trial/'events.json');spans=read(trial/'spans.json')
-    history=NativeConversation(code_system_prompt(),read(trial/'public_task.json'))
+    prompt=code_system_prompt()
+    if plan['phase']=='P28':
+        from code_runtime_prompts import control_system_prompt
+        prompt=control_system_prompt(plan)
+    history=NativeConversation(prompt,read(trial/'public_task.json'))
     prior={};programs=0;program_api=0
     for call in usage:
         request=read(trial/call['id']/'request.json')

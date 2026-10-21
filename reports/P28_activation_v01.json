@@ -1,0 +1,21 @@
+{
+  "phase": "P28",
+  "at": "2026-10-21T16:44:43.657922+00:00",
+  "decision": "clarify_provided_globals_only",
+  "why": "All P27 cases initially attempted imports; keep fresh variables unchanged to separate callable guidance from interpreter persistence. All four prior cases remain included.",
+  "alternatives": {
+    "persistence_also": "Would change two mechanisms together; reserve for a separate reviewed control.",
+    "increase_budgets": "No output-length finishes in P27; repeated reads and runtime use warrant control first.",
+    "failed_case_only": "Would change the cohort after observing outcomes; keep all four.",
+    "claim_novelty": "Ordinary interface clarification is not a novel harness contribution."
+  },
+  "system_prompt_sha256": "b3ba231b571f86bb14ddf54d6ac35b0fc48b12bf7426a405ce542901e9591f9b",
+  "prerequisite_sha256": {
+    "reports/P27_comparison.json": "6ecb138023242488b2abfef3d88a77bdb72a52fbbb310abebf6a7b1ac285f1e4",
+    "reports/P27_program_diagnostics.json": "4c844021970a0ef7cb1782de6ea151281fd0b7d50b5d8816defdba67ea0b9640",
+    "reports/P27_program_structure.json": "f48190e11ff2b254baac66fd1aa8a238835a239dc34b68ef10a74b200ef0ef9e",
+    "docs/P27_findings.md": "f4a99c853e21849042c78f63cbed8da174b87cfab59decf3807bc55caa8c4ea4",
+    "configs/P27_code_comparison_v01.json": "8611e39a9a24ab8a4253ea5bfe8cb7a0e6f5cb3555f032c3863a3f6d7db2103e"
+  },
+  "reserved_confirmation_instruction_reads": 0
+}

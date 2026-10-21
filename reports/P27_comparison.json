@@ -1,0 +1,182 @@
+{
+  "phase": "P27",
+  "all_four_reviewed": true,
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "baseline": {
+        "task_id": "34d9492_1",
+        "run_id": "P26_01_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 16,
+        "known_total_tokens": 361169,
+        "unknown_usage_calls": 0,
+        "api_requests": 97,
+        "output_limit_finishes": 1,
+        "execution_wall_seconds": 1598.6095467498526
+      },
+      "code": {
+        "task_id": "34d9492_1",
+        "run_id": "P27_01_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 20,
+        "known_total_tokens": 187189,
+        "unknown_usage_calls": 0,
+        "api_requests": 102,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 712.873707790859
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "baseline": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P25_02_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 8,
+        "known_total_tokens": 181220,
+        "unknown_usage_calls": 0,
+        "api_requests": 16,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 384.85404845909216
+      },
+      "code": {
+        "task_id": "3c13f5a_1",
+        "run_id": "P27_02_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 27,
+        "known_total_tokens": 258270,
+        "unknown_usage_calls": 0,
+        "api_requests": 23,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 422.99691675021313
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "baseline": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P25_03_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 6,
+        "known_total_tokens": 69547,
+        "unknown_usage_calls": 0,
+        "api_requests": 8,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 190.74317966680974
+      },
+      "code": {
+        "task_id": "60d0b5b_1",
+        "run_id": "P27_03_CODE",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 32,
+        "known_total_tokens": 341481,
+        "unknown_usage_calls": 0,
+        "api_requests": 16,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 781.1767192499246
+      },
+      "outcome": "both_success"
+    },
+    {
+      "task_id": "6104387_1",
+      "baseline": {
+        "task_id": "6104387_1",
+        "run_id": "P25_04_GUIDED",
+        "success": true,
+        "declared_complete": true,
+        "stop_reason": "agent_declared_complete",
+        "model_calls": 12,
+        "known_total_tokens": 370343,
+        "unknown_usage_calls": 0,
+        "api_requests": 75,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 1075.560141790891
+      },
+      "code": {
+        "task_id": "6104387_1",
+        "run_id": "P27_04_CODE",
+        "success": false,
+        "declared_complete": false,
+        "stop_reason": "api_request_limit",
+        "model_calls": 21,
+        "known_total_tokens": 177249,
+        "unknown_usage_calls": 0,
+        "api_requests": 80,
+        "output_limit_finishes": 0,
+        "execution_wall_seconds": 630.8821200001985
+      },
+      "outcome": "worsened"
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "model_calls": 42,
+      "known_total_tokens": 982279,
+      "unknown_usage_calls": 0,
+      "api_requests": 196,
+      "output_limit_finishes": 1,
+      "execution_wall_seconds": 3249.7669166666456,
+      "successes": 4,
+      "trials": 4
+    },
+    "code": {
+      "model_calls": 100,
+      "known_total_tokens": 964189,
+      "unknown_usage_calls": 0,
+      "api_requests": 221,
+      "output_limit_finishes": 0,
+      "execution_wall_seconds": 2547.9294637911953,
+      "successes": 3,
+      "trials": 4
+    }
+  },
+  "outcome_counts": {
+    "both_success": 3,
+    "worsened": 1
+  },
+  "source_hashes": {
+    "configs/P27_code_comparison_v01.json": "8611e39a9a24ab8a4253ea5bfe8cb7a0e6f5cb3555f032c3863a3f6d7db2103e",
+    "reports/P18_P25_paired_comparison.json": "d32546c75e715493a505ed05cf50468a40ef4edbd61bf8f6dbb28b9bcd475bb8",
+    "reports/P26_photo_budget_summary.json": "5fdbe8bcaedeb93c666246fcdf4766cf360b4de1ce1969f88548a347b08fe425",
+    "reports/P26_budget_diagnostics.json": "52c4dc8cbfc95577e1ee9ddff1e486a029d020093df7c8ad0cc7db4f131b3a9b",
+    "reports/P26_interpretation.json": "9ede046fc4f3fa30b4381beef7473d21b895e36bbeffaa7d9135523f050a7ff8",
+    "reports/P25_interpretation.json": "cc98a1845d800a5d96fcb7085ecd6118b28e8ded3d59d7d970515f035782fb38",
+    "reports/P27_01_CODE_execution_audit.json": "4940927bd8b8977fa762477138619257eb84a1a65bf702b8a46b0950553f730a",
+    "reports/P27_01_CODE_boundary_audit.json": "969fd581b7ab083cfb210bf176286d6ac3a24c59917257f261f5eb678da4af7d",
+    "reports/P27_02_CODE_execution_audit.json": "a873b0e13b2fa7a548c9e3d6523ffaffcc31ee84321b9d95f79d84e4b3847290",
+    "reports/P27_02_CODE_boundary_audit.json": "eeb94b8a7e202b920951a61e5a8e48ec4b2af88ee0035b8e2dda81ac3996a224",
+    "reports/P27_03_CODE_execution_audit.json": "f6fe10b285e839c84ea4317d5e20dc16f5dc5e5fed81a501e9ac6c4b04d701fb",
+    "reports/P27_03_CODE_boundary_audit.json": "51fb27ddcb6d6634af1a08391a5015ef31b3c00f9b70c8ff0a54081388d39271",
+    "reports/P27_04_CODE_execution_audit.json": "db6f7970ff4d4196845e8d9c2c74e80f49e88f2baa99268b806be713051fff1f",
+    "reports/P27_04_CODE_boundary_audit.json": "4fae1258684307369b5d089fcb3e7d95f1f2570239842882f589eafee48dbc66",
+    "reports/P27_budget_diagnostics.json": "b9b255a5b2bf4b1a0370cc72db75f1dba8b85d190ff2ce54d536209c6807b8f2",
+    "reports/P27_public_trace_diagnostics.json": "5bf316b63904027cbc7d0ffcf2272c5ae2175109da90d4bc2670105fd2d4e81b"
+  },
+  "script_sha256": "069f33e98c7a30f3db37548adcaa3576e745312f9556b3a976c54476d3fd0df1",
+  "new_model_calls": 0,
+  "environment_requests": 0,
+  "novelty_established": false,
+  "limitations": [
+    "Four already observed cases, one seed; not confirmation.",
+    "Photo baseline is P26 (160 API); other baselines are P25 (80 API).",
+    "Python control flow, schema access and visible output differ; not a language-only intervention.",
+    "P27 inherited a native discovery-policy description in the configuration. Actual code updates schemas within each program, as specified in the P27 protocol and code guide. This metadata discrepancy is retained, not silently corrected in the frozen run.",
+    "Fresh variables between code programs, unlike a persistent CodeAct interpreter.",
+    "A standard code interface is not a proposed novel method."
+  ]
+}
