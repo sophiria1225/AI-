@@ -1,0 +1,64 @@
+{
+  "phase": "P20",
+  "plan_sha256": "a96112742193eb56bad0055619b972c6e29ebf7de845dea68ef39eeff563a114",
+  "input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+  "input_manifest_sha256": "132c8152a991f16eb6e5911993c435a0cc90a2125632f27b2a8d08a8aba8fd7c",
+  "source_hashes": {
+    "scripts/analyze_p3_timeline.py": "9816f3b7394c13b59920aad7023ef9959c2441786a7c8754c8064c781527960a",
+    "scripts/appworld_native_tools.py": "02a9e3493ed45c3929c9e605070649e80cb6cb7451d38350ab4275ec70d4b3f5",
+    "scripts/audit_p2.py": "2cb639e73fd281457b081e44b71895f95fa1b45d04af25750d1a80d596140c7d",
+    "scripts/audit_p3.py": "f1a2f4c01169d2451b9a0c5e715de78351fcbee342edda69cb50589b3699b162",
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/data_export_probe.py": "41ea80843905ff0564e46be35bbe1cf6325657d6b3dee60233c3b670a64155bd",
+    "scripts/data_python.py": "64c50713622ad547d1074ea9d273c772389ec3b70b6ad1d0ecd53e15fe36cb60",
+    "scripts/evaluate_data_export_probe.py": "0cca77b2e100deb68c906c7dedbb0e4dfcfd1a2ec50121691650966e4220637f",
+    "scripts/execution_event_views.py": "6ce220754f74bb44d1aaed0a8c9760ee39b86af0ee3b5d920b28cf061e7e68fb",
+    "scripts/experiment_state.py": "e541ed7e640d9b2cf2d285e3687887a7b889060d10e4e95a740234898c4567df",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "scripts/native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3",
+    "scripts/native_ledger_memory.py": "07bedde65eb0d37d075dcab233621b8795f7eb7125004ace362c18e9ad1f2635",
+    "scripts/native_memory_view.py": "f95d0ccd6020e7a43277126c64433ab0d4655f3cbd51551f77a954a47a25ce00",
+    "scripts/prepare_data_export_probe.py": "9a2c29452eae2ab675b1a0d0fdb284659d9d9400d00ff6d0278f2a4b6e2e9224",
+    "scripts/prepare_event_view_probe.py": "9029171059aa040e0ea679d7db070fea13322bad339f9472702b7f8aa9b46119",
+    "scripts/run_context_comparison.py": "d32f78bb51a96a40eb83c65e97777b991f5c02491c42f20703f89d977ceec105",
+    "scripts/run_data_export_probe.py": "f4c37339658b1301b6af3be30aa5b7def8b2521c4d4ec088fd53242c0e7a2e18",
+    "scripts/run_event_view_probe.py": "a5e4397b5a076244dbe45ac2a3b35030485b75d49f2fe7a1a6875055681bdc11",
+    "scripts/summarize_p3.py": "11e3aea20ac6bf39fcedd00e9add5c6062cce687802be46eea5c5fa87465d8b3",
+    "scripts/summarize_pro_comparison.py": "8f4085f9ae80bf9249b56ed3fdae6b74fa02a016e22fffb37b0a9453a1b9d48b",
+    "scripts/summarize_pro_pilot.py": "f51dbfeea6b1fe353512cfb317710da03ce716e6c67aa3232c4faba97b86f338",
+    "scripts/watch_pro_comparison.py": "0d67b4018bf4576a91a9f5ae8582392b4d381d20b6f935e4bbe45845183cde23",
+    "configs/P18_additional_baseline_v01.json": "f45bf21f18429744e164597b9071cee5f2ea690b917ac043cae5055cd943dfe7",
+    "configs/models/minimax_m3_iq4_selection.json": "66fcce6347cfa18a0bc8cba3643048c1a136620fb2c4d4c4db87c051b8abd83c"
+  },
+  "schedule": [
+    {
+      "variant": "literal_csv",
+      "seed": 51
+    },
+    {
+      "variant": "data_program",
+      "seed": 51
+    },
+    {
+      "variant": "data_program",
+      "seed": 52
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 52
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 53
+    },
+    {
+      "variant": "data_program",
+      "seed": 53
+    }
+  ],
+  "model_calls": 0,
+  "environment_requests": 0,
+  "reserved_task_reads": 0,
+  "scope": "Post hoc, fixed-evidence export diagnostic on one previously observed development failure. Two new conditions, three seeds; not independent tasks, not a CodeAct reproduction, not a novel method or end-to-end success comparison."
+}
