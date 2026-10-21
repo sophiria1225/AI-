@@ -70,6 +70,34 @@ class ReviewResultsTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             aggregate(self.review, self.annotation_path, self.lock, self.audit)
 
+    def replace_packet(self, packet):
+        path = self.review/'review_001.json'
+        path.write_text(json.dumps(packet))
+        manifest = json.loads((self.review/'manifest.json').read_text())
+        manifest['packets_sha256'][path.name] = sha(path)
+        (self.review/'manifest.json').write_text(json.dumps(manifest))
+
+    def test_task_source_is_allowed_only_as_the_actual_supplied_requirement(self):
+        packet = json.loads((self.review/'review_001.json').read_text())
+        packet['task'] = {'instruction': 'perform the requested work'}
+        packet['additional_sources'] = {'task': {'kind': 'user_requirement', 'value': packet['task']}}
+        self.replace_packet(packet)
+        self.annotations[1]['evidence_span_ids'] = ['task']
+        validate_annotations(self.review, self.annotations)
+        packet['additional_sources']['task']['kind'] = 'successful_operation'
+        self.replace_packet(packet)
+        with self.assertRaisesRegex(ValueError, 'requirement source'):
+            validate_annotations(self.review, self.annotations)
+
+    def test_audited_seed_must_match_the_sealed_mapping(self):
+        path = self.review/'mapping_private.json'
+        mapping = json.loads(path.read_text())
+        mapping[0]['seed'] = 47
+        path.write_text(json.dumps(mapping))
+        seal(self.review, self.annotation_path, self.lock)
+        with self.assertRaisesRegex(ValueError, 'seed differ'):
+            aggregate(self.review, self.annotation_path, self.lock, self.audit)
+
 
 if __name__ == '__main__':
     unittest.main()

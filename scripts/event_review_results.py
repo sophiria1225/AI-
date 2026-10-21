@@ -33,6 +33,9 @@ def validate_annotations(review, annotations):
         if path.parent != review or not name.startswith('review_') or sha(path) != digest:
             raise ValueError('review packet changed')
         packet = read(path)
+        extra = packet.get('additional_sources', {})
+        if extra and extra != {'task': {'kind': 'user_requirement', 'value': packet['task']}}:
+            raise ValueError('only the supplied task may be an additional requirement source')
         packets[packet['packet_id']] = packet
         for row in packet['items']:
             key = (packet['packet_id'], row['item_index'])
@@ -58,7 +61,8 @@ def validate_annotations(review, annotations):
         if annotation['uncertainty'] not in ('low', 'medium', 'high'):
             raise ValueError('uncertainty must be low, medium or high')
         evidence = annotation['evidence_span_ids']
-        if not isinstance(evidence, list) or not set(evidence) <= set(packets[key[0]]['spans']):
+        permitted = set(packets[key[0]]['spans']) | set(packets[key[0]].get('additional_sources', {}))
+        if not isinstance(evidence, list) or not set(evidence) <= permitted:
             raise ValueError('evidence outside the permitted prefix')
     if seen != set(expected):
         raise ValueError('every item, including non-done items, needs a label')
@@ -107,6 +111,8 @@ def aggregate(review, annotations_path, seal_path, structural_path):
         p, call = packets[m['packet_id']], calls[m['call_id']]
         if any(m[key] != call[key] for key in ('case_id', 'variant')):
             raise ValueError('mapping and audited call differ')
+        if 'seed' in m and m['seed'] != call.get('seed'):
+            raise ValueError('mapping and audited seed differ')
         if p['schema_valid'] != call['schema_valid']:
             raise ValueError('packet validity differs from audit')
         items = {row['item_index']: row['item'] for row in p['items']}
@@ -119,6 +125,8 @@ def aggregate(review, annotations_path, seal_path, structural_path):
                         'all_item_labels': dict(counts), 'done_item_labels': dict(done_counts),
                         'unsupported_done_action': done_counts['unsupported_action_completion'],
                         'ambiguous_done': done_counts['ambiguous']})
+        if 'seed' in m:
+            outputs[-1]['seed'] = m['seed']
     groups = []
     for g in structural['groups']:
         rows = [r for r in outputs if (r['condition'], r['variant']) == (g['condition'], g['variant'])]
@@ -137,9 +145,9 @@ def aggregate(review, annotations_path, seal_path, structural_path):
             'calls': structural['calls'], 'known_total_tokens': structural['known_total_tokens'],
             'unknown_usage_calls': structural['unknown_usage_calls'],
             'annotation_seal': locked, 'structural_audit_sha256': sha(structural_path),
-            'scope': 'Four source tasks, one seed per view. Items and repeated controls are not independent tasks. '
+            'scope': structural.get('semantic_scope', 'Four source tasks, one seed per view. Items and repeated controls are not independent tasks. '
                      'Invalid schemas and missing outputs are separate from semantic successes. '
-                     'Unsupported completion is not proof of false world state. No repair or task-success claim.'}
+                     'Unsupported completion is not proof of false world state. No repair or task-success claim.')}
 
 
 def main():

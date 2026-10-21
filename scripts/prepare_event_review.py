@@ -24,6 +24,7 @@ def main():
     if read(args.run/'status.json')['status'] in ('running','preflight'):
         raise ValueError('wait for all planned outputs or a terminal failure')
     rubric=read(args.rubric)
+    is_contract_review = rubric.get('experiment') == 'P17_01'
     rows=read(args.run/'results.json')
     random.Random(rubric['packet_shuffle_seed']).shuffle(rows)
     args.output.mkdir(parents=True,exist_ok=False)
@@ -31,10 +32,14 @@ def main():
     for i,row in enumerate(rows,1):
         packet_id=f'review_{i:03d}'
         mapping.append({'packet_id':packet_id,'case_id':row['case_id'],'variant':row['variant'],'call_id':row['call_id']})
+        if is_contract_review:
+            mapping[-1]['seed'] = row['seed']
         case=read(args.inputs/(row['case_id']+'.json'))
         packet={'packet_id':packet_id,'schema_valid':row['schema_valid'],
                 'task':case['task'],'tools':case['tools'],'spans':case['spans'],'receipts':case['receipts'],
                 'selected_span_ids':case['selected_span_ids'],'items':[]}
+        if is_contract_review:
+            packet['additional_sources'] = {'task': {'kind': 'user_requirement', 'value': case['task']}}
         if row['schema_valid']:
             ledger=read(args.run/row['call_id']/'ledger_private.json')
             packet.update(constraints=ledger['constraints'],unresolved=ledger['unresolved'])
