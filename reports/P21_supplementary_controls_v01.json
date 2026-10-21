@@ -1,0 +1,25 @@
+{
+  "phase": "P21_supplementary",
+  "prepared_at": "2026-10-21T10:18:46.478319+00:00",
+  "generation_status_at_freeze": "running",
+  "completed_generations_at_freeze": 1,
+  "model_output_content_inspected": false,
+  "primary_input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+  "primary_plan_sha256": "166b93651f4404eb67516da424c1e14c64fe4a58d360a4053f9fe776bb74867e",
+  "transformations": [
+    "reverse_order",
+    "duplicate_observations",
+    "irrelevant_metadata",
+    "rename_title"
+  ],
+  "source_hashes": {
+    "scripts/export_robustness.py": "47696a1cd863aa709b0c15698c169a4d7d3bd236f81b3bd5f2261d69ba8cb791",
+    "scripts/evaluate_export_robustness.py": "6e7d95390b881446b3d3b6343cbf9a7e1f128f58de3e88673a804746cc524655",
+    "tests/test_export_robustness.py": "41d81b737dd2905834e132fea2dc229d3aa4c34dae5a87cf01fb514b8edd028b",
+    "docs/experiments/P21_supplementary_robustness.md": "a08a000bd18beced8228c9c432c882ef6259d502d70b621873d73f54270118db"
+  },
+  "unit_tests_passed": 364,
+  "new_model_calls": 0,
+  "environment_requests": 0,
+  "scope": "Supplementary analyst-defined program-only checks, not changes to primary generation or evaluation."
+}
