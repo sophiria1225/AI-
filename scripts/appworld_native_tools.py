@@ -6,7 +6,8 @@ from context_preservation import AGENT_TOOLS
 
 
 class NativeCatalog:
-    def __init__(self, public_tools):
+    def __init__(self, public_tools, *, enable_compute=False):
+        self.enable_compute = enable_compute
         self.catalog = {}
         for tool in public_tools:
             name = tool["function"]["name"]
@@ -20,12 +21,19 @@ class NativeCatalog:
                         if n.startswith(("api_docs__", "supervisor__"))}
 
     def tools(self):
-        return [copy.deepcopy(self.catalog[n]) for n in sorted(self.visible)] + [
+        tools = [copy.deepcopy(self.catalog[n]) for n in sorted(self.visible)] + [
             copy.deepcopy(AGENT_TOOLS[1])]
+        if self.enable_compute:
+            from native_data_compute import COMPUTE_TOOL
+            tools.append(copy.deepcopy(COMPUTE_TOOL))
+        return tools
 
     def decode(self, function, visible=None):
         name = function.get("name")
         allowed = self.visible if visible is None else visible
+        if name == 'compute_data' and self.enable_compute:
+            from native_data_compute import validate_arguments
+            return {'compute': True, **validate_arguments(json.loads(function['arguments']))}
         if name != "read_span" and name not in allowed:
             raise ValueError("tool is not in the supplied public schema set")
         arguments = json.loads(function["arguments"])
@@ -69,7 +77,8 @@ class NativeCatalog:
 
 
 def dispatch_native_calls(message, catalog, bridge, read_archive, *, remaining_api_calls,
-                          may_continue=lambda: True, on_record=lambda row: None):
+                          may_continue=lambda: True, on_record=lambda row: None,
+                          compute_data=None):
     """Dispatch in recorded order; every rejected/skipped item gets a record."""
     calls = message.get("tool_calls") or []
     if not isinstance(calls, list):
@@ -103,6 +112,13 @@ def dispatch_native_calls(message, catalog, bridge, read_archive, *, remaining_a
                         row["observation"] = read_archive(decoded["span_id"], decoded.get("offset", 0))
                     except (ValueError, KeyError, TypeError) as exc:
                         row["observation"] = {"format_error": str(exc)}
+                elif decoded.pop('compute', False):
+                    if compute_data is None:
+                        raise RuntimeError('compute tool exposed without its executor')
+                    try:
+                        row['observation'] = compute_data(decoded)
+                    except (ValueError, KeyError, TypeError) as exc:
+                        row['observation'] = {'compute_input_error': str(exc)}
                 elif sent >= remaining_api_calls:
                     row["observation"] = {"not_executed": "API request budget was reached"}
                 else:
