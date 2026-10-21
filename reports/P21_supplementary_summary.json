@@ -1,0 +1,122 @@
+{
+  "phase": "P21_supplementary",
+  "outputs": [
+    {
+      "variant": "literal_csv",
+      "seed": 51,
+      "call_id": "call_001",
+      "primary_complete_export": false,
+      "eligible": false,
+      "skip_reason": "fixed_csv_not_a_reexecutable_program",
+      "checks": [],
+      "wall_seconds": 0.0
+    },
+    {
+      "variant": "data_program",
+      "seed": 51,
+      "call_id": "call_002",
+      "primary_complete_export": false,
+      "eligible": false,
+      "skip_reason": "unsubmitted_truncated_or_invalid_program",
+      "checks": [],
+      "wall_seconds": 0.0
+    },
+    {
+      "variant": "data_program",
+      "seed": 52,
+      "call_id": "call_003",
+      "primary_complete_export": true,
+      "eligible": true,
+      "skip_reason": null,
+      "checks": [
+        {
+          "transformation": "reverse_order",
+          "executed": true,
+          "complete_export": true,
+          "error_type": null,
+          "steps": 6110,
+          "rows": 72,
+          "unique_rows": 72,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        },
+        {
+          "transformation": "duplicate_observations",
+          "executed": true,
+          "complete_export": true,
+          "error_type": null,
+          "steps": 10470,
+          "rows": 72,
+          "unique_rows": 72,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        },
+        {
+          "transformation": "irrelevant_metadata",
+          "executed": true,
+          "complete_export": true,
+          "error_type": null,
+          "steps": 6164,
+          "rows": 72,
+          "unique_rows": 72,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        },
+        {
+          "transformation": "rename_title",
+          "executed": true,
+          "complete_export": true,
+          "error_type": null,
+          "steps": 6110,
+          "rows": 72,
+          "unique_rows": 72,
+          "missing": 0,
+          "extra": 0,
+          "duplicates": 0
+        }
+      ],
+      "wall_seconds": 0.021539625013247132
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 52,
+      "call_id": "call_004",
+      "primary_complete_export": true,
+      "eligible": false,
+      "skip_reason": "fixed_csv_not_a_reexecutable_program",
+      "checks": [],
+      "wall_seconds": 0.0
+    },
+    {
+      "variant": "literal_csv",
+      "seed": 53,
+      "call_id": "call_005",
+      "primary_complete_export": true,
+      "eligible": false,
+      "skip_reason": "fixed_csv_not_a_reexecutable_program",
+      "checks": [],
+      "wall_seconds": 0.0
+    },
+    {
+      "variant": "data_program",
+      "seed": 53,
+      "call_id": "call_006",
+      "primary_complete_export": false,
+      "eligible": false,
+      "skip_reason": "unsubmitted_truncated_or_invalid_program",
+      "checks": [],
+      "wall_seconds": 0.0
+    }
+  ],
+  "eligible_programs": 1,
+  "programs_passing_all_four": 1,
+  "primary_result_sha256": "b7b94153aff9fb641ef721833237d106d67e10c656a77aff598f87c9bbc3b865",
+  "supplement_sha256": "6e4aadc02af571a32aa340084d123bfa3131e9b2aad69566cfe6b431579d5ff5",
+  "input_sha256": "f1ac5aeab602068e444d01173193ba3f176b8c9a5a31c4d8a8ceb0f4eee0d773",
+  "new_model_calls": 0,
+  "environment_requests": 0,
+  "scope": "Analyst-defined task-specific input transformations; no repair, no literal/program rate comparison, no independent new tasks or novelty claim."
+}

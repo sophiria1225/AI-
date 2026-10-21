@@ -12,8 +12,8 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P21 running since 2026-10-21T10:08:56Z: six fixed generations, 8192 output cap. Separately freeze supplementary program checks before content inspection.",
-  "queued_experiment": null,
+  "current_experiment": "P21 complete: direct CSV 2/3, code 1/3; all submitted outputs correct, other three output-cap stops. Six-call diagnostic; no novel mechanism established.",
+  "queued_experiment": "P22: six preselected development tasks, full-history baseline. Execution controls being frozen.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -27,15 +27,16 @@
   ],
   "current_guide": "README.md",
   "last_completed_experiment": {
-    "phase": "P20",
+    "phase": "P21",
     "calls": 6,
-    "known_tokens": 80367,
+    "known_tokens": 100107,
     "unknown_usage_calls": 0,
-    "submitted_outputs": 0,
-    "output_cap_stops": 6,
-    "decision": "No content-quality comparison possible. Preserve all failures and test 8192-token sensitivity as P21.",
-    "results": "../../docs/P20_findings.md"
+    "submitted_outputs": 3,
+    "complete_exports": 3,
+    "output_cap_stops": 3,
+    "decision": "No code advantage established; move to six preselected development scenarios rather than another export-specific sweep.",
+    "results": "../../docs/P21_findings.md"
   },
-  "latest_presentation": "../../materials/20261021_p18/AI_harness_P18_20261021.pdf",
+  "latest_presentation": "../../materials/20261021_p21/AI_harness_P20_P21_20261021.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md"
 }

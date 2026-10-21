@@ -1,0 +1,570 @@
+{
+  "pages": 6,
+  "text_boxes": 80,
+  "overflow": [],
+  "font_name": "Arial Unicode MS",
+  "font_path_for_build": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "boxes": [
+    {
+      "slide": 1,
+      "text": "RESEARCH CHECKPOINT / P20・P21",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 1,
+      "text": "出力方式の比較と、生成上限の制約",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 1,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "01",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "直接CSVは２／３、計算コードは１／３が完全な書出。\n残り３件は上限停止。コード方式の優位性は示せない。",
+      "lines": 2,
+      "used_height": 71.28,
+      "box_height": 98
+    },
+    {
+      "slide": 1,
+      "text": "P20：提出 0/6、完全な書出 0/6、総 80,367 トークン",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 1,
+      "text": "P21：提出 3/6、完全な書出 3/6、総 100,107 トークン",
+      "lines": 1,
+      "used_height": 27.720000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 1,
+      "text": "目的：通常の計算で足りるかを確認し、追加のハーネス機構が必要か判断する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 2,
+      "text": "01 / 比較のアーキテクチャ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 2,
+      "text": "両方式へ同じ取得済み観測を渡す",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 2,
+      "text": "P18のCSVや欠落行、正解件数、隠し評価を生成側へ渡さない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 2,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "02",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "要求＋66観測",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "観測文字列・モデルは共通",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 2,
+      "text": "直接CSVの生成",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "文字列として全内容を提出",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 2,
+      "text": "計算コードの生成",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "限定されたデータ実行器",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 40
+    },
+    {
+      "slide": 2,
+      "text": "全６生成後に内容を照合",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "公開観測から分析者が定義した評価",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 65
+    },
+    {
+      "slide": 2,
+      "text": "P20は4,096出力、P21は8,192出力。両方式を等しく変更。\nseed・指示・入力は固定。思考と提出物の生成を含む全費用を記録する。",
+      "lines": 2,
+      "used_height": 44.88,
+      "box_height": 55
+    },
+    {
+      "slide": 3,
+      "text": "02 / 全条件の結果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 3,
+      "text": "提出の有無と、提出内容の正しさを分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 3,
+      "text": "３seedは同じ入力の反復。課題数を水増ししない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 3,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "03",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "実験",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "方式",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "出力上限",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "提出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "完全書出",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "総トークン",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "P20",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "直接CSV",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "4,096",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "0/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "0/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "39,720",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "P20",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "計算コード",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "4,096",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "0/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "0/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "40,647",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "P21",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "直接CSV",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "8,192",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "2/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "2/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "47,616",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "P21",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "計算コード",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "8,192",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "1/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "1/3",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "52,491",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 39
+    },
+    {
+      "slide": 3,
+      "text": "未提出・打切りは成功に数えない。CSVが存在しない場合、\n欠落行数や余分な行数は「評価対象なし」であり、０件の正解ではない。",
+      "lines": 2,
+      "used_height": 42.24,
+      "box_height": 43
+    },
+    {
+      "slide": 4,
+      "text": "03 / 費用と提出",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "全12生成を残し、予算変更の効果を分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 4,
+      "text": "計算コードを使うだけで新規性が得られるとは扱わない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 4,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "04",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "04 / 補助検査と解釈",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 5,
+      "text": "１入力での正解を、一般的な正しさへ広げない",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 5,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "05",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "提出コードの補助評価：対象 1 件。\n４変換すべてに適合 1 件。追加モデル呼出し０。\n固定CSVには適用しない。検査対象なしを合格とは数えない。",
+      "lines": 3,
+      "used_height": 79.2,
+      "box_height": 90
+    },
+    {
+      "slide": 5,
+      "text": "提出できた３件は、公開観測から求めた72行と一致。\n唯一の提出コードは４つの入力変換にも適合した。\n残る失敗は未提出であり、言語制限による実行失敗ではない。\n１",
+      "lines": 4,
+      "used_height": 95.04,
+      "box_height": 130
+    },
+    {
+      "slide": 5,
+      "text": "補助検査は既存の検査原理を利用。自律的な仕様生成や新機構の実績ではない。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 6,
+      "text": "05 / 次の判断と投稿",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 6,
+      "text": "４ページの原稿に載せる主張を、実測で絞る",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 6,
+      "text": "10/23主要実験・あらまし、10/31投稿完了。採録は査読に依存する。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 6,
+      "text": "2026-10-21｜既知１状態・各方式３seed｜出力部分の診断。独立６課題・全体性能ではない",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "06",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "この１件で上限拡張や指示調整を繰り返さない。\n予約した別の６開発課題を、既存の全履歴基準で観察する。\n通常構成でも残る失敗から、必要な変更規則を一つ絞る。\n確認",
+      "lines": 4,
+      "used_height": 100.32000000000001,
+      "box_height": 116
+    },
+    {
+      "slide": 6,
+      "text": "P20：全結果と上限を増やした理由",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "P21：全結果・解釈・採らない案",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "既存研究との機能の重なり",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "確認群を残した追加開発課題の準備",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    }
+  ],
+  "note": "Text bounds checked in the shared layout. Native PowerPoint rendering can vary by installed font."
+}
