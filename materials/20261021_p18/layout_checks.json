@@ -1,0 +1,528 @@
+{
+  "pages": 6,
+  "text_boxes": 74,
+  "overflow": [],
+  "font_name": "Arial Unicode MS",
+  "font_path_for_build": "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  "boxes": [
+    {
+      "slide": 1,
+      "text": "RESEARCH CHECKPOINT / P18",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 1,
+      "text": "取得できても、成果物へ全件を反映できない例",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 1,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "01",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 1,
+      "text": "72曲の情報は取得済み。\n書出は71曲で、読み返した後も完了と判断。",
+      "lines": 2,
+      "used_height": 73.92,
+      "box_height": 97
+    },
+    {
+      "slide": 1,
+      "text": "全履歴基準は４課題中２件成功。\n49生成、1,017,215トークン、187 API、使用量不明０。\n別の１失敗はAPI上限で終了し、原因候補を分けた。",
+      "lines": 3,
+      "used_height": 83.16000000000001,
+      "box_height": 112
+    },
+    {
+      "slide": 1,
+      "text": "自然な欠落は観測できた。ただし、新規性や改善効果を示す結果ではない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 2,
+      "text": "01 / 目的と実験アーキテクチャ",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 2,
+      "text": "固定した基準を、未使用の４開発課題へ適用",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 2,
+      "text": "P11と同じ条件。モデル・予算・方式を実行中に変更しない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 2,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "02",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 2,
+      "text": "課題の事前選定",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "要求を読む前にID順で固定",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 2,
+      "text": "同じ単一エージェント",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "全履歴・64K・公開API",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 2,
+      "text": "模擬環境の最終状態",
+      "lines": 1,
+      "used_height": 25.080000000000002,
+      "box_height": 38
+    },
+    {
+      "slide": 2,
+      "text": "全件終了後に独立評価",
+      "lines": 1,
+      "used_height": 20.46,
+      "box_height": 50
+    },
+    {
+      "slide": 2,
+      "text": "各課題：45万トークン・80生成・80 API・30分。\n操作・観測・予算・成果物を保存し、送信と未送信を区別。\n終了後に公開観測から分析。隠し正解を次の方式へ",
+      "lines": 3,
+      "used_height": 79.2,
+      "box_height": 112
+    },
+    {
+      "slide": 2,
+      "text": "研究の目的：情報保持と実行の構成が、最終品質と総費用に与える効果を切り分ける。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "02 / 全４件の結果",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 3,
+      "text": "成功例と失敗例、全費用を残す",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 3,
+      "text": "課題が異なるP11との成功率差を、方式変更の効果とは呼ばない。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 3,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "03",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 3,
+      "text": "課題",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "結果・終了条件",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "総トークン",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "送信API",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "01：写真整理",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "失敗・API上限",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "294,726",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "80",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "02：割り勘の依頼",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "成功・完了宣言",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "297,442",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "23",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "03：誤請求の返金",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "成功・完了宣言",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "67,858",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "8",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "04：曲一覧の書出",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "失敗・完了宣言",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "357,189",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "76",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "合計",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "2 / 4 成功",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "1,017,215",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "187",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 31
+    },
+    {
+      "slide": 3,
+      "text": "原要求・送信・使用量・保存境界の監査不一致０。\n完了宣言は最終成功ではない。部分合格を成功件数へ加算しない。",
+      "lines": 2,
+      "used_height": 42.24,
+      "box_height": 43
+    },
+    {
+      "slide": 4,
+      "text": "03 / 資源使用量",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 4,
+      "text": "予算の上限と、実際に使った量を分ける",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 4,
+      "text": "入力・出力・調整を含む。破線は各課題の上限。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 4,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 4,
+      "text": "04",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "04 / 観測された失敗と限界",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 5,
+      "text": "操作予算の不足と、取得後の欠落は別の問題",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 5,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "05",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 5,
+      "text": "01：個別処理の途中で上限",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 5,
+      "text": "42ファイルを読み、27件の移動を送信。\n42件の個別読取＋個別移動だけで84 API。\n今回は80 APIで停止した。\nただし、別手順も含めた最小費用を\n証明",
+      "lines": 5,
+      "used_height": 112.2,
+      "box_height": 158
+    },
+    {
+      "slide": 5,
+      "text": "04：元の情報とCSVを照合",
+      "lines": 1,
+      "used_height": 29.040000000000003,
+      "box_height": 55
+    },
+    {
+      "slide": 5,
+      "text": "元の和集合は72 ID。必要な情報も72件。\nCSVは71行で、１件欠落・余分な行０。\nファイルの再読後も模擬アカウントを終了。\n分析者の集合照合であり、自律的",
+      "lines": 5,
+      "used_height": 112.2,
+      "box_height": 158
+    },
+    {
+      "slide": 5,
+      "text": "全履歴でも残る現象。ただし１例から一般発生率や内部の判断原因までは決めない。",
+      "lines": 1,
+      "used_height": 21.12,
+      "box_height": 31
+    },
+    {
+      "slide": 6,
+      "text": "05 / 次の比較と論文の目標",
+      "lines": 1,
+      "used_height": 15.84,
+      "box_height": 22
+    },
+    {
+      "slide": 6,
+      "text": "通常の計算コードで解消するか、先に測る",
+      "lines": 1,
+      "used_height": 39.6,
+      "box_height": 48
+    },
+    {
+      "slide": 6,
+      "text": "投稿原稿は２段組４ページ。10/23主要実験・あらまし、10/31投稿完了が目標。",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 54
+    },
+    {
+      "slide": 6,
+      "text": "2026-10-21｜追加４開発課題・全履歴・各１seed｜新方式の効果・一般発生率は未確定",
+      "lines": 1,
+      "used_height": 13.200000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "06",
+      "lines": 1,
+      "used_height": 14.520000000000001,
+      "box_height": 21
+    },
+    {
+      "slide": 6,
+      "text": "次の比較：同じ取得済み情報から、直接CSVを書く／計算コードで書く。\n集合演算・変数・コード実行は既存技術。導入だけを独自性に数えない。\nその対照でも残る問題が",
+      "lines": 4,
+      "used_height": 89.76,
+      "box_height": 120
+    },
+    {
+      "slide": 6,
+      "text": "P18：全結果・次の比較・採らない案",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "公開観測だけによる集合照合",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "４ページの原稿構成",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    },
+    {
+      "slide": 6,
+      "text": "既存のコード処理を先に比べる理由",
+      "lines": 1,
+      "used_height": 22.44,
+      "box_height": 29
+    }
+  ],
+  "note": "Text bounds checked in the shared layout. Native PowerPoint rendering can vary by installed font."
+}

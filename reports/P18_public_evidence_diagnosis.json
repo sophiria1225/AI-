@@ -1,0 +1,159 @@
+{
+  "phase": "P18",
+  "trials": [
+    {
+      "run_id": "P18_01_ROLES",
+      "sent_counts": {
+        "file_system__move_file": 27,
+        "file_system__show_file": 43,
+        "supervisor__show_profile": 1,
+        "api_docs__show_api_descriptions": 1,
+        "file_system__show_directory": 2,
+        "file_system__login": 2,
+        "file_system__create_directory": 3,
+        "supervisor__show_account_passwords": 1
+      },
+      "not_sent_spans": [
+        "s81",
+        "s82",
+        "s83",
+        "s84",
+        "s85",
+        "s86"
+      ],
+      "text_failure_spans": [
+        "s4",
+        "s43"
+      ],
+      "source_sha256": {
+        "spans.json": "c529c7517c2ea99e6ebaf95760e71f3753483b05d6fca1b33deb16e5effc4583",
+        "events.json": "01d063c7acf28b3684d2f8f0d7d59157b2309f3383b03e7c476187b4c43d902b",
+        "summary.json": "f632a149944d8a4cdea9bfe9b0c5ef0359a77d05405031dd18954bcb6ab4d306"
+      },
+      "photo_counts": {
+        "listed_unique_paths": 42,
+        "successful_metadata_reads": 42,
+        "unique_metadata_paths": 42,
+        "listed_without_metadata": 0,
+        "move_requests_with_json_receipt": 27,
+        "unique_moved_source_paths": 27,
+        "listed_without_move_receipt": 42,
+        "individual_read_and_move_count_for_this_strategy": 84,
+        "scope": "Counts of this individual-file strategy, not a minimum over all possible strategies. JSON receipt counts alone do not establish correct destination or final success."
+      }
+    },
+    {
+      "run_id": "P18_02_ROLES",
+      "sent_counts": {
+        "venmo__create_payment_request": 3,
+        "phone__show_contact_relationships": 1,
+        "file_system__show_directory": 1,
+        "venmo__search_users": 3,
+        "file_system__show_file": 2,
+        "file_system__login": 2,
+        "supervisor__show_account_passwords": 1,
+        "venmo__search_friends": 1,
+        "venmo__login": 1,
+        "supervisor__complete_task": 1,
+        "phone__get_current_date_and_time": 1,
+        "phone__search_contacts": 1,
+        "api_docs__show_api_descriptions": 3,
+        "venmo__show_profile": 1,
+        "phone__login": 1
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [
+        "s3"
+      ],
+      "source_sha256": {
+        "spans.json": "164c5bd7a80b2000363e5759d8b165a4f9b571b55d6191cdd7bb411372e0b5f5",
+        "events.json": "cfbc0d68bc5b1599271aa88853c212fddcf73133766619cc382f6c1f906b4a06",
+        "summary.json": "b7334c3bafc9f056de40c52146cad15a0c5a018083f54a7a3e7a963c8b93c130"
+      }
+    },
+    {
+      "run_id": "P18_03_ROLES",
+      "sent_counts": {
+        "venmo__show_sent_payment_requests": 1,
+        "venmo__create_transaction": 1,
+        "venmo__search_users": 1,
+        "supervisor__show_account_passwords": 1,
+        "api_docs__show_api_descriptions": 1,
+        "supervisor__complete_task": 1,
+        "venmo__login": 2
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [
+        "s3"
+      ],
+      "source_sha256": {
+        "spans.json": "5e1466bf24aa0a6c13bbcfe8f37c65935e21a655ed0d96e5572a56890fc302a9",
+        "events.json": "a939e84d867b25df1b8d8f01742a45aaad78b1f423b565151baf05438c8fb89a",
+        "summary.json": "a03b15ea44214ae18c5eedb5cdae7e936ce6f44d3f882fc3c1b286bcdb351eb2"
+      }
+    },
+    {
+      "run_id": "P18_04_ROLES",
+      "sent_counts": {
+        "spotify__show_song": 60,
+        "spotify__show_album_library": 2,
+        "spotify__delete_account": 1,
+        "spotify__show_playlist_library": 2,
+        "spotify__show_song_library": 2,
+        "supervisor__show_account_passwords": 1,
+        "spotify__login": 1,
+        "file_system__create_directory": 1,
+        "file_system__login": 1,
+        "file_system__show_file": 1,
+        "api_docs__show_api_descriptions": 2,
+        "file_system__create_file": 1,
+        "supervisor__complete_task": 1
+      },
+      "not_sent_spans": [],
+      "text_failure_spans": [],
+      "source_sha256": {
+        "spans.json": "caada98e81d0af8402f22f8d5f0228495e55c5846f31a1526d54437dae26ab7b",
+        "events.json": "a41995a6b9a112fd9995f3e351dca0562ee6ee569c202d98f427d55417d7c9f2",
+        "summary.json": "403629528a160ea1f0593e425a31f1056a0b58dc8ae514d37866b35a0b6f4daf"
+      },
+      "song_coverage": {
+        "source_unique_id_counts": {
+          "song": 12,
+          "album": 24,
+          "playlist": 41
+        },
+        "source_kinds_with_recorded_empty_next_page": [
+          "album",
+          "playlist",
+          "song"
+        ],
+        "union_unique_ids": 72,
+        "known_metadata_before_export": 72,
+        "unique_known_title_artist_pairs": 72,
+        "export_rows": 71,
+        "export_unique_pairs": 71,
+        "matching_pairs": 71,
+        "missing_known_pairs": 1,
+        "unmatched_export_pairs": 0,
+        "missing_id_membership_counts": {
+          "song": 0,
+          "album": 0,
+          "playlist": 1
+        },
+        "missing_metadata_receipt_spans": [
+          "s12"
+        ],
+        "export_create_span": "s73",
+        "export_reread_identical": true,
+        "scope": "Analyst-derived set from public observed IDs and fields, not hidden truth. No output values or missing title exported. All metadata was received before creation. One observed omission is not a causal account of all independent evaluation failures."
+      }
+    }
+  ],
+  "plan_sha256": "f45bf21f18429744e164597b9071cee5f2ea690b917ac043cae5055cd943dfe7",
+  "script_sha256": "54147d0a0e4c7c8b4e35cb3e6f39784014dfa2fc1c511eeb13fee3a7812ddd5f",
+  "model_calls": 0,
+  "environment_requests": 0,
+  "evaluator_contents_read": false,
+  "reserved_tasks_read": 0,
+  "scope": "Post-run public-evidence diagnosis of four development cases. Task-specific analyst checks are not a proposed autonomous verifier or proof of a novel mechanism."
+}
