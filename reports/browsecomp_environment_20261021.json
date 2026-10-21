@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-21T03:32:02.221828+00:00",
+  "isolated_environment": true,
+  "python": "3.12.13",
+  "primary_packages_digest_verified": [
+    {
+      "package": "pyarrow",
+      "version": "26.0.0",
+      "sha256": "90ddaf7c625307ad52f31a9b25c34fe5e4897c7529ee3481135822b2b6842ff1",
+      "url": "https://files.pythonhosted.org/packages/b3/60/6793778f2617cce469383dac0ba08c4f2401cf342df0c7b9ca53939d9b46/pyarrow-26.0.0-cp312-cp312-macosx_12_0_arm64.whl"
+    },
+    {
+      "package": "pyserini",
+      "version": "2.4.0",
+      "sha256": "45979fa5fc8d54a35dce15cfd59d4d3dc4b4b29d8f0442e1e1f3a9ab0a303541",
+      "url": "https://files.pythonhosted.org/packages/2c/df/9ec1b77d323c8fe65fe9cbb4fb6fd0e03164cf4fdf26678f5c027db0013b/pyserini-2.4.0.tar.gz"
+    },
+    {
+      "package": "pyjnius",
+      "version": "1.9.0",
+      "sha256": "e02faf8bf9290a48d8d1c7b8b9ce18ace215622cc1b2ee6541827081e695e1a7",
+      "url": "https://files.pythonhosted.org/packages/c7/ab/c3f46aea67953234f109d89b27886348d843506a35adc3ce69ac450b7a51/pyjnius-1.9.0-cp312-cp312-macosx_10_13_universal2.whl"
+    }
+  ],
+  "installed_packages": 133,
+  "pip_check": "No broken requirements found.",
+  "requirements_sha256": "575ed37d89b073198dbf81b3e4326d2bd2f078f72eb41c542662abb71773132a",
+  "pip_report_sha256": "049f8fff4ac0f648f32b50cf3ec0592a4ae20b583ba6e7a82f957f74dbe4be99",
+  "jdk": {
+    "status": "complete",
+    "started_at": "2026-10-21T03:19:04.216767+00:00",
+    "upstream_api_attempt": "Adoptium assets API HTTP403; switched to official GitHub release metadata",
+    "release": "jdk-21.0.12.1+1",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz",
+    "metadata_sha256": "6474b351a8a7a47f3e57320409f3a39546a8e019d579555191f6046f74909063",
+    "bytes": 200073404,
+    "sha256": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998",
+    "version_output": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n",
+    "finished_at": "2026-10-21T03:19:17.041363+00:00"
+  },
+  "bm25_similarity": "BM25(k1=0.9,b=0.4)",
+  "similarity_probe_log_sha256": "e267f6e7429ae1b69b2db21ce822cc9ced29949640fddad474ffd3179848eb81",
+  "corpus_documents": 100195,
+  "qa_download_bytes": 2781428153,
+  "index_download_bytes": 2170624147,
+  "directory_disk_kib": 7153636,
+  "measurement_includes": [
+    "QA distribution",
+    "full BM25 index",
+    "venv",
+    "JDK and archive",
+    "ID selection and selected-question projection"
+  ],
+  "excludes": [
+    "shared pip cache",
+    "main model",
+    "future experiment records"
+  ],
+  "model_calls": 0,
+  "answer_or_label_columns_read": false,
+  "notes": [
+    "Adoptium API HTTP403; official release metadata fallback verified archive digest.",
+    "Index v01 recorded Java object repr for similarity; separate same-index read-only probe recorded actual BM25 parameters.",
+    "Pyserini import follows dense-encoder dependencies; isolated official package requirements installed, not overlaid on existing environments.",
+    "All document raw fields parsed programmatically without exporting text or reading answer mappings."
+  ]
+}

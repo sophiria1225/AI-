@@ -86,9 +86,9 @@
     },
     {
       "dataset": "BrowseComp-Plus",
-      "checked_at": "2026-10-20T23:09:09.812789+00:00",
+      "checked_at": "2026-10-21T03:37:10.259768+00:00",
       "metadata_report": "reports/browsecomp_distribution_preflight_20261021.json",
-      "task_instruction_rows_read": 0,
+      "task_instruction_rows_read": 12,
       "answers_or_qrels_read": false,
       "generator_exposure": false,
       "researcher_preview_exposures": [
@@ -108,7 +108,43 @@
           ]
         }
       ],
-      "future_access_rule": "Pin revisions, precommit query ID selection before reading text, isolate answer/relevance columns from generator, retain full corpus and record all development exposures. No claim that pretrained models have never seen this benchmark."
+      "future_access_rule": "Pin revisions, precommit query ID selection before reading text, isolate answer/relevance columns from generator, retain full corpus and record all development exposures. No claim that pretrained models have never seen this benchmark.",
+      "programmatic_projection": {
+        "ID_rows": 830,
+        "encrypted_query_rows_projected": 830,
+        "selected_questions_decrypted": 12,
+        "selected_query_ids": [
+          "353",
+          "234",
+          "1105",
+          "1066",
+          "409",
+          "934",
+          "621",
+          "1253",
+          "347",
+          "681",
+          "1233",
+          "528"
+        ],
+        "researcher_question_texts_displayed": 0,
+        "stored_corpus_documents_read_for_integrity": 100195,
+        "corpus_contents_returned_to_LLM": 0
+      },
+      "exclude_queries_from_untouched_confirmation": [
+        "353",
+        "234",
+        "1105",
+        "1066",
+        "409",
+        "934",
+        "621",
+        "1253",
+        "347",
+        "681",
+        "1233",
+        "528"
+      ]
     }
   ]
 }
