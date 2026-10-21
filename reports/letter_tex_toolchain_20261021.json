@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-21T05:50:02.324819+00:00",
+  "archive_url": "https://github.com/rstudio/tinytex-releases/releases/download/v2026.10/TinyTeX-1-darwin-v2026.10.tar.xz",
+  "archive_bytes": 67189208,
+  "archive_sha256": "e40c294efae81026d8cc8d12c09d2dd456d268efe7fe092410478bc1973fd40f",
+  "archive_hash_matched_official_release_digest": true,
+  "portable_only": true,
+  "global_configuration_changes": false,
+  "texlive_year": 2026,
+  "tlmgr_version": "tlmgr revision 80658 (2026-10-16 12:08:14 +0200)",
+  "package_repository": "https://tlnet.yihui.org",
+  "package_signatures_verified": false,
+  "package_signature_note": "tlmgr reported gpg unavailable; package installation is not claimed signature-verified.",
+  "installed_tree_bytes": 411032628,
+  "selected_installed_packages": [
+    "i adobemapping: Adobe cmap and pdfmapping files",
+    "i haranoaji: Harano Aji Fonts",
+    "i japanese-otf: Advanced font selection for platex and its friends",
+    "i jsclasses: Classes tailored for use with Japanese",
+    "i platex: pLaTeX2e and miscellaneous macros for pTeX",
+    "i ptex-fontmaps: Font maps and configuration tools for Japanese/Chinese/Korean fonts with (u)ptex",
+    "i pxjahyper: Hyperref support for pLaTeX",
+    "i texlive.infra: basic TeX Live infrastructure",
+    "i uplatex: pLaTeX2e and miscellaneous macros for upTeX"
+  ],
+  "package_list_sha256": "736691d0cf5592fd67728eea49720ac75bf2645c7ad7bbe25a1112d72f7b0ed8",
+  "failures_preserved": [
+    "Initial package installation required tlmgr --self update.",
+    "First PDF builds failed due missing font maps, then missing Adobe CMap.",
+    "kanjiEmbed was not a supported option; local config uses jaEmbed."
+  ],
+  "resolution": "Installed ptex-fontmaps and adobemapping, regenerated maps inside portable installation; uplatex and dvipdfmx completed.",
+  "smoke_pdf": {
+    "bytes": 33937,
+    "sha256": "4324dbfe86779e1676a01dce7aeed0c445e9410678fd5d5cb6f0c72cb293fecf"
+  },
+  "pdf_pages": 1,
+  "japanese_text_extraction_verified": true,
+  "visual_inspection": "One smoke page inspected; Japanese, formula and table render. This is not a manuscript or official layout.",
+  "official_ieice_class_acquired": false,
+  "submission_layout_verified": false,
+  "logs_sha256": {
+    "install_japanese_after_update.log": "3086acd330bd0caa1060cd1d877d5c81abd89e16225058931f56b033a9d6ebd1",
+    "build_4_fontmaps.log": "8ce22752ed3724c8c5dc530be5e6339d8ab0850c69a34cafef0ba1aff2962afd",
+    "install_adobemapping.log": "361ca516b53950690ebd38e415050a6a08e12374578c3508904bddb8912e57f1",
+    "install_japanese.log": "caa3c9ad1c730911cf363b4cac2328a8ecc811b9825a31835d09df55b8aa4ee6",
+    "update_manager.log": "0313259634136302f25cfbd581cc1d5171791a0d00e581c731b350232bf9c136",
+    "install_fontmaps.log": "e9f61c905ed876b1576298d6afc01f7c5162c888cb75306f37e41cdc98b2ca49",
+    "refresh_fontmaps.log": "cc015ee4a11e9777d4f166fd4b91d242babacb1ddaa475a34162fb7c46657423"
+  }
+}
