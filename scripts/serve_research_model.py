@@ -60,9 +60,12 @@ def main():
     parser.add_argument('--selection', default=LEGACY_SELECTION)
     parser.add_argument('--cache-type-k', choices=['f16', 'q8_0'], default='f16')
     parser.add_argument('--cache-type-v', choices=['f16', 'q8_0'], default='f16')
+    parser.add_argument('--storage-root', type=Path, default=ROOT,
+                        help='Keep model files and server records in the original storage while running fixed worktree code')
     args = parser.parse_args()
-    selection, download, model = verified_model(args.selection)
-    runtime = json.loads((ROOT / 'records/models/p2_runtime_install.json').read_text())
+    storage = args.storage_root.resolve()
+    selection, download, model = verified_model(args.selection, root=storage)
+    runtime = json.loads((storage / 'records/models/p2_runtime_install.json').read_text())
     if runtime['runtime'] != selection['runtime']:
         raise RuntimeError('runtime provenance mismatch')
     with socket.socket() as sock:
@@ -72,13 +75,13 @@ def main():
         if json.load(response).get('models'):
             raise RuntimeError('another Ollama model is loaded; serialize large model experiments')
     stamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    out = ROOT / 'records/p2_servers' / stamp
+    out = storage / 'records/p2_servers' / stamp
     out.mkdir(parents=True)
     (out / Path(__file__).name).write_bytes(Path(__file__).read_bytes())
     (out / 'model_provenance.py').write_bytes((ROOT / 'scripts/model_provenance.py').read_bytes())
     write_json(out / 'selection.json', selection)
     write_json(out / 'download_record.json', download)
-    command = [str(ROOT / runtime['server_path']), '--model', str(model),
+    command = [str(storage / runtime['server_path']), '--model', str(model),
                '--alias', selection['model_alias'], '--host', '127.0.0.1', '--port', str(args.port),
                '--ctx-size', str(args.ctx_size), '--parallel', '1', '--n-gpu-layers', '999',
                '--flash-attn', 'on', '--batch-size', '256', '--ubatch-size', '128',
@@ -91,7 +94,7 @@ def main():
              'selection': args.selection, 'model_alias': selection['model_alias'],
              'quantization': selection['quantization'],
              'cache_type_k': args.cache_type_k, 'cache_type_v': args.cache_type_v,
-             'record_directory': str(out.relative_to(ROOT)),
+             'record_directory': str(out.relative_to(storage)),
              'memory_note': '5-second RSS samples and system swap; RSS is not total unified GPU allocation'}
     stop_requested = False
 
@@ -103,7 +106,7 @@ def main():
     with (out / 'server.log').open('w') as log, (out / 'memory.jsonl').open('w') as samples:
         process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
         state.update(pid=process.pid, supervisor_pid=__import__('os').getpid())
-        write_json(ROOT / '.runtime/model_server.json', state)
+        write_json(storage / '.runtime/model_server.json', state)
         baseline = memory_sample(process.pid)
         state['baseline'] = baseline
         peak_rss = 0
@@ -124,7 +127,7 @@ def main():
                 if failure:
                     state.update(status='failed', stop_reason='backend_compute_error', backend_error=failure)
                     write_json(out / 'summary.json', state)
-                    write_json(ROOT / '.runtime/model_server.json', state)
+                    write_json(storage / '.runtime/model_server.json', state)
                     break
                 if state['status'] == 'loading':
                     try:
@@ -146,7 +149,7 @@ def main():
                 elif peak_swap - (baseline['swap_used_bytes'] or 0) > args.max_swap_growth_gib * 1024**3:
                     reason = 'swap_growth_guard'
                 write_json(out / 'summary.json', state)
-                write_json(ROOT / '.runtime/model_server.json', state)
+                write_json(storage / '.runtime/model_server.json', state)
                 if reason:
                     state['stop_reason'] = reason
                     break
@@ -163,7 +166,7 @@ def main():
                          sampled_peak_rss_bytes=peak_rss, peak_system_swap_bytes=peak_swap)
             state.setdefault('stop_reason', 'server_exit')
             write_json(out / 'summary.json', state)
-            write_json(ROOT / '.runtime/model_server.json', state)
+            write_json(storage / '.runtime/model_server.json', state)
             print(json.dumps({'status': state['status'], 'reason': state['stop_reason'],
                               'exit_code': state['exit_code'], 'path': str(out)}), flush=True)
     return was_ready and state['stop_reason'] in ('requested_stop', 'supervisor_time_limit')
