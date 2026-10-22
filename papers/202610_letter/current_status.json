@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T12:49:49.058059+00:00",
+  "updated_at": "2026-10-22T14:50:46.679369+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -13,15 +13,7 @@
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
   "current_experiment": "No active model experiment. P47 closed at 18:12 JST under predeclared unknown-usage stop; all twelve planned cells accounted for. Selected display not adopted: observed photo success loss and higher refund cost than full display. Central novel rule remains unestablished.",
-  "queued_experiment": {
-    "phase": "P54",
-    "kind": "ordinary_read_access_controls",
-    "planned_arms": 3,
-    "model_generations": 0,
-    "is_autonomous_task_comparison": false,
-    "is_novel_method_comparison": false,
-    "plan": "../../docs/experiments/P54_ranked_subset_access.md"
-  },
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -173,5 +165,25 @@
     "audit_errors": 0,
     "server_stopped": true,
     "decision": "Do not allocate continuation generations to the two usage-retention candidates: neither met the fixed two-tasks/1000-token gate. The ordinary listing-preserving control met the initial-input gate only; no task-quality or whole-cost conclusion."
+  },
+  "last_completed_access_control_probe": {
+    "phase": "P54",
+    "report": "../../reports/P54_ranked_subset_access.json",
+    "arms": 3,
+    "caller_supplied_known_target_set": true,
+    "lookup_api_requests": [
+      57,
+      1,
+      1
+    ],
+    "total_api_requests_with_setup": 74,
+    "outputs_equal": true,
+    "output_projection_bytes": 69,
+    "audit_errors": 0,
+    "model_generations": 0,
+    "evaluator_calls": 0,
+    "is_autonomous_task_comparison": false,
+    "additional_value_over_simple_ranked_access": false,
+    "decision": "Do not promote bounded prefetch to a novel main comparison; ordinary ranked access was sufficient, and LLM-token savings were not measured."
   }
 }
