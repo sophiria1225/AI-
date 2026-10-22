@@ -61,6 +61,18 @@ def code_hashes():
     return {str(p.relative_to(ROOT)): sha(p) for p in paths}
 
 
+def confirmed_ci(head, ids):
+    rows = check_ci(head, ids)
+    for row in rows:
+        jobs = json.loads(subprocess.check_output(['gh', 'api',
+            f'repos/sophiria1225/AI-/actions/runs/{row["id"]}/jobs'], text=True))['jobs']
+        if (len(jobs) != 1 or jobs[0]['name'] != 'accounting-and-syntax'
+                or jobs[0]['status'] != 'completed' or jobs[0]['conclusion'] != 'success'):
+            raise ValueError('CI workflow and job must both confirm success')
+        row['successful_job_id'] = jobs[0]['id']
+    return rows
+
+
 def run_worker(storage):
     plan, original, variants = source_material(storage)
     parent = read(storage / 'records/context_pilot' / PIPELINE / 'status.json')
@@ -178,7 +190,7 @@ def run_pipeline(storage, expected_commit, ci_ids):
     if (head != expected_commit or subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip()
             or origin not in ('https://github.com/sophiria1225/AI-', 'https://github.com/sophiria1225/AI-.git')):
         raise ValueError('clean exact implementation in the authorized repository required')
-    resume = check_resume(storage); ci = check_ci(head, ci_ids)
+    resume = check_resume(storage); ci = confirmed_ci(head, ci_ids)
     plan, original, _ = source_material(storage)
     out = storage / 'records/context_pilot' / PIPELINE; out.mkdir(exist_ok=False)
     state = {'phase': 'P58_pipeline', 'status': 'starting', 'git_commit': head, 'ci': ci,
