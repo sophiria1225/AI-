@@ -1,0 +1,18 @@
+{
+  "phase": "P39",
+  "batch_id": "P39_inference_cache_v01",
+  "source_run": "P38_04_NONE_KEEP",
+  "source_request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+  "source_input_tokens": 13552,
+  "seed": 50,
+  "max_output_tokens": 256,
+  "max_calls": 6,
+  "max_total_tokens": 100000,
+  "call_timeout_seconds": 240,
+  "max_wall_seconds": 1560,
+  "schedule": ["cold_1", "warm_1", "warm_2", "cold_2", "warm_3", "cold_3"],
+  "cache_rule": "Keep cache_prompt=true and the identical request in all six calls. Clear idle slot 0 immediately before each cold call; warm calls inherit the immediately preceding same-prompt call. Observe cache_n and prompt_n; do not infer cache state from configuration alone.",
+  "stop_rule": "No retries. Stop on unknown usage, changed server identity, non-idle slot, cache-state mismatch, budget, or stop file. Preserve every attempted call and cleanup status.",
+  "scope": "One known development input, capped generation only. Never execute generated tool calls, invoke AppWorld or a final evaluator. Not a task-effectiveness study, sample independence claim, or new research method.",
+  "source_specification": "https://raw.githubusercontent.com/ggml-org/llama.cpp/620d2225cc436ab0b001e3200e590e3b286ef9ab/tools/server/README.md"
+}

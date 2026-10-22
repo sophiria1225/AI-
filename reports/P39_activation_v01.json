@@ -1,0 +1,38 @@
+{
+  "phase": "P39",
+  "source_sha256": {
+    "scripts/probe_inference_cache.py": "c1ffb26cc8a48b770ccd532acc09996e6ac91d90d93f89f7df7d575837727e8f",
+    "scripts/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "scripts/diagnose_projected_misses.py": "3487d40ce8a95ae9d184668c69afad6a0beb99a1ed97670c9cf1e342a0be6f8a",
+    "scripts/field_read_contract.py": "cc7ff1f8ab452a5ed7cb562a93941a4d1f85db663c841d545cd01732ea04b44a",
+    "scripts/run_event_view_probe.py": "a5e4397b5a076244dbe45ac2a3b35030485b75d49f2fe7a1a6875055681bdc11",
+    "configs/P39_inference_cache_v01.json": "41e720985957cf77d600ec8669c6d154f1dcf60a2813f222f9587f4f1d707708",
+    "configs/P29_stateful_code_v01.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+    "docs/experiments/P39_inference_cache.md": "796d58c27ab20a1dfc4a4f2cc35806e5a32b9605b933284ed2f9b6009fb1829d",
+    "tests/test_inference_cache_control.py": "df7cd585f6c7a55a788384c345b877cffb22b7b8ab8a27f192bba0a63643622b"
+  },
+  "request_sha256": "f8644b183c36c8a4ec8c6ad721e42caf21c0e6f5f525f98e0affc5ccff0f22e4",
+  "input_tokens": 13552,
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-21T22:05:59.492404+00:00",
+    "pid": 15665,
+    "supervisor_pid": 15663,
+    "ctx_size": 65536
+  },
+  "server_lease_end": "2026-10-22T10:05:59.492404+00:00",
+  "prepared_at": "2026-10-22T03:28:15.431823+00:00",
+  "model_calls": 0,
+  "input_count_requests": 1,
+  "environment_api_requests": 0
+}
