@@ -1,0 +1,73 @@
+{
+  "phase": "P66",
+  "source_config": "configs/P29_stateful_code_v01.json",
+  "task_ids": [
+    "34d9492_1"
+  ],
+  "arms": [
+    "documented",
+    "named"
+  ],
+  "run_order": [
+    [
+      "34d9492_1",
+      "documented",
+      "P66_01_PHOTO_DOCUMENTED"
+    ],
+    [
+      "34d9492_1",
+      "named",
+      "P66_02_PHOTO_NAMED"
+    ]
+  ],
+  "reference_runs": [
+    "P64_01_PHOTO_DOCUMENTED",
+    "P64_02_PHOTO_NAMED"
+  ],
+  "reference_audit_sha256": "8c5dac74fcb69c59b89df936270b5bed8ab00db0abef10feca15f07faebfd283",
+  "public_scope_sha256": "23e1c81b8beb047779ba1a1cff13844ac6f8db20ccb47a3d5c217f39583b94a1",
+  "source_code_sha256": {
+    "scripts/public_move_evidence.py": "6c5297f69b69c31d00d3aa9cf8e8227d269874ecfaea5442d43d4ba7c983d74a",
+    "scripts/inspect_new_move_scope.py": "49626654339c0e859d621e13bcb78e3f97c13968cfeded64c2245548bd5d785b",
+    "scripts/public_name_comparison.py": "a8145e9991647d1549cca282a6abc04b6ea947b6c9085929fc624a2304911a49"
+  },
+  "seed": 42,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "max_output_tokens": 4096,
+  "api_budget_by_task": {
+    "34d9492_1": 160
+  },
+  "max_setup_seconds": 120,
+  "max_evaluation_seconds": 180,
+  "max_idle_wait_seconds": 60,
+  "server_max_lifetime_seconds": 5280,
+  "server_readiness_seconds": 300,
+  "worker_timeout_seconds": 4800,
+  "output_reservation": "fixed",
+  "model_usage_receipt": "streaming_terminal_usage_required",
+  "first_call_cache_prompt": false,
+  "same_arm_later_cache_prompt": true,
+  "notification": "unchanged_P64_static_limits_and_capability_guidance",
+  "max_controller_checks_per_condition": 80,
+  "max_public_events_per_check": 4000,
+  "max_controller_completion_attempts": 1,
+  "controller_check_boundary": "after_whole_model_message_execution_before_next_generation",
+  "controller_action": {
+    "app": "supervisor",
+    "api": "complete_task",
+    "args": {
+      "status": "success"
+    }
+  },
+  "unknown_or_unsupported_policy": "continue_ordinary_agent_without_extra_hint_or_request",
+  "controller_completion_failure_policy": "stop_condition_and_remaining_schedule_without_retry",
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "selection": "One known photo instruction template; both P64 ordinary interfaces, each once from a fresh task. Posthoc development control selected after P65. Not independent confirmation.",
+  "scope": "Hand-authored public receipt monitor using unchanged P62/P65 move checks. Extra conservative guard rejects unhandled non-file app effects and nonchronological events. No future record or evaluator response is supplied during execution.",
+  "comparison": "Compare with the closed corresponding P64 baseline, including whole logical input/output, APIs and time. Do not assume a deterministic shared prefix: audit requests, messages, events and final non-supervisor database hashes. Historical paired runs, not randomized repeated causal estimates.",
+  "failure_policy": "No retry or replacement. Known task/model budget closure is evaluated then next fixed condition. Unknown effects, setup/runtime/cleanup/evaluation failure, controller completion failure, source/server drift, explicit stop or process limit stops remaining schedule.",
+  "allocation_rule": "Exactly two conditions, at most 160 model calls, 900000 logical tokens, 320 environment APIs including controller completion, two evaluations. All measured and unknown costs retained."
+}
