@@ -50,6 +50,7 @@ def figures(output, report, preflight):
     axes[0].set_xlim(0, 20500)
     axes[1].set_xlim(0, max(145000, max(r['known_total_tokens'] for r in report['rows']) * 1.35))
     for ax in axes:
+        ax.set_ylim(3.55, -.55)
         ax.set_xlabel('token（k＝1,000）')
         ax.xaxis.set_major_locator(MaxNLocator(4))
         ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f'{value / 1000:g}k'))
@@ -73,8 +74,8 @@ def table(headers, rows):
 
 def build(root, output):
     paths = ('reports/P47_comparison.json', 'reports/P47_prefix_checks.json', 'reports/P47_activation_v01.json',
-             'reports/P47_runtime_checks.json', 'reports/P46_contract_feedback.json')
-    report, pre, activation, runtime, probe = [read(root / name) for name in paths]
+             'reports/P47_runtime_checks.json', 'reports/P46_contract_feedback.json', 'reports/P47_server_session.json')
+    report, pre, activation, runtime, probe, server = [read(root / name) for name in paths]
     if (not report['all_planned_cells_accounted'] or report['audit_errors'] or len(report['rows']) != 12
             or report['batch_status'] not in ('complete', 'stopped')
             or any(report['source_sha256'][key] != sha(root / path) for key, path in
@@ -89,11 +90,11 @@ def build(root, output):
     add('目的：必要な処理を残し、仕事全体の費用を減らす',
         '<p class="lead">仕様が手元に残っていても、AIが正しく使えるとは限らない。</p>'
         '<div class="two"><div class="col"><h3>前の比較から</h3><p class="body">P45の選択表示は採用見送り。<br>P46では７拒否中４件・３課題に<br>既公開契約を返せると照合した。</p></div>'
-        '<div class="col"><h3>今回の問い</h3><p class="body">同じ詳しい返信があっても<br>表示を減らすことは有効か。<br>引数名だけの返信でも足りるか。</p></div></div>',
+        '<div class="col"><h3>今回の問い</h3><p class="body">同じ詳しい返信規則の下で<br>表示を減らすことは有効か。<br>引数名だけの返信でも足りるか。</p></div></div>',
         '最終品質と、制御・修復・再取得を含む全費用で判断する。',
         notes='P46は保存記録の実装照合で、節約実績ではない。詳細エラーと省略は通常の方法であり、組合せだけで独自性とはしない。',
         refs=(('最終目標', 'docs/research_objective_20261022.md'), ('P46結果', 'docs/P46_findings.md')))
-    add('比較：全表示にも同じ契約返信を与える',
+    add('比較：全表示にも同じ契約返信の規則を適用',
         table(('条件', '境界での表示', '未知引数の拒否時'), [
             (LABELS[0], '全表示', '公開済みの原契約'), (LABELS[1], '由来を照合した仕様部分を省略', '許される引数名'),
             (LABELS[2], '上と同じ省略', '公開済みの原契約')]) +
@@ -112,7 +113,7 @@ def build(root, output):
         for index, arm in enumerate(ARMS):
             row = report['rows'][number * 3 + index]
             if row['arm'] != arm: raise ValueError('planned row order differs')
-            values.append(f'<b>{outcome(row)}</b><br>{token_label(row)} token<br>AI {row["model_calls"]} / API {row["api_requests"]}')
+            values.append(f'<b>{outcome(row)}</b> / {token_label(row)} token<br>AI {row["model_calls"]} / API {row["api_requests"]}')
         rows.append(values)
     counts = report['record_status_counts']
     add('全12条件を残し、成功・未達・欠測を分ける', table(('課題', *LABELS), rows),
@@ -130,11 +131,12 @@ def build(root, output):
                               f'{report["totals"][arm]["feedback_control_seconds"]:.4f}'))
     add('返信の適用と、実際の入力への対応を照合する',
         table(('条件', '付加件数', '次入力に存在／次生成あり', '付加文字数', '構成秒'), feedback_rows) +
-        '<p class="body">全プログラム開始時の公開範囲、RPC要求、返却を再構成。<br>元の契約を変えていないか、送信済み要求へ付加していないかを確認。</p>',
+        '<p class="body">全プログラム開始時の公開範囲、RPC要求、返却を再構成。<br>元の契約を変えていないか、送信済み要求へ付加していないかを確認。</p>'
+        '<p class="small">写真の「選択＋契約」は対象拒否がなく付加０件。返信適用の有無も区別する。</p>',
         '付加件数・文字数は節約量ではない。後続の生成・API・品質まで含めて評価する。',
         notes='存在は次入力中の正規化された返信文字列の照合。実送信の判定は凍結コードと保存記録による推定であり、別のネットワーク計測ではない。返信構成秒は継続秒の内数。',
         refs=(('返信監査器', 'scripts/audit_contract_feedback.py'), ('監査済み全結果', paths[0])))
-    cost_rows = []
+    cost_rows = [('試行／評価した条件数', *[f'{report["totals"][a]["attempted_trials"]} / {report["totals"][a]["evaluated_trials"]}' for a in ARMS])]
     for label, key, unknown in (
         ('共通前半の既知token', 'prefix_known_total_tokens', 'prefix_unknown_usage_calls'),
         ('継続の既知token', 'known_total_tokens', 'unknown_usage_calls'),
@@ -147,8 +149,9 @@ def build(root, output):
             vals.append(f'{t["setup_api_requests"]} / {t["setup_wall_seconds"]:.2f}' if key == 'setup' else
                 f'{sum(t[k] for k in ("display_construction_seconds", "feedback_control_seconds", "input_count_seconds")):.3f}' if key is None else f'{t[key]:.2f}')
         cost_rows.append((label, *vals))
-    add('仕事全体と、実験用の復元を区別する', table(('費用の区間', *LABELS), cost_rows),
-        '前半は実行済み条件へ１回ずつ加算。新しい全体実行を測った値ではない。',
+    add('仕事全体と、実験用の復元を区別する', table(('費用の区間', *LABELS), cost_rows)
+        + f'<p class="small">共有サーバー：ロード {server["load_wall_seconds"]:.2f}秒、全稼働 {server["wall_seconds"]:.2f}秒。各条件への重複加算はしない。</p>',
+        '条件数が異なる合計。前半は実行済み条件へ１回加えた値で、方式の優劣には使わない。',
         notes='表示・返信・入力計数は継続時間の内数。tokenには再利用された入力も含む。実再処理・再利用、原文再読、ロード・サーバー費用は集計と結果文へ別記。未完遂の合計を方式の優劣に使わない。',
         refs=(('全費用の監査', paths[0]), ('費用の定義', 'docs/research_objective_20261022.md')))
     if report['development_gate_met']:
@@ -163,7 +166,8 @@ def build(root, output):
         contrast_rows.append((label, c['paired_success_losses'] if c['paired_success_losses'] is not None else '未判定',
             f'{c["candidate_minus_control_total_tokens"]:+,}' if c['candidate_minus_control_total_tokens'] is not None else '未判定'))
     add('採否：両対照に追加価値があるか',
-        '<p class="lead">'+decision+'</p>'+table(('選択＋契約の比較相手', '成功喪失', '継続token差'), contrast_rows) +
+        '<p class="lead">'+decision+'</p>'+table(('選択＋契約の比較相手', '４課題の成功喪失', '４課題の継続token差'), contrast_rows) +
+        '<p class="small">評価済みの写真は選択２条件で未達。返金の選択＋契約は、<br>成功した全表示＋契約より15,040 token多い。</p>' +
         '<p class="small">４既知課題・１seed。成功件数の一致だけでは通過させない。<br>12保留シナリオは未閲覧。複数担当の通信削減と方式の新規性は未確立。</p>',
         '10月23日の主張・主要結果・あらましへ、実証した範囲だけを反映する。',
         notes='全12件・既知使用量・監査合格に加え、両対照への課題別成功喪失０と総token減が条件。欠測を完了した対で補わない。確認群は具体的な主規則と比較・評価条件を固定するまで使わない。',

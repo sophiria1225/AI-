@@ -1,0 +1,129 @@
+[
+  {
+    "title": "仕様の表示を減らした後に<br>API契約を返す効果と費用",
+    "body": "",
+    "take": "",
+    "notes": "",
+    "refs": [],
+    "cover": true
+  },
+  {
+    "title": "目的：必要な処理を残し、仕事全体の費用を減らす",
+    "body": "<p class=\"lead\">仕様が手元に残っていても、AIが正しく使えるとは限らない。</p><div class=\"two\"><div class=\"col\"><h3>前の比較から</h3><p class=\"body\">P45の選択表示は採用見送り。<br>P46では７拒否中４件・３課題に<br>既公開契約を返せると照合した。</p></div><div class=\"col\"><h3>今回の問い</h3><p class=\"body\">同じ詳しい返信規則の下で<br>表示を減らすことは有効か。<br>引数名だけの返信でも足りるか。</p></div></div>",
+    "take": "最終品質と、制御・修復・再取得を含む全費用で判断する。",
+    "notes": "P46は保存記録の実装照合で、節約実績ではない。詳細エラーと省略は通常の方法であり、組合せだけで独自性とはしない。",
+    "refs": [
+      [
+        "最終目標",
+        "docs/research_objective_20261022.md"
+      ],
+      [
+        "P46結果",
+        "docs/P46_findings.md"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "比較：全表示にも同じ契約返信の規則を適用",
+    "body": "<table class=\"compact\"><thead><tr><th>条件</th><th>境界での表示</th><th>未知引数の拒否時</th></tr></thead><tbody><tr><td>全表示＋契約</td><td>全表示</td><td>公開済みの原契約</td></tr><tr><td>選択＋引数名</td><td>由来を照合した仕様部分を省略</td><td>許される引数名</td></tr><tr><td>選択＋契約</td><td>上と同じ省略</td><td>公開済みの原契約</td></tr></tbody></table><p class=\"body\">４既知課題・８応答後の同じ環境とPython状態。各１回、計12件。<br>16生成／120,000 token／480秒。元のAPI枠、通知・出力枠も共通。</p>",
+    "take": "未送信・既公開の拒否だけが対象。推測修正・自動再送・新しいAPIの公開はしない。",
+    "notes": "seed50から呼出しごとに増加。初回cacheなしを実測、以後再利用可。16,000文字を超える返信は引数名、さらに大きければ元の拒否へ戻す。P45との差を同時対照とはしない。",
+    "refs": [
+      [
+        "生成前の固定条件",
+        "docs/experiments/P47_contract_comparison.md"
+      ],
+      [
+        "activation",
+        "reports/P47_activation_v01.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "初回入力と、終了までの費用を分ける",
+    "body": "<div class=\"diagram\"><img src=\"figures/initial_and_continuation.svg\" style=\"width:100%;height:355px\" alt=\"全４課題・３条件の入力と継続費用\"></div><p class=\"small\">左右の横軸の範囲は異なる。右は失敗も含む全継続費用。斜線と＋?は既知分に加わる不明使用量。</p>",
+    "take": "",
+    "notes": "左は事前計数、右は実測。初回の実通知には経過時間が入るため毎回実入力を再計数。少ない費用で未達になった条件を成功の効率とは数えない。",
+    "refs": [
+      [
+        "全入力事前計数",
+        "reports/P47_prefix_checks.json"
+      ],
+      [
+        "全件監査",
+        "reports/P47_comparison.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "全12条件を残し、成功・未達・欠測を分ける",
+    "body": "<table class=\"compact\"><thead><tr><th>課題</th><th>全表示＋契約</th><th>選択＋引数名</th><th>選択＋契約</th></tr></thead><tbody><tr><td>写真整理</td><td><b>成功</b> / 77,478 token<br>AI 6 / API 94</td><td><b>未達</b> / 103,158 token<br>AI 9 / API 90</td><td><b>未達</b> / 113,762 token<br>AI 10 / API 50</td></tr><tr><td>電気代の分担請求</td><td><b>未達</b> / 115,851 token<br>AI 9 / API 8</td><td><b>未達</b> / 106,952 token<br>AI 9 / API 8</td><td><b>未達</b> / 106,092 token<br>AI 9 / API 8</td></tr><tr><td>返金</td><td><b>成功</b> / 32,145 token<br>AI 2 / API 2</td><td><b>成功</b> / 63,118 token<br>AI 4 / API 3</td><td><b>成功</b> / 47,185 token<br>AI 3 / API 2</td></tr><tr><td>曲情報の書出</td><td><b>未評価</b> / 68,964 ＋不明 token<br>AI 5 / API 60</td><td><b>未実行</b> / — token<br>AI 0 / API 0</td><td><b>未実行</b> / — token<br>AI 0 / API 0</td></tr></tbody></table>",
+    "take": "評価済 9/12、実行済み未評価 1、未実行 2。",
+    "notes": "AIはモデル呼出し、APIは継続中の実要求。公式評価の成功とAIの完了宣言を区別する。未知tokenを０にしない。全条件CSVをfiguresに保存。",
+    "refs": [
+      [
+        "結果と採否",
+        "docs/P47_findings.md"
+      ],
+      [
+        "全予定条件",
+        "reports/P47_comparison.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "返信の適用と、実際の入力への対応を照合する",
+    "body": "<table class=\"compact\"><thead><tr><th>条件</th><th>付加件数</th><th>次入力に存在／次生成あり</th><th>付加文字数</th><th>構成秒</th></tr></thead><tbody><tr><td>全表示＋契約</td><td>1</td><td>1 / 1</td><td>497</td><td>0.0029</td></tr><tr><td>選択＋引数名</td><td>3</td><td>3 / 3</td><td>1271</td><td>0.0013</td></tr><tr><td>選択＋契約</td><td>2</td><td>2 / 2</td><td>1616</td><td>0.0009</td></tr></tbody></table><p class=\"body\">全プログラム開始時の公開範囲、RPC要求、返却を再構成。<br>元の契約を変えていないか、送信済み要求へ付加していないかを確認。</p><p class=\"small\">写真の「選択＋契約」は対象拒否がなく付加０件。返信適用の有無も区別する。</p>",
+    "take": "付加件数・文字数は節約量ではない。後続の生成・API・品質まで含めて評価する。",
+    "notes": "存在は次入力中の正規化された返信文字列の照合。実送信の判定は凍結コードと保存記録による推定であり、別のネットワーク計測ではない。返信構成秒は継続秒の内数。",
+    "refs": [
+      [
+        "返信監査器",
+        "scripts/audit_contract_feedback.py"
+      ],
+      [
+        "監査済み全結果",
+        "reports/P47_comparison.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "仕事全体と、実験用の復元を区別する",
+    "body": "<table class=\"compact\"><thead><tr><th>費用の区間</th><th>全表示＋契約</th><th>選択＋引数名</th><th>選択＋契約</th></tr></thead><tbody><tr><td>試行／評価した条件数</td><td>4 / 3</td><td>3 / 3</td><td>3 / 3</td></tr><tr><td>共通前半の既知token</td><td>210,380</td><td>144,520</td><td>144,520</td></tr><tr><td>継続の既知token</td><td>294,438 ＋不明1</td><td>273,228</td><td>267,039</td></tr><tr><td>前半＋継続の論理全仕事</td><td>504,818 ＋不明1</td><td>417,748</td><td>411,559</td></tr><tr><td>継続の経過秒</td><td>1245.60</td><td>807.23</td><td>880.24</td></tr><tr><td>表示・返信・入力計数の秒</td><td>0.880</td><td>0.876</td><td>0.883</td></tr><tr><td>実験用復元 API／秒</td><td>51 / 8.89</td><td>33 / 6.65</td><td>33 / 6.65</td></tr></tbody></table><p class=\"small\">共有サーバー：ロード 10.07秒、全稼働 3072.10秒。各条件への重複加算はしない。</p>",
+    "take": "条件数が異なる合計。前半は実行済み条件へ１回加えた値で、方式の優劣には使わない。",
+    "notes": "表示・返信・入力計数は継続時間の内数。tokenには再利用された入力も含む。実再処理・再利用、原文再読、ロード・サーバー費用は集計と結果文へ別記。未完遂の合計を方式の優劣に使わない。",
+    "refs": [
+      [
+        "全費用の監査",
+        "reports/P47_comparison.json"
+      ],
+      [
+        "費用の定義",
+        "docs/research_objective_20261022.md"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "採否：両対照に追加価値があるか",
+    "body": "<p class=\"lead\">全12件の評価と既知使用量がそろわず、<br>事前の採用条件に届かない。</p><table class=\"compact\"><thead><tr><th>選択＋契約の比較相手</th><th>４課題の成功喪失</th><th>４課題の継続token差</th></tr></thead><tbody><tr><td>全表示＋契約</td><td>未判定</td><td>未判定</td></tr><tr><td>選択＋引数名</td><td>未判定</td><td>未判定</td></tr></tbody></table><p class=\"small\">評価済みの写真は選択２条件で未達。返金の選択＋契約は、<br>成功した全表示＋契約より15,040 token多い。</p><p class=\"small\">４既知課題・１seed。成功件数の一致だけでは通過させない。<br>12保留シナリオは未閲覧。複数担当の通信削減と方式の新規性は未確立。</p>",
+    "take": "10月23日の主張・主要結果・あらましへ、実証した範囲だけを反映する。",
+    "notes": "全12件・既知使用量・監査合格に加え、両対照への課題別成功喪失０と総token減が条件。欠測を完了した対で補わない。確認群は具体的な主規則と比較・評価条件を固定するまで使わない。",
+    "refs": [
+      [
+        "固定した採否",
+        "docs/experiments/P47_contract_comparison.md"
+      ],
+      [
+        "金曜までの決定表",
+        "docs/letter_friday_decisions_20261022.md"
+      ]
+    ],
+    "cover": false
+  }
+]

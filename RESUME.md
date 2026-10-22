@@ -1,6 +1,6 @@
 # アカウント変更後の研究引き継ぎ
 
-**2026年10月22日、アカウント変更後のユーザー指示で再開済み。** 停止するまで実装を継続する指示を受け、P45の全予定条件の終了監査とP46の全保存記録照合を完了し、P47の３条件比較を準備している。[再開の根拠と次の計測](docs/resumption_20261022.md)／[現在の状態](docs/current_status.md)。14:27 JSTの停止記録、モデル・データ・原記録は保存した。以下の会話例は停止時に準備した引き継ぎ手順で、再度の許可を求める意味ではない。
+**2026年10月22日、アカウント変更後のユーザー指示で再開済み。** 停止するまで実装を継続する指示を受け、P47は18:12 JSTに事前規則で終了し、９評価・１未評価・２未実行を全件監査した。選択表示は写真の成功を失い、採用しない。モデルは正常停止、研究の実装は継続中。独自の中核と品質を保った総費用削減は未確立で、10月23日の主張・主要結果・あらましへ向けて次の具体的規則を絞る。[再開の根拠と次の計測](docs/resumption_20261022.md)／[現在の状態](docs/current_status.md)。14:27 JSTの停止記録、モデル・データ・原記録は保存した。以下の会話例は停止時に準備した引き継ぎ手順で、再度の許可を求める意味ではない。
 
 ## 同じMacで開くフォルダ
 
@@ -26,7 +26,7 @@ GitHubで変更してよいのは sophiria1225/AI- とその専用Projectだけ�
 
 1. [詳しい引き継ぎ](docs/handoff_20261022_account_switch.md)：目的、期限、実装、結果、未完了、再開手順。
 2. [現在の状態](docs/current_status.md)／[ユーザーと確認した研究目的](docs/research_objective_20261022.md)。
-3. [最新P45の結果](docs/P45_findings.md)／[判断理由の記録](docs/decision_log.md)。
-4. [GitHub Project](https://github.com/users/sophiria1225/projects/1)／[最新の資料PDF](materials/20261022_p45/AI_harness_documentation_cost_20261022.pdf)。
+3. [最新P47の結果](docs/P47_findings.md)／[判断理由の記録](docs/decision_log.md)。
+4. [GitHub Project](https://github.com/users/sophiria1225/projects/1)／[最新の資料PDF](materials/20261022_p47/AI_harness_contract_feedback_20261022.pdf)。
 
 `/init`で新しい方針を作り直す必要はない。既存のAGENTS.mdとこの引き継ぎを読むことを優先する。アカウントをまたいだ同一会話の自動移行は確認できていないため、それを前提にしない。
