@@ -8,8 +8,10 @@
 
 **P52／P53を終了。** 全４既知境界×４入力の16計数を各１回実行し、86監査不一致０。使用後だけ省く候補は合計1,975 token、全引数名の観測も要求する候補は982 token削減し、どちらも「２課題で1,000」の配分基準に未達で継続生成を見送る。一覧だけ残す単純対照は２課題で基準を満たしたが、品質と総費用は未測定。生成・実API０、推論器正常停止。[全結果](P53_findings.md)／[夜の６枚資料](../materials/20261022_evening/README.md)。
 
+**P54を固定、実行前。** 通常の個別取得／順位付き走査／１ページだけ先行取得を実装し、既知の同じ公開対象集合で３対照を各１回比べる。順位・同点・網羅の公開条件を点検し、生成・計数・評価器は０。各80取得、３対照合計255 APIを上限とする。[固定計画](experiments/P54_ranked_subset_access.md)。
+
 通常修復の[SchemaShield-Lite本文と固定実装](argument_repair_overlap_20261022.md)を照合済み。小さい入力、API固定、局所修復だけを独自性にしない。必要な情報を保つ具体的な規則、通常対照の後にも残る費用、反証条件を絞る。[次の判断](next_actions.md)。
 
-全733検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
+全746検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
 
 [以前の経緯](archive/current_status_through_P49_20261022.md)／[作業ボード](task_board.md)／[Project](https://github.com/users/sophiria1225/projects/1)。GitHubの変更先はsophiria1225/AI-と専用Projectだけ。実装はユーザーの継続指示に従い進めている。
