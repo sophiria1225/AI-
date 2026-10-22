@@ -79,12 +79,16 @@ def prepare_sources(storage, root):
 
 def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, run_id):
     boundary_call=prepared['prefix']['manifest']['state']['model_calls']
-    if plan['phase'] not in ('P31','P32','P33') or boundary_call!=plan['boundary_after_model_calls']:
+    if plan['phase'] not in ('P31','P32','P33','P38') or boundary_call!=plan['boundary_after_model_calls']:
         raise ValueError('wrong prespecified boundary or phase')
     if plan['phase']=='P33':
         from handoff_output_views import ARMS as VIEW_ARMS
         if arm not in VIEW_ARMS or boundary_call!=8:
             raise ValueError('outside output-view comparison')
+    if plan['phase']=='P38':
+        from projected_read_runtime import ARMS as READ_ARMS
+        if arm not in READ_ARMS or boundary_call!=8 or prepared['source_run']!='P29_04_CODE':
+            raise ValueError('outside fixed field-read mechanism check')
     trial = storage/'records/context_pilot'/run_id
     if trial.exists(): raise FileExistsError('preserve every prior branch')
     appworld = storage/'.runtime/appworld/r18_probe_01'
@@ -106,7 +110,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
     write_json(trial/'source_identity.json', {k:prepared[k] for k in
                ('task_id','source_run','source_sha256','boundary_manifest_sha256')})
     catalog = NativeCatalog(tools)
-    bridge = session = infer = None
+    bridge = session = infer = field_runtime = None
     setup_started = time.monotonic()
     setup = {'status':'running','environment_replay':{},'python_replay':None}
     reason, complete = 'not_started', False
@@ -136,13 +140,24 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
         if plan['phase']=='P33':
             from handoff_output_views import build_view
             conversation,transfer=build_view(prefix,arm,session,storage,trial,schemas,catalog)
+        elif plan['phase']=='P38':
+            from field_read_contract import verify_public_implementation
+            from projected_read_runtime import ProjectedReadRuntime, make_conversation
+            transfer_started=time.monotonic()
+            verified=verify_public_implementation(storage/'.runtime/appworld/venv/lib/python3.12/site-packages/appworld/apps/spotify')
+            field_runtime=ProjectedReadRuntime(arm.removesuffix('_keep'),execution_scope=run_id,verified_contract=verified)
+            field_runtime.seed(prefix['events'],prefix['spans'])
+            field_runtime.install(session,storage,trial/'field_helper_install',catalog)
+            conversation=make_conversation(prefix)
+            transfer={'transfer_wall_seconds':time.monotonic()-transfer_started,
+                      'field_read_mode':field_runtime.cache.mode,'original_api_semantics_unchanged':True}
         else:
             conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm,boundary_call)
         write_json(trial/'conversation_private.json', conversation.messages())
         setup.update(status='matched_observable_prefix',wall_seconds=time.monotonic()-setup_started)
         write_json(trial/'setup.json', setup)
         infer = Inference(config, trial)
-        if plan['phase']=='P33':
+        if plan['phase'] in ('P33','P38'):
             # Inspection is real controller work, charged to the continuation
             # wall budget. Reconstruction remains separate experimental setup.
             infer.started-=transfer['transfer_wall_seconds']
@@ -181,7 +196,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
                 remaining_api=lambda:config['max_api_requests']-prefix_api-suffix_api,
                 may_continue=lambda:time.monotonic()-infer.started<config['max_wall_seconds'] and not complete,
                 remaining_wall=lambda:config['max_wall_seconds']-(time.monotonic()-infer.started),
-                program=session.run,
+                program=field_runtime.program(session) if field_runtime else session.run,
                 read_archive=lambda sid,offset:page_span(spans,sid,offset,config['observation_page_characters']))
             conversation.append(message,current_spans)
             write_json(trial/'conversation_private.json', conversation.messages())
@@ -225,6 +240,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
             'unknown_effect_requests':sum(e['effects_unknown'] for e in events),
             'history_formatting':formatting,'python_session':session.state if session else None,
             'full_process_equivalence_claim':False}
+        if field_runtime is not None:summary['projected_reads']=field_runtime.summary()
         write_json(trial/'summary.json',summary)
     return summary
 

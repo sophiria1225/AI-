@@ -1,0 +1,20 @@
+{
+  "phase": "P38",
+  "batch_id": "P38_batch_v01",
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": ["P29_04_CODE"],
+  "boundary_after_model_calls": 8,
+  "arms": ["none_keep", "exact_keep", "contract_keep"],
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "recent_complete_turns": 1,
+  "selection_rule": "One explicitly supported development task, P29_04_CODE, selected for a mechanism-use check after all twelve P37 record probes. Not an independent effectiveness or generalization evaluation. Other tasks and heldout scenarios are not claimed as covered.",
+  "order_rule": "Run none_keep, exact_keep, contract_keep once each; do not replace failed branches or extend budgets.",
+  "interface_rule": "All arms see identical full retained history and the same read_fields guide. The model chooses requested fields. Raw call_api is unchanged; exact caches in both cache arms can reuse whole show_song replies, including raw calls.",
+  "contract_rule": "P37 pinned Song library-to-detail public fields; six audited read handlers preserve the within-run revision, all other sent operations invalidate, errors never become successful cache entries.",
+  "budget_rule": "Same original 80 API cap including prefix, 16 continuation calls, 120000 logical input+output tokens, 480 seconds. Cache hits are recorded but do not count as backend sends; helper, index and lookup wall cost belong to continuation. Experimental restoration is separately reported. No condition gets a free model call.",
+  "continuation_gate": "Mechanism check only: inspect all three final outcomes, interface use, exact/cross-API hits, backend sends and total tokens. No hits means implementation is not evidence of benefit. A hit without successful completion or lower total cost does not establish quality-preserving efficiency. Even a favorable one-task result does not establish novelty or noninferiority.",
+  "novel_method_claim": false
+}
