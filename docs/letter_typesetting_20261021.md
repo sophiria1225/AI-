@@ -42,3 +42,5 @@ ZIP本体は保存されず、失敗manifestをArtifactから回収した。
 22時台に[OverleafのIEICE名義テンプレート](https://www.overleaf.com/latex/templates/template-for-ieice-journals-technical-reports/kxtxxvzpzgkg)も確認した。表示は2019年のv3.2で、レターのマクロ例を確認できるが、現行3.4bと同じとは扱えない。「テンプレートを開く」はログイン画面へ移り、クラスのダウンロード・新しい外部プロジェクトの作成はしていない。最新版と公式ページ数の確認を、この古い公開例で完了扱いにしない。
 
 23時台には、論文誌との同時査読を案内する[MIRU2026の公式投稿ページ](https://miru-committee.github.io/miru2026/author/submission/)から公開のLaTeX配布を取得できた。ただし、収録クラスは`miru2026j.cls`で、ヘッダーはIPSJクラスからの改変を明記している。`ieicej.cls`は含まれず、IEICE論文誌の現行様式を得たことにはならない。別の４ページ規定を論文誌へ流用する案は採らず、クラスの実行・転載も行わない。[取得・不採用の記録](../reports/miru_template_scope_20261021.json)。同じIEICE配布先への再試行を繰り返したものではない。
+
+10月22日13時台に同じ現行3.4bの公開URLを再確認したが、再びHTTP 403だった。[取得失敗記録](../reports/ieice_template_fetch_20261022.json)。これは新しい入手経路の検証にはならず、以後このURLへの反復取得は行わない。公式クラスと４ページ組版は未完了のまま、実験と主張の確定を優先する。
