@@ -1,0 +1,43 @@
+{
+  "phase": "P52",
+  "batch_id": "P52_contract_use_retention_v01",
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE",
+    "P29_03_CODE",
+    "P29_04_CODE"
+  ],
+  "boundary_after_model_calls": 8,
+  "modes": [
+    "used_since_document",
+    "all_parameters_observed"
+  ],
+  "max_wall_seconds": 120,
+  "model_generations": 0,
+  "tokenizer_requests": 0,
+  "environment_api_requests": 0,
+  "program_reexecutions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "source_reports_sha256": {
+    "reports/P44_documentation_origin.json": "b2ca8252f924b7bfe03fece245b887e2927f3bce97174dab36d627a6ee8af9aa",
+    "reports/P44_documentation_origin_integrity.json": "d50bf3d87d8e3f021c02b747b10257bf3c67de20a5d76c1a0ae3b275b220ef39",
+    "reports/P29_comparison.json": "7ff4058f39df63e4babeaa5a76ff73a4bc50a5051b89ed5b96c3c066d87c4eb3",
+    "reports/P32_comparison.json": "34bc2d51206539f6611b39d742249155e6bf95b3cb1d3a3d9f162baffa1f55f2"
+  },
+  "implementation_sources": [
+    "scripts/contract_use_retention.py",
+    "scripts/inspect_contract_use_retention.py",
+    "scripts/documentation_print_origin.py",
+    "scripts/input_exposure_accounting.py",
+    "scripts/later_handoff_sources.py",
+    "scripts/handoff_factors.py",
+    "scripts/handoff_output_views.py",
+    "scripts/run_handoff_factors.py",
+    "scripts/recorded_python_replay.py",
+    "tests/test_contract_use_retention.py"
+  ],
+  "selection_inputs": "Only original first-eight-response public events, already-known instructions and schemas; never suffix results or reserved tasks.",
+  "generation_comparison_authorized": false,
+  "interpretation": "Observed non-error JSON and past argument-name coverage do not prove semantic correctness or future irrelevance. Character removal is not token or total-cost savings. Preserve all four source cases and zero-effect candidates."
+}
