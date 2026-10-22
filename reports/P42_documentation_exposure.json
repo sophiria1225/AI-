@@ -1,0 +1,443 @@
+{
+  "phase": "P42",
+  "status": "complete",
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "boundary_manifest_sha256": "2de2c894b847fa19fe23dbcb8427f033a1359d8192e40a2ab6dafdbd372bf356",
+      "selection": {
+        "candidate_outputs": 6,
+        "matched_documentation_outputs": 1,
+        "checks": [
+          {
+            "turn": 1,
+            "span_id": "s2",
+            "stdout_characters": 2302,
+            "matched": true,
+            "reason": "whole_documentation_content_match",
+            "renderers": [
+              "python_print"
+            ],
+            "documentation_receipts": 1
+          },
+          {
+            "turn": 2,
+            "span_id": "s9",
+            "stdout_characters": 5787,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 6
+          },
+          {
+            "turn": 4,
+            "span_id": "s13",
+            "stdout_characters": 503,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 5,
+            "span_id": "s15",
+            "stdout_characters": 551,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 1
+          },
+          {
+            "turn": 6,
+            "span_id": "s17",
+            "stdout_characters": 371,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 7,
+            "span_id": "s19",
+            "stdout_characters": 2241,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          }
+        ],
+        "source_archive_modified": false,
+        "new_runtime_or_tool_calls": 0,
+        "future_relevance_claim": false,
+        "quality_preservation_claim": false,
+        "common_notice_in_all_views": true,
+        "latest_complete_turn_retained": true
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 8517,
+          "wall_seconds": 0.022445667069405317,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b953637e9400b657861e1b86f5aed6b3484248e9c8cbfd407a0ea2e51d4ef13b",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "all_stdout_mask_keep": {
+          "input_tokens": 5432,
+          "wall_seconds": 0.015852500218898058,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "f7d9b9685ad46dd1ed7be83cff25ba1a2d2481ddd7616de8f324448e0b21ef47",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "documentation_stdout_mask_keep": {
+          "input_tokens": 8029,
+          "wall_seconds": 0.01901041599921882,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "5cfc268a53fd4653b18674b52e360fd70c77c5adfbcd30c77d69f0b751c1decf",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        }
+      },
+      "documentation_input_tokens_removed": 488,
+      "all_stdout_input_tokens_removed": 3085,
+      "development_cost_gate_met": false
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "boundary_manifest_sha256": "de4a9e08e93e66cfdc5a42865a4f497be8feebf7b762e5f2ccaa112289d52008",
+      "selection": {
+        "candidate_outputs": 6,
+        "matched_documentation_outputs": 1,
+        "checks": [
+          {
+            "turn": 1,
+            "span_id": "s2",
+            "stdout_characters": 2668,
+            "matched": true,
+            "reason": "whole_documentation_content_match",
+            "renderers": [
+              "json_False_2",
+              "json_True_2"
+            ],
+            "documentation_receipts": 1
+          },
+          {
+            "turn": 2,
+            "span_id": "s4",
+            "stdout_characters": 403,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 3,
+            "span_id": "s6",
+            "stdout_characters": 600,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 4,
+            "span_id": "s9",
+            "stdout_characters": 1161,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 2
+          },
+          {
+            "turn": 5,
+            "span_id": "s11",
+            "stdout_characters": 380,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 6,
+            "span_id": "s13",
+            "stdout_characters": 10196,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          }
+        ],
+        "source_archive_modified": false,
+        "new_runtime_or_tool_calls": 0,
+        "future_relevance_claim": false,
+        "quality_preservation_claim": false,
+        "common_notice_in_all_views": true,
+        "latest_complete_turn_retained": true
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 10995,
+          "wall_seconds": 0.023116250056773424,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "8e93e4a28d1d4f0f9f1c7784a2d04f56f6cbf13597c4b63df9eee7f0b80eecad",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "all_stdout_mask_keep": {
+          "input_tokens": 5712,
+          "wall_seconds": 0.015915374970063567,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b842c6072d172cf0d24f2e679d42eae99929774411882468df43ad088c6b7f5e",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "documentation_stdout_mask_keep": {
+          "input_tokens": 10194,
+          "wall_seconds": 0.02127695898525417,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b3c5550a7e7b9b9849f51f7ba070c9557393348fc9ee6c2639d25c129028f833",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        }
+      },
+      "documentation_input_tokens_removed": 801,
+      "all_stdout_input_tokens_removed": 5283,
+      "development_cost_gate_met": false
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "boundary_manifest_sha256": "56050f91ff214806dfe2c9ae0446ccac336b17a5b9b542c1af23acec909a1b7b",
+      "selection": {
+        "candidate_outputs": 6,
+        "matched_documentation_outputs": 0,
+        "checks": [
+          {
+            "turn": 1,
+            "span_id": "s3",
+            "stdout_characters": 5236,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 2,
+            "span_id": "s6",
+            "stdout_characters": 2701,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 2
+          },
+          {
+            "turn": 3,
+            "span_id": "s9",
+            "stdout_characters": 665,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 5,
+            "span_id": "s13",
+            "stdout_characters": 545,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 1
+          },
+          {
+            "turn": 6,
+            "span_id": "s15",
+            "stdout_characters": 216,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 7,
+            "span_id": "s20",
+            "stdout_characters": 22564,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          }
+        ],
+        "source_archive_modified": false,
+        "new_runtime_or_tool_calls": 0,
+        "future_relevance_claim": false,
+        "quality_preservation_claim": false,
+        "common_notice_in_all_views": true,
+        "latest_complete_turn_retained": true
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 15474,
+          "wall_seconds": 0.03013545903377235,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "afbdd2d202eb0295701f98bf6459f65800c910a2b497602dea823b453a2012c6",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "all_stdout_mask_keep": {
+          "input_tokens": 5199,
+          "wall_seconds": 0.01670129201374948,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b76df52404dcba9204bc3fd0d1ea3e24d10cfcbba98324642db175b2a9f0d683",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "documentation_stdout_mask_keep": {
+          "input_tokens": 15474,
+          "wall_seconds": 0.031356666004285216,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "afbdd2d202eb0295701f98bf6459f65800c910a2b497602dea823b453a2012c6",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        }
+      },
+      "documentation_input_tokens_removed": 0,
+      "all_stdout_input_tokens_removed": 10275,
+      "development_cost_gate_met": false
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "boundary_manifest_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "selection": {
+        "candidate_outputs": 5,
+        "matched_documentation_outputs": 1,
+        "checks": [
+          {
+            "turn": 1,
+            "span_id": "s4",
+            "stdout_characters": 11256,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 3
+          },
+          {
+            "turn": 2,
+            "span_id": "s11",
+            "stdout_characters": 5342,
+            "matched": false,
+            "reason": "stdout_not_exact_documentation",
+            "renderers": [],
+            "documentation_receipts": 6
+          },
+          {
+            "turn": 3,
+            "span_id": "s13",
+            "stdout_characters": 600,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          },
+          {
+            "turn": 5,
+            "span_id": "s17",
+            "stdout_characters": 529,
+            "matched": true,
+            "reason": "whole_documentation_content_match",
+            "renderers": [
+              "python_print"
+            ],
+            "documentation_receipts": 1
+          },
+          {
+            "turn": 7,
+            "span_id": "s23",
+            "stdout_characters": 7809,
+            "matched": false,
+            "reason": "mixed_non_documentation_or_failed_receipts"
+          }
+        ],
+        "source_archive_modified": false,
+        "new_runtime_or_tool_calls": 0,
+        "future_relevance_claim": false,
+        "quality_preservation_claim": false,
+        "common_notice_in_all_views": true,
+        "latest_complete_turn_retained": true
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 13499,
+          "wall_seconds": 0.02878837496973574,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "7f8ca9a5029a08b544c6c516e4bf85f8241d72f156d79826fc5453e64d54336b",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "all_stdout_mask_keep": {
+          "input_tokens": 5550,
+          "wall_seconds": 0.01571683306246996,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "44de86d86e0cb86c518a9791d08fc3dc19f0ca556bd84e3699ca7b69fdbc2582",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        },
+        "documentation_stdout_mask_keep": {
+          "input_tokens": 13405,
+          "wall_seconds": 0.027173292124643922,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "60f1c6de05c1f6d2a64d30627ea6c0e9c82348b5b35bde958ec1d692ac64deb7",
+          "formatting": {
+            "text_fallback_turns": 0,
+            "paged_spans": 0
+          }
+        }
+      },
+      "documentation_input_tokens_removed": 94,
+      "all_stdout_input_tokens_removed": 7949,
+      "development_cost_gate_met": false
+    }
+  ],
+  "input_count_requests": 12,
+  "failed_input_count_requests": 0,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "python_replay_programs": 0,
+  "reserved_scenarios_read": 0,
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-21T22:05:59.492404+00:00",
+    "pid": 15665,
+    "supervisor_pid": 15663,
+    "ctx_size": 65536
+  },
+  "server_lease_end": "2026-10-22T10:05:59.492404+00:00",
+  "source_sha256": {
+    "scripts/documentation_exposure.py": "7aa6bd59b06f079740d893171035953c359e12d16318e390acf50844aa8231d8",
+    "scripts/inspect_documentation_exposure.py": "b85a65bde6d2f153ac9cc47c6383e7036c02ca8c5bd3c196a925ed53c4ff103b",
+    "scripts/later_handoff_sources.py": "35922983507346befb20d240caf2bf8345ac67b13916843542eb7aabe415e647",
+    "scripts/handoff_output_views.py": "b59414470b92c78193294ea02cbbc7cb917a662cbe8139789ed52d1ed1db7a37",
+    "scripts/handoff_factors.py": "0f620dce91eff19a211a45dcafe145702ee16b6a507b02c0ca02bf5803a3fcd2",
+    "scripts/native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "scripts/probe_inference_cache.py": "73d4a561dfc50b099558d14aa1d05f81ae2fd3a8adb5a53a758ab6d3354093ee",
+    "docs/experiments/P42_documentation_exposure.md": "849bfb218265b3514a1a3f02c876280329153e1408efc2c05e5df47c581c722c",
+    "tests/test_documentation_exposure.py": "fcdd6f68fab78cc0d2782545c1682f93d48bf7abed22feba776a055d5360dc4b"
+  },
+  "git_commit": "8efca8c60048d02ced243f30e8ca67eac4bf4304",
+  "started_at": "2026-10-22T05:22:37.482203+00:00",
+  "quality_preservation_claim": false,
+  "end_to_end_savings_claim": false,
+  "novel_method_claim": false,
+  "all_four_boundaries_counted": true,
+  "additional_generation_design_gate": false,
+  "wall_seconds": 0.2995951250195503,
+  "finished_at": "2026-10-22T05:22:37.769506+00:00"
+}
