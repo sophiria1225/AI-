@@ -1,0 +1,75 @@
+{
+  "phase": "P64",
+  "source_config": "configs/P29_stateful_code_v01.json",
+  "task_ids": [
+    "34d9492_1",
+    "3c13f5a_1"
+  ],
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE"
+  ],
+  "source_public_task_sha256": [
+    "f6253dae38e28f196675347898edaea147130570c049a8da0df376a9d2300948",
+    "f7521e031ecfc6b8f7a5fde8a5d505f5f6b22b8152c64ef37e42d8348c85fff9"
+  ],
+  "source_provenance_sha256": [
+    "240a3c6f603103e99b9b39b4fde8417a8c49e1c703e4b06e56dca64fd132d3eb",
+    "c280b642796931ca08548757b8ad765162536b2bb9be1001a69793e97be89e24"
+  ],
+  "arms": [
+    "documented",
+    "named"
+  ],
+  "run_order": [
+    [
+      "34d9492_1",
+      "documented",
+      "P64_01_PHOTO_DOCUMENTED"
+    ],
+    [
+      "34d9492_1",
+      "named",
+      "P64_02_PHOTO_NAMED"
+    ],
+    [
+      "3c13f5a_1",
+      "named",
+      "P64_03_BILL_NAMED"
+    ],
+    [
+      "3c13f5a_1",
+      "documented",
+      "P64_04_BILL_DOCUMENTED"
+    ]
+  ],
+  "seed": 42,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "max_output_tokens": 4096,
+  "api_budget_by_task": {
+    "34d9492_1": 160,
+    "3c13f5a_1": 80
+  },
+  "max_setup_seconds": 120,
+  "max_evaluation_seconds": 180,
+  "max_idle_wait_seconds": 60,
+  "server_max_lifetime_seconds": 10080,
+  "server_readiness_seconds": 300,
+  "worker_timeout_seconds": 9600,
+  "output_reservation": "fixed",
+  "model_usage_receipt": "streaming_terminal_usage_required",
+  "first_call_cache_prompt": false,
+  "same_arm_later_cache_prompt": true,
+  "notification": "static_common_limits_no_live_wall_snapshot",
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "selection": "Both original P29 tasks with requests newly admitted in P63: photo and bill. Known posthoc development selection, not independent evaluation. Each ordinary interface runs once from the same fresh task start, with accurate capability instructions. No saved future receipts or solution program is supplied.",
+  "failure_policy": "No replacement or retry. Task budget exhaustion or unusable/unknown model response closes that condition and is evaluated if its world is known, then the next fixed condition runs. Unknown API effects, setup/runtime/cleanup/evaluation failure, changed source/server, explicit stop or owning process deadline stops all remaining conditions. Never execute an incomplete or unaccounted model response.",
+  "scope": "Interface package comparison: admission and its accurate description change together. All other ordinary guidance, schema visibility, authentication, runtime, model and budgets are common. Do not infer isolated admission causality, novelty, general quality preservation, or improvement against historical runs with different accounting.",
+  "source_initial_boundary_sha256": [
+    "1141f81d42abf1d1e4ca6e3bd96cf84d7f292a97339a6310d11dd88d4cfc958b",
+    "501aed494c3b2ab987c46912c52e1c4aba0648a0016d385e20f68ce4dccaaf34"
+  ]
+}
