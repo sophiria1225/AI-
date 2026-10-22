@@ -102,7 +102,7 @@ def build(root,output):
     totals=report['totals'];slides=[]
     def slide(title,body='',take='',notes='',refs=(),cover=False):
         slides.append(dict(title=title,body=body,take=take,notes=notes,refs=list(refs),cover=cover))
-    slide('情報を減らしても、<br>仕事全体の費用は減るか',cover=True,
+    slide('AIハーネスにおける<br>入力削減と実行費用の分析',cover=True,
           notes='P33の追加進捗資料。出力だけの省略と一覧の効果を、最終成否と総費用で確認する。')
     slide('目的：最終品質を保ち、不要な処理を減らす',
         '<p class="lead">ハーネスが、AIへ渡す情報・ツール実行・状態・検証・停止を制御する。</p>'
@@ -134,7 +134,8 @@ def build(root,output):
         notes.append(f'{label}：対照の成功を落とした課題 {len(d["baseline_successes_lost"])}件。'+
             ('費用差は不明呼出しがあるため未確定。' if unknown else f'総トークン差 {d["total_token_change"]:+,}。'))
     slide('品質：成功件数だけでは判断しない',paired+
-          '<div class="body">'+''.join('<p>'+esc(n)+'</p>' for n in notes)+'</div>',
+          '<div class="body">'+''.join('<p>'+esc(n)+'</p>' for n in notes)+'</div>'+
+          '<p class="small">書出は全履歴がAPI上限、他２方式がトークン上限で未達。<br>早く打ち切られた低費用を、効率よく完了した結果とは扱わない。</p>',
           '４件各１回の結果。品質維持の一般的な証明にはならない。',
           notes='対照で成功した課題を失っていないかを個別に確認する。別課題の成功で相殺しない。',
           refs=('reports/P33_development_gate.json',))
@@ -143,10 +144,10 @@ def build(root,output):
     slide('考察：通常方式の効果と、独自の差を分ける',
           '<p class="lead">'+esc(headline)+'</p><div class="body"><p>出力省略と変数一覧は既存の仕組み。<br>結果が良くても、それだけを新規性とはしない。</p>'
           '<p>値との照合だけで省略を選ぶ候補（P34）は、対象23出力中１出力にしか適用できず、追加のモデル比較を見送った。</p>'
-          '<p>次は全件の実行経路と再取得を照合し、通常方式で足りない具体的な条件を絞る。12確認シナリオは未閲覧のまま残す。</p></div>',
+          '<p>次は、コードが参照した情報とAPI返却の対応を、保存記録の再生で調べる。読み取りの記録がないことを、不要だとは判定しない。</p></div>',
           '月末投稿へ向けた独自の主張と、未調整課題での確認は未完了。',
-          notes='目的を変更したわけではない。効果の出ない条件や費用不明を隠して主張を強めない。今後の追加方式は全件分析から別途選ぶ。',
-          refs=('docs/experiments/P34_output_residency.md','docs/next_actions.md'))
+          notes='返金は全方式で成功したが呼出しは２／12／４回。成功の同率だけでは費用を説明できない。12確認シナリオは未閲覧のまま。次の計測も独自の制御技術とはまだ確定していない。',
+          refs=('docs/P33_findings.md','docs/experiments/P34_output_residency.md'))
     time_rows='<table class="compact"><thead><tr><th>条件</th><th>総入力</th><th>キャッシュ入力</th><th>新規入力処理</th><th>出力</th></tr></thead><tbody>'
     for arm,label in zip(ARMS,NAMES):
         c=cost['by_arm'][arm]['totals'];time_rows+='<tr><td>'+label+'</td>'+''.join(f'<td>{c[k]:,}</td>' for k in ('input_tokens','cached_input_tokens','processed_input_tokens','output_tokens'))+'</tr>'
