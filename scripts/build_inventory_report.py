@@ -66,8 +66,9 @@ def plot(report, output):
 def build(root, output):
     source_paths = ('reports/P55_comparison.json', 'reports/P55_prefix_checks.json',
                     'reports/P55_initial_inventory_visibility.json',
-                    'reports/P55_full_control_variation.json', 'reports/P55_server_session.json')
-    report, pre, visibility, variation, server = [read(root / p) for p in source_paths]
+                    'reports/P55_full_control_variation.json', 'reports/P55_server_session.json',
+                    'reports/P55_outcome_scope.json')
+    report, pre, visibility, variation, server, scope = [read(root / p) for p in source_paths]
     if (report['audit_errors'] or not report['all_planned_cells_accounted'] or len(report['rows']) != 12
             or server['status'] != 'stopped' or pre['status'] != 'complete'):
         raise ValueError('closed and audited whole-cohort evidence required')
@@ -112,7 +113,7 @@ def build(root, output):
 
     totals = [report['totals'][a] for a in ARMS]
     metric_rows = []
-    for label, key in [('AI呼出し', 'model_calls'), ('継続API', 'api_requests'),
+    for label, key in [('前半＋継続AI呼出し', 'logical_task_model_calls'), ('継続API', 'api_requests'),
                        ('復元API', 'setup_api_requests'), ('使用量不明の呼出し', 'unknown_usage_calls')]:
         metric_rows.append('<tr><td>' + label + '</td>' + ''.join(f'<td>{t[key]:,}</td>' for t in totals) + '</tr>')
     metric_rows.append('<tr><td>継続実時間（秒）</td>' + ''.join(
@@ -123,7 +124,7 @@ def build(root, output):
         '比較終了後に停止済み。</p>',
         'APIが少ないことだけでは、要求を満たす仕事が効率化されたとは判断しない。',
         [('費用監査', 'reports/P55_comparison.json'), ('推論器記録', 'reports/P55_server_session.json')],
-        '実験用の状態復元・評価と運用時の継続を区別。全条件共通の前半モデル費用を足すが、同じ元実行を実際に何度も生成したという意味ではない。')
+        '実験用の状態復元・評価と運用時の継続を区別。評価器単独の秒数は未計測で、推論器稼働全体に含む。全条件共通の前半モデル費用を足すが、同じ元実行を実際に何度も生成したという意味ではない。')
 
     gate = '達成' if report['development_gate_met'] else '未達'
     advantage = '支持条件を満たす' if report['inventory_advantage_supported'] else '支持条件を満たさない'
@@ -132,7 +133,7 @@ def build(root, output):
         '<table><tr><th>制約</th><th>解釈</th></tr>'
         '<tr><td>既知４課題、各１回</td><td>一般的な性能維持・非劣性の証明ではない</td></tr>'
         '<tr><td>返金はD/Bの基礎入力が同じ</td><td>その差を一覧の効果と呼ばない</td></tr>'
-        '<tr><td>API名・状態・原文が別経路に残る</td><td>完全な情報消去の実験ではない</td></tr>'
+        '<tr><td>写真F/DのファイルDBは一致</td><td>成功差をファイル整理の改善と断定しない</td></tr>'
         '<tr><td>段階的な開示には先行方式がある</td><td>通常方式を独自アルゴリズムにしない</td></tr></table>',
         '10月23日：主張・主要結果・概要を絞る。10月31日：レター投稿完了を目指す。',
         [('採録見込みの評価', 'docs/letter_assessment_20261023.md'),
@@ -151,7 +152,7 @@ def build(root, output):
             f'<div class="footer"><span class="sources">{refs}</span><span>{number}/{len(slides)}</span></div>'
             f'<div class="notes">{html.escape(slide["notes"])}</div></section>')
     nav = '<nav id="nav"><button id="prev">←</button><span id="count"></span><button id="next">→</button><button id="all">一覧</button><button id="note">説明</button><button id="print">印刷</button></nav><aside id="speaker"></aside>'
-    extra = '.chart{display:block;width:1120px;height:325px;object-fit:contain}table{font-size:20px}h2{font-size:35px}.small{margin-top:18px}.results td{padding:10px 16px}.metric{font-size:19px;font-variant-numeric:tabular-nums}'
+    extra = '.chart{display:block;width:1120px;height:325px;object-fit:contain}table{font-size:20px}h2{font-size:35px}.small{margin-top:18px}.results td{padding:6px 16px}.results+.small{margin-top:12px}.metric{font-size:19px;font-variant-numeric:tabular-nums}'
     (output / 'index.html').write_text('<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>P55 API一覧と詳細</title><style>'
         + STYLE + extra + '</style></head><body>' + ''.join(sections) + nav + '<script>' + SCRIPT + '</script></body></html>')
     write = lambda path, value: path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')

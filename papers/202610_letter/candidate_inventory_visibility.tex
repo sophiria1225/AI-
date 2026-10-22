@@ -10,6 +10,8 @@
 \begin{document}
 \raggedbottom
 \maketitle
+\noindent\textbf{あらまし（検討用）}\quad 実行状態を保持した４課題12条件でAPI一覧と詳細の履歴表示を比較した。詳細省略の既知総tokenは全表示を上回り、使用量不明も１件生じた。保存状態と完了通知を区別し、開発比較の範囲を報告する。
+\par\medskip
 \noindent\textbf{原稿の位置づけ．}
 既知課題での開発比較を一つの問いへ絞った検討用原稿である．
 研究上の中心的貢献，著者情報，公式様式への適合は未確定であり，投稿完成稿ではない．
@@ -32,8 +34,14 @@ API一覧と詳細の表示を別々に省くと，最終成否と終了まで�
 通常の段階的開示を新しいアルゴリズムとして提案するものではない．
 また，単一作業役の比較から，多担当間の通信削減を主張しない．
 
-\newpage
 \section{関連研究と比較範囲}
+Beyond Token Savings\cite{beyond}は複数モデルと反復を用いて，
+圧縮方針と成否・token・時間の関係を検証する．
+Liu\cite{interaction}は状態の再取得費用を分け，
+予算をそろえた保持や外部からの状態復元を比較する．
+環境によって再取得の増加が見られない例も報告している．
+従って，短縮が総費用削減を保証しないという一般論は，本稿独自の発見ではない．
+
 CodeAct\cite{codeact}はコードを行動として用いる．
 CaveAgent\cite{cave}は持続する実行状態を扱っており，
 Python変数を保持すること自体は本研究の新規性ではない．
@@ -69,8 +77,10 @@ API名が過去コードに現れること，その意味を理解すること�
 継続のみの値も併記する．API，時間，制御・計数，
 実験用復元，評価，推論器のロード・常駐を別記し，
 準備費用を無料とみなさない．
+評価器単独の秒数は実行器が保存しておらず未計測とする．
+評価と親プロセスの処理は推論器の稼働全体に含まれ，
+継続・復元の測定値との差を評価器だけの時間へ読み替えない．
 
-\clearpage
 \section{固定した開発比較}
 \input{papers/202610_letter/p55_methods_component.tex}
 
@@ -91,7 +101,6 @@ Bが追加で省く一覧は各１・１・０・３返却だった．
 \InventoryFirstInputs
 \end{minipage}\end{center}
 
-\newpage
 \subsection{採否と欠測}
 全12条件を評価し使用量が既知で監査に合格した場合に限り，
 DがF/B双方の成功を失わず，合計$T_{\rm work}$がFより小さくB以下なら，
@@ -105,6 +114,11 @@ API作用，復元，実行，片付け，評価，推論器版の不一致は�
 結果を見てseed・条件・予算を変更せず，未実行を成功や失敗に補完しない．
 
 \section{全予定条件の結果}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth,bb=0 0 813.6 223.2]{materials/20261023_p55/work_tokens.pdf}
+\caption{全４課題・３表示の仕事全体tokenと公式成否．共通前半を含み，縦軸は０から示す．斜線の棒は既知分のみで，さらに使用量不明の呼出しがある．}
+\end{figure*}
 \InventoryResultSummary
 全12予定条件の成否と仕事全体の費用を表2へ示す．
 途中の入力が少なくても，生成回数や後続の行動が変われば合計は減らない．
@@ -113,9 +127,9 @@ API作用，復元，実行，片付け，評価，推論器版の不一致は�
 \begin{center}\begin{minipage}{\columnwidth}\centering
 \small 表2\quad 全12予定条件の成否と費用\par\smallskip
 \InventoryAllCells
+\par\smallskip\footnotesize $+?$は別に使用量不明の１生成があることを示す．
 \end{minipage}\end{center}
 
-\clearpage
 \subsection{費用差と実行量}
 \InventoryContrasts
 表3は全条件の生成，API，継続時間を含む．
@@ -127,6 +141,11 @@ API回数だけを見て再取得や無駄を断定せず，完了できた処�
 \small 表3\quad 全４課題合計の費用と実行量\par\smallskip
 \InventoryTotals
 \end{minipage}\end{center}
+
+\subsection{課題別の変化をどう読むか}
+\InventoryCaseEvidence
+要求を送った回数は，処理内容や要求達成の同一性を保証しない．
+仕事の終了条件をそろえた上で，成功と費用を対にして解釈する．
 
 \subsection{表示から消えた情報の範囲}
 一覧を省いたBでも，写真の一覧26 API名のうち８名，
@@ -141,7 +160,6 @@ API回数だけを見て再取得や無駄を断定せず，完了できた処�
 残時間通知，実行時間，数値計算などの変動が残る．
 \InventoryVariation
 
-\newpage
 \section{主張の限界と次の確認}
 本比較は，既知４課題，単一モデル，各条件１回に限られる．
 一つの課題で成功と費用が改善しても，広い課題群の品質維持や因果機構の確立とはならない．
@@ -165,6 +183,7 @@ API回数だけを見て再取得や無駄を断定せず，完了できた処�
 
 \begin{thebibliography}{9}\small
 \bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
+\bibitem{interaction} S. Liu, ``What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics,'' arXiv:2608.16370v1, 2026.
 \bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
 \bibitem{cave} M. Ran et al., ``CaveAgent: Transforming LLMs into Stateful Runtime Operators,'' arXiv:2601.01569v4, 2026.
 \bibitem{hdgist} Y. Jiang, M. Del Vecchio, M. Bansal, and A. Johannsen, ``Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage,'' Findings of EACL, pp.2162--2174, 2024.

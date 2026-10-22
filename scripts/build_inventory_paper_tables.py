@@ -10,13 +10,14 @@ from run_handoff_factors import ROOT, read, sha
 def build():
     paths = ('reports/P55_comparison.json', 'reports/P55_prefix_checks.json',
              'reports/P55_full_control_variation.json', 'reports/P55_initial_inventory_visibility.json',
-             'configs/P55_inventory_comparison_v01.json')
-    report, pre, variation, _, _ = [read(ROOT / path) for path in paths]
+             'configs/P55_inventory_comparison_v01.json', 'reports/P55_outcome_scope.json',
+             'reports/P55_server_session.json')
+    report, pre, variation, _, _, scope, _ = [read(ROOT / path) for path in paths]
     if not report['all_planned_cells_accounted'] or report['audit_errors'] or len(report['rows']) != 12:
         raise ValueError('complete accounting of all scheduled cells required')
     lines = ['% Generated from closed P55 evidence; no model or task execution.']
     lines += [r'\newcommand{\InventoryAllCells}{%',
-              r'\begin{tabular}{llrr}\hline 課題 & 条件・成否 & 仕事全体token & 生成\\\hline']
+              r'\begin{tabular}{llrr}\hline 課題 & 条件・成否 & 仕事全体token & 継続生成\\\hline']
     for task, label in TASKS:
         for index, arm in enumerate(ARMS):
             row = next(r for r in report['rows'] if r['task_id'] == task and r['arm'] == arm)
@@ -29,7 +30,9 @@ def build():
     values = [('成功／評価済み', [f"{v['successes']}/{v['evaluated_trials']}" for v in totals])]
     for label, key in [('仕事全体・既知token', 'logical_task_known_total_tokens'),
                        ('継続・既知token', 'known_total_tokens'), ('使用量不明生成', 'unknown_usage_calls'),
-                       ('生成', 'model_calls'), ('継続API', 'api_requests'), ('復元API', 'setup_api_requests')]:
+                       ('前半＋継続生成', 'logical_task_model_calls'), ('継続生成', 'model_calls'),
+                       ('前半＋継続API', 'logical_task_api_requests'),
+                       ('継続API', 'api_requests'), ('復元API', 'setup_api_requests')]:
         values.append((label, [f'{v[key]:,}' for v in totals]))
     values.append(('継続時間（秒）', [f"{v['continuation_wall_seconds']:,.1f}" for v in totals]))
     lines += [label + ' & ' + ' & '.join(v) + r'\\' for label, v in values]
@@ -48,6 +51,9 @@ def build():
         summary += '詳細省略Dは既知課題に対する固定の採用基準を満たした．独立した確認群での性能維持や一般的な省費用を示すものではない．'
     else:
         summary += '詳細省略Dは固定の採用基準を満たさず，品質を保った総費用削減として採用しない．'
+    lower_difference = totals[1]['logical_task_known_total_tokens'] - totals[0]['logical_task_known_total_tokens']
+    if totals[0]['logical_task_unknown_usage_calls'] == 0 and lower_difference > 0:
+        summary += f'Dは既知分だけでFを{lower_difference:,} token上回るため，未知分を除いても削減にはならない．'
     lines.append(r'\newcommand{\InventoryResultSummary}{' + summary + '}')
     contrast = []
     for arm, label in ((ARMS[0], '全表示F'), (ARMS[2], '一覧も省くB')):
@@ -59,6 +65,20 @@ def build():
             contrast.append(f"Dは{label}より仕事全体で{abs(diff):,} token" + ('少なく' if diff < 0 else '多く' if diff > 0 else 'の差で') +
                 f"，対ごとの成功喪失は{d['paired_success_losses']}件だった．")
     lines.append(r'\newcommand{\InventoryContrasts}{' + ''.join(contrast) + '}')
+    photo = [next(r for r in report['rows'] if r['task_id'] == TASKS[0][0] and r['arm'] == a) for a in ARMS]
+    refund = [next(r for r in report['rows'] if r['task_id'] == TASKS[2][0] and r['arm'] == a) for a in ARMS]
+    case = ('写真整理のF/Dは，それぞれ' + '／'.join(str(r.get('sent_api_names', {}).get('file_system__move_file', 0))
+            for r in photo[:2]) + '件のファイル移動要求を送ったが，成否は' +
+            '／'.join(outcome(r) for r in photo[:2]) + 'だった．')
+    comparison = next(r for r in scope['rows'] if r['task_id'] == TASKS[0][0] and r['arms'] == list(ARMS[:2]))
+    if comparison.get('changes_confined_to_supervisor_file'):
+        case += ('この対では全ての非supervisorアプリの保存ファイルが一致し，'
+                 '異なるアプリ状態はsupervisorだけだった．完了通知の要求はFで０，Dで１件であり，'
+                 '公式成否の差をファイル整理そのものの改善と呼ばない．隠れた個別テストの原因同定ではない．')
+    case += ('返金はF/D/Bの全条件が' + ('成功した' if all(r['success'] is True for r in refund) else '同じ成否とは限らなかった') +
+        '．継続tokenはF/Dで' + '／'.join(f"{r['known_total_tokens']:,}" for r in refund[:2]) +
+        'であり，初回の詳細省略量だけから終了までの費用を予測できない．')
+    lines.append(r'\newcommand{\InventoryCaseEvidence}{' + case + '}')
     changed = [r for r in variation['rows'] if r.get('independent_success') and
                all(isinstance(x, bool) for x in r['independent_success']) and
                r['independent_success'][0] != r['independent_success'][1]]

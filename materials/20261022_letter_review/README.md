@@ -14,4 +14,4 @@
 
 表の再生成は `python scripts/build_letter_evidence_tables.py`。組版はリポジトリのルートから `uplatex`（shell escapeなし）を２回実行し、`dvipdfmx`で変換する。TinyTeXと汎用クラスの既存環境を使用した。原記録・モデル生成・環境APIを変更する処理は含まない。
 
-10月23日：[採録見込み・新規性・意義の評価](../../docs/letter_assessment_20261023.md)と[P55の近接研究・比較範囲](../../docs/inventory_retention_overlap_20261023.md)を追加した。P55の原稿部品・全件表の生成処理を準備中。P55結果が閉じる前に新しい完成PDFとしては公開しない。
+10月23日：[P55全12条件の結果を反映した別の４ページ原稿と６枚資料](../20261023_p55/README.md)を作成し、全頁確認済み。既知費用だけでもDはFを上回り、写真F/Dの非supervisor保存状態は一致する。今回の旧PDFは履歴として保持する。[採録見込みと不足](../../docs/letter_assessment_20261023.md)は引き続き未解決の中心的貢献を明記する。
