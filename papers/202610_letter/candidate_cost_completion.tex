@@ -1,0 +1,176 @@
+% Provisional empirical manuscript. Generic class; authors and contribution remain unconfirmed.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\input{papers/202610_letter/inventory_tables.tex}
+\title{状態保持型エージェントのAPI説明省略における\newline 仕事全体の費用と終了手続きの診断}
+\author{検討用原稿・著者情報未設定}
+\date{2026年10月23日}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし}\quad
+\input{papers/202610_letter/cost_completion_abstract_ja.txt}
+\par\medskip
+\noindent\textbf{検討範囲．}
+既知課題の実証原稿であり，新手法の有効性を主張するものではない．
+中心的貢献，著者情報，公式様式への適合は未確定である．
+
+\section{目的と検証する問い}
+AIエージェントによる仕事の費用を減らすには，必要な情報・処理と最終品質を保ち，
+取得，生成，実行，検証を含む全体を制御する必要がある．
+入力を短くしても，後続の再取得や生成が増えれば費用は減らない\cite{beyond,interaction}．
+また，成功判定の差だけでは，実作業が改善したか，終了手続きが変わったかを区別できない．
+本稿は，情報表示の省略を評価する際のこの二つの問題を，状態保持型の実行環境で調べる．
+
+APIを使う作業では，何ができるかを示す一覧と，引数を説明する詳細の両方が現れる．
+一度取得した説明を履歴へ繰り返す負担を減らすため，本稿では両者の表示を別々に省く．
+ただし，Python状態，公開スキーマと原文への参照経路を保持するため，
+表示の省略は実行環境からの情報消去とは異なる．
+
+問いは，\textbf{共通の途中状態からAPI説明の表示を省いたとき，
+仕事全体の費用と最終成否がどう変わり，その成否差を実作業の改善と解釈できるか}である．
+既知４課題の全12条件を比較し，その後，写真整理の保存状態に完了通知だけを加える診断を行う．
+入力短縮，課題の成功数，作業状態を別々に記録することで，
+今回の観測から支持できる費用・品質の解釈を限定する．
+
+\section{関連研究と本稿の範囲}
+Beyond Token Savings\cite{beyond}は，複数モデルと反復を用いて
+圧縮方針と成否・token・時間の関係を比較する．
+Liu\cite{interaction}は状態の再取得費用を分け，
+予算をそろえた保持や外部からの状態復元を検証する．
+短縮が総費用削減を保証しないという一般論は既に指摘されている．
+
+CodeAct\cite{codeact}はコードを行動として用い，CaveAgent\cite{cave}は持続する実行状態を扱う．
+HD-Gist\cite{hdgist}はAPI引数と値を分けた学習表現を生成中に参照する．
+Tool Search Tool\cite{toolsearch}は初期表示を抑え，検索したツールの定義を展開する．
+段階的開示の研究\cite{disclosure}も，同じ文書・チャンクで索引の配置と階層を比較する．
+状態保持，API説明の分割，索引の保持は，いずれも既存の設計要素である．
+
+Zhangら\cite{evidence}は科学計算について，値の生成，モデルへの提示，最終回答を分け，
+計算済みの同じ状態から返却方式を変える継続比較を行う．
+本稿が扱うのは，説明を一度取得した後の履歴表示と，
+操作先アプリの保存状態を変えない完了通知である．
+対象と介入は異なるが，段階を分けた診断や同一途中状態からの比較自体を独自方式とはしない．
+先行方式を同一条件で再実装した性能比較でもない．
+
+\section{状態と費用の定義}
+継続点の状態を会話履歴$H$，Python名前空間$P$，操作先環境$E$，残予算$B$とする．
+表示への介入は$H$の一部に限り，$P$と$E$への操作権限をそろえる．
+終了手続きの診断では，作業対象アプリの状態と，完了を記録するsupervisorの状態を区別する．
+保存ファイルの一致は観測範囲での一致であり，非公開の採点項目を推定するものではない．
+
+仕事全体の論理トークンを
+\begin{equation}
+ T_{\rm work}=T_{\rm prefix}+\sum_{j=1}^{n}(I_j+O_j)
+\end{equation}
+とする．共通前半の実測値を条件ごとに一度加え，キャッシュ入力も$I_j$へ含める．
+継続だけの値も併記し，初回入力の削減量を全体の節約量へ転記しない．
+API，時間，実験用復元，評価，推論器のロード・常駐は別記する．
+評価器単独の秒数は表示比較では未計測で，後述の完了診断では計測した．
+表示比較における推論器稼働時間と継続・復元時間との差を，評価器だけの時間とはしない．
+
+\section{表示比較の方法}
+\input{papers/202610_letter/p55_methods_component.tex}
+
+\subsection{対象と入力の照合}
+AppWorld\cite{appworld}の写真整理，電気代精算，返金，曲一覧の書出を用いる．
+過去の失敗と入力計数を見た後の方式探索であり，独立の確認評価ではない．
+未閲覧の12シナリオは使わず，有利な課題への交換もしない．
+返却，保存DB，Python出力を照合するが，プロセスのヒープや乱数状態の完全複製はしていない．
+D/Bで詳細の省略対象は課題順に７・２・３・７返却と一致し，
+Bが追加で省く一覧は１・１・０・３返却だった．
+表1に示す初回入力は，共通の予算通知と省略印を含む．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表1\quad 通知を含む初回入力token\par\smallskip
+\InventoryFirstInputs
+\end{minipage}\end{center}
+
+\subsection{採用基準と欠測}
+全12条件を評価し使用量が既知で監査に合格した場合に限り，
+DがF/B双方の成功を失わず，合計$T_{\rm work}$がFより小さくB以下なら，開発上の採用候補とする．
+一覧の追加価値を支持するには，入力の異なる課題でD成功・B失敗の対も必要とする．
+同数成功を統計的な非劣性とはみなさない．
+使用量不明はゼロや上限で埋めず，既知分と不明生成数を示す．
+不明がある対の正確な費用差は求めず，観測された既知分だけで判断できる範囲を記す．
+API作用，復元，実行，片付け，評価，推論器版の不一致は全体を停止する．
+結果を見てseed・条件・予算を変更せず，未実行を成功や失敗に補完しない．
+
+\section{費用と成否の全結果}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth,bb=0 0 813.6 223.2]{materials/20261023_p55/work_tokens.pdf}
+\caption{全４課題・３表示の仕事全体tokenと公式成否．共通前半を含み，縦軸は０から示す．斜線の棒は既知分のみで，さらに使用量不明の呼出しがある．}
+\end{figure*}
+\InventoryResultSummary
+表2に全予定条件を示す．Dは写真で成功した一方，
+全４課題の既知費用が増えたため，この比較は品質を保った総費用削減を支持しない．
+また，未達で早く止まった条件を効率のよい成功とは数えない．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表2\quad 全12予定条件の成否と費用\par\smallskip
+\InventoryAllCells
+\par\smallskip\footnotesize $+?$は別に使用量不明の１生成があることを示す．
+\end{minipage}\end{center}
+
+\subsection{入力短縮と仕事全体の費用}
+\InventoryContrasts
+表3は生成，API，継続時間の合計である．
+Dの初回入力はFより全４課題で短いが，継続生成は22回から26回へ増えた．
+返金では全表示と詳細省略がともに成功した一方，
+初回入力15,746／14,964 tokenに対し，継続費用は32,209／63,735 tokenだった．
+この１回ずつの実行では，初回短縮と終了までの費用が逆方向だった．
+後続の行動も異なるため，各段階の独立した因果効果の和には分解しない．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表3\quad 全４課題合計の費用と実行量\par\smallskip
+\InventoryTotals
+\end{minipage}\end{center}
+
+継続APIは実際に送信した要求数であり，拒否され送信しなかった要求や原文参照は別に記録する．
+API回数の減少だけで不要取得の削減とは判断せず，完了した処理と合わせて読む．
+本比較の推論器稼働全体は4,112.859秒で，復元・評価等の実験費用も生じた．
+
+\section{成否差と終了手続きの診断}
+写真整理のF/Dは各42件の移動要求を送り，非supervisorアプリの全保存ファイルが一致した．
+しかし公式成否は未達／成功で，完了通知の要求は０／１件だった．
+\input{papers/202610_letter/completion_diagnostic.tex}
+この診断で，写真F/Dの成否差を写真整理そのものの改善と解釈する根拠はなくなる．
+一方，Bは通知だけでは成功せず，完了宣言を一律に足せばよいともいえない．
+自動で通知を送るには，要求した仕事が済んだと判断する別の公開条件が必要である．
+
+\section{解釈の限界}
+既知４課題，単一モデル，各条件１回の開発比較であり，
+追加診断は同じ写真課題の事後介入である．診断４条件を独立４課題として数えない．
+seedと初回キャッシュ条件をそろえても，後続の実行経路の再現性は保証されない．
+返金D/Bの基礎入力は同じだが，後続の残時間通知などが異なるため，差を一覧の効果に帰属させない．
+\InventoryVariation
+
+一覧を省いたBでもAPI名は過去のコード等に残る．
+写真では一覧26名中８名，電気代では26名中10名が文字列として入力中に存在した．
+これは意味理解を測るものではなく，表示省略と情報の完全な喪失を区別するための照合である．
+省略対象も出自の確かな古い説明だけで，混合出力，最新応答，不確かな表示は残した．
+任意の履歴やモデルに同じ費用・成否の関係を保証するものではない．
+
+\section{結論}
+API説明の履歴省略を，全予定条件の仕事全体の費用と終了手続きから調べた．
+詳細省略は初回入力を短くしたが，全４課題の既知費用だけでも全表示を上回った．
+また，写真整理では作業状態を保った完了通知により成否が変わった．
+この局所比較では，短い入力や成功数の増加だけを費用・実作業品質の改善根拠にはできない．
+必要情報と品質を守る制御を評価する際には，
+終了までの費用と，作業状態・終了手続きへの介入を対応させる必要がある．
+
+\begin{thebibliography}{9}\small
+\bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
+\bibitem{interaction} S. Liu, ``What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics,'' arXiv:2608.16370v1, 2026.
+\bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
+\bibitem{cave} M. Ran et al., ``CaveAgent: Transforming LLMs into Stateful Runtime Operators,'' arXiv:2601.01569v4, 2026.
+\bibitem{hdgist} Y. Jiang, M. Del Vecchio, M. Bansal, and A. Johannsen, ``Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage,'' Findings of EACL, pp.2162--2174, 2024.
+\bibitem{toolsearch} Anthropic, ``Introducing advanced tool use on the Claude Developer Platform,'' Nov. 24, 2025.
+\bibitem{disclosure} Y. He, Y. Zhao, J. Wang, and H. Chen, ``Is Progressive Disclosure All You Need for Long-Context Agents?,'' arXiv:2607.17598v1, 2026.
+\bibitem{evidence} K. Zhang et al., ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
+\bibitem{appworld} H. Trivedi et al., ``AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents,'' ACL, pp.16022--16076, 2024.
+\end{thebibliography}
+\end{document}
