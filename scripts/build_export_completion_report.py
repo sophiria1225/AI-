@@ -49,7 +49,7 @@ def build(output):
     strict = equality(pair.get('same_entire_executed_model_prefix'))
     events = equality(pair.get('same_prefix_events')); spans = equality(pair.get('same_prefix_spans'))
     slides = [
-        dict(cover=True, title='書出しと退会を残した通常終了制御を<br>同じ条件の仕事全体で比較する'),
+        dict(cover=True, title='CSV書出し課題の通常終了制御を<br>同じ条件の仕事全体で比較する'),
         dict(cover=False, title='新しい通常対照と終了制御：全２条件',
             body='<p class="lead">既知CSV１課題・各１回。初期状態、案内、ツール、予算、モデルをそろえる。</p>'
             '<table><tr><th>条件</th><th>公式成否</th><th>全体token</th><th>生成</th><th>API</th><th>使用量不明</th></tr>'

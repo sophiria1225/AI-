@@ -136,6 +136,13 @@ def write_control_component():
 
 def build(tex_bin, output):
     locked, actual = evidence_checks()
+    bibliography_report = read(ROOT / 'reports/letter_bibliography_check_20261023.json')
+    tex = (PAPER / f'{NAME}.tex').read_text()
+    bibliography = tex.split(r'\begin{thebibliography}', 1)[1].split(r'\end{thebibliography}', 1)[0]
+    if (hashlib.sha256(bibliography.encode()).hexdigest() != bibliography_report['bibliography_sha256']
+            or re.findall(r'\\bibitem\{([^}]+)\}', bibliography) != [r['key'] for r in bibliography_report['entries']]
+            or not bibliography_report['all_printed_entries_checked']):
+        raise ValueError('printed bibliography differs from the manually verified primary sources')
     write_control_component()
     ja = (PAPER / 'cost_completion_abstract_ja.txt').read_text().strip()
     en = (PAPER / 'cost_completion_abstract_en.txt').read_text().strip()
@@ -189,6 +196,7 @@ def build(tex_bin, output):
         'docs/termination_control_overlap_20261023.md',
         'papers/202610_letter/ordinary_completion_component.tex', 'docs/P66_findings.md',
         'docs/ordinary_completion_literature_20261023.md',
+        'reports/letter_bibliography_check_20261023.json',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},
@@ -219,6 +227,7 @@ def build(tex_bin, output):
             'record': 'docs/termination_control_overlap_20261023.md',
         },
         'additional_termination_cost_review': 'docs/ordinary_completion_literature_20261023.md',
+        'bibliography_verification': 'reports/letter_bibliography_check_20261023.json',
     }
     (PAPER / f'{NAME}.pdf').write_bytes((output / f'{NAME}.pdf').read_bytes())
     save(old_layout, layout)

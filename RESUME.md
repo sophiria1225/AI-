@@ -1,6 +1,8 @@
 # アカウント変更後の研究引き継ぎ
 
-**2026年10月22日、アカウント変更後のユーザー指示で再開済み。** 停止するまで実装を継続する指示を受け、P47は18:12 JSTに事前規則で終了し、９評価・１未評価・２未実行を全件監査した。選択表示は写真の成功を失い、採用しない。モデルは正常停止、研究の実装は継続中。独自の中核と品質を保った総費用削減は未確立で、10月23日の主張・主要結果・あらましへ向けて次の具体的規則を絞る。[再開の根拠と次の計測](docs/resumption_20261022.md)／[現在の状態](docs/current_status.md)。14:27 JSTの停止記録、モデル・データ・原記録は保存した。以下の会話例は停止時に準備した引き継ぎ手順で、再度の許可を求める意味ではない。
+**アカウント変更後のユーザー指示で再開済み。** その後も「次のメッセージまで実装を続ける」と指示され、研究・実装・資料整備を継続している。再度の許可は不要で、停止指示が届いたら直ちに従う。10月23日の主張・主要結果・あらまし、31日のレター投稿完了を目指す。[再開の根拠](docs/resumption_20261022.md)／[現在の状態](docs/current_status.md)／[次の作業](docs/next_actions.md)。14:27 JSTの停止記録、モデル・データ・原記録は保存している。
+
+2026年10月23日更新。P66は既知写真２条件の成功と最終保存状態を保った局所的な費用減少、P67はCSV３記録の公開証拠点検を終了。現在は[P68](docs/experiments/P68_export_completion.md)の固定２条件を実行中。新提案の中核と一般的な品質維持は未確立。現在のブランチ・稼働状態を確認し、古い「次の作業」から終了済み実験を再開しない。以下は別会話へ引き継ぐための案内で、現在の実行を止める指示ではない。
 
 ## 同じMacで開くフォルダ
 
@@ -20,13 +22,14 @@ GitHubで変更してよいのは sophiria1225/AI- とその専用Projectだけ�
 過去の実験を上書きせず、新規性・性能維持がまだ未確立であることを引き継いで。
 ```
 
-その後、実験も再開したい場合は「確認できたら実装・実験を再開して」と伝える。
+再開の可否はユーザーの最新指示に従う。この会話では既に継続を許可されている。
 
 ## 最初に読むもの
 
-1. [詳しい引き継ぎ](docs/handoff_20261022_account_switch.md)：目的、期限、実装、結果、未完了、再開手順。
-2. [現在の状態](docs/current_status.md)／[ユーザーと確認した研究目的](docs/research_objective_20261022.md)。
-3. [最新P47の結果](docs/P47_findings.md)／[判断理由の記録](docs/decision_log.md)。
-4. [GitHub Project](https://github.com/users/sophiria1225/projects/1)／[最新の資料PDF](materials/20261022_p47/AI_harness_contract_feedback_20261022.pdf)。
+1. [現在の状態](docs/current_status.md)／[次の作業](docs/next_actions.md)／[金曜の判断表](docs/letter_friday_decisions_20261022.md)。
+2. [ユーザーと確認した研究目的](docs/research_objective_20261022.md)／[原稿と未完了事項](papers/202610_letter/README.md)。
+3. [P66の結果](docs/P66_findings.md)／[P67の結果](docs/P67_findings.md)／[P68の資料](materials/20261023_p68/README.md)。
+4. [GitHub Project](https://github.com/users/sophiria1225/projects/1)／[現在のREADME](README.md)。
+5. [10月22日停止時の詳しい引き継ぎ](docs/handoff_20261022_account_switch.md)と[以前の全経緯](README_before_P68_20261023.md)は履歴として読む。
 
 `/init`で新しい方針を作り直す必要はない。既存のAGENTS.mdとこの引き継ぎを読むことを優先する。アカウントをまたいだ同一会話の自動移行は確認できていないため、それを前提にしない。
