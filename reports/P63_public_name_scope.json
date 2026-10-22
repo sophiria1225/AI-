@@ -1,0 +1,691 @@
+{
+  "phase": "P63_public_name_scope",
+  "selection": "all four known P29 Python baselines and all twelve P55 continuations with their repeated prefixes",
+  "rows": [
+    {
+      "run_id": "P29_01_CODE",
+      "task_id": "34d9492_1",
+      "source_sha256": {
+        "spans.json": "6caff222196df4f422143528a863de36bdce3516cabedeacde1b304c66224ff1",
+        "events.json": "613235e6b7ea42396a755c123afc326be21e852c502c7da9cd8dfd60cff49396",
+        "provenance.json": "240a3c6f603103e99b9b39b4fde8417a8c49e1c703e4b06e56dca64fd132d3eb"
+      },
+      "event_visits": 130,
+      "counts": {
+        "python_api_events": 109,
+        "already_argument_valid": 107,
+        "outer_model_tool_events": 21,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "whole_task",
+          "call_id": "call_003",
+          "span_id": "s10",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "whole_task",
+          "call_id": "call_013",
+          "span_id": "s30",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P29_02_CODE",
+      "task_id": "3c13f5a_1",
+      "source_sha256": {
+        "spans.json": "cc4f3678b780d253a77a66098a81dbfcd0f0156d8ba2dfeb5f6eeeeabb6a48cd",
+        "events.json": "c30f4d6966d0dc44f42eb1e394b5aa08db5cc5833cb2d873028ff2fa2064a71f",
+        "provenance.json": "c280b642796931ca08548757b8ad765162536b2bb9be1001a69793e97be89e24"
+      },
+      "event_visits": 47,
+      "counts": {
+        "python_api_events": 26,
+        "already_argument_valid": 24,
+        "outer_model_tool_events": 21,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "whole_task",
+          "call_id": "call_007",
+          "span_id": "s14",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "whole_task",
+          "call_id": "call_010",
+          "span_id": "s21",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P29_03_CODE",
+      "task_id": "60d0b5b_1",
+      "source_sha256": {
+        "spans.json": "a9e3b64ba6881290be5d8a1d9f400c73cccd95434587dac48374906e2b39578f",
+        "events.json": "6a919c7947e0ad83938f412e73b7d0609e18d45aad57c05a54441f84e244d73c",
+        "provenance.json": "649d05f0e1b9c0c2c982038763f87169aca154e2b27f0c8500bd1f992d3090cd"
+      },
+      "event_visits": 26,
+      "counts": {
+        "python_api_events": 16,
+        "already_argument_valid": 15,
+        "outer_model_tool_events": 10,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "whole_task",
+          "call_id": "call_004",
+          "span_id": "s10",
+          "api": "venmo__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P29_04_CODE",
+      "task_id": "6104387_1",
+      "source_sha256": {
+        "spans.json": "147dc0a3950d6daf88ffc6cf3c70197fbffeca8000ba6148aa40ab1e04037c17",
+        "events.json": "1aa3558e2f99bf62e40cd6033900540d2a98b44bf96786cc59f814dc8b3fb951",
+        "provenance.json": "44f1e303d36523a3e847fa426e53372ce41d1e5a24811cf2b80958170a6d7fe2"
+      },
+      "event_visits": 93,
+      "counts": {
+        "python_api_events": 82,
+        "already_argument_valid": 81,
+        "outer_model_tool_events": 11,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "whole_task",
+          "call_id": "call_004",
+          "span_id": "s14",
+          "api": "spotify__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_01_FULL_KEEP",
+      "task_id": "34d9492_1",
+      "source_sha256": {
+        "spans.json": "c567e7a1fa8f9b832291242cbde4f3072a82eb313d3de21615d57b0ff619a193",
+        "events.json": "318d3fad7cf1444a71265ba7cfe822b2b975100ed99272c0b58dd3af0eae384d",
+        "prefix_events.json": "5bbf2de80cfd5b77f42db0db0a5b30f055a55cc6173f8549b5ddaa4bfc6fa48f",
+        "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+      },
+      "event_visits": 129,
+      "counts": {
+        "python_api_events": 113,
+        "already_argument_valid": 112,
+        "outer_model_tool_events": 16,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_003",
+          "span_id": "s10",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_01_DETAILS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "source_sha256": {
+        "spans.json": "1bb73165644db471db0b70d03577189baf7439b563b11980dd78225cae849d98",
+        "events.json": "6d4590685d09141e5c115d8362ed235e935e7e6c9da802e3ee16e34f3a60858f",
+        "prefix_events.json": "5bbf2de80cfd5b77f42db0db0a5b30f055a55cc6173f8549b5ddaa4bfc6fa48f",
+        "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+      },
+      "event_visits": 117,
+      "counts": {
+        "python_api_events": 103,
+        "already_argument_valid": 101,
+        "outer_model_tool_events": 14,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_003",
+          "span_id": "s10",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_003",
+          "span_id": "s69",
+          "api": "file_system__move_file",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "source_sha256": {
+        "spans.json": "29d5649f9225af70a9e440dd98d7c1bbf0c50e4c8c1f7cb6ee35039bdbf7e89c",
+        "events.json": "ba2a109ab20870fee38e627b834f118de1160b65b8f688792883fb0a6b8151be",
+        "prefix_events.json": "5bbf2de80cfd5b77f42db0db0a5b30f055a55cc6173f8549b5ddaa4bfc6fa48f",
+        "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+      },
+      "event_visits": 82,
+      "counts": {
+        "python_api_events": 63,
+        "already_argument_valid": 60,
+        "outer_model_tool_events": 19,
+        "legacy_rejected_requests": 3,
+        "named_argument_valid_requests": 2
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_003",
+          "span_id": "s10",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_002",
+          "span_id": "s24",
+          "api": "phone__login",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_005",
+          "span_id": "s30",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "source_sha256": {
+        "spans.json": "53b773be8235f1e556fd520dc3d03dc5e30754a0139d8e49145fa17e46d72bdc",
+        "events.json": "1df5cec844278bd6a3fbb1ed65d39ce148f5a07e96bfa5b3c0878a4f569b2c89",
+        "prefix_events.json": "d0e615c4cce92d114d872eea7a216a2dd8c315f72b549ed36d6974fa5f29d0a8",
+        "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+      },
+      "event_visits": 36,
+      "counts": {
+        "python_api_events": 19,
+        "already_argument_valid": 17,
+        "outer_model_tool_events": 17,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_007",
+          "span_id": "s14",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_003",
+          "span_id": "s22",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_02_DETAILS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "source_sha256": {
+        "spans.json": "44dc9e00ec10fbe69d651a3c0758d41e5c876c4eacdd91611fb851cf630423d4",
+        "events.json": "e20a1e50bf72ea754b3a93e97a453259830b43712c1a7e6a09d900a2d253e351",
+        "prefix_events.json": "d0e615c4cce92d114d872eea7a216a2dd8c315f72b549ed36d6974fa5f29d0a8",
+        "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+      },
+      "event_visits": 36,
+      "counts": {
+        "python_api_events": 19,
+        "already_argument_valid": 18,
+        "outer_model_tool_events": 17,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_007",
+          "span_id": "s14",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "source_sha256": {
+        "spans.json": "d51fe8642a18cacd821319aeb0d2831769587a7697ea02391cb7e6d6fc383a36",
+        "events.json": "2e710a1780147544b03d1501d9b77e9cec8f6683aab5da03901b7c92addb2984",
+        "prefix_events.json": "d0e615c4cce92d114d872eea7a216a2dd8c315f72b549ed36d6974fa5f29d0a8",
+        "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+      },
+      "event_visits": 35,
+      "counts": {
+        "python_api_events": 18,
+        "already_argument_valid": 16,
+        "outer_model_tool_events": 17,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 1
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_007",
+          "span_id": "s14",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": false,
+          "eligible_under_named_argument_check": true,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_003",
+          "span_id": "s22",
+          "api": "phone__get_current_date_and_time",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_03_FULL_KEEP",
+      "task_id": "60d0b5b_1",
+      "source_sha256": {
+        "spans.json": "dc1115be18a664bccd4430e906a43e45c49816d199e383ce0af68725b5027a39",
+        "events.json": "5e5f654640f6cddd566dd7edb838ed4bcd16e9816093fc6823008e9a3026057b",
+        "prefix_events.json": "7933aae718764eb4b00837d507a59b4551c651eb87e4d6f1aaa281f978783627",
+        "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+      },
+      "event_visits": 26,
+      "counts": {
+        "python_api_events": 16,
+        "already_argument_valid": 15,
+        "outer_model_tool_events": 10,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s10",
+          "api": "venmo__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_03_DETAILS_OMITTED_KEEP",
+      "task_id": "60d0b5b_1",
+      "source_sha256": {
+        "spans.json": "257ab98fe279e5fda317859e3fe5076ce9b73ea38195a69493655902ccc13ea4",
+        "events.json": "6f2bc83c7ef62cbfb8fb09438a740a202ac0b6a98a2ea85325d72afc2e0d4e0a",
+        "prefix_events.json": "7933aae718764eb4b00837d507a59b4551c651eb87e4d6f1aaa281f978783627",
+        "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+      },
+      "event_visits": 30,
+      "counts": {
+        "python_api_events": 18,
+        "already_argument_valid": 16,
+        "outer_model_tool_events": 12,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s10",
+          "api": "venmo__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_001",
+          "span_id": "s23",
+          "api": "venmo__create_transaction",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_03_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "60d0b5b_1",
+      "source_sha256": {
+        "spans.json": "ed27deaa52456792ebd96ef1cc22ebae7ac7e599685828ed47c1899cc3715f0b",
+        "events.json": "eb12f356a741e6d3be7edd6623c603a21c4e1328202ea201f4bd0db467a92655",
+        "prefix_events.json": "7933aae718764eb4b00837d507a59b4551c651eb87e4d6f1aaa281f978783627",
+        "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+      },
+      "event_visits": 31,
+      "counts": {
+        "python_api_events": 19,
+        "already_argument_valid": 17,
+        "outer_model_tool_events": 12,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s10",
+          "api": "venmo__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_001",
+          "span_id": "s23",
+          "api": "venmo__create_transaction",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "source_sha256": {
+        "spans.json": "1811c6f453e86a0ef1cc4d72f6352d7242795bf3b5411c6541e13a9db51cca10",
+        "events.json": "5bde269ccf99c4958ff2506c497c6e17571d035157e3bb71f0102824bc0d87ad",
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+      },
+      "event_visits": 92,
+      "counts": {
+        "python_api_events": 81,
+        "already_argument_valid": 80,
+        "outer_model_tool_events": 11,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s14",
+          "api": "spotify__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_04_DETAILS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "source_sha256": {
+        "spans.json": "2d089c90008ecb0d7fa71c5f3f6d55a32133e6c381aaeb8cbdf298cafd025bc1",
+        "events.json": "672887db5eb2453492b840d94f9c182320993816fcbe93bcf40ec913115ea995",
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+      },
+      "event_visits": 94,
+      "counts": {
+        "python_api_events": 80,
+        "already_argument_valid": 78,
+        "outer_model_tool_events": 14,
+        "legacy_rejected_requests": 2,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s14",
+          "api": "spotify__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        },
+        {
+          "boundary": "continuation",
+          "call_id": "call_003",
+          "span_id": "s30",
+          "api": "spotify__show_song",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    },
+    {
+      "run_id": "P55_04_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "source_sha256": {
+        "spans.json": "14c714ae5c20ab8eaa852422559bf6c4561091a9286d89c6bd231d0622422338",
+        "events.json": "a7cf83d43ae26b44e8926d49e9c140be8a3cd0e539b48fbc6be8333d46b41af2",
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+      },
+      "event_visits": 95,
+      "counts": {
+        "python_api_events": 82,
+        "already_argument_valid": 81,
+        "outer_model_tool_events": 13,
+        "legacy_rejected_requests": 1,
+        "named_argument_valid_requests": 0
+      },
+      "rejected_request_checks": [
+        {
+          "boundary": "prefix",
+          "call_id": "call_004",
+          "span_id": "s14",
+          "api": "spotify__login",
+          "public_name_known": true,
+          "definition_exposed": true,
+          "eligible_under_named_argument_check": false,
+          "original_request_sent": false,
+          "is_execution_or_success_prediction": false
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "P29": {
+      "recorded_runs": 4,
+      "event_visits": 296,
+      "python_api_events": 233,
+      "already_argument_valid": 227,
+      "outer_model_tool_events": 63,
+      "legacy_rejected_requests": 6,
+      "named_argument_valid_requests": 2,
+      "newly_argument_valid_api_counts": {
+        "phone__get_current_date_and_time": 2
+      }
+    },
+    "P55": {
+      "recorded_runs": 12,
+      "event_visits": 803,
+      "python_api_events": 631,
+      "already_argument_valid": 611,
+      "outer_model_tool_events": 172,
+      "legacy_rejected_requests": 20,
+      "named_argument_valid_requests": 7,
+      "newly_argument_valid_api_counts": {
+        "phone__get_current_date_and_time": 6,
+        "phone__login": 1
+      }
+    }
+  },
+  "distinct_known_tasks": 4,
+  "source_hashes": {
+    "configs/P50_baseline_repair_census_v01.json": "af3cc57354f478e1d113619adb2ff5d8aa42fc827763727576722f820fcd5c1f",
+    "reports/P55_comparison.json": "23a86f5aba2a2cdb1d6184980fda3194bb496df1918b2d30ca1981489767150a"
+  },
+  "public_schema_hashes": {
+    "api_docs/function_calling/amazon.json": "641103cdbfa64da0832bf73b7db4e846bcf99f649bf10641d508d2e006a67f5b",
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/function_calling/api_docs.json": "5b08688dd5b4dec208f4251b5c33269b3049517c7c4451fd98d49c67477e291e",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/function_calling/file_system.json": "68b087cb4c15677e87e772448a28eca85e01ebf4fdfeec313696d0778f068ad5",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/function_calling/gmail.json": "4a0ee65205fb5e5363d24f7e9e5ba8884063b23f2a28e5d7b7da4829e3974553",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/function_calling/phone.json": "afd6a33ebf9ea91aeb738f840bc607e5af57b86c944f96c9d871467ef6d225a9",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/function_calling/simple_note.json": "53414bc70fbece5ba2ce5f1e6f5a50a41084704a410ce45597130350ab773a3f",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/function_calling/splitwise.json": "d52b852f982c9a4ccd1eb453a5cb035af8128875eab9fa85b0fbbe8606cc16b2",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/function_calling/spotify.json": "7194c0cc18a48e479f65192ba732e098174498ccc904cdb2dfa4d371e365d9c3",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/function_calling/supervisor.json": "e9b6c983f7b92686d530349e7d4d7afb8a3332e24ff2219789e6380d8c136ce9",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/function_calling/todoist.json": "88b67e50dec1f6ae8dc3ac82a5a1a0d9ec91e11ea004fe9bdeeca0572de90086",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/function_calling/venmo.json": "dc69706b9c8ccc59fa8e28740abe36c35d3fc2cf3dca37cdd501ad413f37f615",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "installed_public_implementation": {
+    "package_version": "0.1.3.post1",
+    "files": {
+      "collections/apis.py": "597aa608dd2447b8e77805490baa0289d549fb79c6d3d2b382637713e5a4eefe",
+      "environment.py": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9"
+    },
+    "read_scope": "ApiCollection.load binds permitted public names on construction; environment initializes this collection. No hidden tests or task databases."
+  },
+  "inspector_sha256": "a66fcfbf2fd7124d3f98c733cc39e2ae57dadd7bd11f6d5758b5124e3be5c12d",
+  "catalog_sha256": "a272513646f59a976720d585e7ca71fe65284a1d8568aa67276d7196dc512926",
+  "wall_seconds": 1.2428537090017926,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "program_reexecutions": 0,
+  "reserved_scenarios_read": 0,
+  "old_native_policy_changed": false,
+  "old_python_policy_changed": false,
+  "measured_savings": null,
+  "novel_method_claim": false,
+  "limits": [
+    "Fixed recorded requests only; newly accepted actions are not executed or predicted successful.",
+    "P55 repeats P29 source prefixes; event visits are not distinct actual requests or independent tasks.",
+    "Public metadata visibility remains unchanged; named admission does not provide missing arguments or credentials.",
+    "The environment still validates required parameters, types, authorization, and task-specific app availability.",
+    "This is an opt-in ordinary comparator, not proof of task-quality improvement or token savings."
+  ]
+}
