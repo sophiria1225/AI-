@@ -1,0 +1,206 @@
+{
+  "phase": "P59",
+  "status": "complete",
+  "kind": "posthoc_ordinary_membership_scope",
+  "selection": "Largest known whole-work token cost among all six already completed P24 development trials.",
+  "six_original_trials": [
+    {
+      "run_id": "P24_01_GUIDED",
+      "task_id": "692c77d_1",
+      "model_calls": 9,
+      "known_total_tokens": 177938,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "P24_02_GUIDED",
+      "task_id": "6ea6792_1",
+      "model_calls": 15,
+      "known_total_tokens": 383832,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "P24_03_GUIDED",
+      "task_id": "76f2c72_1",
+      "model_calls": 10,
+      "known_total_tokens": 115774,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "P24_04_GUIDED",
+      "task_id": "771d8fc_1",
+      "model_calls": 7,
+      "known_total_tokens": 75709,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "P24_05_GUIDED",
+      "task_id": "7d7fbf6_1",
+      "model_calls": 10,
+      "known_total_tokens": 95049,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "P24_06_GUIDED",
+      "task_id": "82e2fac_1",
+      "model_calls": 8,
+      "known_total_tokens": 170479,
+      "unknown_usage_calls": 0
+    }
+  ],
+  "selected_run": "P24_02_GUIDED",
+  "api_counts": {
+    "api_docs__show_api_descriptions": 2,
+    "phone__login": 1,
+    "phone__search_contacts": 8,
+    "phone__show_contact_relationships": 2,
+    "supervisor__complete_task": 1,
+    "supervisor__show_account_passwords": 1,
+    "supervisor__show_active_task": 1,
+    "supervisor__show_profile": 1,
+    "venmo__approve_payment_request": 10,
+    "venmo__login": 1,
+    "venmo__show_payment_cards": 1,
+    "venmo__show_received_payment_requests": 7,
+    "venmo__show_venmo_balance": 1
+  },
+  "relationship_pages": [
+    {
+      "span_id": "s11",
+      "relationship": "roommate",
+      "page_index": 0,
+      "page_limit": 20,
+      "returned_rows": 3,
+      "first_page_under_limit": true,
+      "rows_contain_requested_relationship": true
+    },
+    {
+      "span_id": "s12",
+      "relationship": "coworker",
+      "page_index": 0,
+      "page_limit": 20,
+      "returned_rows": 8,
+      "first_page_under_limit": true,
+      "rows_contain_requested_relationship": true
+    }
+  ],
+  "observed_relationship_rows": 11,
+  "observed_unique_member_emails": 11,
+  "pending_pages": [
+    {
+      "page_index": 0,
+      "returned_rows": 5
+    },
+    {
+      "page_index": 1,
+      "returned_rows": 5
+    },
+    {
+      "page_index": 2,
+      "returned_rows": 5
+    },
+    {
+      "page_index": 3,
+      "returned_rows": 5
+    },
+    {
+      "page_index": 4,
+      "returned_rows": 5
+    },
+    {
+      "page_index": 5,
+      "returned_rows": 1
+    },
+    {
+      "page_index": 6,
+      "returned_rows": 0
+    }
+  ],
+  "observed_pending_requests": 26,
+  "ordinary_join_selected": 10,
+  "observed_approval_requests": 10,
+  "observed_unique_approval_ids": 10,
+  "ordinary_join_matches_observed_approval_ids": true,
+  "later_contact_searches": [
+    {
+      "span_id": "s21",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    },
+    {
+      "span_id": "s22",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    },
+    {
+      "span_id": "s23",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    },
+    {
+      "span_id": "s24",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    },
+    {
+      "span_id": "s25",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    },
+    {
+      "span_id": "s26",
+      "model_call": "call_013",
+      "after_observed_join_inputs": true,
+      "returned_rows": 20,
+      "rows_exactly_in_prior_relationship_results": 8,
+      "rows_with_ids_absent_from_prior_relationship_results": 12,
+      "all_returned_rows_exactly_available_before": false
+    }
+  ],
+  "later_contact_response_rows": 120,
+  "later_contact_unique_ids": 22,
+  "source_sha256": {
+    "reports/P24_guidance_baseline_summary.json": "e23c2d6e79be8dcf9f43204f01a8a6ca88860a4f2cb52155d88558f3c6592724",
+    "reports/P24_02_GUIDED_execution_audit.json": "22e448d41c807ef7cf047d939a18ec52e42e4adc19a0b59d2a33ddb320f115b7",
+    "events.json": "1f20c53140bba44433111c01e88f4eae756db16dfe0f1d739af3a4f3d2760a8c",
+    "spans.json": "5eabacf44239dd6308ddfc9012bfe1b9cdc0d1b966373ee61a0bb3130a277041",
+    "plan.json": "a8af6dbd487d630c6d9eb412795326fcac12c5cd2a23a880cbcf2661ec10a0ed",
+    "provenance.json": "3a6e340385b314550c8ccf2731de591249952755dfb4d3ce8e9897abf939f7a6",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "model_calls": 0,
+  "tokenizer_requests": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "database_reads": 0,
+  "reserved_scenarios_read": 0,
+  "script_sha256": "77d4e276ccb63caf792190fa2b6ab4e757e687e313dd28ba150dbdf3ba9588ac",
+  "limits": [
+    "The analyst supplies the membership predicate and key; this is not autonomous requirement interpretation.",
+    "A short first page is observed; population completeness and absence of external changes are assumptions, not new guarantees.",
+    "Matching observed approval IDs does not prove all task requirements or an independent quality outcome.",
+    "A membership answer is not an equivalent replacement for the full contact search response.",
+    "No skipped-query execution, LLM token saving, safe online filter or novel method has been evaluated."
+  ],
+  "wall_seconds": 0.002781499999400694
+}
