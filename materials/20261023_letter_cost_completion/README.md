@@ -2,7 +2,7 @@
 
 - [２段組４ページPDF](../../papers/202610_letter/candidate_cost_completion.pdf)
 - [TeX本文](../../papers/202610_letter/candidate_cost_completion.tex)
-- [和文あらまし104字](../../papers/202610_letter/cost_completion_abstract_ja.txt)／[英文43語](../../papers/202610_letter/cost_completion_abstract_en.txt)
+- [和文あらまし111字](../../papers/202610_letter/cost_completion_abstract_ja.txt)／[英文45語](../../papers/202610_letter/cost_completion_abstract_en.txt)
 - [主張・根拠・先行研究との差](../../docs/letter_claim_scope_20261023.md)
 - [出典・数値照合](../../papers/202610_letter/cost_completion_source_map.json)／[描画記録](../../papers/202610_letter/cost_completion_layout.json)
 
@@ -18,4 +18,6 @@ P62/P63の点検を受け、文書取得前の公開名を拒否する接続条�
 
 本文と別の通常基準比較P64/P65は[５枚の結果資料](../20261023_p64/README.md)へ保存した。公開名アクセスの合計費用削減はなく、写真の公開根拠がそろった後続費用も、まだ節約額とはしない。その後[P66の通常終了制御](../20261023_p66/README.md)の全２条件が終了し、成功・最終13保存ファイルを保って全体token30.1％／26.0％減を観測した。本文第７節・表５へ反映し、呼出しIDによる全文一致の不成立と既知１課題の限界も記載した。主表の条件・独立課題数には合算しない。
 
-P66反映前の[PDF](../../papers/202610_letter/candidate_cost_completion_before_P66_20261023.pdf)とTeX・出典・あらましを保存。表２と重複するグラフは[元のP55資料](../20261023_p55/README.md)へ保持し、本文は全件表で４ページに収めた。和文104字・英文43語、全４頁目視。P67のCSV内容・退会順序の読取点検は[別資料](../20261023_p67/README.md)にまとめた。
+P66反映前の[PDF](../../papers/202610_letter/candidate_cost_completion_before_P66_20261023.pdf)とTeX・出典・あらましを保存。表２と重複するグラフは[元のP55資料](../20261023_p55/README.md)へ保持し、本文は全件表で４ページに収めた。和文104字・英文45語、全４頁目視。P67のCSV内容・退会順序の読取点検は[別資料](../20261023_p67/README.md)にまとめた。
+
+P68の全２条件はAPI上限で未達、各219,126 tokenで削減なし。この結果を写真P66の改善と並べ、本文・あらましへ反映した。[CSVの全結果](../../docs/P68_findings.md)。引用13件の書誌を原典照合済み。全４頁目視、はみ出し・未解決引用０。公式様式と著者情報、採録に足る中心貢献は未確定。

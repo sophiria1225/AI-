@@ -16,27 +16,30 @@
     "configs/P66_ordinary_completion_v01.json": "c0320ff4f5d0b594b5afe9e95654167693dfca4ca04a02d6796667051aa66dba",
     "reports/P66_ordinary_completion.json": "5e38fab2a658da64ea47d63cef936a2a027ef1f35d5fd93e9c5638ca6172eaaa",
     "reports/P66_completion_audit.json": "f8864e42c0b627f6ffc5dc10636c78573050236beb2b1811115c1248030ca990",
-    "reports/P66_identity_differences.json": "8ac7c2f1914924d98151f7bcc857fdc335ee91f79a7999104fa65654964b6d27"
+    "reports/P66_identity_differences.json": "8ac7c2f1914924d98151f7bcc857fdc335ee91f79a7999104fa65654964b6d27",
+    "reports/P68_export_completion.json": "c42a14a72c298d530d054e790aec150f2f5e0d93dc9735715ce27421fce1aba4",
+    "reports/P68_completion_audit.json": "36fc231b04efb84758c44c3969c61c0179912114ee1c3feef7c95bc74da4a980"
   },
   "rendering_sources": {
-    "papers/202610_letter/candidate_cost_completion.tex": "9c30b50951cd3f4f54b78d4be13864fb91ace8601a0d4dd9947044bcd08888ce",
+    "papers/202610_letter/candidate_cost_completion.tex": "972e111141e551a6f5c1ec2121ba8784b68be904ee27131b43382360c815f510",
     "papers/202610_letter/p55_methods_component.tex": "a738730a09d1332745b3fe26929b763edc40270408c3d078f3b8f373fead809a",
     "papers/202610_letter/inventory_tables.tex": "0861c3256b149987ffd58218fd68b42075c3db22a499f249a19d56722313a63d",
     "papers/202610_letter/completion_diagnostic.tex": "2f0d459dbdf4c590f8381aa8ff48bd9ea2dd9c648c7ee523b786c2c0b3e6a089",
-    "papers/202610_letter/cost_completion_abstract_ja.txt": "3edc27a5e29bb5d1a58ea95df7384038debf7d13930e8c38f8194883eff577e4",
-    "papers/202610_letter/cost_completion_abstract_en.txt": "36d193a5099893313a09ba1be0bdf91c1972c61d3ad1b6c7ded0937a39a97008",
+    "papers/202610_letter/cost_completion_abstract_ja.txt": "49303fff868ecf5f3cdcaa5fb678b32550fc6ac47f297839e128ae892fddf742",
+    "papers/202610_letter/cost_completion_abstract_en.txt": "4d6278177b13e4f3c6fa5c9289e606d5563a2342e02e2bb021b7a200a293a57e",
     "docs/evidence_delivery_overlap_20261023.md": "55c841bc9077817e46c6538bce4f147c2910bff60bd17290c6f733dbc170e74f",
     "docs/P62_findings.md": "9d4de1a5c3c8d0a29a5c7a48bbad5a8351b0d87099e5d190ca3f466649b67f6e",
     "docs/P63_findings.md": "15baf4c7b07eff633f18b8cfca0e2c952c083a53dc2f9661505d92c2e5202882",
     "docs/termination_control_overlap_20261023.md": "4bba4f34f3e7d28d6161f6e555ba38257c4826d8e88f774bdc8b5cde5d35cac1",
     "papers/202610_letter/ordinary_completion_component.tex": "ad9d248760ff630fa23cdb3534861cd0af233436340ba1e3631fb7078e55a099",
     "docs/P66_findings.md": "c15ed97b53f4d0570baf25c7fc397993ad737af5f8457d8bd38e5dd813871737",
-    "docs/ordinary_completion_literature_20261023.md": "64374b0eaada257cfba709089a52caafd5c4cbcf260617a956db34b7e5cf0220",
-    "reports/letter_bibliography_check_20261023.json": "7f8857b97daf4e63742a07f5f99bb767eae9b58dd848864360a77e6c8a4e51ec"
+    "docs/ordinary_completion_literature_20261023.md": "ff9a7278f22bac5fe2e75a472495e497074c1fa6e58a54a3ee98208f784c8754",
+    "reports/letter_bibliography_check_20261023.json": "7f8857b97daf4e63742a07f5f99bb767eae9b58dd848864360a77e6c8a4e51ec",
+    "docs/P68_findings.md": "dd3b993b7e094af07b109385befe16a145eaec9afd29598f1b792fa7285e0b01"
   },
   "source_lock_manifest_sha256": "59bc3b6c7ccb5088ba8133e9ea4d2e66ac4a568687ac800b41c236d7c15dd287",
-  "builder_sha256": "782b76bad85751d34d7663d5af90915e76eec096b4e6f76346c28c77b269f752",
-  "pdf_sha256": "5f2737c4937f61a63fe8bc3aed828182fec665f64c47aeff41f892585df97218",
+  "builder_sha256": "7b3fa8e04e8a068092617e5ae99bf8d5f3c91bbf3e3690b1c18746a31e0a4067",
+  "pdf_sha256": "39218bc006b8e9717a05f30c02a94091177dd9a82b584accd7a056c2668c6b03",
   "source_date_epoch": "1792677600",
   "data_checks": {
     "planned_and_evaluated_cells": 12,
@@ -150,7 +153,53 @@
       ]
     ],
     "ordinary_control_identity_criterion_changed": false,
-    "ordinary_control_server_stopped": true
+    "ordinary_control_server_stopped": true,
+    "export_audit_errors": [],
+    "export_all_evaluated": true,
+    "export_usage": [
+      16,
+      438252,
+      0,
+      160,
+      2
+    ],
+    "export_success": [
+      false,
+      false
+    ],
+    "export_tokens": [
+      219126,
+      219126
+    ],
+    "export_stop_reason": [
+      "api_request_limit",
+      "api_request_limit"
+    ],
+    "export_write_delete_calls": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "export_controller_checks_attempts": [
+      [
+        0,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "export_controller_seconds": 0.00408,
+    "export_final_database_differences": [],
+    "export_strict_prefix_equal": false,
+    "export_local_gate_met": false,
+    "export_server_stopped": true
   },
   "pages": 4,
   "visual_reviewed_pages": [
@@ -159,14 +208,16 @@
     3,
     4
   ],
-  "japanese_abstract_characters": 104,
-  "english_abstract_words": 43,
+  "japanese_abstract_characters": 111,
+  "english_abstract_words": 45,
   "all_scheduled_agent_cells": 12,
   "posthoc_replay_cases": 4,
   "independent_agent_tasks": 4,
   "separate_ordinary_completion_conditions": 2,
   "separate_ordinary_reference_conditions": 2,
   "ordinary_completion_uses_same_known_photo_task": true,
+  "separate_export_completion_conditions": 2,
+  "export_completion_uses_same_known_export_task": true,
   "official_class_used": false,
   "submission_ready": false,
   "central_contribution_confirmed": false,

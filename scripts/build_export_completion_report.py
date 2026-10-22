@@ -25,16 +25,19 @@ def build(output):
             or report['status'] not in ('complete', 'stopped')):
         raise ValueError('closed, reconciled, complete scheduled population required')
     labels = {'native': '通常native', 'controlled': '同じnative＋終了制御'}
+    stop_labels = {'api_request_limit': 'API上限', 'controller_declared_complete': '制御の完了通知',
+                   'declared_complete': '完了通知', 'token_reservation_limit': 'token予約上限'}
     comparisons = []; evidence = []; executed = []
     for row in audit['rows']:
         label = labels[row['arm']]
         if row['status'] == 'not_run':
-            comparisons.append(f'<tr><td>{label}</td><td colspan="5">未実行</td></tr>')
+            comparisons.append(f'<tr><td>{label}</td><td colspan="6">未実行</td></tr>')
             evidence.append(f'<tr><td>{label}</td><td colspan="3">未実行</td></tr>'); continue
         executed.append(row)
         tokens = f'{row["known_total_tokens"]:,}' + (' + ?' if row['unknown_usage_calls'] else '')
         comparisons.append(f'<tr><td>{label}</td><td>{outcome(row["official_success"])}</td><td>{tokens}</td>'
-            f'<td>{row["model_calls"]}</td><td>{row["api_requests"]}</td><td>{row["unknown_usage_calls"]}</td></tr>')
+            f'<td>{row["model_calls"]}</td><td>{row["api_requests"]}</td><td>{row["unknown_usage_calls"]}</td>'
+            f'<td>{html.escape(stop_labels.get(row["stop_reason"], row["stop_reason"]))}</td></tr>')
         c = row['controller']; boundary = ', '.join(c['supported_boundaries']) or ('監視なし' if row['arm'] == 'native' else '支持なし')
         evidence.append(f'<tr><td>{label}</td><td>{boundary}</td><td>{c["checks"]}</td><td>{c["completion_attempts"]}</td></tr>')
     pair = audit['comparison']; complete = pair['both_evaluated']
@@ -46,20 +49,23 @@ def build(output):
     totals = f'{audit.get("known_total_tokens", 0):,}' + (' + ?' if audit.get('unknown_usage_calls', 0) else '')
     seconds = sum(r['controller']['wall_seconds'] for r in executed)
     walls = '／'.join(f'{r["full_wall_seconds"]:.3f}' for r in executed) or 'なし'
+    mutations = '、'.join(f'{labels[r["arm"]]} {r["sent_api_counts"].get("file_system__create_file",0)}／'
+                          f'{r["sent_api_counts"].get("spotify__delete_account",0)}' for r in executed) or '未実行'
     strict = equality(pair.get('same_entire_executed_model_prefix'))
     events = equality(pair.get('same_prefix_events')); spans = equality(pair.get('same_prefix_spans'))
     slides = [
         dict(cover=True, title='CSV書出し課題の通常終了制御を<br>同じ条件の仕事全体で比較する'),
         dict(cover=False, title='新しい通常対照と終了制御：全２条件',
             body='<p class="lead">既知CSV１課題・各１回。初期状態、案内、ツール、予算、モデルをそろえる。</p>'
-            '<table><tr><th>条件</th><th>公式成否</th><th>全体token</th><th>生成</th><th>API</th><th>使用量不明</th></tr>'
+            '<table><tr><th>条件</th><th>公式成否</th><th>全体token</th><th>生成</th><th>API</th><th>不明</th><th>停止理由</th></tr>'
             + ''.join(comparisons) + f'</table><p class="small">制御あり−通常の全体token差：{delta}。<br>全入力＋全出力、cached inputを含む。未達・未評価・未実行も保持。</p>',
             takeaway=conclusion,
             notes='P25との歴史的な差ではなく、P68の２条件を比較する。P67で既知の成功・失敗を読んだ後に選択した通常制御の開発点検で、独立確認ではない。'),
         dict(cover=False, title='書出しの内容と、その後の退会を要求',
             body='<p class="lead">各応答の全操作後に確認。制御が送れるのは通常の完了通知だけ。</p>'
             '<table><tr><th>条件</th><th>支持境界</th><th>検査回数</th><th>制御の通知試行</th></tr>'
-            + ''.join(evidence) + '</table><p class="small">終端ページ→元ID集合→メタデータ→正しいCSV→退会の順序を確認。<br>不明・矛盾なら追加案内なしで継続。退会そのものはモデルが実行。</p>',
+            + ''.join(evidence) + '</table><p class="small">終端ページ→元ID集合→メタデータ→正しいCSV→退会の順序を確認。<br>不明・矛盾なら追加案内なしで継続。退会そのものはモデルが実行。<br>'
+            f'書出し／退会APIの送信数：{mutations}。</p>',
             takeaway='書出しだけで終わらせず、未来の情報で不足していた証拠を埋めない。',
             notes='P67の手書き文型と検査器を変更せず使う。同じ応答内で後続の未対応変更があれば支持しない。完了通知の失敗・作用不明時には再試行しない。'),
         dict(cover=False, title='実行した前半・最終状態・費用を照合',
