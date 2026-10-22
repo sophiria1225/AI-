@@ -1,0 +1,23 @@
+{
+  "phase": "P60",
+  "source_run": "P24_02_GUIDED",
+  "source_report": "reports/P59_membership_scope.json",
+  "source_report_sha256": "a4cdb0d4a709b185f38b9cc0420169482709ed246d488ae3a2f4ebad3ce4055d",
+  "relations": ["roommate", "coworker"],
+  "scenarios": ["no_evidence", "one_relation", "complete_union", "rows_without_terminal_evidence", "changed_epoch", "changed_principal"],
+  "expected_membership_requests_per_scenario": 26,
+  "max_wall_seconds": 60,
+  "max_rows": 4096,
+  "max_pages": 128,
+  "installed_public_source_sha256": {
+    "apps/phone/apis.py": "b32c231f29515f0c77175e6cb3bd3cd91254237545f2230eb5166a102e250338",
+    "apps/model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172",
+    "apps/api_lib.py": "573657c3db8d99def6ee92b6833fbc2fedd894be41031fe38feebab49e597485"
+  },
+  "model_calls": 0,
+  "tokenizer_requests": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "scope": "Ordinary membership reuse on previously observed data; analyst-specified predicate and explicit output contract. No full-response replacement, task quality, savings or novelty claim."
+}

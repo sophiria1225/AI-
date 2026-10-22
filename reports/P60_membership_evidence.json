@@ -1,0 +1,210 @@
+{
+  "phase": "P60",
+  "status": "complete",
+  "rows": [
+    {
+      "condition": "no_evidence",
+      "membership_requests": 26,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 26,
+      "reasons": {
+        "incomplete_union": 26
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": false,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "unknown": 26
+        },
+        "relations": 2,
+        "closed_relations": 0,
+        "retained_rows": 0,
+        "accepted_pages": 0,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    },
+    {
+      "condition": "one_relation",
+      "membership_requests": 26,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 26,
+      "reasons": {
+        "incomplete_union": 26
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": false,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "pages_attempted": 1,
+          "pages_accepted": 1,
+          "unknown": 26
+        },
+        "relations": 2,
+        "closed_relations": 1,
+        "retained_rows": 3,
+        "accepted_pages": 1,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    },
+    {
+      "condition": "complete_union",
+      "membership_requests": 26,
+      "positive": 10,
+      "negative": 16,
+      "unknown": 0,
+      "reasons": {
+        "complete_union_absence": 16,
+        "observed_witness": 10
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": true,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "pages_attempted": 2,
+          "pages_accepted": 2,
+          "negative": 16,
+          "positive": 10
+        },
+        "relations": 2,
+        "closed_relations": 2,
+        "retained_rows": 11,
+        "accepted_pages": 2,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    },
+    {
+      "condition": "rows_without_terminal_evidence",
+      "membership_requests": 26,
+      "positive": 10,
+      "negative": 0,
+      "unknown": 16,
+      "reasons": {
+        "incomplete_union": 16,
+        "observed_witness": 10
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": false,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "pages_attempted": 2,
+          "pages_accepted": 2,
+          "unknown": 16,
+          "positive": 10
+        },
+        "relations": 2,
+        "closed_relations": 0,
+        "retained_rows": 11,
+        "accepted_pages": 2,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    },
+    {
+      "condition": "changed_epoch",
+      "membership_requests": 26,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 26,
+      "reasons": {
+        "scope_mismatch": 26
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": false,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "pages_attempted": 2,
+          "pages_accepted": 2,
+          "unknown": 26
+        },
+        "relations": 2,
+        "closed_relations": 2,
+        "retained_rows": 11,
+        "accepted_pages": 2,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    },
+    {
+      "condition": "changed_principal",
+      "membership_requests": 26,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 26,
+      "reasons": {
+        "scope_mismatch": 26
+      },
+      "known_answers_disagree_with_ordinary_complete_union": 0,
+      "complete_union_compared": false,
+      "cache": {
+        "counts": {
+          "resets": 1,
+          "pages_attempted": 2,
+          "pages_accepted": 2,
+          "unknown": 26
+        },
+        "relations": 2,
+        "closed_relations": 2,
+        "retained_rows": 11,
+        "accepted_pages": 2,
+        "tainted": false,
+        "full_response_supported": false
+      }
+    }
+  ],
+  "audit_errors": [],
+  "known_tasks": 1,
+  "scenarios": 6,
+  "membership_requests": 156,
+  "ordinary_complete_union_positive": 10,
+  "ordinary_complete_union_negative": 16,
+  "git_commit": "2d6e054728dad3c208527bfc2b49ff2ba79cc382",
+  "plan_sha256": "c29f265f6be34d8ae0f063ae536d646598760f63884f402d93cd010ee2cfe504",
+  "source_report_sha256": "a4cdb0d4a709b185f38b9cc0420169482709ed246d488ae3a2f4ebad3ce4055d",
+  "source_sha256": {
+    "reports/P24_guidance_baseline_summary.json": "e23c2d6e79be8dcf9f43204f01a8a6ca88860a4f2cb52155d88558f3c6592724",
+    "reports/P24_02_GUIDED_execution_audit.json": "22e448d41c807ef7cf047d939a18ec52e42e4adc19a0b59d2a33ddb320f115b7",
+    "events.json": "1f20c53140bba44433111c01e88f4eae756db16dfe0f1d739af3a4f3d2760a8c",
+    "spans.json": "5eabacf44239dd6308ddfc9012bfe1b9cdc0d1b966373ee61a0bb3130a277041",
+    "plan.json": "a8af6dbd487d630c6d9eb412795326fcac12c5cd2a23a880cbcf2661ec10a0ed",
+    "provenance.json": "3a6e340385b314550c8ccf2731de591249952755dfb4d3ce8e9897abf939f7a6",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "installed_public_source_sha256": {
+    "apps/phone/apis.py": "b32c231f29515f0c77175e6cb3bd3cd91254237545f2230eb5166a102e250338",
+    "apps/model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172",
+    "apps/api_lib.py": "573657c3db8d99def6ee92b6833fbc2fedd894be41031fe38feebab49e597485"
+  },
+  "implementation_sha256": {
+    "scripts/membership_evidence.py": "4c82b25c7b232a29dea7574364d226e376a86eee31ec685c68be8897026888e2",
+    "scripts/probe_membership_evidence.py": "cdf7e4eb5afe07e387a29980f8ea9fc64fadacf797b8e1e9a6726837a1fcfa6c",
+    "tests/test_membership_evidence.py": "8e4470cdd585791976f841fd3fee9c3fd9c4357f70538898cce45e9131ee6d4a",
+    "scripts/diagnose_p24_public_traces.py": "68ece928880d73ec59f201ed39eb04337764a50b4be4ab2a7e596dde447983e4"
+  },
+  "wall_seconds": 0.013777207997918595,
+  "model_calls": 0,
+  "tokenizer_requests": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "database_reads": 0,
+  "reserved_scenarios_read": 0,
+  "scope": "Ordinary membership reuse on previously observed data; analyst-specified predicate and explicit output contract. No full-response replacement, task quality, savings or novelty claim.",
+  "runtime_epoch_monitoring_implemented": false,
+  "live_llm_interface_installed": false,
+  "limits": [
+    "One frozen known trace and analyst-supplied predicate; 156 control requests are not tasks.",
+    "Terminal evidence is justified only for this fixed empty-query adapter over frozen observations.",
+    "No original API call was skipped or replaced; full-response requests remain outside this interface.",
+    "No task-quality, whole-work saving or additional value beyond an ordinary set join measured."
+  ]
+}
