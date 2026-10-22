@@ -1,0 +1,142 @@
+{
+  "phase": "P56_audit",
+  "batch_status": "complete",
+  "audit_errors": [],
+  "all_four_cases_accounted": true,
+  "all_four_evaluated": true,
+  "rows": [
+    {
+      "source_run": "P55_01_FULL_KEEP",
+      "arm": "no_completion",
+      "run_id": "P56_01_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 112,
+      "intervention_api_requests": 0,
+      "observation_matches": 112,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_original_D": false,
+      "execution_wall_seconds_including_cleanup": 4.17239683400112,
+      "evaluation_wall_seconds": 2.1969524170053774,
+      "source_sha256": {
+        "result.json": "56e8dca5864a36c9e9fd217f5ab5087d2c39a513df7c480b697e63c990a80918",
+        "calls_private.json": "bd7f41b71d06af5b6d7f83f8dc2656ee2affe02782458da88d74474016751e20",
+        "summary.json": "d03fb7cf10f9a53159ed8d22efd0ec3354c5e990e9cc93ba2529f9917275f1bf",
+        "evaluation.json": "d255506448fb5c97942c7b8cae75657dccc0c72c125d3fd0cebd6dad70733c30"
+      }
+    },
+    {
+      "source_run": "P55_01_FULL_KEEP",
+      "arm": "append_completion",
+      "run_id": "P56_02_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": true,
+      "replay_api_requests": 112,
+      "intervention_api_requests": 1,
+      "observation_matches": 112,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_original_D": true,
+      "execution_wall_seconds_including_cleanup": 4.037591042004351,
+      "evaluation_wall_seconds": 2.181993375001184,
+      "source_sha256": {
+        "result.json": "7ff4450003a1116bb22e4f0f78aadd8dba26ab32792511fe4e0ac825555a3260",
+        "calls_private.json": "23f9dc7a8e3c1fd4cafd1c80f6b840825b78a111724cd655fdf87abe1ddcac87",
+        "summary.json": "b5642a18e87ff00e33241ab14180341f0a95ba4f469d799a21d8f29502293f14",
+        "evaluation.json": "c7a159ec42e083446e9ea73f52fafe90b43678f26f5f2884a6a96ee8c96f4cfb"
+      }
+    },
+    {
+      "source_run": "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "arm": "no_completion",
+      "run_id": "P56_03_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 60,
+      "intervention_api_requests": 0,
+      "observation_matches": 60,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_original_D": false,
+      "execution_wall_seconds_including_cleanup": 3.1122361250018002,
+      "evaluation_wall_seconds": 2.0880752920056693,
+      "source_sha256": {
+        "result.json": "111083cd7bc6e008a06a4a5a5f797a929ebdc9ed2541a8ccc85c1389cb11f145",
+        "calls_private.json": "7b3071d0749717c125a920d679385feb63b9225d2c0a00da0d19bcab78218d4e",
+        "summary.json": "0b3cddcde76a78fa522c787fb6bf121874f852333357d1ecd3026e2fcd0cffc5",
+        "evaluation.json": "0e7868400e6e6bc8ed2309a4768920d8e58d23e4c5bbe4726f8c9ceef7788bab"
+      }
+    },
+    {
+      "source_run": "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "arm": "append_completion",
+      "run_id": "P56_04_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 60,
+      "intervention_api_requests": 1,
+      "observation_matches": 60,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_original_D": false,
+      "execution_wall_seconds_including_cleanup": 3.1232055419968674,
+      "evaluation_wall_seconds": 2.0737960830010707,
+      "source_sha256": {
+        "result.json": "98f19fd16a33464d57968b30e62b87235f1c0c25ab1d403d17a46d5807e0a362",
+        "calls_private.json": "95534c88c263d2d1fed23c1f98c0aee7477b4917733f1e26224a069456630846",
+        "summary.json": "7119f810f10d7fb11050848837823ca0755e9cc61d47326c0541b966b0a1d0d7",
+        "evaluation.json": "ee420c5dc5ebbc2a96339125851c56a8176fb1ff42a6588dc1b0e6deea2f4f38"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "source_run": "P55_01_FULL_KEEP",
+      "outcomes": [
+        false,
+        true
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": true
+    },
+    {
+      "source_run": "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    }
+  ],
+  "known_api_requests": 346,
+  "total_api_requests": 346,
+  "unknown_request_count_cases": [],
+  "original_sources_unchanged": true,
+  "additional_model_calls": 0,
+  "additional_api_requests": 0,
+  "additional_evaluator_calls": 0,
+  "hidden_test_details_read": false,
+  "autonomous_finalizer_validated": false,
+  "original_outcomes_relabelled": false,
+  "source_report_sha256": "3e3b1341840bea7e424a4434cad8fb4afd9c5c63677b593cc3e6bdd880f14ee9",
+  "source_plan_sha256": "cb519a9e9fb6625ea2ab040bdc1a7471749750987fcc16a8ea1389588cd40a11",
+  "auditor_sha256": "076eb4b40ab83675002c36bd84eafd82927988f352d6c183771ec347fc61f148",
+  "limits": [
+    "Post-hoc known-task diagnostic, not an independent agent-quality trial.",
+    "Only the prespecified terminal API intervention is isolated; no safe automatic completion rule is established.",
+    "Extra replay, intervention and evaluation costs are separate from original P55 costs.",
+    "Original P55 outcomes and unknown model usage remain unchanged."
+  ]
+}
