@@ -1,0 +1,9 @@
+run_id,task_id,arm,record_status,success,known_total_tokens,unknown_usage_calls,model_calls,api_requests,continuation_wall_seconds,stop_reason
+P40_01_PLAIN_KEEP,34d9492_1,plain_keep,evaluated,False,100129,0,9,92,312.02973599988036,token_reservation_limit
+P40_01_BUDGET_KEEP,34d9492_1,budget_keep,evaluated,True,105095,0,7,134,445.3496217499487,agent_declared_complete
+P40_02_PLAIN_KEEP,3c13f5a_1,plain_keep,evaluated,False,99922,0,8,10,199.7471007918939,token_reservation_limit
+P40_02_BUDGET_KEEP,3c13f5a_1,budget_keep,evaluated,False,113410,0,9,9,225.7755205000285,token_reservation_limit
+P40_03_PLAIN_KEEP,60d0b5b_1,plain_keep,evaluated,True,31658,0,2,4,167.571020625066,agent_declared_complete
+P40_03_BUDGET_KEEP,60d0b5b_1,budget_keep,evaluated,True,83335,0,5,4,214.33963249996305,agent_declared_complete
+P40_04_PLAIN_KEEP,6104387_1,plain_keep,not_run_after_prespecified_stop,,0,0,0,0,,
+P40_04_BUDGET_KEEP,6104387_1,budget_keep,stopped_unknown_usage_unevaluated,,46210,1,4,0,479.4460776250344,wall_limit_during_model_call

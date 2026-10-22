@@ -26,10 +26,53 @@ def validate_request(request, signal, arm, expected, first):
                            ('logical_input_plus_output_tokens', 'remaining_tokens_before')):
         if signal['state']['remaining'][target] != expected[source]:
             raise ValueError('notification differs from accounted remaining budget')
+    for target, source in (('continuation_logical_tokens', 'known_tokens_before'),):
+        if signal['state']['used'][target] != expected[source]:
+            raise ValueError('notification used-resource counter differs')
     if request['cache_prompt'] != (not first) or signal['cache_prompt'] != request['cache_prompt']:
         raise ValueError('request cache policy differs')
     return {'notification_characters': len(messages[-1]['content']) if arm == 'budget_keep' else 0,
             'base_messages_sha256': digest(base), 'request_messages_sha256': digest(messages)}
+
+
+def audit_requests(folder, row, prepared):
+    usage, events = read(folder / 'usage.json'), read(folder / 'events.json')
+    limits = read(folder / 'plan.json')
+    before, _ = budget_before_calls(usage, events, row['prefix_api_requests'], limits)
+    signals = read(folder / 'budget_signals.json')
+    attempted = [s for s in signals if s['model_attempted']]
+    if ([s['next_call_id'] for s in attempted] != [c['id'] for c in usage]
+            or len(signals) - len(attempted) not in (0, 1)
+            or (len(signals) > len(attempted) and signals[-1]['model_attempted'])):
+        raise ValueError('signal/model call correspondence differs')
+    checks = []
+    for index, (call, signal, budget) in enumerate(zip(usage, attempted, before)):
+        p = folder / call['id']; request = read(p / 'request.json')
+        check = validate_request(request, signal, row['arm'], budget, index == 0)
+        check.update(call_id=call['id'], remaining=signal['state']['remaining'],
+                     request_sha256=sha(p / 'request.json'), response_sha256=sha(p / 'response.json'))
+        if index == 0:
+            measured = read(p / 'response.json')
+            cache = cache_measurement('cold_1', measured, measured['input_tokens'])
+            if not cache['state_confirmed'] or cache != signal['first_input_measurement']:
+                raise ValueError('first-input cache verification differs')
+            if check['base_messages_sha256'] != prepared['base_messages_sha256']:
+                raise ValueError('initial base input differs from fixed preparation')
+        checks.append(check)
+    profile = summarize_calls(usage, lambda cid: read(folder / cid / 'response.json'),
+                              lambda cid: read(folder / cid / 'request.json'))
+    if profile['totals']['known_total_tokens'] != row['known_total_tokens']:
+        raise ValueError('profile accounting differs')
+    row.update(input_tokens=profile['totals']['input_tokens'],
+               output_tokens=profile['totals']['output_tokens'],
+               processed_input_tokens=profile['totals']['processed_input_tokens'],
+               cached_input_tokens=profile['totals']['cached_input_tokens'],
+               prompt_seconds=profile['totals']['prompt_seconds'],
+               decode_seconds=profile['totals']['decode_seconds'],
+               first_input_tokens=usage[0]['input_tokens'],
+               notification_characters=sum(c['notification_characters'] for c in checks),
+               signals_checked=checks, signal_source_sha256=sha(folder / 'budget_signals.json'))
+    return row
 
 
 def analyze(storage, root):
@@ -49,42 +92,7 @@ def analyze(storage, root):
             row = trial_row(folder, original, source)
             if row['arm'] != arm or row['task_id'] != original['task_ids'][number - 1]:
                 raise ValueError('wrong task/condition')
-            usage, events = read(folder / 'usage.json'), read(folder / 'events.json')
-            limits = read(folder / 'plan.json')
-            before, _ = budget_before_calls(usage, events, row['prefix_api_requests'], limits)
-            signals = read(folder / 'budget_signals.json')
-            attempted = [s for s in signals if s['model_attempted']]
-            if ([s['next_call_id'] for s in attempted] != [c['id'] for c in usage]
-                    or len(signals) - len(attempted) not in (0, 1)
-                    or (len(signals) > len(attempted) and signals[-1]['model_attempted'])):
-                raise ValueError('signal/model call correspondence differs')
-            checks = []
-            for index, (call, signal, budget) in enumerate(zip(usage, attempted, before)):
-                p = folder / call['id']; request = read(p / 'request.json')
-                check = validate_request(request, signal, arm, budget, index == 0)
-                check.update(call_id=call['id'], remaining=signal['state']['remaining'],
-                             request_sha256=sha(p / 'request.json'), response_sha256=sha(p / 'response.json'))
-                if index == 0:
-                    measured = read(p / 'response.json')
-                    cache = cache_measurement('cold_1', measured, measured['input_tokens'])
-                    if not cache['state_confirmed'] or cache != signal['first_input_measurement']:
-                        raise ValueError('first-input cache verification differs')
-                    if check['base_messages_sha256'] != preflight['rows'][number - 1]['base_messages_sha256']:
-                        raise ValueError('initial base input differs from fixed preparation')
-                checks.append(check)
-            profile = summarize_calls(usage, lambda cid: read(folder / cid / 'response.json'),
-                                      lambda cid: read(folder / cid / 'request.json'))
-            if profile['totals']['known_total_tokens'] != row['known_total_tokens']:
-                raise ValueError('profile accounting differs')
-            row.update(input_tokens=profile['totals']['input_tokens'],
-                       output_tokens=profile['totals']['output_tokens'],
-                       processed_input_tokens=profile['totals']['processed_input_tokens'],
-                       cached_input_tokens=profile['totals']['cached_input_tokens'],
-                       prompt_seconds=profile['totals']['prompt_seconds'],
-                       decode_seconds=profile['totals']['decode_seconds'],
-                       first_input_tokens=usage[0]['input_tokens'],
-                       notification_characters=sum(c['notification_characters'] for c in checks),
-                       signals_checked=checks, signal_source_sha256=sha(folder / 'budget_signals.json'))
+            row = audit_requests(folder, row, preflight['rows'][number - 1])
             rows.append(row)
     totals = {}
     for arm in ARMS:

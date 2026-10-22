@@ -114,11 +114,16 @@ def publish_status(status, output):
     from watch_pro_comparison import gh_api
     marker = '<!-- harness-budget-awareness:P40_batch_v01 -->'
     issue = 191
+    active = status.get('active') if status['status'] == 'running' else None
     lines = [marker, 'P40：予算通知の有無を比べる既存方式の対照実験',
-        f"状態：{status['status']}／完了 {len(status['completed'])}/8／実行中 {status['active'] or 'なし'}", '',
-        '| 課題 | 条件 | 成功 | AI呼出し | 既知token | 後続API |', '|---|---|---:|---:|---:|---:|']
+        f"状態：{status['status']}／評価済 {len(status['completed'])}/8／実行中 {active or 'なし'}", '',
+        '| 課題 | 条件 | 成功 | AI呼出し | 既知token | 使用量不明 | 後続API |', '|---|---|---:|---:|---:|---:|---:|']
     for r in status['rows']:
-        lines.append(f"| {r['task_id']} | {r['arm']} | {r.get('success','未評価')} | {r['model_calls']} | {r['known_total_tokens']:,} | {r['api_requests']} |")
+        lines.append(f"| {r['task_id']} | {r['arm']} | {r.get('success','未評価')} | {r['model_calls']} | {r['known_total_tokens']:,} | {r.get('unknown_usage_calls',0)} | {r['api_requests']} |")
+    if status['status'] == 'stopped':
+        lines += ['', f"事前規則でバッチ停止。未実行は {8 - len(status['rows'])} 条件。",
+                  '使用量不明分は既知tokenへの追加であり、０として計上していません。４課題の比較は未完遂です。',
+                  '置換試行や予算延長はせず、評価済み・未評価・未実行を分けて終了監査します。']
     lines += ['', '同じ４既知課題の８応答後から、全履歴・Python状態を維持。残予算通知だけを変更。',
         '初回は両方式とも推論キャッシュ再利用なし。通知と復元の費用、失敗も記録する。',
         '全件終了前に優劣を確定しない。予算通知自体は先行研究があり、新規性の主張はしない。']

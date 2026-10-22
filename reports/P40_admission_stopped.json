@@ -1,0 +1,74 @@
+{
+  "phase": "P40_admission_audit",
+  "status": "complete",
+  "rows": [
+    {
+      "run_id": "P40_01_PLAIN_KEEP",
+      "remaining_tokens": 19871,
+      "next_input_tokens": 17400,
+      "reserved_output_tokens": 4096,
+      "positive_output_capacity": 2471,
+      "classification": "smaller_output_cap_could_admit",
+      "completion_possible_claim": false,
+      "count_wall_seconds": 0.03921008389443159,
+      "model_messages_sha256": "a2fdd70ee744ee586e77a1d6101a27b27eedc44073a7a794ac3db1568599c118",
+      "conversation_sha256": "f15784893b373ad33740d0d019e947cafd3ee4354dd2f7810efa13e493f9a21f"
+    },
+    {
+      "run_id": "P40_02_PLAIN_KEEP",
+      "remaining_tokens": 20078,
+      "next_input_tokens": 16200,
+      "reserved_output_tokens": 4096,
+      "positive_output_capacity": 3878,
+      "classification": "smaller_output_cap_could_admit",
+      "completion_possible_claim": false,
+      "count_wall_seconds": 0.036116375122219324,
+      "model_messages_sha256": "dc8f8a5cb401da9af89eea27cb22008525bc4b1fbff16ba51270bf483555fd4a",
+      "conversation_sha256": "fb7262123b4ec64c4fbda3c84bc6f74a5c5b4b633c947671715b58f14528017b"
+    },
+    {
+      "run_id": "P40_02_BUDGET_KEEP",
+      "remaining_tokens": 6590,
+      "next_input_tokens": 16123,
+      "reserved_output_tokens": 4096,
+      "positive_output_capacity": 0,
+      "classification": "no_positive_output_fits",
+      "completion_possible_claim": false,
+      "count_wall_seconds": 0.03731666714884341,
+      "model_messages_sha256": "e21dae1416a7562d883fa486eb974ffd912ec831111423cf9dc4bffd89a38b6e",
+      "conversation_sha256": "d4c8320aaf66becc48e8299d19f3d38a2ac2a2b2b883331ffbfdd16e3401e7dd"
+    }
+  ],
+  "created_at": "2026-10-22T04:35:32.931823+00:00",
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-21T22:05:59.492404+00:00",
+    "pid": 15665,
+    "supervisor_pid": 15663,
+    "ctx_size": 65536
+  },
+  "completion_requests": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "input_count_requests": 3,
+  "failed_input_count_requests": 0,
+  "limits": [
+    "Only the recorded token-reservation stops are recounted.",
+    "Positive output capacity does not establish that a useful or complete response fits.",
+    "No execution is resumed, and no additional budget is granted.",
+    "This is a stopping-policy diagnostic, not a novel method or a task-success result."
+  ],
+  "terminated_batch_scope": true,
+  "source_sha256": {
+    "reports/P40_termination.json": "8ef44315144ccab7401b40ef2995c5b0b1248946b83b7ccf08f0bec7bf83b188",
+    "scripts/inspect_budget_admission.py": "a5dfa0510da79fda701f94adc072a1ad3b3ede770b2afec43b1d5f5a08754b2c"
+  }
+}
