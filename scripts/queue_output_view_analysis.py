@@ -30,13 +30,21 @@ def run(root,storage,wait_seconds):
     def save(**values):
         values.update(updated_at=dt.datetime.now(dt.timezone.utc).isoformat(),analysis_head=head,
                       new_inference_calls=0,new_api_requests=0)
-        state.write_text(json.dumps(values,ensure_ascii=False,indent=2)+'\n')
+        temp=state.with_suffix('.tmp')
+        temp.write_text(json.dumps(values,ensure_ascii=False,indent=2)+'\n');temp.replace(state)
     save(status='waiting_for_complete_published_P33')
     deadline=time.monotonic()+wait_seconds;source_state=storage/'.runtime/p33_pipeline_status.json'
     while time.monotonic()<deadline:
-        status=json.loads(source_state.read_text()) if source_state.exists() else {}
+        if (storage/'.runtime/p33_pipeline_error.txt').exists():
+            save(status='source_pipeline_requires_review',source_status='error_recorded');return 1
+        try:status=json.loads(source_state.read_text()) if source_state.exists() else {}
+        except json.JSONDecodeError:
+            # The existing frozen producer writes its small status in place.
+            # Retry a concurrent write; never infer completion from partial JSON.
+            time.sleep(1);continue
         if status.get('status')=='merged':break
-        if status.get('status') in ('batch_stopped','audit_failed','ci_failed','pipeline_error'):
+        if status.get('status') in ('batch_stopped','audit_failed','ci_failed','pipeline_error',
+                                   'ci_wait_timeout_branch_published'):
             save(status='source_pipeline_requires_review',source_status=status['status']);return 1
         time.sleep(15)
     else:save(status='bounded_wait_expired');return 1
