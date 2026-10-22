@@ -1,0 +1,47 @@
+{
+  "phase": "P39",
+  "version": "v02",
+  "source_sha256": {
+    "scripts/probe_inference_cache.py": "73d4a561dfc50b099558d14aa1d05f81ae2fd3a8adb5a53a758ab6d3354093ee",
+    "scripts/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "scripts/diagnose_projected_misses.py": "3487d40ce8a95ae9d184668c69afad6a0beb99a1ed97670c9cf1e342a0be6f8a",
+    "scripts/field_read_contract.py": "cc7ff1f8ab452a5ed7cb562a93941a4d1f85db663c841d545cd01732ea04b44a",
+    "scripts/run_event_view_probe.py": "a5e4397b5a076244dbe45ac2a3b35030485b75d49f2fe7a1a6875055681bdc11",
+    "configs/P29_stateful_code_v01.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+    "tests/test_inference_cache_control.py": "d73b1eb1c4f63ce79f3777f403c4f6f6240f3da1595ac6f66a74f7254d67c8c1",
+    "configs/P39_inference_cache_v02.json": "5d96f38efb2c74b237161ebffaa93788b75973f5117ae43775c4f033975b3e16",
+    "docs/experiments/P39_inference_cache_v02.md": "9dae95c4126c2ece3d7a85d6a70098fe84056e778f04d72c7d2583bb8d8e6f02"
+  },
+  "request_sha256": "f8644b183c36c8a4ec8c6ad721e42caf21c0e6f5f525f98e0affc5ccff0f22e4",
+  "condition_request_sha256": {
+    "cold_1": "e2477a05cf5ea961fb3c5274dae4082dae948f79fbbb6b84c74c9e6c62f50286",
+    "warm_1": "f8644b183c36c8a4ec8c6ad721e42caf21c0e6f5f525f98e0affc5ccff0f22e4",
+    "warm_2": "f8644b183c36c8a4ec8c6ad721e42caf21c0e6f5f525f98e0affc5ccff0f22e4",
+    "cold_2": "e2477a05cf5ea961fb3c5274dae4082dae948f79fbbb6b84c74c9e6c62f50286",
+    "warm_3": "f8644b183c36c8a4ec8c6ad721e42caf21c0e6f5f525f98e0affc5ccff0f22e4",
+    "cold_3": "e2477a05cf5ea961fb3c5274dae4082dae948f79fbbb6b84c74c9e6c62f50286"
+  },
+  "input_tokens": 13552,
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-21T22:05:59.492404+00:00",
+    "pid": 15665,
+    "supervisor_pid": 15663,
+    "ctx_size": 65536
+  },
+  "server_lease_end": "2026-10-22T10:05:59.492404+00:00",
+  "prepared_at": "2026-10-22T03:34:41.173088+00:00",
+  "model_calls": 0,
+  "input_count_requests": 1,
+  "environment_api_requests": 0
+}
