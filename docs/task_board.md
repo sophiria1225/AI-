@@ -67,7 +67,7 @@
 | P1 | R59 | P34：過去出力と現在の値の一致範囲を測る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/172) |
 | P0 | R60 | P35：API返却と実行コードの参照範囲を記録再生で照合する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/178) |
 | P0 | R61 | P36：既取得データによる要求代替の成立範囲を測る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/180) |
-| P0 | R62 | P37：必要項目を明示した読取と限定再利用を実装・検証 | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/183) |
+| P0 | R62 | P37：必要項目を明示した読取と限定再利用を実装・検証 | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/183) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -736,7 +736,7 @@ P33全件終了後に着手。原記録の取得と動的参照を分け、計�
 
 ## R62 P37：必要項目を明示した読取と限定再利用を実装・検証
 
-P36の結果を受け着手。Songの通常・短縮表現の共通５項目に限定し、実行範囲・状態版・契約版を確認する。モデル実行はまだ開始しない。docs/experiments/P37_field_contract.md。
+全548検査合格。全12記録の補助要求99件で、毎回取得99、同一要求キャッシュ99、別API契約を加えて88。項目不一致０。11件は書出・全履歴に限る。元のAIコードや最終成果は再実行しておらず、実際のタスク費用削減とはしない。実行器への接続確認へ進むが、新規方式・未閲覧群の評価へ自動昇格しない。docs/P37_findings.md。
 
 **なぜ行うか**: 項目名の一致では取得を省けない。対象・項目・版を確認できる小さな契約で、通常取得と同じ値を返せる部品と適用範囲を測る。
 
