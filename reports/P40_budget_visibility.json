@@ -1,0 +1,1622 @@
+{
+  "phase": "P40_budget_visibility_audit",
+  "rows": [
+    {
+      "run_id": "P33_01_FULL_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 148,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "a37ac5b259b5adc53e59961af5eee22bcbf4ed7a002112b2ad0c68e83a9440c3",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 106,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 110732,
+          "known_tokens_before": 9268,
+          "terminal_usage_known": true,
+          "request_sha256": "3296cb39f65009d5e34b522a72b4d29ad6be510a28dfafd197f0128ddc1e579d",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 103,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 98199,
+          "known_tokens_before": 21801,
+          "terminal_usage_known": true,
+          "request_sha256": "60dcd4ab8c3d1601ad98a22541c8c1d8e526c89a68f5ecd40f850d7660c2b686",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 85320,
+          "known_tokens_before": 34680,
+          "terminal_usage_known": true,
+          "request_sha256": "1870f5b586179eed453b95ab8de7cd626304a3ffc81b8143f341da040183616a",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 60,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 69779,
+          "known_tokens_before": 50221,
+          "terminal_usage_known": true,
+          "request_sha256": "0ea4b56dab3f6671dfc11c048190f3418e0f2a1c64530f9b493204ef528428fe",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 66851,
+      "suffix_api_requests": 89,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 12,
+      "limits": {
+        "max_api_requests": 160,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 5
+      },
+      "source_sha256": {
+        "usage.json": "876ba1127d25d8e7469a3f0b39a151d6dc209fd473e84f59ba27c40c96cf5007",
+        "summary.json": "9900fad4810fe113f896e6f8f6ea760e879aa79fee04d173071bad7166f22621",
+        "events.json": "cf146d8a5778b584768af7dcdc465e9863e951c94cb313009981182df2fd15c2",
+        "spans.json": "64cb5562ca4e8e42bb13b07f0c8cc90c47ebeb9c8724d4d834b8dbc8f15f6112"
+      }
+    },
+    {
+      "run_id": "P33_01_STDOUT_MASK_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 148,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "e1546b660fc031959fd05e2b9c2fda3ac7fa5a278ec819439abac795bd762e3e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 106,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 113822,
+          "known_tokens_before": 6178,
+          "terminal_usage_known": true,
+          "request_sha256": "a28f4a9dbac6b4e9fb35df926d2a35dc942ff35ca76ebf38c122b75832461aa5",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 103,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 104747,
+          "known_tokens_before": 15253,
+          "terminal_usage_known": true,
+          "request_sha256": "92c2225c8cd0441ce292fc9a91f5ae389c0c9ae2af5c0397fa2c7a53c8f5042b",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 102,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 95397,
+          "known_tokens_before": 24603,
+          "terminal_usage_known": true,
+          "request_sha256": "969cb7011822fd7d5a32f953876a32ead3c2ca62338bf7e6c8e4f14dc1b5aa0f",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 60,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 84759,
+          "known_tokens_before": 35241,
+          "terminal_usage_known": true,
+          "request_sha256": "c8762e43593e9437f3b0f3917c9031425d2aefd3c6b60cbdfde6c2efbcee639b",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 59,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 71178,
+          "known_tokens_before": 48822,
+          "terminal_usage_known": true,
+          "request_sha256": "643926ad37f35dde2935a01168b142e44546aaa3a3f0a6fffb8529f49ce23fad",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 63575,
+      "suffix_api_requests": 90,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 12,
+      "limits": {
+        "max_api_requests": 160,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 6
+      },
+      "source_sha256": {
+        "usage.json": "4244e660f2df8f73816235c5f3fce45997f6c009a1bbb984e3883e8a471b2d14",
+        "summary.json": "72bd58318f2dca32a6592dee56d1269e04425a1f15bbb6cf46bc982866a4cf1b",
+        "events.json": "730c432b42ea78832b4666c87e0e6e315ba86dccbc83a3cafd03acc3c42fd46d",
+        "spans.json": "57cfb94b6c835ed83973ac87f0141428b8a7f31ed224b9126e6c2efd218c705c"
+      }
+    },
+    {
+      "run_id": "P33_01_STDOUT_MASK_INDEX_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 148,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "56a6583d82bc6f54d1c4bb6a2a900d627bf1a6753db1aca0f1eab169753caf27",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 106,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 113478,
+          "known_tokens_before": 6522,
+          "terminal_usage_known": true,
+          "request_sha256": "2bf63eb49e97fbae91f35dba680e7e17f7f1fd4bb2c1704ca7ef2e95d8b52be6",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 103,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 104316,
+          "known_tokens_before": 15684,
+          "terminal_usage_known": true,
+          "request_sha256": "a2b4a61ad9ad21058a06f182a394c9ba13a49452946ecba8ec03c5ad58baaba5",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 103,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 94214,
+          "known_tokens_before": 25786,
+          "terminal_usage_known": true,
+          "request_sha256": "3ba936efb839da097dbdcee89973a2f0c0ebc8c0cfd7735ade6cb0852b72eb5e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 103,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 84084,
+          "known_tokens_before": 35916,
+          "terminal_usage_known": true,
+          "request_sha256": "101e5629625809384bdaa2aca3c43bb94ca40bc10055c59f402a39f8961e4ad7",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 102,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 73820,
+          "known_tokens_before": 46180,
+          "terminal_usage_known": true,
+          "request_sha256": "052f3908f24b9fd3d1529608e3e1c5f500114714e8c018783133bde9e8302cb1",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 60,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 62427,
+          "known_tokens_before": 57573,
+          "terminal_usage_known": true,
+          "request_sha256": "f0a2b4daa915dee9c62ecfd7bd7a114460292b71e5124096acfb5ed1a12ad072",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 59,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 48166,
+          "known_tokens_before": 71834,
+          "terminal_usage_known": true,
+          "request_sha256": "8f5e221368188392b9883daa78e11c52fc52716c2979b4dd74dd99db19beef0a",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 87160,
+      "suffix_api_requests": 90,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 12,
+      "limits": {
+        "max_api_requests": 160,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "8a1a71b4e8edabe39899c689df89224c3248411e7d8930025c0e012269cf07fd",
+      "user_envelope_shapes": {
+        "task": 8
+      },
+      "source_sha256": {
+        "usage.json": "027eb6d5be7ca6e932012254ec33fde819836db13452d5947bc4e35a414c5798",
+        "summary.json": "e2aa50a6b19c339fa9e5b475ecb0c259de748d9c0ece8481c80b523fa3460de1",
+        "events.json": "bce17475a8069e566cc97dc67def3142a49670b2fccc8bb76b04ccdbc808c2f7",
+        "spans.json": "baf5cba66939682511315ec5ac3cac3e2a3c8c3700ca5914bbbc8f31f2857bac"
+      }
+    },
+    {
+      "run_id": "P33_02_FULL_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 72,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "415889985b1f968aa2f75fcc7536ae029c3f763bb14d934f079e1198f0f78be2",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 71,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 108859,
+          "known_tokens_before": 11141,
+          "terminal_usage_known": true,
+          "request_sha256": "6d423891e2855566e983f37ef31440e5b68c74a83377a7ee1ffd40c435686d13",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 70,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 97462,
+          "known_tokens_before": 22538,
+          "terminal_usage_known": true,
+          "request_sha256": "e181576fccc253434213ac73866e75468a7a1e3da7acb6ca1e40f3085d6d3ec5",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 69,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 85767,
+          "known_tokens_before": 34233,
+          "terminal_usage_known": true,
+          "request_sha256": "f82f72ad1740917b79a86b39c7705c3048902dfc348ccedada7047fd0f13a477",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 69,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 73706,
+          "known_tokens_before": 46294,
+          "terminal_usage_known": true,
+          "request_sha256": "9e8283b53f3e706cab79e217b27d332134bbcf7271bb31501512f35307079907",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 68,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 61479,
+          "known_tokens_before": 58521,
+          "terminal_usage_known": true,
+          "request_sha256": "d7317936b949fbb52cf3569b18677e04ad3d5187ed72d4e062ea3ff7d03f3c19",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 67,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 48925,
+          "known_tokens_before": 71075,
+          "terminal_usage_known": true,
+          "request_sha256": "2e083fb3b0349bec932e6104741c0ae1b342d91e47a455938f5907c8647d2380",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 36024,
+          "known_tokens_before": 83976,
+          "terminal_usage_known": true,
+          "request_sha256": "882c09ed65b3fe406ed3fcd945ce0db0ee5043d31bbfab8d6b859075f36c7932",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_009",
+          "remaining_api_before": 65,
+          "remaining_calls_before": 8,
+          "remaining_tokens_before": 22681,
+          "known_tokens_before": 97319,
+          "terminal_usage_known": true,
+          "request_sha256": "b631c4aebfed162eefb71d269bc7e81ec1b2d66d9f7fbadfcc6baec11ed1420c",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 110922,
+      "suffix_api_requests": 9,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 8,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 9
+      },
+      "source_sha256": {
+        "usage.json": "74f69bd4da5b0c8fae78cb7503c6d448b601cb607fc0454a2181ebd01de76094",
+        "summary.json": "981d9abdff51aa75e89a373a32f9e9ed7c9387bc7db11be33d87b3b6cbf56a92",
+        "events.json": "15d342282f6bb998b636e406a7c266a91c489f66825404b67cdd697da0e108dd",
+        "spans.json": "5f9f241b70029ac41a2cb5659c6088453515839e8670be4f99c1666425ca3d5f"
+      }
+    },
+    {
+      "run_id": "P33_02_STDOUT_MASK_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 72,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "b73b816be14fc34adaabd585e101c97503064396e28af669c481628ff32330c5",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 71,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 114177,
+          "known_tokens_before": 5823,
+          "terminal_usage_known": true,
+          "request_sha256": "bb65be3ad1b1eaf2120339a6bf9cc955ec3cc13cb7932a7fdaa539125cbf638e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 70,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 108095,
+          "known_tokens_before": 11905,
+          "terminal_usage_known": true,
+          "request_sha256": "4c711d4880b80b97e58ba3812faced6234a3067b9a701fcafa25d10730178c89",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 69,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 101563,
+          "known_tokens_before": 18437,
+          "terminal_usage_known": true,
+          "request_sha256": "da40a416a1f8433d2c8083324f1a10862aa9cab211e1e8568efed5342531961c",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 68,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 94736,
+          "known_tokens_before": 25264,
+          "terminal_usage_known": true,
+          "request_sha256": "de2bd21409b1bddef4823b8ea7662630ea5b024cfa54108eccb1df9b8408039c",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 67,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 87546,
+          "known_tokens_before": 32454,
+          "terminal_usage_known": true,
+          "request_sha256": "df3f2af295f5a68c2c65864ffa0a0db8e35344eebf2bbb6efbb3a11082a3b416",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 79837,
+          "known_tokens_before": 40163,
+          "terminal_usage_known": true,
+          "request_sha256": "47b5f404a12941257aee8254cb962a14c6bdd0b0eb90a2f9b66288c4f09652ad",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 72015,
+          "known_tokens_before": 47985,
+          "terminal_usage_known": true,
+          "request_sha256": "1fe33d298c22d7beb53e6cdc2add8913180ac6b0c822d0c1d7f7562e8e27678e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_009",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 8,
+          "remaining_tokens_before": 59814,
+          "known_tokens_before": 60186,
+          "terminal_usage_known": true,
+          "request_sha256": "56a821e70f603052f429713b600dada3d9c4bf580379ce6679f0021e4dccf257",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_010",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 7,
+          "remaining_tokens_before": 47418,
+          "known_tokens_before": 72582,
+          "terminal_usage_known": true,
+          "request_sha256": "2180750c8cddb47ed6c43c6c7a40658651155cbfdcbb1c87bcc04e8891d73664",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_011",
+          "remaining_api_before": 65,
+          "remaining_calls_before": 6,
+          "remaining_tokens_before": 34980,
+          "known_tokens_before": 85020,
+          "terminal_usage_known": true,
+          "request_sha256": "fddcaa871097d1506da95f03c5cb2709b60e5e39991effaefc7e80ca540bc671",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_012",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 5,
+          "remaining_tokens_before": 22212,
+          "known_tokens_before": 97788,
+          "terminal_usage_known": true,
+          "request_sha256": "0c43a2b104965a63062d48eda4eafc8b0a7f3e117eb34ffbc4a01b67dae32ae7",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 110906,
+      "suffix_api_requests": 8,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 8,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 12,
+        "observation,span_id": 3
+      },
+      "source_sha256": {
+        "usage.json": "ec03d9e01029062fd55bdda1036d0300b04900c68eb7e52bb84284a735530548",
+        "summary.json": "8aaa255ba4de3f3d82ae451efb40f7a3cebc3c986542cedb9e4f63fa76fe7fde",
+        "events.json": "c76c148a37c21c46427bf3a2dbe65dee5ee26b1467731141d329804a59fcba88",
+        "spans.json": "6988a7bcac3c67dc8a52c09dc398a6473fa757f6a086ccdc4e3fc213e03ca441"
+      }
+    },
+    {
+      "run_id": "P33_02_STDOUT_MASK_INDEX_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 72,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "a2f86c7751a8492ee9f64e5f8e117e2ad0720ef15c1f01538fb3f66526b73ba3",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 71,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 113569,
+          "known_tokens_before": 6431,
+          "terminal_usage_known": true,
+          "request_sha256": "3a61870ebb28ed49a9d7959c97f6b5f086cd8d6aa30a5fb4bec2e33cce56f38f",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 70,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 106552,
+          "known_tokens_before": 13448,
+          "terminal_usage_known": true,
+          "request_sha256": "32c1243d69a34fe1e2b78fb98db6f9bf47076986f918383eaf353bfdb1610a00",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 69,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 97479,
+          "known_tokens_before": 22521,
+          "terminal_usage_known": true,
+          "request_sha256": "e8b51ea65fe94d493b9656fb44051d3c6cbdf232f949777d8c2329d935859057",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 68,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 84251,
+          "known_tokens_before": 35749,
+          "terminal_usage_known": true,
+          "request_sha256": "2bbd408a7336b19c92c44b6f1aa11d856c52213481557793b4f71ea55ba0e5a2",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 70449,
+          "known_tokens_before": 49551,
+          "terminal_usage_known": true,
+          "request_sha256": "3c08bd9da35b88d82c6474e22369bd62def35cf8573427c328e42563906a3ad2",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 56341,
+          "known_tokens_before": 63659,
+          "terminal_usage_known": true,
+          "request_sha256": "333faaf837825cbe9e1769867b7cae7a5d54d2abbd2df8bbc6d5ce99eabad9c1",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 63,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 41390,
+          "known_tokens_before": 78610,
+          "terminal_usage_known": true,
+          "request_sha256": "bbcd41c60f342f82363d72a258d051e3a807a419a144a03a852496193dd0d843",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_009",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 8,
+          "remaining_tokens_before": 26049,
+          "known_tokens_before": 93951,
+          "terminal_usage_known": true,
+          "request_sha256": "1075fa10e844bc6b31e91ef52edb959f6f14ffcf55736a4dd81dabdedd70cdae",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 109531,
+      "suffix_api_requests": 11,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 8,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "60700493dbee4a8885630fe6880e5c0864998865bb1071ffe4886f94eed9f3d7",
+      "user_envelope_shapes": {
+        "task": 9
+      },
+      "source_sha256": {
+        "usage.json": "a9ab7472bdb31ce42d14ce5a55bd7e667c9d9884d97841e5432780832a558184",
+        "summary.json": "656a16674f4050b01c7d74833c60a63644c2ed6cf7daf3b2c7a8c18d5fdebd86",
+        "events.json": "64f9cba05b7406c67aaba8f10c0d0a224849fd0bcb8656dea0781b04fb23e494",
+        "spans.json": "24946a750b8e07cad3f64ff31b754beae93d22376d2c5c091bf1cea72646fafe"
+      }
+    },
+    {
+      "run_id": "P33_03_FULL_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 67,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "c300d671ca1ca2d4bdf8cb68a86956f890f56a1007bc7767773cec407520f401",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 104263,
+          "known_tokens_before": 15737,
+          "terminal_usage_known": true,
+          "request_sha256": "76da94a22796ad59bbd191983229284fdaa4998158d4d858bdd1433cd2d7bab1",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 31680,
+      "suffix_api_requests": 2,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 13,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 2
+      },
+      "source_sha256": {
+        "usage.json": "b6cb953830c761f4d758c69ed5d5d06aeb88fcf3807a9317809abab9bfe54df6",
+        "summary.json": "ecf98557ec1c9bfb13e4c12632e2b937d2e761ca504e29039e6fee8d41427e18",
+        "events.json": "5e5f654640f6cddd566dd7edb838ed4bcd16e9816093fc6823008e9a3026057b",
+        "spans.json": "4a40e77b6afb636e5b7af464d6b4231702081fa45ad19c34333f680669180a71"
+      }
+    },
+    {
+      "run_id": "P33_03_STDOUT_MASK_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 67,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "35e3072c5ed16e31cfd7b2f9fc6e957eaedeeb437bb50fb54ee0982f1cac8a30",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 114583,
+          "known_tokens_before": 5417,
+          "terminal_usage_known": true,
+          "request_sha256": "f524ca29716d3bc382334a3d13bba27fa90ad7014df4b936d729a487e9113fa4",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 108679,
+          "known_tokens_before": 11321,
+          "terminal_usage_known": true,
+          "request_sha256": "4b42671f578ae1538b8a0c7bcc39a786f2f6ab411b73243078a330731e5bbf1d",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 102581,
+          "known_tokens_before": 17419,
+          "terminal_usage_known": true,
+          "request_sha256": "a5439957cde0e58cf70c09aa0ad6e8bcb919bfba579e133069b6f0b1f26402a4",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 65,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 96346,
+          "known_tokens_before": 23654,
+          "terminal_usage_known": true,
+          "request_sha256": "3bc64d0fa4c859ce382398d34a572b4cb31cfe4a1a3061ffc424649d9d1d24b6",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 89343,
+          "known_tokens_before": 30657,
+          "terminal_usage_known": true,
+          "request_sha256": "a5cb305307fb24a6643477122029a6ffc755f29d72eaf7ae728b2fe47bbcebbb",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 81862,
+          "known_tokens_before": 38138,
+          "terminal_usage_known": true,
+          "request_sha256": "e97b9c68ff9d9f434a12d2795ab6ebead3aab30b3c7141b862351f7d399480b2",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 73467,
+          "known_tokens_before": 46533,
+          "terminal_usage_known": true,
+          "request_sha256": "92073e1f5799172d3100d84031d0259f5be0dccf23c98f95cb6a0f9f695d747c",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_009",
+          "remaining_api_before": 63,
+          "remaining_calls_before": 8,
+          "remaining_tokens_before": 64728,
+          "known_tokens_before": 55272,
+          "terminal_usage_known": true,
+          "request_sha256": "3a208e7fa6d69b77544edd92074adec544ddc73b102b3eac7926a472bcde4357",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_010",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 7,
+          "remaining_tokens_before": 55601,
+          "known_tokens_before": 64399,
+          "terminal_usage_known": true,
+          "request_sha256": "c02ee32766dec1d6a5d45d819c58b73d9a390fbc01d5fcce53bb1650f4a63901",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_011",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 6,
+          "remaining_tokens_before": 45301,
+          "known_tokens_before": 74699,
+          "terminal_usage_known": true,
+          "request_sha256": "0f147fb455ce6bca6827b563dd3c605f220534ad0e3c594d387820d3810d7399",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_012",
+          "remaining_api_before": 60,
+          "remaining_calls_before": 5,
+          "remaining_tokens_before": 33693,
+          "known_tokens_before": 86307,
+          "terminal_usage_known": true,
+          "request_sha256": "61846d0f595085673f166d6bbe4bf9c538863b490399be8e6bef0f054512f179",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 98106,
+      "suffix_api_requests": 8,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 13,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 12
+      },
+      "source_sha256": {
+        "usage.json": "3d8c1a6ac9c3a2a0de73ff4f0149ec6d4db06521b61a8122a4b51a12fcea96e9",
+        "summary.json": "cf110fe21603f08d27f41179c4a4e021c698f3c0dd2304c1085c4f7a3c28dd61",
+        "events.json": "ce3776b1e3e80bee48bcd1120550317f26dfb9b23ad3d5a818190b1a7ffc94bf",
+        "spans.json": "4378b55cf5ffe8c5c083b1935c64a58db914200e1cb4a3f2c167d32dbc9411ad"
+      }
+    },
+    {
+      "run_id": "P33_03_STDOUT_MASK_INDEX_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 67,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "31e0d775ed19a899a9591a3db52e3afd30599a22cc617d21277b2d954efbaf16",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 66,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 113732,
+          "known_tokens_before": 6268,
+          "terminal_usage_known": true,
+          "request_sha256": "c79c19f71b964f732f82de9ff5516d7f8b149e70d508c3a4c7c833c2c5e89c90",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 65,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 107046,
+          "known_tokens_before": 12954,
+          "terminal_usage_known": true,
+          "request_sha256": "69b4deb81897843258e62e55578473d7d66e864ac930e21bd43ebe0ceef9f829",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 64,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 99722,
+          "known_tokens_before": 20278,
+          "terminal_usage_known": true,
+          "request_sha256": "f159cc17f5dc0191f3f6a22ef06478d0bad245c3e28ea9d8a364e7b61e649474",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 27808,
+      "suffix_api_requests": 4,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 13,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "986a8acbff15fbda9648d172eb3a1dc3e52d883c2c3eb3189e5fe3f4aa538f2e",
+      "user_envelope_shapes": {
+        "task": 4
+      },
+      "source_sha256": {
+        "usage.json": "4c0191a7efe01b848609bb2adc1a1e4359ce16b039f3254dc1714852b543634f",
+        "summary.json": "c766caeeff074e95e703fd0d43375daa317cf0c4a17470fabcd75e61b5e5f954",
+        "events.json": "f169c68c03f1dfd769362ffdd234ef24a26d9eda08f6c671ff615936fc0556e1",
+        "spans.json": "d5a1320ca371c9fba77fe832111beefa4a1ac27601b7efdfad7d166bd107bc5b"
+      }
+    },
+    {
+      "run_id": "P33_04_FULL_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "9c43185d0b333ba610654c61f5d736225d1e4967d0c03d88b8ecff34ad8f88e6",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 103491,
+          "known_tokens_before": 16509,
+          "terminal_usage_known": true,
+          "request_sha256": "affe33169d0477199ffd380f4fd0ff6819f7f7fe0c6ced225c0302d7c34375fd",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 33187,
+      "suffix_api_requests": 62,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 2
+      },
+      "source_sha256": {
+        "usage.json": "5b36d077990d241711af708e3f2c8721bb7f9bbe70108333fb3185e0e85048fd",
+        "summary.json": "c19f1b2238a925432deaca83758fb17909778e86c83f8fec4dc2c1cedb6d8d0f",
+        "events.json": "90535239a46376564c9c9ed848926f07355ead1fc4787340acec9e72c61a1707",
+        "spans.json": "f9e2c67ab237206fde3907421ce8b8f5cebdefa106ad1246312f73810d93714b"
+      }
+    },
+    {
+      "run_id": "P33_04_STDOUT_MASK_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "35e735a3f6b1e1209dfc42ab37b900c2858b65036f11af4d867c4ef5ccdc944b",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 59,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 114116,
+          "known_tokens_before": 5884,
+          "terminal_usage_known": true,
+          "request_sha256": "5d1d3c157ad7b970e41cb6d43bb46d84529c2434f0c5c2ddc82f7c5a5c97940f",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 58,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 104379,
+          "known_tokens_before": 15621,
+          "terminal_usage_known": true,
+          "request_sha256": "328908bd74a9d9b6d49efdfb62f6cc0dd8cda6bc1237ce515eaa3f1766dd62b6",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 55,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 93824,
+          "known_tokens_before": 26176,
+          "terminal_usage_known": true,
+          "request_sha256": "6f747daa14d06359d92094ddcfc968908d151012f334315172a0c9e1525c40a1",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 55,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 82791,
+          "known_tokens_before": 37209,
+          "terminal_usage_known": true,
+          "request_sha256": "2d3fb9443aa1b7a310f66b15fc4095df8147f9a29cb5f2844f87eafc52543da2",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 40,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 71092,
+          "known_tokens_before": 48908,
+          "terminal_usage_known": true,
+          "request_sha256": "af7239012a2747d12512d89b3b26b757f2cec8be603f3d1a7e05e1369826ab68",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 38,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 58627,
+          "known_tokens_before": 61373,
+          "terminal_usage_known": true,
+          "request_sha256": "0709b0393a987f7332dbd050218e1666a96ceecdafbcb10f1038d42f7f4b066e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 36,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 45262,
+          "known_tokens_before": 74738,
+          "terminal_usage_known": true,
+          "request_sha256": "f0d8c1b5b33c0fe29a8b15a9e9b7aabe553b89bb4799d48ac3fb363ab774934b",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_009",
+          "remaining_api_before": 36,
+          "remaining_calls_before": 8,
+          "remaining_tokens_before": 30300,
+          "known_tokens_before": 89700,
+          "terminal_usage_known": true,
+          "request_sha256": "a077add685e0af6ef52485133d25bd06485dc3b5386bc957c5d9d0dea694c109",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 104685,
+      "suffix_api_requests": 27,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "15d23c4d0341355b9d389998e8966aef8762f67221222a6ca7db59bced0bcb60",
+      "user_envelope_shapes": {
+        "task": 9
+      },
+      "source_sha256": {
+        "usage.json": "28d19c397f6c355b251cab7cc7b3eab7ae915f38d3b198248b7273ac32abab71",
+        "summary.json": "6849f4b30dd5f2969adda41a124a9a3dd2014795538f1f7cf7fa0d642db12f61",
+        "events.json": "2336117f61db3d5fa661e82dd71588f87666a3eeb2ba0b7ef52f9949966ee56b",
+        "spans.json": "1ef9670874dd63f866f5252d7b6c1589c3304435dd96aeb3e73b9748648881a1"
+      }
+    },
+    {
+      "run_id": "P33_04_STDOUT_MASK_INDEX_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "3907fcaf4dfa6c0629e2e68cbc95a3a71ce61949fdcad8b5d635d8bfe8033479",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 113063,
+          "known_tokens_before": 6937,
+          "terminal_usage_known": true,
+          "request_sha256": "b86e355418662fa5e731d93bec62a6d69856fe2f768b41e90d378ec1b98e7798",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 104259,
+          "known_tokens_before": 15741,
+          "terminal_usage_known": true,
+          "request_sha256": "42e2da3b411a345c30a4ac425de1c7faa8c8f800fcb7e48c70a945c69f662d17",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 93772,
+          "known_tokens_before": 26228,
+          "terminal_usage_known": true,
+          "request_sha256": "7a9404d0e9bb890d4cb5c0f74f33a5d6c1169ae250051fb96e1b56361fa86490",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 80295,
+          "known_tokens_before": 39705,
+          "terminal_usage_known": true,
+          "request_sha256": "335f69e1ec071617a25757786e1094da46d580dc56b3e297e81a3057bb513108",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 60,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 66791,
+          "known_tokens_before": 53209,
+          "terminal_usage_known": true,
+          "request_sha256": "dfd5793427b2a0b48e3f2f38c861a460b963caa294ec5c7f0816ededb799fe47",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_007",
+          "remaining_api_before": 54,
+          "remaining_calls_before": 10,
+          "remaining_tokens_before": 51886,
+          "known_tokens_before": 68114,
+          "terminal_usage_known": true,
+          "request_sha256": "6b59f6a874c79af8a44919fb3dda40312129fe4da22e78fb5bdfa274ad47fd22",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_008",
+          "remaining_api_before": 54,
+          "remaining_calls_before": 9,
+          "remaining_tokens_before": 35144,
+          "known_tokens_before": 84856,
+          "terminal_usage_known": true,
+          "request_sha256": "4a68500d526c51cbbc1dfb995940e60a67c221b037dd47d0954c60c37b5c2ede",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 102770,
+      "suffix_api_requests": 45,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "e8c86d600a7cd11de3092b9e6bfbf21b0d5ded879bcbc8bcc78e7400dd8a9f73",
+      "user_envelope_shapes": {
+        "task": 8
+      },
+      "source_sha256": {
+        "usage.json": "415bfb331b543e7d87d2be725a5440243533f48aefecd736321435a0dbb2e0a4",
+        "summary.json": "d0e9818e95958fb6a581990a1261eab3aa25cfd6cd7871d19f0c600359c9b9ba",
+        "events.json": "aff5f6d847047e2af0303db57a68c59b13997d2b72715db390eac4333a6074a7",
+        "spans.json": "cef34152299f4bcd124c0b5faf79ac1feb4e3dff19a20d43d91e94307a3dd659"
+      }
+    },
+    {
+      "run_id": "P38_04_NONE_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 56,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 105965,
+          "known_tokens_before": 14035,
+          "terminal_usage_known": true,
+          "request_sha256": "21c47c25a53c5bbc42ab636f8d15ff19cb44ca97bb9012e51ae0eabb9a19d943",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 50,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 88921,
+          "known_tokens_before": 31079,
+          "terminal_usage_known": true,
+          "request_sha256": "911f57628e220ff531e0949366b991022ec0d3106097727f6f2d1b478c695acc",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 50,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 66224,
+          "known_tokens_before": 53776,
+          "terminal_usage_known": false,
+          "request_sha256": "6e0b68b4e9e56488ce8f72a06b32b806e5249efd08b0f07b01990db0109ad3b0",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 53776,
+      "suffix_api_requests": 12,
+      "unknown_usage_calls": 1,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "065947205a699ea309609ac1b61f60995b09d916c294ad8b76ec330c6d74bc60",
+      "user_envelope_shapes": {
+        "task": 4
+      },
+      "source_sha256": {
+        "usage.json": "0e334d5db0237eb7e6cfb302b77d30b707486cec18964be8e36251db717dee41",
+        "summary.json": "165421ea9afc3150543c476966fc65baa159428d5ca2e401b2e52990ce40b1f9",
+        "events.json": "4fd4f8479c68951e666c02be54afd3ca540e91ffa6ec3a2306f8e3dea95fd9ec",
+        "spans.json": "afe013b8e81b27ddfb97ea12ca29113e13e6490ee7138ab59933432db526adf4"
+      }
+    },
+    {
+      "run_id": "P38_04_EXACT_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 105018,
+          "known_tokens_before": 14982,
+          "terminal_usage_known": true,
+          "request_sha256": "7b4d9d3b138474c257ac6dad09c4f0db582c1f64c92ea4c48948bd66fa8a75f3",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 89736,
+          "known_tokens_before": 30264,
+          "terminal_usage_known": true,
+          "request_sha256": "1a2533effc16ab468ff369677088ed2cdccf4319ef0306c64a70dbe758bafd29",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 73502,
+          "known_tokens_before": 46498,
+          "terminal_usage_known": true,
+          "request_sha256": "a739e9a71c87bcaad4966735d8b3cdcf5842da25b0f8f6be076b717e0deff743",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 1,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 56677,
+          "known_tokens_before": 63323,
+          "terminal_usage_known": true,
+          "request_sha256": "c0366f3af53295f6b2cfab3a72c8264caa3c7e7d5ad5df78369b11546218bf63",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 1,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 32854,
+          "known_tokens_before": 87146,
+          "terminal_usage_known": true,
+          "request_sha256": "597de5ca1a234f2c362c75a42d96f081873c5a5127ba3ca24a411753b09bfa1e",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 111149,
+      "suffix_api_requests": 61,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "065947205a699ea309609ac1b61f60995b09d916c294ad8b76ec330c6d74bc60",
+      "user_envelope_shapes": {
+        "task": 6
+      },
+      "source_sha256": {
+        "usage.json": "cbf6667a95ff8324e539d206ac729b79ee6ad0ec9afebac8f3f8cf2cbc09d55a",
+        "summary.json": "01be6045a86db367397e25da5d49d2e2427526f711bb151cddf9cf8fc690ef41",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca"
+      }
+    },
+    {
+      "run_id": "P38_04_CONTRACT_KEEP",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 16,
+          "remaining_tokens_before": 120000,
+          "known_tokens_before": 0,
+          "terminal_usage_known": true,
+          "request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_002",
+          "remaining_api_before": 62,
+          "remaining_calls_before": 15,
+          "remaining_tokens_before": 105018,
+          "known_tokens_before": 14982,
+          "terminal_usage_known": true,
+          "request_sha256": "9203c90fbf061c6697385cd2cc4495d1ac3d813321f578ff968d3051dad70a98",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_003",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 14,
+          "remaining_tokens_before": 89736,
+          "known_tokens_before": 30264,
+          "terminal_usage_known": true,
+          "request_sha256": "2cdcc020a80ce73909e0ef00ba6c11fe6e15f81e31b702673975f860601226d8",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_004",
+          "remaining_api_before": 61,
+          "remaining_calls_before": 13,
+          "remaining_tokens_before": 73502,
+          "known_tokens_before": 46498,
+          "terminal_usage_known": true,
+          "request_sha256": "d9a3d3d66ba4a66992cf4cc4372308832f449588a2c02c62ef409415c920b3aa",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_005",
+          "remaining_api_before": 1,
+          "remaining_calls_before": 12,
+          "remaining_tokens_before": 56677,
+          "known_tokens_before": 63323,
+          "terminal_usage_known": true,
+          "request_sha256": "3ba888e2b06b6ffb1711a4cbaf37d6932cc0e27e95e655486f075344eabd7a5a",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        },
+        {
+          "call_id": "call_006",
+          "remaining_api_before": 1,
+          "remaining_calls_before": 11,
+          "remaining_tokens_before": 32854,
+          "known_tokens_before": 87146,
+          "terminal_usage_known": true,
+          "request_sha256": "535827fd339c0d780324df3ce0527f0814f57450a4ebd7eb4b3819082dab80a8",
+          "system_unchanged": true,
+          "explicit_budget_block": false,
+          "request_cache_prompt": true
+        }
+      ],
+      "known_total_tokens": 111149,
+      "suffix_api_requests": 61,
+      "unknown_usage_calls": 0,
+      "prefix_api_requests": 18,
+      "limits": {
+        "max_api_requests": 80,
+        "max_calls": 16,
+        "max_total_tokens": 120000,
+        "max_wall_seconds": 480
+      },
+      "system_sha256": "065947205a699ea309609ac1b61f60995b09d916c294ad8b76ec330c6d74bc60",
+      "user_envelope_shapes": {
+        "task": 6
+      },
+      "source_sha256": {
+        "usage.json": "bd12d053a3f5f6a9bbcdc0c399337e5eb1f9b6b8b16834aee6e51ffc4fa6c6cf",
+        "summary.json": "072ad02a2149c6aca05816d6e9cff90f039cc2db4df3500470ea178661163735",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca"
+      }
+    }
+  ],
+  "cells_reviewed": 15,
+  "calls_reviewed": 102,
+  "model_calls_added": 0,
+  "environment_api_requests_added": 0,
+  "final_evaluator_calls_added": 0,
+  "reserved_scenarios_read": 0,
+  "source_sha256": {
+    "scripts/audit_budget_visibility.py": "3f50a965637888c6d057230cbf36371181e8914a6b3e11e6dc00dc6343edbfe9",
+    "reports/P33_comparison.json": "722cf575147ea5bac87e49dc420493126c65c6e76b2f26b72c81a9375b650ce4",
+    "reports/P38_comparison.json": "775eb8e96e37564aea7401479d0a3170f4d6687a24af7a1a29f6e9579e4673ba"
+  },
+  "limits": [
+    "Message envelopes and fixed controller source establish absence of an explicit running budget feed.",
+    "An API count in a receipt is not the same as a disclosed total/remaining budget.",
+    "The model may infer constraints or mention budgets itself; this does not measure internal awareness.",
+    "No causal claim that missing budget signals caused the recorded failures."
+  ]
+}

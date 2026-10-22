@@ -1,0 +1,21 @@
+{
+  "phase": "P40",
+  "batch_id": "P40_batch_v01",
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": ["P29_01_CODE", "P29_02_CODE", "P29_03_CODE", "P29_04_CODE"],
+  "boundary_after_model_calls": 8,
+  "arms": ["plain_keep", "budget_keep"],
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "recent_complete_turns": 1,
+  "selection_rule": "All four already inspected development tasks and the existing eighth-response boundary. Posthoc baseline-strengthening comparison, not a heldout effectiveness test. No task replacement or extra trial after outcomes.",
+  "order_rule": "Plain then notification on task indices 1 and 3; notification then plain on 2 and 4. One trial per cell. Review all eight cells before describing benefit.",
+  "notification_rule": "Only budget_keep receives a fresh ephemeral user message before each model call: remaining and used API/model/token budgets, remaining wall-time snapshot, context and per-output limits. No future-cost prediction or task-specific hints. The full underlying conversation and persistent Python state are identical at the boundary. Notifications are charged and never accumulated in the underlying history.",
+  "cache_rule": "Both conditions use cache_prompt=false for their first continuation call and confirm cache_n=0 from terminal measurement. Subsequent calls use true. This prevents reuse of the preceding condition's prefix, not all sources of nondeterminism. Historical P33/P38 timings are not direct controls.",
+  "budget_rule": "Original API caps include the prefix. Same 16 calls, 120000 full logical input+output tokens, and 480 continuation seconds. Notification construction and counting time belong to continuation. Reconstructing the common prefix is separately recorded. No extra model calls for control or verification.",
+  "failure_rule": "Setup mismatch, unknown model usage/effects, cache-policy mismatch, evaluator failure, or an explicit stop ends the batch without a replacement. Ordinary budget or task failures are retained and the fixed next cell runs if the same server is idle and its lease suffices.",
+  "continuation_gate": "This is a familiar budget-awareness baseline. A favorable result is not novel or a general quality guarantee. Check paired task outcomes, all-cost totals, incomplete trials, notification overhead, and source/counter correspondence before using it as a comparator for a new mechanism.",
+  "novel_method_claim": false
+}
