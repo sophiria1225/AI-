@@ -1,6 +1,8 @@
 # 10月31日投稿用原稿の現在地
 
-**最新はP55に絞った検討用原稿。** [４ページPDF](candidate_inventory_visibility.pdf)／[TeX](candidate_inventory_visibility.tex)／[資料と確認範囲](../../materials/20261023_p55/README.md)。全12評価・不明１生成・費用不採用と、写真F/Dの保存状態が一致する限界を反映。和文97字・英文45語。自然改頁の２段組４ページ、全頁目視、はみ出し・未解決引用０。公式様式・著者情報・中心的な貢献は未確定。
+**最新はP55/P56を合わせた検討用原稿。** [４ページPDF](candidate_inventory_terminal_scope.pdf)／[TeX](candidate_inventory_terminal_scope.tex)／[資料と確認範囲](../../materials/20261023_p56/README.md)。全12表示条件と完了通知の追加４診断を区別し、元の成否・未知費用を維持。和文111字・英文47語。全頁目視、はみ出し・未解決引用０。中心的貢献・公式様式・著者情報は未確定。以下のP55単独原稿も当時の履歴として保存する。
+
+**P55単独の検討用原稿。** [４ページPDF](candidate_inventory_visibility.pdf)／[TeX](candidate_inventory_visibility.tex)／[資料と確認範囲](../../materials/20261023_p55/README.md)。全12評価・不明１生成・費用不採用と、写真F/Dの保存状態が一致する限界を反映。和文97字・英文45語。自然改頁の２段組４ページ、全頁目視、はみ出し・未解決引用０。公式様式・著者情報・中心的な貢献は未確定。
 
 以下の原稿・実験は過去の検討履歴。旧PDFは上書きしない。
 
