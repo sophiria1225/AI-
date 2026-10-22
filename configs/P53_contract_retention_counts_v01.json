@@ -1,0 +1,43 @@
+{
+  "phase": "P53",
+  "batch_id": "P53_contract_retention_counts_v01",
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE",
+    "P29_03_CODE",
+    "P29_04_CODE"
+  ],
+  "modes": [
+    "full_keep",
+    "all_documented_details",
+    "used_since_document",
+    "all_parameters_observed"
+  ],
+  "max_count_requests": 16,
+  "max_wall_seconds": 180,
+  "max_server_seconds": 600,
+  "gate_minimum_tokens": 1000,
+  "gate_minimum_tasks": 2,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "program_reexecutions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "source_reports_sha256": {
+    "reports/P52_contract_use_retention.json": "8505d73c2f091d276a07a3ef405555e16c2f5f34b7b82c49d126cbdd95812586",
+    "reports/P44_documentation_origin.json": "b2ca8252f924b7bfe03fece245b887e2927f3bce97174dab36d627a6ee8af9aa"
+  },
+  "implementation_sources": [
+    "scripts/count_contract_retention.py",
+    "scripts/contract_retention_controls.py",
+    "scripts/local_llama.py",
+    "scripts/local_llama_stream.py",
+    "scripts/inference_cache_control.py",
+    "scripts/model_provenance.py",
+    "tests/test_contract_retention_controls.py",
+    "tests/test_count_contract_retention.py"
+  ],
+  "stop_rule": "One count per scheduled input, no retries. Stop on source, count, server identity or budget mismatch; preserve all attempted and unattempted cases. Stop the owned server after counts.",
+  "allocation_gate": "Same 1000-input-token removal in at least two of four known tasks used in P44, for allocation only. No threshold lowering if unmet. Meeting this condition does not itself authorize generation or establish quality, novelty, or total cost reduction.",
+  "interpretation": "Only initial inputs are counted. Same original model/template and source messages as P44. Retention labels/markers remain part of measured input; this is not a causal task-outcome comparison."
+}
