@@ -6,6 +6,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 from public_export_evidence import inspect_export, DELETED
+from inspect_public_export_scope import usage_for_cost
 
 TASK={'ground_truth_loaded':False,'instruction':
  'Export a unique list of all the songs in my song and album library and all playlists '
@@ -48,6 +49,18 @@ def inspect(task,calls):return inspect_export(task,*records(calls))
 
 
 class PublicExportTests(unittest.TestCase):
+    def test_legacy_usage_keeps_known_amounts_and_unknown_calls(self):
+        rows=[{'id':'call_001','input_tokens':12,'output_tokens':3},
+              {'id':'call_002','input_tokens':None,'output_tokens':None}]
+        before=copy.deepcopy(rows);result=usage_for_cost(rows,1)
+        self.assertEqual([r['usage_known'] for r in result],[True,False])
+        self.assertEqual(rows,before);self.assertIsNone(result[1]['input_tokens'])
+
+    def test_legacy_usage_must_agree_with_prior_audit_and_any_explicit_flag(self):
+        rows=[{'id':'call_001','input_tokens':12,'output_tokens':3}]
+        with self.assertRaises(ValueError):usage_for_cost(rows,1)
+        with self.assertRaises(ValueError):usage_for_cost([{**rows[0],'usage_known':False}],0)
+
     def test_support_requires_complete_union_exact_csv_and_deletion_after_backup(self):
         task,calls=fixture();r=inspect(task,calls)
         self.assertEqual(r['final']['trace_support'],'supported')

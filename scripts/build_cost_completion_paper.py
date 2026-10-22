@@ -1,4 +1,4 @@
-"""Build the bounded P55/P56 manuscript from the closed, hash-locked evidence.
+"""Build the bounded P55/P56/P66 manuscript from closed, hash-locked evidence.
 
 Use the reporting Python environment and pass the installed TeX binary directory.
 This command performs no task execution, model generation, or network request.
@@ -37,6 +37,11 @@ def evidence_checks():
     locked.update({
         'reports/P62_public_move_scope.json': '8f99d38b6497c186d170b907ed01881a10d9b37a78fcf4f7c74b3b89084aa6c5',
         'reports/P63_public_name_scope.json': 'ce3efc942aebf8415b105ea9adf09f3483ed31a632774b7c9eb8c9fd9736d7e4',
+        'reports/P64_public_name_audit.json': '8c5dac74fcb69c59b89df936270b5bed8ab00db0abef10feca15f07faebfd283',
+        'configs/P66_ordinary_completion_v01.json': 'c0320ff4f5d0b594b5afe9e95654167693dfca4ca04a02d6796667051aa66dba',
+        'reports/P66_ordinary_completion.json': '5e38fab2a658da64ea47d63cef936a2a027ef1f35d5fd93e9c5638ca6172eaaa',
+        'reports/P66_completion_audit.json': 'f8864e42c0b627f6ffc5dc10636c78573050236beb2b1811115c1248030ca990',
+        'reports/P66_identity_differences.json': '8ac7c2f1914924d98151f7bcc857fdc335ee91f79a7999104fa65654964b6d27',
     })
     for relative, digest in locked.items():
         if sha(ROOT / relative) != digest:
@@ -47,6 +52,8 @@ def evidence_checks():
     diagnostic = read(ROOT / 'reports/P56_completion_audit.json')
     session = read(ROOT / 'reports/P55_server_session.json')
     move_scope = read(ROOT / 'reports/P62_public_move_scope.json')
+    control = read(ROOT / 'reports/P66_completion_audit.json')
+    identities = read(ROOT / 'reports/P66_identity_differences.json')
     actual = {
         'planned_and_evaluated_cells': len(report['rows']),
         'all_planned_cells_accounted': report['all_planned_cells_accounted'],
@@ -66,6 +73,18 @@ def evidence_checks():
         'photo_public_clock_requests': [r['public_clock_requests_sent'] for r in move_scope['rows']],
         'photo_name_preserved_moves': [r['final']['filename_preserved_moves'] for r in move_scope['rows']],
         'photo_public_trace_support': [r['final']['trace_support'] for r in move_scope['rows']],
+        'ordinary_control_conditions': control['planned_conditions'],
+        'ordinary_control_audit_errors': control['audit_errors'],
+        'ordinary_control_usage': [control[k] for k in ('model_calls', 'known_total_tokens', 'unknown_usage_calls', 'api_requests', 'evaluator_calls')],
+        'ordinary_control_success': [r['official_success'] for r in control['rows']],
+        'ordinary_control_reference_success': [r['baseline_comparison']['reference_official_success'] for r in control['rows']],
+        'ordinary_control_tokens': [[r['baseline_comparison']['reference_known_tokens'], r['known_total_tokens']] for r in control['rows']],
+        'ordinary_control_final_database_differences': [r['baseline_comparison']['changed_final_database_files'] for r in control['rows']],
+        'ordinary_control_public_prefix_equal': [[r['baseline_comparison'][k] for k in ('same_prefix_events', 'same_prefix_spans')] for r in control['rows']],
+        'ordinary_control_strict_prefix_equal': [r['baseline_comparison']['same_entire_executed_model_prefix'] for r in control['rows']],
+        'ordinary_control_identity_other_differences': [[r['request_other_differences'], r['response_other_differences']] for r in identities['rows']],
+        'ordinary_control_identity_criterion_changed': identities['criterion_changed'],
+        'ordinary_control_server_stopped': control['server_stopped'],
     }
     expected = {
         'planned_and_evaluated_cells': 12,
@@ -82,14 +101,42 @@ def evidence_checks():
         'photo_public_clock_requests': [0, 0, 0],
         'photo_name_preserved_moves': [42, 42, 0],
         'photo_public_trace_support': ['unknown', 'unknown', 'unknown'],
+        'ordinary_control_conditions': 2, 'ordinary_control_audit_errors': [],
+        'ordinary_control_usage': [25, 203349, 0, 199, 2],
+        'ordinary_control_success': [True, True],
+        'ordinary_control_reference_success': [True, True],
+        'ordinary_control_tokens': [[130439, 91116], [151664, 112233]],
+        'ordinary_control_final_database_differences': [[], []],
+        'ordinary_control_public_prefix_equal': [[True, True], [True, True]],
+        'ordinary_control_strict_prefix_equal': [False, False],
+        'ordinary_control_identity_other_differences': [[0, 0], [0, 0]],
+        'ordinary_control_identity_criterion_changed': False,
+        'ordinary_control_server_stopped': True,
     }
     if actual != expected:
         raise ValueError(f'manuscript claim/source mismatch: {actual}')
     return locked, actual
 
 
+def write_control_component():
+    control = read(ROOT / 'reports/P66_completion_audit.json')
+    lines = [r'% Generated from the closed P66 audit by build_cost_completion_paper.py.',
+             r'\begin{center}\begin{minipage}{\columnwidth}\centering',
+             r'\small 表5\quad 別条件の写真課題：全体token\par\smallskip',
+             r'\begin{tabular}{lrrr}\hline',
+             r'接続 & 通常終了 & 終了制御 & 減少率\\\hline']
+    labels = {'documented': '文書取得必須', 'named': '公開名'}
+    for row in control['rows']:
+        baseline = row['baseline_comparison']['reference_known_tokens']
+        current = row['known_total_tokens']
+        lines.append(f"{labels[row['arm']]} & {baseline:,} & {current:,} & {(baseline-current)/baseline*100:.1f}\\%" + r'\\')
+    lines += [r'\hline\end{tabular}', r'\end{minipage}\end{center}']
+    (PAPER / 'ordinary_completion_component.tex').write_text('\n'.join(lines) + '\n')
+
+
 def build(tex_bin, output):
     locked, actual = evidence_checks()
+    write_control_component()
     ja = (PAPER / 'cost_completion_abstract_ja.txt').read_text().strip()
     en = (PAPER / 'cost_completion_abstract_en.txt').read_text().strip()
     if len(ja) > 120 or len(en.split()) > 50:
@@ -137,9 +184,10 @@ def build(tex_bin, output):
         f'papers/202610_letter/{NAME}.tex', 'papers/202610_letter/p55_methods_component.tex',
         'papers/202610_letter/inventory_tables.tex', 'papers/202610_letter/completion_diagnostic.tex',
         'papers/202610_letter/cost_completion_abstract_ja.txt', 'papers/202610_letter/cost_completion_abstract_en.txt',
-        'materials/20261023_p55/work_tokens.pdf', 'docs/evidence_delivery_overlap_20261023.md',
+        'docs/evidence_delivery_overlap_20261023.md',
         'docs/P62_findings.md', 'docs/P63_findings.md',
         'docs/termination_control_overlap_20261023.md',
+        'papers/202610_letter/ordinary_completion_component.tex', 'docs/P66_findings.md',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},
@@ -149,6 +197,8 @@ def build(tex_bin, output):
         'pages': layout['pages'], 'visual_reviewed_pages': layout['visual_reviewed_pages'],
         'japanese_abstract_characters': len(ja), 'english_abstract_words': len(en.split()),
         'all_scheduled_agent_cells': 12, 'posthoc_replay_cases': 4, 'independent_agent_tasks': 4,
+        'separate_ordinary_completion_conditions': 2, 'separate_ordinary_reference_conditions': 2,
+        'ordinary_completion_uses_same_known_photo_task': True,
         'official_class_used': False, 'submission_ready': False, 'central_contribution_confirmed': False,
         'forced_section_or_column_breaks': False, 'rendering_up_to_date': True,
         'new_model_calls_for_rendering': 0, 'new_api_requests_for_rendering': 0,
@@ -160,6 +210,11 @@ def build(tex_bin, output):
         'additional_related_reference': {
             'url': 'https://arxiv.org/html/2610.21394v1',
             'read_scope': 'Sections 3.1–4.3, 20.2–20.3 and 20.5; not all later sections or an implementation reproduction. Abstract page identifies the work as a non-peer-reviewed research preprint.',
+            'record': 'docs/termination_control_overlap_20261023.md',
+        },
+        'ordinary_termination_reference': {
+            'url': 'https://arxiv.org/html/2608.23623v1',
+            'read_scope': 'Declared contract, evidence ledger, deterministic verification and trust boundary; no implementation reproduction.',
             'record': 'docs/termination_control_overlap_20261023.md',
         },
     }

@@ -9,3 +9,5 @@
 監査1,721項目不一致０、所有推論器1,059.910秒で正常停止、保留群０。[固定計画](../../docs/experiments/P66_ordinary_completion.md)／[設定](../../configs/P66_ordinary_completion_v01.json)。出典と生成処理のハッシュは[manifest](build_manifest.json)。再生成は `scripts/build_completion_control_report.py --pdf`。
 
 [前段P64/P65の５枚資料](../20261023_p64/README.md)／[現在の研究状態](../../docs/current_status.md)。原稿の中心貢献・公式様式・著者情報は未確定のまま、10月31日の投稿を目指す。
+
+P66の結果を[４ページ原稿](../../papers/202610_letter/candidate_cost_completion.pdf)の別節へ反映済み。続く[P67のCSV読取結果](../20261023_p67/README.md)では、正しい書出し後の退会まで支持できる記録と、欠落・未完了の記録を区別した。

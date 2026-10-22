@@ -13,6 +13,19 @@ PLAN='configs/P67_public_export_scope_v01.json'
 RUNS=['P18_04_ROLES','P25_04_GUIDED','P29_04_CODE']
 
 
+def usage_for_cost(usage, expected_unknown):
+    """Legacy records omit the flag; classify existing amounts without imputation."""
+    result=[]
+    for call in usage:
+        known=all(type(call.get(k)) is int and call[k]>=0 for k in ('input_tokens','output_tokens'))
+        if 'usage_known' in call and call['usage_known'] is not known:
+            raise ValueError('stored usage classification disagrees with amounts')
+        result.append({**call,'usage_known':known})
+    if sum(not c['usage_known'] for c in result)!=expected_unknown:
+        raise ValueError('legacy usage differs from the original audit')
+    return result
+
+
 def inspect(storage):
     began=time.monotonic();plan=read(ROOT/PLAN)
     required={'phase':'P67','task_id':'6104387_1','run_ids':RUNS,'max_wall_seconds':120,
@@ -38,7 +51,8 @@ def inspect(storage):
         task,spans,events,usage=[read(trial/(n+'.json')) for n in ('public_task','spans','events','usage')]
         result=inspect_export(task,spans,events,usage)
         result.update(run_id=rid,original_official_success=audit['evaluation']['official_success'],
-            source_sha256=source,observed_cost_after_first_supported_boundary=later_cost(result['boundaries'],usage))
+            source_sha256=source,observed_cost_after_first_supported_boundary=later_cost(result['boundaries'],
+                usage_for_cost(usage,audit['unknown_usage_calls'])))
         rows.append(result)
     return {'phase':'P67','selection':plan['selection'],'known_tasks':1,'records':3,'rows':rows,
         'plan_sha256':sha(ROOT/PLAN),'checker_sha256':sha(ROOT/'scripts/public_export_evidence.py'),
