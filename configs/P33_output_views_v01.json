@@ -1,0 +1,20 @@
+{
+  "phase": "P33",
+  "batch_id": "P33_batch_v01",
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": ["P29_01_CODE", "P29_02_CODE", "P29_03_CODE", "P29_04_CODE"],
+  "boundary_after_model_calls": 8,
+  "arms": ["full_keep", "stdout_mask_keep", "stdout_mask_index_keep"],
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "recent_complete_turns": 1,
+  "order_rule": "Rotate the three listed arms by task index modulo three. All twelve cells run once.",
+  "selection_rule": "Posthoc development comparison after full P31/P32 inspection, on all four original P29 eighth-response states. No final holdout use, no outcome-driven replacement or extension.",
+  "masking_rule": "Once at the boundary, replace only stdout of older successful run_python observations when the explicit pointer is shorter. Preserve the latest complete turn, all assistant commands, source IDs, status, errors, truncation, completion and API receipt metadata. Keep full immutable archives available in every arm. Later turns are appended unchanged.",
+  "inventory_rule": "In the indexed arm only, expose bounded names, builtin types, container lengths and loaded API schema names at the boundary. No values, source evaluation or generated summary. No relevance or future validity claim.",
+  "budget_rule": "Same original task API cap includes original prefix; same model and continuation seed begins at original seed plus eight. Inventory and view-construction wall time are charged to continuation; their input tokens count naturally. Environment/Python reconstruction remains separately measured experimental setup.",
+  "continuation_gate": "Descriptive development decision only: examine all four paired outcomes and all costs. Do not advance a quality-preserving efficiency claim if an arm loses a baseline-success task or fails to reduce total known tokens; unknown usage prevents an exact savings rate. Even passing is not non-inferiority or generalization evidence.",
+  "novel_method_claim": false
+}

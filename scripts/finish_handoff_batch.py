@@ -15,7 +15,10 @@ REPOSITORY='sophiria1225/AI-'
 
 
 def run(root,storage,phase='P31'):
-    if phase not in ('P31','P32'):raise ValueError('unknown phase')
+    if phase not in ('P31','P32','P33'):raise ValueError('unknown phase')
+    count=12 if phase=='P33' else 16
+    batch_script='run_output_views.py' if phase=='P33' else 'run_handoff_factors.py'
+    audit_script='analyze_output_views.py' if phase=='P33' else 'analyze_handoff_factors.py'
     slug=phase.lower()
     state_path=storage/f'.runtime/{slug}_pipeline_status.json'
     def status(**values):
@@ -34,27 +37,27 @@ def run(root,storage,phase='P31'):
     status(status='running_batch',branch=branch)
     log=storage/f'.runtime/{slug}_pipeline.log'
     with log.open('w') as stream:
-        completed=subprocess.run([sys.executable,str(root/'scripts/run_handoff_factors.py'),
+        completed=subprocess.run([sys.executable,str(root/'scripts'/batch_script),
             '--storage-root',str(storage),'--repo-root',str(root),'--phase',phase,'--publish'],cwd=root,
             stdout=stream,stderr=subprocess.STDOUT)
         if completed.returncode:
             status(status='batch_stopped',exit_code=completed.returncode);return completed.returncode
         status(status='auditing_complete_cohort',branch=branch)
-        analyzed=subprocess.run([sys.executable,str(root/'scripts/analyze_handoff_factors.py'),
+        analyzed=subprocess.run([sys.executable,str(root/'scripts'/audit_script),
             '--storage-root',str(storage),'--repo-root',str(root),'--phase',phase],cwd=root,
             stdout=stream,stderr=subprocess.STDOUT)
         if analyzed.returncode:
             status(status='audit_failed',exit_code=analyzed.returncode);return analyzed.returncode
     report_name=f'reports/{phase}_comparison.json'
     report=json.loads((root/report_name).read_text())
-    if not report['all_sixteen_reviewed'] or report['audit_errors']:
+    if not report['all_twelve_reviewed' if phase=='P33' else 'all_sixteen_reviewed'] or report['audit_errors']:
         raise ValueError('incomplete audit')
     command(['git','add',report_name])
-    command(['git','commit','-m',f'Record all sixteen {phase} fixed-prefix handoff continuations'])
+    command(['git','commit','-m',f'Record all {count} {phase} fixed-prefix continuations'])
     head=command(['git','rev-parse','HEAD'])
     command(['git','-c','credential.helper=','-c','credential.helper=!gh auth git-credential',
              'push','-u','origin',branch])
-    lines=['全16分岐の実行・独立評価・費用監査が終了したため、公開可能な集計だけを保存する。',
+    lines=[f'全{count}分岐の実行・独立評価・費用監査が終了したため、公開可能な集計だけを保存する。',
            '', '| 条件 | 成功 | 既知token | 不明呼出 | 後続API |','|---|---:|---:|---:|---:|']
     for arm,row in report['totals'].items():
         lines.append(f"| {arm} | {row['successes']}/4 | {row['known_total_tokens']:,} | {row['unknown_usage_calls']} | {row['api_requests']} |")
@@ -84,7 +87,7 @@ def run(root,storage,phase='P31'):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--repo-root',type=Path,required=True)
     parser.add_argument('--storage-root',type=Path,required=True)
-    parser.add_argument('--phase',choices=('P31','P32'),default='P31');a=parser.parse_args()
+    parser.add_argument('--phase',choices=('P31','P32','P33'),default='P31');a=parser.parse_args()
     try:raise SystemExit(run(a.repo_root,a.storage_root,a.phase))
     except Exception as exc:
         (a.storage_root/f'.runtime/{a.phase.lower()}_pipeline_error.txt').write_text(type(exc).__name__+': '+str(exc)+'\n')

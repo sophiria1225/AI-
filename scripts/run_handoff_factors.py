@@ -79,8 +79,12 @@ def prepare_sources(storage, root):
 
 def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, run_id):
     boundary_call=prepared['prefix']['manifest']['state']['model_calls']
-    if plan['phase'] not in ('P31','P32') or boundary_call!=plan['boundary_after_model_calls']:
+    if plan['phase'] not in ('P31','P32','P33') or boundary_call!=plan['boundary_after_model_calls']:
         raise ValueError('wrong prespecified boundary or phase')
+    if plan['phase']=='P33':
+        from handoff_output_views import ARMS as VIEW_ARMS
+        if arm not in VIEW_ARMS or boundary_call!=8:
+            raise ValueError('outside output-view comparison')
     trial = storage/'records/context_pilot'/run_id
     if trial.exists(): raise FileExistsError('preserve every prior branch')
     appworld = storage/'.runtime/appworld/r18_probe_01'
@@ -128,11 +132,22 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
                 raise ValueError('reconstructed Python prefix differs')
         if time.monotonic()-setup_started > plan['max_setup_seconds']:
             raise TimeoutError('reconstruction exceeded setup deadline')
-        conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm,boundary_call)
+        setup_wall=time.monotonic()-setup_started
+        if plan['phase']=='P33':
+            from handoff_output_views import build_view
+            conversation,transfer=build_view(prefix,arm,session,storage,trial,schemas,catalog)
+        else:
+            conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm,boundary_call)
         write_json(trial/'conversation_private.json', conversation.messages())
         setup.update(status='matched_observable_prefix',wall_seconds=time.monotonic()-setup_started)
         write_json(trial/'setup.json', setup)
         infer = Inference(config, trial)
+        if plan['phase']=='P33':
+            # Inspection is real controller work, charged to the continuation
+            # wall budget. Reconstruction remains separate experimental setup.
+            infer.started-=transfer['transfer_wall_seconds']
+            setup['wall_seconds']=setup_wall
+            write_json(trial/'setup.json',setup)
         while not complete:
             if prefix_api+suffix_api >= config['max_api_requests']:
                 raise BudgetStop('api_request_limit')
