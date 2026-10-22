@@ -1,0 +1,82 @@
+{
+  "phase": "P38_miss_diagnostics",
+  "rows": [
+    {
+      "run_id": "P38_04_NONE_KEEP",
+      "arm": "none_keep",
+      "available_source_objects_at_boundary": 12,
+      "explicit_projected_requests": 0,
+      "shadow_contract_reasons": {},
+      "requests_for_boundary_source_objects": 0,
+      "suffix_invalidations": 0,
+      "first_request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+      "first_response_file_sha256": "986043b0658c545a7b4030d96205a7f9b24e9914173af4b488f127d2e2a54b89",
+      "first_produced_sha256": "a54c9c44a6a0f20998dd802099ee6311e0e21933e931544f52708f4c0ac722e6",
+      "source_sha256": {
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "events.json": "4fd4f8479c68951e666c02be54afd3ca540e91ffa6ec3a2306f8e3dea95fd9ec",
+        "spans.json": "afe013b8e81b27ddfb97ea12ca29113e13e6490ee7138ab59933432db526adf4",
+        "usage.json": "0e334d5db0237eb7e6cfb302b77d30b707486cec18964be8e36251db717dee41"
+      }
+    },
+    {
+      "run_id": "P38_04_EXACT_KEEP",
+      "arm": "exact_keep",
+      "available_source_objects_at_boundary": 12,
+      "explicit_projected_requests": 60,
+      "shadow_contract_reasons": {
+        "object_not_previously_observed": 60
+      },
+      "requests_for_boundary_source_objects": 0,
+      "suffix_invalidations": 0,
+      "first_request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+      "first_response_file_sha256": "0151504eca33da5d79e7b22270ccd55171e11682504f6bb9af7abc3c51b289fc",
+      "first_produced_sha256": "5f478e6677e3119644901ab934a00f4c475d1c996460d9d1f9a812fbbacbd4e9",
+      "source_sha256": {
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca",
+        "usage.json": "cbf6667a95ff8324e539d206ac729b79ee6ad0ec9afebac8f3f8cf2cbc09d55a"
+      }
+    },
+    {
+      "run_id": "P38_04_CONTRACT_KEEP",
+      "arm": "contract_keep",
+      "available_source_objects_at_boundary": 12,
+      "explicit_projected_requests": 60,
+      "shadow_contract_reasons": {
+        "object_not_previously_observed": 60
+      },
+      "requests_for_boundary_source_objects": 0,
+      "suffix_invalidations": 0,
+      "first_request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+      "first_response_file_sha256": "2ee3bab680340ca2df8705c55082bc349ec74cbf102a321cf7bbe510fa53d40e",
+      "first_produced_sha256": "94824d39cee6040a2702d762ec327e0ddb3ca76c7d3498789fa1c54cdf2060e4",
+      "source_sha256": {
+        "prefix_events.json": "0274e523d5b38dc1c292bc482e6767358abb3c3e7ff7e687418d274197478cfc",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca",
+        "usage.json": "bd12d053a3f5f6a9bbcdc0c399337e5eb1f9b6b8b16834aee6e51ffc4fa6c6cf"
+      }
+    }
+  ],
+  "all_three_diagnosed": true,
+  "identical_first_request": true,
+  "identical_first_produced_fields": false,
+  "cache_arms_first_produced_fields_equal": false,
+  "model_calls_added": 0,
+  "api_requests_added": 0,
+  "evaluator_calls_added": 0,
+  "reserved_scenarios_read": 0,
+  "source_sha256": {
+    "reports/P38_comparison.json": "775eb8e96e37564aea7401479d0a3170f4d6687a24af7a1a29f6e9579e4673ba",
+    "scripts/diagnose_projected_misses.py": "222a0584d8dc80644f63dd5959bd1c15d434699f9f75948a2a0e57d7f441f193",
+    "scripts/field_read_contract.py": "cc7ff1f8ab452a5ed7cb562a93941a4d1f85db663c841d545cd01732ea04b44a",
+    "scripts/projected_read_runtime.py": "7ca0d2a6ab794d941c3441319b62948e4f90a4f947b4fbf472de3937301eb8a2"
+  },
+  "limits": [
+    "A shadow lookup over fixed recorded requests is not a model counterfactual.",
+    "The first request can be identical even if sampled generations differ.",
+    "Different cache/prefill counts are observed, but do not establish why outputs differ."
+  ]
+}

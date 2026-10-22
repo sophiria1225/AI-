@@ -1,0 +1,164 @@
+{
+  "phase": "P38",
+  "rows": [
+    {
+      "run_id": "P38_04_NONE_KEEP",
+      "task_id": "6104387_1",
+      "arm": "none_keep",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "model_calls": 4,
+      "known_total_tokens": 53776,
+      "unknown_usage_calls": 1,
+      "api_requests": 12,
+      "prefix_api_requests": 18,
+      "setup_api_requests": 18,
+      "setup_wall_seconds": 2.3000806670170277,
+      "continuation_wall_seconds": 479.7958754999563,
+      "full_wall_seconds": 483.48600441683084,
+      "unknown_effect_requests": 0,
+      "name_or_value_exceptions": {},
+      "archive_read_calls": 0,
+      "selected_prior_receipts": 0,
+      "repeat_identical_request_excess": 0,
+      "repeat_count_scope": "All identical dispatched API name+argument pairs, including writes; not all are waste.",
+      "source_boundary_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "165421ea9afc3150543c476966fc65baa159428d5ca2e401b2e52990ce40b1f9",
+        "evaluation.json": "e387d5adb232ba3507a7915a046cb471537a5da26923cb5f962fd7bfb1b4f425",
+        "events.json": "4fd4f8479c68951e666c02be54afd3ca540e91ffa6ec3a2306f8e3dea95fd9ec",
+        "spans.json": "afe013b8e81b27ddfb97ea12ca29113e13e6490ee7138ab59933432db526adf4",
+        "usage.json": "0e334d5db0237eb7e6cfb302b77d30b707486cec18964be8e36251db717dee41",
+        "setup.json": "98e47e017f024d3efc1adb2da849896259c49bdc6da0dd42cf265f44d5d3186d",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc",
+        "plan.json": "f51a6ca510a6c744f637a42cb64cbe7c7f1b4e658d8231f86cb30ec57a381594",
+        "factor_plan.json": "56347febbe0a4353fdc8ffd066748a5b2c7f49bca794369092d37a508fa3f6e9"
+      },
+      "projected_reads": {
+        "mode": "none",
+        "counts": {
+          "invalidations": 12,
+          "backend_requests": 12
+        },
+        "installation": {
+          "wall_seconds": 0.022988083073869348,
+          "model_calls": 0,
+          "api_requests": 0,
+          "program_index": 9
+        },
+        "bounds_rejected": 0,
+        "revision_changes": 12
+      }
+    },
+    {
+      "run_id": "P38_04_EXACT_KEEP",
+      "task_id": "6104387_1",
+      "arm": "exact_keep",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "model_calls": 6,
+      "known_total_tokens": 111149,
+      "unknown_usage_calls": 0,
+      "api_requests": 61,
+      "prefix_api_requests": 18,
+      "setup_api_requests": 18,
+      "setup_wall_seconds": 2.403527250047773,
+      "continuation_wall_seconds": 402.8213585841004,
+      "full_wall_seconds": 406.28609933308326,
+      "unknown_effect_requests": 0,
+      "name_or_value_exceptions": {},
+      "archive_read_calls": 0,
+      "selected_prior_receipts": 0,
+      "repeat_identical_request_excess": 0,
+      "repeat_count_scope": "All identical dispatched API name+argument pairs, including writes; not all are waste.",
+      "source_boundary_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "01be6045a86db367397e25da5d49d2e2427526f711bb151cddf9cf8fc690ef41",
+        "evaluation.json": "a8f9c38c7d51477ffcb2b7120e314b06e16b472ec2a63a14b418759c953bee36",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca",
+        "usage.json": "cbf6667a95ff8324e539d206ac729b79ee6ad0ec9afebac8f3f8cf2cbc09d55a",
+        "setup.json": "a8ac52a7d85c474598b8940dfaa18454abfd6ee74c95a662d238aa33572ff095",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc",
+        "plan.json": "f51a6ca510a6c744f637a42cb64cbe7c7f1b4e658d8231f86cb30ec57a381594",
+        "factor_plan.json": "56347febbe0a4353fdc8ffd066748a5b2c7f49bca794369092d37a508fa3f6e9"
+      },
+      "projected_reads": {
+        "mode": "exact",
+        "counts": {
+          "invalidations": 12,
+          "backend_requests": 61,
+          "projected_fetched": 60,
+          "rejected": 1
+        },
+        "installation": {
+          "wall_seconds": 0.01224679104052484,
+          "model_calls": 0,
+          "api_requests": 0,
+          "program_index": 9
+        },
+        "bounds_rejected": 0,
+        "revision_changes": 12
+      }
+    },
+    {
+      "run_id": "P38_04_CONTRACT_KEEP",
+      "task_id": "6104387_1",
+      "arm": "contract_keep",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "model_calls": 6,
+      "known_total_tokens": 111149,
+      "unknown_usage_calls": 0,
+      "api_requests": 61,
+      "prefix_api_requests": 18,
+      "setup_api_requests": 18,
+      "setup_wall_seconds": 2.383002792019397,
+      "continuation_wall_seconds": 401.91870475001633,
+      "full_wall_seconds": 405.395288792206,
+      "unknown_effect_requests": 0,
+      "name_or_value_exceptions": {},
+      "archive_read_calls": 0,
+      "selected_prior_receipts": 0,
+      "repeat_identical_request_excess": 0,
+      "repeat_count_scope": "All identical dispatched API name+argument pairs, including writes; not all are waste.",
+      "source_boundary_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "audit_errors": [],
+      "source_hashes": {
+        "summary.json": "072ad02a2149c6aca05816d6e9cff90f039cc2db4df3500470ea178661163735",
+        "evaluation.json": "b9292b4b5ec1c8d92abed6617b365a4d821f2de5be1e2631e92da5e5eea353e4",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca",
+        "usage.json": "bd12d053a3f5f6a9bbcdc0c399337e5eb1f9b6b8b16834aee6e51ffc4fa6c6cf",
+        "setup.json": "71f347903852667c12e316d0488efcc1607cadb9517cab7958da5eab73b633ce",
+        "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc",
+        "plan.json": "f51a6ca510a6c744f637a42cb64cbe7c7f1b4e658d8231f86cb30ec57a381594",
+        "factor_plan.json": "56347febbe0a4353fdc8ffd066748a5b2c7f49bca794369092d37a508fa3f6e9"
+      },
+      "projected_reads": {
+        "mode": "contract",
+        "counts": {
+          "invalidations": 12,
+          "backend_requests": 61,
+          "projected_fetched": 60,
+          "rejected": 1
+        },
+        "installation": {
+          "wall_seconds": 0.01329541695304215,
+          "model_calls": 0,
+          "api_requests": 0,
+          "program_index": 9
+        },
+        "bounds_rejected": 0,
+        "revision_changes": 12
+      }
+    }
+  ],
+  "all_three_reviewed": true,
+  "independent_tasks": 1,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false
+}
