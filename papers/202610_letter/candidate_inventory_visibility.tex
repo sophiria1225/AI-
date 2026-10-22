@@ -1,0 +1,175 @@
+% Provisional P55-focused manuscript. Generic class; authors and contribution not finalized.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\input{papers/202610_letter/inventory_tables.tex}
+\title{API一覧と詳細の履歴表示が\newline 状態保持型エージェントの継続に与える影響}
+\author{検討用原稿・著者情報未設定}
+\date{2026年10月23日}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{原稿の位置づけ．}
+既知課題での開発比較を一つの問いへ絞った検討用原稿である．
+研究上の中心的貢献，著者情報，公式様式への適合は未確定であり，投稿完成稿ではない．
+
+\section{目的と検証する問い}
+AIエージェントの費用を減らすには，必要な情報・処理と最終品質を守り，
+取得，生成，実行，検証を含む仕事全体を制御する必要がある．
+短い入力が終了までの費用を減らすとは限らず，
+圧縮後の行動や再取得，課題別の成否まで調べる必要がある\cite{beyond}．
+本研究は，この長期的目標のうち，持続する実行状態と会話に見える情報との関係を扱う．
+
+APIを使う作業では，何ができるかを示す一覧と，
+具体的な引数を示す詳細の両方が現れる．
+詳細を読んだ後も長い説明を入力へ繰り返す負担がある一方，
+一覧まで省くと後続の行動選択を変える可能性がある．
+ただし，実行環境に情報が残る場合，表示から消えたことを情報の完全な喪失とは呼べない．
+
+本稿の問いは，Python状態と原文の参照経路を残した共通の途中状態で，
+API一覧と詳細の表示を別々に省くと，最終成否と終了までの費用がどう変わるか，である．
+通常の段階的開示を新しいアルゴリズムとして提案するものではない．
+また，単一作業役の比較から，多担当間の通信削減を主張しない．
+
+\newpage
+\section{関連研究と比較範囲}
+CodeAct\cite{codeact}はコードを行動として用いる．
+CaveAgent\cite{cave}は持続する実行状態を扱っており，
+Python変数を保持すること自体は本研究の新規性ではない．
+HD-Gist\cite{hdgist}はAPI引数と値を区別した学習表現を使い，
+必要な表現を生成中に動的に参照する．
+API説明を種類に分けて圧縮する一般的着想も既存である．
+
+AnthropicのTool Search Tool\cite{toolsearch}は，
+初期表示を抑えて検索したツールの定義を展開する．
+追加検索の時間と入力削減の釣合いも設計上の論点とされる．
+長文を扱う段階的開示の研究\cite{disclosure}も，
+同じ文書・チャンクで索引の配置と階層を比較している．
+従って，索引を残すことや表示を分割することだけを独自の貢献としない．
+
+今回の対象は，既に一度取得したAPI説明の履歴表示である．
+操作先の環境とPythonを復元し，公開スキーマと保存原文へのアクセスを共通にした上で，
+表示の違いと継続の成否・総費用を記録する．
+先行方式の実装を同一モデルで再現した比較ではないため，
+先行方式より優れるという主張は行わない．
+
+\section{状態と費用の定義}
+継続点の状態を会話履歴$H$，Python名前空間$P$，
+操作先の環境$E$，残予算$B$とする．
+介入は$H$の一部に限り，$P$と$E$に対する操作権限をそろえる．
+API名が過去コードに現れること，その意味を理解すること，
+正しい処理に使うことは別である．
+
+仕事全体の論理トークンを
+\begin{equation}
+ T_{\rm work}=T_{\rm prefix}+\sum_{j=1}^{n}(I_j+O_j)
+\end{equation}
+とする．共通前半は保存した実測値を一度ずつ加え，キャッシュした入力も$I_j$へ含める．
+継続のみの値も併記する．API，時間，制御・計数，
+実験用復元，評価，推論器のロード・常駐を別記し，
+準備費用を無料とみなさない．
+
+\clearpage
+\section{固定した開発比較}
+\input{papers/202610_letter/p55_methods_component.tex}
+
+\subsection{対象と入力の照合}
+AppWorld\cite{appworld}の既知４課題は写真整理，電気代精算，返金，曲一覧の書出である．
+過去の失敗と入力計数を見た後の方式探索であり，独立の確認評価ではない．
+未閲覧の12シナリオは使わず，有利な課題への交換もしない．
+元の返却，保存DB，Pythonの出力を照合するが，
+プロセス全体のヒープや乱数状態を完全複製したとは主張しない．
+
+D/Bで詳細の省略対象は各７・２・３・７返却と一致した．
+Bが追加で省く一覧は各１・１・０・３返却だった．
+初回入力は表1のとおりで，共通の予算通知と省略印を含む．
+この差を終了までの節約量へ転記しない．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表1\quad 通知を含む初回入力token\par\smallskip
+\InventoryFirstInputs
+\end{minipage}\end{center}
+
+\newpage
+\subsection{採否と欠測}
+全12条件を評価し使用量が既知で監査に合格した場合に限り，
+DがF/B双方の成功を失わず，合計$T_{\rm work}$がFより小さくB以下なら，
+既知課題に対する採用候補とする．
+一覧の追加価値を支持するには，入力の異なる課題でD成功・B失敗の対も必要とする．
+４課題の同数成功を統計的な非劣性とはみなさない．
+
+使用量不明はゼロや上限で埋めず，既知分と不明生成数を示す．
+不明があれば確定した総費用差による採用判定は行わない．
+API作用，復元，実行，片付け，評価，推論器版の不一致は全体を停止する．
+結果を見てseed・条件・予算を変更せず，未実行を成功や失敗に補完しない．
+
+\section{全予定条件の結果}
+\InventoryResultSummary
+全12予定条件の成否と仕事全体の費用を表2へ示す．
+途中の入力が少なくても，生成回数や後続の行動が変われば合計は減らない．
+また，要求を満たさず早く停止した条件を，効率のよい成功と数えない．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表2\quad 全12予定条件の成否と費用\par\smallskip
+\InventoryAllCells
+\end{minipage}\end{center}
+
+\clearpage
+\subsection{費用差と実行量}
+\InventoryContrasts
+表3は全条件の生成，API，継続時間を含む．
+継続APIは実際に送信した要求数であり，
+拒否され送信しなかった要求や原文参照の回数は別の記録に残す．
+API回数だけを見て再取得や無駄を断定せず，完了できた処理と対にして解釈する．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表3\quad 全４課題合計の費用と実行量\par\smallskip
+\InventoryTotals
+\end{minipage}\end{center}
+
+\subsection{表示から消えた情報の範囲}
+一覧を省いたBでも，写真の一覧26 API名のうち８名，
+電気代では26名のうち10名が入力中に文字列として残った．
+過去に実行したコードや詳細取得の操作にもAPI名が含まれるためである．
+書出の３一覧も９／91，２／26，６／６名が残った．
+同名APIによる偶然の一致を含み得るため，これは意味理解の測定ではない．
+一覧を消したことと，APIの存在を全く知らないことを混同しない．
+
+返金ではD/Bの基礎入力が同じだった．
+異なる結果が生じた場合も一覧の効果には帰属させない．
+残時間通知，実行時間，数値計算などの変動が残る．
+\InventoryVariation
+
+\newpage
+\section{主張の限界と次の確認}
+本比較は，既知４課題，単一モデル，各条件１回に限られる．
+一つの課題で成功と費用が改善しても，広い課題群の品質維持や因果機構の確立とはならない．
+同じseedと初回キャッシュ不使用は推論条件をそろえる措置だが，
+経路全体の再現性を保証しない．
+後続の入力と処理の変化を，独立した削減効果の和に分解することもしない．
+
+表示対象は出自が照合できた古い説明に限定され，
+混合出力，最新応答，不確かな表示を残す．
+従って，任意の会話やAPI説明へ同じ効果を保証しない．
+結果が有望でも，機構・比較・予算・分析を固定した未調整群と，
+生成変動の確認が必要である．
+新しいデータや限定した解釈を貢献の候補とする場合にも，
+既存の段階的開示に対する追加の知見が何かを明示しなければならない．
+
+\section{現在の結論}
+状態保持型エージェントについて，API一覧と詳細の履歴表示を分けた開発比較を行った．
+保存原文と実行状態を共通にし，最終成否，仕事全体の費用，欠測，実行量を全予定条件で記録した．
+この局所比較を，品質を保ちながら不要な取得・共有・生成・実行・検証を減らす研究へつなぐ．
+通常方式の実装や少数例の改善を，新しい万能な制御方式の確立へ読み替えない．
+
+\begin{thebibliography}{9}\small
+\bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
+\bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
+\bibitem{cave} M. Ran et al., ``CaveAgent: Transforming LLMs into Stateful Runtime Operators,'' arXiv:2601.01569v4, 2026.
+\bibitem{hdgist} Y. Jiang, M. Del Vecchio, M. Bansal, and A. Johannsen, ``Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage,'' Findings of EACL, pp.2162--2174, 2024.
+\bibitem{toolsearch} Anthropic, ``Introducing advanced tool use on the Claude Developer Platform,'' Nov. 24, 2025.
+\bibitem{disclosure} Y. He, Y. Zhao, J. Wang, and H. Chen, ``Is Progressive Disclosure All You Need for Long-Context Agents?,'' arXiv:2607.17598v1, 2026.
+\bibitem{appworld} H. Trivedi et al., ``AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents,'' ACL, pp.16022--16076, 2024.
+\end{thebibliography}
+\end{document}

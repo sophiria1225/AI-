@@ -13,3 +13,5 @@
 [P52の契約保持候補](contract_retention_addendum.md)を追加。使用前の詳細を残す入力を全４既知境界で構築した。初回token・総費用・最終品質は未測定。
 
 表の再生成は `python scripts/build_letter_evidence_tables.py`。組版はリポジトリのルートから `uplatex`（shell escapeなし）を２回実行し、`dvipdfmx`で変換する。TinyTeXと汎用クラスの既存環境を使用した。原記録・モデル生成・環境APIを変更する処理は含まない。
+
+10月23日：[採録見込み・新規性・意義の評価](../../docs/letter_assessment_20261023.md)と[P55の近接研究・比較範囲](../../docs/inventory_retention_overlap_20261023.md)を追加した。P55の原稿部品・全件表の生成処理を準備中。P55結果が閉じる前に新しい完成PDFとしては公開しない。
