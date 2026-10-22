@@ -1,0 +1,11 @@
+{
+  "phase": "P48",
+  "rejected_report_sha256": "e82abe04e8cee5b042ea3762ba2cb0c8fdb7dca4ce40dab3b877933aa919d9fe",
+  "rejected_script_commit": "cf02f7f",
+  "reason": "Static inspector incorrectly assumed one combined API name; actual public runtime signature is call_api(app, api, **kwargs). All-zero static matches rejected. Other measurements are not used from this rejected result.",
+  "raw_rejected_report": "records/context_pilot/P48_repair_scope_v01/rejected_report.json",
+  "corrective_action": "Match the native two-part positional/keyword signature, preserve unresolved aliases and dynamic targets, add interface test, rerun the same passive scope.",
+  "model_calls": 0,
+  "api_requests": 0,
+  "checked_at": "2026-10-22T09:49:11.802099+00:00"
+}

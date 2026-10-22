@@ -47,6 +47,22 @@ def argument_changes(before, after):
     }
 
 
+def literal_api_name(call):
+    """The actual runtime ABI is call_api(app, api, **kwargs), not one name."""
+    if len(call.args) > 2 or any(isinstance(a, ast.Starred) for a in call.args):
+        return None
+    bindings = dict(zip(('app', 'api'), call.args))
+    for keyword in call.keywords:
+        if keyword.arg is None: return None
+        if keyword.arg in ('app', 'api'):
+            if keyword.arg in bindings: return None
+            bindings[keyword.arg] = keyword.value
+    if set(bindings) != {'app', 'api'}: return None
+    if not all(isinstance(n, ast.Constant) and isinstance(n.value, str) for n in bindings.values()):
+        return None
+    return bindings['app'].value + '__' + bindings['api'].value
+
+
 def call_shape(code, api):
     """Return only syntax counts; do not evaluate expressions or infer liveness."""
     try:
@@ -57,9 +73,7 @@ def call_shape(code, api):
     parents = {child: node for node in ast.walk(tree) for child in ast.iter_child_nodes(node)}
     calls = [n for n in ast.walk(tree) if isinstance(n, ast.Call)
              and isinstance(n.func, ast.Name) and n.func.id == 'call_api']
-    literal = lambda n: bool(n.args and isinstance(n.args[0], ast.Constant)
-                             and isinstance(n.args[0].value, str))
-    matching = [n for n in calls if literal(n) and n.args[0].value == api]
+    matching = [n for n in calls if literal_api_name(n) == api]
     groups = {
         'loop': (ast.For, ast.AsyncFor, ast.While, ast.ListComp, ast.SetComp,
                  ast.DictComp, ast.GeneratorExp),
@@ -80,10 +94,10 @@ def call_shape(code, api):
     return {
         'parsed': True,
         'direct_call_api_sites': len(calls),
-        'dynamic_name_direct_call_sites': sum(not literal(n) for n in calls),
+        'dynamic_name_direct_call_sites': sum(literal_api_name(n) is None for n in calls),
         'literal_matching_sites': len(matching),
         'matching_site_context_counts': {k: counts[k] for k in groups},
-        'matching_argument_load_names': sum(len({n.id for arg in [*call.args[1:], *(k.value for k in call.keywords)]
+        'matching_argument_load_names': sum(len({n.id for arg in [k.value for k in call.keywords if k.arg not in ('app', 'api')]
             for n in ast.walk(arg) if isinstance(n, ast.Name) and isinstance(n.ctx, ast.Load)})
             for call in matching),
         'runtime_resume_point_identified': False,

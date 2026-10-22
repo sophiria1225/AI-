@@ -31,7 +31,7 @@ class RepairScopeTests(unittest.TestCase):
         self.assertEqual(nested['same_name_changed_values'], 1)
 
     def test_literal_site_inside_loop_does_not_locate_runtime_resume(self):
-        code = "for item in items:\n    call_api('fixture__move', {'key': item})\n"
+        code = "for item in items:\n    call_api('fixture', 'move', key=item)\n"
         result = call_shape(code, 'fixture__move')
         self.assertEqual(result['literal_matching_sites'], 1)
         self.assertEqual(result['matching_site_context_counts']['loop'], 1)
@@ -40,12 +40,19 @@ class RepairScopeTests(unittest.TestCase):
         self.assertNotIn('item', json.dumps(result))
 
     def test_dynamic_alias_and_duplicate_sites_are_not_certified(self):
-        code = "call_api(name, {})\nother = call_api\nother('fixture__read', {})\ncall_api('fixture__read', {})\ncall_api('fixture__read', {})\n"
+        code = "call_api('fixture', name)\nother = call_api\nother('fixture', 'read')\ncall_api('fixture', 'read')\ncall_api('fixture', 'read')\n"
         result = call_shape(code, 'fixture__read')
         self.assertEqual(result['dynamic_name_direct_call_sites'], 1)
         self.assertEqual(result['literal_matching_sites'], 2)
         self.assertFalse(result['alias_or_reflective_calls_resolved'])
         self.assertFalse(call_shape('if', 'fixture__read')['parsed'])
+
+    def test_native_two_part_interface_with_keyword_and_dynamic_bindings(self):
+        code = "call_api(app='fixture', api='read', key=value)\ncall_api('fixture', api='read')\ncall_api('fixture', 'read', **values)\n"
+        result = call_shape(code, 'fixture__read')
+        self.assertEqual(result['literal_matching_sites'], 2)
+        self.assertEqual(result['dynamic_name_direct_call_sites'], 1)
+        self.assertEqual(result['matching_argument_load_names'], 1)
 
     def test_empty_contract_requires_exposure_and_known_nondispatch(self):
         span = {'action': {'name': 'fixture__time', 'arguments': '{"credential":"secret"}'},
