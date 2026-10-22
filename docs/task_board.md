@@ -66,7 +66,7 @@
 | P0 | R58 | P33：操作の手掛かりを残す出力省略を実装し総費用と成功を比べる | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/168) |
 | P1 | R59 | P34：過去出力と現在の値の一致範囲を測る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/172) |
 | P0 | R60 | P35：API返却と実行コードの参照範囲を記録再生で照合する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/178) |
-| P0 | R61 | P36：既取得データによる要求代替の成立範囲を測る | 進行中 | 未同期 |
+| P0 | R61 | P36：既取得データによる要求代替の成立範囲を測る | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/180) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
