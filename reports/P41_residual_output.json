@@ -1,0 +1,257 @@
+{
+  "phase": "P41",
+  "status": "complete",
+  "active": null,
+  "rows": [
+    {
+      "run_id": "P40_01_PLAIN_KEEP",
+      "residual": {
+        "policy": "residual",
+        "remaining_tokens": 19871,
+        "input_tokens": 17400,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 2471,
+        "admitted": true,
+        "stop_reason": null
+      },
+      "fixed": {
+        "policy": "fixed",
+        "remaining_tokens": 19871,
+        "input_tokens": 17400,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 4096,
+        "admitted": false,
+        "stop_reason": "token_reservation_limit"
+      },
+      "model_messages_sha256": "a2fdd70ee744ee586e77a1d6101a27b27eedc44073a7a794ac3db1568599c118",
+      "conversation_sha256": "f15784893b373ad33740d0d019e947cafd3ee4354dd2f7810efa13e493f9a21f",
+      "original_remaining_wall_seconds": 168,
+      "status": "generated",
+      "model_calls": 1,
+      "known_total_tokens": 17757,
+      "unknown_usage_calls": 0,
+      "finish_reason": "tool_calls",
+      "syntax": {
+        "tool_calls_returned": 1,
+        "checks": [
+          {
+            "name": "run_python",
+            "valid_envelope_and_syntax": true
+          }
+        ],
+        "all_tools_valid_envelope_and_syntax": true,
+        "tool_execution_calls": 0,
+        "task_success_evaluations": 0,
+        "semantics_or_task_success_claim": false
+      },
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 17400,
+        "input_tokens": 17400,
+        "output_tokens": 357,
+        "prompt_seconds": 149.07748,
+        "decode_seconds": 21.766102
+      },
+      "response_sha256": "d4348466085a8dcfd5fd058ed9776e19638d7b4d0fa41c75bb280720130ac67e",
+      "request_sha256": "70cb48d1532c3fe5b18bf55c13b38ce924e581ec1b52f02f390f07648cb5d9f3",
+      "admissions": [
+        {
+          "next_call_id": "call_001",
+          "role": "agent",
+          "policy": "residual",
+          "model_attempted": true,
+          "status": "generated",
+          "count_wall_seconds": 0.03884312487207353,
+          "remaining_tokens": 19871,
+          "input_tokens": 17400,
+          "configured_output_limit": 4096,
+          "context_limit": 65536,
+          "selected_output_cap": 2471,
+          "admitted": true,
+          "stop_reason": null,
+          "model_request_started": true
+        }
+      ],
+      "diagnostic_wall_seconds": 170.92251458298415
+    },
+    {
+      "run_id": "P40_02_PLAIN_KEEP",
+      "residual": {
+        "policy": "residual",
+        "remaining_tokens": 20078,
+        "input_tokens": 16200,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 3878,
+        "admitted": true,
+        "stop_reason": null
+      },
+      "fixed": {
+        "policy": "fixed",
+        "remaining_tokens": 20078,
+        "input_tokens": 16200,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 4096,
+        "admitted": false,
+        "stop_reason": "token_reservation_limit"
+      },
+      "model_messages_sha256": "dc8f8a5cb401da9af89eea27cb22008525bc4b1fbff16ba51270bf483555fd4a",
+      "conversation_sha256": "fb7262123b4ec64c4fbda3c84bc6f74a5c5b4b633c947671715b58f14528017b",
+      "original_remaining_wall_seconds": 280,
+      "status": "generated",
+      "model_calls": 1,
+      "known_total_tokens": 16300,
+      "unknown_usage_calls": 0,
+      "finish_reason": "tool_calls",
+      "syntax": {
+        "tool_calls_returned": 1,
+        "checks": [
+          {
+            "name": "run_python",
+            "valid_envelope_and_syntax": true
+          }
+        ],
+        "all_tools_valid_envelope_and_syntax": true,
+        "tool_execution_calls": 0,
+        "task_success_evaluations": 0,
+        "semantics_or_task_success_claim": false
+      },
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 16200,
+        "input_tokens": 16200,
+        "output_tokens": 100,
+        "prompt_seconds": 136.37808900000002,
+        "decode_seconds": 6.0169570000000006
+      },
+      "response_sha256": "497d60471429e6cfd31ef8741f9dcb035edf6389da6ff679ee62f57ce8716484",
+      "request_sha256": "a4f5d4d2a7382d3fb352f935f45f88825d0d3b8a950d0ac1ac02b7d4eff5162a",
+      "admissions": [
+        {
+          "next_call_id": "call_001",
+          "role": "agent",
+          "policy": "residual",
+          "model_attempted": true,
+          "status": "generated",
+          "count_wall_seconds": 0.03968225000426173,
+          "remaining_tokens": 20078,
+          "input_tokens": 16200,
+          "configured_output_limit": 4096,
+          "context_limit": 65536,
+          "selected_output_cap": 3878,
+          "admitted": true,
+          "stop_reason": null,
+          "model_request_started": true
+        }
+      ],
+      "diagnostic_wall_seconds": 142.47523666615598
+    },
+    {
+      "run_id": "P40_02_BUDGET_KEEP",
+      "residual": {
+        "policy": "residual",
+        "remaining_tokens": 6590,
+        "input_tokens": 16123,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 0,
+        "admitted": false,
+        "stop_reason": "token_reservation_limit"
+      },
+      "fixed": {
+        "policy": "fixed",
+        "remaining_tokens": 6590,
+        "input_tokens": 16123,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 4096,
+        "admitted": false,
+        "stop_reason": "token_reservation_limit"
+      },
+      "model_messages_sha256": "e21dae1416a7562d883fa486eb974ffd912ec831111423cf9dc4bffd89a38b6e",
+      "conversation_sha256": "d4c8320aaf66becc48e8299d19f3d38a2ac2a2b2b883331ffbfdd16e3401e7dd",
+      "original_remaining_wall_seconds": 254,
+      "status": "not_admitted",
+      "model_calls": 0,
+      "known_total_tokens": 0,
+      "unknown_usage_calls": 0,
+      "reason": "token_reservation_limit",
+      "admissions": [
+        {
+          "next_call_id": "call_001",
+          "role": "agent",
+          "policy": "residual",
+          "model_attempted": false,
+          "status": "stopped",
+          "count_wall_seconds": 0.04088370897807181,
+          "remaining_tokens": 6590,
+          "input_tokens": 16123,
+          "configured_output_limit": 4096,
+          "context_limit": 65536,
+          "selected_output_cap": 0,
+          "admitted": false,
+          "stop_reason": "token_reservation_limit",
+          "exception_type": "BudgetStop",
+          "reason": "token_reservation_limit"
+        }
+      ],
+      "diagnostic_wall_seconds": 0.041329832980409265
+    }
+  ],
+  "git_commit": "b12437dff2018ff3cedf8e38b5cb0f8ece24942f",
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-21T22:05:59.492404+00:00",
+    "pid": 15665,
+    "supervisor_pid": 15663,
+    "ctx_size": 65536
+  },
+  "server_lease_end": "2026-10-22T10:05:59.492404+00:00",
+  "known_total_tokens": 34057,
+  "unknown_usage_calls": 0,
+  "model_calls": 2,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "source_sha256": {
+    "scripts/residual_output_budget.py": "5f96aa7d26d45ada35e10c6b39fe36a9ed71da96019095b495efd9a01c552cd4",
+    "scripts/probe_residual_output.py": "7aa0f6b6e411e53c2a4a75fec97d090daeadf682f0f793bc0419391c39f47bad",
+    "scripts/inspect_budget_admission.py": "a5dfa0510da79fda701f94adc072a1ad3b3ede770b2afec43b1d5f5a08754b2c",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/run_context_comparison.py": "d32f78bb51a96a40eb83c65e97777b991f5c02491c42f20703f89d977ceec105",
+    "scripts/budget_signal.py": "bdacc91acbcf16e78b790a4841b7337e98f4a5240ee937581ad649de164c6fda",
+    "scripts/native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3",
+    "scripts/code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "scripts/appworld_native_tools.py": "5d055d1013ba0a82c1fbb1dc3a7595d22e7602b927f1bc8f0261819dd9f3f446",
+    "scripts/probe_inference_cache.py": "73d4a561dfc50b099558d14aa1d05f81ae2fd3a8adb5a53a758ab6d3354093ee",
+    "scripts/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "configs/P41_residual_output_v01.json": "71dd3fbb37e5868a5ab445c47488bdf4d06f1b3736d0fbf0fab6b49ab08e4b44",
+    "docs/experiments/P41_residual_output.md": "0d574fbf7adc0e7fb3e162b5469c994dae5c0cd8894825cf7505190edffef4e5",
+    "reports/P40_termination.json": "8ef44315144ccab7401b40ef2995c5b0b1248946b83b7ccf08f0bec7bf83b188",
+    "reports/P40_admission_stopped.json": "84a059f506ce2b406edfdc1e39f1b4bf280ed998fd872280b2b697a39fb2a6f4",
+    "tests/test_residual_output_budget.py": "48f8d18f6e431017bed5f8382282ebb0b1bcd63e0a63f75a0c4de202935fa1f8",
+    "tests/test_residual_output_probe.py": "998c8f578b1a5218f393e3a63dcc341c94929763557b29fe64543028f2af9d43"
+  },
+  "started_at": "2026-10-22T04:58:13.287581+00:00",
+  "task_success_claim": false,
+  "original_remaining_wall_feasibility_claim": false,
+  "novel_method_claim": false,
+  "updated_at": "2026-10-22T05:03:26.746633+00:00",
+  "wall_seconds": 313.47003429196775,
+  "all_three_states_accounted": true,
+  "not_attempted_sources": []
+}

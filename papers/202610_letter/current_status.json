@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T04:56:01.386134+00:00",
+  "updated_at": "2026-10-22T05:10:04.825738+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -12,12 +12,8 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P40 terminated by the predeclared stop gate at 13:31 JST: 6 evaluated, 1 stopped with unknown usage and no final evaluation, 1 never started. Full four-task comparison incomplete. Separate termination and input-admission audits complete; residual output-cap implementation is next as an ordinary baseline.",
-  "queued_experiment": {
-    "phase": "P41",
-    "scope": "Generation-only residual output allowance diagnostic on all three known P40 admission stops; at most two generations, no tool or evaluator execution. An ordinary baseline, not a novel method.",
-    "issue": "https://github.com/sophiria1225/AI-/issues/195"
-  },
+  "current_experiment": "P41 generation-only residual-output diagnostic closed and audited: two generations, 34,057 tokens, unknown usage zero; both returned syntactically valid tool instructions. Third input rejected before generation. No tool execution or task-success evaluation. Next: passive audit of repeated API specification exposure, not an established novel method.",
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -70,5 +66,15 @@
     "known_tokens": 579759,
     "unknown_usage_calls": 1,
     "results": "../../docs/P40_findings.md"
+  },
+  "last_completed_component_probe": {
+    "phase": "P41",
+    "states": 3,
+    "model_calls": 2,
+    "known_tokens": 34057,
+    "unknown_usage_calls": 0,
+    "environment_api_requests": 0,
+    "task_evaluations": 0,
+    "results": "../../docs/P41_findings.md"
   }
 }
