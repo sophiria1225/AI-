@@ -34,6 +34,10 @@ def save(path, data):
 
 def evidence_checks():
     locked = read(PAPER / 'terminal_draft_source_map.json')['sources']
+    locked.update({
+        'reports/P62_public_move_scope.json': '8f99d38b6497c186d170b907ed01881a10d9b37a78fcf4f7c74b3b89084aa6c5',
+        'reports/P63_public_name_scope.json': 'ce3efc942aebf8415b105ea9adf09f3483ed31a632774b7c9eb8c9fd9736d7e4',
+    })
     for relative, digest in locked.items():
         if sha(ROOT / relative) != digest:
             raise ValueError(f'closed source changed: {relative}')
@@ -42,6 +46,7 @@ def evidence_checks():
         'full_keep', 'details_omitted_keep', 'details_and_listings_omitted_keep'))
     diagnostic = read(ROOT / 'reports/P56_completion_audit.json')
     session = read(ROOT / 'reports/P55_server_session.json')
+    move_scope = read(ROOT / 'reports/P62_public_move_scope.json')
     actual = {
         'planned_and_evaluated_cells': len(report['rows']),
         'all_planned_cells_accounted': report['all_planned_cells_accounted'],
@@ -58,6 +63,9 @@ def evidence_checks():
         'completion_diagnostic_non_supervisor_unchanged': all(r['non_supervisor_files_unchanged'] for r in diagnostic['rows']),
         'completion_diagnostic_api_requests': diagnostic['total_api_requests'],
         'display_server_wall_seconds_rounded': round(session['wall_seconds'], 3),
+        'photo_public_clock_requests': [r['public_clock_requests_sent'] for r in move_scope['rows']],
+        'photo_name_preserved_moves': [r['final']['filename_preserved_moves'] for r in move_scope['rows']],
+        'photo_public_trace_support': [r['final']['trace_support'] for r in move_scope['rows']],
     }
     expected = {
         'planned_and_evaluated_cells': 12,
@@ -71,6 +79,9 @@ def evidence_checks():
         'completion_diagnostic_non_supervisor_unchanged': True,
         'completion_diagnostic_api_requests': 346,
         'display_server_wall_seconds_rounded': 4112.859,
+        'photo_public_clock_requests': [0, 0, 0],
+        'photo_name_preserved_moves': [42, 42, 0],
+        'photo_public_trace_support': ['unknown', 'unknown', 'unknown'],
     }
     if actual != expected:
         raise ValueError(f'manuscript claim/source mismatch: {actual}')
@@ -127,6 +138,7 @@ def build(tex_bin, output):
         'papers/202610_letter/inventory_tables.tex', 'papers/202610_letter/completion_diagnostic.tex',
         'papers/202610_letter/cost_completion_abstract_ja.txt', 'papers/202610_letter/cost_completion_abstract_en.txt',
         'materials/20261023_p55/work_tokens.pdf', 'docs/evidence_delivery_overlap_20261023.md',
+        'docs/P62_findings.md', 'docs/P63_findings.md',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},

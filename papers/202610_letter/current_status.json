@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P64 prepared: four fresh-task ordinary Python interface conditions on two known tasks. Await exact preparation commit CI, then execute once per fixed condition; no replacement, no novel-method claim, no reserved task reads.",
+  "current_experiment": "P64 running from the fixed, CI-confirmed 6c490545 preparation commit. Four scheduled fresh-task ordinary Python conditions on two known tasks; no replacement and no reserved reads.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -194,7 +194,10 @@
     "central_contribution_confirmed": false,
     "submission_ready": false,
     "source_map": "cost_completion_source_map.json",
-    "layout": "cost_completion_layout.json"
+    "layout": "cost_completion_layout.json",
+    "public_admission_scope_explicit": true,
+    "public_clock_evidence_limit_explicit": true,
+    "pdf_sha256": "9392aa9dd5d173bf4242ed4d477ef039e9bd82f1a55f091295b01378f9117258"
   },
   "last_completed_measurement_calibration": {
     "phase": "P58",
@@ -239,7 +242,7 @@
   },
   "queued_comparison": {
     "phase": "P64",
-    "status": "prepared_not_run",
+    "status": "running",
     "plan": "../../configs/P64_public_name_comparison_v01.json",
     "planned_conditions": 4,
     "known_tasks": 2,
@@ -248,7 +251,10 @@
     "max_api_requests": 480,
     "max_evaluator_calls": 4,
     "novel_method_claim": false,
-    "reserved_scenarios_read": 0
+    "reserved_scenarios_read": 0,
+    "fixed_commit": "6c490545b7c6fec177560b8be18e94312025890b",
+    "push_ci": 39850257816,
+    "pr_ci": 39850265640
   },
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {
