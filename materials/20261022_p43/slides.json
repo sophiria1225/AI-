@@ -1,0 +1,95 @@
+[
+  {
+    "title": "AIハーネスの入力費用と<br>取得情報の扱い",
+    "body": "",
+    "take": "",
+    "notes": "",
+    "refs": [],
+    "cover": true
+  },
+  {
+    "title": "目的：仕事の品質を保ち、不要な処理を減らす",
+    "body": "<p class=\"lead\">AIへ渡す情報・取得・実行・検証を、ハーネスで制御する。</p><div class=\"two\"><div class=\"col\"><h3>分かっていること</h3><p class=\"body\">P33では一律に出力を省くと、<br>初回入力は短くても総tokenは増えた。</p></div><div class=\"col\"><h3>今回確かめること</h3><p class=\"body\">仕様説明と作業データの費用は<br>どこに、どれだけ含まれるか。</p></div></div>",
+    "take": "入力が短いことと、必要な仕事を安く完了できることを区別する。",
+    "notes": "研究目的は不要な情報処理・実行の削減と最終品質の維持。P43はその準備となる保存入力の計測で、性能比較ではない。",
+    "refs": [
+      [
+        "研究目的",
+        "docs/research_objective_20261022.md"
+      ],
+      [
+        "P33結果",
+        "docs/P33_findings.md"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "前提：同じ４課題・８応答後の入力を計数する",
+    "body": "<table><thead><tr><th>項目</th><th>固定した内容</th></tr></thead><tbody><tr><td>対象</td><td>写真整理／電気代の分担請求／返金／曲情報の書出</td></tr><tr><td>状態</td><td>過去のP29から同じ８応答境界。32応答を保持。</td></tr><tr><td>測定</td><td>入力の各部分を順に戻し、４課題×11入力を計数。</td></tr><tr><td>照合</td><td>最後の全入力がP42の保存入力とtoken数に一致。</td></tr></tbody></table><p class=\"body\">追加の生成・API実行・環境再生・最終評価はすべて０。</p>",
+    "take": "",
+    "notes": "MiniMax M3 IQ4_XSと同じllama.cpp形式。11段階は独立した試行ではなく、記述的な内訳のための入力。保留12シナリオは未閲覧。",
+    "refs": [
+      [
+        "事前計画",
+        "docs/experiments/P43_input_exposure_accounting.md"
+      ],
+      [
+        "全計数",
+        "reports/P43_input_exposure_tokens.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "結果：入力費用の所在は課題ごとに異なる",
+    "body": "<div class=\"diagram\"><img src=\"figures/input_components.svg\" style=\"width:100%;height:325px\" alt=\"４課題の入力token内訳\"></div><p class=\"small\">仕様API群は「呼んだAPIが仕様APIのみ」の分類。出力全文が仕様だけという意味ではない。<br>差分は復元順序に依存する。図の大きさを、そのまま安全に削除できる量とは解釈しない。</p>",
+    "take": "",
+    "notes": "全入力合計48485 token。仕様API群のstdoutは9832、他API群は17954。最新応答も含む内訳であり、P42の古い出力に対する省略量とは異なる。",
+    "refs": [
+      [
+        "全４課題の内訳",
+        "reports/P43_input_exposure_tokens.json"
+      ],
+      [
+        "結果と限界",
+        "docs/P43_findings.md"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "出力全体の不一致を、作業データと決めつけない",
+    "body": "<table class=\"compact\"><thead><tr><th>課題・出力</th><th>全体の文字数</th><th>仕様返却との一致</th><th>残り</th></tr></thead><tbody><tr><td>写真整理・s9</td><td>5,787</td><td>5,652</td><td>135</td></tr><tr><td>写真整理・s15</td><td>551</td><td>533</td><td>18</td></tr><tr><td>電気代の分担請求・s9</td><td>1,161</td><td>1,157</td><td>4</td></tr><tr><td>返金・s6</td><td>2,701</td><td>2,638</td><td>63</td></tr><tr><td>返金・s13</td><td>545</td><td>527</td><td>18</td></tr><tr><td>曲情報の書出・s4</td><td>11,256</td><td>11,248</td><td>8</td></tr><tr><td>曲情報の書出・s11</td><td>5,342</td><td>5,322</td><td>20</td></tr></tbody></table>",
+    "take": "見出しや区切り文字がある。文字列の一致だけでは、削除の安全性を証明できない。",
+    "notes": "P42で全体一致しなかった７出力を全て表示。合計27343文字のうち27077文字が仕様返却の全文表示と一意に一致し、残り266文字。これは文字数であってtoken数ではない。出力の由来や将来の必要性は別問題。",
+    "refs": [
+      [
+        "P42の見送り",
+        "docs/P42_findings.md"
+      ],
+      [
+        "文字列対応の監査",
+        "reports/P43_input_exposure_structure.json"
+      ]
+    ],
+    "cover": false
+  },
+  {
+    "title": "現在の判断：効果の主張を増やす段階ではない",
+    "body": "<div class=\"two\"><div class=\"col\"><h3>今回確かめたこと</h3><p class=\"body\">費用の内訳と、全体一致規則が<br>扱えなかった出力の対応。</p><p class=\"small\">44計数、保存入力88件の再構成、<br>不一致０。サーバーは計数後に正常停止。</p></div><div class=\"col\"><h3>次に確かめること</h3><p class=\"body\">作業情報を落とさず区別できるか。<br>既存の制御との差は何か。<br>最終品質と継続総費用はどう変わるか。</p></div></div>",
+    "take": "P42の見送りは維持。新規性・品質を保つ総費用削減は、まだ未確立。",
+    "notes": "部分一致への規則緩和だけで新規性を作ったとはしない。次の制御候補には独立した計画と採否基準が必要。４既知課題の結果を未知課題へ一般化しない。",
+    "refs": [
+      [
+        "研究上の主張",
+        "docs/contribution_status_20261022.md"
+      ],
+      [
+        "全件照合",
+        "reports/P43_input_exposure_integrity.json"
+      ]
+    ],
+    "cover": false
+  }
+]
