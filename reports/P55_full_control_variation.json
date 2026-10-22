@@ -1,0 +1,332 @@
+{
+  "phase": "P55_full_control_variation",
+  "rows": [
+    {
+      "known_task_index": 1,
+      "cell_ids": [
+        "P47_01_FULL_CONTRACT_KEEP",
+        "P55_01_FULL_KEEP"
+      ],
+      "comparable_cells_available": true,
+      "independent_success": [
+        true,
+        false
+      ],
+      "first_request_difference": "call_002",
+      "first_content_difference": "call_002",
+      "compared_calls": [
+        {
+          "call_id": "call_001",
+          "actual_serialized_requests_equal": true,
+          "requests_equal_except_transport_ids": true,
+          "only_budget_notice_differs_after_transport_normalization": false,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": true,
+          "request_sha256": [
+            "3e74ee0c81fc42adc17b9ddf4d9af79345f5d9400737ecb4b03b19427422d87a",
+            "3e74ee0c81fc42adc17b9ddf4d9af79345f5d9400737ecb4b03b19427422d87a"
+          ],
+          "response_sha256": [
+            "74df3a0539b912b31fb6a639bf01a659bfcf39d5b00894b0812bd2c011bfd46f",
+            "57a118fd2b508e47c5b357ff359d97a3935e0da19b87e6ac9ef23f580c1a52f6"
+          ]
+        },
+        {
+          "call_id": "call_002",
+          "actual_serialized_requests_equal": false,
+          "requests_equal_except_transport_ids": false,
+          "only_budget_notice_differs_after_transport_normalization": true,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": false,
+          "request_sha256": [
+            "9cfb117228446424bbe325fe238207b5e595ad1429814b70521fffb1d24bcf00",
+            "d74c791d02ac2e8fd623018ca2757b326cebd048adf10ba14bd546935f307056"
+          ],
+          "response_sha256": [
+            "70fe32537d2d023190afe31fc525d43f05ea7b48596932e89ce77713dcce8943",
+            "1abd0c4bce08b80ea118db3b4ec2f36b62e248e5911c87c0de77cc84c1a792e9"
+          ]
+        }
+      ],
+      "source_sha256": {
+        "P47_01_FULL_CONTRACT_KEEP": {
+          "usage.json": "93103911678ab4156f6cf2b0d0306e84e34378bb627b424ad70300778031a0c7",
+          "summary.json": "e5dced17f2ef8d3e35f8f0b9e5bfd0b7ce0566985c56488737a19e785d7beef8",
+          "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206",
+          "budget_signals.json": "f31d21a84af4b5b3a8d338f2f7f572032f9dc037065c8ee0a2e80ca78110176e"
+        },
+        "P55_01_FULL_KEEP": {
+          "usage.json": "d83f695bfe08552a4c203197e95f80ef41d45a60ff2c29b254f0dc3411f157ca",
+          "summary.json": "8611c674fe35fef63dd1456441cd18eb009ea2b6977e661fb4c079e04080fe28",
+          "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206",
+          "budget_signals.json": "5807c7c8434c0176384fb5eae4ef94aeb46eb87de3255def289154f2c028448d"
+        }
+      }
+    },
+    {
+      "known_task_index": 2,
+      "cell_ids": [
+        "P47_02_FULL_CONTRACT_KEEP",
+        "P55_02_FULL_KEEP"
+      ],
+      "comparable_cells_available": true,
+      "independent_success": [
+        false,
+        false
+      ],
+      "first_request_difference": "call_002",
+      "first_content_difference": "call_002",
+      "compared_calls": [
+        {
+          "call_id": "call_001",
+          "actual_serialized_requests_equal": true,
+          "requests_equal_except_transport_ids": true,
+          "only_budget_notice_differs_after_transport_normalization": false,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": true,
+          "request_sha256": [
+            "49124bd1bcc73b68f45dc8b1d518b205dead90c0dfd406c5cd21c4e63b2883e4",
+            "49124bd1bcc73b68f45dc8b1d518b205dead90c0dfd406c5cd21c4e63b2883e4"
+          ],
+          "response_sha256": [
+            "dbbff00c16c5a5167ffbe61df910c5eeddfbc84856feaab36bb84c87ec2088af",
+            "ee2b96fecbc880ad217c01601ae57e0d73fb771d3964f04311c526aa20680d17"
+          ]
+        },
+        {
+          "call_id": "call_002",
+          "actual_serialized_requests_equal": false,
+          "requests_equal_except_transport_ids": false,
+          "only_budget_notice_differs_after_transport_normalization": true,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": false,
+          "request_sha256": [
+            "9de45ec48c2e7bb0fa184f25a6c79e1a80f3f5b81c6b2d46daec3c9061e93ba1",
+            "841c792b8bfa3db2c20562cf9c6ca917c8c58a4084b0c5bbc0e6c8a2a1a78028"
+          ],
+          "response_sha256": [
+            "123b783906359ee3bc534e3218418981ffcd235fdde7d1d3ed11e985e4c22c24",
+            "6b0346f2f22ebc9819956a21d4bfd8304273049a8f851cb5d3e8c67a74342ed9"
+          ]
+        }
+      ],
+      "source_sha256": {
+        "P47_02_FULL_CONTRACT_KEEP": {
+          "usage.json": "030300d0023c2906fa9b886c156f708b3f1f4c9674d6469ce3fd5edbf1833e79",
+          "summary.json": "15ae32e41a2ec1a85211707d7d6d10886276d2098fa162cd53da29bcadd9286d",
+          "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80",
+          "budget_signals.json": "2107b616a2646029d9a5e6e0388805c3a3ebda939b59dbddfc6432e4d35f43db"
+        },
+        "P55_02_FULL_KEEP": {
+          "usage.json": "d41459d86aac8c44b0e0a300b37000a0322299f44cba63c816a3013070db3fcd",
+          "summary.json": "0e78ca9323336efbc59042730283c64721d6121e1363cb255c202f56741fbe3f",
+          "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80",
+          "budget_signals.json": "73112b4efaed9c2678057a60fdda2bed740f93c2b54e17c5215bbb0ba2f9d597"
+        }
+      }
+    },
+    {
+      "known_task_index": 3,
+      "cell_ids": [
+        "P47_03_FULL_CONTRACT_KEEP",
+        "P55_03_FULL_KEEP"
+      ],
+      "comparable_cells_available": true,
+      "independent_success": [
+        true,
+        true
+      ],
+      "first_request_difference": "call_002",
+      "first_content_difference": "call_002",
+      "compared_calls": [
+        {
+          "call_id": "call_001",
+          "actual_serialized_requests_equal": true,
+          "requests_equal_except_transport_ids": true,
+          "only_budget_notice_differs_after_transport_normalization": false,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": true,
+          "request_sha256": [
+            "cccfa9442a50c4fc06f0024f98ba93d4780b0c968d019ed7eecd33234226337c",
+            "cccfa9442a50c4fc06f0024f98ba93d4780b0c968d019ed7eecd33234226337c"
+          ],
+          "response_sha256": [
+            "04fc940fb775bf5a92ee8904a626de9449b1c18812ed7371bb0ad07ac9c80f06",
+            "217499425a68b34bcbf7a97d675fa272467a5d0f1aa9c40725c002fd4c84d6b1"
+          ]
+        },
+        {
+          "call_id": "call_002",
+          "actual_serialized_requests_equal": false,
+          "requests_equal_except_transport_ids": false,
+          "only_budget_notice_differs_after_transport_normalization": true,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": false,
+          "request_sha256": [
+            "836f436e484439f6812502cd2c43ab2c6c17023eae6f00c3cc2b04a2c6b99287",
+            "2882cc530fdc40af666a0ee17f787b43111502bbb1df04fb546cc4683c098703"
+          ],
+          "response_sha256": [
+            "83656a464aceaffe4f22f46d9a449935229ac3678035d83a3fbf16b4ffa4648e",
+            "fb5ea7d5c330313d79176acfef870f890c9893195ca38ced306691a347a17e0f"
+          ]
+        }
+      ],
+      "source_sha256": {
+        "P47_03_FULL_CONTRACT_KEEP": {
+          "usage.json": "2931ee87ba6a141942daf7c72aff236b9f8311341292dc7d227944eb311e785f",
+          "summary.json": "e0e415f3a89e981482974eb5aeec9627b7c5e6182318ef3b0895e08859219121",
+          "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f",
+          "budget_signals.json": "8796bcae6a268d9d9f2d01d828ab683aaa4995a67966357fe27e0197390770bc"
+        },
+        "P55_03_FULL_KEEP": {
+          "usage.json": "96c70e88a1f2cb78648c28b9215e9ee5222a1550bcdf0c50e435c215857d0e42",
+          "summary.json": "5239ecedf4bd0e85a39239ba9e6435670bdb6fe6f969830e218cf87e455c4319",
+          "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f",
+          "budget_signals.json": "b8cbca6c48a825eda39b873ab2c5c6bd81d06a27c7a89d63bea179c482bdc2ed"
+        }
+      }
+    },
+    {
+      "known_task_index": 4,
+      "cell_ids": [
+        "P47_04_FULL_CONTRACT_KEEP",
+        "P55_04_FULL_KEEP"
+      ],
+      "comparable_cells_available": true,
+      "independent_success": [
+        null,
+        false
+      ],
+      "first_request_difference": "call_002",
+      "first_content_difference": "call_002",
+      "compared_calls": [
+        {
+          "call_id": "call_001",
+          "actual_serialized_requests_equal": true,
+          "requests_equal_except_transport_ids": true,
+          "only_budget_notice_differs_after_transport_normalization": false,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": true,
+          "request_sha256": [
+            "aaf0916ebaa598f0c817b9464a7ef6e5a7c564b4d13f46b7e91c1b90462de8b5",
+            "aaf0916ebaa598f0c817b9464a7ef6e5a7c564b4d13f46b7e91c1b90462de8b5"
+          ],
+          "response_sha256": [
+            "0bddb951566c45376ba2e2f3e5204ed24a1b52a4131ed9a1342cce3eabf7231c",
+            "22bace7d3b6972d1a159c09805785b5739c77ca1994ace370a241f00aff9c9d7"
+          ]
+        },
+        {
+          "call_id": "call_002",
+          "actual_serialized_requests_equal": false,
+          "requests_equal_except_transport_ids": false,
+          "only_budget_notice_differs_after_transport_normalization": true,
+          "both_terminal_usage_known": true,
+          "generated_messages_equal_except_transport_ids": false,
+          "request_sha256": [
+            "f72cec665aeec44a5c14560a60abc8dc7f7ee278db1db2275321e269dbeef5c1",
+            "e227e53b643e5de0a0c2e05f49b3a0494df6bfa0678ea5060f85fdb6dc87c8f3"
+          ],
+          "response_sha256": [
+            "8eb42aaede859396d90ef9172fb3f0e7bccdd303938dc6cf3710b9bffb9fd8bc",
+            "c3396c2c6bbf59269b854d25b60ab6b5d88ae001348316767aaedfc9fc98d299"
+          ]
+        }
+      ],
+      "source_sha256": {
+        "P47_04_FULL_CONTRACT_KEEP": {
+          "usage.json": "36ef889c5a55edce2b35a24f8721df9f26a2ab037a3e163fb439afe00fba53dd",
+          "summary.json": "b5f62b4f28da7f4d22714cc8bac2a882ac50c62ebfd3405afbd3830bf4333368",
+          "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc",
+          "budget_signals.json": "defbd0d563bae4b9883bd179361a73a9aec26c9248ea118cfbc47e59552b6e25"
+        },
+        "P55_04_FULL_KEEP": {
+          "usage.json": "3a53863db244920f608e5fa20a654a718cf84186790af279378eed5dd20987fa",
+          "summary.json": "172df7133fa1848d8f3750704a550f0a2ce3e3f72f555c7d9437b81c3699336a",
+          "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc",
+          "budget_signals.json": "5172370574301a1a92e9668b18d7a213ae82fa1ba425c247ab9ca5fb78af5aa5"
+        }
+      }
+    }
+  ],
+  "refund_negative_control": {
+    "known_task_index": 3,
+    "cell_ids": [
+      "P55_03_DETAILS_OMITTED_KEEP",
+      "P55_03_DETAILS_AND_LISTINGS_OMITTED_KEEP"
+    ],
+    "comparable_cells_available": true,
+    "independent_success": [
+      true,
+      true
+    ],
+    "first_request_difference": "call_002",
+    "first_content_difference": "call_002",
+    "compared_calls": [
+      {
+        "call_id": "call_001",
+        "actual_serialized_requests_equal": true,
+        "requests_equal_except_transport_ids": true,
+        "only_budget_notice_differs_after_transport_normalization": false,
+        "both_terminal_usage_known": true,
+        "generated_messages_equal_except_transport_ids": true,
+        "request_sha256": [
+          "c43ab6875da1bcf123b29433d7363477c5103aff0b9bc5727b35fa1a758cd494",
+          "c43ab6875da1bcf123b29433d7363477c5103aff0b9bc5727b35fa1a758cd494"
+        ],
+        "response_sha256": [
+          "de1a032d4a1717b3b1b8f0abd3df44428bab01086e7c3564f57c43452dc62519",
+          "ca2ae8c6ed88a8672297d0d7e6a33d06a55f97f0f29e051f43741cb51115a6ec"
+        ]
+      },
+      {
+        "call_id": "call_002",
+        "actual_serialized_requests_equal": false,
+        "requests_equal_except_transport_ids": false,
+        "only_budget_notice_differs_after_transport_normalization": true,
+        "both_terminal_usage_known": true,
+        "generated_messages_equal_except_transport_ids": false,
+        "request_sha256": [
+          "af74e51ca5dacabfc1a38dfaef95c03e3c55cf8efe7ae8c24f5d4e7c7f6ab4c1",
+          "067c1d5d08c22ed0350a7011ba5c47e67260b26688ebbff8b69390113b11799f"
+        ],
+        "response_sha256": [
+          "8fe5ae6e4ad12ca4a93e66a3a6c6929ee2f33b6d9a276ef13f71a76a63db1bb6",
+          "0b519c3471e7e1607e445c2dd774dc04221a344039bbc61257afb832f26b4342"
+        ]
+      }
+    ],
+    "source_sha256": {
+      "P55_03_DETAILS_OMITTED_KEEP": {
+        "usage.json": "8def3f7615eb6c15932aa2ca10e70c0bd8db6e8bcf764ddd34155d6b51e43185",
+        "summary.json": "366d31344d912145a93be9603bbdbb4c3a34d8fedd34fc4088ef10b67fb6afac",
+        "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f",
+        "budget_signals.json": "4ebf44c30ee3e32aa73112f15440090a542ea63f1ded4eed7a5a986c84893e91"
+      },
+      "P55_03_DETAILS_AND_LISTINGS_OMITTED_KEEP": {
+        "usage.json": "cdaf94eea693d76111b7e76e7d23ac6df9f52100a725d04492710199d0a926db",
+        "summary.json": "480a4c5c3f21ca7213dd224683f00a8cb87c5ca0c9c8f727af8c8395576fdd9d",
+        "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f",
+        "budget_signals.json": "80e3c646263021135084f91ed8f6fdb46296c1e7b9939879be0b363ff07bca1a"
+      }
+    },
+    "prespecified_identical_base": true,
+    "inventory_causal_attribution_allowed": false,
+    "replicate_variance_estimate": false
+  },
+  "inspector_sha256": "96af3f8dc9d8f07f4e447ff0ba04d94462fd02efdb188df11232d8bf6e3d5334",
+  "additional_model_calls": 0,
+  "additional_tokenizer_calls": 0,
+  "additional_api_requests": 0,
+  "additional_evaluator_calls": 0,
+  "causal_attribution_claim": false,
+  "prospective_replication_study": false,
+  "limits": [
+    "All four available known controls, not a representative task sample.",
+    "P47/P55 run in different server sessions and were not allocated as repeat trials.",
+    "Transport-id normalization describes request structure, not independent prompt retokenization.",
+    "A differing clock notice coincident with diverging output does not prove timing caused failure.",
+    "P55 conditions and thresholds were not changed in response to this inspection."
+  ]
+}

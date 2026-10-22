@@ -1,0 +1,83 @@
+[
+  {
+    "title": "必要な情報を残すハーネス制御<br>API一覧と詳細の表示比較",
+    "cover": true
+  },
+  {
+    "title": "一覧を残すことが、品質と総費用にどう響くか",
+    "body": "<p class=\"lead\">最終目標：必要な情報・処理と最終品質を守り、仕事全体の費用を減らす。</p><table><tr><th>条件</th><th>古い詳細</th><th>API一覧・説明</th></tr><tr><td>F 全表示</td><td>保持</td><td>保持</td></tr><tr><td>D 詳細を省略</td><td>由来が一致する区間を省略</td><td>保持</td></tr><tr><td>B 詳細＋一覧を省略</td><td>Dと同じ区間を省略</td><td>由来が一致する区間を省略</td></tr></table><p class=\"small\">Python状態・公開スキーマ・原文への参照・契約返信・予算を共通にする。</p>",
+    "takeaway": "既知４課題の同じ８応答後、各３条件を一度ずつ。通常方式の開発比較。",
+    "refs": [
+      [
+        "固定計画",
+        "docs/experiments/P55_inventory_comparison.md"
+      ]
+    ],
+    "notes": "各16生成・継続120,000 token・480秒。省略は境界で一度だけ。最新応答、操作、リテラル、混合出力を保持。初回cache_prompt=false。未閲覧12課題は使用していない。",
+    "cover": false
+  },
+  {
+    "title": "全12予定条件を、成否と仕事全体の費用で見る",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>F 全表示</th><th>D 詳細を省略</th><th>B 詳細＋一覧を省略</th></tr><tr><td>写真整理</td><td>未達<br><span class=\"metric\">145,850</span></td><td>成功<br><span class=\"metric\">120,935</span></td><td>未達<br><span class=\"metric\">165,015</span></td></tr><tr><td>電気代精算</td><td>未達<br><span class=\"metric\">163,918</span></td><td>未達<br><span class=\"metric\">161,225</span></td><td>未達<br><span class=\"metric\">154,720</span></td></tr><tr><td>返金</td><td>成功<br><span class=\"metric\">85,697</span></td><td>成功<br><span class=\"metric\">117,223</span></td><td>成功<br><span class=\"metric\">117,305</span></td></tr><tr><td>曲一覧の書出</td><td>未達<br><span class=\"metric\">117,100</span></td><td>未達<br><span class=\"metric\">156,265＋不明</span></td><td>未達<br><span class=\"metric\">126,734</span></td></tr></table><p class=\"small\">数値：共通前半＋継続の全入力出力 token。評価済み12、未評価0、未実行0。</p>",
+    "takeaway": "不明費用と未実行をゼロで埋めず、失敗して安く終了した条件を改善に数えない。",
+    "refs": [
+      [
+        "全件監査",
+        "reports/P55_comparison.json"
+      ]
+    ],
+    "notes": "成否は独立評価器。モデル使用量不明でも、作用と片付けが既知の場合だけ最終状態を評価する事前規則。全12条件の費用が確定しなければ総費用の採用基準は未達。",
+    "cover": false
+  },
+  {
+    "title": "初回の入力短縮と、終了までの総費用を分ける",
+    "body": "<img class=\"chart\" src=\"work_tokens.svg\" alt=\"全４課題・３条件の仕事全体tokenと最終成否\"/><p class=\"small\">Dの初回削減：1,447 ／ 258 ／ 782 ／ 1,629 token。最終費用とは別の指標。</p>",
+    "takeaway": "棒は共通前半と継続の既知費用。斜線がある場合は、さらに不明費用が存在する。",
+    "refs": [
+      [
+        "初回計数",
+        "reports/P55_prefix_checks.json"
+      ],
+      [
+        "総費用",
+        "reports/P55_comparison.json"
+      ]
+    ],
+    "notes": "キャッシュした入力も論理tokenへ含む。処理入力・出力・モデル呼出し・API・時間は別集計。縦軸は０から。失敗条件や未実行を除外しない。",
+    "cover": false
+  },
+  {
+    "title": "取得・実行・失敗・推論器の稼働も記録する",
+    "body": "<table><tr><th>全４課題の合計</th><th>F</th><th>D</th><th>B</th></tr><tr><td>前半＋継続AI呼出し</td><td>54</td><td>58</td><td>61</td></tr><tr><td>継続API</td><td>173</td><td>162</td><td>122</td></tr><tr><td>復元API</td><td>51</td><td>51</td><td>51</td></tr><tr><td>使用量不明の呼出し</td><td>0</td><td>1</td><td>0</td></tr><tr><td>継続実時間（秒）</td><td>1,308.5</td><td>1,354.0</td><td>1,359.1</td></tr></table><p class=\"small\">推論器：ロード10.1秒、常駐4,112.9秒。比較終了後に停止済み。</p>",
+    "takeaway": "APIが少ないことだけでは、要求を満たす仕事が効率化されたとは判断しない。",
+    "refs": [
+      [
+        "費用監査",
+        "reports/P55_comparison.json"
+      ],
+      [
+        "推論器記録",
+        "reports/P55_server_session.json"
+      ]
+    ],
+    "notes": "実験用の状態復元・評価と運用時の継続を区別。評価器単独の秒数は未計測で、推論器稼働全体に含む。全条件共通の前半モデル費用を足すが、同じ元実行を実際に何度も生成したという意味ではない。",
+    "cover": false
+  },
+  {
+    "title": "投稿の中心へ使える範囲を限定する",
+    "body": "<p class=\"lead\">固定した開発上の採用基準：未達<br>一覧保持の追加価値：支持条件を満たさない</p><table><tr><th>制約</th><th>解釈</th></tr><tr><td>既知４課題、各１回</td><td>一般的な性能維持・非劣性の証明ではない</td></tr><tr><td>返金はD/Bの基礎入力が同じ</td><td>その差を一覧の効果と呼ばない</td></tr><tr><td>写真F/DのファイルDBは一致</td><td>成功差をファイル整理の改善と断定しない</td></tr><tr><td>段階的な開示には先行方式がある</td><td>通常方式を独自アルゴリズムにしない</td></tr></table>",
+    "takeaway": "10月23日：主張・主要結果・概要を絞る。10月31日：レター投稿完了を目指す。",
+    "refs": [
+      [
+        "採録見込みの評価",
+        "docs/letter_assessment_20261023.md"
+      ],
+      [
+        "近接研究",
+        "docs/inventory_retention_overlap_20261023.md"
+      ]
+    ],
+    "notes": "採用条件は全12件評価・使用量既知・監査合格、DがF/Bの成功を失わず総tokenがFより少なくB以下。一覧の効果を支持するには入力が異なる課題でD成功/B失敗も必要。中心的な新規性や一般的な品質維持が自動的に成立するわけではない。",
+    "cover": false
+  }
+]
