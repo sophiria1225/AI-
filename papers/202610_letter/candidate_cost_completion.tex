@@ -32,6 +32,7 @@ APIを使う作業では，何ができるかを示す一覧と，引数を説�
 問いは，\textbf{共通の途中状態からAPI説明の表示を省いたとき，
 仕事全体の費用と最終成否がどう変わり，その成否差を実作業の改善と解釈できるか}である．
 既知４課題の全12条件を比較し，その後，写真整理の保存状態に完了通知だけを加える診断を行う．
+さらに，別の通常実行で得た公開証拠を用い，完了後の継続を省く局所制御を点検する．
 入力短縮，課題の成功数，作業状態を別々に記録することで，
 今回の観測から支持できる費用・品質の解釈を限定する．
 
@@ -57,6 +58,8 @@ Zhangら\cite{evidence}は科学計算について，値の生成，モデルへ
 また，Matoi\cite{matoi}は操作，方針遵守，課題指標を分け，
 外部ベンチマークの指標が実行前から真となる例も報告する．
 従って，作用と成功指標を区別する一般的な観点そのものも新規性とはしない．
+ECT\cite{ect}は宣言した契約と記録上の証拠を照合して終了を制御する．
+本稿の追加点検も既知要求を手書きした通常制御であり，証拠付き終了の新方式とはしない．
 
 \section{状態と費用の定義}
 継続点の状態を会話履歴$H$，Python名前空間$P$，操作先環境$E$，残予算$B$とする．
@@ -107,11 +110,6 @@ API作用，復元，実行，片付け，評価，推論器版の不一致は�
 結果を見てseed・条件・予算を変更せず，未実行を成功や失敗に補完しない．
 
 \section{費用と成否の全結果}
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth,bb=0 0 813.6 223.2]{materials/20261023_p55/work_tokens.pdf}
-\caption{全４課題・３表示の仕事全体tokenと公式成否．共通前半を含み，縦軸は０から示す．斜線の棒は既知分のみで，さらに使用量不明の呼出しがある．}
-\end{figure*}
 \InventoryResultSummary
 表2に全予定条件を示す．Dは写真で成功した一方，
 全４課題の既知費用が増えたため，この比較は品質を保った総費用削減を支持しない．
@@ -152,6 +150,26 @@ API回数の減少だけで不要取得の削減とは判断せず，完了し�
 分類に必要な現在年の成功した時計応答は得られていなかった．
 完了通知による公式成否の変化は，公開証拠だけで要求を全て検証できたことを意味しない．
 
+\section{公開証拠による通常終了制御の追加点検}
+同じ既知写真課題を初期状態から実行した別の通常対照を用いた．
+文書取得必須と，説明取得前も公開名を呼べる接続の各１条件である．
+各対照と同じモデル，seed，入力案内，予算から再実行し，
+生成応答内の全プログラムの実行後に，その時点までの公開記録を検査した．
+各80生成・450,000 token・1,800秒・160 APIを上限とし，検査結果の追加案内は与えない．
+元集合・移動前の日時・現在年・移動先・名前保持が全て支持されれば，
+通常の完了APIを１回送り終了する．不明時は通常継続し，未来応答や評価器は参照しない．
+\input{papers/202610_letter/ordinary_completion_component.tex}
+４実行は全て公式成功で，制御によって各２生成・４ APIが少なくなった．
+両接続とも対応する対照と最終13保存ファイルが同一で，実行した公開API記録も一致した．
+ただし呼出しIDが異なり，要求・モデルメッセージ全文の一致という事前基準は不成立だった．
+この基準を事後に緩めず，反復された因果効果や一般的品質保証とは解釈しない．
+
+制御２条件の全25生成は203,349 token，199 API，２評価，使用量不明０だった．
+25回の検査と記録ダイジェスト計算は合計0.028224秒で，全体時間にも含めた．
+減少78,754 tokenのうち66,720はcached inputであり，金銭・時間の同率削減ではない．
+要求解釈は既知１文型，APIの意味は信頼するという限定がある．
+表示比較の成否を書き換えず，表2・3の課題数や費用へ合算しない．
+
 \section{解釈の限界}
 既知４課題，単一モデル，各条件１回の開発比較であり，
 追加診断は同じ写真課題の事後介入である．診断４条件を独立４課題として数えない．
@@ -169,11 +187,12 @@ seedと初回キャッシュ条件をそろえても，後続の実行経路の�
 API説明の履歴省略を，全予定条件の仕事全体の費用と終了手続きから調べた．
 詳細省略は初回入力を短くしたが，全４課題の既知費用だけでも全表示を上回った．
 また，写真整理では作業状態を保った完了通知により成否が変わった．
+別条件の通常終了制御では，同じ保存状態・公式成功を保った局所的な費用減少を観測した．
 この局所比較では，短い入力や成功数の増加だけを費用・実作業品質の改善根拠にはできない．
 必要情報と品質を守る制御を評価する際には，
 終了までの費用と，作業状態・終了手続きへの介入を対応させる必要がある．
 
-\begin{thebibliography}{10}\small
+\begin{thebibliography}{11}\small
 \bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
 \bibitem{interaction} S. Liu, ``What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics,'' arXiv:2608.16370v1, 2026.
 \bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
@@ -183,6 +202,7 @@ API説明の履歴省略を，全予定条件の仕事全体の費用と終了�
 \bibitem{disclosure} Y. He, Y. Zhao, J. Wang, and H. Chen, ``Is Progressive Disclosure All You Need for Long-Context Agents?,'' arXiv:2607.17598v1, 2026.
 \bibitem{evidence} K. Zhang et al., ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
 \bibitem{matoi} Z. Wang, ``Matoi: Selective Revalidation of Consequence Evidence for Agent Authorization,'' arXiv:2610.21394v1, 2026.
+\bibitem{ect} J. Liu, ``When May an Agent Stop? Evidence-Carrying Termination for Tool-Using LLMs,'' arXiv:2608.23623v1, 2026.
 \bibitem{appworld} H. Trivedi et al., ``AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents,'' ACL, pp.16022--16076, 2024.
 \end{thebibliography}
 \end{document}

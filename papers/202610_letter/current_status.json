@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P64/P65 complete; preparing a bounded ordinary online completion control on the known photo instruction template. Novel central method not established.",
+  "current_experiment": "P66 closed and integrated as a separate ordinary-control comparison in the four-page manuscript. P67 read-only export inspection closed: contradicted/supported/unknown on all three known records; no new model/API/evaluation. Next prepare a matched fresh ordinary-native versus completion-control comparison before allocation.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -27,33 +27,31 @@
   ],
   "current_guide": "README.md",
   "last_completed_experiment": {
-    "phase": "P61",
-    "planned_cells": 2,
-    "evaluated_cells": 2,
-    "independent_known_tasks": 1,
-    "model_calls": 5,
-    "known_continuation_tokens": 111541,
+    "phase": "P66",
+    "status": "complete",
+    "plan": "../../configs/P66_ordinary_completion_v01.json",
+    "planned_conditions": 2,
+    "known_tasks": 1,
+    "max_model_calls": 160,
+    "max_logical_tokens": 900000,
+    "max_api_requests": 320,
+    "max_evaluator_calls": 2,
+    "novel_method_claim": false,
+    "reserved_scenarios_read": 0,
+    "fixed_commit": "0641bc7088f5074cebca028ca7b43b907ed783c2",
+    "push_ci": 39858445636,
+    "pr_ci": 39858517879,
+    "model_calls": 25,
+    "known_total_tokens": 203349,
     "unknown_usage_calls": 0,
-    "continuation_api_requests": 23,
-    "setup_api_requests": 40,
-    "successes": [
-      true,
-      true
-    ],
-    "additional_contact_searches": [
-      0,
-      0
-    ],
-    "whole_task_known_tokens": [
-      311298,
-      305447
-    ],
+    "api_requests": 199,
+    "evaluator_calls": 2,
+    "audit_checks": 1721,
     "audit_errors": 0,
     "server_stopped": true,
-    "novel_method_claim": false,
-    "results": "../../docs/P61_findings.md"
+    "results": "../../docs/P66_findings.md"
   },
-  "latest_presentation": "../../materials/20261023_p62/AI_harness_public_completion_scope_20261023.pdf",
+  "latest_presentation": "../../materials/20261023_p66/AI_harness_ordinary_completion_20261023.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/70",
   "method_fragment": "p55_methods_component.tex",
@@ -61,31 +59,29 @@
   "research_objective": "Reduce unnecessary information acquisition, sharing, model calls and execution through harness control while maintaining final task quality.",
   "objective_document": "../../docs/research_objective_20261022.md",
   "last_completed_task_experiment": {
-    "phase": "P61",
-    "planned_cells": 2,
-    "evaluated_cells": 2,
-    "independent_known_tasks": 1,
-    "model_calls": 5,
-    "known_continuation_tokens": 111541,
+    "phase": "P66",
+    "status": "complete",
+    "plan": "../../configs/P66_ordinary_completion_v01.json",
+    "planned_conditions": 2,
+    "known_tasks": 1,
+    "max_model_calls": 160,
+    "max_logical_tokens": 900000,
+    "max_api_requests": 320,
+    "max_evaluator_calls": 2,
+    "novel_method_claim": false,
+    "reserved_scenarios_read": 0,
+    "fixed_commit": "0641bc7088f5074cebca028ca7b43b907ed783c2",
+    "push_ci": 39858445636,
+    "pr_ci": 39858517879,
+    "model_calls": 25,
+    "known_total_tokens": 203349,
     "unknown_usage_calls": 0,
-    "continuation_api_requests": 23,
-    "setup_api_requests": 40,
-    "successes": [
-      true,
-      true
-    ],
-    "additional_contact_searches": [
-      0,
-      0
-    ],
-    "whole_task_known_tokens": [
-      311298,
-      305447
-    ],
+    "api_requests": 199,
+    "evaluator_calls": 2,
+    "audit_checks": 1721,
     "audit_errors": 0,
     "server_stopped": true,
-    "novel_method_claim": false,
-    "results": "../../docs/P61_findings.md"
+    "results": "../../docs/P66_findings.md"
   },
   "latest_official_template_check": "../../reports/ieice_template_fetch_20261022.json",
   "last_terminated_task_experiment": {
@@ -129,23 +125,27 @@
     "resumption": "docs/resumption_20261022.md"
   },
   "last_completed_passive_inspection": {
-    "phase": "P65",
-    "report": "../../reports/P65_public_move_scope.json",
+    "phase": "P67",
+    "report": "../../reports/P67_public_export_scope.json",
     "known_tasks": 1,
-    "conditions": 2,
-    "supported_conditions": 2,
-    "later_tokens": [
-      39323,
-      39431
+    "records": 3,
+    "trace_support": [
+      "contradicted",
+      "supported",
+      "unknown"
     ],
+    "later_known_tokens_on_supported_record": 41702,
     "is_measured_savings": false,
-    "parity_controls": 3,
-    "reserved_scenarios_read": 0
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "reserved_scenarios_read": 0,
+    "initial_failure_preserved": "../../reports/P67_preflight_failure.json"
   },
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
   "critical_path": [
-    "Execute and audit the fixed P64 ordinary-baseline comparison after exact preparation CI. Retain every result and unknown usage; distinguish interface calibration from a new method.",
+    "Prepare a fixed matched native-tool versus ordinary completion-control comparison for the known CSV instruction, using P67 public evidence and a fresh baseline; historical P25 tail cost is not measured savings.",
     "Choose one additional empirical finding or control rule beyond the closest ordinary baseline; novelty remains unestablished.",
     "Freeze the main claim and supporting comparison by 2026-10-23, retaining negative and unknown results.",
     "Use reserved scenarios only after mechanism, controls, budgets and missing-data analysis are fixed.",
@@ -164,7 +164,7 @@
     "unknown_usage_calls": 1,
     "results": "../../docs/P45_findings.md"
   },
-  "latest_related_work_review": "../../docs/evidence_delivery_overlap_20261023.md",
+  "latest_related_work_review": "../../docs/termination_control_overlap_20261023.md",
   "result_fragment": "inventory_tables.tex",
   "result_source_map": "cost_completion_source_map.json",
   "provisional_manuscript": {
@@ -180,14 +180,16 @@
       4
     ],
     "japanese_abstract_characters": 104,
-    "english_abstract_words": 44,
+    "english_abstract_words": 43,
     "central_contribution_confirmed": false,
     "submission_ready": false,
     "source_map": "cost_completion_source_map.json",
     "layout": "cost_completion_layout.json",
     "public_admission_scope_explicit": true,
     "public_clock_evidence_limit_explicit": true,
-    "pdf_sha256": "5b7b63e8d3ba93d09c63f600fa59b8c8a346f2d32fc0a2c81aab3c0babfe53d3"
+    "pdf_sha256": "125131d5d8937100955c3e9191d4d15be92cb0e35da9a2c6f6a8b3a25c210ad3",
+    "ordinary_completion_results_included": true,
+    "strict_prefix_failure_explicit": true
   },
   "last_completed_measurement_calibration": {
     "phase": "P58",
@@ -230,19 +232,7 @@
     "additional_value_over_simple_ranked_access": false,
     "decision": "Do not promote bounded prefetch to a novel main comparison; ordinary ranked access was sufficient, and LLM-token savings were not measured."
   },
-  "queued_comparison": {
-    "phase": "P66",
-    "status": "prepared_not_started",
-    "plan": "../../configs/P66_ordinary_completion_v01.json",
-    "planned_conditions": 2,
-    "known_tasks": 1,
-    "max_model_calls": 160,
-    "max_logical_tokens": 900000,
-    "max_api_requests": 320,
-    "max_evaluator_calls": 2,
-    "novel_method_claim": false,
-    "reserved_scenarios_read": 0
-  },
+  "queued_comparison": null,
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {
     "path": "candidate_execution_state.tex",
@@ -380,8 +370,8 @@
     "live_llm_interface_installed": false,
     "results": "../../docs/P60_findings.md"
   },
-  "latest_component_material": "../../materials/20261023_p63/README.md",
-  "latest_comparison_material": "../../materials/20261023_p64/README.md",
+  "latest_component_material": "../../materials/20261023_p67/README.md",
+  "latest_comparison_material": "../../materials/20261023_p66/README.md",
   "latest_termination_related_review": "../../docs/termination_control_overlap_20261023.md",
   "last_completed_ordinary_comparison": {
     "phase": "P64",
@@ -406,5 +396,73 @@
     "audit_checks": 2366,
     "audit_errors": 0,
     "server_stopped": true
-  }
+  },
+  "previous_completed_task_experiment": {
+    "phase": "P61",
+    "planned_cells": 2,
+    "evaluated_cells": 2,
+    "independent_known_tasks": 1,
+    "model_calls": 5,
+    "known_continuation_tokens": 111541,
+    "unknown_usage_calls": 0,
+    "continuation_api_requests": 23,
+    "setup_api_requests": 40,
+    "successes": [
+      true,
+      true
+    ],
+    "additional_contact_searches": [
+      0,
+      0
+    ],
+    "whole_task_known_tokens": [
+      311298,
+      305447
+    ],
+    "audit_errors": 0,
+    "server_stopped": true,
+    "novel_method_claim": false,
+    "results": "../../docs/P61_findings.md"
+  },
+  "last_completed_ordinary_completion": {
+    "phase": "P66",
+    "status": "complete",
+    "plan": "../../configs/P66_ordinary_completion_v01.json",
+    "planned_conditions": 2,
+    "known_tasks": 1,
+    "max_model_calls": 160,
+    "max_logical_tokens": 900000,
+    "max_api_requests": 320,
+    "max_evaluator_calls": 2,
+    "novel_method_claim": false,
+    "reserved_scenarios_read": 0,
+    "fixed_commit": "0641bc7088f5074cebca028ca7b43b907ed783c2",
+    "push_ci": 39858445636,
+    "pr_ci": 39858517879,
+    "model_calls": 25,
+    "known_total_tokens": 203349,
+    "unknown_usage_calls": 0,
+    "api_requests": 199,
+    "evaluator_calls": 2,
+    "audit_checks": 1721,
+    "audit_errors": 0,
+    "server_stopped": true,
+    "results": "../../docs/P66_findings.md"
+  },
+  "previous_passive_photo_inspection": {
+    "phase": "P65",
+    "report": "../../reports/P65_public_move_scope.json",
+    "known_tasks": 1,
+    "conditions": 2,
+    "supported_conditions": 2,
+    "later_tokens": [
+      39323,
+      39431
+    ],
+    "is_measured_savings": false,
+    "parity_controls": 3,
+    "reserved_scenarios_read": 0
+  },
+  "ordinary_completion_fragment": "ordinary_completion_component.tex",
+  "previous_cost_completion_manuscript": "candidate_cost_completion_before_P66_20261023.pdf"
 }

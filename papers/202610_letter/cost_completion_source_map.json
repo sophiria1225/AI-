@@ -11,24 +11,30 @@
     "reports/P56_completion_audit.json": "4600af50f2bead2e7099c5dba67e2d4850247628d6f49751960f4de897b70a03",
     "configs/P56_completion_scope_v01.json": "cb519a9e9fb6625ea2ab040bdc1a7471749750987fcc16a8ea1389588cd40a11",
     "reports/P62_public_move_scope.json": "8f99d38b6497c186d170b907ed01881a10d9b37a78fcf4f7c74b3b89084aa6c5",
-    "reports/P63_public_name_scope.json": "ce3efc942aebf8415b105ea9adf09f3483ed31a632774b7c9eb8c9fd9736d7e4"
+    "reports/P63_public_name_scope.json": "ce3efc942aebf8415b105ea9adf09f3483ed31a632774b7c9eb8c9fd9736d7e4",
+    "reports/P64_public_name_audit.json": "8c5dac74fcb69c59b89df936270b5bed8ab00db0abef10feca15f07faebfd283",
+    "configs/P66_ordinary_completion_v01.json": "c0320ff4f5d0b594b5afe9e95654167693dfca4ca04a02d6796667051aa66dba",
+    "reports/P66_ordinary_completion.json": "5e38fab2a658da64ea47d63cef936a2a027ef1f35d5fd93e9c5638ca6172eaaa",
+    "reports/P66_completion_audit.json": "f8864e42c0b627f6ffc5dc10636c78573050236beb2b1811115c1248030ca990",
+    "reports/P66_identity_differences.json": "8ac7c2f1914924d98151f7bcc857fdc335ee91f79a7999104fa65654964b6d27"
   },
   "rendering_sources": {
-    "papers/202610_letter/candidate_cost_completion.tex": "f194187f7c2b2fe93c48679f26f9fbbbcafdc1c381cf9e0ed60c9e5e03262089",
+    "papers/202610_letter/candidate_cost_completion.tex": "b82e229e6c7c9002796151707cea590b309e8298a858b5641b42dbce2bfc8a40",
     "papers/202610_letter/p55_methods_component.tex": "a738730a09d1332745b3fe26929b763edc40270408c3d078f3b8f373fead809a",
     "papers/202610_letter/inventory_tables.tex": "0861c3256b149987ffd58218fd68b42075c3db22a499f249a19d56722313a63d",
     "papers/202610_letter/completion_diagnostic.tex": "2f0d459dbdf4c590f8381aa8ff48bd9ea2dd9c648c7ee523b786c2c0b3e6a089",
-    "papers/202610_letter/cost_completion_abstract_ja.txt": "83c262ccb07f276c8fa9b2a886ccedf19056b1b4b58ff02f39912f627c3f4196",
-    "papers/202610_letter/cost_completion_abstract_en.txt": "d8ad0d91c35774476d5b98dc44c19b1b9e5d26ba0d330f4f9276115704869b65",
-    "materials/20261023_p55/work_tokens.pdf": "401999491359bac157dd0e2fe04dd2c5f12111d7d78bd541daddb709e928300f",
+    "papers/202610_letter/cost_completion_abstract_ja.txt": "3edc27a5e29bb5d1a58ea95df7384038debf7d13930e8c38f8194883eff577e4",
+    "papers/202610_letter/cost_completion_abstract_en.txt": "36d193a5099893313a09ba1be0bdf91c1972c61d3ad1b6c7ded0937a39a97008",
     "docs/evidence_delivery_overlap_20261023.md": "55c841bc9077817e46c6538bce4f147c2910bff60bd17290c6f733dbc170e74f",
     "docs/P62_findings.md": "9d4de1a5c3c8d0a29a5c7a48bbad5a8351b0d87099e5d190ca3f466649b67f6e",
     "docs/P63_findings.md": "15baf4c7b07eff633f18b8cfca0e2c952c083a53dc2f9661505d92c2e5202882",
-    "docs/termination_control_overlap_20261023.md": "4bba4f34f3e7d28d6161f6e555ba38257c4826d8e88f774bdc8b5cde5d35cac1"
+    "docs/termination_control_overlap_20261023.md": "4bba4f34f3e7d28d6161f6e555ba38257c4826d8e88f774bdc8b5cde5d35cac1",
+    "papers/202610_letter/ordinary_completion_component.tex": "ad9d248760ff630fa23cdb3534861cd0af233436340ba1e3631fb7078e55a099",
+    "docs/P66_findings.md": "c15ed97b53f4d0570baf25c7fc397993ad737af5f8457d8bd38e5dd813871737"
   },
   "source_lock_manifest_sha256": "59bc3b6c7ccb5088ba8133e9ea4d2e66ac4a568687ac800b41c236d7c15dd287",
-  "builder_sha256": "8924a526be3e215b651b9a361ab9afe5c22b30753c3d85226cbfc7c4bf1f1e22",
-  "pdf_sha256": "5b7b63e8d3ba93d09c63f600fa59b8c8a346f2d32fc0a2c81aab3c0babfe53d3",
+  "builder_sha256": "fcae24e5883bf5acb45174c0d5c75e63a878272dc28faf6e195c74d93ee5798a",
+  "pdf_sha256": "125131d5d8937100955c3e9191d4d15be92cb0e35da9a2c6f6a8b3a25c210ad3",
   "source_date_epoch": "1792677600",
   "data_checks": {
     "planned_and_evaluated_cells": 12,
@@ -85,7 +91,64 @@
       "unknown",
       "unknown",
       "unknown"
-    ]
+    ],
+    "ordinary_control_conditions": 2,
+    "ordinary_control_audit_errors": [],
+    "ordinary_control_usage": [
+      25,
+      203349,
+      0,
+      199,
+      2
+    ],
+    "ordinary_control_success": [
+      true,
+      true
+    ],
+    "ordinary_control_reference_success": [
+      true,
+      true
+    ],
+    "ordinary_control_tokens": [
+      [
+        130439,
+        91116
+      ],
+      [
+        151664,
+        112233
+      ]
+    ],
+    "ordinary_control_final_database_differences": [
+      [],
+      []
+    ],
+    "ordinary_control_public_prefix_equal": [
+      [
+        true,
+        true
+      ],
+      [
+        true,
+        true
+      ]
+    ],
+    "ordinary_control_strict_prefix_equal": [
+      false,
+      false
+    ],
+    "ordinary_control_identity_other_differences": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "ordinary_control_identity_criterion_changed": false,
+    "ordinary_control_server_stopped": true
   },
   "pages": 4,
   "visual_reviewed_pages": [
@@ -95,10 +158,13 @@
     4
   ],
   "japanese_abstract_characters": 104,
-  "english_abstract_words": 44,
+  "english_abstract_words": 43,
   "all_scheduled_agent_cells": 12,
   "posthoc_replay_cases": 4,
   "independent_agent_tasks": 4,
+  "separate_ordinary_completion_conditions": 2,
+  "separate_ordinary_reference_conditions": 2,
+  "ordinary_completion_uses_same_known_photo_task": true,
   "official_class_used": false,
   "submission_ready": false,
   "central_contribution_confirmed": false,
@@ -114,6 +180,11 @@
   "additional_related_reference": {
     "url": "https://arxiv.org/html/2610.21394v1",
     "read_scope": "Sections 3.1–4.3, 20.2–20.3 and 20.5; not all later sections or an implementation reproduction. Abstract page identifies the work as a non-peer-reviewed research preprint.",
+    "record": "docs/termination_control_overlap_20261023.md"
+  },
+  "ordinary_termination_reference": {
+    "url": "https://arxiv.org/html/2608.23623v1",
+    "read_scope": "Declared contract, evidence ledger, deterministic verification and trust boundary; no implementation reproduction.",
     "record": "docs/termination_control_overlap_20261023.md"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "phase": "P67_initial_readonly_attempt",
+  "status": "failed",
+  "error_type": "KeyError",
+  "error_field": "usage_known",
+  "stage": "later-cost classification on the second fixed record",
+  "records_normalized_before_failure": 2,
+  "third_record_inspected": false,
+  "wall_seconds": null,
+  "wall_seconds_note": "The initial command did not preserve a measured duration; not reconstructed.",
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "git_commit": "da0f9991a12b8f040f3235a39913da6cdd3138c4",
+  "inspector_sha256": "3e4a48b549060005b3541b1bd030b63f909e389a82f61cef372eb1a3d6fbbd1d",
+  "checker_sha256": "7f0126dbdc59814832b0148acbc94c10fe3688c9a19ec20d142aa29a01eb672c",
+  "plan_sha256": "eab69f1e4eaace900f05550d3ac7608489c4a7b349eb9c4bdd4f52acead469e0",
+  "cause": "Legacy usage records contain numeric input/output and no usage_known flag. The posthoc later-cost helper required the newer flag. No result row was published.",
+  "resolution": "Derive known status from existing nonnegative integer input/output, reconcile unknown count with the original closed audit, retain values and any unknown calls. No model retry."
+}

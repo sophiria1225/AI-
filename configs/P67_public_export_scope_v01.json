@@ -1,0 +1,59 @@
+{
+  "phase": "P67",
+  "task_id": "6104387_1",
+  "run_ids": [
+    "P18_04_ROLES",
+    "P25_04_GUIDED",
+    "P29_04_CODE"
+  ],
+  "max_wall_seconds": 120,
+  "max_events_per_record": 4000,
+  "max_model_boundaries": 80,
+  "max_source_ids": 512,
+  "max_content_characters": 1048576,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "source_files": {
+    "P18_04_ROLES": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "a41995a6b9a112fd9995f3e351dca0562ee6ee569c202d98f427d55417d7c9f2",
+      "spans.json": "caada98e81d0af8402f22f8d5f0228495e55c5846f31a1526d54437dae26ab7b",
+      "usage.json": "c8551867aac01950754d30eb0bce1d47090237193e46f573dc3ad3c8d4fab2d4",
+      "summary.json": "403629528a160ea1f0593e425a31f1056a0b58dc8ae514d37866b35a0b6f4daf"
+    },
+    "P25_04_GUIDED": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "ac380497eb2713eaeb3afc876ec043775d58fdb2ec7348bb717fb570c1f8fab7",
+      "spans.json": "6ebfbdaa21dc07ac762b183c98f0ded5a9df6677697ccafb605972bd1b751ef9",
+      "usage.json": "61cdccd3d61ca5bac7df6fd815b3d508aca56a2142e51a197ed44e74005fd902",
+      "summary.json": "0effc66e43126d2f011af59d403a5b0e1df754f5c8fc0760fc763fdd0b335ffe"
+    },
+    "P29_04_CODE": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "1aa3558e2f99bf62e40cd6033900540d2a98b44bf96786cc59f814dc8b3fb951",
+      "spans.json": "147dc0a3950d6daf88ffc6cf3c70197fbffeca8000ba6148aa40ab1e04037c17",
+      "usage.json": "d39e4c15395d9dbf3a16434356702678608dcdd162f7494a53d94a22a50f4621",
+      "summary.json": "3abb1a5167ef5f4b60805d992ddc340680760a7afcfdc926cbf71aedb9d3cebc"
+    }
+  },
+  "audit_reports": {
+    "reports/P18_04_ROLES_execution_audit.json": "3e104f6009312022f5e093b2efdacd005a18d43cb64910c2101f2f62ee672e85",
+    "reports/P25_04_GUIDED_execution_audit.json": "099f6a32816f95fac3cea692c773b6481697a06c7224be94b6427015ffd47c9c",
+    "reports/P29_04_CODE_execution_audit.json": "1a49a3c33b9365d154673788b09983282699927e70d682206aa1474f62ef6ac2"
+  },
+  "public_api_implementation_sha256": {
+    "spotify": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "file_system": "5717b0cbabf4b8647c7429a187db3b3c278e9778798a51ff83f14815f8065e22"
+  },
+  "helper_sha256": {
+    "scripts/diagnose_p25_public_traces.py": "e41eb494406ca44cb25d485ec4c58dcb1f15216ffe05263af74b7658f07c3dda",
+    "scripts/inspect_public_move_scope.py": "ce5c8e2ad2c802067212394c8fc7a4244044c8f17758a8888d2809be7383ca6a",
+    "scripts/public_move_evidence.py": "6c5297f69b69c31d00d3aa9cf8e8227d269874ecfaea5442d43d4ba7c983d74a"
+  },
+  "selection": "Posthoc known export task: original P18 baseline, generic-guidance P25 baseline, persistent-Python P29 baseline. Public shapes and earlier diagnoses were read before this plan. All three are retained; not independent tasks or an interface causal comparison.",
+  "scope": "Analyst-authored exact known request template, complete paginated source lists, source metadata, unique title/artists representation, trusted target create receipt, and successful account deletion strictly after a supported backup. Read-only feasibility analysis, not a live controller or measured savings."
+}
