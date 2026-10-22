@@ -1,0 +1,83 @@
+{
+  "phase": "P68",
+  "source_config": "configs/P25_guidance_transfer_v01.json",
+  "task_ids": [
+    "6104387_1"
+  ],
+  "arms": [
+    "native",
+    "controlled"
+  ],
+  "run_order": [
+    [
+      "6104387_1",
+      "native",
+      "P68_01_EXPORT_NATIVE"
+    ],
+    [
+      "6104387_1",
+      "controlled",
+      "P68_02_EXPORT_CONTROLLED"
+    ]
+  ],
+  "seed": 42,
+  "max_calls": 80,
+  "max_total_tokens": 450000,
+  "max_wall_seconds": 1800,
+  "max_output_tokens": 4096,
+  "api_budget_by_task": {
+    "6104387_1": 80
+  },
+  "max_setup_seconds": 120,
+  "max_evaluation_seconds": 180,
+  "max_idle_wait_seconds": 60,
+  "server_max_lifetime_seconds": 5280,
+  "server_readiness_seconds": 300,
+  "worker_timeout_seconds": 4800,
+  "output_reservation": "fixed",
+  "model_usage_receipt": "streaming_terminal_usage_required",
+  "first_call_cache_prompt": false,
+  "same_arm_later_cache_prompt": true,
+  "notification": "same_static_limits_and_P25_generic_native_guidance",
+  "max_controller_checks_per_condition": 80,
+  "max_public_events_per_check": 4000,
+  "max_controller_completion_attempts": 1,
+  "controller_check_boundary": "after_whole_native_model_message_execution_before_next_generation",
+  "controller_action": {
+    "app": "supervisor",
+    "api": "complete_task",
+    "args": {
+      "status": "success"
+    }
+  },
+  "unknown_or_unsupported_policy": "continue_ordinary_agent_without_extra_hint_or_request",
+  "controller_completion_failure_policy": "stop_condition_and_remaining_schedule_without_retry",
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "selection": "One known export-then-delete instruction selected after P67 inspection of P18/P25/P29. Two fresh matched native runs, one per condition; not independent confirmation.",
+  "scope": "Hand-authored unchanged P67 public source/content/order checks. The agent performs every task operation including account deletion. The controller may only send the ordinary final completion request. No future receipt or evaluator is supplied.",
+  "comparison": "Fresh ordinary-native baseline versus the same prompt/tools with external completion control. Report strict request/message equality and identifier-only diagnostics separately; equality is not assumed or a causal estimate. Never compare new costs to the historical P25 tail as measured savings.",
+  "failure_policy": "No retry or replacement. Known task/model budget closure is evaluated then next fixed condition. Unknown effects, setup/runtime/cleanup/evaluation failure, controller completion failure, source/server drift, explicit stop or process limit stops remaining schedule.",
+  "allocation_rule": "Exactly two conditions, at most 160 model calls, 900000 logical tokens, 160 environment API requests including completion, two evaluations. No retry/replacement or adaptive budget. Retain every failure and unknown cost.",
+  "source_run": "P25_04_GUIDED",
+  "local_adoption_rule": "Both fresh runs evaluated successful, all usage known, no audit errors, identical 13 final database hashes, controlled whole logical tokens lower. Descriptive one-known-task development gate only.",
+  "source_files_sha256": {
+    "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+    "provenance.json": "24d49161437aaa29f6dea5a4ae4ee1a2ba1a64bebf0673d142cf25c847a75b45",
+    "boundaries/manifests/initial.json": "45ad60b92f91bedac98edea2e1d82ba06ccd8b79cdae4f81a077678e74ac1551"
+  },
+  "source_code_sha256": {
+    "scripts/public_export_evidence.py": "7f0126dbdc59814832b0148acbc94c10fe3688c9a19ec20d142aa29a01eb672c",
+    "scripts/diagnose_p25_public_traces.py": "e41eb494406ca44cb25d485ec4c58dcb1f15216ffe05263af74b7658f07c3dda",
+    "scripts/inspect_public_move_scope.py": "ce5c8e2ad2c802067212394c8fc7a4244044c8f17758a8888d2809be7383ca6a",
+    "scripts/public_move_evidence.py": "6c5297f69b69c31d00d3aa9cf8e8227d269874ecfaea5442d43d4ba7c983d74a",
+    "scripts/run_native_appworld.py": "e7a57404a10aea2c0bf0a2e9130a8a2a8c875d6a335b27c5dd60a8467d3d3b5c",
+    "scripts/ordinary_continuation.py": "bd9ba54c9b8ace9cbbd6ae7376d8f01a0848775cab5cd205933363b0ce3a8f2a"
+  },
+  "source_config_sha256": "2e150aac960c3d8c54ca5f1d733281f14fe40332f0f7bc2c8fa86511cd2b69be",
+  "public_scope_sha256": "bc58c994b03bf3572cdd1575a024ff29ae1c3e50c490bf0c79fb86cf752229c7",
+  "public_api_implementation_sha256": {
+    "spotify": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "file_system": "5717b0cbabf4b8647c7429a187db3b3c278e9778798a51ff83f14815f8065e22"
+  }
+}

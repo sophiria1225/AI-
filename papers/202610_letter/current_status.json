@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P66 closed and integrated as a separate ordinary-control comparison in the four-page manuscript. P67 read-only export inspection closed: contradicted/supported/unknown on all three known records; no new model/API/evaluation. Next prepare a matched fresh ordinary-native versus completion-control comparison before allocation.",
+  "current_experiment": "P66/P67 complete and published. P68 matched fresh native/export-completion control prepared; not yet executed.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -232,7 +232,19 @@
     "additional_value_over_simple_ranked_access": false,
     "decision": "Do not promote bounded prefetch to a novel main comparison; ordinary ranked access was sufficient, and LLM-token savings were not measured."
   },
-  "queued_comparison": null,
+  "queued_comparison": {
+    "phase": "P68",
+    "status": "prepared",
+    "plan": "../../configs/P68_export_completion_v01.json",
+    "planned_conditions": 2,
+    "known_tasks": 1,
+    "max_model_calls": 160,
+    "max_logical_tokens": 900000,
+    "max_api_requests": 160,
+    "max_evaluator_calls": 2,
+    "novel_method_claim": false,
+    "reserved_scenarios_read": 0
+  },
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {
     "path": "candidate_execution_state.tex",
