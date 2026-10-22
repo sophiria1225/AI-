@@ -11,7 +11,8 @@ from run_handoff_factors import ROOT, read, sha
 
 STEM = 'AI_harness_ordinary_completion_20261023'
 SOURCES = ('reports/P66_completion_audit.json', 'reports/P66_ordinary_completion.json',
-    'configs/P66_ordinary_completion_v01.json', 'reports/P64_public_name_audit.json')
+    'configs/P66_ordinary_completion_v01.json', 'reports/P64_public_name_audit.json',
+    'reports/P66_identity_differences.json')
 
 
 def outcome(value):
@@ -23,7 +24,7 @@ def equality(value):
 
 
 def build(output):
-    audit, report, plan, baseline = [read(ROOT / p) for p in SOURCES]
+    audit, report, plan, baseline, identity = [read(ROOT / p) for p in SOURCES]
     if (audit['audit_errors'] or not audit['server_stopped'] or audit['owned_server_processes_present']
             or audit['source_report_sha256'] != sha(ROOT / SOURCES[1])
             or audit['plan_sha256'] != sha(ROOT / SOURCES[2])
@@ -32,6 +33,11 @@ def build(output):
             or [[r['task_id'],r['arm'],r['run_id']] for r in audit['rows']] != plan['run_order']
             or report['status'] not in ('complete','stopped')):
         raise ValueError('closed complete fixed population and reconciled sources required')
+    if (identity['criterion_changed'] or identity['source_sha256'][SOURCES[0]] != sha(ROOT/SOURCES[0])
+            or identity['inspector_sha256'] != sha(ROOT/'scripts/inspect_completion_identity_differences.py')
+            or len(identity['rows']) != 2
+            or any(r.get('request_other_differences', 0) or r.get('response_other_differences', 0) for r in identity['rows'])):
+        raise ValueError('matching field-path diagnosis required for identifier-only description')
     comparisons=[]; scope=[]; completed=[]
     for row in audit['rows']:
         arm = '文書取得必須' if row['arm']=='documented' else '公開名アクセス'
@@ -69,9 +75,9 @@ def build(output):
         dict(cover=False,title='前半の一致と、実作業の保存状態を照合',
             body='<p class="lead">時系列の公開応答だけで、全プログラム実行後・次の生成前に判定。</p>'
             '<table><tr><th>通常Python</th><th>支持された境界</th><th>実行した前半</th><th>作業アプリの最終DB</th></tr>'
-            +''.join(scope)+'</table><p class="small">前半＝全要求・モデルメッセージ・公開イベント・応答の厳密一致。<br>作業アプリのDB比較はsupervisor以外の全保存ファイル。内容は読まない。</p>',
-            takeaway='前半が異なる場合、総費用差を終了制御だけの効果にはしない。',
-            notes='同じseedだけで同じ生成になるとは仮定せず、終了後に全前半を比較する。制御は未来の応答・元の解答・公式評価の返却を使わない。生成内の途中では終了させず、その生成の全要求を見た境界で判定する。'),
+            +''.join(scope)+'</table><p class="small">前半の全文一致は不成立。差分は外側のツール呼出しIDだった。<br>実APIの公開イベント・応答と、最終13 DBは両条件とも一致した。</p>',
+            takeaway='事前の全文一致基準は変更しない。局所の観測差を一般的な因果効果へ広げない。',
+            notes='同じseedだけで同じ生成になるとは仮定せず、終了後に全前半を比較した。差分診断では要求のID差156／132、モデルメッセージのID差13／12、その他の値の差０。これは判定基準を緩めた一致ではない。制御は未来の応答・元の解答・公式評価を使わない。生成内の途中では終了させない。'),
         dict(cover=False,title='判定と完了通知を含め、追加の費用も残す',
             body='<table><tr><th>全２予定条件の測定</th><th>今回の値</th></tr>'
             f'<tr><td>全入力＋全出力／生成／API／公式評価</td><td>{totals} token／{audit.get("model_calls",0)}／{audit.get("api_requests",0)}／{audit.get("evaluator_calls",0)}</td></tr>'

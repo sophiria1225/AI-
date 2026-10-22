@@ -1,0 +1,902 @@
+{
+  "phase": "P66_identity_difference_diagnosis",
+  "rows": [
+    {
+      "run_id": "P66_01_PHOTO_DOCUMENTED",
+      "reference_run": "P64_01_PHOTO_DOCUMENTED",
+      "status": "evaluated",
+      "strict_prefix_match_retained": false,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "80826ac7572d3e7817f8566b33fabb2eee497f812a75e762d9529618e5402437",
+            "reference_request": "80826ac7572d3e7817f8566b33fabb2eee497f812a75e762d9529618e5402437",
+            "new_response": "9f175a8dad1885b6502f9b75793dd48d2a2ffd1707b3f519f72f8625e2c9f95f",
+            "reference_response": "5b838faf86ad3d519322465cf02a016b1e1e08c97f6a3517e50dae56c4ce2463"
+          },
+          "request": {
+            "strict_equal": true,
+            "identifier_difference_paths": [],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_002",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "db61661efdcd3817c35384cebb53de41a779a84fa4e7eb50cb9dc046d388c30a",
+            "reference_request": "d372a82ac788909a123c09157c94504ff17487da315525d2de0f7c0c36eb848c",
+            "new_response": "0ebf004e02006ce45aaca8a658004f82c4ec7b08e4494ec8f92b36a68ca1f8dd",
+            "reference_response": "4e62fa69b75fced3316a6351c4e2e6094acd4929c7cca32b6b9923f39f077514"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_003",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "307e5a981863f455d353330b24f37d166d9568886b535febd10ad4d86c67f11c",
+            "reference_request": "961d20f6d7143aa05a98c2f88fd81077b4c00b203e9c3933e8564745db607940",
+            "new_response": "201ca2d4a2810b43cb84116119795e2632ebb4eaa4abbea446ae0d83462c5e41",
+            "reference_response": "f7516d962d02b28890271f3baaae61997c2460daf3e99b83b364e994137b8e42"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_004",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "0a38aa91df0ef7df59ea91206525074f72cc95c10f847b3b7023d68c786aae38",
+            "reference_request": "5bf8bc5fc684644800b628ce2e8f46b738ecdaeea0e77f6e8212bce843c97b8e",
+            "new_response": "8f525ef71e0899e7dfd60206f640912668c4490e2344a49daf550a79c55f4176",
+            "reference_response": "357cfb4a5f2057262cb7916dc85d8e2687c10a6315c64478610de0ec74371fa2"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_005",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "becc8e3027b2527fe6b1248e4659896d9fd45d7cb62046ad2d8d8cce41a174c4",
+            "reference_request": "37c4004a696cfb9290c62b31cc6c70914004124d9e1ea58731e8fd0ed81c655d",
+            "new_response": "c294ca350fb8a2836354b487a066f98dc98d09a284a2dc855a5d524bebbe14e0",
+            "reference_response": "c8d00eeb01678f5e628a54b3b14cc08ea18fbb6bb27e71576ad650b1fa120049"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_006",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "2622fc205201a4040187469d58cd1718a8343f96cdbafc89323d0d1dd18d1b7e",
+            "reference_request": "837db649b8a9a82ef5fb1d23f84879b584cf733750c3d9292ab8f903fab13896",
+            "new_response": "37d7b9b617ef949b54dbaf65ee159b80743099bffaaa5be2f22efbc5c455568c",
+            "reference_response": "cd8794c83eaac6917828380cbeff2475756d182daedfb0007d4a8bb1ff776438"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_007",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "15504a69d2c7b69941170b2f1033630a06a2743336264b04f6b4dc75016d3c85",
+            "reference_request": "d00106d3c597c33c1a83290572af5132d30d42e644f93703fb7f1bf693662461",
+            "new_response": "fd4548ef280658214b250a70cb44aa3f80df35d5b85f3b67967b2d78754a03f3",
+            "reference_response": "bf76be5362f16aa4fc13f2612ca354bc171a0d0d8d9022456ba2136bfab3977d"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_008",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "276cc488bfd9e444776ae582a76faa9cf0d3f5c2eb8864b19aff083d7085c0d5",
+            "reference_request": "6767c41bdbd99a66534527a07c6ea73ace242a989579f3ea8b42692ff1bdad74",
+            "new_response": "aef84bbc7f3095e0b4fa41772935050ffa95ca43283d15db3e0bdccf8e8e8137",
+            "reference_response": "1bf1bb78b0ba8ff274a59f36f4262c072745ea1b08206d1276a1c885f9800a82"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_009",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "f9e8474b1e77d60be0778b863c60816a837911feacd71637a4bcb69d84f9c6ba",
+            "reference_request": "d4c050d6d501e11884498dd2638f27ca0a377f7904369c968139a0d562920817",
+            "new_response": "8436c7733eb58e8a985a6a7afe625648f02a9b80f1a41df34433e3964c5c5bb3",
+            "reference_response": "3e7401ec569faddb192738592bbc8e19715ebc51d6ac87eecc5916ea76f6c8e3"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_010",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "442f41cfd3165992cbc92190ea195b7469078b1f3e651b081bd27b30230d2605",
+            "reference_request": "8543e44104822176bd5fd2b477c13e5207d554f2b27dd5845fb75082cdf4278e",
+            "new_response": "ad8e0a148687b0e57f79dd72f29715071a4d37750f4fd92e8b14af37db5d9420",
+            "reference_response": "2005130b4dde4852597ca61c0340edcbf598c570244a6e02358f1627e2ec673d"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_011",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "c6f0e01cbf595a8278ac0a931c8f75c698ec45cc458c4064f71adfa91555c286",
+            "reference_request": "beeed755c5a78b7ee96d39d2b7ae623f4816549cfaa2fcba62ee49dff848fd32",
+            "new_response": "7b07b13c5947f95558e4f7cd4d681a2e42ea6f7eb4de5482db594002d83f9168",
+            "reference_response": "3e340d8c528621905ac5698f353ab9e24907d815a349565910109cc51d5384c4"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id",
+              "$.messages[20].tool_calls[0].id",
+              "$.messages[21].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_012",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "e36ad63ae6336c32d7080a698460fa9a7914d1e0a14b64db9fd0fa8dd2c67f3e",
+            "reference_request": "8bfacc95e0516ec4c769f3697ba872d1ea891e6c4579c5c87b3477dd8ca963ce",
+            "new_response": "3b65b4154096ab7065e01df40ba910bffb2d0818f92a71f6e20f3e1e112bafc2",
+            "reference_response": "b0c4a35a1bab7f4d5726f1c2683c131542e357a3e2afd6eabf44eac0c483efbb"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id",
+              "$.messages[20].tool_calls[0].id",
+              "$.messages[21].tool_call_id",
+              "$.messages[22].tool_calls[0].id",
+              "$.messages[23].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_013",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "ee8a926f3490be07aa5ee4f65b0c9dd1d1f01ab5321d25c0d0b1c2b80bd7b747",
+            "reference_request": "c63619353b82c9aa1c9055c1fb030e559b6d91618c79268e3187ea0b5a124c2a",
+            "new_response": "60bd27b5a41bd1dcf0f4584d1ad48a19da569cdd81c1076ca3f1f35543795100",
+            "reference_response": "89ab272c911b9d964fed24eaa53fdbd7c2af4cb3de3b62f2f4ff9f92754eb9bc"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id",
+              "$.messages[20].tool_calls[0].id",
+              "$.messages[21].tool_call_id",
+              "$.messages[22].tool_calls[0].id",
+              "$.messages[23].tool_call_id",
+              "$.messages[24].tool_calls[0].id",
+              "$.messages[25].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        }
+      ],
+      "request_identifier_differences": 156,
+      "request_other_differences": 0,
+      "response_identifier_differences": 13,
+      "response_other_differences": 0
+    },
+    {
+      "run_id": "P66_02_PHOTO_NAMED",
+      "reference_run": "P64_02_PHOTO_NAMED",
+      "status": "evaluated",
+      "strict_prefix_match_retained": false,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "0f5179a6a257596d4ec7c66e9ba2c4ce40e6454ba6c8188af293b04d8433811c",
+            "reference_request": "0f5179a6a257596d4ec7c66e9ba2c4ce40e6454ba6c8188af293b04d8433811c",
+            "new_response": "606f2a4225849e5f75c371f961c953fa9c188a9e0645aec24df36134202c8153",
+            "reference_response": "07003cc1e81a3a8dc2d641094f89a732eae6d7c0d16cc7b313f1e2695479023d"
+          },
+          "request": {
+            "strict_equal": true,
+            "identifier_difference_paths": [],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_002",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "ddfa9c583fb0f41f3eec35630c1f1cd41d66a0e198ebd7e944c8bca0ad230ad4",
+            "reference_request": "ddbd34c9dc3aecdf77fbd5f9fb4c624d32e44f69b060d53d1919bdca45187038",
+            "new_response": "ec46652909f1b3f97e1a9218210c4deea91091ec2877d2cdaf617cde2aefe6a6",
+            "reference_response": "71a354801ee5552fc70370a03d5309192b5809d450f5f80922f7dee53eb84f97"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_003",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "4a0bb2eed15ef4a0965a5967c5b669beeaac04d07a482dc6339deef29e8b96cd",
+            "reference_request": "c2340749055b30b3215fb8d0ed20459b3bb0f3524e9abfd7bdadee726562b1f0",
+            "new_response": "75e7f8a4769fbefe032553a8c904861427e33e2abe49b22e3d6beae49a156837",
+            "reference_response": "f928157f14fd4778b141c7e685c432889b77cf19f57146722dd25915d6e442a0"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_004",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "6065ba6171962f9f508359cb613189f37899ba3924387b441cf3c895787780fd",
+            "reference_request": "9171140421056f6b0aa6404e27f11666815a98a495cdcf75a9823ce1f7b1c7ce",
+            "new_response": "fdb48f1775a7662abd149b7900390e15e4396d5e04aa4a14217f6259395124f8",
+            "reference_response": "4a338ddda1cb84231959dc0ecb738c4ad104bd8f6f2c7d7fb8536d836f6f161e"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_005",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "fb8e0806a39c3c3c701a26171ed2be04fdd4ee4cdcabcdaaf2cf0d426ad1cc1c",
+            "reference_request": "4383d8246331ccd8f31155bab565585dc56fb817aa2368412854b91384aa3783",
+            "new_response": "757e25ec074618487825019d5578cb45ab2c1bb582466384ff0b70b57112ab72",
+            "reference_response": "649c70716d6ad19cfb33ace3c7d13d7d7470f2d0f20249e07ef1f298e662014e"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_006",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "edf36546ffb616a23ad6cf5ede333430aacfddd77df8d844e7619d78355ea29a",
+            "reference_request": "51bae73436ab44ae66294e78af5be0d65a86d0318a7e478481cde9e7dd05caae",
+            "new_response": "860c3e37846e84ad518631e1a709db74dc76a62254b68d4c929356dbdbba4c3a",
+            "reference_response": "54290883346b9239def5c26b6d5021467fc72629bfe68c75e5674a38dcc11552"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_007",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "3c4e2d8240457629daf6bd9785aeb4a78154cf93469ff0d36b45cfa194bdfd45",
+            "reference_request": "64f8e45a40602bc02a0627da66e7cd051cc5d19b1406d91eab80dd99238c4097",
+            "new_response": "f134848657aeea09c6a8f3fa8f07aef5488539bea9b2928404ffa899b9d834df",
+            "reference_response": "36635aa18866a08dc5cc0d4ccaa203eb8c3cc6924a87e05829a68d4c359d5af9"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_008",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "19d3334dee3d2a98b7f5782ddf5fc6af6ac937bab4a0f679338d3a1cf9d08cce",
+            "reference_request": "10c531d4ae065b31cab2ea7a939c2c4f4f7922260621ab9bb66213180acd2a19",
+            "new_response": "4ed95254aacf28159133fb1024f368adc788380d3c91fe4e0b8155dd6abebc6c",
+            "reference_response": "46cb7d9d91026b5892d6fa94916cbfbf55dd5e360039146376d6898459c2b789"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_009",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "d14ac7bd397ac62af5ce7acff62f273b306fc59ec56e9b0cdc542e93fee58f3a",
+            "reference_request": "3c788dee54beaccdd207bdb15c431092761c3cf83e3ac6d4a9efa59ce131be39",
+            "new_response": "307e05401d63b67ecae28b6f8ff2f25ce62864e051d7b014729e762284e3f699",
+            "reference_response": "588c25273c356fb7f9790b1adec49075083cef845e370a8ed6f59d9659739498"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_010",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "efb2588afec2f4322ff5e96a4067d5f35ab46f44e4562204d13d46d10aac5f3f",
+            "reference_request": "387bd804550d084c218e1b783de79b029e91a0e5f369a4753c3f775120fdf2ca",
+            "new_response": "f05e8cc3e8f5ef31622b021cadac0a5ad85046b9f5e6d41ee9d7fec4e8ad05da",
+            "reference_response": "0db7f4c69f0b76ba8579ca347767752703c3f467263250f7ae35a55caa335a4d"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_011",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "822295978ed027e9f29519cfaf5be5bf04255c4ef8b464c1fcf1908700fc1568",
+            "reference_request": "721dbc8842158ce35a1c25d7d52b8999aac4f2c723e202abbaa9b3347d84b154",
+            "new_response": "d1ceb1cd3fa8e2f8b24f052715acc7dcbd6530f04a7f5cb94222a3634450a1e1",
+            "reference_response": "4cc803df2c8e318925d2202533cacf78c2907dc98b3380d39a625c115d7d7918"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id",
+              "$.messages[20].tool_calls[0].id",
+              "$.messages[21].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        },
+        {
+          "call_id": "call_012",
+          "reference_present": true,
+          "source_sha256": {
+            "new_request": "6d512a2d22160f6a1eae06e650fcad31a4959cc313c1fea2407fd9ada9ff9938",
+            "reference_request": "483304a0fac0a53c3f4f591e683a0eb0703fe909cccd5f24736e33952cf9cb1c",
+            "new_response": "8440e3e8903383dbcd9c35c5ef6415618b3d5cf3a7a347b24b3ee17314943948",
+            "reference_response": "ab7d224d5d795a40a9fae3ad4b3fb6648c6427c8f59caccce07174d6800937be"
+          },
+          "request": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.messages[2].tool_calls[0].id",
+              "$.messages[3].tool_call_id",
+              "$.messages[4].tool_calls[0].id",
+              "$.messages[5].tool_call_id",
+              "$.messages[6].tool_calls[0].id",
+              "$.messages[7].tool_call_id",
+              "$.messages[8].tool_calls[0].id",
+              "$.messages[9].tool_call_id",
+              "$.messages[10].tool_calls[0].id",
+              "$.messages[11].tool_call_id",
+              "$.messages[12].tool_calls[0].id",
+              "$.messages[13].tool_call_id",
+              "$.messages[14].tool_calls[0].id",
+              "$.messages[15].tool_call_id",
+              "$.messages[16].tool_calls[0].id",
+              "$.messages[17].tool_call_id",
+              "$.messages[18].tool_calls[0].id",
+              "$.messages[19].tool_call_id",
+              "$.messages[20].tool_calls[0].id",
+              "$.messages[21].tool_call_id",
+              "$.messages[22].tool_calls[0].id",
+              "$.messages[23].tool_call_id"
+            ],
+            "other_difference_paths": []
+          },
+          "response": {
+            "strict_equal": false,
+            "identifier_difference_paths": [
+              "$.tool_calls[0].id"
+            ],
+            "other_difference_paths": []
+          }
+        }
+      ],
+      "request_identifier_differences": 132,
+      "request_other_differences": 0,
+      "response_identifier_differences": 12,
+      "response_other_differences": 0
+    }
+  ],
+  "source_sha256": {
+    "reports/P66_completion_audit.json": "f8864e42c0b627f6ffc5dc10636c78573050236beb2b1811115c1248030ca990",
+    "reports/P64_public_name_audit.json": "8c5dac74fcb69c59b89df936270b5bed8ab00db0abef10feca15f07faebfd283"
+  },
+  "inspector_sha256": "245983338b8f13c0b3cee3dd7a9f9f14f1d0b65a9f609dbb20f19d799d453fa1",
+  "criterion_changed": false,
+  "new_model_calls": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "wall_seconds": 0.00952112500090152,
+  "scope": "Posthoc field-path diagnosis only. Original strict request/message prefix comparison remains unchanged; no causal or general-quality guarantee is added."
+}

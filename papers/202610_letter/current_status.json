@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P66 running from fixed CI-confirmed 0641bc7088f5074cebca028ca7b43b907ed783c2; two ordinary completion controls on one known photo task. No new-method claim.",
+  "current_experiment": "P66 complete: both ordinary photo controls successful, 203349 known logical tokens, no unknown usage, 1721 audit checks with no errors. Strict request/message prefix comparison remains false due to tool-call IDs; actual API trace and all 13 final database files match. Preparing read-only P67 known export scope.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -232,7 +232,7 @@
   },
   "queued_comparison": {
     "phase": "P66",
-    "status": "running",
+    "status": "complete",
     "plan": "../../configs/P66_ordinary_completion_v01.json",
     "planned_conditions": 2,
     "known_tasks": 1,
@@ -244,7 +244,15 @@
     "reserved_scenarios_read": 0,
     "fixed_commit": "0641bc7088f5074cebca028ca7b43b907ed783c2",
     "push_ci": 39858445636,
-    "pr_ci": 39858517879
+    "pr_ci": 39858517879,
+    "model_calls": 25,
+    "known_total_tokens": 203349,
+    "unknown_usage_calls": 0,
+    "api_requests": 199,
+    "evaluator_calls": 2,
+    "audit_checks": 1721,
+    "audit_errors": 0,
+    "server_stopped": true
   },
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {
@@ -384,7 +392,7 @@
     "results": "../../docs/P60_findings.md"
   },
   "latest_component_material": "../../materials/20261023_p63/README.md",
-  "latest_comparison_material": "../../materials/20261023_p64/README.md",
+  "latest_comparison_material": "../../materials/20261023_p66/README.md",
   "latest_termination_related_review": "../../docs/termination_control_overlap_20261023.md",
   "last_completed_ordinary_comparison": {
     "phase": "P64",
