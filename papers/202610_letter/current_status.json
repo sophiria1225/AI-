@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T12:01:55.395580+00:00",
+  "updated_at": "2026-10-22T12:27:14.639917+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -13,14 +13,7 @@
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
   "current_experiment": "No active model experiment. P47 closed at 18:12 JST under predeclared unknown-usage stop; all twelve planned cells accounted for. Selected display not adopted: observed photo success loss and higher refund cost than full display. Central novel rule remains unestablished.",
-  "queued_experiment": {
-    "phase": "P53",
-    "kind": "input_token_counts_only",
-    "planned_count_requests": 16,
-    "model_generations": 0,
-    "plan": "../../docs/experiments/P53_contract_retention_counts.md",
-    "is_task_or_novel_method_comparison": false
-  },
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -43,7 +36,7 @@
     "decision": "Six capped calibration generations checked. Cold/warm cache settings alter processed input and generated payload; normalize first-call cache policy for subsequent comparisons. No task-quality or novelty claim. Failed P39_v01 preserved.",
     "results": "../../docs/P39_findings.md"
   },
-  "latest_presentation": "../../materials/20261022_p47/AI_harness_contract_feedback_20261022.pdf",
+  "latest_presentation": "../../materials/20261022_evening/AI_harness_evening_decisions_20261022.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/215",
   "method_fragment": "methods_contract_comparison.tex",
@@ -163,5 +156,14 @@
     "intentional_disconnect_output_lower_bound": 4,
     "is_task_or_novel_method_comparison": false,
     "server_stopped": true
+  },
+  "last_completed_token_count_probe": {
+    "phase": "P53",
+    "report": "../../reports/P53_contract_retention_counts.json",
+    "count_requests": 16,
+    "model_generations": 0,
+    "audit_errors": 0,
+    "server_stopped": true,
+    "decision": "Do not allocate continuation generations to the two usage-retention candidates: neither met the fixed two-tasks/1000-token gate. The ordinary listing-preserving control met the initial-input gate only; no task-quality or whole-cost conclusion."
   }
 }

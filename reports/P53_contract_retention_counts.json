@@ -1,0 +1,433 @@
+{
+  "phase": "P53",
+  "status": "complete",
+  "git_commit": "fb991f72c183811b02a5d0e9381e59a1e242aea7",
+  "started_at": "2026-10-22T12:03:47.513086+00:00",
+  "source_sha256": {
+    "scripts/count_contract_retention.py": "0ce407131f40c1bbba04c21adff93b34b40704f3d389bd0f550a455a4a668fa2",
+    "scripts/contract_retention_controls.py": "97cffa5884e5e8d03fd658be3fb9081598cc8ce6be307644f98b5221ef0a25d5",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/local_llama_stream.py": "8b31a8e7cdce86c380b3bd1c021a3384e2948c277ad273786ad785dd08491f37",
+    "scripts/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "tests/test_contract_retention_controls.py": "737281daf4314937b8c5a94d0ed6e3434683e0a98fe7067c8a90024ac2c2343f",
+    "tests/test_count_contract_retention.py": "a680e737966dbe06f419fcb42f1f64903da826a466b00aa6dc4aa7e67bd8274d",
+    "configs/P53_contract_retention_counts_v01.json": "ab1f00b7419a39ba27270660c95d4caf39fd4f8618e0a96bd68bcb1b554a5227"
+  },
+  "count_requests_attempted": 16,
+  "count_requests_completed": 16,
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "boundary_manifest_sha256": "2de2c894b847fa19fe23dbcb8427f033a1359d8192e40a2ab6dafdbd372bf356",
+      "control": {
+        "mode": "all_documented_details",
+        "changed_outputs": 2,
+        "changes": [
+          {
+            "span_id": "s9",
+            "documentation_receipt_ids": [
+              "s3",
+              "s4",
+              "s5",
+              "s6",
+              "s7",
+              "s8"
+            ]
+          },
+          {
+            "span_id": "s15",
+            "documentation_receipt_ids": [
+              "s14"
+            ]
+          }
+        ],
+        "app_and_api_listings_retained": true,
+        "uses_execution_outcomes_to_choose_details": false,
+        "latest_turn_retained": true,
+        "future_irrelevance_proven": false
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 8517,
+          "wall_seconds": 0.024280708999867784,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b953637e9400b657861e1b86f5aed6b3484248e9c8cbfd407a0ea2e51d4ef13b"
+        },
+        "all_documented_details": {
+          "input_tokens": 7110,
+          "wall_seconds": 0.019899917002476286,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "5dcaf80d9fb1aeef2727c56ad8cccec323f416373a355d989c7db13c05de99fc"
+        },
+        "used_since_document": {
+          "input_tokens": 7961,
+          "wall_seconds": 0.021996666000632104,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "035fe113f120a2eb4190b449dca0889706e46cac7e5d17972b8aff2b6fdab9bc"
+        },
+        "all_parameters_observed": {
+          "input_tokens": 8283,
+          "wall_seconds": 0.02221237499907147,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "b638d4e4638982d8c7526eda2d5cafde574375b9fee7033a60a0c229c6f07f49"
+        }
+      },
+      "tokens_removed": {
+        "all_documented_details": 1407,
+        "used_since_document": 556,
+        "all_parameters_observed": 234
+      }
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "boundary_manifest_sha256": "de4a9e08e93e66cfdc5a42865a4f497be8feebf7b762e5f2ccaa112289d52008",
+      "control": {
+        "mode": "all_documented_details",
+        "changed_outputs": 1,
+        "changes": [
+          {
+            "span_id": "s9",
+            "documentation_receipt_ids": [
+              "s7",
+              "s8"
+            ]
+          }
+        ],
+        "app_and_api_listings_retained": true,
+        "uses_execution_outcomes_to_choose_details": false,
+        "latest_turn_retained": true,
+        "future_irrelevance_proven": false
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 10995,
+          "wall_seconds": 0.02626116699684644,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "8e93e4a28d1d4f0f9f1c7784a2d04f56f6cbf13597c4b63df9eee7f0b80eecad"
+        },
+        "all_documented_details": {
+          "input_tokens": 10757,
+          "wall_seconds": 0.025717666998389177,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "284b4ff8f30fedce90502925d3bb1a53ad8ce5add9f5cccb004887436b2975c1"
+        },
+        "used_since_document": {
+          "input_tokens": 10918,
+          "wall_seconds": 0.025909457999659935,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "a3bcdfa65e5ec47860084c1cbf2ffb8593c200fa48fd62d23ea7d8493a79606f"
+        },
+        "all_parameters_observed": {
+          "input_tokens": 10919,
+          "wall_seconds": 0.025854542000161018,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "f75b72733ff418d8fb473ffb37708d0730f20ebfea06bd9a29a6ffc31f210f51"
+        }
+      },
+      "tokens_removed": {
+        "all_documented_details": 238,
+        "used_since_document": 77,
+        "all_parameters_observed": 76
+      }
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "boundary_manifest_sha256": "56050f91ff214806dfe2c9ae0446ccac336b17a5b9b542c1af23acec909a1b7b",
+      "control": {
+        "mode": "all_documented_details",
+        "changed_outputs": 2,
+        "changes": [
+          {
+            "span_id": "s6",
+            "documentation_receipt_ids": [
+              "s4",
+              "s5"
+            ]
+          },
+          {
+            "span_id": "s13",
+            "documentation_receipt_ids": [
+              "s12"
+            ]
+          }
+        ],
+        "app_and_api_listings_retained": true,
+        "uses_execution_outcomes_to_choose_details": false,
+        "latest_turn_retained": true,
+        "future_irrelevance_proven": false
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 15474,
+          "wall_seconds": 0.034814208000170765,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "afbdd2d202eb0295701f98bf6459f65800c910a2b497602dea823b453a2012c6"
+        },
+        "all_documented_details": {
+          "input_tokens": 14732,
+          "wall_seconds": 0.03291187500144588,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "269a6936c3e3afe49342d0d0f7b3063a671f2c3041430789fca5e3cc9a04b764"
+        },
+        "used_since_document": {
+          "input_tokens": 15053,
+          "wall_seconds": 0.03334624999843072,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "650a589b3b6d58ea3231f71a82bbabc977cb54db77cc91e6f5178812d4b3f43a"
+        },
+        "all_parameters_observed": {
+          "input_tokens": 15398,
+          "wall_seconds": 0.03396579200125416,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "272f99e9981dfda242120bd33dfb045e1664dd0fa0c3be01b8466622aa86dc27"
+        }
+      },
+      "tokens_removed": {
+        "all_documented_details": 742,
+        "used_since_document": 421,
+        "all_parameters_observed": 76
+      }
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "boundary_manifest_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "control": {
+        "mode": "all_documented_details",
+        "changed_outputs": 2,
+        "changes": [
+          {
+            "span_id": "s11",
+            "documentation_receipt_ids": [
+              "s10",
+              "s5",
+              "s6",
+              "s7",
+              "s8",
+              "s9"
+            ]
+          },
+          {
+            "span_id": "s17",
+            "documentation_receipt_ids": [
+              "s16"
+            ]
+          }
+        ],
+        "app_and_api_listings_retained": true,
+        "uses_execution_outcomes_to_choose_details": false,
+        "latest_turn_retained": true,
+        "future_irrelevance_proven": false
+      },
+      "views": {
+        "full_keep": {
+          "input_tokens": 13499,
+          "wall_seconds": 0.03188012500322657,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "7f8ca9a5029a08b544c6c516e4bf85f8241d72f156d79826fc5453e64d54336b"
+        },
+        "all_documented_details": {
+          "input_tokens": 11910,
+          "wall_seconds": 0.028709875001368346,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "109b7f65477b2f6e0ca9bc288914ebe30987f37f9e3eba5c8cbd8009dfee35bc"
+        },
+        "used_since_document": {
+          "input_tokens": 12578,
+          "wall_seconds": 0.029914082999312086,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "bfd09b903734832367b75466414cafda5d4a5ab7f4ae7f043a304a700b6b3a06"
+        },
+        "all_parameters_observed": {
+          "input_tokens": 12903,
+          "wall_seconds": 0.030564291999326088,
+          "method": "llama.cpp /v1/chat/completions/input_tokens",
+          "input_sha256": "569225fd5e5035b6e5097f05381aded26047fab1bd7ff29e7537aaa6db999be8"
+        }
+      },
+      "tokens_removed": {
+        "all_documented_details": 1589,
+        "used_since_document": 921,
+        "all_parameters_observed": 596
+      }
+    }
+  ],
+  "planned_inputs": [
+    [
+      "P29_01_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_01_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_01_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_01_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_02_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_02_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_02_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_02_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_03_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_03_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_03_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_03_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_04_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_04_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_04_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_04_CODE",
+      "all_parameters_observed"
+    ]
+  ],
+  "attempted_inputs": [
+    [
+      "P29_01_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_01_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_01_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_01_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_02_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_02_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_02_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_02_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_03_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_03_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_03_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_03_CODE",
+      "all_parameters_observed"
+    ],
+    [
+      "P29_04_CODE",
+      "full_keep"
+    ],
+    [
+      "P29_04_CODE",
+      "all_documented_details"
+    ],
+    [
+      "P29_04_CODE",
+      "used_since_document"
+    ],
+    [
+      "P29_04_CODE",
+      "all_parameters_observed"
+    ]
+  ],
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "program_reexecutions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "quality_preservation_claim": false,
+  "end_to_end_savings_claim": false,
+  "server_shutdown_record_pending": false,
+  "server_record_directory": "records/p2_servers/20261022_210330",
+  "server_supervisor_pid": 21823,
+  "server_pid": 21825,
+  "allocation_gate": {
+    "all_documented_details": {
+      "tasks_at_least_1000": 2,
+      "passed": true
+    },
+    "used_since_document": {
+      "tasks_at_least_1000": 0,
+      "passed": false
+    },
+    "all_parameters_observed": {
+      "tasks_at_least_1000": 0,
+      "passed": false
+    }
+  },
+  "wall_seconds": 0.6030747080003493,
+  "not_attempted_inputs": [],
+  "original_status_sha256": "6583d6f5ad2b6d29f0966407001a5d9cbb04cdc0f2251b5988b108ed5b269e66",
+  "server_closure": {
+    "started_at": "2026-10-22T12:03:30.872457+00:00",
+    "status": "stopped",
+    "wall_seconds": 151.50694037499852,
+    "load_wall_seconds": 10.065016874999856,
+    "sampled_peak_rss_bytes": 235211079680,
+    "peak_system_swap_bytes": 0,
+    "exit_code": 0,
+    "stop_reason": "requested_stop",
+    "memory_note": "5-second RSS samples and system swap; RSS is not total unified GPU allocation",
+    "record_directory": "records/p2_servers/20261022_210330",
+    "source_sha256": {
+      "summary.json": "b8751fc20641f69aa47982f2c7b713d116fa5ff3bd58c8c4cc5ee657270f5da8",
+      "memory.jsonl": "b86c6cbfe31e169d6a8bfe9a25c4c2931c2d98fa780c57a6cc3023ff36f4dcdf",
+      "server.log": "bc570a889a467cbc09589923723270bad9bd595c6eb7086eab89d381675818e2"
+    }
+  },
+  "audit_report": "reports/P53_contract_retention_audit.json"
+}
