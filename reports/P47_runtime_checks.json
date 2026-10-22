@@ -1,0 +1,63 @@
+{
+  "phase": "P47_runtime_checks",
+  "all_checks_passed": true,
+  "rows": [
+    {
+      "mode": "parameter_names",
+      "programs": 4,
+      "container_removed": true,
+      "feedback": {
+        "mode": "parameter_names",
+        "checked_requests": 6,
+        "feedback_events": [
+          {
+            "api": "sample__echo",
+            "mode": "parameter_names",
+            "schema_sha256": "629aac77360b17e1c29307c51d199b65ded525f998c22a49222918395e3e672f",
+            "characters": 361
+          }
+        ],
+        "control_wall_seconds": 7.64579981478164e-05,
+        "automatic_retries": 0,
+        "extra_model_calls": 0,
+        "extra_environment_requests": 0
+      }
+    },
+    {
+      "mode": "public_schema",
+      "programs": 4,
+      "container_removed": true,
+      "feedback": {
+        "mode": "public_schema",
+        "checked_requests": 6,
+        "feedback_events": [
+          {
+            "api": "sample__echo",
+            "mode": "public_schema",
+            "schema_sha256": "629aac77360b17e1c29307c51d199b65ded525f998c22a49222918395e3e672f",
+            "characters": 439
+          }
+        ],
+        "control_wall_seconds": 7.283400009328034e-05,
+        "automatic_retries": 0,
+        "extra_model_calls": 0,
+        "extra_environment_requests": 0
+      }
+    }
+  ],
+  "model_calls": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "fixture_dispatches": 4,
+  "started_at": "2026-10-22T08:21:33.478874+00:00",
+  "wall_seconds": 0.4144146250000631,
+  "source_sha256": {
+    "preflight_contract_feedback.py": "5f30ae0b495581d550d2c3521fdea6852c8ac8db18c33ddb33a2d529bf6fa376",
+    "contract_comparison.py": "941847b482f1a78031d1caadff6cbac89da82487d391855568bceada8ad3b395",
+    "contract_feedback.py": "434d0757430b3e010d4d27733270588541faf22b34ccfeb10522e65b1672ffa8",
+    "code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "container_api_python.py": "cddd7bf0ea6bb8f30cd1f7f22377a962c9b17df35522eb3beacfc96202ca5863",
+    "persistent_api_python.py": "ba6df3ac0d5d444f8cca728f8fb3e13a4fee64355d8b39c0051b9a848b1f48bd"
+  }
+}
