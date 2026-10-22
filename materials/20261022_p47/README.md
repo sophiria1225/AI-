@@ -4,7 +4,7 @@
 
 [PDF](AI_harness_contract_feedback_20261022.pdf)／[HTML](index.html)／[全結果と判断](../../docs/P47_findings.md)／[図のCSV](figures/all_conditions.csv)。
 
-確定後の保存記録点検：[修復範囲の補足](repair_scope_addendum.md)。PDFの結果を変更せず、引数削除・名前と型の変更・未公開APIを区別した。
+確定後の保存記録点検：[修復範囲の補足](repair_scope_addendum.md)。PDFの結果を変更せず、引数削除・名前と型の変更・未公開APIを区別し、P49で値を保持する部品の狭い適用範囲を追記した。
 
 P47は18:12 JSTに事前規則で終了。９評価・１使用量不明の未評価・２未実行。選択表示は写真の成功を失い、採用基準を満たさなかった。全４課題の完全な比較としての優劣、独自性、一般的な品質維持を主張しない。実行中の資料やP45の結果は別に保存する。
 

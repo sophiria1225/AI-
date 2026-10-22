@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T09:58:42.539792+00:00",
+  "updated_at": "2026-10-22T10:28:44.076155+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -93,21 +93,23 @@
     "resumption": "docs/resumption_20261022.md"
   },
   "last_completed_passive_inspection": {
-    "phase": "P48",
+    "phase": "P49",
     "planned_cells": 12,
-    "programs_checked": 65,
-    "internal_requests_checked": 335,
     "rejected_requests": 10,
-    "exposed_contract_rejections": 6,
-    "empty_contract_extra_argument_candidates": 3,
+    "bindings_admitted": 6,
+    "empty_contract_normalization_candidates": 3,
+    "complete_rename_candidates": 1,
+    "requires_broader_repair": 2,
+    "bindings_refused": 4,
     "model_generations": 0,
     "environment_api_requests": 0,
-    "results": "../../docs/P48_findings.md"
+    "repairs_executed": 0,
+    "results": "../../docs/P49_findings.md"
   },
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
   "critical_path": [
-    "P47 closed, audited, and not adopted. Use closed records to distinguish necessary work from a concrete avoidable cost before selecting a new experiment.",
+    "P47 not adopted; P49 value-preserving repair has one nontrivial candidate. Do not expand a resumer on this evidence; identify a concrete avoidable cost beyond ordinary repair.",
     "Fix one concrete control rule and contribution beyond the nearest baseline",
     "Complete main comparison and new abstract by 2026-10-23",
     "Additional controls and reserved-scenario checks only after frozen conditions, by 2026-10-25",
@@ -126,7 +128,7 @@
     "unknown_usage_calls": 1,
     "results": "../../docs/P45_findings.md"
   },
-  "latest_related_work_review": "../../docs/repair_context_overlap_20261022.md",
+  "latest_related_work_review": "../../docs/argument_repair_overlap_20261022.md",
   "result_fragment": "results_contract_comparison.tex",
   "result_source_map": "results_contract_source_map.json"
 }
