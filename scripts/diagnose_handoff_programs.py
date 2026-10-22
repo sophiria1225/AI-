@@ -19,13 +19,20 @@ def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':')
 
 
 def require_complete(report,status,phase):
+    if phase not in ('P31','P32','P33'):raise ValueError('unknown completed cohort')
+    arms=ARMS
+    if phase=='P33':
+        from handoff_output_views import ARMS as arms
+    count=4*len(arms)
     rows=report.get('rows',[]);tasks={r['task_id'] for r in rows}
-    if (report.get('phase')!=phase or not report.get('all_sixteen_reviewed')
-        or report.get('audit_errors') or len(tasks)!=4 or len(rows)!=16
-        or {(r['task_id'],r['arm']) for r in rows}!={(t,a) for t in tasks for a in ARMS}
+    flag='all_twelve_reviewed' if phase=='P33' else 'all_sixteen_reviewed'
+    if (report.get('phase')!=phase or not report.get(flag)
+        or report.get('audit_errors') or len(tasks)!=4 or len(rows)!=count
+        or {(r['task_id'],r['arm']) for r in rows}!={(t,a) for t in tasks for a in arms}
         or status.get('status')!='complete'
+        or len(status.get('completed',[]))!=count
         or set(status.get('completed',[]))!={r['run_id'] for r in rows}):
-        raise ValueError('require the complete audited sixteen-cell cohort')
+        raise ValueError('require the complete audited cohort')
 
 
 def matching_prefix_requests(prefix_events,prefix_spans,events,spans):
@@ -54,7 +61,8 @@ def matching_prefix_requests(prefix_events,prefix_spans,events,spans):
 
 def analyze(storage,root,phase):
     report_path=root/f'reports/{phase}_comparison.json'
-    report=read(report_path);plan=read(root/f'configs/{phase}_handoff_factors_v01.json')
+    suffix='output_views' if phase=='P33' else 'handoff_factors'
+    report=read(report_path);plan=read(root/f'configs/{phase}_{suffix}_v01.json')
     status=read(storage/'records/context_pilot'/plan['batch_id']/'status.json')
     require_complete(report,status,phase)
     rows=[]
@@ -78,7 +86,8 @@ def analyze(storage,root,phase):
         row['program_result_sha256']={str(p.relative_to(trial)):sha(p) for p in results}
         row['source_sha256']={n:sha(trial/n) for n in ('events.json','spans.json','usage.json','prefix_events.json','prefix_spans.json')}
         rows.append(row)
-    return {'phase':phase,'all_sixteen_reviewed':True,'kind':'posthoc_closed_cohort_diagnostics',
+    flag='all_twelve_reviewed' if phase=='P33' else 'all_sixteen_reviewed'
+    return {'phase':phase,flag:True,'kind':'posthoc_closed_cohort_diagnostics',
             'rows':rows,'model_calls_added':0,'api_requests_added':0,'evaluator_contents_read':False,
             'novel_method_claim':False,'causal_remedy_identified':False,
             'request_match_scope':'Exact API name and parsed JSON arguments; aliases are not normalized. Includes writes. Compares to the last equal request in the prefix; changed observations can be legitimate.',
@@ -88,7 +97,7 @@ def analyze(storage,root,phase):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--storage-root',type=Path,required=True)
-    p.add_argument('--repo-root',type=Path,default=ROOT);p.add_argument('--phase',choices=('P31','P32'),required=True);a=p.parse_args()
+    p.add_argument('--repo-root',type=Path,default=ROOT);p.add_argument('--phase',choices=('P31','P32','P33'),required=True);a=p.parse_args()
     target=a.repo_root/f'reports/{a.phase}_program_diagnostics.json'
     if target.exists():raise FileExistsError('preserve completed diagnostics')
     result=analyze(a.storage_root,a.repo_root,a.phase)
