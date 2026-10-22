@@ -3,6 +3,7 @@
 \usepackage[margin=20mm]{geometry}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{amsmath}
+\usepackage{url}
 \input{papers/202610_letter/inventory_tables.tex}
 \title{状態保持型エージェントのAPI説明省略における\newline 仕事全体の費用と終了手続きの診断}
 \author{検討用原稿・著者情報未設定}
@@ -12,10 +13,6 @@
 \maketitle
 \noindent\textbf{あらまし}\quad
 \input{papers/202610_letter/cost_completion_abstract_ja.txt}
-\par\medskip
-\noindent\textbf{検討範囲．}
-既知課題の実証原稿であり，新手法の有効性を主張するものではない．
-中心的貢献，著者情報，公式様式への適合は未確定である．
 
 \section{目的と検証する問い}
 AIエージェントによる仕事の費用を減らすには，必要な情報・処理と最終品質を保ち，
@@ -33,8 +30,7 @@ APIを使う作業では，何ができるかを示す一覧と，引数を説�
 仕事全体の費用と最終成否がどう変わり，その成否差を実作業の改善と解釈できるか}である．
 既知４課題の全12条件を比較し，その後，写真整理の保存状態に完了通知だけを加える診断を行う．
 さらに，別の通常実行で得た公開証拠を用い，完了後の継続を省く局所制御を点検する．
-入力短縮，課題の成功数，作業状態を別々に記録することで，
-今回の観測から支持できる費用・品質の解釈を限定する．
+全結果と不明使用量を残す．
 
 \section{関連研究と本稿の範囲}
 Beyond Token Savings\cite{beyond}は，複数モデルと反復を用いて
@@ -47,19 +43,16 @@ CodeAct\cite{codeact}はコードを行動として用い，CaveAgent\cite{cave}
 HD-Gist\cite{hdgist}はAPI引数と値を分けた学習表現を生成中に参照する．
 Tool Search Tool\cite{toolsearch}は初期表示を抑え，検索したツールの定義を展開する．
 段階的開示の研究\cite{disclosure}も，同じ文書・チャンクで索引の配置と階層を比較する．
-状態保持，API説明の分割，索引の保持は，いずれも既存の設計要素である．
 
-Zhangら\cite{evidence}は科学計算について，値の生成，モデルへの提示，最終回答を分け，
-計算済みの同じ状態から返却方式を変える継続比較を行う．
-本稿が扱うのは，説明を一度取得した後の履歴表示と，
-操作先アプリの保存状態を変えない完了通知である．
-対象と介入は異なるが，段階を分けた診断や同一途中状態からの比較自体を独自方式とはしない．
-先行方式を同一条件で再実装した性能比較でもない．
-また，Matoi\cite{matoi}は操作，方針遵守，課題指標を分け，
-外部ベンチマークの指標が実行前から真となる例も報告する．
-従って，作用と成功指標を区別する一般的な観点そのものも新規性とはしない．
-ECT\cite{ect}は宣言した契約と記録上の証拠を照合して終了を制御する．
-本稿の追加点検も既知要求を手書きした通常制御であり，証拠付き終了の新方式とはしない．
+Zhangら\cite{evidence}は科学計算の生成・提示・回答を分け，
+同じ計算済み状態から返却方式を変える．Matoi\cite{matoi}は作用・方針・課題指標を分け，
+実行前から指標が真となる例も報告する．段階別診断や状態を固定した比較自体は既出である．
+ECT\cite{ect}は契約と記録の証拠を照合して終了を制御する．
+AgentLoop\cite{agentloop}は要求充足と状態変化から反復を抑え，判定費用も報告する．
+検証の反復や費用がハーネスに依存する観測もある\cite{waste}．
+本稿は取得済み説明の表示と，作業状態を変えない完了通知を具体的に照合する．
+手書きの既知要求による追加点検を新しい証拠付き終了方式とはせず，
+先行方式を同一条件で再実装した性能比較とも区別する．
 
 \section{状態と費用の定義}
 継続点の状態を会話履歴$H$，Python名前空間$P$，操作先環境$E$，残予算$B$とする．
@@ -74,8 +67,8 @@ ECT\cite{ect}は宣言した契約と記録上の証拠を照合して終了を�
 とする．共通前半の実測値を条件ごとに一度加え，キャッシュ入力も$I_j$へ含める．
 継続だけの値も併記し，初回入力の削減量を全体の節約量へ転記しない．
 API，時間，実験用復元，評価，推論器のロード・常駐は別記する．
-評価器単独の秒数は表示比較では未計測で，後述の完了診断では計測した．
-表示比較における推論器稼働時間と継続・復元時間との差を，評価器だけの時間とはしない．
+評価器単独の時間は表示比較では未計測，完了診断では計測した．
+推論器の全稼働時間から継続・復元時間を引いた差は評価器の時間と同一ではない．
 
 \section{表示比較の方法}
 \input{papers/202610_letter/p55_methods_component.tex}
@@ -162,13 +155,17 @@ API回数の減少だけで不要取得の削減とは判断せず，完了し�
 ４実行は全て公式成功で，制御によって各２生成・４ APIが少なくなった．
 両接続とも対応する対照と最終13保存ファイルが同一で，実行した公開API記録も一致した．
 ただし呼出しIDが異なり，要求・モデルメッセージ全文の一致という事前基準は不成立だった．
-この基準を事後に緩めず，反復された因果効果や一般的品質保証とは解釈しない．
 
 制御２条件の全25生成は203,349 token，199 API，２評価，使用量不明０だった．
 25回の検査と記録ダイジェスト計算は合計0.028224秒で，全体時間にも含めた．
 減少78,754 tokenのうち66,720はcached inputであり，金銭・時間の同率削減ではない．
-要求解釈は既知１文型，APIの意味は信頼するという限定がある．
-表示比較の成否を書き換えず，表2・3の課題数や費用へ合算しない．
+別の既知書出し課題では，新しい通常ツール対照と同じ接続の終了制御を各１回比較した．
+各80生成・450,000 token・1,800秒・80 APIで，正しいCSV作成後の退会までを公開記録に要求した．
+両条件とも８生成・219,126 token・80 APIで上限に達し未達，書出し・退会は０回だった．
+制御の８検査は計0.004080秒で完了通知０回，費用削減も０だった．
+使用量不明０，最終13保存ファイルは一致したが，呼出しIDによる全文不一致は残った．
+これらはAPIの意味を信頼した既知文型の通常制御であり，表2・3へ合算しない．
+実装・固定条件・全件集計を公開する\footnote{\url{https://github.com/sophiria1225/AI-}}．
 
 \section{解釈の限界}
 既知４課題，単一モデル，各条件１回の開発比較であり，
@@ -180,29 +177,30 @@ seedと初回キャッシュ条件をそろえても，後続の実行経路の�
 一覧を省いたBでもAPI名は過去のコード等に残る．
 写真では一覧26名中８名，電気代では26名中10名が文字列として入力中に存在した．
 これは意味理解を測るものではなく，表示省略と情報の完全な喪失を区別するための照合である．
-省略対象も出自の確かな古い説明だけで，混合出力，最新応答，不確かな表示は残した．
-任意の履歴やモデルに同じ費用・成否の関係を保証するものではない．
+省略対象は出自の確かな古い説明に限られる．
 
 \section{結論}
 API説明の履歴省略を，全予定条件の仕事全体の費用と終了手続きから調べた．
 詳細省略は初回入力を短くしたが，全４課題の既知費用だけでも全表示を上回った．
 また，写真整理では作業状態を保った完了通知により成否が変わった．
-別条件の通常終了制御では，同じ保存状態・公式成功を保った局所的な費用減少を観測した．
+別条件の通常終了制御は写真課題で成功を保ち費用を減らしたが，書出し課題では未達・削減なしだった．
 この局所比較では，短い入力や成功数の増加だけを費用・実作業品質の改善根拠にはできない．
 必要情報と品質を守る制御を評価する際には，
 終了までの費用と，作業状態・終了手続きへの介入を対応させる必要がある．
 
-\begin{thebibliography}{11}\small
+\begin{thebibliography}{13}\small
 \bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
 \bibitem{interaction} S. Liu, ``What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics,'' arXiv:2608.16370v1, 2026.
 \bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
 \bibitem{cave} M. Ran et al., ``CaveAgent: Transforming LLMs into Stateful Runtime Operators,'' arXiv:2601.01569v4, 2026.
 \bibitem{hdgist} Y. Jiang, M. Del Vecchio, M. Bansal, and A. Johannsen, ``Hierarchical and Dynamic Prompt Compression for Efficient Zero-shot API Usage,'' Findings of EACL, pp.2162--2174, 2024.
-\bibitem{toolsearch} Anthropic, ``Introducing advanced tool use on the Claude Developer Platform,'' Nov. 24, 2025.
+\bibitem{toolsearch} Anthropic, ``Introducing advanced tool use on the Claude Developer Platform,'' Nov. 24, 2025. \url{https://www.anthropic.com/research/advanced-tool-use}, accessed Oct. 23, 2026.
 \bibitem{disclosure} Y. He, Y. Zhao, J. Wang, and H. Chen, ``Is Progressive Disclosure All You Need for Long-Context Agents?,'' arXiv:2607.17598v1, 2026.
 \bibitem{evidence} K. Zhang et al., ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
 \bibitem{matoi} Z. Wang, ``Matoi: Selective Revalidation of Consequence Evidence for Agent Authorization,'' arXiv:2610.21394v1, 2026.
 \bibitem{ect} J. Liu, ``When May an Agent Stop? Evidence-Carrying Termination for Tool-Using LLMs,'' arXiv:2608.23623v1, 2026.
+\bibitem{agentloop} W. Zheng et al., ``AgentLoop: Runtime Control of Slot-closed Execution Loops for Tool-augmented LLM Agents,'' arXiv:2609.33315v1, 2026.
+\bibitem{waste} S. Weinberger and A. Hozez, ``Prompt-Induced Waste in Coding Agents: Reasoning, Effort, Harness Design, and End-to-End Cost,'' arXiv:2608.01347v6, 2026.
 \bibitem{appworld} H. Trivedi et al., ``AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents,'' ACL, pp.16022--16076, 2024.
 \end{thebibliography}
 \end{document}
