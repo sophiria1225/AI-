@@ -1,6 +1,6 @@
 # 現在の状態
 
-**P58の通知感度確認を準備。** 残時間335／336秒以外を同じにし、各２回・全４生成を固定。全回cold、生成結果は実行しない。４呼出し・10万token・1200秒、推論器1800秒。新方式の有効性ではなく比較の基礎確認。[計画](experiments/P58_notice_calibration.md)。
+**P58の固定４生成を終了・監査済み。** 同じ通知335／336秒の各２反復は一致し、値の間で生成メッセージが異なった。全回cold、63,312 token、不明０、生成操作・環境API・評価０、推論器正常停止。元P55のwarm生成の原因や品質・節約効果は未判定。[全結果](P58_findings.md)／[３枚資料](../materials/20261023_p58/README.md)。
 
 **P57の全77生成の読取点検を終了。** 完了通知だけを送った４生成に64,882 tokenを確認したが、判断・必要確認を省いてよい根拠は未確定で、削減可能額とはしない。終了指示・別判定器・証拠付き完了の原典を照合し、自動完了方式の新規性と追加価値は未確定。[全結果](P57_findings.md)／[原典](termination_control_overlap_20261023.md)。新しいモデル実験は未配分。
 
@@ -20,6 +20,6 @@
 
 通常修復の[SchemaShield-Lite本文と固定実装](argument_repair_overlap_20261022.md)を照合済み。小さい入力、API固定、局所修復だけを独自性にしない。必要な情報を保つ具体的な規則、通常対照の後にも残る費用、反証条件を絞る。[次の判断](next_actions.md)。
 
-全764検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、旧あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
+全772検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、旧あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
 
 [以前の経緯](archive/current_status_through_P49_20261022.md)／[作業ボード](task_board.md)／[Project](https://github.com/users/sophiria1225/projects/1)。GitHubの変更先はsophiria1225/AI-と専用Projectだけ。実装はユーザーの継続指示に従い進めている。

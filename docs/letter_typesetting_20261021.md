@@ -46,3 +46,7 @@ ZIP本体は保存されず、失敗manifestをArtifactから回収した。
 10月22日13時台に同じ現行3.4bの公開URLを再確認したが、再びHTTP 403だった。[取得失敗記録](../reports/ieice_template_fetch_20261022.json)。これは新しい入手経路の検証にはならず、以後このURLへの反復取得は行わない。公式クラスと４ページ組版は未完了のまま、実験と主張の確定を優先する。
 
 10月23日に別の公式ディレクトリ `ftp/tex/tech_rep/LaTeX2e/` とその説明PDFの冒頭を確認したが、一覧は2003年、説明はクラスv1.3だった。現行3.4bの代用にはせず、アーカイブ取得を試みていない。失敗した現行ZIPの同一URLは再取得していない。
+
+## 2026年10月23日：公開ミラーの版を点検
+
+[mar-tusita/ieicej-platex](https://github.com/mar-tusita/ieicej-platex/tree/09affdda87853ac52313ec92ae90e0f14a43a20d) は説明にv3.4bとあるが、固定commitの `ieicej.cls` は `2023/11/21 v3.4a` を宣言していた。４ファイルのGit blob IDとダウンロード内容を照合した。公式2026年1月19日v3.4bとの一致は確認できず、最新版として採用しない。クラスや外部スクリプトの実行、失敗済み公式ZIPの再取得は行っていない。[検査記録](../reports/ieice_mirror_check_20261023.json)。
