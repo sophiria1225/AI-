@@ -129,7 +129,8 @@ def summarize_calls(calls, response_loader, request_loader):
 def profile(storage, root, phase):
     comparison_path = root / f'reports/{phase}_comparison.json'
     comparison = read(comparison_path)
-    plan = read(root / f'configs/{phase}_handoff_factors_v01.json')
+    suffix='output_views' if phase=='P33' else 'handoff_factors'
+    plan = read(root / f'configs/{phase}_{suffix}_v01.json')
     base = storage / 'records/context_pilot'
     require_complete(comparison, read(base / plan['batch_id'] / 'status.json'), phase)
     rows = []
@@ -155,7 +156,10 @@ def profile(storage, root, phase):
                                      for name in ('request.json', 'response.json')}
         rows.append(row)
     totals = {}
-    for arm in ARMS:
+    arms=ARMS
+    if phase=='P33':
+        from handoff_output_views import ARMS as arms
+    for arm in arms:
         cells = [r for r in rows if r['arm'] == arm]
         totals[arm] = {}
         for group in ('totals', 'exposed_field_characters', 'nested_field_characters'):
@@ -165,7 +169,8 @@ def profile(storage, root, phase):
             totals[arm][group] = dict(combined)
         totals[arm]['successes'] = sum(r['success'] for r in cells)
         totals[arm]['trials'] = len(cells)
-    return {'phase': phase, 'all_sixteen_profiled': True, 'rows': rows, 'by_arm': totals,
+    flag='all_twelve_profiled' if phase=='P33' else 'all_sixteen_profiled'
+    return {'phase': phase, flag: True, 'rows': rows, 'by_arm': totals,
             'model_inference_calls_added': 0, 'api_requests_added': 0,
             'tokenizer_requests_added': 0, 'evaluator_contents_read': False,
             'unnecessary_information_identified': False,
@@ -177,7 +182,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--storage-root', type=Path, required=True)
     p.add_argument('--repo-root', type=Path, default=ROOT)
-    p.add_argument('--phase', choices=('P31', 'P32'), required=True)
+    p.add_argument('--phase', choices=('P31', 'P32', 'P33'), required=True)
     a = p.parse_args()
     target = a.repo_root / f'reports/{a.phase}_cost_profile.json'
     if target.exists():
