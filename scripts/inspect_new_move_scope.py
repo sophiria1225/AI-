@@ -207,7 +207,10 @@ def inspect(storage):
             'api_requests': original['sent_api_requests_with_prefix'], 'prefix_api_requests': 0}
         actual = inspect_records(records['public_task'], records['spans'], read(folder / 'prefix_events.json'),
             records['events'], records['usage'], source)
-        differences = [k for k, v in actual.items() if original[k] != v]
+        # Original reports were serialized: JSON object keys are strings.
+        # Compare the same representation, preserving all fields and values.
+        serialized = json.loads(json.dumps(actual, allow_nan=False))
+        differences = [k for k, v in serialized.items() if original[k] != v]
         if differences: raise ValueError('P62 parity failure: ' + ','.join(differences))
         parity.append({'run_id': source['run_id'], 'matched_fields': len(actual), 'differences': differences})
     audit_path = ROOT / 'reports/P64_public_name_audit.json'; audit = read(audit_path)

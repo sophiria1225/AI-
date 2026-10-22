@@ -16,12 +16,23 @@ SOURCE = 'reports/P64_public_name_audit.json'
 def build(output):
     audit = read(ROOT / SOURCE); report = read(ROOT / 'reports/P64_public_name_comparison.json')
     plan = read(ROOT / 'configs/P64_public_name_comparison_v01.json')
+    scope = read(ROOT / 'reports/P65_public_move_scope.json')
     if (audit['audit_errors'] or len(audit['rows']) != 4 or not audit['server_stopped']
             or audit['owned_server_processes_present'] or audit['source_report_sha256'] != sha(ROOT / 'reports/P64_public_name_comparison.json')
             or audit['plan_sha256'] != sha(ROOT / 'configs/P64_public_name_comparison_v01.json')
             or report['status'] not in ('complete', 'stopped')
             or [[r['task_id'], r['arm'], r['run_id']] for r in audit['rows']] != plan['run_order']):
         raise ValueError('all fixed conditions, closed server and reconciled sources required')
+    if (scope['source_report_sha256']['P64'] != sha(ROOT / SOURCE) or len(scope['rows']) != 2
+            or any(r['differences'] for r in scope['old_parity_controls'])
+            or scope['inspector_sha256'] != sha(ROOT / 'scripts/inspect_new_move_scope.py')):
+        raise ValueError('matching passive scope analysis and original parity controls required')
+    for row in scope['rows']:
+        final = row['final']; tail = row['observed_cost_after_first_supported_boundary']
+        if (final['trace_support'] != 'supported' or not final['current_year_observed']
+                or any(final[k] != 42 for k in ('inventory_files', 'metadata_files', 'successful_move_receipts', 'filename_preserved_moves'))
+                or tail is None or tail['later_model_calls'] != 2 or tail['later_unknown_usage_calls']):
+            raise ValueError('this presentation requires both complete, clock-supported photo traces and two measured later calls')
     table = []; details = []
     for row in audit['rows']:
         task = '写真整理' if row['task_id'] == '34d9492_1' else '電気代精算'
@@ -61,6 +72,24 @@ def build(output):
             '10月31日の投稿へ向け、実証的な主張の根拠と限界を更新する。</p>',
             takeaway='最終目標は、必要な仕事と品質を保ち、制御・失敗込みの仕事全体費用を減らすこと。',
             notes='公開名アクセスは普通の実行能力をそろえる比較であり、独自方式の採用ではない。受付と能力説明が一緒に変わるため、受付コードだけの因果効果も主張しない。公式様式と著者情報、採録に足る中心貢献は未確定。')]
+    scope_table = []
+    for row in scope['rows']:
+        arm = '文書取得必須' if row['arm'] == 'documented' else '公開名アクセス'
+        if row['status'] == 'not_run':
+            scope_table.append(f'<tr><td>{arm}</td><td colspan="3">未実行</td></tr>'); continue
+        supported = row['final']['trace_support']
+        tail = row['observed_cost_after_first_supported_boundary']
+        status = {'supported': '宣言した条件を支持', 'contradicted': '矛盾', 'unknown': '不明'}[supported]
+        boundary = tail['first_supported_boundary'] if tail else 'なし'
+        cost = f'{tail["later_known_tokens"]:,}' + (' + ?' if tail['later_unknown_usage_calls'] else '') if tail else '対象なし'
+        scope_table.append(f'<tr><td>{arm}</td><td>{status}</td><td>{boundary}</td><td>{cost}</td></tr>')
+    slides.insert(-1, dict(cover=False, title='写真２条件では、公開時計を含む根拠がそろった',
+        body='<p class="lead">P65の読取分析。元集合・移動前の日時・42件の移動・名前保持を照合。</p>'
+        '<table><tr><th>通常条件</th><th>公開記録の支持範囲</th><th>最初の境界</th><th>その後のtoken</th></tr>'
+        + ''.join(scope_table) + '</table><p class="small">両条件とも、その後に２生成。後続費用は実測節約額ではない。<br>'
+        '同じ既知要求文型の通常検査。旧３条件との一致を確認し、公式成否を維持。</p>',
+        takeaway='公開根拠がそろう条件を確認した。自動終了による品質・費用はまだ測っていない。',
+        notes='P62の厳しい正規化を新しい２記録へ適用。新しい独立２課題ではなく同じ写真課題の２条件。後続の公開一覧確認と完了通知が不要だったとは断定しない。読取0.030秒、追加生成・API・評価・DB内容・保留群０。事前のJSONキー表現の比較失敗も別記録へ保存。'))
     sections = []
     for number, slide in enumerate(slides, 1):
         if slide['cover']:
@@ -69,15 +98,15 @@ def build(output):
             f'<h2>{slide["title"]}</h2>{slide["body"]}<div class="takeaway">{slide["takeaway"]}</div>'
             '<div class="footer"><span class="sources"><a href="https://github.com/sophiria1225/AI-/blob/main/docs/P64_findings.md">全結果・限界</a> / '
             '<a href="https://github.com/sophiria1225/AI-/blob/main/reports/P64_public_name_audit.json">全条件の照合</a></span>'
-            f'<span>{number}/4</span></div><div class="notes">{html.escape(slide["notes"])}</div></section>')
+            f'<span>{number}/{len(slides)}</span></div><div class="notes">{html.escape(slide["notes"])}</div></section>')
     nav = '<nav id="nav"><button id="prev">←</button><span id="count"></span><button id="next">→</button><button id="all">一覧</button><button id="note">説明</button><button id="print">印刷</button></nav><aside id="speaker"></aside>'
-    css = 'h2{font-size:34px}table{font-size:19px}.lead{font-size:22px}.small{margin-top:22px;font-size:19px}td{padding:16px 14px}.takeaway{font-size:20px}'
+    css = 'h2{font-size:34px}table{font-size:19px}.lead{font-size:22px}.small{margin-top:16px;font-size:18px}td{padding:12px 14px}.takeaway{font-size:20px}'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'index.html').write_text('<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>P64 公開名アクセスの通常基準</title><style>'
         + STYLE + css + '</style></head><body>' + ''.join(sections) + nav + '<script>' + SCRIPT + '</script></body></html>')
     (output / 'slides.json').write_text(json.dumps(slides, ensure_ascii=False, indent=2) + '\n')
-    manifest = {'pages': 4, 'generated_at': datetime.now(timezone.utc).isoformat(),
-        'source_sha256': {p: sha(ROOT / p) for p in (SOURCE, 'reports/P64_public_name_comparison.json', 'configs/P64_public_name_comparison_v01.json')},
+    manifest = {'pages': len(slides), 'generated_at': datetime.now(timezone.utc).isoformat(),
+        'source_sha256': {p: sha(ROOT / p) for p in (SOURCE, 'reports/P64_public_name_comparison.json', 'configs/P64_public_name_comparison_v01.json', 'reports/P65_public_move_scope.json')},
         'builder_sha256': sha(Path(__file__)), 'visual_reviewed': False,
         'scope': 'All four scheduled conditions on two known development tasks; ordinary interface package, no novel method.'}
     (output / 'build_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')

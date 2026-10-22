@@ -1,0 +1,18 @@
+{
+  "phase": "P65_preflight",
+  "status": "stopped_before_new_record_inspection",
+  "git_commit": "a92a640",
+  "inspector_sha256": "3fae7dcf3d22400e5f19a881e9586d6f401438dede37330ccd4ab11a5c471091",
+  "error_type": "ValueError",
+  "failed_check": "P62 parity: pre_move_creation_year_counts",
+  "cause": "The old JSON report has string year keys, while the fresh in-memory Counter summary has integer year keys. Comparing before JSON normalization rejected the equivalent representation.",
+  "original_records_changed": false,
+  "new_P64_records_inspected": 0,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "program_executions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "wall_seconds": null,
+  "resolution": "Compare the actual result after ordinary JSON serialization normalization, retaining every field and value; rerun the same finite passive inspection."
+}
