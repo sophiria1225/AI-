@@ -9,3 +9,5 @@ P55写真整理のF/Bの保存状態を再現し、完了通知なし／１回�
 [P55とP56を合わせた４ページ原稿](../../papers/202610_letter/candidate_inventory_terminal_scope.pdf)／[TeX](../../papers/202610_letter/candidate_inventory_terminal_scope.tex)／[和文111字](../../papers/202610_letter/terminal_abstract_ja.txt)／[英文47語](../../papers/202610_letter/terminal_abstract_en.txt)。全４頁目視、はみ出し・未解決引用０。汎用jsarticleによる自然改頁の検討用原稿で、公式IEICEの４ページ確認・著者情報・中心的貢献・投稿準備は未完了。旧P55原稿は保存した。
 
 [原稿の出典・ハッシュ](../../papers/202610_letter/terminal_draft_source_map.json)／[描画点検](../../papers/202610_letter/terminal_draft_layout.json)。再生成は `scripts/build_completion_report.py --pdf`。原稿はリポジトリルートからshell escapeを無効にしたuplatexとdvipdfmxで変換する。再生成後は描画確認とハッシュを更新する。
+
+[P57：終了付近の費用と新提案の不足条件](terminal_cost_addendum.md)を追記。既存PDF・元結果の変更なし。
