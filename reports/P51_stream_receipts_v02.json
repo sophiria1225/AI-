@@ -1,0 +1,208 @@
+{
+  "phase": "P51",
+  "batch_id": "P51_stream_receipts_v02",
+  "status": "complete",
+  "git_commit": "98f6ae7d5032e06de06c81cd44af99d525ba8eae",
+  "started_at": "2026-10-22T11:31:54.277297+00:00",
+  "source_sha256": {
+    "scripts/probe_stream_receipts_v02.py": "08ef4dfef1c9750cddedfa515140df785cc159deb517c27b09518382f52b3c75",
+    "scripts/streaming_usage_receipt.py": "4fa1adc235702a29fe07b4cb1316b7740dbf81e218633346b0482d93042f3483",
+    "scripts/local_llama_stream.py": "8b31a8e7cdce86c380b3bd1c021a3384e2948c277ad273786ad785dd08491f37",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "scripts/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "configs/P51_stream_receipts_v02.json": "305fbf5a78475c6d6c13778b46ea34d73f89003729bbffe1506e911e854543ad"
+  },
+  "planned": [
+    "nonstream_complete",
+    "stream_complete",
+    "stream_disconnect"
+  ],
+  "rows": [
+    {
+      "label": "nonstream_complete",
+      "call_id": "call_001",
+      "status": "ok",
+      "model_attempted": true,
+      "predicted_input_tokens": 201,
+      "reserved_maximum_input_plus_output": 329,
+      "count_wall_seconds": 0.0017430000007152557,
+      "input_tokens": 201,
+      "output_tokens": 76,
+      "cached_input_tokens": 0,
+      "wall_seconds": 5.1594749159994535,
+      "done_reason": "stop",
+      "error_kind": null,
+      "stream_receipt": null,
+      "response_sha256": "5b7dd885929eabbd7cce1f704ad07f814688b7805af12ccac0c5c2ae968911e1",
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 201,
+        "input_tokens": 201,
+        "output_tokens": 76,
+        "prompt_seconds": 1.673703,
+        "decode_seconds": 3.4837249999999997
+      },
+      "private_message_sha256": "2bfba8e848693a8efb250168099aa060f5470251aff46328fbd557a785eb2577"
+    },
+    {
+      "label": "stream_complete",
+      "call_id": "call_002",
+      "status": "ok",
+      "model_attempted": true,
+      "predicted_input_tokens": 201,
+      "reserved_maximum_input_plus_output": 329,
+      "count_wall_seconds": 0.0017457909998483956,
+      "input_tokens": 201,
+      "output_tokens": 76,
+      "cached_input_tokens": 0,
+      "wall_seconds": 5.159051666996675,
+      "done_reason": "stop",
+      "error_kind": null,
+      "stream_receipt": {
+        "stream_events": 79,
+        "protocol_valid": true,
+        "terminal_usage_received": true,
+        "stream_done": true,
+        "message_ready": true,
+        "input_tokens": 201,
+        "output_tokens": 76,
+        "observed_output_tokens_lower_bound": 76,
+        "observed_input_tokens_lower_bound": 0,
+        "last_prompt_progress": {
+          "total": 201,
+          "cache": 0,
+          "processed": 201,
+          "time_ms": 1656
+        },
+        "last_server_timings": {
+          "cache_n": 0,
+          "prompt_n": 201,
+          "prompt_ms": 1657.078,
+          "prompt_per_token_ms": 8.244169154228855,
+          "prompt_per_second": 121.29785079519492,
+          "predicted_n": 76,
+          "predicted_ms": 3499.677,
+          "predicted_per_token_ms": 46.66236,
+          "predicted_per_second": 21.430549162108388
+        },
+        "input_lower_bound_is_not_exact_usage": true,
+        "partial_message_may_execute": false
+      },
+      "response_sha256": "ede7c31744c26f28285e9f19987570a3b77479137a04d8cbc820d4084ca52767",
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 201,
+        "input_tokens": 201,
+        "output_tokens": 76,
+        "prompt_seconds": 1.657078,
+        "decode_seconds": 3.499677
+      },
+      "private_message_sha256": "2bfba8e848693a8efb250168099aa060f5470251aff46328fbd557a785eb2577"
+    },
+    {
+      "label": "stream_disconnect",
+      "call_id": "call_003",
+      "status": "error",
+      "model_attempted": true,
+      "predicted_input_tokens": 201,
+      "reserved_maximum_input_plus_output": 329,
+      "count_wall_seconds": 0.0017529579999973066,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached_input_tokens": null,
+      "wall_seconds": 1.8006693330025882,
+      "done_reason": null,
+      "error_kind": "intentional_probe_disconnect",
+      "stream_receipt": {
+        "stream_events": 7,
+        "protocol_valid": true,
+        "terminal_usage_received": false,
+        "stream_done": false,
+        "message_ready": false,
+        "input_tokens": null,
+        "output_tokens": null,
+        "observed_output_tokens_lower_bound": 4,
+        "observed_input_tokens_lower_bound": 0,
+        "last_prompt_progress": {
+          "total": 201,
+          "cache": 0,
+          "processed": 201,
+          "time_ms": 1654
+        },
+        "last_server_timings": {
+          "cache_n": 0,
+          "prompt_n": 201,
+          "prompt_ms": 1655.478,
+          "prompt_per_token_ms": 8.236208955223882,
+          "prompt_per_second": 121.41508374016448,
+          "predicted_n": 4,
+          "predicted_ms": 143.271,
+          "predicted_per_token_ms": 47.757,
+          "predicted_per_second": 20.939338735682732
+        },
+        "input_lower_bound_is_not_exact_usage": true,
+        "partial_message_may_execute": false
+      },
+      "response_sha256": "0a57cea741ca82f8b573f73daac0c3228d8743ae20942b65c0928909fa16167c"
+    }
+  ],
+  "reserved_logical_tokens": 987,
+  "input_count_requests": 3,
+  "environment_api_requests": 0,
+  "generated_tools_executed": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "server_shutdown_record_pending": false,
+  "model_identity": {
+    "revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "quantization": "IQ4_XS",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "download_status": "verified",
+    "model_path": "models/MiniMax-M3-GGUF/2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6/MiniMax-M3-IQ4_XS/MiniMax-M3-IQ4_XS-00001-of-00006.gguf"
+  },
+  "server_record_directory": "records/p2_servers/20261022_203107",
+  "server_supervisor_pid": 20484,
+  "after_disconnect_idle_wait_seconds": 0.2629632499993022,
+  "complete_case_comparison": {
+    "input_token_counts_equal": true,
+    "output_token_counts_equal": true,
+    "private_messages_equal": true,
+    "equality_is_not_assumed_or_required_for_retry": true
+  },
+  "wall_seconds": 12.407704916997318,
+  "known_total_tokens": 554,
+  "unknown_usage_calls": 1,
+  "model_calls_attempted": 3,
+  "not_attempted": [],
+  "original_status_sha256": "a0734f8a8effce00fb87ad468d65bb576827552c29b5bd7a7ab2cafa0084cbf9",
+  "server_closure": {
+    "started_at": "2026-10-22T11:31:07.201178+00:00",
+    "status": "stopped",
+    "wall_seconds": 96.43762725000124,
+    "load_wall_seconds": 10.066210417000548,
+    "sampled_peak_rss_bytes": 235271536640,
+    "peak_system_swap_bytes": 0,
+    "exit_code": 0,
+    "stop_reason": "requested_stop",
+    "memory_note": "5-second RSS samples and system swap; RSS is not total unified GPU allocation",
+    "record_directory": "records/p2_servers/20261022_203107",
+    "source_sha256": {
+      "summary.json": "e9687e53c862427699c1d49de06dc8e4e969eaa26c8c4cdb6d7c10c7d7c8646b",
+      "memory.jsonl": "13b778a0b11f02e77cf52e6758bd8b8ada717cb2a5c1185f9ca17cef7295fda0",
+      "server.log": "64c00e7cbfc243d858494c057f6ea6652438a0a37555c8d1b95d16a90fc8ea4f",
+      "serve_research_model.py": "2fc5a76b621bd57917d65d61fa135d6d13b0f723a05f9b8bccd3b1a8c0e3f9a5",
+      "model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3"
+    }
+  },
+  "audit_report": "reports/P51_stream_receipts_v02_audit.json"
+}

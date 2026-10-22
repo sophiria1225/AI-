@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T11:19:21.097793+00:00",
+  "updated_at": "2026-10-22T11:39:12.524282+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -13,16 +13,7 @@
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
   "current_experiment": "No active model experiment. P47 closed at 18:12 JST under predeclared unknown-usage stop; all twelve planned cells accounted for. Selected display not adopted: observed photo success loss and higher refund cost than full display. Central novel rule remains unestablished.",
-  "queued_experiment": {
-    "phase": "P51",
-    "kind": "synthetic_stream_measurement_calibration",
-    "planned_model_calls": 3,
-    "environment_api_requests": 0,
-    "is_task_or_novel_method_comparison": false,
-    "plan": "../../docs/experiments/P51_stream_receipts.md",
-    "configuration": "configs/P51_stream_receipts_v02.json",
-    "initialization_failure": "reports/P51_stream_receipts_v01_failure.json"
-  },
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -156,5 +147,18 @@
     "central_contribution_confirmed": false,
     "submission_ready": false,
     "source_map": "evidence_draft_source_map.json"
+  },
+  "last_completed_measurement_calibration": {
+    "phase": "P51",
+    "fixed_generation_commit": "98f6ae7d5032e06de06c81cd44af99d525ba8eae",
+    "report": "../../reports/P51_stream_receipts_v02.json",
+    "initialization_failure": "../../reports/P51_stream_receipts_v01_failure.json",
+    "audit_errors": 0,
+    "model_calls": 3,
+    "known_total_tokens": 554,
+    "unknown_usage_calls": 1,
+    "intentional_disconnect_output_lower_bound": 4,
+    "is_task_or_novel_method_comparison": false,
+    "server_stopped": true
   }
 }
