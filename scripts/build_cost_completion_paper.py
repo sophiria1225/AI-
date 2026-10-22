@@ -139,6 +139,7 @@ def build(tex_bin, output):
         'papers/202610_letter/cost_completion_abstract_ja.txt', 'papers/202610_letter/cost_completion_abstract_en.txt',
         'materials/20261023_p55/work_tokens.pdf', 'docs/evidence_delivery_overlap_20261023.md',
         'docs/P62_findings.md', 'docs/P63_findings.md',
+        'docs/termination_control_overlap_20261023.md',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},
@@ -155,6 +156,11 @@ def build(tex_bin, output):
             'url': 'https://arxiv.org/html/2610.26836v1',
             'read_scope': 'Abstract, introduction, and Appendix D boundary selection and paired continuation. Not an implementation reproduction or acceptance-status check.',
             'record': 'docs/evidence_delivery_overlap_20261023.md',
+        },
+        'additional_related_reference': {
+            'url': 'https://arxiv.org/html/2610.21394v1',
+            'read_scope': 'Sections 3.1–4.3, 20.2–20.3 and 20.5; not all later sections or an implementation reproduction. Abstract page identifies the work as a non-peer-reviewed research preprint.',
+            'record': 'docs/termination_control_overlap_20261023.md',
         },
     }
     (PAPER / f'{NAME}.pdf').write_bytes((output / f'{NAME}.pdf').read_bytes())
