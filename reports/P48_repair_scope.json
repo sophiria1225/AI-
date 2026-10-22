@@ -1,0 +1,904 @@
+{
+  "phase": "P48",
+  "kind": "posthoc_passive_repair_scope_inspection",
+  "all_planned_cells_accounted": true,
+  "rows": [
+    {
+      "run_id": "P47_01_FULL_CONTRACT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "full_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 6,
+      "internal_requests_checked": 94,
+      "rejected_requests": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "6c23610636bdffd1675516e293235a1135697a6fe635db7da762e21bd61905b7",
+        "programs/call_001_01/result_private.json": "17cab9f6adf19d976f7bc09648775a40991f0abe1ff39b6e606df2288bf05450",
+        "programs/call_001_01/wire_private.jsonl": "230481448cf0458d3ac38b7afbf27ddd60b30a2a5b272c3d8626a073521e25c8",
+        "programs/call_002_01/input_private.json": "588da2b3accfde1568ea4dff68cff3cd5198c6607692ba85788967dda9884d2f",
+        "programs/call_002_01/result_private.json": "89fe73d46b6b48c4a01015a44f078e6583d6f71f5091ce5c6034ab58af08ec05",
+        "programs/call_002_01/wire_private.jsonl": "fce12e3dbba866114104458bdba3a51958d233ccc7592628527a5efe18925e9c",
+        "programs/call_003_01/input_private.json": "65755ec47f15639e65fcc9cefe757636bfdb775819cf92d012cefcc83d32039d",
+        "programs/call_003_01/result_private.json": "e273dbeee0a62a32599bb2ee53107f37a945c8328035206c22dee2babfb90aee",
+        "programs/call_003_01/wire_private.jsonl": "78d7265bc6967418beb781133ff558626d34fb717b22d1b7663bcf70f4f62059",
+        "programs/call_004_01/input_private.json": "9df1da004ad4cf2023350c9fd2f248c3830e3af77b05a9ec86cd6d25af629198",
+        "programs/call_004_01/result_private.json": "76d699b8dd2b4dee60dd1b6edffe4708f9b4ebe1f6de59a4436a87f6bb9c66ff",
+        "programs/call_004_01/wire_private.jsonl": "aaffbe1ded0ec35c6c66395bbaa0bf84a99c3fe7f5f9da8c8d887e851ed20c44",
+        "programs/call_005_01/input_private.json": "7b56313c24d8bbbb1e70064fbb770ca5b52deda1cae5173bf07312b92bb96a4e",
+        "programs/call_005_01/result_private.json": "60d13ca0c34bd1354740dd0b3fb2b33b1bcfaf862175f209df436282a8a30106",
+        "programs/call_005_01/wire_private.jsonl": "51158cc83ad9adb3583258b654e76820adfbaf24a5925030d16d63501dbd8f8a",
+        "programs/call_006_01/input_private.json": "6d3e55920c7d036e86719694110660c89045553b377430233e45b71dd0e44895",
+        "programs/call_006_01/result_private.json": "3811e11d0049313909738cabed363f264584a0e619685f5b08c1c8029a9b35df",
+        "programs/call_006_01/wire_private.jsonl": "9ca539899d20214402e2f4e3f6851449ceeafaf9424b1c5cb397d632cc184363"
+      }
+    },
+    {
+      "run_id": "P47_01_SELECTED_NAMES_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_names_keep",
+      "record_status": "evaluated",
+      "programs_checked": 9,
+      "internal_requests_checked": 92,
+      "rejected_requests": 2,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "1030704b515df725aeea7c93022ebb84f44dc074a8f22f2cf19a4d69294be673",
+        "programs/call_001_01/result_private.json": "9d634f69bae11ee16112b3ffa6144803ae64bd6fafa9c26520d5b331a430e672",
+        "programs/call_001_01/wire_private.jsonl": "1fd5923062476f400a29fd363e9c780dd2eb897cddff9afd6f28ce8b6454c982",
+        "programs/call_002_01/input_private.json": "102d5b2b066eb39c6dfbbcc817f0e0c3095e9711adc1c8bb411a741b1cd612b5",
+        "programs/call_002_01/result_private.json": "f936f2210e0b91d063f4059a009fe99f9a68580f921b6c847668155ccdb5c78a",
+        "programs/call_002_01/wire_private.jsonl": "56f6e95a35e6b2285c68e3ac26e1269f4a0bbf6e684a889be17049eaf926f579",
+        "programs/call_003_01/input_private.json": "64ebd719bf819010433f5b342157d12c10b41b4b1deb941315abc1ecec442f52",
+        "programs/call_003_01/result_private.json": "27be436ebb1f49903935cd949845ef8a72254bbb6a852cb911b4611305dff77e",
+        "programs/call_003_01/wire_private.jsonl": "30e3f39b524587301a0a0e62d48ef3e2ed5a663fc07186e2ffda29615db2aa2b",
+        "programs/call_004_01/input_private.json": "adc145e898fc0fb7ac182e7f56d9fed8ecc4cde38dd43f59b49915e53bff0481",
+        "programs/call_004_01/result_private.json": "a515ba252daae2a0cbaae7d7451f50b6313480b1c19bb0d89ac919c62dd5395c",
+        "programs/call_004_01/wire_private.jsonl": "88715624be2a32107c9cec07f08efbd59a419f1970bd3524c45d9cef1738e32f",
+        "programs/call_005_01/input_private.json": "d5ca49aaaa3ddd1e062e45abdbb7b12cdc54db80f9f26c40d84b9ffa609468e9",
+        "programs/call_005_01/result_private.json": "f8b83c234ce18a351ca868fbc488a4264171c6d23beedb6a320e9bd96c6b56de",
+        "programs/call_005_01/wire_private.jsonl": "285286b2c56970bede8d28457266a88830245cf5d669e12fafc215318fea9028",
+        "programs/call_006_01/input_private.json": "e7713218132f32c597e808a6136d4d7e12a49d654c7476cb02beb9f9563edf43",
+        "programs/call_006_01/result_private.json": "1bfcc26e4deb1e91c93a10500c6cb970d3389666e9cb3e5b3eb583f55f5517d6",
+        "programs/call_006_01/wire_private.jsonl": "2d765b6b5f88b6e900d0316cfacccbefa802aa6f28f45ed05bfcdbf4e7c46325",
+        "programs/call_007_01/input_private.json": "e352c6a5ec9458111710060aba17bc85e90afcfe54844e7d8548a3ac3e53cfe4",
+        "programs/call_007_01/result_private.json": "d8f71e5433e27b6857d984cb7a1bada63900f84d5ae7e737abb2f5a20524c0ef",
+        "programs/call_007_01/wire_private.jsonl": "8b87327e651c12214290e013503929ce4e805ace65e4dc9cb9fe770fb6800198",
+        "programs/call_008_01/input_private.json": "bd5743dc880a8705a5299cefdacdc8bad1ec86d5631b543ec2d42a3deb418349",
+        "programs/call_008_01/result_private.json": "8fcebb970193cc77381deea07e28a26254306bf9db888b94e7109dc0f5f8fd74",
+        "programs/call_008_01/wire_private.jsonl": "82c7dc25052082ba3a70a14522f284529ca096b3c3c1fa59e669e2cc9a3d5f34",
+        "programs/call_009_01/input_private.json": "22b2e4833f007434a54ee21aaac2f4048625ca14f8188e7b5a640689a0b83402",
+        "programs/call_009_01/result_private.json": "9fa9a5a49a18e99b89150ab836c4f5e406b66007d07c439c290c874996ef143c",
+        "programs/call_009_01/wire_private.jsonl": "8d087e72d1fca86de2fa52a2909f919120ea336dd94fed049217fe9a5f3d2042"
+      }
+    },
+    {
+      "run_id": "P47_01_SELECTED_CONTRACT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 10,
+      "internal_requests_checked": 53,
+      "rejected_requests": 3,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "1030704b515df725aeea7c93022ebb84f44dc074a8f22f2cf19a4d69294be673",
+        "programs/call_001_01/result_private.json": "4257b6b28db118310fa25d23c7b3335ba98cb185e4b8cda9f34b7f72c751c060",
+        "programs/call_001_01/wire_private.jsonl": "1fd5923062476f400a29fd363e9c780dd2eb897cddff9afd6f28ce8b6454c982",
+        "programs/call_002_01/input_private.json": "fd683d976361e6cc15bb460e61234080123e88f4779272cedb9c3021c737ffb8",
+        "programs/call_002_01/result_private.json": "070d43fdbb709554fdac2e402eb61b467f64f78afd9d631f2c1a5c150d576de5",
+        "programs/call_002_01/wire_private.jsonl": "56f6e95a35e6b2285c68e3ac26e1269f4a0bbf6e684a889be17049eaf926f579",
+        "programs/call_003_01/input_private.json": "5e4ed6b6f79370c898091d3f04400c382ac274a8ad785d908bcaffbe2093f93c",
+        "programs/call_003_01/result_private.json": "70df26679904fa464569dbbb1ae19e5385cd41a910e164662b2b3ac575f516f4",
+        "programs/call_003_01/wire_private.jsonl": "ce95ff8af8a0c401b86eea90c8cfe59ef555679b7c11121e009a908a5c69023c",
+        "programs/call_004_01/input_private.json": "a4116242454807ba1fc7e6855b2f2cd1caab16b6f145d965656cd6bab0966be3",
+        "programs/call_004_01/result_private.json": "c131313cdb6bb5073bb0b4b9382c0bad7104827133d4e49763cd66730436ef80",
+        "programs/call_004_01/wire_private.jsonl": "35e094c24e3a16b1c093c8c6efcc67f52a26eddd463151d51458e3724b36264f",
+        "programs/call_005_01/input_private.json": "13b5fd50c799704ade9155ce09c13b1a7c536c33a44c479804810996b391664e",
+        "programs/call_005_01/result_private.json": "a1634f098997dd9b6dc6039174f052352a4da462a37beea559d673b889b96455",
+        "programs/call_005_01/wire_private.jsonl": "4960a190573b0e1d9c2a7c9153719a4c7afb52dbcd53e343df6d8af8ab7f5917",
+        "programs/call_006_01/input_private.json": "eccbf0ffefe659761f4441973953760575f72b7d6714af4d563a0abbee5b4def",
+        "programs/call_006_01/result_private.json": "c40c05cf7302b052957021d1ce9668f0d9a9ed70bd28ef92e344a543609a8aba",
+        "programs/call_006_01/wire_private.jsonl": "8fab94a783a9ea1db63279645b0de82f7ff8bd0180e4fe8da45cafadcc7e8750",
+        "programs/call_007_01/input_private.json": "6d66452ab8f5792f81d3047945de855a4ba0ffeb24cfd7ffe40ffd20ccff522d",
+        "programs/call_007_01/result_private.json": "9d00d571e4bba501ef1ddd74495ef5699761fe68325a9d1c8d3ef7fdf07d9ae8",
+        "programs/call_007_01/wire_private.jsonl": "e248744d711940d1a11cf6c5bb9c1ef34b6f415aa5923a9d64565507efa18205",
+        "programs/call_008_01/input_private.json": "37980efe811f1ee4e0cf636f63f813d06dde5b4604941281e2fc5eecae328f78",
+        "programs/call_008_01/result_private.json": "ae489d77335a4876cb8f32ced244674664b2a37422974de27e293ba75d2d99f2",
+        "programs/call_008_01/wire_private.jsonl": "fe5aacb86d44787bc5a147db157ac5f743f22fbe86e83a9583698e30565c2bff",
+        "programs/call_009_01/input_private.json": "fa1ebdd8f45305f9ce7783ca00b74f44c8e9f84c4d92d148cc437dd7e08fa9df",
+        "programs/call_009_01/result_private.json": "8610d802be1b3097e2fa45dff841e033526ada9932c564449f1852236c5cc841",
+        "programs/call_009_01/wire_private.jsonl": "528fe1ba95a67178c1803e1d6f3f168010e70afbcc5963218259f64742d0e00b",
+        "programs/call_010_01/input_private.json": "610941bd8fc5972eccdef6ddcddf1b9150f80c5827bacbccc7028d43666b9218",
+        "programs/call_010_01/result_private.json": "92048adc116d3d1f66dad0255987e268c653d6489fb4c7ef27d2ecd79044836a",
+        "programs/call_010_01/wire_private.jsonl": "36327d2ba0832829943be2d789026ac7a7276606f4b4215487363549753052a9"
+      }
+    },
+    {
+      "run_id": "P47_02_FULL_CONTRACT_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 9,
+      "internal_requests_checked": 9,
+      "rejected_requests": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "c6abea523be4397ac467aacf54e24d3c22fb4ad72b63ad8eb9bccaac1d841e18",
+        "programs/call_001_01/result_private.json": "a5c07574cd8b34f591c9d1abbd623ab82fee93c43f860aac8c5d23c6869d8ecd",
+        "programs/call_001_01/wire_private.jsonl": "4db823ed9a295f5bf2f514a09a0c0d92ea06b471dd041cb66d0e9f7e3e760cf9",
+        "programs/call_002_01/input_private.json": "5242d81720c6fd4ba14c51a4d4c59d338719b55761d8461f2daa5cb47ae79931",
+        "programs/call_002_01/result_private.json": "50ce90c3cc0a342445486fd56992571bbad99d6a26416e90fe69798cba9417a2",
+        "programs/call_002_01/wire_private.jsonl": "a6da0ced7c7e058d10ce369855cfa89e1e7b72bc540923819293ffec8b322233",
+        "programs/call_003_01/input_private.json": "335b202437495d9e0d13842acb82240432317af84401ecf51006214c3b94bcf0",
+        "programs/call_003_01/result_private.json": "4093ace7be102813e90b09fd958d5465c60cbfa90b6d07caf73431e1fa4effbb",
+        "programs/call_003_01/wire_private.jsonl": "8ae2d63e099feb68b6834d710ae384a11c5154ac025f241503e0e350ff8454d8",
+        "programs/call_004_01/input_private.json": "0969eea656d59f11d760250f42edde029cd832303f703b9ccfd48ca3a6c62671",
+        "programs/call_004_01/result_private.json": "ccdab8a25df278ab6a4574af9e3849a92c027ca2be438ed38148240dd646567b",
+        "programs/call_004_01/wire_private.jsonl": "0e60ce7ea2763f70e6f6cb4ce7d595f41b88c9debc6d90a465a7c0752553c99e",
+        "programs/call_005_01/input_private.json": "597c7c5250239008fb4b8928821db48c4f96fa118b95f773d1961102ee2d7fb9",
+        "programs/call_005_01/result_private.json": "e034e6909431fe5cdbe5e0354485b19cf5bbb84928b04cac36cdca46dc49cce4",
+        "programs/call_005_01/wire_private.jsonl": "8dda80fd0cf0bc23b8c50fab74b2f46403aa6778521ccab94fe9c0aeb9130764",
+        "programs/call_006_01/input_private.json": "9b7a07c996a7f6ef5e0ec908b3c228eb651e07b11c7eb79e2e217edb626235ad",
+        "programs/call_006_01/result_private.json": "9d336f50e3d32cf373081d10182fa288c10e93f37740b6f7497e681e4664512f",
+        "programs/call_006_01/wire_private.jsonl": "4e30c62d1156896547d409e1c19df996db908e3712f45e04b86fae8328c1578b",
+        "programs/call_007_01/input_private.json": "09a3e50991410e08a495657e44b02a6bca5f1b48f9827b9560cc740940f98375",
+        "programs/call_007_01/result_private.json": "3ff878f2b21abd40a8387e497946c674c8ce6dea45b84a9ca1cff7bce66a1d92",
+        "programs/call_007_01/wire_private.jsonl": "dfb2774cadb32af3f67085cd1f58001597c3c2090a0dd804441554671bf6b4cb",
+        "programs/call_008_01/input_private.json": "73a3ba13199e2035be955ca6a2956b51c2517159c54795363353a267a4295ca8",
+        "programs/call_008_01/result_private.json": "ef2becc50ab2e69ad59d24b256b58554092c245f5cc0955a7878e1037285eee3",
+        "programs/call_008_01/wire_private.jsonl": "fa0df1955ab6dc5b79a3feb1a2ab15d49ed566cee54382de743386b782245373",
+        "programs/call_009_01/input_private.json": "ff46093feaa3b8f9489fd8a6dd5256b54e1076e22b0120deaca1addb6d4f0f92",
+        "programs/call_009_01/result_private.json": "77c508d168385d7ad6760794979fd31e463a693b578970222efe2880f8250890",
+        "programs/call_009_01/wire_private.jsonl": "4deeb8627712297de206e6ecf0ac86ccf490e3ece2c24581c900558bababffad"
+      }
+    },
+    {
+      "run_id": "P47_02_SELECTED_NAMES_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "selected_names_keep",
+      "record_status": "evaluated",
+      "programs_checked": 9,
+      "internal_requests_checked": 9,
+      "rejected_requests": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "85ea02ffce0af812a832ae502bcafd473df66148814ddae0e7836ba98e947da3",
+        "programs/call_001_01/result_private.json": "c062bd08c4ab49055df579c2219d73357c86999fd9af06546143c6b01a429b50",
+        "programs/call_001_01/wire_private.jsonl": "d0342cd49a43149e691036f4efc5ef42008e78f64e75e9ccb1af6f2a82a558a5",
+        "programs/call_002_01/input_private.json": "39b1d3553ed11c12b9042f5699450118a33ab059d110f9dcc2d75dad1a485341",
+        "programs/call_002_01/result_private.json": "a1c74dcdc8827a69f92586973672e22825d62b1779c3753db7a12fe1af753d74",
+        "programs/call_002_01/wire_private.jsonl": "74af0d1bebead6e9f7a06784d00f294575ec5a0a8deef06046ae5ac7f0b7bf7f",
+        "programs/call_003_01/input_private.json": "56e56040fd3a43a475f05fdac80db817695729d0f95e6d48066b618272007c94",
+        "programs/call_003_01/result_private.json": "e9069dcf2a1f96717460f55de4d175d701b80b9f98235335697bbcd97f67cd02",
+        "programs/call_003_01/wire_private.jsonl": "b3541961ae12e91eaf9666c817939afd942f4d5135a84321a91fdf4d5fe37dab",
+        "programs/call_004_01/input_private.json": "a6eaa9e7b5abb920b674538cdc3c78b9dcb6193e03fb7339459b09f6566d240c",
+        "programs/call_004_01/result_private.json": "164200c8068330c733b7731bd0b79181af3b43ab76c62ae58acc8c51903e0e0b",
+        "programs/call_004_01/wire_private.jsonl": "52b7dd1ff3976b96032086e0f20ea41eb984edfd2ce62e5f84358043c8c44f0c",
+        "programs/call_005_01/input_private.json": "604137ad7c14e46632302a4c774cb2545f7cc526e8cd76116f5955f0bfef6a55",
+        "programs/call_005_01/result_private.json": "7dc79941a303aea1702865e9eb164c25d41adfb16e4230217d0bf848d665f167",
+        "programs/call_005_01/wire_private.jsonl": "fbba892df8603c9d9d78fcae98b7fa557ffd9cdd3aa9a0bf90557d82e27bf5f2",
+        "programs/call_006_01/input_private.json": "4e120bb7a65a1fb84b3476e00d4ac2186cabbd4151bf8de92165ef54adc25a63",
+        "programs/call_006_01/result_private.json": "92f9ae3c7e197de4059c1347faf84360a117255b75b1879c2930ea55e6fe16fa",
+        "programs/call_006_01/wire_private.jsonl": "60e8ce39c37e11657edc2c28258b8de2ca9e6081cfef5c2d5f79816d4b032a26",
+        "programs/call_007_01/input_private.json": "c3aaf32760f1ace661058b9d38e0b4357ca577a06ecb75a9e2fa24ba4b7812ed",
+        "programs/call_007_01/result_private.json": "e796ed9abf7d1e2ee6251637874e05829945461a2ecbcebbc038615a6627ddc5",
+        "programs/call_007_01/wire_private.jsonl": "dfb2774cadb32af3f67085cd1f58001597c3c2090a0dd804441554671bf6b4cb",
+        "programs/call_008_01/input_private.json": "c4466b4b2b99e7f621038dde61c624f50547768261338f6529723509e890219a",
+        "programs/call_008_01/result_private.json": "9d96ff0d8ff74e19d18d27187483205c25476287b8194ebb432a97c1c211d11e",
+        "programs/call_008_01/wire_private.jsonl": "40d54538e6feb7e49be3df2c1af704ff7f8d8b815aa94bbd888d3669ad397b92",
+        "programs/call_009_01/input_private.json": "a37b96361354617ebbb83148d9421aea8edd1044d0b798b6df926cd6acf6ec30",
+        "programs/call_009_01/result_private.json": "3a906d6a4c5deea008a529e68497ce02c2ab3eacbb44c345184611e0dfe1c141",
+        "programs/call_009_01/wire_private.jsonl": "4deeb8627712297de206e6ecf0ac86ccf490e3ece2c24581c900558bababffad"
+      }
+    },
+    {
+      "run_id": "P47_02_SELECTED_CONTRACT_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "selected_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 9,
+      "internal_requests_checked": 9,
+      "rejected_requests": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "85ea02ffce0af812a832ae502bcafd473df66148814ddae0e7836ba98e947da3",
+        "programs/call_001_01/result_private.json": "0623c4a5b2eb01abff2d593925e6ece118ce2e8dc13e9538bed58b9a0266cfb1",
+        "programs/call_001_01/wire_private.jsonl": "d0342cd49a43149e691036f4efc5ef42008e78f64e75e9ccb1af6f2a82a558a5",
+        "programs/call_002_01/input_private.json": "39b1d3553ed11c12b9042f5699450118a33ab059d110f9dcc2d75dad1a485341",
+        "programs/call_002_01/result_private.json": "961e1688cdaaa697e8c34d07c5e15116f94fc5f72adc07c73ff624b6b0a75be5",
+        "programs/call_002_01/wire_private.jsonl": "74af0d1bebead6e9f7a06784d00f294575ec5a0a8deef06046ae5ac7f0b7bf7f",
+        "programs/call_003_01/input_private.json": "56e56040fd3a43a475f05fdac80db817695729d0f95e6d48066b618272007c94",
+        "programs/call_003_01/result_private.json": "04e699667e6710d57fe8e162ce9d43d04f39faa363ff03f9da9b0847e8d23efb",
+        "programs/call_003_01/wire_private.jsonl": "bce0d83ac2a544a796b40fe35840cce9c2a333a1c485ea134384ad5afa4792bd",
+        "programs/call_004_01/input_private.json": "a691da85232edec54fa0ef585b9f7ec3ac3507fc93616648ccd5a57c7411e78a",
+        "programs/call_004_01/result_private.json": "421d7d4e6a3c471298345bfd32001b158047b98d28ae8f651795b3339e2bf8f3",
+        "programs/call_004_01/wire_private.jsonl": "52b7dd1ff3976b96032086e0f20ea41eb984edfd2ce62e5f84358043c8c44f0c",
+        "programs/call_005_01/input_private.json": "d1408ccbfe5b86cf4ab44ed770619bf75a4bcd23bac44b6dd7127d761dd3c713",
+        "programs/call_005_01/result_private.json": "a924b9017f7ad97f39063f82e7b5b6c193a47a586d178f4605fd34df8f33c233",
+        "programs/call_005_01/wire_private.jsonl": "fbba892df8603c9d9d78fcae98b7fa557ffd9cdd3aa9a0bf90557d82e27bf5f2",
+        "programs/call_006_01/input_private.json": "a380a4d1b79c790982710361acc8a50cbfae9cd8eaec2b1cc1205bb92ca5ef5b",
+        "programs/call_006_01/result_private.json": "00ad51aadd48266059744d051a6561f68988bf65092bf54648ecc7516a194851",
+        "programs/call_006_01/wire_private.jsonl": "60e8ce39c37e11657edc2c28258b8de2ca9e6081cfef5c2d5f79816d4b032a26",
+        "programs/call_007_01/input_private.json": "5bca079030b9c551fbf7773ce548089e13792ec71a8069cc39b81d71ceffef19",
+        "programs/call_007_01/result_private.json": "05bdda93d5423a820196c983608fe334052d7e8d9280ad2604e6809116210a4d",
+        "programs/call_007_01/wire_private.jsonl": "dfb2774cadb32af3f67085cd1f58001597c3c2090a0dd804441554671bf6b4cb",
+        "programs/call_008_01/input_private.json": "73a3ba13199e2035be955ca6a2956b51c2517159c54795363353a267a4295ca8",
+        "programs/call_008_01/result_private.json": "92122de9a09af749d7ff4ffa76ddd339f10ff62857500a4fdf2394e58b0b10fd",
+        "programs/call_008_01/wire_private.jsonl": "fa0df1955ab6dc5b79a3feb1a2ab15d49ed566cee54382de743386b782245373",
+        "programs/call_009_01/input_private.json": "2fade7620445a22a75f0ecc19d671d7ef1febe676e950692b5caeaca86d911cd",
+        "programs/call_009_01/result_private.json": "4b8eadb18dafadfd348f63fa68136c0ec7b1fd87e7caddca7431c52153523b15",
+        "programs/call_009_01/wire_private.jsonl": "4deeb8627712297de206e6ecf0ac86ccf490e3ece2c24581c900558bababffad"
+      }
+    },
+    {
+      "run_id": "P47_03_FULL_CONTRACT_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "full_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 2,
+      "internal_requests_checked": 2,
+      "rejected_requests": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "18425917edec4fea66f73b29614df2025de8e24f057b9c7e602569a852be29c4",
+        "programs/call_001_01/result_private.json": "b8fe0cf57cea3024203933092f97102769b16c6310d82933a9092609647c6ace",
+        "programs/call_001_01/wire_private.jsonl": "1d1e98ce746ebcd7773ebbb99daa4985b099e235fa90c321320d1d6cced95362",
+        "programs/call_002_01/input_private.json": "0829a8ccda1aa3e6ee9e808421153ea6106c3d8a9b6f5c7ca364ee9d83dec562",
+        "programs/call_002_01/result_private.json": "2dfcfc668d2497eb9ce02ab16c7d45822a837f06cf0c4031ed0394e787189b7c",
+        "programs/call_002_01/wire_private.jsonl": "d33eafda75ccdf294f63d57d2b1528a07237dd34a0b1d930027afcd74f54a613"
+      }
+    },
+    {
+      "run_id": "P47_03_SELECTED_NAMES_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "selected_names_keep",
+      "record_status": "evaluated",
+      "programs_checked": 4,
+      "internal_requests_checked": 4,
+      "rejected_requests": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "a96954f00186235651467557b66466c88a79eeb6bf503840fcce9adf061ea74e",
+        "programs/call_001_01/result_private.json": "461f809c3e36f3190898db4a2e01dc5503e70516ffa2eabba7eaf20b0ba5df5e",
+        "programs/call_001_01/wire_private.jsonl": "3e6042fc5390f267171ee99653451598a00db2f59ae7267d016ac25e45efe4f5",
+        "programs/call_002_01/input_private.json": "f221c590e222e2d223f448663b6d775d4c4882978776eb645360c71858e5dcc5",
+        "programs/call_002_01/result_private.json": "14c7f3678221551532650406ba3e71a6a04899e2370286a62e94c6f22a30091c",
+        "programs/call_002_01/wire_private.jsonl": "64b2ead3d15bd59f7cbfc13bc550acca1c3f5cf7c6f87a43736a7bf0a2d14c6d",
+        "programs/call_003_01/input_private.json": "fada861d24a102d14f4bbf99759850a67c9150da681914a6b55cfb4a8421fc84",
+        "programs/call_003_01/result_private.json": "31705e1377707a636660a2c3136eb79a4f1e286f7606d1e042d885c7f1af9066",
+        "programs/call_003_01/wire_private.jsonl": "520db83ac6ea56bdc530547d933cb8f1fe21d1461caa9e08f1be25daae08bfef",
+        "programs/call_004_01/input_private.json": "9a0b27cc6257eb924e5587ee7df17d16cbe69a7be04d1298e80228056b161b39",
+        "programs/call_004_01/result_private.json": "b8022554e472120d8c2027b08f86f49250f74761e99363ae24f9a531cd4d328b",
+        "programs/call_004_01/wire_private.jsonl": "61ed864fa1e6d6d277427e27f57d4917616d0d55bff39d79609cf32098b203ed"
+      }
+    },
+    {
+      "run_id": "P47_03_SELECTED_CONTRACT_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "selected_contract_keep",
+      "record_status": "evaluated",
+      "programs_checked": 3,
+      "internal_requests_checked": 3,
+      "rejected_requests": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "a96954f00186235651467557b66466c88a79eeb6bf503840fcce9adf061ea74e",
+        "programs/call_001_01/result_private.json": "e1b576fd49739d4fde4a1d7693c03826b68e1ac6b50c34a6a5bbd0beea3f6164",
+        "programs/call_001_01/wire_private.jsonl": "65c7e43875ba395b5c9ade67849cd36110b6a6472a0b0c2632b04f3a2ec5d14b",
+        "programs/call_002_01/input_private.json": "f17ce575ebdaae3f49f5fa7ad20c2248b6db25e2a7e2d76807f52709009f158c",
+        "programs/call_002_01/result_private.json": "55cc76b00bcf00eb81eeb22a9d74242643bc607d5842f99ab80b066264a3b5f9",
+        "programs/call_002_01/wire_private.jsonl": "72e2220a5d0e6f791b9294f8e88875a1b83ea03eb8555eefce9736631e9d6a81",
+        "programs/call_003_01/input_private.json": "c2a59d802676e52aaae4b04066f7334f8d2c1caf55463165f7c467150c10cfe7",
+        "programs/call_003_01/result_private.json": "13742521eae3dd218c6833f1e24d0cb09fddbbac12a83dccf0685e836be56772",
+        "programs/call_003_01/wire_private.jsonl": "dbce3b44e7c244e1f2fa77f27049c06cb8e5c2682399dd24cabaf621e99d0ef8"
+      }
+    },
+    {
+      "run_id": "P47_04_FULL_CONTRACT_KEEP",
+      "task_id": "6104387_1",
+      "arm": "full_contract_keep",
+      "record_status": "attempted_unevaluated",
+      "programs_checked": 4,
+      "internal_requests_checked": 60,
+      "rejected_requests": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "44765f94dedba7f4a3810e8c4fc8f864669c4cdfa5717e2a5ac57aca3a9cae91",
+        "programs/call_001_01/result_private.json": "d6f2895ef57e7bc1d9650b4f0d346628be51a9b2cb5d84245057533abb495e60",
+        "programs/call_001_01/wire_private.jsonl": "8b4e83ae07b1543c03e7f1bfeac89de77507e3f9969f397ad89abbfa43776d98",
+        "programs/call_002_01/input_private.json": "7b3797d1b3f5b62d85e69e0bc867dae452d760fac5bb374b48c3b1041546726e",
+        "programs/call_002_01/result_private.json": "6817277a90a1384e9761d9013ccb931be40dd3d1ec273a466908f2367907a0f3",
+        "programs/call_002_01/wire_private.jsonl": "4307fead2ac411c86078fee91c0d724039034e7ad06ac0ba44491a446dce22a5",
+        "programs/call_003_01/input_private.json": "81c8f5c56bf36e5725c770b9ef2cff3f5d09ecdf5a79b1e13790c6a198eab9a1",
+        "programs/call_003_01/result_private.json": "0e30f80b3ea0e511df35cff41d5c9278b799a9b2b8104218507fd65cb9807822",
+        "programs/call_003_01/wire_private.jsonl": "eb68427dfb545400458a11a5c1199445395767a71c158aff1327867a015278e6",
+        "programs/call_004_01/input_private.json": "8f1529f1a15077e40481a8fc9b6dc231f5669fea1b6ed44fd2e55d5998659875",
+        "programs/call_004_01/result_private.json": "fd08cadf1b0c390fbe82d72454a6fbdef73a444cb409e92414962d7cb7df8aed",
+        "programs/call_004_01/wire_private.jsonl": "48f9cf1038ac9b0bd62773f70bedda5ead7dea3ebc4c642710fbee454b4a9138"
+      }
+    },
+    {
+      "run_id": "P47_04_SELECTED_NAMES_KEEP",
+      "task_id": "6104387_1",
+      "arm": "selected_names_keep",
+      "record_status": "not_run_after_stop"
+    },
+    {
+      "run_id": "P47_04_SELECTED_CONTRACT_KEEP",
+      "task_id": "6104387_1",
+      "arm": "selected_contract_keep",
+      "record_status": "not_run_after_stop"
+    }
+  ],
+  "rejections": [
+    {
+      "run_id": "P47_01_SELECTED_NAMES_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_names_keep",
+      "call_id": "call_002",
+      "span_id": "s24",
+      "api": "phone__login",
+      "rejection_kind": "other_format_rejection",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": false,
+      "requested_parameter_count": 2,
+      "requested_value_types": {
+        "str": 2
+      },
+      "allowed_parameter_count": null,
+      "unknown_parameter_count": null,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": null,
+      "automatic_repair_performed": false,
+      "program_characters": 189,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 2,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 0,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": null,
+      "following_model_input_tokens": 8777,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_01_SELECTED_NAMES_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_names_keep",
+      "call_id": "call_007",
+      "span_id": "s76",
+      "api": "file_system__move_file",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 3,
+      "requested_value_types": {
+        "str": 3
+      },
+      "allowed_parameter_count": 5,
+      "unknown_parameter_count": 2,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": 900,
+      "automatic_repair_performed": false,
+      "program_characters": 614,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 1,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 3,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_008",
+        "span_id": "s78",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 1,
+          "same_name_changed_values": 0,
+          "removed_parameter_count": 2,
+          "added_parameter_count": 2,
+          "removed_to_added_equal_type_edges": 4,
+          "removed_to_added_equal_value_edges": 2,
+          "removed_value_types": {
+            "str": 2
+          },
+          "added_value_types": {
+            "str": 2
+          },
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 13161,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_01_SELECTED_CONTRACT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_contract_keep",
+      "call_id": "call_002",
+      "span_id": "s24",
+      "api": "phone__login",
+      "rejection_kind": "other_format_rejection",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": false,
+      "requested_parameter_count": 2,
+      "requested_value_types": {
+        "str": 2
+      },
+      "allowed_parameter_count": null,
+      "unknown_parameter_count": null,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": null,
+      "automatic_repair_performed": false,
+      "program_characters": 208,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 2,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 0,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_004",
+        "span_id": "s28",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 1,
+          "same_name_changed_values": 1,
+          "removed_parameter_count": 0,
+          "added_parameter_count": 0,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {},
+          "added_value_types": {},
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 8782,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_01_SELECTED_CONTRACT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_contract_keep",
+      "call_id": "call_004",
+      "span_id": "s29",
+      "api": "phone__get_current_date_and_time",
+      "rejection_kind": "other_format_rejection",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": false,
+      "requested_parameter_count": 1,
+      "requested_value_types": {
+        "str": 1
+      },
+      "allowed_parameter_count": null,
+      "unknown_parameter_count": null,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": null,
+      "automatic_repair_performed": false,
+      "program_characters": 215,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 2,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": null,
+      "following_model_input_tokens": 9379,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_01_SELECTED_CONTRACT_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "selected_contract_keep",
+      "call_id": "call_008",
+      "span_id": "s76",
+      "api": "phone__get_current_date_and_time",
+      "rejection_kind": "other_format_rejection",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": false,
+      "requested_parameter_count": 1,
+      "requested_value_types": {
+        "str": 1
+      },
+      "allowed_parameter_count": null,
+      "unknown_parameter_count": null,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": null,
+      "automatic_repair_performed": false,
+      "program_characters": 594,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 1,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": null,
+      "following_model_input_tokens": 14420,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_02_FULL_CONTRACT_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_contract_keep",
+      "call_id": "call_004",
+      "span_id": "s24",
+      "api": "phone__get_current_date_and_time",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 1,
+      "requested_value_types": {
+        "str": 1
+      },
+      "allowed_parameter_count": 0,
+      "unknown_parameter_count": 1,
+      "empty_contract_extra_argument_candidate": true,
+      "contract_characters": 142,
+      "automatic_repair_performed": false,
+      "program_characters": 334,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_005",
+        "span_id": "s26",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 0,
+          "same_name_changed_values": 0,
+          "removed_parameter_count": 1,
+          "added_parameter_count": 0,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {
+            "str": 1
+          },
+          "added_value_types": {},
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 12635,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_02_SELECTED_NAMES_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "selected_names_keep",
+      "call_id": "call_003",
+      "span_id": "s22",
+      "api": "phone__get_current_date_and_time",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 1,
+      "requested_value_types": {
+        "str": 1
+      },
+      "allowed_parameter_count": 0,
+      "unknown_parameter_count": 1,
+      "empty_contract_extra_argument_candidate": true,
+      "contract_characters": 142,
+      "automatic_repair_performed": false,
+      "program_characters": 317,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_004",
+        "span_id": "s24",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 0,
+          "same_name_changed_values": 0,
+          "removed_parameter_count": 1,
+          "added_parameter_count": 0,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {
+            "str": 1
+          },
+          "added_value_types": {},
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 11272,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_02_SELECTED_CONTRACT_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "selected_contract_keep",
+      "call_id": "call_003",
+      "span_id": "s22",
+      "api": "phone__get_current_date_and_time",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 1,
+      "requested_value_types": {
+        "str": 1
+      },
+      "allowed_parameter_count": 0,
+      "unknown_parameter_count": 1,
+      "empty_contract_extra_argument_candidate": true,
+      "contract_characters": 142,
+      "automatic_repair_performed": false,
+      "program_characters": 317,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_004",
+        "span_id": "s24",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 0,
+          "same_name_changed_values": 0,
+          "removed_parameter_count": 1,
+          "added_parameter_count": 0,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {
+            "str": 1
+          },
+          "added_value_types": {},
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 11304,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_03_SELECTED_NAMES_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "selected_names_keep",
+      "call_id": "call_001",
+      "span_id": "s23",
+      "api": "venmo__create_transaction",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 5,
+      "requested_value_types": {
+        "str": 4,
+        "float": 1
+      },
+      "allowed_parameter_count": 6,
+      "unknown_parameter_count": 1,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": 808,
+      "automatic_repair_performed": false,
+      "program_characters": 597,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_002",
+        "span_id": "s25",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 3,
+          "same_name_changed_values": 1,
+          "removed_parameter_count": 1,
+          "added_parameter_count": 1,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {
+            "str": 1
+          },
+          "added_value_types": {
+            "bool": 1
+          },
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 15419,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    },
+    {
+      "run_id": "P47_03_SELECTED_CONTRACT_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "selected_contract_keep",
+      "call_id": "call_001",
+      "span_id": "s23",
+      "api": "venmo__create_transaction",
+      "rejection_kind": "unknown_parameter",
+      "api_request_sent": false,
+      "effects_unknown": false,
+      "contract_exposed_at_rejection": true,
+      "requested_parameter_count": 5,
+      "requested_value_types": {
+        "str": 4,
+        "float": 1
+      },
+      "allowed_parameter_count": 6,
+      "unknown_parameter_count": 1,
+      "empty_contract_extra_argument_candidate": false,
+      "contract_characters": 808,
+      "automatic_repair_performed": false,
+      "program_characters": 597,
+      "call_site_shape": {
+        "parsed": true,
+        "direct_call_api_sites": 1,
+        "dynamic_name_direct_call_sites": 0,
+        "literal_matching_sites": 1,
+        "matching_site_context_counts": {
+          "loop": 0,
+          "branch": 0,
+          "function": 0,
+          "exception": 0,
+          "context_manager": 0
+        },
+        "matching_argument_load_names": 1,
+        "runtime_resume_point_identified": false,
+        "alias_or_reflective_calls_resolved": false
+      },
+      "first_later_same_api_dispatch": {
+        "call_id": "call_002",
+        "span_id": "s25",
+        "same_program_call": false,
+        "argument_changes": {
+          "same_name_unchanged_values": 4,
+          "same_name_changed_values": 0,
+          "removed_parameter_count": 1,
+          "added_parameter_count": 1,
+          "removed_to_added_equal_type_edges": 0,
+          "removed_to_added_equal_value_edges": 0,
+          "removed_value_types": {
+            "str": 1
+          },
+          "added_value_types": {
+            "bool": 1
+          },
+          "semantic_equivalence_verified": false
+        }
+      },
+      "following_model_input_tokens": 15588,
+      "following_model_usage_status": "ok",
+      "following_cost_is_saved_or_avoidable": false
+    }
+  ],
+  "totals": {
+    "programs_checked": 65,
+    "internal_requests_checked": 335,
+    "rejected_requests": 10,
+    "contract_exposed": 6,
+    "empty_contract_extra_argument_candidates": 3,
+    "later_same_api_dispatches_found": 7,
+    "single_literal_call_site_rejections": 10
+  },
+  "wall_seconds": 0.1377287499999511,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "tokenizer_requests": 0,
+  "program_reexecutions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "automatic_repairs": 0,
+  "novel_method_established": false,
+  "quality_preservation_claim": false,
+  "measured_savings_claim": false,
+  "source_sha256": {
+    "plan": "bdf4849c42d938b9a9dee97d47c9538c6992a2557a74ef57ec55001a3ad593cf",
+    "comparison": "901ca94052d1c5d2c786d4326ff9e538b67b2b6e72d7b29eb258e4172fb2cb67",
+    "script": "d1a25626a808b3c59745815ef21cc8b3be481dcff4e66baa8b08795d721116e0",
+    "closed_batch_status": "b38859d2982a46871a8026e1a381c55c1db873b5a5a9c8700a08f5ba217c4471"
+  },
+  "limits": [
+    "All twelve planned P47 cells retained; this is posthoc development analysis.",
+    "Later argument changes are hindsight observations, not runtime repair knowledge.",
+    "Type/value correspondence does not certify semantic equivalence or final success.",
+    "Static call sites do not identify dynamic iterations, aliases, or safe continuation points.",
+    "Character counts and following model costs are not savings or avoidable-cost bounds."
+  ]
+}
