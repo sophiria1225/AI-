@@ -22,16 +22,18 @@ ARMS = ['none_keep', 'exact_keep', 'contract_keep']
 def evidence(root):
     paths = ['reports/P38_comparison.json', 'reports/P38_cache_replay.json',
              'reports/P38_runtime_costs.json', 'reports/P38_prefix_checks.json',
-             'reports/P33_comparison.json', 'reports/P37_field_contract.json']
+             'reports/P33_comparison.json', 'reports/P37_field_contract.json',
+             'reports/P38_miss_diagnostics.json']
     values = [read(root / p) for p in paths]
-    comparison, audit, costs, prefix, _, _ = values
+    comparison, audit, costs, prefix, _, _, misses = values
     if (not comparison['all_three_reviewed'] or not audit['all_three_attempted']
-            or not costs['all_three_profiled'] or not prefix['identical_initial_inputs']):
+            or not costs['all_three_profiled'] or not prefix['identical_initial_inputs']
+            or not misses['all_three_diagnosed']):
         raise ValueError('closed complete cohort and audits are required')
     for result in (comparison, audit, costs):
         if [r['run_id'] for r in result['rows']] != ['P38_04_' + a.upper() for a in ARMS]:
             raise ValueError('incomplete or reordered cohort')
-    for result in (audit, costs):
+    for result in (audit, costs, misses):
         for name, expected in result['source_sha256'].items():
             if sha(root / name) != expected: raise ValueError('changed evidence: ' + name)
     for r, c in zip(comparison['rows'], costs['rows']):
@@ -91,7 +93,7 @@ def charts(output, comparison):
 
 
 def build(root, output):
-    (comparison,audit,costs,prefix,p33,p37), hashes = evidence(root)
+    (comparison,audit,costs,prefix,p33,p37,misses), hashes = evidence(root)
     output.mkdir(parents=True,exist_ok=True); charts(output,comparison)
     slides=[]
     def add(title,body='',take='',notes='',refs=(),cover=False):
@@ -140,12 +142,21 @@ def build(root, output):
         '<div class="diagram"><img src="figures/p38_costs.svg" style="width:100%;height:260px" alt="全３条件の総トークンと実API呼出し"></div>'+table,
         notes='斜線の棒は既知使用量の下限。不明分をゼロとしない。低費用でも失敗なら効率的な完了とは扱わない。３方式の行動列は実行後に異なるため、差の全てをキャッシュに帰属させない。',
         refs=('reports/P38_comparison.json','reports/P38_runtime_costs.json'))
+    m=misses['rows'][2]
+    add('考察：再利用の対象と、次に必要な対象が違った',
+        '<div class="two"><div class="col"><h3>前半で保持していた値</h3>'+
+        f'<p class="n">{m["available_source_objects_at_boundary"]}対象</p><p class="body">曲一覧から取得済み。<br>後続の無効化は０回。</p></div>'+
+        '<div class="col"><h3>後続の項目読取</h3>'+
+        f'<p class="n">{m["explicit_projected_requests"]}要求</p><p class="body">全て、候補キャッシュでは未観測。<br>前半の12対象への要求は０。</p></div></div>'+
+        '<p class="body">この要求列では、無効化を緩めても不足している値は作れない。</p>',
+        notes='各要求の返却を見る前に照合した。記録列を変えない診断で、モデルの行動を変えた場合の反実仮想ではない。別の取得方法の不存在まで証明していない。P37の別軌跡での11件を今回の節約へ転記しない。',
+        refs=('reports/P38_miss_diagnostics.json','docs/P38_findings.md'))
     audit_table='<table class="compact"><thead><tr><th>方式</th><th>照合した通常応答</th><th>再利用値の実取得照合</th><th>最終DB</th></tr></thead><tbody>'
     for label,r in zip(NAMES,audit['rows']):
         audit_table+=f'<tr><td>{label}</td><td>{r["matched_sent"]}</td><td>{r["matched_cached"]}</td><td>{"一致" if r["db_files_match"] else "不一致／未確認"}</td></tr>'
     audit_table+='</tbody></table>'
     add('検証：再利用の正しさと、課題の正しさは別',
-        '<p class="lead">実験終了後に、別の隔離環境で同じ操作列を再生。<br>省いた読取も実際にAPIへ送り、返却値を照合した。</p>'+audit_table+
+        '<p class="lead">実験終了後に、別の隔離環境で同じ操作列を再生。<br>今回は再利用０件のため、通常応答の再現を確認した。</p>'+audit_table+
         f'<p class="body">監査用の追加API：{audit["verification_api_requests"]}回。追加AI・最終評価器：０回。<br>値が一致しても、仕事を最後まで達成できた証明にはならない。</p>',
         notes='モデルには監査結果を戻していない。後から最終成果物を選び直していない。固定された操作列の再現であり、別の課題や実サービスでの一般的な安全性は保証しない。',
         refs=('reports/P38_cache_replay.json','docs/P38_audit_plan.md'))

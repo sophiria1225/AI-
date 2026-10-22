@@ -1,0 +1,695 @@
+{
+  "phase": "P38_runtime_costs",
+  "rows": [
+    {
+      "run_id": "P38_04_NONE_KEEP",
+      "arm": "none_keep",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "totals": {
+        "calls": 4,
+        "known_usage_calls": 3,
+        "unknown_usage_calls": 1,
+        "input_tokens": 48906,
+        "output_tokens": 4870,
+        "cached_input_tokens": 30550,
+        "processed_input_tokens": 18356,
+        "timed_calls": 3,
+        "untimed_known_calls": 0,
+        "prompt_seconds": 163.266581,
+        "decode_seconds": 298.076947,
+        "call_wall_seconds": 479.44968295819126,
+        "known_call_wall_seconds": 461.4481882080436,
+        "unknown_call_wall_seconds": 18.001494750147685,
+        "known_total_tokens": 53776
+      },
+      "exposed_field_characters": {
+        "system": 19348,
+        "original_task": 27036,
+        "assistant_text": 0,
+        "function_arguments": 23904,
+        "tool_receipts": 156951,
+        "other_user_receipts": 0,
+        "other": 0
+      },
+      "nested_field_characters": {
+        "python_stdout": 132714,
+        "python_code": 21171
+      },
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "input_tokens": 13552,
+          "output_tokens": 483,
+          "cached_input_tokens": 979,
+          "processed_input_tokens": 12573,
+          "wall_seconds": 136.85677125002258,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 3411,
+            "tool_receipts": 30024,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 25794,
+            "python_code": 2996
+          },
+          "total_exposed_field_characters": 45031,
+          "source_sha256": {
+            "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+            "response.json": "986043b0658c545a7b4030d96205a7f9b24e9914173af4b488f127d2e2a54b89"
+          }
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "input_tokens": 16021,
+          "output_tokens": 1023,
+          "cached_input_tokens": 13551,
+          "processed_input_tokens": 2470,
+          "wall_seconds": 86.00710654095747,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 3870,
+            "tool_receipts": 36214,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 30671,
+            "python_code": 3412
+          },
+          "total_exposed_field_characters": 51680,
+          "source_sha256": {
+            "request.json": "21c47c25a53c5bbc42ab636f8d15ff19cb44ca97bb9012e51ae0eabb9a19d943",
+            "response.json": "b5576c1c037dabee0128a94d58ff1011ff8b3a6701d5050f611ec53e6ceeb1a2"
+          }
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "input_tokens": 19333,
+          "output_tokens": 3364,
+          "cached_input_tokens": 16020,
+          "processed_input_tokens": 3313,
+          "wall_seconds": 238.58431041706353,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 4450,
+            "tool_receipts": 45018,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 37879,
+            "python_code": 3948
+          },
+          "total_exposed_field_characters": 61064,
+          "source_sha256": {
+            "request.json": "911f57628e220ff531e0949366b991022ec0d3106097727f6f2d1b478c695acc",
+            "response.json": "afcae57733d00dbebbd1a54ced2a3a026e65db1c75d64586fd3ea5b0a7c7689b"
+          }
+        },
+        {
+          "call_id": "call_004",
+          "status": "error",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "processed_input_tokens": null,
+          "wall_seconds": 18.001494750147685,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 12173,
+            "tool_receipts": 45695,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 38370,
+            "python_code": 10815
+          },
+          "total_exposed_field_characters": 69464,
+          "source_sha256": {
+            "request.json": "6e0b68b4e9e56488ce8f72a06b32b806e5249efd08b0f07b01990db0109ad3b0",
+            "response.json": "c7398c180b795831ee3c5098a74cab34392b3d52e2eacc7d8291e7ca701b91ac"
+          }
+        }
+      ],
+      "read_account": {
+        "backend_requests": 12
+      },
+      "installation": {
+        "wall_seconds": 0.022988083073869348,
+        "model_calls": 0,
+        "api_requests": 0,
+        "program_index": 9
+      },
+      "first_call": {
+        "call_id": "call_001",
+        "status": "ok",
+        "input_tokens": 13552,
+        "output_tokens": 483,
+        "cached_input_tokens": 979,
+        "processed_input_tokens": 12573,
+        "wall_seconds": 136.85677125002258,
+        "exposed_field_characters": {
+          "system": 4837,
+          "original_task": 6759,
+          "assistant_text": 0,
+          "function_arguments": 3411,
+          "tool_receipts": 30024,
+          "other_user_receipts": 0,
+          "other": 0
+        },
+        "nested_field_characters": {
+          "python_stdout": 25794,
+          "python_code": 2996
+        },
+        "total_exposed_field_characters": 45031,
+        "source_sha256": {
+          "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "response.json": "986043b0658c545a7b4030d96205a7f9b24e9914173af4b488f127d2e2a54b89"
+        }
+      },
+      "source_sha256": {
+        "usage.json": "0e334d5db0237eb7e6cfb302b77d30b707486cec18964be8e36251db717dee41",
+        "summary.json": "165421ea9afc3150543c476966fc65baa159428d5ca2e401b2e52990ce40b1f9",
+        "events.json": "4fd4f8479c68951e666c02be54afd3ca540e91ffa6ec3a2306f8e3dea95fd9ec",
+        "spans.json": "afe013b8e81b27ddfb97ea12ca29113e13e6490ee7138ab59933432db526adf4"
+      }
+    },
+    {
+      "run_id": "P38_04_EXACT_KEEP",
+      "arm": "exact_keep",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "totals": {
+        "calls": 6,
+        "known_usage_calls": 6,
+        "unknown_usage_calls": 0,
+        "input_tokens": 106211,
+        "output_tokens": 4938,
+        "cached_input_tokens": 95884,
+        "processed_input_tokens": 10327,
+        "timed_calls": 6,
+        "untimed_known_calls": 0,
+        "prompt_seconds": 99.88856,
+        "decode_seconds": 301.87806500000005,
+        "call_wall_seconds": 401.9973406661302,
+        "known_call_wall_seconds": 401.9973406661302,
+        "unknown_call_wall_seconds": 0,
+        "known_total_tokens": 111149
+      },
+      "exposed_field_characters": {
+        "system": 29022,
+        "original_task": 40554,
+        "assistant_text": 0,
+        "function_arguments": 52298,
+        "tool_receipts": 217677,
+        "other_user_receipts": 0,
+        "other": 0
+      },
+      "nested_field_characters": {
+        "python_stdout": 177744,
+        "python_code": 46599
+      },
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "input_tokens": 13552,
+          "output_tokens": 1430,
+          "cached_input_tokens": 13551,
+          "processed_input_tokens": 1,
+          "wall_seconds": 86.63746091700159,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 3411,
+            "tool_receipts": 30024,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 25794,
+            "python_code": 2996
+          },
+          "total_exposed_field_characters": 45031,
+          "source_sha256": {
+            "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+            "response.json": "0151504eca33da5d79e7b22270ccd55171e11682504f6bb9af7abc3c51b289fc"
+          }
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "input_tokens": 15101,
+          "output_tokens": 181,
+          "cached_input_tokens": 13551,
+          "processed_input_tokens": 1550,
+          "wall_seconds": 24.994715915992856,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 6878,
+            "tool_receipts": 30559,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26145,
+            "python_code": 6105
+          },
+          "total_exposed_field_characters": 49033,
+          "source_sha256": {
+            "request.json": "7b4d9d3b138474c257ac6dad09c4f0db582c1f64c92ea4c48948bd66fa8a75f3",
+            "response.json": "c5a2f25ba48c4cc315081b4fd74be2dc468338af3d26714f585ab92bb16a8363"
+          }
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "input_tokens": 15454,
+          "output_tokens": 780,
+          "cached_input_tokens": 15100,
+          "processed_input_tokens": 354,
+          "wall_seconds": 51.28499208413996,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 7163,
+            "tool_receipts": 31240,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26519,
+            "python_code": 6354
+          },
+          "total_exposed_field_characters": 49999,
+          "source_sha256": {
+            "request.json": "1a2533effc16ab468ff369677088ed2cdccf4319ef0306c64a70dbe758bafd29",
+            "response.json": "8e8933e0e4de16604c998b90e3f63d0d9c1a895c0b12ae93d0b78c1991cfaed6"
+          }
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 16383,
+          "output_tokens": 442,
+          "cached_input_tokens": 15453,
+          "processed_input_tokens": 930,
+          "wall_seconds": 35.51765454094857,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 9040,
+            "tool_receipts": 31706,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26801,
+            "python_code": 8078
+          },
+          "total_exposed_field_characters": 52342,
+          "source_sha256": {
+            "request.json": "a739e9a71c87bcaad4966735d8b3cdcf5842da25b0f8f6be076b717e0deff743",
+            "response.json": "0a4b426b47731f6a4b222081e04678ff8461379681e1e0a35bb1c28c7fd21659"
+          }
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "input_tokens": 21848,
+          "output_tokens": 1975,
+          "cached_input_tokens": 16382,
+          "processed_input_tokens": 5466,
+          "wall_seconds": 174.91723237512633,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 9590,
+            "tool_receipts": 46954,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 36215,
+            "python_code": 8583
+          },
+          "total_exposed_field_characters": 68140,
+          "source_sha256": {
+            "request.json": "c0366f3af53295f6b2cfab3a72c8264caa3c7e7d5ad5df78369b11546218bf63",
+            "response.json": "013581cc96b1541940915063a8cdb403837f4fdfd072f7e0088bc03a1f7e2924"
+          }
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "input_tokens": 23873,
+          "output_tokens": 130,
+          "cached_input_tokens": 21847,
+          "processed_input_tokens": 2026,
+          "wall_seconds": 28.64528483292088,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 16216,
+            "tool_receipts": 47194,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 36270,
+            "python_code": 14483
+          },
+          "total_exposed_field_characters": 75006,
+          "source_sha256": {
+            "request.json": "597de5ca1a234f2c362c75a42d96f081873c5a5127ba3ca24a411753b09bfa1e",
+            "response.json": "12f1404d9a2d90867caab2dbfc8f21446a8b2e7d3559457a0933bff1317c9956"
+          }
+        }
+      ],
+      "read_account": {
+        "backend_requests": 61,
+        "projected_fetched": 60,
+        "rejected": 1
+      },
+      "installation": {
+        "wall_seconds": 0.01224679104052484,
+        "model_calls": 0,
+        "api_requests": 0,
+        "program_index": 9
+      },
+      "first_call": {
+        "call_id": "call_001",
+        "status": "ok",
+        "input_tokens": 13552,
+        "output_tokens": 1430,
+        "cached_input_tokens": 13551,
+        "processed_input_tokens": 1,
+        "wall_seconds": 86.63746091700159,
+        "exposed_field_characters": {
+          "system": 4837,
+          "original_task": 6759,
+          "assistant_text": 0,
+          "function_arguments": 3411,
+          "tool_receipts": 30024,
+          "other_user_receipts": 0,
+          "other": 0
+        },
+        "nested_field_characters": {
+          "python_stdout": 25794,
+          "python_code": 2996
+        },
+        "total_exposed_field_characters": 45031,
+        "source_sha256": {
+          "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "response.json": "0151504eca33da5d79e7b22270ccd55171e11682504f6bb9af7abc3c51b289fc"
+        }
+      },
+      "source_sha256": {
+        "usage.json": "cbf6667a95ff8324e539d206ac729b79ee6ad0ec9afebac8f3f8cf2cbc09d55a",
+        "summary.json": "01be6045a86db367397e25da5d49d2e2427526f711bb151cddf9cf8fc690ef41",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca"
+      }
+    },
+    {
+      "run_id": "P38_04_CONTRACT_KEEP",
+      "arm": "contract_keep",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "totals": {
+        "calls": 6,
+        "known_usage_calls": 6,
+        "unknown_usage_calls": 0,
+        "input_tokens": 106211,
+        "output_tokens": 4938,
+        "cached_input_tokens": 95884,
+        "processed_input_tokens": 10327,
+        "timed_calls": 6,
+        "untimed_known_calls": 0,
+        "prompt_seconds": 99.487545,
+        "decode_seconds": 301.349412,
+        "call_wall_seconds": 401.07213637349196,
+        "known_call_wall_seconds": 401.07213637349196,
+        "unknown_call_wall_seconds": 0,
+        "known_total_tokens": 111149
+      },
+      "exposed_field_characters": {
+        "system": 29022,
+        "original_task": 40554,
+        "assistant_text": 0,
+        "function_arguments": 52298,
+        "tool_receipts": 217677,
+        "other_user_receipts": 0,
+        "other": 0
+      },
+      "nested_field_characters": {
+        "python_stdout": 177744,
+        "python_code": 46599
+      },
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "input_tokens": 13552,
+          "output_tokens": 1430,
+          "cached_input_tokens": 13551,
+          "processed_input_tokens": 1,
+          "wall_seconds": 86.16542274993844,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 3411,
+            "tool_receipts": 30024,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 25794,
+            "python_code": 2996
+          },
+          "total_exposed_field_characters": 45031,
+          "source_sha256": {
+            "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+            "response.json": "2ee3bab680340ca2df8705c55082bc349ec74cbf102a321cf7bbe510fa53d40e"
+          }
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "input_tokens": 15101,
+          "output_tokens": 181,
+          "cached_input_tokens": 13551,
+          "processed_input_tokens": 1550,
+          "wall_seconds": 24.978757249889895,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 6878,
+            "tool_receipts": 30559,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26145,
+            "python_code": 6105
+          },
+          "total_exposed_field_characters": 49033,
+          "source_sha256": {
+            "request.json": "9203c90fbf061c6697385cd2cc4495d1ac3d813321f578ff968d3051dad70a98",
+            "response.json": "a822af34aa42ffd06a60f0f867ec61dc5a30df41989ad8fec711cb537955c9f2"
+          }
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "input_tokens": 15454,
+          "output_tokens": 780,
+          "cached_input_tokens": 15100,
+          "processed_input_tokens": 354,
+          "wall_seconds": 51.06775533291511,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 7163,
+            "tool_receipts": 31240,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26519,
+            "python_code": 6354
+          },
+          "total_exposed_field_characters": 49999,
+          "source_sha256": {
+            "request.json": "2cdcc020a80ce73909e0ef00ba6c11fe6e15f81e31b702673975f860601226d8",
+            "response.json": "0ad6acc5db9e3c44a94e8a881903c5e7a0f49319f1ca3cd03ee63905702cd95c"
+          }
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 16383,
+          "output_tokens": 442,
+          "cached_input_tokens": 15453,
+          "processed_input_tokens": 930,
+          "wall_seconds": 35.71340616582893,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 9040,
+            "tool_receipts": 31706,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 26801,
+            "python_code": 8078
+          },
+          "total_exposed_field_characters": 52342,
+          "source_sha256": {
+            "request.json": "d9a3d3d66ba4a66992cf4cc4372308832f449588a2c02c62ef409415c920b3aa",
+            "response.json": "6e98e7640701f82f20645014bfd449cc13f5d209a62a5f04f440bbfedea3c6b6"
+          }
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "input_tokens": 21848,
+          "output_tokens": 1975,
+          "cached_input_tokens": 16382,
+          "processed_input_tokens": 5466,
+          "wall_seconds": 174.90905699995346,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 9590,
+            "tool_receipts": 46954,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 36215,
+            "python_code": 8583
+          },
+          "total_exposed_field_characters": 68140,
+          "source_sha256": {
+            "request.json": "3ba888e2b06b6ffb1711a4cbaf37d6932cc0e27e95e655486f075344eabd7a5a",
+            "response.json": "38b48a6382205b780fe3a5a4aa46579da1bdda1526a38a4ca2d793fcf4f7632f"
+          }
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "input_tokens": 23873,
+          "output_tokens": 130,
+          "cached_input_tokens": 21847,
+          "processed_input_tokens": 2026,
+          "wall_seconds": 28.237737874966115,
+          "exposed_field_characters": {
+            "system": 4837,
+            "original_task": 6759,
+            "assistant_text": 0,
+            "function_arguments": 16216,
+            "tool_receipts": 47194,
+            "other_user_receipts": 0,
+            "other": 0
+          },
+          "nested_field_characters": {
+            "python_stdout": 36270,
+            "python_code": 14483
+          },
+          "total_exposed_field_characters": 75006,
+          "source_sha256": {
+            "request.json": "535827fd339c0d780324df3ce0527f0814f57450a4ebd7eb4b3819082dab80a8",
+            "response.json": "b3e5fdebefe06bf616ef5fa3178523f6f41796839ef886b1e168f5ce4803df45"
+          }
+        }
+      ],
+      "read_account": {
+        "backend_requests": 61,
+        "projected_fetched": 60,
+        "rejected": 1
+      },
+      "installation": {
+        "wall_seconds": 0.01329541695304215,
+        "model_calls": 0,
+        "api_requests": 0,
+        "program_index": 9
+      },
+      "first_call": {
+        "call_id": "call_001",
+        "status": "ok",
+        "input_tokens": 13552,
+        "output_tokens": 1430,
+        "cached_input_tokens": 13551,
+        "processed_input_tokens": 1,
+        "wall_seconds": 86.16542274993844,
+        "exposed_field_characters": {
+          "system": 4837,
+          "original_task": 6759,
+          "assistant_text": 0,
+          "function_arguments": 3411,
+          "tool_receipts": 30024,
+          "other_user_receipts": 0,
+          "other": 0
+        },
+        "nested_field_characters": {
+          "python_stdout": 25794,
+          "python_code": 2996
+        },
+        "total_exposed_field_characters": 45031,
+        "source_sha256": {
+          "request.json": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+          "response.json": "2ee3bab680340ca2df8705c55082bc349ec74cbf102a321cf7bbe510fa53d40e"
+        }
+      },
+      "source_sha256": {
+        "usage.json": "bd12d053a3f5f6a9bbcdc0c399337e5eb1f9b6b8b16834aee6e51ffc4fa6c6cf",
+        "summary.json": "072ad02a2149c6aca05816d6e9cff90f039cc2db4df3500470ea178661163735",
+        "events.json": "7c6e1d502866af2c7c797955072efe9b93a127f354896f3545a2d99d9e568c22",
+        "spans.json": "185b60a0fd70a320f1c320358278c0e8d5a781a744fe3bdfcb1023d5587189ca"
+      }
+    }
+  ],
+  "all_three_profiled": true,
+  "source_sha256": {
+    "reports/P38_comparison.json": "775eb8e96e37564aea7401479d0a3170f4d6687a24af7a1a29f6e9579e4673ba",
+    "scripts/profile_projected_reads.py": "0fe973146a347b3125711cafda3b057a0a81fab6e90187fe855bb5ba03c44ac1",
+    "scripts/profile_handoff_costs.py": "96514368fd1af37c3cc5af8ed3fa04260b8ff5a838e2a80c04c02b48492393e2"
+  },
+  "model_calls_added": 0,
+  "api_requests_added": 0,
+  "limits": [
+    "Unknown-usage calls are not zero; known totals are lower bounds.",
+    "API result caching and model KV-prefix caching are different mechanisms.",
+    "The fixed single-task order does not reset the server KV cache between modes.",
+    "This accounting is descriptive and does not identify a causal latency effect."
+  ]
+}
