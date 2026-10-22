@@ -54,6 +54,9 @@ Zhangら\cite{evidence}は科学計算について，値の生成，モデルへ
 操作先アプリの保存状態を変えない完了通知である．
 対象と介入は異なるが，段階を分けた診断や同一途中状態からの比較自体を独自方式とはしない．
 先行方式を同一条件で再実装した性能比較でもない．
+また，Matoi\cite{matoi}は操作，方針遵守，課題指標を分け，
+外部ベンチマークの指標が実行前から真となる例も報告する．
+従って，作用と成功指標を区別する一般的な観点そのものも新規性とはしない．
 
 \section{状態と費用の定義}
 継続点の状態を会話履歴$H$，Python名前空間$P$，操作先環境$E$，残予算$B$とする．
@@ -73,6 +76,11 @@ API，時間，実験用復元，評価，推論器のロード・常駐は別�
 
 \section{表示比較の方法}
 \input{papers/202610_letter/p55_methods_component.tex}
+
+本接続は，公開APIの説明を一度取得するまで，名前を知っていても呼出しを拒否する．
+これは本ハーネスが加えた制約であり，F/D/Bに共通である．
+説明の表示を省いた後も，取得済みの公開スキーマと呼出し権限は保持する．
+従って，この制約のない通常のコード実行エージェントへ結果を一般化しない．
 
 \subsection{対象と入力の照合}
 AppWorld\cite{appworld}の写真整理，電気代精算，返金，曲一覧の書出を用いる．
@@ -140,6 +148,9 @@ API回数の減少だけで不要取得の削減とは判断せず，完了し�
 この診断で，写真F/Dの成否差を写真整理そのものの改善と解釈する根拠はなくなる．
 一方，Bは通知だけでは成功せず，完了宣言を一律に足せばよいともいえない．
 自動で通知を送るには，要求した仕事が済んだと判断する別の公開条件が必要である．
+実際，写真のF/Dでは42件の移動と名前保持を公開返却から照合できた一方，
+分類に必要な現在年の成功した時計応答は得られていなかった．
+完了通知による公式成否の変化は，公開証拠だけで要求を全て検証できたことを意味しない．
 
 \section{解釈の限界}
 既知４課題，単一モデル，各条件１回の開発比較であり，
@@ -162,7 +173,7 @@ API説明の履歴省略を，全予定条件の仕事全体の費用と終了�
 必要情報と品質を守る制御を評価する際には，
 終了までの費用と，作業状態・終了手続きへの介入を対応させる必要がある．
 
-\begin{thebibliography}{9}\small
+\begin{thebibliography}{10}\small
 \bibitem{beyond} R. Satish et al., ``Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents,'' arXiv:2609.32961v1, 2026.
 \bibitem{interaction} S. Liu, ``What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics,'' arXiv:2608.16370v1, 2026.
 \bibitem{codeact} X. Wang et al., ``Executable Code Actions Elicit Better LLM Agents,'' ICML, PMLR 235, pp.50208--50232, 2024.
@@ -171,6 +182,7 @@ API説明の履歴省略を，全予定条件の仕事全体の費用と終了�
 \bibitem{toolsearch} Anthropic, ``Introducing advanced tool use on the Claude Developer Platform,'' Nov. 24, 2025.
 \bibitem{disclosure} Y. He, Y. Zhao, J. Wang, and H. Chen, ``Is Progressive Disclosure All You Need for Long-Context Agents?,'' arXiv:2607.17598v1, 2026.
 \bibitem{evidence} K. Zhang et al., ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
+\bibitem{matoi} Z. Wang, ``Matoi: Selective Revalidation of Consequence Evidence for Agent Authorization,'' arXiv:2610.21394v1, 2026.
 \bibitem{appworld} H. Trivedi et al., ``AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents,'' ACL, pp.16022--16076, 2024.
 \end{thebibliography}
 \end{document}

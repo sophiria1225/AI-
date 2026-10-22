@@ -1,0 +1,1442 @@
+{
+  "phase": "P64",
+  "source_report_sha256": "77fa4c607a70f1b7122b352b15a47b9ed190595dbef7e4a7a79434b796b27273",
+  "plan_sha256": "ed369a9feaebdc02ccb2d697f280d01d25f0a6df12f7d32942041fa85f228320",
+  "fixed_commit": "6c490545b7c6fec177560b8be18e94312025890b",
+  "checks": 2366,
+  "audit_errors": [],
+  "rows": [
+    {
+      "run_id": "P64_01_PHOTO_DOCUMENTED",
+      "task_id": "34d9492_1",
+      "arm": "documented",
+      "status": "evaluated",
+      "model_calls": 15,
+      "known_total_tokens": 130439,
+      "input_tokens": 124502,
+      "output_tokens": 5937,
+      "cached_input_tokens": 104383,
+      "unknown_usage_calls": 0,
+      "api_requests": 104,
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 2,
+        "phone__get_current_date_and_time": 1,
+        "api_docs__show_api_doc": 6,
+        "supervisor__show_account_passwords": 1,
+        "file_system__login": 1,
+        "file_system__show_directory": 5,
+        "file_system__show_file": 42,
+        "file_system__create_directory": 3,
+        "file_system__move_file": 42,
+        "supervisor__complete_task": 1
+      },
+      "clock_receipts_with_date_and_time": [
+        {
+          "call_id": "call_004",
+          "span_id": "s7"
+        }
+      ],
+      "undispatched_clock_requests": 1,
+      "python_programs": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_002",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "error_present": false
+        }
+      ],
+      "stop_reason": "agent_declared_complete",
+      "official_success": true,
+      "wall_seconds": 534.1887175000084,
+      "full_wall_seconds": 536.8925866669961,
+      "setup_wall_seconds": 1.7304061249960796,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 2900,
+          "output_tokens": 87,
+          "cached_input_tokens": 0,
+          "request_sha256": "80826ac7572d3e7817f8566b33fabb2eee497f812a75e762d9529618e5402437",
+          "response_sha256": "5b838faf86ad3d519322465cf02a016b1e1e08c97f6a3517e50dae56c4ce2463",
+          "wire_sha256": "359a23afa983b6d34e0d052f9c1f382c6e65b8baa9bb6c1e1882642e199957fd"
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 3591,
+          "output_tokens": 135,
+          "cached_input_tokens": 2899,
+          "request_sha256": "d372a82ac788909a123c09157c94504ff17487da315525d2de0f7c0c36eb848c",
+          "response_sha256": "4e62fa69b75fced3316a6351c4e2e6094acd4929c7cca32b6b9923f39f077514",
+          "wire_sha256": "3a9bf0b8fbd680bd0ed96d30410cb72120d1996a5ad9e5710f4de7983852a12f"
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 3749,
+          "output_tokens": 64,
+          "cached_input_tokens": 3590,
+          "request_sha256": "961d20f6d7143aa05a98c2f88fd81077b4c00b203e9c3933e8564745db607940",
+          "response_sha256": "f7516d962d02b28890271f3baaae61997c2460daf3e99b83b364e994137b8e42",
+          "wire_sha256": "d379071f5d87e777db1ee341b769cd72c691e24ce4496ff89474a33a076dacac"
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 4502,
+          "output_tokens": 77,
+          "cached_input_tokens": 3748,
+          "request_sha256": "5bf8bc5fc684644800b628ce2e8f46b738ecdaeea0e77f6e8212bce843c97b8e",
+          "response_sha256": "357cfb4a5f2057262cb7916dc85d8e2687c10a6315c64478610de0ec74371fa2",
+          "wire_sha256": "bd3a70cc409c0faf8f167f875d25104c1d138b141951a04334fc24bc508b0b02"
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 4657,
+          "output_tokens": 99,
+          "cached_input_tokens": 4501,
+          "request_sha256": "37c4004a696cfb9290c62b31cc6c70914004124d9e1ea58731e8fd0ed81c655d",
+          "response_sha256": "c8d00eeb01678f5e628a54b3b14cc08ea18fbb6bb27e71576ad650b1fa120049",
+          "wire_sha256": "218096cafaddc64a82467b9238915f701bf988b95c329a7c2b5a5a47b069a120"
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5137,
+          "output_tokens": 174,
+          "cached_input_tokens": 4656,
+          "request_sha256": "837db649b8a9a82ef5fb1d23f84879b584cf733750c3d9292ab8f903fab13896",
+          "response_sha256": "cd8794c83eaac6917828380cbeff2475756d182daedfb0007d4a8bb1ff776438",
+          "wire_sha256": "e5594a605aacdddfb7834093c40c598b01bc27b126e608c79895ea896b3d1177"
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6313,
+          "output_tokens": 128,
+          "cached_input_tokens": 5136,
+          "request_sha256": "d00106d3c597c33c1a83290572af5132d30d42e644f93703fb7f1bf693662461",
+          "response_sha256": "bf76be5362f16aa4fc13f2612ca354bc171a0d0d8d9022456ba2136bfab3977d",
+          "wire_sha256": "bf58962c67a097a7acf075c270c499f09d40e859fd7a35dce371575eb31cd6b8"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6605,
+          "output_tokens": 83,
+          "cached_input_tokens": 6312,
+          "request_sha256": "6767c41bdbd99a66534527a07c6ea73ace242a989579f3ea8b42692ff1bdad74",
+          "response_sha256": "1bf1bb78b0ba8ff274a59f36f4262c072745ea1b08206d1276a1c885f9800a82",
+          "wire_sha256": "bf61aad6010108b419ad3b3d5ccbe34eeb982bc6d0566a8fc5042c561e18ce2b"
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6876,
+          "output_tokens": 193,
+          "cached_input_tokens": 6604,
+          "request_sha256": "d4c050d6d501e11884498dd2638f27ca0a377f7904369c968139a0d562920817",
+          "response_sha256": "3e7401ec569faddb192738592bbc8e19715ebc51d6ac87eecc5916ea76f6c8e3",
+          "wire_sha256": "8d00b74e406a0e3017d87a18ce979db15b6acb7926c53847c31e54e7fab3347f"
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 7916,
+          "output_tokens": 117,
+          "cached_input_tokens": 6875,
+          "request_sha256": "8543e44104822176bd5fd2b477c13e5207d554f2b27dd5845fb75082cdf4278e",
+          "response_sha256": "2005130b4dde4852597ca61c0340edcbf598c570244a6e02358f1627e2ec673d",
+          "wire_sha256": "88ab87e09e7436418ed4b31a3a4e6e3d2cd5506293f8e55096670ff5848b7f30"
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 8283,
+          "output_tokens": 1071,
+          "cached_input_tokens": 7915,
+          "request_sha256": "beeed755c5a78b7ee96d39d2b7ae623f4816549cfaa2fcba62ee49dff848fd32",
+          "response_sha256": "3e340d8c528621905ac5698f353ab9e24907d815a349565910109cc51d5384c4",
+          "wire_sha256": "f42928a26e054944757146a9be60b6eb016100f68daf9cd1d2a31a9b18bca09c"
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 11553,
+          "output_tokens": 1938,
+          "cached_input_tokens": 8282,
+          "request_sha256": "8bfacc95e0516ec4c769f3697ba872d1ea891e6c4579c5c87b3477dd8ca963ce",
+          "response_sha256": "b0c4a35a1bab7f4d5726f1c2683c131542e357a3e2afd6eabf44eac0c483efbb",
+          "wire_sha256": "304541c12c0a83641cda88886c77763deabaa90398636dda8d1cab459f534927"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13546,
+          "output_tokens": 1322,
+          "cached_input_tokens": 11552,
+          "request_sha256": "c63619353b82c9aa1c9055c1fb030e559b6d91618c79268e3187ea0b5a124c2a",
+          "response_sha256": "89ab272c911b9d964fed24eaa53fdbd7c2af4cb3de3b62f2f4ff9f92754eb9bc",
+          "wire_sha256": "b8fe0c88cd3f29256b2cd2656cba0dad2a3262bce2fe1664d069fd28c9e93e8f"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 18769,
+          "output_tokens": 273,
+          "cached_input_tokens": 13545,
+          "request_sha256": "cc574e8078459d9d237ef2518358a3014642b9b417783baa172a92728129b560",
+          "response_sha256": "a51b78fdb180f88d16c3096d512a05ea16c374f9795fe0909d7aaac60702ceca",
+          "wire_sha256": "318f0a5b267b14ac66b389eee154ad473901e90d68085b48dc5b4ffd4feba021"
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 20105,
+          "output_tokens": 176,
+          "cached_input_tokens": 18768,
+          "request_sha256": "963b2fa4f376f640e0deb8c8d7526766287fd561cc421050016c7f880c605239",
+          "response_sha256": "775aac8e9e7d31134e014a4f888d381b6e317946a1731c9d6c862ec4effd2ecd",
+          "wire_sha256": "c9303e515faf8c3aba85ec2725fe6a84b3476e7a16629f3519b1267a11a1f1f8"
+        }
+      ],
+      "source_sha256": {
+        "summary": "15b86f4d9334fa77e43c7084708df69d91d1b454a3b8905f8707295ef4eb6d34",
+        "events": "4c51a38f6852c16fbccffa1d1e6d98717bd89b2482bc3a86d5d57c7512029156",
+        "spans": "445fcb9119835886d43769e53bad737c84c568bee28c94fe6986e85969dbc331",
+        "usage": "bee4e0e520e7a245648abf39126a3568af174f92c5ffbe7d592c1b6e71c8efc0"
+      }
+    },
+    {
+      "run_id": "P64_02_PHOTO_NAMED",
+      "task_id": "34d9492_1",
+      "arm": "named",
+      "status": "evaluated",
+      "model_calls": 14,
+      "known_total_tokens": 151664,
+      "input_tokens": 143592,
+      "output_tokens": 8072,
+      "cached_input_tokens": 122973,
+      "unknown_usage_calls": 0,
+      "api_requests": 103,
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 1,
+        "api_docs__show_api_doc": 5,
+        "supervisor__show_account_passwords": 1,
+        "file_system__login": 1,
+        "file_system__show_directory": 5,
+        "phone__get_current_date_and_time": 1,
+        "file_system__show_file": 43,
+        "file_system__create_directory": 3,
+        "file_system__move_file": 42,
+        "supervisor__complete_task": 1
+      },
+      "clock_receipts_with_date_and_time": [
+        {
+          "call_id": "call_007",
+          "span_id": "s16"
+        }
+      ],
+      "undispatched_clock_requests": 0,
+      "python_programs": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "error_present": false
+        }
+      ],
+      "stop_reason": "agent_declared_complete",
+      "official_success": true,
+      "wall_seconds": 667.4526527499984,
+      "full_wall_seconds": 670.1894484579971,
+      "setup_wall_seconds": 1.7798652080018655,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 2940,
+          "output_tokens": 107,
+          "cached_input_tokens": 0,
+          "request_sha256": "0f5179a6a257596d4ec7c66e9ba2c4ce40e6454ba6c8188af293b04d8433811c",
+          "response_sha256": "07003cc1e81a3a8dc2d641094f89a732eae6d7c0d16cc7b313f1e2695479023d",
+          "wire_sha256": "a926c68d8e3da669c9fce1a85a21577b0de911be75652b88b63737998aa6f1bc"
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 3958,
+          "output_tokens": 198,
+          "cached_input_tokens": 2939,
+          "request_sha256": "ddbd34c9dc3aecdf77fbd5f9fb4c624d32e44f69b060d53d1919bdca45187038",
+          "response_sha256": "71a354801ee5552fc70370a03d5309192b5809d450f5f80922f7dee53eb84f97",
+          "wire_sha256": "9429fbc0b97d0c6ea036165a1d691a3e891cb340ac659e880650b05218d4d855"
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5630,
+          "output_tokens": 230,
+          "cached_input_tokens": 3957,
+          "request_sha256": "c2340749055b30b3215fb8d0ed20459b3bb0f3524e9abfd7bdadee726562b1f0",
+          "response_sha256": "f928157f14fd4778b141c7e685c432889b77cf19f57146722dd25915d6e442a0",
+          "wire_sha256": "6f07b908cea11a967382e0142f177b3e8fa6bda28f3a21aaca6748b9180d53d9"
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6454,
+          "output_tokens": 98,
+          "cached_input_tokens": 5629,
+          "request_sha256": "9171140421056f6b0aa6404e27f11666815a98a495cdcf75a9823ce1f7b1c7ce",
+          "response_sha256": "4a338ddda1cb84231959dc0ecb738c4ad104bd8f6f2c7d7fb8536d836f6f161e",
+          "wire_sha256": "20e8320159a58d08b34c42477aaa1445d18f78b64ab709a2886d39638a15b124"
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6880,
+          "output_tokens": 101,
+          "cached_input_tokens": 6453,
+          "request_sha256": "4383d8246331ccd8f31155bab565585dc56fb817aa2368412854b91384aa3783",
+          "response_sha256": "649c70716d6ad19cfb33ace3c7d13d7d7470f2d0f20249e07ef1f298e662014e",
+          "wire_sha256": "474d4dae1183c8c87ece80d6fea8b2f024665ee3dabee918aa95e47b6256d09e"
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 7172,
+          "output_tokens": 225,
+          "cached_input_tokens": 6879,
+          "request_sha256": "51bae73436ab44ae66294e78af5be0d65a86d0318a7e478481cde9e7dd05caae",
+          "response_sha256": "54290883346b9239def5c26b6d5021467fc72629bfe68c75e5674a38dcc11552",
+          "wire_sha256": "06d0412171f021a5ac50424d4c67067baba062a8dc5f7ce7393449877d77650b"
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 8396,
+          "output_tokens": 97,
+          "cached_input_tokens": 7171,
+          "request_sha256": "64f8e45a40602bc02a0627da66e7cd051cc5d19b1406d91eab80dd99238c4097",
+          "response_sha256": "36635aa18866a08dc5cc0d4ccaa203eb8c3cc6924a87e05829a68d4c359d5af9",
+          "wire_sha256": "83faa99f3390a0d302e9de43a2a8370e12c8e790672998ce3be3325b16cac436"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 8579,
+          "output_tokens": 1077,
+          "cached_input_tokens": 8395,
+          "request_sha256": "10c531d4ae065b31cab2ea7a939c2c4f4f7922260621ab9bb66213180acd2a19",
+          "response_sha256": "46cb7d9d91026b5892d6fa94916cbfbf55dd5e360039146376d6898459c2b789",
+          "wire_sha256": "475422d600a6e0a119b1dcc8bbcd3bfca866d67fbe0e74ac1022f9143e77911a"
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 9768,
+          "output_tokens": 1140,
+          "cached_input_tokens": 8578,
+          "request_sha256": "3c788dee54beaccdd207bdb15c431092761c3cf83e3ac6d4a9efa59ce131be39",
+          "response_sha256": "588c25273c356fb7f9790b1adec49075083cef845e370a8ed6f59d9659739498",
+          "wire_sha256": "3eec22dc31581fb0bc91b34cdfee543eb6f52df8eb32c4b3700b84a1d3487db5"
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13072,
+          "output_tokens": 2724,
+          "cached_input_tokens": 9767,
+          "request_sha256": "387bd804550d084c218e1b783de79b029e91a0e5f369a4753c3f775120fdf2ca",
+          "response_sha256": "0db7f4c69f0b76ba8579ca347767752703c3f467263250f7ae35a55caa335a4d",
+          "wire_sha256": "a6ae763b45f9a48a79f76d3af9e5d70ec3b5cfdc065fbae95ec08b76947173a1"
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 15728,
+          "output_tokens": 283,
+          "cached_input_tokens": 13071,
+          "request_sha256": "721dbc8842158ce35a1c25d7d52b8999aac4f2c723e202abbaa9b3347d84b154",
+          "response_sha256": "4cc803df2c8e318925d2202533cacf78c2907dc98b3380d39a625c115d7d7918",
+          "wire_sha256": "4d294bd29b7e73f2042d942abc7735ea76c9671ba93c65ce3fcbfbd231852acc"
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 16127,
+          "output_tokens": 1249,
+          "cached_input_tokens": 15727,
+          "request_sha256": "483304a0fac0a53c3f4f591e683a0eb0703fe909cccd5f24736e33952cf9cb1c",
+          "response_sha256": "ab7d224d5d795a40a9fae3ad4b3fb6648c6427c8f59caccce07174d6800937be",
+          "wire_sha256": "24e91e7f1e471309ebe4b8ba6f4899e2b33607dc1b1aa25d1a22a85d8f602923"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 18282,
+          "output_tokens": 334,
+          "cached_input_tokens": 16126,
+          "request_sha256": "18ee26d5c714949dbc3fd50ef9b10795802c53bfa034cea9fc124fd077958ea7",
+          "response_sha256": "45498e03efff4930d84446b33c0a4b907d294e94d562c37286baf538c5869761",
+          "wire_sha256": "e0d17af4b2cf11515bb9a9e5ac351037b22064e7df2c24a5b1ded5c3f1cf6134"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 20606,
+          "output_tokens": 209,
+          "cached_input_tokens": 18281,
+          "request_sha256": "cb4954349cdb87f48e5217b607e830695ad7502becd153f38e4748d668d3da25",
+          "response_sha256": "71f4c00f5fb960decd81ac3d704c2c4a96860c8cf0874e1035fa392f6458b5ec",
+          "wire_sha256": "949c56dc47dd1dc0907668b7bcbedbf34f3c7d4e46e0c0d41b97be426010a733"
+        }
+      ],
+      "source_sha256": {
+        "summary": "d0e14902dbf3fc62ecb97b8cdbb51fed0c13c32e22e87bf697041bdab83df07a",
+        "events": "d0aa53a81b2aad11c3868becabf44d054595eb9a0d4610d26315bd7c1c760cd2",
+        "spans": "d1b037e05a5ba30220bfe19ea1f72aeb1a8b20e688cb8e4e62cb2622be8073d8",
+        "usage": "e45f0ae6ab0e41e56125d24855a21f0ab8d62d04135abb81bcd81615bf60e278"
+      }
+    },
+    {
+      "run_id": "P64_03_BILL_NAMED",
+      "task_id": "3c13f5a_1",
+      "arm": "named",
+      "status": "evaluated",
+      "model_calls": 24,
+      "known_total_tokens": 256382,
+      "input_tokens": 253128,
+      "output_tokens": 3254,
+      "cached_input_tokens": 234961,
+      "unknown_usage_calls": 0,
+      "api_requests": 23,
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 3,
+        "api_docs__show_api_doc": 5,
+        "supervisor__show_account_passwords": 1,
+        "file_system__login": 1,
+        "file_system__show_directory": 1,
+        "phone__get_current_date_and_time": 1,
+        "file_system__show_file": 1,
+        "supervisor__show_profile": 1,
+        "phone__login": 2,
+        "phone__show_contact_relationships": 1,
+        "phone__search_contacts": 1,
+        "venmo__login": 1,
+        "venmo__create_payment_request": 3,
+        "supervisor__complete_task": 1
+      },
+      "clock_receipts_with_date_and_time": [
+        {
+          "call_id": "call_009",
+          "span_id": "s17"
+        }
+      ],
+      "undispatched_clock_requests": 0,
+      "python_programs": [
+        {
+          "call_id": "call_001",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_003",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_022",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_023",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_024",
+          "status": "ok",
+          "error_present": false
+        }
+      ],
+      "stop_reason": "agent_declared_complete",
+      "official_success": true,
+      "wall_seconds": 356.3073179570056,
+      "full_wall_seconds": 359.26419737499964,
+      "setup_wall_seconds": 1.7666386249984498,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 2929,
+          "output_tokens": 134,
+          "cached_input_tokens": 0,
+          "request_sha256": "48df076ba2c6daa7ea303e9e4e0a965335dd06a5690bdd7fdd343d90b854a665",
+          "response_sha256": "54a4882584327fcbcb6e48d28b0ae9668877ad1ac921efe662954dc676ca9038",
+          "wire_sha256": "e83d4965059ee4f2a07b820fc0cb15cff3320bb4a9d1a597770dd312e6a05c97"
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 3092,
+          "output_tokens": 80,
+          "cached_input_tokens": 2928,
+          "request_sha256": "45df7b7c53c4f2c4b91a733a63199baa76d3dbb5a2146d0f72a986c70dab2173",
+          "response_sha256": "b5b91dcfa7ab2d6491de3885f57821bc54926f18ac19285b45e24fcf3b21c947",
+          "wire_sha256": "96dac93f9a160ecf27438849a2cfc69d02ddcd59d72e6f83f38a1e48fce582a2"
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 4096,
+          "output_tokens": 74,
+          "cached_input_tokens": 3091,
+          "request_sha256": "a0c496fa11aea2fbf5486517d96b51c81f93531eecded5c6a884aaeb24df20af",
+          "response_sha256": "1932276638f0207427b63addd5a0d3af2767abf36f64d49b094747397dec4fa8",
+          "wire_sha256": "3278b87fedf4283f59737b0595aadfa9b12accc748f01f2c5a40c438cbceb933"
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 4246,
+          "output_tokens": 76,
+          "cached_input_tokens": 4095,
+          "request_sha256": "f9ac5b827ad2f2c57bee2098116a6051510c89cdc6d7a6ee133095171291255d",
+          "response_sha256": "72fb07aa68131079608ed2bf6621b971de76800d97507250253b8bb380db30e9",
+          "wire_sha256": "cb7ee3bd9e7b03480f91e99dc9e03ca9fce462ea380d37e7b9a93de9115e4c2f"
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 4907,
+          "output_tokens": 78,
+          "cached_input_tokens": 4245,
+          "request_sha256": "5d6696fd837e6496fe71cf5ed69817b143ed5843d967a8093f8675a54948fe7b",
+          "response_sha256": "961edebce4509fee46ca4ed23f1608367218979c36142ed33deba18fe3111f35",
+          "wire_sha256": "635ff57b8173f07b74c730805c6825ff630e7d93983426f1ac25b9d0dd45518f"
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5314,
+          "output_tokens": 77,
+          "cached_input_tokens": 4906,
+          "request_sha256": "b20c83613cf91f7928a899174c96d730e8965aa29f829ac52b5524d03d84d0b5",
+          "response_sha256": "e4bdaeff17e8e591e031f0ee9352046d5ad6e9e00ec15fffaee4a96537358bf1",
+          "wire_sha256": "195396633058b3facb14a147fb40d5977cda65934481307ec5b12342e10c202a"
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5701,
+          "output_tokens": 96,
+          "cached_input_tokens": 5313,
+          "request_sha256": "bd3f6d13d35cecef9cda6711a1f32905c07797b75a79d56ecc03e411293cb648",
+          "response_sha256": "143b7342a9a7427986ea9a566f3ee2c4d12451a852ca3c0f989dd933ab7df38f",
+          "wire_sha256": "c863f658001af10096be8c4f2d3bc74f81d6dbeba1c01271970d5eebf26e08b2"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5984,
+          "output_tokens": 196,
+          "cached_input_tokens": 5700,
+          "request_sha256": "da39e514c0b07d228a81c443cf43036cbfd2aaea503d0bc2553361ca17541c52",
+          "response_sha256": "b71553ed5d009098be36e6fceb1cfed5af896682bbbf0d11900a26e401837c48",
+          "wire_sha256": "4c3417b73b91c7972efb285236c9075b4644009a796ce0c0c9c9be6fb4c82ba8"
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 10043,
+          "output_tokens": 103,
+          "cached_input_tokens": 5983,
+          "request_sha256": "97f80a32f1d0e6adcb24a1b5477f1d99541c1cb197bb91ac0c62bc9e2172cb1f",
+          "response_sha256": "eeb7cadbfda295d2a8ce0b80e600dfa1092c8dfa997e08e8b49d74f8c9df3507",
+          "wire_sha256": "633b9df7978e9801310408910325695ee467a990a60923a03b1733099b10292f"
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 10226,
+          "output_tokens": 259,
+          "cached_input_tokens": 10042,
+          "request_sha256": "7f180a1798571c8ddbd67e01870df9dcaf5b3d6731bf60d99754611e680f2760",
+          "response_sha256": "a81d9ae1c0e4a637bef0ed1a6093d538dded3e898230dd1977db03f5fc3549cf",
+          "wire_sha256": "c407392fd9706568d62ba347859ff2a1fd620fd7989dca8d501c3fd7f448174a"
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 10715,
+          "output_tokens": 124,
+          "cached_input_tokens": 10225,
+          "request_sha256": "dfded87feb73ba580ad2c1a46c9207116b0dedd0538fff7b3910596d907be733",
+          "response_sha256": "53c575ec617c6716b9751a9c7646f4cc440efe7aff2fdcd859a21099acc31a69",
+          "wire_sha256": "97254c722997535286963885a75a127bc696539484bed50196987e0c641df4a0"
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 10939,
+          "output_tokens": 70,
+          "cached_input_tokens": 10714,
+          "request_sha256": "37d7d3b6489bb199d7d60151a873cf9d602547a3b1406f3305541edd8b6f026a",
+          "response_sha256": "deda90fcb151011198365a78291d9159845aa749f87bea4fcae9e848a5cd3ab3",
+          "wire_sha256": "486cc3807507c11abc9b23b058956fa6de7b6ac1cd531cfd0905bd65bdf7c92e"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 12060,
+          "output_tokens": 76,
+          "cached_input_tokens": 10938,
+          "request_sha256": "2867a5e040188317a2b7a895836630445d1bc492e7b4403a8fd97b711e184788",
+          "response_sha256": "c92d9635c89d1e91fc3fab2f95b5ac1cb5293fac37520cc8ecefc15350e21fd8",
+          "wire_sha256": "1c436dd1e454f9e2dff7ed1504303b0ae8f0a8c58f0e288afcec1bf131ffb915"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 12392,
+          "output_tokens": 85,
+          "cached_input_tokens": 12059,
+          "request_sha256": "a618604c80d512ae70bb143210072794785cecb438551140a54cb3be82be1ed1",
+          "response_sha256": "0689402a983f3936a3267b8e6877fb9ec6cb4d64035527fa5c07b543c8ddc4f5",
+          "wire_sha256": "519edaa2d15c94c84026a612617cbcc85d8344bc2606635551ddaf081b185ccd"
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 12639,
+          "output_tokens": 89,
+          "cached_input_tokens": 12391,
+          "request_sha256": "ccd4d940f14a7ac70e317bc7e81e4cfa6a23de693679b6620f1c176530fc0220",
+          "response_sha256": "95fd6d1bafddaf8ce1428d5d071f9f8748a8a3ca0999236e6a1569a3946f988b",
+          "wire_sha256": "716ac0b162b02fc3547dee22c5a0b87d34f5242244079db0d45bb8dd88a47564"
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 12912,
+          "output_tokens": 173,
+          "cached_input_tokens": 12638,
+          "request_sha256": "568ad3c90af2a7876b27ce596c6ecb867a2163cace8d97ceb36b4c81d76c5efb",
+          "response_sha256": "f464050aa20a2329683baeed9599158267181b892bd9cccdf0b352560f2411ac",
+          "wire_sha256": "e697669a05a7df8f17e100654b6c1644b00ce0e1dea957e39e14d7b17c268ee7"
+        },
+        {
+          "call_id": "call_017",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13222,
+          "output_tokens": 71,
+          "cached_input_tokens": 12911,
+          "request_sha256": "8f5ec59f5226ceb8b41072573f7482dd385633ce58b7dfadbe78d87b396ab2b0",
+          "response_sha256": "3b8906d5cfdef32f7820fe8b970adc7a4c92c51e97e72e1639989e1b115a854b",
+          "wire_sha256": "053bf8e7cdec25b9e71b86381271756da1c68bfdf297e47c0e1fff62c47ca221"
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13249,
+          "output_tokens": 85,
+          "cached_input_tokens": 13221,
+          "request_sha256": "ffa1815d3c711b0f379546bb795408cccf81e4ae3eecae2685dbb16d7294574e",
+          "response_sha256": "b52200bda39a321991615c569406cd93a2594a02e08f86066c862b25e62406bc",
+          "wire_sha256": "8e0faf7014c0b8d2f32df1eff2de33d459bc2621f587e18263bea25c7a6c669a"
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13980,
+          "output_tokens": 178,
+          "cached_input_tokens": 13248,
+          "request_sha256": "4536e1dd2d625244792aca20f09db787c009cd283295cb931af98af7d7a70c86",
+          "response_sha256": "56f86bd0b6ed7e4e6851b2b0847a22c7faf03026fb2eec8e28cb358dd355d747",
+          "wire_sha256": "04a1172716f80191d77ca294d04f0095321ed7aa75953c810c21c86678c682da"
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 14761,
+          "output_tokens": 113,
+          "cached_input_tokens": 13979,
+          "request_sha256": "96d4d04b0cc91d0dbba3691dc90d63b9087c3b264d0bc546804ec6b9baaa33ce",
+          "response_sha256": "417658ca57fac4ac2e27ef8003edea5e198bc9e1d7971d4e04023d04a9a22e90",
+          "wire_sha256": "6dc8ddb631ef412104d37fc75161fcab263b015c701ed342a614650b45e48731"
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 16690,
+          "output_tokens": 154,
+          "cached_input_tokens": 14760,
+          "request_sha256": "16bfd0275c92046f7f441fc3fcdebadf96ca4d7f16a26f5c4cda6ab595ce5c6d",
+          "response_sha256": "8001af99689f1745ba57d159129924f82fa14cde62d6bd00b23a1bebeeea45a2",
+          "wire_sha256": "71ec679b3ede16196c5fc87bc99dde17154c8c07929cbcc584e347baddaf4a88"
+        },
+        {
+          "call_id": "call_022",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 17304,
+          "output_tokens": 161,
+          "cached_input_tokens": 16689,
+          "request_sha256": "f6398c3119fb49ad592956284cdb13ef911f5b75c57b3b823344d30f6a3df58e",
+          "response_sha256": "8111a0e4ad4f1915cdbdfd95e8206d877882f3f76659a67eb5485cdafd0986c6",
+          "wire_sha256": "a5bdef16d29d1015f73122b27e2aa35d4e33bdbf9b1bf2d7bf2707eecf9dd896"
+        },
+        {
+          "call_id": "call_023",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 17583,
+          "output_tokens": 532,
+          "cached_input_tokens": 17303,
+          "request_sha256": "20c4974514de01c5ff5a6c561eb74569c6988d087090dfaf6b0f925fa1d36574",
+          "response_sha256": "0a050b0295c5c430479fd2393ef6de440e2160bfd5cdd6062853ce644fef05c0",
+          "wire_sha256": "9cc7bf62e3069075763ddf4051ee0ea3e4dacd18aeb78725efb1419383fbd663"
+        },
+        {
+          "call_id": "call_024",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 18144,
+          "output_tokens": 170,
+          "cached_input_tokens": 17582,
+          "request_sha256": "eafad907a4fa8decc4d212f75dbf519ab8cffc913daae5d9cabf6d34ef506067",
+          "response_sha256": "d22b503d7c96ad0ae7d283e711318dac3bbfec4e2e14a0d23e0a278740d1cc86",
+          "wire_sha256": "fca242a0b23624f978399246abc071ece8615eae9810e7b0a51aec2b7c0d6877"
+        }
+      ],
+      "source_sha256": {
+        "summary": "2090d7ade06ab54782e240ebc2b082018eae487a8f5d667b351e14485ddad0c2",
+        "events": "2af549ae45d3ffc75cb94749af147a815b3baee3509e4398bfc46950610798cc",
+        "spans": "19ee07d1e7674f0f18f20a087db96da91173415b4ca487d068e07ab113b89771",
+        "usage": "e4e18b1af5987861c8ca7e7cc478165f66968291503be1c587a77dc0294d9979"
+      }
+    },
+    {
+      "run_id": "P64_04_BILL_DOCUMENTED",
+      "task_id": "3c13f5a_1",
+      "arm": "documented",
+      "status": "evaluated",
+      "model_calls": 23,
+      "known_total_tokens": 277239,
+      "input_tokens": 273497,
+      "output_tokens": 3742,
+      "cached_input_tokens": 254750,
+      "unknown_usage_calls": 0,
+      "api_requests": 23,
+      "sent_api_counts": {
+        "api_docs__show_api_descriptions": 3,
+        "api_docs__show_api_doc": 6,
+        "supervisor__show_account_passwords": 1,
+        "file_system__login": 1,
+        "file_system__show_directory": 1,
+        "phone__login": 2,
+        "phone__get_current_date_and_time": 1,
+        "file_system__show_file": 1,
+        "phone__show_contact_relationships": 1,
+        "phone__search_contacts": 1,
+        "venmo__login": 1,
+        "venmo__create_payment_request": 3,
+        "supervisor__complete_task": 1
+      },
+      "clock_receipts_with_date_and_time": [
+        {
+          "call_id": "call_016",
+          "span_id": "s32"
+        }
+      ],
+      "undispatched_clock_requests": 2,
+      "python_programs": [
+        {
+          "call_id": "call_001",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_003",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_009",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_014",
+          "status": "execution_error",
+          "error_present": true
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_017",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_022",
+          "status": "ok",
+          "error_present": false
+        },
+        {
+          "call_id": "call_023",
+          "status": "ok",
+          "error_present": false
+        }
+      ],
+      "stop_reason": "agent_declared_complete",
+      "official_success": true,
+      "wall_seconds": 393.73907637400407,
+      "full_wall_seconds": 396.7180522080016,
+      "setup_wall_seconds": 1.770585749996826,
+      "calls": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 2889,
+          "output_tokens": 152,
+          "cached_input_tokens": 0,
+          "request_sha256": "83d71fccc21287cdc3e600d40b69abeefac7fb7aa34dfe6c40bb868f9f4a16eb",
+          "response_sha256": "94662e7daddac5732872832e0260ad0620138032c50c29a5844fb0438388cef3",
+          "wire_sha256": "1d267a311b3e6cd3403396a777243d3bdf71256095c07cf033dda95ab450f8ed"
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 3062,
+          "output_tokens": 135,
+          "cached_input_tokens": 2888,
+          "request_sha256": "4ba778fb292d0522d930bed15d37f3ae6925e1867c4ffe4d4cdf0ed86d88ed99",
+          "response_sha256": "e1ceaf2107609190099e0b926ff5afd93caca2598cf473dfbd77baa89315b4be",
+          "wire_sha256": "fc5ccc2f9e3d2eada6c83566679e9e512e1ac736cb12eb0e55b46acdeb86cde2"
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 5948,
+          "output_tokens": 86,
+          "cached_input_tokens": 3061,
+          "request_sha256": "51dc21d09a652050ad15c0c6fde7a72525c4463b24f019f270ce905849cce803",
+          "response_sha256": "f03fd45bf53ea6a26a4938cfd125fae521100c58923bc1d5496bc7a9cf0b2fb1",
+          "wire_sha256": "923aafd430b246df3fbb1f7e5d7210fcae0e6ec1e5e5529519c6a2f0ad38d872"
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6109,
+          "output_tokens": 91,
+          "cached_input_tokens": 5947,
+          "request_sha256": "fe68d9f0b08db5f59b2874e5fef2354f4e7f3110a8eca6ddd264fa3e2bc67daa",
+          "response_sha256": "72267d59836dd5a6da8378d739785a62fc0fab2005dc4d50736da02ec0c18b76",
+          "wire_sha256": "b43e6c5de2d5dd0cd21d765036c6b7ca4293bdcd14cd4c43b43b0075f98742c7"
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 6785,
+          "output_tokens": 100,
+          "cached_input_tokens": 6108,
+          "request_sha256": "edb6cf9e74f7a5870eaeef20ea77f2b5275a09693ebc6b1420a6ab22fdf264ed",
+          "response_sha256": "7b711bc43d4b8101434025565ccc41c01f66bbb0738f63bc44568ba9b42dd83f",
+          "wire_sha256": "dac7f4d3028820eaf98f9f97b699121f2d42991218f0f7bb1ce4f7dc374c8f46"
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 7187,
+          "output_tokens": 81,
+          "cached_input_tokens": 6784,
+          "request_sha256": "c03c3f1acd0d8d72161827f0b8e1c1cdcc27d19a440fe6add68ec6946ef5a7e9",
+          "response_sha256": "13d3ecd9e1af498d64e19bf91247948244ed7152285a35412290851949c2ede0",
+          "wire_sha256": "b9003c893886b6d300d2ca64c961c6eaa91de6e2b6158df0ab8d1a322df4dd4c"
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 7608,
+          "output_tokens": 106,
+          "cached_input_tokens": 7186,
+          "request_sha256": "0d83fffe0c7696b36ec2a7bde6e4405a20f8680de8a7abb4c45b56a1739869cf",
+          "response_sha256": "587f053800270dd1fb8e2cda38ed47588b86b502daa5a7beedd9b2cb46297180",
+          "wire_sha256": "7e33813a2a52755255cce397ad18c19a492281b138a6ccb6fa9a6c6db4f4ca37"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 7898,
+          "output_tokens": 211,
+          "cached_input_tokens": 7607,
+          "request_sha256": "d7bbb923c4a7b25ad9d1f4672fc5289a6bea6909ac379a9941d2dc268ed791ee",
+          "response_sha256": "42b028b650eb15e7b1e2ee6a0888adb877474367b06f59189f9693f8a0342266",
+          "wire_sha256": "2ecc3ecdf375d480e88cf1a58fe0ce074cb66d0f60e2ba2857e89aad1addc577"
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 11969,
+          "output_tokens": 88,
+          "cached_input_tokens": 7897,
+          "request_sha256": "2475d48e9336e538479a0075db98570930f714ff7ebf080932e62552ae49bedc",
+          "response_sha256": "c1b569487c45ad76cd0d826d62e196b135904c92bdc750b7ebecc0f2302446c9",
+          "wire_sha256": "80d1b1456685de9c21b48f2212683e6cd44c5050743f2761124fddbb0eb8dc1a"
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 12133,
+          "output_tokens": 97,
+          "cached_input_tokens": 11968,
+          "request_sha256": "9676b262cf9fe01578d874fb7155904867c2f82f50653d6a540cb4f4fcfb870c",
+          "response_sha256": "26b60f668f0c5a733358ba7da2493842457cefa5056c570a65ee14c89fe865cc",
+          "wire_sha256": "3a5dd46a8a0d56ecb0ed4c60eba1e055d35e24860b3906a2ded587920d2186e9"
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13266,
+          "output_tokens": 152,
+          "cached_input_tokens": 12132,
+          "request_sha256": "e1f7a4609362502340669cb8d8c646aa529474fa77e6230ffd6a200749d9e853",
+          "response_sha256": "d31b318516a76d2e1cabd54c7fe2c2f0062a797d934d440fa111db515b83b8d5",
+          "wire_sha256": "1b8993870ed5ef74fd894c23c5762134bca8113def6b5e654053c012a0208726"
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13518,
+          "output_tokens": 98,
+          "cached_input_tokens": 13265,
+          "request_sha256": "409e0c605868438ffe22d12bd1143a5036027a545a75000e29f968781f41f13a",
+          "response_sha256": "17966b407609c1af25cfd897ca4ddb94d7be5831e81b0bd322e2511dc20a0569",
+          "wire_sha256": "66df41c266a35c0debfa6cc5c1e6976beeecad6d6cd72ef44abcb7761a842224"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 13917,
+          "output_tokens": 89,
+          "cached_input_tokens": 13517,
+          "request_sha256": "5f80258168ba2076693fc7b25a64221bcdab4ff70f5b61dca99952a891339775",
+          "response_sha256": "1db110f3fe965f7206ab35d6394440798cd84f961507017291e4d371c4d0dabb",
+          "wire_sha256": "38b38ee191f61da8b99351e6103dfb35a7fb61f1dd821634f7a328dd2fbb3426"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 14193,
+          "output_tokens": 179,
+          "cached_input_tokens": 13916,
+          "request_sha256": "45a7a6311fb53cc8dbb661d40d0b8d865ea80d47f42347cd6cb3fb967a78354c",
+          "response_sha256": "f51c035bb8597fae9961f33d1883d4af740f113e8fe58e85bc5f10f6b820b849",
+          "wire_sha256": "051bccdef1e9cd3bb9369edf1e38654d2938aa420b98044526b2043a31a1082d"
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 14455,
+          "output_tokens": 110,
+          "cached_input_tokens": 14192,
+          "request_sha256": "5688cac5706481449aa83b1ece8271040a42866ba422226f267801c24c36ca8b",
+          "response_sha256": "c9b392be53a30bfca5032735efd0aa63491ad1e6762754a64f36b642c7ecb576",
+          "wire_sha256": "e7c03876d07b2bea3ca5dd9b1b35e0ab11d5160f088dfb4cc2de0f672d76321f"
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 14745,
+          "output_tokens": 87,
+          "cached_input_tokens": 14454,
+          "request_sha256": "9a468035d2294cb64fbb1fab62a67e69c45969128e3ebe52f05563b0b165908a",
+          "response_sha256": "30818df7041b7e73226317486a8f686aa633677d9e0f3ff8430d1105ec934dcf",
+          "wire_sha256": "7b836689a8da56f0dbe1299141d7a711eb0c75684bb9d673e8336ba4809bea4f"
+        },
+        {
+          "call_id": "call_017",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 14931,
+          "output_tokens": 257,
+          "cached_input_tokens": 14744,
+          "request_sha256": "98e83fbcd3babd98ec3d3a02e70280c283eb4e10d56df90bfcaab05e0c967ea1",
+          "response_sha256": "ebd4d0cd2b65ed72a87a1a0a79c4e928cd0729b6de512e75de43c23e7375a298",
+          "wire_sha256": "1b094d78a494fb538d4af5bdf0eca041aac7dd3da133145d24a46e0691c51720"
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 15436,
+          "output_tokens": 211,
+          "cached_input_tokens": 14930,
+          "request_sha256": "9263e04ec0540a0cc8b023672760352dc5c89fdd66748f1f06ea71e6774d8692",
+          "response_sha256": "bbcbcb3dac08ddc612cf7c4ac0aceef3f12b92ac37ccb85cab7650c38c2adb26",
+          "wire_sha256": "a8b4e793f6cb08076b581fba23bc6f038fc948c24feb83e5aa4288c997ebd191"
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 15758,
+          "output_tokens": 191,
+          "cached_input_tokens": 15435,
+          "request_sha256": "27872c919838927bac5ce72ad7a422e86590f9ec267e10f87c70a0a58d37ad12",
+          "response_sha256": "45676ec05204f0138e2dbbc24949c55473f9491b1fb97348b51bbc5ef1a9ef48",
+          "wire_sha256": "45ef948d06f9436de3dbb9e6f6965648735dc22ad8ae03aa425d37d40c27fe41"
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 16892,
+          "output_tokens": 328,
+          "cached_input_tokens": 15757,
+          "request_sha256": "9c5b696f6477396f2297168b5d8199c4cf8dd32ee1f2dbeca1516242efac4cdf",
+          "response_sha256": "16fe9c80d5ed0abe4093f8aeca6adaafc1c5d3ee0cb84727c6c5e012b4a3f169",
+          "wire_sha256": "9ff139dc5b121d73e023e084861078b1c9e4824bf58b949eecf71388022fc751"
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 17895,
+          "output_tokens": 164,
+          "cached_input_tokens": 16891,
+          "request_sha256": "eea553db647debca09bc98ecea57b2ab8c51a9a67c2c27ff6a98da8c094725b7",
+          "response_sha256": "927c3a61cf0c61de246d7d4cd222c122a20723223e4b9077d546acef861d62fd",
+          "wire_sha256": "4665817e5ec2dc2cd0bb8cb8d55b19a69c1c516c8eadb697526256b6954ab252"
+        },
+        {
+          "call_id": "call_022",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 18178,
+          "output_tokens": 519,
+          "cached_input_tokens": 17894,
+          "request_sha256": "c4b5b6a87a86db14355c506727fea0e85efc3c43b7c5b3d36fc00b6926fd0ead",
+          "response_sha256": "090d836be96084b921ee845f87fe551af08426736c6aa763e011612b88f20b30",
+          "wire_sha256": "1b7d3eee377077d1097ab7c59d0ba6e5f7d04c35be0d0a35e58fac69929bbb51"
+        },
+        {
+          "call_id": "call_023",
+          "status": "ok",
+          "usage_known": true,
+          "input_tokens": 18725,
+          "output_tokens": 210,
+          "cached_input_tokens": 18177,
+          "request_sha256": "bfafb74b5fbec8085e55a5cad763e1b2eb19408fc7cb6730f92ded2bce46e1a2",
+          "response_sha256": "ee28ba8885fa25bf76947bc2018a1a141ac5bf9a494719511e41eaee7f29ee7a",
+          "wire_sha256": "1dbd361c051a1f40a46cb9da88ef8727879be9a48cce126c263fa4007eb05f07"
+        }
+      ],
+      "source_sha256": {
+        "summary": "049560a6c9e2d6f6c751ae19ccf3eab3ede351937443a5cb04bc040f0ee4ca45",
+        "events": "f3a3ff73b277930cebd545e3a97fe4e6b82b0ddb7bfc7069e0d0416270e49be6",
+        "spans": "64a8fb6dca66db1bac52c0d0362a074263632fd19d85840c14b28a30de9bb08e",
+        "usage": "db6c0f2e07a658883e298fccb9ccc9aeca44690525092c5a4254e8c074a75054"
+      }
+    }
+  ],
+  "evaluator_calls": 4,
+  "model_calls": 76,
+  "known_total_tokens": 815724,
+  "unknown_usage_calls": 0,
+  "api_requests": 253,
+  "planned_conditions": 4,
+  "known_tasks": 2,
+  "server_stopped": true,
+  "owned_server_processes_present": [],
+  "server": {
+    "wall_seconds": 1983.3103917920016,
+    "load_wall_seconds": 10.060832583003503,
+    "sampled_peak_rss_bytes": 235944624128,
+    "peak_system_swap_bytes": 0,
+    "stop_reason": "requested_stop",
+    "exit_code": 0
+  },
+  "pipeline_sha256": "a56beb3086c8d5968e0c0d9fa3b0ef3dcc132636296ef0cf7df48c33001db9a6",
+  "server_final_sha256": "d6ab25df77c5f16ae01b6cb0b15f3ecfab4f662c7b078b977970a6ab95bdd4ea",
+  "audit_model_calls": 0,
+  "audit_environment_api_requests": 0,
+  "audit_evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "audit_wall_seconds": 0.242219790998206,
+  "novel_method_claim": false,
+  "general_quality_preservation_established": false
+}
