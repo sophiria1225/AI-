@@ -17,7 +17,7 @@ STEM = 'AI_harness_budget_20261022'
 LINK = 'https://github.com/sophiria1225/AI-/blob/main/'
 ARMS = ('plain_keep', 'budget_keep')
 LABELS = ('通知なし', '残予算を毎回通知')
-TASKS = ('写真整理', '共有・依頼', '返金', '曲情報の書出')
+TASKS = ('写真整理', '電気代の分担請求', '返金', '曲情報の書出')
 
 
 def architecture():
@@ -30,11 +30,29 @@ def architecture():
         s += txt(x, 238, sub, 22, anchor='middle')
     s += line(160, 150, 422, 150, arrow=True) + txt(290, 126, 'Pythonの処理を要求', 20, anchor='middle')
     s += line(558, 150, 915, 150, arrow=True) + txt(740, 126, '上限内でAPIを実行', 20, anchor='middle')
-    s += '<path d="M985 220 V300 H95 V220" fill="none" stroke="#177b79" stroke-width="3" marker-end="url(#arrow)"/>'
-    s += txt(500, 289, '処理結果・利用したAPIの記録', 22, anchor='middle')
-    s += '<path d="M490 220 V365 H95 V248" fill="none" stroke="#c66a38" stroke-width="4" marker-end="url(#arrow)"/>'
-    s += txt(480, 372, '通知ありだけ：残API・token・呼出し・時間', 20, weight=700)
-    return svg(s, h=400, label='ハーネスが実行費用を記録し、通知条件では次のAI判断へ残り予算を渡す')
+    s += '<path d="M985 214 V305 H20 V150 H32" fill="none" stroke="#177b79" stroke-width="3" marker-end="url(#arrow)"/>'
+    s += txt(815, 289, '処理結果・利用したAPIの記録', 22, anchor='middle')
+    s += '<path d="M548 170 H625 V365 H8 V180 H38" fill="none" stroke="#c66a38" stroke-width="4" marker-end="url(#arrow)"/>'
+    s += txt(480, 395, '通知ありだけ：残API・token・呼出し・時間', 20, weight=700)
+    return svg(s, h=410, label='ハーネスが実行費用を記録し、通知条件では次のAI判断へ残り予算を渡す')
+
+
+def comparison_flow():
+    s = circle(118, 190, 72, '#e3e9e2')
+    s += txt(118, 185, '同じ', 26, weight=700, anchor='middle')
+    s += txt(118, 219, '途中状態', 26, weight=700, anchor='middle')
+    s += txt(118, 294, '会話・Python・アプリ', 20, anchor='middle')
+    for y, label, sub, color in ((100, '通知なし', '元の入力で継続', '#7d8892'),
+                                  (280, '毎回通知', '元の入力＋その時点の残予算', '#177b79')):
+        s += f'<path d="M195 190 H260 V{y} H350" fill="none" stroke="{color}" stroke-width="3" marker-end="url(#arrow)"/>'
+        s += txt(520, y - 14, label, 30, color=color, weight=700, anchor='middle')
+        s += txt(520, y + 25, sub, 21, anchor='middle')
+        s += line(735, y, 920, y, arrow=True)
+        s += circle(985, y, 49, '#dce4ef')
+        s += txt(985, y + 9, '評価', 26, weight=700, anchor='middle')
+    s += txt(830, 195, 'それぞれの最終状態を', 21, anchor='middle')
+    s += txt(830, 225, '同じ基準で判定', 21, anchor='middle')
+    return svg(s, h=355, label='同じ会話、Python、アプリ状態から二条件へ分岐し、各最終状態を独立評価する')
 
 
 def figures(output, report):
@@ -58,7 +76,7 @@ def figures(output, report):
             ax.annotate(f'{value:.1f}', (value, 3 - n), xytext=(0, 12 if j else -20),
                         textcoords='offset points', ha='center', color=color, fontsize=9)
     ax.set_yticks(range(4), TASKS[::-1]); ax.set_ylim(-.65, 3.65)
-    ax.set_xlabel('終了までの総入出力トークン（千）'); ax.set_xlim(left=0)
+    ax.set_xlabel('継続全体の入出力トークン（千・キャッシュ分を含む）'); ax.set_xlim(left=0)
     ax.grid(axis='x', alpha=.15); ax.set_axisbelow(True)
     ax.legend(loc='upper center', bbox_to_anchor=(.5, 1.21), ncol=2, frameon=False)
     for ext in ('svg', 'png', 'pdf'):
@@ -86,14 +104,14 @@ def build(root, output):
     slides = []
     def add(title, body='', take='', notes='', refs=(), cover=False):
         slides.append(dict(title=title, body=body, take=take, notes=notes, refs=list(refs), cover=cover))
-    add('AIハーネスによる<br>性能と総費用の比較検証', cover=True)
-    add('研究の目的：仕事の品質を保って、不要な処理を減らす',
+    add('AIハーネスの実行予算制御と<br>総費用評価', cover=True)
+    add('仕事の品質を保ち、不要な処理を減らす',
         '<p class="lead">AIに任せる仕事には、調査・判断・実行・確認が含まれる。</p>'
-        '<div class="diagram tight">' + scope_diagram() + '</div>'
+        '<div class="diagram tight">' + scope_diagram().replace('viewBox="0 0 1120 360"', 'viewBox="0 80 1120 250"') + '</div>'
         '<p class="body">ハーネスは、渡す情報・ツール実行・状態・検証・停止を制御する。<br>減らしたいのは、不要な取得・共有・追加生成・やり直しの総費用。</p>',
         notes='社会的な課題は複雑な仕事を利用可能な費用で完了すること。現在は単一作業役の基礎制御を検証中で、複数AIの通信削減を実証した段階ではない。',
         refs=(('研究目的', 'docs/research_objective_20261022.md'),))
-    add('今回の問題：上限を守る仕組みと、予算を知るAIは別',
+    add('上限で止めても、仕事の完了は保証できない',
         '<div class="two"><div class="col"><h3>実行器がしていたこと</h3><p class="body">API・token・時間の上限を監視。<br>上限に届いたら処理を止める。</p></div>'
         '<div class="col"><h3>AIに伝えていなかったこと</h3><p class="body">あと何回APIを使えるか。<br>あとどれだけ生成・実行できるか。</p></div></div>'
         f'<p class="body">過去{visibility["cells_reviewed"]}条件・{visibility["calls_reviewed"]}入力を点検し、明示的な残予算通知がないことを確認。</p>',
@@ -105,21 +123,26 @@ def build(root, output):
         notes='通知は追加のAIを呼ばず、実測カウンターから作る。通知の文字や処理も費用へ含む。予測器は使わず、残量は必要量の予測や成功保証ではない。',
         refs=(('実装', 'scripts/budget_signal.py'), ('計画', 'docs/experiments/P40_budget_notification.md')))
     add('実験の前提：同じ途中状態から、通知だけを変える',
-        '<p class="lead">写真整理／共有・依頼／返金／曲情報の書出の４既知課題。</p>'
+        '<p class="lead">AppWorldの模擬アプリ：写真整理／電気代の分担請求／返金／曲情報の書出。</p>'
         '<table><thead><tr><th>条件</th><th>AIが受け取る入力</th></tr></thead><tbody>'
         '<tr><td>通知なし</td><td>全履歴・現在の実行結果</td></tr>'
         '<tr><td>毎回通知</td><td>同じ情報 ＋ その時点の残予算</td></tr></tbody></table>'
         '<p class="body">８応答後の会話・Python・アプリ状態を復元。<br>各条件：16生成・12万token・480秒。APIは元の上限で前半も計上。</p>'
-        '<p class="small">同じMiniMax M3 IQ4_XS。４課題×２条件×各１回。課題ごとに実行順を交互にする。</p>',
+        '<p class="small">MiniMax M3 IQ4_XS。４課題×２条件×各１回。token・API・時間は別の費用として記録。</p>',
         notes='新たに初回だけ推論キャッシュの再利用を無効化し、実処理を確認した。同じ原状態での追加通知以外に、ツールや成功判定を変えない。確認用12シナリオは未閲覧。',
         refs=(('事前設定', 'configs/P40_budget_notification_v01.json'), ('入力照合', 'reports/P40_prefix_checks.json')))
-    summary = '<table class="compact"><thead><tr><th>条件</th><th>成功</th><th>全token</th><th>AI呼出し</th><th>後続API</th></tr></thead><tbody>'
+    add('手順：開始状態をそろえ、継続後の成否と費用を測る',
+        '<div class="diagram">' + comparison_flow() + '</div>'
+        '<p class="body">８応答後の状態を各条件へ復元。評価結果は実行中のAIに返さない。</p>',
+        notes='開始状態は同じだが、その後の行動や取得情報は方式に応じて変わり得る。元の記録を復元した準備費用と、続きの実行費用を分けて残す。途中で正解した成果物を後から選び直さず、実行終了時の成果物を判定する。',
+        refs=(('復元と独立評価', 'scripts/run_handoff_factors.py'), ('比較計画', 'docs/experiments/P40_budget_notification.md')))
+    summary = '<table class="compact"><thead><tr><th>条件</th><th>成功</th><th>継続token</th><th>AI呼出し</th><th>後続API</th><th>継続秒</th></tr></thead><tbody>'
     for arm, label in zip(ARMS, LABELS):
         t = report['totals'][arm]
-        summary += f'<tr><td>{label}</td><td>{t["successes"]}/4</td><td>{t["known_total_tokens"]:,}</td><td>{t["model_calls"]}</td><td>{t["api_requests"]}</td></tr>'
+        summary += f'<tr><td>{label}</td><td>{t["successes"]}/4</td><td>{t["known_total_tokens"]:,}</td><td>{t["model_calls"]}</td><td>{t["api_requests"]}</td><td>{t["continuation_wall_seconds"]:.1f}</td></tr>'
     summary += '</tbody></table>'
     add('結果：費用だけでなく、完了できた仕事を対応させる',
-        '<div class="diagram"><img src="figures/p40_paired_costs.svg" style="width:100%;height:265px" alt="４課題それぞれの通知なし／ありの総トークン。塗りは成功、白抜きは未達"></div><p class="small">塗りつぶし：成功　白抜き：未達。未達の低費用は「完了までの節約」ではない。</p>' + summary,
+        '<div class="diagram"><img src="figures/p40_paired_costs.svg" style="width:100%;height:265px" alt="４課題それぞれの通知なし／ありの総トークン。塗りは成功、白抜きは未達"></div><p class="small">塗り：成功／白抜き：未達。共通前半・実験用の復元は別計上。未達の安さは効率化としない。</p>' + summary,
         notes='塗りつぶしは成功、白抜きは未達。未達の低費用は、仕事を終えるための節約とは扱わない。費用は継続全体の入出力、実験用の復元は別記。各１回なので優越性や非劣性を証明しない。',
         refs=(('全８件・使用量', 'reports/P40_comparison.json'),))
     table = '<table><thead><tr><th>課題</th><th>通知なし</th><th>毎回通知</th><th>通知あり−なしのtoken</th></tr></thead><tbody>'
@@ -156,7 +179,7 @@ def build(root, output):
     sections = []
     for i, slide in enumerate(slides, 1):
         if slide['cover']:
-            sections.append(f'<section class="slide cover"><h1>{slide["title"]}</h1></section>'); continue
+            sections.append(f'<section class="slide cover"><h1>{slide["title"]}</h1><div class="notes"></div></section>'); continue
         refs = ' / '.join(f'<a href="{LINK + path}">{html.escape(label)}</a>' for label, path in slide['refs'])
         sections.append(f'<section class="slide"><div class="eyebrow">実行予算と費用 / {i - 1:02d}</div>'
             f'<h2>{slide["title"]}</h2>{slide["body"]}' +

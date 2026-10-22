@@ -26,6 +26,9 @@ def validate_request(request, signal, arm, expected, first):
                            ('logical_input_plus_output_tokens', 'remaining_tokens_before')):
         if signal['state']['remaining'][target] != expected[source]:
             raise ValueError('notification differs from accounted remaining budget')
+    for target, source in (('continuation_logical_tokens', 'known_tokens_before'),):
+        if signal['state']['used'][target] != expected[source]:
+            raise ValueError('notification used-resource counter differs')
     if request['cache_prompt'] != (not first) or signal['cache_prompt'] != request['cache_prompt']:
         raise ValueError('request cache policy differs')
     return {'notification_characters': len(messages[-1]['content']) if arm == 'budget_keep' else 0,
