@@ -1,0 +1,18 @@
+{
+  "phase": "P41",
+  "batch_id": "P41_residual_output_v01",
+  "source_runs": ["P40_01_PLAIN_KEEP", "P40_02_PLAIN_KEEP", "P40_02_BUDGET_KEEP"],
+  "max_calls": 2,
+  "max_total_tokens": 39949,
+  "max_wall_seconds": 900,
+  "per_input_wall_seconds": 360,
+  "selection_rule": "All three clean token-reservation stops in the closed P40 audit. This is a posthoc component diagnostic on known inputs, not a heldout task comparison.",
+  "intervention": "Set the output cap to min(4096, remaining logical tokens minus exact full input). Preserve each rejected input, next seed and sampling. Context, unknown-usage, and positive-output guards remain. Each input is recounted, including the third which cannot fit.",
+  "cache_rule": "Fresh-input cache_prompt=false for every diagnostic, measured cache_n=0. Historical P40 had warm continuation states; diagnostic latency is not substituted into P40.",
+  "time_scope": "Up to 360 seconds per input, 900 seconds for this separate probe. These are diagnostic time limits, not the original residual task-time budgets. No task-time feasibility claim.",
+  "failure_rule": "Unknown usage, identity/count/cache mismatch, timeout, or explicit stop ends the probe with no replacement. A positive-cap response cut at the output cap is a valid observed failure to provide an action, not an infrastructure retry trigger.",
+  "evaluation_rule": "No tools, generated Python, task worlds, or final evaluators are executed. Check terminal usage, function envelope, source-span references, and Python 3.12 syntax only. Syntax does not establish semantics or task success.",
+  "novel_method_claim": false,
+  "task_success_claim": false,
+  "original_remaining_wall_feasibility_claim": false
+}
