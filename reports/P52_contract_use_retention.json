@@ -1,0 +1,1407 @@
+{
+  "phase": "P52",
+  "status": "complete",
+  "started_at": "2026-10-22T11:50:23.089758+00:00",
+  "git_commit": "c4d439102e562ed35bb3c18dc608cce7b6f91ad9",
+  "source_sha256": {
+    "scripts/contract_use_retention.py": "9b929e903cdf9ac6d116a7ae4c6003006d47a368d7730f1b45091376c62d72de",
+    "scripts/inspect_contract_use_retention.py": "2564a040de2c78a918a65b9a610c20d94a14dc44f9ccc948affb1291f496fc75",
+    "scripts/documentation_print_origin.py": "2197ce361d09d0ac13d142130e2b02d59ff031fc7d0f29d411987af61c3c3fd3",
+    "scripts/input_exposure_accounting.py": "628953167c42c8492ceff17943987099a32cb2e3c0053fb14fee8c8aa745ce82",
+    "scripts/later_handoff_sources.py": "35922983507346befb20d240caf2bf8345ac67b13916843542eb7aabe415e647",
+    "scripts/handoff_factors.py": "0f620dce91eff19a211a45dcafe145702ee16b6a507b02c0ca02bf5803a3fcd2",
+    "scripts/handoff_output_views.py": "b59414470b92c78193294ea02cbbc7cb917a662cbe8139789ed52d1ed1db7a37",
+    "scripts/run_handoff_factors.py": "856b9054c40c0560cac6fd05e98763344be2aa808b69a30d7e30572a178da75a",
+    "scripts/recorded_python_replay.py": "f76208c4ac1fa9ba13018bb7f6d6ce2a11972360517e35153c46ede2406eb3c8",
+    "tests/test_contract_use_retention.py": "b6f74f39f679ed589fc29eff46fd5207861204471932cc50818dbe727c1be328",
+    "configs/P52_contract_use_retention_v01.json": "c1fb7ae81c4b4d25c9daa63a8b1aeff80f00ed9c2d94096f7e72a499863677e9"
+  },
+  "source_reports_sha256": {
+    "reports/P44_documentation_origin.json": "b2ca8252f924b7bfe03fece245b887e2927f3bce97174dab36d627a6ee8af9aa",
+    "reports/P44_documentation_origin_integrity.json": "d50bf3d87d8e3f021c02b747b10257bf3c67de20a5d76c1a0ae3b275b220ef39",
+    "reports/P29_comparison.json": "7ff4058f39df63e4babeaa5a76ff73a4bc50a5051b89ed5b96c3c066d87c4eb3",
+    "reports/P32_comparison.json": "34bc2d51206539f6611b39d742249155e6bf95b3cb1d3a3d9f162baffa1f55f2"
+  },
+  "rows": [
+    {
+      "source_run": "P29_01_CODE",
+      "task_id": "34d9492_1",
+      "boundary_manifest_sha256": "2de2c894b847fa19fe23dbcb8427f033a1359d8192e40a2ab6dafdbd372bf356",
+      "original_source_sha256": {
+        "events.json": "613235e6b7ea42396a755c123afc326be21e852c502c7da9cd8dfd60cff49396",
+        "spans.json": "6caff222196df4f422143528a863de36bdce3516cabedeacde1b304c66224ff1",
+        "summary.json": "0244ec2264d7ccaade5a3ce28bd40a632845680d94b95cf079c20dd512240fae",
+        "provenance.json": "240a3c6f603103e99b9b39b4fde8417a8c49e1c703e4b06e56dca64fd132d3eb",
+        "plan.json": "61e3ee5175c890ddb1a591caa55d69ef2e98c60e1b7180f2c8a97dabacc4274a"
+      },
+      "full_input_characters": 32539,
+      "candidate_outputs": 6,
+      "p44_changed_outputs": 3,
+      "views": {
+        "used_since_document": {
+          "selection": {
+            "mode": "used_since_document",
+            "checks": [
+              {
+                "span_id": "s2",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s9",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s3",
+                  "s6"
+                ],
+                "removed_stdout_characters": 1958,
+                "documentation_receipt_ids": [
+                  "s3",
+                  "s6"
+                ]
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s15",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s14"
+                ],
+                "removed_stdout_characters": 461,
+                "documentation_receipt_ids": [
+                  "s14"
+                ]
+              },
+              {
+                "span_id": "s17",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s19",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s3": {
+                "target_api": "file_system__show_directory",
+                "document_call": "call_002",
+                "document_value_sha256": "811d3c7d1493e4aef48a9dcbde16894be7cd814c6d96ca021c06c8b5e89a7fbb",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "entry_type",
+                  "recursive",
+                  "substring"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "entry_type",
+                  "recursive"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s4": {
+                "target_api": "file_system__move_file",
+                "document_call": "call_002",
+                "document_value_sha256": "6ea25de372e515028baad58ab4f052aad858f10e7e2cfee0ed736e7dacda842a",
+                "public_parameter_names": [
+                  "access_token",
+                  "destination_file_path",
+                  "overwrite",
+                  "retain_dates",
+                  "source_file_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s5": {
+                "target_api": "file_system__create_directory",
+                "document_call": "call_002",
+                "document_value_sha256": "b4986629102c2b0f4cbcde97eefc4cb20cd139572adbaee9f525f1d0fc9a7535",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "recursive"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s6": {
+                "target_api": "file_system__show_file",
+                "document_call": "call_002",
+                "document_value_sha256": "de136a0faf0a0396c1b996a8b0dc19307fefb5d1a7ca3ead323d3c0c00a2d435",
+                "public_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s7": {
+                "target_api": "file_system__file_exists",
+                "document_call": "call_002",
+                "document_value_sha256": "b86c738763ed3b9eaa456c1d4d1984fe565a25e7aad6a72a96b2bd2ec829e7dc",
+                "public_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "file_system__directory_exists",
+                "document_call": "call_002",
+                "document_value_sha256": "01dbd36b5342271e2025d44cd9c75ba1377a0a81ef7e0cd484fb94914fb1a2a5",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s14": {
+                "target_api": "file_system__login",
+                "document_call": "call_005",
+                "document_value_sha256": "a19f2fab9ef876707fc737106a95ae7eedcc9c891904ed4564a548e385123982",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 2,
+            "removed_stdout_characters": 2419,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 30541,
+          "input_characters_removed": 1998,
+          "private_input_sha256": "035fe113f120a2eb4190b449dca0889706e46cac7e5d17972b8aff2b6fdab9bc"
+        },
+        "all_parameters_observed": {
+          "selection": {
+            "mode": "all_parameters_observed",
+            "checks": [
+              {
+                "span_id": "s2",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s9",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s6"
+                ],
+                "removed_stdout_characters": 701,
+                "documentation_receipt_ids": [
+                  "s6"
+                ]
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s15",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s14"
+                ],
+                "removed_stdout_characters": 461,
+                "documentation_receipt_ids": [
+                  "s14"
+                ]
+              },
+              {
+                "span_id": "s17",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s19",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s3": {
+                "target_api": "file_system__show_directory",
+                "document_call": "call_002",
+                "document_value_sha256": "811d3c7d1493e4aef48a9dcbde16894be7cd814c6d96ca021c06c8b5e89a7fbb",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "entry_type",
+                  "recursive",
+                  "substring"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "entry_type",
+                  "recursive"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s4": {
+                "target_api": "file_system__move_file",
+                "document_call": "call_002",
+                "document_value_sha256": "6ea25de372e515028baad58ab4f052aad858f10e7e2cfee0ed736e7dacda842a",
+                "public_parameter_names": [
+                  "access_token",
+                  "destination_file_path",
+                  "overwrite",
+                  "retain_dates",
+                  "source_file_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s5": {
+                "target_api": "file_system__create_directory",
+                "document_call": "call_002",
+                "document_value_sha256": "b4986629102c2b0f4cbcde97eefc4cb20cd139572adbaee9f525f1d0fc9a7535",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path",
+                  "recursive"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s6": {
+                "target_api": "file_system__show_file",
+                "document_call": "call_002",
+                "document_value_sha256": "de136a0faf0a0396c1b996a8b0dc19307fefb5d1a7ca3ead323d3c0c00a2d435",
+                "public_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s7": {
+                "target_api": "file_system__file_exists",
+                "document_call": "call_002",
+                "document_value_sha256": "b86c738763ed3b9eaa456c1d4d1984fe565a25e7aad6a72a96b2bd2ec829e7dc",
+                "public_parameter_names": [
+                  "access_token",
+                  "file_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "file_system__directory_exists",
+                "document_call": "call_002",
+                "document_value_sha256": "01dbd36b5342271e2025d44cd9c75ba1377a0a81ef7e0cd484fb94914fb1a2a5",
+                "public_parameter_names": [
+                  "access_token",
+                  "directory_path"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s14": {
+                "target_api": "file_system__login",
+                "document_call": "call_005",
+                "document_value_sha256": "a19f2fab9ef876707fc737106a95ae7eedcc9c891904ed4564a548e385123982",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 2,
+            "removed_stdout_characters": 1162,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 31811,
+          "input_characters_removed": 728,
+          "private_input_sha256": "b638d4e4638982d8c7526eda2d5cafde574375b9fee7033a60a0c229c6f07f49"
+        }
+      }
+    },
+    {
+      "source_run": "P29_02_CODE",
+      "task_id": "3c13f5a_1",
+      "boundary_manifest_sha256": "de4a9e08e93e66cfdc5a42865a4f497be8feebf7b762e5f2ccaa112289d52008",
+      "original_source_sha256": {
+        "events.json": "c30f4d6966d0dc44f42eb1e394b5aa08db5cc5833cb2d873028ff2fa2064a71f",
+        "spans.json": "cc4f3678b780d253a77a66098a81dbfcd0f0156d8ba2dfeb5f6eeeeabb6a48cd",
+        "summary.json": "70909161b086e3074900e6ffded0ce9218309c4fbfa99a6fa67c12502185f17c",
+        "provenance.json": "c280b642796931ca08548757b8ad765162536b2bb9be1001a69793e97be89e24",
+        "plan.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898"
+      },
+      "full_input_characters": 41243,
+      "candidate_outputs": 6,
+      "p44_changed_outputs": 2,
+      "views": {
+        "used_since_document": {
+          "selection": {
+            "mode": "used_since_document",
+            "checks": [
+              {
+                "span_id": "s2",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s4",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s6",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s9",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s8"
+                ],
+                "removed_stdout_characters": 462,
+                "documentation_receipt_ids": [
+                  "s8"
+                ]
+              },
+              {
+                "span_id": "s11",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s7": {
+                "target_api": "file_system__show_account",
+                "document_call": "call_004",
+                "document_value_sha256": "fa8bde5bced29dadef986defb28471b1370acfebea91fff8585f2fe3779fb775",
+                "public_parameter_names": [
+                  "access_token"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "file_system__login",
+                "document_call": "call_004",
+                "document_value_sha256": "a19f2fab9ef876707fc737106a95ae7eedcc9c891904ed4564a548e385123982",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 1,
+            "removed_stdout_characters": 462,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 40999,
+          "input_characters_removed": 244,
+          "private_input_sha256": "a3bcdfa65e5ec47860084c1cbf2ffb8593c200fa48fd62d23ea7d8493a79606f"
+        },
+        "all_parameters_observed": {
+          "selection": {
+            "mode": "all_parameters_observed",
+            "checks": [
+              {
+                "span_id": "s2",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s4",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s6",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s9",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s8"
+                ],
+                "removed_stdout_characters": 462,
+                "documentation_receipt_ids": [
+                  "s8"
+                ]
+              },
+              {
+                "span_id": "s11",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s7": {
+                "target_api": "file_system__show_account",
+                "document_call": "call_004",
+                "document_value_sha256": "fa8bde5bced29dadef986defb28471b1370acfebea91fff8585f2fe3779fb775",
+                "public_parameter_names": [
+                  "access_token"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "file_system__login",
+                "document_call": "call_004",
+                "document_value_sha256": "a19f2fab9ef876707fc737106a95ae7eedcc9c891904ed4564a548e385123982",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 1,
+            "removed_stdout_characters": 462,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 41003,
+          "input_characters_removed": 240,
+          "private_input_sha256": "f75b72733ff418d8fb473ffb37708d0730f20ebfea06bd9a29a6ffc31f210f51"
+        }
+      }
+    },
+    {
+      "source_run": "P29_03_CODE",
+      "task_id": "60d0b5b_1",
+      "boundary_manifest_sha256": "56050f91ff214806dfe2c9ae0446ccac336b17a5b9b542c1af23acec909a1b7b",
+      "original_source_sha256": {
+        "events.json": "6a919c7947e0ad83938f412e73b7d0609e18d45aad57c05a54441f84e244d73c",
+        "spans.json": "a9e3b64ba6881290be5d8a1d9f400c73cccd95434587dac48374906e2b39578f",
+        "summary.json": "056a38d635060fda69ad52c84658650f312f3e8f963f8ea11cd0d3daacdc2429",
+        "provenance.json": "649d05f0e1b9c0c2c982038763f87169aca154e2b27f0c8500bd1f992d3090cd",
+        "plan.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898"
+      },
+      "full_input_characters": 52560,
+      "candidate_outputs": 6,
+      "p44_changed_outputs": 2,
+      "views": {
+        "used_since_document": {
+          "selection": {
+            "mode": "used_since_document",
+            "checks": [
+              {
+                "span_id": "s3",
+                "changed": false,
+                "receipt_group": "mixed"
+              },
+              {
+                "span_id": "s6",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s4"
+                ],
+                "removed_stdout_characters": 1286,
+                "documentation_receipt_ids": [
+                  "s4"
+                ]
+              },
+              {
+                "span_id": "s9",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s13",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s12"
+                ],
+                "removed_stdout_characters": 455,
+                "documentation_receipt_ids": [
+                  "s12"
+                ]
+              },
+              {
+                "span_id": "s15",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s20",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s4": {
+                "target_api": "venmo__show_sent_payment_requests",
+                "document_call": "call_002",
+                "document_value_sha256": "05e10b78ae633faebffe7eb8ee91a8e043ca0fa15289582ff29c76201117160e",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit",
+                  "status"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 4,
+                "non_error_json_responses_since_document": 4,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s5": {
+                "target_api": "venmo__create_transaction",
+                "document_call": "call_002",
+                "document_value_sha256": "618e6236243adc8eff8d86a9c0db387834c6e49abc785221cf560981db15c290",
+                "public_parameter_names": [
+                  "access_token",
+                  "amount",
+                  "description",
+                  "payment_card_id",
+                  "private",
+                  "receiver_email"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s12": {
+                "target_api": "venmo__login",
+                "document_call": "call_005",
+                "document_value_sha256": "68d1799e5cf8a7c3680b6eae2334f689bd4d80e02133a55f71f794399091f43f",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 2,
+            "removed_stdout_characters": 1741,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 51251,
+          "input_characters_removed": 1309,
+          "private_input_sha256": "650a589b3b6d58ea3231f71a82bbabc977cb54db77cc91e6f5178812d4b3f43a"
+        },
+        "all_parameters_observed": {
+          "selection": {
+            "mode": "all_parameters_observed",
+            "checks": [
+              {
+                "span_id": "s3",
+                "changed": false,
+                "receipt_group": "mixed"
+              },
+              {
+                "span_id": "s6",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s9",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s13",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s12"
+                ],
+                "removed_stdout_characters": 455,
+                "documentation_receipt_ids": [
+                  "s12"
+                ]
+              },
+              {
+                "span_id": "s15",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s20",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s4": {
+                "target_api": "venmo__show_sent_payment_requests",
+                "document_call": "call_002",
+                "document_value_sha256": "05e10b78ae633faebffe7eb8ee91a8e043ca0fa15289582ff29c76201117160e",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit",
+                  "status"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 4,
+                "non_error_json_responses_since_document": 4,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s5": {
+                "target_api": "venmo__create_transaction",
+                "document_call": "call_002",
+                "document_value_sha256": "618e6236243adc8eff8d86a9c0db387834c6e49abc785221cf560981db15c290",
+                "public_parameter_names": [
+                  "access_token",
+                  "amount",
+                  "description",
+                  "payment_card_id",
+                  "private",
+                  "receiver_email"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s12": {
+                "target_api": "venmo__login",
+                "document_call": "call_005",
+                "document_value_sha256": "68d1799e5cf8a7c3680b6eae2334f689bd4d80e02133a55f71f794399091f43f",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 6,
+            "changed_outputs": 1,
+            "removed_stdout_characters": 455,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 52329,
+          "input_characters_removed": 231,
+          "private_input_sha256": "272f99e9981dfda242120bd33dfb045e1664dd0fa0c3be01b8466622aa86dc27"
+        }
+      }
+    },
+    {
+      "source_run": "P29_04_CODE",
+      "task_id": "6104387_1",
+      "boundary_manifest_sha256": "18c487db03396b9551e9dbd783db4519d648086c6152963f249f427ad442e270",
+      "original_source_sha256": {
+        "events.json": "1aa3558e2f99bf62e40cd6033900540d2a98b44bf96786cc59f814dc8b3fb951",
+        "spans.json": "147dc0a3950d6daf88ffc6cf3c70197fbffeca8000ba6148aa40ab1e04037c17",
+        "summary.json": "3abb1a5167ef5f4b60805d992ddc340680760a7afcfdc926cbf71aedb9d3cebc",
+        "provenance.json": "44f1e303d36523a3e847fa426e53372ce41d1e5a24811cf2b80958170a6d7fe2",
+        "plan.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898"
+      },
+      "full_input_characters": 50668,
+      "candidate_outputs": 5,
+      "p44_changed_outputs": 3,
+      "views": {
+        "used_since_document": {
+          "selection": {
+            "mode": "used_since_document",
+            "checks": [
+              {
+                "span_id": "s4",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s11",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s5",
+                  "s6",
+                  "s7"
+                ],
+                "removed_stdout_characters": 2881,
+                "documentation_receipt_ids": [
+                  "s5",
+                  "s6",
+                  "s7"
+                ]
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s17",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s16"
+                ],
+                "removed_stdout_characters": 457,
+                "documentation_receipt_ids": [
+                  "s16"
+                ]
+              },
+              {
+                "span_id": "s23",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s5": {
+                "target_api": "spotify__show_song_library",
+                "document_call": "call_002",
+                "document_value_sha256": "deb8526322d30e4b5332fb47ebb0dbb44274b6cf2223c1bdc1867e93f9f6ba22",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s6": {
+                "target_api": "spotify__show_album_library",
+                "document_call": "call_002",
+                "document_value_sha256": "6b3776b25d5085fe1187db362ed435926a093a86ccf90bdaa611a33575c98238",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s7": {
+                "target_api": "spotify__show_playlist_library",
+                "document_call": "call_002",
+                "document_value_sha256": "8e366566aaa37c2d2040c2ae464cc2c224c5c143b5a29ba37d60bafb4c0fe8c0",
+                "public_parameter_names": [
+                  "access_token",
+                  "is_public",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "spotify__show_playlist",
+                "document_call": "call_002",
+                "document_value_sha256": "5537893ebbfb2c8ec774ebba301084a6cce33453b7165a839ff456cb355efca9",
+                "public_parameter_names": [
+                  "access_token",
+                  "playlist_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s9": {
+                "target_api": "spotify__show_song",
+                "document_call": "call_002",
+                "document_value_sha256": "ca0646cff27c525d781002442f48bdee690288a20c5e54ceb8bb3f4a056ac915",
+                "public_parameter_names": [
+                  "song_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s10": {
+                "target_api": "spotify__show_album",
+                "document_call": "call_002",
+                "document_value_sha256": "86fcebab8f73203a0d88bc21644de8671df4e99c343a302650240a827a2f7498",
+                "public_parameter_names": [
+                  "album_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s16": {
+                "target_api": "spotify__login",
+                "document_call": "call_005",
+                "document_value_sha256": "9c384f2d85cb1e5d0bf9a4dcc892352907fed6047e77ee1ee37cf0e4adeeb784",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 5,
+            "changed_outputs": 2,
+            "removed_stdout_characters": 3338,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 47765,
+          "input_characters_removed": 2903,
+          "private_input_sha256": "bfd09b903734832367b75466414cafda5d4a5ab7f4ae7f043a304a700b6b3a06"
+        },
+        "all_parameters_observed": {
+          "selection": {
+            "mode": "all_parameters_observed",
+            "checks": [
+              {
+                "span_id": "s4",
+                "changed": false,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": []
+              },
+              {
+                "span_id": "s11",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s5",
+                  "s6"
+                ],
+                "removed_stdout_characters": 1786,
+                "documentation_receipt_ids": [
+                  "s5",
+                  "s6"
+                ]
+              },
+              {
+                "span_id": "s13",
+                "changed": false,
+                "receipt_group": "other"
+              },
+              {
+                "span_id": "s17",
+                "changed": true,
+                "receipt_group": "documentation_only",
+                "recognized": true,
+                "eligible_document_receipts": [
+                  "s16"
+                ],
+                "removed_stdout_characters": 457,
+                "documentation_receipt_ids": [
+                  "s16"
+                ]
+              },
+              {
+                "span_id": "s23",
+                "changed": false,
+                "receipt_group": "other"
+              }
+            ],
+            "receipt_use_evidence": {
+              "s5": {
+                "target_api": "spotify__show_song_library",
+                "document_call": "call_002",
+                "document_value_sha256": "deb8526322d30e4b5332fb47ebb0dbb44274b6cf2223c1bdc1867e93f9f6ba22",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s6": {
+                "target_api": "spotify__show_album_library",
+                "document_call": "call_002",
+                "document_value_sha256": "6b3776b25d5085fe1187db362ed435926a093a86ccf90bdaa611a33575c98238",
+                "public_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s7": {
+                "target_api": "spotify__show_playlist_library",
+                "document_call": "call_002",
+                "document_value_sha256": "8e366566aaa37c2d2040c2ae464cc2c224c5c143b5a29ba37d60bafb4c0fe8c0",
+                "public_parameter_names": [
+                  "access_token",
+                  "is_public",
+                  "page_index",
+                  "page_limit"
+                ],
+                "observed_parameter_names": [
+                  "access_token",
+                  "page_index",
+                  "page_limit"
+                ],
+                "attempts_since_document": 2,
+                "non_error_json_responses_since_document": 2,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s8": {
+                "target_api": "spotify__show_playlist",
+                "document_call": "call_002",
+                "document_value_sha256": "5537893ebbfb2c8ec774ebba301084a6cce33453b7165a839ff456cb355efca9",
+                "public_parameter_names": [
+                  "access_token",
+                  "playlist_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s9": {
+                "target_api": "spotify__show_song",
+                "document_call": "call_002",
+                "document_value_sha256": "ca0646cff27c525d781002442f48bdee690288a20c5e54ceb8bb3f4a056ac915",
+                "public_parameter_names": [
+                  "song_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s10": {
+                "target_api": "spotify__show_album",
+                "document_call": "call_002",
+                "document_value_sha256": "86fcebab8f73203a0d88bc21644de8671df4e99c343a302650240a827a2f7498",
+                "public_parameter_names": [
+                  "album_id"
+                ],
+                "observed_parameter_names": [],
+                "attempts_since_document": 0,
+                "non_error_json_responses_since_document": 0,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": null,
+                "used_since_document": false,
+                "all_parameters_observed": false,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              },
+              "s16": {
+                "target_api": "spotify__login",
+                "document_call": "call_005",
+                "document_value_sha256": "9c384f2d85cb1e5d0bf9a4dcc892352907fed6047e77ee1ee37cf0e4adeeb784",
+                "public_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "observed_parameter_names": [
+                  "password",
+                  "username"
+                ],
+                "attempts_since_document": 1,
+                "non_error_json_responses_since_document": 1,
+                "uncertain_or_failed_attempts_since_document": 0,
+                "last_attempt_observed_non_error_json": true,
+                "used_since_document": true,
+                "all_parameters_observed": true,
+                "future_irrelevance_proven": false,
+                "semantic_success_verified": false
+              }
+            },
+            "candidate_outputs": 5,
+            "changed_outputs": 2,
+            "removed_stdout_characters": 2243,
+            "app_and_api_listings_retained": true,
+            "latest_turn_retained": true,
+            "original_archive_modified": false,
+            "future_irrelevance_proven": false,
+            "quality_preservation_claim": false
+          },
+          "input_characters": 48867,
+          "input_characters_removed": 1801,
+          "private_input_sha256": "569225fd5e5035b6e5097f05381aded26047fab1bd7ff29e7537aaa6db999be8"
+        }
+      }
+    }
+  ],
+  "model_generations": 0,
+  "tokenizer_requests": 0,
+  "environment_api_requests": 0,
+  "program_reexecutions": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "generation_comparison_authorized": false,
+  "future_irrelevance_proven": false,
+  "novel_method_established": false,
+  "quality_preservation_claim": false,
+  "token_savings_measured": false,
+  "wall_seconds": 0.15489745899685659
+}
