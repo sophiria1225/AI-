@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T10:28:44.076155+00:00",
+  "updated_at": "2026-10-22T10:41:22.355807+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -93,23 +93,22 @@
     "resumption": "docs/resumption_20261022.md"
   },
   "last_completed_passive_inspection": {
-    "phase": "P49",
-    "planned_cells": 12,
-    "rejected_requests": 10,
-    "bindings_admitted": 6,
-    "empty_contract_normalization_candidates": 3,
-    "complete_rename_candidates": 1,
-    "requires_broader_repair": 2,
-    "bindings_refused": 4,
+    "phase": "P50",
+    "planned_cells": 10,
+    "distinct_known_tasks": 10,
+    "events_checked": 488,
+    "native_format_rejections": 0,
+    "persistent_python_format_rejections": 6,
+    "complete_rename_candidates": 2,
     "model_generations": 0,
     "environment_api_requests": 0,
     "repairs_executed": 0,
-    "results": "../../docs/P49_findings.md"
+    "results": "../../docs/P50_findings.md"
   },
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
   "critical_path": [
-    "P47 not adopted; P49 value-preserving repair has one nontrivial candidate. Do not expand a resumer on this evidence; identify a concrete avoidable cost beyond ordinary repair.",
+    "P47 not adopted. P49/P50 show sparse local name-repair candidates, including deterministic alternatives. Do not send every rejection to an LLM or expand a resumer without evidence.",
     "Fix one concrete control rule and contribution beyond the nearest baseline",
     "Complete main comparison and new abstract by 2026-10-23",
     "Additional controls and reserved-scenario checks only after frozen conditions, by 2026-10-25",
