@@ -1,0 +1,69 @@
+{
+  "phase": "P54",
+  "batch_id": "P54_ranked_subset_access_v01",
+  "source_run": "P24_06_GUIDED",
+  "boundary": "call_004",
+  "prefix_calls": [
+    "call_001",
+    "call_002",
+    "call_003",
+    "call_004"
+  ],
+  "prefix_events": 5,
+  "target_span": "s5",
+  "arms": [
+    "point",
+    "ranked",
+    "bounded"
+  ],
+  "maximum_target_ids": 100,
+  "max_requests_per_arm": 80,
+  "max_setup_api_per_arm": 5,
+  "max_total_api_requests": 255,
+  "max_seconds_per_arm": 180,
+  "max_batch_seconds": 600,
+  "page_limit": 20,
+  "exploratory_pages": 1,
+  "model_generations": 0,
+  "tokenizer_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "source_sha256": {
+    "plan.json": "a8af6dbd487d630c6d9eb412795326fcac12c5cd2a23a880cbcf2661ec10a0ed",
+    "provenance.json": "ec1073fd2f22b819fcf8175fc702b1ca611639a76e76d58f689a7399fefa2be1",
+    "events.json": "47e9982ea7ce19fee409c66fe57bc5ae979aa09439616b5fdd5baa4eb85d20da",
+    "spans.json": "81d4827c17053a6e0a21ddb5c354c78d2d605685dbfa32dbb367a41eece15c5f",
+    "public_task.json": "b4399cb05bc7f2b6a26633cb2202e41729a5ee736dff3754304a0b144efbc486",
+    "boundaries/manifests/call_004.json": "eda0fe3e46c63ce02946280c291ec713ca397f88167a2d96fb2a0d99adab30e5",
+    "call_001/request.json": "4ab60677b45c18ffc9b395fa81742216640921c650b55370e24152a2d72217d4",
+    "call_001/response.json": "4f889b21e1ecfcc3f5ef57a3662c1130feac662df76bacc7f385331695cae92b",
+    "call_002/request.json": "a0265ffa55cdb2de6d5b420cd4b5b396404a56bac956a6bba69e63a056151037",
+    "call_002/response.json": "551cc90b352df3216d3339e2e6745fd597acf3b18f1e55b8533afe7546f04d37",
+    "call_003/request.json": "b2a7621eef1f1d110fa2bcb0a008f59b9c10d4e8b950f7d0aeaf24415039858a",
+    "call_003/response.json": "2c5ed28bfefb01bc01e5422075b3128eb4f7cddc1d1d89524df743d5c7db7bcc",
+    "call_004/request.json": "ee3208ad13f340b47021708093d0a56307e58eeb1655420593adfedc040a288c",
+    "call_004/response.json": "dfc3548b7711ad814ef26b83a84868f8d8c761fea5a3a27a6f88143263c49a72"
+  },
+  "installed_source_sha256": {
+    "spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172",
+    "api_lib.py": "573657c3db8d99def6ee92b6833fbc2fedd894be41031fe38feebab49e597485"
+  },
+  "contract": {
+    "app": "spotify",
+    "point_api": "show_song",
+    "ranked_api": "search_songs",
+    "id_field": "song_id",
+    "score_field": "like_count",
+    "value_fields": [
+      "title"
+    ],
+    "query": "",
+    "sort_by": "-like_count"
+  },
+  "scope": "Conventional access strategies for one caller-supplied known ID set. Not autonomous task interpretation, task success, new algorithm, or model-token savings.",
+  "stop_on_prefix_or_source_mismatch": true,
+  "retry_failed_case": false,
+  "max_cleanup_seconds_per_arm": 15,
+  "forced_process_reap_seconds": 5
+}
