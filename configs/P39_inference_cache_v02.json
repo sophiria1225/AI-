@@ -1,0 +1,26 @@
+{
+  "phase": "P39",
+  "batch_id": "P39_inference_cache_v02",
+  "source_run": "P38_04_NONE_KEEP",
+  "source_request_sha256": "65244df8e1582b6417d79a34193e3f26ba212e9c477bb51bc9132e3ac499d6a4",
+  "source_input_tokens": 13552,
+  "seed": 50,
+  "max_output_tokens": 256,
+  "max_calls": 6,
+  "max_total_tokens": 100000,
+  "call_timeout_seconds": 240,
+  "max_wall_seconds": 1560,
+  "schedule": [
+    "cold_1",
+    "warm_1",
+    "warm_2",
+    "cold_2",
+    "warm_3",
+    "cold_3"
+  ],
+  "cache_rule": "For each cold-labelled call set cache_prompt=false, and for each warm-labelled call true. All input messages/tools, seed, sampling and output cap remain identical. Verify cache_n and prompt_n; no erase endpoint or server restart.",
+  "stop_rule": "No retries. Stop on unknown usage, changed server identity, non-idle slot, cache-state mismatch, budget, or stop file. Preserve every attempted call and cleanup status.",
+  "scope": "One known development input, capped generation only. Never execute generated tool calls, invoke AppWorld or a final evaluator. Not a task-effectiveness study, sample independence claim, or new research method.",
+  "source_specification": "https://raw.githubusercontent.com/ggml-org/llama.cpp/620d2225cc436ab0b001e3200e590e3b286ef9ab/tools/server/README.md",
+  "source_version": "v01 stopped before generation because slot actions require --slot-save-path, which the active server does not enable."
+}

@@ -5,6 +5,7 @@ import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from inference_cache_control import (SCHEDULE, cache_measurement, request_for,
                                      require_idle, validate_erasure)
+from probe_inference_cache import condition_payload
 
 
 class CacheControlTests(unittest.TestCase):
@@ -43,6 +44,17 @@ class CacheControlTests(unittest.TestCase):
         with self.assertRaises(ValueError):cache_measurement('cold_1',{'status':'error'},100)
         r=self.response(0);r['timings']['prompt_n']=99
         with self.assertRaises(ValueError):cache_measurement('cold_1',r,100)
+
+    def test_v02_changes_only_the_request_cache_policy(self):
+        source={'cache_prompt':True,'seed':50,'max_tokens':256,'messages':[{'content':'fixture'}]}
+        cold=condition_payload(source,'cold_1','v02');warm=condition_payload(source,'warm_1','v02')
+        self.assertEqual(warm,source)
+        self.assertEqual(cold,{**source,'cache_prompt':False})
+        cold['messages'][0]['content']='changed'
+        self.assertEqual(source['messages'][0]['content'],'fixture')
+        self.assertEqual(condition_payload(source,'cold_1','v01'),source)
+        with self.assertRaises(ValueError):condition_payload(source,'unknown','v02')
+        with self.assertRaises(ValueError):condition_payload(source,'cold_1','unknown')
 
 
 if __name__=='__main__':unittest.main()
