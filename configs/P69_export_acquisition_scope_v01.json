@@ -1,0 +1,75 @@
+{
+  "phase": "P69",
+  "task_id": "6104387_1",
+  "run_ids": [
+    "P18_04_ROLES",
+    "P25_04_GUIDED",
+    "P29_04_CODE",
+    "P68_01_EXPORT_NATIVE",
+    "P68_02_EXPORT_CONTROLLED"
+  ],
+  "max_wall_seconds": 120,
+  "max_events_per_record": 4000,
+  "max_model_boundaries": 80,
+  "max_song_ids": 512,
+  "max_file_bytes": 16777216,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "source_files": {
+    "P18_04_ROLES": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "a41995a6b9a112fd9995f3e351dca0562ee6ee569c202d98f427d55417d7c9f2",
+      "spans.json": "caada98e81d0af8402f22f8d5f0228495e55c5846f31a1526d54437dae26ab7b",
+      "usage.json": "c8551867aac01950754d30eb0bce1d47090237193e46f573dc3ad3c8d4fab2d4",
+      "summary.json": "403629528a160ea1f0593e425a31f1056a0b58dc8ae514d37866b35a0b6f4daf"
+    },
+    "P25_04_GUIDED": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "ac380497eb2713eaeb3afc876ec043775d58fdb2ec7348bb717fb570c1f8fab7",
+      "spans.json": "6ebfbdaa21dc07ac762b183c98f0ded5a9df6677697ccafb605972bd1b751ef9",
+      "usage.json": "61cdccd3d61ca5bac7df6fd815b3d508aca56a2142e51a197ed44e74005fd902",
+      "summary.json": "0effc66e43126d2f011af59d403a5b0e1df754f5c8fc0760fc763fdd0b335ffe"
+    },
+    "P29_04_CODE": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "1aa3558e2f99bf62e40cd6033900540d2a98b44bf96786cc59f814dc8b3fb951",
+      "spans.json": "147dc0a3950d6daf88ffc6cf3c70197fbffeca8000ba6148aa40ab1e04037c17",
+      "usage.json": "d39e4c15395d9dbf3a16434356702678608dcdd162f7494a53d94a22a50f4621",
+      "summary.json": "3abb1a5167ef5f4b60805d992ddc340680760a7afcfdc926cbf71aedb9d3cebc"
+    },
+    "P68_01_EXPORT_NATIVE": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "72d919ca0ca071f644a9a2850413f1b98d734c63aaf25fb5992801dd03a4f4be",
+      "spans.json": "3d3434737183bc600518e312a0d6dd14022a3abff8d0898d96ca973ce4212f59",
+      "usage.json": "e640cd71ed89914ccba1505a78fe8d32d89e2ace2b6ee58e87bff21766003dd3",
+      "summary.json": "9240426504494e8651a09d20b7a491a6f93f876e1a0037f7c84194cf52b8c781"
+    },
+    "P68_02_EXPORT_CONTROLLED": {
+      "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+      "events.json": "72d919ca0ca071f644a9a2850413f1b98d734c63aaf25fb5992801dd03a4f4be",
+      "spans.json": "3d3434737183bc600518e312a0d6dd14022a3abff8d0898d96ca973ce4212f59",
+      "usage.json": "09d8a59503671d276b266487f7e919cb76885d1d2e47b4b812042dda17e43582",
+      "summary.json": "8eec103514df601e68c0e51932cb0cb2eb4a691c5e72725a8b89a6ca7cb74e61"
+    }
+  },
+  "audit_reports": {
+    "reports/P18_04_ROLES_execution_audit.json": "3e104f6009312022f5e093b2efdacd005a18d43cb64910c2101f2f62ee672e85",
+    "reports/P25_04_GUIDED_execution_audit.json": "099f6a32816f95fac3cea692c773b6481697a06c7224be94b6427015ffd47c9c",
+    "reports/P29_04_CODE_execution_audit.json": "1a49a3c33b9365d154673788b09983282699927e70d682206aa1474f62ef6ac2",
+    "reports/P68_completion_audit.json": "36fc231b04efb84758c44c3969c61c0179912114ee1c3feef7c95bc74da4a980"
+  },
+  "public_api_implementation_sha256": {
+    "spotify": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1"
+  },
+  "helper_sha256": {
+    "scripts/public_export_evidence.py": "7f0126dbdc59814832b0148acbc94c10fe3688c9a19ec20d142aa29a01eb672c",
+    "scripts/inspect_public_move_scope.py": "ce5c8e2ad2c802067212394c8fc7a4244044c8f17758a8888d2809be7383ca6a",
+    "scripts/inspect_public_export_scope.py": "2747c6ad986ec8b2773d43d28bca34fd4594a7bc580d93c1ffa524ae8a2e217b"
+  },
+  "selection": "Posthoc one known export task: all three old P67 source records plus both fresh P68 conditions. All five retained. P68 outcomes and saved runtime metadata coverage were already read; this is not an independent test or causal comparison of P25 versus P68.",
+  "scope": "Classify show_song reads using only prior public receipts: task title/artists coverage, exact prior request responses and posthoc full-object equality. Distinguish projection sufficiency from complete API-response substitution. Never execute, suppress or alter a call; never translate a posthoc opportunity into measured savings."
+}
