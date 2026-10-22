@@ -60,6 +60,15 @@ class ContractComparisonAuditTests(unittest.TestCase):
             write_json(folder / 'evaluation.json', evaluation)
             result = audit_cell(folder, item, ARMS[0], original, plan, preflight, True)
             self.assertEqual(result['known_total_tokens'], 51)
+            # A shared prefix is accounted separately; unknown usage is not zero.
+            item['prefix']['usage'] = [
+                {'status': 'ok', 'input_tokens': 71, 'output_tokens': 13},
+                {'status': 'timeout', 'input_tokens': None, 'output_tokens': None}]
+            write_json(folder / 'prefix_usage.json', item['prefix']['usage'])
+            result = audit_cell(folder, item, ARMS[0], original, plan, preflight, True)
+            self.assertEqual(result['prefix_known_total_tokens'], 84)
+            self.assertEqual(result['prefix_unknown_usage_calls'], 1)
+            self.assertEqual(result['known_total_tokens'], 51)
             path = folder / 'call_001/request.json'; request = json.loads(path.read_text())
             changed = copy.deepcopy(request); changed['messages'][1]['content'] = 'altered task'
             write_json(path, changed)

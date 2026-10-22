@@ -218,6 +218,8 @@ def audit_cell(folder, item, arm, original, plan, preflight, evaluated):
            'record_status': 'evaluated' if evaluated else 'attempted_unevaluated',
            'success': success, 'stop_reason': summary['stop_reason'], 'model_calls': len(usage),
            'known_total_tokens': summary['known_total_tokens'], 'unknown_usage_calls': summary['unknown_usage_calls'],
+           'prefix_known_total_tokens': sum(c['input_tokens'] + c['output_tokens'] for c in prefix['usage'] if c['status'] == 'ok'),
+           'prefix_unknown_usage_calls': sum(c['status'] != 'ok' for c in prefix['usage']),
            'api_requests': summary['api_requests'], 'prefix_api_requests': prefix_api,
            'setup_api_requests': setup['environment_replay'].get('api_requests', 0),
            'setup_wall_seconds': setup['wall_seconds'], 'continuation_wall_seconds': summary['wall_seconds'],
@@ -291,6 +293,9 @@ def audit(storage, root, frozen):
             or state['unevaluated'] != [rid for rid in started if rid not in state['completed']]):
         raise ValueError('missing-cell accounting differs')
     totals = {}
+    for row in rows:
+        row['logical_task_known_total_tokens'] = row.get('prefix_known_total_tokens', 0) + row['known_total_tokens']
+        row['logical_task_unknown_usage_calls'] = row.get('prefix_unknown_usage_calls', 0) + row['unknown_usage_calls']
     for arm in ARMS:
         selected = [r for r in rows if r['arm'] == arm]
         total = {'planned_trials': 4, 'attempted_trials': sum(r['record_status'] != 'not_run_after_stop' for r in selected),
@@ -300,7 +305,8 @@ def audit(storage, root, frozen):
                     'setup_api_requests', 'setup_wall_seconds', 'continuation_wall_seconds', 'full_wall_seconds',
                     'display_construction_seconds', 'input_count_seconds', 'notification_characters',
                     'archive_read_calls', 'selected_prior_receipts', 'reduced_output_caps', 'admission_rejections',
-                    'feedback_count', 'feedback_control_seconds'):
+                    'feedback_count', 'feedback_control_seconds', 'prefix_known_total_tokens',
+                    'prefix_unknown_usage_calls', 'logical_task_known_total_tokens', 'logical_task_unknown_usage_calls'):
             total[key] = sum(r.get(key, 0) for r in selected)
         profile = Counter()
         for row in selected: profile.update(row.get('cost_profile', {}))
