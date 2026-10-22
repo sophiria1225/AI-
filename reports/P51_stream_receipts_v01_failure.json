@@ -1,0 +1,51 @@
+{
+  "phase": "P51",
+  "batch_id": "P51_stream_receipts_v01",
+  "status": "initialization_failed",
+  "git_commit": "509befb38f7f61c6e0ce82714f03cb9edafb47b1",
+  "failure_type": "TypeError",
+  "failure": "model provenance tuple included a pathlib.Path; initial status JSON serialization failed before the generation loop",
+  "model_calls_attempted": 0,
+  "input_count_requests": 0,
+  "known_total_tokens": 0,
+  "unknown_usage_calls": 0,
+  "environment_api_requests": 0,
+  "generated_tools_executed": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "planned": [
+    "nonstream_complete",
+    "stream_complete",
+    "stream_disconnect"
+  ],
+  "not_attempted": [
+    "nonstream_complete",
+    "stream_complete",
+    "stream_disconnect"
+  ],
+  "evidence_scope": "Observed traceback at initial save before loop; no call directory. This is a post-failure record, not an automatically completed status file.",
+  "preserved_files_sha256": {
+    "plan.json": "4e003b3ce0756e959564686224d3ee6625983162bc8797efbd604e4ea4a8540a",
+    "server_props.json": "03961095c5bdf1c414285d8a7fa86cb2133c112c7aaa877596c5e6f9c2cc6470",
+    "server_runtime.json": "5812d90f49bf5eeda65daa2d77e335aa097527f4edc94224646f32c75da3c91c",
+    "source/inference_cache_control.py": "e11e04a320b341fb189fcefc7e018ac27491988b3f67c48c6c6b6ebb137969f7",
+    "source/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "source/local_llama_stream.py": "8b31a8e7cdce86c380b3bd1c021a3384e2948c277ad273786ad785dd08491f37",
+    "source/model_provenance.py": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+    "source/probe_stream_receipts.py": "065861523b5253faf8aac82cc54c40682198822da36f0c4281bdb2a0c36b06ef",
+    "source/streaming_usage_receipt.py": "4fa1adc235702a29fe07b4cb1316b7740dbf81e218633346b0482d93042f3483"
+  },
+  "server_record_directory": "records/p2_servers/20261022_202630",
+  "server_summary_sha256": "6d32f2d840cd752e44ea4fc10617d9406e3a2561f3583fa0ce830c429d65fd73",
+  "server_session": {
+    "started_at": "2026-10-22T11:26:30.324089+00:00",
+    "status": "stopped",
+    "wall_seconds": 41.10990800000218,
+    "load_wall_seconds": 10.064762416001031,
+    "sampled_peak_rss_bytes": 235206279168,
+    "peak_system_swap_bytes": 0,
+    "exit_code": 0,
+    "stop_reason": "requested_stop"
+  },
+  "decision": "Close v01 without rerun. v02 changes initialization serialization and failure recording only, with three runner integration tests. No model outcome or task result was observed; all generation conditions remain fixed."
+}

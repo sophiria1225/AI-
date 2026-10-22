@@ -1,0 +1,42 @@
+{
+  "phase": "P51",
+  "batch_id": "P51_stream_receipts_v02",
+  "supersedes_initialization_only": "v01 stopped before any tokenizer or model request because its model provenance tuple contained a Path. Preserve v01; correct JSON serialization and record pre-generation failures. No generation outcome was observed or selected.",
+  "purpose": "Synthetic transport/measurement calibration only; not a task-efficiency experiment or repair comparison.",
+  "model_selection": "configs/models/minimax_m3_iq4_selection.json",
+  "model": {
+    "base_url": "http://127.0.0.1:8011",
+    "model": "minimax-m3-iq4xs",
+    "num_ctx": 65536,
+    "temperature": 1.0,
+    "seed": 73,
+    "num_predict": 128,
+    "cache_prompt": false,
+    "thinking_mode": "enabled",
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "call_timeout_seconds": 120,
+    "expected_system_fingerprint": "b11669-620d2225c"
+  },
+  "messages": [
+    {"role": "system", "content": "You are a concise assistant. This is a transport test; do not use tools."},
+    {"role": "user", "content": "Write one sentence explaining JSON, followed by a short example with a key named color."}
+  ],
+  "tools": [],
+  "schedule": ["nonstream_complete", "stream_complete", "stream_disconnect"],
+  "max_model_calls": 3,
+  "max_input_tokens_per_call": 2048,
+  "max_reserved_logical_tokens": 8192,
+  "max_wall_seconds": 300,
+  "max_server_seconds": 1200,
+  "disconnect_after_observed_output_tokens": 4,
+  "max_quiescence_wait_seconds": 30,
+  "environment_api_requests": 0,
+  "generated_tools_executed": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "stop_rule": "One attempt per scheduled case, no retries. Stop on unexpected failure, changed model/source/server, non-idle slot, or budget. The final intentional disconnect remains unknown exact usage; its last counter is only an observed lower bound. Poll for one idle slot for at most 30 seconds, then close the owned server. Never continue task execution from a partial stream.",
+  "interpretation": "Compare terminal usage validity and record any stream/nonstream payload difference; equality is not assumed and differences do not authorize repeats. Reserved maximum tokens are admission accounting, not measured usage. Do not fill prior unknown calls or change closed experimental stop rules."
+}

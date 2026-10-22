@@ -2,12 +2,12 @@
 
 **最優先は10月23日の主張・主要結果・あらましと、31日のレター投稿。** 最終目標は、必要な情報と処理を残し、最終品質を維持して制御・失敗・再取得を含む仕事全体の費用を減らすこと。独自の中核と品質を保った総費用削減は未確立。[金曜の決定表](letter_friday_decisions_20261022.md)。
 
-**P47は18:12 JSTに事前規則で終了。** ９評価・１使用量不明の未評価・２未実行。66生成、既知834,705 token＋不明１呼出し、継続325 API。写真の成功を失い、返金も全表示より高費用のため選択表示は採用しない。[全結果](P47_findings.md)／[８枚PDF](../materials/20261022_p47/AI_harness_contract_feedback_20261022.pdf)。モデルは正常停止。次の課題比較は未選定で、計測器の合成３生成だけを[P51](experiments/P51_stream_receipts.md)として固定した。実サーバー校正は未開始。
+**P47は18:12 JSTに事前規則で終了。** ９評価・１使用量不明の未評価・２未実行。66生成、既知834,705 token＋不明１呼出し、継続325 API。写真の成功を失い、返金も全表示より高費用のため選択表示は採用しない。[全結果](P47_findings.md)／[８枚PDF](../materials/20261022_p47/AI_harness_contract_feedback_20261022.pdf)。モデルは正常停止。次の課題比較は未選定で、計測器の合成３生成だけを[P51](experiments/P51_stream_receipts.md)として固定した。v01は生成前の記録保存で停止し生成０回。修正版v02を固定し、実サーバー校正は未達。
 
 **P48〜P50で局所修復の適用範囲を絞った。** P49は値・既存引数・APIを保持する部品を実装し、P47の10拒否で通常正規化３、名前対応１、完全対応なし２、未公開API４。P50の介入前10実行では、P24の直接ツール６課題に形式拒否０、P29の持続Python４課題に６件。その名前対応２件はいずれも型上の行先１つだった。追加生成・実API０。型の適合を意味的な正解とせず、全拒否をLLM修復へ送る案は主比較へ進めない。[P49](P49_findings.md)／[P50](P50_findings.md)／[資料補足](../materials/20261022_p47/repair_scope_addendum.md)。
 
 通常修復の[SchemaShield-Lite本文と固定実装](argument_repair_overlap_20261022.md)を照合済み。小さい入力、API固定、局所修復だけを独自性にしない。必要な情報を保つ具体的な規則、通常対照の後にも残る費用、反証条件を絞る。[次の判断](next_actions.md)。
 
-全719検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
+全722検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
 
 [以前の経緯](archive/current_status_through_P49_20261022.md)／[作業ボード](task_board.md)／[Project](https://github.com/users/sophiria1225/projects/1)。GitHubの変更先はsophiria1225/AI-と専用Projectだけ。実装はユーザーの継続指示に従い進めている。
