@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T07:17:30.326849+00:00",
+  "updated_at": "2026-10-22T07:46:20.918360+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -12,15 +12,8 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P44 closed: eight input counts, ten output edits audited, zero mismatches. Reductions 1941/1065/782/4298 tokens. The development gate is met in three known tasks; next comparison must fix common budget controls and final-quality/full-continuation outcomes. No method novelty or quality-preserving savings established.",
-  "queued_experiment": {
-    "phase": "P45",
-    "status": "running_frozen_ed58f37",
-    "planned_tasks": 4,
-    "planned_cells": 8,
-    "plan": "../../docs/experiments/P45_documentation_comparison.md",
-    "novel_method_claim": false
-  },
+  "current_experiment": "P45 closed under its fixed stop rule: all eight attempted, seven evaluated, one unknown-usage unevaluated cell. All planned records audited with zero mismatches. Selective masking lost one evaluated paired success and increased tokens in the three evaluated pairs; do not adopt it. No complete four-task quality/cost comparison or novelty claim.",
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -43,10 +36,10 @@
     "decision": "Six capped calibration generations checked. Cold/warm cache settings alter processed input and generated payload; normalize first-call cache policy for subsequent comparisons. No task-quality or novelty claim. Failed P39_v01 preserved.",
     "results": "../../docs/P39_findings.md"
   },
-  "latest_presentation": "../../materials/20261022_p43/AI_harness_input_cost_20261022.pdf",
+  "latest_presentation": "../../materials/20261022_p45/AI_harness_documentation_cost_20261022.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/207",
-  "method_fragment": "methods_output_views.tex",
+  "method_fragment": "methods_documentation_comparison.tex",
   "current_references": "references_handoff.bib",
   "research_objective": "Reduce unnecessary information acquisition, sharing, model calls and execution through harness control while maintaining final task quality.",
   "objective_document": "../../docs/research_objective_20261022.md",
@@ -63,16 +56,17 @@
   },
   "latest_official_template_check": "../../reports/ieice_template_fetch_20261022.json",
   "last_terminated_task_experiment": {
-    "phase": "P40",
+    "phase": "P45",
     "planned_cells": 8,
-    "evaluated_cells": 6,
+    "attempted_cells": 8,
+    "evaluated_cells": 7,
     "unknown_usage_unevaluated_cells": 1,
-    "not_run_cells": 1,
+    "not_run_cells": 0,
     "complete_four_task_comparison": false,
-    "model_calls": 44,
-    "known_tokens": 579759,
+    "model_calls": 53,
+    "known_tokens": 684053,
     "unknown_usage_calls": 1,
-    "results": "../../docs/P40_findings.md"
+    "results": "../../docs/P45_findings.md"
   },
   "last_completed_component_probe": {
     "phase": "P41",
@@ -105,10 +99,22 @@
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
   "critical_path": [
-    "Close and audit all P45 cells",
+    "P45 closed and audited; use its rejection evidence to fix the next concrete control rule",
     "Fix one concrete control rule and contribution beyond the nearest baseline",
     "Complete main comparison and new abstract by 2026-10-23",
     "Additional controls and reserved-scenario checks only after frozen conditions, by 2026-10-25",
     "Prepare official four-page manuscript and submission package by 2026-10-30"
-  ]
+  ],
+  "previous_terminated_task_experiment": {
+    "phase": "P40",
+    "planned_cells": 8,
+    "evaluated_cells": 6,
+    "unknown_usage_unevaluated_cells": 1,
+    "not_run_cells": 1,
+    "complete_four_task_comparison": false,
+    "model_calls": 44,
+    "known_tokens": 579759,
+    "unknown_usage_calls": 1,
+    "results": "../../docs/P40_findings.md"
+  }
 }
