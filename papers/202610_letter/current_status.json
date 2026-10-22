@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T05:10:04.825738+00:00",
+  "updated_at": "2026-10-22T06:00:12.122878+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P41 generation-only residual-output diagnostic closed and audited: two generations, 34,057 tokens, unknown usage zero; both returned syntactically valid tool instructions. Third input rejected before generation. No tool execution or task-success evaluation. Next: passive audit of repeated API specification exposure, not an established novel method.",
+  "current_experiment": "P43 passive input accounting prepared on all four known boundaries. P42 generation gate remains failed. No new method or quality-preserving savings established.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -78,11 +78,20 @@
     "results": "../../docs/P41_findings.md"
   },
   "research_pause": {
-    "status": "paused_by_user",
+    "status": "resumed_by_user",
     "at": "2026-10-22T05:27:39.282147+00:00",
     "handoff": "docs/handoff_20261022_account_switch.md",
     "last_completed_phase": "P42",
     "novelty_established": false,
-    "resume_requires_user_instruction": true
+    "resume_requires_user_instruction": false,
+    "resumed_at": "2026-10-22T06:00:12.122878+00:00",
+    "resumption": "docs/resumption_20261022.md"
+  },
+  "last_completed_passive_inspection": {
+    "phase": "P42",
+    "inputs": 12,
+    "model_generations": 0,
+    "additional_generation_design_gate": false,
+    "results": "../../docs/P42_findings.md"
   }
 }
