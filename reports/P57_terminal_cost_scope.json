@@ -1,0 +1,2213 @@
+{
+  "phase": "P57_terminal_cost_scope",
+  "inspection": "post_hoc_read_only",
+  "all_twelve_cells_accounted": true,
+  "rows": [
+    {
+      "run_id": "P55_01_FULL_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "full_keep",
+      "original_success": false,
+      "stop_reason": "token_reservation_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 8789,
+          "output_tokens": 746,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 9535,
+          "model_request_wall_seconds": 115.48777520799922,
+          "sent_api_requests": 5,
+          "sent_api_names": {
+            "file_system__show_file": 5
+          },
+          "sent_categories": {
+            "information_request": 5
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 9679,
+          "output_tokens": 322,
+          "cached_input_tokens": 8514,
+          "known_total_tokens": 10001,
+          "model_request_wall_seconds": 29.752883250002924,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_descriptions": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 10445,
+          "output_tokens": 658,
+          "cached_input_tokens": 9403,
+          "known_total_tokens": 11103,
+          "model_request_wall_seconds": 49.44061412500014,
+          "sent_api_requests": 2,
+          "sent_api_names": {
+            "supervisor__show_active_task": 1,
+            "supervisor__show_profile": 1
+          },
+          "sent_categories": {
+            "information_request": 2
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 10773,
+          "output_tokens": 379,
+          "cached_input_tokens": 10169,
+          "known_total_tokens": 11152,
+          "model_request_wall_seconds": 28.59243512499961,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 10992,
+          "output_tokens": 1318,
+          "cached_input_tokens": 10497,
+          "known_total_tokens": 12310,
+          "model_request_wall_seconds": 84.93848704100674,
+          "sent_api_requests": 42,
+          "sent_api_names": {
+            "file_system__show_file": 42
+          },
+          "sent_categories": {
+            "information_request": 42
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 13707,
+          "output_tokens": 285,
+          "cached_input_tokens": 10716,
+          "known_total_tokens": 13992,
+          "model_request_wall_seconds": 44.743130750001,
+          "sent_api_requests": 3,
+          "sent_api_names": {
+            "file_system__create_directory": 3
+          },
+          "sent_categories": {
+            "task_mutation_request": 3
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "ok",
+          "input_tokens": 14074,
+          "output_tokens": 775,
+          "cached_input_tokens": 13431,
+          "known_total_tokens": 14849,
+          "model_request_wall_seconds": 53.859843958001875,
+          "sent_api_requests": 42,
+          "sent_api_names": {
+            "file_system__move_file": 42
+          },
+          "sent_categories": {
+            "task_mutation_request": 42
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_008",
+          "usage_status": "ok",
+          "input_tokens": 17601,
+          "output_tokens": 292,
+          "cached_input_tokens": 13798,
+          "known_total_tokens": 17893,
+          "model_request_wall_seconds": 54.300735709002765,
+          "sent_api_requests": 4,
+          "sent_api_names": {
+            "file_system__show_directory": 4
+          },
+          "sent_categories": {
+            "information_request": 4
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 8,
+        "known_total_tokens": 100835,
+        "known_input_tokens": 96060,
+        "known_output_tokens": 4775,
+        "known_cached_input_tokens": 76528,
+        "known_uncached_input_plus_output_tokens": 24307,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 461.1159051660143,
+        "sent_api_requests": 100
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_007",
+        "cost_after_boundary": {
+          "model_calls": 1,
+          "known_total_tokens": 17893,
+          "known_input_tokens": 17601,
+          "known_output_tokens": 292,
+          "known_cached_input_tokens": 13798,
+          "known_uncached_input_plus_output_tokens": 4095,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 54.300735709002765,
+          "sent_api_requests": 4
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_01_DETAILS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "details_omitted_keep",
+      "original_success": true,
+      "stop_reason": "agent_declared_complete",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 7342,
+          "output_tokens": 858,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 8200,
+          "model_request_wall_seconds": 109.91317120800522,
+          "sent_api_requests": 42,
+          "sent_api_names": {
+            "file_system__show_file": 42
+          },
+          "sent_categories": {
+            "information_request": 42
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 10314,
+          "output_tokens": 1742,
+          "cached_input_tokens": 7067,
+          "known_total_tokens": 12056,
+          "model_request_wall_seconds": 133.00519787500525,
+          "sent_api_requests": 3,
+          "sent_api_names": {
+            "file_system__create_directory": 3
+          },
+          "sent_categories": {
+            "task_mutation_request": 3
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 11478,
+          "output_tokens": 726,
+          "cached_input_tokens": 10038,
+          "known_total_tokens": 12204,
+          "model_request_wall_seconds": 56.77811758299504,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 12508,
+          "output_tokens": 875,
+          "cached_input_tokens": 11202,
+          "known_total_tokens": 13383,
+          "model_request_wall_seconds": 64.91349783400074,
+          "sent_api_requests": 42,
+          "sent_api_names": {
+            "file_system__move_file": 42
+          },
+          "sent_categories": {
+            "task_mutation_request": 42
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 14303,
+          "output_tokens": 204,
+          "cached_input_tokens": 12232,
+          "known_total_tokens": 14507,
+          "model_request_wall_seconds": 31.41403462499875,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "file_system__show_directory": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 15487,
+          "output_tokens": 83,
+          "cached_input_tokens": 14027,
+          "known_total_tokens": 15570,
+          "model_request_wall_seconds": 18.776791624994075,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "supervisor__complete_task": 1
+          },
+          "sent_categories": {
+            "completion_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": true,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 6,
+        "known_total_tokens": 75920,
+        "known_input_tokens": 71432,
+        "known_output_tokens": 4488,
+        "known_cached_input_tokens": 54566,
+        "known_uncached_input_plus_output_tokens": 21354,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 414.8008107499991,
+        "sent_api_requests": 89
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_004",
+        "cost_after_boundary": {
+          "model_calls": 2,
+          "known_total_tokens": 30077,
+          "known_input_tokens": 29790,
+          "known_output_tokens": 287,
+          "known_cached_input_tokens": 26259,
+          "known_uncached_input_plus_output_tokens": 3818,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 50.190826249992824,
+          "sent_api_requests": 2
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 15570,
+        "known_input_tokens": 15487,
+        "known_output_tokens": 83,
+        "known_cached_input_tokens": 14027,
+        "known_uncached_input_plus_output_tokens": 1543,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 18.776791624994075,
+        "sent_api_requests": 1
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 12204,
+        "known_input_tokens": 11478,
+        "known_output_tokens": 726,
+        "known_cached_input_tokens": 10038,
+        "known_uncached_input_plus_output_tokens": 2166,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 56.77811758299504,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "details_and_listings_omitted_keep",
+      "original_success": false,
+      "stop_reason": "token_reservation_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 6848,
+          "output_tokens": 239,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 7087,
+          "model_request_wall_seconds": 68.42363637499511,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__search_api_docs": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 8599,
+          "output_tokens": 99,
+          "cached_input_tokens": 6573,
+          "known_total_tokens": 8698,
+          "model_request_wall_seconds": 23.4995421670028,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 8777,
+          "output_tokens": 165,
+          "cached_input_tokens": 8323,
+          "known_total_tokens": 8942,
+          "model_request_wall_seconds": 14.066860999999335,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 9060,
+          "output_tokens": 113,
+          "cached_input_tokens": 8501,
+          "known_total_tokens": 9173,
+          "model_request_wall_seconds": 11.922572082999977,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 9314,
+          "output_tokens": 228,
+          "cached_input_tokens": 8784,
+          "known_total_tokens": 9542,
+          "model_request_wall_seconds": 18.576504875003593,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 9564,
+          "output_tokens": 103,
+          "cached_input_tokens": 9038,
+          "known_total_tokens": 9667,
+          "model_request_wall_seconds": 10.939670708001358,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "ok",
+          "input_tokens": 9911,
+          "output_tokens": 443,
+          "cached_input_tokens": 9288,
+          "known_total_tokens": 10354,
+          "model_request_wall_seconds": 32.34092162500019,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_008",
+          "usage_status": "ok",
+          "input_tokens": 10279,
+          "output_tokens": 745,
+          "cached_input_tokens": 9635,
+          "known_total_tokens": 11024,
+          "model_request_wall_seconds": 50.94931324999925,
+          "sent_api_requests": 42,
+          "sent_api_names": {
+            "file_system__show_file": 42
+          },
+          "sent_categories": {
+            "information_request": 42
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_009",
+          "usage_status": "ok",
+          "input_tokens": 12899,
+          "output_tokens": 1458,
+          "cached_input_tokens": 10003,
+          "known_total_tokens": 14357,
+          "model_request_wall_seconds": 115.81174458299938,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_010",
+          "usage_status": "ok",
+          "input_tokens": 14755,
+          "output_tokens": 672,
+          "cached_input_tokens": 12623,
+          "known_total_tokens": 15427,
+          "model_request_wall_seconds": 61.33790233300533,
+          "sent_api_requests": 3,
+          "sent_api_names": {
+            "file_system__create_directory": 3
+          },
+          "sent_categories": {
+            "task_mutation_request": 3
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_011",
+          "usage_status": "ok",
+          "input_tokens": 15528,
+          "output_tokens": 201,
+          "cached_input_tokens": 14479,
+          "known_total_tokens": 15729,
+          "model_request_wall_seconds": 22.567645542003447,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        }
+      ],
+      "total": {
+        "model_calls": 11,
+        "known_total_tokens": 120000,
+        "known_input_tokens": 115534,
+        "known_output_tokens": 4466,
+        "known_cached_input_tokens": 97247,
+        "known_uncached_input_plus_output_tokens": 22753,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 430.4363145410098,
+        "sent_api_requests": 48
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_010",
+        "cost_after_boundary": {
+          "model_calls": 1,
+          "known_total_tokens": 15729,
+          "known_input_tokens": 15528,
+          "known_output_tokens": 201,
+          "known_cached_input_tokens": 14479,
+          "known_uncached_input_plus_output_tokens": 1250,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 22.567645542003447,
+          "sent_api_requests": 0
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 6,
+        "known_total_tokens": 68347,
+        "known_input_tokens": 65815,
+        "known_output_tokens": 2532,
+        "known_cached_input_tokens": 58165,
+        "known_uncached_input_plus_output_tokens": 10182,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 223.73602950001077,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_keep",
+      "original_success": false,
+      "stop_reason": "token_reservation_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 11267,
+          "output_tokens": 142,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 11409,
+          "model_request_wall_seconds": 100.0346130830003,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 11529,
+          "output_tokens": 201,
+          "cached_input_tokens": 10992,
+          "known_total_tokens": 11730,
+          "model_request_wall_seconds": 17.366655332996743,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 11812,
+          "output_tokens": 298,
+          "cached_input_tokens": 11253,
+          "known_total_tokens": 12110,
+          "model_request_wall_seconds": 23.41617683399818,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 12231,
+          "output_tokens": 192,
+          "cached_input_tokens": 11536,
+          "known_total_tokens": 12423,
+          "model_request_wall_seconds": 18.09299483299401,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__get_current_date_and_time": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 12525,
+          "output_tokens": 275,
+          "cached_input_tokens": 11955,
+          "known_total_tokens": 12800,
+          "model_request_wall_seconds": 22.007566958003736,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "file_system__show_file": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 13038,
+          "output_tokens": 258,
+          "cached_input_tokens": 12249,
+          "known_total_tokens": 13296,
+          "model_request_wall_seconds": 23.23553774999891,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__show_contact_relationships": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "ok",
+          "input_tokens": 13362,
+          "output_tokens": 196,
+          "cached_input_tokens": 12762,
+          "known_total_tokens": 13558,
+          "model_request_wall_seconds": 17.70202770800097,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__search_contacts": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_008",
+          "usage_status": "ok",
+          "input_tokens": 14147,
+          "output_tokens": 152,
+          "cached_input_tokens": 13086,
+          "known_total_tokens": 14299,
+          "model_request_wall_seconds": 19.421988707996206,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_descriptions": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_009",
+          "usage_status": "ok",
+          "input_tokens": 16090,
+          "output_tokens": 186,
+          "cached_input_tokens": 13871,
+          "known_total_tokens": 16276,
+          "model_request_wall_seconds": 32.284946666004544,
+          "sent_api_requests": 2,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1,
+            "venmo__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1,
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 9,
+        "known_total_tokens": 117901,
+        "known_input_tokens": 116001,
+        "known_output_tokens": 1900,
+        "known_cached_input_tokens": 97704,
+        "known_uncached_input_plus_output_tokens": 20197,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 273.5625078729936,
+        "sent_api_requests": 9
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 12110,
+        "known_input_tokens": 11812,
+        "known_output_tokens": 298,
+        "known_cached_input_tokens": 11253,
+        "known_uncached_input_plus_output_tokens": 857,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 23.41617683399818,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_02_DETAILS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "details_omitted_keep",
+      "original_success": false,
+      "stop_reason": "token_reservation_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 11009,
+          "output_tokens": 123,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 11132,
+          "model_request_wall_seconds": 96.94190237500152,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__get_current_date_and_time": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 11193,
+          "output_tokens": 259,
+          "cached_input_tokens": 10734,
+          "known_total_tokens": 11452,
+          "model_request_wall_seconds": 20.209236041999247,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "file_system__show_file": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 11682,
+          "output_tokens": 171,
+          "cached_input_tokens": 10917,
+          "known_total_tokens": 11853,
+          "model_request_wall_seconds": 17.340144500005408,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 11997,
+          "output_tokens": 98,
+          "cached_input_tokens": 11406,
+          "known_total_tokens": 12095,
+          "model_request_wall_seconds": 11.519524584000465,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 12291,
+          "output_tokens": 97,
+          "cached_input_tokens": 11721,
+          "known_total_tokens": 12388,
+          "model_request_wall_seconds": 11.135968332993798,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 12570,
+          "output_tokens": 194,
+          "cached_input_tokens": 12015,
+          "known_total_tokens": 12764,
+          "model_request_wall_seconds": 16.775333582998428,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__show_contact_relationships": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "ok",
+          "input_tokens": 12894,
+          "output_tokens": 187,
+          "cached_input_tokens": 12294,
+          "known_total_tokens": 13081,
+          "model_request_wall_seconds": 16.621561166997708,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__search_contacts": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_008",
+          "usage_status": "ok",
+          "input_tokens": 14030,
+          "output_tokens": 227,
+          "cached_input_tokens": 12618,
+          "known_total_tokens": 14257,
+          "model_request_wall_seconds": 26.87809487499908,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_descriptions": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_009",
+          "usage_status": "ok",
+          "input_tokens": 15972,
+          "output_tokens": 214,
+          "cached_input_tokens": 13754,
+          "known_total_tokens": 16186,
+          "model_request_wall_seconds": 34.181955915999424,
+          "sent_api_requests": 2,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 2
+          },
+          "sent_categories": {
+            "documentation_request": 2
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 9,
+        "known_total_tokens": 115208,
+        "known_input_tokens": 113638,
+        "known_output_tokens": 1570,
+        "known_cached_input_tokens": 95459,
+        "known_uncached_input_plus_output_tokens": 19749,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 251.60372137499508,
+        "sent_api_requests": 10
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "details_and_listings_omitted_keep",
+      "original_success": false,
+      "stop_reason": "token_reservation_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 10202,
+          "output_tokens": 99,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 10301,
+          "model_request_wall_seconds": 88.31172162500297,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 10604,
+          "output_tokens": 105,
+          "cached_input_tokens": 9927,
+          "known_total_tokens": 10709,
+          "model_request_wall_seconds": 12.645751959003974,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__login": 1
+          },
+          "sent_categories": {
+            "authentication_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 10891,
+          "output_tokens": 254,
+          "cached_input_tokens": 10328,
+          "known_total_tokens": 11145,
+          "model_request_wall_seconds": 20.609856540999317,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 11302,
+          "output_tokens": 117,
+          "cached_input_tokens": 10615,
+          "known_total_tokens": 11419,
+          "model_request_wall_seconds": 13.505318542003806,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__get_current_date_and_time": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 11491,
+          "output_tokens": 271,
+          "cached_input_tokens": 11026,
+          "known_total_tokens": 11762,
+          "model_request_wall_seconds": 20.655498165993777,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "file_system__show_file": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 11995,
+          "output_tokens": 212,
+          "cached_input_tokens": 11215,
+          "known_total_tokens": 12207,
+          "model_request_wall_seconds": 19.88324858299893,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__show_contact_relationships": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "ok",
+          "input_tokens": 12317,
+          "output_tokens": 199,
+          "cached_input_tokens": 11719,
+          "known_total_tokens": 12516,
+          "model_request_wall_seconds": 17.525337792001665,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "phone__search_contacts": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_008",
+          "usage_status": "ok",
+          "input_tokens": 13106,
+          "output_tokens": 212,
+          "cached_input_tokens": 12041,
+          "known_total_tokens": 13318,
+          "model_request_wall_seconds": 22.875415208996856,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_descriptions": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_009",
+          "usage_status": "ok",
+          "input_tokens": 15050,
+          "output_tokens": 276,
+          "cached_input_tokens": 12830,
+          "known_total_tokens": 15326,
+          "model_request_wall_seconds": 37.68075820800004,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 9,
+        "known_total_tokens": 108703,
+        "known_input_tokens": 106958,
+        "known_output_tokens": 1745,
+        "known_cached_input_tokens": 89701,
+        "known_uncached_input_plus_output_tokens": 19002,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 253.69290662500134,
+        "sent_api_requests": 8
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 11145,
+        "known_input_tokens": 10891,
+        "known_output_tokens": 254,
+        "known_cached_input_tokens": 10328,
+        "known_uncached_input_plus_output_tokens": 817,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 20.609856540999317,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_03_FULL_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "full_keep",
+      "original_success": true,
+      "stop_reason": "agent_declared_complete",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 15746,
+          "output_tokens": 253,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 15999,
+          "model_request_wall_seconds": 149.8803032920041,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "venmo__create_transaction": 1
+          },
+          "sent_categories": {
+            "task_mutation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 16073,
+          "output_tokens": 137,
+          "cached_input_tokens": 15471,
+          "known_total_tokens": 16210,
+          "model_request_wall_seconds": 14.294005416995788,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "supervisor__complete_task": 1
+          },
+          "sent_categories": {
+            "completion_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": true,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 2,
+        "known_total_tokens": 32209,
+        "known_input_tokens": 31819,
+        "known_output_tokens": 390,
+        "known_cached_input_tokens": 15471,
+        "known_uncached_input_plus_output_tokens": 16738,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 164.1743087089999,
+        "sent_api_requests": 2
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_001",
+        "cost_after_boundary": {
+          "model_calls": 1,
+          "known_total_tokens": 16210,
+          "known_input_tokens": 16073,
+          "known_output_tokens": 137,
+          "known_cached_input_tokens": 15471,
+          "known_uncached_input_plus_output_tokens": 739,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 14.294005416995788,
+          "sent_api_requests": 1
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 16210,
+        "known_input_tokens": 16073,
+        "known_output_tokens": 137,
+        "known_cached_input_tokens": 15471,
+        "known_uncached_input_plus_output_tokens": 739,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 14.294005416995788,
+        "sent_api_requests": 1
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_03_DETAILS_OMITTED_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "details_omitted_keep",
+      "original_success": true,
+      "stop_reason": "agent_declared_complete",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 14964,
+          "output_tokens": 273,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 15237,
+          "model_request_wall_seconds": 144.0607427080031,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 15588,
+          "output_tokens": 244,
+          "cached_input_tokens": 14689,
+          "known_total_tokens": 15832,
+          "model_request_wall_seconds": 23.66211824999482,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "venmo__create_transaction": 1
+          },
+          "sent_categories": {
+            "task_mutation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 15925,
+          "output_tokens": 211,
+          "cached_input_tokens": 15312,
+          "known_total_tokens": 16136,
+          "model_request_wall_seconds": 19.00763945899962,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "venmo__show_transaction": 1
+          },
+          "sent_categories": {
+            "information_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 16333,
+          "output_tokens": 197,
+          "cached_input_tokens": 15649,
+          "known_total_tokens": 16530,
+          "model_request_wall_seconds": 18.97247016699839,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "supervisor__complete_task": 1
+          },
+          "sent_categories": {
+            "completion_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": true,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 4,
+        "known_total_tokens": 63735,
+        "known_input_tokens": 62810,
+        "known_output_tokens": 925,
+        "known_cached_input_tokens": 45650,
+        "known_uncached_input_plus_output_tokens": 18085,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 205.70297058399592,
+        "sent_api_requests": 3
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_002",
+        "cost_after_boundary": {
+          "model_calls": 2,
+          "known_total_tokens": 32666,
+          "known_input_tokens": 32258,
+          "known_output_tokens": 408,
+          "known_cached_input_tokens": 30961,
+          "known_uncached_input_plus_output_tokens": 1705,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 37.98010962599801,
+          "sent_api_requests": 2
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 16530,
+        "known_input_tokens": 16333,
+        "known_output_tokens": 197,
+        "known_cached_input_tokens": 15649,
+        "known_uncached_input_plus_output_tokens": 881,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 18.97247016699839,
+        "sent_api_requests": 1
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 15237,
+        "known_input_tokens": 14964,
+        "known_output_tokens": 273,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 15237,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 144.0607427080031,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_03_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "details_and_listings_omitted_keep",
+      "original_success": true,
+      "stop_reason": "agent_declared_complete",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 14964,
+          "output_tokens": 273,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 15237,
+          "model_request_wall_seconds": 143.7069065839969,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 15588,
+          "output_tokens": 242,
+          "cached_input_tokens": 14689,
+          "known_total_tokens": 15830,
+          "model_request_wall_seconds": 23.562650790998305,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "venmo__create_transaction": 1
+          },
+          "sent_categories": {
+            "task_mutation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 15925,
+          "output_tokens": 253,
+          "cached_input_tokens": 15312,
+          "known_total_tokens": 16178,
+          "model_request_wall_seconds": 21.61731562500063,
+          "sent_api_requests": 2,
+          "sent_api_names": {
+            "venmo__show_transaction": 1,
+            "venmo__show_venmo_balance": 1
+          },
+          "sent_categories": {
+            "information_request": 2
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 16419,
+          "output_tokens": 153,
+          "cached_input_tokens": 15649,
+          "known_total_tokens": 16572,
+          "model_request_wall_seconds": 16.684472792003362,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "supervisor__complete_task": 1
+          },
+          "sent_categories": {
+            "completion_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": true,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 4,
+        "known_total_tokens": 63817,
+        "known_input_tokens": 62896,
+        "known_output_tokens": 921,
+        "known_cached_input_tokens": 45650,
+        "known_uncached_input_plus_output_tokens": 18167,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 205.5713457919992,
+        "sent_api_requests": 4
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": "call_002",
+        "cost_after_boundary": {
+          "model_calls": 2,
+          "known_total_tokens": 32750,
+          "known_input_tokens": 32344,
+          "known_output_tokens": 406,
+          "known_cached_input_tokens": 30961,
+          "known_uncached_input_plus_output_tokens": 1789,
+          "unknown_usage_calls": 0,
+          "model_request_wall_seconds": 38.30178841700399,
+          "sent_api_requests": 3
+        },
+        "is_completion_or_safely_removable_boundary": false
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 16572,
+        "known_input_tokens": 16419,
+        "known_output_tokens": 153,
+        "known_cached_input_tokens": 15649,
+        "known_uncached_input_plus_output_tokens": 923,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 16.684472792003362,
+        "sent_api_requests": 1
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 15237,
+        "known_input_tokens": 14964,
+        "known_output_tokens": 273,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 15237,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 143.7069065839969,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "full_keep",
+      "original_success": false,
+      "stop_reason": "api_request_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 13771,
+          "output_tokens": 1802,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 15573,
+          "model_request_wall_seconds": 226.66832791599882,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 15369,
+          "output_tokens": 424,
+          "cached_input_tokens": 13496,
+          "known_total_tokens": 15793,
+          "model_request_wall_seconds": 43.45218233399646,
+          "sent_api_requests": 60,
+          "sent_api_names": {
+            "spotify__show_song": 60
+          },
+          "sent_categories": {
+            "information_request": 60
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 18185,
+          "output_tokens": 1689,
+          "cached_input_tokens": 15093,
+          "known_total_tokens": 19874,
+          "model_request_wall_seconds": 136.06482666599914,
+          "sent_api_requests": 2,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 2
+          },
+          "sent_categories": {
+            "documentation_request": 2
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 3,
+        "known_total_tokens": 51240,
+        "known_input_tokens": 47325,
+        "known_output_tokens": 3915,
+        "known_cached_input_tokens": 28589,
+        "known_uncached_input_plus_output_tokens": 22651,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 406.1853369159944,
+        "sent_api_requests": 62
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 1,
+        "known_total_tokens": 15573,
+        "known_input_tokens": 13771,
+        "known_output_tokens": 1802,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 15573,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 226.66832791599882,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_04_DETAILS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "details_omitted_keep",
+      "original_success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 12142,
+          "output_tokens": 656,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 12798,
+          "model_request_wall_seconds": 140.18302916699758,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 12987,
+          "output_tokens": 755,
+          "cached_input_tokens": 11867,
+          "known_total_tokens": 13742,
+          "model_request_wall_seconds": 56.36534400000528,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 13873,
+          "output_tokens": 441,
+          "cached_input_tokens": 12711,
+          "known_total_tokens": 14314,
+          "model_request_wall_seconds": 37.73842720800167,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 14553,
+          "output_tokens": 61,
+          "cached_input_tokens": 13597,
+          "known_total_tokens": 14614,
+          "model_request_wall_seconds": 12.715110083998297,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 15132,
+          "output_tokens": 358,
+          "cached_input_tokens": 14277,
+          "known_total_tokens": 15490,
+          "model_request_wall_seconds": 30.475178874999983,
+          "sent_api_requests": 60,
+          "sent_api_names": {
+            "spotify__show_song": 60
+          },
+          "sent_categories": {
+            "information_request": 60
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_006",
+          "usage_status": "ok",
+          "input_tokens": 16884,
+          "output_tokens": 2563,
+          "cached_input_tokens": 14856,
+          "known_total_tokens": 19447,
+          "model_request_wall_seconds": 180.88610920799692,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_007",
+          "usage_status": "error",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "known_total_tokens": null,
+          "model_request_wall_seconds": 20.002608875001897,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 0,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        }
+      ],
+      "total": {
+        "model_calls": 7,
+        "known_total_tokens": 90405,
+        "known_input_tokens": 85571,
+        "known_output_tokens": 4834,
+        "known_cached_input_tokens": 67308,
+        "known_uncached_input_plus_output_tokens": 23097,
+        "unknown_usage_calls": 1,
+        "model_request_wall_seconds": 478.36580741700163,
+        "sent_api_requests": 60
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 6,
+        "known_total_tokens": 74915,
+        "known_input_tokens": 70439,
+        "known_output_tokens": 4476,
+        "known_cached_input_tokens": 53031,
+        "known_uncached_input_plus_output_tokens": 21884,
+        "unknown_usage_calls": 1,
+        "model_request_wall_seconds": 447.89062854200165,
+        "sent_api_requests": 0
+      }
+    },
+    {
+      "run_id": "P55_04_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "details_and_listings_omitted_keep",
+      "original_success": false,
+      "stop_reason": "api_request_limit",
+      "calls": [
+        {
+          "call_id": "call_001",
+          "usage_status": "ok",
+          "input_tokens": 9473,
+          "output_tokens": 3434,
+          "cached_input_tokens": 0,
+          "known_total_tokens": 12907,
+          "model_request_wall_seconds": 286.1353197089993,
+          "sent_api_requests": 1,
+          "sent_api_names": {
+            "api_docs__show_api_doc": 1
+          },
+          "sent_categories": {
+            "documentation_request": 1
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_002",
+          "usage_status": "ok",
+          "input_tokens": 10186,
+          "output_tokens": 151,
+          "cached_input_tokens": 9198,
+          "known_total_tokens": 10337,
+          "model_request_wall_seconds": 18.094367916994088,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_003",
+          "usage_status": "ok",
+          "input_tokens": 10589,
+          "output_tokens": 319,
+          "cached_input_tokens": 9910,
+          "known_total_tokens": 10908,
+          "model_request_wall_seconds": 25.829897541996615,
+          "sent_api_requests": 3,
+          "sent_api_names": {
+            "api_docs__show_api_descriptions": 1,
+            "api_docs__show_api_doc": 2
+          },
+          "sent_categories": {
+            "documentation_request": 3
+          },
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        },
+        {
+          "call_id": "call_004",
+          "usage_status": "ok",
+          "input_tokens": 11758,
+          "output_tokens": 1379,
+          "cached_input_tokens": 10313,
+          "known_total_tokens": 13137,
+          "model_request_wall_seconds": 97.51817754100193,
+          "sent_api_requests": 0,
+          "sent_api_names": {},
+          "sent_categories": {},
+          "unsent_events": 1,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": true
+        },
+        {
+          "call_id": "call_005",
+          "usage_status": "ok",
+          "input_tokens": 13209,
+          "output_tokens": 376,
+          "cached_input_tokens": 11482,
+          "known_total_tokens": 13585,
+          "model_request_wall_seconds": 38.62388266700145,
+          "sent_api_requests": 58,
+          "sent_api_names": {
+            "spotify__show_song": 58
+          },
+          "sent_categories": {
+            "information_request": 58
+          },
+          "unsent_events": 2,
+          "only_sent_api_is_completion": false,
+          "no_sent_environment_api": false
+        }
+      ],
+      "total": {
+        "model_calls": 5,
+        "known_total_tokens": 60874,
+        "known_input_tokens": 55215,
+        "known_output_tokens": 5659,
+        "known_cached_input_tokens": 40903,
+        "known_uncached_input_plus_output_tokens": 19971,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 466.2016453759934,
+        "sent_api_requests": 62
+      },
+      "after_last_classified_mutation_request": {
+        "boundary_call": null,
+        "cost_after_boundary": null,
+        "reason": "No classified task-mutation request in this continuation."
+      },
+      "completion_only_sent_api_cost": {
+        "model_calls": 0,
+        "known_total_tokens": 0,
+        "known_input_tokens": 0,
+        "known_output_tokens": 0,
+        "known_cached_input_tokens": 0,
+        "known_uncached_input_plus_output_tokens": 0,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 0,
+        "sent_api_requests": 0
+      },
+      "no_sent_api_call_cost": {
+        "model_calls": 2,
+        "known_total_tokens": 23474,
+        "known_input_tokens": 21944,
+        "known_output_tokens": 1530,
+        "known_cached_input_tokens": 19511,
+        "known_uncached_input_plus_output_tokens": 3963,
+        "unknown_usage_calls": 0,
+        "model_request_wall_seconds": 115.61254545799602,
+        "sent_api_requests": 0
+      }
+    }
+  ],
+  "total": {
+    "model_calls": 77,
+    "known_total_tokens": 1000847,
+    "known_input_tokens": 965259,
+    "known_output_tokens": 35588,
+    "known_cached_input_tokens": 754776,
+    "known_uncached_input_plus_output_tokens": 246071,
+    "unknown_usage_calls": 1,
+    "model_request_wall_seconds": 4011.4135811239976,
+    "sent_api_requests": 457
+  },
+  "completion_only_sent_api_cost": {
+    "model_calls": 4,
+    "known_total_tokens": 64882,
+    "known_input_tokens": 64312,
+    "known_output_tokens": 570,
+    "known_cached_input_tokens": 60796,
+    "known_uncached_input_plus_output_tokens": 4086,
+    "unknown_usage_calls": 0,
+    "model_request_wall_seconds": 68.72774000099162,
+    "sent_api_requests": 4
+  },
+  "no_sent_api_call_cost": {
+    "model_calls": 20,
+    "known_total_tokens": 248242,
+    "known_input_tokens": 236078,
+    "known_output_tokens": 12164,
+    "known_cached_input_tokens": 162326,
+    "known_uncached_input_plus_output_tokens": 85916,
+    "unknown_usage_calls": 1,
+    "model_request_wall_seconds": 1402.4793316659998,
+    "sent_api_requests": 0
+  },
+  "public_api_categories": {
+    "task_mutation_request": [
+      "file_system__create_directory",
+      "file_system__move_file",
+      "venmo__create_transaction"
+    ],
+    "completion_request": [
+      "supervisor__complete_task"
+    ],
+    "authentication_request": [
+      "phone__login",
+      "venmo__login"
+    ],
+    "documentation_request": [
+      "api_docs__show_api_descriptions",
+      "api_docs__show_api_doc",
+      "api_docs__search_api_docs"
+    ],
+    "information_request": [
+      "file_system__show_file",
+      "file_system__show_directory",
+      "supervisor__show_profile",
+      "supervisor__show_active_task",
+      "phone__get_current_date_and_time",
+      "phone__show_contact_relationships",
+      "phone__search_contacts",
+      "venmo__show_transaction",
+      "venmo__show_venmo_balance",
+      "spotify__show_song"
+    ]
+  },
+  "public_schema_hashes": {
+    "api_docs/function_calling/amazon.json": "641103cdbfa64da0832bf73b7db4e846bcf99f649bf10641d508d2e006a67f5b",
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/function_calling/api_docs.json": "5b08688dd5b4dec208f4251b5c33269b3049517c7c4451fd98d49c67477e291e",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/function_calling/file_system.json": "68b087cb4c15677e87e772448a28eca85e01ebf4fdfeec313696d0778f068ad5",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/function_calling/gmail.json": "4a0ee65205fb5e5363d24f7e9e5ba8884063b23f2a28e5d7b7da4829e3974553",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/function_calling/phone.json": "afd6a33ebf9ea91aeb738f840bc607e5af57b86c944f96c9d871467ef6d225a9",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/function_calling/simple_note.json": "53414bc70fbece5ba2ce5f1e6f5a50a41084704a410ce45597130350ab773a3f",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/function_calling/splitwise.json": "d52b852f982c9a4ccd1eb453a5cb035af8128875eab9fa85b0fbbe8606cc16b2",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/function_calling/spotify.json": "7194c0cc18a48e479f65192ba732e098174498ccc904cdb2dfa4d371e365d9c3",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/function_calling/supervisor.json": "e9b6c983f7b92686d530349e7d4d7afb8a3332e24ff2219789e6380d8c136ce9",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/function_calling/todoist.json": "88b67e50dec1f6ae8dc3ac82a5a1a0d9ec91e11ea004fe9bdeeca0572de90086",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/function_calling/venmo.json": "dc69706b9c8ccc59fa8e28740abe36c35d3fc2cf3dca37cdd501ad413f37f615",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "source_audit_sha256": "23a86f5aba2a2cdb1d6184980fda3194bb496df1918b2d30ca1981489767150a",
+  "source_sha256": {
+    "P55_01_FULL_KEEP": {
+      "events.json": "318d3fad7cf1444a71265ba7cfe822b2b975100ed99272c0b58dd3af0eae384d",
+      "spans.json": "c567e7a1fa8f9b832291242cbde4f3072a82eb313d3de21615d57b0ff619a193",
+      "usage.json": "d83f695bfe08552a4c203197e95f80ef41d45a60ff2c29b254f0dc3411f157ca",
+      "summary.json": "8611c674fe35fef63dd1456441cd18eb009ea2b6977e661fb4c079e04080fe28",
+      "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+    },
+    "P55_01_DETAILS_OMITTED_KEEP": {
+      "events.json": "6d4590685d09141e5c115d8362ed235e935e7e6c9da802e3ee16e34f3a60858f",
+      "spans.json": "1bb73165644db471db0b70d03577189baf7439b563b11980dd78225cae849d98",
+      "usage.json": "86ab8a778749dee578266dfc9c7026432fcdce1c591332d1ea517a24c8cc5c41",
+      "summary.json": "979a201daa1228fe0e4414c649cd6c22a459dcb9da302521c8fb17a5df1da92c",
+      "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+    },
+    "P55_01_DETAILS_AND_LISTINGS_OMITTED_KEEP": {
+      "events.json": "ba2a109ab20870fee38e627b834f118de1160b65b8f688792883fb0a6b8151be",
+      "spans.json": "29d5649f9225af70a9e440dd98d7c1bbf0c50e4c8c1f7cb6ee35039bdbf7e89c",
+      "usage.json": "7c1f767846d44821a07c15fef98c8711cd285560bbd3fbbebb96651859271e29",
+      "summary.json": "7f98c9482b0e9b810ac124aaf500b5248a6c6e456cd2b4ab3c204ec8cf771e7e",
+      "source_identity.json": "13a96d9620c09c196e163a555a8919e044deab07dd1fd6c9ae29d9005dff3206"
+    },
+    "P55_02_FULL_KEEP": {
+      "events.json": "1df5cec844278bd6a3fbb1ed65d39ce148f5a07e96bfa5b3c0878a4f569b2c89",
+      "spans.json": "53b773be8235f1e556fd520dc3d03dc5e30754a0139d8e49145fa17e46d72bdc",
+      "usage.json": "d41459d86aac8c44b0e0a300b37000a0322299f44cba63c816a3013070db3fcd",
+      "summary.json": "0e78ca9323336efbc59042730283c64721d6121e1363cb255c202f56741fbe3f",
+      "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+    },
+    "P55_02_DETAILS_OMITTED_KEEP": {
+      "events.json": "e20a1e50bf72ea754b3a93e97a453259830b43712c1a7e6a09d900a2d253e351",
+      "spans.json": "44dc9e00ec10fbe69d651a3c0758d41e5c876c4eacdd91611fb851cf630423d4",
+      "usage.json": "c8709bf18c17cc690ab7ac79e8afc8778e00d1e8517570a3f1afbe04c719728e",
+      "summary.json": "baa6dde7a9d92949fa33dc60a3cb1a626670def2032c4da14c08fb513ef91e1f",
+      "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+    },
+    "P55_02_DETAILS_AND_LISTINGS_OMITTED_KEEP": {
+      "events.json": "2e710a1780147544b03d1501d9b77e9cec8f6683aab5da03901b7c92addb2984",
+      "spans.json": "d51fe8642a18cacd821319aeb0d2831769587a7697ea02391cb7e6d6fc383a36",
+      "usage.json": "256172da485e663a020ed194d769f3f78e753e379fdb8da32b8e674a31849c6d",
+      "summary.json": "58ad6ae1482c31378f3428c778ce1757fdf2bb24326d939bea8f6622f491be81",
+      "source_identity.json": "e6fae314547f116fb5b9935e2523bad5cedd894171c3697c76f5194c5177ee80"
+    },
+    "P55_03_FULL_KEEP": {
+      "events.json": "5e5f654640f6cddd566dd7edb838ed4bcd16e9816093fc6823008e9a3026057b",
+      "spans.json": "dc1115be18a664bccd4430e906a43e45c49816d199e383ce0af68725b5027a39",
+      "usage.json": "96c70e88a1f2cb78648c28b9215e9ee5222a1550bcdf0c50e435c215857d0e42",
+      "summary.json": "5239ecedf4bd0e85a39239ba9e6435670bdb6fe6f969830e218cf87e455c4319",
+      "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+    },
+    "P55_03_DETAILS_OMITTED_KEEP": {
+      "events.json": "6f2bc83c7ef62cbfb8fb09438a740a202ac0b6a98a2ea85325d72afc2e0d4e0a",
+      "spans.json": "257ab98fe279e5fda317859e3fe5076ce9b73ea38195a69493655902ccc13ea4",
+      "usage.json": "8def3f7615eb6c15932aa2ca10e70c0bd8db6e8bcf764ddd34155d6b51e43185",
+      "summary.json": "366d31344d912145a93be9603bbdbb4c3a34d8fedd34fc4088ef10b67fb6afac",
+      "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+    },
+    "P55_03_DETAILS_AND_LISTINGS_OMITTED_KEEP": {
+      "events.json": "eb12f356a741e6d3be7edd6623c603a21c4e1328202ea201f4bd0db467a92655",
+      "spans.json": "ed27deaa52456792ebd96ef1cc22ebae7ac7e599685828ed47c1899cc3715f0b",
+      "usage.json": "cdaf94eea693d76111b7e76e7d23ac6df9f52100a725d04492710199d0a926db",
+      "summary.json": "480a4c5c3f21ca7213dd224683f00a8cb87c5ca0c9c8f727af8c8395576fdd9d",
+      "source_identity.json": "9c98b2c941bf88ee9848b38f0e5d871de35a535fdc5b32edbaf7ea0085b0255f"
+    },
+    "P55_04_FULL_KEEP": {
+      "events.json": "5bde269ccf99c4958ff2506c497c6e17571d035157e3bb71f0102824bc0d87ad",
+      "spans.json": "1811c6f453e86a0ef1cc4d72f6352d7242795bf3b5411c6541e13a9db51cca10",
+      "usage.json": "3a53863db244920f608e5fa20a654a718cf84186790af279378eed5dd20987fa",
+      "summary.json": "172df7133fa1848d8f3750704a550f0a2ce3e3f72f555c7d9437b81c3699336a",
+      "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+    },
+    "P55_04_DETAILS_OMITTED_KEEP": {
+      "events.json": "672887db5eb2453492b840d94f9c182320993816fcbe93bcf40ec913115ea995",
+      "spans.json": "2d089c90008ecb0d7fa71c5f3f6d55a32133e6c381aaeb8cbdf298cafd025bc1",
+      "usage.json": "73f6f2702f6dba0bfd1fc179e2e3c0193e02a2160d63687b728de92f9ad93c5b",
+      "summary.json": "51e3e2c9679258ac8184fd0b5bacaf02c22947037a7eb8a5b8bcc5e696ee5da0",
+      "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+    },
+    "P55_04_DETAILS_AND_LISTINGS_OMITTED_KEEP": {
+      "events.json": "a7cf83d43ae26b44e8926d49e9c140be8a3cd0e539b48fbc6be8333d46b41af2",
+      "spans.json": "14c714ae5c20ab8eaa852422559bf6c4561091a9286d89c6bd231d0622422338",
+      "usage.json": "a286878be28082b684f3c0eba5fc1dcfdd7b7afd5456e9532ea6cd4c6ac70d1c",
+      "summary.json": "61cc8b7bf6b12718808af1a24263cccef3dfc4618d5871eccda3a940627a755b",
+      "source_identity.json": "2defd80ef9454c5d9b1a1b935ed11aa918cdd12f4d7f4e7a07c0d58fc21304dc"
+    }
+  },
+  "inspector_sha256": "c10561b976ab1db3bcccd2d39a7886ac8832465034135ab3c00473b4d2035be2",
+  "inspection_wall_seconds": 0.02021562500158325,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "hidden_test_details_read": false,
+  "reserved_scenarios_read": 0,
+  "safe_online_stopping_rule_established": false,
+  "measured_token_savings": null,
+  "limits": [
+    "Every P55 call is retained; this is not a new independent task or agent trial.",
+    "API categories use the public descriptions, not observed per-call database deltas.",
+    "A sent mutation request does not establish success, task completion, or lack of collateral effects.",
+    "Information requests may be necessary verification; zero sent APIs may include needed local computation or repair.",
+    "Only-sent-API completion still includes the model reasoning and local execution in that call.",
+    "Primary tokens include cached input. Uncached-input-plus-output is descriptive, not billed cost.",
+    "Model-request time is not whole-work time and is not proven removable.",
+    "No runtime finalizer, replay, original outcome relabeling, or imputation of unknown usage."
+  ]
+}
