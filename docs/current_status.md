@@ -8,6 +8,6 @@
 
 通常修復の[SchemaShield-Lite本文と固定実装](argument_repair_overlap_20261022.md)を照合済み。小さい入力、API固定、局所修復だけを独自性にしない。必要な情報を保つ具体的な規則、通常対照の後にも残る費用、反証条件を絞る。[次の判断](next_actions.md)。
 
-全699検査合格。未閲覧12シナリオは保持。原稿は方法・結果部品までで、中心主張、新あらまし、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
+全699検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
 
 [以前の経緯](archive/current_status_through_P49_20261022.md)／[作業ボード](task_board.md)／[Project](https://github.com/users/sophiria1225/projects/1)。GitHubの変更先はsophiria1225/AI-と専用Projectだけ。実装はユーザーの継続指示に従い進めている。
