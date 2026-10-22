@@ -8,4 +8,6 @@
 
 日本語あらまし案75字、英語案43語を別ファイルへ保存した。旧P16案は履歴として保持している。新しい案も主張・主要比較の確定後に書き直す。
 
+[P51の測定補足](measurement_addendum.md)を追加。完了した使用量と途中の下限を分ける合成３生成の校正で、PDFの主結果や新方式の検証ではない。
+
 表の再生成は `python scripts/build_letter_evidence_tables.py`。組版はリポジトリのルートから `uplatex`（shell escapeなし）を２回実行し、`dvipdfmx`で変換する。TinyTeXと汎用クラスの既存環境を使用した。原記録・モデル生成・環境APIを変更する処理は含まない。
