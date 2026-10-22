@@ -1,0 +1,1372 @@
+{
+  "phase": "P70",
+  "source_report": "reports/P35_read_footprint.json",
+  "source_report_sha256": "2e7b517f25f996d19c0f5702d6340aef2a60c2379495633cf998110c81dafea7",
+  "known_tasks": 4,
+  "max_wall_seconds": 120,
+  "max_input_files": 181,
+  "max_file_bytes": 4194304,
+  "max_source_characters": 20000,
+  "max_ast_nodes": 5000,
+  "selection": "Posthoc all P33 cells already inspected in P35; repeated prefixes retained, no new independent tasks. Code parsing only.",
+  "rows": [
+    {
+      "run_id": "P33_01_FULL_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "full_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_001_01/input_private.json",
+          "sha256": "0664e21218044f476638364d0c33818f6ac4824898f10259663f16395611c3ea"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_002_01/input_private.json",
+          "sha256": "644a9851ae5d9952c6a3a48d3a416bd7f185b35b3c17c52d4b91a5223dc30ca7"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_003_01/input_private.json",
+          "sha256": "da47967a21f2c9ec8e74402b4ae27931bbaf75a5a5bf05662c79a73232dc8fa8"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_004_01/input_private.json",
+          "sha256": "83a5529d8fa934b1742e8199abada42044c0f55401855b54180b95a75c06a327"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_005_01/input_private.json",
+          "sha256": "d41380ab788e8d58c090c080c2fdd49f19829c863fad336c4126b8acdbb169ac"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_006_01/input_private.json",
+          "sha256": "d1baf38e01118bec6a4a2a45461aa93f24ab8d19eec2540dcca27c1ae341edd8"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_007_01/input_private.json",
+          "sha256": "09275774064264b33464021af20dcc3a19ccf1b55a706eb8ccbb5dc0fa3c1152"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cb6943af776b4e5549687ede2e2ecba661cd604805b382a2ad6f39cf9a2230cd"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_01_FULL_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "894e1796e08c12875bdcc240cc784ea93188168f0a36dfc331d1cb2f2a65776e"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_01_FULL_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "34cfc439afebbc3f8fd6b9622f515857ae839bd3d9e7d29f85413bc24a3f2163"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_01_FULL_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "a85b180e58055837be16f9e428811ae312ed84733dfaf267755f52756ab3d75d"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_01_FULL_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "358c7cb290168c48d7ab9b4745624d3b0a104366977e3da2641cf9a6c4332e87"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_01_FULL_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "b8ec2b26cded9326410313a634d42e28b1804d660ae426c6d38de8b9cdd5ab02"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_01_STDOUT_MASK_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "stdout_mask_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_001_01/input_private.json",
+          "sha256": "0664e21218044f476638364d0c33818f6ac4824898f10259663f16395611c3ea"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_002_01/input_private.json",
+          "sha256": "644a9851ae5d9952c6a3a48d3a416bd7f185b35b3c17c52d4b91a5223dc30ca7"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_003_01/input_private.json",
+          "sha256": "da47967a21f2c9ec8e74402b4ae27931bbaf75a5a5bf05662c79a73232dc8fa8"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_004_01/input_private.json",
+          "sha256": "83a5529d8fa934b1742e8199abada42044c0f55401855b54180b95a75c06a327"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_005_01/input_private.json",
+          "sha256": "d41380ab788e8d58c090c080c2fdd49f19829c863fad336c4126b8acdbb169ac"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_006_01/input_private.json",
+          "sha256": "d1baf38e01118bec6a4a2a45461aa93f24ab8d19eec2540dcca27c1ae341edd8"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_007_01/input_private.json",
+          "sha256": "09275774064264b33464021af20dcc3a19ccf1b55a706eb8ccbb5dc0fa3c1152"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cb6943af776b4e5549687ede2e2ecba661cd604805b382a2ad6f39cf9a2230cd"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "e16fc7aaef9fdcf98d26d38c6f89a35e34e3fb4ca5b3c4490e7b9747d817ce0d"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "0bee1d663aa4c4a6ba2c2edfd248d3c8c3db425636d871fa78f3961fc8c525be"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "23918d8ed0c15aa4be6a677a80f42a374a67dc748a82bd74b595d63bd2e2fcf2"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "b315e84f83a451954bc04c5ab5fab77beb451115f9503c64958a3064147612cd"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "28a1c099e81c55f917312b2342839cfab4fe87c34458a3d42c406e8e72e920d6"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "e7d9c995c022f66c35049d25ae865feb3af989df4589aba6f1a81ff64ec7f017"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_01_STDOUT_MASK_INDEX_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "stdout_mask_index_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_001_01/input_private.json",
+          "sha256": "0664e21218044f476638364d0c33818f6ac4824898f10259663f16395611c3ea"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_002_01/input_private.json",
+          "sha256": "644a9851ae5d9952c6a3a48d3a416bd7f185b35b3c17c52d4b91a5223dc30ca7"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_003_01/input_private.json",
+          "sha256": "da47967a21f2c9ec8e74402b4ae27931bbaf75a5a5bf05662c79a73232dc8fa8"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_004_01/input_private.json",
+          "sha256": "83a5529d8fa934b1742e8199abada42044c0f55401855b54180b95a75c06a327"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_005_01/input_private.json",
+          "sha256": "d41380ab788e8d58c090c080c2fdd49f19829c863fad336c4126b8acdbb169ac"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_006_01/input_private.json",
+          "sha256": "d1baf38e01118bec6a4a2a45461aa93f24ab8d19eec2540dcca27c1ae341edd8"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_007_01/input_private.json",
+          "sha256": "09275774064264b33464021af20dcc3a19ccf1b55a706eb8ccbb5dc0fa3c1152"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_01_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cb6943af776b4e5549687ede2e2ecba661cd604805b382a2ad6f39cf9a2230cd"
+        },
+        {
+          "program": "transfer_inventory",
+          "phase": "control",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/transfer_inventory/input_private.json",
+          "sha256": "85efb1eb48efd4b8abcaf7ee422103bf30b24a54d7d15abd0e00a3d0edd617e0"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "f63911707f03e65e9b72e1127cfe4f40b18b84360238883894dbd6f29a667e2b"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "3d3d818503a04141cd70b610d8b8331cf42a169f32114328aac6a1117eeba901"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "24b4197fbe57e2435495a14f13029f013833495e7870d0bb20a5521a9c0c82ad"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "f8952a203cb1e20fb829e5a303408197544ee932c540a1bc00fc6928a38a5d89"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "45f109cc37b2df71861c0804b827faf7985468d57edf7ef8a92bb5e7f9bc3743"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "0002992ea3171c811f40504e7a168a19763fa00cf13094a6c725619c62381b51"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "aba332a31978656d30bbda6f8de737b5037fa2016eb551f31214b17675867c3b"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_01_STDOUT_MASK_INDEX_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "17513559cefab34641a86bf48e1df7a3153ed88015447de924ec0e36c1d50bf4"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_001_01/input_private.json",
+          "sha256": "029e1d4594d87b42d3974f4ddaab050b0bf0fa06b1796338e8e27ec173d14e64"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_002_01/input_private.json",
+          "sha256": "d25c2972c25c7c8895564f26304590d0ed91099c83534f7227620e44303c90e9"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_003_01/input_private.json",
+          "sha256": "053b92ac367136cc8d8a65ae075777773bc04a8049abb13cd19ef4f188fabd9c"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_004_01/input_private.json",
+          "sha256": "4a80c9e86d1ddf6ba91dbe0919fd14452f05df19a37324b7b7cc4c69716534a1"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_005_01/input_private.json",
+          "sha256": "25a9ee7fcfa566c1319558114d71f3f38f7ba697dbb5df319147a75c44108a57"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_006_01/input_private.json",
+          "sha256": "6f2b3bfb69a062d921bf341f45079307b46e15a9e6c6bbdb767359cf75886714"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_007_01/input_private.json",
+          "sha256": "35d4073b046cf8bde06d1529986c4921098632a7261d2f8c15a5c754effa0fbb"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_008_01/input_private.json",
+          "sha256": "47d6ae9c57dc2f577eacabf5286c0b257e9e3b9d3f8c7a9055d5ab8c2b605d46"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "ff8b56c495d147f519ebe6b87e4df11b0f60c1ab044c6917e59ab6c5a6f00856"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "c613d72bbaa287b8da8c2beae3f1c303b9682aa22b9ca9be51fce7a73371fad6"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "9624cf2d702a43a1486815a8963081a08ede483629a03c1481fedae5eed8c446"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "c5856a341f821be521f8bd8cba125ce32fcce9cbea9ace6ca91f98be335833cb"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "841e80da9572e821ce583955f363e6333c2a0ee1aad1d30d1dd7f0635bde8d8a"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "4935f29a4bacfa55997b15d050569922b536a3d4bb31f87ed83fa5e09ea272bf"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "18030411dd4fbf8f6ee501ca87f0ae1ca9d9cbb822ed465e7dfe5a1c35e1b368"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "4d3939269b997e466ef7000a9ed8226639359ca15baea82d6dfd46163d2600c1"
+        },
+        {
+          "program": "call_009_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_02_FULL_KEEP/programs/call_009_01/input_private.json",
+          "sha256": "b4d8a47daa6c600bc0be7cce47f96db80126d0abc5858b5bad1c44f58342f7e1"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_02_STDOUT_MASK_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "stdout_mask_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_001_01/input_private.json",
+          "sha256": "029e1d4594d87b42d3974f4ddaab050b0bf0fa06b1796338e8e27ec173d14e64"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_002_01/input_private.json",
+          "sha256": "d25c2972c25c7c8895564f26304590d0ed91099c83534f7227620e44303c90e9"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_003_01/input_private.json",
+          "sha256": "053b92ac367136cc8d8a65ae075777773bc04a8049abb13cd19ef4f188fabd9c"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_004_01/input_private.json",
+          "sha256": "4a80c9e86d1ddf6ba91dbe0919fd14452f05df19a37324b7b7cc4c69716534a1"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_005_01/input_private.json",
+          "sha256": "25a9ee7fcfa566c1319558114d71f3f38f7ba697dbb5df319147a75c44108a57"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_006_01/input_private.json",
+          "sha256": "6f2b3bfb69a062d921bf341f45079307b46e15a9e6c6bbdb767359cf75886714"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_007_01/input_private.json",
+          "sha256": "35d4073b046cf8bde06d1529986c4921098632a7261d2f8c15a5c754effa0fbb"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_008_01/input_private.json",
+          "sha256": "47d6ae9c57dc2f577eacabf5286c0b257e9e3b9d3f8c7a9055d5ab8c2b605d46"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "9a45eee8b3ca2cd44914135bcc12809d4d9f989b4f1820f43039ff7d07f92422"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "fa8a5143737d6cd2a7c31de3b541fdf73868721ffad85e368cd461ec5a893591"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "576f57d86b310df45b6c6f1063734ed87b3793c96b7e640bc164ac833ba3ceb6"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "f94b68380ee4a6f116ec29b8b99bb251adf687bddd36def147f7e889aad459dd"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "2b7ae6b9e1fd17b8c8335a6bc4c6deadf96f18f50fbb8622cbbd461f2c46e0ff"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "9a842b3fd4aedc531a6dd9d075284bbbfa9604fb05e63b23d2b9b2f85e0ad0d2"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "a30b5637d65734e0354926fe3ba6af182174278facee5669fb11f8043785c0f4"
+        },
+        {
+          "program": "call_010_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_010_01/input_private.json",
+          "sha256": "7b75dd8143a102027b1a190a213008385c6e01f1523613eeeb639806cda4754b"
+        },
+        {
+          "program": "call_011_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_011_01/input_private.json",
+          "sha256": "12b300c5984a0e92c89d0c074a30aae9e0add0f6a4d2f19e868038b91b3c4c7d"
+        },
+        {
+          "program": "call_012_01",
+          "phase": "continuation",
+          "program_index": 18,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_KEEP/programs/call_012_01/input_private.json",
+          "sha256": "332d63abd1b28cf85243154c2bf80d8857d9b40840adc4b440f5db2aa6dbb1f2"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_02_STDOUT_MASK_INDEX_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "stdout_mask_index_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_001_01/input_private.json",
+          "sha256": "029e1d4594d87b42d3974f4ddaab050b0bf0fa06b1796338e8e27ec173d14e64"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_002_01/input_private.json",
+          "sha256": "d25c2972c25c7c8895564f26304590d0ed91099c83534f7227620e44303c90e9"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_003_01/input_private.json",
+          "sha256": "053b92ac367136cc8d8a65ae075777773bc04a8049abb13cd19ef4f188fabd9c"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_004_01/input_private.json",
+          "sha256": "4a80c9e86d1ddf6ba91dbe0919fd14452f05df19a37324b7b7cc4c69716534a1"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_005_01/input_private.json",
+          "sha256": "25a9ee7fcfa566c1319558114d71f3f38f7ba697dbb5df319147a75c44108a57"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_006_01/input_private.json",
+          "sha256": "6f2b3bfb69a062d921bf341f45079307b46e15a9e6c6bbdb767359cf75886714"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_007_01/input_private.json",
+          "sha256": "35d4073b046cf8bde06d1529986c4921098632a7261d2f8c15a5c754effa0fbb"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_02_CODE/programs/call_008_01/input_private.json",
+          "sha256": "47d6ae9c57dc2f577eacabf5286c0b257e9e3b9d3f8c7a9055d5ab8c2b605d46"
+        },
+        {
+          "program": "transfer_inventory",
+          "phase": "control",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/transfer_inventory/input_private.json",
+          "sha256": "92c0062a79c4207955f7e1cb6af6e87589ac4ab6853e005e84845e302e1f4f31"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "2c34197f1ef20784af06ea0000e6775710d425494a342a72c79fa4a00471bc42"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "339e85d65243d6a99e8eacbac6ee085bc90b0c53805d93cea04921cbddd8488f"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "b56b406c61cfd988886aeb1a4b043f4a651fc0052f9dc68c33caa512551447ff"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "26b644ec9e44fb6e37dd1f296c000fa835ec834e2dafaafeb860ed2f8e5f72d8"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "9fe5660f88d821bdce80250dec6f3a3674a06f1463855ab4063ff77f7ea4161a"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "7e34a1385de60a45c3abdf9cc0341dfe9fee4e26ab578003fdaa3bcba75b44cd"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "f020fc7c8007d20cf1f42024991647fa14a642b36e30da7b861a13ef49a80ef2"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "994e5e7a7a20fbf4e52ad410297a52cc863ab945eeaade6148a2b55baa71f383"
+        },
+        {
+          "program": "call_009_01",
+          "phase": "continuation",
+          "program_index": 18,
+          "path": "records/context_pilot/P33_02_STDOUT_MASK_INDEX_KEEP/programs/call_009_01/input_private.json",
+          "sha256": "7e76bd89f91cbd1149d56104cec9a65f8933c8815081270103a8577a577bf985"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_03_FULL_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "full_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_001_01/input_private.json",
+          "sha256": "592e6e9d41e8818dd6ed6af4b62e2e8a6c1706b3f57ecf8ba17e8355889507b7"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_002_01/input_private.json",
+          "sha256": "a86b951b3b6fa956caa108b4753a6013481311bd01585a9cecf66a00386a0c30"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_003_01/input_private.json",
+          "sha256": "08c744d7fbbbff29345a3eb6d0425ba46e74e080f7d95a36ee673e926b7f4025"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_004_01/input_private.json",
+          "sha256": "0a2371b77709510716dfb11dc7aed9b4de8796ec1d255e7ab7c834987e80413e"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_005_01/input_private.json",
+          "sha256": "fbf9d09b7b181829ec9282748af27cd8eaa170423d0ee4c2b6664b856cee5566"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_006_01/input_private.json",
+          "sha256": "3ddf2904dc7307bac13039ed0eb2a284befca36824d44f33a6fb0e5324a06850"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_007_01/input_private.json",
+          "sha256": "e690241bb13e7520a20741022f5cc41d5f421c61f314dbfbe9fd7bbed416f1d8"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cae80294549eb9f14326a330c6d32a2f86d74bea085b9773dd6bc9208dd8fa84"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_03_FULL_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "ed7f8bd6900d1cd6bd63bfdbf535669f3026331ffc6b5be231ea568a3ee3a81d"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_03_FULL_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "4c5b6552b10186fcc2c0ea17ee5348ab18df8c2903a357936e9fe389839cea84"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_03_STDOUT_MASK_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "stdout_mask_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_001_01/input_private.json",
+          "sha256": "592e6e9d41e8818dd6ed6af4b62e2e8a6c1706b3f57ecf8ba17e8355889507b7"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_002_01/input_private.json",
+          "sha256": "a86b951b3b6fa956caa108b4753a6013481311bd01585a9cecf66a00386a0c30"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_003_01/input_private.json",
+          "sha256": "08c744d7fbbbff29345a3eb6d0425ba46e74e080f7d95a36ee673e926b7f4025"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_004_01/input_private.json",
+          "sha256": "0a2371b77709510716dfb11dc7aed9b4de8796ec1d255e7ab7c834987e80413e"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_005_01/input_private.json",
+          "sha256": "fbf9d09b7b181829ec9282748af27cd8eaa170423d0ee4c2b6664b856cee5566"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_006_01/input_private.json",
+          "sha256": "3ddf2904dc7307bac13039ed0eb2a284befca36824d44f33a6fb0e5324a06850"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_007_01/input_private.json",
+          "sha256": "e690241bb13e7520a20741022f5cc41d5f421c61f314dbfbe9fd7bbed416f1d8"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cae80294549eb9f14326a330c6d32a2f86d74bea085b9773dd6bc9208dd8fa84"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "a7a532dbb135384d1668cbcae9ff0524a97b3769c19ced370f3ffb98ba106133"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "d94e7d045eb22abc5a4001f87610e5d31645521b1b6bc62aa5725b4329ca5280"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "b215fec76122670292ed2029d35063bcceafe3d60301f0e107d0c39d0b139cb1"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "e2c0cf3c8af406676f4b8faede387707bc71e51e557231398803ddd89f395be9"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "3c8a857590db8d455ac953c265834b1d33fed3b6675e47953c1b92eb0bee2219"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "2b9fe7400d24d9e901ab8bd94e33d61382f57ff7108c778dd5aae4a94cd8bd44"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "7ba594c3cda144ec50de0c05f5e3733e5fcfc99533bede23bf8c4983ba6fdcd9"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "96511398696282d0bc6892bee6c5f88f65c21764915f14bf30f0c7657372e28d"
+        },
+        {
+          "program": "call_009_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_009_01/input_private.json",
+          "sha256": "9b643082f59ddc189cb85a3dbdebba0fd970e817e5d271dc6b753183236c74ac"
+        },
+        {
+          "program": "call_010_01",
+          "phase": "continuation",
+          "program_index": 18,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_010_01/input_private.json",
+          "sha256": "365d5b0f888ad9d700bc658fd6bd357588403422a96d4fed29c5352535399b94"
+        },
+        {
+          "program": "call_011_01",
+          "phase": "continuation",
+          "program_index": 19,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_011_01/input_private.json",
+          "sha256": "1d0adfc53dbb20b436145e74fe3ca648660f16615a6166f69c77646a5a0ed341"
+        },
+        {
+          "program": "call_012_01",
+          "phase": "continuation",
+          "program_index": 20,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_KEEP/programs/call_012_01/input_private.json",
+          "sha256": "82e6571c003f4fd5820f8870e94671b323e134328674b1fed4901907044152f8"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_03_STDOUT_MASK_INDEX_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "stdout_mask_index_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_001_01/input_private.json",
+          "sha256": "592e6e9d41e8818dd6ed6af4b62e2e8a6c1706b3f57ecf8ba17e8355889507b7"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_002_01/input_private.json",
+          "sha256": "a86b951b3b6fa956caa108b4753a6013481311bd01585a9cecf66a00386a0c30"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_003_01/input_private.json",
+          "sha256": "08c744d7fbbbff29345a3eb6d0425ba46e74e080f7d95a36ee673e926b7f4025"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_004_01/input_private.json",
+          "sha256": "0a2371b77709510716dfb11dc7aed9b4de8796ec1d255e7ab7c834987e80413e"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_005_01/input_private.json",
+          "sha256": "fbf9d09b7b181829ec9282748af27cd8eaa170423d0ee4c2b6664b856cee5566"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_006_01/input_private.json",
+          "sha256": "3ddf2904dc7307bac13039ed0eb2a284befca36824d44f33a6fb0e5324a06850"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_007_01/input_private.json",
+          "sha256": "e690241bb13e7520a20741022f5cc41d5f421c61f314dbfbe9fd7bbed416f1d8"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_03_CODE/programs/call_008_01/input_private.json",
+          "sha256": "cae80294549eb9f14326a330c6d32a2f86d74bea085b9773dd6bc9208dd8fa84"
+        },
+        {
+          "program": "transfer_inventory",
+          "phase": "control",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_INDEX_KEEP/transfer_inventory/input_private.json",
+          "sha256": "60e5d76efd27d716e4b90588c7e92466b750cb83ce1add4854599d07e281713d"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_INDEX_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "2c29159a8a113199524cf8252b7edf1dcae3fced917dad16ae9716db1a93418a"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_INDEX_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "fe90877faaf478e7b9138c48b4ad0b16c5dd3cc69fc1a5b46667ab93625ede98"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_INDEX_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "bfa537f7d2205f9a94dca6d79adef149815e91d12fba9699fd2fb7ae0cf75d33"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_03_STDOUT_MASK_INDEX_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "bb79bba104ced037f919611c9907f34616a5c908788b53241b707cc5009440d1"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "full_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_001_01/input_private.json",
+          "sha256": "c51887084702b3d2266886e79206f20da7b2fc0d69971089c69ecd204146bb8c"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_002_01/input_private.json",
+          "sha256": "38d2ce4d5905298d6028459112af5473a868266b2a9792645ab06f25e813f419"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_003_01/input_private.json",
+          "sha256": "814bd84038c2d519d7759d86285f95fd8a4b6bcd8f51eb1ae56d466df728be56"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_004_01/input_private.json",
+          "sha256": "ccd25e336519f8a9239d4b33a258cc213bdd75c3dc9ca17d757bf1e81b254229"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_005_01/input_private.json",
+          "sha256": "9f0a19542f9788819777d3c47d41247c8dcc39a31bdec7f6c466cbb9c94a9071"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_006_01/input_private.json",
+          "sha256": "07fe1d57f7c21b5d3c3a5363bdf8fba899a6b2f16bf801e5c3d4d6e11a6ade41"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_007_01/input_private.json",
+          "sha256": "cf1035ec4f045c7bde6d5929858914b376b95e1c76cc8f994d3f70f5198308d9"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_008_01/input_private.json",
+          "sha256": "e0ae46f92c3c086c7473f483a26556aece9b1b4055a9f4a8af2abbb677532736"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_04_FULL_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "60e3adeefd47f8c2139a7b810ddb928220d28b511e8162160003775589c5ba71"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_04_FULL_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "e5ecce7a4a31185f1ddd9f54f576b06dfa8eee0bbb0bf30b24eaafeaa76c4b30"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_04_STDOUT_MASK_KEEP",
+      "task_id": "6104387_1",
+      "arm": "stdout_mask_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_001_01/input_private.json",
+          "sha256": "c51887084702b3d2266886e79206f20da7b2fc0d69971089c69ecd204146bb8c"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_002_01/input_private.json",
+          "sha256": "38d2ce4d5905298d6028459112af5473a868266b2a9792645ab06f25e813f419"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_003_01/input_private.json",
+          "sha256": "814bd84038c2d519d7759d86285f95fd8a4b6bcd8f51eb1ae56d466df728be56"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_004_01/input_private.json",
+          "sha256": "ccd25e336519f8a9239d4b33a258cc213bdd75c3dc9ca17d757bf1e81b254229"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_005_01/input_private.json",
+          "sha256": "9f0a19542f9788819777d3c47d41247c8dcc39a31bdec7f6c466cbb9c94a9071"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_006_01/input_private.json",
+          "sha256": "07fe1d57f7c21b5d3c3a5363bdf8fba899a6b2f16bf801e5c3d4d6e11a6ade41"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_007_01/input_private.json",
+          "sha256": "cf1035ec4f045c7bde6d5929858914b376b95e1c76cc8f994d3f70f5198308d9"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_008_01/input_private.json",
+          "sha256": "e0ae46f92c3c086c7473f483a26556aece9b1b4055a9f4a8af2abbb677532736"
+        },
+        {
+          "program": "call_001_01",
+          "phase": "continuation",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_001_01/input_private.json",
+          "sha256": "18b55fc423fa867b7dadfacc69f0ca88bf8c0961ca48f7ba7f05faa0029b313e"
+        },
+        {
+          "program": "call_002_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_002_01/input_private.json",
+          "sha256": "c46f06541b31dfcc86b3ae3e04591276f760dd9aa5b82905387a454b90385695"
+        },
+        {
+          "program": "call_003_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_003_01/input_private.json",
+          "sha256": "94de96d33754a90b31c463bfb2dea1bb5b21d511943d362032bb70edf1988113"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "d01c449cb7909ef0c325f26c0f0f4f561458c75f56c58fc163918f2547901339"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "db21b81ae1dad678eef544ab94c9a413bd159140ff6385d8c25cd524c99f7e50"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "d59d22eb8039af2c6af655c868607f42bef6b2f2f8aea2debd250c9ac3b8f235"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 15,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "5bad37768819441393ad8dbd2171bb19f417c06e525aa0d9e51583518e721149"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 16,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "a3324e87e97bd07e04bff871aaaf0aae2ae7cebf43bad1f7a30774505315fda3"
+        },
+        {
+          "program": "call_009_01",
+          "phase": "continuation",
+          "program_index": 17,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_KEEP/programs/call_009_01/input_private.json",
+          "sha256": "63d3c70829d5a01c434219ae122e208aef70de87e7b0a1c9e67edcf05324a67c"
+        }
+      ]
+    },
+    {
+      "run_id": "P33_04_STDOUT_MASK_INDEX_KEEP",
+      "task_id": "6104387_1",
+      "arm": "stdout_mask_index_keep",
+      "inputs": [
+        {
+          "program": "prefix_call_001_01",
+          "phase": "prefix",
+          "program_index": 1,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_001_01/input_private.json",
+          "sha256": "c51887084702b3d2266886e79206f20da7b2fc0d69971089c69ecd204146bb8c"
+        },
+        {
+          "program": "prefix_call_002_01",
+          "phase": "prefix",
+          "program_index": 2,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_002_01/input_private.json",
+          "sha256": "38d2ce4d5905298d6028459112af5473a868266b2a9792645ab06f25e813f419"
+        },
+        {
+          "program": "prefix_call_003_01",
+          "phase": "prefix",
+          "program_index": 3,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_003_01/input_private.json",
+          "sha256": "814bd84038c2d519d7759d86285f95fd8a4b6bcd8f51eb1ae56d466df728be56"
+        },
+        {
+          "program": "prefix_call_004_01",
+          "phase": "prefix",
+          "program_index": 4,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_004_01/input_private.json",
+          "sha256": "ccd25e336519f8a9239d4b33a258cc213bdd75c3dc9ca17d757bf1e81b254229"
+        },
+        {
+          "program": "prefix_call_005_01",
+          "phase": "prefix",
+          "program_index": 5,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_005_01/input_private.json",
+          "sha256": "9f0a19542f9788819777d3c47d41247c8dcc39a31bdec7f6c466cbb9c94a9071"
+        },
+        {
+          "program": "prefix_call_006_01",
+          "phase": "prefix",
+          "program_index": 6,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_006_01/input_private.json",
+          "sha256": "07fe1d57f7c21b5d3c3a5363bdf8fba899a6b2f16bf801e5c3d4d6e11a6ade41"
+        },
+        {
+          "program": "prefix_call_007_01",
+          "phase": "prefix",
+          "program_index": 7,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_007_01/input_private.json",
+          "sha256": "cf1035ec4f045c7bde6d5929858914b376b95e1c76cc8f994d3f70f5198308d9"
+        },
+        {
+          "program": "prefix_call_008_01",
+          "phase": "prefix",
+          "program_index": 8,
+          "path": "records/context_pilot/P29_04_CODE/programs/call_008_01/input_private.json",
+          "sha256": "e0ae46f92c3c086c7473f483a26556aece9b1b4055a9f4a8af2abbb677532736"
+        },
+        {
+          "program": "transfer_inventory",
+          "phase": "control",
+          "program_index": 9,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/transfer_inventory/input_private.json",
+          "sha256": "c20d5264a5ce4b44aae49d91389e45fcf2da8d3ade680f8750eb230583c6c060"
+        },
+        {
+          "program": "call_004_01",
+          "phase": "continuation",
+          "program_index": 10,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/programs/call_004_01/input_private.json",
+          "sha256": "aac22e098026ba22f8173f8bc46ff9c80f52a8bef3ff9e7834a73e2abe881419"
+        },
+        {
+          "program": "call_005_01",
+          "phase": "continuation",
+          "program_index": 11,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/programs/call_005_01/input_private.json",
+          "sha256": "2b35cca15a3ae8b369a50ebb5bffcc6ac8dd266ce50e3abd36094017aaa19c72"
+        },
+        {
+          "program": "call_006_01",
+          "phase": "continuation",
+          "program_index": 12,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/programs/call_006_01/input_private.json",
+          "sha256": "c9b98fb74cdc54f0ad50e2cc988d6cf39d7ae6c484bc2daf955ca4492dd0856f"
+        },
+        {
+          "program": "call_007_01",
+          "phase": "continuation",
+          "program_index": 13,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/programs/call_007_01/input_private.json",
+          "sha256": "c108a4e5d8bf22cd40eedbb7354b2adcc90a88e4d223cf41712fb0764ff0c4ba"
+        },
+        {
+          "program": "call_008_01",
+          "phase": "continuation",
+          "program_index": 14,
+          "path": "records/context_pilot/P33_04_STDOUT_MASK_INDEX_KEEP/programs/call_008_01/input_private.json",
+          "sha256": "685142146defef00141fb6d2a5d15fbd20efedb1b2202a38bbc5feb24d86a741"
+        }
+      ]
+    }
+  ],
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "saved_code_executions": 0,
+  "novel_method_claim": false
+}
