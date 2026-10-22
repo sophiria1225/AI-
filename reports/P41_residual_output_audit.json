@@ -1,0 +1,145 @@
+{
+  "phase": "P41_audit",
+  "all_three_states_audited": true,
+  "audit_errors": [],
+  "rows": [
+    {
+      "source_run": "P40_01_PLAIN_KEEP",
+      "admission": {
+        "policy": "residual",
+        "remaining_tokens": 19871,
+        "input_tokens": 17400,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 2471,
+        "admitted": true,
+        "stop_reason": null
+      },
+      "status": "generated",
+      "model_calls": 1,
+      "input_tokens": 17400,
+      "output_tokens": 357,
+      "source_sha256": {
+        "admissions.json": "5bacde292abe395b80f1a4fa3a224457528be3590e10a12f482dd17ac65ae82f",
+        "call_001/request.json": "70cb48d1532c3fe5b18bf55c13b38ce924e581ec1b52f02f390f07648cb5d9f3",
+        "call_001/raw_response.json": "438003c12d64d213cc388a4edce159524402e87daf3ff0a48b33f938999b2699",
+        "call_001/response.json": "d4348466085a8dcfd5fd058ed9776e19638d7b4d0fa41c75bb280720130ac67e",
+        "usage.json": "9b31f0ae215f0f8ae540e4643752e4caa16712a850cb4de010b7035b9975ed1e"
+      },
+      "finish_reason": "tool_calls",
+      "syntax": {
+        "tool_calls_returned": 1,
+        "checks": [
+          {
+            "name": "run_python",
+            "valid_envelope_and_syntax": true
+          }
+        ],
+        "all_tools_valid_envelope_and_syntax": true,
+        "tool_execution_calls": 0,
+        "task_success_evaluations": 0,
+        "semantics_or_task_success_claim": false
+      },
+      "output_limit_reached": false,
+      "generation_wall_seconds": 170.8817650838755,
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 17400,
+        "input_tokens": 17400,
+        "output_tokens": 357,
+        "prompt_seconds": 149.07748,
+        "decode_seconds": 21.766102
+      }
+    },
+    {
+      "source_run": "P40_02_PLAIN_KEEP",
+      "admission": {
+        "policy": "residual",
+        "remaining_tokens": 20078,
+        "input_tokens": 16200,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 3878,
+        "admitted": true,
+        "stop_reason": null
+      },
+      "status": "generated",
+      "model_calls": 1,
+      "input_tokens": 16200,
+      "output_tokens": 100,
+      "source_sha256": {
+        "admissions.json": "b11325bf2f892e29f38d3257804fa024a0664ca6e80e29efea8d469103a09755",
+        "call_001/request.json": "a4f5d4d2a7382d3fb352f935f45f88825d0d3b8a950d0ac1ac02b7d4eff5162a",
+        "call_001/raw_response.json": "a1f63c5df90a0c738a105ac25426c2e6524e50677ff5d608682202b0e9e7452f",
+        "call_001/response.json": "497d60471429e6cfd31ef8741f9dcb035edf6389da6ff679ee62f57ce8716484",
+        "usage.json": "c811d25133f28eeef75b075955c1f9fe740ac4bc7bb751c8928966da563d3154"
+      },
+      "finish_reason": "tool_calls",
+      "syntax": {
+        "tool_calls_returned": 1,
+        "checks": [
+          {
+            "name": "run_python",
+            "valid_envelope_and_syntax": true
+          }
+        ],
+        "all_tools_valid_envelope_and_syntax": true,
+        "tool_execution_calls": 0,
+        "task_success_evaluations": 0,
+        "semantics_or_task_success_claim": false
+      },
+      "output_limit_reached": false,
+      "generation_wall_seconds": 142.4338424159214,
+      "cache_measurement": {
+        "state_confirmed": true,
+        "cached_tokens": 0,
+        "processed_tokens": 16200,
+        "input_tokens": 16200,
+        "output_tokens": 100,
+        "prompt_seconds": 136.37808900000002,
+        "decode_seconds": 6.0169570000000006
+      }
+    },
+    {
+      "source_run": "P40_02_BUDGET_KEEP",
+      "admission": {
+        "policy": "residual",
+        "remaining_tokens": 6590,
+        "input_tokens": 16123,
+        "configured_output_limit": 4096,
+        "context_limit": 65536,
+        "selected_output_cap": 0,
+        "admitted": false,
+        "stop_reason": "token_reservation_limit"
+      },
+      "status": "not_admitted",
+      "model_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "source_sha256": {
+        "admissions.json": "1ce7c27136a4e434a44078fc23916ff7fa455f30fb35038d4a2eb4a2aee8f213"
+      }
+    }
+  ],
+  "model_calls": 2,
+  "known_total_tokens": 34057,
+  "unknown_usage_calls": 0,
+  "valid_syntax_responses": 2,
+  "environment_api_requests": 0,
+  "task_evaluations": 0,
+  "task_success_claim": false,
+  "original_remaining_wall_feasibility_claim": false,
+  "novel_method_claim": false,
+  "source_sha256": {
+    "batch_status": "1497c33a409320e8547fe4cdbc7f8a3b6c4455bcbc0ca4ad8a27072709c5f124",
+    "activation": "326c0d52296e20050232c6998c737e979a94a23fdf586f726ebeafe0e760b139",
+    "auditor": "2929976d4687225cf474e6d607b11bcff35ccad3fe30a642350409b4ccba0736"
+  },
+  "limits": [
+    "Known stopped inputs; posthoc generation-only diagnostic.",
+    "Fresh cache and separate diagnostic time budget; not original task-time feasibility.",
+    "Syntax is not execution, semantic correctness, or task success.",
+    "Original P40 incomplete comparison and results remain unchanged."
+  ]
+}
