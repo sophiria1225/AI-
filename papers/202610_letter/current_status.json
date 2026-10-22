@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P56 closed: four saved-state terminal interventions evaluated, audit errors zero, no model calls. F changes failure to success after one completion call; B remains unsuccessful. Original P55 costs and outcomes unchanged. No active model experiment.",
+  "current_experiment": "P58 complete: one known input, 335/336 wall notice, two cold repeats each. Within-literal full messages matched; between-literal messages differed. No generated actions or evaluators executed; no historical warm-call cause, task-quality, savings or new-method claim.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -39,9 +39,9 @@
     "is_autonomous_agent_comparison": false,
     "results": "../../docs/P56_findings.md"
   },
-  "latest_presentation": "../../materials/20261023_p56/AI_harness_completion_scope_20261023.pdf",
+  "latest_presentation": "../../materials/20261023_p58/AI_harness_notice_calibration_20261023.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
-  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/245",
+  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/70",
   "method_fragment": "p55_methods_component.tex",
   "current_references": "references_handoff.bib",
   "research_objective": "Reduce unnecessary information acquisition, sharing, model calls and execution through harness control while maintaining final task quality.",
@@ -162,15 +162,14 @@
     "layout": "terminal_draft_layout.json"
   },
   "last_completed_measurement_calibration": {
-    "phase": "P51",
-    "fixed_generation_commit": "98f6ae7d5032e06de06c81cd44af99d525ba8eae",
-    "report": "../../reports/P51_stream_receipts_v02.json",
-    "initialization_failure": "../../reports/P51_stream_receipts_v01_failure.json",
-    "audit_errors": 0,
-    "model_calls": 3,
-    "known_total_tokens": 554,
-    "unknown_usage_calls": 1,
-    "intentional_disconnect_output_lower_bound": 4,
+    "phase": "P58",
+    "fixed_generation_commit": "b84bec7c92bae31d382f94cb6e671410165dd4d7",
+    "report": "../../reports/P58_notice_calibration.json",
+    "audit": "../../reports/P58_notice_audit.json",
+    "model_calls": 4,
+    "known_total_tokens": 63312,
+    "unknown_usage_calls": 0,
+    "local_message_sensitivity_observed": true,
     "is_task_or_novel_method_comparison": false,
     "server_stopped": true
   },
@@ -205,7 +204,7 @@
   },
   "queued_comparison": {
     "phase": "P58",
-    "state": "prepared_awaiting_exact_head_ci",
+    "state": "running_exact_head_ci_confirmed",
     "plan": "../../configs/P58_notice_calibration_v01.json",
     "max_model_calls": 4,
     "environment_api_requests": 0,
@@ -250,5 +249,19 @@
     "source_map": "inventory_draft_source_map.json",
     "layout": "inventory_draft_layout.json"
   },
-  "diagnostic_fragment": "completion_diagnostic.tex"
+  "diagnostic_fragment": "completion_diagnostic.tex",
+  "previous_measurement_calibration": {
+    "phase": "P51",
+    "fixed_generation_commit": "98f6ae7d5032e06de06c81cd44af99d525ba8eae",
+    "report": "../../reports/P51_stream_receipts_v02.json",
+    "initialization_failure": "../../reports/P51_stream_receipts_v01_failure.json",
+    "audit_errors": 0,
+    "model_calls": 3,
+    "known_total_tokens": 554,
+    "unknown_usage_calls": 1,
+    "intentional_disconnect_output_lower_bound": 4,
+    "is_task_or_novel_method_comparison": false,
+    "server_stopped": true
+  },
+  "latest_mirror_template_check": "../../reports/ieice_mirror_check_20261023.json"
 }
