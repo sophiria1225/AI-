@@ -1,0 +1,327 @@
+{
+  "phase": "P33",
+  "all_twelve_accounted": true,
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "reference_run_id": "P33_01_FULL_KEEP",
+      "candidate_run_id": "P33_01_STDOUT_MASK_KEEP",
+      "candidate_arm": "stdout_mask_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 66851,
+        "decomposition": {
+          "calls": 5,
+          "initial_input_tokens": 8517,
+          "later_input_growth_tokens": 20673,
+          "output_tokens": 3593
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 63575,
+        "decomposition": {
+          "calls": 6,
+          "initial_input_tokens": 5432,
+          "later_input_growth_tokens": 28441,
+          "output_tokens": 2542
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": -3276,
+      "components": {
+        "initial_input_size": -16967.5,
+        "number_of_calls": 6974.5,
+        "later_input_growth": 7768,
+        "output_tokens": -1051
+      }
+    },
+    {
+      "task_id": "34d9492_1",
+      "reference_run_id": "P33_01_FULL_KEEP",
+      "candidate_run_id": "P33_01_STDOUT_MASK_INDEX_KEEP",
+      "candidate_arm": "stdout_mask_index_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 66851,
+        "decomposition": {
+          "calls": 5,
+          "initial_input_tokens": 8517,
+          "later_input_growth_tokens": 20673,
+          "output_tokens": 3593
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 87160,
+        "decomposition": {
+          "calls": 8,
+          "initial_input_tokens": 5880,
+          "later_input_growth_tokens": 35435,
+          "output_tokens": 4685
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": 20309,
+      "components": {
+        "initial_input_size": -17140.5,
+        "number_of_calls": 21595.5,
+        "later_input_growth": 14762,
+        "output_tokens": 1092
+      }
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "reference_run_id": "P33_02_FULL_KEEP",
+      "candidate_run_id": "P33_02_STDOUT_MASK_KEEP",
+      "candidate_arm": "stdout_mask_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 110922,
+        "decomposition": {
+          "calls": 9,
+          "initial_input_tokens": 10995,
+          "later_input_growth_tokens": 10613,
+          "output_tokens": 1354
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 110906,
+        "decomposition": {
+          "calls": 12,
+          "initial_input_tokens": 5712,
+          "later_input_growth_tokens": 40264,
+          "output_tokens": 2098
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": -16,
+      "components": {
+        "initial_input_size": -55471.5,
+        "number_of_calls": 25060.5,
+        "later_input_growth": 29651,
+        "output_tokens": 744
+      }
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "reference_run_id": "P33_02_FULL_KEEP",
+      "candidate_run_id": "P33_02_STDOUT_MASK_INDEX_KEEP",
+      "candidate_arm": "stdout_mask_index_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 110922,
+        "decomposition": {
+          "calls": 9,
+          "initial_input_tokens": 10995,
+          "later_input_growth_tokens": 10613,
+          "output_tokens": 1354
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 109531,
+        "decomposition": {
+          "calls": 9,
+          "initial_input_tokens": 6333,
+          "later_input_growth_tokens": 50891,
+          "output_tokens": 1643
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": -1391,
+      "components": {
+        "initial_input_size": -41958.0,
+        "number_of_calls": 0.0,
+        "later_input_growth": 40278,
+        "output_tokens": 289
+      }
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "reference_run_id": "P33_03_FULL_KEEP",
+      "candidate_run_id": "P33_03_STDOUT_MASK_KEEP",
+      "candidate_arm": "stdout_mask_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 31680,
+        "decomposition": {
+          "calls": 2,
+          "initial_input_tokens": 15474,
+          "later_input_growth_tokens": 342,
+          "output_tokens": 390
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 98106,
+        "decomposition": {
+          "calls": 12,
+          "initial_input_tokens": 5199,
+          "later_input_growth_tokens": 33830,
+          "output_tokens": 1888
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": 66426,
+      "components": {
+        "initial_input_size": -71925.0,
+        "number_of_calls": 103365.0,
+        "later_input_growth": 33488,
+        "output_tokens": 1498
+      }
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "reference_run_id": "P33_03_FULL_KEEP",
+      "candidate_run_id": "P33_03_STDOUT_MASK_INDEX_KEEP",
+      "candidate_arm": "stdout_mask_index_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 31680,
+        "decomposition": {
+          "calls": 2,
+          "initial_input_tokens": 15474,
+          "later_input_growth_tokens": 342,
+          "output_tokens": 390
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 27808,
+        "decomposition": {
+          "calls": 4,
+          "initial_input_tokens": 5993,
+          "later_input_growth_tokens": 3078,
+          "output_tokens": 758
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": -3872,
+      "components": {
+        "initial_input_size": -28443.0,
+        "number_of_calls": 21467.0,
+        "later_input_growth": 2736,
+        "output_tokens": 368
+      }
+    },
+    {
+      "task_id": "6104387_1",
+      "reference_run_id": "P33_04_FULL_KEEP",
+      "candidate_run_id": "P33_04_STDOUT_MASK_KEEP",
+      "candidate_arm": "stdout_mask_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 33187,
+        "decomposition": {
+          "calls": 2,
+          "initial_input_tokens": 13499,
+          "later_input_growth_tokens": 2774,
+          "output_tokens": 3415
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 104685,
+        "decomposition": {
+          "calls": 9,
+          "initial_input_tokens": 5550,
+          "later_input_growth_tokens": 50125,
+          "output_tokens": 4610
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": 71498,
+      "components": {
+        "initial_input_size": -43719.5,
+        "number_of_calls": 66671.5,
+        "later_input_growth": 47351,
+        "output_tokens": 1195
+      }
+    },
+    {
+      "task_id": "6104387_1",
+      "reference_run_id": "P33_04_FULL_KEEP",
+      "candidate_run_id": "P33_04_STDOUT_MASK_INDEX_KEEP",
+      "candidate_arm": "stdout_mask_index_keep",
+      "reference": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 33187,
+        "decomposition": {
+          "calls": 2,
+          "initial_input_tokens": 13499,
+          "later_input_growth_tokens": 2774,
+          "output_tokens": 3415
+        }
+      },
+      "candidate": {
+        "all_usage_known": true,
+        "unknown_usage_calls": 0,
+        "exact_total_tokens": 102770,
+        "decomposition": {
+          "calls": 8,
+          "initial_input_tokens": 6886,
+          "later_input_growth_tokens": 43082,
+          "output_tokens": 4600
+        }
+      },
+      "causal_components": false,
+      "exact_total_token_change": 69583,
+      "components": {
+        "initial_input_size": -33065.0,
+        "number_of_calls": 61155.0,
+        "later_input_growth": 40308,
+        "output_tokens": 1185
+      }
+    }
+  ],
+  "by_arm": {
+    "stdout_mask_keep": {
+      "complete_exact_comparison": true,
+      "exact_total_token_change": 134632,
+      "components": {
+        "initial_input_size": -188083.5,
+        "number_of_calls": 202071.5,
+        "later_input_growth": 118258,
+        "output_tokens": 2386
+      },
+      "pairs_with_unknown_usage": 0
+    },
+    "stdout_mask_index_keep": {
+      "complete_exact_comparison": true,
+      "exact_total_token_change": 84629,
+      "components": {
+        "initial_input_size": -120606.5,
+        "number_of_calls": 104217.5,
+        "later_input_growth": 98084,
+        "output_tokens": 2934
+      },
+      "pairs_with_unknown_usage": 0
+    }
+  },
+  "identity": "T = n * first_input + sum(input_j - first_input) + total_output; delta(n*I) = mean(n)*delta(I) + mean(I)*delta(n)",
+  "interpretation": "Descriptive algebra on observed trajectories. The terms are not separately identified causal effects or achievable savings. Input includes cache hits; this is not latency, compute or money. Unknown usage suppresses the exact paired decomposition.",
+  "new_inference_calls": 0,
+  "new_api_requests": 0,
+  "source_sha256": {
+    "reports/P33_comparison.json": "722cf575147ea5bac87e49dc420493126c65c6e76b2f26b72c81a9375b650ce4",
+    "reports/P33_cost_profile.json": "d77ef6c28665ce3bb20a0e8a0e1eee2fb841f8e6355c419bb983980d5baa34e8"
+  },
+  "script_sha256": "1ad21c7cf5d0e52491b268197c2129faa001fa2be9c90de6fa4befb0306905c4"
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "title": "AIハーネスにおける<br>入力削減と実行費用の分析",
+    "body": "",
+    "take": "",
+    "notes": "P33の追加進捗資料。出力だけの省略と一覧の効果を、最終成否と総費用で確認する。",
+    "refs": [],
+    "cover": true
+  },
+  {
+    "title": "目的：最終品質を保ち、不要な処理を減らす",
+    "body": "<p class=\"lead\">ハーネスが、AIへ渡す情報・ツール実行・状態・検証・停止を制御する。</p><div class=\"two\"><div class=\"col\"><h3>減らしたい負担</h3><p class=\"body\">同じ長い出力の再入力。<br>省略した情報の再取得。<br>それに伴う追加のAI呼出し。</p></div><div class=\"col\"><h3>残す必要があるもの</h3><p class=\"body\">要求・操作・失敗の記録。<br>必要な値と元資料へのアクセス。<br>要求を満たす最終成果。</p></div></div>",
+    "take": "今回の問い：操作の手掛かりを残せば、長い出力を省けるか。",
+    "notes": "仕事の分担や通信全体を最適化した実験ではない。今回は入力の構成を変える局所比較。",
+    "refs": [
+      "docs/research_objective_20261022.md",
+      "docs/cost_profile_20261022.md"
+    ],
+    "cover": false
+  },
+  {
+    "title": "実験：同じ途中状態から、３条件を比べる",
+    "body": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"同じ途中状態から入力の構成だけが異なる三条件へ分岐\" viewBox=\"0 0 1120 355\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L8,3 L0,6\" fill=\"#167a78\"/></marker></defs><text x=\"10\" y=\"35\" font-size=\"24\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">同じ４課題の８応答後</text><path d=\"M20 72h220v23H20z\" fill=\"#d6dfdb\"/><path d=\"M20 106h180v23H20z\" fill=\"#a7c9c1\"/><path d=\"M20 140h240v23H20z\" fill=\"#d6dfdb\"/><path d=\"M20 174h170v23H20z\" fill=\"#a7c9c1\"/><text x=\"20\" y=\"242\" font-size=\"22\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">会話・アプリ・Python</text><line x1=\"290\" y1=\"159\" x2=\"473\" y2=\"76\" stroke=\"#8796a2\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><circle cx=\"505\" cy=\"76\" r=\"21\" fill=\"#8796a2\" stroke=\"none\" stroke-width=\"3\"/><text x=\"548\" y=\"80\" font-size=\"26\" fill=\"#8796a2\" font-weight=\"700\" text-anchor=\"start\">全履歴</text><text x=\"548\" y=\"111\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">出力を全て渡す</text><line x1=\"290\" y1=\"159\" x2=\"473\" y2=\"172\" stroke=\"#177b79\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><circle cx=\"505\" cy=\"172\" r=\"21\" fill=\"#177b79\" stroke=\"none\" stroke-width=\"3\"/><text x=\"548\" y=\"176\" font-size=\"26\" fill=\"#177b79\" font-weight=\"700\" text-anchor=\"start\">出力省略</text><text x=\"548\" y=\"207\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">古い長い出力を参照に置換</text><line x1=\"290\" y1=\"159\" x2=\"473\" y2=\"268\" stroke=\"#c66a38\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/><circle cx=\"505\" cy=\"268\" r=\"21\" fill=\"#c66a38\" stroke=\"none\" stroke-width=\"3\"/><text x=\"548\" y=\"272\" font-size=\"26\" fill=\"#c66a38\" font-weight=\"700\" text-anchor=\"start\">出力省略＋一覧</text><text x=\"548\" y=\"303\" font-size=\"20\" fill=\"#172c43\" font-weight=\"500\" text-anchor=\"start\">変数・APIの名前も渡す</text><text x=\"20\" y=\"326\" font-size=\"21\" fill=\"#172c43\" font-weight=\"700\" text-anchor=\"start\">Python状態・原記録の再読・モデル・後続予算は共通</text></svg></div><p class=\"small\">後続上限：16生成・12万総トークン・480秒。元のAPI上限と共通前半を計上。<br>４既知課題×３条件×各１試行。全履歴の対照も新しく実行。整理・一覧の費用も含める。</p>",
+    "take": "",
+    "notes": "固定８応答後に一度だけ省略し、後のターンはそのまま追加。元の最後の１ターン、エラー、操作コードを残す。復元費用は別記し、無料の運用処理とはしない。",
+    "refs": [
+      "docs/experiments/P33_output_views.md"
+    ],
+    "cover": false
+  },
+  {
+    "title": "結果：初回の短縮と総費用を分ける",
+    "body": "<div class=\"diagram\"><img src=\"figures/input_and_total.svg\" style=\"width:100%;height:250px\" alt=\"初回入力と全体トークンの比較\"></div><table class=\"compact\"><thead><tr><th>条件</th><th>最終成功</th><th>AI呼出し</th><th>後続API</th><th>使用量不明</th></tr></thead><tbody><tr><td>全履歴</td><td>2/4</td><td>18</td><td>162</td><td>0呼出</td></tr><tr><td>出力省略</td><td>2/4</td><td>39</td><td>133</td><td>0呼出</td></tr><tr><td>出力省略＋一覧</td><td>2/4</td><td>29</td><td>150</td><td>0呼出</td></tr></tbody></table>",
+    "take": "",
+    "notes": "左右の軸は別尺度。未知の使用量を含む棒は既知分の下限。不明分をゼロとは扱わない。",
+    "refs": [
+      "reports/P33_comparison.json",
+      "reports/P33_cost_profile.json"
+    ],
+    "cover": false
+  },
+  {
+    "title": "品質：成功件数だけでは判断しない",
+    "body": "<table class=\"results-table\"><thead><tr><th>課題</th><th>全履歴</th><th>出力省略</th><th>出力省略＋一覧</th></tr></thead><tbody><tr><td>写真整理</td><td class=\"ok\">成功</td><td class=\"ok\">成功</td><td class=\"ok\">成功</td></tr><tr><td>共有・依頼</td><td class=\"miss\">未達</td><td class=\"miss\">未達</td><td class=\"miss\">未達</td></tr><tr><td>返金</td><td class=\"ok\">成功</td><td class=\"ok\">成功</td><td class=\"ok\">成功</td></tr><tr><td>曲一覧の書出</td><td class=\"miss\">未達</td><td class=\"miss\">未達</td><td class=\"miss\">未達</td></tr></tbody></table><div class=\"body\"><p>出力省略：対照の成功を落とした課題 0件。総トークン差 +134,632。</p><p>出力省略＋一覧：対照の成功を落とした課題 0件。総トークン差 +84,629。</p></div><p class=\"small\">書出は全履歴がAPI上限、他２方式がトークン上限で未達。<br>早く打ち切られた低費用を、効率よく完了した結果とは扱わない。</p>",
+    "take": "４件各１回の結果。品質維持の一般的な証明にはならない。",
+    "notes": "対照で成功した課題を失っていないかを個別に確認する。別課題の成功で相殺しない。",
+    "refs": [
+      "reports/P33_development_gate.json"
+    ],
+    "cover": false
+  },
+  {
+    "title": "考察：通常方式の効果と、独自の差を分ける",
+    "body": "<p class=\"lead\">今回の２つの省略条件は、開発用の採否基準を満たさなかった。</p><div class=\"body\"><p>出力省略と変数一覧は既存の仕組み。<br>結果が良くても、それだけを新規性とはしない。</p><p>値との照合だけで省略を選ぶ候補（P34）は、対象23出力中１出力にしか適用できず、追加のモデル比較を見送った。</p><p>次は、コードが参照した情報とAPI返却の対応を、保存記録の再生で調べる。読み取りの記録がないことを、不要だとは判定しない。</p></div>",
+    "take": "月末投稿へ向けた独自の主張と、未調整課題での確認は未完了。",
+    "notes": "返金は全方式で成功したが呼出しは２／12／４回。成功の同率だけでは費用を説明できない。12確認シナリオは未閲覧のまま。次の計測も独自の制御技術とはまだ確定していない。",
+    "refs": [
+      "docs/P33_findings.md",
+      "docs/experiments/P34_output_residency.md"
+    ],
+    "cover": false
+  },
+  {
+    "title": "補足：入力トークンと実際の処理量",
+    "body": "<table class=\"compact\"><thead><tr><th>条件</th><th>総入力</th><th>キャッシュ入力</th><th>新規入力処理</th><th>出力</th></tr></thead><tbody><tr><td>全履歴</td><td>233,888</td><td>176,340</td><td>57,548</td><td>8,752</td></tr><tr><td>出力省略</td><td>366,134</td><td>322,808</td><td>43,326</td><td>11,138</td></tr><tr><td>出力省略＋一覧</td><td>315,583</td><td>264,881</td><td>50,702</td><td>11,686</td></tr></tbody></table><div class=\"body\"><p>総入力には、再利用されたキャッシュ部分も含む。<br>小さい入力、少ないAPI、短い実時間は別の指標。</p><p>使用量が不明な呼出しは、この内訳の外にある。<br>再構成、制御、失敗を含む詳細は元の集計とCSVへ残した。</p></div>",
+    "take": "",
+    "notes": "キャッシュや時間の内訳は観測値。原因を特定した介入実験や一般的な速度保証ではない。",
+    "refs": [
+      "reports/P33_cost_profile.json"
+    ],
+    "cover": false
+  }
+]

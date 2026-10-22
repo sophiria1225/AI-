@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T09:28+09:00",
+  "updated_at": "2026-10-22T01:37:06.952931+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P33 started at 09:28 JST: full history, stdout-only masking, masking plus ordinary runtime inventory. All twelve conditions frozen before inference; results pending. Not a novel method.",
+  "current_experiment": "P35 implementation: record-only measurement of API returns and code accesses. No new model run; heldout scenarios remain unread.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -27,20 +27,20 @@
   ],
   "current_guide": "README.md",
   "last_completed_experiment": {
-    "phase": "P32",
-    "calls": 128,
-    "known_tokens": 1291600,
-    "unknown_usage_calls": 1,
+    "phase": "P33",
+    "calls": 86,
+    "known_tokens": 947181,
+    "unknown_usage_calls": 0,
     "successes": 6,
-    "trials": 16,
+    "trials": 12,
     "independent_tasks": 4,
-    "decision": "In the reset conditions, recent history reduced API calls by 22.1% but increased total tokens by 13.3%. Equal success counts on four known tasks do not establish maintained quality. No novel selection method established.",
-    "results": "../../docs/P32_findings.md"
+    "decision": "Both ordinary output-masking conditions fail the predeclared cost-reduction gate. Same successful tasks but no general quality-maintenance claim; export stopping limits differ. No novel method established.",
+    "results": "../../docs/P33_findings.md"
   },
-  "latest_presentation": "../../materials/20261022_morning/AI_harness_progress_20261022.pdf",
+  "latest_presentation": "../../materials/20261022_p33/AI_harness_P33_20261022.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
-  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/168",
-  "method_fragment": "methods_handoff.tex",
+  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/178",
+  "method_fragment": "methods_output_views.tex",
   "current_references": "references_handoff.bib",
   "research_objective": "Reduce unnecessary information acquisition, sharing, model calls and execution through harness control while maintaining final task quality.",
   "objective_document": "../../docs/research_objective_20261022.md"

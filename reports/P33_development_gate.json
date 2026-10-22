@@ -1,0 +1,59 @@
+{
+  "phase": "P33",
+  "independent_tasks": 4,
+  "repetitions_per_cell": 1,
+  "rule": "No baseline-success task lost AND strictly lower total tokens AND no unknown usage in either arm.",
+  "totals": {
+    "full_keep": {
+      "known_total_tokens": 242640,
+      "unknown_usage_calls": 0,
+      "successes": 2
+    },
+    "stdout_mask_keep": {
+      "known_total_tokens": 377272,
+      "unknown_usage_calls": 0,
+      "successes": 2
+    },
+    "stdout_mask_index_keep": {
+      "known_total_tokens": 327269,
+      "unknown_usage_calls": 0,
+      "successes": 2
+    }
+  },
+  "decisions": {
+    "stdout_mask_keep": {
+      "baseline_successes_lost": [],
+      "new_successes": [],
+      "all_usage_known_in_pair": true,
+      "total_token_change": 134632,
+      "token_change_fraction": 0.5548631717771184,
+      "prespecified_descriptive_gate_passed": false,
+      "baseline_success_count": 2,
+      "quality_preservation_established": false,
+      "novelty_established": false,
+      "heldout_evaluation_authorized_by_gate": false
+    },
+    "stdout_mask_index_keep": {
+      "baseline_successes_lost": [],
+      "new_successes": [],
+      "all_usage_known_in_pair": true,
+      "total_token_change": 84629,
+      "token_change_fraction": 0.3487842070557204,
+      "prespecified_descriptive_gate_passed": false,
+      "baseline_success_count": 2,
+      "quality_preservation_established": false,
+      "novelty_established": false,
+      "heldout_evaluation_authorized_by_gate": false
+    }
+  },
+  "limits": [
+    "A gate pass is a descriptive result on known development tasks, not generalization or non-inferiority.",
+    "Unknown usage does not become zero and cannot support an exact savings fraction.",
+    "The gate cannot establish novelty or select a new experiment automatically."
+  ],
+  "source_sha256": {
+    "reports/P33_comparison.json": "722cf575147ea5bac87e49dc420493126c65c6e76b2f26b72c81a9375b650ce4",
+    "scripts/output_view_decision.py": "0580cc7ceb2836d1d6e446b89bcf25d895bfa12fd4f1419de690dccd348b7a3b",
+    "configs/P33_output_views_v01.json": "9db07dd7b0dddc02a173b2d7d4eb0babda0db8cdbf96ee3b3ecd0d09c0af46b5"
+  }
+}
