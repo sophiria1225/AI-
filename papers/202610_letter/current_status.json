@@ -206,7 +206,15 @@
     "additional_value_over_simple_ranked_access": false,
     "decision": "Do not promote bounded prefetch to a novel main comparison; ordinary ranked access was sufficient, and LLM-token savings were not measured."
   },
-  "queued_comparison": null,
+  "queued_comparison": {
+    "phase": "P56",
+    "state": "prepared_awaiting_exact_head_ci",
+    "plan": "../../configs/P56_completion_scope_v01.json",
+    "model_generations": 0,
+    "known_source_states": 2,
+    "planned_terminal_interventions": 4,
+    "novel_method_claim": false
+  },
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {
     "path": "candidate_execution_state.tex",
