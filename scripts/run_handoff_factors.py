@@ -79,7 +79,7 @@ def prepare_sources(storage, root):
 
 def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, run_id):
     boundary_call=prepared['prefix']['manifest']['state']['model_calls']
-    if plan['phase'] not in ('P31','P32','P33','P38','P40','P45') or boundary_call!=plan['boundary_after_model_calls']:
+    if plan['phase'] not in ('P31','P32','P33','P38','P40','P45','P47') or boundary_call!=plan['boundary_after_model_calls']:
         raise ValueError('wrong prespecified boundary or phase')
     if plan['phase']=='P33':
         from handoff_output_views import ARMS as VIEW_ARMS
@@ -97,6 +97,10 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
         from documentation_comparison import ARMS as DOC_ARMS
         if arm not in DOC_ARMS or boundary_call!=8:
             raise ValueError('outside fixed documentation-display comparison')
+    if plan['phase']=='P47':
+        from contract_comparison import ARMS as CONTRACT_ARMS
+        if arm not in CONTRACT_ARMS or boundary_call!=8:
+            raise ValueError('outside fixed contract-feedback comparison')
     trial = storage/'records/context_pilot'/run_id
     if trial.exists(): raise FileExistsError('preserve every prior branch')
     appworld = storage/'.runtime/appworld/r18_probe_01'
@@ -118,7 +122,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
     write_json(trial/'source_identity.json', {k:prepared[k] for k in
                ('task_id','source_run','source_sha256','boundary_manifest_sha256')})
     catalog = NativeCatalog(tools)
-    bridge = session = infer = field_runtime = None
+    bridge = session = infer = field_runtime = feedback_runtime = None
     setup_started = time.monotonic()
     setup = {'status':'running','environment_replay':{},'python_replay':None}
     reason, complete = 'not_started', False
@@ -164,6 +168,9 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
         elif plan['phase']=='P45':
             from documentation_comparison import build_condition
             conversation, transfer = build_condition(prepared, arm)
+        elif plan['phase']=='P47':
+            from contract_comparison import build_condition
+            conversation, transfer = build_condition(prepared, arm)
         else:
             conversation, transfer = handoff_conversation(prefix['conversation_private'], prefix['public_task'], arm,boundary_call)
         write_json(trial/'conversation_private.json', conversation.messages())
@@ -175,21 +182,27 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
         elif plan['phase']=='P45':
             from documentation_comparison import OriginBudgetInference
             infer = OriginBudgetInference(config, trial, arm)
+        elif plan['phase']=='P47':
+            from contract_comparison import CONDITIONS, FeedbackProgram
+            from documentation_comparison import OriginBudgetInference
+            view, mode = CONDITIONS[arm]
+            infer = OriginBudgetInference(config, trial, view)
+            feedback_runtime = FeedbackProgram(session.run, mode)
         else:
             infer = Inference(config, trial)
-        if plan['phase'] in ('P33','P38','P45'):
+        if plan['phase'] in ('P33','P38','P45','P47'):
             # Inspection is real controller work, charged to the continuation
             # wall budget. Reconstruction remains separate experimental setup.
             infer.started-=transfer['transfer_wall_seconds']
             setup['wall_seconds']=setup_wall
             write_json(trial/'setup.json',setup)
         while not complete:
-            if plan['phase']=='P45' and (storage/'.runtime/P45.stop').exists():
-                raise InterruptedError('explicit P45 stop')
+            if plan['phase'] in ('P45','P47') and (storage/f'.runtime/{plan["phase"]}.stop').exists():
+                raise InterruptedError('explicit experiment stop')
             if prefix_api+suffix_api >= config['max_api_requests']:
                 raise BudgetStop('api_request_limit')
             messages, formatting = conversation.for_model(config['observation_page_characters'])
-            if plan['phase'] in ('P40','P45'):
+            if plan['phase'] in ('P40','P45','P47'):
                 infer.set_environment_usage(prefix_api, suffix_api)
             message = infer.call('agent', messages, CODE_TOOLS)
             call_id = infer.calls[-1]['id']
@@ -220,7 +233,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
                 remaining_api=lambda:config['max_api_requests']-prefix_api-suffix_api,
                 may_continue=lambda:time.monotonic()-infer.started<config['max_wall_seconds'] and not complete,
                 remaining_wall=lambda:config['max_wall_seconds']-(time.monotonic()-infer.started),
-                program=field_runtime.program(session) if field_runtime else session.run,
+                program=(field_runtime.program(session) if field_runtime else feedback_runtime or session.run),
                 read_archive=lambda sid,offset:page_span(spans,sid,offset,config['observation_page_characters']))
             conversation.append(message,current_spans)
             write_json(trial/'conversation_private.json', conversation.messages())
@@ -265,6 +278,7 @@ def run_branch(storage, root, plan, source_plan, tools, schemas, prepared, arm, 
             'history_formatting':formatting,'python_session':session.state if session else None,
             'full_process_equivalence_claim':False}
         if field_runtime is not None:summary['projected_reads']=field_runtime.summary()
+        if feedback_runtime is not None:summary['contract_feedback']=feedback_runtime.summary()
         write_json(trial/'summary.json',summary)
     return summary
 

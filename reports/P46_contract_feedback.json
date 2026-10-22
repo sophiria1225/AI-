@@ -1,0 +1,511 @@
+{
+  "phase": "P46",
+  "all_eight_cells_inspected": true,
+  "kind": "posthoc_implementation_probe",
+  "rows": [
+    {
+      "run_id": "P45_01_FULL_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "full_keep",
+      "model_calls": 7,
+      "programs_checked": 7,
+      "rejected_requests": 0,
+      "feedback_candidates": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "6c23610636bdffd1675516e293235a1135697a6fe635db7da762e21bd61905b7",
+        "programs/call_001_01/result_private.json": "07cd2d8e82f24930526ee795ee82a664cd61661c774c67a2057e4b90ce9c0df9",
+        "programs/call_001_01/wire_private.jsonl": "230481448cf0458d3ac38b7afbf27ddd60b30a2a5b272c3d8626a073521e25c8",
+        "programs/call_002_01/input_private.json": "588da2b3accfde1568ea4dff68cff3cd5198c6607692ba85788967dda9884d2f",
+        "programs/call_002_01/result_private.json": "6685492783a2fadab82e3283f391c471d14136a542591ca7089c0f96b5a4070c",
+        "programs/call_002_01/wire_private.jsonl": "fce12e3dbba866114104458bdba3a51958d233ccc7592628527a5efe18925e9c",
+        "programs/call_003_01/input_private.json": "f322a04e6078ddb5f96dc23fb05081100c07e17d84a672952fa899637d0a46cc",
+        "programs/call_003_01/result_private.json": "4b7cc538d2b6c7a7c67f78634906d8207446aa0a683b5cd45546f3ecb0df6e9e",
+        "programs/call_003_01/wire_private.jsonl": "471736be551d7f5fb9092db8e9dd6f5831ca2d3ebb731aff4b692b09dcde1b47",
+        "programs/call_004_01/input_private.json": "646e259887aff2313e2a59c9f784486299a4d38fc0e8191aafa1611c17131c76",
+        "programs/call_004_01/result_private.json": "472007a9160ac71853a0df0c11aa0493a8988b82d9af3e2fbff57402084bf187",
+        "programs/call_004_01/wire_private.jsonl": "750d3811dfaaee81c089b467b11bba0351aee2b6b896b5661ba6e3c188549944",
+        "programs/call_005_01/input_private.json": "ea1d471170157309eb38d3c3fcbcf06ea65c8b5c91b43bee4b521586725c4a77",
+        "programs/call_005_01/result_private.json": "eba1aea95c5b6b7bd737fe148daf0452d2c28e79a7ed7117de5e0c34dc0542d0",
+        "programs/call_005_01/wire_private.jsonl": "b44e3900a35bfc75f9776db65abcbbcc0632d4ac48e2f58be5d47c7693f50f5a",
+        "programs/call_006_01/input_private.json": "0486ce0ac32058be8257525fa51445fa50f85506b0adffe7447d843ad7e3003b",
+        "programs/call_006_01/result_private.json": "e4e2d153031dad6428e281f16a82acc0273cf37b329ebd330f8f990e14445b98",
+        "programs/call_006_01/wire_private.jsonl": "5f0bc89c98b9ba24008494a5fdfec4432e38418774516454c71791cf7edd680d",
+        "programs/call_007_01/input_private.json": "5bdbee8dd7fc9f69d55b1f60a1265957a7766f9936cedaf36cd6dfe9945290b1",
+        "programs/call_007_01/result_private.json": "d6ffa849198a10636cab86a6145840c5d702b720922ef33f460ec369239de2e9",
+        "programs/call_007_01/wire_private.jsonl": "794980f6b1361909266b21e80d8c4d85086e3115b228fd0751e16a05fbd72b85"
+      }
+    },
+    {
+      "run_id": "P45_01_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "documentation_origin_keep",
+      "model_calls": 10,
+      "programs_checked": 10,
+      "rejected_requests": 3,
+      "feedback_candidates": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "1030704b515df725aeea7c93022ebb84f44dc074a8f22f2cf19a4d69294be673",
+        "programs/call_001_01/result_private.json": "c4918979a458b86b53581d3b436131e2f27f41637d7d5390db39adb6de2085d0",
+        "programs/call_001_01/wire_private.jsonl": "1fd5923062476f400a29fd363e9c780dd2eb897cddff9afd6f28ce8b6454c982",
+        "programs/call_002_01/input_private.json": "fd683d976361e6cc15bb460e61234080123e88f4779272cedb9c3021c737ffb8",
+        "programs/call_002_01/result_private.json": "e6145673fb833c8fc010d5ab92604781147a17a050c0ec63f36c528b321d0075",
+        "programs/call_002_01/wire_private.jsonl": "56f6e95a35e6b2285c68e3ac26e1269f4a0bbf6e684a889be17049eaf926f579",
+        "programs/call_003_01/input_private.json": "5e4ed6b6f79370c898091d3f04400c382ac274a8ad785d908bcaffbe2093f93c",
+        "programs/call_003_01/result_private.json": "4ad1a9628a97163d97eb04cfd4eba498f113be44c11a9ebfe9bc895b72713ea3",
+        "programs/call_003_01/wire_private.jsonl": "ce95ff8af8a0c401b86eea90c8cfe59ef555679b7c11121e009a908a5c69023c",
+        "programs/call_004_01/input_private.json": "a4116242454807ba1fc7e6855b2f2cd1caab16b6f145d965656cd6bab0966be3",
+        "programs/call_004_01/result_private.json": "65cbba6dc4e1483ba8b283c2bbbea31987020e0dbe98a88d900cb0e2026e93c1",
+        "programs/call_004_01/wire_private.jsonl": "35e094c24e3a16b1c093c8c6efcc67f52a26eddd463151d51458e3724b36264f",
+        "programs/call_005_01/input_private.json": "13b5fd50c799704ade9155ce09c13b1a7c536c33a44c479804810996b391664e",
+        "programs/call_005_01/result_private.json": "23811ed14378d6fa643de42c4f2c95e9323668f3223ba7fe58c95108289da64f",
+        "programs/call_005_01/wire_private.jsonl": "4960a190573b0e1d9c2a7c9153719a4c7afb52dbcd53e343df6d8af8ab7f5917",
+        "programs/call_006_01/input_private.json": "eccbf0ffefe659761f4441973953760575f72b7d6714af4d563a0abbee5b4def",
+        "programs/call_006_01/result_private.json": "5e9fa4b73863984f68103b888b213104b723b31e4a62ee3cf936d673670046f3",
+        "programs/call_006_01/wire_private.jsonl": "8fab94a783a9ea1db63279645b0de82f7ff8bd0180e4fe8da45cafadcc7e8750",
+        "programs/call_007_01/input_private.json": "6d66452ab8f5792f81d3047945de855a4ba0ffeb24cfd7ffe40ffd20ccff522d",
+        "programs/call_007_01/result_private.json": "e91aeaab44e08749d8d38ecaf56d3dc056c417aaaa1340c6e45e6ac1b449ecd6",
+        "programs/call_007_01/wire_private.jsonl": "e248744d711940d1a11cf6c5bb9c1ef34b6f415aa5923a9d64565507efa18205",
+        "programs/call_008_01/input_private.json": "02a0a17a273745a2d0efb85f7c46906f649d8b70bc96aff60c27f91a5ac22d61",
+        "programs/call_008_01/result_private.json": "91924d8769bb1a2497c8a713a1b5cec6b4e8f970323f3a0e3aab2ca871e402d2",
+        "programs/call_008_01/wire_private.jsonl": "ec346507e29027caf54ea490e0729a8fb13ef623d13108fb60db79c199845603",
+        "programs/call_009_01/input_private.json": "6ed5483398ea8c8ec35ba1e8df8efe61b665413f4044e436ac2b80461221519f",
+        "programs/call_009_01/result_private.json": "31e5095832bbd66fa678dfe6d16bab90f9e6ef29e085eed6c45332c3170187d0",
+        "programs/call_009_01/wire_private.jsonl": "7bab451b5c129c2dc75334a3d566f417e0e3c78a6497ac91633ea47aa96aef14",
+        "programs/call_010_01/input_private.json": "55735d0fde8493862e9c3263771081c3811e961dc280b21b0a46253b0ce4c87f",
+        "programs/call_010_01/result_private.json": "ab680ba66c1408f9dba044c5307422afe449962b0889245b289ae11794bbb2a5",
+        "programs/call_010_01/wire_private.jsonl": "0cd613b1895ae43999c58385fe8e17fbc7c74ff1aca84bd65a8eaf94cd252681"
+      }
+    },
+    {
+      "run_id": "P45_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_keep",
+      "model_calls": 9,
+      "programs_checked": 9,
+      "rejected_requests": 1,
+      "feedback_candidates": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "c6abea523be4397ac467aacf54e24d3c22fb4ad72b63ad8eb9bccaac1d841e18",
+        "programs/call_001_01/result_private.json": "b0a8af22beccd33045edc978d7e0eb77f1fcc6ecb4745676455dbfc9c11aeb62",
+        "programs/call_001_01/wire_private.jsonl": "4db823ed9a295f5bf2f514a09a0c0d92ea06b471dd041cb66d0e9f7e3e760cf9",
+        "programs/call_002_01/input_private.json": "9217aee59abc3d1a7a12742733c687726dced6c7e87fab48f8e6198d57c4ec3f",
+        "programs/call_002_01/result_private.json": "41579b0b99203de93e4821ac334491545cb07a75cd7690dc1f107068bfceb6df",
+        "programs/call_002_01/wire_private.jsonl": "6225140c63a389ff7b3f203627e3ac424789f81e64d48fd71525712553f246f5",
+        "programs/call_003_01/input_private.json": "ae8ccead0be001288ce1f02590e9bb3b335582a37768996b1646c8b6d2ee946f",
+        "programs/call_003_01/result_private.json": "e065d54b4a55aa38beb1bbf58debc9717503c5e7288c630fc5975daaa1be04c3",
+        "programs/call_003_01/wire_private.jsonl": "c152f2bde1da5040ac6fa3e6031658e6dba3a2cdbf3c34b9bf3742bf3630dd71",
+        "programs/call_004_01/input_private.json": "9be6d240f742f5dcb5bb40b6e9c48626f397108be354f2b7ecd65578b0979d1f",
+        "programs/call_004_01/result_private.json": "e869386b621d950bf87cb2d6cbc1c13a37e6e9d3c0bc0923ab5c5f0a51c6628a",
+        "programs/call_004_01/wire_private.jsonl": "5ae865564fc1376331abacfdb5573086088e38ef207c06dac7112f9bf6365cad",
+        "programs/call_005_01/input_private.json": "6f654e39b586bcd104c0dcf07063cba65889f109b51cd2e03bdd41b26d939dfa",
+        "programs/call_005_01/result_private.json": "3845b4c5301c46b7c2963f3a24de0b5b6241d6df53e56a28b56e31a4bd9a97df",
+        "programs/call_005_01/wire_private.jsonl": "fbba892df8603c9d9d78fcae98b7fa557ffd9cdd3aa9a0bf90557d82e27bf5f2",
+        "programs/call_006_01/input_private.json": "bc9554fb4574bcf0983143857cd6ce54ef97d573e65b740c6f456e91957d947c",
+        "programs/call_006_01/result_private.json": "8f733a4796955b09f94bcc3453ab43eb188e0060df10b3feab5c166ab59989e3",
+        "programs/call_006_01/wire_private.jsonl": "cd846cd15cf2f26dedbb03a12365e35b2ea7d0189c76cf1b986743cc0901ffc3",
+        "programs/call_007_01/input_private.json": "bc9a31ee28a99efa2d159ba23a39eb6c14917829be33dc0bf42d4b4b1e301d97",
+        "programs/call_007_01/result_private.json": "688ca023f24a15cdb1e98c618c42a15496795bbafd9a142b0981d903986a050e",
+        "programs/call_007_01/wire_private.jsonl": "eafc072507f742e7907be3a7439d3cd680936b94c497c7dd716eb8e7364d150a",
+        "programs/call_008_01/input_private.json": "9719f4c4f1e462588ad40cbc03bb1943660081fb27eec3811a2760c494014dc9",
+        "programs/call_008_01/result_private.json": "6c2335ebad18fa11a905a4b45060f768f1b772e855b3b489fb7c1007d1d280a1",
+        "programs/call_008_01/wire_private.jsonl": "a77fe804dfebf7a7b8aa3b345eab35dc991f01b9c01375c3125e320703d70e0c",
+        "programs/call_009_01/input_private.json": "4fd097610f1d0c6bc63078655e649cf99f1485f5f3d61c922378004799623476",
+        "programs/call_009_01/result_private.json": "688e6d63aeac2cc4f77c4dc688cbefac8b7cd6f475fc6abdcc95d434b12bc389",
+        "programs/call_009_01/wire_private.jsonl": "19d54de7ea118be41c08e90368dbf91325d0d9dcd2de3daf4545b0010d662749"
+      }
+    },
+    {
+      "run_id": "P45_02_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "documentation_origin_keep",
+      "model_calls": 10,
+      "programs_checked": 10,
+      "rejected_requests": 2,
+      "feedback_candidates": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "85ea02ffce0af812a832ae502bcafd473df66148814ddae0e7836ba98e947da3",
+        "programs/call_001_01/result_private.json": "9d5fa03a5f46514b3d2eabe1fd2242ba3e7b547aa84b75fca3609293b9f4a3b2",
+        "programs/call_001_01/wire_private.jsonl": "d0342cd49a43149e691036f4efc5ef42008e78f64e75e9ccb1af6f2a82a558a5",
+        "programs/call_002_01/input_private.json": "39b1d3553ed11c12b9042f5699450118a33ab059d110f9dcc2d75dad1a485341",
+        "programs/call_002_01/result_private.json": "ffed283d4116ac47a0f5887574f4f2a9735bb1e213658e16f039d8665a477755",
+        "programs/call_002_01/wire_private.jsonl": "74af0d1bebead6e9f7a06784d00f294575ec5a0a8deef06046ae5ac7f0b7bf7f",
+        "programs/call_003_01/input_private.json": "7fb777305a0643e81ff8b27ce7ab2fd6ae5a74e9bef906929ae5c40b15188895",
+        "programs/call_003_01/result_private.json": "c6281329fb0e71692edeb0e8153bc1d01f0b4f7715593f0346289de66e4b8406",
+        "programs/call_003_01/wire_private.jsonl": "c152f2bde1da5040ac6fa3e6031658e6dba3a2cdbf3c34b9bf3742bf3630dd71",
+        "programs/call_004_01/input_private.json": "0e00deb97c92665cf71173379df25cbb0ddb3350c6896e43ceb6baef1280200e",
+        "programs/call_004_01/result_private.json": "dd2d3e1533c1bc42d652043b7b80db23acf8d93e398ad4df75b64beb97b2cf26",
+        "programs/call_004_01/wire_private.jsonl": "6e87cd3408da0ee14dd8b13de70bbfe9428c054adcc1790f85627241d821b462",
+        "programs/call_005_01/input_private.json": "333147b00756ce6ef6158e3f723237461c1a5971c530e2f257d2f0e9db5805b3",
+        "programs/call_005_01/result_private.json": "1f421bf817c9a83013371657484c7d62d069ffaf6f34b262523aa2d7485e967b",
+        "programs/call_005_01/wire_private.jsonl": "495d12ce790285af1542bbb7cb5864220e5d79f317c95804bb251cf80d2be040",
+        "programs/call_006_01/input_private.json": "bb6beac28189d85807c051b23d22812d9b26009b2ffaee146f3b353d4c3c16f3",
+        "programs/call_006_01/result_private.json": "66e1f4e78f91461dfb1819e77a90b139b5c6a41d7d09783f4a515dc6acdde62b",
+        "programs/call_006_01/wire_private.jsonl": "c4cd6e189d787c3376d21eaa984c70ebc44fa51e15060038e28513dd8bde52a2",
+        "programs/call_007_01/input_private.json": "eb65cceb3f317cdb8e25e4cf10cde5fef075bf613f00299419f8ea9f33bfb2bf",
+        "programs/call_007_01/result_private.json": "a096e7bf3f1cf31360695c6f1a606e3bdba8f1c9257a6c280244c773fbf3e168",
+        "programs/call_007_01/wire_private.jsonl": "966370778cb01ca59c5af36f9c907ff172866c7a698f7a1e749ece37364664c0",
+        "programs/call_008_01/input_private.json": "e419b9b08ec044dc9667fbc7c144f7febd30f1fc917edbd9ad26b94639e2b6ac",
+        "programs/call_008_01/result_private.json": "15939c35d1bb97bdc609d1f82f0fdf636c4a887d29dffcf1cbf35be14877651b",
+        "programs/call_008_01/wire_private.jsonl": "c138fd6990d403df769ab29e83562ce87c518a34598941ca2ace121d44286447",
+        "programs/call_009_01/input_private.json": "403f29b8762453ed70921ad8ebd8a760e604bdf8e3bdd441ddad899766c266a9",
+        "programs/call_009_01/result_private.json": "b43acb8c750ed6b4194d4410545e7115473ad315d77293939e89ba457104102b",
+        "programs/call_009_01/wire_private.jsonl": "044a2d024aaef3eb017aa464c6a85ae1c09eb504fa77deeaf999774ccf682318",
+        "programs/call_010_01/input_private.json": "2b91299b717effe0138f66885bd80849e77bb1e05240cb841a51de618666764e",
+        "programs/call_010_01/result_private.json": "a12dade98697d2e125bf329f207e9495de32174fb8b67024558ff435a9a9d182",
+        "programs/call_010_01/wire_private.jsonl": "5963b9af35f3116e96eb2283bbe99206f93bcd220e9d09d39b09126eaaa2673c"
+      }
+    },
+    {
+      "run_id": "P45_03_FULL_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "full_keep",
+      "model_calls": 2,
+      "programs_checked": 2,
+      "rejected_requests": 0,
+      "feedback_candidates": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "18425917edec4fea66f73b29614df2025de8e24f057b9c7e602569a852be29c4",
+        "programs/call_001_01/result_private.json": "8dc7b224c345e6c532c135a98c4abe2621e45946d1c55db50c2f6614bbf08985",
+        "programs/call_001_01/wire_private.jsonl": "1d1e98ce746ebcd7773ebbb99daa4985b099e235fa90c321320d1d6cced95362",
+        "programs/call_002_01/input_private.json": "a641c66fe87edca9df8f51a9c1357b50d4d8557594d7bdb0910a3929e0f75e41",
+        "programs/call_002_01/result_private.json": "d7433fda08c3f243ae61b2957ecdcd53d747a36e0a8995815bd623ac89a6aabf",
+        "programs/call_002_01/wire_private.jsonl": "d33eafda75ccdf294f63d57d2b1528a07237dd34a0b1d930027afcd74f54a613"
+      }
+    },
+    {
+      "run_id": "P45_03_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "documentation_origin_keep",
+      "model_calls": 5,
+      "programs_checked": 5,
+      "rejected_requests": 1,
+      "feedback_candidates": 1,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "a96954f00186235651467557b66466c88a79eeb6bf503840fcce9adf061ea74e",
+        "programs/call_001_01/result_private.json": "a1bedbcb50ff7053f8524476c27aed6ef244f57443c6f246b03b2563ba17106c",
+        "programs/call_001_01/wire_private.jsonl": "16e440a8c931530959c6baefe145194905ddc27a045d3431990b2ee7c35b7ba3",
+        "programs/call_002_01/input_private.json": "03a1582f23bde1daab5d6d8b379acbb3fb3e62b17899629d8753ab8229933170",
+        "programs/call_002_01/result_private.json": "4262ca63affcaa995e6eab1ae38f3eb98d1f6d1f7d271ec75b74556819bf02aa",
+        "programs/call_002_01/wire_private.jsonl": "b9f5c8ab7894d98270dfbcebc529f4e9261cf6e7ffba2c741850027ad01fb6eb",
+        "programs/call_003_01/input_private.json": "5c29ee869c8361f4472eaa6d5592339f2149cb33316fd058c84a1a564d8112c2",
+        "programs/call_003_01/result_private.json": "0b1db8fcc9cce92b7b6b3431bbc1b46b3a738eb2efda8a8d165bfdaa82163d5c",
+        "programs/call_003_01/wire_private.jsonl": "1e39cc06d25d99703a384a399944b22d3c4a32e0bf0916f532f8e6c08a6dff25",
+        "programs/call_004_01/input_private.json": "51fc2332f349dd65444d5c5904f51593cdc25b68c81123023eb4c83bdbf6018d",
+        "programs/call_004_01/result_private.json": "a21228584dcfb8e0cb2861c901d4685451ad54ce3b4a6c5067f08b051f6a4a76",
+        "programs/call_004_01/wire_private.jsonl": "04f11d186b4acfc19e2b3e7424c85564c643c9274ff921058dce7506e811fdc8",
+        "programs/call_005_01/input_private.json": "e947fe00dfbb1f806f03a22bbec3826fdadd4e2cd127741fc9ce7d8e56012e88",
+        "programs/call_005_01/result_private.json": "17611968b7621f22c10c237af28746b45c8c33a6d934cba485af636451ae2a94",
+        "programs/call_005_01/wire_private.jsonl": "280295fe621c95e06b38e912bc07b01bfb8d26a119a1f57b9d46715abe2312ef"
+      }
+    },
+    {
+      "run_id": "P45_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "full_keep",
+      "model_calls": 5,
+      "programs_checked": 4,
+      "rejected_requests": 0,
+      "feedback_candidates": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "44765f94dedba7f4a3810e8c4fc8f864669c4cdfa5717e2a5ac57aca3a9cae91",
+        "programs/call_001_01/result_private.json": "0c66b72b1305a7c23f142d5e3d0ee87e145421a0394bed233b03ca8e07012e17",
+        "programs/call_001_01/wire_private.jsonl": "8b4e83ae07b1543c03e7f1bfeac89de77507e3f9969f397ad89abbfa43776d98",
+        "programs/call_002_01/input_private.json": "7b3797d1b3f5b62d85e69e0bc867dae452d760fac5bb374b48c3b1041546726e",
+        "programs/call_002_01/result_private.json": "a84c18d245a6865c6bf07378123f647feb27624f5571b085f660d2af5028af84",
+        "programs/call_002_01/wire_private.jsonl": "4307fead2ac411c86078fee91c0d724039034e7ad06ac0ba44491a446dce22a5",
+        "programs/call_003_01/input_private.json": "81c8f5c56bf36e5725c770b9ef2cff3f5d09ecdf5a79b1e13790c6a198eab9a1",
+        "programs/call_003_01/result_private.json": "b2980499b91c69e75ab1ba780a909d2bc45ef9e9d5a6106a3afb6ec1a02c7a9e",
+        "programs/call_003_01/wire_private.jsonl": "eb68427dfb545400458a11a5c1199445395767a71c158aff1327867a015278e6",
+        "programs/call_004_01/input_private.json": "8f1529f1a15077e40481a8fc9b6dc231f5669fea1b6ed44fd2e55d5998659875",
+        "programs/call_004_01/result_private.json": "7bfbcca87622667e59a03529f714a34cf6e1978c8946d5473a56377ebd8dff34",
+        "programs/call_004_01/wire_private.jsonl": "48f9cf1038ac9b0bd62773f70bedda5ead7dea3ebc4c642710fbee454b4a9138"
+      }
+    },
+    {
+      "run_id": "P45_04_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "6104387_1",
+      "arm": "documentation_origin_keep",
+      "model_calls": 5,
+      "programs_checked": 5,
+      "rejected_requests": 0,
+      "feedback_candidates": 0,
+      "source_sha256": {
+        "programs/call_001_01/input_private.json": "a057a15b29e5247b90873080ab2e286812ffec03e1232d9ae6c4e24a5cfab637",
+        "programs/call_001_01/result_private.json": "2900b2ec3c62abe6bd6e44d0df838fa4ae651a2920b0265720b038d00a6a811c",
+        "programs/call_001_01/wire_private.jsonl": "ce8bf923cd7d4b5ce1c3ee7f9d3a6cd2327f5aedf7718df600579fafce2f79be",
+        "programs/call_002_01/input_private.json": "ac0bd37d099f9d86217d7938fcd6b4d557d150ece93a9a9321d31f0f4e818af0",
+        "programs/call_002_01/result_private.json": "87b81700e4bc373831c8c191627cfae13bfed5369dd219d6bd10cc8c9f37d8cb",
+        "programs/call_002_01/wire_private.jsonl": "782cb1a4a6274cc45df40b9f61dc05024707a4383d77af67c7e21ca842174731",
+        "programs/call_003_01/input_private.json": "c2e00ec8a97d8bad9e372218e5118ec347d890494aedfddd11f380390a805303",
+        "programs/call_003_01/result_private.json": "ced3c239a10f23560941a55c7abbe1caf86df879ad2f6e9f9ded0d1d6fdb165d",
+        "programs/call_003_01/wire_private.jsonl": "3ce0b972963d4a37f039234e56725a947c9e94b34a163114f5c55c907241d445",
+        "programs/call_004_01/input_private.json": "727058e0ab8def0646ba075f9e51b7613868346de4b16530e12c6bf5c34f79bf",
+        "programs/call_004_01/result_private.json": "d3b27fa2c8c44e2cc304b9e51bdcd30bc4a196f2435759e7d1deaee3932725f2",
+        "programs/call_004_01/wire_private.jsonl": "8ca5a60543157744d53350f325ecf9b02705be2569603eea4b119f544ece914f",
+        "programs/call_005_01/input_private.json": "cd5f936cc8ffde9feeacd2f10d3e6fc10adbfef9f40be2c93ab83f97c579ce43",
+        "programs/call_005_01/result_private.json": "e4364f12d65e13660d1d3fb1dd5a71864478954668431d14499400e7c9897618",
+        "programs/call_005_01/wire_private.jsonl": "43c02401192a991f2b5034afce7d4aa3994e3456810e29138f7bb56e2f4c0b14"
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "run_id": "P45_01_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_002",
+      "span_id": "s24",
+      "api": "phone__login",
+      "category": "other_rejection",
+      "already_exposed": false,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "public_schema": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": false,
+      "following_known_tokens": 9197,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_01_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_004",
+      "span_id": "s29",
+      "api": "phone__get_current_date_and_time",
+      "category": "other_rejection",
+      "already_exposed": false,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "public_schema": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": false,
+      "following_known_tokens": 9757,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_01_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_009",
+      "span_id": "s80",
+      "api": "file_system__move_file",
+      "category": "unknown_parameter",
+      "already_exposed": true,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": true,
+          "characters": 448,
+          "schema_sha256": "a0170739b82e3fe1a62c5a285d9910bc56bd9ef732b5326b37818604d11db9c1",
+          "actual_mode": "parameter_names"
+        },
+        "public_schema": {
+          "available": true,
+          "characters": 1217,
+          "schema_sha256": "a0170739b82e3fe1a62c5a285d9910bc56bd9ef732b5326b37818604d11db9c1",
+          "actual_mode": "public_schema"
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": true,
+      "following_known_tokens": 15702,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "full_keep",
+      "call_id": "call_003",
+      "span_id": "s22",
+      "api": "phone__get_current_date_and_time",
+      "category": "unknown_parameter",
+      "already_exposed": true,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": true,
+          "characters": 374,
+          "schema_sha256": "cce6433cfca08263e97f0ac4c9c62ee90ca4bc595c50bd0a411aafa41c2f9b27",
+          "actual_mode": "parameter_names"
+        },
+        "public_schema": {
+          "available": true,
+          "characters": 497,
+          "schema_sha256": "cce6433cfca08263e97f0ac4c9c62ee90ca4bc595c50bd0a411aafa41c2f9b27",
+          "actual_mode": "public_schema"
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": false,
+      "following_known_tokens": 12265,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_02_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_003",
+      "span_id": "s22",
+      "api": "phone__get_current_date_and_time",
+      "category": "unknown_parameter",
+      "already_exposed": true,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": true,
+          "characters": 374,
+          "schema_sha256": "cce6433cfca08263e97f0ac4c9c62ee90ca4bc595c50bd0a411aafa41c2f9b27",
+          "actual_mode": "parameter_names"
+        },
+        "public_schema": {
+          "available": true,
+          "characters": 497,
+          "schema_sha256": "cce6433cfca08263e97f0ac4c9c62ee90ca4bc595c50bd0a411aafa41c2f9b27",
+          "actual_mode": "public_schema"
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": false,
+      "following_known_tokens": 11338,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_02_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_006",
+      "span_id": "s28",
+      "api": "file_system__read_file",
+      "category": "other_rejection",
+      "already_exposed": false,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "public_schema": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": false,
+      "following_known_tokens": 12019,
+      "following_cost_is_claimed_savings": false
+    },
+    {
+      "run_id": "P45_03_DOCUMENTATION_ORIGIN_KEEP",
+      "task_id": "60d0b5b_1",
+      "arm": "documentation_origin_keep",
+      "call_id": "call_001",
+      "span_id": "s23",
+      "api": "venmo__create_transaction",
+      "category": "unknown_parameter",
+      "already_exposed": true,
+      "feedback": {
+        "generic": {
+          "available": false,
+          "characters": 0,
+          "schema_sha256": null,
+          "actual_mode": null
+        },
+        "parameter_names": {
+          "available": true,
+          "characters": 449,
+          "schema_sha256": "ec8140a68ed8e0b2cf367324c64bd2e72be36ee5ebee1fc9874cc69b474248f6",
+          "actual_mode": "parameter_names"
+        },
+        "public_schema": {
+          "available": true,
+          "characters": 1119,
+          "schema_sha256": "ec8140a68ed8e0b2cf367324c64bd2e72be36ee5ebee1fc9874cc69b474248f6",
+          "actual_mode": "public_schema"
+        }
+      },
+      "next_program_contains_schema_lookup_and_sends_no_api": true,
+      "following_known_tokens": 15467,
+      "following_cost_is_claimed_savings": false
+    }
+  ],
+  "programs_checked": 52,
+  "rejected_requests": 7,
+  "feedback_candidates": 4,
+  "candidate_tasks": 3,
+  "next_call_schema_lookup_syntax_without_api": 2,
+  "wall_seconds": 0.14084724999884202,
+  "model_calls": 0,
+  "environment_api_requests": 0,
+  "tokenizer_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "quality_preservation_claim": false,
+  "measured_savings_claim": false,
+  "source_sha256": {
+    "plan": "07c1387d55770aff175ce1b4775748848e174713141f34248e75cdbd1595ce2b",
+    "comparison": "c1dafd9c8ae39ab58a4eaddb5860b21a02b0166292558778ff9d68e6f8ad54be",
+    "script": "09434fedbc9db1e7ed31efac1343b04e244eed01984d0a461c9bfa98bc699b54",
+    "feedback": "434d0757430b3e010d4d27733270588541faf22b34ccfeb10522e65b1672ffa8"
+  },
+  "limits": [
+    "Selected after observing P45 rejection and schema-lookup patterns, not a blind discovery test.",
+    "Character counts are not token savings; subsequent call costs are not saved costs.",
+    "Literal api_schemas lookup syntax does not prove the lookup executed or served a particular decision.",
+    "All eight known-task conditions remain, including the unknown-usage unevaluated cell.",
+    "No hypothetical feedback was sent to a model and no saved program was executed."
+  ]
+}

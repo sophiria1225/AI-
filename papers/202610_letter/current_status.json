@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T08:06:00.802197+00:00",
+  "updated_at": "2026-10-22T08:18:30.087120+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -13,7 +13,7 @@
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
   "current_experiment": "P45 closed under its fixed stop rule: all eight attempted, seven evaluated, one unknown-usage unevaluated cell. All planned records audited with zero mismatches. Selective masking lost one evaluated paired success and increased tokens in the three evaluated pairs; do not adopt it. No complete four-task quality/cost comparison or novelty claim.",
-  "queued_experiment": "P46 passive inspection of the closed P45 cohort: generic, parameter-name and already-exposed public-schema feedback, no additional generation or API execution. Prospective quality and total-cost comparison will be frozen separately.",
+  "queued_experiment": "P47 prospective known-task comparison: full display plus public contract; selected display plus parameter names; selected display plus public contract. Twelve cells, unchanged per-cell budgets; pending CI, synthetic runtime checks and all-input preflight.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -38,7 +38,7 @@
   },
   "latest_presentation": "../../materials/20261022_p45/AI_harness_documentation_cost_20261022.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
-  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/213",
+  "current_progress_url": "https://github.com/sophiria1225/AI-/issues/215",
   "method_fragment": "methods_documentation_comparison.tex",
   "current_references": "references_handoff.bib",
   "research_objective": "Reduce unnecessary information acquisition, sharing, model calls and execution through harness control while maintaining final task quality.",
@@ -89,12 +89,14 @@
     "resumption": "docs/resumption_20261022.md"
   },
   "last_completed_passive_inspection": {
-    "phase": "P44",
-    "inputs_counted": 8,
-    "saved_inputs_reconstructed": 8,
+    "phase": "P46",
+    "programs_checked": 52,
+    "rejected_requests": 7,
+    "feedback_candidates": 4,
+    "candidate_tasks": 3,
     "model_generations": 0,
-    "additional_generation_design_gate": true,
-    "results": "../../docs/P44_findings.md"
+    "environment_api_requests": 0,
+    "results": "../../docs/P46_findings.md"
   },
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
