@@ -66,6 +66,10 @@ def figures(output, report):
     ax.set_facecolor('#f6f4ed')
     for n in range(4):
         a, b = report['rows'][n * 2:n * 2 + 2]
+        if any(r.get('record_status', 'evaluated') != 'evaluated' for r in (a, b)):
+            ax.text(.03, 3 - n, '通知なし：未実行 ／ 通知あり：時間上限・使用量不明１回',
+                    transform=ax.get_yaxis_transform(), fontsize=10, color='#596c79', va='center')
+            continue
         vals = [r['known_total_tokens'] / 1000 for r in (a, b)]
         ax.plot(vals, [3 - n] * 2, color='#d3cbbb', lw=3, zorder=1)
         for j, (r, value) in enumerate(zip((a, b), vals)):
@@ -83,20 +87,29 @@ def figures(output, report):
         fig.savefig(folder / ('p40_paired_costs.' + ext), dpi=180, facecolor='#f6f4ed')
     plt.close(fig)
     with (folder / 'p40_results.csv').open('w') as stream:
-        writer = csv.DictWriter(stream, fieldnames=['run_id', 'task_id', 'arm', 'success',
+        writer = csv.DictWriter(stream, fieldnames=['run_id', 'task_id', 'arm', 'record_status', 'success',
             'known_total_tokens', 'unknown_usage_calls', 'model_calls', 'api_requests',
             'continuation_wall_seconds', 'stop_reason'], extrasaction='ignore')
         writer.writeheader(); writer.writerows(report['rows'])
 
 
-def build(root, output):
-    paths = ('reports/P40_comparison.json', 'reports/P40_prefix_checks.json',
+def build(root, output, terminated=False):
+    results_ref = 'reports/P40_termination.json' if terminated else 'reports/P40_comparison.json'
+    paths = (results_ref, 'reports/P40_prefix_checks.json',
              'reports/P40_budget_visibility.json', 'reports/P39_calibration_audit.json')
     report, prepared, visibility, calibration = [read(root / p) for p in paths]
-    if (not report['all_eight_reviewed'] or report['audit_errors']
-            or any(r['unknown_usage_calls'] for r in report['rows'])
-            or not calibration['all_six_validated']):
-        raise ValueError('complete audited evidence is required')
+    valid = (report.get('all_planned_cells_accounted') and report['status'] == 'stopped') if terminated else (
+        report.get('all_eight_reviewed') and not any(r['unknown_usage_calls'] for r in report['rows']))
+    if not valid or report['audit_errors'] or not calibration['all_six_validated']:
+        raise ValueError('explicitly scoped audited evidence is required')
+    if terminated:
+        report['totals'] = {}
+        for arm in ARMS:
+            selected = [r for r in report['rows'] if r['arm'] == arm and r['record_status'] == 'evaluated']
+            report['totals'][arm] = {k: sum(r[k] for r in selected) for k in
+                ('known_total_tokens', 'model_calls', 'api_requests', 'continuation_wall_seconds')}
+            report['totals'][arm].update(successes=sum(r['success'] for r in selected), trials=len(selected))
+        report['paired_results'] = report['paired_observations_only']
     expected = [f'P40_{n:02d}_{a.upper()}' for n in range(1, 5) for a in ARMS]
     if [r['run_id'] for r in report['rows']] != expected:
         raise ValueError('all eight original cells must appear in the report')
@@ -136,32 +149,60 @@ def build(root, output):
         '<p class="body">８応答後の状態を各条件へ復元。評価結果は実行中のAIに返さない。</p>',
         notes='開始状態は同じだが、その後の行動や取得情報は方式に応じて変わり得る。元の記録を復元した準備費用と、続きの実行費用を分けて残す。途中で正解した成果物を後から選び直さず、実行終了時の成果物を判定する。',
         refs=(('復元と独立評価', 'scripts/run_handoff_factors.py'), ('比較計画', 'docs/experiments/P40_budget_notification.md')))
+    if terminated:
+        add('終了状況：評価済み６件、途中終了１件、未実行１件',
+            '<div class="three"><div class="col"><div class="n">6</div><h3>最終評価まで終了</h3><p class="body">３課題の２条件。<br>使用量も確定。</p></div>'
+            '<div class="col"><div class="n">1</div><h3>時間上限で終了</h3><p class="body">書出・通知あり。<br>最終生成の使用量不明。</p></div>'
+            '<div class="col"><div class="n">1</div><h3>規則により未実行</h3><p class="body">書出・通知なし。<br>置換試行はしない。</p></div></div>',
+            '予定した４課題の比較は未完遂。欠測を失敗０点や使用量０に置き換えない。',
+            notes='13:31に事前の不明使用量停止規則が発動した。44生成、既知579759 tokenと不明１回、後続253 API、実験用復元84 API。六件の公式評価で成功３件だが、方式ごとの４課題成功率は出さない。',
+            refs=(('全８条件の状態', results_ref),))
     summary = '<table class="compact"><thead><tr><th>条件</th><th>成功</th><th>継続token</th><th>AI呼出し</th><th>後続API</th><th>継続秒</th></tr></thead><tbody>'
     for arm, label in zip(ARMS, LABELS):
         t = report['totals'][arm]
-        summary += f'<tr><td>{label}</td><td>{t["successes"]}/4</td><td>{t["known_total_tokens"]:,}</td><td>{t["model_calls"]}</td><td>{t["api_requests"]}</td><td>{t["continuation_wall_seconds"]:.1f}</td></tr>'
+        summary += f'<tr><td>{label}</td><td>{t["successes"]}/{t.get("trials", 4)}</td><td>{t["known_total_tokens"]:,}</td><td>{t["model_calls"]}</td><td>{t["api_requests"]}</td><td>{t["continuation_wall_seconds"]:.1f}</td></tr>'
     summary += '</tbody></table>'
-    add('結果：費用だけでなく、完了できた仕事を対応させる',
+    add('評価済み３課題：成否と費用を対応させる' if terminated else '結果：費用だけでなく、完了できた仕事を対応させる',
         '<div class="diagram"><img src="figures/p40_paired_costs.svg" style="width:100%;height:265px" alt="４課題それぞれの通知なし／ありの総トークン。塗りは成功、白抜きは未達"></div><p class="small">塗り：成功／白抜き：未達。共通前半・実験用の復元は別計上。未達の安さは効率化としない。</p>' + summary,
         notes='塗りつぶしは成功、白抜きは未達。未達の低費用は、仕事を終えるための節約とは扱わない。費用は継続全体の入出力、実験用の復元は別記。各１回なので優越性や非劣性を証明しない。',
-        refs=(('全８件・使用量', 'reports/P40_comparison.json'),))
+        refs=(('全条件の状態・使用量', results_ref),))
     table = '<table><thead><tr><th>課題</th><th>通知なし</th><th>毎回通知</th><th>通知あり−なしのtoken</th></tr></thead><tbody>'
     for name, p in zip(TASKS, report['paired_results']):
         table += f'<tr><td>{name}</td><td>{"成功" if p["plain_success"] else "未達"}</td><td>{"成功" if p["notified_success"] else "未達"}</td><td>{p["notified_minus_plain_tokens"]:+,}</td></tr>'
+    if terminated:
+        table += '<tr><td>曲情報の書出</td><td>未実行</td><td>途中終了・未評価</td><td>比較不可</td></tr>'
     table += '</tbody></table>'
     add('課題ごとの対応：成功と打切りを混ぜて評価しない', table,
         '同じ成功件数だけでは、同じ課題を解けたことや一般的な品質維持を示せない。',
         notes='減少は負、増加は正。成功が入れ替わった場合も全行を示す。小標本の結果からモデル一般や別領域へ広げない。',
-        refs=(('対応結果', 'reports/P40_comparison.json'), ('少数評価の限界', 'docs/letter_evaluation_scope_20261021.md')))
-    a, b = calibration['groups']['cold'], calibration['groups']['warm']
-    add('比較を整えた点：前の実験の入力キャッシュを使わない',
-        '<p class="lead">直前の校正では、同じ入力・seedでも再利用の有無で生成が異なった。</p>'
-        '<table><thead><tr><th>短い校正生成</th><th>入力の実処理/回</th><th>平均時間</th></tr></thead><tbody>'
-        f'<tr><td>再利用なし３回</td><td>13,552 token</td><td>{a["mean_wall_seconds"]:.2f}秒</td></tr>'
-        f'<tr><td>再利用あり３回</td><td>1 token</td><td>{b["mean_wall_seconds"]:.2f}秒</td></tr></tbody></table>'
-        '<p class="body">P40では両条件の初回を再利用なしに統一。<br>課題内の継続は通常の再利用を認め、実量を記録する。</p>',
-        notes='校正は１入力・最大256生成tokenで、タスク成功率を比較していない。既知の実装挙動を確認したもので、新規性ではない。古いP33/P38を今回の直接の対照にしない。',
-        refs=(('校正と失敗記録', 'docs/P39_findings.md'),))
+        refs=(('対応結果', results_ref), ('少数評価の限界', 'docs/letter_evaluation_scope_20261021.md')))
+    if terminated:
+        admission_path = 'reports/P40_admission_stopped.json'
+        admission = read(root / admission_path)
+        if admission['status'] != 'complete' or admission['completion_requests']:
+            raise ValueError('input-only admission audit required')
+        paths = paths + (admission_path,)
+        labels = {'P40_01_PLAIN_KEEP': '写真整理・通知なし', 'P40_02_PLAIN_KEEP': '分担請求・通知なし',
+                  'P40_02_BUDGET_KEEP': '分担請求・毎回通知'}
+        content = '<p class="lead">実行器は「次の入力＋最大4,096出力token」を予約していた。</p>'
+        content += '<table><thead><tr><th>予約上限で停止した条件</th><th>残token</th><th>次の入力</th><th>出力に残せる量</th></tr></thead><tbody>'
+        for r in admission['rows']:
+            content += f'<tr><td>{labels[r["run_id"]]}</td><td>{r["remaining_tokens"]:,}</td><td>{r["next_input_tokens"]:,}</td><td>{r["positive_output_capacity"]:,}</td></tr>'
+        content += '</tbody></table><p class="body">終了後に入力長だけを再計数。生成・環境操作は追加していない。</p>'
+        add('考察：残予算と、呼出しを止める規則を分ける', content,
+            '２条件には短い出力枠が残る。ただし、それで仕事を完了できるかは未検証。',
+            notes='総予算は増やさず、出力予約の仕方によって生成開始の可否が変わる場合がある。残量に合わせた出力上限も通常の制御候補であり、その実装だけを新規性にはしない。P40の比較条件は後から変更していない。',
+            refs=(('入力計数と限界', admission_path), ('分析規則', 'docs/P40_analysis_plan.md')))
+    else:
+        a, b = calibration['groups']['cold'], calibration['groups']['warm']
+        add('比較を整えた点：前の実験の入力キャッシュを使わない',
+            '<p class="lead">直前の校正では、同じ入力・seedでも再利用の有無で生成が異なった。</p>'
+            '<table><thead><tr><th>短い校正生成</th><th>入力の実処理/回</th><th>平均時間</th></tr></thead><tbody>'
+            f'<tr><td>再利用なし３回</td><td>13,552 token</td><td>{a["mean_wall_seconds"]:.2f}秒</td></tr>'
+            f'<tr><td>再利用あり３回</td><td>1 token</td><td>{b["mean_wall_seconds"]:.2f}秒</td></tr></tbody></table>'
+            '<p class="body">P40では両条件の初回を再利用なしに統一。<br>課題内の継続は通常の再利用を認め、実量を記録する。</p>',
+            notes='校正は１入力・最大256生成tokenで、タスク成功率を比較していない。既知の実装挙動を確認したもので、新規性ではない。古いP33/P38を今回の直接の対照にしない。',
+            refs=(('校正と失敗記録', 'docs/P39_findings.md'),))
     add('新規性の現在地：今回整えたのは、比較の土台',
         '<table><thead><tr><th>候補・部品</th><th>現在の判断</th></tr></thead><tbody>'
         '<tr><td>一律の履歴省略</td><td>過去の比較で総tokenが増え、採用を見送った。</td></tr>'
@@ -171,7 +212,7 @@ def build(root, output):
         notes='新しい名前を付けて貢献にしない。部品が動くこと、少数課題で差が出ること、既存方式を超える貢献は分ける。',
         refs=(('主張の現在地', 'docs/contribution_status_20261022.md'), ('原典との照合', 'docs/budget_control_overlap_20261022.md')))
     add('次に必要なこと：通常の対処を超える改善を絞る',
-        '<div class="two"><div class="col"><h3>研究として確かめる</h3><p class="body">どの取得・反復が増えているか。<br>通知で変わる処理と残る失敗は何か。<br>既存方式を超える制御が必要か。</p></div>'
+        '<div class="two"><div class="col"><h3>研究として確かめる</h3><p class="body">どの取得・反復が増えているか。<br>予算通知と停止規則の効果を分ける。<br>残る失敗に必要な制御を絞る。</p></div>'
         '<div class="col"><h3>レターへ向けた現状</h3><p class="body">10月31日の投稿が目標。<br>中心となる独自の主張が不足。<br>４課題の結果を一般化しない。</p></div></div>',
         '目標は変わらない：必要な仕事を完了し、不要な取得・共有・実行を減らす。',
         notes='確認用課題は方式と主比較を固定するまで開かない。結果に合わせて予算を増やし続けたり、成功例だけを残したりしない。あらましへ未確認の改善率を書かない。',
@@ -191,7 +232,7 @@ def build(root, output):
     (output / 'slides.json').write_text(json.dumps(slides, ensure_ascii=False, indent=2) + '\n')
     manifest = {'pages': len(slides), 'generated_at': dt.datetime.now(dt.timezone.utc).isoformat(),
                 'source_sha256': {p: sha(root / p) for p in paths}, 'builder_sha256': sha(Path(__file__)),
-                'all_eight_results_included': True, 'visual_reviewed': False}
+                'all_planned_cells_included': True, 'terminated_batch': terminated, 'complete_four_task_comparison': not terminated, 'visual_reviewed': False}
     (output / 'build_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     return manifest
 
@@ -218,5 +259,6 @@ def export(output):
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--repo-root', type=Path, default=ROOT)
     p.add_argument('--output', type=Path, default=ROOT / 'materials/20261022_p40'); p.add_argument('--pdf', action='store_true')
-    a = p.parse_args(); print(json.dumps(build(a.repo_root, a.output)))
+    p.add_argument('--terminated', action='store_true', help='Present the explicit termination audit, including missing cells')
+    a = p.parse_args(); print(json.dumps(build(a.repo_root, a.output, a.terminated)))
     if a.pdf: export(a.output)

@@ -42,12 +42,16 @@ def restore(messages):
     return view
 
 
-def inspect(storage, root):
-    report = read(root / 'reports/P40_comparison.json')
+def inspect(storage, root, stopped=False):
+    report_name = 'reports/P40_termination.json' if stopped else 'reports/P40_comparison.json'
+    report = read(root / report_name)
     status = read(storage / 'records/context_pilot/P40_batch_v01/status.json')
-    if (not report['all_eight_reviewed'] or report['audit_errors'] or len(report['rows']) != 8
-            or status['status'] != 'complete' or len(status['completed']) != 8):
-        raise ValueError('wait for the whole closed and audited cohort')
+    if stopped:
+        valid = report.get('all_planned_cells_accounted') and status['status'] == 'stopped'
+    else:
+        valid = report.get('all_eight_reviewed') and status['status'] == 'complete' and len(status['completed']) == 8
+    if not valid or report['audit_errors'] or len(report['rows']) != 8:
+        raise ValueError('require the explicitly selected closed-cohort audit')
     activation = read(root / 'reports/P40_activation_v01.json')
     for name in ('scripts/budget_signal.py', 'scripts/native_conversation.py',
                  'scripts/local_llama.py', 'scripts/code_agent_interface.py'):
@@ -55,8 +59,9 @@ def inspect(storage, root):
             raise ValueError('input construction differs from the executed version')
     source = read(root / 'configs/P29_stateful_code_v01.json')
     identity, _ = live_identity(storage, source, 300)
-    out = storage / 'records/context_pilot/P40_admission_v01'
-    target = root / 'reports/P40_admission.json'
+    suffix = '_stopped' if stopped else ''
+    out = storage / 'records/context_pilot' / ('P40_admission' + suffix + '_v01')
+    target = root / ('reports/P40_admission' + suffix + '.json')
     if out.exists() or target.exists():
         raise FileExistsError('preserve admission audit or failed attempt')
     out.mkdir()
@@ -68,11 +73,12 @@ def inspect(storage, root):
                          'Positive output capacity does not establish that a useful or complete response fits.',
                          'No execution is resumed, and no additional budget is granted.',
                          'This is a stopping-policy diagnostic, not a novel method or a task-success result.'],
+              'terminated_batch_scope': stopped,
               'source_sha256': {p: sha(root / p) for p in
-                  ('reports/P40_comparison.json', 'scripts/inspect_budget_admission.py')}}
+                  (report_name, 'scripts/inspect_budget_admission.py')}}
     try:
         for cell in report['rows']:
-            if cell['stop_reason'] != 'token_reservation_limit':
+            if cell.get('stop_reason') != 'token_reservation_limit':
                 continue
             folder = storage / 'records/context_pilot' / cell['run_id']
             if sha(folder / 'budget_signals.json') != cell['signal_source_sha256']:
@@ -115,5 +121,6 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--storage-root', type=Path, required=True)
     p.add_argument('--repo-root', type=Path, default=ROOT)
+    p.add_argument('--stopped-batch', action='store_true', help='Use the explicit incomplete-cohort accounting report')
     a = p.parse_args()
-    inspect(a.storage_root, a.repo_root)
+    inspect(a.storage_root, a.repo_root, a.stopped_batch)

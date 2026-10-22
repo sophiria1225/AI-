@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T04:11:44.157474+00:00",
+  "updated_at": "2026-10-22T04:46:09.332566+00:00",
   "format": {
     "columns": 2,
     "target_pages": 4,
@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P40 started at 12:56 JST from frozen f72f09d. Four previously inspected development tasks, plain versus per-call budget notification, eight fixed continuations. Initial cache reuse disabled and measured in both arms; all-cell analysis pending. Notification is an existing baseline, not a novel proposal.",
+  "current_experiment": "P40 terminated by the predeclared stop gate at 13:31 JST: 6 evaluated, 1 stopped with unknown usage and no final evaluation, 1 never started. Full four-task comparison incomplete. Separate termination and input-admission audits complete; residual output-cap implementation is next as an ordinary baseline.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -36,7 +36,7 @@
     "decision": "Six capped calibration generations checked. Cold/warm cache settings alter processed input and generated payload; normalize first-call cache policy for subsequent comparisons. No task-quality or novelty claim. Failed P39_v01 preserved.",
     "results": "../../docs/P39_findings.md"
   },
-  "latest_presentation": "../../materials/20261022_p38/AI_harness_acquisition_20261022.pdf",
+  "latest_presentation": "../../materials/20261022_p40/AI_harness_budget_20261022.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/191#issuecomment-6332302146",
   "method_fragment": "methods_output_views.tex",
@@ -54,5 +54,17 @@
     "decision": "Projected reads used but zero actual cache reuse; do not expand this candidate.",
     "results": "../../docs/P38_findings.md"
   },
-  "latest_official_template_check": "../../reports/ieice_template_fetch_20261022.json"
+  "latest_official_template_check": "../../reports/ieice_template_fetch_20261022.json",
+  "last_terminated_task_experiment": {
+    "phase": "P40",
+    "planned_cells": 8,
+    "evaluated_cells": 6,
+    "unknown_usage_unevaluated_cells": 1,
+    "not_run_cells": 1,
+    "complete_four_task_comparison": false,
+    "model_calls": 44,
+    "known_tokens": 579759,
+    "unknown_usage_calls": 1,
+    "results": "../../docs/P40_findings.md"
+  }
 }
