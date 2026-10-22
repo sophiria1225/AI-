@@ -6,10 +6,10 @@
 
 **P48〜P50で局所修復の適用範囲を絞った。** P49は値・既存引数・APIを保持する部品を実装し、P47の10拒否で通常正規化３、名前対応１、完全対応なし２、未公開API４。P50の介入前10実行では、P24の直接ツール６課題に形式拒否０、P29の持続Python４課題に６件。その名前対応２件はいずれも型上の行先１つだった。追加生成・実API０。型の適合を意味的な正解とせず、全拒否をLLM修復へ送る案は主比較へ進めない。[P49](P49_findings.md)／[P50](P50_findings.md)／[資料補足](../materials/20261022_p47/repair_scope_addendum.md)。
 
-**P52で使用前の契約を残す候補を構築。** 全４既知境界で、使用後だけ省く場合6,454文字、全引数名の使用も要求すると3,000文字の入力削減。未使用APIの詳細と一覧を保持する。実token・総費用・最終品質は未測定で、次は一覧だけを残す単純対照も含めて有限の計数を行う。[結果](P52_findings.md)。
+**P52で使用前の契約を残す候補を構築。** 全４既知境界で、使用後だけ省く場合6,454文字、全引数名の使用も要求すると3,000文字の入力削減。未使用APIの詳細と一覧を保持する。実token・総費用・最終品質は未測定で、一覧だけを残す単純対照も含む[P53の16計数](experiments/P53_contract_retention_counts.md)を固定した。生成０、実計数未開始。[結果](P52_findings.md)。
 
 通常修復の[SchemaShield-Lite本文と固定実装](argument_repair_overlap_20261022.md)を照合済み。小さい入力、API固定、局所修復だけを独自性にしない。必要な情報を保つ具体的な規則、通常対照の後にも残る費用、反証条件を絞る。[次の判断](next_actions.md)。
 
-全729検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
+全733検査合格。未閲覧12シナリオは保持。[検討用の４ページ原稿](../materials/20261022_letter_review/README.md)を作成し、あらまし案75字・英語43語、全ページを目視確認した。中心主張の確定、公式IEICEの４ページ組版、著者情報は未完了。[原稿の状態](../papers/202610_letter/current_status.json)。
 
 [以前の経緯](archive/current_status_through_P49_20261022.md)／[作業ボード](task_board.md)／[Project](https://github.com/users/sophiria1225/projects/1)。GitHubの変更先はsophiria1225/AI-と専用Projectだけ。実装はユーザーの継続指示に従い進めている。
