@@ -12,7 +12,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P66/P67 complete and published. P68 matched fresh native/export-completion control prepared; not yet executed.",
+  "current_experiment": "P68 running the two fixed fresh native export conditions from 457aeb8226d0d31928f8c9df3a03e786535d1425 after exact push and PR workflow/job success; no interim semantic analysis.",
   "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
@@ -234,7 +234,7 @@
   },
   "queued_comparison": {
     "phase": "P68",
-    "status": "prepared",
+    "status": "running",
     "plan": "../../configs/P68_export_completion_v01.json",
     "planned_conditions": 2,
     "known_tasks": 1,
@@ -243,7 +243,12 @@
     "max_api_requests": 160,
     "max_evaluator_calls": 2,
     "novel_method_claim": false,
-    "reserved_scenarios_read": 0
+    "reserved_scenarios_read": 0,
+    "fixed_commit": "457aeb8226d0d31928f8c9df3a03e786535d1425",
+    "push_ci": 39865045198,
+    "pr_ci": 39865061046,
+    "push_job": 120125002878,
+    "pr_job": 120125055779
   },
   "candid_assessment": "../../docs/letter_assessment_20261023.md",
   "previous_provisional_manuscript": {

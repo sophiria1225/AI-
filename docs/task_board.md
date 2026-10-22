@@ -1228,6 +1228,8 @@ P61準備。P24_02の第12生成後（前半252,602 token・20 API）から通�
 
 ## R94 既知CSVの通常nativeと公開証拠による終了制御を同じ条件で比較する
 
+P68 running from fixed commit 457aeb8226d0d31928f8c9df3a03e786535d1425. Push CI39865045198/job120125002878 and PR CI39865061046/job120125055779 succeeded. All 876 tests passed. Two fixed fresh native conditions; no interim semantic analysis or condition changes.
+
 【P68準備】P67の全３記録点検後、同じ既知CSV課題の新しい通常native/終了制御を各１回、計最大160生成・900000 token・160API・２評価に固定。初期公開要求と13DB、一般案内、静的予算通知、seed、cold初回をそろえる。全応答後に変更していないP67の内容・順序検査を適用し、通常の完了通知だけを１回送る。10合成検査、全876検査合格。まだモデル実行なし。docs/experiments/P68_export_completion.md。
 
 **なぜ行うか**: 写真以外の既知文型で、必要な書出し・退会を残したまま最後の生成を省けるか全体費用で調べる。

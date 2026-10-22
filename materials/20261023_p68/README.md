@@ -1,6 +1,6 @@
 # CSVの通常終了制御 — 実行前の固定範囲
 
-[P68の固定計画](../../docs/experiments/P68_export_completion.md)／[設定](../../configs/P68_export_completion_v01.json)。同じ既知CSV課題を、新しい通常nativeと同じnative＋外部終了制御で各１回比較する。まだ実行結果はない。
+[P68の固定計画](../../docs/experiments/P68_export_completion.md)／[設定](../../configs/P68_export_completion_v01.json)。同じ既知CSV課題を、新しい通常nativeと同じnative＋外部終了制御で各１回比較する。固定版457aeb8226d0d31928f8c9df3a03e786535d1425の両CI・job成功後に開始し、現在実行中。全結果はまだ確定していない。
 
 各80生成・450,000 token・1,800秒・80 API。追加の完了通知も同じAPI予算に含める。初期状態・一般案内・静的通知・モデル・seed・cold初回条件をそろえる。モデルによる正しい書出しと、その後の退会の公開証拠がそろったときだけ、制御から通常の完了通知を送る。
 
