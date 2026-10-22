@@ -188,6 +188,7 @@ def build(tex_bin, output):
         'docs/P62_findings.md', 'docs/P63_findings.md',
         'docs/termination_control_overlap_20261023.md',
         'papers/202610_letter/ordinary_completion_component.tex', 'docs/P66_findings.md',
+        'docs/ordinary_completion_literature_20261023.md',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},
@@ -217,6 +218,7 @@ def build(tex_bin, output):
             'read_scope': 'Declared contract, evidence ledger, deterministic verification and trust boundary; no implementation reproduction.',
             'record': 'docs/termination_control_overlap_20261023.md',
         },
+        'additional_termination_cost_review': 'docs/ordinary_completion_literature_20261023.md',
     }
     (PAPER / f'{NAME}.pdf').write_bytes((output / f'{NAME}.pdf').read_bytes())
     save(old_layout, layout)
