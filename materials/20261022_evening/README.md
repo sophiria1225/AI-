@@ -9,3 +9,5 @@
 [固定計画](../../docs/experiments/P53_contract_retention_counts.md)／[P53全結果](../../docs/P53_findings.md)／[金曜の判断](../../docs/letter_friday_decisions_20261022.md)／[検討用４ページ原稿](../20261022_letter_review/README.md)。この６枚は説明資料で、投稿原稿のページ数ではない。中心主張、公式様式と著者情報は未完了。
 
 再生成は `scripts/build_evening_report.py --pdf`。集計の出典・実装・成果物のハッシュと全ページ確認は `build_manifest.json` に保存した。再生成後は目視確認をやり直す。
+
+10月23日追記：[現状の採録見込みと研究意義](../../docs/letter_assessment_20261023.md)／[P55の固定計画](../../docs/experiments/P55_inventory_comparison.md)。６枚PDFはP53終了時点の記録として維持する。
