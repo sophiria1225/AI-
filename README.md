@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+[P80の残時間表示比較](docs/experiments/P80_budget_visibility.md)を既知４課題×２条件で実装・固定した。追加11、全1095合成検査成功。生成は未開始で、新規手法の成立とは扱わない。[土日の判断](docs/weekend_decision_20261023.md)と[資料](materials/20261023_p80/README.md)を追加。
+
 [別の既知６開発課題の再点検](docs/development_opportunity_review_20261023.md)では、後続の完了引数診断・通常の順位付き取得・通常ツール対照まで対応付けた。既実施の診断や通常方式の改善を新規性として数え直さない。追加生成・API・評価・原履歴/DB・保留群閲覧０。[判断資料](materials/20261023_development_review/README.md)。時間通知workerは[PR331](https://github.com/sophiria1225/AI-/pull/331)でmainへ反映した。
 
 [時間通知部品の新しいworker接続](docs/budget_observation_worker_20261023.md)を追加し、17合成検査・全1,084検査を確認した。送信処理開始後の終端欠測を不明試行として最終集計へ残し、APIの不明な結果の二重計上を避ける。実モデル・実コンテナ・AppWorld課題での新接続は未検証。[部品資料](materials/20261023_budget_worker/README.md)。新規性・品質改善とは扱わず、次の生成比較はまだ配分していない。
