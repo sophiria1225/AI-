@@ -1,0 +1,65 @@
+{
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE",
+    "P29_03_CODE",
+    "P29_04_CODE"
+  ],
+  "boundary_after_model_calls": 8,
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "recent_complete_turns": 1,
+  "output_reservation": "residual",
+  "notification": "both",
+  "cache_rule": "First continuation call uses cache_prompt=false and must have measured cache_n=0 and prompt_n equal to its full input. Subsequent calls use true. This removes preceding-condition prefix reuse, not all nondeterminism.",
+  "budget_rule": "All three display arms retain 16 calls, 120000 full logical input+output tokens, 480 continuation seconds and original task API caps including the prefix. Count the full input, then output cap=min(4096, remaining_tokens-input_tokens); reject if no output fits or input+cap exceeds the unchanged 65536 context. Display construction, notification, counting, model and tool time belong to continuation. Prefix reconstruction and model loading are separately reported. No free controller model calls.",
+  "feedback_rule": "Only a confirmed undispatched unknown-parameter rejection for an already-exposed API receives the P46 exact public contract or allowed-parameter names. No argument values, new API discovery, automatic correction, retry or new model call. The full-display control receives the identical public-contract feedback. Feedback remains in subsequent ordinary history, is charged as input, and follows the existing output paging rules.",
+  "max_feedback_characters": 16000,
+  "server_max_lifetime_seconds": 21600,
+  "phase": "P71",
+  "batch_id": "P71_batch_v01",
+  "arms": [
+    "full_keep",
+    "details_omitted_keep",
+    "details_and_listings_omitted_keep"
+  ],
+  "max_idle_wait_seconds": 60,
+  "max_evaluation_seconds": 180,
+  "selection_rule": "All four previously inspected P29 eighth-response boundaries. Public-name display sensitivity after P55/P63/P64/P68/P70. No task/checkpoint replacement; no reserved-scenario reads.",
+  "order_rule": "Exactly once: task 1 F,D,B; task 2 D,B,F; task 3 B,F,D; task 4 F,B,D. No outcome-based early success, replacement, seed change, or budget extension.",
+  "display_rule": "Common frozen print-origin recognition. F changes no output; D removes only recognized api_docs.show_api_doc returns for non-api_docs/non-supervisor apps; B removes the same details plus recognized app/API-description listings. Identical omission markers/metadata; retain literal text, mixed/uncertain/latest output, all actions, archive, and persistent Python. The actual removed detail receipt sets must match between D and B. This differs from P53 only in common marker metadata and is recounted before generation.",
+  "failure_rule": "Unknown model usage ends that cell without retry. If API effects and cleanup are known, wait at most 60 seconds for the same server to be idle, then evaluate the saved world once and continue the fixed independent cells. Unknown use stays unknown and fails every total-cost adoption gate. Unknown API effects, restoration/cache-policy/other runtime/cleanup/evaluation failure, server identity or lease failure, or user stop ends the batch. Never retry, replace, impute zero, or execute partial model responses.",
+  "primary_cost": "Work-level logical input+output tokens = common measured P29 prefix tokens plus all continuation calls per task. Also report continuation-only totals. Unknown terminal use prevents an exact work total. Controller construction/notification/counting/API time belongs to continuation wall; model load, preflight, restoration, evaluation, cleanup and server residency are separately measured.",
+  "development_gate": "All twelve cells independently evaluated, all terminal usage known, and audit error-free. D must lose no paired success to F or B, have strictly lower aggregate work tokens than F, and no more work tokens than B. To support an inventory-retention advantage, additionally require a paired D success/B failure. Report failures and every task even if gates fail. This is a known-cohort decision, not statistical noninferiority or generalization.",
+  "interpretation": "Within P71: D-F and D-B under the same public-name access and corrected capability wording. Historical P55 is not a concurrent causal control for access policy. Runtime wall notifications and numerical variation remain recorded; identical D/B base views on refund are a negative control, not an inventory effect.",
+  "max_cells": 12,
+  "max_continuation_model_calls": 192,
+  "max_continuation_reserved_tokens": 1440000,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "catalog_policy": "public_names",
+  "capability_wording": "All three display conditions share the P64 named-interface permission wording and tool description; old recorded turns remain unchanged.",
+  "source_comparison": "reports/P55_comparison.json",
+  "source_comparison_sha256": "23a86f5aba2a2cdb1d6184980fda3194bb496df1918b2d30ca1981489767150a",
+  "prior_implementation_derivation": {
+    "run_inventory_branch.py": {
+      "source_sha256": "a71caf50d93c8ee4e35c71bcf30014e229fde97f92fde91aa3d79a57934e5638",
+      "new_file": "scripts/run_public_display_branch.py"
+    },
+    "run_inventory_comparison.py": {
+      "source_sha256": "6be5b4445cd3994ea467b812df1514a704b2632d42ae1ab870974ec3ee8214aa",
+      "new_file": "scripts/run_public_display_comparison.py"
+    },
+    "run_inventory_pipeline.py": {
+      "source_sha256": "32a322b191c71f7eafa4625cee5d295082b361e7a51915f1c51678fc646b7a87",
+      "new_file": "scripts/run_public_display_pipeline.py"
+    },
+    "audit_inventory_comparison.py": {
+      "source_sha256": "50268b054f6f32d6a85f21da423d5fa296f744af2c0de90d6f96e978909996d6",
+      "new_file": "scripts/audit_public_display_comparison.py"
+    }
+  }
+}
