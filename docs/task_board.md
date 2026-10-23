@@ -111,6 +111,7 @@
 | P0 | R103 | 推論保持あり・なしの通常対照を同じ途中状態と予算で比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/297) |
 | P0 | R104 | 閉じた全８条件の再取得・ローカル処理・中断を公開記録で分ける | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/302) |
 | P0 | R105 | 公開APIの値と例外を区別する通常部品を整備する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/305) |
+| P0 | R106 | 型付きAPI返却を通常の持続Pythonへ任意接続する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/307) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -392,6 +393,10 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
+
+【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
+
 【返却契約の通常部品】P77全３例外の公開読取0.003844秒。精算２件は認証失敗の文字列参照による二次TypeError、書出し１件は60取得後の読取専用環境への書込み。公開APIを１回呼び、値・呼出し例外・不明返却を区別する任意部品を追加。14部品検査を含む全1008検査1.760秒・compileall成功、実SafetyGuard下の４合成ケース0.038695秒。実験workerへ未接続、追加生成/API/評価０、成功・費用改善・新規性は未測定。docs/public_api_result_contract_20261023.md、materials/20261023_api_result_contract/README.md。
 
 【P77公開完了】PR304：HEAD acf542aa356ef1c0c6e95bf2d674588f41cc4f4eのpush CI39906034159/job120258105345・PR CI39906162787/job120258494854成功後、merge49129aabfcbfcb07aace68d8e4f365ef0520682bへ反映。全994検査・全件資料・104項目のボードを照合しR104完了を専用Projectへ同期した。
@@ -505,6 +510,10 @@ PR300：固定HEAD 2ee40795f24a6296d6c593f366fe122d7704a9d2のpush CI39901438132
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
+
+【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
+
 【返却契約の通常部品】P77全３例外の公開読取0.003844秒。精算２件は認証失敗の文字列参照による二次TypeError、書出し１件は60取得後の読取専用環境への書込み。公開APIを１回呼び、値・呼出し例外・不明返却を区別する任意部品を追加。14部品検査を含む全1008検査1.760秒・compileall成功、実SafetyGuard下の４合成ケース0.038695秒。実験workerへ未接続、追加生成/API/評価０、成功・費用改善・新規性は未測定。docs/public_api_result_contract_20261023.md、materials/20261023_api_result_contract/README.md。
 
 【P77公開完了】PR304：HEAD acf542aa356ef1c0c6e95bf2d674588f41cc4f4eのpush CI39906034159/job120258105345・PR CI39906162787/job120258494854成功後、merge49129aabfcbfcb07aace68d8e4f365ef0520682bへ反映。全994検査・全件資料・104項目のボードを照合しR104完了を専用Projectへ同期した。
@@ -613,6 +622,10 @@ P75終了：P75は全105回を0.190755秒で読取点検。正常103応答全て
 **他候補の扱い**: 対象の成否を見て有利な状態だけを残す、未実行と作用不明を混ぜる、同じ状態の種違いを独立件数として数える方法は採らない。
 
 ## R34 ２段組４ページのレター原稿を完成し10月31日投稿へ備える
+
+【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
+
+【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
 
 【返却契約の通常部品】P77全３例外の公開読取0.003844秒。精算２件は認証失敗の文字列参照による二次TypeError、書出し１件は60取得後の読取専用環境への書込み。公開APIを１回呼び、値・呼出し例外・不明返却を区別する任意部品を追加。14部品検査を含む全1008検査1.760秒・compileall成功、実SafetyGuard下の４合成ケース0.038695秒。実験workerへ未接続、追加生成/API/評価０、成功・費用改善・新規性は未測定。docs/public_api_result_contract_20261023.md、materials/20261023_api_result_contract/README.md。
 
@@ -1433,8 +1446,18 @@ P61準備。P24_02の第12生成後（前半252,602 token・20 API）から通�
 
 ## R105 公開APIの値と例外を区別する通常部品を整備する
 
+【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
+
 【返却契約の通常部品】P77全３例外の公開読取0.003844秒。精算２件は認証失敗の文字列参照による二次TypeError、書出し１件は60取得後の読取専用環境への書込み。公開APIを１回呼び、値・呼出し例外・不明返却を区別する任意部品を追加。14部品検査を含む全1008検査1.760秒・compileall成功、実SafetyGuard下の４合成ケース0.038695秒。実験workerへ未接続、追加生成/API/評価０、成功・費用改善・新規性は未測定。docs/public_api_result_contract_20261023.md、materials/20261023_api_result_contract/README.md。
 
 **なぜ行うか**: 認証失敗が文字列として返り二次TypeErrorへ隠れる経路を区別し、次の制御比較に使う通常対照の契約を明示する。
 
 **他候補の扱い**: 文字列markerによる自動修復・自動再試行・旧結果の差替えをしない。通常の返却型整備を新規方式や費用改善へ言い換えない。
+
+## R106 型付きAPI返却を通常の持続Pythonへ任意接続する
+
+【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。 全1023検査1.908秒・compileall・既存５実装と原稿88出典の不変を確認。正式な合成接続検査は未実施。
+
+**なぜ行うか**: 返却契約だけでなく、通常のAPI許可・残予算・持続状態・記録・終了との接続を確認して、次の対照で使える状態へ整える。
+
+**他候補の扱い**: 旧workerの実験結果を変更せず、新方式や性能改善とは呼ばない。通信不明を正常な文字列に戻したり、別プログラムから再送したりしない。
