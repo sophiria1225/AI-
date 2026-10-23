@@ -25,7 +25,7 @@
 
 | 成果物 | 内容と状態 |
 |---|---|
-| [P80/P81の検討稿](papers/202610_letter/time_visibility_intervals/README.md) | 全24条件・429生成と条件付き費用区間。本文・文献４頁＋英文１頁を確認済み。新しい資源別集計と追加先行研究は最終統合時に反映する |
+| [P80/P81の資源別統合稿](papers/202610_letter/resource_measurement/README.md) | 全24条件・429生成、条件付き費用区間、入力・出力・時間の差と追加先行研究。本文・文献４頁＋英文１頁を確認済み |
 | [P82原稿の準備](papers/202610_letter/late_time_control/README.md) | 全24条件・全４採否比較・表示開始位置を取り込む処理。実結果の表とPDFは終了後に生成する |
 | [教授用の題名・あらまし](materials/20261023_professor_brief/README.md) | 合意した日英題名と456字あらましを保存。著者・所属・順序は未確定 |
 | [P81の７枚資料](materials/20261024_p81_results/README.md) | 成否・全費用・経路の照合を全件掲載 |
