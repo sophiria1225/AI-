@@ -96,5 +96,82 @@ class TrackingRecovery(unittest.TestCase):
             sync.check_project_scope({'id': 'fixture-project'})
 
 
+class TrackingScopePagination(unittest.TestCase):
+    def connection(self, kind, repositories, more=False, cursor=None):
+        nodes = [{'nameWithOwner': r} if kind == 'repositories' else
+                 {'content': {'repository': {'nameWithOwner': r}}} for r in repositories]
+        return {'data': {'node': {kind: {'nodes': nodes,
+            'pageInfo': {'hasNextPage': more, 'endCursor': cursor}}}}}
+
+    def scan(self, pages):
+        with patch.object(sync, 'gh', side_effect=pages) as gh:
+            counts = sync.check_project_scope({'id': 'fixture-project'})
+            return counts, gh.call_args_list
+
+    def test_all_items_after_the_first_hundred_are_checked(self):
+        own = sync.ALLOWED_REPOSITORY
+        counts, calls = self.scan([
+            self.connection('repositories', [own]),
+            self.connection('items', [own] * 100, True, 'after100'),
+            self.connection('items', [own]),
+        ])
+        self.assertEqual(counts, {'repositories': 1, 'items': 101})
+        self.assertNotIn('cursor=after100', calls[1].args)
+        self.assertIn('cursor=after100', calls[2].args)
+        self.assertTrue(all(c.args[:2] == ('api', 'graphql') for c in calls))
+
+    def test_unrelated_item_on_a_later_page_is_rejected(self):
+        own = sync.ALLOWED_REPOSITORY
+        with self.assertRaisesRegex(RuntimeError, 'outside'):
+            self.scan([self.connection('repositories', [own]),
+                       self.connection('items', [own], True, 'next'),
+                       self.connection('items', ['fixture/other'])])
+
+    def test_repository_connection_is_also_fully_paged(self):
+        own = sync.ALLOWED_REPOSITORY
+        with self.assertRaisesRegex(RuntimeError, 'outside'):
+            self.scan([self.connection('repositories', [own], True, 'repo-next'),
+                       self.connection('repositories', ['fixture/other'])])
+
+    def test_missing_or_repeated_cursor_and_empty_continuation_stop(self):
+        own = sync.ALLOWED_REPOSITORY
+        for bad in (self.connection('items', [own], True),
+                    self.connection('items', [], True, 'next')):
+            with self.assertRaisesRegex(RuntimeError, 'pagination'):
+                self.scan([self.connection('repositories', [own]), bad])
+        with self.assertRaisesRegex(RuntimeError, 'pagination'):
+            self.scan([self.connection('repositories', [own]),
+                       self.connection('items', [own], True, 'same'),
+                       self.connection('items', [own], True, 'same')])
+
+    def test_partial_graphql_error_and_unknown_content_are_rejected(self):
+        own = sync.ALLOWED_REPOSITORY
+        page = self.connection('items', [own]); page['errors'] = [{'message': 'partial response'}]
+        with self.assertRaisesRegex(RuntimeError, 'Unable'):
+            self.scan([self.connection('repositories', [own]), page])
+        for content in (None, {}, {'title': 'unscoped draft'}):
+            page = self.connection('items', [own]); page['data']['node']['items']['nodes'][0]['content'] = content
+            with self.assertRaisesRegex(RuntimeError, 'outside'):
+                self.scan([self.connection('repositories', [own]), page])
+
+    def test_missing_page_metadata_never_counts_as_last_page(self):
+        own = sync.ALLOWED_REPOSITORY
+        for metadata in (None, {}, {'hasNextPage': 0}):
+            page = self.connection('repositories', [own]);page['data']['node']['repositories']['pageInfo'] = metadata
+            with self.assertRaisesRegex(RuntimeError, 'Unable'):
+                self.scan([page])
+
+    def test_no_project_mutation_precedes_complete_scope_check(self):
+        own = sync.ALLOWED_REPOSITORY
+        project = {'id': 'fixture-project', 'number': 1, 'url': 'fixture', 'title': sync.ALLOWED_PROJECT_TITLE}
+        with patch.object(sync, 'gh', side_effect=[{'projects': [project]},
+            self.connection('repositories', [own]), self.connection('items', [own], True, 'next'),
+            self.connection('items', ['fixture/other'])]) as gh:
+            with self.assertRaisesRegex(RuntimeError, 'outside'):
+                sync.publish_project({'repository': own, 'project_title': sync.ALLOWED_PROJECT_TITLE}, {})
+            self.assertEqual(gh.call_args_list[0].args[:2], ('project', 'list'))
+            self.assertTrue(all(c.args[:2] == ('api', 'graphql') for c in gh.call_args_list[1:]))
+
+
 if __name__ == '__main__':
     unittest.main()

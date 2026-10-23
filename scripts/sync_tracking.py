@@ -22,32 +22,52 @@ def check_repository_scope(data):
 
 
 def check_project_scope(project):
-    """Fail closed if a dedicated Project later acquires unrelated content."""
-    query = '''query($id: ID!) {
-      node(id: $id) { ... on ProjectV2 {
-        repositories(first: 100) { nodes { nameWithOwner } pageInfo { hasNextPage } }
-        items(first: 100) {
-          nodes { content {
+    """Read every page before allowing any Project mutation; never skip unknown content."""
+    counts = {}
+    selections = {
+        'repositories': 'nodes { nameWithOwner }',
+        'items': '''nodes { content {
             ... on Issue { repository { nameWithOwner } }
             ... on PullRequest { repository { nameWithOwner } }
-          } }
-          pageInfo { hasNextPage }
-        }
-      } }
-    }'''
-    result = gh('api', 'graphql', '-f', 'query=' + query, '-f', 'id=' + project['id'],
-                json_output=True)
-    node = result.get('data', {}).get('node')
-    if not node or 'repositories' not in node or 'items' not in node:
-        raise RuntimeError('Unable to verify Project scope')
-    for connection in (node['repositories'], node['items']):
-        if connection['pageInfo']['hasNextPage']:
-            raise RuntimeError('Project scope exceeds the verified page; no Project changes')
-    repos = [r['nameWithOwner'] for r in node['repositories']['nodes']]
-    repos += [(item.get('content') or {}).get('repository', {}).get('nameWithOwner')
-              for item in node['items']['nodes']]
-    if any(repo != ALLOWED_REPOSITORY for repo in repos):
-        raise RuntimeError('Project contains content outside ' + ALLOWED_REPOSITORY)
+        } }''',
+    }
+    for name, selection in selections.items():
+        query = ('query($id: ID!, $cursor: String) { node(id: $id) { ... on ProjectV2 { '
+                 + name + '(first: 100, after: $cursor) { ' + selection
+                 + ' pageInfo { hasNextPage endCursor } } } } }')
+        cursor = None; seen = set(); count = 0
+        while True:
+            args = ['api', 'graphql', '-f', 'query=' + query, '-f', 'id=' + project['id']]
+            if cursor is not None:
+                args += ['-f', 'cursor=' + cursor]
+            result = gh(*args, json_output=True)
+            if not isinstance(result, dict):
+                raise RuntimeError('Unable to verify Project scope')
+            node = (result.get('data') or {}).get('node')
+            connection = node.get(name) if isinstance(node, dict) else None
+            if result.get('errors') or not isinstance(connection, dict):
+                raise RuntimeError('Unable to verify Project scope')
+            nodes = connection.get('nodes'); page = connection.get('pageInfo')
+            if (not isinstance(nodes, list) or not isinstance(page, dict)
+                    or type(page.get('hasNextPage')) is not bool):
+                raise RuntimeError('Unable to verify Project scope page')
+            for item in nodes:
+                if not isinstance(item, dict):
+                    raise RuntimeError('Unable to verify Project scope item')
+                content = item.get('content')
+                repository = item if name == 'repositories' else (
+                    content.get('repository') if isinstance(content, dict) else None)
+                if not isinstance(repository, dict) or repository.get('nameWithOwner') != ALLOWED_REPOSITORY:
+                    raise RuntimeError('Project contains content outside ' + ALLOWED_REPOSITORY)
+            count += len(nodes)
+            if not page['hasNextPage']:
+                break
+            next_cursor = page.get('endCursor')
+            if (not nodes or type(next_cursor) is not str or not next_cursor or next_cursor in seen):
+                raise RuntimeError('Unable to verify Project scope pagination')
+            seen.add(next_cursor); cursor = next_cursor
+        counts[name] = count
+    return counts
 
 
 def gh(*args, json_output=False):
