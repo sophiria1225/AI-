@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P78 is complete and included in the primary manuscript. P79 completed all twelve saved-input replays with zero audit mismatches and 99,966 known tokens; both inputs were sensitive to a one-second notice change. This calibration does not establish new methodology or task savings. No new generation comparison is allocated.",
+  "current_experiment": "All P78 and P79 runs are closed. P79 calibration is included in the reviewed four-body-page manuscript plus English endmatter. Budget time visibility is implemented and checked as an ordinary optional component, not connected to task workers. No new model comparison is allocated; central novelty remains unestablished.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -237,7 +237,7 @@
     "layout": "cost_completion_layout.json",
     "public_admission_scope_explicit": true,
     "public_clock_evidence_limit_explicit": true,
-    "pdf_sha256": "caf2465dd300a7c33e9310d4bac0fece8c40e8116ff13a40704b4fc38a1109b9",
+    "pdf_sha256": "1269b1e5b0e207986f997d2ed17e810cc93a15b4594d3114aa4c44ce2537a8b8",
     "ordinary_completion_results_included": true,
     "strict_prefix_failure_explicit": true,
     "export_completion_negative_results_included": true,
@@ -256,7 +256,10 @@
     "keywords_per_language": 5,
     "api_error_comparison_included": true,
     "separate_api_error_conditions": 8,
-    "api_error_preintervention_divergence_explicit": true
+    "api_error_preintervention_divergence_explicit": true,
+    "clock_notice_calibration_included": true,
+    "P79_generations": 12,
+    "P79_adds_independent_tasks": false
   },
   "last_completed_measurement_calibration": {
     "phase": "P79",
@@ -443,7 +446,7 @@
     "results": "../../docs/P56_findings.md"
   },
   "claim_scope": "../../docs/letter_claim_scope_20261023.md",
-  "latest_manuscript_material": "../../materials/20261023_letter_api_errors/README.md",
+  "latest_manuscript_material": "../../materials/20261023_letter_clock_notice/README.md",
   "latest_user_direction": "2026-10-23: user asked whether novelty is emerging and directed execution to continue after the answer. Candidly report that a novel method remains unestablished; continue authorized implementation, research and materials/Project updates.",
   "previous_passive_inspection": {
     "phase": "P59",
@@ -772,7 +775,7 @@
     "original_report": "../../reports/P73_prompt_identity.json",
     "read_report": "../../reports/P73_stop_diagnosis.json"
   },
-  "current_pdf_sha256": "caf2465dd300a7c33e9310d4bac0fece8c40e8116ff13a40704b4fc38a1109b9",
+  "current_pdf_sha256": "1269b1e5b0e207986f997d2ed17e810cc93a15b4594d3114aa4c44ce2537a8b8",
   "latest_input_diagnostic_material": "../../materials/20261023_p73/README.md",
   "input_identity_fragment": "prompt_identity_component.tex",
   "last_completed_read_only_inspection": {
@@ -826,7 +829,8 @@
     "submission_ready": false,
     "authors_are_placeholders": true,
     "P78_results_included": true,
-    "matches_current_manuscript": true
+    "matches_current_manuscript": false,
+    "scope_note": "P78 snapshot before P79 calibration; official archive identity remains unconfirmed."
   },
   "latest_deferred_acquisition_decision": "../../docs/deferred_acquisition_feasibility_20261023.md",
   "previous_completed_task_experiment_before_P76": {
@@ -1148,7 +1152,7 @@
     "reasoning_history_comparison_included": true,
     "separate_reasoning_history_conditions": 8
   },
-  "latest_manuscript_integration": "../../reports/P78_manuscript_integration_20261023.json",
+  "latest_manuscript_integration": "../../reports/P79_manuscript_integration_20261023.json",
   "previous_mirror_preview_before_P78": {
     "report": "../../reports/P76_ieice_mirror_preview.json",
     "pdf": "../../materials/20261023_p76_ieice_preview/AI_harness_P76_ieice_preview_20261023.pdf",
@@ -1200,7 +1204,7 @@
     "is_task_or_novel_method_comparison": false,
     "server_stopped": true
   },
-  "P79_is_added_to_primary_manuscript_results": false,
+  "P79_is_added_to_primary_manuscript_results": true,
   "latest_budget_observation_component": {
     "document": "../../docs/budget_observation_contract_20261023.md",
     "material": "../../materials/20261023_budget_observation/README.md",
@@ -1213,7 +1217,53 @@
     "local_fixture_tests": 12,
     "task_worker_connected": false,
     "task_quality_or_savings_measured": false,
-    "novel_method_claim": false
+    "novel_method_claim": false,
+    "publication": "../../reports/budget_observation_publication_20261023.json"
   },
-  "latest_calibration_publication": "../../reports/P79_results_publication_20261023.json"
+  "latest_calibration_publication": "../../reports/P79_results_publication_20261023.json",
+  "previous_provisional_manuscript_before_P79": {
+    "path": "candidate_cost_completion.tex",
+    "pdf": "candidate_cost_completion.pdf",
+    "pages": 5,
+    "official_class_used": false,
+    "section_and_column_breaks_for_review": false,
+    "visual_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "japanese_abstract_characters": 115,
+    "english_abstract_words": 45,
+    "central_contribution_confirmed": false,
+    "submission_ready": false,
+    "source_map": "cost_completion_source_map.json",
+    "layout": "cost_completion_layout.json",
+    "public_admission_scope_explicit": true,
+    "public_clock_evidence_limit_explicit": true,
+    "pdf_sha256": "caf2465dd300a7c33e9310d4bac0fece8c40e8116ff13a40704b4fc38a1109b9",
+    "ordinary_completion_results_included": true,
+    "strict_prefix_failure_explicit": true,
+    "export_completion_negative_results_included": true,
+    "main_pages": 4,
+    "english_endmatter_pages": 1,
+    "public_display_results_included": true,
+    "all_planned_display_cells": 24,
+    "distinct_known_tasks": 4,
+    "all_reference_authors_printed": true,
+    "posthoc_replay_cases": 18,
+    "public_completion_diagnostic_results_included": true,
+    "distinct_known_diagnostic_tasks": 3,
+    "reference_count": 14,
+    "reasoning_history_comparison_included": true,
+    "separate_reasoning_history_conditions": 8,
+    "keywords_per_language": 5,
+    "api_error_comparison_included": true,
+    "separate_api_error_conditions": 8,
+    "api_error_preintervention_divergence_explicit": true
+  },
+  "previous_latest_manuscript_integration_before_P79": "../../reports/P78_manuscript_integration_20261023.json",
+  "previous_latest_manuscript_material_before_P79": "../../materials/20261023_letter_api_errors/README.md",
+  "P79_manuscript_role": "Saved-input calibration in interpretation; not task quality, savings or a novel-method result."
 }
