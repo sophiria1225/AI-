@@ -1,0 +1,202 @@
+{
+  "scope": "synthetic_typed_result_code_adapter_and_container_integration",
+  "started_at": "2026-10-23T06:45:04.316093+00:00",
+  "all_checks_passed": true,
+  "programs": [
+    {
+      "session": "ordinary",
+      "program": 1,
+      "status": "execution_error",
+      "fixture_api_requests": 2,
+      "declared_complete": false,
+      "unknown_effects": false,
+      "receipt_count": 2,
+      "stdout_sha256": "0d15895a64cf4c28707f97b38ff2a4a2818a204e9211d8bea435f46303e8d7da"
+    },
+    {
+      "session": "ordinary",
+      "program": 2,
+      "status": "ok",
+      "fixture_api_requests": 1,
+      "declared_complete": false,
+      "unknown_effects": false,
+      "receipt_count": 1,
+      "stdout_sha256": "0de74abffe4f94215cca963e78b548c5f4f13069b4c65afac5da066c4ff7cbd2"
+    },
+    {
+      "session": "ordinary",
+      "program": 3,
+      "status": "execution_error",
+      "fixture_api_requests": 0,
+      "declared_complete": false,
+      "unknown_effects": false,
+      "receipt_count": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "session": "ordinary",
+      "program": 4,
+      "status": "execution_error",
+      "fixture_api_requests": 0,
+      "declared_complete": false,
+      "unknown_effects": false,
+      "receipt_count": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "session": "ordinary",
+      "program": 5,
+      "status": "execution_error",
+      "fixture_api_requests": 1,
+      "declared_complete": true,
+      "unknown_effects": false,
+      "receipt_count": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "session": "ordinary",
+      "program": 6,
+      "status": "execution_error",
+      "fixture_api_requests": 0,
+      "declared_complete": true,
+      "unknown_effects": false,
+      "receipt_count": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "session": "unknown",
+      "program": 1,
+      "status": "execution_error",
+      "fixture_api_requests": 1,
+      "declared_complete": false,
+      "unknown_effects": true,
+      "receipt_count": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "session": "completion_exception",
+      "program": 1,
+      "status": "execution_error",
+      "fixture_api_requests": 1,
+      "declared_complete": true,
+      "unknown_effects": false,
+      "receipt_count": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "sessions": [
+    {
+      "name": "ordinary",
+      "container_removed": true,
+      "programs": 6,
+      "fixture_dispatches": 4,
+      "trusted_syntax_checks": 4,
+      "receipts": [
+        {
+          "protocol": "public-api-result-v1",
+          "status": "returned",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "e764682f898941878c958fb6174941be",
+          "raw_reply_sha256": "a991128b0828bcf9c740104f2d52a824d22ecdb3c5662c9b777667af01216f50",
+          "declared_complete": false,
+          "transport_and_decode_wall_seconds": 0.6401876660092967
+        },
+        {
+          "protocol": "public-api-result-v1",
+          "status": "raised",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "b44ee315712d4112ab15542adf6c4247",
+          "raw_reply_sha256": "01cff71da4e72170c8d17dfcccfbaea9b1e45b2401f90b34adb1c799d3c2fec0",
+          "declared_complete": false,
+          "exception_type": "ValueError",
+          "transport_and_decode_wall_seconds": 0.003493917000014335
+        },
+        {
+          "protocol": "public-api-result-v1",
+          "status": "returned",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "0aab5a8d2fee435da5c5e56d8322ba1c",
+          "raw_reply_sha256": "7724607b154ef190ea7a9b11585f16d189a31f1e3881376f8976e16ce6509d09",
+          "declared_complete": false,
+          "transport_and_decode_wall_seconds": 0.0033637080050539225
+        },
+        {
+          "protocol": "public-api-result-v1",
+          "status": "returned",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "ae60b4de9aeb433db42863cc3c1467eb",
+          "raw_reply_sha256": "e231e8b664fdbb7016cc708e6e20774f9ed3c1be72aa61ce05942a682d8fef8e",
+          "declared_complete": true,
+          "transport_and_decode_wall_seconds": 0.003023666999069974
+        }
+      ]
+    },
+    {
+      "name": "unknown",
+      "container_removed": true,
+      "programs": 1,
+      "fixture_dispatches": 1,
+      "trusted_syntax_checks": 1,
+      "receipts": [
+        {
+          "protocol": "public-api-result-v1",
+          "status": "unknown",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "9f5288cfa5594a24b1e9486db20d6e08",
+          "failure_type": "InvalidExecutionEnvelope",
+          "transport_and_decode_wall_seconds": 0.00434720900375396
+        }
+      ]
+    },
+    {
+      "name": "completion_exception",
+      "container_removed": true,
+      "programs": 1,
+      "fixture_dispatches": 1,
+      "trusted_syntax_checks": 1,
+      "receipts": [
+        {
+          "protocol": "public-api-result-v1",
+          "status": "raised",
+          "bridge_request_sent": true,
+          "automatic_retries": 0,
+          "rollback_guaranteed": false,
+          "nonce": "4e2d71c822e94cb893db95a9781b9bd7",
+          "raw_reply_sha256": "5fc98ff58a7b4ea2154fa3be759094342ee78a5b5c02979799faba3988951c52",
+          "declared_complete": true,
+          "exception_type": "ValueError",
+          "transport_and_decode_wall_seconds": 0.003871374996379018
+        }
+      ]
+    }
+  ],
+  "model_calls": 0,
+  "task_loads": 0,
+  "appworld_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "database_contents_read": 0,
+  "saved_model_programs_executed": 0,
+  "task_success_or_cost_improvement_measured": false,
+  "wall_seconds": 1.3178883329965174,
+  "source_sha256": {
+    "scripts/appworld_typed_bridge.py": "b62c5cb9a4b59e144911e26f50ed643b5e47b03ca3f2d66ef684d3a8cf10079e",
+    "scripts/public_api_envelope.py": "fbfcb5bbe975f57b7f7047d1789293b1e45b165ef68e7ebd1160e51b366b6790",
+    "scripts/public_api_result_transport.py": "1f5746c85150759256e39ba7ee340e7951340ec0b4b1a6b0ab4e8ba147318e74",
+    "scripts/preflight_public_api_result_transport.py": "a86263f992d584eaa982fa913d2b4b6234ff650fe4f643637f915cb80018bd0e",
+    "scripts/code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "scripts/persistent_api_python.py": "ba6df3ac0d5d444f8cca728f8fb3e13a4fee64355d8b39c0051b9a848b1f48bd",
+    "scripts/container_api_python.py": "cddd7bf0ea6bb8f30cd1f7f22377a962c9b17df35522eb3beacfc96202ca5863"
+  },
+  "guard_source_sha256": "fa105c1bc55bc9fc3dba70f414bdfcb43e05fcede06e63477ceb712037044da7"
+}

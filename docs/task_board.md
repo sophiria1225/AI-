@@ -111,7 +111,7 @@
 | P0 | R103 | 推論保持あり・なしの通常対照を同じ途中状態と予算で比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/297) |
 | P0 | R104 | 閉じた全８条件の再取得・ローカル処理・中断を公開記録で分ける | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/302) |
 | P0 | R105 | 公開APIの値と例外を区別する通常部品を整備する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/305) |
-| P0 | R106 | 型付きAPI返却を通常の持続Pythonへ任意接続する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/307) |
+| P0 | R106 | 型付きAPI返却を通常の持続Pythonへ任意接続する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/307) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -393,6 +393,8 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【返却契約の合成接続終了】固定HEAD594055e740bf458b21bfe61b3416e93351cb63fe、push CI39912672756/job120279019627・PR CI39912713122/job120279145414成功、PR308 mergefa78cd2cae085f693f2f1f3a27924690168e30a2後に別作業木で１回実行。８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し全コンテナ除去。例外前の変数と型を保持し、予算・許可・完了・不明による停止とAPI記録が一致。７実行エラーは意図した合成経路で実タスク成否ではない。モデル/AppWorldタスク/API/評価/保留群０。実際の品質・費用改善・新規性は未測定。docs/public_api_result_runtime_20261023.md、materials/20261023_api_result_runtime/README.md。
+
 【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
 
 【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
@@ -510,6 +512,8 @@ PR300：固定HEAD 2ee40795f24a6296d6c593f366fe122d7704a9d2のpush CI39901438132
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【返却契約の合成接続終了】固定HEAD594055e740bf458b21bfe61b3416e93351cb63fe、push CI39912672756/job120279019627・PR CI39912713122/job120279145414成功、PR308 mergefa78cd2cae085f693f2f1f3a27924690168e30a2後に別作業木で１回実行。８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し全コンテナ除去。例外前の変数と型を保持し、予算・許可・完了・不明による停止とAPI記録が一致。７実行エラーは意図した合成経路で実タスク成否ではない。モデル/AppWorldタスク/API/評価/保留群０。実際の品質・費用改善・新規性は未測定。docs/public_api_result_runtime_20261023.md、materials/20261023_api_result_runtime/README.md。
+
 【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
 
 【返却部品の公開完了】PR306：HEAD6102359c97fe86c3b847fe96b7dc07ea7c2c3f67、push CI39910420255/job120271870789・PR CI39910561176/job120272327504成功。merge51983e923f7bbc9dc54dc9d31acf084e9d421dfdへ反映。R105はIssue305、専用Projectは全105項目を維持。
@@ -622,6 +626,8 @@ P75終了：P75は全105回を0.190755秒で読取点検。正常103応答全て
 **他候補の扱い**: 対象の成否を見て有利な状態だけを残す、未実行と作用不明を混ぜる、同じ状態の種違いを独立件数として数える方法は採らない。
 
 ## R34 ２段組４ページのレター原稿を完成し10月31日投稿へ備える
+
+【返却契約の合成接続終了】固定HEAD594055e740bf458b21bfe61b3416e93351cb63fe、push CI39912672756/job120279019627・PR CI39912713122/job120279145414成功、PR308 mergefa78cd2cae085f693f2f1f3a27924690168e30a2後に別作業木で１回実行。８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し全コンテナ除去。例外前の変数と型を保持し、予算・許可・完了・不明による停止とAPI記録が一致。７実行エラーは意図した合成経路で実タスク成否ではない。モデル/AppWorldタスク/API/評価/保留群０。実際の品質・費用改善・新規性は未測定。docs/public_api_result_runtime_20261023.md、materials/20261023_api_result_runtime/README.md。
 
 【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。
 
@@ -1455,6 +1461,8 @@ P61準備。P24_02の第12生成後（前半252,602 token・20 API）から通�
 **他候補の扱い**: 文字列markerによる自動修復・自動再試行・旧結果の差替えをしない。通常の返却型整備を新規方式や費用改善へ言い換えない。
 
 ## R106 型付きAPI返却を通常の持続Pythonへ任意接続する
+
+【返却契約の合成接続終了】固定HEAD594055e740bf458b21bfe61b3416e93351cb63fe、push CI39912672756/job120279019627・PR CI39912713122/job120279145414成功、PR308 mergefa78cd2cae085f693f2f1f3a27924690168e30a2後に別作業木で１回実行。８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し全コンテナ除去。例外前の変数と型を保持し、予算・許可・完了・不明による停止とAPI記録が一致。７実行エラーは意図した合成経路で実タスク成否ではない。モデル/AppWorldタスク/API/評価/保留群０。実際の品質・費用改善・新規性は未測定。docs/public_api_result_runtime_20261023.md、materials/20261023_api_result_runtime/README.md。
 
 【返却契約の接続準備】旧実行系を変更せず、typed専用bridge、対応照合と不明・完了のtransport停止、元コードツールへの任意wrapperを追加。正常なJSON風文字列、作用後例外、別プログラムからの送信、途中返却timeoutを含む15検査に合格。３コンテナ・８プログラム・６fixture送信・作業120秒の合成接続検査を固定した。正式な接続検査は両CI後に１回行い、モデル・AppWorld課題/API/評価・保留群は使わない。docs/public_api_result_runtime_20261023.md。 全1023検査1.908秒・compileall・既存５実装と原稿88出典の不変を確認。正式な合成接続検査は未実施。
 

@@ -6,7 +6,7 @@
 
 ## 最新の終了結果
 
-[返却契約の実行系への接続](public_api_result_runtime_20261023.md)を準備中。別bridge・transport・コードツール用wrapperと15検査を追加した。次は両CI後に固定した３コンテナ・８プログラムの合成検査を１回行う。実タスクの生成や評価は配分していない。
+[返却契約の合成接続](public_api_result_runtime_20261023.md)を全件終了。元の許可・予算・記録・持続Pythonで、８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し、全コンテナを除去した。意図した例外・拒否を含む接続検査であり、モデル・AppWorldタスク/API・評価０。実タスクの品質・費用・新規性の改善は未測定。[資料](../materials/20261023_api_result_runtime/README.md)。
 
 [公開APIの返却契約](public_api_result_contract_20261023.md)を整備した。P77の全３例外を読み取り、精算２件の認証失敗からの二次TypeError、書出し１件の読取専用環境への書込みを区別。返却値・呼出し例外・不明を分ける通常部品と14検査、実行制限下の４合成ケースを追加した。実験workerへ未接続、タスク成功・費用改善は未測定。追加生成・AppWorld API・評価０。[補足資料](../materials/20261023_api_result_contract/README.md)。
 
