@@ -14,6 +14,8 @@
 
 [現在の結果と限界](docs/current_status.md)／[次の作業と採否](docs/next_actions.md)／[同じ環境での引き継ぎ](RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。停止はユーザーの最新指示に従う。終了済みの実験を古い記録から再開しない。
 
+[P82の条件付き区間解析](materials/20261024_p82_interval_preparation/README.md)を準備した。全件終了後だけ実行し、不明使用量と元の採用基準を保持する。実区間は未算出。
+
 ## 閉じた結果から分かっていること
 
 - P80/P81の既知４課題×３反復では、M/Hとも各反復3/4成功。採用基準は全反復未達。書出しは全６条件で未達だった。[全結果](docs/P81_findings.md)。
