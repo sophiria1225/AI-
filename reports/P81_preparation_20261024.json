@@ -1,0 +1,113 @@
+{
+  "phase": "P81_preparation",
+  "status": "implemented_not_started",
+  "new_tests": 13,
+  "all_tests": 1114,
+  "all_tests_wall_seconds": 2.268,
+  "all_tests_passed": true,
+  "compileall_passed": true,
+  "earlier_environment_failure": {
+    "tests_run": 1102,
+    "import_errors": 4,
+    "cause": "New worktree did not contain the ignored pinned mini-swe-agent vendor checkout.",
+    "resolution": "Linked the existing verified checkout at 04d809ceab9df28f9adaed044884180159172930; complete suite then passed. No research execution was attempted."
+  },
+  "public_source_validation": {
+    "known_tasks": 4,
+    "public_tool_schemas": 457,
+    "plan_source_hashes": 26,
+    "source_hashes_matched": true
+  },
+  "closed_anchor": "P80",
+  "anchor_usage_unknown_preserved": 1,
+  "new_cells": 16,
+  "same_seed_repetitions": [
+    2,
+    3
+  ],
+  "original_repetition_retained": 1,
+  "new_reserved_model_calls": 1280,
+  "new_reserved_tokens": 7200000,
+  "server_max_lifetime_seconds": 43200,
+  "model_generations": 0,
+  "environment_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_task_reads": 0,
+  "source_sha256": {
+    "scripts/budget_visibility_repetition.py": "f2f24d2c7b6a9dd9e6f207c4e3572ed1890ccf165ef1bed02c0993ccbdcdffec",
+    "scripts/run_budget_visibility_repeat_cell.py": "54452ac262096dc44a0ec3d82809a49c073698ecedcc947854b452c98b1e6636",
+    "scripts/run_budget_visibility_repetition.py": "0b6d82798fd22a605904c15212bc79c49c9d987fb44584baf0ddaca4afcf9c02",
+    "scripts/run_budget_visibility_repeat_pipeline.py": "9cd931525ebe0fb2bc9299027268ac099dd4103ced8a00fd27b877b0977e53e7",
+    "scripts/audit_budget_visibility_repetition.py": "285492fad3be95d5c061fb6db83a06a1264e393d029cfaad42bcf840839f4c70",
+    "scripts/compare_budget_visibility_repetitions.py": "bade878ae26ae3c6c411532134afbad442b1ee48375107041ec44e2fb9522e5f",
+    "tests/test_budget_visibility_repetition.py": "6aa5ff16ce5bd465d1202665d737aabf647a9ec742d1337004bca05a723ea6df",
+    "tests/test_budget_visibility_repetition_stability.py": "274d393b0aab27d453c493c94de7665d997488dba3a331ad1568f6823662e1e0",
+    "configs/P81_budget_visibility_repetition_v01.json": "c0bd37c19100398c7484027dd33df5e7ed04e18c8bec1e8d6463c7da2060cb38",
+    "docs/experiments/P81_budget_visibility_repetition.md": "37e53e274737e7e33a0d7fa0f85a51a0161baef40eef36efca8b8e8d8079b623"
+  },
+  "private_trace_inspector_preparation": [
+    {
+      "rows": [
+        {
+          "run_id": "BOC_P80_01_MEASURED",
+          "calls": 17,
+          "known_complete": true,
+          "source_audit_sha256": "fd9477683b00ea8281e40a03459f18a6a969930070b8f229911059899885e101"
+        },
+        {
+          "run_id": "BOC_P80_01_NOT_EXPOSED",
+          "calls": 16,
+          "known_complete": true,
+          "source_audit_sha256": "321dd0a23670d8851f9e540600a1bb8d80e105ce3ddf083cd31db1a38d4aa186"
+        },
+        {
+          "run_id": "BOC_P80_02_MEASURED",
+          "calls": 20,
+          "known_complete": true,
+          "source_audit_sha256": "e2e026681754b71b8458528270338a77eee1336873fa6f3e420b1d7ffdb4c37f"
+        },
+        {
+          "run_id": "BOC_P80_02_NOT_EXPOSED",
+          "calls": 24,
+          "known_complete": true,
+          "source_audit_sha256": "f6d44d9200e1aaca3ddb813a5d54cd78116b98e5c20df8267a8bbbb615cc4c9c"
+        },
+        {
+          "run_id": "BOC_P80_03_MEASURED",
+          "calls": 21,
+          "known_complete": true,
+          "source_audit_sha256": "3f63dae255ed96cb2a0580ea3a770373de132f605369eec3bf9a7558bbc78dab"
+        },
+        {
+          "run_id": "BOC_P80_03_NOT_EXPOSED",
+          "calls": 13,
+          "known_complete": true,
+          "source_audit_sha256": "1ab4830f00d73f3d086ec0c9d6ec5f010363813380d84c9c90ee5a9adf27d9d5"
+        }
+      ],
+      "all_known_complete": true,
+      "model_calls_inspected": 111,
+      "additional_generations": 0,
+      "api_requests": 0,
+      "evaluations": 0,
+      "private_reasoning_inspected_semantically": false,
+      "inspector_sha256": "bade878ae26ae3c6c411532134afbad442b1ee48375107041ec44e2fb9522e5f"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "calls": 20,
+      "known_complete": false,
+      "last_public_output_hash": null,
+      "additional_generations": 0,
+      "api_requests": 0,
+      "evaluations": 0
+    }
+  ],
+  "novel_method_claim": false,
+  "limitations": [
+    "Same-seed repetitions on four known tasks; not 24 independent tasks.",
+    "P80 unknown usage is retained; the all-three-repetition adoption gate is already unmet.",
+    "Saved JSON equality does not establish identical model token input or causal timing effects.",
+    "New live model/container/AppWorld repeated comparison has not started."
+  ]
+}

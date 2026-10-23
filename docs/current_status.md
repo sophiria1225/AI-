@@ -1,5 +1,11 @@
 # 現在の状態
 
+P81の全条件反復を実装・固定した。同じ既知４課題×２条件を同じseedで２回追加し、全24行の成否・費用・入出力列の安定性を調べる。追加13、全1,114検査成功。生成はまだ未開始。P80の未達と不明１生成は保持し、一般的改善・新手法の成立とは扱わない。 [反復計画](experiments/P81_budget_visibility_repetition.md)。
+
+2026-10-24、P80の全８条件を終了・独立評価・監査した。M/Hはともに3/4成功、Mは787,092 token、Hは既知780,394＋不明１生成。Hの書出しは時間切れで未達となり、全体の採用基準は未達。全143生成・437 API・８評価、監査不一致０、所有推論器停止。新規手法と一般品質維持は未確立。 [全結果](P80_findings.md)／[４枚資料](../materials/20261024_p80/README.md)／[中心を絞った別稿](../papers/202610_letter/time_visibility_focus/README.md)。現在の主原稿と教授用456字は保持し、次は同じseedの全条件反復を準備する。
+
+## 過去の作業記録（記載時点）
+
 [P80は実行中](../reports/P80_execution_start_20261023.json)。[PR334](https://github.com/sophiria1225/AI-/pull/334)の両CI後、固定版から既知４課題×２条件を開始した。８初期入力確認は成功。全件の採否は未確定で、進行中の途中結果を改善成立とは扱わない。[読取監査](../scripts/audit_budget_visibility_comparison.py)も追加した。
 
 [P80の残時間表示比較](experiments/P80_budget_visibility.md)を既知４課題×２条件で実装・固定した。追加11、全1095合成検査成功。生成は未開始で、新規手法の成立とは扱わない。[土日の判断](weekend_decision_20261023.md)と[資料](../materials/20261023_p80/README.md)を追加。
