@@ -17,3 +17,5 @@ P55/P71の全24表示条件を本文へ載せ、P56の４ケースとP72の14ケ
 [P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。[P72反映前の原稿](archive_before_P72_20261023/README.md)も保持した。元P55/P56/P71の成否や欠測をP72で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。
 
 P75の履歴条件を方法節へ明記した。Fを含む全表示条件で返却推論を再投入していないため、推論保持を含む通常対照へ一般化しない。本文４頁＋英文末尾１頁を再組版し、全５頁を目視確認。P76は別条件として実行中で、現PDFに結果は含めていない。[変更範囲](../../docs/P75_manuscript_scope.md)。
+
+[入手済みミラーによる組版予行](../../materials/20261023_ieice_mirror_preview/README.md)も本文４頁＋英文末尾１頁、全５頁目視済み。最新版の公式配布物との一致と実著者欄は未確認であり、現在の主PDFとは別の予行版として保存する。
