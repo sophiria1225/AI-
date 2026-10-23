@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-23T23:27:35.629656+00:00",
+  "status": "primary_sources_read_scope_recorded",
+  "bounded_search_queries": 3,
+  "search_absence_is_not_novelty_evidence": true,
+  "sources": [
+    {
+      "url": "https://github.com/can1357/oh-my-pi/issues/3458",
+      "type": "issue_report_and_proposal",
+      "created_at": "2026-06-25T09:30:05Z",
+      "scope_read": "issue body, not execution logs or implementation",
+      "summary_ja": "空の関数名を持つ呼出しとエラー結果が履歴に残り、後続送信が400になるという報告。対応する呼出しと結果の除去を提案する。こちらの不正引数を文章として保持する経路とは別。報告の件数をこちらで再現したとはしない。",
+      "implementation_reproduced": false
+    },
+    {
+      "url": "https://github.com/can1357/oh-my-pi/pull/3437",
+      "type": "merged_source_patch_and_tests",
+      "created_at": "2026-06-25T03:49:12Z",
+      "merged_at": "2026-06-25T04:33:51Z",
+      "head": "57f2c646c6f371d940f44967a84b5c89e74d9a42",
+      "merge": "cf4da4d786c4d3c091c85fc3bc4a73ae85ec2db4",
+      "scope_read": "PR body and all four changed file patches; no runtime execution",
+      "summary_ja": "異なるAPIの履歴を文章化する処理が、後続の推論欄への格納より先に働く問題を修正する実装と検査。互換変換の順序や履歴保持自体も既存の課題であり、新規性の柱にしない。対象は返却推論欄であり、こちらの通信参照IDとは異なる。",
+      "implementation_reproduced": false
+    }
+  ],
+  "read_route_note": "PR3458 endpoint returned 404; the issue3458 endpoint resolved it. No repeated retry or foreign repository mutation.",
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "patch_file_git_blob_sha1": {
+    "packages/ai/src/providers/openai-completions.ts": "8877d6237306bdde6517671353f7183fe839e617",
+    "packages/ai/src/providers/transform-messages.ts": "dffdc13f92338d338808500d29ca7f7f3ee1c6d9",
+    "packages/ai/test/deepseek-reasoning-content.test.ts": "16bae42cf76f5e0085f77faf8b233aabc62c21e7",
+    "packages/ai/test/openai-completions-compat.test.ts": "ebfffcb15905ad8373b063298d906813e20339ed"
+  }
+}
