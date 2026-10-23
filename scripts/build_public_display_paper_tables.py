@@ -67,6 +67,8 @@ def build(root=ROOT):
         rows = [('成功／評価', [f"{t['successes']}/{t['evaluated_trials']}" for t in totals]),
                 ('仕事・既知token', [f"{t['logical_task_known_total_tokens']:,}" +
                  (r'$+?$' if t['logical_task_unknown_usage_calls'] else '') for t in totals]),
+                ('継続・既知token', [f"{t['known_total_tokens']:,}" +
+                 (r'$+?$' if t['unknown_usage_calls'] else '') for t in totals]),
                 ('継続生成／不明', [f"{t['model_calls']}/{t['unknown_usage_calls']}" for t in totals]),
                 ('継続／復元API', [f"{t['api_requests']}/{t['setup_api_requests']}" for t in totals])]
         lines.extend(label + ' & ' + ' & '.join(cells) + r'\\' for label, cells in rows)

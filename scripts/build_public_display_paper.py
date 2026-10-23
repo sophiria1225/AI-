@@ -113,6 +113,10 @@ def build(tex_bin, output):
         raise ValueError('resolve draft placeholders and use the verified bibliography')
     write_control_component()
     metadata, ja, en = metadata_fragments()
+    title = re.search(r'\\title\{([^}]+)\}', tex, re.S)
+    if (not title or ''.join(title[1].replace(r'\newline', '').split()) != metadata['title_ja']
+            or tex.count(r'\LetterJapaneseKeywords') != 1):
+        raise ValueError('printed Japanese title or keyword component differs from metadata')
     output.mkdir(parents=True, exist_ok=True)
     environment = dict(os.environ, SOURCE_DATE_EPOCH='1792677600', FORCE_SOURCE_DATE='1')
     for number in (1, 2):
@@ -165,6 +169,9 @@ def build(tex_bin, output):
     old_layout = PAPER / 'cost_completion_layout.json'
     if old_layout.exists() and read(old_layout).get('pdf_sha256') == layout['pdf_sha256']:
         layout['visual_reviewed_pages'] = read(old_layout).get('visual_reviewed_pages', [])
+    table_sources = read(PAPER / 'public_display_table_sources.json')
+    table_sources['rendering_up_to_date'] = True
+    save(PAPER / 'public_display_table_sources.json', table_sources)
     rendering = [f'papers/202610_letter/{NAME}.tex', *[
         'papers/202610_letter/' + p for p in (*required,
             'inventory_tables.tex', 'completion_diagnostic.tex', 'ordinary_completion_component.tex',
@@ -174,6 +181,9 @@ def build(tex_bin, output):
         'docs/P71_findings.md', 'docs/P71_manuscript_integration.md',
         'docs/letter_cost_metric_scope_20261023.md', 'docs/measurement_scope_review_20261023.md',
         'docs/letter_submission_format_20261023.md',
+        'docs/P62_findings.md', 'docs/P63_findings.md', 'docs/P66_findings.md', 'docs/P68_findings.md',
+        'docs/evidence_delivery_overlap_20261023.md', 'docs/termination_control_overlap_20261023.md',
+        'docs/ordinary_completion_literature_20261023.md',
     ]
     manifest = {
         'sources': locked, 'rendering_sources': {p: sha(ROOT / p) for p in rendering},

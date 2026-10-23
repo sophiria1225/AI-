@@ -59,11 +59,12 @@ def build(root, output):
 
     add('呼出し制約をそろえて、表示の比較を繰り返す',
         '<p class="lead">必要な情報・処理と最終品質を保ち、仕事全体の費用を減らす。</p>'
-        '<table><tr><th>表示</th><th>保持するもの</th><th>公開APIの呼出し</th></tr>'
+        '<table><tr><th>表示</th><th>古い説明の表示</th><th>公開APIの呼出し</th></tr>'
         '<tr><td>F 全表示</td><td>詳細・一覧</td><td rowspan="3">全条件で同じ<br>登録公開名を説明閲覧前から使える</td></tr>'
         '<tr><td>D 詳細を省略</td><td>一覧</td></tr>'
-        '<tr><td>B 詳細＋一覧を省略</td><td>操作・新しい出力・不確かな出力</td></tr></table>'
-        '<p class="small">P55と同じ４既知課題・８応答後。Python状態・アーカイブ・公開契約返信・予算は共通。</p>',
+        '<tr><td>B 詳細＋一覧を省略</td><td>どちらも省略</td></tr></table>'
+        '<p class="small">P55と同じ４既知課題・８応答後。操作・最新応答・不確かな出力は全条件で保持。<br>'
+        'Python状態・アーカイブ・公開契約返信・予算は共通。</p>',
         '説明閲覧を必須にしない通常接続で、表示省略の適用範囲を確かめる。',
         [('固定条件', 'docs/experiments/P71_public_display.md')],
         '能力説明とrun_pythonの案内も全条件で共通修正。元の履歴・行動・応答は維持。'
@@ -114,8 +115,11 @@ def build(root, output):
 
     decision = '達成' if report['development_gate_met'] else '未達'
     advantage = '支持条件を満たす' if report['inventory_advantage_supported'] else '支持条件を満たさない'
+    delta = totals[1]['logical_task_known_total_tokens'] - totals[0]['logical_task_known_total_tokens']
+    known_contrast = (f'{abs(delta):,} token' + ('多い' if delta > 0 else '少ない')) if delta else '同額'
     add('この既知群から主張できる範囲',
-        f'<p class="lead">固定した採用基準：{decision}<br>一覧保持の追加価値：{advantage}</p>'
+        f'<p class="lead">Dは既知分でFより{known_contrast}。不明{totals[1]["unknown_usage_calls"]}生成。<br>'
+        f'固定した採用基準：{decision} ／ 一覧保持の追加価値：{advantage}</p>'
         '<table><tr><th>比較の範囲</th><th>原稿での扱い</th></tr>'
         '<tr><td>P71内のF/D/B</td><td>同じ公開名接続・能力説明での比較</td></tr>'
         '<tr><td>旧P55との違い</td><td>時点・案内文も違う。接続制約だけの因果効果としない</td></tr>'
