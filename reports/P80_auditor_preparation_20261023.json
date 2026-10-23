@@ -1,0 +1,35 @@
+{
+  "phase": "P80_audit_preparation",
+  "new_tests": 6,
+  "all_tests": 1101,
+  "all_tests_wall_seconds": 2.367,
+  "all_tests_passed": true,
+  "compileall_passed": true,
+  "source_sha256": {
+    "scripts/audit_budget_visibility_comparison.py": "9a86b042b15e2d0635e95340fbc1d769403868fdd896ad7fe135563675da35c3",
+    "tests/test_budget_visibility_audit.py": "4b93155e5b95ccf26e2e8d240b05c1c64ea6cc79d93e2fc623510f7da43ca755"
+  },
+  "new_model_calls": 0,
+  "new_environment_requests": 0,
+  "new_evaluator_calls": 0,
+  "reserved_task_reads": 0,
+  "closed_real_cohort_audited": false,
+  "scope": "Reconstruct exact sent views, full usage, missing terminal usage, and late known responses in synthetic integration fixtures.",
+  "first_closed_real_cell_check": {
+    "run_id": "BOC_P80_01_MEASURED",
+    "record_status": "evaluated",
+    "model_calls": 17,
+    "known_total_tokens": 177373,
+    "unknown_usage_calls": 0,
+    "summary_sha256": "51380209bb0e241e836ca5e6f2515bd3b2ef4fbb8d3bc1b52c6edb8622bbd6ed",
+    "usage_sha256": "6000e8166d04c685b56a81452b5499139d05704047d4f412a531d9b127bc0d01",
+    "evaluation_sha256": "f1745b0cc52012aa79f52b7eee0c32a9f8b3f149c760539c1b0b8a57b43ee25a",
+    "comparison_conclusion": null
+  },
+  "old_closed_source_hashes_matched": {
+    "P78": 33,
+    "P79": 16,
+    "paper": 121
+  },
+  "local_links_checked": 215
+}
