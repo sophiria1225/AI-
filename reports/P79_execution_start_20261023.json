@@ -1,0 +1,50 @@
+{
+  "phase": "P79",
+  "fixed_commit": "1365919664d33fe6b883232151f6e36043ada5d5",
+  "pr": 324,
+  "merge_commit": "300fe12e46857c9c5b22042d1b82efa3faff7c28",
+  "push_ci": 39951687525,
+  "push_job": 120407408075,
+  "pr_ci": 39951824331,
+  "pr_job": 120407871258,
+  "both_exact_head_workflows_and_jobs_success_before_start": true,
+  "started_at": "2026-10-23T12:18:14.479982+00:00",
+  "pipeline_record": "records/context_pilot/P79_pipeline_v01",
+  "generation_record": "records/context_pilot/P79_clock_notice_v01",
+  "frozen_worktree": ".runtime/worktrees/p79-run",
+  "pipeline_ci_recheck": [
+    {
+      "id": 39951824331,
+      "head_sha": "1365919664d33fe6b883232151f6e36043ada5d5",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120407871258
+    },
+    {
+      "id": 39951687525,
+      "head_sha": "1365919664d33fe6b883232151f6e36043ada5d5",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120407408075
+    }
+  ],
+  "preflight_sha256": "1878279f68da0f353c723e19d26998b5875e2b893f066cba259b9d84a6e37201",
+  "fixed_source_files": 643,
+  "input_count_requests": 4,
+  "input_count_body_wall_seconds": 0.09083220800675917,
+  "reserved_total_tokens": 145356,
+  "max_model_calls": 12,
+  "max_total_tokens": 150000,
+  "max_generation_seconds": 7200,
+  "server_max_lifetime_seconds": 9000,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "reserved_scenarios_read": 0,
+  "snapshot_status": "running",
+  "snapshot_completed_generations": 9,
+  "snapshot_known_tokens": 73028,
+  "snapshot_unknown_usage_calls": 0,
+  "snapshot_is_final_result": false
+}
