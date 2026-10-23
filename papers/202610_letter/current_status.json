@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P76 complete with gate unmet and server stopped. P77 public-path read-only diagnosis prepared for all eight closed cells; no model comparison allocated.",
+  "current_experiment": "P76 and P77 complete. All eight P76 cells retained; P77 separates public repeats, known local work and unknown unexecuted calls. No new model comparison allocated; central novelty unestablished.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -477,7 +477,7 @@
     "live_llm_interface_installed": false,
     "results": "../../docs/P60_findings.md"
   },
-  "latest_component_material": "../../materials/20261023_p67/README.md",
+  "latest_component_material": "../../materials/20261023_p77/README.md",
   "latest_comparison_material": "../../materials/20261023_p76/README.md",
   "latest_termination_related_review": "../../docs/termination_control_overlap_20261023.md",
   "last_completed_ordinary_comparison": {
@@ -615,7 +615,7 @@
   },
   "current_readonly_inspection": {
     "phase": "P77",
-    "status": "prepared",
+    "status": "complete",
     "cells": 8,
     "model_calls_inspected": 43,
     "public_programs": 40,
@@ -625,7 +625,15 @@
     "new_model_calls": 0,
     "new_api_requests": 0,
     "new_evaluator_calls": 0,
-    "novel_method_claim": false
+    "novel_method_claim": false,
+    "findings": "../../docs/P77_findings.md",
+    "report": "../../reports/P77_public_path_scope.json",
+    "audit": "../../reports/P77_public_path_audit.json",
+    "material": "../../materials/20261023_p77/README.md",
+    "wall_seconds": 0.17182441600016318,
+    "audit_errors": 0,
+    "measured_savings": null,
+    "safe_omission_verified": false
   },
   "previous_readonly_inspection": {
     "phase": "P69",
@@ -773,23 +781,26 @@
   "latest_input_diagnostic_material": "../../materials/20261023_p73/README.md",
   "input_identity_fragment": "prompt_identity_component.tex",
   "last_completed_read_only_inspection": {
-    "phase": "P75",
+    "phase": "P77",
     "status": "complete",
-    "attempts": 105,
-    "known_responses": 103,
-    "unknown_usage_attempts": 2,
-    "nonempty_known_reasoning": 103,
-    "requests_containing_reasoning": 0,
-    "public_prefixes_matched": true,
-    "wall_seconds": 0.19075541599886492,
-    "model_generations": 0,
-    "environment_api_requests": 0,
-    "evaluator_calls": 0,
-    "tokenizer_calls": 0,
-    "reserved_scenarios_read": 0,
+    "cells": 8,
+    "model_calls_inspected": 43,
+    "public_programs": 40,
+    "max_wall_seconds": 120,
+    "plan": "../../configs/P77_public_path_scope_v01.json",
+    "protocol": "../../docs/experiments/P77_public_path_scope.md",
+    "new_model_calls": 0,
+    "new_api_requests": 0,
+    "new_evaluator_calls": 0,
     "novel_method_claim": false,
-    "results": "../../docs/P75_findings.md",
-    "audit": "../../reports/P75_reasoning_history_audit.json"
+    "findings": "../../docs/P77_findings.md",
+    "report": "../../reports/P77_public_path_scope.json",
+    "audit": "../../reports/P77_public_path_audit.json",
+    "material": "../../materials/20261023_p77/README.md",
+    "wall_seconds": 0.17182441600016318,
+    "audit_errors": 0,
+    "measured_savings": null,
+    "safe_omission_verified": false
   },
   "planned_task_experiment": null,
   "reasoning_history_scope_in_manuscript": {
@@ -964,5 +975,25 @@
     "material": "../../materials/20261023_p74/README.md",
     "normal_path_release_syntax_candidates": 0,
     "wall_seconds": 0.18113645901030395
-  }
+  },
+  "last_completed_read_only_inspection_before_P77": {
+    "phase": "P75",
+    "status": "complete",
+    "attempts": 105,
+    "known_responses": 103,
+    "unknown_usage_attempts": 2,
+    "nonempty_known_reasoning": 103,
+    "requests_containing_reasoning": 0,
+    "public_prefixes_matched": true,
+    "wall_seconds": 0.19075541599886492,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "tokenizer_calls": 0,
+    "reserved_scenarios_read": 0,
+    "novel_method_claim": false,
+    "results": "../../docs/P75_findings.md",
+    "audit": "../../reports/P75_reasoning_history_audit.json"
+  },
+  "P77_is_added_to_primary_manuscript_results": false
 }
