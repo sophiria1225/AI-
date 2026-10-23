@@ -6,7 +6,7 @@
 
 ## 現在の実行と原稿
 
-[教授への事前相談用の仮案](materials/20261023_professor_brief/README.md)を作成した。仮題・449字のあらまし・投稿先・専門分野３件を[コピー用本文](materials/20261023_professor_brief/professor_message.txt)へ整理。著者・所属は差し替え欄で、実投稿時に改訂できる案として保存した。
+[教授への事前相談用の仮案](materials/20261023_professor_brief/README.md)を作成した。ハーネスエンジニアリングを明示した仮題・456字のあらまし・投稿先・専門分野３件を[コピー用本文](materials/20261023_professor_brief/professor_message.txt)へ整理。著者・所属は差し替え欄で、実投稿時に改訂できる案として保存した。
 
 [返却契約の合成接続](docs/public_api_result_runtime_20261023.md)を全件終了。元の許可・予算・記録・持続Pythonで、８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し、全コンテナを除去した。意図した例外・拒否を含む接続検査であり、モデル・AppWorldタスク/API・評価０。実タスクの品質・費用・新規性の改善は未測定。[資料](materials/20261023_api_result_runtime/README.md)。
 
