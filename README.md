@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+[P80は実行中](reports/P80_execution_start_20261023.json)。[PR334](https://github.com/sophiria1225/AI-/pull/334)の両CI後、固定版から既知４課題×２条件を開始した。８初期入力確認は成功。全件の採否は未確定で、進行中の途中結果を改善成立とは扱わない。[読取監査](scripts/audit_budget_visibility_comparison.py)も追加した。
+
 [P80の残時間表示比較](docs/experiments/P80_budget_visibility.md)を既知４課題×２条件で実装・固定した。追加11、全1095合成検査成功。生成は未開始で、新規手法の成立とは扱わない。[土日の判断](docs/weekend_decision_20261023.md)と[資料](materials/20261023_p80/README.md)を追加。
 
 [別の既知６開発課題の再点検](docs/development_opportunity_review_20261023.md)では、後続の完了引数診断・通常の順位付き取得・通常ツール対照まで対応付けた。既実施の診断や通常方式の改善を新規性として数え直さない。追加生成・API・評価・原履歴/DB・保留群閲覧０。[判断資料](materials/20261023_development_review/README.md)。時間通知workerは[PR331](https://github.com/sophiria1225/AI-/pull/331)でmainへ反映した。

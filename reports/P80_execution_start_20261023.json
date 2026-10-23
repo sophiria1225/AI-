@@ -1,0 +1,91 @@
+{
+  "snapshot_at": "2026-10-23T14:55:04.435180+00:00",
+  "phase": "P80",
+  "pipeline": {
+    "phase": "P80_pipeline",
+    "status": "batch",
+    "git_commit": "e23b74727f7c2ff0c881a487940a4b6dbf764fd1",
+    "ci": [
+      {
+        "id": 39972237241,
+        "head_sha": "e23b74727f7c2ff0c881a487940a4b6dbf764fd1",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 120477639990
+      },
+      {
+        "id": 39972177481,
+        "head_sha": "e23b74727f7c2ff0c881a487940a4b6dbf764fd1",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 120477431435
+      }
+    ],
+    "research_resume": {
+      "resume_sha256": "246d469985d5ca99ec7eb4501572717107c7458a0c7327ea57d39dabb95564ee",
+      "retained_pause_sha256": "798e6029d054b8501848ff32a9e02349c1b2da5f54ff7266c7395e5c7e5d7b62",
+      "at": "2026-10-22T05:55:04.961010+00:00"
+    },
+    "stages": [
+      {
+        "mode": "preflight",
+        "exit_code": 0,
+        "wall_seconds": 8.071582375006983
+      },
+      {
+        "mode": "activation",
+        "exit_code": 0,
+        "wall_seconds": 0.13526729099976365
+      }
+    ],
+    "started_at": "2026-10-23T14:46:18.525739+00:00",
+    "source_sha256": "9846ad1e4ab6a2c6c84cc631971b9ace7bf058ce8317b61fec4a801394824363",
+    "server_owned": true,
+    "wall_seconds": 19.302183125008014,
+    "server_supervisor_pid": 95580,
+    "server_record_directory": "records/p2_servers/20261023_234618",
+    "stage_pid": 96271
+  },
+  "batch_snapshot": {
+    "phase": "P80",
+    "status": "running",
+    "rows": [],
+    "completed": [],
+    "active": "BOC_P80_01_MEASURED",
+    "planned": [
+      "BOC_P80_01_MEASURED",
+      "BOC_P80_01_NOT_EXPOSED",
+      "BOC_P80_02_NOT_EXPOSED",
+      "BOC_P80_02_MEASURED",
+      "BOC_P80_03_MEASURED",
+      "BOC_P80_03_NOT_EXPOSED",
+      "BOC_P80_04_NOT_EXPOSED",
+      "BOC_P80_04_MEASURED"
+    ],
+    "model_identity": {
+      "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+      "runtime": {
+        "name": "llama.cpp",
+        "release": "v0.7.0",
+        "binary_tag": "b11669",
+        "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+        "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+        "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+      },
+      "started_at": "2026-10-23T14:46:18.583602+00:00",
+      "pid": 95581,
+      "supervisor_pid": 95580,
+      "ctx_size": 65536
+    },
+    "server_lease_end": "2026-10-23T20:46:18.583602+00:00",
+    "reserved_scenarios_read": 0,
+    "started_at": "2026-10-23T14:46:37.940571+00:00",
+    "git_commit": "e23b74727f7c2ff0c881a487940a4b6dbf764fd1",
+    "updated_at": "2026-10-23T14:46:37.959421+00:00"
+  },
+  "snapshot_not_final_result": true,
+  "preflight_sha256": "be852a74ba42136c0d551b4af2fd706704f9cf40fcd9072402d06937df734d80",
+  "novel_method_claim": false
+}
