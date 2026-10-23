@@ -1,0 +1,174 @@
+{
+  "synthetic_only": true,
+  "uses_real_model_template": false,
+  "format": "peg-minimax-m3",
+  "grammar_nonempty": true,
+  "grammar_lazy": true,
+  "generation_prompt": "",
+  "model_loads": 0,
+  "vocabulary_loads": 0,
+  "inference_contexts": 0,
+  "tokenizations": 0,
+  "sampling_calls": 0,
+  "environment_calls": 0,
+  "cases": [
+    {
+      "id": "complete_single",
+      "synthetic_input": "]<]minimax[>[<tool_call>]<]minimax[>[<invoke name=\"execute_python\">]<]minimax[>[<code>pass]<]minimax[>[</code>]<]minimax[>[</invoke>]<]minimax[>[</tool_call>",
+      "parses": [
+        {
+          "is_partial": true,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"}",
+              "json_parseable": true,
+              "object_arguments": true
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        },
+        {
+          "is_partial": false,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"}",
+              "json_parseable": true,
+              "object_arguments": true
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        }
+      ]
+    },
+    {
+      "id": "cut_inside_argument",
+      "synthetic_input": "]<]minimax[>[<tool_call>]<]minimax[>[<invoke name=\"execute_python\">]<]minimax[>[<code>pa",
+      "parses": [
+        {
+          "is_partial": true,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pa",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        },
+        {
+          "is_partial": false,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pa",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        }
+      ]
+    },
+    {
+      "id": "cut_after_argument",
+      "synthetic_input": "]<]minimax[>[<tool_call>]<]minimax[>[<invoke name=\"execute_python\">]<]minimax[>[<code>pass]<]minimax[>[</code>",
+      "parses": [
+        {
+          "is_partial": true,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        },
+        {
+          "is_partial": false,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        }
+      ]
+    },
+    {
+      "id": "complete_then_cut",
+      "synthetic_input": "]<]minimax[>[<tool_call>]<]minimax[>[<invoke name=\"execute_python\">]<]minimax[>[<code>pass]<]minimax[>[</code>]<]minimax[>[</invoke>]<]minimax[>[<invoke name=\"execute_python\">]<]minimax[>[<code>pa",
+      "parses": [
+        {
+          "is_partial": true,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"}",
+              "json_parseable": true,
+              "object_arguments": true
+            },
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pa",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        },
+        {
+          "is_partial": false,
+          "tool_calls": [
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pass\"}",
+              "json_parseable": true,
+              "object_arguments": true
+            },
+            {
+              "name": "execute_python",
+              "arguments": "{\"code\":\"pa",
+              "json_parseable": false,
+              "object_arguments": false
+            }
+          ],
+          "content": "",
+          "reasoning_characters": 0
+        }
+      ]
+    },
+    {
+      "id": "text_only",
+      "synthetic_input": "Synthetic text without a tool call.",
+      "parses": [
+        {
+          "is_partial": true,
+          "tool_calls": [],
+          "content": "Synthetic text without a tool call.",
+          "reasoning_characters": 0
+        },
+        {
+          "is_partial": false,
+          "tool_calls": [],
+          "content": "Synthetic text without a tool call.",
+          "reasoning_characters": 0
+        }
+      ]
+    }
+  ]
+}
