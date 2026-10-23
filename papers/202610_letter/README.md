@@ -2,7 +2,9 @@
 
 2026年10月23日。本文・文献４ページと末尾英文１ページの検討原稿を整えた。採録に足る中心貢献・公式様式・著者情報は未確定。必要情報と最終品質を守り、仕事全体費用を減らす最終目標を維持する。
 
-[現在のPDF](candidate_cost_completion.pdf)／[TeX](candidate_cost_completion.tex)／[主張・根拠・限界](../../docs/letter_claim_scope_20261023.md)／[P78を含む原稿資料](../../materials/20261023_letter_api_errors/README.md)。
+[現在のPDF](candidate_cost_completion.pdf)／[TeX](candidate_cost_completion.tex)／[主張・根拠・限界](../../docs/letter_claim_scope_20261023.md)／[P79の校正を補足した原稿資料](../../materials/20261023_letter_clock_notice/README.md)。
+
+P79の全12生成を解釈節へ補足した。同じ通知の３反復は一致し、残時間１秒差の公開出力は両入力で異なった。全回cache０、99,966 token・推論器1010.160秒・タスクAPIと評価０。元P78の再利用状態や成否・費用への効果は再現していない。[反映範囲](../../docs/P79_manuscript_integration.md)／[反映前の原稿](archive_before_P79_20261023/README.md)。
 
 P78の全８失敗通知条件を別表へ追加した。両方3/4成功、全使用量既知、例外通知側が120,991 token多く採用基準は未達。返金は実例外０、書出しは例外前に入力と公開行動が分かれたため、費用差を通知方法だけの効果とはしない。過去比較の開始状態・予算・推論方針の違いも残す。[反映範囲](../../docs/P78_manuscript_integration.md)／[反映前の原稿](archive_before_P78_20261023/README.md)。
 
@@ -10,11 +12,11 @@ P55/P71の全24表示条件を本文へ載せ、P56の４ケースとP72の14ケ
 
 [P73の事後入力診断](../../docs/P73_findings.md)を通常終了制御の節へ追記。元batchの停止を保持し、全33対の再構成文章・全token列・生成制約の一致と追加処理費用を明示した。[反映前の原稿](archive_before_P73_20261023/README.md)を保持する。
 
-和文115字・英文45語、日英５キーワード。題名は教授用の日英案にそろえ、ハーネスエンジニアリングをキーワードへ含めた。教授用456字あらましは別に保持する。全14引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。[現行P78原稿のミラークラス予行](../../materials/20261023_p78_ieice_preview/README.md)も本文４頁＋英文１頁、全頁目視・組版警告０。現行公式配布物との一致は未確認。
+和文115字・英文45語、日英５キーワード。題名は教授用の日英案にそろえ、ハーネスエンジニアリングをキーワードへ含めた。教授用456字あらましは別に保持する。全14引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。[P78時点のミラークラス予行](../../materials/20261023_p78_ieice_preview/README.md)も本文４頁＋英文１頁、全頁目視・組版警告０。P79補足前の版であり、現行公式配布物との一致も未確認。
 
 [数値・出典](cost_completion_source_map.json)／[組版点検](cost_completion_layout.json)／[日英メタデータ](submission_metadata.json)／[文献照合](../../reports/letter_bibliography_ieice_style_20261023.json)／[機械可読な現状](current_status.json)。旧来の著者省略を直し、CaveAgent v4の24名も全て残した。書誌確認と科学的主張の検証は分ける。
 
-再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_api_error_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じたP78の33ソースと旧生成器も照合し、根拠が変われば停止する。PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。[６回の組版と最終確認の記録](../../reports/P78_manuscript_integration_20261023.json)。
+再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_clock_notice_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じたP78の33ソース・P79の16ソースと旧生成器も照合し、根拠が変われば停止する。PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。[P79補足の４回の組版記録](../../reports/P79_manuscript_integration_20261023.json)。
 
 [P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。[P72反映前の原稿](archive_before_P72_20261023/README.md)も保持した。元P55/P56/P71の成否や欠測をP72で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。
 
@@ -22,4 +24,4 @@ P75の履歴条件を方法節へ明記した。Fを含む全表示条件で返�
 
 [入手済みミラーによる組版予行](../../materials/20261023_p76_ieice_preview/README.md)も本文４頁＋英文末尾１頁、全５頁目視済み。最新版の公式配布物との一致と実著者欄は未確認であり、現在の主PDFとは別の予行版として保存する。
 
-P78反映は[PR322](https://github.com/sophiria1225/AI-/pull/322)でmainへ公開した。[固定HEADの両CIとmergeの記録](../../reports/P78_manuscript_publication_20261023.json)。P79の準備中の生成診断は、この原稿の実験結果へ含めていない。
+P78反映は[PR322](https://github.com/sophiria1225/AI-/pull/322)でmainへ公開した。[固定HEADの両CIとmergeの記録](../../reports/P78_manuscript_publication_20261023.json)。その後P79の閉じた全12生成を補足したが、新手法やタスク比較の主結果へ格上げしていない。
