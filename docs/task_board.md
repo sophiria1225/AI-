@@ -631,7 +631,7 @@ P75終了：P75は全105回を0.190755秒で読取点検。正常103応答全て
 
 ## R34 ２段組４ページのレター原稿を完成し10月31日投稿へ備える
 
-【教授向け英題】コピー用本文に和文題と英題を併記した。英題は既存の項目データ・READMEと同じ「Evaluating Information Retention and Execution Control in Stateful LLM Agents」。あらましは456字のまま。materials/20261023_professor_brief/professor_message.txt。
+【教授向け英題】コピー用本文に和文題と英題を併記した。英題は既存の項目データ・READMEと同じ「Evaluating Information Retention and Execution Control in Stateful LLM Agents」。あらましは456字を維持し、ユーザー指定に沿って中点を読点または「と」へ置換、句点を半角ピリオドへ統一。項目データ・README・送信用本文の全コピーへ反映。materials/20261023_professor_brief/professor_message.txt。
 
 【教授相談用の仮案】ユーザーの希望に沿い、仮題を元の簡潔な表現へ戻した。研究の軸であるハーネスエンジニアリングはあらまし・キーワードで説明する。情報保持と実行制御を品質維持・仕事全体費用削減のための具体的な検証対象に位置づける。ユーザー指定の400〜500字に沿い、実投稿時に変更可能な仮題「状態保持型LLMエージェントにおける情報保持と実行制御の評価」、和文456字、和文Dレター（研究速報）、専門分野D140624／D140803／D240706を整理。著者・所属・順序は未共有で差し替え欄。教授への送信や実投稿はしていない。原稿PDFと既存の題・あらましは保持。materials/20261023_professor_brief/README.md、professor_message.txt。
 
