@@ -119,6 +119,7 @@
 | P1 | R111 | 時間通知部品を逐次実行へ接続し不明試行の集計を守る | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/330) |
 | P1 | R112 | P80で残時間表示の全仕事費用と品質を比較する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/333) |
 | P1 | R113 | P81で残時間表示比較の同一seedでの安定性を調べる | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/337) |
+| P1 | R114 | 残時間の後半表示を通常対照として準備・判断する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/343) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -1634,3 +1635,11 @@ PR331、merge d95988bbdfdda49c14e3639829aaa6a12efcedb2へ固定HEADのpush/PR両
 **なぜ行うか**: 各１回のP80結果だけでは費用・成否・実行経路の安定性を判断できない。
 
 **他候補の扱い**: 通常設定の反復であり、新手法・追加24課題・元の欠測を消す再実行とは扱わない。
+
+## R114 残時間の後半表示を通常対照として準備・判断する
+
+1/2という通常規則の部品を実装。追加７・全1,133検査成功。P80全８条件の読取で、非表示書出しだけ16生成目・残741秒から切替機会があった。切替前196,133 tokenを保持し、後続５回を節約した扱いにはしない。実タスクworkerへ未接続、新しい生成・API・評価０。docs/late_clock_control_preparation_20261024.md、materials/20261024_late_clock/README.md。
+
+**なぜ行うか**: 常時非表示のP80は書出しで時間切れとなり全体削減が成立しなかった。前半の入力差と終盤の時間通知を分けた通常対照の適用機会を確認する。
+
+**他候補の扱い**: 閾値通知そのものを新手法にせず、P81の条件を変更しない。新しい実行は全件終了後の判断・固定計画・有限予算・両CIを経て行う。
