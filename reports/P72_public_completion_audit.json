@@ -1,0 +1,436 @@
+{
+  "phase": "P72_audit",
+  "batch_status": "complete",
+  "audit_errors": [],
+  "all_cases_accounted": true,
+  "all_cases_evaluated": true,
+  "rows": [
+    {
+      "source_run": "P71_01_DETAILS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "no_completion",
+      "run_id": "P72_01_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 99,
+      "intervention_api_requests": 0,
+      "observation_matches": 99,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": false,
+      "execution_wall_seconds_including_cleanup": 3.5328373329975875,
+      "evaluation_wall_seconds": 2.076282750000246,
+      "source_sha256": {
+        "result.json": "f8d35102bdb3a9fff470e012342b02e886a02a31f24bb0bb8e435f0ea7aad2f8",
+        "calls_private.json": "f906e5883fc492071ff26da6767352f8ff64532a33ef58279a9ee929958c9d10",
+        "summary.json": "4bb1e81ec90bf824cbcb531fabff227431854ec5684360a3c40b635c0ee02583",
+        "evaluation.json": "5b8467ab6d20b0550b2ae393170a3da37423fbf46e785d788686aecc14649dea"
+      }
+    },
+    {
+      "source_run": "P71_01_DETAILS_OMITTED_KEEP",
+      "task_id": "34d9492_1",
+      "arm": "append_completion",
+      "run_id": "P72_02_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": true,
+      "replay_api_requests": 99,
+      "intervention_api_requests": 1,
+      "observation_matches": 99,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": true,
+      "execution_wall_seconds_including_cleanup": 3.4768041250063106,
+      "evaluation_wall_seconds": 2.082282709001447,
+      "source_sha256": {
+        "result.json": "57524399c20e95e3880130b5b903a16fdcda2366beeaf63d28d071fb77ff53f2",
+        "calls_private.json": "1c370902584d94dcaf2e8d720707f92e159279cca833e912d8fc8cd95d3d830d",
+        "summary.json": "94ca05595a3f37a6624378286cd83da592301a16389b19a9f241ac59bbb56038",
+        "evaluation.json": "d9eeb3b141107cd41b7106d5e2a14861e9f7330e72696b9b48b2b0945049c810"
+      }
+    },
+    {
+      "source_run": "P71_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "no_completion",
+      "run_id": "P72_03_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 17,
+      "intervention_api_requests": 0,
+      "observation_matches": 17,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.861592790999566,
+      "evaluation_wall_seconds": 1.2459981249994598,
+      "source_sha256": {
+        "result.json": "3a433486f559025301655f64ab996a2abe0144668e7c82bcbc6708a7e9028888",
+        "calls_private.json": "477cd39703d5f22ee3c324732923aff48003eb2724fcfe65bc01c64e80573ea4",
+        "summary.json": "493dbe00a7e6790ef4b23055dab7b48d4ce3b9af199b8c50f9907fabf802cd13",
+        "evaluation.json": "5c25dd17fb69a3e7f60b7d7ad112dc7fb332ec9a705e9c4176d973892f85f6a4"
+      }
+    },
+    {
+      "source_run": "P71_02_FULL_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "append_completion",
+      "run_id": "P72_04_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 17,
+      "intervention_api_requests": 1,
+      "observation_matches": 17,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.8934462089964654,
+      "evaluation_wall_seconds": 1.2498733329994138,
+      "source_sha256": {
+        "result.json": "d307363ac062145fb2ce2c39c02e74a023f34bf116ab41144f9f6adbfe54896a",
+        "calls_private.json": "72f14e300f1bb3b999ff7ab8c0993b2ee759c93a60d5ce1a78fb7a5e16544ec8",
+        "summary.json": "9a178dacc24d491b610c9ef02096c48a2b4034300070a7ecd926b09899fd4adf",
+        "evaluation.json": "f257ba466a7db12bfe78aa68b7f85f11d8bfb8a33cb40f2b742ffa5423bfc1d8"
+      }
+    },
+    {
+      "source_run": "P71_02_DETAILS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "no_completion",
+      "run_id": "P72_05_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 16,
+      "intervention_api_requests": 0,
+      "observation_matches": 16,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.6320202909992076,
+      "evaluation_wall_seconds": 1.2373736669978825,
+      "source_sha256": {
+        "result.json": "1e25a43d397395d102e784ee4cab2de3c9d705b66b1fc628a3e3dd5a8d1233f7",
+        "calls_private.json": "fe70b4a2bfa3ef1e1c8d0a29ed701606aafcb61c0ac3acc25d6de1eee0ffb453",
+        "summary.json": "007971773da166b304c45690426af5e7515b6a5aa8852944ec578124667cb87a",
+        "evaluation.json": "a9cdfcfe3d7efd8c58a129632f50fe63aac4203123496ace07cc2029dce16a73"
+      }
+    },
+    {
+      "source_run": "P71_02_DETAILS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "append_completion",
+      "run_id": "P72_06_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 16,
+      "intervention_api_requests": 1,
+      "observation_matches": 16,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.6177934580045985,
+      "evaluation_wall_seconds": 1.23960754199652,
+      "source_sha256": {
+        "result.json": "bd0d916350f1b664e0bb7b3cfd6ddd38f118c89e5f8b9dda9848a97135cc3da2",
+        "calls_private.json": "adb2d8edf8a2c7705ad48c20b34aa613f348443eab616dbd8ee14ae3852ba5b7",
+        "summary.json": "2935c019e1c58a275e5d7c05600f942aa83d174e9074d5306d3a4cbda2cd4950",
+        "evaluation.json": "e40e3bf1cc9a33f810a9a832be3fe5e6d15143195b960293267a4a32ec5e33f5"
+      }
+    },
+    {
+      "source_run": "P71_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "no_completion",
+      "run_id": "P72_07_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 14,
+      "intervention_api_requests": 0,
+      "observation_matches": 14,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.6071602909942158,
+      "evaluation_wall_seconds": 1.263050417008344,
+      "source_sha256": {
+        "result.json": "1a8b66636a462454b0f903f176387a3c8aaa1c8d2e21313d7207efc8aa6960bc",
+        "calls_private.json": "0b24a298f4badae9afb4b3874df3d6c44a87f92f4551c895ecf8076dab766928",
+        "summary.json": "6cff768d8f35999f4e66c05f450d5be5cd004e83aa42e046561b441101a89566",
+        "evaluation.json": "f7a84c51a7b117a233a042176cd150e8a58ef9e95bd38e39447c0683eebfc71e"
+      }
+    },
+    {
+      "source_run": "P71_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "3c13f5a_1",
+      "arm": "append_completion",
+      "run_id": "P72_08_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 14,
+      "intervention_api_requests": 1,
+      "observation_matches": 14,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.625194291002117,
+      "evaluation_wall_seconds": 1.2631640409963438,
+      "source_sha256": {
+        "result.json": "2a6726050ca6b1c38d7c4f821e19ec5ff26c26cc12e32c231e1b85dc3f723a8c",
+        "calls_private.json": "e107ba5933347c8cb5ddc36fbefbbfc44a1716d39528928c1ff356a9e0b08443",
+        "summary.json": "2a391f92f8934379c4050ac8397798f0e4f6614d277732d89b4eba01f7143951",
+        "evaluation.json": "7ca1670eb4e81273edf3bcc8e390a1430999c27528db0bad0def221c75df2336"
+      }
+    },
+    {
+      "source_run": "P71_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "no_completion",
+      "run_id": "P72_09_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 80,
+      "intervention_api_requests": 0,
+      "observation_matches": 80,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 3.0368980420025764,
+      "evaluation_wall_seconds": 1.296164957995643,
+      "source_sha256": {
+        "result.json": "fc1663cee45f16767f8fd3290d42e9de6d7ccf999f445f04d64fbe195721bca7",
+        "calls_private.json": "e6fc3140f1a56ec0719941b6684345b8b55e03b3e2b6d5824533b8cb40e6fcbe",
+        "summary.json": "588ff0458f29a8bb1cdd06a7d5a9dd05b041597b26d30b089dc55b846b97c555",
+        "evaluation.json": "a215e008b969acc3cfd535ec45c33b285157e4af9e9c233d67db5c61a90fd721"
+      }
+    },
+    {
+      "source_run": "P71_04_FULL_KEEP",
+      "task_id": "6104387_1",
+      "arm": "append_completion",
+      "run_id": "P72_10_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 80,
+      "intervention_api_requests": 1,
+      "observation_matches": 80,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 3.0354053329938324,
+      "evaluation_wall_seconds": 1.2811877089989139,
+      "source_sha256": {
+        "result.json": "7cf6728b01279087b99c8a9c4a89a62cdad149361a55343c5785e4562ad8cf10",
+        "calls_private.json": "25e431125511c6cbb52e2f6e66d2752242f8f2960be97f3f6cd936ef31329e16",
+        "summary.json": "94e92cdc24fd32b6d0fdb6d736c030c1673c7689d6a51adcf3d3d5ee7a7569a9",
+        "evaluation.json": "8df3171c1079c8ad28df1c9caa987a2a3d53462b65c10614a51e8492f10a34dd"
+      }
+    },
+    {
+      "source_run": "P71_04_DETAILS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "no_completion",
+      "run_id": "P72_11_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 58,
+      "intervention_api_requests": 0,
+      "observation_matches": 58,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.912696457991842,
+      "evaluation_wall_seconds": 1.3158049170015147,
+      "source_sha256": {
+        "result.json": "f4cd7722ae25597c75754bd647cf0bbea313ffb231291d807cdb04247c166f8d",
+        "calls_private.json": "8391d43ac3d1d4f843d46c11959736311378d190f0160e802d48cc3a9a4e7b23",
+        "summary.json": "6456ebdc181321f58076eb29c26f46cfc1acaafc18f68e9f232682865cd0c154",
+        "evaluation.json": "b007b00bf568412304c9e05f4e19fd3ada81e9076f924cace653ac8ad6dd38c8"
+      }
+    },
+    {
+      "source_run": "P71_04_DETAILS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "append_completion",
+      "run_id": "P72_12_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 58,
+      "intervention_api_requests": 1,
+      "observation_matches": 58,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.9713199580000946,
+      "evaluation_wall_seconds": 1.3198609999963082,
+      "source_sha256": {
+        "result.json": "eb9c9822aacd2a878ce69ac2513509c8ff1d2607f7a2f0c37b5b49480a5af3e9",
+        "calls_private.json": "f57a009cf881cbda31e5db697d8d5ffe4dcea5749a22d07218f516031772467f",
+        "summary.json": "fcde73f9cbf8c0bae937b259289fecf981c43601a08f2f8ebaa7089f0b670c61",
+        "evaluation.json": "940f21147b4fde93bb3be771ff7caf475a22890b37a6bea5d37df3d1c0cc1441"
+      }
+    },
+    {
+      "source_run": "P71_04_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "no_completion",
+      "run_id": "P72_13_NO_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 67,
+      "intervention_api_requests": 0,
+      "observation_matches": 67,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.994729833997553,
+      "evaluation_wall_seconds": 1.2990842909930507,
+      "source_sha256": {
+        "result.json": "2f6f715fe27bb886d7fcf2e2e8f4dabf6b8e9fc726e5b4ee19ae7aaa256a9fcc",
+        "calls_private.json": "49286a4fdc20a9bdc662cb4f8841b2b0530d007e35e2411fde4504c0c299e1b9",
+        "summary.json": "ad30f906d236bf7068f28bab92c148b0d6594dfb8b6b341b5f553aaa4a125a1a",
+        "evaluation.json": "c9f5c815e2ba8ad6234e14e88f81edc8d6d3531601f941e22255520b080b60b0"
+      }
+    },
+    {
+      "source_run": "P71_04_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "task_id": "6104387_1",
+      "arm": "append_completion",
+      "run_id": "P72_14_APPEND_COMPLETION",
+      "record_status": "evaluated",
+      "official_success": false,
+      "replay_api_requests": 67,
+      "intervention_api_requests": 1,
+      "observation_matches": 67,
+      "database_files": 13,
+      "non_supervisor_files_unchanged": true,
+      "changed_saved_files": [
+        "dbs/model_hashes.json",
+        "dbs/supervisor.jsonl"
+      ],
+      "final_world_equals_completed_reference": null,
+      "execution_wall_seconds_including_cleanup": 2.977552583004581,
+      "evaluation_wall_seconds": 1.3335763749928446,
+      "source_sha256": {
+        "result.json": "a42aa80adfdb5b27bf08250ad5eaa605e0becc49081c688e3241773122fd9e8a",
+        "calls_private.json": "38181c9d1e26dee13d234d891f6b296010a38e7a706130bba05f3243d3160319",
+        "summary.json": "9fa29d0447802e1fc9bef427f120d8c888209d3c4881c4662e78b7724fd7c9eb",
+        "evaluation.json": "0152fb290063b297fbb5b54c6585cd608071ed7599718ea04b092153bf36f483"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "source_run": "P71_01_DETAILS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        true
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": true
+    },
+    {
+      "source_run": "P71_02_FULL_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    },
+    {
+      "source_run": "P71_02_DETAILS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    },
+    {
+      "source_run": "P71_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    },
+    {
+      "source_run": "P71_04_FULL_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    },
+    {
+      "source_run": "P71_04_DETAILS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    },
+    {
+      "source_run": "P71_04_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+      "outcomes": [
+        false,
+        false
+      ],
+      "both_evaluated": true,
+      "outcome_changed_by_completion": false
+    }
+  ],
+  "known_api_requests": 709,
+  "total_api_requests": 709,
+  "unknown_request_count_cases": [],
+  "original_sources_unchanged": true,
+  "additional_model_calls": 0,
+  "additional_api_requests": 0,
+  "additional_evaluator_calls": 0,
+  "hidden_test_details_read": false,
+  "autonomous_finalizer_validated": false,
+  "original_outcomes_relabelled": false,
+  "source_report_sha256": "327dc950b37534893cf8851a739cf45174b12be57a5d44fa870ec554ad48a240",
+  "source_plan_sha256": "8647eedd42b26bc2cc4a71440ef29b751ceac12a0c174e293331f3714c0b3421",
+  "auditor_sha256": "93ee399b7ceb5aa259c7c09c7f72e975ac5c8e60dfc8bfaa37ea7f98a3d9db27",
+  "limits": [
+    "Post-hoc known-task diagnostic, not an independent agent-quality trial.",
+    "Only the prespecified terminal API intervention is isolated; no safe automatic completion rule is established.",
+    "Extra replay, intervention and evaluation costs are separate from original P71 costs.",
+    "Original P71 outcomes and unknown model usage remain unchanged."
+  ]
+}
