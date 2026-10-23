@@ -16,11 +16,14 @@ STEM = 'AI_harness_api_error_comparison_20261023'
 TASKS = ('写真整理', '精算', '返金', '曲情報の書出し')
 LABELS = ('エラーを文字列で返す', 'Python例外として通知')
 FILES = ('configs/P78_api_error_v01.json', 'reports/P78_comparison.json',
-         'reports/P78_initial_checks.json', 'reports/P78_server_session.json')
+         'reports/P78_initial_checks.json', 'reports/P78_server_session.json',
+         'reports/P78_call_profile.json', 'reports/P78_input_divergence.json',
+         'reports/P78_public_api_prefixes.json', 'reports/P78_input_content_divergence.json')
 
 
 def validated():
-    plan, report, pre, session = [read(ROOT / name) for name in FILES]
+    plan, report, pre, session = [read(ROOT / name) for name in FILES[:4]]
+    profile, divergence, prefixes, content = [read(ROOT / name) for name in FILES[4:]]
     validate_plan(plan)
     expected = [(cell_id(n, arm), plan['known_tasks'][n - 1]['task_id'], arm) for n, arm in run_order()]
     if ([(r['run_id'], r['task_id'], r['arm']) for r in report['rows']] != expected
@@ -38,6 +41,14 @@ def validated():
         a, b = [row['conditions'][arm] for arm in ARMS]
         if a['model_messages_sha256'] != b['model_messages_sha256'] or a['input_tokens'] != b['input_tokens']:
             raise ValueError('initial_inputs_not_matched')
+    tasks = [t['task_id'] for t in plan['known_tasks']]
+    if (any(x['comparison_sha256'] != sha(ROOT / FILES[1]) for x in (profile, divergence, prefixes, content))
+            or divergence['profile_sha256'] != sha(ROOT / FILES[4])
+            or prefixes['call_profile_sha256'] != sha(ROOT / FILES[4])
+            or content['profile_sha256'] != sha(ROOT / FILES[4])
+            or content['raw_divergence_sha256'] != sha(ROOT / FILES[5])
+            or any([p['task_id'] for p in x['pairs']] != tasks for x in (divergence, prefixes, content))):
+        raise ValueError('whole_cohort_posthoc_descriptions_must_match_audited_results')
     return plan, report, pre, session, {name: sha(ROOT / name) for name in FILES}
 
 
@@ -154,6 +165,25 @@ def build(output):
         '<p class="body">全８評価・使用量既知・実API例外あり・双方成功の課題あり・成功喪失なし・全体費用減少を要求。</p>',
         decision + ' 一般的な品質維持や新規性の証明とは区別する。',
         '実例外がない条件では通知方法の違いが使われていない。事前検査の入力一致と、実行中の入力一致は別。計算の非決定性と実測残時間の差も残る。')
+    divergence, prefixes = read(ROOT / FILES[7]), read(ROOT / FILES[6])
+    rows, untreated = [], []
+    for name, item, d, p in zip(TASKS, plan['known_tasks'], divergence['pairs'], prefixes['pairs'], strict=True):
+        cells = {r['arm']: r for r in report['rows'] if r['task_id'] == item['task_id']}
+        exceptions = [cells[arm].get('invocation_exceptions') for arm in ARMS]
+        if exceptions == [0, 0]: untreated.append(name)
+        exact = {True: '一致', False: '異なる', None: '未確認'}[p.get('actual_initial_request_bytes_equal')]
+        before = {True: 'はい', False: 'いいえ', None: '未確定'}[d.get('divergence_before_any_API_exception')]
+        call = d.get('first_unmatched_call')
+        values = (name, ' / '.join('—' if n is None else str(n) for n in exceptions), exact,
+                  '—' if call is None else str(call), before)
+        rows.append('<tr>' + ''.join('<td>' + html.escape(v) + '</td>' for v in values) + '</tr>')
+    add('費用差が、失敗通知の効果とは限らない',
+        '<table class="results"><tr><th>課題</th><th>実API例外<br>文字列 / 例外</th><th>最初の送信要求</th>'
+        '<th>最初に差が出た<br>モデル呼出し</th><th>差は例外より前</th></tr>' + ''.join(rows) + '</table>'
+        '<p class="body">参照IDだけを一貫して置換し、入力と公開出力を元の順で比較。残時間通知は保持。</p>',
+        ('実API例外が０の' + '、'.join(untreated) + 'では、費用差を通知方法の効果とは解釈しない。')
+        if untreated else '例外の有無、介入前の差、全仕事費用を分けて解釈する。',
+        '全４対の事後読取。未処理JSONは全対の第２回で参照IDだけが異なり、元の記録を保存。表はID対応をそろえた後の比較。未知応答は保留。JSONとモデル内部状態の一致は別で、因果効果は特定しない。')
     add('記録を閉じ、主張できる範囲を残す',
         f'<p class="body">モデル生成 {sum(t["model_calls"] for t in ts)}回、API {sum(t["api_requests"] for t in ts)}回。<br>'
         f'専有推論器 {session["wall_seconds"]:,.3f}秒、ロード {session["load_wall_seconds"]:.3f}秒。<br>'

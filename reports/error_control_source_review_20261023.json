@@ -1,6 +1,6 @@
 {
   "review_date": "2026-10-23",
-  "phase_context": "P78_running_fixed_conditions_unchanged",
+  "phase_context": "P78_closed_all_conditions_and_original_gate_preserved",
   "sources": [
     {
       "url": "https://arxiv.org/html/2609.34313v1",
@@ -26,11 +26,43 @@
       ],
       "checked_scope": "fixed-tool repair and candidate retry distinction; per-example and repair overhead measurement",
       "implementation_reproduced": false
+    },
+    {
+      "url": "https://arxiv.org/html/2609.32961v1",
+      "title": "Beyond Token Savings: A Systematic Study of Context Compression in LLM Agents",
+      "version": "v1",
+      "sections": [
+        "1",
+        "A.3",
+        "A.5"
+      ],
+      "checked_scope": "repetitions, task-level uncertainty and separate handling of time-capped resource measurements",
+      "implementation_reproduced": false
+    },
+    {
+      "url": "https://arxiv.org/html/2608.16370v1",
+      "title": "What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics",
+      "version": "v1",
+      "sections": [
+        "3.2"
+      ],
+      "checked_scope": "deterministic world instance versus model trajectory; public retrieval and execution split",
+      "implementation_reproduced": false
+    },
+    {
+      "url": "https://arxiv.org/html/2608.01347v6",
+      "title": "Prompt-Induced Waste in Coding Agents: Reasoning, Effort, Harness Design, and End-to-End Cost",
+      "version": "v6",
+      "sections": [
+        "Appendix O"
+      ],
+      "checked_scope": "activation evidence, repeated comparison and scope of cross-harness diagnostics",
+      "implementation_reproduced": false
     }
   ],
   "new_model_generations": 0,
   "new_environment_api_calls": 0,
   "new_evaluations": 0,
   "reserved_scenarios_read": 0,
-  "scientific_decision": "Do not treat argument-only edits preserving continuation, typed values or Python exception propagation as novel in themselves. P78 is a matched ordinary failure-presentation comparison."
+  "scientific_decision": "Typed values, exception propagation, argument-only repair, activation checks and whole-task accounting are not claimed as novel. P78 is an ordinary failure-presentation comparison; observed time feedback and pre-exception path differences limit causal interpretation. Preserve all eight cells and the original gate."
 }

@@ -1,0 +1,60 @@
+{
+  "pages": 7,
+  "generated_at": "2026-10-23T11:08:26.752483+00:00",
+  "builder_sha256": "46884c9ff68f2032d0a55369e3ed73ef0225b1ffe4306cc77627f46b6861f227",
+  "source_sha256": {
+    "configs/P78_api_error_v01.json": "4cd9f13f64927dff3a3d63f91c97b928753ffd3d84e22584c505cf4934aefdd6",
+    "reports/P78_comparison.json": "6364af563af1cc3d1d2f5ad37ac8233c7d379a92f06042cd755851d24ba22999",
+    "reports/P78_initial_checks.json": "1c76948e342cda4d7ba1363aa1b17eb841fe677a5b5fe0c9c42afd4e08bf56b5",
+    "reports/P78_server_session.json": "c8f8da25e8de505e73d7132bae2afce914399d3fbeac3f38911b49ac940b6d58",
+    "reports/P78_call_profile.json": "266a383338e7647167a9957b802b49c9d120ad2d7f5db03406319bf40274495d",
+    "reports/P78_input_divergence.json": "48a8c5bc5d4aee7586a01def0d52c1bf6bd82fdb7556804381c29ff94fec45d2",
+    "reports/P78_public_api_prefixes.json": "401b441eb2ee46cf3746e453ded8cd0636ecfa2390fa930c1311350ae94625e9",
+    "reports/P78_input_content_divergence.json": "4d3d4ae3414930d599e419386c28b869b161318001e22111cd12a1d7aeb998ec"
+  },
+  "visual_reviewed": true,
+  "csv_sha256": "6212c2151bbb54f0142c606bab691d634171ace176615862fe521fa8f23ae135",
+  "paired_csv_sha256": "4eeccdbf52cc2c8f35ffab588d317f11048368b48a0795913b00894a77479ee2",
+  "totals": [
+    {
+      "arm": "error_value",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "known_total_tokens": 670713,
+      "unknown_usage_calls": 0,
+      "model_calls": 66,
+      "api_requests": 225,
+      "invocation_exceptions": 4
+    },
+    {
+      "arm": "error_exception",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "known_total_tokens": 791704,
+      "unknown_usage_calls": 0,
+      "model_calls": 71,
+      "api_requests": 223,
+      "invocation_exceptions": 5
+    }
+  ],
+  "development_gate_met": false,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "visual_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "visual_reviewed_at": "2026-10-23T11:11:02.174269+00:00",
+  "pdf_sha256": "ae3caea6fbc422e2cbd80fd012aa4451fc4ef46c1bfb835e2277b94d48397dc5",
+  "layout_errors": 0,
+  "cover_title_only_verified": true
+}
