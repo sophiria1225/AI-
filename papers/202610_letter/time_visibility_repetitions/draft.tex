@@ -26,6 +26,7 @@
 
 \section{関連研究と本稿の範囲}
 コードを行動とするCodeAct\cite{codeact}や，状態を持つアプリ操作を評価するAppWorld\cite{appworld}を背景とする．
+ツール列・引数・分岐位置の反復一致は既に評価されており\cite{consistency}，ハーネス探索でも費用と選択結果の信頼性が検討されている\cite{beyondprompts}．
 On the Clock\cite{clock}は時間情報の通知とコマンドへの期限強制を区別し，予算遵守と時間の生産的利用が別の問題であることを扱う．
 本稿も通知と期限を分離するが，この分離そのものを独自手法とはしない．
 Timely Machine\cite{timely}は推論とツールの待ち時間を含む時間予算への適応を学習し，速度や時間情報の扱いを検討する．
@@ -47,8 +48,9 @@ Hは時刻を固定値や虚偽値へ置き換えない．token，API，生成�
 この経路の差は元の実験を変更せず，保存された呼出しと表示処理に結び付けた補助読取で確認する．
 文章，API引数・返却，過去の推論には文字列置換を行わず，元履歴も保存する．
 この処理は通信識別子の表現をそろえるもので，モデル内部やGPU演算の決定性を保証しない．
-同じ固定ランタイムで実施済みの別の入力診断では，IDだけを変更しても再構成token列は一致していた．
-従って，通信JSON上のID差だけからモデル入力差や挙動への影響を推定しない．
+同じ固定ランタイムで実施済みの別の入力診断では，通常の構造化参照のIDだけを変更しても再構成token列は一致していた．
+一方，P80と第２反復のHの書出しでは，14生成目の保存要求が文章化されたIDだけで異なり，入力計数は22,669対22,667だった．
+従って，通信JSON上のID差を一律に無視せず，実際に文章となる経路と区別する．この観測だけでは後続の成否や費用への因果効果は分からない．
 
 \section{保存入力の局所診断}
 先行する失敗通知の比較では，API例外より前に経路が分かれた２入力があった．
@@ -105,6 +107,8 @@ MとHは初回から通知文が異なり，その文章長の差も処置に含
 同じホストで編集，読取解析，軽量検査も行っており，計算機負荷を排他的に固定した比較ではない．
 出力列の一致は意味的な同値や将来の再現を保証せず，時計欄の差が先行したことだけで全費用差の因果効果は同定しない．
 この反復から他の課題・モデル・予算の一般的品質維持や平均削減は主張しない．
+同じ書出し課題には，過去の直接API型で75 API，370,343 token，1,075.6秒の成功記録がある．
+設定と実行時期が異なるため同時対照ではないが，現在の未達を上限だけで説明したり，未達を安く終えることを必要品質の維持とみなしたりはできない．
 
 局所診断で１秒差への反応が確認されても，課題全体で時間通知が不要であるとは結論できない．
 反対に，時間内に停止したことだけでは，必要処理と品質を保った効率化は示せない．
@@ -118,6 +122,8 @@ MとHは初回から通知文が異なり，その文章長の差も処置に含
 \bibitem{timely} Y. Ma, L. Li, Y. Chen, P. Li, X. Li, Q. Guo, D. Lin, and K. Chen, ``Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic,'' Proc. ACL, vol.1, pp.4619--4636, San Diego, USA, July 2026.
 \bibitem{nondeterminism} J. Yuan, H. Li, X. Ding, W. Xie, Y.-J. Li, W. Zhao, K. Wan, J. Shi, X. Hu, and Z. Liu, ``Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference,'' Advances in Neural Information Processing Systems, vol.38, 2025, doi:10.52202/085713-5653.
 \bibitem{repro} P. Pattnayak and A. Bhatia, ``ReproEvalCard: A Reporting Standard for Reproducible Evaluation of LLM Pipelines,'' Proc. ACL, vol.2, pp.238--249, San Diego, USA, July 2026.
+\bibitem{consistency} A. Yagubyan, ``How Consistent Are LLM Agents? Measuring Behavioral Reproducibility in Multi-Step Tool-Calling Pipelines,'' arXiv:2605.28840v1, 2026.
+\bibitem{beyondprompts} C. Zhao, H. Ruan, W. Chen, P.-f. Tu, U. Abbasi, and J. Hesch, ``Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses,'' arXiv:2609.05736v1, 2026.
 \end{thebibliography}
 \clearpage
 \onecolumn
