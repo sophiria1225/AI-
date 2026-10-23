@@ -1,0 +1,26 @@
+{
+  "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+  "proof_kind": "fixed-commit path content equals Git blob content; local bytes hash to that blob",
+  "sources": {
+    "tools/server/server-context.cpp": {
+      "git_blob": "a18b7542c3af4fc367e6dcfcd09870e399bdca4b",
+      "sha256": "4ed2e401a9e566b2caf2dd208582fbd42a6b230d516b1b9d56be130cbad3caa6",
+      "prior_proof": "reports/P80_backend_source_proof_20261024.json",
+      "reviewed_code": ["n_remaining and has_budget", "per-request n_predict_max assignment", "process_token output limit", "ordinary sampling increment and stop", "speculative accepted-token increment and stop"]
+    },
+    "tools/server/server-schema.cpp": {
+      "git_blob": "54e126aa0c3572895042cd0a8c4faf4a0eb0b9f7",
+      "sha256": "1f9d7b73b4363b90b08de0360b0a5ce0b3d152750bfb8d587a367e90c7904050",
+      "pinned_path_and_blob_content_equal": true,
+      "reviewed_code": ["max_tokens alias of n_predict"]
+    },
+    "tools/server/server-common.cpp": {
+      "git_blob": "c32c0d1a5aa7b09e0afe4655a305c6d73f8e27d7",
+      "sha256": "fcb05757dd6a25d349024fd57df9b05c7ff77902cd17d1b70b9f41ac54f6c45c",
+      "pinned_path_and_blob_content_equal": true,
+      "reviewed_code": ["completion and chat parameter forwarding; explicit n_predict override rejected in saved requests"]
+    }
+  },
+  "bound_scope": "logical input plus accepted generated tokens; excludes computational work not counted by terminal token usage",
+  "terminal_receipts_recovered": false
+}
