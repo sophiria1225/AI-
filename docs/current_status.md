@@ -51,4 +51,6 @@ P82の途中の完了記録には終端使用量不明２生成がある。全�
 
 [教授用案](../materials/20261023_professor_brief/README.md)の日英題名・456字あらましは保持。投稿先は電子情報通信学会論文誌Dのレター（研究速報）、専門分野はD140624、D140803、D240706の案。著者・所属・順序と公式様式確認は未完了。25日までに採否を絞り、29〜30日に原稿、31日に投稿完了を目指す。投稿・教授への送信は行っていない。
 
+文献を14件へ増やした現在の閉じた稿も、[ミラーのletter形式](../materials/20261024_prior_review_mirror_preview/README.md)で本文４頁＋英文１頁を全頁確認した。本文・全４数値入力・引用を変えず、はみ出し・未定義参照は０。公式配布物と実著者欄での確認は引き続き未完了である。
+
 [次の作業](next_actions.md)／[実行状態の確認方法](../RESUME.md)／[Project](https://github.com/users/sophiria1225/projects/1)。以前の結果を含む時系列は[更新前の状態記録](https://github.com/sophiria1225/AI-/blob/6e38556bcff00b2cfb509da6a645e736f5fcce23/docs/current_status.md)に保存した。
