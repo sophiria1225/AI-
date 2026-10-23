@@ -1,5 +1,9 @@
 # 残時間の後半表示：部品の準備
 
+P81/P83の終了を確認し、P82の最終計画を固定した。共通の表示前参照統一下でM/H/後半表示Lを既知４課題×２反復、全24条件で新規比較する。46出典を照合、全1,160検査成功。モデル割当てと初期入力計数は未開始で、この計画を含む固定HEADの両CI後に開始する。新規性・品質改善は未実証。 [最終計画](../../configs/P82_late_clock_comparison_v01.json)／[実行判断](../../docs/P82_execution_decision_20261024.md)／[出典照合](../../reports/P82_final_plan_20261024.json)。
+
+## 準備時点の記録
+
 [全24条件の終了後集計](../../docs/P82_closure_preparation_20261024.md)も準備。追加４・全1,160検査成功。全36対の照合、成功／未達を分けた費用差、欠測を保持する７枚資料の生成を実装した。模擬データの生成確認済み、実結果の資料はまだ生成していない。[比較規則](../../docs/experiments/P82_late_clock_comparison.md)／[参照整形の保証範囲](../../docs/protocol_rendering_invariance_20261024.md)。
 
 [３条件の実行系接続](../../docs/P82_integration_preparation_20261024.md)を準備。追加８・全1,150検査成功。最終計画と実モデル実験は未開始。P81全件の終了後に必要性を判断する。[追加の先行研究確認](../../docs/behavioral_reproducibility_scope_20261024.md)。
