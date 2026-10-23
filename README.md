@@ -30,6 +30,7 @@
 | [教授用の題名・あらまし](materials/20261023_professor_brief/README.md) | 合意した日英題名と456字あらましを保存。著者・所属・順序は未確定 |
 | [P81の７枚資料](materials/20261024_p81_results/README.md) | 成否・全費用・経路の照合を全件掲載 |
 | [費用指標の１頁図](materials/20261024_p81_resource_accounting/README.md) | 論理token、cacheを除く入力、出力、時間の方向差 |
+| [資源別稿の組版予行](materials/20261024_resource_mirror_preview/README.md) | 照合済みミラーのletter形式でも本文４頁＋英文１頁を確認。現行公式ファイルとの同一性は未確認 |
 
 投稿先は電子情報通信学会論文誌Dのレター（研究速報）を想定する。現行稿は公式クラス未使用・著者未設定で、投稿可能な最終版ではない。教授への送信・実投稿は行っていない。
 
