@@ -1,0 +1,61 @@
+{
+  "status": "stopped",
+  "stop_reason": "requested_stop",
+  "started_at": "2026-10-23T04:03:47.763576+00:00",
+  "wall_seconds": 2662.085781667003,
+  "load_wall_seconds": 10.06600525000249,
+  "sampled_peak_rss_bytes": 235870781440,
+  "peak_system_swap_bytes": 0,
+  "exit_code": 0,
+  "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+  "runtime": {
+    "name": "llama.cpp",
+    "release": "v0.7.0",
+    "binary_tag": "b11669",
+    "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+    "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+  },
+  "ctx_size": 65536,
+  "cache_type_k": "q8_0",
+  "cache_type_v": "q8_0",
+  "memory_note": "5-second RSS samples and system swap; RSS is not total unified GPU allocation",
+  "phase": "P76",
+  "checked_at": "2026-10-23T04:48:27.998358+00:00",
+  "owned_processes_absent": true,
+  "baseline_system_swap_bytes": 0.0,
+  "source_sha256": "62dc59123d0212506835905e5fec56c701919cf973b152fe6ec04c234a1280c5",
+  "memory_source_sha256": "0633c3a81ff92eec1cff76556a3ca3ecd22a12252170504329816a7391011be3",
+  "pipeline_source_sha256": "3f4275817469f205bc95187bb25a91e468c04f178276c22b0ac4ac8a202c234a",
+  "inspector_sha256": "852f92ae54751a8cf700d73ba50b368059df166bc56274d61b2f653ba7c0463c",
+  "audit_source_sha256": "d8329fc820d49901a9c5eab7b3733bdcb6424b9fc341e812f65c5a097639859e",
+  "scope": "Whole finite server session: load, preflight, reconstruction, continuation, evaluation, cleanup and idle gaps.",
+  "evaluation_wall_seconds": 12.875839248983539,
+  "evaluation_time_note": "Per-evaluation subprocess wall measurements are included in batch/server time; do not add them again.",
+  "pipeline_wall_seconds": 2662.196490833012,
+  "stages": [
+    {
+      "mode": "preflight",
+      "exit_code": 0,
+      "wall_seconds": 7.887983749998966
+    },
+    {
+      "mode": "activation",
+      "exit_code": 0,
+      "wall_seconds": 0.08451779099414125
+    },
+    {
+      "mode": "batch",
+      "exit_code": 0,
+      "wall_seconds": 2638.946598708004
+    }
+  ],
+  "additional_model_calls": 0,
+  "additional_api_requests": 0,
+  "additional_evaluator_calls": 0,
+  "cell_full_wall_seconds": 2620.461494874966,
+  "idle_recovery_seconds": 0.904140416008886,
+  "batch_other_wall_seconds": 17.580963417029125,
+  "batch_other_time_note": "Includes evaluation, parent process overhead and record writing; not isolated evaluation time.",
+  "overlap_note": "Cell full time includes setup and continuation; display construction, input counting and feedback are inside continuation. Do not sum overlapping measures."
+}

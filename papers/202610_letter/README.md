@@ -8,14 +8,14 @@ P55/P71の全24表示条件を本文へ載せ、P56の４ケースとP72の14ケ
 
 [P73の事後入力診断](../../docs/P73_findings.md)を通常終了制御の節へ追記。元batchの停止を保持し、全33対の再構成文章・全token列・生成制約の一致と追加処理費用を明示した。[反映前の原稿](archive_before_P73_20261023/README.md)を保持する。
 
-和文115字・英文49語、日英４キーワード。全13引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。公式クラスによる本文４ページの確認は未完了。
+和文116字・英文46語、日英４キーワード。全14引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。ミラークラスの予行は本文４ページを確認したが、現行公式配布物との一致は未確認。
 
 [数値・出典](cost_completion_source_map.json)／[組版点検](cost_completion_layout.json)／[日英メタデータ](submission_metadata.json)／[文献照合](../../reports/letter_bibliography_ieice_style_20261023.json)／[機械可読な現状](current_status.json)。旧来の著者省略を直し、CaveAgent v4の24名も全て残した。書誌確認と科学的主張の検証は分ける。
 
-再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_history_scope_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じた根拠が変われば停止し、PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。
+再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_reasoning_comparison_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じた根拠が変われば停止し、PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。
 
 [P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。[P72反映前の原稿](archive_before_P72_20261023/README.md)も保持した。元P55/P56/P71の成否や欠測をP72で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。
 
-P75の履歴条件を方法節へ明記した。Fを含む全表示条件で返却推論を再投入していないため、推論保持を含む通常対照へ一般化しない。本文４頁＋英文末尾１頁を再組版し、全５頁を目視確認。P76は別条件として実行中で、現PDFに結果は含めていない。[変更範囲](../../docs/P75_manuscript_scope.md)。
+P75の履歴条件を方法節へ明記した。Fを含む全表示条件で返却推論を再投入していないため、推論保持を含む通常対照へ一般化しない。本文４頁＋英文末尾１頁を再組版し、全５頁を目視確認。P76の閉じた全８条件を別表へ含めた。両方2/4成功、写真の減少と精算・返金の増加、書出しの両未達・不明２生成を残す。採用基準は未達。[P76反映範囲](../../docs/P76_manuscript_integration.md)／[反映前の原稿](archive_before_P76_20261023/README.md)。
 
-[入手済みミラーによる組版予行](../../materials/20261023_ieice_mirror_preview/README.md)も本文４頁＋英文末尾１頁、全５頁目視済み。最新版の公式配布物との一致と実著者欄は未確認であり、現在の主PDFとは別の予行版として保存する。
+[入手済みミラーによる組版予行](../../materials/20261023_p76_ieice_preview/README.md)も本文４頁＋英文末尾１頁、全５頁目視済み。最新版の公式配布物との一致と実著者欄は未確認であり、現在の主PDFとは別の予行版として保存する。
