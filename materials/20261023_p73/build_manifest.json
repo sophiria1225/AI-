@@ -1,0 +1,94 @@
+{
+  "pages": 5,
+  "generated_at": "2026-10-23T02:35:54.126183+00:00",
+  "source_sha256": {
+    "reports/P73_prompt_identity.json": "d5a38803fb709e46f481bd7d5bddb95c89325ca8c08b8ed3f8f642e9247b03f1",
+    "reports/P73_prompt_identity_audit.json": "a4237db92c593e6cdf395650251e4f91a61ddefdbedfa8518192c624d454d2a5",
+    "reports/P73_stop_diagnosis.json": "4b8e2099ccf6576964ce64df33b5e298f9070abf59aa2cd9b99dd6787384fa7c",
+    "configs/P73_prompt_identity_v01.json": "d92cc309204255f92b74794a82de4a9638c670c2d4f97548e1ae9c7ffb00f730",
+    "docs/P73_stop_diagnosis_scope.md": "35557808586bbbc0db22586e6bfc16351702b4597542ad305d43e5dc66819b75"
+  },
+  "claims": {
+    "original_batch_status": "stopped",
+    "original_validated_pairs": 0,
+    "posthoc_pairs": 33,
+    "groups": [
+      {
+        "reference_run": "P64_01_PHOTO_DOCUMENTED",
+        "controlled_run": "P66_01_PHOTO_DOCUMENTED",
+        "pairs": 13,
+        "raw_request_equal_pairs": 1,
+        "bound_id_renamed_equal_pairs": 13,
+        "equal_pairs": {
+          "prompt": 13,
+          "tokens": 13,
+          "session_controls": 13,
+          "parsed_non_message_parameters": 13
+        },
+        "historical_input_counts_matching": 26
+      },
+      {
+        "reference_run": "P64_02_PHOTO_NAMED",
+        "controlled_run": "P66_02_PHOTO_NAMED",
+        "pairs": 12,
+        "raw_request_equal_pairs": 1,
+        "bound_id_renamed_equal_pairs": 12,
+        "equal_pairs": {
+          "prompt": 12,
+          "tokens": 12,
+          "session_controls": 12,
+          "parsed_non_message_parameters": 12
+        },
+        "historical_input_counts_matching": 24
+      },
+      {
+        "reference_run": "P68_01_EXPORT_NATIVE",
+        "controlled_run": "P68_02_EXPORT_CONTROLLED",
+        "pairs": 8,
+        "raw_request_equal_pairs": 1,
+        "bound_id_renamed_equal_pairs": 8,
+        "equal_pairs": {
+          "prompt": 8,
+          "tokens": 8,
+          "session_controls": 8,
+          "parsed_non_message_parameters": 8
+        },
+        "historical_input_counts_matching": 16
+      }
+    ],
+    "renderings_and_input_tokenizations": 69,
+    "historical_input_counts_matching": 66,
+    "preflight_wall_seconds": 1.8587345000123605,
+    "batch_wall_seconds": 5.5433097909990465,
+    "sampled_peak_rss_bytes": 184991744,
+    "posthoc_read_wall_seconds": 0.2540501659968868,
+    "unchanged_control_equal": true,
+    "id_control_equal": true,
+    "content_control_equal": false,
+    "new_model_calls": 0,
+    "new_api_requests": 0,
+    "new_evaluator_calls": 0,
+    "reserved_scenarios_read": 0,
+    "original_criteria_changed": false,
+    "original_outcomes_relabelled": false,
+    "novel_method_claim": false,
+    "historical_gpu_or_rng_state_restored": false
+  },
+  "builder_sha256": "2fcc7217d9c5bf9f7ca6b990774edcf6e3633055e24d908815268e3667527865",
+  "component_sha256": "1a214cf45d85c44e3be7cbd60b15bace17f66c557bc6609fbf9f1570e58945c3",
+  "csv_sha256": "1ac071b874e31cf1202730f1ce01d45ba1d8c6c6804b9fd9b3722fb851109034",
+  "shared_rendering_sha256": {
+    "build_morning_report.py": "d388724bedbca194c829002376adf300926bc868c1ad614e4b7ad2710e56c069",
+    "build_budget_report.py": "a51182a3eeb505c18334dc5c7fc7e78898bba591855a3a8d6ce9dfc81fd87247"
+  },
+  "visual_reviewed": true,
+  "scope": "Posthoc reading of all 33 pairs and 3 controls; original batch remains stopped.",
+  "visual_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "pdf_sha256": "d721bf25c989b3bebd49b2f7d27951ec2e696c08d56ea3c0fb34ce69466f3926"
+}

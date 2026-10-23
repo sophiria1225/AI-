@@ -27,10 +27,15 @@
     "papers/202610_letter/public_display_manuscript_claims.json": "434df9dd2a8def19a63e4591a553e312467510ac960486d1fb1ca49f578f1eb3",
     "reports/P72_public_completion_scope.json": "327dc950b37534893cf8851a739cf45174b12be57a5d44fa870ec554ad48a240",
     "reports/P72_public_completion_audit.json": "d7fc2e2060fa0e80f2cced78e095067e9be22dad30691142127dafc9502772b7",
-    "configs/P72_public_completion_scope_v01.json": "8647eedd42b26bc2cc4a71440ef29b751ceac12a0c174e293331f3714c0b3421"
+    "configs/P72_public_completion_scope_v01.json": "8647eedd42b26bc2cc4a71440ef29b751ceac12a0c174e293331f3714c0b3421",
+    "reports/P73_prompt_identity.json": "d5a38803fb709e46f481bd7d5bddb95c89325ca8c08b8ed3f8f642e9247b03f1",
+    "reports/P73_prompt_identity_audit.json": "a4237db92c593e6cdf395650251e4f91a61ddefdbedfa8518192c624d454d2a5",
+    "reports/P73_stop_diagnosis.json": "4b8e2099ccf6576964ce64df33b5e298f9070abf59aa2cd9b99dd6787384fa7c",
+    "configs/P73_prompt_identity_v01.json": "d92cc309204255f92b74794a82de4a9638c670c2d4f97548e1ae9c7ffb00f730",
+    "docs/P73_stop_diagnosis_scope.md": "35557808586bbbc0db22586e6bfc16351702b4597542ad305d43e5dc66819b75"
   },
   "rendering_sources": {
-    "papers/202610_letter/candidate_cost_completion.tex": "4af7fef2cf47ceaba0c8dc5b617a6861f7598c223c2d762df25b6e4ef97d254a",
+    "papers/202610_letter/candidate_cost_completion.tex": "632cd1722e8a286bf8f698fc7f0b0a69941f4c54b7411e2ca05f971dc916ee65",
     "papers/202610_letter/public_display_tables.tex": "3f6bad9444fcb1a89769eeefc0104248b4ae4f906c41515c7994f96787ebc842",
     "papers/202610_letter/public_display_methods_component.tex": "aad29993a4e69f44c431c46faf7c2af0bd2b24c966e4b72e78b6f93e301e9b7a",
     "papers/202610_letter/submission_metadata.tex": "531c9eaf405c59365a9946c65916d6d4cc67ce8bb6f51ad54ccd07c26b0d8c79",
@@ -59,11 +64,17 @@
     "docs/P68_findings.md": "dd3b993b7e094af07b109385befe16a145eaec9afd29598f1b792fa7285e0b01",
     "docs/evidence_delivery_overlap_20261023.md": "55c841bc9077817e46c6538bce4f147c2910bff60bd17290c6f733dbc170e74f",
     "docs/termination_control_overlap_20261023.md": "4bba4f34f3e7d28d6161f6e555ba38257c4826d8e88f774bdc8b5cde5d35cac1",
-    "docs/ordinary_completion_literature_20261023.md": "ff9a7278f22bac5fe2e75a472495e497074c1fa6e58a54a3ee98208f784c8754"
+    "docs/ordinary_completion_literature_20261023.md": "ff9a7278f22bac5fe2e75a472495e497074c1fa6e58a54a3ee98208f784c8754",
+    "papers/202610_letter/prompt_identity_component.tex": "1a214cf45d85c44e3be7cbd60b15bace17f66c557bc6609fbf9f1570e58945c3",
+    "materials/20261023_p73/build_manifest.json": "d46dd014516365e4efae6806009315062d290be00af53d1c3d7bf305d916d8d4",
+    "scripts/build_prompt_identity_report.py": "2fcc7217d9c5bf9f7ca6b990774edcf6e3633055e24d908815268e3667527865",
+    "scripts/inspect_prompt_identity_stop.py": "663dfa3b648e8cc16927ed0b4199959415734dacdaa2c0b89eeef8d60fb37f05",
+    "docs/P73_findings.md": "485961d350e721b42b92e858a6610f6415ba4dd9f09769f745b7789062f7604e",
+    "docs/P73_manuscript_integration.md": "1037cdf19715cb0f64c1683c87e1b39960666a99f61802ee916a867d60901c10"
   },
-  "builder_sha256": "d7ab01737a6b68316c515ad1956beb07cc4177a604e043e054cad7342862544d",
+  "builder_sha256": "5cabb72b5afaa3fdd7ff97b4192282f4992d11c8663f5e3fb9bb31bad83ec543",
   "earlier_evidence_checker_sha256": "7b3fa8e04e8a068092617e5ae99bf8d5f3c91bbf3e3690b1c18746a31e0a4067",
-  "pdf_sha256": "30d2d04e31f5337770802a0b71810a248eb4f393b549739127f9d27b432bdb95",
+  "pdf_sha256": "d07fc9d3dd145d9b55ea8855841f3852673d48a02fa978b04bb5d95b5495486a",
   "source_date_epoch": "1792677600",
   "data_checks": {
     "earlier_comparisons": {
@@ -416,6 +427,72 @@
       "original_usage_unknown_calls_preserved": 2,
       "photo_completed_world_matches_original_B": true,
       "non_supervisor_files_unchanged": true
+    },
+    "posthoc_prompt_identity": {
+      "original_batch_status": "stopped",
+      "original_validated_pairs": 0,
+      "posthoc_pairs": 33,
+      "groups": [
+        {
+          "reference_run": "P64_01_PHOTO_DOCUMENTED",
+          "controlled_run": "P66_01_PHOTO_DOCUMENTED",
+          "pairs": 13,
+          "raw_request_equal_pairs": 1,
+          "bound_id_renamed_equal_pairs": 13,
+          "equal_pairs": {
+            "prompt": 13,
+            "tokens": 13,
+            "session_controls": 13,
+            "parsed_non_message_parameters": 13
+          },
+          "historical_input_counts_matching": 26
+        },
+        {
+          "reference_run": "P64_02_PHOTO_NAMED",
+          "controlled_run": "P66_02_PHOTO_NAMED",
+          "pairs": 12,
+          "raw_request_equal_pairs": 1,
+          "bound_id_renamed_equal_pairs": 12,
+          "equal_pairs": {
+            "prompt": 12,
+            "tokens": 12,
+            "session_controls": 12,
+            "parsed_non_message_parameters": 12
+          },
+          "historical_input_counts_matching": 24
+        },
+        {
+          "reference_run": "P68_01_EXPORT_NATIVE",
+          "controlled_run": "P68_02_EXPORT_CONTROLLED",
+          "pairs": 8,
+          "raw_request_equal_pairs": 1,
+          "bound_id_renamed_equal_pairs": 8,
+          "equal_pairs": {
+            "prompt": 8,
+            "tokens": 8,
+            "session_controls": 8,
+            "parsed_non_message_parameters": 8
+          },
+          "historical_input_counts_matching": 16
+        }
+      ],
+      "renderings_and_input_tokenizations": 69,
+      "historical_input_counts_matching": 66,
+      "preflight_wall_seconds": 1.8587345000123605,
+      "batch_wall_seconds": 5.5433097909990465,
+      "sampled_peak_rss_bytes": 184991744,
+      "posthoc_read_wall_seconds": 0.2540501659968868,
+      "unchanged_control_equal": true,
+      "id_control_equal": true,
+      "content_control_equal": false,
+      "new_model_calls": 0,
+      "new_api_requests": 0,
+      "new_evaluator_calls": 0,
+      "reserved_scenarios_read": 0,
+      "original_criteria_changed": false,
+      "original_outcomes_relabelled": false,
+      "novel_method_claim": false,
+      "historical_gpu_or_rng_state_restored": false
     }
   },
   "pages": 5,
@@ -451,5 +528,9 @@
   "new_model_calls_for_rendering": 0,
   "new_api_requests_for_rendering": 0,
   "bibliography_verification": "reports/letter_bibliography_ieice_style_20261023.json",
-  "visual_review_basis": "All five pages viewed; final regenerated PDF text and rendered pixels equal on every page."
+  "previous_full_checker_sha256": "d7ab01737a6b68316c515ad1956beb07cc4177a604e043e054cad7342862544d",
+  "original_prompt_reconstruction_status": "stopped",
+  "posthoc_input_pairs_inspected": 33,
+  "prompt_input_diagnosis_changes_original_criteria": false,
+  "historical_gpu_or_rng_state_restored": false
 }
