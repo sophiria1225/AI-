@@ -50,3 +50,5 @@ ZIP本体は保存されず、失敗manifestをArtifactから回収した。
 ## 2026年10月23日：公開ミラーの版を点検
 
 [mar-tusita/ieicej-platex](https://github.com/mar-tusita/ieicej-platex/tree/09affdda87853ac52313ec92ae90e0f14a43a20d) は説明にv3.4bとあるが、固定commitの `ieicej.cls` は `2023/11/21 v3.4a` を宣言していた。４ファイルのGit blob IDとダウンロード内容を照合した。公式2026年1月19日v3.4bとの一致は確認できず、最新版として採用しない。クラスや外部スクリプトの実行、失敗済み公式ZIPの再取得は行っていない。[検査記録](../reports/ieice_mirror_check_20261023.json)。
+
+同日午後、最新版の確認とは区別した[ミラー版での組版予行](ieice_mirror_preview_20261023.md)を行った。本文４頁＋英文末尾１頁、全５頁目視、はみ出し・未解決引用／参照０。未設定著者欄を明記した別PDFとして保存し、主PDFを保持する。現行公式様式の取得・投稿可能な完成版とは扱わない。元のミラー検査記録は、その時点の状態のまま保存した。
