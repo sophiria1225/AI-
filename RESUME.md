@@ -1,5 +1,7 @@
 # アカウント変更後の研究引き継ぎ
 
+通常対照を超える候補の[成立条件](docs/remaining_control_scope_20261023.md)を再点検した。P78全137生成で、API例外９件は各API１送信であり、同じ例外プログラム前半の成功API再実行は確認できない。APIなし11生成116,711 tokenも無駄とは扱わない。ControlScope・LazyAgent・Incremental Consistency Executionの本文に照らし、独自の観測・判断・更新規則は未確定。P79原稿は[PR328](https://github.com/sophiria1225/AI-/pull/328)へ反映し、[更新したミラー予行](materials/20261023_p79_ieice_preview/README.md)も全５頁を確認した。
+
 2026-10-23 最新の有限診断: [P79](docs/P79_findings.md)は全12生成・監査を終了。不一致０・使用量不明０、99,966 token。同一通知の３反復は一致し、両入力で１秒差の公開出力は異なった。固定HEAD `1365919664d33fe6b883232151f6e36043ada5d5`、実行木 `p79-run`、記録 `P79_pipeline_v01` / `P79_clock_notice_v01`。所有推論器停止・親子PID不在を確認。終了済み実験を再起動・補充しない。[６枚資料](materials/20261023_p79/README.md)を全頁確認済み。タスク実行・評価・保留群０。新手法・全仕事削減は未実証。次は比較の入力条件と通常対照を超える規則を具体化する。P78原稿PR322はmainへ反映済み。
 
 [主原稿](materials/20261023_letter_clock_notice/README.md)へP79全12生成の校正を補足し、本文４頁＋英文１頁を全５頁確認した。現在PDFは `1269b1e5b0e207986f997d2ed17e810cc93a15b4594d3114aa4c44ce2537a8b8`。旧P78版を保存し、全121出典・描画源を照合。P79をタスク比較や新規手法へ格上げしない。

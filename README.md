@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+通常対照を超える候補の[成立条件](docs/remaining_control_scope_20261023.md)を再点検した。P78全137生成で、API例外９件は各API１送信であり、同じ例外プログラム前半の成功API再実行は確認できない。APIなし11生成116,711 tokenも無駄とは扱わない。ControlScope・LazyAgent・Incremental Consistency Executionの本文に照らし、独自の観測・判断・更新規則は未確定。P79原稿は[PR328](https://github.com/sophiria1225/AI-/pull/328)へ反映し、[更新したミラー予行](materials/20261023_p79_ieice_preview/README.md)も全５頁を確認した。
+
 2026-10-23 継続作業: [P79全12生成](docs/P79_findings.md)を終了・監査した。不一致０・使用量不明０、99,966 token。返金と書出しの両入力で同一通知の３反復は一致し、１秒違う通知との公開出力は異なった。所有推論器は停止し、[６枚の資料](materials/20261023_p79/README.md)を全頁確認した。固定入力の感度であり、新手法や全仕事削減ではない。P78原稿は[PR322](https://github.com/sophiria1225/AI-/pull/322)でmainへ反映済み、[ミラー予行](materials/20261023_p78_ieice_preview/README.md)も本文４頁＋英文１頁を確認済み。
 
 [P79の校正を補足した主原稿](materials/20261023_letter_clock_notice/README.md)は本文・文献４頁＋英文１頁を全頁確認した。既存の全条件・欠測と日英題名、115字・45語の要旨、14文献を保持し、121出典・描画源を照合した。P79は新手法やタスク品質の改善とは扱わない。

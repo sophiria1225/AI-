@@ -1,0 +1,130 @@
+% Unofficial mirror-class typesetting preview; not a submission-ready manuscript.
+\documentclass[letter]{ieicej}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[fleqn]{amsmath}
+\usepackage{newtxtext}
+\usepackage[varg]{newtxmath}
+\usepackage{url}
+\input{papers/202610_letter/submission_metadata.tex}
+\input{papers/202610_letter/inventory_tables.tex}
+\input{papers/202610_letter/public_display_tables.tex}
+\typeofletter{組版予行・未投稿}
+\field{}
+\jtitle{状態保持型LLMエージェントにおける情報保持と実行制御の評価}
+\etitle{Evaluating Information Retention and Execution Control in Stateful LLM Agents}
+\authorlist{\authorentry{著者未設定}{Author details pending}{}{}\MembershipNumber{}}
+\jalcdoi{???????????}
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{papers/202610_letter/cost_completion_abstract_ja.txt}
+\end{abstract}
+\begin{keyword}\LetterJapaneseKeywords\end{keyword}
+\begin{eabstract}
+\input{papers/202610_letter/cost_completion_abstract_en.txt}
+\end{eabstract}
+\begin{ekeyword}\LetterEnglishKeywords\end{ekeyword}
+\section{目的と検証する問い}
+ハーネスエンジニアリングは，LLMの外側で情報提供，実行，検証，停止を設計する．
+必要情報と最終品質を保つ効率化には，取得から終了までの費用評価が必要である．
+\textbf{状態を保持したまま情報提示や実行制御を変えると，全仕事費用と成否はどう変わり，その差をどこまで介入に帰属できるか}を調べる．
+既知４課題の全24表示条件，終了診断，通常終了制御，推論保持，失敗通知を扱い，全結果と不明使用量を残す．
+
+\section{関連研究と本稿の範囲}
+圧縮と成否・費用の反復比較\cite{beyond}，再取得費用\cite{interaction}，推論圧縮と後続行動\cite{thinking}は既出である．
+CodeAct\cite{codeact}のコード行動，CaveAgent\cite{cave}の持続状態，HD-Gist\cite{hdgist}のAPI表現，
+Tool Search Tool\cite{toolsearch}の定義展開，段階的開示\cite{disclosure}も関連する．
+同一状態からの返却比較\cite{evidence}，作用・方針・課題指標の分離\cite{matoi}，
+ECT\cite{ect}とAgentLoop\cite{agentloop}の終了・反復制御，ハーネス依存の検証費用\cite{waste}も踏まえる．
+本稿は具体的な表示・保持・通知の全件比較であり，圧縮の一般論，例外処理，既知文型の手書き検査を新手法とはしない．
+
+\section{費用の定義}
+仕事全体の論理トークンを
+\begin{equation}
+ T_{\rm work}=T_{\rm prefix}+\sum_{j=1}^{n}(I_j+O_j)
+\end{equation}
+とする．共通前半の実測値を各条件へ一度加え，開始時からの比較では前半を０とする．キャッシュ入力も$I_j$へ含める．
+継続だけの値も示し，初回短縮量を全体の節約量へ，論理tokenを請求額・計算量・時間へ換算しない．
+API，時間，実験用復元，評価，推論器のロード・常駐は別記し，重なる時間を足さない．
+評価器単独の時間は表示比較では未計測で，稼働時間の残差からは求めない．
+
+\section{表示比較の方法}
+\input{papers/202610_letter/public_display_methods_component.tex}
+\input{papers/202610_letter/reasoning_history_scope_component.tex}
+
+AppWorld\cite{appworld}の写真整理，電気代精算，返金，曲一覧の書出を用いる．
+過去の失敗・入力計数を見た方式探索であり，未閲覧12シナリオは使わない．
+D/Bの詳細省略は課題順に７・２・３・７返却で一致し，Bの追加一覧省略は１・１・０・３返却だった．
+表1は共通の予算通知と省略印を含む初回短縮量である．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表1\quad Dの初回入力短縮token（対F）\par\smallskip
+\PublicDisplayInitialSavings
+\end{minipage}\end{center}
+
+\subsection{採用基準と欠測}
+全12評価・全使用量既知・監査合格の下，DがF/B双方の成功を失わず，
+合計$T_{\rm work}$がF未満・B以下なら局所採用候補とする．
+一覧の価値には入力が異なるD成功・B失敗の対も要求し，同数成功を非劣性とはしない．
+不明使用量は既知分と分け，ゼロや上限で補わず，確定費用差を求めない．
+API作用・復元・実行・片付け・評価・推論器版の不一致では全体を停止する．
+結果でseed・条件・予算を変えず，未実行の成否も補完しない．
+
+\section{費用と成否の全結果}
+両接続の全12条件を評価した（表2）．Dの既知費用はFよりGで43,083，Nで22,524 token多かった．
+NのDの写真・書出しは時間上限で使用量不明となった．未達の早期停止を完成効率とはしない．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表2\quad 全24予定条件の成否・仕事token\par\smallskip
+\PublicDisplayAllCells
+\par\smallskip\footnotesize G：文書必須，N：公開名で継続．$+?$は別に使用量不明がある値．
+\end{minipage}\end{center}
+
+不明生成を含む確定費用差は求めず，両Dの採用条件は未達とする（表3）．
+GのDは初回入力が短くても継続生成が22回から26回へ増えた．返金も全条件成功だがDの全費用はFより大きい．
+
+\begin{center}\begin{minipage}{\columnwidth}\centering
+\small 表3\quad 全４課題合計の費用と実行量\par\smallskip
+\PublicDisplayTotals
+\end{minipage}\end{center}
+
+APIは実送信数で，拒否と原文参照は別記する．G/Nの推論器全稼働4,112.859/3,724.097秒は復元と評価も含む．回数減だけを不要取得の削減とはしない．
+
+\section{成否差と終了手続きの診断}
+% Keep the caption and all rows together without editing the closed P72 component.
+\begingroup
+\let\JointTableCenter\center
+\let\JointTableEndCenter\endcenter
+\renewenvironment{center}{\JointTableCenter\begin{minipage}{\columnwidth}\centering}{\end{minipage}\JointTableEndCenter}
+\input{papers/202610_letter/completion_scope_joint.tex}
+\endgroup
+
+\section{公開証拠による通常終了制御の追加点検}
+既知写真を開始から文書必須・公開名の各接続で実行する別対照を用いた．
+モデル・seed・案内・予算をそろえ，各80生成・450,000 token・1,800秒・160 APIとした．
+全プログラム実行後の公開記録で，元集合・元日時・現在年・移動先・名前保持が支持されれば完了APIを１回送る．
+不明なら通常継続し，追加案内・未来応答・評価器は使わない．
+\input{papers/202610_letter/ordinary_completion_component.tex}
+全４実行が成功し，制御では各２生成・４ APIを省いた．各対の最終13保存ファイルと制御までの公開API記録は一致したが，ID差で要求・モデル入力の全文一致基準は不成立だった．
+制御25生成の使用量は全て既知で，25検査・記録ダイジェストの0.028224秒を全体時間に含めた．減少78,754 tokenの66,720はcached inputで，金額・時間の同率削減ではない．
+既知書出しでは正しいCSV作成後の退会を要求し，API上限を80として各１回比較した．両方８生成・219,126 token・80 APIで未達，書出し・退会０回だった．
+８検査0.004080秒で通知・削減・使用量不明は０．最終13保存ファイルは一致し，ID差の全文不一致は残った．
+\input{papers/202610_letter/prompt_identity_component.tex}
+これらはAPIの意味を信頼した既知文型の通常制御であり，表2・3へ合算しない．
+実装・固定条件・全件集計を公開する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\input{papers/202610_letter/reasoning_comparison_component.tex}
+\input{papers/202610_letter/api_error_comparison_component.tex}
+
+\section{解釈と結論}
+既知４課題・１モデル・各条件１回の開発比較で，18診断は３課題９状態の事後介入である．
+\input{papers/202610_letter/clock_notice_component.tex}
+BにもAPI名が写真8/26・精算10/26残る（過去コード等）．
+
+表示省略・推論保持・失敗通知は全体採用条件未達だった．
+通常終了制御の局所改善を一般化せず，全仕事費用・実作業・介入発生・終了手続きを分けて評価する．
+
+\input{papers/202610_letter/bibliography_ieice.tex}
+
+\label{PreviewLastBodyPage}
+\end{document}
