@@ -9,6 +9,7 @@ from pathlib import Path
 import build_budget_report
 from build_inventory_report import ARMS, TASKS, LABELS, cost, outcome, plot
 from build_morning_report import STYLE, SCRIPT
+from public_display import validate_plan
 from run_handoff_factors import ROOT, read, sha
 
 STEM = 'AI_harness_public_display_20261023'
@@ -17,13 +18,19 @@ LINK = 'https://github.com/sophiria1225/AI-/blob/main/'
 
 def build(root, output):
     sources = ('reports/P71_comparison.json', 'reports/P71_prefix_checks.json',
-               'reports/P71_server_session.json', 'reports/P55_comparison.json')
-    report, pre, server, historical = [read(root / name) for name in sources]
+               'reports/P71_server_session.json', 'reports/P55_comparison.json',
+               'configs/P71_public_display_v01.json')
+    report, pre, server, historical, plan = [read(root / name) for name in sources]
+    validate_plan(plan)
     if (report['phase'] != 'P71' or report['catalog_policy'] != 'public_names'
             or report['audit_errors'] or not report['all_planned_cells_accounted']
             or len(report['rows']) != 12 or pre['status'] != 'complete'
             or server['status'] != 'stopped' or not server['owned_processes_absent']):
         raise ValueError('closed, audited P71 cohort and owned server required')
+    if (report['source_sha256']['preflight'] != sha(root / sources[1])
+            or report['source_sha256']['plan'] != sha(root / sources[4])
+            or server['audit_source_sha256'] != sha(root / sources[0])):
+        raise ValueError('report, input counts and server ledger must refer to the same audited run')
     if {(r['task_id'], r['arm']) for r in report['rows']} != {(t, a) for t, _ in TASKS for a in ARMS}:
         raise ValueError('every fixed task and display condition must be retained')
     output.mkdir(parents=True, exist_ok=True)

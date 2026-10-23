@@ -47,6 +47,9 @@ def build(root=ROOT):
     preflights = [read(root / f'reports/{phase}_prefix_checks.json') for phase in ('P55', 'P71')]
     if any(p['status'] != 'complete' or len(p['rows']) != 4 for p in preflights):
         raise ValueError('all initial inputs must be counted')
+    for phase, report in zip(('P55', 'P71'), reports, strict=True):
+        if report['source_sha256']['preflight'] != sha(root / f'reports/{phase}_prefix_checks.json'):
+            raise ValueError('input-count source differs from the audited run')
     lines = [r'% P55/P71 all 24 planned display cells. Four distinct known tasks.',
              r'\newcommand{\PublicDisplayAllCells}{%',
              r'{\setlength{\tabcolsep}{2.5pt}',

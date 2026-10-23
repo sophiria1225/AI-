@@ -34,4 +34,10 @@ python3.12 scripts/build_public_display_report.py --pdf
 
 共通前半は、条件ごとの仕事全体費用として一度ずつ足す。同じ前半を実際に何度もモデル生成したという回数ではない。新たに実行した継続生成と、実験用に送信した復元APIは別の実測値として報告する。
 
+## 原稿の組版
+
+終了後の数値点検、全12対の保存状態照合、本文への反映がそろった版では、`scripts/build_public_display_paper.py --tex-bin <TeX実行ファイルのディレクトリ>`を報告環境で実行する。従来の組版処理を変更せず、P55/P56/P66/P68の固定根拠にP71の全件表・推論器記録・確認した主張を加えて検査する。文献断片と日英要旨・キーワードも照合する。
+
+本文・文献４ページと英文要旨１ページを分け、両方を目視確認する。公式クラス未使用の検討用PDFであることは維持する。`public_display_manuscript_claims.json`と終了後の資料がない間はこの組版を完了できず、暫定値で埋める処理はない。[形式の照合](letter_submission_format_20261023.md)に未確定事項をまとめた。
+
 [原稿へ反映する範囲](P71_manuscript_integration.md)／[研究目的](research_objective_20261022.md)／[GitHub Project](https://github.com/users/sophiria1225/projects/1)。
