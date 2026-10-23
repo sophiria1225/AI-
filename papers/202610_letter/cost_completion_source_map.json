@@ -32,10 +32,13 @@
     "reports/P73_prompt_identity_audit.json": "a4237db92c593e6cdf395650251e4f91a61ddefdbedfa8518192c624d454d2a5",
     "reports/P73_stop_diagnosis.json": "4b8e2099ccf6576964ce64df33b5e298f9070abf59aa2cd9b99dd6787384fa7c",
     "configs/P73_prompt_identity_v01.json": "d92cc309204255f92b74794a82de4a9638c670c2d4f97548e1ae9c7ffb00f730",
-    "docs/P73_stop_diagnosis_scope.md": "35557808586bbbc0db22586e6bfc16351702b4597542ad305d43e5dc66819b75"
+    "docs/P73_stop_diagnosis_scope.md": "35557808586bbbc0db22586e6bfc16351702b4597542ad305d43e5dc66819b75",
+    "reports/P75_reasoning_history.json": "e55380f7d0cc4b4321c81132a606884b411b1a74ca75f3e087317db2cc431461",
+    "reports/P75_reasoning_history_audit.json": "90f01a9a5cb9d218597b8cfd65283c56a2920127de29c92e5004140595f98c62",
+    "configs/P75_reasoning_history_v01.json": "c6984dac80c463559630aa938c0c597e950974301a3e708ede13cd7572dbf206"
   },
   "rendering_sources": {
-    "papers/202610_letter/candidate_cost_completion.tex": "632cd1722e8a286bf8f698fc7f0b0a69941f4c54b7411e2ca05f971dc916ee65",
+    "papers/202610_letter/candidate_cost_completion.tex": "c66633da5bc714bb9cb8024cba9ff059facf71c06656715e0952ab2852c5f234",
     "papers/202610_letter/public_display_tables.tex": "3f6bad9444fcb1a89769eeefc0104248b4ae4f906c41515c7994f96787ebc842",
     "papers/202610_letter/public_display_methods_component.tex": "aad29993a4e69f44c431c46faf7c2af0bd2b24c966e4b72e78b6f93e301e9b7a",
     "papers/202610_letter/submission_metadata.tex": "531c9eaf405c59365a9946c65916d6d4cc67ce8bb6f51ad54ccd07c26b0d8c79",
@@ -70,11 +73,16 @@
     "scripts/build_prompt_identity_report.py": "2fcc7217d9c5bf9f7ca6b990774edcf6e3633055e24d908815268e3667527865",
     "scripts/inspect_prompt_identity_stop.py": "663dfa3b648e8cc16927ed0b4199959415734dacdaa2c0b89eeef8d60fb37f05",
     "docs/P73_findings.md": "485961d350e721b42b92e858a6610f6415ba4dd9f09769f745b7789062f7604e",
-    "docs/P73_manuscript_integration.md": "1037cdf19715cb0f64c1683c87e1b39960666a99f61802ee916a867d60901c10"
+    "docs/P73_manuscript_integration.md": "1037cdf19715cb0f64c1683c87e1b39960666a99f61802ee916a867d60901c10",
+    "papers/202610_letter/reasoning_history_scope_component.tex": "36889e7dceb06cd1d3347024c1ba543374dfa6507253918009bb4bd5f7853253",
+    "docs/P75_findings.md": "bb01b27a6196a84e108c2fe2f44c7eccf236f8dcdf1f07acb1fb4a3ede3d65ce",
+    "docs/P75_manuscript_scope.md": "dbdcaadfdad8082b82be8f6acd16d2642fb2b0a2484c4e04e7f4ea28dbd01c51",
+    "materials/20261023_p75/build_manifest.json": "7d2b1b193d1d25951ab5f4558d99158ab397e5a4ec7a530894a7b1100acf43d9",
+    "scripts/build_reasoning_history_report.py": "b6a3a69fb224067f2620652035758b3b75d184289a7fe3f062bc3c95c35a827f"
   },
-  "builder_sha256": "5cabb72b5afaa3fdd7ff97b4192282f4992d11c8663f5e3fb9bb31bad83ec543",
+  "builder_sha256": "6584b7e9cc3e7648165adf261a90be9366b8a4818429a66c722eed43f065fa81",
   "earlier_evidence_checker_sha256": "7b3fa8e04e8a068092617e5ae99bf8d5f3c91bbf3e3690b1c18746a31e0a4067",
-  "pdf_sha256": "d07fc9d3dd145d9b55ea8855841f3852673d48a02fa978b04bb5d95b5495486a",
+  "pdf_sha256": "ebbebae51cb9198eb095e15a108392bfab1e28c59e4e479b17c216e692a91974",
   "source_date_epoch": "1792677600",
   "data_checks": {
     "earlier_comparisons": {
@@ -493,6 +501,15 @@
       "original_outcomes_relabelled": false,
       "novel_method_claim": false,
       "historical_gpu_or_rng_state_restored": false
+    },
+    "reasoning_history_scope": {
+      "historical_display_conditions_replay_reasoning": false,
+      "saved_attempts_inspected": 105,
+      "known_responses_with_nonempty_reasoning": 103,
+      "requests_containing_reasoning": 0,
+      "unknown_usage_attempts_preserved": 2,
+      "quality_effect_established_by_P75": false,
+      "P76_results_included": false
     }
   },
   "pages": 5,
@@ -532,5 +549,6 @@
   "original_prompt_reconstruction_status": "stopped",
   "posthoc_input_pairs_inspected": 33,
   "prompt_input_diagnosis_changes_original_criteria": false,
-  "historical_gpu_or_rng_state_restored": false
+  "historical_gpu_or_rng_state_restored": false,
+  "previous_prompt_checker_sha256": "5cabb72b5afaa3fdd7ff97b4192282f4992d11c8663f5e3fb9bb31bad83ec543"
 }

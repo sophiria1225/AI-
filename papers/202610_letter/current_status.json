@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P76 prepared: four known prefixes x public_only/reasoning_keep, eight fixed conditions. Offline histories and 982 tests passed; server preflight/activation/generation not yet started.",
+  "current_experiment": "P76 running in the frozen p76-run worktree after all eight initial inputs passed measured admission. No outcome interpretation before all fixed conditions close.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -240,7 +240,7 @@
     "layout": "cost_completion_layout.json",
     "public_admission_scope_explicit": true,
     "public_clock_evidence_limit_explicit": true,
-    "pdf_sha256": "30d2d04e31f5337770802a0b71810a248eb4f393b549739127f9d27b432bdb95",
+    "pdf_sha256": "ebbebae51cb9198eb095e15a108392bfab1e28c59e4e479b17c216e692a91974",
     "ordinary_completion_results_included": true,
     "strict_prefix_failure_explicit": true,
     "export_completion_negative_results_included": true,
@@ -780,10 +780,9 @@
     "results": "../../docs/P75_findings.md",
     "audit": "../../reports/P75_reasoning_history_audit.json"
   },
-  "pending_baseline_scope_note": "The current PDF has not yet integrated P75: historical full history retains public content/actions/observations, excluding reasoning_content by the P10 protocol. Quality effects of retaining reasoning remain untested.",
   "planned_task_experiment": {
     "phase": "P76",
-    "status": "prepared_not_activated",
+    "status": "running",
     "known_tasks": 4,
     "planned_conditions": 8,
     "max_calls_per_condition": 16,
@@ -794,6 +793,26 @@
     "reserved_scenarios_read": 0,
     "novel_method_claim": false,
     "plan": "../../configs/P76_reasoning_history_v01.json",
-    "protocol": "../../docs/experiments/P76_reasoning_history.md"
+    "protocol": "../../docs/experiments/P76_reasoning_history.md",
+    "fixed_commit": "902d9d9ec00fb121507581342464b9eb746c38b1",
+    "push_ci": 39898078442,
+    "pr_ci": 39898175074,
+    "push_job": 120233031106,
+    "pr_job": 120233346700,
+    "merge_commit": "87e79517b0010eabcbf4c41b1c3d79bcf1a85edd",
+    "all_eight_initial_inputs_admitted": true,
+    "initial_reasoning_minus_public_tokens": [
+      291,
+      189,
+      1116,
+      361
+    ]
+  },
+  "reasoning_history_scope_in_manuscript": {
+    "included": true,
+    "component": "reasoning_history_scope_component.tex",
+    "historical_display_conditions_replay_reasoning": false,
+    "P76_results_included": false,
+    "source": "../../docs/P75_manuscript_scope.md"
   }
 }
