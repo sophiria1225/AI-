@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+第２反復の全８条件は両側３／４成功、非表示は合計69,581 token増。文章化された呼出し記録内のID差も確認し、表示前の参照統一部品を検査した。新しい部品の実モデル効果は未検証。第３反復は元の固定条件で継続中。[第２反復とID経路の補助読取](docs/P81_fallback_reference_diagnostic_20261024.md)。
+
 P81の同一seed反復を固定HEAD `39af0d0c7a4ca8a0937676a84f714eb36cf7bdf3` から実行中。既知４課題×残時間表示／非表示を２回追加する全16条件を、固定順と有限予算のまま進める。初期８入力確認は成功した。全件の採否は終了後に判断し、途中の一致や費用差を全体へ広げない。 [実行開始](reports/P81_execution_start_20261024.json)／[終了後の集計](docs/P81_closure_reporting_20261024.md)／[全24条件を取り込む原稿準備](papers/202610_letter/time_visibility_repetitions/README.md)。
 
 終了済みP80は両条件3/4成功で全体の採用基準は未達。補助ログの順序対応を前提にした非表示側の論理費用下限は820,051 tokenで、表示側の787,092を上回る。元の不明１生成は保持する。新手法・品質を保った全仕事削減・採録に足る中心貢献は未確立。 [P80全結果](docs/P80_findings.md)／[補助下限](docs/P80_usage_lower_bound_20261024.md)／[貢献の範囲](docs/time_observation_contribution_scope_20261024.md)。
