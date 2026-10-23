@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P78 task comparison complete and integrated. P79 is preparing twelve model-only saved-input replays to separate within-condition repetition from a one-second wall-notice change. No task API, evaluator or reserved scenario use; central novelty remains unestablished.",
+  "current_experiment": "P78 is complete and included in the primary manuscript. P79 completed all twelve saved-input replays with zero audit mismatches and 99,966 known tokens; both inputs were sensitive to a one-second notice change. This calibration does not establish new methodology or task savings. No new generation comparison is allocated.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -259,16 +259,27 @@
     "api_error_preintervention_divergence_explicit": true
   },
   "last_completed_measurement_calibration": {
-    "phase": "P58",
-    "fixed_generation_commit": "b84bec7c92bae31d382f94cb6e671410165dd4d7",
-    "report": "../../reports/P58_notice_calibration.json",
-    "audit": "../../reports/P58_notice_audit.json",
-    "model_calls": 4,
-    "known_total_tokens": 63312,
+    "phase": "P79",
+    "status": "complete",
+    "fixed_generation_commit": "1365919664d33fe6b883232151f6e36043ada5d5",
+    "report": "../../reports/P79_clock_notice_replay.json",
+    "model_calls": 12,
+    "known_total_tokens": 99966,
     "unknown_usage_calls": 0,
-    "local_message_sensitivity_observed": true,
+    "within_all_four_groups_equal": true,
+    "cross_public_output_equal_pairs_by_input": [
+      0,
+      0
+    ],
+    "cross_pairs_by_input": [
+      9,
+      9
+    ],
+    "independent_samples_claim": false,
+    "server_stopped": true,
+    "owned_processes_absent": true,
     "is_task_or_novel_method_comparison": false,
-    "server_stopped": true
+    "material": "../../materials/20261023_p79/README.md"
   },
   "last_completed_token_count_probe": {
     "phase": "P53",
@@ -433,7 +444,7 @@
   },
   "claim_scope": "../../docs/letter_claim_scope_20261023.md",
   "latest_manuscript_material": "../../materials/20261023_letter_api_errors/README.md",
-  "latest_user_direction": "2026-10-23: user directed implementation to resume after professor-brief title and abstract revisions. Continue authorized research and manuscript work; no new method or acceptance assurance established.",
+  "latest_user_direction": "2026-10-23: user asked whether novelty is emerging and directed execution to continue after the answer. Candidly report that a novel method remains unestablished; continue authorized implementation, research and materials/Project updates.",
   "previous_passive_inspection": {
     "phase": "P59",
     "report": "../../reports/P59_membership_scope.json",
@@ -1162,13 +1173,32 @@
   "latest_manuscript_publication": "../../reports/P78_manuscript_publication_20261023.json",
   "planned_generation_diagnostic": {
     "phase": "P79",
-    "status": "preparing",
+    "status": "complete",
     "max_model_calls": 12,
     "max_total_tokens": 150000,
     "max_wall_seconds": 7200,
     "task_execution": false,
     "new_task_quality_or_savings_claim": false,
     "plan": "../../configs/P79_clock_notice_replay_v01.json",
-    "protocol": "../../docs/experiments/P79_clock_notice_replay.md"
-  }
+    "protocol": "../../docs/experiments/P79_clock_notice_replay.md",
+    "fixed_commit": "1365919664d33fe6b883232151f6e36043ada5d5",
+    "preflight_input_count_requests": 4,
+    "maximum_reserved_tokens": 145356,
+    "execution_start": "../../reports/P79_execution_start_20261023.json",
+    "results": "../../docs/P79_findings.md",
+    "audit": "../../reports/P79_clock_notice_replay.json"
+  },
+  "previous_measurement_calibration_before_P79": {
+    "phase": "P58",
+    "fixed_generation_commit": "b84bec7c92bae31d382f94cb6e671410165dd4d7",
+    "report": "../../reports/P58_notice_calibration.json",
+    "audit": "../../reports/P58_notice_audit.json",
+    "model_calls": 4,
+    "known_total_tokens": 63312,
+    "unknown_usage_calls": 0,
+    "local_message_sensitivity_observed": true,
+    "is_task_or_novel_method_comparison": false,
+    "server_stopped": true
+  },
+  "P79_is_added_to_primary_manuscript_results": false
 }

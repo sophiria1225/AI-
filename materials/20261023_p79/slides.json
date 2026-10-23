@@ -1,0 +1,39 @@
+[
+  {
+    "title": "残時間通知と<br>生成の再現性",
+    "cover": true,
+    "body": "",
+    "takeaway": "",
+    "notes": "P79。既知２入力の有限診断。表紙は題名のみ。"
+  },
+  {
+    "title": "同じ入力の反復と、通知１秒差を分ける",
+    "body": "<table class=\"results\"><tr><th>既知入力</th><th>元の生成</th><th>元の通知 秒</th><th>＋１秒</th><th>入力token</th></tr><tr><td>返金</td><td>call_006</td><td>1,696</td><td>1,697</td><td>7,403</td></tr><tr><td>曲情報の書出し</td><td>call_006</td><td>1,677</td><td>1,678</td><td>8,631</td></tr></table><p class=\"body\">各通知３回、計12生成。履歴・通信ID・ツール・seed56・最大4096出力を共通化。</p><p class=\"body\">全要求で入力再利用を無効にし、実測cache_n=0を確認する。</p>",
+    "takeaway": "元P78のタスクや推論状態を再現せず、保存入力に対する単発生成を診断する。",
+    "notes": "P78の全４対から、実API例外前の最初の内容差が残時間だけだった全２対を選んだ。元の継続はキャッシュあり。保存された通知は実時間ではなく固定した刺激である。"
+  },
+  {
+    "title": "固定した全12生成を、そのまま残す",
+    "body": "<table class=\"results\"><tr><th>順</th><th>入力</th><th>通知</th><th>反復</th><th>入力token</th><th>出力token</th><th>終了</th><th>生成 秒</th></tr><tr><td>1</td><td>返金</td><td>元</td><td>1</td><td>7,403</td><td>222</td><td>ツール生成</td><td>71.508</td></tr><tr><td>2</td><td>返金</td><td>＋１</td><td>1</td><td>7,403</td><td>323</td><td>ツール生成</td><td>77.595</td></tr><tr><td>3</td><td>返金</td><td>＋１</td><td>2</td><td>7,403</td><td>323</td><td>ツール生成</td><td>77.817</td></tr><tr><td>4</td><td>返金</td><td>元</td><td>2</td><td>7,403</td><td>222</td><td>ツール生成</td><td>71.233</td></tr><tr><td>5</td><td>返金</td><td>元</td><td>3</td><td>7,403</td><td>222</td><td>ツール生成</td><td>71.452</td></tr><tr><td>6</td><td>返金</td><td>＋１</td><td>3</td><td>7,403</td><td>323</td><td>ツール生成</td><td>77.687</td></tr><tr><td>7</td><td>書出し</td><td>＋１</td><td>1</td><td>8,631</td><td>336</td><td>ツール生成</td><td>89.169</td></tr><tr><td>8</td><td>書出し</td><td>元</td><td>1</td><td>8,631</td><td>373</td><td>ツール生成</td><td>91.394</td></tr><tr><td>9</td><td>書出し</td><td>元</td><td>2</td><td>8,631</td><td>373</td><td>ツール生成</td><td>91.335</td></tr><tr><td>10</td><td>書出し</td><td>＋１</td><td>2</td><td>8,631</td><td>336</td><td>ツール生成</td><td>89.215</td></tr><tr><td>11</td><td>書出し</td><td>＋１</td><td>3</td><td>8,631</td><td>336</td><td>ツール生成</td><td>89.144</td></tr><tr><td>12</td><td>書出し</td><td>元</td><td>3</td><td>8,631</td><td>373</td><td>ツール生成</td><td>91.383</td></tr></table>",
+    "takeaway": "未実行や不明使用量を補充しない。生成したプログラムは実行しない。",
+    "notes": "入力は全履歴を含む論理tokenで、内部推論も出力tokenへ計上する。生成時間には推論器全体のロードや待機は含まれない。生成した内容や認証値は公開せず、ハッシュだけ保存する。"
+  },
+  {
+    "title": "同一通知の３反復を、条件間の差より先に確認する",
+    "body": "<table class=\"results\"><tr><th>入力</th><th>通知</th><th>既知／試行</th><th>公開出力一致／組</th><th>全メッセージ一致／組</th><th>３回判定</th></tr><tr><td>返金</td><td>元</td><td>3/3</td><td>3/3</td><td>3/3</td><td>一致</td></tr><tr><td>返金</td><td>＋１</td><td>3/3</td><td>3/3</td><td>3/3</td><td>一致</td></tr><tr><td>曲情報の書出し</td><td>元</td><td>3/3</td><td>3/3</td><td>3/3</td><td>一致</td></tr><tr><td>曲情報の書出し</td><td>＋１</td><td>3/3</td><td>3/3</td><td>3/3</td><td>一致</td></tr></table><p class=\"body\">公開出力は文・関数名・引数・終了理由をそのまま照合。生成された通信IDだけを除く。</p>",
+    "takeaway": "打切りや空の公開出力、未完了の群を、同じ行動の再現とは判定しない。",
+    "notes": "全メッセージには推論フィールドも含めるが、内容を解釈せずハッシュで比較する。同じ入力からの組合せは独立標本ではない。未知の結果を一致に置き換えない。"
+  },
+  {
+    "title": "１秒差の全９組を、入力ごとに読む",
+    "body": "<table class=\"results\"><tr><th>入力</th><th>公開出力一致／組</th><th>全メッセージ一致／組</th></tr><tr><td>返金</td><td>0/9</td><td>0/9</td></tr><tr><td>曲情報の書出し</td><td>0/9</td><td>0/9</td></tr></table><p class=\"body\"><strong>返金</strong>：同一通知内は一致し、２通知の公開出力は全９組で異なった。</p><p class=\"body\"><strong>曲情報の書出し</strong>：同一通知内は一致し、２通知の公開出力は全９組で異なった。</p>",
+    "takeaway": "この固定入力の感度と、元タスクの成功・費用への効果は別である。",
+    "notes": "一方の通知の３回と他方の３回の総当たり９組。独立９標本やp値にはしない。キャッシュありのP78、将来の入力、課題品質への一般化は行わない。"
+  },
+  {
+    "title": "診断自身の費用を記録し、所有推論器を終了する",
+    "body": "<table class=\"results\"><tr><th>測定</th><th>値</th></tr><tr><td>試行／計画</td><td>12/12</td></tr><tr><td>論理入力＋出力token</td><td>99,966</td></tr><tr><td>実処理入力token</td><td>96,204</td></tr><tr><td>キャッシュ入力token</td><td>0</td></tr><tr><td>全推論器稼働 秒</td><td>1,010.160</td></tr><tr><td>ロード 秒</td><td>10.052</td></tr><tr><td>生成時間合計 秒</td><td>988.929</td></tr></table><p class=\"body\">入力計数４回。環境API・生成コード実行・評価器・保留群は０。</p>",
+    "takeaway": "全結果の監査と所有プロセスの不在を確認。新手法や全仕事費用の削減は未実証。",
+    "notes": "全推論器時間はロード・計数・生成・待機を含むため、各部分と足し合わせない。不明使用量は既知分へ補完しない。この診断結果は次の比較の入力条件へ戻し、元P78の成否と採否を変更しない。"
+  }
+]
