@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P78 complete; all eight conditions evaluated and included in the manuscript. Both arms 3/4, exception minus value +120991 whole-task tokens; adoption gate failed. No new model comparison allocated; central novelty unestablished.",
+  "current_experiment": "P78 task comparison complete and integrated. P79 is preparing twelve model-only saved-input replays to separate within-condition repetition from a one-second wall-notice change. No task API, evaluator or reserved scenario use; central novelty remains unestablished.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -797,10 +797,10 @@
     "P76_component": "reasoning_comparison_component.tex"
   },
   "latest_mirror_preview": {
-    "report": "../../reports/P76_ieice_mirror_preview.json",
-    "pdf": "../../materials/20261023_p76_ieice_preview/AI_harness_P76_ieice_preview_20261023.pdf",
-    "source_pdf_sha256": "9acf95889a07911d1a9751312e181efc26eccb28469aa7a2e6a60b72a2e1df5d",
-    "pdf_sha256": "5d09dae3e40633d1d825e4e403e0088aa77c2a46f1868e8ae6e9c3790fe3b3fb",
+    "report": "../../reports/P78_ieice_mirror_preview.json",
+    "pdf": "../../materials/20261023_p78_ieice_preview/AI_harness_P78_ieice_preview_20261023.pdf",
+    "source_pdf_sha256": "caf2465dd300a7c33e9310d4bac0fece8c40e8116ff13a40704b4fc38a1109b9",
+    "pdf_sha256": "eab5abbb34f46eefc0b85dc8016f3955cf21f6bb022fdfa77b6aa06407084f32",
     "class_version": "2023/11/21 v3.4a for Transactions of IEICE",
     "main_pages": 4,
     "english_endmatter_pages": 1,
@@ -814,8 +814,8 @@
     "current_official_template_verified": false,
     "submission_ready": false,
     "authors_are_placeholders": true,
-    "P76_results_included": true,
-    "matches_current_manuscript": false
+    "P78_results_included": true,
+    "matches_current_manuscript": true
   },
   "latest_deferred_acquisition_decision": "../../docs/deferred_acquisition_feasibility_20261023.md",
   "previous_completed_task_experiment_before_P76": {
@@ -1137,5 +1137,38 @@
     "reasoning_history_comparison_included": true,
     "separate_reasoning_history_conditions": 8
   },
-  "latest_manuscript_integration": "../../reports/P78_manuscript_integration_20261023.json"
+  "latest_manuscript_integration": "../../reports/P78_manuscript_integration_20261023.json",
+  "previous_mirror_preview_before_P78": {
+    "report": "../../reports/P76_ieice_mirror_preview.json",
+    "pdf": "../../materials/20261023_p76_ieice_preview/AI_harness_P76_ieice_preview_20261023.pdf",
+    "source_pdf_sha256": "9acf95889a07911d1a9751312e181efc26eccb28469aa7a2e6a60b72a2e1df5d",
+    "pdf_sha256": "5d09dae3e40633d1d825e4e403e0088aa77c2a46f1868e8ae6e9c3790fe3b3fb",
+    "class_version": "2023/11/21 v3.4a for Transactions of IEICE",
+    "main_pages": 4,
+    "english_endmatter_pages": 1,
+    "visual_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "current_official_template_verified": false,
+    "submission_ready": false,
+    "authors_are_placeholders": true,
+    "P76_results_included": true,
+    "matches_current_manuscript": false
+  },
+  "latest_manuscript_publication": "../../reports/P78_manuscript_publication_20261023.json",
+  "planned_generation_diagnostic": {
+    "phase": "P79",
+    "status": "preparing",
+    "max_model_calls": 12,
+    "max_total_tokens": 150000,
+    "max_wall_seconds": 7200,
+    "task_execution": false,
+    "new_task_quality_or_savings_claim": false,
+    "plan": "../../configs/P79_clock_notice_replay_v01.json",
+    "protocol": "../../docs/experiments/P79_clock_notice_replay.md"
+  }
 }

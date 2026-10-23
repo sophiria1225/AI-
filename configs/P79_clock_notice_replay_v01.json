@@ -1,0 +1,146 @@
+{
+  "phase": "P79",
+  "batch_id": "P79_clock_notice_v01",
+  "max_calls": 12,
+  "max_total_tokens": 150000,
+  "max_output_tokens": 4096,
+  "seed": 56,
+  "call_timeout_seconds": 480,
+  "max_wall_seconds": 7200,
+  "max_preflight_seconds": 300,
+  "max_idle_seconds": 60,
+  "server_max_lifetime_seconds": 9000,
+  "cache_prompt": false,
+  "automatic_retries": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "schedule": [
+    {
+      "case_index": 0,
+      "level": "original",
+      "replicate": 1,
+      "id": "call_001"
+    },
+    {
+      "case_index": 0,
+      "level": "plus_one",
+      "replicate": 1,
+      "id": "call_002"
+    },
+    {
+      "case_index": 0,
+      "level": "plus_one",
+      "replicate": 2,
+      "id": "call_003"
+    },
+    {
+      "case_index": 0,
+      "level": "original",
+      "replicate": 2,
+      "id": "call_004"
+    },
+    {
+      "case_index": 0,
+      "level": "original",
+      "replicate": 3,
+      "id": "call_005"
+    },
+    {
+      "case_index": 0,
+      "level": "plus_one",
+      "replicate": 3,
+      "id": "call_006"
+    },
+    {
+      "case_index": 1,
+      "level": "plus_one",
+      "replicate": 1,
+      "id": "call_007"
+    },
+    {
+      "case_index": 1,
+      "level": "original",
+      "replicate": 1,
+      "id": "call_008"
+    },
+    {
+      "case_index": 1,
+      "level": "original",
+      "replicate": 2,
+      "id": "call_009"
+    },
+    {
+      "case_index": 1,
+      "level": "plus_one",
+      "replicate": 2,
+      "id": "call_010"
+    },
+    {
+      "case_index": 1,
+      "level": "plus_one",
+      "replicate": 3,
+      "id": "call_011"
+    },
+    {
+      "case_index": 1,
+      "level": "original",
+      "replicate": 3,
+      "id": "call_012"
+    }
+  ],
+  "cases": [
+    {
+      "task_id": "60d0b5b_1",
+      "source_call": "call_006",
+      "source_run": "P78_03_ERROR_VALUE",
+      "other_run": "P78_03_ERROR_EXCEPTION",
+      "original_wall_seconds": 1696,
+      "expected_input_tokens": 7403,
+      "condition_payload_sha256": {
+        "original": "6a20eb1053767dcc29506503aed6dfe0749c5fed9d1d649d99d1d7871493162e",
+        "plus_one": "47ed663d4bcf71b642f222dd80b26639e3d695ace6a4411943c2c3cfcc31a979"
+      }
+    },
+    {
+      "task_id": "6104387_1",
+      "source_call": "call_006",
+      "source_run": "P78_04_ERROR_VALUE",
+      "other_run": "P78_04_ERROR_EXCEPTION",
+      "original_wall_seconds": 1677,
+      "expected_input_tokens": 8631,
+      "condition_payload_sha256": {
+        "original": "45d0e8f2c6195d84c2dfcfaf50e811c0e18f016ae09635ccc7677650f1690445",
+        "plus_one": "2959d2722436210120e71ba6159d39149f43ccc85b82c0240fa0c51af63516f2"
+      }
+    }
+  ],
+  "source_sha256": {
+    "reports/P78_comparison.json": "6364af563af1cc3d1d2f5ad37ac8233c7d379a92f06042cd755851d24ba22999",
+    "reports/P78_input_divergence.json": "48a8c5bc5d4aee7586a01def0d52c1bf6bd82fdb7556804381c29ff94fec45d2",
+    "reports/P78_input_content_divergence.json": "4d3d4ae3414930d599e419386c28b869b161318001e22111cd12a1d7aeb998ec",
+    "reports/P78_results_provenance_20261023.json": "bad700d457762bc67cc99a6767915e0ee84dc6b1ebed65408dee1af1f9aa39fa",
+    "configs/P29_stateful_code_v01.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+    "reports/P39_inference_cache_v02.json": "122378c9ef4855e84171c08cd6672d2f9db5b280a0021a355080f8193a81aaef",
+    "docs/P39_findings.md": "dac8064eddbd75db3a60ddcab85295d64d754695b0679405fc1794340e8ec500"
+  },
+  "source_record_sha256": {
+    "records/context_pilot/P78_03_ERROR_VALUE/call_006/request.json": "713828b4cfea34c728d063224f5444125d200d1049f8350ddefab32c3b3661a3",
+    "records/context_pilot/P78_03_ERROR_VALUE/call_006/response.json": "4d0a6dc72f792ca2999cc57c2dd8972836a303511c8f12c63e8c79c5761b51b5",
+    "records/context_pilot/P78_03_ERROR_VALUE/budget_signals.json": "f3172591e9c2dba137fd80f9dea9afa0d580348c780939c841c99d8e2fdf34e8",
+    "records/context_pilot/P78_03_ERROR_EXCEPTION/call_006/request.json": "61e9fb257732a6a17c94b49d65b6dc4d92f86644f865914557a6fc65d8f823ba",
+    "records/context_pilot/P78_03_ERROR_EXCEPTION/call_006/response.json": "d46e1e949408e84b7b88bb5e47de5f919122c79785d364193eeee32d4dacdfb4",
+    "records/context_pilot/P78_03_ERROR_EXCEPTION/budget_signals.json": "a17ec93403243b6f58b92cb215fdcc3130c8210363720864bd67d47df52180bf",
+    "records/context_pilot/P78_04_ERROR_EXCEPTION/call_006/request.json": "65ab4b27b8e65d28e8b106b8fe1237080ac07091c80579ae3a38e61d017f32da",
+    "records/context_pilot/P78_04_ERROR_EXCEPTION/call_006/response.json": "a6398eda156731145bec3aa193c01ece6165ed24c955c8c86d8b14a575566a57",
+    "records/context_pilot/P78_04_ERROR_EXCEPTION/budget_signals.json": "288465010ca6df1c818ef3783cfed7feab42bb5d74504b7192e0b204dd422beb",
+    "records/context_pilot/P78_04_ERROR_VALUE/call_006/request.json": "032851b1a20d84599368f7e44236bea642feca75fc569fdc3542331d313881ac",
+    "records/context_pilot/P78_04_ERROR_VALUE/call_006/response.json": "8ae44ad0300fea801692dac18d551556b89dd051667033631c14a6cc9c3024c2",
+    "records/context_pilot/P78_04_ERROR_VALUE/budget_signals.json": "a1876a6a80c137e5fe447d1f2f0aee0c6e4f029d51977902fee1811934d5b814"
+  },
+  "selection_rule": "All P78 pairs whose first content difference before any API exception vanishes after only current wall-snapshot normalization and corresponding transport-ID renaming.",
+  "comparison": "Original value-arm call_006 request, with current wall snapshot original or plus one second. Both use cache_prompt=false; all remaining fields including IDs, opaque reasoning, tools and sampling stay unchanged.",
+  "scope": "Known saved-input generation only. Never execute generated code or tools. Does not recreate the P78 warm cache or measure task quality or whole-task savings.",
+  "stop_rule": "Stop the entire probe on unknown usage, identity/input/cache mismatch, non-idle runtime, exhausted bounds or user stop. Preserve every failed or unattempted slot; no replacement."
+}
