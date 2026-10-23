@@ -37,6 +37,8 @@ P82の[条件付き区間解析](docs/P82_interval_preparation_20261024.md)は�
 
 条件付き区間が全件照合を通った後、[P82資源別集計](docs/P82_resource_preparation_20261024.md)を別処理で作る。全24行・48側別CSVを保存し、未知cache量を補完しない。この実集計も未生成である。
 
+P82/P84が閉じた後の[統合稿の構築処理](papers/202610_letter/closed_control_integration/README.md)を準備した。自動待機処理は追加していない。同一hashの報告を解析版へ保存後、build_closed_control_draft.pyとrender_bound_letter_draft.pyを実行する。実結果の表・PDFは未生成。区間が成立しなければ理由を残し、明示的な省略指定で欠測を保持できる。
+
 ## 保存した結果と未完了事項
 
 [現在の状態](docs/current_status.md)に、P80/P81、P83、費用指標の再集計、先行研究、原稿の入口をまとめた。実験結果・準備台帳・既存原稿のhashを保ち、必要な改訂は別版にする。README等の入口は更新してよい。
