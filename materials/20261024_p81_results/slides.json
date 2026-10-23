@@ -1,0 +1,44 @@
+[
+  {
+    "title": "同じseedと初期状態で、全８条件を３回ずつ調べる",
+    "body": "<p class=\"body\">既知４課題×残時間表示M／非表示H。P80の８行と、新しいP81の16行をすべて保持。</p><table class=\"\"><tr><th>条件</th><th>成功／評価</th><th>既知全token</th><th>不明生成</th><th>実行済み／予定</th></tr><tr><td>残時間を表示</td><td>9/12</td><td>2,426,782</td><td>0</td><td>12/12</td></tr><tr><td>残時間を非表示</td><td>9/12</td><td>2,321,406＋不明2</td><td>2</td><td>12/12</td></tr></table>",
+    "takeaway": "独立した課題は４つ。24行や24対を独立標本として扱わない。",
+    "notes": "seed57＋呼出し番号、世界seed42。全推論保持・持続Python・実期限・計数を共通化。全体費用には失敗と不明試行も含める。P80欠測は反復で置き換えない。"
+  },
+  {
+    "title": "反復1の全８条件：P80の元記録",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>M 表示</td><td>成功</td><td>177,373</td><td>17</td><td>100</td><td>583.8</td></tr><tr><td>写真移動</td><td>H 非表示</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>496.7</td></tr><tr><td>精算</td><td>M 表示</td><td>成功</td><td>284,294</td><td>20</td><td>26</td><td>447.3</td></tr><tr><td>精算</td><td>H 非表示</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.4</td></tr><tr><td>返金</td><td>M 表示</td><td>成功</td><td>216,854</td><td>21</td><td>25</td><td>510.7</td></tr><tr><td>返金</td><td>H 非表示</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>325.6</td></tr><tr><td>曲情報の書出し</td><td>M 表示</td><td>未達</td><td>108,571</td><td>12</td><td>80</td><td>355.9</td></tr><tr><td>曲情報の書出し</td><td>H 非表示</td><td>未達</td><td>331,569＋不明1</td><td>20</td><td>69</td><td>1799.5</td></tr></table>",
+    "takeaway": "成功・未達・未評価・使用量不明を、同じ行に残す。",
+    "notes": "各反復を別々に表示する。知られた費用だけの差を、完全な総費用差へ読み替えない。全入力はcache分を含み、金額ではない。"
+  },
+  {
+    "title": "反復2の全８条件：P81の追加実行",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>M 表示</td><td>成功</td><td>210,357</td><td>19</td><td>101</td><td>865.0</td></tr><tr><td>写真移動</td><td>H 非表示</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>499.0</td></tr><tr><td>精算</td><td>M 表示</td><td>成功</td><td>215,182</td><td>17</td><td>22</td><td>382.5</td></tr><tr><td>精算</td><td>H 非表示</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.5</td></tr><tr><td>返金</td><td>M 表示</td><td>成功</td><td>138,701</td><td>17</td><td>17</td><td>361.3</td></tr><tr><td>返金</td><td>H 非表示</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>326.3</td></tr><tr><td>曲情報の書出し</td><td>M 表示</td><td>未達</td><td>134,352</td><td>15</td><td>80</td><td>382.7</td></tr><tr><td>曲情報の書出し</td><td>H 非表示</td><td>未達</td><td>319,348</td><td>19</td><td>80</td><td>1512.6</td></tr></table>",
+    "takeaway": "成功・未達・未評価・使用量不明を、同じ行に残す。",
+    "notes": "各反復を別々に表示する。知られた費用だけの差を、完全な総費用差へ読み替えない。全入力はcache分を含み、金額ではない。"
+  },
+  {
+    "title": "反復3の全８条件：P81の追加実行",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>M 表示</td><td>成功</td><td>164,024</td><td>17</td><td>100</td><td>614.5</td></tr><tr><td>写真移動</td><td>H 非表示</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>495.5</td></tr><tr><td>精算</td><td>M 表示</td><td>成功</td><td>263,695</td><td>19</td><td>26</td><td>440.3</td></tr><tr><td>精算</td><td>H 非表示</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.9</td></tr><tr><td>返金</td><td>M 表示</td><td>成功</td><td>73,670</td><td>12</td><td>12</td><td>191.0</td></tr><tr><td>返金</td><td>H 非表示</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>326.4</td></tr><tr><td>曲情報の書出し</td><td>M 表示</td><td>未達</td><td>439,709</td><td>25</td><td>71</td><td>1399.5</td></tr><tr><td>曲情報の書出し</td><td>H 非表示</td><td>未達</td><td>324,014＋不明1</td><td>20</td><td>48</td><td>1799.8</td></tr></table>",
+    "takeaway": "成功・未達・未評価・使用量不明を、同じ行に残す。",
+    "notes": "各反復を別々に表示する。知られた費用だけの差を、完全な総費用差へ読み替えない。全入力はcache分を含み、金額ではない。"
+  },
+  {
+    "title": "同じ条件の３回で、成否と費用はどの程度そろうか",
+    "body": "<img class=\"cost-figure\" src=\"figures/P81_repetition_costs.svg\" alt=\"全４課題・両条件・３回の論理費用\">",
+    "takeaway": "塗りは成功、白抜きは未達・未評価。上向き三角は既知費用＋不明使用量。",
+    "notes": "全３回が評価済みで使用量既知の場合だけ範囲を計算。欠測を０にした平均や、成功例だけの平均は作らない。縦軸の尺度は課題ごとに異なる。"
+  },
+  {
+    "title": "要求と公開出力の一致を全24対で照合する",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>全使用量既知</th><th>全要求一致</th><th>全公開出力一致</th><th>最初の差が現在時計のみ</th></tr><tr><td>写真移動</td><td>M</td><td>3/3</td><td>0/3</td><td>0/3</td><td>3対</td></tr><tr><td>写真移動</td><td>H</td><td>3/3</td><td>3/3</td><td>3/3</td><td>0対</td></tr><tr><td>精算</td><td>M</td><td>3/3</td><td>0/3</td><td>0/3</td><td>3対</td></tr><tr><td>精算</td><td>H</td><td>3/3</td><td>3/3</td><td>3/3</td><td>0対</td></tr><tr><td>返金</td><td>M</td><td>3/3</td><td>0/3</td><td>0/3</td><td>3対</td></tr><tr><td>返金</td><td>H</td><td>3/3</td><td>3/3</td><td>3/3</td><td>0対</td></tr><tr><td>曲情報の書出し</td><td>M</td><td>3/3</td><td>0/3</td><td>0/3</td><td>3対</td></tr><tr><td>曲情報の書出し</td><td>H</td><td>0/3</td><td>未確定</td><td>未確定</td><td>0対</td></tr></table>",
+    "takeaway": "各条件３対は同じ３実行を共有する。入出力hashの照合は意味的な同値証明ではない。",
+    "notes": "一致の比は一致対数／両方の使用量が既知の判定対数であり、生成数が異なる場合は不一致。使用量欠測は未確定。時計差は該当が観測された対数。現在通知だけをそろえた事後照合は、実際の入力を変更した実験ではない。推論文字列はhashだけ照合。"
+  },
+  {
+    "title": "全体の採否とレターで主張できる範囲",
+    "body": "<table class=\"\"><tr><th>反復</th><th>採用基準</th><th>成功喪失</th><th>全費用差 H−M</th></tr><tr><td>1</td><td>未達</td><td>0</td><td>未確定</td></tr><tr><td>2</td><td>未達</td><td>0</td><td>+69,581</td></tr><tr><td>3</td><td>未達</td><td>0</td><td>未確定</td></tr></table><p class=\"body\">追加P81の推論器滞在 10,405.1秒、独立評価 26.82秒。<br>元のP80の費用・失敗・欠測は保持する。</p>",
+    "takeaway": "新手法・一般的品質維持・母集団の平均削減を、この反復だけで確立したとはしない。",
+    "notes": "P80の不明生成があるため全３反復の採用基準達成は元から不成立。反復の目的は安定性の確認。P80補助下限は別の事後解析で、終端使用量やこの表を書き換えない。各時間は重なるため足さない。同じホストで編集・読取解析・軽量検査も進めており、ホストの負荷を排他的に固定した実験ではない。"
+  }
+]
