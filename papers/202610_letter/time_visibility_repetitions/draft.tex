@@ -1,0 +1,127 @@
+% Working repetition manuscript. No results until the full 24-row cohort is audited.
+% This file does not replace the current manuscript or the professor brief.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントの時間通知を評価する. 実時間上限を共通にし, 残時間の表示有無を比較する. 保存入力の１秒差による経路変化と課題全体の成否, 全入出力費用を分けて検証する.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，時間通知，費用評価
+
+\section{問題設定}
+必要な情報と最終品質を保って仕事全体の費用を減らすには，ハーネスがモデルへ渡す情報の必要性を検証する必要がある．
+環境の観測に加え，残token，API回数，残時間などの制御情報も次の行動へ入力される．
+このうち残時間は同じ課題状態でも推論速度や処理時間によって変わる．
+従って，同じseedと実行上限を指定したことだけでは，同じ判断入力を与えたことにならない．
+
+本稿の問いは，\textbf{実際の期限を共通にしても，現在の残時間をモデルへ表示するかどうかが，最終成否と全仕事費用へどう現れるか}である．
+残時間の非表示を常に望ましいとは仮定せず，通知の役割と強制的な停止の役割を分けて評価する．
+
+\section{関連研究と本稿の範囲}
+コードを行動とするCodeAct\cite{codeact}や，状態を持つアプリ操作を評価するAppWorld\cite{appworld}を背景とする．
+On the Clock\cite{clock}は時間情報の通知とコマンドへの期限強制を区別し，予算遵守と時間の生産的利用が別の問題であることを扱う．
+本稿も通知と期限を分離するが，この分離そのものを独自手法とはしない．
+Timely Machine\cite{timely}は推論とツールの待ち時間を含む時間予算への適応を学習し，速度や時間情報の扱いを検討する．
+また，数値精度や実行構成による推論の非決定性\cite{nondeterminism}と，複数段の評価に必要な記録の報告\cite{repro}にも先行研究がある．
+本稿では，保存入力の１秒差への局所反応と，全仕事の成否・費用・同一seed反復を区別し，現在時刻を含む制御入力の差と出力列の変化を照合する．
+時刻通知，固定seedの限界，記録の保存そのものを新規手法とはしない．
+通信参照の正規化も通常の比較条件整備である．
+
+\section{通知と実行上限の分離}
+時点$j$でハーネスが持つ実資源状態を$b_j$，モデルへ渡す表示を$v_j$とする．
+次のモデル入力は，公開履歴と返却済み推論を含む$h_j$と$v_j$から作る．
+表示条件Mは$b_j$の実測残時間を整数秒で通知し，非表示条件Hはその値を除いて非表示である旨を明示する．
+Hは時刻を固定値や虚偽値へ置き換えない．token，API，生成回数の通知は共通にする．
+実行可否とタイムアウトは両側とも実際の単調時計から判定する．
+表示を消したことによる期限延長はない．
+
+通信上のtool-call IDとtool-result IDは両条件とも初出順に付け直し，対応を検査してから入力を計数する．
+文章，API引数・返却，過去の推論には文字列置換を行わず，元履歴も保存する．
+この処理は通信識別子の表現をそろえるもので，モデル内部やGPU演算の決定性を保証しない．
+同じ固定ランタイムで実施済みの別の入力診断では，IDだけを変更しても再構成token列は一致していた．
+従って，通信JSON上のID差だけからモデル入力差や挙動への影響を推定しない．
+
+\section{保存入力の局所診断}
+先行する失敗通知の比較では，API例外より前に経路が分かれた２入力があった．
+通信参照を対応付けた後の最初の差は実測残時間１秒だった．
+この２入力について他の項目を共通にし，元値と＋１秒を各３回，計12回生成した．
+全回で初期cacheは０，同じ通知内では３回の公開出力が一致し，通知間では両入力とも異なった．
+使用量不明は０，論理入出力99,966 tokenであり，生成コードの実行と課題評価は行っていない．
+これは小さな入力差への局所反応であり，元のwarm状態の再現，実行後の成否差，通知非表示の品質保証ではない．
+
+\section{全仕事比較の方法}
+既知の写真移動，電気代精算，返金，曲情報書出しの４課題について，初期状態からM/Hを各３回比較する．
+最初の全８条件をP80，同じ８条件を２回追加する計画をP81と呼ぶ．
+P80を確認後にP81の全16条件と順序を固定しており，３回を初めから同時に事前登録した比較ではない．
+これらは過去の方式探索で閲覧・実行した開発課題であり，未調整群ではない．
+AppWorld 0.1.3.post1上で，MiniMax-M3のIQ4\_XS量子化版とllama.cpp b11669を用いる．
+推論を有効にし，温度1.0，top-p 0.95，１生成の通信待ち上限600秒と残実時間の小さい方を用いる．
+モデル，公開初期状態，型付きAPI返却，通常Python例外，持続Python，公開API名，初回からの推論保持は共通とする．
+環境seed42，モデルseed57＋呼出し番号を固定し，初回は課題順にM/H，H/M，M/H，H/Mと実行する．
+２回目は各組の順序を逆転し，３回目は初回と同じ順序とする．
+課題やseedの探索ではなく，同じ条件の３回の安定性を調べる．
+各条件80生成，450,000論理token，1,800作業秒を上限とし，API上限は写真160，他80とする．
+出力上限は4,096 tokenと残予算の小さい方である．
+各条件の初回はcold cacheを実測確認し，後続は通常のprefix cacheを使う．
+
+最終成否は独立評価器で各１回判定し，評価結果や隠れた基準をモデルへ返さない．
+仕事費用は初期からの全論理入力$I_j$と出力$O_j$の和
+\begin{equation}T_{\rm work}=\sum_j(I_j+O_j)\end{equation}
+で，推論，制御情報，失敗，回復とcache入力を含む．
+論理tokenを請求額や時間と同一視しない．
+API，準備，作業，後片付け，評価，推論器ロード・滞在は別に示し，重なる時間を加算しない．
+
+生成を送信した後に使用量が不明になった場合，未確認応答を実行せず，再試行もしない．
+既知部分と不明試行を残し，確定合計差は求めない．
+期限後に応答と使用量だけが届いた場合も，その費用は計上し，期限外のコード実行は認めない．
+Hの開発上の採用基準は全８条件の評価・全使用量既知・監査一致，課題ごとの成功喪失０，合計$T_{\rm work}$の減少とする．
+これは統計的な非劣性判定ではない．
+
+\section{全条件の成否と費用}
+\input{papers/202610_letter/time_visibility_repetitions/results.tex}
+
+\section{同じ条件の経路の照合}
+各条件の３実行から得る３対，計24対を全て比較する．
+公開出力と返却メッセージ全体のhashを照合し，返却された内部推論の意味内容は解析しない．
+最初に要求が異なる箇所では，現在の残時間欄だけをそろえた事後照合も行う．
+これは実際のモデル入力token列の同一性を確認する操作ではなく，差の所在を切り分ける読取解析である．
+\input{papers/202610_letter/time_visibility_repetitions/stability.tex}
+
+\section{解釈と限界}
+MとHは初回から通知文が異なり，その文章長の差も処置に含む．
+操作はハーネスの現在の残時間欄に限り，生成コードによる独自の時刻参照を禁止するものではない．
+同じAPI列に到達しても，後続の入力，Python状態，潜在計算の同一性は意味しない．
+同じseedでもGPU演算やcache状態による変動が残るため，単一実行の費用差を安定した平均改善とは扱わない．
+また，独立した課題は既知４つである．24行を24課題とは扱わず，24対も同じ実行を共有するため独立標本とはしない．
+同じホストで編集，読取解析，軽量検査も行っており，計算機負荷を排他的に固定した比較ではない．
+出力列の一致は意味的な同値や将来の再現を保証せず，時計欄の差が先行したことだけで全費用差の因果効果は同定しない．
+この反復から他の課題・モデル・予算の一般的品質維持や平均削減は主張しない．
+
+局所診断で１秒差への反応が確認されても，課題全体で時間通知が不要であるとは結論できない．
+反対に，時間内に停止したことだけでは，必要処理と品質を保った効率化は示せない．
+表示情報，実行上限，実際の操作，最終成否，全仕事費用を対応付けて判断する．
+全条件と探索段階の先行結果を公開記録に保持する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\begin{thebibliography}{9}
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{clock} A. Wang, N. Madan, V. Sobal, M. Trager, M. Kleinman, E. Mansimov, W. Xia, and S. Soatto, ``On the Clock: Towards Punctual and Productive Time-Budgeted AI Agents,'' arXiv:2610.10833v1, 2026.
+\bibitem{timely} Y. Ma, L. Li, Y. Chen, P. Li, X. Li, Q. Guo, D. Lin, and K. Chen, ``Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic,'' Proc. ACL, vol.1, pp.4619--4636, San Diego, USA, July 2026.
+\bibitem{nondeterminism} J. Yuan, H. Li, X. Ding, W. Xie, Y.-J. Li, W. Zhao, K. Wan, J. Shi, X. Hu, and Z. Liu, ``Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference,'' Advances in Neural Information Processing Systems, vol.38, 2025, doi:10.52202/085713-5653.
+\bibitem{repro} P. Pattnayak and A. Bhatia, ``ReproEvalCard: A Reporting Standard for Reproducible Evaluation of LLM Pipelines,'' Proc. ACL, vol.2, pp.238--249, San Diego, USA, July 2026.
+\end{thebibliography}
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Summary draft}\quad We evaluate wall-time observations in stateful LLM agents under a common enforced deadline. Saved-input calibration and three same-seed repetitions per condition separate local response changes from whole-task success, cost and trajectory stability. Four known development tasks do not establish general quality preservation or average savings.
+\end{document}
