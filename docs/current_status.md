@@ -1,5 +1,7 @@
 # 現在の状態
 
+[時間通知部品の新しいworker接続](budget_observation_worker_20261023.md)を追加し、17合成検査・全1,084検査を確認した。送信処理開始後の終端欠測を不明試行として最終集計へ残し、APIの不明な結果の二重計上を避ける。実モデル・実コンテナ・AppWorld課題での新接続は未検証。[部品資料](../materials/20261023_budget_worker/README.md)。新規性・品質改善とは扱わず、次の生成比較はまだ配分していない。
+
 通常対照を超える候補の[成立条件](remaining_control_scope_20261023.md)を再点検した。P78全137生成で、API例外９件は各API１送信であり、同じ例外プログラム前半の成功API再実行は確認できない。APIなし11生成116,711 tokenも無駄とは扱わない。ControlScope・LazyAgent・Incremental Consistency Executionの本文に照らし、独自の観測・判断・更新規則は未確定。P79原稿は[PR328](https://github.com/sophiria1225/AI-/pull/328)へ反映し、[更新したミラー予行](../materials/20261023_p79_ieice_preview/README.md)も全５頁を確認した。
 
 2026-10-23 継続作業: [P79全12生成](P79_findings.md)を終了・監査した。不一致０・使用量不明０、99,966 token。両入力で同一通知の３反復は一致し、１秒違う通知との公開出力は異なった。所有推論器停止・PID不在を確認、[６枚の資料](../materials/20261023_p79/README.md)を全頁確認した。環境API・生成コード実行・評価・保留群０。新手法や品質を保つ全仕事削減は未確立。次は比較の入力条件と通常対照を超える規則を絞る。同種の校正を増やさない。P78原稿と[ミラー予行](../materials/20261023_p78_ieice_preview/README.md)は保持する。
