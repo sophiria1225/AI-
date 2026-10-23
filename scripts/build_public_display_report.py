@@ -1,5 +1,6 @@
 """Render every P71 cell and its fixed decision; never select successful runs."""
 import argparse
+import csv
 from datetime import datetime, timezone
 import html
 import json
@@ -27,6 +28,23 @@ def build(root, output):
         raise ValueError('every fixed task and display condition must be retained')
     output.mkdir(parents=True, exist_ok=True)
     plot(report, output)
+    fields = ('phase', 'run_id', 'task_id', 'arm', 'record_status', 'success',
+              'logical_task_known_total_tokens', 'logical_task_unknown_usage_calls',
+              'known_total_tokens', 'unknown_usage_calls', 'model_calls', 'api_requests',
+              'setup_api_requests', 'continuation_wall_seconds', 'full_wall_seconds')
+    with (output / 'all_display_cells.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore')
+        writer.writeheader()
+        for cohort in (historical, report):
+            if (cohort['audit_errors'] or not cohort['all_planned_cells_accounted']
+                    or len(cohort['rows']) != 12):
+                raise ValueError('preserve all twelve historical and new cells')
+            for row in cohort['rows']:
+                values = {**row, 'phase': cohort['phase']}
+                if row['record_status'] == 'not_run_after_stop':
+                    values['logical_task_known_total_tokens'] = None
+                    values['logical_task_unknown_usage_calls'] = None
+                writer.writerow(values)
     slides = [dict(title='公開API名を使える条件で<br>説明省略の総費用を検証', cover=True)]
 
     def add(title, body, takeaway, refs, notes):
@@ -84,7 +102,7 @@ def build(root, output):
         f'{server["load_wall_seconds"]:.1f}秒、常駐{server["wall_seconds"]:,.1f}秒。終了とプロセス消滅を確認。</p>',
         '説明なしの公開名呼出しも、通常のAPI送信として予算と監査の対象にする。',
         [('全件監査', 'reports/P71_comparison.json'), ('推論器費用', 'reports/P71_server_session.json')],
-        '未登録API、不正引数、完了後、作用不明後の送信を監査。公開スキーマが増える契機も記録から照合する。'
+        '未登録API、未知の引数名、完了後、作用不明後の送信を監査。型と必須引数の検査は元のAPI側に委ねる。公開スキーマが増える契機も記録から照合する。'
         '復元は実験の費用として別記。評価単独の時間は分離計測していないので０としない。')
 
     decision = '達成' if report['development_gate_met'] else '未達'

@@ -6,7 +6,7 @@ from build_inventory_report import TASKS
 from public_display import ARMS, validate_plan
 from run_handoff_factors import ROOT, read, sha
 
-LABELS = ('写真', '精算', '返金', '曲書出し')
+LABELS = ('写真', '精算', '返金', '書出')
 
 
 def value(row):
@@ -49,13 +49,14 @@ def build(root=ROOT):
         raise ValueError('all initial inputs must be counted')
     lines = [r'% P55/P71 all 24 planned display cells. Four distinct known tasks.',
              r'\newcommand{\PublicDisplayAllCells}{%',
+             r'{\setlength{\tabcolsep}{2.5pt}',
              r'\begin{tabular}{llrrr}\hline 接続 & 課題 & F & D & B\\\hline']
-    for label, report in zip(('文書必須', '公開名'), reports, strict=True):
+    for label, report in zip(('G', 'N'), reports, strict=True):
         for number, ((tid, _), short) in enumerate(zip(TASKS, LABELS, strict=True)):
             cells = [next(r for r in report['rows'] if r['task_id'] == tid and r['arm'] == a) for a in ARMS]
             lines.append(f'{label if number == 0 else ""} & {short} & ' + ' & '.join(map(value, cells)) + r'\\')
         lines.append(r'\hline')
-    lines += [r'\end{tabular}}', r'\newcommand{\PublicDisplayTotals}{%',
+    lines += [r'\end{tabular}}}', r'\newcommand{\PublicDisplayTotals}{%',
               r'\begin{tabular}{lrrr}\hline 指標 & F & D & B\\\hline']
     for label, report in zip(('文書取得必須（P55）', '公開名（P71）'), reports, strict=True):
         totals = [report['totals'][a] for a in ARMS]
@@ -91,14 +92,15 @@ def build(root=ROOT):
         if delta is None:
             contrast.append(f'Dと{label}の全４課題の確定費用差は算出しない．')
         else:
-            phrase = f'{abs(delta):,} token' + ('少なく' if delta < 0 else '多く') if delta else '同額で'
-            contrast.append(f"Dは{label}より{phrase}，対ごとの成功喪失は{item['paired_success_losses']}件だった．")
+            phrase = (f'Dは{label}より{abs(delta):,} token' + ('少なく' if delta < 0 else '多く')) if delta else f'Dと{label}は同額で'
+            contrast.append(f"{phrase}，対ごとの成功喪失は{item['paired_success_losses']}件だった．")
     contrast.append('固定した開発上の採用条件は' + ('満たした' if current['development_gate_met'] else '満たさなかった') + '．')
     lines.append(r'\newcommand{\PublicDisplayContrasts}{' + ''.join(contrast) + '}')
     target = root / 'papers/202610_letter/public_display_tables.tex'
     target.write_text('\n'.join(lines) + '\n')
     manifest = {'sources': {p: sha(root / p) for p in paths}, 'table_sha256': sha(target),
         'builder_sha256': sha(Path(__file__)), 'planned_display_cells': 24, 'distinct_known_tasks': 4,
+        'cohort_labels': {'G': 'P55_documentation_required', 'N': 'P71_public_names_for_continuation'},
         'cohorts_are_independent': False, 'historical_access_difference_is_causal': False,
         'new_model_calls': 0, 'new_api_requests': 0, 'rendering_up_to_date': False}
     (target.parent / 'public_display_table_sources.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
