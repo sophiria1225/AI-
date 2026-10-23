@@ -1,0 +1,117 @@
+% Prospective manuscript template. Results are generated only after P82 closes.
+% The current manuscript, closed P81 draft and professor brief remain separate.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントへの残時間通知を評価する. 実期限と参照表現を共通にし, 常時表示, 非表示, 後半表示を既知４課題で２回比較する. 欠測と未達を含む全仕事費用と反復間の一致を用いて採否を判断する.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，時間通知，費用評価
+
+\section{問題設定}
+必要な情報と品質を保ちながら仕事全体の費用を下げるには，ハーネスがモデルへ渡す制御情報も検討する必要がある．
+残時間は実行速度によって変わるため，同じ課題状態とseedを指定しても同じ判断入力になるとは限らない．
+一方，時間情報を全く与えないと，期限までに必要処理を終えるための手掛かりを失う可能性がある．
+本稿では，実期限を共通にした常時表示M，非表示H，後半だけ表示するLを比較し，最終成否，欠測を含む全仕事費用，反復間の入力・出力の一致を対応付ける．
+Lは固定した通常の通知規則であり，後半という閾値自体を新しいアルゴリズムとはしない．
+
+\section{関連研究と評価の範囲}
+CodeAct\cite{codeact}のコードによる行動と，AppWorld\cite{appworld}の状態を持つアプリ操作を背景とする．
+時間通知と期限の強制を分けるOn the Clock\cite{clock}，推論とツール待ち時間を含む適応を学ぶTimely Machine\cite{timely}がある．
+本稿も通知と強制上限を分離するが，学習による時間配分や閾値探索は行わない．
+ツール列の反復一致\cite{consistency}，数値実行の非決定性\cite{nondeterminism}，ハーネス探索の信頼性\cite{beyondprompts}にも既存研究がある．
+入力形式やサーバ運用が品質と資源計測へ与える影響\cite{localprotocol}，同じ計算結果の提示を変える再開比較\cite{delivery}も報告されている．
+本稿では，通知の局所効果と，失敗を含む仕事全体の改善を区別し，既知課題の開発段階で全条件を比較する．
+
+\section{共通履歴と３つの通知規則}
+時点$j$の公開履歴と返却済み推論を$h_j$，ハーネスが測る実資源状態を$b_j$とする．
+実際の残時間を整数秒へ切り捨てた値を$r_j$，元の作業上限を$B=1800$秒とする．
+Mは$r_j$を毎回知らせ，Hは非表示である旨を通知する．Lの表示規則は
+\begin{equation}
+v_L(r_j)=\begin{cases}
+\text{非表示},&2r_j>B,\\
+\text{実測残秒を表示},&2r_j\leq B.
+\end{cases}
+\end{equation}
+である．整数化により実残時間の半分より１秒未満早く切り替わり得る．
+通知は生成要求の直前だけ更新し，進行中の生成へ割り込まない．
+過去の表示を書き換えず，実行可否とタイムアウトは全条件で単調時計に基づく実残時間から判定する．
+残token，API回数，生成回数の表示は共通である．
+
+呼出しIDと結果IDは，検証済みの元会話で対応を保って初出順に統一してから表示処理へ渡す．
+不正な引数を含む呼出しを文章として保存する場合も，この統一済み構造を使う．
+重複ID，結果の欠落，対応のない返答は拒否する．引数，コード，観測，エラー，返却推論の値は変更せず，原記録も保存する．
+この処理は３条件共通であり，元実験との比較で正規化の品質効果を推定するものではない．
+対応を保つ参照改名に対して表示が一致しても，GPU演算や成果品質の再現は保証されない．
+
+\section{全仕事比較の方法}
+既知の写真移動，電気代精算，返金，曲情報書出しの４課題を，初期状態から３条件で２回ずつ実行する．
+全24条件をP82と呼び，過去のM/H比較P80/P81を新しい対照へ流用しない．
+先行する全条件の未達と入力照合を確認した後，３条件・順序・予算を固定した．
+既知開発課題であり，未調整の課題群ではない．
+
+実行環境にはAppWorld 0.1.3.post1を用いる．モデルはMiniMax-M3のIQ4\_XS量子化版で，推論器はllama.cpp b11669である．
+持続Python，型付きAPI返却，通常例外，公開API名，初回からの返却推論保持を共通にする．
+温度1.0，top-p 0.95，環境seed42，モデルseed57＋生成番号を固定する．
+反復１は課題順にMHL，HLM，LMH，LHM，反復２は各組を逆順にする．
+各条件80生成，450,000論理token，1,800作業秒を上限とし，API上限は写真160，他80とする．
+１生成の出力上限は4,096 tokenと残予算の小さい方，通信待ちは600秒と残実時間の小さい方とする．
+各条件の初回はcold cacheを確認し，後続は通常のprefix cacheを用いる．
+
+最終状態は独立評価器で各１回判定し，隠れた基準や評価結果をモデルへ返さない．
+費用は仕事開始からの全論理入力$I_j$と出力$O_j$の和
+\begin{equation}T_{\rm work}=\sum_j(I_j+O_j)\end{equation}
+とし，推論，制御情報，失敗，回復，cache入力も含む．APIと実時間は別に計測し，重複時間を加算しない．
+送信後の使用量欠測は既知分と分け，応答の再実行や自動再試行で補完しない．
+期限後に応答の使用量が得られても費用を残し，期限外の行動実行は認めない．
+
+Lの開発上の採用基準は，各反復でMとHの両方に対して，全件評価・使用量既知・監査一致，課題ごとの成功喪失０，共通成功課題１以上，全４課題の論理費用減少を満たすことである．
+２対照×２反復の４比較すべてで成立を要求する．統計的な非劣性保証ではない．
+
+\section{全条件の結果と費用}
+\input{papers/202610_letter/late_time_control/results.tex}
+
+\section{経路の一致と表示開始位置}
+\input{papers/202610_letter/late_time_control/stability.tex}
+公開出力と返却メッセージのhashを照合し，内部推論の意味内容は解析しない．
+後半表示が発動する前に終了した条件も残す．その条件を除いて表示開始例だけを選ぶことはしない．
+
+\section{解釈と限界}
+独立した課題は既知４つであり，24条件や36対を独立課題の数に読み替えない．
+同じseedでも数値演算とcacheの変動が残る．ホストでは軽量編集や解析も行い，負荷を排他的に固定していない．
+通知の切替規則と実行順の交互化によって，処理速度に由来する差を全て除けるわけではない．
+現在の残時間欄の非表示は，生成コードによる独自の時刻参照を禁じるものでもない．
+通知文の長さも処置に含むため，文字列長と情報の効果を独立に識別していない．
+
+過去の直接API型には同じ書出し課題の成功記録があり，現在の未達を予算だけで説明できない．
+その記録は設定と実行時期が異なり，新しい同時対照や品質保証ではない．
+開発上の相対基準を通過した場合にも，必要な全成果の回復，別課題・別モデルでの一般的改善，独自の規則が成立したかを別に判断する．
+全条件と採用しなかった結果を公開記録に保持する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{clock} A. Wang, N. Madan, V. Sobal, M. Trager, M. Kleinman, E. Mansimov, W. Xia, and S. Soatto, ``On the Clock: Towards Punctual and Productive Time-Budgeted AI Agents,'' arXiv:2610.10833v1, 2026.
+\bibitem{timely} Y. Ma, L. Li, Y. Chen, P. Li, X. Li, Q. Guo, D. Lin, and K. Chen, ``Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic,'' Proc. ACL, vol.1, pp.4619--4636, San Diego, USA, July 2026.
+\bibitem{consistency} A. Yagubyan, ``How Consistent Are LLM Agents? Measuring Behavioral Reproducibility in Multi-Step Tool-Calling Pipelines,'' arXiv:2605.28840v1, 2026.
+\bibitem{nondeterminism} J. Yuan, H. Li, X. Ding, W. Xie, Y.-J. Li, W. Zhao, K. Wan, J. Shi, X. Hu, and Z. Liu, ``Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference,'' Advances in Neural Information Processing Systems, vol.38, 2025, doi:10.52202/085713-5653.
+\bibitem{beyondprompts} C. Zhao, H. Ruan, W. Chen, P.-f. Tu, U. Abbasi, and J. Hesch, ``Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses,'' arXiv:2609.05736v1, 2026.
+\bibitem{localprotocol} R. Agarwal, ``Measuring Local SLM Agents as Systems: Protocol Effects on Quality and Resource Use,'' preprint, 2026, doi:10.5281/zenodo.21903714.
+\bibitem{delivery} K. Zhang, S. Chundur, J. P. Owusu, M. J. Abdolhosseini Qomi, and M. Raissi, ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
+\end{thebibliography}
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Summary draft}\quad We evaluate always-visible, hidden, and late-visible remaining-time notices for stateful LLM agents under a common enforced deadline and reference representation. Two repetitions of four known tasks retain failures and missing usage in whole-task accounting and compare complete execution trajectories under fixed development criteria.
+\end{document}
