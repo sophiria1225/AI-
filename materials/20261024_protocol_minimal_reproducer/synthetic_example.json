@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "synthetic_only": true,
+  "comparison_level": "outgoing_conversation_JSON_values_not_model_token_sequences",
+  "model_generations": 0,
+  "tokenizer_calls": 0,
+  "api_requests": 0,
+  "evaluations": 0,
+  "generated_code_executions": 0,
+  "raw_experiment_histories_read": false,
+  "private_reasoning_read": false,
+  "model_output_effect_measured": false,
+  "quality_or_cost_improvement_claim": false,
+  "novel_algorithm_claim": false,
+  "checks": {
+    "sources_differ_only_in_protocol_fields": true,
+    "old_order_differs": true,
+    "new_order_matches": true,
+    "all_preservation_checks_pass": true
+  },
+  "cases": {
+    "A": {
+      "raw_archival_messages": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "example-a-1",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "example-a-1",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_1\",\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "example-a-2",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "example-a-2",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "old_order_normalize_after_rendering": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"assistant_text\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"tool_call_records\":[{\"id\":\"example-a-1\",\"type\":\"function\",\"function\":{\"name\":\"run_python\",\"arguments\":\"{\"}}]}"
+        },
+        {
+          "role": "user",
+          "content": "{\"recorded_results\":[{\"id\":\"span_1\",\"assistant\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"action\":{\"name\":\"run_python\",\"arguments\":\"{\"},\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}]}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "transport_reference_1",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "transport_reference_1",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "new_order_normalize_before_rendering": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"assistant_text\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"tool_call_records\":[{\"id\":\"transport_reference_1\",\"type\":\"function\",\"function\":{\"name\":\"run_python\",\"arguments\":\"{\"}}]}"
+        },
+        {
+          "role": "user",
+          "content": "{\"recorded_results\":[{\"id\":\"span_1\",\"assistant\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"action\":{\"name\":\"run_python\",\"arguments\":\"{\"},\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}]}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "transport_reference_2",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "transport_reference_2",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "preservation_checks": {
+        "archive_unchanged": true,
+        "source_non_protocol_fields_unchanged": true,
+        "initial_messages_unchanged": true,
+        "assistant_text_unchanged": true,
+        "malformed_arguments_unchanged": true,
+        "fallback_receipt_unchanged": true,
+        "normal_turn_unchanged_except_reference": true,
+        "normal_call_and_result_remain_paired": true,
+        "same_rendering_statistics": true
+      },
+      "old_order_sha256": "706a750ae66ee38bd388801c77c43635f291980dedd569ee6670940a6e574a5f",
+      "new_order_sha256": "0eb63c09d1d3c7fc05577364cf2739f268ba2d431831b9ee035670f541b33a6d"
+    },
+    "B": {
+      "raw_archival_messages": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "example-b-1",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "example-b-1",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_1\",\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "example-b-2",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "example-b-2",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "old_order_normalize_after_rendering": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"assistant_text\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"tool_call_records\":[{\"id\":\"example-b-1\",\"type\":\"function\",\"function\":{\"name\":\"run_python\",\"arguments\":\"{\"}}]}"
+        },
+        {
+          "role": "user",
+          "content": "{\"recorded_results\":[{\"id\":\"span_1\",\"assistant\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"action\":{\"name\":\"run_python\",\"arguments\":\"{\"},\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}]}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "transport_reference_1",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "transport_reference_1",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "new_order_normalize_before_rendering": [
+        {
+          "role": "system",
+          "content": "Synthetic formatting example; do not execute these calls."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\":{\"instruction\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"assistant_text\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"tool_call_records\":[{\"id\":\"transport_reference_1\",\"type\":\"function\",\"function\":{\"name\":\"run_python\",\"arguments\":\"{\"}}]}"
+        },
+        {
+          "role": "user",
+          "content": "{\"recorded_results\":[{\"id\":\"span_1\",\"assistant\":\"example-a-1 is ordinary text here; keep it unchanged.\",\"action\":{\"name\":\"run_python\",\"arguments\":\"{\"},\"observation\":{\"format_error\":\"synthetic malformed arguments; no execution\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}]}"
+        },
+        {
+          "role": "assistant",
+          "content": "example-a-1 is ordinary text here; keep it unchanged.",
+          "tool_calls": [
+            {
+              "id": "transport_reference_2",
+              "type": "function",
+              "function": {
+                "name": "run_python",
+                "arguments": "{\"code\": \"pass # example-a-1 is ordinary text here; keep it unchanged.\"}"
+              }
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "tool_call_id": "transport_reference_2",
+          "name": "run_python",
+          "content": "{\"span_id\":\"span_2\",\"observation\":{\"synthetic_receipt\":\"not executed\",\"literal\":\"example-a-1 is ordinary text here; keep it unchanged.\"}}"
+        }
+      ],
+      "preservation_checks": {
+        "archive_unchanged": true,
+        "source_non_protocol_fields_unchanged": true,
+        "initial_messages_unchanged": true,
+        "assistant_text_unchanged": true,
+        "malformed_arguments_unchanged": true,
+        "fallback_receipt_unchanged": true,
+        "normal_turn_unchanged_except_reference": true,
+        "normal_call_and_result_remain_paired": true,
+        "same_rendering_statistics": true
+      },
+      "old_order_sha256": "81792324d914c97ad6abd8982081c013131d3b13c3f60f83bb0d7d8cd0adbdb7",
+      "new_order_sha256": "0eb63c09d1d3c7fc05577364cf2739f268ba2d431831b9ee035670f541b33a6d"
+    }
+  }
+}
