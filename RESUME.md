@@ -31,7 +31,7 @@ P82は常時残時間表示M、非表示H、後半表示Lを、同じ表示前�
 
 停止時は `.runtime/P82.stop` を作り、本実行・終了後監査・原稿待機の停止を確認する。資料処理のみの停止は `.runtime/P82_reports.stop`、原稿のみは `.runtime/P82_manuscript.stop`。停止ファイルを勝手に削除しない。
 
-P84は準備済み・本実行未開始。両CIとジョブ成功を確認して、接続処理と終了後処理を一度だけ起動済みである。P82の全24件監査・使用量既知・所有推論器停止を確認した場合だけ固定した18生成へ接続する条件を決めた。[接続の詳細](docs/P84_continuation_decision_20261024.md)。待機状態は `.runtime/P84_continuation_status.json`、実際の開始判断は `.runtime/P84_execution_decision.json`、終了後処理は `.runtime/P84_closure_status.json` に保存する。研究全体の停止時には `.runtime/P82.stop` と `.runtime/P84.stop` の双方を作る。待機のみは `P84_continuation.stop`、P84資料のみは `P84_reports.stop`。既存lock・停止印を削除しない。現在はP84モデル割当て・計数・生成０。[計画](docs/experiments/P84_fallback_output.md)を変更せず、別の実験で不明使用量を埋めない。
+P84は準備済み・本実行未開始。両CIとジョブ成功を確認して、接続処理と終了後処理を一度だけ起動済みである。P82の全24件監査・使用量既知・所有推論器停止を確認した場合だけ固定した18生成へ接続する条件を決めた。[接続の詳細](docs/P84_continuation_decision_20261024.md)。待機状態は `.runtime/P84_continuation_status.json`、実際の開始判断は `.runtime/P84_execution_decision.json`、終了後処理は `.runtime/P84_closure_status.json` に保存する。研究全体の停止時には `.runtime/P82.stop` と `.runtime/P84.stop` の双方を作る。待機のみは `P84_continuation.stop`、P84資料のみは `P84_reports.stop`。既存lock・停止印を削除しない。途中のP82完了記録に使用量不明２生成を確認したため、全使用量既知を要求する自動接続はこのままでは通らない。接続条件を変更せず全件監査を待ち、P84の独立した問いへの実行判断を改めて記録する。現在はP84モデル割当て・計数・生成０。[計画](docs/experiments/P84_fallback_output.md)を変更せず、別の実験で不明使用量を埋めない。
 
 ## 保存した結果と未完了事項
 

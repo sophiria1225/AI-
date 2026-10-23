@@ -36,6 +36,8 @@
 
 投稿先は電子情報通信学会論文誌Dのレター（研究速報）を想定する。現行稿は公式クラス未使用・著者未設定で、投稿可能な最終版ではない。教授への送信・実投稿は行っていない。
 
+[公開ファイルだけでの再計算](materials/20261024_public_resource_reproduction/README.md)では、全24条件・32区分のCSVが一致した。元のモデル実験の再実行とは区別する。
+
 ## 実装と記録
 
 [表示前の参照統一](scripts/protocol_stable_history.py)、[後半の時間表示](scripts/late_time_observation.py)、[P82の固定実行系](scripts/run_late_clock_pipeline.py)、[P84の固定計画](docs/experiments/P84_fallback_output.md)、[条件付き接続](docs/P84_continuation_decision_20261024.md)、[作業ボード](docs/task_board.md)。半分閾値、参照正規化、記録整備をそれ自体で新規手法とはしない。
