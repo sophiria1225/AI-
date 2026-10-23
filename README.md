@@ -6,6 +6,8 @@
 
 ## 現在の実行と原稿
 
+[教授への事前相談用の仮案](materials/20261023_professor_brief/README.md)を作成した。仮題・120字のあらまし・投稿先・専門分野３件を[コピー用本文](materials/20261023_professor_brief/professor_message.txt)へ整理。著者・所属は差し替え欄で、実投稿時に改訂できる案として保存した。
+
 [返却契約の合成接続](docs/public_api_result_runtime_20261023.md)を全件終了。元の許可・予算・記録・持続Pythonで、８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し、全コンテナを除去した。意図した例外・拒否を含む接続検査であり、モデル・AppWorldタスク/API・評価０。実タスクの品質・費用・新規性の改善は未測定。[資料](materials/20261023_api_result_runtime/README.md)。
 
 [公開APIの返却契約](docs/public_api_result_contract_20261023.md)を整備した。P77の全３例外を読み取り、精算２件の認証失敗からの二次TypeError、書出し１件の読取専用環境への書込みを区別。返却値・呼出し例外・不明を分ける通常部品と14検査、実行制限下の４合成ケースを追加した。実験workerへ未接続、タスク成功・費用改善は未測定。追加生成・AppWorld API・評価０。[補足資料](materials/20261023_api_result_contract/README.md)。
