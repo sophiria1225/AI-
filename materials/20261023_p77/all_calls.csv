@@ -1,0 +1,44 @@
+run_id,call_id,usage_status,input_tokens,output_tokens,cached_input_tokens,known_total_tokens,model_request_wall_seconds,sent_api_requests,sent_api_names,model_tool_counts,category
+P76_01_PUBLIC_ONLY,call_001,ok,8829,781,0,9610,116.62401958300325,42,"{""file_system__show_file"": 42}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_002,ok,10515,642,8554,11157,55.48649216699414,0,{},"{""run_python"": 1}",known_without_sent_api
+P76_01_PUBLIC_ONLY,call_003,ok,10942,740,10239,11682,50.65442816600262,42,"{""file_system__show_file"": 42}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_004,ok,13027,278,10666,13305,37.91147374999127,3,"{""file_system__create_directory"": 3}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_005,ok,13400,718,12751,14118,49.623755708991666,14,"{""file_system__move_file"": 14}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_006,ok,14971,580,13124,15551,52.55672233400401,28,"{""file_system__move_file"": 28}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_007,ok,17382,204,14695,17586,37.808220500010066,1,"{""file_system__show_directory"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_01_PUBLIC_ONLY,call_008,ok,18567,163,17106,18730,24.22096112500003,1,"{""supervisor__complete_task"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_01_REASONING_KEEP,call_001,ok,9120,673,0,9793,113.33874479099177,42,"{""file_system__show_file"": 42}","{""run_python"": 1}",known_with_sent_api
+P76_01_REASONING_KEEP,call_002,ok,11634,742,8845,12376,69.39409120900382,3,"{""file_system__create_directory"": 3}","{""run_python"": 1}",known_with_sent_api
+P76_01_REASONING_KEEP,call_003,ok,12528,1938,11358,14466,129.26744883399806,42,"{""file_system__move_file"": 42}","{""run_python"": 1}",known_with_sent_api
+P76_01_REASONING_KEEP,call_004,ok,17280,322,12252,17602,66.16481924999971,4,"{""file_system__show_directory"": 4}","{""run_python"": 1}",known_with_sent_api
+P76_01_REASONING_KEEP,call_005,ok,18696,236,17004,18932,31.19824250000238,1,"{""supervisor__complete_task"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_001,ok,11307,91,0,11398,97.73032487499586,1,"{""phone__get_current_date_and_time"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_002,ok,11498,250,11032,11748,19.69763820899243,1,"{""file_system__show_file"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_003,ok,11991,142,11222,12133,15.618255291992682,1,"{""phone__show_contact_relationships"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_004,ok,12236,123,11715,12359,12.200255875010043,1,"{""phone__login"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_005,ok,12516,134,11960,12650,13.447899958002381,1,"{""api_docs__show_api_doc"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_006,ok,12918,101,12240,13019,12.48442358399916,1,"{""phone__login"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_007,ok,13196,207,12642,13403,18.247367042000405,1,"{""phone__show_contact_relationships"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_008,ok,13518,185,12920,13703,17.148660499995458,1,"{""phone__search_contacts"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_PUBLIC_ONLY,call_009,ok,14302,146,13242,14448,19.12299033399904,1,"{""api_docs__show_api_descriptions"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_001,ok,11496,82,0,11578,98.56843941600528,1,"{""phone__get_current_date_and_time"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_002,ok,11696,244,11221,11940,19.397601749995374,1,"{""file_system__show_file"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_003,ok,12224,96,11420,12320,13.333931417000713,1,"{""phone__show_contact_relationships"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_004,ok,12498,115,11948,12613,12.171954083998571,1,"{""phone__login"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_005,ok,12800,138,12222,12938,13.86206412500178,2,"{""api_docs__show_api_doc"": 1, ""supervisor__show_profile"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_006,ok,13361,119,12524,13480,15.186637416991289,1,"{""phone__login"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_007,ok,13775,186,13085,13961,18.25772691599559,1,"{""phone__show_contact_relationships"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_008,ok,14114,196,13499,14310,17.979822875000536,1,"{""phone__search_contacts"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_02_REASONING_KEEP,call_009,ok,14920,245,13838,15165,25.57934983400628,1,"{""api_docs__show_api_descriptions"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_03_PUBLIC_ONLY,call_001,ok,15786,239,0,16025,149.9575949160062,1,"{""venmo__create_transaction"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_03_PUBLIC_ONLY,call_002,ok,16105,102,15511,16207,12.134538625003188,1,"{""supervisor__complete_task"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_03_REASONING_KEEP,call_001,ok,16902,247,0,17149,159.7543588749977,1,"{""venmo__create_transaction"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_03_REASONING_KEEP,call_002,ok,17258,106,16627,17364,12.680761249997886,1,"{""supervisor__complete_task"": 1}","{""run_python"": 1}",known_with_sent_api
+P76_04_PUBLIC_ONLY,call_001,ok,13811,1112,0,14923,184.9193077920063,0,{},"{""run_python"": 1}",known_without_sent_api
+P76_04_PUBLIC_ONLY,call_002,ok,15020,1841,13536,16861,129.52760470799694,60,"{""spotify__show_song"": 60}","{""run_python"": 1}",known_with_sent_api
+P76_04_PUBLIC_ONLY,call_003,ok,17490,1352,14744,18842,111.75964370800648,0,{},"{""read_span"": 1}",known_without_sent_api
+P76_04_PUBLIC_ONLY,call_004,ok,17837,648,17214,18485,47.12869670800865,0,{},"{""run_python"": 1}",known_without_sent_api
+P76_04_PUBLIC_ONLY,call_005,error,,,,,5.002579416002845,0,{},{},unknown_usage_unexecuted
+P76_04_REASONING_KEEP,call_001,ok,14172,1871,0,16043,235.409137249997,0,{},"{""run_python"": 1}",known_without_sent_api
+P76_04_REASONING_KEEP,call_002,ok,16335,2187,13897,18522,159.4251177910046,0,{},"{""run_python"": 1}",known_without_sent_api
+P76_04_REASONING_KEEP,call_003,error,,,,,84.00258862500777,0,{},{},unknown_usage_unexecuted
