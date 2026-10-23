@@ -11,6 +11,8 @@
 | モデル・データ・Git管理外記録・環境 | `/Users/tp26013/AI-` |
 | 最新の編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-prep` |
 | P82の実行木 | `/Users/tp26013/AI-/.runtime/worktrees/p82-run`、`ce81c87ed4a456543859ee98e5aec9e7c5703b77`固定。実行中は編集しない |
+| P84の接続待機木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-controller`、`8af247a90e9b6994c263e387f7c63f13bd45f705`固定。接続処理が待機中 |
+| P84の固定実行・終了後出力木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-run`、`1dfa3cafb9e111cffaea2b563513db890e85ebce`固定。本実行未開始、終了後処理待機中 |
 | P82終了後の資料・原稿出力木 | `/Users/tp26013/AI-/.runtime/worktrees/p82-prep`。待機処理が出力するので、無断で切替・削除しない |
 
 最新編集木のブランチは変わり得るため `git status --short --branch` で確認する。p82-prepの未追跡成果物は終了後処理が作った可能性がある。上書き・清掃しない。コードをcloneするだけでは私有記録・モデルは戻らない。
@@ -29,7 +31,7 @@ P82は常時残時間表示M、非表示H、後半表示Lを、同じ表示前�
 
 停止時は `.runtime/P82.stop` を作り、本実行・終了後監査・原稿待機の停止を確認する。資料処理のみの停止は `.runtime/P82_reports.stop`、原稿のみは `.runtime/P82_manuscript.stop`。停止ファイルを勝手に削除しない。
 
-P84は準備済み・未開始。P82の全24件監査・使用量既知・所有推論器停止を確認した場合だけ固定した18生成へ接続する条件を決めた。[接続の詳細](docs/P84_continuation_decision_20261024.md)。待機状態は `.runtime/P84_continuation_status.json`、実際の開始判断は `.runtime/P84_execution_decision.json`、終了後処理は `.runtime/P84_closure_status.json` に保存する。研究全体の停止時には `.runtime/P82.stop` と `.runtime/P84.stop` の双方を作る。待機のみは `P84_continuation.stop`、P84資料のみは `P84_reports.stop`。既存lock・停止印を削除しない。現在はP84モデル割当て・計数・生成０。[計画](docs/experiments/P84_fallback_output.md)を変更せず、別の実験で不明使用量を埋めない。
+P84は準備済み・本実行未開始。両CIとジョブ成功を確認して、接続処理と終了後処理を一度だけ起動済みである。P82の全24件監査・使用量既知・所有推論器停止を確認した場合だけ固定した18生成へ接続する条件を決めた。[接続の詳細](docs/P84_continuation_decision_20261024.md)。待機状態は `.runtime/P84_continuation_status.json`、実際の開始判断は `.runtime/P84_execution_decision.json`、終了後処理は `.runtime/P84_closure_status.json` に保存する。研究全体の停止時には `.runtime/P82.stop` と `.runtime/P84.stop` の双方を作る。待機のみは `P84_continuation.stop`、P84資料のみは `P84_reports.stop`。既存lock・停止印を削除しない。現在はP84モデル割当て・計数・生成０。[計画](docs/experiments/P84_fallback_output.md)を変更せず、別の実験で不明使用量を埋めない。
 
 ## 保存した結果と未完了事項
 
