@@ -1,0 +1,55 @@
+{
+  "prepared_on": "2026-10-23",
+  "purpose": "教授への事前相談用の仮案。実投稿時に変更可能。",
+  "title_ja": "LLMエージェントのハーネスエンジニアリング：情報保持と実行制御の評価",
+  "title_en": "Harness Engineering for LLM Agents: Evaluating Information Retention and Execution Control",
+  "authors": null,
+  "affiliations": null,
+  "author_order_confirmed": false,
+  "abstract_ja": "大規模言語モデル（LLM）を用いたエージェントでは，入力情報，状態管理，ツール実行，検証・停止を担うハーネスの設計が，最終成果の品質と実行費用に関わる。本研究では，必要な情報と処理を保持しながら不要な取得・呼出し・再実行を減らすハーネスエンジニアリングを対象とし，制御・失敗・再取得を含む仕事全体の費用削減を目指す。具体的には，状態保持型LLMエージェントの情報保持と実行制御に着目し，既知の４課題でAPI説明の提示範囲と推論履歴の保持条件を比較する。タスクの成否，総入出力トークン数，API呼出し回数を測定するとともに，作業状態と完了通知を分けて未達の原因を診断する。現時点では，推論履歴の保持による局所的な費用減少の一方で，他課題では費用増加や未達を観測した。また，作業状態が同じでも完了通知の有無で評価が変わる例を確認した。これらを踏まえ，入力の短縮だけで効率を判断せず，情報の再利用と終了手続きまで含めて評価する枠組みを整理し，品質維持と総費用削減を両立するハーネスの設計条件を明らかにすることを目指す。",
+  "abstract_ja_characters": 456,
+  "keywords_ja": [
+    "ハーネスエンジニアリング",
+    "LLMエージェント",
+    "情報保持",
+    "実行制御",
+    "費用評価"
+  ],
+  "venue": "電子情報通信学会論文誌D（情報・システム）",
+  "article_type_proposed": "レター（研究速報）",
+  "broad_field_proposed": "人工知能，データマイニング",
+  "specialty_fields_proposed": [
+    {
+      "code": "D140624",
+      "name": "知的エージェント",
+      "reason": "LLMエージェントの行動と実行制御を対象とするため。"
+    },
+    {
+      "code": "D140803",
+      "name": "知識の共有・再利用",
+      "reason": "取得済み情報や保持した状態の再利用を扱うため。"
+    },
+    {
+      "code": "D240706",
+      "name": "文脈処理",
+      "reason": "API説明や履歴の保持・省略による影響を扱うため。"
+    }
+  ],
+  "classification_source": "ユーザーが2026-10-23に提示した付録F.専門分野分類表",
+  "rules_sources": [
+    "https://www.ieice.org/jpn/shiori/iss_1.html",
+    "https://www.ieice.org/jpn/shiori/iss_2.html"
+  ],
+  "internal_submission_target": "2026-10-31",
+  "official_submission_deadline_claimed": false,
+  "sent_to_professor": false,
+  "journal_submitted": false,
+  "current_manuscript_modified": false,
+  "scope_note": "既知４課題での探索的比較。新規な手法の確立や一般的な品質維持・費用削減を主張する案ではない。",
+  "professor_abstract_character_limits": {
+    "minimum": 400,
+    "maximum": 500,
+    "source": "2026-10-23のユーザー指定"
+  },
+  "research_framing": "研究全体の軸はハーネスエンジニアリング。情報保持と実行制御は、品質維持と仕事全体の費用削減を目指す今回の具体的な検証対象。"
+}
