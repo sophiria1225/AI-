@@ -6,7 +6,7 @@
 
 ## 同じMacで開くフォルダ
 
-次の[P72](docs/experiments/P72_public_completion_scope.md)は準備中。編集ブランチ`research/p72-public-completion-diagnostic-20261023`。全７未完了状態×２通知条件、生成０・最大1,680 API・14評価・1,800秒。固定版の両CIを確認するまで実行しない。P71の推論器は停止したままで、次の診断にモデル推論器は不要。
+[P72](docs/P72_findings.md)も終了済み。固定版`7be6428f1d956b575a3ab897fb606f668eaa909d`、作業木`p72-run`、記録`records/context_pilot/P72_public_completion_scope_v01`。全14評価・監査不一致０、709 API・64.318秒・生成０。写真Dだけが通知で未達→成功、他６状態は未達。元の成否・不明費用を保持し、全18診断を本文へ反映。編集ブランチ`research/p72-results-20261023`。モデル推論器は停止したまま。
 
 [P71](docs/P71_findings.md)は終了済み。固定版`7948bc9c9a004980c39f36b9b06494871a9cd2ce`、固定作業木`p71-run`、記録は`records/context_pilot/P71_pipeline_v01`と`P71_batch_v01`。全12評価・監査不一致０、所有推論器の停止とプロセス消滅を確認。73生成・既知継続950,398 token＋不明２生成、継続490＋復元153 API、12評価。全912検査、開始前push/PR両CIの記録を保持する。未閲覧12シナリオは使用していない。
 

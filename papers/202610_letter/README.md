@@ -4,12 +4,12 @@
 
 [現在のPDF](candidate_cost_completion.pdf)／[TeX](candidate_cost_completion.tex)／[主張・根拠・限界](../../docs/letter_claim_scope_20261023.md)／[説明資料](../../materials/20261023_letter_cost_completion/README.md)。
 
-P55/P71の全24表示条件を本文へ載せ、P56の４介入と、P66/P68の別条件の通常終了制御を区別した。両接続の詳細省略は既知費用だけでも全表示を上回った。P71の写真D/Bも作業アプリの保存状態が一致したまま公式成否が異なる。同じ既知４課題・各条件１回で、独立８課題、一般品質維持、新手法の実証ではない。
+P55/P71の全24表示条件を本文へ載せ、P56の４ケースとP72の14ケースは終了診断の別表へまとめた。P72では全未完了７状態のうち写真Dだけが通知１回で未達→成功、他６状態は未達。P66/P68の通常終了制御は別条件として保持する。両接続の詳細省略は既知費用だけでも全表示を上回った。同じ既知４課題・各条件１回で、新手法や一般品質維持の実証ではない。
 
 和文115字・英文49語、日英４キーワード。全13引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。公式クラスによる本文４ページの確認は未完了。
 
 [数値・出典](cost_completion_source_map.json)／[組版点検](cost_completion_layout.json)／[日英メタデータ](submission_metadata.json)／[文献照合](../../reports/letter_bibliography_ieice_style_20261023.json)／[機械可読な現状](current_status.json)。旧来の著者省略を直し、CaveAgent v4の24名も全て残した。書誌確認と科学的主張の検証は分ける。
 
-再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_public_display_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じた根拠が変われば停止し、PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。
+再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_public_completion_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じた根拠が変われば停止し、PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。
 
-[P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。元P55/P56の成否や欠測をP71で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。
+[P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。[P72反映前の原稿](archive_before_P72_20261023/README.md)も保持した。元P55/P56/P71の成否や欠測をP72で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。

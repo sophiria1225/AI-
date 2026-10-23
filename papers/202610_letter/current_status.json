@@ -15,22 +15,8 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P72 preparing: fourteen completion-only diagnostic cases from all seven uncompleted P71 sources; no model generation or environment execution started.",
-  "queued_experiment": {
-    "phase": "P72",
-    "status": "preparing",
-    "plan": "../../configs/P72_public_completion_scope_v01.json",
-    "protocol": "../../docs/experiments/P72_public_completion_scope.md",
-    "known_tasks": 3,
-    "known_source_states": 7,
-    "planned_cases": 14,
-    "max_api_requests": 1680,
-    "max_evaluator_calls": 14,
-    "max_wall_seconds": 1800,
-    "model_generations": 0,
-    "reserved_scenarios_read": 0,
-    "novel_method_claim": false
-  },
+  "current_experiment": "P72 complete: all 14 completion-only diagnostic cases evaluated and audited; photo D changes false to true, six bill/export states remain false. Original agent outcomes and two unknown generations are preserved.",
+  "queued_experiment": null,
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -44,50 +30,63 @@
   ],
   "current_guide": "README.md",
   "last_completed_experiment": {
-    "phase": "P71",
+    "phase": "P72",
     "status": "complete",
-    "plan": "../../configs/P71_public_display_v01.json",
-    "protocol": "../../docs/experiments/P71_public_display.md",
-    "known_tasks": 4,
-    "planned_conditions": 12,
-    "max_model_calls": 192,
-    "max_continuation_tokens": 1440000,
-    "max_evaluator_calls": 12,
-    "reserved_scenarios_read": 0,
-    "novel_method_claim": false,
-    "comparison": "display controls under common public-name admission; historical P55 is not a concurrent access-policy control",
-    "fixed_commit": "7948bc9c9a004980c39f36b9b06494871a9cd2ce",
-    "push_ci": 39875500995,
-    "pr_ci": 39875506922,
-    "push_job": 120159980925,
-    "pr_job": 120160001345,
-    "evaluated_conditions": 12,
-    "model_calls": 73,
-    "known_continuation_tokens": 950398,
-    "unknown_usage_calls": 2,
-    "continuation_api_requests": 490,
-    "setup_api_requests": 153,
-    "evaluator_calls": 12,
-    "successes_full_detail_both": [
-      2,
-      1,
-      2
-    ],
-    "whole_work_known_tokens": [
-      500883,
-      523407,
-      557248
-    ],
+    "known_tasks": 3,
+    "source_states": 7,
+    "planned_cases": 14,
+    "evaluated_cases": 14,
     "audit_errors": 0,
-    "server_stopped": true,
-    "development_gate_met": false,
-    "inventory_advantage_supported": false,
-    "results": "../../docs/P71_findings.md",
-    "audit": "../../reports/P71_comparison.json",
-    "server_session": "../../reports/P71_server_session.json",
-    "outcome_scope": "../../reports/P71_outcome_scope.json"
+    "model_generations": 0,
+    "tokenizer_requests": 0,
+    "reserved_scenarios_read": 0,
+    "replay_api_requests": 702,
+    "intervention_api_requests": 7,
+    "total_api_requests": 709,
+    "evaluator_calls": 14,
+    "wall_seconds": 64.31786170801206,
+    "paired_outcomes": [
+      [
+        false,
+        true
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        false,
+        false
+      ]
+    ],
+    "non_supervisor_files_unchanged": true,
+    "original_outcomes_relabelled": false,
+    "novel_method_claim": false,
+    "fixed_commit": "7be6428f1d956b575a3ab897fb606f668eaa909d",
+    "push_ci": 39884664784,
+    "pr_ci": 39884669379,
+    "push_job": 120189910342,
+    "pr_job": 120189924767,
+    "results": "../../docs/P72_findings.md",
+    "audit": "../../reports/P72_public_completion_audit.json"
   },
-  "latest_presentation": "../../materials/20261023_p71/AI_harness_public_display_20261023.pdf",
+  "latest_presentation": "../../materials/20261023_p72/AI_harness_public_completion_20261023.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/70",
   "method_fragment": "public_display_methods_component.tex",
@@ -200,8 +199,8 @@
   "friday_decision_sheet": "../../docs/letter_friday_decisions_20261022.md",
   "latest_deadline_presentation": "../../materials/20261022_deadline/AI_harness_goal_and_deadline_20261022.pdf",
   "critical_path": [
-    "Freeze a finite completion-only diagnostic for all eligible uncompleted P71 conditions; first verify replay and no-intervention states. Do not regenerate or relabel original outcomes.",
-    "Retain all 24 P55/P71 cells and separate P56/P66/P68 conditions in the empirical letter; central novelty remains unestablished.",
+    "Use all 24 display cells and 18 separate diagnostic cases to review the bounded empirical claim and remaining contribution gap; do not relabel agent outcomes or launch outcome-driven retries.",
+    "Specify any remaining difference from strong ordinary controls and primary related work before proposing another finite model comparison.",
     "Keep reserved scenarios unread until mechanism, comparison, budgets and missing-data analysis are fixed.",
     "Complete official four-page formatting and author information toward the 2026-10-31 submission."
   ],
@@ -242,7 +241,7 @@
     "layout": "cost_completion_layout.json",
     "public_admission_scope_explicit": true,
     "public_clock_evidence_limit_explicit": true,
-    "pdf_sha256": "e8712d20b8cb80e927694730c494ed3870e6c348feaf8aff56c33c4044be6e06",
+    "pdf_sha256": "30d2d04e31f5337770802a0b71810a248eb4f393b549739127f9d27b432bdb95",
     "ordinary_completion_results_included": true,
     "strict_prefix_failure_explicit": true,
     "export_completion_negative_results_included": true,
@@ -251,7 +250,10 @@
     "public_display_results_included": true,
     "all_planned_display_cells": 24,
     "distinct_known_tasks": 4,
-    "all_reference_authors_printed": true
+    "all_reference_authors_printed": true,
+    "posthoc_replay_cases": 18,
+    "public_completion_diagnostic_results_included": true,
+    "distinct_known_diagnostic_tasks": 3
   },
   "last_completed_measurement_calibration": {
     "phase": "P58",
@@ -656,11 +658,11 @@
   },
   "supporting_cost_metric_scope": "../../docs/letter_cost_metric_scope_20261023.md",
   "prepared_submission_format": {
-    "status": "integrated_after_P71_audit",
+    "status": "integrated_after_P72_audit",
     "metadata": "submission_metadata.json",
     "bibliography": "bibliography_ieice.tex",
     "check": "../../reports/letter_bibliography_ieice_style_20261023.json",
-    "builder": "../../scripts/build_public_display_paper.py",
+    "builder": "../../scripts/build_public_completion_paper.py",
     "current_pdf_updated": true,
     "official_class_used": false,
     "authors_confirmed": false
@@ -684,5 +686,49 @@
     "server_stopped": true,
     "adopted": false,
     "results": "../../docs/P55_findings.md"
+  },
+  "previous_completed_experiment": {
+    "phase": "P71",
+    "status": "complete",
+    "plan": "../../configs/P71_public_display_v01.json",
+    "protocol": "../../docs/experiments/P71_public_display.md",
+    "known_tasks": 4,
+    "planned_conditions": 12,
+    "max_model_calls": 192,
+    "max_continuation_tokens": 1440000,
+    "max_evaluator_calls": 12,
+    "reserved_scenarios_read": 0,
+    "novel_method_claim": false,
+    "comparison": "display controls under common public-name admission; historical P55 is not a concurrent access-policy control",
+    "fixed_commit": "7948bc9c9a004980c39f36b9b06494871a9cd2ce",
+    "push_ci": 39875500995,
+    "pr_ci": 39875506922,
+    "push_job": 120159980925,
+    "pr_job": 120160001345,
+    "evaluated_conditions": 12,
+    "model_calls": 73,
+    "known_continuation_tokens": 950398,
+    "unknown_usage_calls": 2,
+    "continuation_api_requests": 490,
+    "setup_api_requests": 153,
+    "evaluator_calls": 12,
+    "successes_full_detail_both": [
+      2,
+      1,
+      2
+    ],
+    "whole_work_known_tokens": [
+      500883,
+      523407,
+      557248
+    ],
+    "audit_errors": 0,
+    "server_stopped": true,
+    "development_gate_met": false,
+    "inventory_advantage_supported": false,
+    "results": "../../docs/P71_findings.md",
+    "audit": "../../reports/P71_comparison.json",
+    "server_session": "../../reports/P71_server_session.json",
+    "outcome_scope": "../../reports/P71_outcome_scope.json"
   }
 }
