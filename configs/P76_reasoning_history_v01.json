@@ -1,0 +1,72 @@
+{
+  "source_plan": "configs/P29_stateful_code_v01.json",
+  "source_runs": [
+    "P29_01_CODE",
+    "P29_02_CODE",
+    "P29_03_CODE",
+    "P29_04_CODE"
+  ],
+  "boundary_after_model_calls": 8,
+  "max_calls": 16,
+  "max_total_tokens": 120000,
+  "max_wall_seconds": 480,
+  "max_setup_seconds": 600,
+  "recent_complete_turns": 1,
+  "output_reservation": "residual",
+  "notification": "both",
+  "cache_rule": "First continuation call uses cache_prompt=false and must have measured cache_n=0 and prompt_n equal to its full input. Subsequent calls use true. This removes preceding-condition prefix reuse, not all nondeterminism.",
+  "budget_rule": "Both ordinary history arms retain 16 calls, 120000 full logical input+output tokens, 480 continuation seconds and original task API caps including the prefix. Count the full input, then output cap=min(4096, remaining_tokens-input_tokens); reject if no output fits or input+cap exceeds the unchanged 65536 context. Display construction, notification, counting, model and tool time belong to continuation. Prefix reconstruction and model loading are separately reported. No free controller model calls.",
+  "feedback_rule": "Only a confirmed undispatched unknown-parameter rejection for an already-exposed API receives the P46 exact public contract or allowed-parameter names. No argument values, new API discovery, automatic correction, retry or new model call. The full-display control receives the identical public-contract feedback. Feedback remains in subsequent ordinary history, is charged as input, and follows the existing output paging rules.",
+  "max_feedback_characters": 16000,
+  "max_idle_wait_seconds": 60,
+  "max_evaluation_seconds": 180,
+  "failure_rule": "Unknown model usage ends that cell without retry. If API effects and cleanup are known, wait at most 60 seconds for the same server to be idle, then evaluate the saved world once and continue the fixed independent cells. Unknown use stays unknown and fails every total-cost adoption gate. Unknown API effects, restoration/cache-policy/other runtime/cleanup/evaluation failure, server identity or lease failure, or user stop ends the batch. Never retry, replace, impute zero, or execute partial model responses.",
+  "primary_cost": "Work-level logical input+output tokens = common measured P29 prefix tokens plus all continuation calls per task. Also report continuation-only totals. Unknown terminal use prevents an exact work total. Controller construction/notification/counting/API time belongs to continuation wall; model load, preflight, restoration, evaluation, cleanup and server residency are separately measured.",
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false,
+  "catalog_policy": "public_names",
+  "phase": "P76",
+  "batch_id": "P76_batch_v01",
+  "arms": [
+    "public_only",
+    "reasoning_keep"
+  ],
+  "server_max_lifetime_seconds": 14400,
+  "max_cells": 8,
+  "max_continuation_model_calls": 128,
+  "max_continuation_reserved_tokens": 960000,
+  "selection_rule": "All four previously inspected P29 eighth-response boundaries, one continuation per ordinary history condition. Same P71 public-name interface, full public history and persistent Python in both arms. No task/checkpoint replacement; reserved scenarios remain unread.",
+  "order_rule": "Exactly once: task 1 public,reasoning; task 2 reasoning,public; task 3 public,reasoning; task 4 reasoning,public. No outcome-based replacement, seed change, budget extension or extra trial.",
+  "history_rule": "public_only retains original NativeConversation behavior; reasoning_keep retains every returned reasoning_content string/null field from the fixed preceding eight responses and all its own successful continuation responses, including native invalid-argument fallback. No selective retention, summaries, future responses or hidden evaluator information. Every other public message field, observation, API policy and tool definition is equal at the branch.",
+  "development_gate": "All eight cells must be independently evaluated with no audit errors and known total usage. Observed quality-preserving lower cost requires at least one paired successful task, no paired success loss and strictly lower aggregate whole-work logical tokens for reasoning_keep. Quality gains with higher cost are a tradeoff, not savings. Any missing/unknown case prevents the cost adoption claim; all results are reported. Four known tasks once each do not establish statistical noninferiority or novelty.",
+  "interpretation": "This is a concurrent ordinary baseline comparison from a prefix generated without reasoning replay, not a from-start retention policy comparison. Historical P71 is not its causal control. Seed schedule, cold first cache, public schemas, residual budgets and wall notices are common, but timing and numerical nondeterminism remain.",
+  "stop_rule_before_generation": "All eight preflight inputs must fit unchanged context/output/total budgets. Freeze complete code, plans and initial message digests after both exact-head workflows/jobs pass. Any preflight or source failure stops without generation or retry.",
+  "source_sha256": {
+    "configs/P75_reasoning_history_v01.json": "c6984dac80c463559630aa938c0c597e950974301a3e708ede13cd7572dbf206",
+    "reports/P75_reasoning_history.json": "e55380f7d0cc4b4321c81132a606884b411b1a74ca75f3e087317db2cc431461",
+    "reports/P75_reasoning_history_audit.json": "90f01a9a5cb9d218597b8cfd65283c56a2920127de29c92e5004140595f98c62",
+    "scripts/reasoning_history.py": "4da76b04bf42aab7c78b9ce3b71ee73e20ad812c648c3173613ced7cf8ac8fdc",
+    "scripts/native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/public_display.py": "830d874ae5e9aef4eb442f1f4eef4705cdfa17efff5fd434bc804917f46c7187",
+    "reports/P76_preparation_history_checks.json": "4cc88227a1046a3999af32cef1df5df35dc3573517c6aa4808da2214a430da64"
+  },
+  "prior_implementation_derivation": {
+    "run_public_display_branch.py": {
+      "source_sha256": "d3b91e95c7f53b761a995a16d74de24cc6c051dd8f31f9ae6fa01629a4451e70",
+      "new_file": "scripts/run_reasoning_history_branch.py"
+    },
+    "run_public_display_comparison.py": {
+      "source_sha256": "1c32b21de9e1aefad6c4b34710f5bc2bb41b5584a87d60c56c2cca74a0587776",
+      "new_file": "scripts/run_reasoning_history_comparison.py"
+    },
+    "run_public_display_pipeline.py": {
+      "source_sha256": "8c558f018d56a6467b3a8fa605e7682b92c77326ab9354efdd794f715977274c",
+      "new_file": "scripts/run_reasoning_history_pipeline.py"
+    },
+    "audit_public_display_comparison.py": {
+      "source_sha256": "f9d0738b7d89d2fa5fffc5218768cca4d2debefdc4454c4cf010bc7c4854524a",
+      "new_file": "scripts/audit_reasoning_history_comparison.py"
+    }
+  }
+}

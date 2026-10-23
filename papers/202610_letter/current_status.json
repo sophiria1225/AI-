@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P75 complete: all 105 saved attempts inspected; 103 known responses contain reasoning and no inputs transmit it. No model execution active; prepare a separately bounded ordinary-history comparison.",
+  "current_experiment": "P76 prepared: four known prefixes x public_only/reasoning_keep, eight fixed conditions. Offline histories and 982 tests passed; server preflight/activation/generation not yet started.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -780,5 +780,20 @@
     "results": "../../docs/P75_findings.md",
     "audit": "../../reports/P75_reasoning_history_audit.json"
   },
-  "pending_baseline_scope_note": "The current PDF has not yet integrated P75: historical full history retains public content/actions/observations, excluding reasoning_content by the P10 protocol. Quality effects of retaining reasoning remain untested."
+  "pending_baseline_scope_note": "The current PDF has not yet integrated P75: historical full history retains public content/actions/observations, excluding reasoning_content by the P10 protocol. Quality effects of retaining reasoning remain untested.",
+  "planned_task_experiment": {
+    "phase": "P76",
+    "status": "prepared_not_activated",
+    "known_tasks": 4,
+    "planned_conditions": 8,
+    "max_calls_per_condition": 16,
+    "max_continuation_tokens_per_condition": 120000,
+    "max_continuation_seconds_per_condition": 480,
+    "max_continuation_model_calls": 128,
+    "max_continuation_tokens": 960000,
+    "reserved_scenarios_read": 0,
+    "novel_method_claim": false,
+    "plan": "../../configs/P76_reasoning_history_v01.json",
+    "protocol": "../../docs/experiments/P76_reasoning_history.md"
+  }
 }
