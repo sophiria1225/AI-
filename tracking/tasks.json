@@ -2700,7 +2700,32 @@
         "cursor欠落・反復・空の継続ページ・GraphQL部分エラーで停止する",
         "既存のIssue同期復旧と全件ボード生成を維持する"
       ],
-      "progress": "【全ページ照合を実装】repositoriesとitemsを独立に末尾まで読み、他リポジトリ・不明内容・不正cursor・部分エラーを拒否する。追加７検査・全958検査合格1.626秒。実Projectは最初100件、R101追加直後の読取も100件だったため追加書込を止め、後続のGraphQL totalCount101・CLI101・全ページ検査101で照合した。所属は全てsophiria1225/AI-。研究結果やモデル実行の追加ではない。docs/project_scope_pagination_20261023.md。"
+      "progress": "【全ページ照合を実装】repositoriesとitemsを独立に末尾まで読み、他リポジトリ・不明内容・不正cursor・部分エラーを拒否する。追加７検査・全958検査合格1.626秒。実Projectは最初100件、R101追加直後の読取も100件だったため追加書込を止め、後続のGraphQL totalCount101・CLI101・全ページ検査101で照合した。所属は全てsophiria1225/AI-。研究結果やモデル実行の追加ではない。docs/project_scope_pagination_20261023.md。 PR293 main反映。HEAD eb644af7d4f79627761593ae61b9c7285c785026、push CI39895183562/job120223857889、PR CI39895648592/job120225372368成功。merge cf62716880766696de68077277bd6dd7092ef769。"
+    },
+    {
+      "id": "R102",
+      "title": "通常対照の推論履歴の扱いを全保存入力で確認する",
+      "priority": "P0",
+      "status": "in_progress",
+      "why": "P10以降の全履歴は公開content・呼出し・観測だけを保持する。通常の推論保持対照との差を明確にし、情報削減の比較条件を過大に一般化しない。",
+      "alternatives": "元条件を不具合として書換えない。M2やM3.1の推奨だけで量子化M3の改善を断定せず、推論保持自体を新規手法と呼ばない。",
+      "steps": [
+        "既知４課題の前半32応答とP71全73回のmetadata点検範囲を固定",
+        "旧部品を変更せず推論保持の通常部品と合成反例検査を追加",
+        "両CI成功の別作業木で全105回を一度だけ読取点検",
+        "全件・不明２回・通常対照の制約を資料とProjectへ反映"
+      ],
+      "completed_steps": [
+        "既知４課題の前半32応答とP71全73回のmetadata点検範囲を固定",
+        "旧部品を変更せず推論保持の通常部品と合成反例検査を追加"
+      ],
+      "acceptance": [
+        "全105回と不明２回を保持し、前半と継続・私的文章と公開metadataを分ける",
+        "未来応答・隠れた評価・DB内容・保留群を使わず、生成・API・tokenizer・評価は０",
+        "hash・時系列・期限不一致で部分結果を保存し停止する",
+        "品質改善・費用減少・新規性を点検結果から捏造しない"
+      ],
+      "progress": "【P75準備】計画105回のrequest/response hashを固定。別のReasoningConversationを追加し、旧NativeConversationは変更しない。モデル生成・API・評価０のmetadata点検。全件点検は未実行、両CI確認後に別作業木で実施。docs/experiments/P75_reasoning_history.md。新規中核は未確立。 追加12検査を含む全970検査が1.618秒で合格、compileall・diff確認成功。"
     }
   ]
 }

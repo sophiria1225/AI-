@@ -107,6 +107,7 @@
 | P0 | R99 | 呼出しIDの差と固定runtimeで再構成したモデル入力を分けて監査する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/286) |
 | P0 | R100 | 現在のコードの項目需要と次の生成へ残るAPI返却を区別する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/289) |
 | P1 | R101 | 専用Projectの全ページで更新先の所属を確認する | 完了 | [Issue](https://github.com/sophiria1225/AI-/issues/292) |
+| P0 | R102 | 通常対照の推論履歴の扱いを全保存入力で確認する | 進行中 | [Issue](https://github.com/sophiria1225/AI-/issues/294) |
 
 [GitHub Project](https://github.com/users/sophiria1225/projects/1)
 
@@ -1341,8 +1342,16 @@ P61準備。P24_02の第12生成後（前半252,602 token・20 API）から通�
 
 ## R101 専用Projectの全ページで更新先の所属を確認する
 
-【全ページ照合を実装】repositoriesとitemsを独立に末尾まで読み、他リポジトリ・不明内容・不正cursor・部分エラーを拒否する。追加７検査・全958検査合格1.626秒。実Projectは最初100件、R101追加直後の読取も100件だったため追加書込を止め、後続のGraphQL totalCount101・CLI101・全ページ検査101で照合した。所属は全てsophiria1225/AI-。研究結果やモデル実行の追加ではない。docs/project_scope_pagination_20261023.md。
+【全ページ照合を実装】repositoriesとitemsを独立に末尾まで読み、他リポジトリ・不明内容・不正cursor・部分エラーを拒否する。追加７検査・全958検査合格1.626秒。実Projectは最初100件、R101追加直後の読取も100件だったため追加書込を止め、後続のGraphQL totalCount101・CLI101・全ページ検査101で照合した。所属は全てsophiria1225/AI-。研究結果やモデル実行の追加ではない。docs/project_scope_pagination_20261023.md。 PR293 main反映。HEAD eb644af7d4f79627761593ae61b9c7285c785026、push CI39895183562/job120223857889、PR CI39895648592/job120225372368成功。merge cf62716880766696de68077277bd6dd7092ef769。
 
 **なぜ行うか**: 専用Projectが100項目に達した。継続する研究記録を同期するため、全ページを読んだ後にだけ変更できるようにする。
 
 **他候補の扱い**: 先頭100件だけで確認を済ませたり、他リポジトリを拒否する条件を緩めたりしない。
+
+## R102 通常対照の推論履歴の扱いを全保存入力で確認する
+
+【P75準備】計画105回のrequest/response hashを固定。別のReasoningConversationを追加し、旧NativeConversationは変更しない。モデル生成・API・評価０のmetadata点検。全件点検は未実行、両CI確認後に別作業木で実施。docs/experiments/P75_reasoning_history.md。新規中核は未確立。 追加12検査を含む全970検査が1.618秒で合格、compileall・diff確認成功。
+
+**なぜ行うか**: P10以降の全履歴は公開content・呼出し・観測だけを保持する。通常の推論保持対照との差を明確にし、情報削減の比較条件を過大に一般化しない。
+
+**他候補の扱い**: 元条件を不具合として書換えない。M2やM3.1の推奨だけで量子化M3の改善を断定せず、推論保持自体を新規手法と呼ばない。
