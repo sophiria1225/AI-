@@ -1,0 +1,36 @@
+{
+  "review_date": "2026-10-23",
+  "phase_context": "P78_running_fixed_conditions_unchanged",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2609.34313v1",
+      "title": "ControlScope: Workflow Revision and Reliability in LLM Agents",
+      "version": "v1",
+      "sections": [
+        "3.1",
+        "3.2",
+        "A.3"
+      ],
+      "checked_scope": "public state and nested revision operations; local feedback visibility diagnostic",
+      "implementation_reproduced": false
+    },
+    {
+      "url": "https://arxiv.org/html/2610.23342v1",
+      "title": "Robust Function Calling for LLM Agents Under Interface Drift",
+      "version": "v1",
+      "sections": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "6.1 repair cost overhead"
+      ],
+      "checked_scope": "fixed-tool repair and candidate retry distinction; per-example and repair overhead measurement",
+      "implementation_reproduced": false
+    }
+  ],
+  "new_model_generations": 0,
+  "new_environment_api_calls": 0,
+  "new_evaluations": 0,
+  "reserved_scenarios_read": 0,
+  "scientific_decision": "Do not treat argument-only edits preserving continuation, typed values or Python exception propagation as novel in themselves. P78 is a matched ordinary failure-presentation comparison."
+}
