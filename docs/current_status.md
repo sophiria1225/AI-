@@ -1,5 +1,7 @@
 # 現在の状態
 
+[別の既知６開発課題の再点検](development_opportunity_review_20261023.md)では、後続の完了引数診断・通常の順位付き取得・通常ツール対照まで対応付けた。既実施の診断や通常方式の改善を新規性として数え直さない。追加生成・API・評価・原履歴/DB・保留群閲覧０。[判断資料](../materials/20261023_development_review/README.md)。時間通知workerは[PR331](https://github.com/sophiria1225/AI-/pull/331)でmainへ反映した。
+
 [時間通知部品の新しいworker接続](budget_observation_worker_20261023.md)を追加し、17合成検査・全1,084検査を確認した。送信処理開始後の終端欠測を不明試行として最終集計へ残し、APIの不明な結果の二重計上を避ける。実モデル・実コンテナ・AppWorld課題での新接続は未検証。[部品資料](../materials/20261023_budget_worker/README.md)。新規性・品質改善とは扱わず、次の生成比較はまだ配分していない。
 
 通常対照を超える候補の[成立条件](remaining_control_scope_20261023.md)を再点検した。P78全137生成で、API例外９件は各API１送信であり、同じ例外プログラム前半の成功API再実行は確認できない。APIなし11生成116,711 tokenも無駄とは扱わない。ControlScope・LazyAgent・Incremental Consistency Executionの本文に照らし、独自の観測・判断・更新規則は未確定。P79原稿は[PR328](https://github.com/sophiria1225/AI-/pull/328)へ反映し、[更新したミラー予行](../materials/20261023_p79_ieice_preview/README.md)も全５頁を確認した。
