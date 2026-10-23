@@ -1,0 +1,50 @@
+{
+  "phase": "P80_results_publication",
+  "pr": 336,
+  "results_head": "d6d11b1fec2d3180ddf66fd0676302450d8a1cdf",
+  "integration_pr": 338,
+  "integration_head": "39af0d0c7a4ca8a0937676a84f714eb36cf7bdf3",
+  "integration_merge_commit": "337e027fa4d1ee53166d57f3cc1228ba55f0d082",
+  "results_pr_auto_marked_merged": true,
+  "exact_integration_head_checks": [
+    {
+      "id": 39987942309,
+      "event": "pull_request",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 120531898704,
+          "name": "accounting-and-syntax",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 39987879000,
+      "event": "push",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 120531680186,
+          "name": "accounting-and-syntax",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "original_results_workflow_snapshot": [
+    {
+      "id": 39987137481,
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39987088792,
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "note": "P80 results and P81 preparation were integrated together through PR338 after both exact integration-head push/PR workflows and accounting-and-syntax jobs succeeded. The original P80 push workflow had not reached completed status at the earlier observation despite its successful job; do not claim that workflow was completed then."
+}
