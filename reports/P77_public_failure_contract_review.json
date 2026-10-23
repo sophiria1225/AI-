@@ -1,0 +1,1616 @@
+{
+  "scope": "post_P77_public_source_review_all_three_errors",
+  "rows": [
+    {
+      "run_id": "P76_02_PUBLIC_ONLY",
+      "call_id": "call_004",
+      "span_id": "s25",
+      "source_sha256": "65895711a794fd0bcef4d32ae6f2590451d75d190cdc17903f95d448335685d8",
+      "exception_type": "TypeError",
+      "public_error_sha256": "df42020ab60a2348c65528fd77711b4e55f237d65d94521a126e32028ec9b505",
+      "read_only_filesystem_marker": false,
+      "errno_30_marker": false,
+      "string_index_type_error_marker": true,
+      "direct_open_sites": [],
+      "subscript_base_names": [
+        "result"
+      ],
+      "api_returns": [
+        {
+          "api": "phone__login",
+          "api_request_sent": true,
+          "argument_names": [
+            "password",
+            "username"
+          ],
+          "value_type_delivered_to_python": "str",
+          "json_decoded": false,
+          "top_level_keys": null,
+          "public_text_contains_traceback_marker": true,
+          "public_observation_sha256": "6dc495df961e73a9a9982c544755331a16fb30bd98b5320d328b7e1821fd59bc"
+        }
+      ],
+      "error_text_is_online_control_contract": false
+    },
+    {
+      "run_id": "P76_02_REASONING_KEEP",
+      "call_id": "call_004",
+      "span_id": "s25",
+      "source_sha256": "568b1b6edccc3b0203aff9194c4dc3951d64a4a57ee3d69eb056d41bafaa748e",
+      "exception_type": "TypeError",
+      "public_error_sha256": "df42020ab60a2348c65528fd77711b4e55f237d65d94521a126e32028ec9b505",
+      "read_only_filesystem_marker": false,
+      "errno_30_marker": false,
+      "string_index_type_error_marker": true,
+      "direct_open_sites": [],
+      "subscript_base_names": [
+        "result"
+      ],
+      "api_returns": [
+        {
+          "api": "phone__login",
+          "api_request_sent": true,
+          "argument_names": [
+            "password",
+            "username"
+          ],
+          "value_type_delivered_to_python": "str",
+          "json_decoded": false,
+          "top_level_keys": null,
+          "public_text_contains_traceback_marker": true,
+          "public_observation_sha256": "6dc495df961e73a9a9982c544755331a16fb30bd98b5320d328b7e1821fd59bc"
+        }
+      ],
+      "error_text_is_online_control_contract": false
+    },
+    {
+      "run_id": "P76_04_PUBLIC_ONLY",
+      "call_id": "call_002",
+      "span_id": "s89",
+      "source_sha256": "3307dfc7307ce4f162c06557a5ba7b4bef96299f9b6ca2f37b4a8b3b4c4f58c0",
+      "exception_type": "OSError",
+      "public_error_sha256": "17b0eae3fc407ea0c9b7f24b3ec530916c693a9eadbb373d705b162bd8e90596",
+      "read_only_filesystem_marker": true,
+      "errno_30_marker": true,
+      "string_index_type_error_marker": false,
+      "direct_open_sites": [
+        {
+          "line": 43,
+          "literal_mode": "w"
+        }
+      ],
+      "subscript_base_names": [],
+      "api_returns": [
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "e32e2438af0ca0693903727e1a35ef8adc738918f04d8980a864d13d9e2ade2d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "bd813e2d0a6cf9ccd0088df3f015cb30270fa691408efd72994d1ebd87bae985"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "794ecb264fcd31cbda58a3c539215445aa43df074383b9481d9f98e8068fc187"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "30ed7a6a90bf1812c3515e4a98a3c3966f55dd34429a0d1a46db239684405232"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "cd19807a07a8e98d79551d56f1c2fe671f0b6c8ee4b38d70857523bafc881391"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "23e8fce008c8997300dc9fd2908d0843fc854429ea3f1ddeb656a7340e95b065"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "358f393a0ba5b27fc5c474aecbd13fd4b041a6ff9a9fbef2a0949cf099ba3a49"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "9d5d62cf99604c22da88ddc81a859cc78f5f46cc040111333613fe67cdc44885"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "489759139a19a37ed79afd8112281c03ba515e9a1ad1b68163ed76eecebbdbe6"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "775482599e8033ad42f7b068963f39633e8fc94845ac71211702733589249364"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "f0bf6c93629625f0874454162baa351d95dc84d9cbf030df7c0ac9a7ea9c856c"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "8dd8568fe5d23d1a3c4dc207644b33784f7e1471af5bf7b1ee4497ad6f020f54"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "4825b141dd2f67f7bb58708704d047b4d179c2e691b15cbada37611835ab110d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "8147092b22b4feabc7714205bb76543666782139bd621f9d6bb72d79b790587a"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "722ca784f02229ec9128c2ef945d853e3ee7a845cbf946e707ffbd30311b1aee"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "c84ccbf3e13d2bcd634e66283be03c6808a635b288cb16b2b703e17c7329c697"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "27d9d4ab4f70863915cb0c75f1818188f35241e2fb8f1a9b2521d20882837ff7"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "c3dd28c8931a20f14ceb9602ad7469c25507e16b8c0001cf06fc3f9d54aecf84"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "b55848bb5c1768914ec0f9f2cb775a793ea3a94d803caee8683fb8cf43a51cf0"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "a184fe68a3c5331a3007c2e5cb0ae1a6bf505086b08a4ffb31d97738a85f5f93"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "57106d9ae91631ce95b29bf244fc418a199749836268150f94fd14dc4a790cb7"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "903b093d966db6d08d9d7438fac558edcb5e98700b478b7cffcfa2b2166c6c1a"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "985ca357033ddeace2f5b7902d08426fa1e008fd18c10b3adc6b03e45f3d1023"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "bb8607fa1334ccf198b5f79401c56b0b70efa3d2a6a61241841f935334e51c87"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "c975208bd392207eab0b54956afeeda7db0fa42dd8c95beb83187609c0aa86ea"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "442d84d1656697d3a9cbe231094a017e917338ee41fa4eceb2845ac81ef1c253"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "8234b72636d904be0295b0a0739f7aaafc1e8535bd4a5f01de213befc65a5236"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "8ffe9aa6737fd297fc6b351edfe846b4f0a0869e0335d9ef9edd96fa8c8eeb6d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "aad86ab53be9cc8f1c29a361f0908cc64106486b245899a5fd15cc3238c458eb"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "31ab465a389a5a1859a458177d16304b61f4b9388f7c9ddfdf06310ea39240ae"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "bc4d86d2889dbce8995c878520349f6758acbeb05c9ca69ff7425efbcbaf35b9"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "fdfe5dd9234d16a387adef5a0fc314bd9df7c7d7404dbfc6e5b91c1e801ea77e"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "5378ed662d10e7747ebd606d1b65b64770cb8e2f8d7f1851e73dd4c754fe719a"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "6edabfb45e238a1b36bb6f8c81bc4bdc924d9cf9f6b8d796693d8e4118e10854"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "6b7867e32ce30e9e89055ea276a04fdc455cc81cefaa748913a8bfa23ff51b9e"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "a1fbf367efd4e3598a1409a730145b72cc18ec0bb273108e87269cfb5280cb8d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "3bd50a7ebdb1b982d69116fecea140175389ad89e24e439e279b5d2b0af18d0d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "2100d7e731abb9d78431aaf441d6fc662f6e87599f06d654d2ce97efc1a044ac"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "d3d01369a4e8d77b138335810f8bc422ec0c2c699f6d528486ab731c197820be"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "c644d1eca8882c77fe87d5190fc8f4e795cfbe42d509695b376456af397b3d77"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "fc185839318f3f90dfeece127d5a7af83d5156628f6d16189f01a89cfec121cc"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "dfc88091cf527024319c61c14a33e50d2700f9ce426601d2d272e254f7e2d00c"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "4a1d6eee5734b0fca6f9897c12bf97d13d919b3405adc3fcff1380d7ae1d415d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "87cadf38180e4b1baa02bfdbf0ebe36171dbc30109cf85e4f3bbe771ec4eb113"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "193c6adf5f0eaeeaee033c7f55a14db262cbb73317b6fe1c166411ef0aed2172"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "7bf6379a9622b17765b6ca18aa48aaee9938902595b1a0c74d1781ee197e4b38"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "afdfbae050c03f5438a9c42caf8f48d739d522f9ce9b410f491cafb10fd89c55"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "45da2a26f487e13ee824000d98b85ac3bb8ff6aa60fe822c58dc6e973821c72e"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "fe62b5cbab55b5db480df5f1cb710f76d6daf1de44f42fa2cf370ced52b2aef3"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "5ade3ad6eae1260b9b44a7733a23c7dff83ca7eafb9092028a674d3ce69f949f"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "c7d00831ff7e3c4c3cbaea787a662246898185480e7b7703d0e5de6d36fe8861"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "e2edb69db1cef19147840d5a22c489d060218804b92e3e953b20b9cdb5fbf6d9"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "0d3181d7b7ad2140133ff0d8c63ad8f7c04d9a2faa1aabc01783c4ab170f785d"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "cf93ba099af345778f2d78f914d198131cf2518611f4708f0ef13b269f56d349"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "4f9b44fe60507ef06d2c9800af813e69f32f6014238e0fe33b36f574e2dcfd9c"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "550311e6cff002e0e36c48edbf01c61a77f93e4e7365e840f7651d6b0a3daf3a"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "59adc10e665771fcd8dc0148298e405dcfe4edbe5db3916fbc8d7b8d4a2f3b93"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "392ae630ca0acef7d09406e86a4fe0e927e4047340637dfb97fbd116e45dabb9"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "eedc659689a6fdbe775a39f8c6b76afe2e8202a41963c6310665f229b4573928"
+        },
+        {
+          "api": "spotify__show_song",
+          "api_request_sent": true,
+          "argument_names": [
+            "song_id"
+          ],
+          "value_type_delivered_to_python": "dict",
+          "json_decoded": true,
+          "top_level_keys": [
+            "album_id",
+            "artists",
+            "duration",
+            "genre",
+            "like_count",
+            "play_count",
+            "rating",
+            "release_date",
+            "review_count",
+            "shareable_link",
+            "song_id",
+            "title"
+          ],
+          "public_text_contains_traceback_marker": false,
+          "public_observation_sha256": "308a9f8be12361613e5e63ec5bc6dfbe2fb523ed531aefefcd9c7f59d7bdf4a3"
+        }
+      ],
+      "error_text_is_online_control_contract": false
+    }
+  ],
+  "P77_source_sha256": "78a8dfe68254dbec4d8fc564fbab915ccefb6b4a10beaafcafb0f663864c7f8a",
+  "new_model_calls": 0,
+  "new_api_requests": 0,
+  "new_evaluator_calls": 0,
+  "saved_code_executions": 0,
+  "database_contents_read": 0,
+  "reserved_scenarios_read": 0,
+  "private_reasoning_text_read": 0,
+  "automatic_repair_or_retry": false,
+  "old_P77_report_changed": false,
+  "source_sha256": {
+    "records/context_pilot/P76_02_PUBLIC_ONLY/spans.json": "92d458b056e85966e1b2ffc45835ea01e3a065afe043839ae102e2e72f42be55",
+    "records/context_pilot/P76_02_REASONING_KEEP/spans.json": "a3710debae32287e2145dd1a8ec1693396ea7123019936bce7ec805d8bba1ec3",
+    "records/context_pilot/P76_04_PUBLIC_ONLY/spans.json": "d264041eb13bdf0d7e8312cc535ccf31f84238d1d346ad5019b8cdd3f16f4a62"
+  },
+  "repository_source_sha256": {
+    "scripts/container_api_python.py": "cddd7bf0ea6bb8f30cd1f7f22377a962c9b17df35522eb3beacfc96202ca5863",
+    "scripts/persistent_api_python.py": "ba6df3ac0d5d444f8cca728f8fb3e13a4fee64355d8b39c0051b9a848b1f48bd",
+    "scripts/code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "scripts/context_preservation.py": "d67c24606a3238bfdb7d3399eaae51149422d7fa004a45a7c6beb4199ead022c",
+    "scripts/stateful_code_prompts.py": "8f46065c0b3a65e2b4bab6ecd0d61014ab87d07f4fe1ff68c39a998250dea7cf"
+  },
+  "public_api_implementation_sha256": {
+    "phone/apis.py": "b32c231f29515f0c77175e6cb3bd3cd91254237545f2230eb5166a102e250338",
+    "file_system/apis.py": "5717b0cbabf4b8647c7429a187db3b3c278e9778798a51ff83f14815f8065e22"
+  },
+  "review_script_sha256": "d96a5deb6f6d6991cd999dbd00d2730b4b1436b4e47cb06933b875d5c040bdac",
+  "wall_seconds": 0.0038442920049419627
+}

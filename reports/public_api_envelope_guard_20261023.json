@@ -1,0 +1,56 @@
+{
+  "scope": "synthetic_protocol_checks_under_installed_safety_guard",
+  "rows": [
+    {
+      "fixture": "json",
+      "syntax_accepted": true,
+      "status": "returned",
+      "fixture_invocations": 1,
+      "temporary_function_removed": true,
+      "source_sha256": "f25bc4b3b03ff8018e1363ddf5355e04186ba80cc6cf5efc4ea47117ef44c20b",
+      "reply_sha256": "27369ff844b406d4eacba4d11b4f7902efaa29ab479f0e44859298ee68a83a47"
+    },
+    {
+      "fixture": "error_looking_text",
+      "syntax_accepted": true,
+      "status": "returned",
+      "fixture_invocations": 1,
+      "temporary_function_removed": true,
+      "source_sha256": "d98d8b7acd4df82cbae565ed9afd274399ac3fcf17a1aa36af5844e54ad6f89b",
+      "reply_sha256": "f2078ab9d91025dd436e87d1a4a389249aa9606502573e9f227663ba04902a8e"
+    },
+    {
+      "fixture": "raised_after_effect",
+      "syntax_accepted": true,
+      "status": "raised",
+      "fixture_invocations": 1,
+      "temporary_function_removed": true,
+      "source_sha256": "c913f6e06ce41acc7e083cedf65c6f3b7317f8496a28efd84d57a9b2fb1fb712",
+      "reply_sha256": "0b34add731b2d1f6b5e0756a55c30acbd63ea30bcf3a19651469c87aab21f443"
+    },
+    {
+      "fixture": "business_failure",
+      "syntax_accepted": true,
+      "status": "returned",
+      "fixture_invocations": 1,
+      "temporary_function_removed": true,
+      "source_sha256": "86ea542506f480c496c1f7b89660aa8b3c301070477ef2cf060b38f875678d17",
+      "reply_sha256": "f91e035afa6a5ad4b827f1fe2f6a82966932e50fd90fcc5916b1db60fca904a2"
+    }
+  ],
+  "wall_seconds": 0.03869495799881406,
+  "new_model_calls": 0,
+  "task_loads": 0,
+  "appworld_api_requests": 0,
+  "evaluator_calls": 0,
+  "database_contents_read": 0,
+  "reserved_scenarios_read": 0,
+  "saved_model_code_executions": 0,
+  "task_success_or_cost_improvement_measured": false,
+  "connected_to_task_workers": false,
+  "source_sha256": {
+    "scripts/public_api_envelope.py": "fbfcb5bbe975f57b7f7047d1789293b1e45b165ef68e7ebd1160e51b366b6790",
+    "scripts/check_public_api_envelope_guard.py": "6a3461bccfb9205aecd21897478d8699727a8f607cc9331759238ade99c8968e"
+  },
+  "guard_source_sha256": "fa105c1bc55bc9fc3dba70f414bdfcb43e05fcede06e63477ceb712037044da7"
+}
