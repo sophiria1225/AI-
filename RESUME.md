@@ -8,6 +8,8 @@ P76の固定版は `902d9d9ec00fb121507581342464b9eb746c38b1`、固定作業木�
 
 ## 同じMacで開くフォルダ
 
+[返却契約の実API接続](docs/public_api_live_preflight_20261023.md)を準備した。既知１課題・手書き２プログラム・公開API３回に固定し、正常返却・意図した認証例外・失敗前の状態再利用を確認する。モデルと評価は０、実接続は両CI後に１回だけ行う。
+
 [返却契約の合成接続](docs/public_api_result_runtime_20261023.md)を全件終了。元の許可・予算・記録・持続Pythonで、８プログラム・３コンテナ・６fixture送信を1.317888秒で確認し、全コンテナを除去した。意図した例外・拒否を含む接続検査であり、モデル・AppWorldタスク/API・評価０。実タスクの品質・費用・新規性の改善は未測定。[資料](materials/20261023_api_result_runtime/README.md)。
 
 [公開APIの返却契約](docs/public_api_result_contract_20261023.md)を整備した。P77の全３例外を読み取り、精算２件の認証失敗からの二次TypeError、書出し１件の読取専用環境への書込みを区別。返却値・呼出し例外・不明を分ける通常部品と14検査、実行制限下の４合成ケースを追加した。実験workerへ未接続、タスク成功・費用改善は未測定。追加生成・AppWorld API・評価０。[補足資料](materials/20261023_api_result_contract/README.md)。
