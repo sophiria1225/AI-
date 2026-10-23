@@ -15,7 +15,7 @@
   "status": "contribution_not_yet_established",
   "retired_candidate": "role_specific_view_of_rejected_requests",
   "retired_candidate_basis": "P16 did not observe unsupported operation completion in valid raw outputs; predeclared continuation gate not met",
-  "current_experiment": "P74 complete: all 181 saved program occurrences inspected; no fixed normal-path release candidates. No model execution active. Continue bounded recovery-cost mechanism review.",
+  "current_experiment": "P75 complete: all 105 saved attempts inspected; 103 known responses contain reasoning and no inputs transmit it. No model execution active; prepare a separately bounded ordinary-history comparison.",
   "current_experiment_is_novel_method": false,
   "submission_ready": false,
   "official_ieice_class_acquired": false,
@@ -85,7 +85,7 @@
     "results": "../../docs/P72_findings.md",
     "audit": "../../reports/P72_public_completion_audit.json"
   },
-  "latest_presentation": "../../materials/20261023_p74/AI_harness_boundary_lifetime_20261023.pdf",
+  "latest_presentation": "../../materials/20261023_p75/AI_harness_reasoning_history_20261023.pdf",
   "evaluation_scope": "../../docs/letter_evaluation_scope_20261021.md",
   "current_progress_url": "https://github.com/sophiria1225/AI-/issues/70",
   "method_fragment": "public_display_methods_component.tex",
@@ -760,5 +760,25 @@
   },
   "current_pdf_sha256": "d07fc9d3dd145d9b55ea8855841f3852673d48a02fa978b04bb5d95b5495486a",
   "latest_input_diagnostic_material": "../../materials/20261023_p73/README.md",
-  "input_identity_fragment": "prompt_identity_component.tex"
+  "input_identity_fragment": "prompt_identity_component.tex",
+  "last_completed_read_only_inspection": {
+    "phase": "P75",
+    "status": "complete",
+    "attempts": 105,
+    "known_responses": 103,
+    "unknown_usage_attempts": 2,
+    "nonempty_known_reasoning": 103,
+    "requests_containing_reasoning": 0,
+    "public_prefixes_matched": true,
+    "wall_seconds": 0.19075541599886492,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "tokenizer_calls": 0,
+    "reserved_scenarios_read": 0,
+    "novel_method_claim": false,
+    "results": "../../docs/P75_findings.md",
+    "audit": "../../reports/P75_reasoning_history_audit.json"
+  },
+  "pending_baseline_scope_note": "The current PDF has not yet integrated P75: historical full history retains public content/actions/observations, excluding reasoning_content by the P10 protocol. Quality effects of retaining reasoning remain untested."
 }
