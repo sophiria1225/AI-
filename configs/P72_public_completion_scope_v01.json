@@ -1,0 +1,52 @@
+{
+  "phase": "P72",
+  "batch_id": "P72_public_completion_scope_v01",
+  "source_runs": [
+    "P71_01_DETAILS_OMITTED_KEEP",
+    "P71_02_FULL_KEEP",
+    "P71_02_DETAILS_OMITTED_KEEP",
+    "P71_02_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+    "P71_04_FULL_KEEP",
+    "P71_04_DETAILS_OMITTED_KEEP",
+    "P71_04_DETAILS_AND_LISTINGS_OMITTED_KEEP"
+  ],
+  "completion_reference": "P71_01_DETAILS_AND_LISTINGS_OMITTED_KEEP",
+  "arms": [
+    "no_completion",
+    "append_completion"
+  ],
+  "source_audit_sha256": "25f99601a1a53fc0e9f58f9ab6ccbe06744fcbb6348657c8c2eb47ddab3c9e0e",
+  "source_outcome_scope_sha256": "7829aeb42e7852cfd8a78390a05044146b72ea31269998f6fee24053f51afaa0",
+  "completion_action": {
+    "name": "supervisor__complete_task",
+    "arguments": "{\"status\": \"success\"}"
+  },
+  "environment_seed": 42,
+  "max_cases": 14,
+  "max_api_requests_per_case": 120,
+  "max_execution_seconds_per_case": 120,
+  "max_cleanup_seconds_per_case": 45,
+  "max_evaluation_seconds_per_case": 180,
+  "max_batch_seconds": 1800,
+  "max_total_api_requests": 1680,
+  "model_generations": 0,
+  "reserved_scenarios_read": 0,
+  "selection_rule": "Post-hoc diagnostic after all twelve P71 evaluations: include every source with no sent completion API, in audited task/display order, regardless of its official success. These are seven sources on three known tasks. Each has a no-intervention and one fixed completion-call case. No source exchange or outcome-driven extension.",
+  "restoration_rule": "Replay every sent public API request from the prefix and continuation in a new simulated world using the public-name catalog. Match every public response and schema exposure, then require all saved database hashes to equal the original evaluated source before intervention. Never execute saved model code or read hidden tests.",
+  "intervention_rule": "No-completion sends no terminal call. Append-completion sends exactly the observed P71 photo-B supervisor.complete_task arguments {\"status\": \"success\"} once. The source action is fixed before any diagnostic execution; do not search answers or use another status.",
+  "failure_rule": "Any source, replay, observation, database, API-effect, cleanup, evaluation, code identity, CI, deadline or user-stop failure stops the batch. No replacement, retry, alternative completion arguments, or outcome-dependent extension.",
+  "analysis_rule": "Report all fourteen diagnostic cases separately from P71. The no-intervention condition must reproduce the original outcome; all non-supervisor files must remain unchanged. Missing/failed cases remain visible. Never relabel the original seven sources, fill their unknown model use, present the cases as independent agent tasks, infer safe autonomous completion, or claim savings from replay.",
+  "novel_method_claim": false,
+  "source_task_ids": {
+    "P71_01_DETAILS_OMITTED_KEEP": "34d9492_1",
+    "P71_02_FULL_KEEP": "3c13f5a_1",
+    "P71_02_DETAILS_OMITTED_KEEP": "3c13f5a_1",
+    "P71_02_DETAILS_AND_LISTINGS_OMITTED_KEEP": "3c13f5a_1",
+    "P71_04_FULL_KEEP": "6104387_1",
+    "P71_04_DETAILS_OMITTED_KEEP": "6104387_1",
+    "P71_04_DETAILS_AND_LISTINGS_OMITTED_KEEP": "6104387_1"
+  },
+  "expected_replay_api_requests": 702,
+  "expected_intervention_api_requests": 7,
+  "unknown_usage_rule": "The two P71 unknown terminal generations remain unknown. A source is eligible only when its sole unknown generation is last, has no associated execution event, has no imputed input/output counts, and all API effects, source evaluation and cleanup are known. Unknown API effects prohibit replay."
+}
