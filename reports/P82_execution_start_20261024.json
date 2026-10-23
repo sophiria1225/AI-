@@ -1,0 +1,62 @@
+{
+  "phase": "P82_execution_start",
+  "status_at_snapshot": "batch_running",
+  "started_at": "2026-10-23T19:47:35.777165+00:00",
+  "batch_started_at": "2026-10-23T19:47:56.007071+00:00",
+  "git_commit": "ce81c87ed4a456543859ee98e5aec9e7c5703b77",
+  "ci": [
+    {
+      "id": 40014023664,
+      "head_sha": "ce81c87ed4a456543859ee98e5aec9e7c5703b77",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120621341433
+    },
+    {
+      "id": 40013986874,
+      "head_sha": "ce81c87ed4a456543859ee98e5aec9e7c5703b77",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120621216767
+    }
+  ],
+  "server_record_directory": "records/p2_servers/20261024_044735",
+  "server_supervisor_pid": 19617,
+  "stage_pid": 20378,
+  "planned_new_cells": 24,
+  "first_active_cell": "BOC_P82_R1_01_MEASURED",
+  "all_twelve_initial_inputs_checked": true,
+  "hidden_and_late_initial_inputs_equal": true,
+  "input_count_requests": 12,
+  "preflight_wall_seconds": 8.870317875000183,
+  "activation_wall_seconds": 0.1427852500055451,
+  "server_lease_end": "2026-10-24T13:47:35.832079+00:00",
+  "model_identity": {
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "runtime": {
+      "name": "llama.cpp",
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-macos-arm64.tar.gz",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "started_at": "2026-10-23T19:47:35.832079+00:00",
+    "pid": 19618,
+    "supervisor_pid": 19617,
+    "ctx_size": 65536
+  },
+  "source_sha256": {
+    "configs/P82_late_clock_comparison_v01.json": "b5fc45f6a51faf8a1e3dc621ba7444f62c3843fc35fc05368e62584639a8119a",
+    "docs/P82_execution_decision_20261024.md": "e0ac656c847c0c0f5383b723c36eb92294d1e8771ad854af9aedc595784298a7",
+    "reports/P82_final_plan_20261024.json": "d460efa07ee4598d5088c0607315cba0fe84ffee10f38b70503ec10235c280cd",
+    "reports/P82_initial_checks.json": "75420d49d35c64e4ec344b6b7f2f63d08dc6dcb5d02984ba5facd1249269ee4d",
+    "reports/P82_activation_v01.json": "06019a23ddc54e2146a9fc53ec09e69cab3cfd58ae682330bfb3afb307b9140b"
+  },
+  "private_pipeline_snapshot_sha256": "c3e9008b5ed92c25dcda30cf9724b37da5ae85d7a9022c2121892e0b87784d86",
+  "whole_cohort_decision_pending": true,
+  "automatic_retries": 0,
+  "novel_method_claim": false
+}
