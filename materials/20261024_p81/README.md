@@ -1,5 +1,7 @@
 # 同一seedによる残時間表示の反復：実行中
 
+終了後の[全件監査・７枚資料への集計](../../docs/P81_closure_reporting_20261024.md)も準備した。全24行と全24対を保持し、実データでの最終描画・目視確認は終了後に行う。
+
 [PR338](https://github.com/sophiria1225/AI-/pull/338)の固定HEADでpush・PR両workflow/job成功後、2026-10-24 01:36 JSTに全16条件を開始した。初期入力８件の確認と固定化は成功。全件の結果は未確定。[開始記録](../../reports/P81_execution_start_20261024.json)／[主張の範囲](../../docs/time_observation_contribution_scope_20261024.md)。
 
 ## 開始前の準備記録
