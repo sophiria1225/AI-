@@ -1,6 +1,6 @@
 # AIハーネス研究
 
-2026-10-23 最新: [P78の全８条件](docs/P78_findings.md)を終了・独立評価・監査した。不一致０、全使用量既知。文字列／例外通知はともに3/4成功、全仕事tokenは670,713／791,704、例外側が120,991多く事前採用基準は未達。返金は両側に実例外がなく、書出しも例外前に経路が分かれたため、差を通知方法だけの効果としない。137生成・448 API・８評価、所有推論器停止とPID不在を確認。[７枚の全件資料](materials/20261023_p78/README.md)。新手法と一般品質維持は未確立。P78の主原稿への反映を次に行う。
+2026-10-23 最新: [P78の全８条件](docs/P78_findings.md)を終了・独立評価・監査した。不一致０、全使用量既知。文字列／例外通知はともに3/4成功、全仕事tokenは670,713／791,704、例外側が120,991多く事前採用基準は未達。返金は両側に実例外がなく、書出しも例外前に経路が分かれたため、差を通知方法だけの効果としない。137生成・448 API・８評価、所有推論器停止とPID不在を確認。[７枚の全件資料](materials/20261023_p78/README.md)。新手法と一般品質維持は未確立。P78全８条件を[主原稿](materials/20261023_letter_api_errors/README.md)へ反映済み。本文・文献４頁＋英文１頁を全頁確認し、和文115字・英文45語、日英５キーワードとした。
 
 **必要な情報・処理と最終品質を保ち、制御・失敗・再取得を含む仕事全体の費用を減らす。** AIオーケストレーションのハーネス制御を研究する。現在は単一作業役の局所検証で、複数担当の通信削減を測った段階ではない。[研究目的](docs/research_objective_20261022.md)／[10月22日朝の説明資料](materials/20261022_morning/AI_harness_progress_20261022.pdf)。
 
@@ -36,7 +36,7 @@
 
 [P68の固定２条件](docs/P68_findings.md)は両方API上限で未達、各219,126 tokenで削減なし。書出し・退会に進まず、制御からの完了通知０回。全16生成・438,252 token・160 API・２評価、使用量不明０、1,348監査不一致０、推論器正常停止。各80生成・450,000 token・1,800秒・80 APIの条件を変更していない。[P68資料](materials/20261023_p68/README.md)。
 
-[現在の原稿PDF：本文４頁＋英文末尾１頁](papers/202610_letter/candidate_cost_completion.pdf)／[原稿案内](papers/202610_letter/README.md)／[主張・根拠・限界](docs/letter_claim_scope_20261023.md)。P55/P71の全24表示条件、P56/P72の全18診断、P66/P68の別条件の終了制御を区別した。和文116字・英文46語、日英４キーワード、全14文献を全著者表記へ整備。P76の全８推論保持条件も別表へ反映。全５頁目視・はみ出し０。公式様式・著者情報・採録に足る中心貢献は未確定。
+[現在の原稿PDF：本文４頁＋英文末尾１頁](papers/202610_letter/candidate_cost_completion.pdf)／[原稿案内](papers/202610_letter/README.md)／[主張・根拠・限界](docs/letter_claim_scope_20261023.md)。P55/P71の全24表示条件、P56/P72の全18診断、P66/P68の別条件の終了制御を区別した。和文115字・英文45語、日英５キーワード、全14文献を全著者表記へ整備。P76の全８推論保持条件とP78の全８失敗通知条件を別表へ反映。全５頁目視・はみ出し０。公式様式・著者情報・採録に足る中心貢献は未確定。
 
 ## 現在の研究判断を支える結果
 
@@ -60,7 +60,7 @@
 | 読みたいもの | 場所 |
 |---|---|
 | 最新の状況と次の判断 | [現在地](docs/current_status.md)／[次の作業](docs/next_actions.md)／[採録・新規性の現状評価](docs/letter_assessment_20261023.md) |
-| 主な説明資料 | [P55・表示比較](materials/20261023_p55/README.md)／[P56・終了診断](materials/20261023_p56/README.md)／[P64・通常接続](materials/20261023_p64/README.md)／[P66・終了制御](materials/20261023_p66/README.md)／[原稿資料](materials/20261023_letter_cost_completion/README.md) |
+| 主な説明資料 | [P55・表示比較](materials/20261023_p55/README.md)／[P56・終了診断](materials/20261023_p56/README.md)／[P64・通常接続](materials/20261023_p64/README.md)／[P66・終了制御](materials/20261023_p66/README.md)／[原稿資料](materials/20261023_letter_api_errors/README.md) |
 | 原典との対応 | [終了制御](docs/termination_control_overlap_20261023.md)／[停止・検証費用の補足](docs/ordinary_completion_literature_20261023.md)／[表示と証拠](docs/evidence_delivery_overlap_20261023.md) |
 | 実装・固定条件・集計 | [scripts](scripts/)／[configs](configs/)／[reports](reports/) |
 | 進捗管理 | [専用Project](https://github.com/users/sophiria1225/projects/1)／[作業ボード](docs/task_board.md)／[中心判断 #70](https://github.com/sophiria1225/AI-/issues/70)／[主要比較 #71](https://github.com/sophiria1225/AI-/issues/71)／[原稿 #72](https://github.com/sophiria1225/AI-/issues/72) |

@@ -1,10 +1,12 @@
-# 10月23日：費用と終了手続きに絞った検討原稿
+# 10月23日：P78反映前の検討原稿
 
-- [本文・文献４ページ＋英文末尾１ページのPDF](../../papers/202610_letter/candidate_cost_completion.pdf)
-- [TeX本文](../../papers/202610_letter/candidate_cost_completion.tex)
-- [和文あらまし116字](../../papers/202610_letter/cost_completion_abstract_ja.txt)／[英文46語](../../papers/202610_letter/cost_completion_abstract_en.txt)
+このページはP76までの原稿の保存案内。[P78を含む新しい原稿資料](../20261023_letter_api_errors/README.md)へ更新済み。以下の字数・ハッシュは保存版に対応する。
+
+- [本文・文献４ページ＋英文末尾１ページのPDF](../../papers/202610_letter/archive_before_P78_20261023/candidate_cost_completion.pdf)
+- [TeX本文](../../papers/202610_letter/archive_before_P78_20261023/candidate_cost_completion.tex)
+- [和文あらまし116字](../../papers/202610_letter/archive_before_P78_20261023/cost_completion_abstract_ja.txt)／[英文46語](../../papers/202610_letter/archive_before_P78_20261023/cost_completion_abstract_en.txt)
 - [主張・根拠・先行研究との差](../../docs/letter_claim_scope_20261023.md)
-- [出典と数値](../../papers/202610_letter/cost_completion_source_map.json)／[描画記録](../../papers/202610_letter/cost_completion_layout.json)
+- [出典と数値](../../papers/202610_letter/archive_before_P78_20261023/cost_completion_source_map.json)／[描画記録](../../papers/202610_letter/archive_before_P78_20261023/cost_completion_layout.json)
 
 P55/P71の全24表示条件と、P56の４ケース＋P72の14ケースの終了診断を別表へ載せた。P72では全未完了７状態のうち写真Dだけが通知で未達→成功、精算・書出しの６状態は未達。作業保存状態は全14件で不変だった。元の成否と不明費用は保持し、診断を自律実行の成功率へ加えない。P66/P68の通常終了制御は別条件として区別する。
 
