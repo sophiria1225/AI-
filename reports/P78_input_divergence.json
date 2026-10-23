@@ -1,0 +1,107 @@
+{
+  "phase": "P78",
+  "posthoc_description": true,
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "first_API_exception_model_call_by_arm": [
+        3,
+        3
+      ],
+      "first_unmatched_call": 2,
+      "actual_request_structures_equal": false,
+      "requests_equal_after_only_wall_snapshot_normalization": false,
+      "request_differing_fields": [
+        "$.messages[2].tool_calls[0].id",
+        "$.messages[3].tool_call_id"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": true,
+      "remaining_wall_seconds": [
+        1766,
+        1766
+      ],
+      "divergence_before_any_API_exception": true
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "first_API_exception_model_call_by_arm": [
+        3,
+        3
+      ],
+      "first_unmatched_call": 2,
+      "actual_request_structures_equal": false,
+      "requests_equal_after_only_wall_snapshot_normalization": false,
+      "request_differing_fields": [
+        "$.messages[2].tool_calls[0].id",
+        "$.messages[3].tool_call_id"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": true,
+      "remaining_wall_seconds": [
+        1768,
+        1768
+      ],
+      "divergence_before_any_API_exception": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "first_API_exception_model_call_by_arm": [
+        null,
+        null
+      ],
+      "first_unmatched_call": 2,
+      "actual_request_structures_equal": false,
+      "requests_equal_after_only_wall_snapshot_normalization": false,
+      "request_differing_fields": [
+        "$.messages[2].tool_calls[0].id",
+        "$.messages[3].tool_call_id"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": true,
+      "remaining_wall_seconds": [
+        1767,
+        1767
+      ],
+      "divergence_before_any_API_exception": true
+    },
+    {
+      "task_id": "6104387_1",
+      "first_API_exception_model_call_by_arm": [
+        null,
+        19
+      ],
+      "first_unmatched_call": 2,
+      "actual_request_structures_equal": false,
+      "requests_equal_after_only_wall_snapshot_normalization": false,
+      "request_differing_fields": [
+        "$.messages[2].tool_calls[0].id",
+        "$.messages[3].tool_call_id"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": true,
+      "remaining_wall_seconds": [
+        1767,
+        1767
+      ],
+      "divergence_before_any_API_exception": true
+    }
+  ],
+  "comparison_sha256": "6364af563af1cc3d1d2f5ad37ac8233c7d379a92f06042cd755851d24ba22999",
+  "profile_sha256": "266a383338e7647167a9957b802b49c9d120ad2d7f5db03406319bf40274495d",
+  "budget_signal_sha256": {
+    "P78_01_ERROR_VALUE": "98528a6e6ca68f11f18e47ca28180bc926d372174fdb146ff3740536671758de",
+    "P78_01_ERROR_EXCEPTION": "b88c3cd284872608d458b16d52582bb355997697ddd6cdbea294b15300780091",
+    "P78_02_ERROR_VALUE": "c53126b02c6a3f60a37767e51455e1598df35430952b569581b284fc658f9df6",
+    "P78_02_ERROR_EXCEPTION": "c209a489e217bfbb53133b8b3ce0e9ee5bfd88f21d319a9840affa7081adfc5a",
+    "P78_03_ERROR_VALUE": "f3172591e9c2dba137fd80f9dea9afa0d580348c780939c841c99d8e2fdf34e8",
+    "P78_03_ERROR_EXCEPTION": "a17ec93403243b6f58b92cb215fdcc3130c8210363720864bd67d47df52180bf",
+    "P78_04_ERROR_VALUE": "a1876a6a80c137e5fe447d1f2f0aee0c6e4f029d51977902fee1811934d5b814",
+    "P78_04_ERROR_EXCEPTION": "288465010ca6df1c818ef3783cfed7feab42bb5d74504b7192e0b204dd422beb"
+  },
+  "script_sha256": "3143415b02a37ce3b85edd49af6107ac91579ad57e04c66071b97cbaa181cc37",
+  "additional_generations": 0,
+  "additional_api_calls": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizations": 0,
+  "saved_programs_executed": 0,
+  "private_reasoning_inspected_semantically": false,
+  "causal_effect_identified": false,
+  "interpretation": "All four pairs are compared by original model-call index until the first differing request or generated public output. Only the current budget notice wall-time field is normalized in the separate normalized equality check. Requests are compared as JSON, not retokenized prompts. No post-divergence alignment, private-reasoning interpretation, latent-state equality or causal effect is inferred. The original development gate is unchanged."
+}

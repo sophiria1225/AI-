@@ -1,0 +1,95 @@
+{
+  "phase": "P78",
+  "posthoc_description": true,
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "first_API_exception_model_call_by_arm": [
+        3,
+        3
+      ],
+      "first_unmatched_call": 4,
+      "request_differing_fields": [
+        "$.messages[7].content"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": false,
+      "remaining_wall_seconds": [
+        1742,
+        1742
+      ],
+      "divergence_before_any_API_exception": false,
+      "requests_equal_after_transport_id_renaming": false,
+      "requests_equal_after_transport_ids_and_wall_snapshot_normalization": false
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "first_API_exception_model_call_by_arm": [
+        3,
+        3
+      ],
+      "first_unmatched_call": 4,
+      "request_differing_fields": [
+        "$.messages[7].content"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": true,
+      "remaining_wall_seconds": [
+        1748,
+        1748
+      ],
+      "divergence_before_any_API_exception": false,
+      "requests_equal_after_transport_id_renaming": false,
+      "requests_equal_after_transport_ids_and_wall_snapshot_normalization": false
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "first_API_exception_model_call_by_arm": [
+        null,
+        null
+      ],
+      "first_unmatched_call": 6,
+      "request_differing_fields": [
+        "$.messages[12].content"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": false,
+      "remaining_wall_seconds": [
+        1696,
+        1697
+      ],
+      "divergence_before_any_API_exception": true,
+      "requests_equal_after_transport_id_renaming": false,
+      "requests_equal_after_transport_ids_and_wall_snapshot_normalization": true
+    },
+    {
+      "task_id": "6104387_1",
+      "first_API_exception_model_call_by_arm": [
+        null,
+        19
+      ],
+      "first_unmatched_call": 6,
+      "request_differing_fields": [
+        "$.messages[12].content"
+      ],
+      "generated_public_output_equal_ignoring_transport_ids": false,
+      "remaining_wall_seconds": [
+        1677,
+        1678
+      ],
+      "divergence_before_any_API_exception": true,
+      "requests_equal_after_transport_id_renaming": false,
+      "requests_equal_after_transport_ids_and_wall_snapshot_normalization": true
+    }
+  ],
+  "comparison_sha256": "6364af563af1cc3d1d2f5ad37ac8233c7d379a92f06042cd755851d24ba22999",
+  "profile_sha256": "266a383338e7647167a9957b802b49c9d120ad2d7f5db03406319bf40274495d",
+  "raw_divergence_sha256": "48a8c5bc5d4aee7586a01def0d52c1bf6bd82fdb7556804381c29ff94fec45d2",
+  "script_sha256": "9f78314a488edebcf46de72a1ad1c74c92e80173e06884556ca0143db05cad06",
+  "shared_inspector_sha256": "3143415b02a37ce3b85edd49af6107ac91579ad57e04c66071b97cbaa181cc37",
+  "additional_generations": 0,
+  "additional_api_calls": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizations": 0,
+  "saved_programs_executed": 0,
+  "private_reasoning_inspected_semantically": false,
+  "causal_effect_identified": false,
+  "interpretation": "A second description preserving the raw inspection. Only declared tool-call IDs and their linked result references are consistently renamed; generated text, arguments, reasoning and all other request fields remain intact. A separate equality check also normalizes the current wall-time snapshot. No retokenization, model-state equality, post-divergence alignment or causal attribution is claimed."
+}

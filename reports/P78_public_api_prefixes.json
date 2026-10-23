@@ -1,0 +1,262 @@
+{
+  "phase": "P78",
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "matched_initial_api_requests_and_results": 2,
+      "value_total_sent_requests": 103,
+      "exception_total_sent_requests": 103,
+      "whole_public_api_sequences_equal": false,
+      "first_matched_invocation_exception_api_index": 2,
+      "next_value_api": "supervisor__show_account_passwords",
+      "next_exception_api": "api_docs__show_api_doc",
+      "matched_prefix": [
+        {
+          "api_index": 1,
+          "api": "api_docs__show_api_descriptions",
+          "status": "returned",
+          "value_call_id": "call_001",
+          "exception_call_id": "call_001"
+        },
+        {
+          "api_index": 2,
+          "api": "file_system__show_directory",
+          "status": "raised",
+          "value_call_id": "call_003",
+          "exception_call_id": "call_003"
+        }
+      ],
+      "model_inputs_or_python_state_proven_equal": false,
+      "causal_effect_identified": false,
+      "actual_initial_request_bytes_equal": true
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "matched_initial_api_requests_and_results": 9,
+      "value_total_sent_requests": 25,
+      "exception_total_sent_requests": 23,
+      "whole_public_api_sequences_equal": false,
+      "first_matched_invocation_exception_api_index": 2,
+      "next_value_api": "supervisor__show_profile",
+      "next_exception_api": "api_docs__show_api_descriptions",
+      "matched_prefix": [
+        {
+          "api_index": 1,
+          "api": "api_docs__show_api_descriptions",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 2,
+          "api": "file_system__show_directory",
+          "status": "raised",
+          "value_call_id": "call_003",
+          "exception_call_id": "call_003"
+        },
+        {
+          "api_index": 3,
+          "api": "supervisor__show_account_passwords",
+          "status": "returned",
+          "value_call_id": "call_004",
+          "exception_call_id": "call_004"
+        },
+        {
+          "api_index": 4,
+          "api": "file_system__login",
+          "status": "returned",
+          "value_call_id": "call_005",
+          "exception_call_id": "call_005"
+        },
+        {
+          "api_index": 5,
+          "api": "file_system__show_directory",
+          "status": "raised",
+          "value_call_id": "call_006",
+          "exception_call_id": "call_006"
+        },
+        {
+          "api_index": 6,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_007",
+          "exception_call_id": "call_007"
+        },
+        {
+          "api_index": 7,
+          "api": "file_system__show_directory",
+          "status": "returned",
+          "value_call_id": "call_008",
+          "exception_call_id": "call_008"
+        },
+        {
+          "api_index": 8,
+          "api": "phone__get_current_date_and_time",
+          "status": "returned",
+          "value_call_id": "call_009",
+          "exception_call_id": "call_009"
+        },
+        {
+          "api_index": 9,
+          "api": "file_system__show_file",
+          "status": "returned",
+          "value_call_id": "call_010",
+          "exception_call_id": "call_010"
+        }
+      ],
+      "model_inputs_or_python_state_proven_equal": false,
+      "causal_effect_identified": false,
+      "actual_initial_request_bytes_equal": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "matched_initial_api_requests_and_results": 6,
+      "value_total_sent_requests": 17,
+      "exception_total_sent_requests": 17,
+      "whole_public_api_sequences_equal": false,
+      "first_matched_invocation_exception_api_index": null,
+      "next_value_api": "venmo__show_sent_payment_requests",
+      "next_exception_api": "venmo__show_sent_payment_requests",
+      "matched_prefix": [
+        {
+          "api_index": 1,
+          "api": "api_docs__show_api_descriptions",
+          "status": "returned",
+          "value_call_id": "call_001",
+          "exception_call_id": "call_001"
+        },
+        {
+          "api_index": 2,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 3,
+          "api": "supervisor__show_profile",
+          "status": "returned",
+          "value_call_id": "call_003",
+          "exception_call_id": "call_003"
+        },
+        {
+          "api_index": 4,
+          "api": "supervisor__show_account_passwords",
+          "status": "returned",
+          "value_call_id": "call_003",
+          "exception_call_id": "call_003"
+        },
+        {
+          "api_index": 5,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_004",
+          "exception_call_id": "call_004"
+        },
+        {
+          "api_index": 6,
+          "api": "venmo__login",
+          "status": "returned",
+          "value_call_id": "call_005",
+          "exception_call_id": "call_005"
+        }
+      ],
+      "model_inputs_or_python_state_proven_equal": false,
+      "causal_effect_identified": false,
+      "actual_initial_request_bytes_equal": true
+    },
+    {
+      "task_id": "6104387_1",
+      "matched_initial_api_requests_and_results": 10,
+      "value_total_sent_requests": 80,
+      "exception_total_sent_requests": 80,
+      "whole_public_api_sequences_equal": false,
+      "first_matched_invocation_exception_api_index": null,
+      "next_value_api": "spotify__show_song_library",
+      "next_exception_api": "spotify__show_song_library",
+      "matched_prefix": [
+        {
+          "api_index": 1,
+          "api": "api_docs__show_api_descriptions",
+          "status": "returned",
+          "value_call_id": "call_001",
+          "exception_call_id": "call_001"
+        },
+        {
+          "api_index": 2,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 3,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 4,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 5,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 6,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 7,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_002",
+          "exception_call_id": "call_002"
+        },
+        {
+          "api_index": 8,
+          "api": "supervisor__show_account_passwords",
+          "status": "returned",
+          "value_call_id": "call_003",
+          "exception_call_id": "call_003"
+        },
+        {
+          "api_index": 9,
+          "api": "api_docs__show_api_doc",
+          "status": "returned",
+          "value_call_id": "call_004",
+          "exception_call_id": "call_004"
+        },
+        {
+          "api_index": 10,
+          "api": "spotify__login",
+          "status": "returned",
+          "value_call_id": "call_005",
+          "exception_call_id": "call_005"
+        }
+      ],
+      "model_inputs_or_python_state_proven_equal": false,
+      "causal_effect_identified": false,
+      "actual_initial_request_bytes_equal": true
+    }
+  ],
+  "comparison_sha256": "6364af563af1cc3d1d2f5ad37ac8233c7d379a92f06042cd755851d24ba22999",
+  "call_profile_sha256": "266a383338e7647167a9957b802b49c9d120ad2d7f5db03406319bf40274495d",
+  "script_sha256": "903971557730c474683cbe8bc8b03b55a0b80ef22649923a7d10f3e60ef892fd",
+  "additional_model_calls": 0,
+  "additional_api_calls": 0,
+  "additional_evaluations": 0,
+  "private_reasoning_read": false,
+  "interpretation": "The initial sequence of sent public API requests and actual returned values or confirmed exception text is compared, normalizing the declared exception presentation. The first actual model request is compared separately using frozen-audit file hashes. Preflight input equality is at elapsed time zero; live resource notices use measured remaining time. Neither equal first requests nor API prefixes prove equal later model inputs, Python state, latent computation or counterfactual behavior."
+}
