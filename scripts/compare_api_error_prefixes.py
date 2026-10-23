@@ -91,12 +91,16 @@ def run(storage, root):
                                  'signature': signature(event, span, arm)})
             sequences.append(sequence)
         result = compare(*sequences) if all(s is not None for s in sequences) else {'comparison_available': False}
-        pairs.append({'task_id': task, **result})
+        first = [cells[arm].get('request_checks', []) for arm in ARMS]
+        first_equal = (first[0][0]['request_sha256'] == first[1][0]['request_sha256']
+                       if all(first) else None)
+        pairs.append({'task_id': task, **result,
+                      'actual_initial_request_bytes_equal': first_equal})
     result = {'phase': 'P78', 'pairs': pairs, 'comparison_sha256': sha(root / 'reports/P78_comparison.json'),
         'call_profile_sha256': sha(root / 'reports/P78_call_profile.json'),
         'script_sha256': sha(Path(__file__)), 'additional_model_calls': 0, 'additional_api_calls': 0,
         'additional_evaluations': 0, 'private_reasoning_read': False,
-        'interpretation': 'Only the initial sequence of sent public API requests and actual returned values or confirmed exception text is compared. The exception presentation difference is normalized. Equal API prefixes do not prove equal Python state, model inputs, latent computation or later counterfactual behavior.'}
+        'interpretation': 'The initial sequence of sent public API requests and actual returned values or confirmed exception text is compared, normalizing the declared exception presentation. The first actual model request is compared separately using frozen-audit file hashes. Preflight input equality is at elapsed time zero; live resource notices use measured remaining time. Neither equal first requests nor API prefixes prove equal later model inputs, Python state, latent computation or counterfactual behavior.'}
     write_json(target, result)
     print([{k: p.get(k) for k in ('task_id', 'matched_initial_api_requests_and_results',
                                 'first_matched_invocation_exception_api_index')} for p in pairs])

@@ -114,17 +114,19 @@ def build(output):
         writer = csv.DictWriter(stream, fieldnames=list(report['paired_results'][0]))
         writer.writeheader(); writer.writerows(report['paired_results'])
     figures(output, plan, report)
-    slides = []
+    slides = [{'title': '状態保持型エージェントにおける<br>API失敗通知の比較',
+               'cover': True, 'body': '', 'takeaway': '',
+               'notes': '既知４課題の固定比較。表紙は題名のみ。'}]
     def add(title, body, takeaway, notes):
         slides.append({'title': title, 'body': body, 'takeaway': takeaway, 'notes': notes})
     initial = ''.join(f'<tr><td>{task}</td><td>{row["conditions"][ARMS[0]]["input_tokens"]:,}</td>'
                       '<td>両条件で一致</td></tr>' for task, row in zip(TASKS, pre['rows'], strict=True))
     add('失敗の伝え方を、仕事全体の成否と費用で比べる',
         '<p class="body">成功時の型付き値は共通。実際のAPI例外だけを、通常の文字列またはPython例外として返す。</p>'
-        '<table><tr><th>既知課題</th><th>初期入力token</th><th>入力照合</th></tr>' + initial + '</table>'
+        '<table><tr><th>既知課題</th><th>事前検査入力token</th><th>入力照合</th></tr>' + initial + '</table>'
         '<p class="body">最初から推論履歴を保持。持続Python、公開API名、予算も共通。</p>',
         '必要な処理と最終品質を保ち、失敗と再取得を含む総費用を減らすための診断。',
-        '４課題×２条件を各１回。旧P29/P76の文字列トレースバックの完全再現ではない。例外通知自体を新規手法としない。')
+        '４課題×２条件を各１回。入力照合は経過０秒での事前検査。実行時は実測した残時間を毎回通知する。旧P29/P76の完全再現ではなく、例外通知自体を新規手法としない。')
     body = []
     for number, task in enumerate(TASKS, 1):
         for j, arm in enumerate(ARMS):
@@ -151,7 +153,7 @@ def build(output):
         '<p class="lead">' + difference + '</p>'
         '<p class="body">全８評価・使用量既知・実API例外あり・双方成功の課題あり・成功喪失なし・全体費用減少を要求。</p>',
         decision + ' 一般的な品質維持や新規性の証明とは区別する。',
-        '実例外がない条件では通知方法の違いが使われていない。初期入力が同じでも計算やタイミングの非決定性がある。')
+        '実例外がない条件では通知方法の違いが使われていない。事前検査の入力一致と、実行中の入力一致は別。計算の非決定性と実測残時間の差も残る。')
     add('記録を閉じ、主張できる範囲を残す',
         f'<p class="body">モデル生成 {sum(t["model_calls"] for t in ts)}回、API {sum(t["api_requests"] for t in ts)}回。<br>'
         f'専有推論器 {session["wall_seconds"]:,.3f}秒、ロード {session["load_wall_seconds"]:.3f}秒。<br>'
@@ -163,6 +165,10 @@ def build(output):
         '準備、実作業、後始末、評価はサーバー滞在時間と重なる。重複加算しない。過去の成否と費用を修正後の結果で上書きしない。')
     sections = []
     for n, slide in enumerate(slides, 1):
+        if slide.get('cover'):
+            sections.append(f'<section class="slide dark cover"><h1>{slide["title"]}</h1>'
+                            f'<div class="notes">{html.escape(slide["notes"])}</div></section>')
+            continue
         sections.append(f'<section class="slide"><div class="eyebrow">10月23日 API失敗通知の比較 / {n:02d}</div>'
             f'<h2>{slide["title"]}</h2>{slide["body"]}<div class="takeaway">{slide["takeaway"]}</div>'
             f'<div class="footer"><span>既知４課題・固定８条件</span><span>{n}/{len(slides)}</span></div>'
