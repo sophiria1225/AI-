@@ -6,6 +6,8 @@
 
 ## 同じMacで開くフォルダ
 
+[P74](docs/experiments/P74_boundary_lifetime_scope.md)を準備中。P70と同じ全12条件の181コード出現について、現在の項目参照と次の生成へ残る根の値を区別する。保存コードは実行せず、構文候補を安全なAPI代替や節約実証へ転記しない。全117固有入力・120秒上限。 編集ブランチ`research/p74-boundary-lifetime-20261023`。
+
 [P73](docs/P73_findings.md)は停止記録を保持して事後読取診断を完了。P73の元batchは末尾LFの原文照合で停止。全69保存出力の事後読取では、写真13・12対と書出し８対の全33対で文章・全token列・生成制約が一致し、元66入力の実測数とも一致した。元の停止・全文不一致・成否・費用は保持する。69再構成・計数5.543秒、事前照合1.859秒、事後読取0.254秒。新規生成・環境API・評価０。 固定版`d5da376e27ea069be613583364b1187eecd7a5d1`、固定作業木`p73-run`、記録`records/context_pilot/P73_prompt_identity_v01`。編集ブランチ`research/p73-results-20261023`。元batchを再試行しない。
 
 [P72](docs/P72_findings.md)も終了済み。固定版`7be6428f1d956b575a3ab897fb606f668eaa909d`、作業木`p72-run`、記録`records/context_pilot/P72_public_completion_scope_v01`。全14評価・監査不一致０、709 API・64.318秒・生成０。写真Dだけが通知で未達→成功、他６状態は未達。元の成否・不明費用を保持し、全18診断を本文へ反映。編集ブランチ`research/p72-results-20261023`。モデル推論器は停止したまま。
