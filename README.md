@@ -10,7 +10,7 @@
 |---|---|---|
 | P82：残時間を常時表示M／非表示H／後半表示L | 共通の表示前参照統一で、既知４課題×２反復、全24条件を固定順に実行中 | 全件終了・所有推論器停止後に監査し、全４採否比較を判断する |
 | P82終了後の資料・原稿 | 一度だけ動く処理を待機中。監査→全件資料→原稿数表・PDFの順 | PDFの目視と解釈は生成後。監査失敗や停止時は進めない |
-| P84：文章化ID差の次出力への局所効果 | 全６保存入力×３反復を準備済み、未開始 | P82終了後に必要性を判断。生成コードは実行しない |
+| P84：文章化ID差の次出力への局所効果 | 全６保存入力×３反復を準備済み、未開始 | 全24件監査・使用量既知・所有推論器停止後にだけ固定診断へ接続。生成コードは実行しない |
 
 [現在の結果と限界](docs/current_status.md)／[次の作業と採否](docs/next_actions.md)／[同じ環境での引き継ぎ](RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。停止はユーザーの最新指示に従う。終了済みの実験を古い記録から再開しない。
 
@@ -36,6 +36,6 @@
 
 ## 実装と記録
 
-[表示前の参照統一](scripts/protocol_stable_history.py)、[後半の時間表示](scripts/late_time_observation.py)、[P82の固定実行系](scripts/run_late_clock_pipeline.py)、[P84の固定計画](docs/experiments/P84_fallback_output.md)、[作業ボード](docs/task_board.md)。半分閾値、参照正規化、記録整備をそれ自体で新規手法とはしない。
+[表示前の参照統一](scripts/protocol_stable_history.py)、[後半の時間表示](scripts/late_time_observation.py)、[P82の固定実行系](scripts/run_late_clock_pipeline.py)、[P84の固定計画](docs/experiments/P84_fallback_output.md)、[条件付き接続](docs/P84_continuation_decision_20261024.md)、[作業ボード](docs/task_board.md)。半分閾値、参照正規化、記録整備をそれ自体で新規手法とはしない。
 
 [研究目的](docs/research_objective_20261022.md)／[金曜時点の判断表](docs/letter_friday_decisions_20261022.md)／[アカウント引き継ぎ](docs/handoff_20261022_account_switch.md)。過去の詳細な経過は[更新前READMEの固定版](https://github.com/sophiria1225/AI-/blob/6e38556bcff00b2cfb509da6a645e736f5fcce23/README.md)に保存されている。
