@@ -1,45 +1,15 @@
 # 10月31日投稿用原稿の現在地
 
-2026年10月23日。**４ページの検討原稿はあるが、採録に足る中心貢献・公式様式・著者情報は未確定。** 必要な仕事と最終品質を保ち、制御・失敗・再取得込みの全体費用を下げるという最終目標を維持する。
+2026年10月23日。本文・文献４ページと末尾英文１ページの検討原稿を整えた。採録に足る中心貢献・公式様式・著者情報は未確定。必要情報と最終品質を守り、仕事全体費用を減らす最終目標を維持する。
 
-## 現在の本文
+[現在のPDF](candidate_cost_completion.pdf)／[TeX](candidate_cost_completion.tex)／[主張・根拠・限界](../../docs/letter_claim_scope_20261023.md)／[説明資料](../../materials/20261023_letter_cost_completion/README.md)。
 
-[費用と終了診断のPDF](candidate_cost_completion.pdf)／[TeX](candidate_cost_completion.tex)／[主張・根拠・限界](../../docs/letter_claim_scope_20261023.md)／[原稿の資料](../../materials/20261023_letter_cost_completion/README.md)。
+P55/P71の全24表示条件を本文へ載せ、P56の４介入と、P66/P68の別条件の通常終了制御を区別した。両接続の詳細省略は既知費用だけでも全表示を上回った。P71の写真D/Bも作業アプリの保存状態が一致したまま公式成否が異なる。同じ既知４課題・各条件１回で、独立８課題、一般品質維持、新手法の実証ではない。
 
-問いは、同じ途中状態からAPI説明の表示を省いたとき、仕事全体費用と成否がどう変わり、その成功差を実作業の改善と解釈できるか。P55の全12表示条件とP56の４診断、P66/P68の別条件の通常終了制御を区別し、詳細省略の費用不採用、完了通知による成否変化、写真での局所的な費用減少とCSVでの未達・削減なしを記載する。
+和文115字・英文49語、日英４キーワード。全13引用を全著者表記へ整備した。全５頁目視、はみ出し・未解決引用／参照０、underfull警告９件。自然改頁の汎用jsarticleで、英文添付だけを別ページへ置く。公式クラスによる本文４ページの確認は未完了。
 
-和文111字・英文45語。汎用jsarticleで２段組４ページ、全頁目視・はみ出し／未解決引用０。公式４ページへの適合確認ではない。本文には、説明取得前の公開名を拒否する追加制約と、旧写真記録の公開時計不足、近接研究との重なりを明記した。[数値と出典](cost_completion_source_map.json)／[機械可読な現在地](current_status.json)。
+[数値・出典](cost_completion_source_map.json)／[組版点検](cost_completion_layout.json)／[日英メタデータ](submission_metadata.json)／[文献照合](../../reports/letter_bibliography_ieice_style_20261023.json)／[機械可読な現状](current_status.json)。旧来の著者省略を直し、CaveAgent v4の24名も全て残した。書誌確認と科学的主張の検証は分ける。
 
-引用13件の題名・著者表記・年・掲載先／版・ページを原典へ照合した。[書誌確認記録](../../reports/letter_bibliography_check_20261023.json)。HD-Gistの著者名は掲載ページとPDFで差があるためPDF表紙に従う。ウェブ記事にはURLと閲覧日を記載。本文の読了範囲と公式引用体裁の確認は区別する。
+再生成は報告環境で `scripts/build_public_display_paper_tables.py`、続いて `scripts/build_public_display_paper.py --tex-bin <uplatexとdvipdfmxのディレクトリ>`。閉じた根拠が変われば停止し、PDFが変われば再度目視する。原稿生成はモデル・模擬環境・評価器を呼ばない。
 
-## 新しい結果と現在の実行
-
-| 段階 | 全結果と原稿での扱い |
-|---|---|
-| [P61](../../docs/P61_findings.md) | 通常ツール・持続Pythonとも追加の連絡先検索０で成功。専用所属キャッシュを主方式へ拡張しない |
-| [P64](../../docs/P64_findings.md) | 通常２条件が既知２課題とも成功。合計407,678／408,046 tokenで公開名条件の削減なし。P55主表へ合算しない |
-| [P65](../../docs/P65_findings.md) | 新写真２条件は時計を含む宣言済み検査を支持。後続各２生成・約3.9万tokenはまだ節約額ではない |
-| [P66終了](../../docs/experiments/P66_ordinary_completion.md) | 両条件成功・最終13 DB一致、全体token30.1％／26.0％減。呼出しID差による全文一致不成立は保持。通常の手書き制御の局所結果 |
-| [P68終了](../../docs/P68_findings.md) | 通常対照と制御の両方がAPI上限で未達、各219,126 token。書出し・退会・制御の完了通知０。写真の改善と併記し、局所採用条件に未達とした |
-
-[P67のCSV読取資料](../../materials/20261023_p67/README.md)では内容・順序の支持と未達を区別した。新しい生成や実測節約額ではなく、本文の独立課題数へ加えない。
-
-[P64/P65の５枚資料](../../materials/20261023_p64/README.md)／[P66資料](../../materials/20261023_p66/README.md)。単一課題の手書き検査を新提案や一般的な品質維持へ昇格させない。未閲覧12シナリオは方式・比較・予算・評価の固定まで保持する。
-
-## 投稿までに残る判断
-
-10月23日は主張・主要結果・あらましを絞り、25日まで不足確認、29〜30日に原稿を整え、31日の投稿完了を目指す。[金曜の判断表](../../docs/letter_friday_decisions_20261022.md)／[率直な現状評価](../../docs/letter_assessment_20261023.md)。
-
-- 中心貢献：新しい制御機構も、採録に足る実証知見も、まだ成立したとは判断していない。
-- 投稿先：和文論文誌D、人工知能・D140803、レターが第一候補。最終区分は著者確認前。
-- 公式様式：公式クラス取得と公式４ページ組版は未完了。取得失敗と古い版の不採用を保存し、同じ拒否URLへ再試行しない。
-- 著者：氏名・順番・所属は未提供。仮の実名で埋めない。
-- 費用・品質：cached inputも含む全入力＋全出力を主費用とし、API・時間・資源を別記。不明・失敗・未実行を補完しない。
-
-## 過去の検討を保存する
-
-P66反映前の[４ページPDF](candidate_cost_completion_before_P66_20261023.pdf)とTeX・あらまし・出典・描画記録も保存した。主表と同じ数値のグラフはP55資料に保持し、現在の本文は全件表を用いる。
-
-[この整理前の全README](README_before_P66_20261023.md)に、旧原稿・方法部品・判断履歴をリンク付きで保持した。P55単独の[表示比較原稿](candidate_inventory_visibility.pdf)、P55/P56の[前版](candidate_inventory_terminal_scope.pdf)、以前の[実行状態原稿](candidate_execution_state.pdf)は当時の記録で、最新の投稿本文ではない。
-
-`body.tex`・`abstract_ja.txt`・`abstract_en.txt`・`draft_status.json`はP16前の見送り案の骨格。現在の原稿や採用済み手法として再使用しない。過去の成否・不採用・使用量不明は変更しない。
+[P71反映前の原稿・要旨・出典](archive_before_P71_20261023/README.md)を保持した。`candidate_execution_state`、`candidate_inventory_visibility`、`candidate_inventory_terminal_scope`や`body.tex`は過去案で、現在の投稿候補ではない。元P55/P56の成否や欠測をP71で上書きしない。次の作業は[優先順位](../../docs/next_actions.md)に従う。

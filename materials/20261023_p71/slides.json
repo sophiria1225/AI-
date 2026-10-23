@@ -1,0 +1,83 @@
+[
+  {
+    "title": "公開API名を使える条件で<br>説明省略の総費用を検証",
+    "cover": true
+  },
+  {
+    "title": "呼出し制約をそろえて、表示の比較を繰り返す",
+    "body": "<p class=\"lead\">必要な情報・処理と最終品質を保ち、仕事全体の費用を減らす。</p><table><tr><th>表示</th><th>古い説明の表示</th><th>公開APIの呼出し</th></tr><tr><td>F 全表示</td><td>詳細・一覧</td><td rowspan=\"3\">全条件で同じ<br>登録公開名を説明閲覧前から使える</td></tr><tr><td>D 詳細を省略</td><td>一覧</td></tr><tr><td>B 詳細＋一覧を省略</td><td>どちらも省略</td></tr></table><p class=\"small\">P55と同じ４既知課題・８応答後。操作・最新応答・不確かな出力は全条件で保持。<br>Python状態・アーカイブ・公開契約返信・予算は共通。</p>",
+    "takeaway": "説明閲覧を必須にしない通常接続で、表示省略の適用範囲を確かめる。",
+    "refs": [
+      [
+        "固定条件",
+        "docs/experiments/P71_public_display.md"
+      ]
+    ],
+    "notes": "能力説明とrun_pythonの案内も全条件で共通修正。元の履歴・行動・応答は維持。各16生成・120,000継続token・480秒、FDB/DBF/BFD/FBDの順に１回ずつ。新手法の主張ではない。",
+    "cover": false
+  },
+  {
+    "title": "全12条件の成否と、仕事全体の費用",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>F 全表示</th><th>D 詳細を省略</th><th>B 詳細＋一覧を省略</th></tr><tr><td>写真整理</td><td>成功<br><span class=\"metric\">156,754</span></td><td>未達<br><span class=\"metric\">121,357＋不明</span></td><td>成功<br><span class=\"metric\">129,261</span></td></tr><tr><td>電気代精算</td><td>未達<br><span class=\"metric\">161,694</span></td><td>未達<br><span class=\"metric\">162,725</span></td><td>未達<br><span class=\"metric\">154,222</span></td></tr><tr><td>返金</td><td>成功<br><span class=\"metric\">85,975</span></td><td>成功<br><span class=\"metric\">100,527</span></td><td>成功<br><span class=\"metric\">100,527</span></td></tr><tr><td>曲一覧の書出</td><td>未達<br><span class=\"metric\">96,460</span></td><td>未達<br><span class=\"metric\">138,798＋不明</span></td><td>未達<br><span class=\"metric\">173,238</span></td></tr></table><p class=\"small\">数値は共通前半＋全継続の入力出力token。評価12、未評価0、未実行0。</p>",
+    "takeaway": "不明使用量・未評価・未実行を補完せず、未達で早く止まった条件も残す。",
+    "refs": [
+      [
+        "全件監査",
+        "reports/P71_comparison.json"
+      ]
+    ],
+    "notes": "キャッシュ入力も論理費用へ含む。使用量不明は追加費用として明記し、その生成を再試行しない。効果・片付け・idleが確認できる場合に限り最終状態を評価して次の固定条件へ進む。",
+    "cover": false
+  },
+  {
+    "title": "初回入力の短縮と、最後までの費用は別に測る",
+    "body": "<img class=\"chart\" src=\"work_tokens.svg\" alt=\"全４課題３条件の総費用と成否\"/><p class=\"small\">Dの初回短縮：1,447 ／ 258 ／ 782 ／ 1,629 token。</p>",
+    "takeaway": "棒は前半＋継続の既知費用。不明がある棒には斜線を付ける。",
+    "refs": [
+      [
+        "入力計数",
+        "reports/P71_prefix_checks.json"
+      ],
+      [
+        "総費用",
+        "reports/P71_comparison.json"
+      ]
+    ],
+    "notes": "縦軸は０始まり。省略処理・通知・計数・契約返信の費用も継続に含める。返金D/Bは基礎入力が同じで、残時間通知と数値の揺らぎは残る。そこでの行動差を一覧の効果としない。",
+    "cover": false
+  },
+  {
+    "title": "呼出し・復元・推論器の費用を残す",
+    "body": "<table class=\"metrics\"><tr><th>４課題合計</th><th>F</th><th>D</th><th>B</th></tr><tr><td>成功数</td><td>2</td><td>1</td><td>2</td></tr><tr><td>継続AI呼出し</td><td>21</td><td>25</td><td>27</td></tr><tr><td>継続API</td><td>204</td><td>138</td><td>148</td></tr><tr><td>復元API</td><td>51</td><td>51</td><td>51</td></tr><tr><td>使用量不明の呼出し</td><td>0</td><td>2</td><td>0</td></tr><tr><td>説明公開前のAPI送信</td><td>0</td><td>0</td><td>1</td></tr></table><p class=\"small\">推論器ロード10.1秒、常駐3,724.1秒。終了とプロセス消滅を確認。</p>",
+    "takeaway": "説明なしの公開名呼出しも、通常のAPI送信として予算と監査の対象にする。",
+    "refs": [
+      [
+        "全件監査",
+        "reports/P71_comparison.json"
+      ],
+      [
+        "推論器費用",
+        "reports/P71_server_session.json"
+      ]
+    ],
+    "notes": "未登録API、未知の引数名、完了後、作用不明後の送信を監査。型と必須引数の検査は元のAPI側に委ねる。公開スキーマが増える契機も記録から照合する。復元は実験の費用として別記。評価単独の時間は分離計測していないので０としない。",
+    "cover": false
+  },
+  {
+    "title": "この既知群から主張できる範囲",
+    "body": "<p class=\"lead\">Dは既知分でFより22,524 token多い。不明2生成。<br>固定した採用基準：未達 ／ 一覧保持の追加価値：支持条件を満たさない</p><table><tr><th>比較の範囲</th><th>原稿での扱い</th></tr><tr><td>P71内のF/D/B</td><td>同じ公開名接続・能力説明での比較</td></tr><tr><td>旧P55との違い</td><td>時点・案内文も違う。接続制約だけの因果効果としない</td></tr><tr><td>既知４課題を各１回</td><td>一般品質維持・統計的非劣性・新手法の証明ではない</td></tr></table>",
+    "takeaway": "元P55も全結果を保持し、都合のよい条件だけを原稿へ残さない。",
+    "refs": [
+      [
+        "P71固定条件",
+        "docs/experiments/P71_public_display.md"
+      ],
+      [
+        "元のP55",
+        "docs/P55_findings.md"
+      ]
+    ],
+    "notes": "採用条件は全12評価・全使用量既知・監査不一致０、DがF/Bの対の成功を失わず、総費用がFより少なくB以下。一覧の利点には、実際に一覧入力が違う課題でD成功/B失敗も必要。未閲覧12シナリオを使っていない。",
+    "cover": false
+  }
+]
