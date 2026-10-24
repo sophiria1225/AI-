@@ -1,0 +1,33 @@
+[
+  {
+    "title": "参照IDの表現差と<br>次のモデル出力",
+    "cover": true,
+    "body": "",
+    "takeaway": "",
+    "notes": "P84。既知CSV課題の事後選定した保存文脈の診断。課題の実行・品質評価は行わない。"
+  },
+  {
+    "title": "保存した６入力を各３回、生成だけ比較する",
+    "body": "<table class=\"results\"><tr><th>記号</th><th>保存入力と対照</th><th>入力token</th></tr><tr><td>A</td><td>P80元入力</td><td>22,669</td></tr><tr><td>B</td><td>第２反復元入力</td><td>22,667</td></tr><tr><td>C</td><td>P80表示前統一</td><td>22,650</td></tr><tr><td>D</td><td>第２反復表示前統一</td><td>22,650</td></tr><tr><td>N</td><td>native参照変更</td><td>22,669</td></tr><tr><td>X</td><td>内容変更対照</td><td>22,676</td></tr></table><p class=\"body\">全18予定生成。seed 70、出力上限4,096、全要求で入力cacheを無効化。</p>",
+    "takeaway": "P83の入力列の観測を次の出力まで調べる。元のwarm状態や課題全体を再現しない。",
+    "notes": "元の一対はP80/P81の既知課題を見た後に選ばれた。６入力は６独立課題ではない。元要求のcache_promptだけを全条件でFalseにする。P82とは別の有限な所有推論器で実行する。"
+  },
+  {
+    "title": "全18枠を、失敗・途中切れ・未実行も含めて示す",
+    "body": "<div class=\"three\"><div><h3>反復1</h3><table class=\"results\"><tr><th>入力</th><th>入力T</th><th>出力T</th><th>終端</th></tr><tr><td>A</td><td>22,669</td><td>679</td><td>呼出し</td></tr><tr><td>B</td><td>22,667</td><td>289</td><td>呼出し</td></tr><tr><td>C</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>D</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>N</td><td>22,669</td><td>679</td><td>呼出し</td></tr><tr><td>X</td><td>22,676</td><td>565</td><td>呼出し</td></tr></table></div><div><h3>反復2</h3><table class=\"results\"><tr><th>入力</th><th>入力T</th><th>出力T</th><th>終端</th></tr><tr><td>X</td><td>22,676</td><td>565</td><td>呼出し</td></tr><tr><td>N</td><td>22,669</td><td>679</td><td>呼出し</td></tr><tr><td>D</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>C</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>B</td><td>22,667</td><td>289</td><td>呼出し</td></tr><tr><td>A</td><td>22,669</td><td>679</td><td>呼出し</td></tr></table></div><div><h3>反復3</h3><table class=\"results\"><tr><th>入力</th><th>入力T</th><th>出力T</th><th>終端</th></tr><tr><td>C</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>X</td><td>22,676</td><td>565</td><td>呼出し</td></tr><tr><td>A</td><td>22,669</td><td>679</td><td>呼出し</td></tr><tr><td>D</td><td>22,650</td><td>1,316</td><td>完了</td></tr><tr><td>B</td><td>22,667</td><td>289</td><td>呼出し</td></tr><tr><td>N</td><td>22,669</td><td>679</td><td>呼出し</td></tr></table></div></div>",
+    "takeaway": "使用量不明を０に置換しない。上限で切れた応答も費用へ含める。",
+    "notes": "各表はその反復の固定実行順。A/B/C/D/N/Xは前頁の入力。呼出しはモデルが呼出しを生成した意味であり、実際のプログラムやAPIは実行していない。完全・非空の公開出力が３回そろう条件は次頁と最終判定で別に確認する。"
+  },
+  {
+    "title": "入力内の全３対と、入力間の全15組を照合する",
+    "body": "<div class=\"two\"><div><h3>公開内容・関数・引数の一致</h3><table class=\"results\"><tr><th>入力</th><th>A</th><th>B</th><th>C</th><th>D</th><th>N</th><th>X</th></tr><tr><td>A</td><td>3/3</td><td>0/9</td><td>0/9</td><td>0/9</td><td>9/9</td><td>0/9</td></tr><tr><td>B</td><td></td><td>3/3</td><td>0/9</td><td>0/9</td><td>0/9</td><td>0/9</td></tr><tr><td>C</td><td></td><td></td><td>3/3</td><td>9/9</td><td>0/9</td><td>0/9</td></tr><tr><td>D</td><td></td><td></td><td></td><td>3/3</td><td>0/9</td><td>0/9</td></tr><tr><td>N</td><td></td><td></td><td></td><td></td><td>3/3</td><td>0/9</td></tr><tr><td>X</td><td></td><td></td><td></td><td></td><td></td><td>3/3</td></tr></table></div><div><h3>全messageのhash一致</h3><table class=\"results\"><tr><th>入力</th><th>A</th><th>B</th><th>C</th><th>D</th><th>N</th><th>X</th></tr><tr><td>A</td><td>3/3</td><td>0/9</td><td>0/9</td><td>0/9</td><td>9/9</td><td>0/9</td></tr><tr><td>B</td><td></td><td>3/3</td><td>0/9</td><td>0/9</td><td>0/9</td><td>0/9</td></tr><tr><td>C</td><td></td><td></td><td>3/3</td><td>9/9</td><td>0/9</td><td>0/9</td></tr><tr><td>D</td><td></td><td></td><td></td><td>3/3</td><td>0/9</td><td>0/9</td></tr><tr><td>N</td><td></td><td></td><td></td><td></td><td>3/3</td><td>0/9</td></tr><tr><td>X</td><td></td><td></td><td></td><td></td><td></td><td>3/3</td></tr></table></div></div><p class=\"body\">一致数／使用量が既知の比較可能対数。対角は同入力内、上三角は入力間。</p>",
+    "takeaway": "この保存文脈では元のID一対で公開出力が異なり、同値入力の対照は一致した。",
+    "notes": "下三角は重複なので空欄。入力内は最大３対、入力間は最大９対で、共有する反復から作るため独立標本ではない。途中切れや空出力のhash一致も生の照合数には残し、完全・非空の３反復と同値入力対照が成立しなければ局所効果を結論しない。推論の意味内容は読まない。"
+  },
+  {
+    "title": "診断の全費用を残し、元の課題結果へ広げない",
+    "body": "<table class=\"results\"><tr><th>測定</th><th>値</th></tr><tr><td>試行／計画</td><td>18/18</td></tr><tr><td>論理入力＋出力token</td><td>422,475</td></tr><tr><td>入力計数要求</td><td>6</td></tr><tr><td>既知生成の実処理／cache入力token</td><td>407,943 / 0</td></tr><tr><td>全推論器稼働 秒</td><td>4,386.052</td></tr><tr><td>内・ロード 秒</td><td>10.067</td></tr><tr><td>保存済み生成応答時間の合計 秒</td><td>4,360.839</td></tr></table><p class=\"body\">環境API、生成コード実行、課題評価、保留課題の閲覧は０。</p>",
+    "takeaway": "所有推論器は停止済み。局所診断であり、新規手法・課題成功・全仕事削減の証明ではない。",
+    "notes": "推論器滞在にはロード・計数・生成・待機が含まれ、部分時間と二重加算しない。未知費用を既知分へ補完しない。cache内訳は使用量が既知の生成だけ、応答時間は保存済み記録だけの合計。ホストで軽量編集や集計も行うため負荷を排他的に固定した比較ではない。元のP80/P81の未達と欠測、P82の採用基準を変更しない。"
+  }
+]
