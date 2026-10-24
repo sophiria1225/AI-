@@ -73,4 +73,4 @@ P80/P81の[資源別稿](../papers/202610_letter/resource_prior_review/README.md
 
 [次の作業](next_actions.md)／[同じMacでの引き継ぎ](../RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。更新前の記録は[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/docs/current_status.md)と各結果台帳に残す。
 
-実AppWorld接続の有限な確認を準備した。既知CSV課題の独立した初期世界２個、同じ完全応答キャッシュを持つ即時／遅延、各手書き６プログラムと初期化１回。公開認証・一覧の取得費を含め、各API上限12・全体24・能動300秒・モデルと独立評価０に固定。別名保持、次の実行での未知項目、完全キャッシュ再利用、未使用参照の破棄、変更前の値を確認する。５境界検査と全1,358検査が通過。実サービスはまだ未実行で、固定headの両CI/job成功後に一度だけ実行する。 [準備資料](../materials/20261024_public_read_views_live_preparation/README.md)。
+公開APIと読取ビューの実サービス確認は固定２条件を一度ずつ終了した。全６段階の出力が一致し、実APIは即時11／遅延10、制御要求は両18、完全キャッシュ再利用は両１。後から使う項目と変更前の値は完全取得し、未使用の最後の参照を捨てた１件だけ取得を回避。認証と一覧２回を含む。全6.210秒、両コンテナ削除・ブリッジ正常終了とPID不在。モデル・独立評価０。手書き確認であり、LLM課題の全体品質・費用改善や新規性は未確立。 [全件結果](../materials/20261024_public_read_views_live_results/README.md)。次は強い通常方式との差と実際に回避できる取得の範囲を絞る。
