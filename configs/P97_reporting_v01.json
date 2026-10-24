@@ -1,0 +1,31 @@
+{
+  "phase": "P97_reporting",
+  "created_at": "2026-10-24T09:54:43.164174+00:00",
+  "max_wall_seconds": 120,
+  "expected_planned_cells": 12,
+  "max_monitor_file_bytes": 16777216,
+  "expected_executed_head": "46dcfd3f3d2b79214b8601618f40ee6083e67452",
+  "required_closed_audit": "reports/P97_comparison.json",
+  "required_owned_server_closed": true,
+  "source_sha256": {
+    "scripts/build_recovery_notice_report.py": "a5589a35da0dfc8c9222b2e3403c01679974a653d6004b15bb83a74860cddb5c",
+    "scripts/inspect_recovery_notice_ledger.py": "344682ea0c2b0426abda9d3e5721b0904de8756177146a865133f7048ce57f20",
+    "scripts/inspect_recovery_notice_session.py": "ef7d3f39db2c88f88c845c913bc81b86796ac9cc60b5774cbd94fdc46858c27c",
+    "tests/test_recovery_notice_reporting.py": "fb781a7804dda1a3ef40ef180a1585b75687f61a8ba242a897351ebbd000bec8",
+    "configs/P97_recovery_notice_comparison_v01.json": "f5373ba79faaab965d0d92f22b39df0c7ead3f566e2d7658b412590156c385c7",
+    "reports/P97_initial_checks.json": "c4bf722ab676b39948c306ad486598a054869ab875e1d4a9e738fbd5d72f564e",
+    "reports/P97_activation_v01.json": "64436684f5ca70a9333ee6a4bf75868304b501270de204b08c3d00dee5c979bb",
+    "scripts/recovery_notice_comparison.py": "3e45f330a28dfa575227ec48b9a690a2e9846721678673aa9392bbbbc358cd8f",
+    "scripts/auth_origin_observations.py": "f0a7749c901dbe47543df829a33f7dcd410a085ba8c3e07ac7782a2e190b5b86",
+    "scripts/build_morning_report.py": "d388724bedbca194c829002376adf300926bc868c1ad614e4b7ad2710e56c069",
+    "scripts/build_budget_report.py": "a51182a3eeb505c18334dc5c7fc7e78898bba591855a3a8d6ce9dfc81fd87247",
+    "scripts/build_budget_visibility_report.py": "a96a9b41b9ec1173c3732008a49bac04eca4cab90c9dcd960ae5c1353e027520",
+    "scripts/build_budget_visibility_repetition_report.py": "e7c95d324e22b72ad2bea93bd73949636daaf2aa3b6cbb5c95d27fd29e125f7f"
+  },
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "result_preview_permitted": false,
+  "scope": "Close the owned server, preserve all12 audited cells, inspect sanitized monitors once, build all-condition CSV/HTML/PDF and visually review every page. Do not change the running experiment or rerun its model/API/evaluation."
+}
