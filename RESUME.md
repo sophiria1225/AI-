@@ -6,7 +6,9 @@
 
 ## 保存先と作業木
 
-最新のP86は[全855要求の出力枠点検](materials/20261024_output_budget_scope/README.md)を一度だけ実行済み。13上限到達＝途中切れ引数７＋公開操作なし６、推論専用token計数なし。固定実装とP83の保存設定を点検し、通常の推論予算指定が未比較であると確認した。次は通常対照の局所診断P87を準備する。２保存文脈×上限なし／2,048×２反復、計８生成。閾値探索・課題実行・品質主張は行わず、固定計画と検査を通すまでは生成しない。P86の解析・旧実験は再実行しない。
+最新のP86は[全855要求の出力枠点検](materials/20261024_output_budget_scope/README.md)を一度だけ実行済み。13上限到達＝途中切れ引数７＋公開操作なし６、推論専用token計数なし。次の[P87固定計画](docs/experiments/P87_fixed_reasoning_budget.md)は同じ既知CSV課題の２保存文脈×上限なし／推論ブロック2,048×２反復、計８生成。元入力17,696/31,211、元seed69/74を維持し、cacheは全件false。最大228,396論理token、生成段階5,400秒、推論器7,200秒。115依存を束縛した通常対照の局所診断であり、課題実行・品質主張はしない。
+
+実行は別の固定木から `run_fixed_reasoning_budget_pipeline.py --storage-root /Users/tp26013/AI- --expected-commit 固定SHA`。同じheadのpush・PR CI/job成功を確認して開始する。`P87_pipeline_v01`、`P87_preflight_v01`、`P87_fixed_reasoning_budget_v01`を保存し、`.runtime/P87.stop`で停止する。全件終了と所有推論器停止後に `audit_fixed_reasoning_budget.py` を一度実行し、全８枠を資料化する。途中は状態・費用だけを表示し、出力本文・指紋は読まない。P86の解析・旧実験・旧待機を再実行しない。
 
 | 用途 | 場所 |
 |---|---|
