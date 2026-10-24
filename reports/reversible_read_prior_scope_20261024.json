@@ -1,0 +1,103 @@
+{
+  "phase": "reversible_read_views_prior_scope",
+  "checked_at": "2026-10-24T06:25:09.479059+00:00",
+  "novel_method_claim": false,
+  "primary_sources": [
+    {
+      "title": "On Graph Deltas for Historical Queries",
+      "authors": [
+        "Georgia Koloniari",
+        "Dimitris Souravlias",
+        "Evaggelia Pitoura"
+      ],
+      "url": "https://arxiv.org/pdf/1302.5549",
+      "version": "arXiv:1302.5549v1, 2013-02-22; WOSS 2012",
+      "read_scope": [
+        "abstract",
+        "introduction",
+        "2.1 Snapshots and Deltas",
+        "2.2 Storage and Maintenance"
+      ],
+      "incidental_exposure": [
+        "3.1 Query Types",
+        "opening of 3.2"
+      ],
+      "full_proof_audit": false,
+      "reproduced": false,
+      "boundary": "Past reconstruction from complete invertible deltas, intermediate snapshots and reconstruction cost are existing ideas."
+    },
+    {
+      "title": "Lazy Maintenance of Materialized Views",
+      "authors": [
+        "Jingren Zhou",
+        "Per-Ake Larson",
+        "Hicham G. Elmongui"
+      ],
+      "url": "https://www.vldb.org/conf/2007/papers/research/p231-zhou.pdf",
+      "version": "VLDB 2007, pages 231-242",
+      "read_scope": [
+        "abstract",
+        "1 Introduction",
+        "2 overview opening",
+        "2.1 Background Information"
+      ],
+      "incidental_exposure": [
+        "2.2 opening through maintenance task description"
+      ],
+      "reproduced": false,
+      "boundary": "Postponing view maintenance and using row versions is established; this paper targets current relational views, not this host interface."
+    }
+  ],
+  "failed_accesses": [
+    {
+      "url": "https://db.cs.berkeley.edu/cs286/papers/mvlazy-vldb2007.pdf",
+      "reason": "web tool inaccessible; official VLDB primary copy subsequently read"
+    },
+    {
+      "url": "https://arxiv.org/html/1302.5549v1",
+      "reason": "cache miss; primary PDF subsequently read"
+    }
+  ],
+  "public_implementation_read": {
+    "apis_py_lines": [
+      [
+        443,
+        481
+      ],
+      [
+        515,
+        557
+      ],
+      [
+        728,
+        770
+      ],
+      [
+        1051,
+        1096
+      ]
+    ],
+    "models_py_lines": [
+      [
+        141,
+        202
+      ],
+      [
+        230,
+        325
+      ],
+      [
+        501,
+        530
+      ]
+    ],
+    "model_lib_only_symbol_search": true,
+    "transitive_effect_proof_complete": false,
+    "live_effect_exemptions_enabled": false,
+    "recount_invariant_not_established": true,
+    "sha256": {
+      "apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+      "models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6"
+    }
+  }
+}
