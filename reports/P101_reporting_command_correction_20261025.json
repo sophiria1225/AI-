@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-10-24T15:19:29.781135+00:00",
+  "retirement_started_at": "2026-10-24T15:19:29.776852+00:00",
+  "reason": "The original report command supplied --repo-root, which the frozen report CLI does not accept. Found before closure and before reading generation outcomes.",
+  "executed_head": "879f04696a8129252b47678f92ee4e1031a09ea7",
+  "original_watcher_pid": 304,
+  "original_watcher_stages": [],
+  "original_watcher_absent": true,
+  "original_watcher_sha256": "1473dc7ba80429d0a120ea9e62abe40dd5ecbef1ae4e34906b260347a67df0fa",
+  "original_watcher_status_sha256": "31286fd45df7923a0329e8d59efadfc921d240d105175fe51181ee563da37b0b",
+  "replacement_script": "scripts/close_choice_context_reporting.py",
+  "replacement_script_sha256": "d8e6a4822246d901a2686a224d5a227c5a8cfcb6f4812a538186d0f020033855",
+  "corrected_report_arguments": [
+    "--output",
+    "--pdf"
+  ],
+  "audit_arguments_unchanged": [
+    "--storage-root",
+    "--repo-root"
+  ],
+  "original_pipeline_status_before": "generation",
+  "original_pipeline_status_after": "generation",
+  "generation_conditions_changed": false,
+  "generation_outcomes_read": false,
+  "original_source_bindings_unchanged": 887,
+  "generation_attempts_restarted": 0,
+  "audit_attempts_restarted": 0,
+  "report_attempts_restarted": 0,
+  "replacement_watcher_started": false,
+  "original_execution_plan_changed": false,
+  "correction_is_post_generation_start": true,
+  "disclosure": "Reporting orchestration correction after generation began; original generation and audit/report implementations remain frozen.",
+  "new_model_generations": 0,
+  "new_environment_API_requests": 0,
+  "new_evaluations": 0
+}
