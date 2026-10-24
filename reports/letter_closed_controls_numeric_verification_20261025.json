@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-10-24T15:11:14.476298+00:00",
+  "P99_totals": [
+    {
+      "policy": "auto",
+      "evaluated": 4,
+      "successes": 3,
+      "known_total_tokens": 769281,
+      "unknown_usage_calls": 1,
+      "model_calls": 73,
+      "API_requests": 179,
+      "wall_seconds": 2976.2645469999698
+    },
+    {
+      "policy": "required",
+      "evaluated": 4,
+      "successes": 3,
+      "known_total_tokens": 882557,
+      "unknown_usage_calls": 0,
+      "model_calls": 75,
+      "API_requests": 197,
+      "wall_seconds": 2698.152405290981
+    }
+  ],
+  "P99_successful_pairs": [
+    {
+      "task_id": "34d9492_1",
+      "known_tokens_each": 135628,
+      "difference": 0
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "known_tokens_each": 211110,
+      "difference": 0
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "known_tokens_each": 102087,
+      "difference": 0
+    }
+  ],
+  "P99_whole_cost_difference_known": false,
+  "P98_summary_recomputed_from_public_report": true,
+  "P98_unchanged_numeric_files": [
+    "whole_task.tex",
+    "trajectories.tex",
+    "local_replay.tex",
+    "observed_resources.tex",
+    "cross_cohort.tex",
+    "cohort.tex"
+  ],
+  "source_sha256": {
+    "reports/P99_comparison.json": "bd7078cce94fa7a22fb31fb7e23363763da2918ef52d18b3239aea6cbe257da7",
+    "reports/P99_server_session.json": "edb37ff97c357d418ad74933d73e2398488312a6a7822166c7a8057cf593cf60",
+    "reports/P98_recorded_action_agreement.json": "fcf899f10b479a2e29da50304caea03893bec3d30d849b519a75e0a416ac5ec8",
+    "materials/20261024_p98_results/summary.json": "f063e19ef5795ea883eba02eb7bcdd56d8719088fc532a932cd1cd2ca9612f3e",
+    "papers/202610_letter/execution_evidence_controls_v02/ordinary_control.tex": "6cd401b1863b7f689b31484d36000ac137e7c4e7bc97776eb317b114a70292d3"
+  },
+  "scope": "Public published aggregates, exact bytes and arithmetic; no private usage reconstruction or new task evaluation.",
+  "model_generations": 0,
+  "environment_API_requests": 0,
+  "evaluations": 0,
+  "P101_intermediate_results_used": false
+}
