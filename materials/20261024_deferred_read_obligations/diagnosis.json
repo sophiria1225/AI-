@@ -1,0 +1,40 @@
+{
+  "phase": "deferred_read_explicit_operation_model",
+  "created_at": "2026-10-24T04:16:42.544776+00:00",
+  "synthetic": true,
+  "operation_alphabet": [
+    "bind_a",
+    "bind_b",
+    "read_title",
+    "read_rating",
+    "alias",
+    "drop",
+    "effect",
+    "escape_alias"
+  ],
+  "sequence_depth": 4,
+  "modelled_request_limit": 5,
+  "planned_sequences": 4096,
+  "checked_sequences": 4096,
+  "observation_mismatches": 0,
+  "budget_bound_failures": 0,
+  "equal_modelled_request_counts": 2031,
+  "lower_modelled_request_counts": 2065,
+  "all_remaining_aliases_materialized_for_final_comparison": true,
+  "original_python_type_and_implicit_alias_compatibility_tested": false,
+  "trusted_assumptions_derived_automatically": false,
+  "prior_partial_information_acquisition_cost_measured": false,
+  "local_time_seconds": 0.17515691599692218,
+  "source_sha256": {
+    "scripts/deferred_read_obligations.py": "29df5f261a58855f0f27ccb61f64ad125ef7368e8b31882807315f47250f78fd",
+    "scripts/probe_deferred_read_obligations.py": "51461b20490dda4cc23aa3339dafbd74325cfea2b1de8450d35c2e6ad48207ef"
+  },
+  "all_sequences_sha256": "085f6ecb43f6031060fffe1c8276515294abeb1a33871dc49a1362b4b93d34f2",
+  "research_tasks": 0,
+  "model_generations": 0,
+  "real_api_requests": 0,
+  "task_evaluations": 0,
+  "live_P88_records_read": false,
+  "new_method_novelty_established": false,
+  "limitations": "Handwritten operations, trusted total and pure reads, exact initial partial fields, intercepted state changes, explicit names/aliases/deaths/escapes. No arbitrary Python adapter, transport guarantees, hidden aliases, wall deadlines, source evidence costs, or task-quality comparison."
+}

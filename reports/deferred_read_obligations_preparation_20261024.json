@@ -1,0 +1,67 @@
+{
+  "phase": "deferred_read_obligation_model_preparation",
+  "created_at": "2026-10-24T04:23:24.238485+00:00",
+  "synthetic_probe_sha256": "2a44d5ffab09ae9d597ad1cc21684d160caabc99b2d242d4b98c0d753b666d64",
+  "synthetic_rows_sha256": "085f6ecb43f6031060fffe1c8276515294abeb1a33871dc49a1362b4b93d34f2",
+  "source_sha256": {
+    "scripts/deferred_read_obligations.py": "29df5f261a58855f0f27ccb61f64ad125ef7368e8b31882807315f47250f78fd",
+    "scripts/probe_deferred_read_obligations.py": "51461b20490dda4cc23aa3339dafbd74325cfea2b1de8450d35c2e6ad48207ef",
+    "tests/test_deferred_read_obligations.py": "b01568df75ccdb4384bbb4a58fda45266ff2e9cb9372f26ea9da9083f80f18e9",
+    "docs/deferred_read_obligations_20261024.md": "19a538f4a5bcb68f1fe74d69053f78e0175ee382203b0b65a41d12e04d5ef313"
+  },
+  "new_unit_tests": 8,
+  "total_tests": 1309,
+  "full_test_runner": {
+    "exit_code": 0,
+    "wall_seconds": 3.7406095419999996,
+    "completed_at": "2026-10-24T04:18:53.267503+00:00",
+    "log_sha256": "7b45608beec8f165e2b52708137d5bade028680162bdd87b9497472d44727367"
+  },
+  "suite_reported_seconds": 3.347,
+  "prior_sources": {
+    "url": "https://arxiv.org/html/2609.23058v1",
+    "additional_scope": [
+      "3.2 (read with 3.1 context)",
+      "9 selected discussion and assumptions passages",
+      "Appendix B.1"
+    ],
+    "whole_paper_or_code_reproduced": false,
+    "finding": "Demand, projection, state changes and changing graph/request already belong to the prior. No novelty inferred from general lazy reads or future work."
+  },
+  "prior_report_sha256": {
+    "reports/P69_export_acquisition_scope.json": "2f02463b90061dba474d438fe82b62498b337416b56c02cd3f12d9a2f516427f",
+    "reports/P74_boundary_lifetime_scope.json": "32ba5c9d2125eb1c0b95e166a20df96f698d624fcb014b6144a9a131aad6fbd3",
+    "configs/P70_return_use_scope_v01.json": "a0b8f1f5867a58a2a5c184d349018740eaa278b6eac9c838806123eb439a7f5d"
+  },
+  "two_target_code_structure_reads": [
+    {
+      "run_id": "P33_04_FULL_KEEP",
+      "program": "call_002_01",
+      "input_sha256": "e5ecce7a4a31185f1ddd9f54f576b06dfa8eee0bbb0bf30b24eaafeaa76c4b30",
+      "root_load_parents": [
+        "Assign"
+      ],
+      "raw_code_published": false
+    },
+    {
+      "run_id": "P33_04_STDOUT_MASK_INDEX_KEEP",
+      "program": "call_008_01",
+      "input_sha256": "685142146defef00141fb6d2a5d15fbd20efedb1b2202a38bbc5feb24d86a741",
+      "root_load_parents": [
+        "Assign",
+        "Attribute:get",
+        "Attribute:get"
+      ],
+      "raw_code_published": false
+    }
+  ],
+  "live_P88_records_read": false,
+  "live_P88_execution_changed": false,
+  "real_python_adapter_implemented": false,
+  "automatic_trust_or_alias_inference": false,
+  "quality_or_whole_task_savings_established": false,
+  "novelty_established": false,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "task_evaluations": 0
+}
