@@ -1,0 +1,484 @@
+{
+  "all_conditions": {
+    "cells": 12,
+    "successes": 9,
+    "model_attempts": 223,
+    "API_requests": 611,
+    "known_logical_tokens": 2439566,
+    "unknown_usage_attempts": 2,
+    "conditional_request_interval": [
+      2439566,
+      2522222
+    ],
+    "conditional_context_interval": [
+      2439566,
+      2570638
+    ]
+  },
+  "totals": [
+    {
+      "notice_policy": "none",
+      "cells": 4,
+      "successes": 3,
+      "model_attempts": 73,
+      "API_requests": 179,
+      "known_logical_tokens": 769281,
+      "unknown_usage_attempts": 1,
+      "conditional_request_interval": [
+        769281,
+        809337
+      ],
+      "conditional_context_interval": [
+        769281,
+        834817
+      ],
+      "successful": {
+        "cells": 3,
+        "successes": 3,
+        "model_attempts": 53,
+        "API_requests": 137,
+        "known_logical_tokens": 448825,
+        "unknown_usage_attempts": 0,
+        "conditional_request_interval": [
+          448825,
+          448825
+        ],
+        "conditional_context_interval": [
+          448825,
+          448825
+        ]
+      },
+      "unsuccessful": {
+        "cells": 1,
+        "successes": 0,
+        "model_attempts": 20,
+        "API_requests": 42,
+        "known_logical_tokens": 320456,
+        "unknown_usage_attempts": 1,
+        "conditional_request_interval": [
+          320456,
+          360512
+        ],
+        "conditional_context_interval": [
+          320456,
+          385992
+        ]
+      }
+    },
+    {
+      "notice_policy": "generic",
+      "cells": 4,
+      "successes": 3,
+      "model_attempts": 74,
+      "API_requests": 216,
+      "known_logical_tokens": 797644,
+      "unknown_usage_attempts": 1,
+      "conditional_request_interval": [
+        797644,
+        840244
+      ],
+      "conditional_context_interval": [
+        797644,
+        863180
+      ],
+      "successful": {
+        "cells": 3,
+        "successes": 3,
+        "model_attempts": 53,
+        "API_requests": 137,
+        "known_logical_tokens": 448825,
+        "unknown_usage_attempts": 0,
+        "conditional_request_interval": [
+          448825,
+          448825
+        ],
+        "conditional_context_interval": [
+          448825,
+          448825
+        ]
+      },
+      "unsuccessful": {
+        "cells": 1,
+        "successes": 0,
+        "model_attempts": 21,
+        "API_requests": 79,
+        "known_logical_tokens": 348819,
+        "unknown_usage_attempts": 1,
+        "conditional_request_interval": [
+          348819,
+          391419
+        ],
+        "conditional_context_interval": [
+          348819,
+          414355
+        ]
+      }
+    },
+    {
+      "notice_policy": "factual",
+      "cells": 4,
+      "successes": 3,
+      "model_attempts": 76,
+      "API_requests": 216,
+      "known_logical_tokens": 872641,
+      "unknown_usage_attempts": 0,
+      "conditional_request_interval": [
+        872641,
+        872641
+      ],
+      "conditional_context_interval": [
+        872641,
+        872641
+      ],
+      "successful": {
+        "cells": 3,
+        "successes": 3,
+        "model_attempts": 53,
+        "API_requests": 137,
+        "known_logical_tokens": 448825,
+        "unknown_usage_attempts": 0,
+        "conditional_request_interval": [
+          448825,
+          448825
+        ],
+        "conditional_context_interval": [
+          448825,
+          448825
+        ]
+      },
+      "unsuccessful": {
+        "cells": 1,
+        "successes": 0,
+        "model_attempts": 23,
+        "API_requests": 79,
+        "known_logical_tokens": 423816,
+        "unknown_usage_attempts": 0,
+        "conditional_request_interval": [
+          423816,
+          423816
+        ],
+        "conditional_context_interval": [
+          423816,
+          423816
+        ]
+      }
+    }
+  ],
+  "whole_cohort_differences": [
+    {
+      "minuend": "generic",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          -11693,
+          70963
+        ],
+        "sign_under_assumptions": "not_identified"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          -37173,
+          93899
+        ],
+        "sign_under_assumptions": "not_identified"
+      }
+    },
+    {
+      "minuend": "factual",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          63304,
+          103360
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          37824,
+          103360
+        ],
+        "sign_under_assumptions": "positive"
+      }
+    },
+    {
+      "minuend": "factual",
+      "subtrahend": "generic",
+      "conditional_request_interval": {
+        "bounds": [
+          32397,
+          74997
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          9461,
+          74997
+        ],
+        "sign_under_assumptions": "positive"
+      }
+    }
+  ],
+  "all_task_differences": [
+    {
+      "task_id": "34d9492_1",
+      "minuend": "generic",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "34d9492_1",
+      "minuend": "factual",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "34d9492_1",
+      "minuend": "factual",
+      "subtrahend": "generic",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "minuend": "generic",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "minuend": "factual",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "minuend": "factual",
+      "subtrahend": "generic",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "minuend": "generic",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "minuend": "factual",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "minuend": "factual",
+      "subtrahend": "generic",
+      "conditional_request_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          0,
+          0
+        ],
+        "sign_under_assumptions": "zero"
+      },
+      "minuend_success": true,
+      "subtrahend_success": true
+    },
+    {
+      "task_id": "6104387_1",
+      "minuend": "generic",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          -11693,
+          70963
+        ],
+        "sign_under_assumptions": "not_identified"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          -37173,
+          93899
+        ],
+        "sign_under_assumptions": "not_identified"
+      },
+      "minuend_success": false,
+      "subtrahend_success": false
+    },
+    {
+      "task_id": "6104387_1",
+      "minuend": "factual",
+      "subtrahend": "none",
+      "conditional_request_interval": {
+        "bounds": [
+          63304,
+          103360
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          37824,
+          103360
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "minuend_success": false,
+      "subtrahend_success": false
+    },
+    {
+      "task_id": "6104387_1",
+      "minuend": "factual",
+      "subtrahend": "generic",
+      "conditional_request_interval": {
+        "bounds": [
+          32397,
+          74997
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "conditional_context_interval": {
+        "bounds": [
+          9461,
+          74997
+        ],
+        "sign_under_assumptions": "positive"
+      },
+      "minuend_success": false,
+      "subtrahend_success": false
+    }
+  ],
+  "assumptions": [
+    "The server honors the recorded request output cap.",
+    "The recorded tokenizer input count applies to that exact request.",
+    "No unrecorded retry or extra generation is included in the defined logical cost.",
+    "The context-only bound additionally assumes the recorded context cap is enforced."
+  ],
+  "wall_seconds": 2.8288506669923663
+}
