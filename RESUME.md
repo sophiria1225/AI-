@@ -55,8 +55,8 @@ Pythonは保存先の`.runtime/p3_ci_venv/bin/python`、資料は`.runtime/repor
 
 ソース照合時、展開されたspotify/apis.pyがwheel RECORDに直接なく初回lookupがStopIterationとなった。api_lib.pyはRECORDに一致し、両ファイルhashと読取範囲を`reports/truncated_prefix_local_source_review_20261024.json`へ記録した。元の解析や失敗記録を再実行・上書きしない。新しい境界検査10件を含む全1247検査が通過した。
 
-固定backendの推論予算点検P86と局所比較P87は終了した。次は通常の推論予算を全仕事workerへ明示的に接続する準備を進め、課題達成と全費用の未検証部分を別の固定計画で扱う。現在、新しい生成は開始していない。内部推論の意味内容は読まず、通常の予算設定を新方式としない。P87の時間上限を変える追試や不足枠の補充はしない。
+固定backendの推論予算点検P86と局所比較P87は終了した。次の[P88全仕事比較](docs/experiments/P88_whole_task_reasoning_budget.md)は既知４課題×上限なし／固定2,048の新しい８条件。全1,285検査、68依存、初期４組の要求差を確認済み。各80生成・450,000論理token・1,800作業秒、全体640生成・3,600,000予約・推論器21,600秒。現在、新しい生成は開始していない。正確なheadの両CI/job後、別のclean実行木で `run_whole_task_reasoning_budget_pipeline.py` を開始する。`.runtime/P88.stop`を尊重し、同一pipelineを再起動しない。全件終了・所有推論器停止後に `audit_whole_task_reasoning_budget.py` と `inspect_whole_task_reasoning_budget_session.py` を一度実行する。内部推論の意味内容は読まず、通常の予算設定を新方式としない。P87の時間上限を変える追試や不足枠の補充はしない。
 
 [先行実行・処理列再利用](materials/20261024_execution_reuse_priors/README.md)には既存のAppWorld研究がある。[H群の照合](materials/20261024_closed_reference_cohorts/README.md)では、参照統一後も書出し両反復が未達。失敗した方式の再試行や通常手法の改名に進まない。
 
-GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全118件の作業ボードを部分集合で上書きしない。以前の実行中の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/RESUME.md)に保存した。
+GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全119件の作業ボードを部分集合で上書きしない。以前の実行中の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/RESUME.md)に保存した。
