@@ -1,0 +1,98 @@
+{
+  "pages": 7,
+  "generated_at": "2026-10-24T05:10:56.219152+00:00",
+  "source_sha256": {
+    "configs/P88_whole_task_reasoning_budget_v01.json": "c303551a79ee0fd34879ed5a94ff2f21e170c309d2848b38fca7bf35ce43d809",
+    "reports/P88_comparison.json": "c56287475071aa786aa05c76a57e8db69ee484f3554b527ba3bf8c6d5c129e24",
+    "reports/P88_initial_checks.json": "410f3e008be7435f49db92c0d7dab6014f344b4258968171f84b3ee47e8be1ad",
+    "reports/P88_server_session.json": "15ef780d4714f7e4754197a9cb2c8589d85de721918984aa2cabcfce051de758",
+    "reports/P88_activation_v01.json": "18064a9312506c4057998b9c923f96981afb003df65942aa047105f2eea19f66"
+  },
+  "builder_sha256": "b41e3bd36d84098f5610baf387ce44ca203670840acbbbbac07144c9d8c39cc4",
+  "all_planned_rows": 8,
+  "independent_tasks": 4,
+  "repetitions": 1,
+  "totals": [
+    {
+      "reasoning_policy": "unlimited",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 74,
+      "known_total_tokens": 807463,
+      "unknown_usage_calls": 1,
+      "input_tokens": 773785,
+      "output_tokens": 33678,
+      "cached_input_tokens": 673826,
+      "api_requests": 190,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.562676915957127,
+      "wall_seconds": 2961.315686875023,
+      "cleanup_wall_seconds": 4.659104834019672,
+      "full_wall_seconds": 2973.5495868759754,
+      "full_logical_tokens": null,
+      "known_uncached_input_tokens": 99959
+    },
+    {
+      "reasoning_policy": "half",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 76,
+      "known_total_tokens": 881697,
+      "unknown_usage_calls": 0,
+      "input_tokens": 849976,
+      "output_tokens": 31721,
+      "cached_input_tokens": 747123,
+      "api_requests": 209,
+      "invocation_exceptions": 11,
+      "setup_wall_seconds": 7.233564875001321,
+      "wall_seconds": 2874.886023124971,
+      "cleanup_wall_seconds": 4.405286251014331,
+      "full_wall_seconds": 2886.538817958033,
+      "full_logical_tokens": 881697,
+      "known_uncached_input_tokens": 102853
+    }
+  ],
+  "contributions": {
+    "both_successful": {
+      "task_count": 3,
+      "half_minus_unlimited_tokens": null
+    },
+    "both_failed": {
+      "task_count": 1,
+      "half_minus_unlimited_tokens": null
+    },
+    "discordant": {
+      "task_count": 0,
+      "half_minus_unlimited_tokens": null
+    },
+    "unevaluated": {
+      "task_count": 0,
+      "half_minus_unlimited_tokens": null
+    }
+  },
+  "development_gate_met": false,
+  "csv_sha256": "9836a93c070995233c88959fb44822d2e94ec4f81639aa3cfc8ee1413dda901b",
+  "paired_csv_sha256": "b0c485b57fb2f2fb5f56a81406865e340d77dd0a7c4c622f7e2fba74912c31f1",
+  "summary_sha256": "57cff9d699749fd0db1ab0962a6a0923a97901be3066d89731fb3b5111a4b307",
+  "visual_reviewed": true,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "unknown_usage_imputed": false,
+  "visual_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

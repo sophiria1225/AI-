@@ -1,0 +1,97 @@
+% Prepared P88 result template; actual text is emitted only after audited closure.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントの通常推論予算を既知４課題８条件で比較した. 全条件を評価したが１生成の使用量が不明で, 全仕事費用差は確定できなかった. 一般的な品質維持は未検証である.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，推論予算，費用評価
+
+\section{問題設定}
+必要な情報と成果品質を保って仕事全体の費用を減らすため，ハーネスが渡す情報と生成・実行の予算を区別して検討する．
+コードを行動に用いるCodeAct\cite{codeact}型エージェントでは，思考が出力枠を消費した後に，実行に必要なコードを完了できるとは限らない．
+しかし，短い思考や構文上の完成だけでは，課題達成や失敗を含む全費用の減少を意味しない．
+本稿はAppWorld\cite{appworld}の既知４課題を用い，通常の推論ブロック上限指定が課題全体の成否と費用へ与える効果を，固定した８条件で調べる限定的な開発比較である．
+
+思考終了の制御\cite{s1}，予算情報を用いた複数ターンの資源配分の学習\cite{budgettraining}には先行研究がある．
+後者は予算内成功と自然な予算遵守を区別し，１方策につき１資源の予算を扱い，token費用は生成分である．
+本稿は学習せず，既存backendの設定\cite{backend}を比較する．全論理入力と出力を主費用とするが，token削減と他の費用の不一致\cite{costproxy}自体を独自性とはしない．
+新しい予算配分アルゴリズム，学習方式より優れた性能，一般的品質保証を主張する比較ではない．
+
+\section{共通の実行系と比較}
+\subsection{出力枠と履歴}
+１生成の全出力上限を最大4,096とし，推論ブロック専用上限なしをU，固定2,048指定をHとする．
+Uも全出力・全仕事・実時間の上限を持つ．固定backendは推論終了タグを使ってブロックを閉じるため，2,048は操作へ必ず半分を残す予約ではない．
+終了タグ，UTF-8境界の待機，新たな推論ブロックの開始があり，ブロック内の正確な生成token配分を本比較では別計測していない．
+全仕事の残tokenにより全出力枠が縮む場合も，専用指定2,048は変更しない．
+
+両側とも全返却推論，持続Python，型付きAPI返却，通常のPython例外を保持する．
+呼出しと返答の通信参照は構造化された段階で統一してからモデル向けに文章化し，一般本文や業務IDは変更しない．
+参照改名感度と正規化には先行研究\cite{canonical}があり，本処理を新規手法とはしない．
+残実時間は非表示と明示する一方，実行可否は単調時計の期限で強制する．残token・API・生成回数の通知は共通とし，過去の通知を会話へ蓄積しない．
+
+\subsection{固定した課題と上限}
+写真移動，電気代精算，返金，曲情報書出しを新しい初期状態から各条件１回実行する．
+課題順はこの順，条件順はU/H，H/U，U/H，H/Uである．
+世界seed42，モデルseedは初回57で以後生成ごとに１増やす．Mac Studio M3 Ultra・256 GiB上でAppWorld 0.1.3.post1，MiniMax-M3 IQ4\_XS，llama.cpp b11669を用いる．
+温度1.0，top-p 0.95，入力枠65,536，１スロットを共通とする．初回のcache再利用０を確認し，後続は通常のprefix cacheを使う．
+初期８入力を計数し，課題ごとの要求が専用予算のフィールド以外一致することを確認してから生成を始める．
+
+各条件は80生成，450,000論理token，作業1,800秒，写真160・他80 APIを上限とする．１生成の待機は600秒と残作業時間の小さい方である．
+全体は８条件，640生成，3,600,000予約token，所有推論器21,600秒を上限とする．
+公開の要求とAPI仕様を用い，保留12課題は閲覧しない．
+先行する保存文脈の局所診断では予定８生成中４件目で停止し，３件既知・１件不明・４件未実行だった．
+その後に本開発比較を固定しており，未見確認ではない．局所診断の不足枠を補充せず，専用値・seedを探索しない．
+
+\section{計測と採用条件}
+全仕事の論理費用は$T=\sum_j(I_j+O_j)$とし，cache分を含む全入力$I_j$，出力$O_j$，通知，失敗，回復，再取得を含める．
+cache除外入力，出力，API回数，作業・準備・評価・推論器稼働時間を別に記録し，金額や計算量へ換算しない．
+各最終状態を独立評価器で一度だけ判定し，正解や評価結果をモデルへ返さない．
+未知の生成使用量が出た場合はその条件を終了し，応答の実行・再試行をしない．API作用と後片付けが既知で，同じ推論器のidleを確認できた場合のみ評価して固定順を続ける．未知のAPI作用や実行環境・評価の異常は全体を止める．
+
+Hの採用には全８評価・全終端使用量・監査一致，課題ごとの成功喪失０，両側成功１課題以上，全４課題の論理費用がUより小さいことを要求する．
+同数成功だけで品質維持とせず，両側成功・両側未達・成否不一致の費用寄与を分ける．
+これは開発上の相対基準であり，統計的非劣性の証明ではない．
+途中は運用状態と使用量だけを確認し，成否と出力比較は全条件終了後，所有推論器停止とPID不在の確認後に行う．
+
+\section{全件結果}
+\input{papers/202610_letter/reasoning_budget_control_observed/whole_task.tex}
+\input{papers/202610_letter/reasoning_budget_control_observed/resources.tex}
+
+\section{解釈の範囲}
+独立した課題は既知４つであり，８条件や生成数を独立課題数へ読み替えない．
+単一モデル・専用上限１値・各１回の比較から，別課題やモデル，予算での品質維持を保証しない．
+同じseedでも数値実行とcacheの影響は残る．ホストでは軽量な編集と報告準備も行っており，速度の測定は排他的な負荷条件ではない．
+過去の直接API構成の品質を回復したかや，別の強い学習方式に対する優劣は調べていない．
+未達や欠測を残した全件の公開集計と固定版を保存する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\section{結論}
+\input{papers/202610_letter/reasoning_budget_control_observed/conclusion.tex}
+\begin{thebibliography}{99}
+\small
+\raggedright
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{s1} N. Muennighoff, Z. Yang, W. Shi, X. L. Li, L. Fei-Fei, H. Hajishirzi, L. Zettlemoyer, P. Liang, E. Cand\`es, and T. Hashimoto, ``s1: Simple test-time scaling,'' arXiv:2501.19393v3, 2025.
+\bibitem{budgettraining} T. A. Lamb, A. Golinski, E. Gualdoni, S. Williamson, and M. Kirchhof, ``Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints,'' arXiv:2610.28409v1, 2026.
+\bibitem{backend} ggml-org, ``llama.cpp: reasoning budget,'' commit 620d2225cc436ab0b001e3200e590e3b286ef9ab, \url{https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/reasoning-budget.cpp}, accessed Oct. 24, 2026.
+\bibitem{costproxy} S. Weinberger and A. Hozez, ``Token Reduction Is Not Cost Reduction,'' arXiv:2607.12161v5, 2026.
+\bibitem{canonical} A. J. Mercado and A. Lomuscio, ``Formal Verification of Agentic Systems over Operational Data,'' arXiv:2608.03609v1, 2026.
+\end{thebibliography}
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Keywords}\quad LLM agents, harness engineering, state retention, reasoning budget, cost evaluation
+
+\noindent\textbf{Summary draft}\quad We compared ordinary reasoning budgets across eight conditions on four known tasks in a stateful LLM agent. All conditions were evaluated, but missing usage for one generation prevented identifying the complete cost difference. These development results do not establish general quality preservation.
+\end{document}

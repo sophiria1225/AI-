@@ -8,7 +8,7 @@
 
 [P87：通常の推論予算対照](docs/P87_findings.md)は４件目が480秒上限で停止した。３件既知・１件使用量不明・４件未実行、既知76,318論理token、監査不一致０。途中切れ文脈の観測１対では半分指定でコード提出が完成したが、固定した２文脈×２反復の改善条件は判定不能。課題実行・品質評価は０で、新手法や全仕事削減の証明ではない。所有推論器停止・両PID不在済み。[全８枠と全５頁の資料](materials/20261024_p87_results/README.md)。
 
-[P88全仕事比較](materials/20261024_p88_preparation/README.md)は12:30 JSTに開始した。既知４課題×通常の上限なし／固定2,048、各１回の新しい８条件。固定headの両CI/jobと初期８計数の一致を確認済み。最大640生成・3,600,000論理token予約、推論器21,600秒。途中の成否・出力は比較せず、終了後の監査へ進む。[全８条件の報告処理](materials/20261024_p88_reporting_preparation/README.md)も全1,292検査と合成７頁の全頁確認を終えた。実結果は未確定。 [日曜の主張判断](docs/weekend_decision_20261024.md)と[別稿反映の準備](materials/20261024_p88_manuscript_preparation/README.md)も保存した。[固定backendの合成検査](materials/20261024_native_reasoning_budget_check/README.md)ではブロックごとの予算再設定を確認し、操作用tokenの保証とは区別した。
+P88は全８条件を終了・評価した。両方式とも3/4成功、成功した３課題の対ごとの論理token差は各０。全150生成、既知1,689,160論理token＋不明１生成、399 API。書出しは固定2,048側がtoken予約上限、上限なし側が生成中の時間上限で終了し、両方未達。全仕事の費用差は未確定で、固定した採用基準は未達。所有推論器停止・両PID不在後に監査・資源集計を一度ずつ行い、監査不一致０。 [全件の所見](docs/P88_findings.md)／[資料７頁](materials/20261024_p88_results/README.md)／[原稿本文３頁＋英文１頁](papers/202610_letter/reasoning_budget_control_observed/README.md)。全頁確認済み。通常の予算設定を新規手法としない。
 
 | 対象 | 状態 | 判断 |
 |---|---|---|
