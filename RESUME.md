@@ -8,9 +8,9 @@
 
 最新のP86は[全855要求の出力枠点検](materials/20261024_output_budget_scope/README.md)を一度だけ実行済み。13上限到達＝途中切れ引数７＋公開操作なし６、推論専用token計数なし。次の[P87固定計画](docs/experiments/P87_fixed_reasoning_budget.md)は同じ既知CSV課題の２保存文脈×上限なし／推論ブロック2,048×２反復、計８生成。元入力17,696/31,211、元seed69/74を維持し、cacheは全件false。最大228,396論理token、生成段階5,400秒、推論器7,200秒。115依存を束縛した通常対照の局所診断であり、課題実行・品質主張はしない。
 
-P87は11:31 JSTに開始済み。実行木`.runtime/worktrees/p87-run`、固定SHA `14691ea3468d8f7c4d621ca79fb6125298049426`、セッション54366。全1,265検査と同じheadのpush・PR CI/job成功を確認し、初期計数４件は一致した。推論器PID50922・supervisor50921。[開始証拠](reports/P87_start_provenance_20261024.json)。この処理を再起動しない。
+P87は11:31 JST開始、４件目の480秒上限で停止し、11:59:13 JSTまでに推論器を閉じた。実行木`.runtime/worktrees/p87-run`、固定SHA `14691ea3468d8f7c4d621ca79fb6125298049426`、セッション54366はexit 1で終了済み。推論器PID50922・supervisor50921は不在。[全結果](docs/P87_findings.md)、[開始証拠](reports/P87_start_provenance_20261024.json)。この処理を再起動しない。
 
-`P87_pipeline_v01`、`P87_preflight_v01`、`P87_fixed_reasoning_budget_v01`を保存し、`.runtime/P87.stop`で停止する。全件終了と所有推論器停止後に固定実行木から `audit_fixed_reasoning_budget.py` を一度実行し、監査・初期計数を同一hashで編集木へ取り込んで全８枠を資料化する。新しい `build_fixed_reasoning_budget_report.py` は編集木に準備。私有の合成５頁を確認済みだが、実結果の全頁確認は別に必要。途中は状態・費用だけを表示し、出力本文・指紋は読まない。P86の解析・旧実験・旧待機を再実行しない。
+`P87_pipeline_v01`、`P87_preflight_v01`、`P87_fixed_reasoning_budget_v01`を保存。固定実行木で監査を一度実行し、３件既知・１件不明・４件未実行、既知76,318論理token、不一致０。途中切れ文脈の観測１対では半分指定でコード提出が完成したが、主たる２文脈×２反復の条件は判定不能。生成コード・環境API・課題評価０。監査と初期計数を同一hashで編集木へ取り込み、実結果５頁を一度生成して全頁確認した。保存先は`materials/20261024_p87_results`、画像は私有`.runtime/P87_actual_visual_20261024`。途中に出力本文・指紋を表示していない。監査・資料・旧実験・旧待機を再実行しない。
 
 | 用途 | 場所 |
 |---|---|
@@ -55,7 +55,7 @@ Pythonは保存先の`.runtime/p3_ci_venv/bin/python`、資料は`.runtime/repor
 
 ソース照合時、展開されたspotify/apis.pyがwheel RECORDに直接なく初回lookupがStopIterationとなった。api_lib.pyはRECORDに一致し、両ファイルhashと読取範囲を`reports/truncated_prefix_local_source_review_20261024.json`へ記録した。元の解析や失敗記録を再実行・上書きしない。新しい境界検査10件を含む全1247検査が通過した。
 
-固定backendにおける推論・公開コードの出力上限と既存制御の点検はP86で完了した。現在は上記のP87を実行中。内部推論の意味内容は読まず、通常の予算設定を新方式としない。追加のモデル実験は、今回の閉じた結果と通常対照との差を踏まえて具体的な規則・対照・有限予算を固定できる場合だけ検討する。
+固定backendの推論予算点検P86と局所比較P87は終了した。次は通常の推論予算を全仕事workerへ明示的に接続する準備を進め、課題達成と全費用の未検証部分を別の固定計画で扱う。現在、新しい生成は開始していない。内部推論の意味内容は読まず、通常の予算設定を新方式としない。P87の時間上限を変える追試や不足枠の補充はしない。
 
 [先行実行・処理列再利用](materials/20261024_execution_reuse_priors/README.md)には既存のAppWorld研究がある。[H群の照合](materials/20261024_closed_reference_cohorts/README.md)では、参照統一後も書出し両反復が未達。失敗した方式の再試行や通常手法の改名に進まない。
 

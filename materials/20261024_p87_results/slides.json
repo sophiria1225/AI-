@@ -1,0 +1,33 @@
+[
+  {
+    "title": "普通の推論予算で<br>コード提出は完成するか",
+    "cover": true,
+    "body": "",
+    "takeaway": "",
+    "notes": "P87。同じ既知CSV課題の２保存文脈を用いた通常対照の局所診断。新手法でも課題品質の評価でもない。"
+  },
+  {
+    "title": "２保存文脈 × 通常２条件 × ２反復の８生成",
+    "body": "<table class=\"results\"><tr><th>文脈</th><th>元入力token</th><th>元seed</th><th>推論ブロック上限</th></tr><tr><td>A：引数途中切れ</td><td>17,696</td><td>69</td><td>なし／2,048</td></tr><tr><td>B：公開操作なし</td><td>31,211</td><td>74</td><td>なし／2,048</td></tr></table><p class=\"body\">全出力は4,096のまま。条件間の要求差は予算フィールドだけ。<br>全件でcacheを無効化し、各反復で条件順を逆にする。</p>",
+    "takeaway": "対象は同じ既知CSV課題の１課題。元のwarm状態や課題全体を再現しない。",
+    "notes": "P86を見た後に、元の時系列で最初の引数途中切れと最初の公開操作なしを選んだ。独立課題数は１。推論予算はブロック単位であり、終了タグや再開の可能性もあるため、残り半分を操作へ保証する仕組みではない。上限値・seedの探索はしない。"
+  },
+  {
+    "title": "全８予定枠を欠測・未実行も含めて示す",
+    "body": "<table class=\"results\"><tr><th>条件</th><th>反復</th><th>入力T</th><th>出力T</th><th>終端</th><th>コード提出</th></tr><tr><td>A-U</td><td>1</td><td>17,696</td><td>4,096</td><td>length</td><td>JSON不正</td></tr><tr><td>A-H</td><td>1</td><td>17,696</td><td>2,610</td><td>tool_calls</td><td>完成</td></tr><tr><td>B-H</td><td>1</td><td>31,211</td><td>3,009</td><td>tool_calls</td><td>完成</td></tr><tr><td>B-U</td><td>1</td><td>—</td><td>—</td><td>—</td><td>不明</td></tr><tr><td>A-H</td><td>2</td><td>—</td><td>—</td><td>—</td><td>未実行</td></tr><tr><td>A-U</td><td>2</td><td>—</td><td>—</td><td>—</td><td>未実行</td></tr><tr><td>B-U</td><td>2</td><td>—</td><td>—</td><td>—</td><td>未実行</td></tr><tr><td>B-H</td><td>2</td><td>—</td><td>—</td><td>—</td><td>未実行</td></tr></table>",
+    "takeaway": "Uは推論ブロック上限なし、Hは2,048。完成したコードも実行していない。",
+    "notes": "上限途中終了ではなく、全呼出しがrun_pythonで、公開仕様のcode・span_idsと非空Python ASTを満たした場合だけ完成とする。理由欄はJSON、引数形状、Python構文、他ツールの順で表示し、全ての数はCSVへ残す。spanの実在、API前提、意図、実行効果は未検証。"
+  },
+  {
+    "title": "構文の完成と課題達成を分けて判断する",
+    "body": "<table class=\"results\"><tr><th>条件</th><th>完成／既知生成</th><th>不明・未実行</th><th>既知出力T</th><th>反復の公開出力</th></tr><tr><td>A-U</td><td>0/1</td><td>1</td><td>4,096</td><td>不明</td></tr><tr><td>A-H</td><td>1/1</td><td>1</td><td>2,610</td><td>不明</td></tr><tr><td>B-U</td><td>0/0</td><td>2</td><td>0</td><td>不明</td></tr><tr><td>B-H</td><td>1/1</td><td>1</td><td>3,009</td><td>不明</td></tr></table><p class=\"body\">固定した条件：両文脈でUが完成０/２、Hが完成２/２。<br>全８使用量が既知で監査一致の場合だけ判定する。</p>",
+    "takeaway": "全８生成の終端使用量と監査が揃わず、固定した改善条件を判定しない。",
+    "notes": "完成率の分母は観測できた生成数であり、欠測や未実行を成功・失敗へ補完しない。反復は独立課題ではなく、比較を母集団の推定や品質保証へ広げない。公開出力の一致は機械的なhash比較であり、内部推論の意味内容は読んでいない。通常手法による局所の形式改善が得られても新規性・全仕事削減の証明ではない。"
+  },
+  {
+    "title": "通常対照の診断費用を全て残す",
+    "body": "<table class=\"results\"><tr><th>測定</th><th>値</th></tr><tr><td>試行／計画</td><td>4/8</td></tr><tr><td>既知の入力＋出力token</td><td>76,318</td></tr><tr><td>終端使用量不明</td><td>1</td></tr><tr><td>入力計数要求</td><td>4</td></tr><tr><td>実処理／cache入力token</td><td>66,603 / 0</td></tr><tr><td>推論器稼働 秒</td><td>1,686.882</td></tr><tr><td>内・ロード／生成応答の合計 秒</td><td>10.066 / 1,661.549</td></tr></table>",
+    "takeaway": "所有推論器は停止済み。コード実行・環境API・課題評価・未見課題読取は０。",
+    "notes": "推論器稼働にはロード・計数・生成・待機を含み、部分時間と二重加算しない。既知小計は使用量不明の費用を含まない。ホストで軽量な編集・資料準備も行うため排他的な速度ベンチマークではない。全時間・メモリ・hashは監査JSONへ保存する。元課題の未達やP82/P84の採否を変更しない。"
+  }
+]
