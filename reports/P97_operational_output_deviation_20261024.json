@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-24T12:04:59.297303+00:00",
+  "event_at_UTC": "2026-10-24T12:04:14Z",
+  "kind": "intermediate_summary_exposed_by_overbroad_operational_poll",
+  "phase": "P97",
+  "intended_scope": "status, active run id, completed count, timestamps only",
+  "actual_scope": "P97_batch_v01/status.json rows for first 11 completed conditions included in tool output; last factual CSV condition still running",
+  "cause": "exclusion filter removed completed/results/conditions but did not remove rows",
+  "raw_model_history_read": false,
+  "task_outcomes_exposed": true,
+  "runtime_or_condition_changes": false,
+  "retry_or_replacement": false,
+  "mitigation": "Use explicit allowlist for all subsequent status polls. Preserve original 12 conditions and wait for closure before analysis. P99 implementation, design and manuscript preparation were already fixed and merged before this output; do not tune them from these rows. Record this deviation in final provenance rather than claiming no intermediate exposure."
+}

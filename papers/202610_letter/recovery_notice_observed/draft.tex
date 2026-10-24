@@ -1,0 +1,76 @@
+% Result-independent source. Filled only after the entire P97 cohort closes.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントの通常回復通知を既知４課題12条件で比較した. 欠測または未評価が残り，全件の費用差は確定できなかった. 検出対象は１課題で，一般的な品質維持は未検証である.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，回復通知，費用評価
+
+\section{問題設定と関連研究}
+状態保持型LLMエージェントでは，取得済みの値を処理する計算と，同じ情報の再取得が同時に起こり得る．必要な情報と最終成果を残して費用を減らすには，再観測の検出と，その後の行動・完了・全費用を分けて評価する必要がある．本稿ではCodeAct\cite{codeact}型の持続PythonとAppWorld\cite{appworld}を用い，通常の回復通知を初期状態から比較する．
+
+AgentLoop\cite{agentloop}は要求の充足と根拠不足をモデル補助で確認し，安定性などの信号から継続・回答・停止を選ぶ．Failure-Aware Observability\cite{observability}は反復や情報増分を診断し，警告による探索方針の変更も試行している．警告を完了保証へ置き換える方式ではなく，介入評価の限界も述べている．したがって反復検出，見直し通知，状態に応じた終了という一般形を本稿の新手法とはしない．
+
+本稿の問いは，同じ観測値を再び受け取った事実を通知すると，普通の見直し指示に比べて最終成果と全仕事費用がどう変わるかである．成功条件だけを選ばず，未達・欠測を残す．論理token，cache，実時間の違い\cite{costproxy}も区別する．
+
+\section{再観測の検出と通知}
+開発用の保存８実行・399 API要求を事後に調べ，固定したSpotify読取72件で，過去の同じ要求と完全な返答値が一致したものは７件だった．認証引数を除いて照合すると34件となり，成功login要求の由来群を用いた照合も同じ34件だった．２つの判定に差がないため，単純な認証引数除外を使用する．これは同じCSV課題の２実行から得た開発情報であり，独立２課題や改善の実証とはしない．
+
+対象は曲・アルバム・プレイリストの一覧と詳細の６ APIに限定する．最も直近の同じ非認証引数の要求と，今回実際に返された値を比較する．監視対象読取が１件以上あり，全件が以前のモデル境界で得た同じ値で，それ以外の送信は同じSpotify login要求の再成功だけ，という境界が２回続いた時点を候補とする．同じ境界内だけの重複は数えない．空の境界，新しい値，例外，他APIで連続を切り，効果不明後は通知しない．保存枠512件，比較値64 KiBを固定する．
+
+Nは通知なし，Gは残る要求と既存Python変数を見直す一般通知，Fは再観測の事実と限界を添えてGと同じ見直し文を送る条件である．最初の候補の次入力へ最大１回追加し，永続履歴には追加しない．Nも同じ監視・記録を行い，完全一致とlogin由来群の判定も全条件で保存する．通知文の長さはそろえず，実際の入力費用を計上する．
+
+APIを省略せず，返却値の置換，認証値の再利用，変数の変更，追加モデルによる判断を行わない．同じ値を得たことは，ローカル計算の進捗がないこと，現在の権限，将来の値，課題の完了を保証しない．モデルは全ての通常ツールを引き続き使用できる．
+
+\section{比較の手順}
+既知の写真移動，電気代精算，返金，曲情報書出しの４課題を各条件１回，計12条件で計画した．課題順と条件順はN/G/F，G/F/N，F/N/G，N/G/Fに固定する．過去の実行を対照へ流用せず，毎回初期状態から開始する．初期12入力を事前計数し，同じ課題の３条件が同じ要求で始まることを確認する．
+
+Mac Studio M3 Ultra・256 GiB上でAppWorld 0.1.3.post1，MiniMax-M3 IQ4\_XS，llama.cpp b11669を用いる．contextは65,536，出力上限4,096，１スロット，温度1，top-p 0.95，環境seed42，モデルseedは初回57から呼出しごとに１増加する．\texttt{reasoning\_budget\_tokens=-1}，返却推論を含む履歴，型付きAPIを共通とし，実残時間はモデルへ表示しない．初回のcache再利用０を確認し，以後は通常のprefix cacheを用いる．
+
+各条件は80生成，450,000論理token，1,800作業秒を上限とし，APIは写真160・他80，１生成の待機は600秒と実残時間の小さい方である．準備120秒，後片付け180秒，idle回復60秒，独立評価180秒も有限とする．全12条件の予約は960生成，5,400,000 token，1,200 API，所有サーバ上限32,400秒で，使用実績とは別に扱う．
+
+各実行の最終状態を１回評価し，評価内容をモデルへ返さない．使用量不明の生成は実行・再試行せずセルを終了する．API効果と後片付けが確定した場合だけ独立評価を行い，同じidleサーバで次条件へ進む．効果不明・片付け未確認等ではbatchを停止し，残る枠を補充しない．
+
+主費用は全入力と全出力の和で，cache入力，通知，失敗，回復を含める．G−N，F−N，F−Gについて，全12評価・使用量既知・監査正常，課題ごとの成功喪失なし，共通成功１件以上，全４課題の論理token合計の厳密な減少を固定基準とする．Fの便益候補にはF−NとF−Gの両基準に加え，G/Fの通知前履歴と予算のhashが同じ送信試行を１課題以上要求する．閾値・文面・seedの探索はしない．
+
+\section{全仕事の結果}
+\input{papers/202610_letter/recovery_notice_observed/whole_task.tex}
+\section{検出・通知と資源}
+\input{papers/202610_letter/recovery_notice_observed/detection.tex}
+\input{papers/202610_letter/recovery_notice_observed/resources.tex}
+
+\section{解釈の範囲}
+独立した課題は調整に用いた既知４つで，検出対象のAPIを含むのはCSVの１つだけである．他の３課題を誤検出率の陰性例として数えない．各１回の比較から，一般的な平均効果や品質の非劣性は推定しない．同じseedでも実装・数値・実行時の揺らぎが残る．軽量な資料作成を並行したため，速度の排他的な計測でもない．
+
+F/Gは長さを合わせた文章ではなく，意味情報と文量の効果を独立に識別しない．監視対象に属さないAPIやローカル計算を含む反復は本検出器の対象外である．検出器のない無計測基準との監視費用の差，近接手法の完全再実装との性能差も測っていない．全件監査・通知台帳と固定文面は公開リポジトリ\footnote{\url{https://github.com/sophiria1225/AI-}}へ残す．
+
+\section{結論}
+再観測の事実を用いる通知を，通知なし・一般的な見直し通知と比較する全12条件を計画し，12条件の独立評価を得た．全予定枠を残し，全仕事の成否・費用，成功と未達の寄与，検出候補と送信試行を区別した．事実通知の便益候補の固定基準は未達だった．通常対照の結果を新手法の成立へ置き換えず，既知４課題の結果を他課題の品質保証へ一般化しない．
+
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{agentloop} W. Zheng, M. Xu, K. Hu, K. Ye, and C. Xu, ``AgentLoop: Runtime Control of Slot-closed Execution Loops for Tool-augmented LLM Agents,'' arXiv:2609.33315v1, 2026.
+\bibitem{observability} X. Li, W. Yan, Y. Wu, P. Liang, M. Yuan, J. Liu, and J. Yang, ``Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability,'' arXiv:2606.01365v2, 2026.
+\bibitem{costproxy} S. Weinberger and A. Hozez, ``Token Reduction Is Not Cost Reduction,'' arXiv:2607.12161v5, 2026.
+\end{thebibliography}
+
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Keywords}\quad LLM agents, harness engineering, state retention, recovery notices, cost evaluation
+
+\noindent\textbf{Summary draft}\quad We compared ordinary recovery notices across twelve conditions on four known tasks in a stateful LLM agent. Missing usage or evaluations prevented a complete cost comparison. Only one task contained monitored APIs; general quality preservation remains untested.
+\end{document}
