@@ -1,0 +1,106 @@
+[
+  {
+    "title": "研究の現在地と日曜の判断",
+    "body": "<p class=\"lead\">新しい読取機構は実装できたが、実課題で品質を保った全費用削減と、新規手法の中核は未確立。</p><div class=\"three\"><div class=\"col\"><h3>最終目標</h3><p class=\"body\">必要な情報・処理と最終品質を保ち、取得・共有・生成・実行・検証の総費用を減らす。</p></div><div class=\"col\"><h3>今回閉じた範囲</h3><p class=\"body\">P88の全８条件、読取の実サービス確認、P89〜P92の全件点検。</p></div><div class=\"col\"><h3>期限</h3><p class=\"body\">10/25に主張と採否を絞る。10/29〜30に原稿整備、10/31投稿を目指す。</p></div></div>",
+    "takeaway": "実装数や検査数は、新規性・成果品質・採録可能性の代用にならない。",
+    "notes": "2026年10月24日の閉じた根拠をまとめた判断資料。投稿可能な完成稿ではない。ユーザーからの停止指示はなく、実装と原稿の整理を継続する。",
+    "sources": [
+      [
+        "研究状態",
+        "docs/current_status.md"
+      ],
+      [
+        "P88全件",
+        "docs/P88_findings.md"
+      ]
+    ]
+  },
+  {
+    "title": "通常の推論予算：全８条件でも採用基準は未達",
+    "body": "<table class=\"compact decision-table\"><thead><tr><th>課題</th><th>条件</th><th>結果</th><th>生成</th><th>論理token</th><th>実API</th></tr></thead><tbody><tr><td>写真</td><td>U 上限なし</td><td>成功</td><td>16</td><td>135,628</td><td>99</td></tr><tr><td>写真</td><td>H 固定2,048</td><td>成功</td><td>16</td><td>135,628</td><td>99</td></tr><tr><td>精算</td><td>H 固定2,048</td><td>成功</td><td>24</td><td>211,110</td><td>25</td></tr><tr><td>精算</td><td>U 上限なし</td><td>成功</td><td>24</td><td>211,110</td><td>25</td></tr><tr><td>返金</td><td>U 上限なし</td><td>成功</td><td>13</td><td>102,087</td><td>13</td></tr><tr><td>返金</td><td>H 固定2,048</td><td>成功</td><td>13</td><td>102,087</td><td>13</td></tr><tr><td>CSV</td><td>H 固定2,048</td><td>未達</td><td>23</td><td>432,872</td><td>72</td></tr><tr><td>CSV</td><td>U 上限なし</td><td>未達</td><td>21</td><td>358,638＋不明１</td><td>53</td></tr></tbody></table><p class=\"small subtle\">両方式3/4成功。成功３対の論理token差は各０。CSVは両方未達で、Uの１生成は使用量不明。全仕事費用差は未確定。</p>",
+    "takeaway": "形式が完成したことと、課題が成功して全費用が減ることを分ける。",
+    "notes": "全150生成、既知1,689,160論理tokenと使用量不明１生成、399 API、８評価。監査終了。既知小計の差を完全な費用差にしない。通常の設定を新規手法とは主張しない。",
+    "sources": [
+      [
+        "全件結果",
+        "docs/P88_findings.md"
+      ],
+      [
+        "全出力診断",
+        "materials/20261024_p88_output_diagnostic/README.md"
+      ]
+    ]
+  },
+  {
+    "title": "遅延読取：部品の動作と実課題の機会は別",
+    "body": "<table class=\"compact decision-table\"><thead><tr><th>確認</th><th>結果</th><th>言える範囲</th></tr></thead><tbody><tr><td>手書きの実サービス操作</td><td>API 11対10／制御要求18対18</td><td>６段階の値が一致。未使用参照１件の回避</td></tr><tr><td>P89：全８条件</td><td>曲詳細４要求とも事前情報なし</td><td>現行の一覧・詳細契約では候補０</td></tr><tr><td>P90：同じ全４要求</td><td>無効化で失った適合情報０</td><td>無効化を緩めるだけでは候補が増えない</td></tr><tr><td>P91：取得元を追加</td><td>アルバム・プレイリストでも候補０</td><td>この８条件の大きな遅延比較は採用しない</td></tr></tbody></table><p class=\"small subtle\">同じ完全応答キャッシュを即時・遅延の両側へ与えた。旧値を差分復元する別ホストは部品検査までで、実サービスの作用例外は未有効化。</p>",
+    "takeaway": "手書き11対10から、LLM課題の成功率・総費用改善へは一般化しない。",
+    "notes": "３つの点検は同じP88の記録を使っており、独立した３集団ではない。取得元の成功返答総数は要求直前の利用可能性を意味しない。実サービス確認は新しいモデル生成・課題評価０。",
+    "sources": [
+      [
+        "実サービス",
+        "materials/20261024_public_read_views_live_results/README.md"
+      ],
+      [
+        "P91",
+        "materials/20261024_p91_results/README.md"
+      ],
+      [
+        "旧値復元",
+        "docs/reversible_read_views_20261024.md"
+      ]
+    ]
+  },
+  {
+    "title": "P92：部分情報26機会を26要求の節約とは数えない",
+    "body": "<table class=\"compact decision-table\"><thead><tr><th>記録</th><th>元結果</th><th>曲詳細送信</th><th>項目の事前充足</th><th>保存Python</th></tr></thead><tbody><tr><td>P18_04_ROLES</td><td>未達</td><td>60</td><td>0</td><td>0</td></tr><tr><td>P25_04_GUIDED</td><td>成功</td><td>60</td><td>0</td><td>0</td></tr><tr><td>P29_04_CODE</td><td>未達</td><td>50</td><td>8</td><td>11</td></tr><tr><td>P68 NATIVE</td><td>未達</td><td>69</td><td>9</td><td>0</td></tr><tr><td>P68 CONTROLLED</td><td>未達</td><td>69</td><td>9</td><td>0</td></tr></tbody></table><p class=\"small subtle\">Pythonは１記録・11プログラム。最後のループは返却を辞書へ残し、元は50送信後に停止。全件取得後の表示に進んでいない。</p><p class=\"formula\">生存参照を各１回予約する前提では　S ＋ D ＝ S₀ ＋ n</p>",
+    "takeaway": "取得を後回しにしても、予約が残る限り次の読取の余力は増えない。",
+    "notes": "Sは取得済み、Dは未取得予約、nは新しく受理した参照数。参照消滅・完全キャッシュ・まとめ取得などがない場合の直接の恒等式。896合成条件は別の部品検査。P92は保存構造と構文の点検で、変更コードを再生していない。",
+    "sources": [
+      [
+        "全５記録",
+        "materials/20261024_p92_results/README.md"
+      ],
+      [
+        "受理上限",
+        "docs/retained_read_admission_limit_20261024.md"
+      ]
+    ]
+  },
+  {
+    "title": "新規性・研究意義・採録の見通し",
+    "body": "<table class=\"compact decision-table\"><thead><tr><th>評価軸</th><th>現時点の判断</th></tr></thead><tbody><tr><td>新しい方式としての貢献</td><td>通常の遅延・キャッシュ・予約・過去復元を超える規則と実課題での追加価値が未確立</td></tr><tr><td>実証資料としての意義</td><td>入力表現、形式完成、最終成功、各費用を区別し、局所改善が全仕事改善へ届く条件を点検できる</td></tr><tr><td>残る弱点</td><td>少数の既知課題・主に単一モデル。調整後の独立確認と、強い通常対照に勝つ結果が不足</td></tr><tr><td>レター採録の判断</td><td>採録されそうと言える根拠はまだ不足。採録確率の数字は付けず、主張範囲と証拠を優先する</td></tr></tbody></table>",
+    "takeaway": "限定的な評価の原稿は書けるが、良い結果が出たことには置き換えない。",
+    "notes": "評価実験としての価値と、査読に十分な新規性は別。文献メモでは一般原理との重なりを確認しているが、具体的な差が今後生じる可能性まで否定しない。採録の約束をしない。",
+    "sources": [
+      [
+        "先行する資源付き遅延",
+        "docs/deferred_read_resource_prior_boundary_20261024.md"
+      ],
+      [
+        "自動完了契約の限界",
+        "docs/automatic_completion_contract_scope_20261024.md"
+      ]
+    ]
+  },
+  {
+    "title": "日曜までに絞る作業と投稿の準備",
+    "body": "<div class=\"two\"><div><h3>主張の精度を上げる</h3><ul class=\"body\"><li>P84の保存18出力を、文字列の差と公開操作の差に分ける点検を準備する。</li><li>構文一致を意味・品質の一致へ広げない。追加生成・実行はまず配分しない。</li><li>新方式は通常対照後の不要処理と、実行時に使える判断根拠を具体化する。</li></ul></div><div><h3>原稿を成立させる</h3><ul class=\"body\"><li>和英題名と教授用あらましを維持。本文の主張は閉じた結果に合わせる。</li><li>著者・所属・順序は確認待ち。公式様式への適合確認も残る。</li><li>未見12課題は保留。主提案未成立のまま探索へ使わない。</li></ul></div></div>",
+    "takeaway": "10/25は採否を絞る期限。10/31投稿へ、成果のある範囲を明確にする。",
+    "notes": "P84の追加点検は新しい読取専用の計画として準備し、元の固定判定を変更しない。著者情報はユーザーへ質問中。教授への送信と実投稿は行っていない。",
+    "sources": [
+      [
+        "P84の元の判定",
+        "docs/P84_findings.md"
+      ],
+      [
+        "未見群の規則",
+        "docs/letter_scenario_reservation_20261021.md"
+      ],
+      [
+        "現行原稿",
+        "papers/202610_letter/reasoning_budget_control_observed/README.md"
+      ]
+    ]
+  }
+]
