@@ -1,0 +1,109 @@
+{
+  "totals": [
+    {
+      "tool_choice_policy": "auto",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 73,
+      "known_total_tokens": 769281,
+      "unknown_usage_calls": 1,
+      "input_tokens": 737825,
+      "output_tokens": 31456,
+      "cached_input_tokens": 640804,
+      "api_requests": 179,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.3615702490496915,
+      "wall_seconds": 2976.2645469999698,
+      "cleanup_wall_seconds": 4.757865083985962,
+      "full_wall_seconds": 2988.3958242909866,
+      "full_logical_tokens": null,
+      "known_uncached_input_tokens": 97021
+    },
+    {
+      "tool_choice_policy": "required",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 75,
+      "known_total_tokens": 882557,
+      "unknown_usage_calls": 0,
+      "input_tokens": 853963,
+      "output_tokens": 28594,
+      "cached_input_tokens": 750939,
+      "api_requests": 197,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.508855957945343,
+      "wall_seconds": 2698.152405290981,
+      "cleanup_wall_seconds": 4.663906998990569,
+      "full_wall_seconds": 2710.3386211249745,
+      "full_logical_tokens": 882557,
+      "known_uncached_input_tokens": 103024
+    }
+  ],
+  "contributions": {
+    "both_successful": {
+      "task_count": 3,
+      "required_minus_auto_tokens": null
+    },
+    "both_failed": {
+      "task_count": 1,
+      "required_minus_auto_tokens": null
+    },
+    "discordant": {
+      "task_count": 0,
+      "required_minus_auto_tokens": null
+    },
+    "unevaluated": {
+      "task_count": 0,
+      "required_minus_auto_tokens": null
+    }
+  },
+  "development_gate_met": false,
+  "all_planned_rows": 8,
+  "required_minus_auto_whole_task_tokens": null,
+  "paired_success_losses": 0,
+  "paired_success_gains": 0,
+  "submission_counts": [
+    {
+      "tool_choice_policy": "auto",
+      "measured_conditions": 4,
+      "unmeasured_conditions": 0,
+      "recorded_generations": 73,
+      "known_responses": 72,
+      "unknown_responses": 1,
+      "known_no_tool_generations": 3,
+      "known_structured_generations": 69,
+      "known_length_generations": 2,
+      "outer_record_count": 72,
+      "format_rejections": 4,
+      "not_executed_records": 0,
+      "Python_execution_errors": 11,
+      "API_requests": 179
+    },
+    {
+      "tool_choice_policy": "required",
+      "measured_conditions": 4,
+      "unmeasured_conditions": 0,
+      "recorded_generations": 75,
+      "known_responses": 75,
+      "unknown_responses": 0,
+      "known_no_tool_generations": 1,
+      "known_structured_generations": 74,
+      "known_length_generations": 2,
+      "outer_record_count": 75,
+      "format_rejections": 2,
+      "not_executed_records": 0,
+      "Python_execution_errors": 12,
+      "API_requests": 197
+    }
+  ],
+  "all_recorded_generations": 148,
+  "format_metrics_are_not_task_success": true
+}

@@ -1,0 +1,129 @@
+{
+  "pages": 8,
+  "generated_at": "2026-10-24T14:13:40.358668+00:00",
+  "source_sha256": {
+    "configs/P99_whole_task_tool_choice_v01.json": "d2e7a67d0b3c753e1f72da89dd3c29ba84a03902f780f204edacd2b93a3243a9",
+    "reports/P99_comparison.json": "bd7078cce94fa7a22fb31fb7e23363763da2918ef52d18b3239aea6cbe257da7",
+    "reports/P99_initial_checks.json": "82738cc77d90686743ebe2639f4b4fa657466bbf94f4636d703e9b950ad5fdcb",
+    "reports/P99_server_session.json": "edb37ff97c357d418ad74933d73e2398488312a6a7822166c7a8057cf593cf60",
+    "reports/P99_activation_v01.json": "fe8fcfca071a98c30b95fa02c5cc41890ba1a5ed1cc8cb1a55c956ebc22e92d5",
+    "reports/P99_start_provenance_20261024.json": "0ba9a9d85f64bbe208cb34bac0e26f41fb6afba082d361f083a491f43da2e2cc"
+  },
+  "builder_sha256": "2f632d71bb798571f5380ee7542f479dffe985de55304a868439b0163fd18aff",
+  "all_planned_rows": 8,
+  "independent_tasks": 4,
+  "repetitions": 1,
+  "totals": [
+    {
+      "tool_choice_policy": "auto",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 73,
+      "known_total_tokens": 769281,
+      "unknown_usage_calls": 1,
+      "input_tokens": 737825,
+      "output_tokens": 31456,
+      "cached_input_tokens": 640804,
+      "api_requests": 179,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.3615702490496915,
+      "wall_seconds": 2976.2645469999698,
+      "cleanup_wall_seconds": 4.757865083985962,
+      "full_wall_seconds": 2988.3958242909866,
+      "full_logical_tokens": null,
+      "known_uncached_input_tokens": 97021
+    },
+    {
+      "tool_choice_policy": "required",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 75,
+      "known_total_tokens": 882557,
+      "unknown_usage_calls": 0,
+      "input_tokens": 853963,
+      "output_tokens": 28594,
+      "cached_input_tokens": 750939,
+      "api_requests": 197,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.508855957945343,
+      "wall_seconds": 2698.152405290981,
+      "cleanup_wall_seconds": 4.663906998990569,
+      "full_wall_seconds": 2710.3386211249745,
+      "full_logical_tokens": 882557,
+      "known_uncached_input_tokens": 103024
+    }
+  ],
+  "contributions": {
+    "both_successful": {
+      "task_count": 3,
+      "required_minus_auto_tokens": null
+    },
+    "both_failed": {
+      "task_count": 1,
+      "required_minus_auto_tokens": null
+    },
+    "discordant": {
+      "task_count": 0,
+      "required_minus_auto_tokens": null
+    },
+    "unevaluated": {
+      "task_count": 0,
+      "required_minus_auto_tokens": null
+    }
+  },
+  "development_gate_met": false,
+  "csv_sha256": "e70326ce804c85b5b8ec77c94f624d5cd96b7e7a6d61a7f062fb86bec634790d",
+  "paired_csv_sha256": "656e586a15157826457b7c05c63671ffe3778604fa9ee19e885861031e46ad2b",
+  "submission_csv_sha256": "1a228681f7472632d8f34622035ef21106db90308de22293600d23efd4204525",
+  "generation_csv_sha256": "9b27d762009742b22cb87accdd708c5eec9cbb1f34798bf452d180b773eaa352",
+  "all_recorded_generations": 148,
+  "submission_counts": [
+    {
+      "tool_choice_policy": "auto",
+      "measured_conditions": 4,
+      "unmeasured_conditions": 0,
+      "recorded_generations": 73,
+      "known_responses": 72,
+      "unknown_responses": 1,
+      "known_no_tool_generations": 3,
+      "known_structured_generations": 69,
+      "known_length_generations": 2,
+      "outer_record_count": 72,
+      "format_rejections": 4,
+      "not_executed_records": 0,
+      "Python_execution_errors": 11,
+      "API_requests": 179
+    },
+    {
+      "tool_choice_policy": "required",
+      "measured_conditions": 4,
+      "unmeasured_conditions": 0,
+      "recorded_generations": 75,
+      "known_responses": 75,
+      "unknown_responses": 0,
+      "known_no_tool_generations": 1,
+      "known_structured_generations": 74,
+      "known_length_generations": 2,
+      "outer_record_count": 75,
+      "format_rejections": 2,
+      "not_executed_records": 0,
+      "Python_execution_errors": 12,
+      "API_requests": 197
+    }
+  ],
+  "summary_sha256": "7a8ad3f34717443e47abe6f4fd510857ed083eeee77ad21cba9db4068ac1167b",
+  "visual_reviewed": true,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "unknown_usage_imputed": false,
+  "visual_review_sha256": "f92c6e0dfce2346b1dc5c33968a972e6cfd6c8ca010e9ec4dcca3733ee8b2153",
+  "pdf_sha256": "f634e3c85b5f0f718db71201019c7e2db794236fb0f68632ddea377c16926f0e"
+}

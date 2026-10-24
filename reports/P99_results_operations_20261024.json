@@ -1,0 +1,76 @@
+{
+  "closure_operations": {
+    "status": "complete_pending_visual_review",
+    "started_at": "2026-10-24T12:39:18.409476+00:00",
+    "head": "02932c74f532dc1a3b48ad443223ec9d575c3ad0",
+    "stages": [
+      {
+        "name": "audit",
+        "exit_code": 0,
+        "wall_seconds": 0.504261875001248,
+        "log_sha256": "e25b960dcdfc7427e3f1275a75526c53b91c94199f222a687939c63adf32bd61"
+      },
+      {
+        "name": "server_session",
+        "exit_code": 0,
+        "wall_seconds": 0.510358500003349,
+        "log_sha256": "c96745f9fba6a1cbf0f24c0a372186b6bb175c5c1f43977defaa54a831da3825"
+      },
+      {
+        "name": "report",
+        "exit_code": 0,
+        "wall_seconds": 2.538185791025171,
+        "log_sha256": "3e22e4c87d5fc9711b07395383778f1ae3e92fc2b8a1e7c404cac2f34c0fa626"
+      },
+      {
+        "name": "manuscript",
+        "exit_code": 0,
+        "wall_seconds": 0.515192000020761,
+        "log_sha256": "abb185e086ceaca08d092c2499a659a1d5c253dcba3a1d017bbbda4f3d345944"
+      },
+      {
+        "name": "manuscript_render",
+        "exit_code": 0,
+        "wall_seconds": 1.0158060420071706,
+        "log_sha256": "61dc1a0d3798ba4454c632308137870b4f87aed3eac70f5b2af8cd4d21529c54"
+      }
+    ],
+    "new_model_generations": 0,
+    "new_API_requests": 0,
+    "new_evaluations": 0,
+    "wall_seconds": 5665.414532625,
+    "verified_ci": [
+      {
+        "id": 40094574118,
+        "head_sha": "02932c74f532dc1a3b48ad443223ec9d575c3ad0",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 120874030431
+      },
+      {
+        "id": 40094551196,
+        "head_sha": "02932c74f532dc1a3b48ad443223ec9d575c3ad0",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 120873963137
+      }
+    ],
+    "finished_at": "2026-10-24T14:13:43.833537+00:00",
+    "audit_sha256": "bd7078cce94fa7a22fb31fb7e23363763da2918ef52d18b3239aea6cbe257da7",
+    "report_manifest_sha256": "58c4c35fbaf121fd164a250b795403b3419848f98341a2e15257d601961b268c",
+    "manuscript_pdf_sha256": "c9065ff2bc6270ddf28fee8e8ccab7ce7e09b032a2e69ab01163066eeadf99f9"
+  },
+  "recorded_at": "2026-10-24T14:20:01.697059+00:00",
+  "report_visual_review_complete": true,
+  "clarified_manuscript_visual_review_complete": true,
+  "report_pdf_sha256": "f634e3c85b5f0f718db71201019c7e2db794236fb0f68632ddea377c16926f0e",
+  "original_manuscript_pdf_sha256": "c9065ff2bc6270ddf28fee8e8ccab7ce7e09b032a2e69ab01163066eeadf99f9",
+  "clarified_manuscript_pdf_sha256": "46d0a2fab93b92bd222e386091e607405028325cbc3cc3a5bdd1006818f7321f",
+  "original_audit_repeated": false,
+  "original_server_inspection_repeated": false,
+  "model_or_environment_repeated": false,
+  "clarification": "Only prose narrowed to eight completed evaluations and one unknown-usage generation; original numerical tables/gate retained.",
+  "all_intermediate_outcomes_unread_until_closure": true
+}

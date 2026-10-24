@@ -1,0 +1,99 @@
+% P99 result template. Do not typeset as observed results before closed audit.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントの通常ツール提出設定を既知４課題８条件で比較した. 欠測または未評価が残り，全仕事費用差は確定できなかった. 一般的な品質維持は未検証である.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，ツール提出，費用評価
+
+\section{問題設定と先行研究}
+必要な情報と最終成果を保ちながら仕事全体の費用を減らすには，出力形式，実操作，課題達成を区別する必要がある．
+CodeAct\cite{codeact}型の状態保持エージェントが実行コードを提出せず本文だけを返す場合，出力が安定していても有効な操作を実行できない．
+AppWorld\cite{appworld}の既知４課題で得た閉じた24実行の全426生成には，構造化提出完了397，構造化呼出し後の提出未完了４，構造化呼出しなし21，応答不明４があった．397にはPython通常例外を含み，課題成功数ではない．
+この全件観測を動機として，任意提出と必須提出の通常設定を初期状態から比較する．
+
+文法制約による構造化出力\cite{gcd}には先行研究があり，制約による生成分布の変化と文法適合性の区別\cite{gad}も既に扱われている．
+本稿は制約復号や適応文法を提案せず，固定したbackend\cite{backend}の既存設定が，有限予算下の全仕事の成否と費用へ与える結果を調べる．
+構造の完成や通常設定の比較だけを新手法の新規性とはしない．
+
+\section{実行系と固定比較}
+\subsection{提出設定と共通条件}
+通常の任意提出をA，必須提出をRとする．要求の指定値はそれぞれ\texttt{auto}と\texttt{required}である．
+使用するMiniMax-M3用処理ではRの文法はツール部分を任意にせず，文法の遅延適用も無効にする．
+これは有限の出力枠内での完了，正しいPython，課題達成を保証するものではない．両側で推論を有効にし，推論ブロック専用上限は$-1$を明示する．
+全出力上限4,096と全仕事予算は残る．
+
+全返却推論，持続Python，型付きAPI返却，通常例外，公開API仕様を共通にする．
+呼出しと結果の構造化参照を対応を保って統一し，その後にモデル向けに文章化する．通常文，引数，業務ID，観測は書き換えない．
+参照正規化には先行研究\cite{canonical}があり，共通の履歴処理を独自方式としない．
+残token，API，生成回数の通知は共通で，実残時間は表示せず単調時計の期限で強制する．通知を過去履歴に蓄積せず，別の回復通知は加えない．
+
+初期の要求差は\texttt{tool\_choice}だけで，入力計数と生成に同じ指定を渡す．サーバのテンプレート，token化，文法適用の効果は設定に含まれるため，入力token数の一致を要求せず，文法だけの因果効果とは呼ばない．各要求の計数と終端使用量を照合する．
+
+\subsection{課題，順序，予算}
+写真移動，電気代精算，返金，曲情報書出しの既知４課題を各条件１回，初期状態から実行する．
+順序はA/R，R/A，A/R，R/Aとする．環境seed42，モデルseed57から生成ごとに１増やす．
+AppWorld 0.1.3.post1，MiniMax-M3 IQ4\_XS，llama.cpp b11669をMac Studio M3 Ultra・256 GiBで使用する．
+温度1.0，top-p 0.95，文脈65,536，q8\_0のKV，１スロットを共通とし，初回のcache再利用０を確認して以後は通常のprefix cacheを使う．
+
+各条件80生成，450,000論理token，1,800作業秒，写真160・他80 API，出力最大4,096かつ残tokenに応じた予約を上限とする．
+１生成は600秒と残作業時間の小さい方，初期化120秒，後片付け180秒，idle確認60秒，独立評価180秒を上限とする．
+全８条件の予約は640生成，3,600,000 token，800 API，所有推論器21,600秒であり，使用量とは区別する．
+値，閾値，seedを探索せず，過去の失敗・不明・未実行枠を置換しない．保留12課題は閲覧しない．
+
+\section{計測と事前判定}
+一次費用は全仕事の$T=\sum_j(I_j+O_j)$とし，cacheを含む全入力，出力，返却推論，通知，失敗，回復を数える．
+cache除外入力，API，実時間は別に残す．論理tokenと他費用の不一致\cite{costproxy}を認め，金額やFLOPsへ換算しない．
+一次品質は各最終状態に対する一度の独立評価であり，基準や結果をモデルへ返さない．
+全８枠と全生成を保持し，終端使用量不明時は応答を実行せず条件を終了する．API作用と後片付けが既知で同じ推論器のidleを確認できた場合だけ，評価後に予定順を続ける．API作用不明や環境・評価異常では全体を停止する．
+
+Rの開発上の採用には，全８評価と終端使用量が既知，監査一致，課題ごとの成功喪失０，両側成功１課題以上，全４課題の論理費用がAより小さいことを要求する．
+同数成功だけでは通さず，成功・未達・成否不一致・未評価の費用寄与を分ける．CSVの完了も別に報告し，安く未達になった差を達成改善としない．
+
+二次指標は，既知応答のツール提出数と出力上限到達，外側の形式拒否・Python例外・未実行の記録数，実送信API数である．
+未知応答の形式を０で補完しない．出力・行動の再現性を区別する先行研究\cite{consistency}を踏まえ，形式の改善を課題達成の代替指標にしない．
+実行中の成否を見て条件を変更せず，全体終了と所有プロセスの不在確認後に監査する．
+
+\section{全件結果}
+\input{papers/202610_letter/tool_choice_observed/whole_task.tex}
+\input{papers/202610_letter/tool_choice_observed/submission.tex}
+\input{papers/202610_letter/tool_choice_observed/resources.tex}
+
+\section{適用範囲}
+独立した課題は既知４つであり，８条件や生成数を独立標本数へ読み替えない．
+先行24実行の解析後に選んだ開発比較であり，未見確認や統計的な非劣性試験ではない．
+単一モデル，各１回の結果を別課題やモデルへ一般化しない．同じseedにも数値実行，cache，ホスト負荷の変動が残る．
+ホストでは軽量な編集と資料準備も行い，排他的な速度測定ではない．他の文法制約方式や学習方式との優劣は測っていない．
+全予定条件と出典を公開する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\section{結論}
+\input{papers/202610_letter/tool_choice_observed/conclusion.tex}
+\begin{thebibliography}{99}
+\small\raggedright
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{gcd} S. Geng, M. Josifoski, M. Peyrard, and R. West, ``Grammar-constrained decoding for structured NLP tasks without finetuning,'' Proc. EMNLP, pp.10932--10952, Singapore, Dec. 2023, doi:10.18653/v1/2023.emnlp-main.674.
+\bibitem{gad} K. Park, J. Wang, T. Berg-Kirkpatrick, N. Polikarpova, and L. D'Antoni, ``Grammar-aligned decoding,'' Advances in Neural Information Processing Systems, vol.37, 2024, doi:10.52202/079017-0774.
+\bibitem{backend} ggml-org, ``llama.cpp: MiniMax-M3 parser,'' commit 620d2225cc436ab0b001e3200e590e3b286ef9ab, \url{https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/parsers/minimax-m3.cpp}, accessed Oct. 24, 2026.
+\bibitem{canonical} A. J. Mercado and A. Lomuscio, ``Formal Verification of Agentic Systems over Operational Data,'' arXiv:2608.03609v1, 2026.
+\bibitem{costproxy} S. Weinberger and A. Hozez, ``Token Reduction Is Not Cost Reduction,'' arXiv:2607.12161v5, 2026.
+\bibitem{consistency} A. Yagubyan, ``How Consistent Are LLM Agents? Measuring Behavioral Reproducibility in Multi-Step Tool-Calling Pipelines,'' arXiv:2605.28840v1, 2026.
+\end{thebibliography}
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Keywords}\quad LLM agents, harness engineering, state retention, tool submission, cost evaluation
+
+\noindent\textbf{Summary draft}\quad We compared ordinary tool-choice settings across eight conditions on four known tasks in a stateful LLM agent. Missing usage or evaluations prevented a complete cost comparison. General quality preservation remains untested.
+\end{document}

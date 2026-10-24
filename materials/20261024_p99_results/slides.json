@@ -1,0 +1,50 @@
+[
+  {
+    "title": "通常の提出設定を、課題全体の成果へつなげる",
+    "body": "<p class=\"body\">A：任意提出auto／R：必須提出required。推論専用上限−1、全出力上限は共通。</p><table class=\"\"><tr><th>課題</th><th>A 初期入力token</th><th>R 初期入力token</th></tr><tr><td>写真移動</td><td>3,115</td><td>3,115</td></tr><tr><td>精算</td><td>3,104</td><td>3,104</td></tr><tr><td>返金</td><td>3,077</td><td>3,077</td></tr><tr><td>曲情報の書出し</td><td>3,123</td><td>3,123</td></tr></table><p class=\"body\">新しい初期状態から各１回。初期要求差はtool_choiceの値だけ。入力長の差も実測する。</p>",
+    "takeaway": "既知４課題の通常対照比較。過去の不明・未実行枠を補充したものではない。",
+    "notes": "全返却推論・持続Python・型付きAPI・文章化前の構造化参照統一・残時間非表示を共通化。世界seed42、モデルseed57＋生成番号。必須指定でも有限出力内の完成、正しいPython、課題達成は保証されない。"
+  },
+  {
+    "title": "全８条件の成否と、失敗を含む費用",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>A</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>498.4</td></tr><tr><td>写真移動</td><td>R</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>496.3</td></tr><tr><td>精算</td><td>R</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.7</td></tr><tr><td>精算</td><td>A</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>354.2</td></tr><tr><td>返金</td><td>A</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>323.9</td></tr><tr><td>返金</td><td>R</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>325.5</td></tr><tr><td>曲情報の書出し</td><td>R</td><td>未達</td><td>433,732</td><td>22</td><td>60</td><td>1,522.6</td></tr><tr><td>曲情報の書出し</td><td>A</td><td>未達</td><td>320,456＋不明1</td><td>20</td><td>42</td><td>1,799.8</td></tr></table>",
+    "takeaway": "未評価・未実行は失敗数へ入れず、使用量不明は０で補完しない。",
+    "notes": "各条件の最終状態を独立評価で一度だけ判定。判定基準や評価結果はモデルへ返さない。未知生成は実行・再試行しない。保留12課題は未閲覧。"
+  },
+  {
+    "title": "同じ課題で、全仕事の費用と成功を比べる",
+    "body": "<img class=\"cost-figure\" src=\"figures/P99_whole_task_costs.svg\" alt=\"全８条件の論理費用と成否\">",
+    "takeaway": "塗りは成功。三角は不明費用が残る既知小計で、確定した総費用ではない。",
+    "notes": "論理費用はcacheを含む全入力＋出力。早く未達で終えたことだけでは、品質を保った効率化としない。"
+  },
+  {
+    "title": "採否は全４課題と、課題ごとの成功喪失で決める",
+    "body": "<table class=\"\"><tr><th>条件</th><th>成功／評価</th><th>既知token合計</th><th>計測済み／予定</th></tr><tr><td>A 任意提出</td><td>3/4</td><td>769,281＋不明1</td><td>4/4</td></tr><tr><td>R 必須提出</td><td>3/4</td><td>882,557</td><td>4/4</td></tr></table><p class=\"lead\">全課題 R−A：未確定 token</p><p class=\"body\">成功喪失 0課題、成功獲得 0課題。<br>全８評価と使用量既知、監査一致、成功喪失０、両側成功１以上、全費用減が必要。</p>",
+    "takeaway": "開発上の採用基準：未達。同数成功だけでは品質維持と判定しない。",
+    "notes": "既知４課題・１反復の開発比較である。採用基準を満たしても一般的品質維持、以前の直接API方式への品質回復、新規性、採録可能性を保証しない。"
+  },
+  {
+    "title": "成功した課題と、未達の課題の費用を分ける",
+    "body": "<table class=\"\"><tr><th>成果の組合せ</th><th>課題数</th><th>R−A 全論理token</th></tr><tr><td>両側成功</td><td>3</td><td>未確定</td></tr><tr><td>両側未達</td><td>1</td><td>未確定</td></tr><tr><td>成否が異なる</td><td>0</td><td>未確定</td></tr><tr><td>片側以上が未評価</td><td>0</td><td>未確定</td></tr></table><p class=\"body\">全４対の成否・費用差はCSVにも保存。欠測時は全体の寄与を未確定とする。</p>",
+    "takeaway": "成功部分だけの削減と、失敗を含めた全仕事の削減を区別する。",
+    "notes": "全件の使用量が既知のとき、３つの評価済み区分の差は全課題の差へ足し合わさる。不明使用量があれば、選ばれた既知部分を全体の差として表示しない。"
+  },
+  {
+    "title": "cache、出力、呼出しを別の費用として残す",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>A 任意提出</th><th>R 必須提出</th></tr><tr><td>既知の全入力token</td><td>737,825</td><td>853,963</td></tr><tr><td>既知入力のcache再利用</td><td>640,804</td><td>750,939</td></tr><tr><td>既知のcache除外入力</td><td>97,021</td><td>103,024</td></tr><tr><td>既知の出力token</td><td>31,456</td><td>28,594</td></tr><tr><td>生成試行</td><td>73</td><td>75</td></tr><tr><td>API要求</td><td>179</td><td>197</td></tr><tr><td>使用量不明の生成</td><td>1</td><td>0</td></tr></table>",
+    "takeaway": "既知小計は不明生成の使用量を含まない。tokenを金額や計算時間へ換算しない。",
+    "notes": "制御通知・失敗・回復・再取得は仕事全体の入力と出力に含む。各条件の初回だけcoldを確認し、後続は通常のprefix cacheを使用。"
+  },
+  {
+    "title": "提出形式と実操作を、最終成果から区別する",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>A 任意提出</th><th>R 必須提出</th></tr><tr><td>終端応答が既知の生成</td><td>72</td><td>75</td></tr><tr><td>終端応答が不明の生成</td><td>1</td><td>0</td></tr><tr><td>既知応答でツール提出なし</td><td>3</td><td>1</td></tr><tr><td>既知応答で出力上限に到達</td><td>2</td><td>2</td></tr><tr><td>実行口の形式拒否記録</td><td>4</td><td>2</td></tr><tr><td>Pythonの実行例外記録</td><td>11</td><td>12</td></tr><tr><td>提出後の未実行記録</td><td>0</td><td>0</td></tr></table>",
+    "takeaway": "形式が改善しても課題達成は未確認。全８条件の成否で判断する。",
+    "notes": "１生成が複数の外側記録を持つ場合があり、生成数と記録数は同じではない。上限到達と形式拒否も重なり得る。不明応答は提出なし０件へ置き換えず、未計測条件は別に保持する。全生成の数値とhashをCSVへ出す。"
+  },
+  {
+    "title": "ロードから終了まで、所有推論器の費用も残す",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>実測値</th></tr><tr><td>推論器稼働秒</td><td>5,739.32</td></tr><tr><td>モデルロード秒（稼働時間に含む）</td><td>10.06</td></tr><tr><td>全条件の初期化・作業・後片付け秒</td><td>5,698.73</td></tr><tr><td>独立評価秒（稼働時間に含む）</td><td>13.86</td></tr><tr><td>推論器の最大実測RSS GiB</td><td>220.29</td></tr><tr><td>最大システムswap GiB</td><td>0.00</td></tr></table>",
+    "takeaway": "所有推論器の停止とPID不在を確認。重なる時間を二重加算しない。",
+    "notes": "１条件80生成・450000論理token・作業1800秒、全体640生成・3600000予約token・推論器21600秒。ホストで軽量な編集と報告準備も実施し、排他的な速度ベンチマークではない。RSSはGPU使用量全体ではない。"
+  }
+]
