@@ -1,0 +1,29 @@
+{
+  "phase": "P97_preparation",
+  "created_at": "2026-10-24T09:45:56.370662+00:00",
+  "new_synthetic_tests": 14,
+  "all_tests": 1516,
+  "test_seconds": 4.381,
+  "test_process": {
+    "started_at": "2026-10-24T09:43:00.381147+00:00",
+    "wall_seconds": 4.766403165995143,
+    "exit_code": 0,
+    "log_sha256": "b461e1c05029a2598dc11a84d4d5c3469d25ec4b1906a2fcc153ee36318c9c4a"
+  },
+  "test_scope": "Synthetic external I/O only. Includes actual worker/inference/admission/auditor, one-shot notice, extra input accounting, count-only rejection, unknown terminal/no-terminal usage, user stop, unknown API effect, tampered monitor and conditional gates.",
+  "preparation_notes": [
+    "One multi-file patch was rejected before any write because it listed one target twice; consolidated and reapplied. No experiment or test failure.",
+    "The derived server cleanup field server_pid was corrected to the recorded pid field before execution.",
+    "Final source includes a four-public-runtime-file hash check added after the local suite; exact final CI compilation and suite are required before execution."
+  ],
+  "public_dependencies": 87,
+  "public_runtime_files": 4,
+  "known_tasks_source_verified": 4,
+  "new_model_generations": 0,
+  "new_environment_api_requests": 0,
+  "new_evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "actual_model_preflight_started": false,
+  "real_experiment_started": false,
+  "novel_method_or_quality_established": false
+}
