@@ -1,0 +1,52 @@
+{
+  "phase": "explicit_python_read_view_preparation",
+  "created_at": "2026-10-24T04:29:54.980532+00:00",
+  "source_sha256": {
+    "scripts/explicit_deferred_read_views.py": "242e15c20e65de4c4e8f912b8790ed0922cd4785cd61f9b4ceb92ef219bd1a0f",
+    "tests/test_explicit_deferred_read_views.py": "1445c9006d8c0b2642d039b358b7a209b3f3071b7800ce6c6aa1ceefbce35f86",
+    "scripts/deferred_read_obligations.py": "29df5f261a58855f0f27ccb61f64ad125ef7368e8b31882807315f47250f78fd"
+  },
+  "same_interface_for_eager_and_deferred": true,
+  "transparent_dict_replacement": false,
+  "actual_python_containers_and_gc_tested": true,
+  "real_API_adapter_connected": false,
+  "new_unit_tests": 8,
+  "total_tests": 1317,
+  "suite_reported_seconds": 3.438,
+  "full_test_runner": {
+    "exit_code": 0,
+    "wall_seconds": 3.977180125,
+    "completed_at": "2026-10-24T04:27:10.683293+00:00",
+    "log_sha256": "1b10a49f0641a1fad22517706b10a0c1991201f51fe7f7cb079415fa1f8df93c"
+  },
+  "external_source_root": "appworld/apps within pinned AppWorld 0.1.3.post1 installation",
+  "external_source_sha256": {
+    "spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "spotify/models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6",
+    "file_system/apis.py": "5717b0cbabf4b8647c7429a187db3b3c278e9778798a51ff83f14815f8065e22"
+  },
+  "additional_external_read_scope": {
+    "spotify/apis.py": [
+      "show_song",
+      "show_song_library"
+    ],
+    "spotify/models.py": [
+      "Song declaration and humanized serializer",
+      "UserLibrarySong declaration and humanized serializer"
+    ],
+    "file_system/apis.py": [
+      "imports and process_path beginning",
+      "create_file",
+      "update_file as adjacent context"
+    ]
+  },
+  "P37_spotify_hashes_match": true,
+  "full_transitive_purity_success_or_mutation_footprint_verified": false,
+  "new_API_invalidation_policy_adopted": false,
+  "new_liveness_model_compared_to_real_task_success": false,
+  "actual_P88_outcomes_read": false,
+  "live_P88_execution_changed": false,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "task_evaluations": 0
+}
