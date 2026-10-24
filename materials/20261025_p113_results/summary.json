@@ -1,0 +1,155 @@
+{
+  "phase": "P113",
+  "source_audit": "reports/P111_comparison.json",
+  "source_diagnosis": "reports/P112_realized_history_inputs.json",
+  "source_session": "reports/P111_server_session.json",
+  "cells": 12,
+  "known_tasks": 4,
+  "original_model_attempts": 204,
+  "original_API_requests": 610,
+  "original_known_logical_tokens": 2026162,
+  "original_unknown_usage_calls": 2,
+  "condition_pairs": 12,
+  "aligned_positions": 219,
+  "max_saved_calls_per_cell": 80,
+  "max_events_per_cell": 4000,
+  "max_file_bytes": 16777216,
+  "max_total_private_input_bytes": 536870912,
+  "max_wall_seconds": 180,
+  "automatic_retries": 0,
+  "alignment": "same_generation_ordinal_union_not_semantic_correspondence",
+  "selection": "all_P111_conditions_and_all_saved_attempts",
+  "private_reasoning_inspected_semantically": false,
+  "causal_effect_claim": false,
+  "semantic_equivalence_claim": false,
+  "novel_method_claim": false,
+  "model_generations": 0,
+  "environment_API_requests": 0,
+  "saved_code_executions": 0,
+  "evaluations": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "source_commit": "5f8aa671ee154c1f50df481cc146bc70ff5376bd",
+  "ci": [
+    {
+      "event": "push",
+      "workflow": 40142634896,
+      "job": 121017385568,
+      "head": "5f8aa671ee154c1f50df481cc146bc70ff5376bd",
+      "success": true
+    },
+    {
+      "event": "pull_request",
+      "workflow": 40142644902,
+      "job": 121017413472,
+      "head": "5f8aa671ee154c1f50df481cc146bc70ff5376bd",
+      "success": true
+    }
+  ],
+  "research_resume": {
+    "resume_sha256": "246d469985d5ca99ec7eb4501572717107c7458a0c7327ea57d39dabb95564ee",
+    "retained_pause_sha256": "798e6029d054b8501848ff32a9e02349c1b2da5f54ff7266c7395e5c7e5d7b62",
+    "at": "2026-10-22T05:55:04.961010+00:00"
+  },
+  "plan_sha256": "f13cc5b95c1b85592242faffc79dc64a2b4a99c7cc7bf2a6ddff0c1617bcf2d2",
+  "started_at": "2026-10-24T23:26:24.198312+00:00",
+  "status": "complete",
+  "errors": [],
+  "measured_savings": null,
+  "original_P111_gate_changed": false,
+  "full_state_equivalence_established": false,
+  "all_aligned": {
+    "aligned_slots": 219,
+    "status_counts": {
+      "both_recorded": 189,
+      "one_run_ended": 30
+    },
+    "API_class_counts": {
+      "both_nonempty": 163,
+      "both_empty": 8,
+      "unavailable": 31,
+      "one_empty": 17
+    },
+    "equal_public_without_completed_submission": 0,
+    "different_syntax_same_nonempty_API": 14,
+    "comparable_public": 188,
+    "equal_public": 36,
+    "comparable_syntax": 185,
+    "equal_syntax": 43,
+    "equal_nonempty_API": 51
+  },
+  "matched_prior_API_prefix": {
+    "aligned_slots": 53,
+    "status_counts": {
+      "both_recorded": 53
+    },
+    "API_class_counts": {
+      "both_nonempty": 44,
+      "both_empty": 6,
+      "one_empty": 3
+    },
+    "equal_public_without_completed_submission": 0,
+    "different_syntax_same_nonempty_API": 6,
+    "comparable_public": 53,
+    "equal_public": 34,
+    "comparable_syntax": 53,
+    "equal_syntax": 35,
+    "equal_nonempty_API": 35
+  },
+  "comparison_position_counts": {
+    "request_equal": {
+      "equal": 31,
+      "different": 158,
+      "unavailable": 30
+    },
+    "request_without_reasoning_equal": {
+      "equal": 43,
+      "different": 146,
+      "unavailable": 30
+    },
+    "reasoning_equal": {
+      "equal": 37,
+      "different": 151,
+      "unavailable": 31
+    },
+    "public_equal": {
+      "equal": 36,
+      "different": 152,
+      "unavailable": 31
+    },
+    "Python_AST_equal": {
+      "equal": 43,
+      "different": 142,
+      "unavailable": 34
+    },
+    "noncode_arguments_equal": {
+      "equal": 185,
+      "different": 0,
+      "unavailable": 34
+    },
+    "API_sequence_including_empty_equal": {
+      "equal": 59,
+      "different": 129,
+      "unavailable": 31
+    },
+    "API_results_including_empty_equal": {
+      "equal": 59,
+      "different": 129,
+      "unavailable": 31
+    },
+    "public_tool_results_equal": {
+      "equal": 59,
+      "different": 129,
+      "unavailable": 31
+    }
+  },
+  "same_request_different_public_output": 0,
+  "same_request_different_reasoning": 0,
+  "only_reasoning_field_differs_in_request": 12,
+  "comparisons_are_not_independent_samples": true,
+  "ended_at": "2026-10-24T23:26:24.486968+00:00",
+  "wall_seconds": 3.0442352080135606,
+  "inspected_private_sources": 444,
+  "completed_conditions": 12,
+  "source_report_sha256": "30f3e2883dd204a45d6264f29017cb6a0d9cbb5f1fbe21fde8a5fa54f71aeaef"
+}
