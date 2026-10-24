@@ -407,6 +407,11 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【現在：復元とcacheに関する追加原典照合】
+P111全件成否の閲覧前にCADOCとSelf-GCの指定した本文範囲、TurnCostの限界を追加確認。復元可能な履歴管理、harnessによる表示の検査、cache再構築費を考慮するLLMなしの編集時期制御を既存の一般構想として扱う。P111の論理input＋output、実測cache、時間と、各論文の入力費用やjudge指標を区別する。固定P111/P112のコードと規則は不変。新規性と全仕事改善は未成立。
+docs/receipt_history_cache_prior_scope_20261025.md。
+
+【以前の記録】
 【現在：P111中の追加一次資料照合】
 P111全12条件の実行中、成否を読む前に追加の一次資料３件を照合した。ShortReasoningの推論書換えと継続費用、Sentryの失敗時の回復知識提示、AgentRewindの文脈・実行状態の復元との重なりを記録。ハーネス基盤、ReadViewの取得遅延、現在の実行記録による推論表示を区別した技術説明を作成した。追加モデル生成なし、P111の固定規則と未見12課題を変更していない。新規性と品質維持は未成立。
 docs/receipt_history_additional_priors_20261025.md。materials/20261025_harness_technical/README.md。
