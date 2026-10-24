@@ -1,0 +1,263 @@
+"""Report all fixed P88 tasks, unknown costs and quality changes after closure."""
+import argparse
+import csv
+from datetime import datetime, timezone
+import html
+from pathlib import Path
+
+import build_budget_report
+from build_morning_report import STYLE, SCRIPT
+from build_budget_visibility_report import TASKS, outcome
+from build_budget_visibility_repetition_report import table
+from whole_task_reasoning_budget import POLICIES, BUDGETS, cell_id, run_order, summarize, validate_plan
+from run_context_comparison import write_json
+from run_handoff_factors import ROOT, read, sha
+
+STEM = 'AI_harness_whole_task_reasoning_budget_20261024'
+EXECUTED_HEAD = 'f1aeb1301bc09bd620995005923a722c7c6ff1c9'
+LABELS = ('U 専用上限なし', 'H 固定2,048')
+FILES = ('configs/P88_whole_task_reasoning_budget_v01.json', 'reports/P88_comparison.json',
+         'reports/P88_initial_checks.json', 'reports/P88_server_session.json',
+         'reports/P88_activation_v01.json')
+
+
+def validated(root=ROOT):
+    plan, report, pre, session, activation = [read(root / name) for name in FILES]
+    validate_plan(plan)
+    expected = [(cell_id(n, p), plan['known_tasks'][n-1]['task_id'], p) for n, p in run_order()]
+    if ([(r['run_id'], r['task_id'], r['reasoning_policy']) for r in report['rows']] != expected
+            or report['audit_errors'] or report['batch_status'] not in ('complete', 'stopped')
+            or report['plan_sha256'] != sha(root / FILES[0])
+            or report['activation_sha256'] != sha(root / FILES[4])
+            or not report['owned_processes_absent']
+            or pre['status'] != 'complete' or not pre['all_eight_inputs_checked']
+            or pre['input_count_requests'] != 8 or pre['failed_input_count_requests']
+            or pre['git_commit'] != EXECUTED_HEAD
+            or activation['preflight_sha256'] != sha(root / FILES[2])
+            or activation['source_hashes'] != pre['source_hashes']
+            or not activation['all_eight_conditions_frozen_before_generation']
+            or session['status'] != 'stopped' or not session['owned_processes_absent']
+            or session['audit_source_sha256'] != sha(root / FILES[1])
+            or session['pipeline_source_sha256'] != report['pipeline_status_sha256']):
+        raise ValueError('closed_fixed_P88_cohort_and_owned_server_required')
+    if [r['task_id'] for r in pre['rows']] != [r['task_id'] for r in plan['known_tasks']]:
+        raise ValueError('all_four_initial_tasks_required')
+    for row in pre['rows']:
+        if set(row['conditions']) != set(POLICIES):
+            raise ValueError('both_initial_conditions_required')
+        a, b = [row['conditions'][p] for p in POLICIES]
+        if (a['input_tokens'] != b['input_tokens']
+                or a['model_messages_sha256'] != b['model_messages_sha256']
+                or [a['reasoning_budget_tokens'], b['reasoning_budget_tokens']] != [-1, 2048]):
+            raise ValueError('matched_initial_inputs_and_explicit_budgets_required')
+    for name, expected_hash in pre['source_hashes'].items():
+        if sha(root / name) != expected_hash:
+            raise ValueError('frozen_P88_source_changed:' + name)
+    for key, value in summarize(report['rows'], report['audit_errors']).items():
+        if report[key] != value:
+            raise ValueError('fixed_P88_gate_disagrees:' + key)
+    for row in report['rows']:
+        if row['record_status'] == 'evaluated':
+            if type(row['success']) is not bool:
+                raise ValueError('evaluated_success_must_be_boolean')
+        elif row['success'] is not None:
+            raise ValueError('unevaluated_result_cannot_be_success_or_failure')
+    return plan, report, pre, session, activation
+
+
+def totals(rows, policy):
+    cells = [r for r in rows if r['reasoning_policy'] == policy]
+    measured = [r for r in cells if r.get('known_total_tokens') is not None]
+    known = lambda key: sum(r[key] for r in measured) if measured and all(r.get(key) is not None for r in measured) else None
+    out = dict(reasoning_policy=policy, planned=len(cells), measured=len(measured),
+        evaluated=sum(r['record_status'] == 'evaluated' for r in cells),
+        successes=sum(r['success'] is True for r in cells),
+        failures=sum(r['record_status'] == 'evaluated' and r['success'] is False for r in cells),
+        unmeasured=len(cells)-len(measured))
+    for key in ('model_calls', 'known_total_tokens', 'unknown_usage_calls', 'input_tokens',
+                'output_tokens', 'cached_input_tokens', 'api_requests', 'invocation_exceptions',
+                'setup_wall_seconds', 'wall_seconds', 'cleanup_wall_seconds', 'full_wall_seconds'):
+        out[key] = known(key)
+    out['full_logical_tokens'] = (out['known_total_tokens']
+        if len(measured) == len(cells) and out['unknown_usage_calls'] == 0 else None)
+    out['known_uncached_input_tokens'] = (out['input_tokens'] - out['cached_input_tokens']
+        if out['input_tokens'] is not None and out['cached_input_tokens'] is not None else None)
+    return out
+
+
+def cost(row):
+    value = row.get('known_total_tokens')
+    if value is None:
+        return '未計測'
+    text = f'{value:,}'
+    if row.get('unknown_usage_calls'):
+        text += f"＋不明{row['unknown_usage_calls']}"
+    if row.get('unmeasured'):
+        text += f"＋未計測{row['unmeasured']}条件"
+    return text
+
+
+def signed(value):
+    return '未確定' if value is None else f'{value:+,}'
+
+
+def number(value, decimals=0):
+    return '未計測' if value is None else f'{value:,.{decimals}f}'
+
+
+def contributions(report):
+    groups = {'both_successful': [], 'both_failed': [], 'discordant': [], 'unevaluated': []}
+    for pair in report['paired_results']:
+        if not pair['both_evaluated']:
+            group = 'unevaluated'
+        elif pair['both_successful']:
+            group = 'both_successful'
+        elif not pair['unlimited_success'] and not pair['half_success']:
+            group = 'both_failed'
+        else:
+            group = 'discordant'
+        groups[group].append(pair)
+    # Avoid presenting a selected known subset as the contribution of the full cohort.
+    complete = report['all_eight_complete_with_known_usage']
+    return {key: dict(task_count=len(pairs),
+        half_minus_unlimited_tokens=sum(p['half_minus_unlimited_tokens'] for p in pairs) if complete else None)
+        for key, pairs in groups.items()}
+
+
+def figure(output, plan, rows):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({'font.family': 'Hiragino Sans', 'font.size': 10,
+        'axes.spines.top': False, 'axes.spines.right': False})
+    folder = output / 'figures'; folder.mkdir(exist_ok=True)
+    fig, ax = plt.subplots(figsize=(11, 3.5), layout='constrained', facecolor='#f6f4ed')
+    ax.set_facecolor('#f6f4ed')
+    for n, item in enumerate(plan['known_tasks']):
+        for j, policy in enumerate(POLICIES):
+            row = next(r for r in rows if r['task_id'] == item['task_id'] and r['reasoning_policy'] == policy)
+            color = ('#7d8892', '#177b79')[j]; y = 3-n+(-.15 if j == 0 else .15)
+            if row.get('known_total_tokens') is None:
+                ax.text(.02, y, LABELS[j]+'：未計測', transform=ax.get_yaxis_transform(), va='center', color=color)
+                continue
+            value = row['known_total_tokens']/1000
+            marker = '>' if row['unknown_usage_calls'] else ('o', 'D')[j]
+            ax.scatter(value, y, marker=marker, s=75, edgecolor=color,
+                facecolor=color if row['success'] is True else '#f6f4ed', lw=1.8)
+            ax.annotate(f'{value:.1f}'+('＋不明' if row['unknown_usage_calls'] else '')+' '+outcome(row),
+                (value, y), xytext=(7, 0), textcoords='offset points', va='center', color=color, fontsize=9)
+    largest = max((r['known_total_tokens']/1000 for r in rows if r.get('known_total_tokens') is not None), default=1)
+    ax.set_yticks(range(4), TASKS[::-1]); ax.set_ylim(-.6, 3.6); ax.set_xlim(0, max(1, largest)*1.42)
+    ax.grid(axis='x', alpha=.15); ax.set_axisbelow(True)
+    ax.set_xlabel('初期からの論理入力＋出力token（千）／右向き三角：既知小計＋不明使用量')
+    for j, label in enumerate(LABELS):
+        ax.plot([], [], color=('#7d8892', '#177b79')[j], marker=('o', 'D')[j], linestyle='', label=label)
+    ax.legend(loc='upper center', bbox_to_anchor=(.5, 1.2), ncol=2, frameon=False)
+    for ext in ('svg', 'png', 'pdf'):
+        fig.savefig(folder / ('P88_whole_task_costs.'+ext), dpi=180, facecolor='#f6f4ed')
+    plt.close(fig)
+
+
+def build(output, root=ROOT):
+    plan, report, pre, session, _ = validated(root)
+    output.mkdir(parents=True, exist_ok=True); rows = report['rows']
+    fields = ('run_id', 'task_id', 'reasoning_policy', 'record_status', 'success', 'stop_reason',
+        'model_calls', 'known_total_tokens', 'unknown_usage_calls', 'input_tokens', 'cached_input_tokens',
+        'output_tokens', 'api_requests', 'invocation_exceptions', 'setup_wall_seconds',
+        'wall_seconds', 'cleanup_wall_seconds', 'full_wall_seconds')
+    for filename, data, columns in [('all_eight_conditions.csv', rows, fields),
+            ('all_four_pairs.csv', report['paired_results'], tuple(report['paired_results'][0]))]:
+        with (output / filename).open('w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=columns, extrasaction='ignore')
+            writer.writeheader(); writer.writerows(data)
+    figure(output, plan, rows)
+    aggregate = [totals(rows, p) for p in POLICIES]; parts = contributions(report)
+    write_json(output / 'whole_cohort_summary.json', {'totals': aggregate, 'contributions': parts,
+        'development_gate_met': report['development_gate_met'], 'all_planned_rows': 8,
+        'half_minus_unlimited_whole_task_tokens': report['half_minus_unlimited_whole_task_tokens'],
+        'paired_success_losses': report['paired_success_losses'], 'paired_success_gains': report['paired_success_gains']})
+    slides = []
+    def add(title, body, takeaway, notes):
+        slides.append(dict(title=title, body=body, takeaway=takeaway, notes=notes))
+    add('通常の推論予算を、課題全体の成果へつなげる',
+        '<p class="body">U：専用上限なし（−1）／H：固定2,048。全出力上限は両側とも最大4,096。</p>'+
+        table(('課題', 'U 初期入力token', 'H 初期入力token'),
+            [(task, number(r['conditions']['unlimited']['input_tokens']), number(r['conditions']['half']['input_tokens']))
+                for task, r in zip(TASKS, pre['rows'], strict=True)])+
+        '<p class="body">新しい初期状態から各１回。初期要求差は専用予算の値だけ。</p>',
+        '既知４課題の通常対照比較。P87の未実行枠を補充したものではない。',
+        '全返却推論・持続Python・型付きAPI・文章化前の構造化参照統一・残時間非表示を共通化。世界seed42、モデルseed57＋生成番号。2,048は推論ブロック単位で、操作へ半分を必ず予約する保証はない。')
+    add('全８条件の成否と、失敗を含む費用',
+        table(('課題', '条件', '成否', '全仕事token', '生成', 'API', '作業秒'),
+            [(TASKS[n-1], 'U' if p == 'unlimited' else 'H', outcome(r), cost(r),
+              number(r.get('model_calls')), number(r.get('api_requests')), number(r.get('wall_seconds'), 1))
+             for n, p in run_order() for r in rows if r['run_id'] == cell_id(n, p)], 'results'),
+        '未評価・未実行は失敗数へ入れず、使用量不明は０で補完しない。',
+        '各条件の最終状態を独立評価で一度だけ判定。判定基準や評価結果はモデルへ返さない。未知生成は実行・再試行しない。保留12課題は未閲覧。')
+    add('同じ課題で、全仕事の費用と成功を比べる',
+        '<img class="cost-figure" src="figures/P88_whole_task_costs.svg" alt="全８条件の論理費用と成否">',
+        '塗りは成功。三角は不明費用が残る既知小計で、確定した総費用ではない。',
+        '論理費用はcacheを含む全入力＋出力。早く未達で終えたことだけでは、品質を保った効率化としない。')
+    gate = '達成' if report['development_gate_met'] else '未達'
+    add('採否は全４課題と、課題ごとの成功喪失で決める',
+        table(('条件', '成功／評価', '既知token合計', '計測済み／予定'),
+            [(label, f"{r['successes']}/{r['evaluated']}", cost(r), f"{r['measured']}/{r['planned']}")
+                for label, r in zip(LABELS, aggregate, strict=True)])+
+        '<p class="lead">全課題 H−U：'+signed(report['half_minus_unlimited_whole_task_tokens'])+' token</p>'+
+        '<p class="body">成功喪失 '+number(report['paired_success_losses'])+'課題、成功獲得 '+number(report['paired_success_gains'])+'課題。<br>'+
+        '全８評価と使用量既知、監査一致、成功喪失０、両側成功１以上、全費用減が必要。</p>',
+        '開発上の採用基準：'+gate+'。同数成功だけでは品質維持と判定しない。',
+        '既知４課題・１反復の開発比較である。採用基準を満たしても一般的品質維持、以前の直接API方式への品質回復、新規性、採録可能性を保証しない。')
+    add('成功した課題と、未達の課題の費用を分ける',
+        table(('成果の組合せ', '課題数', 'H−U 全論理token'),
+            [(label, parts[key]['task_count'], signed(parts[key]['half_minus_unlimited_tokens']))
+             for key, label in [('both_successful', '両側成功'), ('both_failed', '両側未達'),
+                               ('discordant', '成否が異なる'), ('unevaluated', '片側以上が未評価')]])+
+        '<p class="body">全４対の成否・費用差はCSVにも保存。欠測時は全体の寄与を未確定とする。</p>',
+        '成功部分だけの削減と、失敗を含めた全仕事の削減を区別する。',
+        '全件の使用量が既知のとき、３つの評価済み区分の差は全課題の差へ足し合わさる。不明使用量があれば、選ばれた既知部分を全体の差として表示しない。')
+    add('cache、出力、呼出しを別の費用として残す',
+        table(('計測対象', 'U 専用上限なし', 'H 固定2,048'),
+            [(label, number(aggregate[0][key]), number(aggregate[1][key])) for key, label in [
+                ('input_tokens', '既知の全入力token'), ('cached_input_tokens', '既知入力のcache再利用'),
+                ('known_uncached_input_tokens', '既知のcache除外入力'), ('output_tokens', '既知の出力token'),
+                ('model_calls', '生成試行'), ('api_requests', 'API要求'), ('unknown_usage_calls', '使用量不明の生成')]]),
+        '既知小計は不明生成の使用量を含まない。tokenを金額や計算時間へ換算しない。',
+        '制御通知・失敗・回復・再取得は仕事全体の入力と出力に含む。各条件の初回だけcoldを確認し、後続は通常のprefix cacheを使用。')
+    add('ロードから終了まで、所有推論器の費用も残す',
+        table(('計測対象', '実測値'), [
+            ('推論器稼働秒', number(session['wall_seconds'], 2)),
+            ('モデルロード秒（稼働時間に含む）', number(session['load_wall_seconds'], 2)),
+            ('全条件の初期化・作業・後片付け秒', number(session['cell_full_wall_seconds'], 2)),
+            ('独立評価秒（稼働時間に含む）', number(session['evaluation_wall_seconds'], 2)),
+            ('推論器の最大実測RSS GiB', number(session['sampled_peak_rss_bytes']/2**30, 2)),
+            ('最大システムswap GiB', number(session['peak_system_swap_bytes']/2**30, 2))]),
+        '所有推論器の停止とPID不在を確認。重なる時間を二重加算しない。',
+        '１条件80生成・450000論理token・作業1800秒、全体640生成・3600000予約token・推論器21600秒。ホストで軽量な編集と報告準備も実施し、排他的な速度ベンチマークではない。RSSはGPU使用量全体ではない。')
+    sections = []
+    for n, slide in enumerate(slides, 1):
+        sections.append(f'<section class="slide"><div class="eyebrow">10月24日 全仕事での通常推論予算 / {n:02d}</div><h2>{slide["title"]}</h2>{slide["body"]}<div class="takeaway">{slide["takeaway"]}</div><div class="footer"><span>既知４課題・固定８条件・各１回</span><span>{n}/{len(slides)}</span></div><div class="notes">{html.escape(slide["notes"])}</div></section>')
+    nav = '<nav id="nav"><button id="prev">←</button><span id="count"></span><button id="next">→</button><button id="all">一覧</button><button id="note">説明</button><button id="print">印刷</button></nav><aside id="speaker"></aside>'
+    css = 'h2{font-size:29px}table{font-size:18px}td{padding:8px 12px}.results td,.results th{font-size:16px;padding:7px 8px}.cost-figure{width:100%;height:350px;object-fit:contain}'
+    (output / 'index.html').write_text('<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>P88 全仕事の推論予算</title><style>'+STYLE+css+'</style></head><body>'+''.join(sections)+nav+'<script>'+SCRIPT+'</script></body></html>')
+    write_json(output / 'slides.json', slides)
+    manifest = dict(pages=len(slides), generated_at=datetime.now(timezone.utc).isoformat(),
+        source_sha256={name: sha(root / name) for name in FILES}, builder_sha256=sha(Path(__file__)),
+        all_planned_rows=8, independent_tasks=4, repetitions=1, totals=aggregate, contributions=parts,
+        development_gate_met=report['development_gate_met'],
+        csv_sha256=sha(output / 'all_eight_conditions.csv'), paired_csv_sha256=sha(output / 'all_four_pairs.csv'),
+        summary_sha256=sha(output / 'whole_cohort_summary.json'), visual_reviewed=False,
+        novel_method_claim=False, general_quality_preservation_claim=False, unknown_usage_imputed=False)
+    write_json(output / 'build_manifest.json', manifest)
+    return manifest
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--repo-root', type=Path, default=ROOT)
+    parser.add_argument('--output', type=Path, default=ROOT / 'materials/20261024_p88_results')
+    parser.add_argument('--pdf', action='store_true')
+    args = parser.parse_args(); result = build(args.output, args.repo_root)
+    print({k: result[k] for k in ('pages', 'all_planned_rows', 'development_gate_met')})
+    if args.pdf:
+        build_budget_report.STEM = STEM; build_budget_report.export(args.output)
