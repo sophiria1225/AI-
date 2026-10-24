@@ -59,4 +59,6 @@ Pythonは保存先の`.runtime/p3_ci_venv/bin/python`、資料は`.runtime/repor
 
 [先行実行・処理列再利用](materials/20261024_execution_reuse_priors/README.md)には既存のAppWorld研究がある。[H群の照合](materials/20261024_closed_reference_cohorts/README.md)では、参照統一後も書出し両反復が未達。失敗した方式の再試行や通常手法の改名に進まない。
 
+R120（Issue #396）は将来参照を残す遅延読取の候補。合成仕様・Python参照・共有API予約に続き、[制御通信と独立した実行器](materials/20261024_deferred_view_runtime/README.md)を追加した。全1,343検査が通過し、手書きの別プロセスで既存通信ループと新しいアダプタを検査した。実サービスの公開契約・部分値認定、課題品質・全費用改善は未確認。コンテナ確認は未実行で、`probe_deferred_view_container.py` の固定２条件・各手書き３プログラム・各模擬API上限４回・再試行０を、正確なheadの両CI/jobとP88の全件終了・所有推論器停止後に新規出力先で一度行う。モデル生成・環境API・評価は０。結果が出ても、模擬世界から無料で与えた部分値を実課題の節約へ換算しない。
+
 GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全119件の作業ボードを部分集合で上書きしない。以前の実行中の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/RESUME.md)に保存した。
