@@ -1,0 +1,60 @@
+{
+  "phase": "P88_separate_manuscript_preparation",
+  "created_at": "2026-10-24T03:48:17.261196+00:00",
+  "tests": {
+    "completed_at": "2026-10-24T03:47:35.276897+00:00",
+    "compile_exit_code": 0,
+    "test_exit_code": 0,
+    "process_wall_seconds": 3.616870166006265,
+    "log_sha256": "e8abaf0fddbfb42529e4553a64a2ffb43f6cfe309936370fd831515ede9d6972",
+    "passed": 1296,
+    "new_tests": 4,
+    "suite_seconds": 3.194
+  },
+  "preliminary_errors": [
+    {
+      "kind": "Python string quoting",
+      "result": "SyntaxError before any manuscript build",
+      "correction": "Used raw double-quoted strings for bibliography entries containing TeX quote marks."
+    },
+    {
+      "kind": "synthetic layout",
+      "result": "one overfull box, 2.82553 pt, in the long fixed source URL",
+      "layout_sha256": "0f453b259875ba686b27e43d2bfa128b1c2e1986918b2f9bad66d7843df4c742",
+      "pdf_sha256": "2c3f771a2fd8451172eca503a23f8514fd1030fc75c8538b9edb4c7586949709",
+      "correction": "Reference text uses the standard small size; original failed preview preserved."
+    }
+  ],
+  "intermediate_preview": {
+    "private": true,
+    "pdf_sha256": "44b93f442fe3177871a4e97a62bb5cfaf709391828019e33e24fdaf4336c1329",
+    "layout_sha256": "624a8e20584eeeca5cac5211e8554029af0275d2e0160908db376ba8fd6288f0",
+    "all_four_pages_reviewed": true,
+    "subsequent_change": "Bibliography reordered to first citation order; rendered again as a new private version."
+  },
+  "final_synthetic_preview": {
+    "private": true,
+    "pages": 4,
+    "body_pages": 3,
+    "bibliography_entries": 7,
+    "ja_characters": 87,
+    "en_words": 37,
+    "all_pages_reviewed": true,
+    "pdf_sha256": "fefd0993a2549824a6ada36ddc8f8e3d225ebe58808a28ba9f074527e423d543",
+    "layout_sha256": "13250ec2604f032ea16fa6287321e2c2a0c993aaa82649c824696f2ff0c787d3",
+    "visual_review_sha256": "00f770660d91631ddd5a8e2572fd23f18df20a7cddfadbd612d6cc91e77db02b"
+  },
+  "actual_result_read": false,
+  "actual_manuscript_created": false,
+  "professor_brief_changed": false,
+  "live_P88_execution_changed": false,
+  "model_calls": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "source_sha256": {
+    "scripts/build_whole_task_reasoning_budget_draft.py": "6c3aa822f5f0487e97720737581dcf716e019b21d6e6e27c8c4148346371d844",
+    "tests/test_whole_task_reasoning_budget_draft.py": "0fcd20da3a7d9ad8d6539d36fd49f188809f1f4b2bbc24b4aeb9efb6f4b19dba",
+    "docs/weekend_decision_20261024.md": "4aa6d12c2988a6aacc78d700d80c0e1c1c6992b9b1d45301ebe06fb9e7d22ea5",
+    "reports/weekend_claim_boundary_sources_20261024.json": "751eae47b0d464756703a64c3bf2fc357a0d8f5277b17b8caffaa6fe1b535138"
+  }
+}
