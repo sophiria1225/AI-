@@ -1,0 +1,498 @@
+{
+  "created_at": "2026-10-24T23:47:22.250246+00:00",
+  "sources": [
+    {
+      "source": "scripts/receipt_history_inference.py",
+      "source_sha256": "8ef8c9ae3f6eebfaf10ef872eff9e04dc77cffe5ef89506e168bd7113e02cc02",
+      "derived": "scripts/public_only_history_inference.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ],
+        [
+          "from receipt_reasoning_history import",
+          "from public_only_reasoning_history import"
+        ]
+      ],
+      "additional_unified_diff": [
+        "--- scripts/receipt_history_inference.py after declared substitutions",
+        "+++ scripts/public_only_history_inference.py",
+        "@@ -1,4 +1,4 @@",
+        "-\"\"\"Apply frozen P110 display rules before counting/admission in a new live run.\"\"\"",
+        "+\"\"\"Apply the ordinary public-only display before counting/admission in P114.\"\"\"",
+        " import json",
+        " import time",
+        " "
+      ],
+      "derived_sha256": "9d778c0b16c4efe6e61bbbd859b673e0a08887a64d1327d427c767bcbbc38984"
+    },
+    {
+      "source": "scripts/run_whole_task_receipt_history_cell.py",
+      "source_sha256": "fc825b80d98b6e4dadd637dc1d9e03e4a4928706380090b40046227c70ab9909",
+      "derived": "scripts/run_whole_task_public_only_history_cell.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ]
+      ],
+      "additional_unified_diff": [],
+      "derived_sha256": "11e87ed1d1f8b0de83c974247c38fcbb9027861de9bea5879e3648ce52a4e5cb"
+    },
+    {
+      "source": "scripts/run_whole_task_receipt_history.py",
+      "source_sha256": "c50454b326ffcba62025b835d76ab200e3b3f627a690f1821a403e35775d96b8",
+      "derived": "scripts/run_whole_task_public_only_history.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ]
+      ],
+      "additional_unified_diff": [
+        "--- scripts/run_whole_task_receipt_history.py after declared substitutions",
+        "+++ scripts/run_whole_task_public_only_history.py",
+        "@@ -1,4 +1,4 @@",
+        "-\"\"\"Finite P114 from-start comparison of the three frozen reasoning displays.\"\"\"",
+        "+\"\"\"Finite four-task public-only calibration against closed historical P111.\"\"\"",
+        " import argparse",
+        " import datetime as dt",
+        " import os",
+        "@@ -36,33 +36,63 @@",
+        "     previous, original, tools, prepared = original_sources(storage, root)",
+        "     if any(plan[k] != previous[k] for k in ('known_tasks','source_runs','source_plan','world_seed')):",
+        "         raise ValueError('same_four_known_tasks_required')",
+        "-    diagnosis = read(root / 'reports/P110_receipt_history_inputs.json')",
+        "+    diagnosis = read(root / 'reports/P113_receipt_history_trajectories.json')",
+        "     frozen_rule = read(root / 'configs/P110_receipt_history_inputs_v01.json')['source_sha256']['scripts/receipt_reasoning_history.py']",
+        "-    if (diagnosis['status'] != 'complete' or diagnosis['errors'] or diagnosis['completed_renderings'] != 444",
+        "+    if (diagnosis['status'] != 'complete' or diagnosis['errors'] or diagnosis['completed_conditions'] != 12",
+        "             or sha(root / 'scripts/receipt_reasoning_history.py') != frozen_rule):",
+        "-        raise ValueError('complete_P110_and_unchanged_display_rules_required')",
+        "+        raise ValueError('complete_P113_and_unchanged_historical_rules_required')",
+        "     predecessor_closed(storage, root)",
+        "     return plan, original, tools, prepared",
+        " ",
+        " ",
+        " def predecessor_closed(storage, root):",
+        "-    folder = storage / 'records/context_pilot/P107_pipeline_v01'",
+        "+    folder = storage / 'records/context_pilot/P111_pipeline_v01'",
+        "     pipeline = read(folder / 'status.json'); final = read(folder / 'server_final.json')",
+        "-    audit = read(root / 'reports/P107_comparison.json')",
+        "-    session = read(root / 'reports/P107_server_session.json')",
+        "+    audit = read(root / 'reports/P111_comparison.json')",
+        "+    session = read(root / 'reports/P111_server_session.json')",
+        "     if (pipeline['status'] not in ('complete','stopped') or not pipeline.get('server_stopped')",
+        "             or final['status'] != 'stopped' or final['supervisor_pid'] != pipeline['server_supervisor_pid']",
+        "-            or audit['audit_errors'] or not audit['owned_processes_absent']",
+        "+            or audit['audit_errors'] or len(audit['rows']) != 12 or not audit['owned_processes_absent']",
+        "             or session['status'] != 'stopped' or not session['owned_processes_absent']",
+        "             or audit['pipeline_status_sha256'] != sha(folder / 'status.json')",
+        "             or audit['server_final_sha256'] != sha(folder / 'server_final.json')",
+        "-            or session['audit_source_sha256'] != sha(root / 'reports/P107_comparison.json')):",
+        "-        raise ValueError('closed_owned_audited_P107_required')",
+        "+            or session['audit_source_sha256'] != sha(root / 'reports/P111_comparison.json')):",
+        "+        raise ValueError('closed_owned_audited_P111_required')",
+        "     for key in ('pid','supervisor_pid'):",
+        "         process = subprocess.run(['ps','-p',str(final[key]),'-o','command='],capture_output=True,text=True,timeout=10)",
+        "         if process.returncode != 1 or process.stdout.strip(): raise ValueError('previous_owned_process_present')",
+        "-    return dict(audit_sha256=sha(root / 'reports/P107_comparison.json'),",
+        "+    return dict(audit_sha256=sha(root / 'reports/P111_comparison.json'),",
+        "                 pipeline_status_sha256=sha(folder / 'status.json'),server_final_sha256=sha(folder / 'server_final.json'))",
+        "+",
+        "+",
+        "+def check_historical_initial(storage, root, item, entry, request, identity):",
+        "+    \"\"\"Match the actual first request to all three archived P111 first requests.\"\"\"",
+        "+    historical = read(root / 'reports/P111_initial_checks.json')",
+        "+    if (historical['status'] != 'complete' or not historical['all_twelve_inputs_checked']",
+        "+            or historical['input_count_requests'] != 12 or historical['failed_input_count_requests']):",
+        "+        raise ValueError('complete_historical_initial_checks_required')",
+        "+    # Server process identity is necessarily new; model/runtime/context must match.",
+        "+    if any(identity[k] != historical['model_identity'][k] for k in ('model_revision', 'runtime', 'ctx_size')):",
+        "+        raise ValueError('historical_model_runtime_or_context_changed')",
+        "+    matches = [r for r in historical['rows'] if r['task_id'] == item['task_id'] and r['source_run'] == item['source_run']]",
+        "+    if len(matches) != 1 or set(matches[0]['conditions']) != {'full', 'recent', 'execution_gated'}:",
+        "+        raise ValueError('exact_historical_task_and_conditions_required')",
+        "+    checked = {}",
+        "+    for policy, old in matches[0]['conditions'].items():",
+        "+        path = storage / 'records/context_pilot/P111_preflight_v01' / (item['source_run']+'_'+policy+'_request_private.json')",
+        "+        if sha(path) != old['count_request_sha256']:",
+        "+            raise ValueError('historical_initial_request_archive_changed')",
+        "+        if read(path) != request:",
+        "+            raise ValueError('historical_initial_request_differs')",
+        "+        keys = ('base_messages_sha256', 'model_messages_sha256', 'input_tokens', 'visible_state',",
+        "+                'measured_state', 'admission', 'reasoning_budget_tokens', 'tool_choice')",
+        "+        if any(entry[k] != old[k] for k in keys):",
+        "+            raise ValueError('historical_initial_count_or_controls_differ')",
+        "+        checked[policy] = dict(request_sha256=sha(path), input_tokens=old['input_tokens'])",
+        "+    if request['tool_choice'] != 'auto' or request.get('cache_prompt') is not False:",
+        "+        raise ValueError('initial_auto_and_cold_cache_required')",
+        "+    return dict(historical_preflight_sha256=sha(root / 'reports/P111_initial_checks.json'),",
+        "+                exact_requests_and_counts_match=True, conditions=checked)",
+        " ",
+        " ",
+        " def frozen_hashes(root):",
+        "@@ -89,7 +119,7 @@",
+        "         'server_lease_end': end, 'research_resume': check_resume(storage),",
+        "         'input_count_requests': 0, 'failed_input_count_requests': 0,",
+        "         'model_generations': 0, 'environment_api_requests': 0, 'evaluator_calls': 0,",
+        "-        'reserved_scenarios_read': 0, 'all_twelve_inputs_checked': False}",
+        "+        'reserved_scenarios_read': 0, 'all_four_inputs_checked_against_P111': False}",
+        "     try:",
+        "         for item in prepared:",
+        "             row = {'source_run': item['source_run'], 'task_id': item['task_id'], 'conditions': {}}",
+        "@@ -130,18 +160,12 @@",
+        "                 if not entry['admission']['admitted']:",
+        "                     raise ValueError('initial_request_does_not_fit')",
+        "                 write_json(folder / 'status.json', result)",
+        "-            entries = [row['conditions'][arm] for arm in POLICIES]",
+        "-            if any(e['model_messages_sha256'] != entries[0]['model_messages_sha256']",
+        "-                   or e['base_messages_sha256'] != entries[0]['base_messages_sha256']",
+        "-                   or e['visible_state'] != entries[0]['visible_state']",
+        "-                   or e['input_tokens'] != entries[0]['input_tokens'] for e in entries):",
+        "-                raise ValueError('all_three_initial_inputs_must_match')",
+        "-            requests = [read(folder / (item['source_run'] + '_' + arm + '_request_private.json')) for arm in POLICIES]",
+        "-            if any(request != requests[0] for request in requests) or requests[0]['tool_choice'] != 'auto':",
+        "-                raise ValueError('same_initial_request_and_auto_tool_choice_required')",
+        "-            if 'wall_seconds_at_snapshot' in entries[0]['visible_state']['remaining']:",
+        "+            entry = row['conditions']['public_only']",
+        "+            request = read(folder / (item['source_run'] + '_public_only_request_private.json'))",
+        "+            row['historical_initial_check'] = check_historical_initial(storage, root, item, entry, request, identity)",
+        "+            if 'wall_seconds_at_snapshot' in entry['visible_state']['remaining']:",
+        "                 raise ValueError('hidden_time_was_exposed')",
+        "-        result.update(status='complete', all_twelve_inputs_checked=True)",
+        "+        result.update(status='complete', all_four_inputs_checked_against_P111=True)",
+        "     except Exception as error:",
+        "         result.update(status='failed', error_type=type(error).__name__)",
+        "         (folder / 'error_private.txt').write_text(str(error))",
+        "@@ -157,13 +181,13 @@",
+        "     if (root / ACTIVATION).exists():",
+        "         raise FileExistsError('preserve_P114_activation')",
+        "     pre = read(root / PREFLIGHT)",
+        "-    if (pre['status'] != 'complete' or not pre['all_twelve_inputs_checked']",
+        "-            or pre['input_count_requests'] != 12 or pre['failed_input_count_requests']",
+        "+    if (pre['status'] != 'complete' or not pre['all_four_inputs_checked_against_P111']",
+        "+            or pre['input_count_requests'] != 4 or pre['failed_input_count_requests']",
+        "             or pre['source_hashes'] != frozen_hashes(root)):",
+        "         raise ValueError('P114_preparation_incomplete_or_stale')",
+        "     write_json(root / ACTIVATION, {'phase': 'P114', 'source_hashes': pre['source_hashes'],",
+        "         'preflight_sha256': sha(root / PREFLIGHT), 'research_resume': check_resume(storage),",
+        "-        'all_twelve_conditions_frozen_before_generation': True,",
+        "+        'all_four_conditions_frozen_before_generation': True,",
+        "         'activated_at': dt.datetime.now(dt.timezone.utc).isoformat()})",
+        " ",
+        " ",
+        "@@ -283,7 +307,7 @@",
+        "         if args.arm is None:",
+        "             parser.error('--cell requires --arm')",
+        "         plan, original, tools, prepared = sources(args.storage_root, args.repo_root)",
+        "-        # Every worker requires the already frozen twelve-cell activation.",
+        "+        # Every worker requires the already frozen four-cell activation.",
+        "         frozen = read(args.repo_root / ACTIVATION)",
+        "         if frozen['source_hashes'] != frozen_hashes(args.repo_root):",
+        "             raise ValueError('P114_worker_sources_changed')"
+      ],
+      "derived_sha256": "2a0f0ca3cd6d3d656d1c257631b2579c46ddad1fbacfc69b6c5912d84e44c554"
+    },
+    {
+      "source": "scripts/run_whole_task_receipt_history_pipeline.py",
+      "source_sha256": "9bd01083e5e199d7a1d23025fa1f02637ade9412a6347ef46b5809b02b961742",
+      "derived": "scripts/run_whole_task_public_only_history_pipeline.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ]
+      ],
+      "additional_unified_diff": [],
+      "derived_sha256": "e7f9db0dee6682436ba722606592a4cc567c73cf568fbe6c2af1315646f2dfd3"
+    },
+    {
+      "source": "scripts/audit_whole_task_receipt_history.py",
+      "source_sha256": "80af8d13a70977deeca4a0a086fca2c672f7f993a73472f89368355f907685b6",
+      "derived": "scripts/audit_whole_task_public_only_history.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ],
+        [
+          "from receipt_reasoning_history import",
+          "from public_only_reasoning_history import"
+        ]
+      ],
+      "additional_unified_diff": [
+        "--- scripts/audit_whole_task_receipt_history.py after declared substitutions",
+        "+++ scripts/audit_whole_task_public_only_history.py",
+        "@@ -289,7 +289,7 @@",
+        "             row['record_status'] = 'incomplete_worker'",
+        "         rows.append(row)",
+        "     result = {'phase': 'P114', 'batch_status': batch['status'], 'rows': rows, 'audit_errors': errors,",
+        "-        **summarize(rows, errors),",
+        "+        **summarize(rows, errors, read(root / 'reports/P111_comparison.json')['rows']),",
+        "         'pipeline_status_sha256': sha(pipeline_dir / 'status.json'),",
+        "         'server_final_sha256': sha(pipeline_dir / 'server_final.json'),",
+        "         'owned_processes_absent': True,"
+      ],
+      "derived_sha256": "12c935e2edebc1f479a50572f70a8175444135729a864ce36db87d7faf3a35b9"
+    },
+    {
+      "source": "scripts/inspect_whole_task_receipt_history_session.py",
+      "source_sha256": "52335292bfbf74c187285cc21be93ed672b5b7b4df6b6e8795dbb7dae3c60b29",
+      "derived": "scripts/inspect_whole_task_public_only_history_session.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ],
+        [
+          "len(report['rows']) != 12",
+          "len(report['rows']) != 4"
+        ],
+        [
+          "twelve",
+          "four"
+        ]
+      ],
+      "additional_unified_diff": [],
+      "derived_sha256": "0deebd35f53c558fedcd6e41a92acf925b7d13dbc00a365d3c52eac5983ddd1f"
+    },
+    {
+      "source": "scripts/build_receipt_history_live_summary.py",
+      "source_sha256": "5b535e0cfc6432a767046672a6c615adbfe4407e23b35f86ed5dab9bde2e6d7b",
+      "derived": "scripts/build_public_only_history_summary.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ],
+        [
+          "p111_results",
+          "p114_results"
+        ],
+        [
+          "len(audit['rows'])!=12",
+          "len(audit['rows'])!=4"
+        ],
+        [
+          "all_twelve_complete_with_known_usage",
+          "all_four_complete_with_known_usage"
+        ],
+        [
+          "all_conditions_retained=12",
+          "all_conditions_retained=4"
+        ]
+      ],
+      "additional_unified_diff": [
+        "--- scripts/build_receipt_history_live_summary.py after declared substitutions",
+        "+++ scripts/build_public_only_history_summary.py",
+        "@@ -1,4 +1,4 @@",
+        "-\"\"\"All P114 conditions and calls, after owned-server closure; no experiment I/O.\"\"\"",
+        "+\"\"\"All four new controls and all twelve historical references after closure.\"\"\"",
+        " import argparse",
+        " import csv",
+        " from datetime import datetime,timezone",
+        "@@ -22,7 +22,7 @@",
+        "     if (audit['audit_errors'] or len(audit['rows'])!=4 or not audit['owned_processes_absent']",
+        "             or session['status']!='stopped' or not session['owned_processes_absent']",
+        "             or session['audit_source_sha256']!=sha(root/'reports/P114_comparison.json')):",
+        "-        raise ValueError('closed_all_twelve_audited_conditions_required')",
+        "+        raise ValueError('closed_all_four_audited_conditions_required')",
+        "     folder=root/'materials/20261025_p114_results';folder.mkdir()",
+        "     conditions=[];calls=[];views=[];private={}",
+        "     for row in audit['rows']:",
+        "@@ -73,8 +73,16 @@",
+        "         'latest_execution_eligible','removed_turns','redisplayed_turns','signature_unbound_turns',",
+        "         'original_reasoning_characters','supplied_reasoning_characters','removed_reasoning_characters',",
+        "         'public_history_sha256','original_history_sha256','supplied_history_sha256'],views)",
+        "+    historical=read(root/'reports/P111_comparison.json')",
+        "+    if historical['audit_errors'] or len(historical['rows'])!=12:",
+        "+        raise ValueError('all_twelve_historical_rows_required')",
+        "+    csvfile(folder/'historical_P111_conditions.csv',[",
+        "+        'run_id','task_id','reasoning_display_policy','record_status','success','stop_reason',",
+        "+        'model_calls','known_total_tokens','unknown_usage_calls','api_requests',",
+        "+        'input_tokens','output_tokens','cached_input_tokens','wall_seconds','full_wall_seconds'],historical['rows'])",
+        "     summary={k:audit[k] for k in ('phase','batch_status','planned_rows','independent_tasks',",
+        "         'repetitions','comparisons','development_gate_met','all_four_complete_with_known_usage',",
+        "+        'historical_reference_rows','contemporaneous_comparison',",
+        "         'novel_method_claim','general_quality_preservation_claim','interpretation')}",
+        "     summary.update(model_attempts=len(calls),known_logical_tokens=sum(c['total_tokens'] or 0 for c in calls),",
+        "         unknown_usage_attempts=sum(c['status']!='ok' for c in calls),",
+        "@@ -82,27 +90,30 @@",
+        "         all_conditions_retained=4,original_P110_hypothetical_counts_reused_as_cost=False)",
+        "     write(folder/'summary.json',summary)",
+        "     write(folder/'server_cost.json',session)",
+        "-    lines=['# P114: 推論履歴３方式の全仕事比較','',",
+        "-        '既知４課題×３方式、各１回の開発比較. 全条件と不明使用量、失敗、未実行を保持する.',",
+        "-        '', '| 課題 | 表示 | 成否 | 既知の全論理token | 不明使用量 | 生成 | API |',",
+        "-        '|---|---|---|---:|---:|---:|---:|']",
+        "-    for r in audit['rows']:",
+        "+    lines=['# P114: 内部推論を再入力しない通常対照','',",
+        "+        '既知４課題を初期状態から各１回実行した通常対照の全記録. P111の全12条件は過去参照であり、'",
+        "+        '同時実行の対照でも未見の確認試験でもない. 全条件と不明使用量、失敗、未実行を保持する.',",
+        "+        '', '| 出典 | 課題 | 表示 | 成否 | 既知の全論理token | 不明使用量 | 生成 | API |',",
+        "+        '|---|---|---|---|---:|---:|---:|---:|']",
+        "+    for phase,r in [('P114',r) for r in audit['rows']]+[('P111 過去参照',r) for r in historical['rows']]:",
+        "         success='成功' if r['success'] is True else '未達' if r['success'] is False else r['record_status']",
+        "         lines.append('| '+' | '.join(str(v) if v is not None else '不明' for v in (",
+        "-            r['task_id'],r['reasoning_display_policy'],success,r.get('known_total_tokens'),",
+        "+            phase,r['task_id'],r['reasoning_display_policy'],success,r.get('known_total_tokens'),",
+        "             r.get('unknown_usage_calls'),r.get('model_calls'),r.get('api_requests')))+' |')",
+        "-    lines+=['',f\"開発上の両対照条件: {summary['development_gate_met']}. この真偽だけで新規性や一般化を主張しない.\",'',",
+        "+    lines+=['','通常対照の校正であり新手法の採用判定を行わない. P111の元の採用基準と結果は変更しない.', '',",
+        "         '[全条件](all_conditions.csv)／[全生成試行](all_model_calls.csv)／[全表示判断](all_projections.csv)／'",
+        "-        '[各対照との成否別比較](summary.json)／[サーバー全費用](server_cost.json).','',",
+        "+        '[過去P111の全条件](historical_P111_conditions.csv)／[成否別の記述比較](summary.json)／[サーバー全費用](server_cost.json).','',",
+        "         '使用量不明の要求を０へ補完しない. known_logical_tokensは既知部分の合計であり、'",
+        "         '不明があれば全費用は未確定. control時間はwork内、work/setup/cleanupはfull内、'",
+        "         '評価とloadはserver内なので重複加算しない. cached tokenの減少を論理tokenや時間の削減と同一視しない.','',",
+        "-        'P110の仮想入力を実費用や新方式の品質へ転記していない. 全履歴の原文と生のモデル推論は非公開保存先に置く. '",
+        "+        'P111参照の費用を今回の追加費用に加算しない. 初回の完全要求と計数は過去の３方式と照合する. '",
+        "+        '全履歴の原文と生のモデル推論は非公開保存先に置く. '",
+        "         '未見12課題と原稿保留を維持する.','',",
+        "         '[固定比較](../../docs/experiments/P114_whole_task_public_only_history.md)／[全監査](../../reports/P114_comparison.json).']",
+        "     (folder/'README.md').write_text('\\n'.join(lines)+'\\n')",
+        "     write(folder/'build_manifest.json',dict(created_at=datetime.now(timezone.utc).isoformat(),",
+        "         builder_sha256=sha(Path(__file__)),source_audit_sha256=sha(root/'reports/P114_comparison.json'),",
+        "+        historical_P111_audit_sha256=sha(root/'reports/P111_comparison.json'),",
+        "         private_source_sha256=private,public_artifact_sha256={p.name:sha(p) for p in sorted(folder.iterdir())},",
+        "         additional_model_calls=0,additional_API_requests=0,additional_evaluations=0))",
+        "     print(json.dumps({k:summary[k] for k in ('model_attempts','unknown_usage_attempts','development_gate_met')}))"
+      ],
+      "derived_sha256": "dd90ebc67d5d449c21a771c48195fa4c935aede77477bc1dfc2fee5762f43685"
+    },
+    {
+      "source": "tests/receipt_history_worker_fixture.py",
+      "source_sha256": "0b1726be25bf02420d56d6bb5606c0e807f400b404e90cdc6bd66e4339da4a55",
+      "derived": "tests/public_only_history_worker_fixture.py",
+      "initial_substitutions": [
+        [
+          "whole_task_receipt_history",
+          "whole_task_public_only_history"
+        ],
+        [
+          "receipt_history_inference",
+          "public_only_history_inference"
+        ],
+        [
+          "ReceiptHistoryInference",
+          "PublicOnlyHistoryInference"
+        ],
+        [
+          "P111",
+          "P114"
+        ]
+      ],
+      "additional_unified_diff": [
+        "--- tests/receipt_history_worker_fixture.py after declared substitutions",
+        "+++ tests/public_only_history_worker_fixture.py",
+        "@@ -31,7 +31,7 @@",
+        "     return original, plan, item",
+        " ",
+        " ",
+        "-def fixture(*, policy='full', arm='error_exception', actions=('echo','finish'),",
+        "+def fixture(*, policy='public_only', arm='error_exception', actions=('echo','finish'),",
+        "             count_delay=0, unknown_api=False, cleanup_ok=True, first_cached=0,",
+        "             initial_mismatch=False, token_limit=600, api_limit=8, stop_after_api=False,",
+        "             response_delay=0, folder=None):"
+      ],
+      "derived_sha256": "f93648effb677b94982b11a50900f733694730f7d95ec967faeba30292951151"
+    }
+  ],
+  "previous_sources_unchanged": true,
+  "source_publication_commit": "d97225e37d753a1a65b4ceb1751dfb38951cab9e",
+  "method": "New files derived from immutable P111 sources. Exact name substitutions and remaining diffs are recorded. The worker and owned pipeline differ only in module/phase/class names; session scope is four cells.",
+  "differences": [
+    "Unconditionally omit all prior reasoning fields, including latest and failed turns, in outgoing display only",
+    "Four new ordinary controls; all twelve P111 outcomes remain historical references",
+    "Historical first complete requests, native counts, controls and model/runtime/context must match",
+    "Unknown costs remain unknown; bounds use nonnegative usage only and never absent slots",
+    "No new-method adoption gate; P111 gates and original results are immutable"
+  ],
+  "actual_model_generations": 0
+}
