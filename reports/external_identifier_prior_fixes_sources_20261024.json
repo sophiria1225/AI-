@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-24T13:07:30.903537+00:00",
+  "repository": "huggingface/smolagents",
+  "PRs": [
+    {
+      "number": 2684,
+      "url": "https://github.com/huggingface/smolagents/pull/2684",
+      "title": "fix: preserve tool calls with missing or duplicate IDs",
+      "state": "open",
+      "merged": false,
+      "merge_commit_sha": "fc7ea84612202dc938563a88859cb64b052f099e",
+      "head_sha": "bd00a936e9f1929950e39a621e47b9b47628cbb8",
+      "base_sha": "30bb1161095dbae2271e6bc3cc4c219cc3897a57",
+      "created_at": "2026-08-23T16:01:37Z",
+      "updated_at": "2026-10-05T01:23:44Z",
+      "changed_files": 2
+    },
+    {
+      "number": 2999,
+      "url": "https://github.com/huggingface/smolagents/pull/2999",
+      "title": "Preserve tool calls with duplicate or missing IDs",
+      "state": "open",
+      "merged": false,
+      "merge_commit_sha": "965716b5cafb2da5dd3a27fa149e63fe8ef73f9b",
+      "head_sha": "c4109249f8b5d0970c800debff5fd03708bed0c8",
+      "base_sha": "96f33faaf028479119ec8d34507b47694cf14e34",
+      "created_at": "2026-10-16T02:56:23Z",
+      "updated_at": "2026-10-18T00:02:08Z",
+      "changed_files": 2
+    }
+  ],
+  "sources": [
+    {
+      "PR": 2684,
+      "head": "bd00a936e9f1929950e39a621e47b9b47628cbb8",
+      "path": "src/smolagents/agents.py",
+      "git_blob_sha": "9f27a82081f9127ea2813cabcfddfc303589e3b7",
+      "git_blob_verified": true,
+      "sha256": "5db8d4081f3f9f0eb03a16d22e38528d01acc2f6df29052b35b8bf0869420c90",
+      "patch_sha256": "8ad225d9b141480cfb880dbe07e899ea67a440893a553c220aa3aa6bd43cb791",
+      "read_scope": "All supplied patch hunks for the changed method and added tests; full fetched file hash verified, no claim of whole-file semantic review.",
+      "url": "https://github.com/huggingface/smolagents/blob/bd00a936e9f1929950e39a621e47b9b47628cbb8/src/smolagents/agents.py"
+    },
+    {
+      "PR": 2684,
+      "head": "bd00a936e9f1929950e39a621e47b9b47628cbb8",
+      "path": "tests/test_agents.py",
+      "git_blob_sha": "cd1290a0813180463b5e8b0296cf53d33c14c016",
+      "git_blob_verified": true,
+      "sha256": "89feacd667cc9954ef502b673f38464102f4a24f9d11ecf161ee79c554ed169f",
+      "patch_sha256": "631dd74fc205629293b71d9e39f6541db11ce87b73ad1f211f924cf083c051c9",
+      "read_scope": "All supplied patch hunks for the changed method and added tests; full fetched file hash verified, no claim of whole-file semantic review.",
+      "url": "https://github.com/huggingface/smolagents/blob/bd00a936e9f1929950e39a621e47b9b47628cbb8/tests/test_agents.py"
+    },
+    {
+      "PR": 2999,
+      "head": "c4109249f8b5d0970c800debff5fd03708bed0c8",
+      "path": "src/smolagents/agents.py",
+      "git_blob_sha": "8d8a17ccfec9844e3b20ac3114430c3908fbcb7e",
+      "git_blob_verified": true,
+      "sha256": "3115ee2c10271e1072bf75ac9e3c4c0588e408e8ab91fe50ac4c214cf9be8b99",
+      "patch_sha256": "0598c1b0206373348cba973de82fa31fc6ea4728ed734ddbdec0838717b76001",
+      "read_scope": "All supplied patch hunks for the changed method and added tests; full fetched file hash verified, no claim of whole-file semantic review.",
+      "url": "https://github.com/huggingface/smolagents/blob/c4109249f8b5d0970c800debff5fd03708bed0c8/src/smolagents/agents.py"
+    },
+    {
+      "PR": 2999,
+      "head": "c4109249f8b5d0970c800debff5fd03708bed0c8",
+      "path": "tests/test_tool_call_id_preservation.py",
+      "git_blob_sha": "6e84e17f564729b07c9a79ef5aebbb4116f7e733",
+      "git_blob_verified": true,
+      "sha256": "f06d56502646107eb106aeccb69e2707fbbd0b0a5d1415ab8f51096372436550",
+      "patch_sha256": "e6e4cf57e8f3f87163e31106ef7924292981b445f50d51da54cd104fb344db25",
+      "read_scope": "All supplied patch hunks for the changed method and added tests; full fetched file hash verified, no claim of whole-file semantic review.",
+      "url": "https://github.com/huggingface/smolagents/blob/c4109249f8b5d0970c800debff5fd03708bed0c8/tests/test_tool_call_id_preservation.py"
+    }
+  ],
+  "private_receipt_sha256": "e24170bd2a60c5435ffbaa1a94cc1edf4f5585804a8ea7487ac0cb68bc839be4",
+  "tests_executed": false,
+  "external_code_installed": false,
+  "model_generations": 0,
+  "environment_API_requests": 0,
+  "evaluations": 0,
+  "external_writes": 0,
+  "prior_PR_test_pass_claim_independently_verified": false,
+  "P99_intermediate_outcomes_read": false,
+  "original_source_review": "reports/external_history_identifier_sources_20261024.json"
+}
