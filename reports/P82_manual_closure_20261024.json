@@ -1,0 +1,131 @@
+{
+  "status": "complete",
+  "phase": "P82_manual_closed_report_review",
+  "at": "2026-10-24T00:25:16.924487+00:00",
+  "original_automatic_statuses": {
+    "P82_closure_status": {
+      "status": "stopped",
+      "model_generations": 0,
+      "automatic_retries": 0,
+      "stages": [
+        {
+          "script": "audit_late_clock_comparison.py",
+          "exit_code": 0,
+          "seconds": 1.0204450000019278
+        },
+        {
+          "script": "compare_late_clock_trajectories.py",
+          "exit_code": 0,
+          "seconds": 0.5101212089939509
+        },
+        {
+          "script": "inspect_late_clock_session.py",
+          "exit_code": 0,
+          "seconds": 0.5103412499884143
+        },
+        {
+          "script": "profile_late_clock_calls.py",
+          "exit_code": 0,
+          "seconds": 0.5103630830126349
+        },
+        {
+          "script": "build_late_clock_report_v02.py",
+          "exit_code": 1,
+          "seconds": 2.034157750022132
+        }
+      ],
+      "observed": [
+        "complete",
+        24,
+        null
+      ],
+      "active": "build_late_clock_report_v02.py",
+      "error_type": "RuntimeError",
+      "error": "report_stage_failed_no_retry",
+      "elapsed_seconds": 16235.397697208013
+    },
+    "P82_manuscript_status": {
+      "status": "stopped",
+      "model_generations": 0,
+      "automatic_retries": 0,
+      "visual_review_pending": true,
+      "publication_pending": true,
+      "stages": [],
+      "error_type": "ValueError",
+      "error": "closed_report_pipeline_stopped_no_manuscript",
+      "elapsed_seconds": 10191.923747083987
+    },
+    "P84_continuation_status": {
+      "status": "stopped",
+      "automatic_retries": 0,
+      "model_allocated_by_waiter": false,
+      "wait_limit_seconds": 72000,
+      "started_at": "2026-10-23T22:12:06.926137+00:00",
+      "controller_commit": "8af247a90e9b6994c263e387f7c63f13bd45f705",
+      "controller_ci": [
+        {
+          "id": 40031920542,
+          "head_sha": "8af247a90e9b6994c263e387f7c63f13bd45f705",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "successful_job_id": 120681976597
+        },
+        {
+          "id": 40031847865,
+          "head_sha": "8af247a90e9b6994c263e387f7c63f13bd45f705",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "successful_job_id": 120681739950
+        }
+      ],
+      "elapsed_seconds": 7600.320863000001,
+      "error_type": "ValueError",
+      "error": "P82_closure_failed_no_auto_continuation",
+      "finished_at": "2026-10-24T00:18:47.257554+00:00"
+    },
+    "P84_closure_status": {
+      "status": "stopped",
+      "automatic_retries": 0,
+      "additional_model_calls": 0,
+      "stages": [],
+      "visual_review_pending": true,
+      "publication_pending": true,
+      "wait_limit_seconds": 86400,
+      "error_type": "ValueError",
+      "error": "P84_continuation_stopped_without_pipeline",
+      "elapsed_seconds": 7600.549071042013
+    }
+  },
+  "original_status_files_changed": false,
+  "watchers_restarted": false,
+  "analysis_reports_reexecuted": false,
+  "presentation_only_revisions": true,
+  "manuscript_first_build_after_waiter_stopped": true,
+  "conditions": 24,
+  "model_calls": 426,
+  "unknown_usage_calls": 4,
+  "audit_errors": [],
+  "all_original_gates_met": false,
+  "interval_analysis_failed": true,
+  "conditional_intervals_reported": false,
+  "original_interval_method_changed": false,
+  "sources_sha256": {
+    "reports/P82_comparison.json": "5322017d148299e1176b26db1b4bca47f47603ae2e644ed31ce2106f077e5a3e",
+    "reports/P82_trajectory_stability.json": "517a275e1a3c58a94a7cedbf71f93f3cca39fa732de7cdc447581b788ec38a5f",
+    "reports/P82_server_session.json": "b4494bbd51f1f8f9223ee0e8e2fa88662438f60919c7235cb6ede60a8a7230fd",
+    "reports/P82_call_profile.json": "2ba4c0d0a37a9b8c446694736c798f71aab7a84133840a6c564d8a3fa22118df",
+    "reports/P82_interval_failure_20261024.json": "9dd570f3dfd5815cbb5f7e299b21ea1567c136417e1fb8ed367bd8c4b65427d3",
+    "materials/20261024_p82_results_final/build_manifest.json": "d6812de2bea08c045d6464438f128db3a51a6bdef6647db478e502ded87fc8e8",
+    "materials/20261024_p82_results_final/layout_checks.json": "14337a480134ce63e495b396e7d299992fca08fdc5a03aa2968413ba0ec251f7",
+    "materials/20261024_p82_results_final/visual_review.json": "fefc414315c06c53e9a183f7dc3013255baa0d214dcd6a4eaf7f1ccab7992bc8",
+    "materials/20261024_p82_results_final/AI_harness_late_clock_comparison_20261024.pdf": "2601698a7305446beae6df6fbdf227c36e1950bd6b5958e4592e583ae401473b",
+    "papers/202610_letter/late_time_control/build_manifest.json": "2f0d85464d53e9cbd3415a0950eb785ade5732bca896dfdb8caf21775f509eb2",
+    "papers/202610_letter/late_time_control/visual_review.json": "31ac40898c8587a28bc77e2a5686a14452116712f8d69223c0cff464ebd5dae1",
+    "papers/202610_letter/late_time_control/draft.pdf": "fd12c888107bef97bc39d9e856495b69b7b6bc5d07e47a5422ba4d4c02548b70"
+  },
+  "additional_model_generations": 0,
+  "additional_environment_api_requests": 0,
+  "additional_evaluations": 0
+}

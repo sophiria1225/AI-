@@ -1,0 +1,86 @@
+{
+  "phase": "P82_interval_attempt_and_failure_diagnosis",
+  "created_at": "2026-10-24T00:23:20.111690+00:00",
+  "original_attempts": 1,
+  "original_error_type": "ValueError",
+  "original_error": "cancelled_generation_progress_required_for_bound",
+  "original_method_changed": false,
+  "original_interval_result_created": false,
+  "prepared_resource_analysis_run": false,
+  "diagnostic_only": true,
+  "server_launches": 426,
+  "known_receipts_checked": 422,
+  "unknown_calls": [
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "call_id": "call_021",
+      "server_task": 55034,
+      "peak_logged_progress": 1220,
+      "cancelled": true,
+      "terminal_generated_present": false,
+      "predicted_input_tokens": 35309,
+      "request_output_cap": 4096,
+      "failed_original_requirements": [],
+      "launch_line": 2826,
+      "release_line": 2858
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "call_id": "call_021",
+      "server_task": 79197,
+      "peak_logged_progress": 0,
+      "cancelled": true,
+      "terminal_generated_present": false,
+      "predicted_input_tokens": 39626,
+      "request_output_cap": 4096,
+      "failed_original_requirements": [
+        "no_positive_logged_generation_progress"
+      ],
+      "launch_line": 3585,
+      "release_line": 3589
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "call_id": "call_021",
+      "server_task": 158962,
+      "peak_logged_progress": 0,
+      "cancelled": true,
+      "terminal_generated_present": false,
+      "predicted_input_tokens": 39626,
+      "request_output_cap": 4096,
+      "failed_original_requirements": [
+        "no_positive_logged_generation_progress"
+      ],
+      "launch_line": 7244,
+      "release_line": 7249
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "call_id": "call_021",
+      "server_task": 180715,
+      "peak_logged_progress": 1319,
+      "cancelled": true,
+      "terminal_generated_present": false,
+      "predicted_input_tokens": 35767,
+      "request_output_cap": 4096,
+      "failed_original_requirements": [],
+      "launch_line": 7932,
+      "release_line": 7976
+    }
+  ],
+  "original_unknown_usage_calls": 4,
+  "original_adoption_gate_changed": false,
+  "additional_generations": 0,
+  "additional_input_count_requests": 0,
+  "additional_api_requests": 0,
+  "additional_evaluations": 0,
+  "private_reasoning_inspected_semantically": false,
+  "private_log_sha256": "93f4ca497db58b3c9934f05995bce5589b29f5427d6d0d72483d0ff656ee15f5",
+  "source_sha256": {
+    "reports/P82_comparison.json": "5322017d148299e1176b26db1b4bca47f47603ae2e644ed31ce2106f077e5a3e",
+    "reports/P82_server_session.json": "b4494bbd51f1f8f9223ee0e8e2fa88662438f60919c7235cb6ede60a8a7230fd",
+    "scripts/inspect_late_clock_usage_intervals.py": "f4cb1eaa0bbc1844b220ba2f3625f4a339200bb5cd618bed97d4728bb72e2053",
+    "scripts/inspect_budget_visibility_usage_bounds.py": "debea64f1cf568c9652a8c6aae635da7435a4606049528cd5c549cad4b436dd4",
+    "scripts/inspect_repetition_usage_intervals.py": "2e1b97a3d05a21bc31eea073aa75d4a6acf6c4be85a276785f7d5bca472e1735"
+  }
+}

@@ -1,50 +1,50 @@
-# 現在の研究と実行を引き継ぐ
+# 研究と実行の引き継ぎ
 
-2026-10-24更新。ユーザーは「こちらが止めるまで継続」、さらに就寝中も実行継続を指示した。再度の許可は不要。新しい停止指示が来たら直ちに従う。以前の停止記録を削除したり、終了済み実験を再試行したりしない。
+2026-10-24更新。ユーザーは就寝中も「こちらが何か言うまで実行継続」を指示した。新しい停止指示はない。再度の許可は不要で、新しい停止指示には直ちに従う。最終目標は必要情報・処理と成果品質を保った全仕事費用の削減。25日まで追加確認・採否、29〜30日原稿、31日投稿完了を目指す。新規手法・一般品質維持・採録に足る中核は未確立。
 
-最終目標は必要情報・処理と最終品質を保った全仕事費用の削減。25日まで追加確認と採否、29〜30日に原稿整備、31日にレター投稿完了を目指す。新規手法・一般的品質維持・採録に足る貢献は未確立。[現在の状態](docs/current_status.md)と[次の判断](docs/next_actions.md)を先に読む。
+[現在状態](docs/current_status.md)、[次の作業](docs/next_actions.md)、[AGENTS](AGENTS.md)、[当初の引き継ぎ](docs/handoff_20261022_account_switch.md)を読む。古い停止記録は保存し、現在の停止指示と混同しない。
 
-## 同じMacの保存先と作業木
+## 保存先と作業木
 
-| 用途 | 絶対パス／固定版 |
+| 用途 | 場所 |
 |---|---|
-| モデル・データ・Git管理外記録・環境 | `/Users/tp26013/AI-` |
-| 最新の編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-prep` |
-| P82の実行木 | `/Users/tp26013/AI-/.runtime/worktrees/p82-run`、`ce81c87ed4a456543859ee98e5aec9e7c5703b77`固定。実行中は編集しない |
-| P84の接続待機木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-controller`、`8af247a90e9b6994c263e387f7c63f13bd45f705`固定。接続処理が待機中 |
-| P84の固定実行・終了後出力木 | `/Users/tp26013/AI-/.runtime/worktrees/p84-run`、`1dfa3cafb9e111cffaea2b563513db890e85ebce`固定。本実行未開始、終了後処理待機中 |
-| P82終了後の資料・原稿出力木 | `/Users/tp26013/AI-/.runtime/worktrees/p82-prep`。待機処理が出力するので、無断で切替・削除しない |
+| モデル・環境・私有記録 | `/Users/tp26013/AI-` |
+| 編集木 | `.runtime/worktrees/p84-prep`。現在のブランチはgit statusで確認 |
+| P84の実行木 | `.runtime/worktrees/p84-run`、`1dfa3cafb9e111cffaea2b563513db890e85ebce`固定・実行中。変更しない |
+| P82の終了済み実行木 | `.runtime/worktrees/p82-run`、`ce81c87ed4a456543859ee98e5aec9e7c5703b77`。終了出力を保持 |
+| P82旧資料木 | `.runtime/worktrees/p82-prep`。初回配置失敗の資料・監査を保持。切替や清掃をしない |
+| P84旧接続木 | `.runtime/worktrees/p84-controller`、`8af247a90e9b6994c263e387f7c63f13bd45f705`。停止済みの接続処理を再起動しない |
 
-最新編集木のブランチは変わり得るため `git status --short --branch` で確認する。p82-prepの未追跡成果物は終了後処理が作った可能性がある。上書き・清掃しない。コードをcloneするだけでは私有記録・モデルは戻らない。
+Pythonは保存先の`.runtime/p3_ci_venv/bin/python`、資料は`.runtime/reporting-venv/bin/python`。TeXは`.runtime/letter_tex/v2026.10/portable/TinyTeX/bin/universal-darwin`。AppWorld・vendor・モデルはGit管理外で、cloneだけでは復元しない。
 
-## 動いている処理
+## 現在動いているP84
 
-P82は常時残時間表示M、非表示H、後半表示Lを、同じ表示前参照統一下で既知４課題×２反復、全24条件実行中。[固定計画と開始判断](docs/P82_execution_decision_20261024.md)。途中の結果で順序・閾値・予算を変更しない。
+09:25 JST、[別途の初回実行判断](docs/P84_manual_execution_decision_20261024.md)後に固定実行器を一度起動した。全６初期計数は一致し、生成中。実行セッションは51432。６入力×３反復、18生成、総予約481,671論理token、１生成480秒、生成段階10,800秒、推論器12,600秒。生成コード・環境API・評価は実行しない。
 
-保存先を `/Users/tp26013/AI-` とすると、状態は次を読む。
+状態は`records/context_pilot/P84_pipeline_v01/status.json`、`P84_preflight_v01/status.json`、`P84_fallback_output_v01/status.json`。推論器記録は`records/p2_servers/20261024_092534`。途中の出力で順序・入力・上限・seedを変えない。未知使用量や通信失敗で停止し、再試行しない。
 
-- `records/context_pilot/P82_pipeline_v01/status.json` と `P82_batch_v01/status.json`：本実行。
-- `.runtime/P82_closure_status.json`：終了後の全件監査、経路照合、推論器・呼出し集計、７枚資料。
-- `.runtime/P82_manuscript_status.json`：上記が成功した後の原稿数表とPDF作成。目視・解釈・公開は未実施として残す。
+停止には保存先の`.runtime/P84.stop`を作り、所有実行器と推論器の終了を確認する。研究全体の停止では`.runtime/P82.stop`も作る。停止印・lockを勝手に削除しない。
 
-待機処理はそれぞれ既存lockを持ち、最大72,000秒待機、段階ごと最大300秒、失敗時の自動再試行０。新たに同じ処理を起動しない。原稿の組版先は `.runtime/P82_manuscript_real_render`。開始前に既存の結果表・PDFがないことと準備６出典の不変を確認済み。
+P84の元自動接続はP82資料の配置失敗を受けて停止し、元の終了後資料待機も停止した。`.runtime/P84_continuation_status.json`と`P84_closure_status.json`はその記録であり、現在のP84実行状態ではない。再起動しない。元の`.runtime/P84_execution_decision.json`は作らず、別の`.runtime/P84_manual_execution_decision_20261024.json`へ判断を保存した。P82不明４件も元の自動条件も維持した。
 
-停止時は `.runtime/P82.stop` を作り、本実行・終了後監査・原稿待機の停止を確認する。資料処理のみの停止は `.runtime/P82_reports.stop`、原稿のみは `.runtime/P82_manuscript.stop`。停止ファイルを勝手に削除しない。
+P84終了後は、所有推論器停止・PID不在を確認し、出力がまだない場合だけ固定木で`audit_fallback_output.py --storage-root /Users/tp26013/AI-`、続いて資料Pythonで`build_fallback_output_report.py --pdf`を各一度手動実行する。全18枠と全15比較を保持し、全頁目視後に同一hashで編集木へ取り込む。既存出力は上書きしない。
 
-P84は準備済み・本実行未開始。両CIとジョブ成功を確認して、接続処理と終了後処理を一度だけ起動済みである。P82の全24件監査・使用量既知・所有推論器停止を確認した場合だけ固定した18生成へ接続する条件を決めた。[接続の詳細](docs/P84_continuation_decision_20261024.md)。待機状態は `.runtime/P84_continuation_status.json`、実際の開始判断は `.runtime/P84_execution_decision.json`、終了後処理は `.runtime/P84_closure_status.json` に保存する。研究全体の停止時には `.runtime/P82.stop` と `.runtime/P84.stop` の双方を作る。待機のみは `P84_continuation.stop`、P84資料のみは `P84_reports.stop`。既存lock・停止印を削除しない。途中のP82完了記録に使用量不明２生成を確認したため、全使用量既知を要求する自動接続はこのままでは通らない。接続条件を変更せず全件監査を待ち、P84の独立した問いへの実行判断を改めて記録する。現在はP84モデル割当て・計数・生成０。[計画](docs/experiments/P84_fallback_output.md)を変更せず、別の実験で不明使用量を埋めない。
+## P82は全件終了
 
-P82の[条件付き区間解析](docs/P82_interval_preparation_20261024.md)は準備のみ。終了後に監査・セッションの同一hashを確認して別版で実行する。実ログは未読、区間未算出、自動待機処理は追加していない。不明数と元の４採否を保持する。
+全24条件、426生成、既知4,602,713論理token、不明４生成、1,156 API、24評価、監査不一致０。M成功は3/4・2/4、H/Lは両反復3/4。全４採用基準未達。所有推論器停止・両PID不在済み。[全結果](docs/P82_findings.md)。
 
-条件付き区間が全件照合を通った後、[P82資源別集計](docs/P82_resource_preparation_20261024.md)を別処理で作る。全24行・48側別CSVを保存し、未知cache量を補完しない。この実集計も未生成である。
+初回資料の２ページで表が注記に重なり、資料待機・原稿待機・P84接続待機が停止した。監査・経路・セッション・呼出し集計はすでに成功しており再実行していない。元の`.runtime/P82_closure_status.json`と`P82_manuscript_status.json`を変更せず、別の`.runtime/P82_manual_closure_status_20261024.json`に終了レビューを保存した。
 
-P82/P84が閉じた後の[統合稿の構築処理](papers/202610_letter/closed_control_integration/README.md)を準備した。自動待機処理は追加していない。同一hashの報告を解析版へ保存後、build_closed_control_draft.pyとrender_bound_letter_draft.pyを実行する。実結果の表・PDFは未生成。区間が成立しなければ理由を残し、明示的な省略指定で欠測を保持できる。
+編集木の`materials/20261024_p82_results`に初回失敗、`_v02`に表修正、`_final`に表紙・凡例・全８表示位置を含む最終８頁を保存した。全CSVはbyte一致。全８頁を確認済み。原稿は`papers/202610_letter/late_time_control`の本文３頁＋英文１頁を全頁確認済み。組版私有出力は`.runtime/P82_manuscript_manual_render_20261024`。準備済みの元TeX・READMEは出典固定のため保持し、新しい`RESULTS.md`が実結果の入口となる。
 
-## 保存した結果と未完了事項
+狭い区間解析は一度実行し、Hの未知２件に正の生成進捗がなく停止した。４欠測・既知422件の照合結果は`reports/P82_interval_failure_20261024.json`。元の区間コードは変更せず、`P82_usage_intervals_20261024.json`は未作成。区間入力を必要とする準備済み資源集計も実行していない。
 
-[現在の状態](docs/current_status.md)に、P80/P81、P83、費用指標の再集計、先行研究、原稿の入口をまとめた。実験結果・準備台帳・既存原稿のhashを保ち、必要な改訂は別版にする。README等の入口は更新してよい。
+代わりに公開計数だけを集計した`materials/20261024_p82_observed_resources`を作った。未知の非負性だけでL−Mは少なくとも＋197,929論理tokenといえるが、両側欠測のL−Hは未確定。これは失敗した区間解析の再試行・代替値ではない。全24行と48側別区分を保存した。
 
-[教授用案](materials/20261023_professor_brief/README.md)の日英題名・456字あらましは維持する。著者名・所属・順序を推測しない。公式様式確認は未完了。外部送信・投稿は未実施。
+## 原稿・公開の注意
 
-GitHub変更先は `sophiria1225/AI-` とその[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。全115件の作業ボードを部分集合で上書きしない。実モデル実験の開始とmainへの統合は、正確なHEADのpush/PR両CIとジョブ成功を確認する。
+P84が閉じた後、準備済み`build_closed_control_draft.py`では区間を明示的に省略する`--without-resource-intervals`を使い、失敗理由を記録する。実結果のあらまし・結論と観測計数集計は別版で統合する。固定済み原稿や出典台帳を上書きしない。
 
-[AGENTS.md](AGENTS.md)と[当初の引き継ぎ](docs/handoff_20261022_account_switch.md)も読む。長い時系列記録は[更新前RESUMEの固定版](https://github.com/sophiria1225/AI-/blob/6e38556bcff00b2cfb509da6a645e736f5fcce23/RESUME.md)に残っている。
+教授用の日英題名・456字あらましは保持。著者・所属・順序は未設定、現行公式クラスの確認も未完了。外部送信・投稿は行っていない。新規性や採録見込みを実装数で判断しない。保留12課題は未閲覧のまま維持する。
+
+GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全115件の作業ボードを部分集合で上書きしない。以前の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/RESUME.md)に保存した。

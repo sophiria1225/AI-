@@ -1,0 +1,44 @@
+[
+  {
+    "title": "残時間を知らせる時機を３条件で比べる",
+    "body": "<p class=\"body\">既知４課題×毎回表示M／非表示H／後半表示L×２反復。実期限と参照整形は共通。</p><table class=\"\"><tr><th>条件</th><th>成功／評価</th><th>全仕事token</th><th>不明生成</th><th>実行済み／予定</th></tr><tr><td>M 毎回表示</td><td>5/8</td><td>1,394,929</td><td>0</td><td>8/8</td></tr><tr><td>H 非表示</td><td>6/8</td><td>1,614,926＋不明2</td><td>2</td><td>8/8</td></tr><tr><td>L 後半表示</td><td>6/8</td><td>1,592,858＋不明2</td><td>2</td><td>8/8</td></tr></table>",
+    "takeaway": "各仕事を初期状態から実行。P80/P81の結果を新しい対照へ流用しない。",
+    "notes": "各条件は80生成、450000論理token、作業1800秒。Lは生成直前の整数残秒900以下から表示。長い生成中には通知できない。既知課題による開発比較であり、閾値・seed探索と保留課題閲覧は行わない。"
+  },
+  {
+    "title": "反復1：全12条件の成果と費用",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>M</td><td>成功</td><td>128,796</td><td>16</td><td>103</td><td>410.4</td></tr><tr><td>写真移動</td><td>H</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>497.6</td></tr><tr><td>写真移動</td><td>L</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>499.1</td></tr><tr><td>精算</td><td>M</td><td>成功</td><td>241,963</td><td>18</td><td>25</td><td>405.2</td></tr><tr><td>精算</td><td>H</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.9</td></tr><tr><td>精算</td><td>L</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>353.7</td></tr><tr><td>返金</td><td>M</td><td>成功</td><td>138,701</td><td>17</td><td>17</td><td>361.5</td></tr><tr><td>返金</td><td>H</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>324.9</td></tr><tr><td>返金</td><td>L</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>325.2</td></tr><tr><td>曲情報の書出し</td><td>M</td><td>未達</td><td>257,266</td><td>17</td><td>80</td><td>1515.5</td></tr><tr><td>曲情報の書出し</td><td>H</td><td>未達</td><td>358,638＋不明1</td><td>21</td><td>53</td><td>1799.4</td></tr><tr><td>曲情報の書出し</td><td>L</td><td>未達</td><td>348,419＋不明1</td><td>21</td><td>28</td><td>1799.5</td></tr></table>",
+    "takeaway": "未達・未評価・使用量不明も保持する。成功例だけで総費用を判断しない。",
+    "notes": "論理入力はcache再利用分も含む。未知使用量を０で補完しない。各最終状態を独立評価し、その正解や追加評価をモデルへ返さない。"
+  },
+  {
+    "title": "反復2：全12条件の成果と費用",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>作業秒</th></tr><tr><td>写真移動</td><td>M</td><td>未達</td><td>152,155</td><td>17</td><td>100</td><td>545.7</td></tr><tr><td>写真移動</td><td>H</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>491.5</td></tr><tr><td>写真移動</td><td>L</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>491.7</td></tr><tr><td>精算</td><td>M</td><td>成功</td><td>275,944</td><td>21</td><td>25</td><td>405.4</td></tr><tr><td>精算</td><td>H</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>350.4</td></tr><tr><td>精算</td><td>L</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>350.4</td></tr><tr><td>返金</td><td>M</td><td>成功</td><td>109,383</td><td>14</td><td>14</td><td>287.0</td></tr><tr><td>返金</td><td>H</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>322.2</td></tr><tr><td>返金</td><td>L</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>322.3</td></tr><tr><td>曲情報の書出し</td><td>M</td><td>未達</td><td>90,721</td><td>10</td><td>80</td><td>308.8</td></tr><tr><td>曲情報の書出し</td><td>H</td><td>未達</td><td>358,638＋不明1</td><td>21</td><td>53</td><td>1799.3</td></tr><tr><td>曲情報の書出し</td><td>L</td><td>未達</td><td>346,789＋不明1</td><td>21</td><td>30</td><td>1800.0</td></tr></table>",
+    "takeaway": "未達・未評価・使用量不明も保持する。成功例だけで総費用を判断しない。",
+    "notes": "論理入力はcache再利用分も含む。未知使用量を０で補完しない。各最終状態を独立評価し、その正解や追加評価をモデルへ返さない。"
+  },
+  {
+    "title": "同じ課題の３条件を両反復で見る",
+    "body": "<img class=\"cost-figure\" src=\"figures/P82_whole_task_costs.svg\" alt=\"全24条件の論理費用\">",
+    "takeaway": "塗りは成功、白抜きは未達・未評価。三角は既知費用に不明使用量が残る条件。",
+    "notes": "独立課題は４つ。同じ課題・seedの反復を別の課題として数えない。縦軸は課題ごとに異なる。"
+  },
+  {
+    "title": "Lは両対照に対し、両反復で基準を満たしたか",
+    "body": "<table class=\"results\"><tr><th>反復</th><th>対照</th><th>採用基準</th><th>成功喪失</th><th>全課題 L−対照</th><th>両側成功分</th><th>両側未達分</th></tr><tr><td>1</td><td>M</td><td>未達</td><td>0</td><td>未確定</td><td>未確定</td><td>未確定</td></tr><tr><td>1</td><td>H</td><td>未達</td><td>0</td><td>未確定</td><td>未確定</td><td>未確定</td></tr><tr><td>2</td><td>M</td><td>未達</td><td>0</td><td>未確定</td><td>未確定</td><td>未確定</td></tr><tr><td>2</td><td>H</td><td>未達</td><td>0</td><td>未確定</td><td>未確定</td><td>未確定</td></tr></table>",
+    "takeaway": "全４比較の基準：未達。一般的な品質維持や新規性の認定とは別。",
+    "notes": "全件評価・使用量既知・監査一致、課題ごとの成功喪失０、共通成功課題１以上、全４課題の論理費用減少を要求する。両側未達を安く終えた分と、共通成功課題の差を分ける。"
+  },
+  {
+    "title": "反復間の一致と、時間表示を始めた位置を残す",
+    "body": "<table class=\"\"><tr><th>条件</th><th>全使用量既知の対</th><th>全要求一致</th><th>全公開出力一致</th></tr><tr><td>M 毎回表示</td><td>4/4</td><td>0/4</td><td>0/4</td></tr><tr><td>H 非表示</td><td>3/4</td><td>3/3</td><td>3/3</td></tr><tr><td>L 後半表示</td><td>3/4</td><td>3/3</td><td>3/3</td></tr></table><p class=\"body\">反復間12対と反復内24対の全36対を保存。最初の入力差と最初の実測時間通知を記録。</p>",
+    "takeaway": "現在の通知をそろえた補助照合は、過去の履歴差や全仕事の因果効果を消去しない。",
+    "notes": "比は一致対数／全使用量が既知の判定対数。使用量欠測時は未確定。保存JSONと出力hashの比較であり、モデルtoken列や数値状態の同一性は証明しない。36対は独立標本ではない。"
+  },
+  {
+    "title": "推論器と全実行を含む費用の記録",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>実測値</th></tr><tr><td>新規生成</td><td>426</td></tr><tr><td>推論器滞在秒</td><td>16,263.58</td></tr><tr><td>初期化・作業・後片付け秒</td><td>16,192.11</td></tr><tr><td>評価秒（滞在時間に含む）</td><td>41.47</td></tr><tr><td>推論器の最大実測RSS GiB</td><td>220.24</td></tr></table>",
+    "takeaway": "論理token、cache、API、実時間は別の指標。重なる時間を加算しない。",
+    "notes": "通知構築・入力計数・失敗・再取得は仕事時間に含む。旧P80/P81は別セッション。ホストでは編集や軽量解析も進めており排他的な負荷条件ではない。自動再試行は行わない。"
+  }
+]
