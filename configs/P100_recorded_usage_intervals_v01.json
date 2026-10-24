@@ -1,0 +1,65 @@
+{
+  "phase": "P100",
+  "source_phase": "P97",
+  "cells": 12,
+  "independent_known_tasks": 4,
+  "expected_attempts": 223,
+  "expected_unknown_attempts": 2,
+  "max_file_bytes": 16777216,
+  "max_wall_seconds": 180,
+  "posthoc_sensitivity_analysis": true,
+  "unknown_lower_bound": 0,
+  "unknown_upper_bound": "predicted_input_plus_requested_output_cap",
+  "second_upper_bound": "configured_context_cap",
+  "novel_method_claim": false,
+  "original_gate_replaced": false,
+  "model_generations": 0,
+  "environment_API_requests": 0,
+  "evaluations": 0,
+  "saved_code_executions": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "P99_intermediate_outcomes_read": 0,
+  "limits": {
+    "context_tokens": 65536,
+    "output_tokens": 4096,
+    "cell_tokens": 450000,
+    "max_calls": 80
+  },
+  "run_ids": [
+    "BOC_P97_01_NONE",
+    "BOC_P97_01_GENERIC",
+    "BOC_P97_01_FACTUAL",
+    "BOC_P97_02_GENERIC",
+    "BOC_P97_02_FACTUAL",
+    "BOC_P97_02_NONE",
+    "BOC_P97_03_FACTUAL",
+    "BOC_P97_03_NONE",
+    "BOC_P97_03_GENERIC",
+    "BOC_P97_04_NONE",
+    "BOC_P97_04_GENERIC",
+    "BOC_P97_04_FACTUAL"
+  ],
+  "task_ids": [
+    "34d9492_1",
+    "3c13f5a_1",
+    "60d0b5b_1",
+    "6104387_1"
+  ],
+  "policies": [
+    "none",
+    "generic",
+    "factual"
+  ],
+  "source_sha256": {
+    "scripts/recorded_usage_intervals.py": "d6ca0e20eca58a71e181775920f256f4388ac6412766330706552f16c355fc03",
+    "scripts/inspect_recorded_usage_intervals.py": "72c827b0c1686c7eb859831d7cff45808f348df3e4ef7eeeef138bc1ad953567",
+    "tests/test_recorded_usage_intervals.py": "63f61bd461e7af7033dd435ccf7ec6249380d754814325308ba3a8e47be149aa",
+    "docs/experiments/P100_recorded_usage_intervals.md": "2ade9ba96ae5a93e7866cd7a90be36f1785a729b0ad19fabc80b12834adbc452",
+    "reports/P97_comparison.json": "f7e2b2de2cc1653bd2d04c1b1dec401b45276ed377edb95199199da7f4dffa92",
+    "reports/P97_server_session.json": "5184b4928abab049ce7bfa0eb2e050e4b2778f5d647aa734e6c44ee14ddb3de8",
+    "reports/P97_operational_output_deviation_20261024.json": "5b0265d66e6018345a0af793c060119b293edcda558012c71703528907d0f7c8",
+    "configs/P29_stateful_code_v01.json": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+    "configs/P97_recovery_notice_comparison_v01.json": "f5373ba79faaab965d0d92f22b39df0c7ead3f566e2d7658b412590156c385c7"
+  }
+}

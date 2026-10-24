@@ -1,7 +1,7 @@
 # AIハーネス研究
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P99は固定head 02932c74f532dc1a3b48ad443223ec9d575c3ad0の両workflow/job成功後に開始し、初期８要求を照合、924ソースbindingを凍結した。通常auto/requiredを既知４課題×２条件の固定順序で実行中。全件終了まで途中成否を使わず、所有サーバ終了後に全件監査・資料・原稿を一度作り全頁を確認する。P97は全12条件終了・通知案不採用。投稿候補はP98稿で、新手法は未確立。 [P99実行開始](materials/20261024_p99_started/README.md)／[P97全件結果](materials/20261024_p97_results/README.md)／[現在の原稿](papers/202610_letter/README.md)。未見12課題は保留。著者と公式クラスは未確認。
+P99の通常auto/required固定８条件を実行中。途中成否を読まず条件と924ソースbindingを保持。並行してP100で閉じたP97全12条件・223生成の不明費用を条件付き区間で扱う手順を準備した。追加９検査・全1,587検査成功、実解析は両CI後に一度だけ実行する。元の不明２生成と不採用判定を保持し、区間の大小を新手法としない。投稿候補はP98稿、新手法は未確立。 [P100準備](materials/20261024_p100_preparation/README.md)／[P99実行](materials/20261024_p99_started/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 必要な情報・処理と最終成果の品質を保ち、不要な取得・共有・モデル呼出し・実行・検証を減らす。制御・失敗・再取得を含む仕事全体の費用で評価する。
