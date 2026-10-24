@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P112の全204要求×３表示、612入力の計数を完了し、使用量既知202要求は実測入力と全件一致。選別は写真で同じ実軌跡の表示を4,003 token短縮した一方、実測全仕事は全保持より39,100 token増加。表示短縮と全仕事の増減を分け、会計上の残差を因果効果とは扱わない。P111は全方式3/4成功、採用基準未達、使用量不明２を維持。全12条件と全８比較の図を作成・目視確認した。次のP113は全204要求・610 APIの実行内容を照合する有限診断で、私有記録の処理は未開始。原稿保留、未見12課題は未閲覧、新規性と一般的品質維持は未確立。 [P112所見](docs/P112_findings.md)。
+P113で全12条件・204要求・610 APIの実行内容を照合し、全219対応位置を保存。完全要求が一致した31位置では出力差０。各方式対の最初の入力差は全12対で推論欄だけにあり、その位置でPython構文が11対、API列が９対で変わった。同じAPI列でも構文が異なる14位置を残し、API一致を状態全体の同値性とみなさない。比較は同じ４課題を共有し、独立サンプルではない。P111採用基準未達・未知使用量２を維持。次は今の持続Python構成で、内部推論を次回へ渡さない通常対照を初期状態から既知４課題で確認する計画を準備。原稿保留、未見12課題は未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P113_findings.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P112の全204要求×３表示、612入力の計数を完了し、使用量既�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p112-results-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p113-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -58,6 +58,8 @@ P112は全612入力の計数と全件資料を一度だけ終了した. 固定�
 
 P111/P112の実データ図６ファイルを生成し、PNG２枚の全ラベルと未知表示を目視した. [全件の図](materials/20261025_p111_p112_figures/README.md)と[P112所見](docs/P112_findings.md)を参照する. 合成図は公開結果へ含めない.
 
-P113は `configs/P113_receipt_history_trajectories_v01.json`に371公開ソース、444私有入力を固定済み. 私有記録の新しい処理は未開始. 同じ完全headのpushとpull_request、両workflowと両accounting-and-syntax jobが成功してから、`.runtime/worktrees/p113-run`で `scripts/inspect_receipt_history_trajectories.py --storage-root /Users/tp26013/AI-`を一度だけ実施する. `.runtime/P113_analysis_once_start.json`、`P113_collection_once_end.json`、公開reportとfailureを確認し、重ねて起動しない. 結果が完全なら `scripts/build_receipt_trajectory_summary.py --repo-root FIXED_TREE`で全件資料を作る.
+P113の全12条件・204要求・610 APIの診断と全件資料は一度だけ終了した. 固定実行木は `.runtime/worktrees/p113-run`、`5f8aa671ee154c1f50df481cc146bc70ff5376bd`. `.runtime/P113_analysis_once_start.json`、`P113_collection_once_end.json`、`P113_editor_artifacts_once_end.json`を保持し、再起動しない. 全12対と末尾を含む219位置を残した. [P113所見](docs/P113_findings.md)と[全件資料](materials/20261025_p113_results/README.md)を参照する.
 
-全12条件、204要求、610 API、12対の219対応位置を対象とする. 保存されたコードを実行せず、指紋と構文で差の出た位置を照合する. 同じAPI列を状態全体の同値性とみなさない. [固定規則](docs/experiments/P113_receipt_history_trajectories.md)を参照する. 既存の全台帳と未達判定を保持し、原稿と未見12課題には進まない. ユーザーが停止を指示した場合は直ちに従う.
+次のP114は、内部推論を次回入力に渡さない通常対照を、現在の持続Pythonとauto経路で最初から調べる４既知課題の計画候補. 計画と実装はまだ公開・固定していない. P76は８応答後から、P25は別のnative tool経路であり、今回の構成の初期状態からの対照へ読み替えない. P111は過去参照として全12条件を保持し、同時実行の対照や独立確認と呼ばない. 追加指示、閾値調整、seed探索、未見課題の閲覧は行わない.
+
+新しい[証拠の十分性と実行許可の先行確認](docs/evidence_commit_prior_scope_20261025.md)も判断へ含める. 現在のモデルサーバーはP111終了時に停止済み. 新しい有限計画と同じ完全headの両workflow・両job成功前に生成を始めない. 原稿は保留する. ユーザーの停止指示があれば直ちに従う.
