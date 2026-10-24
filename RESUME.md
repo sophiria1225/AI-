@@ -47,4 +47,6 @@ P84が閉じた後、準備済み`build_closed_control_draft.py`では区間を�
 
 教授用の日英題名・456字あらましは保持。著者・所属・順序は未設定、現行公式クラスの確認も未完了。外部送信・投稿は行っていない。新規性や採録見込みを実装数で判断しない。保留12課題は未閲覧のまま維持する。
 
+P84実行中に[外部３ライブラリの９ファイル](materials/20261024_framework_reference_review/README.md)を固定版で静的に確認した。本文へIDを含める経路は他にもあるが、添付の出所を表す用途もあり一括削除しない。外部実装は実行していない。元コードは私有の`.runtime/framework_source_review_20261024`に保持し、公開物にはURL・hash・読んだ行範囲だけを載せた。
+
 GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全115件の作業ボードを部分集合で上書きしない。以前の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/RESUME.md)に保存した。

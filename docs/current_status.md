@@ -30,6 +30,7 @@
 - P83は、文章化前の参照統一で選定済み２入力の全token列一致を確認した。元の生成や品質を再現した結果ではない。[全６入力](P83_findings.md)／[公開最小再現例](../materials/20261024_protocol_minimal_reproducer/README.md)。
 - 閉じた429生成の引数不正３件は出力上限4,096に達し、P83全６入力には同じ遅延文法があった。[全件診断](../materials/20261024_tool_grammar_boundary/README.md)／[固定解析器の合成再現](../materials/20261024_synthetic_parser_boundary/README.md)。
 - 時間通知・ID正規化・費用指標の不一致・変換順序には近接研究がある。[時間通知](time_observation_contribution_scope_20261024.md)／[参照ID](identifier_prior_and_exposure_20261024.md)／[費用評価](cost_proxy_prior_review_20261024.md)／[履歴変換](../materials/20261024_history_conversion_priors/README.md)。通常部品や実装件数を新規性に置き換えない。
+- [外部３ライブラリの固定版９ファイル](../materials/20261024_framework_reference_review/README.md)では、smolagentsの本文転記、AutoGen通常経路の専用欄保持、Pydantic AI添付経路の出所タグを確認した。すべてのIDが不要とは扱わず、外部の生成・品質・費用は未検証とする。
 
 ## 原稿と期限
 
