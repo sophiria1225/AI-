@@ -1,0 +1,493 @@
+{
+  "source_report_sha256": "51c706607deadbc9f8d5b1cd593fef691aa976e91be440c3eadb7c69d5343eb2",
+  "conditions": [
+    {
+      "case": "P83_P80_ORIGINAL",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 3,
+      "suffix_api_requests": [
+        4,
+        4,
+        4
+      ],
+      "suffix_API_names": [
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        }
+      ],
+      "stdout_characters": [
+        521,
+        521,
+        521
+      ],
+      "whole_task_success": null
+    },
+    {
+      "case": "P83_R2_ORIGINAL",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 3,
+      "suffix_api_requests": [
+        2,
+        2,
+        2
+      ],
+      "suffix_API_names": [
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1
+        }
+      ],
+      "stdout_characters": [
+        707,
+        707,
+        707
+      ],
+      "whole_task_success": null
+    },
+    {
+      "case": "P83_P80_NORMALIZED",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 0,
+      "suffix_api_requests": [
+        0,
+        0,
+        0
+      ],
+      "suffix_API_names": [
+        {},
+        {},
+        {}
+      ],
+      "stdout_characters": [
+        0,
+        0,
+        0
+      ],
+      "whole_task_success": null
+    },
+    {
+      "case": "P83_R2_NORMALIZED",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 0,
+      "suffix_api_requests": [
+        0,
+        0,
+        0
+      ],
+      "suffix_API_names": [
+        {},
+        {},
+        {}
+      ],
+      "stdout_characters": [
+        0,
+        0,
+        0
+      ],
+      "whole_task_success": null
+    },
+    {
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 3,
+      "suffix_api_requests": [
+        4,
+        4,
+        4
+      ],
+      "suffix_API_names": [
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        }
+      ],
+      "stdout_characters": [
+        521,
+        521,
+        521
+      ],
+      "whole_task_success": null
+    },
+    {
+      "case": "P83_CONTENT_CONTROL",
+      "conditions": 3,
+      "public_prefix_matches": 3,
+      "prefix_api_requests": 84,
+      "structured_submissions": 3,
+      "suffix_api_requests": [
+        4,
+        4,
+        4
+      ],
+      "suffix_API_names": [
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        },
+        {
+          "spotify__login": 1,
+          "spotify__show_song_library": 1,
+          "spotify__show_album_library": 1,
+          "spotify__show_playlist_library": 1
+        }
+      ],
+      "stdout_characters": [
+        488,
+        488,
+        488
+      ],
+      "whole_task_success": null
+    }
+  ],
+  "cross": [
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_R2_ORIGINAL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 9,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 9,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_P80_NORMALIZED",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_R2_NORMALIZED",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_NATIVE_IDS_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 9,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 9,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 9,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 9,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_ORIGINAL",
+      "right": "P83_P80_NORMALIZED",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_ORIGINAL",
+      "right": "P83_R2_NORMALIZED",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_ORIGINAL",
+      "right": "P83_NATIVE_IDS_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 9,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 9,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_ORIGINAL",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 9,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 9,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_NORMALIZED",
+      "right": "P83_R2_NORMALIZED",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 9
+    },
+    {
+      "left": "P83_P80_NORMALIZED",
+      "right": "P83_NATIVE_IDS_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_NORMALIZED",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_NORMALIZED",
+      "right": "P83_NATIVE_IDS_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_NORMALIZED",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 9,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_NATIVE_IDS_CONTROL",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 9,
+      "independent_samples": false,
+      "comparable_executed_pairs": 9,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 9,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 9,
+      "both_without_structured_calls": 0
+    }
+  ],
+  "within": [
+    {
+      "left": "P83_P80_ORIGINAL",
+      "right": "P83_P80_ORIGINAL",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 3,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 3,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 3,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_R2_ORIGINAL",
+      "right": "P83_R2_ORIGINAL",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 3,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 3,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 3,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_P80_NORMALIZED",
+      "right": "P83_P80_NORMALIZED",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 3,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 3
+    },
+    {
+      "left": "P83_R2_NORMALIZED",
+      "right": "P83_R2_NORMALIZED",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 0,
+      "unavailable_pairs": 3,
+      "request_sequence_equal": 0,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 0,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 3
+    },
+    {
+      "left": "P83_NATIVE_IDS_CONTROL",
+      "right": "P83_NATIVE_IDS_CONTROL",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 3,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 3,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 3,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    },
+    {
+      "left": "P83_CONTENT_CONTROL",
+      "right": "P83_CONTENT_CONTROL",
+      "pairs": 3,
+      "independent_samples": false,
+      "comparable_executed_pairs": 3,
+      "unavailable_pairs": 0,
+      "request_sequence_equal": 3,
+      "request_sequence_different": 0,
+      "public_execution_result_equal": 3,
+      "public_execution_result_different": 0,
+      "both_without_structured_calls": 0
+    }
+  ],
+  "comparison_unit": "Saved next output executed after a fresh matched public prefix; not an independent task.",
+  "all_eighteen_completed": true,
+  "all_prefixes_match": true,
+  "prefix_API_trace_hashes": 1,
+  "prefix_api_requests": 504,
+  "next_api_requests": 42,
+  "total_api_requests": 546,
+  "prefix_program_executions": 216,
+  "next_program_executions": 12,
+  "total_program_executions": 228,
+  "typed_status_counts": {
+    "returned": 528,
+    "raised": 18
+  },
+  "model_generations": 0,
+  "evaluator_calls": 0,
+  "task_quality_measured": false,
+  "original_full_state_restored": false,
+  "new_method_claim": false
+}
