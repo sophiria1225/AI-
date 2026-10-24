@@ -1,0 +1,2228 @@
+{
+  "phase": "P107",
+  "batch_status": "complete",
+  "rows": [
+    {
+      "run_id": "BOC_P107_01_EAGER_CACHED",
+      "task_id": "6104387_1",
+      "time_visibility": "not_exposed",
+      "read_view_policy": "eager_cached",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "model_calls": 21,
+      "known_total_tokens": 427234,
+      "unknown_usage_calls": 0,
+      "api_requests": 53,
+      "wall_seconds": 1657.6308866249747,
+      "full_wall_seconds": 1660.5887725840148,
+      "cleanup_wall_seconds": 1.1174396249989513,
+      "input_tokens": 407384,
+      "output_tokens": 19850,
+      "cached_input_tokens": 365925,
+      "invocation_exceptions": 0,
+      "invocation_status_counts": {
+        "returned": 53
+      },
+      "setup_wall_seconds": 1.8368332920072135,
+      "request_checks": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "input_tokens": 3405,
+          "output_tokens": 191,
+          "cached_input_tokens": 0,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 0,
+            "pending": 0,
+            "available": 80,
+            "stopped": false
+          },
+          "request_sha256": "be5f682e3646be1be77eda0ba07a86db5ddc73d50a60cead37bc2854361f2ab6",
+          "response_sha256": "252421b1b26c5cd44d5aca1a208af27abb9fcae1d51be8fde40c4b2fcb27382d",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "input_tokens": 6320,
+          "output_tokens": 191,
+          "cached_input_tokens": 3124,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "request_sha256": "1595168034c46699bedfc91a5077ba899f1da857af7d7b257ca5648eede27395",
+          "response_sha256": "47c09fa99f89044bdc2c5e8ad9fffb2af3d1283f1aa36b988d7b076f94b5337a",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 5
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "input_tokens": 8131,
+          "output_tokens": 275,
+          "cached_input_tokens": 6038,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "request_sha256": "603ba803933418fa3d1dc54245bc4d733348bbc90ee2f17cde16fb80e3dcad4f",
+          "response_sha256": "2e3cf536451c0b95caf97e78fb3e595790f13e77771a7cf8d542eadbb7c9d349",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 4
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 9291,
+          "output_tokens": 83,
+          "cached_input_tokens": 7849,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "request_sha256": "365607501a22925c8954dca64cf4bf21a222518aea5859431a90531fe680f3aa",
+          "response_sha256": "a72cd3ca08cef9ebac78a4de5184e7f1f8514e76bc86ee86a90b0e66f86c0aa6",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "input_tokens": 9622,
+          "output_tokens": 137,
+          "cached_input_tokens": 9009,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "request_sha256": "67f82f6f345f2186aadf2f0fef890ad4e5b56f29ed31bf594867d63783579312",
+          "response_sha256": "a97aa56a3155970744c42af5c8b63530d6798ccb895d7591ac1c1b1a2254589b",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "input_tokens": 10103,
+          "output_tokens": 340,
+          "cached_input_tokens": 9340,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "request_sha256": "f1f844bacc36a19f8c4f74f7747735d00637ebf23de65fa9152886b451713149",
+          "response_sha256": "a974862ae25708aeee79e5a68161151722b31493368eb7d230ee314dc2c27fbf",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "input_tokens": 11355,
+          "output_tokens": 313,
+          "cached_input_tokens": 9821,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "request_sha256": "61a70c33ea314a2bcfc9a514684004dface6bdd3e11644153b06b32c1e4415f6",
+          "response_sha256": "a0318b1881b80b76c9f49ce17688858054f5c66d4700cd0803d0201a49d0af66",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "input_tokens": 11760,
+          "output_tokens": 271,
+          "cached_input_tokens": 11073,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "request_sha256": "16abc339720e74a9c69922ba25bd86e6415102a9ea441faa02a37d8f7dd28377",
+          "response_sha256": "6b20bebeab3ac1b42a4c8157ab6d2b2c97c46a2e7f15cac3a0b242ac9789d549",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "input_tokens": 12897,
+          "output_tokens": 274,
+          "cached_input_tokens": 11478,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "request_sha256": "cfbededf3afba4d0fc59d5f801ebc6ae06aea5761a3e4e0fd85b4013f3c59146",
+          "response_sha256": "560c4d99535f59791b4de1f55492d28136ee813cdc41e6fda2d3e1aaaa635315",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 13972,
+          "output_tokens": 2652,
+          "cached_input_tokens": 12615,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "request_sha256": "b7671da92b0d21fda59885f74e4f7f2873d91bce48d88d1fec1d354ebbfe3c5f",
+          "response_sha256": "209f5eeffe7bbbb6eef8ad1f24730c385c7c7c2a09672f5056f90d13accc3013",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "input_tokens": 16913,
+          "output_tokens": 3516,
+          "cached_input_tokens": 13690,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "request_sha256": "8d92493bd2efa0531580d066a9de38a793ff89ecec18540b83ca75ab83d32460",
+          "response_sha256": "057c86febd5531f96de54ed00d33e8e374a49ae69f7c94df2150e2e33118b3e9",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "input_tokens": 20782,
+          "output_tokens": 1415,
+          "cached_input_tokens": 16631,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "request_sha256": "7b9ca1388448206ee2d583584a4ca995817ba56b92275bb3968b95edbc85dc53",
+          "response_sha256": "540cc5ac18b16d6e2c35c45773310f51b54392284626c9c482476fe46ff09038",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "input_tokens": 22476,
+          "output_tokens": 1820,
+          "cached_input_tokens": 20500,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "request_sha256": "e26761add58d855bf382eaa6b31dd6e95b54912aab218e73cb471bd559b33925",
+          "response_sha256": "aedfc6cd84195d4ff18ee2626b528b25f55d262eab86f8ba4ac8a3c77fd64006",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 6
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "input_tokens": 24965,
+          "output_tokens": 618,
+          "cached_input_tokens": 22194,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "request_sha256": "0d9e5378ad5aef66e8b670bdd04e5a956c4f2aac8cd4ecc71935e5d04d599541",
+          "response_sha256": "7a9396cd794f480f77946f6531a830e6888947863a599482250fba7990903c91",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 6
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "input_tokens": 26636,
+          "output_tokens": 2574,
+          "cached_input_tokens": 24683,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "request_sha256": "d1bdf1e1af7235101266c286ee9c789aa57a5e09d8c0410258a95933d01fe2a4",
+          "response_sha256": "b46a4d2bbbab35917c6a7fb8a77083f320d97abf083c4cd80291be2b795bf36c",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "input_tokens": 29444,
+          "output_tokens": 684,
+          "cached_input_tokens": 26354,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "request_sha256": "7383e35b12694d71e52b2626a7da0b13a7e8b27fcab367f0f1b091cfb7f5f2a8",
+          "response_sha256": "d57cff2ae368e53faf1b81ccfed0ec9ccbaf18f68aeebcf76ab4dbffb5b7958a",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 14
+        },
+        {
+          "call_id": "call_017",
+          "status": "ok",
+          "input_tokens": 30605,
+          "output_tokens": 2895,
+          "cached_input_tokens": 29162,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "f5d126c8936dc6cb3f6df517a170a270b5fff2efe32730945290d25986e5a6c7",
+          "response_sha256": "9ff8dd4ef040ef6c59111be71a6d638f311cab05c0a90419474b3f4d8c156c86",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "input_tokens": 33576,
+          "output_tokens": 580,
+          "cached_input_tokens": 30323,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "32c71b1f4bb06aeac4a9d49ca099cf58e789c90ffbf6683819920a168334b973",
+          "response_sha256": "3874ffa2285b41d5e3baddd3793f825e9f5c69a39b4e92c6986cb88eb09675b4",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "input_tokens": 34492,
+          "output_tokens": 253,
+          "cached_input_tokens": 33294,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "95d4e9e93c073ab5220ed65554915a6635f44407b33169564085f56def61ab1a",
+          "response_sha256": "6e9987bb785f7ec5047c0c3f92f5fc1aa629befb267d73c2287b0b3b454584d5",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 1,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "input_tokens": 34819,
+          "output_tokens": 131,
+          "cached_input_tokens": 34210,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "e80a106bba9fd5ab652a03cef0f0e90621a6fafb102447ed182d13a1e4e85787",
+          "response_sha256": "271130a6336f6dd66c2b47d16a127725a997dc2b6bfb80aa4e83b64d7eec7190",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 3
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "input_tokens": 35820,
+          "output_tokens": 637,
+          "cached_input_tokens": 34537,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "request_sha256": "4c2b4dfae297a14b13d59c2ebc27a240cf4ee07d48ad6ea52473017fb4602dbb",
+          "response_sha256": "135c981e77e37015195e3c0720f73b4d5c2d1b142c0a30c75ffc24426f4ac811",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        }
+      ],
+      "summary_sha256": "f0c25dc53518d245743ae77741aa276a82fd60805c956eaf286ab8c56746c44b",
+      "usage_sha256": "a499c3f3d11cca5bb3f80c4593347fc6ea84e08a6ef8ba84c8bc95e6e531ce14",
+      "evaluation_sha256": "6d1883073cac6f739e940b6cc949ee99d33828da24aadfa89b1dc125adb3ccf8",
+      "read_view_runtime": {
+        "budget": {
+          "limit": 80,
+          "spent": 53,
+          "pending": 0,
+          "available": 27,
+          "stopped": false
+        },
+        "view_creation_count": 0,
+        "read_requests": 0,
+        "exact_reuses": 0,
+        "ordinary_complete_reuses": 0,
+        "coalesced_reuses": 0,
+        "materialization_cache_reuses": 0,
+        "surviving_host_views_at_stop": 0,
+        "teardown_forces_no_additional_API": true
+      },
+      "program_costs": [
+        {
+          "program": "call_001_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 0,
+            "pending": 0,
+            "available": 80,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 270,
+          "control_reply_bytes_without_schema": 10760,
+          "reply_wire_bytes_including_schema": 73702,
+          "schema_deliveries": 117,
+          "bootstrap_included": true,
+          "wall_seconds_including_bootstrap": 0.329703374998644
+        },
+        {
+          "program": "call_002_01",
+          "status": "ok",
+          "API_requests": 5,
+          "budget_before": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "control_requests": 5,
+          "control_request_bytes": 779,
+          "control_reply_bytes_without_schema": 4905,
+          "reply_wire_bytes_including_schema": 5165,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.10503104198141955
+        },
+        {
+          "program": "call_003_01",
+          "status": "ok",
+          "API_requests": 4,
+          "budget_before": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "control_requests": 4,
+          "control_request_bytes": 605,
+          "control_reply_bytes_without_schema": 2754,
+          "reply_wire_bytes_including_schema": 2962,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.09297649998916313
+        },
+        {
+          "program": "call_004_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 116,
+          "control_reply_bytes_without_schema": 520,
+          "reply_wire_bytes_including_schema": 572,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.03877700000884943
+        },
+        {
+          "program": "call_005_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 304,
+          "control_reply_bytes_without_schema": 493,
+          "reply_wire_bytes_including_schema": 597,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.13280112500069663
+        },
+        {
+          "program": "call_006_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 312,
+          "control_reply_bytes_without_schema": 2116,
+          "reply_wire_bytes_including_schema": 2168,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.032553166995057836
+        },
+        {
+          "program": "call_007_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 312,
+          "control_reply_bytes_without_schema": 51,
+          "reply_wire_bytes_including_schema": 103,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.035438082995824516
+        },
+        {
+          "program": "call_008_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 626,
+          "control_reply_bytes_without_schema": 1842,
+          "reply_wire_bytes_including_schema": 1946,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.06197837501531467
+        },
+        {
+          "program": "call_009_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 632,
+          "control_reply_bytes_without_schema": 1815,
+          "reply_wire_bytes_including_schema": 1919,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.05887116599478759
+        },
+        {
+          "program": "call_010_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.01872208301210776
+        },
+        {
+          "program": "call_011_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 115,
+          "control_reply_bytes_without_schema": 751,
+          "reply_wire_bytes_including_schema": 803,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.037933959014480934
+        },
+        {
+          "program": "call_012_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 115,
+          "control_reply_bytes_without_schema": 545,
+          "reply_wire_bytes_including_schema": 597,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.040474083012668416
+        },
+        {
+          "program": "call_013_01",
+          "status": "ok",
+          "API_requests": 6,
+          "budget_before": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "control_requests": 6,
+          "control_request_bytes": 690,
+          "control_reply_bytes_without_schema": 3591,
+          "reply_wire_bytes_including_schema": 3903,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.09949145797872916
+        },
+        {
+          "program": "call_014_01",
+          "status": "ok",
+          "API_requests": 6,
+          "budget_before": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "control_requests": 6,
+          "control_request_bytes": 1758,
+          "control_reply_bytes_without_schema": 5172,
+          "reply_wire_bytes_including_schema": 5484,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.11679587501566857
+        },
+        {
+          "program": "call_015_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 152,
+          "control_reply_bytes_without_schema": 537,
+          "reply_wire_bytes_including_schema": 589,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.038094625022495165
+        },
+        {
+          "program": "call_016_01",
+          "status": "ok",
+          "API_requests": 14,
+          "budget_before": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 14,
+          "control_request_bytes": 1635,
+          "control_reply_bytes_without_schema": 2348,
+          "reply_wire_bytes_including_schema": 3081,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.19222483300836757
+        },
+        {
+          "program": "call_017_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.017899333004606888
+        },
+        {
+          "program": "call_018_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.018459125014487654
+        },
+        {
+          "program": "call_019_01",
+          "status": "execution_error",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 311,
+          "control_reply_bytes_without_schema": 85,
+          "reply_wire_bytes_including_schema": 137,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.020035624998854473
+        },
+        {
+          "program": "call_020_01",
+          "status": "ok",
+          "API_requests": 3,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "control_requests": 3,
+          "control_request_bytes": 481,
+          "control_reply_bytes_without_schema": 3044,
+          "reply_wire_bytes_including_schema": 3200,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.08255216700490564
+        },
+        {
+          "program": "call_021_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 53,
+            "pending": 0,
+            "available": 27,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 316,
+          "control_reply_bytes_without_schema": 65,
+          "reply_wire_bytes_including_schema": 117,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.040718834003200755
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P107_01_COALESCED_CACHED",
+      "task_id": "6104387_1",
+      "time_visibility": "not_exposed",
+      "read_view_policy": "coalesced_cached",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "token_reservation_limit",
+      "model_calls": 21,
+      "known_total_tokens": 427234,
+      "unknown_usage_calls": 0,
+      "api_requests": 53,
+      "wall_seconds": 1649.5138327919994,
+      "full_wall_seconds": 1652.4846419590176,
+      "cleanup_wall_seconds": 1.0845851250051055,
+      "input_tokens": 407384,
+      "output_tokens": 19850,
+      "cached_input_tokens": 365925,
+      "invocation_exceptions": 0,
+      "invocation_status_counts": {
+        "returned": 53
+      },
+      "setup_wall_seconds": 1.8831320840108674,
+      "request_checks": [
+        {
+          "call_id": "call_001",
+          "status": "ok",
+          "input_tokens": 3405,
+          "output_tokens": 191,
+          "cached_input_tokens": 0,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 0,
+            "pending": 0,
+            "available": 80,
+            "stopped": false
+          },
+          "request_sha256": "be5f682e3646be1be77eda0ba07a86db5ddc73d50a60cead37bc2854361f2ab6",
+          "response_sha256": "03b93e470fe773340993b89d1f3a2fb61f39ad1e2f88f307aca0f1a6ebf462dd",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_002",
+          "status": "ok",
+          "input_tokens": 6320,
+          "output_tokens": 191,
+          "cached_input_tokens": 3124,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "request_sha256": "1595168034c46699bedfc91a5077ba899f1da857af7d7b257ca5648eede27395",
+          "response_sha256": "5780ada219d32a58603d96743ac013b91a4267a20e9c195aea7cab4e43a1d3f6",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 5
+        },
+        {
+          "call_id": "call_003",
+          "status": "ok",
+          "input_tokens": 8131,
+          "output_tokens": 275,
+          "cached_input_tokens": 6038,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "request_sha256": "603ba803933418fa3d1dc54245bc4d733348bbc90ee2f17cde16fb80e3dcad4f",
+          "response_sha256": "a2478119c2cf8a4a5f9c9468aa96b818323769c6ebd9bbc1de2033c5183e56c0",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 4
+        },
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 9291,
+          "output_tokens": 83,
+          "cached_input_tokens": 7849,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "request_sha256": "365607501a22925c8954dca64cf4bf21a222518aea5859431a90531fe680f3aa",
+          "response_sha256": "0658f9b85e9fdacfe1eb116255e60aaea60984ecfe96e8942abc95c0c9f1155d",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_005",
+          "status": "ok",
+          "input_tokens": 9622,
+          "output_tokens": 137,
+          "cached_input_tokens": 9009,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "request_sha256": "67f82f6f345f2186aadf2f0fef890ad4e5b56f29ed31bf594867d63783579312",
+          "response_sha256": "54456b8731e9f86ad8193aec4291dda6dc2f0ba5a850578c32409a04c3d43414",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_006",
+          "status": "ok",
+          "input_tokens": 10103,
+          "output_tokens": 340,
+          "cached_input_tokens": 9340,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "request_sha256": "f1f844bacc36a19f8c4f74f7747735d00637ebf23de65fa9152886b451713149",
+          "response_sha256": "f12182da27588b542b9691ffd4b975809afce8a3d50bebaff965c02189cde62d",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_007",
+          "status": "ok",
+          "input_tokens": 11355,
+          "output_tokens": 313,
+          "cached_input_tokens": 9821,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "request_sha256": "61a70c33ea314a2bcfc9a514684004dface6bdd3e11644153b06b32c1e4415f6",
+          "response_sha256": "dce2fa452fb73f7b790fcc5e9b5b9f7d849f71cf07915d5693c0e082081b50e3",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "input_tokens": 11760,
+          "output_tokens": 271,
+          "cached_input_tokens": 11073,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "request_sha256": "16abc339720e74a9c69922ba25bd86e6415102a9ea441faa02a37d8f7dd28377",
+          "response_sha256": "40c8cfd45d2a22cef403722dd7478ff650cabf9ff5ba70b0c90b44ea695c9678",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "input_tokens": 12897,
+          "output_tokens": 274,
+          "cached_input_tokens": 11478,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "request_sha256": "cfbededf3afba4d0fc59d5f801ebc6ae06aea5761a3e4e0fd85b4013f3c59146",
+          "response_sha256": "588342fc769f690f00eed55becbd3d5b56ca2632c34b094f9014dba942d76cbf",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 2
+        },
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 13972,
+          "output_tokens": 2652,
+          "cached_input_tokens": 12615,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "request_sha256": "b7671da92b0d21fda59885f74e4f7f2873d91bce48d88d1fec1d354ebbfe3c5f",
+          "response_sha256": "5987610b96b297e03d3fb7ae3d9dea445f2dbcfe8506b4d0257cf79309622cba",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_011",
+          "status": "ok",
+          "input_tokens": 16913,
+          "output_tokens": 3516,
+          "cached_input_tokens": 13690,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "request_sha256": "8d92493bd2efa0531580d066a9de38a793ff89ecec18540b83ca75ab83d32460",
+          "response_sha256": "037fb8404995f0356e3a322e6990491324153fa4ac7514725093182d9c4166cc",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_012",
+          "status": "ok",
+          "input_tokens": 20782,
+          "output_tokens": 1415,
+          "cached_input_tokens": 16631,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "request_sha256": "7b9ca1388448206ee2d583584a4ca995817ba56b92275bb3968b95edbc85dc53",
+          "response_sha256": "79ce04b628146c3dbb19d687ea44c07ccee37ff44c429c6774425ea2a64c931f",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "input_tokens": 22476,
+          "output_tokens": 1820,
+          "cached_input_tokens": 20500,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "request_sha256": "e26761add58d855bf382eaa6b31dd6e95b54912aab218e73cb471bd559b33925",
+          "response_sha256": "ecc4ee9f71f2ff2ccc0ce4042f9d70b15d0d6393c01dd27ab364213a344a315e",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 6
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "input_tokens": 24965,
+          "output_tokens": 618,
+          "cached_input_tokens": 22194,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "request_sha256": "0d9e5378ad5aef66e8b670bdd04e5a956c4f2aac8cd4ecc71935e5d04d599541",
+          "response_sha256": "91f12d32ee9db64d5c5ca812e06a17d4dcf9685cae195daab1146b4b4be88b06",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 6
+        },
+        {
+          "call_id": "call_015",
+          "status": "ok",
+          "input_tokens": 26636,
+          "output_tokens": 2574,
+          "cached_input_tokens": 24683,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "request_sha256": "d1bdf1e1af7235101266c286ee9c789aa57a5e09d8c0410258a95933d01fe2a4",
+          "response_sha256": "b6c607a0fddafda5d707f05b3ce1a4c87db4f3403b4e95af2a994ee03039834f",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        },
+        {
+          "call_id": "call_016",
+          "status": "ok",
+          "input_tokens": 29444,
+          "output_tokens": 684,
+          "cached_input_tokens": 26354,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "request_sha256": "7383e35b12694d71e52b2626a7da0b13a7e8b27fcab367f0f1b091cfb7f5f2a8",
+          "response_sha256": "f64a10b736c1e8fac983cb283131feaf89fc06412d69906907d8040c52e6179d",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 14
+        },
+        {
+          "call_id": "call_017",
+          "status": "ok",
+          "input_tokens": 30605,
+          "output_tokens": 2895,
+          "cached_input_tokens": 29162,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "f5d126c8936dc6cb3f6df517a170a270b5fff2efe32730945290d25986e5a6c7",
+          "response_sha256": "b5eeb0b3d6672700d045c0ccb1db8c83ea4c8a7d2195f76b81f6750e3f6e941e",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_018",
+          "status": "ok",
+          "input_tokens": 33576,
+          "output_tokens": 580,
+          "cached_input_tokens": 30323,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "32c71b1f4bb06aeac4a9d49ca099cf58e789c90ffbf6683819920a168334b973",
+          "response_sha256": "d670b8d96fe0ea427ee0e35c430f705c2cfc3724e2fad9414faff0bb7e21ae28",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_019",
+          "status": "ok",
+          "input_tokens": 34492,
+          "output_tokens": 253,
+          "cached_input_tokens": 33294,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "95d4e9e93c073ab5220ed65554915a6635f44407b33169564085f56def61ab1a",
+          "response_sha256": "c8b1c394e48365e0f6acbc33a62d1dbe10df6e1d8129aeb7607e8cd020086e5d",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 1,
+          "API_requests": 0
+        },
+        {
+          "call_id": "call_020",
+          "status": "ok",
+          "input_tokens": 34819,
+          "output_tokens": 131,
+          "cached_input_tokens": 34210,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "request_sha256": "e80a106bba9fd5ab652a03cef0f0e90621a6fafb102447ed182d13a1e4e85787",
+          "response_sha256": "da5e4063123fdce402af745507da2f7a1569e0b8762537107049f7efd2fd9079",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 3
+        },
+        {
+          "call_id": "call_021",
+          "status": "ok",
+          "input_tokens": 35820,
+          "output_tokens": 637,
+          "cached_input_tokens": 34537,
+          "request_budget_before": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "request_sha256": "4c2b4dfae297a14b13d59c2ebc27a240cf4ee07d48ad6ea52473017fb4602dbb",
+          "response_sha256": "6d2a480b52a4dd1f6f84dd98262a00ac18294202680e022a9acbd398db3f249f",
+          "terminal_usage_recorded": true,
+          "structured_tool_calls": 1,
+          "output_limit_reached": false,
+          "outer_record_count": 1,
+          "format_rejections": 0,
+          "not_executed_records": 0,
+          "Python_execution_errors": 0,
+          "API_requests": 1
+        }
+      ],
+      "summary_sha256": "b6e771af6214074867ce0e3559f1b2dd40e172603d1b08f30c88cab8cc97f0f1",
+      "usage_sha256": "ca20977ada58a40a449f1a07d625871e2e640433a3f6cc0438b42df3225bad7b",
+      "evaluation_sha256": "d120b17b90b84860cddab2a31f9c3393ac403f3b0bd9875d9589a74036e91b14",
+      "read_view_runtime": {
+        "budget": {
+          "limit": 80,
+          "spent": 53,
+          "pending": 0,
+          "available": 27,
+          "stopped": false
+        },
+        "view_creation_count": 0,
+        "read_requests": 0,
+        "exact_reuses": 0,
+        "ordinary_complete_reuses": 0,
+        "coalesced_reuses": 0,
+        "materialization_cache_reuses": 0,
+        "surviving_host_views_at_stop": 0,
+        "teardown_forces_no_additional_API": true
+      },
+      "program_costs": [
+        {
+          "program": "call_001_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 0,
+            "pending": 0,
+            "available": 80,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 270,
+          "control_reply_bytes_without_schema": 10760,
+          "reply_wire_bytes_including_schema": 73702,
+          "schema_deliveries": 117,
+          "bootstrap_included": true,
+          "wall_seconds_including_bootstrap": 0.28140258401981555
+        },
+        {
+          "program": "call_002_01",
+          "status": "ok",
+          "API_requests": 5,
+          "budget_before": {
+            "limit": 80,
+            "spent": 2,
+            "pending": 0,
+            "available": 78,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "control_requests": 5,
+          "control_request_bytes": 779,
+          "control_reply_bytes_without_schema": 4905,
+          "reply_wire_bytes_including_schema": 5165,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.10925062501337379
+        },
+        {
+          "program": "call_003_01",
+          "status": "ok",
+          "API_requests": 4,
+          "budget_before": {
+            "limit": 80,
+            "spent": 7,
+            "pending": 0,
+            "available": 73,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "control_requests": 4,
+          "control_request_bytes": 605,
+          "control_reply_bytes_without_schema": 2754,
+          "reply_wire_bytes_including_schema": 2962,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.09164495900040492
+        },
+        {
+          "program": "call_004_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 11,
+            "pending": 0,
+            "available": 69,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 116,
+          "control_reply_bytes_without_schema": 520,
+          "reply_wire_bytes_including_schema": 572,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.03870629201992415
+        },
+        {
+          "program": "call_005_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 12,
+            "pending": 0,
+            "available": 68,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 304,
+          "control_reply_bytes_without_schema": 493,
+          "reply_wire_bytes_including_schema": 597,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.14409466600045562
+        },
+        {
+          "program": "call_006_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 14,
+            "pending": 0,
+            "available": 66,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 312,
+          "control_reply_bytes_without_schema": 2116,
+          "reply_wire_bytes_including_schema": 2168,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.03608433299814351
+        },
+        {
+          "program": "call_007_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 15,
+            "pending": 0,
+            "available": 65,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 312,
+          "control_reply_bytes_without_schema": 51,
+          "reply_wire_bytes_including_schema": 103,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.03672750000259839
+        },
+        {
+          "program": "call_008_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 16,
+            "pending": 0,
+            "available": 64,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 626,
+          "control_reply_bytes_without_schema": 1842,
+          "reply_wire_bytes_including_schema": 1946,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.06171445798827335
+        },
+        {
+          "program": "call_009_01",
+          "status": "ok",
+          "API_requests": 2,
+          "budget_before": {
+            "limit": 80,
+            "spent": 18,
+            "pending": 0,
+            "available": 62,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "control_requests": 2,
+          "control_request_bytes": 632,
+          "control_reply_bytes_without_schema": 1815,
+          "reply_wire_bytes_including_schema": 1919,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.05827554198913276
+        },
+        {
+          "program": "call_010_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.019395084003917873
+        },
+        {
+          "program": "call_011_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 20,
+            "pending": 0,
+            "available": 60,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 115,
+          "control_reply_bytes_without_schema": 751,
+          "reply_wire_bytes_including_schema": 803,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.03209454199532047
+        },
+        {
+          "program": "call_012_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 21,
+            "pending": 0,
+            "available": 59,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 115,
+          "control_reply_bytes_without_schema": 545,
+          "reply_wire_bytes_including_schema": 597,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.029913541016867384
+        },
+        {
+          "program": "call_013_01",
+          "status": "ok",
+          "API_requests": 6,
+          "budget_before": {
+            "limit": 80,
+            "spent": 22,
+            "pending": 0,
+            "available": 58,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "control_requests": 6,
+          "control_request_bytes": 690,
+          "control_reply_bytes_without_schema": 3591,
+          "reply_wire_bytes_including_schema": 3903,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.09381645900430158
+        },
+        {
+          "program": "call_014_01",
+          "status": "ok",
+          "API_requests": 6,
+          "budget_before": {
+            "limit": 80,
+            "spent": 28,
+            "pending": 0,
+            "available": 52,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "control_requests": 6,
+          "control_request_bytes": 1758,
+          "control_reply_bytes_without_schema": 5172,
+          "reply_wire_bytes_including_schema": 5484,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.11791041598189622
+        },
+        {
+          "program": "call_015_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 34,
+            "pending": 0,
+            "available": 46,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 152,
+          "control_reply_bytes_without_schema": 537,
+          "reply_wire_bytes_including_schema": 589,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.032193916995311156
+        },
+        {
+          "program": "call_016_01",
+          "status": "ok",
+          "API_requests": 14,
+          "budget_before": {
+            "limit": 80,
+            "spent": 35,
+            "pending": 0,
+            "available": 45,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 14,
+          "control_request_bytes": 1635,
+          "control_reply_bytes_without_schema": 2348,
+          "reply_wire_bytes_including_schema": 3081,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.16869483300251886
+        },
+        {
+          "program": "call_017_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.018892457999754697
+        },
+        {
+          "program": "call_018_01",
+          "status": "ok",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 0,
+          "control_request_bytes": 0,
+          "control_reply_bytes_without_schema": 0,
+          "reply_wire_bytes_including_schema": 0,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.017685458005871624
+        },
+        {
+          "program": "call_019_01",
+          "status": "execution_error",
+          "API_requests": 0,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 311,
+          "control_reply_bytes_without_schema": 85,
+          "reply_wire_bytes_including_schema": 137,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.02003216600860469
+        },
+        {
+          "program": "call_020_01",
+          "status": "ok",
+          "API_requests": 3,
+          "budget_before": {
+            "limit": 80,
+            "spent": 49,
+            "pending": 0,
+            "available": 31,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "control_requests": 3,
+          "control_request_bytes": 481,
+          "control_reply_bytes_without_schema": 3044,
+          "reply_wire_bytes_including_schema": 3200,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.07145770898205228
+        },
+        {
+          "program": "call_021_01",
+          "status": "ok",
+          "API_requests": 1,
+          "budget_before": {
+            "limit": 80,
+            "spent": 52,
+            "pending": 0,
+            "available": 28,
+            "stopped": false
+          },
+          "budget_after": {
+            "limit": 80,
+            "spent": 53,
+            "pending": 0,
+            "available": 27,
+            "stopped": false
+          },
+          "control_requests": 1,
+          "control_request_bytes": 316,
+          "control_reply_bytes_without_schema": 65,
+          "reply_wire_bytes_including_schema": 117,
+          "schema_deliveries": 0,
+          "bootstrap_included": false,
+          "wall_seconds_including_bootstrap": 0.04191616701427847
+        }
+      ]
+    }
+  ],
+  "audit_errors": [],
+  "planned_rows": 2,
+  "independent_tasks": 1,
+  "repetitions": 1,
+  "all_two_complete_with_known_usage": true,
+  "both_successful": false,
+  "coalesced_minus_eager_tokens": 0,
+  "coalesced_minus_eager_API_requests": 0,
+  "successful_task_token_reduction": false,
+  "successful_task_API_reduction": false,
+  "development_gate_met": false,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "interpretation": "One posthoc-selected known task, one run per policy with the same explicit interface. Known usage and both independently successful tasks are required for a successful-task cost comparison. API and token differences remain separate; no general quality or novelty claim.",
+  "pipeline_status_sha256": "19737a47eefc87639dd81754622e74fbbcb01e1055f5a268fcaf25a0f25cef4b",
+  "server_final_sha256": "79e5cd3f0b339197dcdaa486ee88a8ecd48af5a3af3ed41a0b29dc292575b4e3",
+  "owned_processes_absent": true,
+  "plan_sha256": "7d30d81ea1100de182341043cf5bacab4caa057c552d723360cbd40e1893aff0",
+  "activation_sha256": "cf3cdaf04494cb7e9cc425a029acf311d852884c1def848364956e9db74c7014",
+  "auditor_sha256": "c657810e05c367faf536e2d84532050b9076e89650f09de9d63de31d4f0f9f2e",
+  "additional_model_calls": 0,
+  "additional_api_calls": 0,
+  "additional_evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "private_reasoning_inspected_semantically": false,
+  "database_contents_inspected": false
+}

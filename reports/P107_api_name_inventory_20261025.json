@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-10-24T19:43:37.215318+00:00",
+  "scope": "Post-closure inventory of every P107 Python API action name and public program status. All two conditions retained. No argument values, code bodies, responses, reasoning or evaluator details interpreted.",
+  "source_audit_sha256": "efdd5be27a60444b251beb79eac5c475382c1c5a5852d5d35e3501d9ad0361ae",
+  "private_source_sha256": {
+    "BOC_P107_01_EAGER_CACHED/events.json": "0928c84be95e21a0fc943c78e75378da7eccde038da41c80aaa28a304dfbbe93",
+    "BOC_P107_01_EAGER_CACHED/spans.json": "e5d0fea4cd66f4228091b46e7eb851bc376f665b351d37868cf55e475ce358c0",
+    "BOC_P107_01_COALESCED_CACHED/events.json": "00635023176a95b536dcbbed2081b4efb1185995c776e9e0b6d3c719067055a9",
+    "BOC_P107_01_COALESCED_CACHED/spans.json": "e5d0fea4cd66f4228091b46e7eb851bc376f665b351d37868cf55e475ce358c0"
+  },
+  "rows": [
+    {
+      "run_id": "BOC_P107_01_EAGER_CACHED",
+      "API_sent_by_name": {
+        "api_docs__show_api_descriptions": 2,
+        "api_docs__show_api_doc": 13,
+        "file_system__directory_exists": 1,
+        "file_system__login": 1,
+        "spotify__login": 1,
+        "spotify__show_album": 8,
+        "spotify__show_album_library": 2,
+        "spotify__show_artist": 14,
+        "spotify__show_playlist": 6,
+        "spotify__show_playlist_library": 2,
+        "spotify__show_song_library": 2,
+        "supervisor__show_account_passwords": 1
+      },
+      "API_not_sent_by_name": {},
+      "program_status_counts": {
+        "ok": 20,
+        "execution_error": 1
+      }
+    },
+    {
+      "run_id": "BOC_P107_01_COALESCED_CACHED",
+      "API_sent_by_name": {
+        "api_docs__show_api_descriptions": 2,
+        "api_docs__show_api_doc": 13,
+        "file_system__directory_exists": 1,
+        "file_system__login": 1,
+        "spotify__login": 1,
+        "spotify__show_album": 8,
+        "spotify__show_album_library": 2,
+        "spotify__show_artist": 14,
+        "spotify__show_playlist": 6,
+        "spotify__show_playlist_library": 2,
+        "spotify__show_song_library": 2,
+        "supervisor__show_account_passwords": 1
+      },
+      "API_not_sent_by_name": {},
+      "program_status_counts": {
+        "ok": 20,
+        "execution_error": 1
+      }
+    }
+  ],
+  "wall_seconds": 0.0023387919936794788,
+  "model_calls": 0,
+  "environment_API_calls": 0,
+  "saved_code_executions": 0,
+  "evaluations": 0,
+  "heldout_tasks_read": 0,
+  "outcome_selected_subset": false,
+  "causal_claim": false
+}
