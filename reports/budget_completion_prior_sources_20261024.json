@@ -1,0 +1,53 @@
+{
+  "reviewed_on": "2026-10-24",
+  "search_queries": [
+    "\"grammar constrained decoding\" \"token budget\" completion",
+    "\"structured generation\" \"budget\" \"termination\" decoding",
+    "\"Mitigating Bias in Locally Constrained Decoding via Tractable Proposals\" arxiv",
+    "\"budget-aware\" \"constrained decoding\" Dang"
+  ],
+  "sources": [
+    {
+      "title": "Mitigating Bias in Locally Constrained Decoding via Tractable Proposals",
+      "url": "https://arxiv.org/html/2606.01926v1",
+      "bibliographic_source": "https://proceedings.mlr.press/v306/dang26c.html",
+      "reviewed": ["abstract", "sections 2 through 3.2", "section 4 introductory distinction"],
+      "not_reviewed": ["full probabilistic method", "all results and appendices", "code or experimental reproduction"],
+      "scope": "Finite-token-budget feasibility masking is explicit prior work for constraints represented as finite automata. This is not a guarantee about arbitrary program intent or environment effects."
+    },
+    {
+      "title": "Decode-Time Grammars: Constrained LLM Generation over a Refinement Order of Grammar Fragments",
+      "url": "https://arxiv.org/html/2607.18357v1",
+      "reviewed": ["abstract", "section 4.3", "sections 7.1-7.2", "Dang et al. bibliographic entry"],
+      "not_reviewed": ["all formal proofs", "all results", "code or experimental reproduction"],
+      "scope": "Distinguishes valid prefixes from completed generation under a finite cap and refers to budget-aware masking. The cited Dang original was subsequently read directly."
+    },
+    {
+      "title": "GRID: Grammar-Railed Decoding for Enterprise SQL Generation",
+      "url": "https://arxiv.org/html/2607.11951v1",
+      "reviewed": ["abstract", "section 5 propositions 7-11 and remark 2", "section 6.1"],
+      "not_reviewed": ["full benchmark audit", "code or experimental reproduction"],
+      "scope": "Decoder-owned token-counted minimal completion reserve is an existing construction. A logits-only interface has a weaker completion guarantee. Constraint satisfaction and task quality remain different endpoints."
+    }
+  ],
+  "retrieval_limitations": [
+    {
+      "url": "https://openreview.net/forum?id=LYBs6f3jlK",
+      "result": "browser verification page; original not read there",
+      "followup": "Used public arXiv v1 and publisher bibliographic entry instead; did not bypass challenge."
+    },
+    {
+      "result": "One two-query search output exceeded available context before compaction",
+      "followup": "Did not rely on the lost output. Repeated only the exact title search, then read the primary source."
+    }
+  ],
+  "primary_sources_only_for_claims": true,
+  "exhaustive_novelty_search": false,
+  "external_experiments_reproduced": false,
+  "P87_conditions_changed": false,
+  "P87_generation_outputs_inspected_during_review": false,
+  "new_model_generations_for_review": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "reserved_scenarios_read": 0
+}
