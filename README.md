@@ -1,7 +1,7 @@
 # AIハーネス研究
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P100はP97全12条件・223試行を一度点検し、不明２生成を保持した。要求上限が守られた仮定下でF−Nは63,304〜103,360、F−Gは32,397〜74,997 tokenの増加、G−Nの符号は不明。追加生成/API/評価０で元の不採用判定を補足。P99の固定８条件は途中成否を開かず実行継続中。投稿候補はP98稿、新手法は未確立。 [P100全件結果](materials/20261024_p100_results/README.md)／[P99実行](materials/20261024_p99_started/README.md)。
+P99固定８条件は途中成否を開かず継続中。P100は上限仮定下で事実通知の費用増を確認し、元の不明２生成・不採用判定を保持した。smolagentsの既存PR２件を変更コードまで読み、操作欠落だけでなくIDによる履歴順序の修正も先行範囲として記録。新手法は未確立、投稿候補はP98実証稿。 [先行修正の追補](materials/20261024_external_id_prior_fixes/README.md)／[P100結果](materials/20261024_p100_results/README.md)／[P99実行](materials/20261024_p99_started/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 必要な情報・処理と最終成果の品質を保ち、不要な取得・共有・モデル呼出し・実行・検証を減らす。制御・失敗・再取得を含む仕事全体の費用で評価する。
