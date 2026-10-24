@@ -1,0 +1,909 @@
+{
+  "phase": "closed_prefix_api_and_later_code_followup",
+  "posthoc": true,
+  "created_at": "2026-10-24T01:51:27.199676+00:00",
+  "source_diagnosis_sha256": "2aa5ab96320e78968e15bf14a58aeb2a684371cae9cf16cefd937a059617470c",
+  "extractor_sha256": "67351868570ec6df86a101b1cddd1456720a817e12f8f185440b0188b722fae0",
+  "script_sha256": "23d7f6c57628791c638cd891a383cc1e548402358c1bd6949ae49d0fdac96618",
+  "malformed_argument_occurrences": 7,
+  "unique_observed_prefixes": 1,
+  "rows": [
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 7,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 14
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 6,
+      "later_unknown_calls": 0,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 0
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 7,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 1,
+      "maximum_later_matching_initial_statements": 22
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 8,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 0
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 8,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 6
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 8,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 6
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "prefix_sha256": "62b7a4810a32435f12adbcb026d34fabdf48e86fec9f29144ac0bc9228872096",
+      "top_level_statements": 22,
+      "public_api_call_shapes": [
+        {
+          "line": 1,
+          "app": "spotify",
+          "api": "login",
+          "keyword_names": [
+            "username",
+            "password"
+          ]
+        },
+        {
+          "line": 8,
+          "app": "spotify",
+          "api": "show_song_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 24,
+          "app": "spotify",
+          "api": "show_album_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        },
+        {
+          "line": 45,
+          "app": "spotify",
+          "api": "show_playlist_library",
+          "keyword_names": [
+            "access_token",
+            "page_index",
+            "page_limit"
+          ]
+        }
+      ],
+      "first_statement_type": "Assign",
+      "later_call_slots": 8,
+      "later_unknown_calls": 1,
+      "later_full_prefix_ast_matches": 0,
+      "maximum_later_matching_initial_statements": 6
+    }
+  ],
+  "later_call_slots": [
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 14,
+      "response_sha256": "e2d8d8a09336fc0266c3f8784c55797c8552a8d2cf2f57cd1ebb2572fc62a125"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 5,
+      "response_sha256": "854eb90055d4bd0e1dbbc88952711e6cbc8372dfd6f22364a3360353a6a1aa54"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "ffba48533219ebc3ed808582d440dd35da170f799ece67d7b0196541b41113d6"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "77fb75e851837890134aacf4105d12b0f146508ddf8c420fbd8172ad193f28d6"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "db207dd4955ed0c17faa77e165dac88233fcc997f188ada1e820d53c9d874823"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 5,
+      "response_sha256": "bde8fd931f7a4bd940187281e079ed8e855b399427cd2a1704efdb4df2461a7e"
+    },
+    {
+      "run_id": "BOC_P80_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "fdbfba64ba642ccca37fe12b6468cc51802be5ac30b13a6c3972ca48c792c30a"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "6c4beb57fc5e0cb425556e59e1b2a529cb68a2dc325475c042664bd33255e453"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "dad09d31c8cfdbaeec3c51afcb1cc69cbfdc4fe03121827c307412653961a23f"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "37617f54d7b95f499b88c6bb41206cb2131c95a3a8dadc2afeae6e82153f3069"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "2ca4f79d2ae79bd61b6f799c6a63937d8b9d7c2c9ff6bd04c64b15365b8cdcd0"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "ac409ba0ffd3433313169688ecb3e5ee87122fa10700f502cf361d7cf9eff036"
+    },
+    {
+      "run_id": "BOC_P81_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "bba2de9ab15753dae76e4f6bf954e946a5a5067a107d6251788b8e071eaad44b"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 1,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 22,
+      "response_sha256": "32c6aedf121c23a3015edfbecc8567651d4459a91e795cf7d38b837d6921ad37"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "0236d9c4452d33ee67b044a584e37d7bfa6ea1800af1e414526fda00a48dab8e"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "ff08892ae6781887ba4cc8cbd5270bd48496e7e9e6a61bf8b4be6bee8acbb736"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "4e2b0c108b019da7b063f0481514f19e8ef6c0e834e4803f8d16c2d60f0340cb"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "d2d48e53092577d9aeac0701ab56c8e69cc4eae2512e8f8219a65dd297823968"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "ea73b3fd4571307aa2917fb3b7754bb843978125399e85f2863d21b5b3017d64"
+    },
+    {
+      "run_id": "BOC_P81_R3_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "5ee67af58488c7ab38d02419e6ec51d79d4c87947fdf620366bc0fe93d6b6a23"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "d5f2ad9919b45d5a4ea49cde92a899c5151bba4b4a419208030e32ec80ac464e"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "faa8769d90b2f6429514b921c8ff0db0150ea3579ad420eb1a05400f259e8f41"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "b9d130a9e4a908f0135f6a835d135fa7321fcde5be802a41c550b05a11638d4b"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "a496d38715eb275451b8a3d405603c85c10a4f6fc569b0db79c52a29f92f23df"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "1d5a195231f408866160126db66bed475a6e3ab74710f484fb5417cf1d15ebb6"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "7acf9d1a5fce340b541eabad5975f8321e21042094d9826949f11d0ef3ab0bd2"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "63f3aab183c9993f69144cb35e673002f9a1aff31f2d466fab0b5b7a8a13d5c6"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_021",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "99baf93a7cd98f54954baf191bab087894c2d1288b3a4f4ed31da98d009ebaf2"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "b004618de53ccd101a810e17568ebe4b2e8c0fe865d1433fe1ee7261214c4343"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "eda5dde66ac138fbc8acbc09970cbc2d5e7da6fba12592fb328fa10ea0d2aa4b"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 6,
+      "response_sha256": "59cc7d87b1e3d5175d638661c78c80d34465173296c4df931dcf6e3d8e7c38a8"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "c3c0aa02d16d05ecf405938df0a23d17d3d49f95093b69a9a7bde9075117c9b8"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "8fd24d7a153901237636f6e1aa6f2101fb833779a1f4c92f0b4eeab0a587a527"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "784b9f6380d3c3c5e89a84c986a97b0bdbad6cb3a4b45fe0842ed7409ec921df"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "56877938980bbc80905a51d0187625ec8b0720516d359f609061bf4316f6ad74"
+    },
+    {
+      "run_id": "BOC_P82_R1_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_021",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "187d0a80cb9b4c2c71353ca5a53c4287191828fd63c2fa003adefdf28acc7379"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "edf2e48781c21adb4694d9725ed54fbc4089b7551b85da44e05dba44a5bca88b"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "5530b6d2bce0949a729d1c1218368e1fdbf311621f501b83cd70a025aa5790a6"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 6,
+      "response_sha256": "98d8c95316be4d3ada5daf0faa44bb475ed2b5cf5fdf9386454fa9b852e1cdee"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "f9c006da2a08dfc4c5ba17430c64b91015dfcbaa86238dd10d59d6f931f8bbc5"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "7c646e2bb12073b3c66bee73fbcbcef8faf0482651c612d5f004c9736ac0f091"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "2ac143ce4f64ce6e40acdf3c7d27a6d6d780f3c1656dcbe368d05e3f98c80ab5"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 2,
+      "response_sha256": "b63b91af0d97aeecf21aef6d3e531c4fc7c95be9aa5e0610df7c80fcb2bc0a1f"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_NOT_EXPOSED",
+      "source_call_id": "call_013",
+      "later_call_id": "call_021",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "8ec14e2f574f4d0746902cf573c06b24ddd138fb81125131a2a670f9a4897f76"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_014",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "42cbff4016cc984debfe8081eade02ff3b7db0aab814656cb34f1203503a6650"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_015",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "7c829a56e38b761a5bf264147dde3a10c484cc50912ec110d39d20ee67b58009"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_016",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "b66c6cd403f65dbef37653d14330853651be1953e03247a5da6b5be3aa323b3d"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_017",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "4cd498df299ff9b779bd08437f78c0a6277791f6d6dec757534b92a1d30bd3d3"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_018",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "b96310b104f0b15f00db2aeac627d3740b364dfb410bbf9f52174e9c71b3f7a7"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_019",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 1,
+      "maximum_matching_initial_statements": 6,
+      "response_sha256": "f032cdbbafcf2d705382d64025570af29262ceaab2449828f941f9b5c174e561"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_020",
+      "terminal_observed": true,
+      "full_prefix_ast_matches": 0,
+      "valid_code_arguments": 0,
+      "maximum_matching_initial_statements": 0,
+      "response_sha256": "05d039fc2898baa308d1ec82faf6d5ce3f7142d30fb9af4ae25af3475fb79b5c"
+    },
+    {
+      "run_id": "BOC_P82_R2_04_LATE_HALF",
+      "source_call_id": "call_013",
+      "later_call_id": "call_021",
+      "terminal_observed": false,
+      "full_prefix_ast_matches": null,
+      "valid_code_arguments": null,
+      "maximum_matching_initial_statements": null,
+      "response_sha256": "dd966a5dedd8234c8419a297fb1ed34e1e261ce86e11d126009801c0285b9192"
+    }
+  ],
+  "raw_code_or_credentials_published": false,
+  "returned_reasoning_semantically_read": false,
+  "api_expression_nodes_are_request_counts": false,
+  "exact_ast_matching_proves_savings": false,
+  "partial_execution_authorized": false,
+  "new_model_generations": 0,
+  "input_count_requests": 0,
+  "environment_api_requests": 0,
+  "generated_programs_executed": 0,
+  "evaluations": 0,
+  "analysis_wall_seconds": 0.016546208993531764
+}

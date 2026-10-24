@@ -45,8 +45,12 @@ Pythonは保存先の`.runtime/p3_ci_venv/bin/python`、資料は`.runtime/repor
 
 ## 次の独立作業
 
-終了済みP80/P81/P82の全48条件・855生成を対象に、途中切れ引数から実際に観測したcode文字列の構文上の接頭部分を点検する。私有準備は`.runtime/p85_prefix_preparation`。８境界検査を通過したが、この更新時点では実記録への適用は未実行。未生成文字の補完・部分実行・追加生成・保留課題閲覧をしない。構文の成立は安全な再利用や節約の証拠ではない。実行後は結果と対象外を一度保存し、次の変更を判断する。
+終了済みP80/P81/P82の全48条件・855生成の点検は一度完了した。公開先は`materials/20261024_truncated_code_prefix_scope`、私有初回出力は`.runtime/P85_first_diagnosis_20261024`、準備コードは`.runtime/p85_prefix_preparation`。７不正引数は同じ１コードで、1,883文字22文の構文上の前半を確認。全体1,912文字は構文エラー。後続52枠（未観測６）の全22文AST一致は１件だった。先頭loginはPOSTであり、GET限定の通常規則ではそのまま受理できない。DBへの永続書込みは動的に検証していない。
+
+ソース照合時、展開されたspotify/apis.pyがwheel RECORDに直接なく初回lookupがStopIterationとなった。api_lib.pyはRECORDに一致し、両ファイルhashと読取範囲を`reports/truncated_prefix_local_source_review_20261024.json`へ記録した。元の解析や失敗記録を再実行・上書きしない。新しい境界検査10件を含む全1247検査が通過した。
+
+次は固定backendにおける推論・公開コードの出力上限と既存制御を公開ソース・計数から確認する。内部推論の意味内容は読まない。通常の予算設定を新方式とせず、具体的な規則・対照・有限予算を固定する前に新しいモデル実験へ進めない。
 
 [先行実行・処理列再利用](materials/20261024_execution_reuse_priors/README.md)には既存のAppWorld研究がある。[H群の照合](materials/20261024_closed_reference_cohorts/README.md)では、参照統一後も書出し両反復が未達。失敗した方式の再試行や通常手法の改名に進まない。
 
-GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全115件の作業ボードを部分集合で上書きしない。以前の実行中の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/RESUME.md)に保存した。
+GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全116件の作業ボードを部分集合で上書きしない。以前の実行中の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/RESUME.md)に保存した。
