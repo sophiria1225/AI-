@@ -74,3 +74,5 @@ P80/P81の[資源別稿](../papers/202610_letter/resource_prior_review/README.md
 [次の作業](next_actions.md)／[同じMacでの引き継ぎ](../RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。更新前の記録は[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/docs/current_status.md)と各結果台帳に残す。
 
 公開APIと読取ビューの実サービス確認は固定２条件を一度ずつ終了した。全６段階の出力が一致し、実APIは即時11／遅延10、制御要求は両18、完全キャッシュ再利用は両１。後から使う項目と変更前の値は完全取得し、未使用の最後の参照を捨てた１件だけ取得を回避。認証と一覧２回を含む。全6.210秒、両コンテナ削除・ブリッジ正常終了とPID不在。モデル・独立評価０。手書き確認であり、LLM課題の全体品質・費用改善や新規性は未確立。 [全件結果](../materials/20261024_public_read_views_live_results/README.md)。次は強い通常方式との差と実際に回避できる取得の範囲を絞る。
+
+P89は閉じたP88の全８条件・399実API要求で、要求直前の部分情報と完全応答キャッシュの候補を数える読取専用点検。32私有ファイルのhash、既存契約、120秒・各16MiBを固定した。未来の応答、変更、不明、例外、型、時系列を扱う９境界検査を追加し、全1,367検査が通過。実点検は両CI/job成功後に一度行う。モデル・API・評価・保存コード実行０。候補件数を実際の取得回避やtoken削減としない。 [準備資料](../materials/20261024_p89_preparation/README.md)。
