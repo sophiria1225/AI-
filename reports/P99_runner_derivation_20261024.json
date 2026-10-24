@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-10-24T11:33:26.395475+00:00",
+  "entries": [
+    {
+      "source": "scripts/fixed_budget_local_llama.py",
+      "source_sha256": "4ac43105b446ff89c515de484a1b46b5d412b90817eab5e441b4424ec25d2f84",
+      "target": "scripts/tool_choice_local_llama.py",
+      "target_sha256": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+      "changed_lines": 25
+    },
+    {
+      "source": "scripts/fixed_budget_residual.py",
+      "source_sha256": "cbf7f8cdc93c99c10f3700571267339ce847e05fe45089c3b075371658cc5eb7",
+      "target": "scripts/tool_choice_residual.py",
+      "target_sha256": "65ac0c5318d31e140a593513833f644e88da29fe9839b8f21c9d24e5fdf56560",
+      "changed_lines": 6
+    },
+    {
+      "source": "scripts/fixed_budget_inference.py",
+      "source_sha256": "dc3f35bddbd82061f9021eb0d50eac04256a767426b1eaf74e9f1b9bb6617a15",
+      "target": "scripts/tool_choice_inference.py",
+      "target_sha256": "84353f1c86f4f7e5b0e22a3058b6699be914eacdf3879037e10ff4e7b8ea05fc",
+      "changed_lines": 22
+    },
+    {
+      "source": "scripts/whole_task_reasoning_budget.py",
+      "source_sha256": "51e1e041fafaaffb0f4f7cad749b8acf3a1bce4bc0c46c1134e034fafdaa4193",
+      "target": "scripts/whole_task_tool_choice.py",
+      "target_sha256": "67853691aba0e67e2acacb7c86bc2a69797527c5b05164b1aef49e0b1cc0e8b6",
+      "changed_lines": 61
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget_cell.py",
+      "source_sha256": "9293eb422c511a785652d01bf6a50dd6120802f31ed14c2dd570bd53978ae627",
+      "target": "scripts/run_whole_task_tool_choice_cell.py",
+      "target_sha256": "7314efcfdf8d971028f8da44993bc4bc88a23787ee57a9495d4803617ab605e7",
+      "changed_lines": 26
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget.py",
+      "source_sha256": "6a722a64b254204822bb0433fd016404095980d1a5e37d099b60ba9cc82a36a2",
+      "target": "scripts/run_whole_task_tool_choice.py",
+      "target_sha256": "579b75c0cc44e2614face00b4872923c4e7c72255b1c04cedaab9fc805974546",
+      "changed_lines": 122
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget_pipeline.py",
+      "source_sha256": "6980697625fdae1a7251aaa70e3eeaab01ed5fcf7e44c51959a118f9742529e7",
+      "target": "scripts/run_whole_task_tool_choice_pipeline.py",
+      "target_sha256": "d90fefae2f22a6c6296496554330ceab8d28cd33285597b9ffbc1d90c391f3bd",
+      "changed_lines": 30
+    },
+    {
+      "source": "scripts/audit_whole_task_reasoning_budget.py",
+      "source_sha256": "51e5dd7924e14a08085b218b4fa5fe16de9ef7d4ee6d0757a3f60e0fcbf84cd3",
+      "target": "scripts/audit_whole_task_tool_choice.py",
+      "target_sha256": "0c909967fb3da4d23bd7dead61010f3563c9dd9cc92a786d19503a62350f1b8a",
+      "changed_lines": 46
+    }
+  ],
+  "scope": "Copied frozen whole-task worker, residual admission, typed API, history and audit; explicit auto/required choice replaces the reasoning-budget comparison. Reasoning remains -1 in both arms. Added closed-P97 start guard and secondary format counters; no old source mutated.",
+  "old_runtime_sources_changed": false,
+  "real_new_model_generations": 0,
+  "real_new_API_requests": 0,
+  "real_new_evaluations": 0
+}

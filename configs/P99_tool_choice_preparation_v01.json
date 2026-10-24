@@ -1,0 +1,50 @@
+{
+  "phase": "P99_preparation",
+  "created_at": "2026-10-24T11:33:26.395475+00:00",
+  "status": "prepared_not_executable",
+  "source_sha256": {
+    "scripts/tool_choice_local_llama.py": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+    "scripts/tool_choice_residual.py": "65ac0c5318d31e140a593513833f644e88da29fe9839b8f21c9d24e5fdf56560",
+    "scripts/tool_choice_inference.py": "84353f1c86f4f7e5b0e22a3058b6699be914eacdf3879037e10ff4e7b8ea05fc",
+    "scripts/whole_task_tool_choice.py": "67853691aba0e67e2acacb7c86bc2a69797527c5b05164b1aef49e0b1cc0e8b6",
+    "scripts/run_whole_task_tool_choice_cell.py": "7314efcfdf8d971028f8da44993bc4bc88a23787ee57a9495d4803617ab605e7",
+    "scripts/run_whole_task_tool_choice.py": "579b75c0cc44e2614face00b4872923c4e7c72255b1c04cedaab9fc805974546",
+    "scripts/run_whole_task_tool_choice_pipeline.py": "d90fefae2f22a6c6296496554330ceab8d28cd33285597b9ffbc1d90c391f3bd",
+    "scripts/audit_whole_task_tool_choice.py": "0c909967fb3da4d23bd7dead61010f3563c9dd9cc92a786d19503a62350f1b8a",
+    "tests/test_tool_choice_control.py": "17b3e4043cf4fbcb459320f00232b6238f696f0d68cfd7b8a0601c46c83ea4aa",
+    "tests/test_tool_choice_preflight.py": "edbfcede2c3f85e21a1d92dd217ef6e9271b67086145252a7ff88d1ea5f9e9af",
+    "tests/test_whole_task_tool_choice_worker.py": "80c64c4e35575da2f00155bb5ced409caba5f5e72fd3214d107ecae14f62a00f",
+    "docs/experiments/P99_whole_task_tool_choice.md": "415830e5d8fd11f8ef6c324a83512f6d9d855d34cca7fd864d2efe58010f7f02",
+    "reports/P99_runner_derivation_20261024.json": "461e7313ed045b0c050eece4bd31a4769783226d9fca1f55fe9bb9c99495875c",
+    "reports/P98_recorded_action_agreement.json": "fcf899f10b479a2e29da50304caea03893bec3d30d849b519a75e0a416ac5ec8",
+    "reports/P98_results_provenance_20261024.json": "e39454797ddb1db9f1edbb8979221a0bfdae8dacd1ab32fcea7f2b8623bfe60b",
+    "materials/20261024_p98_results/summary.json": "f063e19ef5795ea883eba02eb7bcdd56d8719088fc532a932cd1cd2ca9612f3e",
+    "docs/P98_findings.md": "d58add682928e8b9564efc23977fcea52769c1eba910d88489f674177f9f34cb",
+    "reports/P97_manuscript_sources_20261024.json": "74efd8761bf6c31ff5fac73f3201af05989f1905799c8de6d1341d21c5e78a77"
+  },
+  "reasoning_budget_tokens": -1,
+  "tool_choices": [
+    "auto",
+    "required"
+  ],
+  "planned_new_cells": 8,
+  "known_tasks": 4,
+  "repetitions": 1,
+  "max_model_generations": 640,
+  "max_reserved_tokens": 3600000,
+  "max_reserved_API_requests": 800,
+  "server_max_lifetime_seconds": 21600,
+  "required_predecessor_phase": "P97",
+  "required_future_closed_reports": [
+    "reports/P97_comparison.json",
+    "reports/P97_server_session.json",
+    "reports/P97_notice_ledger.json"
+  ],
+  "final_execution_plan_not_created": true,
+  "P97_intermediate_results_used": false,
+  "new_model_generations": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false
+}
