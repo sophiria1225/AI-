@@ -1,0 +1,31 @@
+{
+  "phase": "P96_preparation",
+  "created_at": "2026-10-24T09:23:04.384533+00:00",
+  "all_tests": 1502,
+  "new_unit_tests": 16,
+  "test_seconds": 4.162,
+  "test_process": {
+    "started_at": "2026-10-24T09:19:53.695570+00:00",
+    "exit_code": 0,
+    "wall_seconds": 4.533043500006897,
+    "log_sha256": "a270dc9da3a70de712a3e3c377df24a479168046d0efd0ac22f409b4e1e02a91"
+  },
+  "preparation_compile_failure": {
+    "file": "scripts/inspect_auth_origin_observations.py",
+    "line": 103,
+    "error": "SyntaxError: unmatched closing parenthesis in CLI summary print",
+    "experiment_executed": false,
+    "corrected": "Split the CLI summary into a bounded counts loop and one print; compilation of all three new Python files and 16 component tests then passed.",
+    "full_suite_scope": "All 1502 tests passed before this CLI-only formatting correction; exact final source is also checked by CI before execution."
+  },
+  "final_three_file_compile_exit_code": 0,
+  "final_component_tests": 16,
+  "source_files_hash_verified": 32,
+  "public_dependencies": 11,
+  "public_runtime_files": 4,
+  "real_auth_origin_analysis_started": false,
+  "new_model_generations": 0,
+  "new_environment_api_requests": 0,
+  "new_evaluations": 0,
+  "novelty_or_quality_established": false
+}
