@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P114の通常対照を固定。今の持続Python・auto構成で、直前や失敗時を含む過去の内部推論を次回入力へ渡さない４既知課題を準備した。公開情報・Python状態・完全保存履歴と生成予算は共通。全1,828検査成功、生成未開始。初回要求と計数をP111の３方式すべてと照合する。P111全12条件は過去参照として保持し、同時対照・独立確認とは呼ばない。P111採用基準未達と使用量不明２は変更せず、未見12課題未閲覧・原稿保留。 [固定計画](docs/experiments/P114_whole_task_public_only_history.md)。
+P114を固定headから開始。初回４要求はP111の各３方式と完全要求・native入力数・予算・モデル設定がすべて一致。既知４課題の通常public_only対照を固定順で実行中。全４条件と所有server閉鎖後に結果を比較する。P111全12条件は過去参照、採用基準未達と不明使用量２を保持。全1,828検査・両workflow・両job成功済み。原稿保留、未見12課題未閲覧、実結果の図は未生成。 [開始記録](materials/20261025_p114_running/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P114の通常対照を固定。今の持続Python・auto構成で、直前や失
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p114-public-only-preparation-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p114-running-reporting-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -60,8 +60,8 @@ P111/P112の実データ図６ファイルを生成し、PNG２枚の全ラベ�
 
 P113の全12条件・204要求・610 APIの診断と全件資料は一度だけ終了した. 固定実行木は `.runtime/worktrees/p113-run`、`5f8aa671ee154c1f50df481cc146bc70ff5376bd`. `.runtime/P113_analysis_once_start.json`、`P113_collection_once_end.json`、`P113_editor_artifacts_once_end.json`を保持し、再起動しない. 全12対と末尾を含む219位置を残した. [P113所見](docs/P113_findings.md)と[全件資料](materials/20261025_p113_results/README.md)を参照する.
 
-P114は[固定計画](configs/P114_whole_task_public_only_history_v01.json)と[方法](docs/experiments/P114_whole_task_public_only_history.md)を準備済み. 既知４課題、各１回、public_onlyだけを最初から追加する. 各80生成、450,000 token、1,800仕事秒、写真160 API・他80 API. 所有server14,400秒. 全1,828検査成功、計画391 sourceを固定、実生成は未開始. `.runtime/P114_preparation_once_end.json`を保持する.
+P114は[固定計画](configs/P114_whole_task_public_only_history_v01.json)と[方法](docs/experiments/P114_whole_task_public_only_history.md)を準備済み. 既知４課題、各１回、public_onlyだけを最初から追加する. 各80生成、450,000 token、1,800仕事秒、写真160 API・他80 API. 所有server14,400秒. 全1,828検査成功、計画391 sourceを固定、固定headから実行開始済み. `.runtime/P114_preparation_once_end.json`と`P114_pipeline_once_start.json`を保持する.
 
 P111は全12条件を過去参照としてそのまま使う. 同時実行対照でも未見確認でもない. P76の途中継続とP25のnative toolは同じ初期構成の対照へ読み替えない. 最初の４要求はP111の各３方式の完全要求・計数・予算通知と照合する. 直前や失敗時の推論も送信時に省くが、完全保存履歴と公開情報・状態は保持する. 生成の推論予算は変えない.
 
-実行前に同じ完全headのpush・pull_request両workflowと両accounting-and-syntax job成功を確認し、新しい固定実行木から一度だけ起動する. 所有server閉鎖後に全４条件と全12過去条件を整理する. P111の不明使用量２、採用基準未達と先行研究上の限界を維持する. 条件探索、再試行、未見12課題の閲覧をしない. 原稿は保留し、停止指示があれば直ちに従う.
+同じ完全headのpush・pull_request両workflowと両accounting-and-syntax job成功を確認し、`.runtime/worktrees/p114-run`から一度だけ起動済み. 実行headは`c74c579c1addad248cffcdb9639178b20d5b46b6`. `.runtime/run_close_p114_once.py`がpipeline後にaudit・session・全件reportを一度だけ実行する. 起動を重ねない. 新しい停止指示があればP114の停止印と所有プロセスを扱う. 所有server閉鎖後に全４条件と全12過去条件を整理する. P111の不明使用量２、採用基準未達と先行研究上の限界を維持する. 条件探索、再試行、未見12課題の閲覧をしない. 原稿は保留し、停止指示があれば直ちに従う.
