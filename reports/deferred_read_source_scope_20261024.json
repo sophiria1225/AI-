@@ -1,0 +1,47 @@
+{
+  "scope": {
+    "spotify/models.py": [
+      "Song declaration, _to_humanized_dict (141–202)"
+    ],
+    "spotify/apis.py": [
+      "song-related function names only, plus prior P37/show_song/library reads"
+    ],
+    "model_lib.py": [
+      "by_id_or_raise and by_id (696–716)",
+      "to_dict and to_humanized_dict (1202–1280)",
+      "base _post_change and commit_session (1323–1338)",
+      "save and adjacent delete beginning (1374–1438)"
+    ],
+    "supervisor/apis.py": [
+      "imports/setup, show_active_task, complete_task, adjacent show_profile and addresses header (1–105)"
+    ],
+    "supervisor/models.py": [
+      "Task declaration and humanized serializer, adjacent Address fields (53–100)"
+    ],
+    "file_system/models.py": [
+      "Directory and File declarations/_pre_change plus File serializer (119–156,187–254)",
+      "function/declaration names"
+    ],
+    "file_system/apis.py": [
+      "process_path and update_parent_directories_datetimes (41–83)",
+      "create_directory and adjacent decorator (270–306)",
+      "function names through copy_directory",
+      "prior create_file/update_file read"
+    ]
+  },
+  "external_source_sha256": {
+    "spotify/models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6",
+    "spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172",
+    "supervisor/apis.py": "d9796e20cd5f4ebe21e06f7347f73ab399164d73451edbaa658cd7ff66ddaaf5",
+    "supervisor/models.py": "8c6848a1d97b384b36460ce5669b9f4eb707b24aa80bf8488241c2ce7fc71d68",
+    "file_system/models.py": "c016750f0fc26c7aa3b9c4408d22fecb9814d7ac5e48e4968866de8655853707",
+    "file_system/apis.py": "5717b0cbabf4b8647c7429a187db3b3c278e9778798a51ff83f14815f8065e22"
+  },
+  "full_transitive_effects_verified": false,
+  "new_effect_bypass_policy_adopted": false,
+  "environment_api_requests": 0,
+  "model_generations": 0,
+  "task_evaluations": 0,
+  "known_issue": "Unknown-effect barriers can erase savings for retained views. Source handlers alone do not establish transitive disjoint effects or generic transport-failure equivalence."
+}
