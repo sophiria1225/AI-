@@ -1,0 +1,15 @@
+{
+  "source_title": "ProMCP: Profiling Token Flows and Latency Costs in Model Context Protocol–Based LLM Agents",
+  "source_url": "https://aclanthology.org/2026.findings-acl.1967/",
+  "paper_url": "https://aclanthology.org/2026.findings-acl.1967.pdf",
+  "doi": "10.18653/v1/2026.findings-acl.1967",
+  "authors": ["Sumera Anjum", "Weijian Zheng", "Rajkumar Kettimuthu", "Heng Fan", "Yunhe Feng"],
+  "venue": "Findings of ACL 2026, pages 39476–39487",
+  "read_scope": ["metadata and abstract", "sections 3.1–3.3", "section 4.3.2 context-injection discussion", "Limitations"],
+  "source_summary": "ProMCP profiles six communication stages. It distinguishes LLM usage from the tokenized footprint of protocol artifacts, and records initialization and discovery costs separately. It also distinguishes client choices about injecting complete or selected tool results. Its limitations include incomplete visibility into commercial-client internals, one hardware configuration, and tools of limited execution cost. Heavy I/O may shift the balance.",
+  "our_inference": "Separating API transport, LLM input and initialization costs is already prior work. P104 should establish only the input path of the existing handwritten read-view example. A smaller API count is not sufficient evidence of smaller LLM usage; a content-only attribution view is not itself a validated policy. This does not establish a novel method.",
+  "external_code_or_experiments_reproduced": false,
+  "paper_percentages_adopted_as_our_results": false,
+  "manuscript_edited": false,
+  "publish_with_next_accumulated_experimental_results": true
+}
