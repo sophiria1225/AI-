@@ -19,7 +19,7 @@ P111の既知４課題×全保持・直近保持・実行記録選別、全12条
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p112-realized-history-diagnostic-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/cache-recoverability-priors-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -55,3 +55,5 @@ P110も全444入力の計数を終了した. `.runtime/P110_analysis_once_start.
 P111は `.runtime/run_close_p111_once.py` から一度だけ起動. `.runtime/P111_pipeline_once_start.json`を保持し、終了時に同wrapperがpipeline終了、全記録監査、所有session点検を一度ずつ行う. `.runtime/P111_pipeline_once_end.json`と`P111_closure_once_end.json`ができるまで再起動しない. ユーザー停止は `.runtime/P111.stop` へ反映し、所有プロセスを確認して止める. 実行木と固定計画を編集中に書き換えない.
 
 P112はP111閉鎖後の診断を準備した段階. 実記録計画のbindingと計数は未開始. [固定した範囲](docs/experiments/P112_realized_history_inputs.md)に従い、P111の全12条件と所有server閉鎖、元の監査成功後にbindし、その計画の両CI成功後にcountする. 原文から再構成した仮想入力を別方針の実測と扱わない.
+
+全件閉鎖後の収集は `.runtime/collect_p111_closed_report_once.py` が別の固定木 `.runtime/worktrees/p111-report`（`356fd9f5203cfaf060c2a89a26ea949ee955e931`）で待機する. 終了印 `.runtime/P111_report_collector_once_end.json` を確認するまで手動で重ねて実行しない. P111全監査とsessionをコピーし、全12条件資料を作り、P112実記録のbindまで一度だけ行う. P112のcountは予約していない. 詳細は `.runtime/P111_P112_pending_execution_handoff.json`. 新しい[cache・復元の先行確認](docs/receipt_history_cache_prior_scope_20261025.md)も判断へ含める.

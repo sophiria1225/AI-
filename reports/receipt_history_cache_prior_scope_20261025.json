@@ -1,0 +1,39 @@
+{
+  "date_JST": "2026-10-25",
+  "review_context": "P111 running; complete cohort outcomes not inspected; P111/P112 rules unchanged",
+  "sources": [
+    {
+      "title": "CADOC: Cache-Aware Dynamic Object Context for Long-Horizon Agents",
+      "url": "https://arxiv.org/html/2609.37012v1",
+      "source_type": "arXiv v1 primary manuscript",
+      "reviewed_sections": ["2", "3.1-3.3", "4.1", "5.1", "A.1-A.2"],
+      "read_scope": "Object/retrieval semantics, cache-aware scheduling assumptions, distinction between frozen replay and continuation evaluation; not all experiments or proofs",
+      "implementation_reproduced": false
+    },
+    {
+      "title": "Self-GC: Self-Governing Context for Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/html/2607.00692v1",
+      "source_type": "arXiv v1 primary manuscript",
+      "reviewed_sections": ["The Self-GC Framework", "Recoverability and Cache-Aware Commit", "Limitations", "Appendix Evaluation Artifacts and Prompt Contracts"],
+      "read_scope": "Harness/planner boundary, recoverability, cache-aware commit and evaluation limitations; not every implementation appendix or reported experiment",
+      "implementation_reproduced": false
+    },
+    {
+      "title": "TurnCost: Turns, Not Observations: Cache-Aware Loop Engineering for Coding Agents",
+      "url": "https://arxiv.org/html/2610.15093v1",
+      "source_type": "arXiv v1 primary manuscript",
+      "reviewed_sections_this_update": ["7 Limitations"],
+      "previous_repository_record": "docs/decision_log.md records prior reading of sections 1-4",
+      "publisher_metadata_independently_verified": false,
+      "implementation_reproduced": false
+    }
+  ],
+  "P111_outcomes_inspected": false,
+  "P111_rules_changed": false,
+  "P112_rules_changed": false,
+  "new_method_claim_established": false,
+  "exhaustive_novelty_search": false,
+  "new_model_calls": 0,
+  "manuscript_changed": false,
+  "reserved_scenarios_read": 0
+}
