@@ -1,0 +1,38 @@
+{
+  "derivation": [
+    {
+      "source": "scripts/probe_fallback_output.py",
+      "source_sha256": "de8b316a62108445250ef2064e35605be0d1aff1e2b3e2bc0248d6fa426ead6b",
+      "target": "scripts/probe_fixed_reasoning_budget.py",
+      "target_sha256": "e36881b076358a2a2b7e30fd2c254bb98d52af9d23dfb5cd29e02422ec1f4c2c"
+    },
+    {
+      "source": "scripts/run_fallback_output_pipeline.py",
+      "source_sha256": "b033cd371ecd6ee98c999f62c67f645d22dd169ac1af4208902f2d87deff4801",
+      "target": "scripts/run_fixed_reasoning_budget_pipeline.py",
+      "target_sha256": "f836f2f635dee7c112d73e94b2f70dffa3ddd0237777c9e9a6e023b8258dfac6"
+    },
+    {
+      "source": "scripts/audit_fallback_output.py",
+      "source_sha256": "9dafb4c120b64a64fd45ffa45962fc3f49022d3178f3a2f28bd725a724c39f1d",
+      "target": "scripts/audit_fixed_reasoning_budget.py",
+      "target_sha256": "e58cdf24001f18f1333c18c8db68e429647cf20240b62ddf64c72736cbf1e059"
+    }
+  ],
+  "preserved": [
+    "one owned finite server lease",
+    "clean expected commit and exact-head CI check",
+    "all-call token/input/cache and source checks",
+    "no response execution or free retry",
+    "unknown terminal use stops the batch",
+    "preserve every attempted and unattempted slot",
+    "owned server shutdown and audit before publication"
+  ],
+  "changed": [
+    "P87 names and stop flag; prior closed pipeline is P84",
+    "four budget cases from two hash-bound P80/P81 requests; eight calls",
+    "add ordinary reasoning_budget_tokens and common cold-cache flag only",
+    "validate public Python argument shape and AST completion",
+    "all-eight accounting and local code-completion outcome instead of ID output-equality claim"
+  ]
+}
