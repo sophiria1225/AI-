@@ -1,0 +1,2937 @@
+{
+  "status": "complete",
+  "planned_inputs": 612,
+  "counted_inputs": 612,
+  "missing_request_slots": 0,
+  "errors": [],
+  "wall_seconds": 20.49481454200577,
+  "conditions": [
+    {
+      "run_id": "BOC_P111_01_FULL",
+      "task_id": "34d9492_1",
+      "actual_policy": "full",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 16,
+      "actual_known_total_tokens": 135628,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 135628,
+      "counted_actual_inputs": 16,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 0,
+      "hypothetical_full_display_cost_on_same_outputs": 135628,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 16,
+          "input_sum": 130462,
+          "delta_from_actual_sum": 0
+        },
+        "recent": {
+          "counted": 16,
+          "input_sum": 126229,
+          "delta_from_actual_sum": -4233
+        },
+        "execution_gated": {
+          "counted": 16,
+          "input_sum": 126849,
+          "delta_from_actual_sum": -3613
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "64beb53f368a60c994f6a569b2a3d5c6f106d886140f2256dc5b4c523794ad83",
+          "trusted_record_sha256": "225c86cd4a0bb01b91956da12512e880b3498af3693e8dba1bd330c228c0e917",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4bc92320161a62811b1b96e8e0f180f16499cae209b5204b7090fe5157df1ad9",
+          "trusted_record_sha256": "64db89a6a2c8fd50248df9d99f5b82469ad972fb47ccbfada975862ca6996f58",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "be6a339740a9016b94392dbf551a0d8e2f28fcbb2a9dd18b2d172201749fa5fe",
+          "trusted_record_sha256": "bef4dc4a20f3a22eac2d61af96d2a67c488a2676a86dd0bf074728ad3c595e42",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e8a9a0048970a53584286f4e34f473984c6cc84abcc91504c2ce44f0f18d95d4",
+          "trusted_record_sha256": "3e158369020961f8e92d2f4d43ee2d469dbe9471cdfed3cbf7d407be6355ed74",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1637aa81f641fe9a689ad828e244cbac50d04656ecdebc1b71109fe5f64ab974",
+          "trusted_record_sha256": "7d1f7b6bda7932562959b1f037e0e38e556375f648a9e86893afb519e892181c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7e003d2eb7ca7eff911449a4f2b3c7073cb3018333905dba10f360aa9a08c6cc",
+          "trusted_record_sha256": "eb03c6c5cbf9d9e6405cd1a94c28604c2cf40f7af0839b60656fe570d2c16b17",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6d6954d737c107d68aa97fba05527fd9e75d2502021b458fe3228f4374a78a2b",
+          "trusted_record_sha256": "834cc08d13d9f91f53615b621ff3cf6888d02a216545e63520fe47345c86dd06",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6071bce218a0ceb6e316dd974a286654b7599e3adebf705ffd5ab1e87cf85fb0",
+          "trusted_record_sha256": "9fda55f8ca54dd638708c5db8da4879da15572107ef7dcd750a0f22f438bd487",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9f9c4006c0a2a4b293d82c0e8523af3be279e802212599f99c14a42141572327",
+          "trusted_record_sha256": "aa0b01e2c90ee725aa3d39132f66f86d0a716e464b492ac5cd86cff1de8a47d0",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "30d58f4ab8d75a0a5c0cf441fa0163e240e1069b8a38e06b0098116c8a2cb392",
+          "trusted_record_sha256": "e8806b84ee16078ceee2c108cb850b7c6f2b100ea77de7c52f3de010bb6100d2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 42,
+          "actual_API_requests": 42,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7a3519b72cd70369933c592be727dc238857accaea3b54b27b10bb90ab0f26f9",
+          "trusted_record_sha256": "dc82d7f51f7e78a5ae3895dac535640770fede9f8576039b2049a96d58b24752",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "11cc46726192ea5972b7a05448b50659300fe2b9eb5d651fe613a46385b4a2df",
+          "trusted_record_sha256": "9efa683644837b2f849066da947062e9dbb4a3d31fc2c853f5cd4004c53edb2d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "859b7108833a647f0e0dad2a3e0ec67ef3615c8ec7c8adfa065d21aaa391f02d",
+          "trusted_record_sha256": "a2c85eea92c19dd300c1a015bc86375a38313f5f3a4a082037debbaa9916120a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 42,
+          "actual_API_requests": 42,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "0283bad81f313ae2ae91ebd17af575892e6df7ae796cf4f209868408dceae363",
+          "trusted_record_sha256": "41bbf4edd60f1bcb8e55a8c6ba372a0304d504dbbbacb0b858122bad697b049b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "3c180a68e83bbf0152a537565af7891da9e0110a834fad7d06c2598ce62edfe3",
+          "trusted_record_sha256": "027fd1498060ca73618de84530f0bb64a6fc5d357ca45258e06238d346d27ce4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7ecf74bbe40343ee9032301c42707ee7946ec08986674521a951b017bc201ba3",
+          "trusted_record_sha256": "d671a16e271e6db580cbfce2d9ea59fb01e6a76a5986aff43f7d217fb26d2eef",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_01_RECENT",
+      "task_id": "34d9492_1",
+      "actual_policy": "recent",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 17,
+      "actual_known_total_tokens": 185165,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 185165,
+      "counted_actual_inputs": 17,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 8650,
+      "hypothetical_full_display_cost_on_same_outputs": 193815,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 17,
+          "input_sum": 186444,
+          "delta_from_actual_sum": 8650
+        },
+        "recent": {
+          "counted": 17,
+          "input_sum": 177794,
+          "delta_from_actual_sum": 0
+        },
+        "execution_gated": {
+          "counted": 17,
+          "input_sum": 178116,
+          "delta_from_actual_sum": 322
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "64beb53f368a60c994f6a569b2a3d5c6f106d886140f2256dc5b4c523794ad83",
+          "trusted_record_sha256": "febc5df59c3beda4e84fba3b812253cb7ba6f701fb52bcd60d0e93be7e8fe201",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4bc92320161a62811b1b96e8e0f180f16499cae209b5204b7090fe5157df1ad9",
+          "trusted_record_sha256": "64db89a6a2c8fd50248df9d99f5b82469ad972fb47ccbfada975862ca6996f58",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "413c0fcf993e5dc0b9d2539efbaa5a834d7df1e99bad8da146ea387cbf24fe98",
+          "trusted_record_sha256": "6db0cc86f5799caa69cfc2bfb0e45764ce2d8bd7bb76a6518235e43272dc183f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "bb9d97dfb4b71a960a38611822b5a2cd4872299ae7de1843d3710b37209dd955",
+          "trusted_record_sha256": "b511bd583f4786022e2b1989f26b8998319d241e37e9bc657bda5fd547ef4fde",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1637aa81f641fe9a689ad828e244cbac50d04656ecdebc1b71109fe5f64ab974",
+          "trusted_record_sha256": "61ea3c83738ce920ab1f6d7359a896e8ba3bc169728ff3de7627c89e23e5479d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1e8932443306fc7f68fc8672d8b8f16f3c5a8f14d07e499cc7dd1b18fd12b153",
+          "trusted_record_sha256": "c2874f522eaf54a829bf8a1a702515054cc6b2f43db43d605d240fc7a8b9ab2f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6298ebf7f9411eccbf6432445afa1841e30b11ba792cc4bfe3d257ad7a252064",
+          "trusted_record_sha256": "8e56d82612676127d4f891688ba4d6894b01d594652eda8e08aeb00e233908c9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "86c821a391074d9a811aaee33c4f5d2b841747022c573e504f1aea6f65116040",
+          "trusted_record_sha256": "3c80d45ee9560418048b705910086ab1f99b245c698702020e430c7735dd55a6",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 14,
+          "actual_API_requests": 14,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a8a8b2a7263526e6072f37902b78bb64d3c621703b9b446900901e4059783814",
+          "trusted_record_sha256": "20bd186c9632923c0122c7a6e4dec625eb22604190c4f0290fc498e681206e4e",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 14,
+          "actual_API_requests": 14,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "84cec8bb96b7569d22addb92a0e66f4dc93258afe46235f47b6103ed62d96002",
+          "trusted_record_sha256": "cb30df73a73d4986f1c100a4c753f8da0bae01df2cb43d70863c3e90e8e6d60b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 14,
+          "actual_API_requests": 14,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2468e4081b11fbb67dda698b23142bafe9dc7d5fed89cef2dfa14a4dae3deb3b",
+          "trusted_record_sha256": "597f2fc59d56364d5246375a7be4dfb85131b3c461f4cb0c7773ef4d3cdeae69",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6071bce218a0ceb6e316dd974a286654b7599e3adebf705ffd5ab1e87cf85fb0",
+          "trusted_record_sha256": "4bc5497c90e6bd8880228ceb1b92d4c911748d88a3f15b2fcdfe473fcc5af9c0",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "c90a34aafb7da597445a61911bec4880810f5af2b8918513e90be8845cee027e",
+          "trusted_record_sha256": "a14972beebcfe15da194c69034622e3b7ec7dfa4498a13c0e87c48a0a8d76872",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 13,
+          "actual_API_requests": 13,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ff894fe7a7e0e94937633d147c8a38d2d6d20ed68b4487c0773d91733fae6d66",
+          "trusted_record_sha256": "d54e22aa0e8ead4707713d0c474c6518e0efba43a868200a81627448d732c81f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 29,
+          "actual_API_requests": 29,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "c73052182b1a3663d70bd6d53ecb0d3babe1e7b1b007a34ed95f949b153e7bd8",
+          "trusted_record_sha256": "6ad8907df3d47fde0f7fbdc6787128742e67d902946cb9044851a5c177324804",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "29ed9a5c71b46765b71fd32274c676fcaf19f134b7b4254a3dd7762cd2eb60c5",
+          "trusted_record_sha256": "b1e8cbefe8600341f83b16409882db4fc289bf528aa6228c04f5725eb2ec5b59",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7ecf74bbe40343ee9032301c42707ee7946ec08986674521a951b017bc201ba3",
+          "trusted_record_sha256": "eac2e6e8b717cb4701e6df9cbbaa5d772ff7144d53cb6893094237ec229bc296",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_01_EXECUTION_GATED",
+      "task_id": "34d9492_1",
+      "actual_policy": "execution_gated",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 17,
+      "actual_known_total_tokens": 174728,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 174728,
+      "counted_actual_inputs": 17,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 4003,
+      "hypothetical_full_display_cost_on_same_outputs": 178731,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 17,
+          "input_sum": 172123,
+          "delta_from_actual_sum": 4003
+        },
+        "recent": {
+          "counted": 17,
+          "input_sum": 164563,
+          "delta_from_actual_sum": -3557
+        },
+        "execution_gated": {
+          "counted": 17,
+          "input_sum": 168120,
+          "delta_from_actual_sum": 0
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "64beb53f368a60c994f6a569b2a3d5c6f106d886140f2256dc5b4c523794ad83",
+          "trusted_record_sha256": "7401509424b1b76f807ee5a02a84ab004d81d6e842e741917e348dce44f26bbd",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4bc92320161a62811b1b96e8e0f180f16499cae209b5204b7090fe5157df1ad9",
+          "trusted_record_sha256": "64db89a6a2c8fd50248df9d99f5b82469ad972fb47ccbfada975862ca6996f58",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "be6a339740a9016b94392dbf551a0d8e2f28fcbb2a9dd18b2d172201749fa5fe",
+          "trusted_record_sha256": "b802f3059e1893d458ad6c41d5b63bd71755753c782e58f67786ed95dfb441eb",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e8a9a0048970a53584286f4e34f473984c6cc84abcc91504c2ce44f0f18d95d4",
+          "trusted_record_sha256": "8ad0360c1a9ad6047640fbea3b2ed57b51940ff245be27a9c9ab1d6302502853",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1637aa81f641fe9a689ad828e244cbac50d04656ecdebc1b71109fe5f64ab974",
+          "trusted_record_sha256": "fc88dbe5bc877768fd71bf4573ba1484096527e477e2fd085c328c2cb9aeaf6a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7e003d2eb7ca7eff911449a4f2b3c7073cb3018333905dba10f360aa9a08c6cc",
+          "trusted_record_sha256": "f63caa5c94cda74509c3d7b8e4c319f1cd0cc93ceae4af857937ccb9e54f5d92",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6d6954d737c107d68aa97fba05527fd9e75d2502021b458fe3228f4374a78a2b",
+          "trusted_record_sha256": "26e6046c4030c4785880f61d0cf65d2473cf277f64fa7d4cec796209d5a5c1f5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6071bce218a0ceb6e316dd974a286654b7599e3adebf705ffd5ab1e87cf85fb0",
+          "trusted_record_sha256": "a3cf863543ad88d5ff29959dea35c9c093da2b22e348f735142636383dd2d06c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "669bd2398edeac92b1576bf17c8fbdefb8890a8934a52b8de8c8fac6d97435b2",
+          "trusted_record_sha256": "16dae27e68e2117ac4fd715626dd8d1711ed03d3f9ca892c67ac6d27ca671706",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 21,
+          "actual_API_requests": 21,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "0efb00cbf51ec5bee5d4fe1d0d47c2f21671bf7b0b3e72b69e3b0dfa4abc1e52",
+          "trusted_record_sha256": "99d6193810a4e3d9dc7d2d5d85579a20c81ed61310414aa41a7d50a07f74e827",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 21,
+          "actual_API_requests": 21,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a89235ebe2215e9bf1cfb22fe47ec76a15ee282bae973fb71d60fa2971cd629e",
+          "trusted_record_sha256": "b9a3cf974240b70d493da8b5d44ad5afbbdd4f8fa08194f274a36917f86cb831",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "305a0cf4188cb22db3858bf02ea4c8cf69b09fcb8a38be889dbc46332364d710",
+          "trusted_record_sha256": "c382458500430329e969b47d64407ca15defa2758acb2c920ef78322c891682f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6077e7517a7a247d37bce6e5e52ca838b1112338821ef9b45bd0de700086b145",
+          "trusted_record_sha256": "480e65a91f95cf0780620b51387cc71b794a3b095834432c1bfd3937b4eb0566",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ef88d497412eb2b1d4aef68e8a2c64196c63c283c353d57ff66e79162499f92f",
+          "trusted_record_sha256": "3397347a5b6ff93b78c7017dded47232a4fe871e3e11e963d91a42c4f5c930a7",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 42,
+          "actual_API_requests": 42,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7f9b43a1ca9943ff3dcb22ee3b5c19d4c623a82e1a5ff4ea4a4b7fbbd49b8fec",
+          "trusted_record_sha256": "c25a04151f5741dc24d3292aaaa5f652af85759bb8da4ba21759cd8634793d77",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4d16a99e5f8a5cb7b0b02249e01cfc0e422c4106bf6d3e496de2331a547b0537",
+          "trusted_record_sha256": "044203604289d94c5d8dbc3eed5e9c317178148c2b90c030414c938fc861be4f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "752ecd79f7e24d05590acec5b7703cceb2dfd4a133aad6649de691c56debcb2a",
+          "trusted_record_sha256": "adb655d8dc7aa47d7ddf025f2b1817dfeadd4dce69c0efd3fc9db85fa27f0ccb",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_02_RECENT",
+      "task_id": "3c13f5a_1",
+      "actual_policy": "recent",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 22,
+      "actual_known_total_tokens": 194571,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 194571,
+      "counted_actual_inputs": 22,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 7917,
+      "hypothetical_full_display_cost_on_same_outputs": 202488,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 22,
+          "input_sum": 199510,
+          "delta_from_actual_sum": 7917
+        },
+        "recent": {
+          "counted": 22,
+          "input_sum": 191593,
+          "delta_from_actual_sum": 0
+        },
+        "execution_gated": {
+          "counted": 22,
+          "input_sum": 194889,
+          "delta_from_actual_sum": 3296
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "69f9adfeb2621b05d18f7c4d9c14f3c6ecba8b08d2dd439e2acca1f2f94c9992",
+          "trusted_record_sha256": "1daf0329babd3a23fc6643e134eb858ed6c18223b474b3fcadc140e6cafa50af",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6cc754a39b280def69fe25269f0116d8f87207cb685d2ff571558c6ccf2820f6",
+          "trusted_record_sha256": "97f732673c406fec372de9b7424aca3a603d4c1b2099a78cca106021127f7dc9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7428a96ee7f398c77be988d1451935807df778742c971bb196556185d9fe4ac9",
+          "trusted_record_sha256": "3a51d1c25dca74a981ca3767eb8a5d41e2df53e49f7bff4885b26bdd94c01a26",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "79336eeea95128bc1e217a52ff71c5401ccfd29711a1455ab03f95c6bc9cdd09",
+          "trusted_record_sha256": "dd5757e58efba7fb2942c84d395a7353515c106261cd4d40ab98a1a95a911b69",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "36ef367864480d17cf582a256a99c18b5052cb96f070170e80c243a3fe07c2ea",
+          "trusted_record_sha256": "800c9394cc26e7e521d9ab7af2e466cb512924116ff1d6eb0774bd346a8e2656",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "10e21ff4e4c083620034c1a6a88c934ab63f62b69d90299f60eee916646eb992",
+          "trusted_record_sha256": "c0804237c1e6a5f6d42291b648bd4e51fcd30d25480c1800e853ea47050de792",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "79336eeea95128bc1e217a52ff71c5401ccfd29711a1455ab03f95c6bc9cdd09",
+          "trusted_record_sha256": "4f19433d35303bb1c7a2026702406e14f35949f94ff079360be7a04da3f3a26e",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "18ae181227f001d4e770585040c83d45c94340e58773340903764237913e0565",
+          "trusted_record_sha256": "21d6c34044ec0f13529eb18a3bc447e9b1379d038874079c47bb89ff4c7c3fb5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8856ae56b7c0cb7a1ae8828e17a8339dbe529fa2813fc96be70269785b075f6b",
+          "trusted_record_sha256": "d24616a91ae25d6e111581076860d992549d224b20c79b336ab9ea0ddff0228f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6b345b412bb6b1fdbbbb806f61f2fefc04ff0fbac854a38445c0e47ba59a3e3d",
+          "trusted_record_sha256": "99db8b8c26a2b323c2e1f2e936b6cfc100598d07257209204ec60a1179d8927a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "bbd082474cf7b66d30d1a612d845b574a1d0fe265170f147a899c0e7842fcb9b",
+          "trusted_record_sha256": "360ca2ba7c6ef296eea9cbe462d0ba2c0ceb948b107a22072751a19c20870d19",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "b2d2122b5793e29288dd84ca0db16139f6fc765463a404c8ccebe4a5fc6137a0",
+          "trusted_record_sha256": "49cf97a0e75f0f0b6bf3043cc1d273e484acde3a47686797bbed661720882995",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "0e83a2ef9e550b137a895965544c0522935717b42a8553f480ad4e27e563fdd7",
+          "trusted_record_sha256": "63e71902dd75cb8faea86cb090d63882a08c660384c294f2cc6e2277f458ff47",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2d3f54e31a6a0d06c90effc1a98476aa7b8bcac1ec1166c61d67509dbcd9344a",
+          "trusted_record_sha256": "7db5b411ee7b6024c42ed32de25be4a9f3f5563722dacb967dbfd54170df03f5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "00b297d312402ece022e3a2310ce5882de9a3630c48d41b4676d3a4e17b272c2",
+          "trusted_record_sha256": "edcb60568b9fd523480709ee68aed06bf4e80c39092e0ec7546402fd50b75c0e",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "67f6545250f86fdc6cd10863a1d0029ec7ae4338fe90a7d36f0cefeb6dd42505",
+          "trusted_record_sha256": "b3010ac6c7ce70d19cf78ad2dfcf7cf04987c9c39e4a1b5d15bbec3207dd99f9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "dfdac74e82e7807a93962ee5717e8b8cf241d05ecde3f3b8a848a2f497a3e647",
+          "trusted_record_sha256": "579d69d83fee095f082dcd957b2fa52bd3dd8a42c0d5780f83a700ef8cac6bec",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "0ce430bb4575d4ea68b36baa64edcf2be96ec14440717e7bfb8db3d05dd0ef67",
+          "trusted_record_sha256": "6e7eeac6e186c85ecb45570197d226df62c99053ba9401955c1cd2c2ded2ec69",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4f053d9e0b76c9a7395bb2c2700dac9fd31fd388ba06e8631b3554550348ea59",
+          "trusted_record_sha256": "34dd47fa835fa309a3e1cc830aa6d8be2af47ece905614a17bbd816551ef8911",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e699a82fdd8bfa063a1bce07b41259975496a9e35bd2faf20b39ab7f4ae956bf",
+          "trusted_record_sha256": "d735e8c9396af42709ab5f69488baae0723e224a26b8f5f8e349a20ca3842102",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4491001378eb8f705e6c616b26521143eaff26a6d38948e855fe75b027483275",
+          "trusted_record_sha256": "3259b18a797c96b4a957e23c0bb818d03c2433ffe96f28e037a771ce97e4e299",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "467397414a25f9a9f71324fee430409becfcb004e806bddec28305b79b228636",
+          "trusted_record_sha256": "e70040de60929935980d890e646e87b9ca92423deb49840cb2dad01ce6b26120",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_02_EXECUTION_GATED",
+      "task_id": "3c13f5a_1",
+      "actual_policy": "execution_gated",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 21,
+      "actual_known_total_tokens": 180000,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 180000,
+      "counted_actual_inputs": 21,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 3243,
+      "hypothetical_full_display_cost_on_same_outputs": 183243,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 21,
+          "input_sum": 180415,
+          "delta_from_actual_sum": 3243
+        },
+        "recent": {
+          "counted": 21,
+          "input_sum": 174188,
+          "delta_from_actual_sum": -2984
+        },
+        "execution_gated": {
+          "counted": 21,
+          "input_sum": 177172,
+          "delta_from_actual_sum": 0
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "69f9adfeb2621b05d18f7c4d9c14f3c6ecba8b08d2dd439e2acca1f2f94c9992",
+          "trusted_record_sha256": "1daf0329babd3a23fc6643e134eb858ed6c18223b474b3fcadc140e6cafa50af",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6cc754a39b280def69fe25269f0116d8f87207cb685d2ff571558c6ccf2820f6",
+          "trusted_record_sha256": "ad01a7d9b6bd6585dc69bb6bef2bf4ef053464f50fd97f9118387fdaf6c29b24",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7b26a792c63a84096a8fcc056e527a2943ee1e10cc68242a8d89f1c275e52c7e",
+          "trusted_record_sha256": "970bda766b9001ef948fd00c770a8c045e6a10de12b6182cba9c93536fea6a08",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "b543aad1943201bf1b3a225bc364118e7698fc538a190cdc535e07e859f27870",
+          "trusted_record_sha256": "01af9c5b1354c3da050a9cf775423db98c6dcac382bd23d8bd349ab909075720",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d8dc7fc36b907ea5ef013ca6ae914666d5f76fc4ed41bf9ce666d137b14e1829",
+          "trusted_record_sha256": "4146a629462a1dacc4d2e79c687c7ed056b6381d298866d6d14864dd87cb129a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1f6cd150a34a317324a58c19e9816f68a7f04204d17d54183a3870a48925204c",
+          "trusted_record_sha256": "d7fc28b5c2944d4e6266662242d4f9afc3cfca4bdb5aba42d54a5fc8c04e971d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "32d673d47089ead6424d36d29a565549ad8bb90c5d3efa401dd89aea4706d0bc",
+          "trusted_record_sha256": "65c4b3da67d885ef98c7fe051feaadd30c9311f19509bb870d956b9899b6a388",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4a54d3afcb359e2bf8bd825c455bbb7d3080f7ebe048d35e7e202538f1a2e8f5",
+          "trusted_record_sha256": "b30d5dd3eb3e387a24dc1485f8c60f77a2cafdbbbeee34458c4f5e4e4c18d653",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "c7326d9cb0480bfcf1c53533a66a35c82cc2dec3d6e79cb85865c2eabf2d24c4",
+          "trusted_record_sha256": "94537dfa8b827ffb9b4adde00ca46d137f0a054ac9de7e99a0a1129de7ed49e4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a2d3b9c5a5c9e15570bde3da0aafe4a52f26264beeac272fac8ec2c709ddf35c",
+          "trusted_record_sha256": "88359f40e817c4cb09d40ef59d71307e1aac42b9e136fb58d67b9e3bb6100632",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e8185cb8b66cf4ab1ed4cc84b1b3d2c96120cc886f94f886b5ce764852a66d8e",
+          "trusted_record_sha256": "38444360db3ad8ca4176c8f989f6c6997e5f249196c943fc3be95f5370eb3c1f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "42f2a14e0f553757ae4f9b255ffffebed3c12dd158be93a11a1559d5abe295bc",
+          "trusted_record_sha256": "9b560af63acc5e6154bbfe58d409efb904cda321db1b25124f893af37294a685",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "19fcb1be142d61fb702165a669d4df0496ce89c519cc36ef4bbb28b99d53ac5f",
+          "trusted_record_sha256": "fca96a746e9a11042d3fd19c2f0697817b40c52e77293827c440619d9978fd26",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6bddbbac58c7d62991713a91483037f5655734db4604558bd4e5edac734e73e7",
+          "trusted_record_sha256": "062001795ed4727f4827d5d565ef1794eb0b6194a76b4ff226f078348b9c97cd",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9145b45ff76b67ab656e3f164bde3fb0b434b88486f968fac7877a74238cc749",
+          "trusted_record_sha256": "a98dc1175bd821d33316fcb689754f89dd427df89d936d5a0ebddaeb363f2dd4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6b98b2ddef1956ffd463a82ca4772588fce3fee9654d909f286752a9bd7d346e",
+          "trusted_record_sha256": "d0a7e320ab8cc7d22269c36c818179aec737332e479e881b7c62067ee6658363",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ed4722b5617fdb3708b657b409f39c91de7ef609ec68ce1d95b1bcd7b42f690c",
+          "trusted_record_sha256": "3403e0533dae432a6689d20d8b847becf190a28e331188afd79caf74325098b5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9886a53b53b8ea99256b437e15edce38becec30044614ddeb75bed7d6d4aff28",
+          "trusted_record_sha256": "75573ce83c3ba5ffcb59231222e5a9f28637e26ce951dad989e92d23551e04e4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d88db14950de9ed00445f67b89ec823763eb23cff5f08dcc9bdf9b80793a47c1",
+          "trusted_record_sha256": "b9c778501e0f6d61c1949fce9cf96f5472eae70247420b6f257f5083eee91b4e",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "631214116ee7e2aab453eb073d7424d6bc55ee3386f9648fbd7f2fd913ba6719",
+          "trusted_record_sha256": "722f528d431b59d7a348a63d1fef272540b8e94e88479aace7be2303c46cc481",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a10965d1b51b36a91fbc786bff51ca049e0831e925e5df9c869c34ddb3309cc6",
+          "trusted_record_sha256": "3f5cfe2ede589aa81548c1af0d7bcbb898041955b2e1c4da0c877e3dc7b2d71c",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_02_FULL",
+      "task_id": "3c13f5a_1",
+      "actual_policy": "full",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 24,
+      "actual_known_total_tokens": 211110,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 211110,
+      "counted_actual_inputs": 24,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 0,
+      "hypothetical_full_display_cost_on_same_outputs": 211110,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 24,
+          "input_sum": 208249,
+          "delta_from_actual_sum": 0
+        },
+        "recent": {
+          "counted": 24,
+          "input_sum": 201397,
+          "delta_from_actual_sum": -6852
+        },
+        "execution_gated": {
+          "counted": 24,
+          "input_sum": 205254,
+          "delta_from_actual_sum": -2995
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "69f9adfeb2621b05d18f7c4d9c14f3c6ecba8b08d2dd439e2acca1f2f94c9992",
+          "trusted_record_sha256": "1daf0329babd3a23fc6643e134eb858ed6c18223b474b3fcadc140e6cafa50af",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6cc754a39b280def69fe25269f0116d8f87207cb685d2ff571558c6ccf2820f6",
+          "trusted_record_sha256": "64e0d648d2a8889055348c379f505f65803dff9ec04283049443403bf5377d72",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7b26a792c63a84096a8fcc056e527a2943ee1e10cc68242a8d89f1c275e52c7e",
+          "trusted_record_sha256": "2c4476818f01fdc958b7a39897a8f127409961772f13d79b952dadd690886e9f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "b543aad1943201bf1b3a225bc364118e7698fc538a190cdc535e07e859f27870",
+          "trusted_record_sha256": "53152582e31895b7fc7474c8120a835f4770e3f0f53ba501088c2a577ba43a6d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d8dc7fc36b907ea5ef013ca6ae914666d5f76fc4ed41bf9ce666d137b14e1829",
+          "trusted_record_sha256": "9fa98b12d97b9ace131d468872645aeb685813753ea494dbce13a363f06c5256",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "746765def14f95910dd0900024a9c51b5e01313891ea192cb956abaec8481444",
+          "trusted_record_sha256": "0a20246797df3490139882f0476707f5572218ac6eeb0e8fcb4e82e145ca4a4d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ba1f1beda21f4afb97e5371cfc4195a6ce1e333a91b8ab187380339507d129f6",
+          "trusted_record_sha256": "17d280fb17a5b56b25b0384f1dff6b1cd6e0a73701641b35dccb4cf99c22e310",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "f4fd3273e5a7a690978a28344f47e2f7eb03b6ab3494d945ee88f7c4701c3cdf",
+          "trusted_record_sha256": "e4179dc2be2f92a6ab53bc88525276a033408d4125d43e164126ec5b9f711d05",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "34fcc793c7815f36822fad80b5a2572c8506ffca9f314f21d0a844230cba79e8",
+          "trusted_record_sha256": "c5f23bd24789e6ccde63c6d0da2e98d6bc044c067327ce37acbc6d07c4c112b0",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "eead7323c507ed832b3a75209c776874e06ba785c46da8de4d6b9c0202ca2e3a",
+          "trusted_record_sha256": "e410d66abbe2583797a482f8a879bc420a8172f61018d67adfb63c7917e9c858",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "acbc8955d789021289f82da979dcfaa21bdbeca3cbac046a42bd11ce0865b6b8",
+          "trusted_record_sha256": "d8f28d87b6e26b40375e2c87a20d2f019e84c2449d2efe8fe4c947ffafed90d2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1b2946ce7127e44729afea690cfcc14a43ebf49cea50fbe57101ad0c45ea0df1",
+          "trusted_record_sha256": "fccaa43f3be681c2d7632e10bc65deefa904838f29fc90ad5a31822fa4272c9d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "63f735c11599b5fd7d620b35f302be2fad76ec63c5b2954f0a269502d31e595f",
+          "trusted_record_sha256": "775b01f89e439fdca3ef42fa753d4aed33606c29d15e743bc7c44de5653b1a39",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "78f8d2e155583ea6e2c1e03eed174d357614c52d1ffb848a182997156124d39d",
+          "trusted_record_sha256": "9efaec9380f3384b814c1432ea83529e4d4935222fd9eabee868b533a4102554",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1d615da9200c02929e913da9e33ac1d0f250458bb61d143f77e2fa0668f381ee",
+          "trusted_record_sha256": "bdb2111d3023e87ed491565514617398c0759f3e2ae5f95bc5204988e35c75ce",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2d3f54e31a6a0d06c90effc1a98476aa7b8bcac1ec1166c61d67509dbcd9344a",
+          "trusted_record_sha256": "0ae65e218efd8abb54c30461a076939825b3cdc5d95152b7378fc3063bc93ee1",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "81927f7bc88224a4ac0b4f6cf3d2d55bde85e79f0626511aaa64dc852b3b02bb",
+          "trusted_record_sha256": "257db7b0cdd2994e72caf07ba6f475db5e7da7ab3d2b268ef4229db9e4e7996a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "67f6545250f86fdc6cd10863a1d0029ec7ae4338fe90a7d36f0cefeb6dd42505",
+          "trusted_record_sha256": "43efd5821913bc921c25a2025c3ad90977de50e01820c60352aec169363499e3",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "c083469b1e8e125c7d1bfe6466269fdfa8a7cce3a7d3379e8d73ba522faba880",
+          "trusted_record_sha256": "04f7b42bf78c61dc9c38fdf65011c39ae1d0cba1eb4a32004a395055265b6c63",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d88db14950de9ed00445f67b89ec823763eb23cff5f08dcc9bdf9b80793a47c1",
+          "trusted_record_sha256": "f8466e146fb111d224d8ea3d8500768f748a00f4173e97092bd64c13c7d456ea",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "249c42de556945b684c493e4ded08f0aba7c06659c2896896023255dfac925ea",
+          "trusted_record_sha256": "34da9ad8ff8ab427114c25a8c665b04095eb99e0030d493fbda3fc3e269983b5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4f053d9e0b76c9a7395bb2c2700dac9fd31fd388ba06e8631b3554550348ea59",
+          "trusted_record_sha256": "bf2c2092c37f1c2f4ee356b46a7985872ed6aa2cffbc41d5946dfcd6142888c0",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "be86cd9880e09d2762280ed4c6fdb44e281f4415b89ec61db57cb292c9c2da88",
+          "trusted_record_sha256": "a7d1d66ed8df6719a1d52f6e2accc10d003e3949cd247086f7be3c3c8b4e9ab1",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "467397414a25f9a9f71324fee430409becfcb004e806bddec28305b79b228636",
+          "trusted_record_sha256": "f905b333fb248f2d444470ec9dd780ce860b6d8a846887d104ce0914ddbecb1c",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_03_EXECUTION_GATED",
+      "task_id": "60d0b5b_1",
+      "actual_policy": "execution_gated",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 13,
+      "actual_known_total_tokens": 80314,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 80314,
+      "counted_actual_inputs": 13,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 1106,
+      "hypothetical_full_display_cost_on_same_outputs": 81420,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 13,
+          "input_sum": 79599,
+          "delta_from_actual_sum": 1106
+        },
+        "recent": {
+          "counted": 13,
+          "input_sum": 76937,
+          "delta_from_actual_sum": -1556
+        },
+        "execution_gated": {
+          "counted": 13,
+          "input_sum": 78493,
+          "delta_from_actual_sum": 0
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "122fae1007c4fb6d998b1a1cc97a3c768bec0331f75f99d4f8c467fbfe9cf5af",
+          "trusted_record_sha256": "d6dd3a577704fd84e7e5d48977b4bf10758a69ac7f80dece9f4726f4316f6a79",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "5caa0db7ce071e1560d83751b20ade7b10102e7c138ce980fee1a6e46b106566",
+          "trusted_record_sha256": "81310a5a1ee7259fcf3c482d2460b516e21fbb219b5a07f405ab84e256ce1d2f",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8a2cd54c956543d24899f6c618746346c25fd5b98c04389ac793d247f088487a",
+          "trusted_record_sha256": "1f4d22795e8d6bf56a2276c557e7e84f999b46bd0160baff4fa065e3b1b76818",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "38f466ac82b21c9acdd2d188aec54b502d83d2ad21e620041cbe75ac79619016",
+          "trusted_record_sha256": "59d6842e5f1d2670a7ab9ba42c2e7c7ac08f2d89633f6956d35e2644d91d6b49",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "59831f2eed32f9826929bf83c33317153fbbb4c34f08020ab63d5624da821b5b",
+          "trusted_record_sha256": "63e05f2804900f7b1d30c78bcf32e77d06d0c1367b0db6080a41151c55e9502c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "be8039996c0a21c4db08d5c1e8350662ab1c7703c59b9962e7fd02d829c61441",
+          "trusted_record_sha256": "c7d4a2c7da4f9877b119899b3ff51b7dde28bb1a4309b1902239b473a6f22b58",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9a9659feb6fa5c9adbe9952940ce8ea1986a8652e502d26dadf8987e582712cf",
+          "trusted_record_sha256": "3392336377855ba6b2bee03a340a1e93256af28d937b0d6ed152e75a979e9b9d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e8dca14115b9711e8bde3b0367796c5dab4436e04b6c22b3908331d99a6896fc",
+          "trusted_record_sha256": "ca639ab2015717f7ee1f8f3c0b5964cc894b3dbfbac9a3e9eed7e5c3b3680bf4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "fc7e66f0e7b610e32b85c59694da99bcceec5599eb2d5b59f74bbf7b9e825e10",
+          "trusted_record_sha256": "ae4930116461fed6b815fc57e95ae8c34c5c1de03451c5b3aa138b888ce717b5",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "248d34d425f55063ae5795e214c6e78c2862c463ec0acf024d2981dc8e9cefff",
+          "trusted_record_sha256": "fddbd7e68b54a34885aeacc9f77a9b5e5b0fc31ed3c8c54e1d17d202377ab807",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "30d0f055e6b0ce5678f4094af32cac1ff2f24548f180ac5798a52ccdc10387c6",
+          "trusted_record_sha256": "a830830784f04dedfe3280f7d72e8f9adb4ca427e4f53605254c395531c72e66",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "980bbfd0a792d002d84ad5d9947181ec3443d2787fe1c108ace31fa67f4ed664",
+          "trusted_record_sha256": "6547d4895437569bb90e756300ab9297be65db34f4aa3569a926b4defbad2f08",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "467397414a25f9a9f71324fee430409becfcb004e806bddec28305b79b228636",
+          "trusted_record_sha256": "6ce2f935cfe6d8ad58323c6cc9fd591463a621c829f9dac733897b163a4d7e9c",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_03_FULL",
+      "task_id": "60d0b5b_1",
+      "actual_policy": "full",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 13,
+      "actual_known_total_tokens": 102087,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 102087,
+      "counted_actual_inputs": 13,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 0,
+      "hypothetical_full_display_cost_on_same_outputs": 102087,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 13,
+          "input_sum": 99160,
+          "delta_from_actual_sum": 0
+        },
+        "recent": {
+          "counted": 13,
+          "input_sum": 95076,
+          "delta_from_actual_sum": -4084
+        },
+        "execution_gated": {
+          "counted": 13,
+          "input_sum": 96022,
+          "delta_from_actual_sum": -3138
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "122fae1007c4fb6d998b1a1cc97a3c768bec0331f75f99d4f8c467fbfe9cf5af",
+          "trusted_record_sha256": "f3b29221a44ed6bfe28a4a3b9372bc608ff833791405b9fcdb50b2fca339d1ac",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "5caa0db7ce071e1560d83751b20ade7b10102e7c138ce980fee1a6e46b106566",
+          "trusted_record_sha256": "1e69ea2f45807f8e8b2e086e7247f460714c75f06083db7f62767f5029d66226",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8a2cd54c956543d24899f6c618746346c25fd5b98c04389ac793d247f088487a",
+          "trusted_record_sha256": "8771069655d43eafb30e999c06fd136ecb987740e1c5fb9558c9ca3f928ece03",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9eecf05563e354436baab9d434eaf46a62afbc9a214c711abe429860047ab3b4",
+          "trusted_record_sha256": "ceb5fe1ae04a118ae6c07573e53decc104962361847aa503a27834dd1ceeb2d8",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "5e47072ec6f51990b49fb12a5471627ed263d5ab940f6b140e6c6657440e2f1a",
+          "trusted_record_sha256": "028fe61be33bb289197aac365362b29d43e1549daa4c025a12b42128411527dd",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "72ab8e4d4e3fe58af051ca551c09bc43382969cccc7020e2af417b1c03247c80",
+          "trusted_record_sha256": "e44fc723b890366d4496fd2ea8197cb21efd6ba2ed450bacc886d8f22335469b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "61ddfa6404bba02608f4bf96aff3475ac3bbaf6822fea6b32ccde62dba466263",
+          "trusted_record_sha256": "045185fb2024c23c96ebb7a218246c304b54854eaaf0bc560fb72faf6e00c8d8",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "17179151d3b1018833620c4e8397b62b906e07bad9060b958b282e7db962cd5e",
+          "trusted_record_sha256": "217486f76c132ae6f67ab962074e9809ba45745ea55a1c3cd52a7fd34990e477",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a80840daf2589c92d3b0c96dc62cdf43a10f59ac720c621cf27ecb395c93595d",
+          "trusted_record_sha256": "7a7a4d6aa8ca326445647ff0105e017842c7cb384c13ff8353d68fe9b8c0f2f2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8ee4bbaae638b1c66d8f88f39c3493b22033cc62edad9d4b2294c02a098fe58b",
+          "trusted_record_sha256": "ad6ba5d40b3d69ecbfd69b2795c37f0435b6275a711ecb236d461afd938b3e2c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "0a045fe6fc2e994d9020ad412b8af32f66832689841f42935d13412f6d7d0976",
+          "trusted_record_sha256": "c1abd6fbe150d1f9bd1fa9339190821241d6c6d7a739e138df91fe3171bb180e",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "3552d656d31d2001b8f51b302c003f82bfd191474bae23d32b5f8dcbf31a1a94",
+          "trusted_record_sha256": "8d4f93bb7e2e39080a771496ea124c56ed33545421128ca69db7618638a6843c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "997a22f511c1df49a61f702ce9b664b693fd8d7435d6410858333d34dc55b96f",
+          "trusted_record_sha256": "68173f52c6a742c1a6878b6b6ff8af06899ad30b9ded982830309554fa030f5f",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_03_RECENT",
+      "task_id": "60d0b5b_1",
+      "actual_policy": "recent",
+      "record_status": "evaluated",
+      "actual_success": true,
+      "actual_model_attempts": 12,
+      "actual_known_total_tokens": 73896,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 73896,
+      "counted_actual_inputs": 12,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 3289,
+      "hypothetical_full_display_cost_on_same_outputs": 77185,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 12,
+          "input_sum": 74950,
+          "delta_from_actual_sum": 3289
+        },
+        "recent": {
+          "counted": 12,
+          "input_sum": 71661,
+          "delta_from_actual_sum": 0
+        },
+        "execution_gated": {
+          "counted": 12,
+          "input_sum": 72860,
+          "delta_from_actual_sum": 1199
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "122fae1007c4fb6d998b1a1cc97a3c768bec0331f75f99d4f8c467fbfe9cf5af",
+          "trusted_record_sha256": "ab573d9bf33db154a23cb89efff10c20fd9cda98c25f851a30c32fff57acd08b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "5caa0db7ce071e1560d83751b20ade7b10102e7c138ce980fee1a6e46b106566",
+          "trusted_record_sha256": "d0ff0c0145e89117da0295a45a0a0506926b264f3fadc644875b2f5b1b632f86",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "1637aa81f641fe9a689ad828e244cbac50d04656ecdebc1b71109fe5f64ab974",
+          "trusted_record_sha256": "749845f916e63e75d86050a1b564b44b5aba1daa0ab0e4ad55e67942a8450d6b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "333959ee9f74207487440fae0effd9f46d83fca14f3f989a6fd8fde3ea6127e8",
+          "trusted_record_sha256": "cdbd4d5b15e85ea51b90971d46febb91729ea5b3efe01c2d3bb1f74be9b5c573",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "3c2af36d2606efbd7d5375d533b68e624e37ef3071528864690e9818b4fd033a",
+          "trusted_record_sha256": "5498d6df5cc4a5e48ce0fc178d4be179e0e3c76a26fc2cbb53029bf754f85777",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8a344eb6cc967de48b75885ab247d70ffc43806f496eb9797f96c925c62237d9",
+          "trusted_record_sha256": "9092c956c2b16226021dc25245f96c3e9fbf843a32fa8982876c940b0eade9a2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6709373acfe1f9e5e494f8f7d2f91bc3b9dfcdc2b0a42a78df5cb9307df602e4",
+          "trusted_record_sha256": "b94d35a85e820eda5a22e282d7344c67834a77aaf6cfa34134e7743905ba2dd2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d2c56d27e1c979329cb788ca5760469472ae00f25a4d4c89c865605463d46b9e",
+          "trusted_record_sha256": "f7f714a407f67799b4b18022e28f9c93df1e39b7b4c1c0c04c1ac343fcbc86f4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "17a93d912e72c2e28d86275ecd99eaa899f6e0ba8052b9dbd40e7301332396fb",
+          "trusted_record_sha256": "63b6a06da9bdb9acfa2916878e429641f22b2539412a5ebfca6e24352cc4c2bc",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "f609adb81dd66b0102789946428d6ca2e77f6aaa9c06b52b7da5614f49c1f849",
+          "trusted_record_sha256": "815ebdf7d756f22b2d53558bf4b9d7b41311a0fb3d80c581217c7dc7235951b2",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "dc761a7576f9c83e539995c2a08ea7d67d34f153341fad0e2f81301028d59550",
+          "trusted_record_sha256": "24e1fef3ef668955a22ae2bda4c6d91b9f4e0a58e85b757b3a745199798f574a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7ecf74bbe40343ee9032301c42707ee7946ec08986674521a951b017bc201ba3",
+          "trusted_record_sha256": "6a1f2b6070af27884f01f47af3d225427ade77540fffcc4e371b13326e05d03e",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_04_EXECUTION_GATED",
+      "task_id": "6104387_1",
+      "actual_policy": "execution_gated",
+      "record_status": "evaluated",
+      "actual_success": false,
+      "actual_model_attempts": 17,
+      "actual_known_total_tokens": 228626,
+      "actual_unknown_usage_calls": 1,
+      "actual_full_logical_tokens": null,
+      "counted_actual_inputs": 17,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 13022,
+      "hypothetical_full_display_cost_on_same_outputs": null,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": true,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 17,
+          "input_sum": 258223,
+          "delta_from_actual_sum": 13022
+        },
+        "recent": {
+          "counted": 17,
+          "input_sum": 227046,
+          "delta_from_actual_sum": -18155
+        },
+        "execution_gated": {
+          "counted": 17,
+          "input_sum": 245201,
+          "delta_from_actual_sum": 0
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "f40aea68b79442e782011a17eba5429bea93a6fa40e6fffd501a88bb49beade5",
+          "trusted_record_sha256": "9602a652ae0c7b6d61b29b8758f315e125483d148e57fec45e38a881f3b4966b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "704d263d9dedf1e5a6d00345df69297c97e981518e8b21e55cbf8ecc16e52c6a",
+          "trusted_record_sha256": "4d9402719165c4295ab56c5b6dae65f0ade3a5743ef321685de7636e9749025c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "03800b0bd56c2d4ac3a0f6c45dfbde063977cd40ef0c8640b3ed0759bf0cb4b1",
+          "trusted_record_sha256": "d15b0dad739506c7cd230412698145caec938daedf85262c8279eb21ae947a08",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 8,
+          "actual_API_requests": 8,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "9100d3a251420fc4190e448e5033021bfcdd2a02261e3e2bbc1dfbc09f39c51f",
+          "trusted_record_sha256": "5dcac4eeb285550fa8e6f171c74cdbf343be8d9d7a3719c456128031b129b9f7",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "88e5abc0320412b037d1e72baaf06ca613228b8f1b2c92313d2d2fbb6358c691",
+          "trusted_record_sha256": "a4e403dd17f56bdaf0d3912d5be46e63b8f83905723d0d032b8769fc16e3c8b0",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "3bee4a74480826ae485cc47b4cec8b8d577b32e0b11d52c718f85d0a6c6de0c0",
+          "trusted_record_sha256": "4a31cc24d5f9f1d4f336aa17921c7de730d3c93c6cd292a2db6385a9c511c832",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ec7ddb1467602c1f00f629f868c5df760a9cd6f307fa0ee1c5bb030cd989d8e1",
+          "trusted_record_sha256": "556f27c21e3abcef7b3d89bf9b58bc091d78a0e6e2cd4cecfc55b7eccde8b0b9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "064582a7d5e23152d59cf9a5488c4be76096c8f9ab68e8e3526333db5fde1166",
+          "trusted_record_sha256": "91b6fb72e31da76dfb69a3621a821ab2b8f2351e20c87e51f1400e8508406fe3",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 6,
+          "actual_API_requests": 6,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "46cf662e5ff2826a3794912b56df2a1d0940a2a493480d8b9ebf973d0a568c3e",
+          "trusted_record_sha256": "e1aa0e70dcecdeb1050fd5831f9825a194ba90dbaa689e756bd27ab1a1963886",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 6,
+          "actual_API_requests": 6,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a2cca5cb133270d8300a64a421b9e77b94aed24f0db31b86ce81388d8ff532f8",
+          "trusted_record_sha256": "248898441d5ffc051d7f5dffd306cf51400778cd775880e80ebab9a50c5ffac9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "8005b84644af0e96a5f5dfd03e5f1bfecd6c7d77f00dfd036107dc8d3eead99f",
+          "trusted_record_sha256": "4b40ed54aec95fb991dcdf9cb1ad9b4d8f2f86a4cb3199bf28f74b68dcd48894",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 4,
+          "actual_API_requests": 4,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "14bc3d3e88b088839e4e81a2458983a0c1567c2e9e86ca25e880a294d3cd2f2c",
+          "trusted_record_sha256": "966756808ba6ac36d556477131bfefc72e39af4e97d13a151d579a4e3d352a13",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7d2cf89226b3b6a5e98f0b3163ac9e1a5ef25116f174906e107a89e5b00be894",
+          "trusted_record_sha256": "550d093b85c0a4f763f59925072e81497fb40bbd988b5fb88085307dfd94050b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 37,
+          "actual_API_requests": 37,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ade7d246d2691ac6e05144014b79d34ff40914521ba5601b32d9cd8fc1630bfe",
+          "trusted_record_sha256": "0c41daca867b8c0ab2d6a7514ecb215267fae45bcd73b50b587b518a92f5be24",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "b7e44fe55d798b1abf971a74c4f970df7bffb87649fbaa077f73a5e7b4703d7c",
+          "trusted_record_sha256": "da2cc2b3ca1e5fe5b0e301c8b98030f62ee54d1bba307025031d63d9e3edd797",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "execution_not_confirmed_ok",
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e7eac9ff080d2ca62748b2cf0546f49fe212c723fbfbf4de1186d5fe4ae9490e",
+          "trusted_record_sha256": "0f4313889f0619edc728be2d7eb49b6a9fce5d313fda18c67a087bad8efef5b1",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_04_RECENT",
+      "task_id": "6104387_1",
+      "actual_policy": "recent",
+      "record_status": "evaluated",
+      "actual_success": false,
+      "actual_model_attempts": 11,
+      "actual_known_total_tokens": 101399,
+      "actual_unknown_usage_calls": 0,
+      "actual_full_logical_tokens": 101399,
+      "counted_actual_inputs": 11,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 2588,
+      "hypothetical_full_display_cost_on_same_outputs": 103987,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": false,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 11,
+          "input_sum": 100289,
+          "delta_from_actual_sum": 2588
+        },
+        "recent": {
+          "counted": 11,
+          "input_sum": 97701,
+          "delta_from_actual_sum": 0
+        },
+        "execution_gated": {
+          "counted": 11,
+          "input_sum": 99041,
+          "delta_from_actual_sum": 1340
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "f40aea68b79442e782011a17eba5429bea93a6fa40e6fffd501a88bb49beade5",
+          "trusted_record_sha256": "e590552be3f27ed13d5a4dc267b571df216905d889e86b93ea4069e83ffc589d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "704d263d9dedf1e5a6d00345df69297c97e981518e8b21e55cbf8ecc16e52c6a",
+          "trusted_record_sha256": "5830ad672724d6b420aaf56ea747a0bd013d3898e1f65d8810ae13a8d9dda945",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "03800b0bd56c2d4ac3a0f6c45dfbde063977cd40ef0c8640b3ed0759bf0cb4b1",
+          "trusted_record_sha256": "7d4cf08c8c6c544113c35e57d04f20dd873d94e7437bed001c2d7b94e113c978",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 4,
+          "actual_API_requests": 4,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "54beab7f9abc5344384d02863a7f95a19c2bb956a18e50e53f540b9563103442",
+          "trusted_record_sha256": "113149a44f343b476e812ffd826f92b55924aaa440314bdac1b89a5ada642a55",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4c474a9714a1fc4d06b5296786e13f49d06c2377ef3e07799c46b8cc286269a1",
+          "trusted_record_sha256": "855be71477885b4f057347b4ea586d651024a4caeab4c295c33e682b8086d78b",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "6656d651e0a81940be7c53f24fa32fa44054831fc5395c157eb68913166833da",
+          "trusted_record_sha256": "dd8162d3812fbbdb84807526c34d4e0b268dea55316311e9e79e5cc8569369d9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "dfaa0a9415732f701d5b5818f44eaf8ccf993595eee03ba5afa7ebefdc27476d",
+          "trusted_record_sha256": "4a95a11997f9455027e973976df21b4f1044bfe23d14465f290bf672ef348214",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "cd1382c13968f9a8c2923b0708dd505dc76ec2f9ead849798d3a08954179147c",
+          "trusted_record_sha256": "8644361576ec4d3e4deb8a8edeeccacab185456cc9e1bf43013422d34fe72bc8",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "c00c1b68cc09857455b5f77e0d53cfbad6d658fd70091a28c9cf8eac8ba40344",
+          "trusted_record_sha256": "d1bde14bc63d1fe331c529d09d29324edff07e4323f17764077ada74f1c14441",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2bbcc914295b147e8241c7f2ae1ba9db13e182d518cb74f3fb55c33e3d1801db",
+          "trusted_record_sha256": "c43db75ba14a931e1605bce13daa001301020ecdcd026f600b7a6e824ee0804a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_not_sent",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 65,
+          "actual_API_requests": 64,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "e589d6d7ea484c7e107380e9bf8e65873873c5a5fdc93247ab016f123f934dc8",
+          "trusted_record_sha256": "2386e3e60900adac134d2d4f61cae316118cfd7b5b1c31c84dedaf0308d0fa32",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    },
+    {
+      "run_id": "BOC_P111_04_FULL",
+      "task_id": "6104387_1",
+      "actual_policy": "full",
+      "record_status": "evaluated",
+      "actual_success": false,
+      "actual_model_attempts": 21,
+      "actual_known_total_tokens": 358638,
+      "actual_unknown_usage_calls": 1,
+      "actual_full_logical_tokens": null,
+      "counted_actual_inputs": 21,
+      "all_attempted_inputs_counted": true,
+      "actual_policy_input_omission_on_realized_path": 0,
+      "hypothetical_full_display_cost_on_same_outputs": null,
+      "hypothetical_cost_is_not_an_observed_full_policy_run": true,
+      "actual_unknown_usage_not_imputed": true,
+      "terminal_unattempted_projection_included_as_model_cost": false,
+      "hypothetical_inputs": {
+        "full": {
+          "counted": 21,
+          "input_sum": 375540,
+          "delta_from_actual_sum": 0
+        },
+        "recent": {
+          "counted": 21,
+          "input_sum": 295763,
+          "delta_from_actual_sum": -79777
+        },
+        "execution_gated": {
+          "counted": 21,
+          "input_sum": 367103,
+          "delta_from_actual_sum": -8437
+        }
+      },
+      "prior_turn_evidence": [
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "f40aea68b79442e782011a17eba5429bea93a6fa40e6fffd501a88bb49beade5",
+          "trusted_record_sha256": "037b7dd1279018b73b9b1097e761353c8122dffe2286204598dac2a636b212cc",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "704d263d9dedf1e5a6d00345df69297c97e981518e8b21e55cbf8ecc16e52c6a",
+          "trusted_record_sha256": "5bc9976d237cfb08becdcb43755df677b5c8584bce6fca49fc2314ca783e855d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "39359ea915281c61b1b5afff7eb38c461f2fef70a6b5054fb67217179d2940a0",
+          "trusted_record_sha256": "243e66604edf59eabfa01510300b629b7ba71f5ab4dc43fb7fcf7b67ade95a7c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "API_return_not_confirmed",
+            "execution_not_confirmed_ok"
+          ],
+          "outer_records": 1,
+          "API_records": 1,
+          "actual_API_requests": 1,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "ef83b9766dbb117bff328952efd80e73581dc1dad3bb637930fc518a8d864b86",
+          "trusted_record_sha256": "4a714be293bba4cc50a7f78edabd64af964ba01fedd055c6d380c3417778a7af",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "d5ed3f6d7ec2a774ecf390ef463ebd9409148156dd4efb6022a5037a6afea09c",
+          "trusted_record_sha256": "1a994a2302e40fbdc9fdbb0ce009de4009a29e7d305b81dda5cae91f2bc1cfa9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 4,
+          "actual_API_requests": 4,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "72f6bbe09790b805fe94451a46700022897f180aa296bfbc5c968b2cdd7f9964",
+          "trusted_record_sha256": "905fb866b59504873bffa21cce1610af96a6d8786a1572eceeb76348009bc245",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 4,
+          "actual_API_requests": 4,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "5ac3b17be102412c52f5f9fda0b9316f7252fcb2197c681759b8ce01c1a2898e",
+          "trusted_record_sha256": "7d6986f8c3f0d247c2e81c583fc1160eaa14e2c4daae57263e907cf1e3f58d05",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 4,
+          "actual_API_requests": 4,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "44631268373adba5aed4233b7dfe538f584d2426d35e763b89e658d675beca94",
+          "trusted_record_sha256": "f545d3e07062b9e06a669590ef71f529e7e1ceb6dc90ba313da0a0431700d374",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "a6bf32e541ede56c0ffb8b5b54899ef5dce025c0a8d70ed884bc1482d1d193de",
+          "trusted_record_sha256": "1c1b3d210b136c309e13aab7ac9da3af9171b9be16b9400cb21024ecda244dda",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2f65182590f9970389728cfb83c0bfc01c8ded553df7c018135c59c1f7992346",
+          "trusted_record_sha256": "2ee60a70c4e70dc616e13dd9f30213d2798880fba9375b8b85822fe84a9e329d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "3da06cce36dfecbfa54c78d73f3398558ff7c495a6cf41971ee1f78d5fe80ddd",
+          "trusted_record_sha256": "5fd6d3f88e910c6db508a82168b264b40bd4c279ca4e7d6550bc74226057863c",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 3,
+          "actual_API_requests": 3,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "58611e42ba8c9be31ebff7eddfea37777c68855a17025a180c79b731578fd8d5",
+          "trusted_record_sha256": "970b16a71a6e517c5d152ae717438ece38106c67a8d3052d1ad2f0086894229d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "execution_not_confirmed_ok",
+            "no_actual_API_request",
+            "rejected_or_not_executed"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "7853d0d560b4cfff7413e3d6bcfae87f706a6e38aed67e99433d513a1271e9b1",
+          "trusted_record_sha256": "8b1a9f0f529afdbe840381294194dfd085228049fd3786f4aef010e1060286f9",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "execution_not_confirmed_ok",
+            "no_actual_API_request",
+            "non_python_or_no_action",
+            "rejected_or_not_executed"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "trusted_record_sha256": "28ab957142b26c2fe41608721e36384f6b7bf564835e096e751af102e00ff21a",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "execution_not_confirmed_ok",
+            "no_actual_API_request",
+            "non_python_or_no_action",
+            "rejected_or_not_executed"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "trusted_record_sha256": "0c01b0eee4cbe29378ecaed7eca2c35b86f3b47869bb445bed3439cb232f143d",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 2,
+          "actual_API_requests": 2,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "604082f7f7f2f0419066b7218a7ac05fff3ed4348c2c73ab5d534f17b1641c76",
+          "trusted_record_sha256": "c86d8aa42033448cb753ec165d25da4c73ff6b26b626816e015e08f8571969d7",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "execution_not_confirmed_ok",
+            "no_actual_API_request",
+            "non_python_or_no_action",
+            "rejected_or_not_executed"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "trusted_record_sha256": "5bd36159b6b2067fb9c8b65c9da6c61570b9e3516007f4604f7cc2c5ca0f1136",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": false,
+          "reasons": [
+            "no_actual_API_request"
+          ],
+          "outer_records": 1,
+          "API_records": 0,
+          "actual_API_requests": 0,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "67310e40638d5982407ebdb5a068062804ad2c13c547af0287aa27bb2493a260",
+          "trusted_record_sha256": "18e7beca73174492577e85357166a696198c4e1e18174a1a1eb0f46ce66381e3",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 12,
+          "actual_API_requests": 12,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "636bd2f5309bef75bd2623345c30aaf87bf577f307f73ef3d1cdf304909927ae",
+          "trusted_record_sha256": "32548c323a808c296ac790c2cb7b52b025e1f126b24c35dc479af5b20b6a6dd4",
+          "semantic_redundancy_certified": false
+        },
+        {
+          "eligible": true,
+          "reasons": [],
+          "outer_records": 1,
+          "API_records": 11,
+          "actual_API_requests": 11,
+          "pending_reads": 0,
+          "public_function_signature_sha256": "2da3d4038a89e4ccfbc3d3259296aaf7f1d4bc4fba1d66beb36bb4848ec45a5c",
+          "trusted_record_sha256": "2aef3ee0612e7d0341d4352ccc01e69d85b95213b39fdd7cbb488afc1b16f8c3",
+          "semantic_redundancy_certified": false
+        }
+      ],
+      "terminal_unattempted_projections": 0
+    }
+  ],
+  "accounting_decompositions": [
+    {
+      "task_id": "34d9492_1",
+      "actual_policy": "recent",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": 49537,
+      "local_input_omission_on_candidate_path": 8650,
+      "remainder_after_adding_back_local_omission": 58187,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "34d9492_1",
+      "actual_policy": "execution_gated",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": 39100,
+      "local_input_omission_on_candidate_path": 4003,
+      "remainder_after_adding_back_local_omission": 43103,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "actual_policy": "recent",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": -16539,
+      "local_input_omission_on_candidate_path": 7917,
+      "remainder_after_adding_back_local_omission": -8622,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "actual_policy": "execution_gated",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": -31110,
+      "local_input_omission_on_candidate_path": 3243,
+      "remainder_after_adding_back_local_omission": -27867,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "actual_policy": "recent",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": -28191,
+      "local_input_omission_on_candidate_path": 3289,
+      "remainder_after_adding_back_local_omission": -24902,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "actual_policy": "execution_gated",
+      "full_success": true,
+      "candidate_success": true,
+      "all_logical_usage_known": true,
+      "observed_cost_difference_from_full": -21773,
+      "local_input_omission_on_candidate_path": 1106,
+      "remainder_after_adding_back_local_omission": -20667,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "6104387_1",
+      "actual_policy": "recent",
+      "full_success": false,
+      "candidate_success": false,
+      "all_logical_usage_known": false,
+      "observed_cost_difference_from_full": null,
+      "local_input_omission_on_candidate_path": 2588,
+      "remainder_after_adding_back_local_omission": null,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    },
+    {
+      "task_id": "6104387_1",
+      "actual_policy": "execution_gated",
+      "full_success": false,
+      "candidate_success": false,
+      "all_logical_usage_known": false,
+      "observed_cost_difference_from_full": null,
+      "local_input_omission_on_candidate_path": 13022,
+      "remainder_after_adding_back_local_omission": null,
+      "remainder_is_not_a_causal_effect": true,
+      "quality_preservation_or_savings_claim": false
+    }
+  ],
+  "original_P111_development_gate_met": false,
+  "new_model_calls": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "new_quality_measurement": false,
+  "causal_effect_estimate": null,
+  "new_method_claim": false,
+  "source_report_sha256": "511ea20c530a4fea7cb033a9cb2e5d6d9b24635f6b2570beba3c7d41e1ca65fe"
+}
