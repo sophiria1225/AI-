@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-24T12:09:13.729088+00:00",
+  "inspection_kind": "manual_pinned_source_read_only",
+  "repository": "huggingface/smolagents",
+  "commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+  "files": [
+    {
+      "path": "src/smolagents/memory.py",
+      "git_blob_sha": "3ce42b280c0aa1caee44189210719c0e18833719",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/memory.py",
+      "sha256": "8089d5162069158bd548673b52fc4c2d15b91146ae29d503903cfde8f913418a"
+    },
+    {
+      "path": "src/smolagents/agents.py",
+      "git_blob_sha": "a8f6e52de0361a6c23c0aa5d5907180969f259b7",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/agents.py",
+      "sha256": "da0da2e258c346e28d97b3584dfe58dcd203fc20fbde6c6533e333f9b1a06352"
+    },
+    {
+      "path": "src/smolagents/models.py",
+      "git_blob_sha": "b0aea59ca4f463e5a1fad2e05a7abc24f57a3237",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/models.py",
+      "sha256": "e3510666f0a36d1d09d25d9d9f2e9cb0e0c09edc47ed599b0e52445bddf146e7"
+    }
+  ],
+  "reviewed_spans": {
+    "memory.py": [
+      [
+        24,
+        39
+      ],
+      [
+        92,
+        150
+      ]
+    ],
+    "agents.py": [
+      [
+        758,
+        770
+      ],
+      [
+        1279,
+        1335
+      ],
+      [
+        1364,
+        1385
+      ],
+      [
+        1418,
+        1444
+      ],
+      [
+        1641,
+        1718
+      ],
+      [
+        1714,
+        1742
+      ]
+    ],
+    "models.py": [
+      [
+        111,
+        120
+      ],
+      [
+        282,
+        285
+      ],
+      [
+        332,
+        397
+      ],
+      [
+        400,
+        415
+      ],
+      [
+        502,
+        551
+      ],
+      [
+        583,
+        592
+      ]
+    ]
+  },
+  "findings": [
+    "ToolCall.dict includes its id; ActionStep.to_messages embeds complete call dictionaries into text, and the error branch can additionally embed the first id.",
+    "ToolCallingAgent records the incoming tool id; absent structured calls use parse_tool_calls, whose text parser creates uuid4.",
+    "Agent memory is passed to model generation; the default cleaner maps tool-call/tool-response roles to assistant/user and preserves text content.",
+    "CodeAgent uses a step-derived id, so random identifiers are not inferred for every agent path.",
+    "The default completion-preparation parameter is required, subject to explicit model overrides; this is existing ordinary behavior."
+  ],
+  "limits": [
+    "No external framework installed or executed; no model, environment API, or evaluator invoked.",
+    "No external quality degradation, cost saving, prevalence, or causal replication measured.",
+    "Identifier canonicalization and behavior/representation metric distinctions are already prior art.",
+    "This is a purposive source review, not a representative framework survey.",
+    "LangChain search hits were not followed to a validated content path and are not counted as findings."
+  ],
+  "new_model_generations": 0,
+  "new_environment_API_requests": 0,
+  "new_evaluations": 0,
+  "external_framework_executions": 0,
+  "novel_method_established": false
+}
