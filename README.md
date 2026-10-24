@@ -10,9 +10,10 @@
 |---|---|---|
 | P82：常時表示M／非表示H／後半表示L | 全24条件・426生成・24評価を終了、監査不一致０。使用量不明４件 | 全４採用基準未達。Mは3/4・2/4、H/Lは各3/4・3/4成功。Lの全仕事改善は示せなかった |
 | P82の資料・原稿 | 配置の自動検査で停止した記録を保持し、別版の資料８頁と原稿４頁を全頁確認 | 狭い費用区間も前提不成立を保存。欠測を推定しない全件資源集計を別に公開 |
-| P84：文章化ID差の次出力 | 固定６入力×３反復の初回実行中。初期６計数は一致 | P82全件レビュー後の別途判断で開始。元の自動停止と欠測を保持。生成コードは実行しない |
+| P84：文章化ID差の次出力 | 全18生成、422,475論理token、不明０、監査不一致０。推論器停止済み | 元ID一対A/Bは公開出力一致０/９対、統一入力C/Dとnative参照対照A/Nは各９/９対。１保存文脈の局所差を確認 |
+| P82/P84統合稿 | 実結果の本文４頁＋英文１頁、ミラー予行は本文３頁＋英文１頁を全頁確認 | 後半通知の不採用と局所出力差を併記。新手法や一般品質維持は未確立 |
 
-[P82全件結果](docs/P82_findings.md)／[最新の状態](docs/current_status.md)／[次の作業](docs/next_actions.md)／[引き継ぎ](RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。停止はユーザーの最新指示に従う。終了済みの実験を再試行しない。
+[P82全件結果](docs/P82_findings.md)／[P84全件結果](docs/P84_findings.md)／[最新の状態](docs/current_status.md)／[次の作業](docs/next_actions.md)／[引き継ぎ](RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。停止はユーザーの最新指示に従う。終了済みの実験を再試行しない。
 
 Lは既知分だけでMより197,929論理token多い。一方、Mには第２反復の写真で失敗があり、安いことを同じ品質での改善とは扱わない。L/Hの成功６組はLの通知開始前に終了し、全要求・公開出力列が一致した。[欠測を推定しない資源別集計](materials/20261024_p82_observed_resources/README.md)。
 
@@ -21,7 +22,7 @@ Lは既知分だけでMより197,929論理token多い。一方、Mには第２�
 - P80/P81の既知４課題×３反復では、M/Hとも各反復3/4成功。採用基準は全反復未達。書出しは全６条件で未達だった。[全結果](docs/P81_findings.md)。
 - Hの論理tokenは条件付きで合計約0.79〜1.02％少ないが、cacheを除く入力は既知分だけで7.09％以上、出力は39.30％以上多く、作業時間は実測32.26％長い。不明２生成を保持し、論理tokenをGPU計算量や時間と同一視しない。[全件集計と図](materials/20261024_p81_resource_accounting/README.md)。
 - 文章化された通信参照の露出は全429保存要求中20要求、Hの書出し３反復だけだった。露出のないMの書出しも未達であり、失敗全体の原因とはいえない。[先行研究と露出範囲](docs/identifier_prior_and_exposure_20261024.md)。
-- P83の再構成では、文章化前の参照統一で該当２入力のtoken列が一致した。次出力・課題成功・全費用への効果は別途未検証。[P83](docs/P83_findings.md)／[モデル不要の最小再現例](materials/20261024_protocol_minimal_reproducer/README.md)。
+- P83で文章化前の参照統一により該当２入力のtoken列が一致し、P84では統一後の次出力も一致、元ID一対の次出力は不一致となった。課題成功・全費用への改善は示していない。[P83](docs/P83_findings.md)／[P84](docs/P84_findings.md)／[モデル不要の最小再現例](materials/20261024_protocol_minimal_reproducer/README.md)。
 - 終了済み429生成の引数不正３応答は全て4,096出力上限に達していた。P83の６保存入力には同じ遅延文法設定があり、文法制約なしの基準とは扱わない。追加生成は０。[全件の構文診断](materials/20261024_tool_grammar_boundary/README.md)。
 - [終了済みHの20条件・全24群間比較](materials/20261024_closed_reference_cohorts/README.md)で、P83の統一入力C/DがP82のCSV実行にも両反復の14生成目で使われたことを確認した。その２条件は両方未達であり、入力整合だけから品質回復を主張しない。
 
@@ -33,11 +34,14 @@ Lは既知分だけでMより197,929論理token多い。一方、Mには第２�
 
 | 成果物 | 内容と状態 |
 |---|---|
+| [P82/P84の実結果統合稿](papers/202610_letter/closed_results_final/README.md) | 全24条件・全18生成・観測資源・群間照合を収録。本文４頁＋英文１頁、14文献を全頁確認 |
+| [実結果稿のミラー組版予行](materials/20261024_closed_results_mirror_preview/README.md) | 本文３頁＋英文１頁を全頁確認。現行公式配布物との同一性は未確認 |
+| [P84の５頁資料](materials/20261024_p84_results/README.md) | 全18枠・全15入力間比較・入力内比較・全費用を掲載 |
 | [P80/P81の資源別統合稿](papers/202610_letter/resource_prior_review/README.md) | 全24条件・429生成、条件付き区間、資源別の方向差。近接研究３件を加え、文献14件・本文４頁＋英文１頁を確認済み |
 | [P82実結果稿](papers/202610_letter/late_time_control/RESULTS.md) | 全24条件・全４採否・全８表示開始位置を収録。本文３頁＋英文１頁を全頁確認 |
 | [P82の全件資料](materials/20261024_p82_results_final/README.md) | 題名だけの表紙＋全７内容頁。全24条件・426生成・不明４件を保持 |
-| [全件終了後の統合稿の準備](papers/202610_letter/closed_control_integration/README.md) | P82全24条件とP84全18予定枠を区別して収録する処理。実数表は未生成。合成値で本文３頁＋英文１頁を確認 |
-| [観測資源と終了判定の統合準備](materials/20261024_observed_control_preparation/README.md) | 欠測の片側境界・未確定、判定不能・一致・差を区別して実結果のあらましと結論を作る。実数稿はP84終了後 |
+| [全件終了後の統合処理の準備記録](papers/202610_letter/closed_control_integration/README.md) | 準備時点の説明は保持し、終了後の実数表を生成済み。PDFは最終派生版で確認 |
+| [観測資源と終了判定の統合準備記録](materials/20261024_observed_control_preparation/README.md) | 準備処理から実結果の要旨・結論を生成済み。元の準備記録と中間稿を保持 |
 | [参照統一と文章化の１頁図](materials/20261024_protocol_order_figure/README.md) | 処理の順序とP83で確認した範囲を図解。入力一致を成果品質へ読み替えない |
 | [教授用の題名・あらまし](materials/20261023_professor_brief/README.md) | 合意した日英題名と456字あらましを保存。著者・所属・順序は未確定 |
 | [P81の７枚資料](materials/20261024_p81_results/README.md) | 成否・全費用・経路の照合を全件掲載 |
