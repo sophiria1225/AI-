@@ -1,0 +1,148 @@
+{
+  "phase": "P111",
+  "batch_status": "complete",
+  "planned_rows": 12,
+  "independent_tasks": 4,
+  "repetitions": 1,
+  "comparisons": [
+    {
+      "baseline": "full",
+      "all_eight_complete_with_known_usage": false,
+      "paired_results": [
+        {
+          "task_id": "34d9492_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "full_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_full_tokens": 39100,
+          "invocation_exceptions_observed": 2
+        },
+        {
+          "task_id": "3c13f5a_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "full_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_full_tokens": -31110,
+          "invocation_exceptions_observed": 9
+        },
+        {
+          "task_id": "60d0b5b_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "full_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_full_tokens": -21773,
+          "invocation_exceptions_observed": 5
+        },
+        {
+          "task_id": "6104387_1",
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "full_success": false,
+          "execution_gated_success": false,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": false,
+          "execution_gated_minus_full_tokens": null,
+          "invocation_exceptions_observed": 2
+        }
+      ],
+      "paired_success_losses": 0,
+      "paired_success_gains": 0,
+      "paired_successful_tasks": 3,
+      "execution_gated_minus_full_whole_task_tokens": null,
+      "invocation_exceptions_observed": 18,
+      "development_gate_met": false,
+      "general_quality_preservation_claim": false,
+      "novel_method_claim": false,
+      "paired_successful_token_difference": null,
+      "both_failed_token_difference": null
+    },
+    {
+      "baseline": "recent",
+      "all_eight_complete_with_known_usage": false,
+      "paired_results": [
+        {
+          "task_id": "34d9492_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "recent_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_recent_tokens": -10437,
+          "invocation_exceptions_observed": 1
+        },
+        {
+          "task_id": "3c13f5a_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "recent_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_recent_tokens": -14571,
+          "invocation_exceptions_observed": 7
+        },
+        {
+          "task_id": "60d0b5b_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "recent_success": true,
+          "execution_gated_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "execution_gated_minus_recent_tokens": 6418,
+          "invocation_exceptions_observed": 5
+        },
+        {
+          "task_id": "6104387_1",
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "recent_success": false,
+          "execution_gated_success": false,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": false,
+          "execution_gated_minus_recent_tokens": null,
+          "invocation_exceptions_observed": 2
+        }
+      ],
+      "paired_success_losses": 0,
+      "paired_success_gains": 0,
+      "paired_successful_tasks": 3,
+      "execution_gated_minus_recent_whole_task_tokens": null,
+      "invocation_exceptions_observed": 15,
+      "development_gate_met": false,
+      "general_quality_preservation_claim": false,
+      "novel_method_claim": false,
+      "paired_successful_token_difference": null,
+      "both_failed_token_difference": null
+    }
+  ],
+  "development_gate_met": false,
+  "all_twelve_complete_with_known_usage": false,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "interpretation": "One development run per policy/task, never heldout confirmation. Must preserve each task success and reduce both all-task and paired-successful logical cost against full and recent separately, with all usage known and clean audits. Cheap failures, hypothetical P110 counts and cached tokens are not quality-preserving savings.",
+  "model_attempts": 204,
+  "known_logical_tokens": 2026162,
+  "unknown_usage_attempts": 2,
+  "sent_API_requests": 610,
+  "all_conditions_retained": 12,
+  "original_P110_hypothetical_counts_reused_as_cost": false
+}
