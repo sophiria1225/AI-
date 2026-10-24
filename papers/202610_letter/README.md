@@ -9,3 +9,5 @@ P97は全12条件を終了し、３方式とも3/4成功、CSVは全未達だっ
 日英題名と [教授用456字あらまし](../../materials/20261023_professor_brief/README.md) を保持. [機械可読な現在状態](current_status.json)／[次の作業](../../docs/next_actions.md). 古いP79稿を指していた入口は修正し、[旧README](archive_status_before_P97_closure_20261024/README.md)と[旧状態](archive_status_before_P97_closure_20261024/current_status.json)を保存した. 旧原稿や閉じた実験の再生成は行わない.
 
 P97の不明費用は [P100の条件付き区間](../../materials/20261024_p100_results/README.md) で補足した. 欠測を補完せず、上限仮定下でも事実通知の費用増が残る. この補足をP98本文へ統合したとは扱わない.
+
+P101は全12入力の照合と両CI成功後、全36枠の生成を開始した. [開始記録](../../materials/20261024_p101_started/README.md). 結果は未閉鎖で、P98本文に改善結果として取り込まない.
