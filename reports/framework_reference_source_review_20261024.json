@@ -1,0 +1,248 @@
+{
+  "phase": "framework_reference_source_review",
+  "created_at": "2026-10-24T00:51:45.274398+00:00",
+  "method": "Static reading of selected serialization, dispatch and summary functions at pinned commits; no external package imported or executed.",
+  "repositories": 3,
+  "source_files_count": 9,
+  "source_files": [
+    {
+      "name": "smolagents_memory",
+      "repository": "huggingface/smolagents",
+      "commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+      "path": "src/smolagents/memory.py",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/memory.py",
+      "sha256": "8089d5162069158bd548673b52fc4c2d15b91146ae29d503903cfde8f913418a",
+      "bytes": 12341,
+      "lines": 316,
+      "reviewed_line_ranges": [
+        [
+          24,
+          38
+        ],
+        [
+          92,
+          150
+        ]
+      ]
+    },
+    {
+      "name": "smolagents_models",
+      "repository": "huggingface/smolagents",
+      "commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+      "path": "src/smolagents/models.py",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/models.py",
+      "sha256": "e3510666f0a36d1d09d25d9d9f2e9cb0e0c09edc47ed599b0e52445bddf146e7",
+      "bytes": 86054,
+      "lines": 2102,
+      "reviewed_line_ranges": [
+        [
+          109,
+          123
+        ],
+        [
+          282,
+          285
+        ],
+        [
+          332,
+          397
+        ],
+        [
+          400,
+          415
+        ],
+        [
+          502,
+          541
+        ]
+      ]
+    },
+    {
+      "name": "smolagents_agents",
+      "repository": "huggingface/smolagents",
+      "commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+      "path": "src/smolagents/agents.py",
+      "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/src/smolagents/agents.py",
+      "sha256": "da0da2e258c346e28d97b3584dfe58dcd203fc20fbde6c6533e333f9b1a06352",
+      "bytes": 80780,
+      "lines": 1813,
+      "reviewed_line_ranges": [
+        [
+          758,
+          770
+        ],
+        [
+          1277,
+          1321
+        ],
+        [
+          1366,
+          1386
+        ],
+        [
+          1708,
+          1723
+        ]
+      ]
+    },
+    {
+      "name": "autogen_assistant",
+      "repository": "microsoft/autogen",
+      "commit": "004749e6b7102c8fd317b9b1499ce5807223c278",
+      "path": "python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py",
+      "url": "https://github.com/microsoft/autogen/blob/004749e6b7102c8fd317b9b1499ce5807223c278/python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py",
+      "sha256": "c0e578fc34be40f46f8e36a91b53fb27cf5ff454f4efb3f4ea5dc1e32d0048c1",
+      "bytes": 78803,
+      "lines": 1703,
+      "reviewed_line_ranges": [
+        [
+          735,
+          744
+        ],
+        [
+          1235,
+          1243
+        ],
+        [
+          1495,
+          1533
+        ]
+      ]
+    },
+    {
+      "name": "autogen_openai",
+      "repository": "microsoft/autogen",
+      "commit": "004749e6b7102c8fd317b9b1499ce5807223c278",
+      "path": "python/packages/autogen-ext/src/autogen_ext/models/openai/_openai_client.py",
+      "url": "https://github.com/microsoft/autogen/blob/004749e6b7102c8fd317b9b1499ce5807223c278/python/packages/autogen-ext/src/autogen_ext/models/openai/_openai_client.py",
+      "sha256": "4359a8d5560ee3ea0b0d95cdc4d55f512e690944b6b6ab6ca8340f16fd4b7f42",
+      "bytes": 77525,
+      "lines": 1750,
+      "reviewed_line_ranges": [
+        [
+          76,
+          88
+        ],
+        [
+          165,
+          185
+        ]
+      ]
+    },
+    {
+      "name": "autogen_transform_init",
+      "repository": "microsoft/autogen",
+      "commit": "004749e6b7102c8fd317b9b1499ce5807223c278",
+      "path": "python/packages/autogen-ext/src/autogen_ext/models/openai/_transformation/__init__.py",
+      "url": "https://github.com/microsoft/autogen/blob/004749e6b7102c8fd317b9b1499ce5807223c278/python/packages/autogen-ext/src/autogen_ext/models/openai/_transformation/__init__.py",
+      "sha256": "e8abe80b1f73cc72625d125be3d99811f4ec214051eb93a3981c5bf2a5fb8523",
+      "bytes": 582,
+      "lines": 27,
+      "reviewed_line_ranges": [
+        [
+          1,
+          27
+        ]
+      ]
+    },
+    {
+      "name": "autogen_message_transform",
+      "repository": "microsoft/autogen",
+      "commit": "004749e6b7102c8fd317b9b1499ce5807223c278",
+      "path": "python/packages/autogen-ext/src/autogen_ext/models/openai/_message_transform.py",
+      "url": "https://github.com/microsoft/autogen/blob/004749e6b7102c8fd317b9b1499ce5807223c278/python/packages/autogen-ext/src/autogen_ext/models/openai/_message_transform.py",
+      "sha256": "7a8a847f8282898b2f1b2edfa0510eb0769fa3f1bcedd5c2b4b5d103715c7650",
+      "bytes": 18586,
+      "lines": 560,
+      "reviewed_line_ranges": [
+        [
+          175,
+          186
+        ],
+        [
+          244,
+          253
+        ],
+        [
+          437,
+          467
+        ],
+        [
+          540,
+          560
+        ]
+      ]
+    },
+    {
+      "name": "pydantic_messages",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "120891d166555a20060650b9e0e699a530808b0d",
+      "path": "pydantic_ai_slim/pydantic_ai/messages.py",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/120891d166555a20060650b9e0e699a530808b0d/pydantic_ai_slim/pydantic_ai/messages.py",
+      "sha256": "c0a1cf31d980e8d67dcfc33b1d1239b4e24cb29c1ce6a5c8ed40d3802788c38b",
+      "bytes": 341117,
+      "lines": 7193,
+      "reviewed_line_ranges": [
+        [
+          1900,
+          1921
+        ],
+        [
+          2117,
+          2151
+        ],
+        [
+          2199,
+          2238
+        ],
+        [
+          2403,
+          2442
+        ],
+        [
+          2468,
+          2490
+        ],
+        [
+          2706,
+          2748
+        ]
+      ]
+    },
+    {
+      "name": "pydantic_openai",
+      "repository": "pydantic/pydantic-ai",
+      "commit": "120891d166555a20060650b9e0e699a530808b0d",
+      "path": "pydantic_ai_slim/pydantic_ai/models/openai.py",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/120891d166555a20060650b9e0e699a530808b0d/pydantic_ai_slim/pydantic_ai/models/openai.py",
+      "sha256": "011af667aa78a5fe6edd172ca1d648cc410781f58765e73f2c58ec3a14f482c0",
+      "bytes": 368723,
+      "lines": 7201,
+      "reviewed_line_ranges": [
+        [
+          2320,
+          2349
+        ]
+      ]
+    }
+  ],
+  "selection": "Three initial repository-specific queries for tool-call ID rendering and retry serialization. Six initial source files, followed by three files required to resolve the smolagents call path and AutoGen transformation dispatch. Not an exhaustive ecosystem sample.",
+  "retrieval_exception": {
+    "path": "python/packages/autogen-ext/src/autogen_ext/models/openai/_transformation.py",
+    "status": 404,
+    "resolution": "Listed the known parent directory and discovered the _transformation directory; then read its __init__.py and the listed _message_transform.py. No repeated request to the missing file."
+  },
+  "conclusions": {
+    "smolagents": "ActionStep emits tool-call IDs as text in normal calls and an error path; common input cleanup retains that text. ToolCallingAgent retains model-returned IDs; CodeAgent generates step-derived IDs.",
+    "autogen": "Reviewed normal OpenAI mappings keep call IDs in dedicated fields and result content separately. Default summary text does not itself add a call ID. Other formatters, result contents and paths are outside the claim.",
+    "pydantic_ai": "Text-only tool returns use a separate native call ID; multimodal fallback frames tool attachments using explicit provenance text containing tool name, call ID and file ID. Legacy retries are translated into the current part types.",
+    "scope": "Native protocol fields may still be consumed by model templates; no claim of invisibility. No output, tokenization, quality, cost or external compatibility measurement."
+  },
+  "additional_generations": 0,
+  "input_count_requests": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "foreign_repository_mutations": 0,
+  "external_implementation_reproduced": false,
+  "world_first_claim": false
+}
