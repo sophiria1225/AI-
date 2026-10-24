@@ -1,0 +1,99 @@
+{
+  "pages": 8,
+  "generated_at": "2026-10-24T00:18:44.412869+00:00",
+  "source_sha256": {
+    "configs/P82_late_clock_comparison_v01.json": "b5fc45f6a51faf8a1e3dc621ba7444f62c3843fc35fc05368e62584639a8119a",
+    "reports/P82_comparison.json": "5322017d148299e1176b26db1b4bca47f47603ae2e644ed31ce2106f077e5a3e",
+    "reports/P82_server_session.json": "b4494bbd51f1f8f9223ee0e8e2fa88662438f60919c7235cb6ede60a8a7230fd",
+    "reports/P82_trajectory_stability.json": "517a275e1a3c58a94a7cedbf71f93f3cca39fa732de7cdc447581b788ec38a5f",
+    "reports/P82_call_profile.json": "2ba4c0d0a37a9b8c446694736c798f71aab7a84133840a6c564d8a3fa22118df"
+  },
+  "builder_sha256": "ce73b025d838162501ad0963c8b3e0dd5f7f47fbca5ff321cc1d8add09dc1f52",
+  "all_planned_rows": 24,
+  "dependent_pairwise_comparisons": 36,
+  "independent_tasks": 4,
+  "totals": [
+    {
+      "time_visibility": "measured",
+      "planned": 8,
+      "measured": 8,
+      "evaluated": 8,
+      "successes": 5,
+      "model_calls": 130,
+      "known_total_tokens": 1394929,
+      "unknown_usage_calls": 0,
+      "api_requests": 444,
+      "invocation_exceptions": 12,
+      "wall_seconds": 4239.528596499964
+    },
+    {
+      "time_visibility": "not_exposed",
+      "planned": 8,
+      "measured": 8,
+      "evaluated": 8,
+      "successes": 6,
+      "model_calls": 148,
+      "known_total_tokens": 1614926,
+      "unknown_usage_calls": 2,
+      "api_requests": 380,
+      "invocation_exceptions": 18,
+      "wall_seconds": 5939.233378669014
+    },
+    {
+      "time_visibility": "late_half",
+      "planned": 8,
+      "measured": 8,
+      "evaluated": 8,
+      "successes": 6,
+      "model_calls": 148,
+      "known_total_tokens": 1592858,
+      "unknown_usage_calls": 2,
+      "api_requests": 332,
+      "invocation_exceptions": 18,
+      "wall_seconds": 5941.844728834112
+    }
+  ],
+  "all_repetition_gates_met": false,
+  "visual_reviewed": true,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "unknown_usage_imputed": false,
+  "layout_revision": "Shorter rows on all results tables; original failed export retained.",
+  "initial_presentation_sha256": {
+    "all_24_conditions.csv": "eeae180e6c0f280a94baf0eec2dde3bc364b402ba603af79516573a76f1d1458",
+    "all_36_dependent_pairs.csv": "c7628c4fd792458e39ecbd85b88b33fdd82ab4a28b3f783c47fcdecf9c9c3605",
+    "all_new_model_calls.csv": "de091a46cdc88d6b7cd482dc162837a28b3100b5750a4aa1b9ab6b98867ad167",
+    "all_new_python_program_results.csv": "8ccbc8ca014a179e00a9076c9d5ebf51ab5a5d5aacbb9a0cdb4a67a678d62bf8",
+    "build_manifest.json": "4b3ea96b8073feed5bb5462513ec200b419e8a6be6fb85f082f6a983706f5a6a",
+    "figures/P82_whole_task_costs.pdf": "193c813a6a8e19a5bc8e3f22836ce9c8a20f1328919a1bd9e260717ddfc0ba72",
+    "figures/P82_whole_task_costs.png": "f55d2ebeddbc3c780c4f00adfb54951758e41be964d96450736c65eb78454ae3",
+    "figures/P82_whole_task_costs.svg": "022cec56e0493d55dfa28d884954d3d4b1cc878687b3d028055f53ce40bc7c34",
+    "index.html": "b006e1c43bbfa4f39881ee5a485c11b1b31c9cbd393de8b22fdb1ba2820d00e3",
+    "layout_checks.json": "71037b1a167592f864c61da3cf1fef7d61a538a08fae328839c096170910e884",
+    "slides.json": "cd78cb974680e3ca13f4cb7db81d9ea0840865786a22c16235a56efc72cc6f52"
+  },
+  "layout_fixer_sha256": "7ffa8e5496eead77b8da3a7abeab13d1e7709891fbca9d2c34c256b7b604faae",
+  "html_sha256": "2edbf0ebd19e655729c630d6194a6b649a3977e4be6201379386d3b1d0a00a66",
+  "content_pages": 7,
+  "title_only_cover": true,
+  "finalizer_sha256": "adfcda5943304435e132186fb1851110169959ae555a0a934ae7f55fa01470e4",
+  "previous_manifest_sha256": "8773f9522258ed7231ce005cfaab91740e28add054fbed9b09ffbf92e5798279",
+  "csv_sha256": {
+    "all_new_python_program_results.csv": "8ccbc8ca014a179e00a9076c9d5ebf51ab5a5d5aacbb9a0cdb4a67a678d62bf8",
+    "all_new_model_calls.csv": "de091a46cdc88d6b7cd482dc162837a28b3100b5750a4aa1b9ab6b98867ad167",
+    "all_36_dependent_pairs.csv": "c7628c4fd792458e39ecbd85b88b33fdd82ab4a28b3f783c47fcdecf9c9c3605",
+    "all_24_conditions.csv": "eeae180e6c0f280a94baf0eec2dde3bc364b402ba603af79516573a76f1d1458"
+  },
+  "slides_sha256": "d1ff774cb8eda1d536ae2d3102e3217c4fd94e54272fd2d108e335f6e6bf7aab",
+  "presentation_revision": "Shared legend outside all data axes; title-only cover; all eight L transition positions displayed.",
+  "visual_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}
