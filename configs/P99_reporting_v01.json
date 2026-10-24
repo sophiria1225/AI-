@@ -1,0 +1,26 @@
+{
+  "phase": "P99_reporting_preparation",
+  "created_at": "2026-10-24T11:38:35.186604+00:00",
+  "status": "prepared_not_executed",
+  "source_sha256": {
+    "scripts/build_whole_task_tool_choice_report.py": "2f632d71bb798571f5380ee7542f479dffe985de55304a868439b0163fd18aff",
+    "scripts/inspect_whole_task_tool_choice_session.py": "08200872be7ef0bdfb2fc077c572a9d5d834de782eae5ed88116571c8e9e379d",
+    "tests/test_whole_task_tool_choice_reporting.py": "24f8c9cb16080ffadd271fd43347469a6936692be5f95e9b508f3af36b89a830",
+    "docs/P99_reporting_preparation_20261024.md": "3d6bbc4bd54f677ae5c4ea33befc77e57d3b3c99a8cdf3373ac45681743ba001",
+    "scripts/audit_whole_task_tool_choice.py": "0c909967fb3da4d23bd7dead61010f3563c9dd9cc92a786d19503a62350f1b8a",
+    "scripts/whole_task_tool_choice.py": "67853691aba0e67e2acacb7c86bc2a69797527c5b05164b1aef49e0b1cc0e8b6",
+    "configs/P99_tool_choice_preparation_v01.json": "50ea45b4be477ceeb7311f31110f80b7d966c5926123d9f7452e85a2ff9ff6cd"
+  },
+  "required_closed_phase": "P99",
+  "required_start_provenance": "reports/P99_start_provenance_20261024.json",
+  "expected_rows": 8,
+  "independent_tasks": 4,
+  "repetitions": 1,
+  "expected_pdf_pages": 8,
+  "output": "materials/20261024_p99_results",
+  "new_model_generations": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "prior_P97_intermediate_results_used": false,
+  "novel_method_claim": false
+}
