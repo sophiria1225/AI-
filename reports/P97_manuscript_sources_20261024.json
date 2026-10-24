@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-24",
+  "scope": "Primary-source scope and bibliography for a future closed P97 manuscript; no intermediate P97 content or outcomes inspected.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2609.33315v1",
+      "title": "AgentLoop: Runtime Control of Slot-closed Execution Loops for Tool-augmented LLM Agents",
+      "authors": [
+        "Wanyi Zheng",
+        "Minxian Xu",
+        "Kan Hu",
+        "Kejiang Ye",
+        "Chengzhong Xu"
+      ],
+      "read_this_time": "v1 bibliography and abstract; earlier method review retained",
+      "interpretation": "Slot completeness, missing evidence, stability and continue/synthesize/stop are prior mechanisms."
+    },
+    {
+      "url": "https://arxiv.org/html/2606.01365v2",
+      "title": "Early Diagnosis of Wasted Computation in Multi-Agent LLM Systems via Failure-Aware Observability",
+      "authors": [
+        "Xianyou Li",
+        "Weiran Yan",
+        "Yichao Wu",
+        "Penghao Liang",
+        "Mengwei Yuan",
+        "Jianan Liu",
+        "Jing Yang"
+      ],
+      "read_this_time": "v2 bibliography, abstract, V-D and VI; older v1 review preserved",
+      "interpretation": "The paper already includes warning-triggered behavioral intervention. It distinguishes warning opportunity from an automatic stop rule and limits the small pilot interpretation."
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.33371",
+      "read_this_time": "abstract and introduction; not a complete implementation review",
+      "interpretation": "Model-visible connector identifiers with credential injection at a trusted boundary are existing architecture; no cost or task-quality claim transferred."
+    },
+    {
+      "url": "https://arxiv.org/html/2609.34565v1",
+      "read_this_time": "2.1-2.3 revisited; already reviewed in docs/runtime_state_overlap_20261022.md",
+      "interpretation": "Persistent typed state, incremental updates, and progressive access remain existing mechanisms."
+    },
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/parsers/minimax-m3.cpp",
+      "read_this_time": "Local pinned source, lines 1-228, especially required/optional tool calls and grammar_lazy selection",
+      "local_file_sha256": "3f335b93c94345c2fe48ff47463d057396f505f6e1b50e1e320b9f88655e566d",
+      "interpretation": "Required tools choose nonoptional calls and nonlazy grammar. No generation/completion guarantee or experiment follows from this source reading."
+    }
+  ],
+  "reused_bibliography_source": "papers/202610_letter/execution_evidence_focus/draft.tex",
+  "additional_model_generations": 0,
+  "additional_environment_api_requests": 0,
+  "additional_evaluations": 0,
+  "new_method_established": false
+}
