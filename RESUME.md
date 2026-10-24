@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P111の既知４課題×全保持・直近保持・実行記録選別、全12条件の比較を開始。初期12要求の計数が完了し、各課題で３方式の完全要求とtoken数が一致。不一致０。各80生成・450,000論理token・1,800仕事秒を上限に、同じAPI経路と公開指示で独立実行する。全条件と所有サーバーの閉鎖後に品質と総費用を比較し、途中結果で規則を変更しない。P110の仮想入力差は実測の全仕事削減ではない。新規性と品質維持の証明は未成立。原稿保留、未見12課題は未閲覧。 [P111開始資料](materials/20261025_p111_execution/README.md)。
+P111の既知４課題×３方式、全12条件を終了・評価・監査し、不一致０、所有サーバー停止を確認。全方式3/4成功だが採用基準は未達。204生成、既知2,026,162 token＋使用量不明２、610 API、12評価。選別は成功した全３課題の小計では全保持より3.07%、直近保持より4.10%少ないが、全４課題では既知分だけで直近保持の全費用を108,637 token（19.57%）上回る。不明を０で補わず、小計で基準を置き換えない。P112は全204要求×３表示の612計数をbinding済み、同じ完全headの両CI成功後に一度だけ実施する。原稿保留、未見12課題は未閲覧。新規性と一般的品質維持は未確立。 [全件資料](materials/20261025_p111_results/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P111の既知４課題×全保持・直近保持・実行記録選別、全12条
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/cache-recoverability-priors-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p111-results-p112-binding-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -52,8 +52,10 @@ P109は全件終了済みで、`.runtime/P109_analysis_once_start.json`と`P109_
 
 P110も全444入力の計数を終了した. `.runtime/P110_analysis_once_start.json`と`P110_analysis_once_end.json`を保持. [所見](docs/P110_findings.md)を前提に、次の全仕事比較を準備する. P110はモデル性能の測定ではない.
 
-P111は `.runtime/run_close_p111_once.py` から一度だけ起動. `.runtime/P111_pipeline_once_start.json`を保持し、終了時に同wrapperがpipeline終了、全記録監査、所有session点検を一度ずつ行う. `.runtime/P111_pipeline_once_end.json`と`P111_closure_once_end.json`ができるまで再起動しない. ユーザー停止は `.runtime/P111.stop` へ反映し、所有プロセスを確認して止める. 実行木と固定計画を編集中に書き換えない.
+P111の全12条件と所有サーバーは閉鎖済み. `.runtime/P111_pipeline_once_end.json`、`P111_closure_once_end.json`、`P111_report_collector_once_end.json`、`P111_editor_artifacts_once_end.json`を保持する. pipeline、全記録監査、session点検、全件資料作成、P112 bindingはいずれも一度だけ完了し、再実行しない. サーバーのrequested_stopは有限比較完了後の終了理由であり、ユーザーによる研究停止指示ではない.
 
-P112はP111閉鎖後の診断を準備した段階. 実記録計画のbindingと計数は未開始. [固定した範囲](docs/experiments/P112_realized_history_inputs.md)に従い、P111の全12条件と所有server閉鎖、元の監査成功後にbindし、その計画の両CI成功後にcountする. 原文から再構成した仮想入力を別方針の実測と扱わない.
+P112の完全計画は `configs/P112_realized_history_inputs_v01.json`. 全204保存要求×３表示=612入力、360公開ソース、519私有入力を固定した. 計数は未開始. 計画とコードの同じ完全headの両workflow・両job成功後、`.runtime/worktrees/p112-run`を作り、`.runtime/run_p112_bound_once.py --repo-root /Users/tp26013/AI-/.runtime/worktrees/p112-run --head FULL_SHA`から一度だけ実施する. `.runtime/P112_analysis_once_start.json`と`P112_collection_once_end.json`を確認し、重ねて実行しない.
 
-全件閉鎖後の収集は `.runtime/collect_p111_closed_report_once.py` が別の固定木 `.runtime/worktrees/p111-report`（`356fd9f5203cfaf060c2a89a26ea949ee955e931`）で待機する. 終了印 `.runtime/P111_report_collector_once_end.json` を確認するまで手動で重ねて実行しない. P111全監査とsessionをコピーし、全12条件資料を作り、P112実記録のbindまで一度だけ行う. P112のcountは予約していない. 詳細は `.runtime/P111_P112_pending_execution_handoff.json`. 新しい[cache・復元の先行確認](docs/receipt_history_cache_prior_scope_20261025.md)も判断へ含める.
+P111の結果収集元は固定木 `.runtime/worktrees/p111-report`（`356fd9f5203cfaf060c2a89a26ea949ee955e931`）. 全監査、全資料、P112計画は編集木へ同一bytesでコピー済み. 詳細は `.runtime/P111_P112_pending_execution_handoff.json`. P112終了後は `scripts/plot_receipt_history_results.py`で実データの図を生成し、目視確認する. 合成プレビューは実績として公開しない.
+
+[P111の判断](docs/P111_findings.md)／[実行成否を使う先行研究との追加照合](docs/receipt_history_execution_prior_scope_20261025.md). 未知２試行、元の採用基準未達、原稿保留、未見12課題を維持する. ユーザーの停止指示があれば直ちに従う.

@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-10-24T23:09:42.936946+00:00",
+  "source_audit_sha256": "5c011fa70ec5abcf21bf9870147ffcedd7b22128b3509f23a1ae23ee7c0960d4",
+  "policies": {
+    "full": {
+      "successful_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "known_subtotal": 807463,
+      "unknown_usage": 1,
+      "successful_three_known_total": 448825,
+      "model_attempts": 74,
+      "API_requests": 190
+    },
+    "recent": {
+      "successful_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "known_subtotal": 555031,
+      "unknown_usage": 0,
+      "successful_three_known_total": 453632,
+      "model_attempts": 62,
+      "API_requests": 212
+    },
+    "execution_gated": {
+      "successful_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "known_subtotal": 663668,
+      "unknown_usage": 1,
+      "successful_three_known_total": 435042,
+      "model_attempts": 68,
+      "API_requests": 208
+    }
+  },
+  "successful_three_differences": {
+    "full": {
+      "difference": -13783,
+      "percent": -3.070907369241904
+    },
+    "recent": {
+      "difference": -18590,
+      "percent": -4.098035411963885
+    }
+  },
+  "whole_task_gated_minus_recent_lower_bound": 108637,
+  "whole_task_gated_minus_recent_percent_lower_bound": 19.573140959694143,
+  "lower_bound_assumption": "Unknown token consumption is nonnegative; never imputed as zero.",
+  "successful_subset_is_descriptive_not_replacement_gate": true,
+  "original_audit_aggregate_null_fields_preserved": true,
+  "original_development_gate_met": false,
+  "general_quality_preservation_claim": false,
+  "novel_method_claim": false
+}
