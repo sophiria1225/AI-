@@ -1,0 +1,1144 @@
+{
+  "phase": "P105_coalesced_read_live",
+  "status": "complete",
+  "ci": [
+    {
+      "id": 40117807153,
+      "head_sha": "c22fac0473c9d448d3937a9cc3da6c99326e859c",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120942676139
+    },
+    {
+      "id": 40117756014,
+      "head_sha": "c22fac0473c9d448d3937a9cc3da6c99326e859c",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 120942528059
+    }
+  ],
+  "research_resume": {
+    "resume_sha256": "246d469985d5ca99ec7eb4501572717107c7458a0c7327ea57d39dabb95564ee",
+    "retained_pause_sha256": "798e6029d054b8501848ff32a9e02349c1b2da5f54ff7266c7395e5c7e5d7b62",
+    "at": "2026-10-22T05:55:04.961010+00:00"
+  },
+  "all_planned_program_slots": 21,
+  "task_quality_measured": false,
+  "novel_method_claim": false,
+  "started_at": "2026-10-24T17:51:22.320614+00:00",
+  "plan_sha256": "5ea6ae51e39168ff90918909adba447801fdb5e06b8f0bde0e7b5735bcf27ab7",
+  "source_commit": "c22fac0473c9d448d3937a9cc3da6c99326e859c",
+  "conditions": [
+    {
+      "policy": "eager",
+      "status": "complete",
+      "programs": [
+        {
+          "status": "ok",
+          "api_requests": 6,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.30057841699454,
+          "number": 1,
+          "budget": {
+            "limit": 20,
+            "spent": 6,
+            "pending": 0,
+            "available": 14,
+            "stopped": false
+          },
+          "program_sha256": "66446ff9d6b946dc798b186340b79d64e6182c8c228c4278bac1c41c9b207421",
+          "private_program_receipt_sha256": "002f063da36af30afe19271246ea6296865e621dff9d547c52f2ba4c73767dfb",
+          "stdout_sha256": "e12fda6700e202e234547a7f731360c96cadcbdca45ca366f75ee69cfb2da033",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 1281,
+          "control_reply_bytes": 2256,
+          "client_setup_included": true
+        },
+        {
+          "status": "ok",
+          "api_requests": 1,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.012411249976139516,
+          "number": 2,
+          "budget": {
+            "limit": 20,
+            "spent": 7,
+            "pending": 0,
+            "available": 13,
+            "stopped": false
+          },
+          "program_sha256": "aa99e09c1a6896ee0731def195a97ed5c116662cc7002b8c2a35ee8b2eb3884e",
+          "private_program_receipt_sha256": "ef119e807110b3cac4d34640f0704b0e3091da5ed9c7c6175a45e786fb19a5e9",
+          "stdout_sha256": "09bb8e6145cab3e155b9ec24ce1f42c8ef2fd5075b428e360c887eadb98f53bf",
+          "stdout_truncated": false,
+          "control_requests": 2,
+          "control_request_bytes": 224,
+          "control_reply_bytes": 800,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0019331249932292849,
+          "number": 3,
+          "budget": {
+            "limit": 20,
+            "spent": 7,
+            "pending": 0,
+            "available": 13,
+            "stopped": false
+          },
+          "program_sha256": "440207a659675871526ea723c007b876b0723a4e7229efd5530a4971f2672d2d",
+          "private_program_receipt_sha256": "35a3e872cafeb7f864ec34208f367f9e532cb61e5cedf2e5898dc52e9ca8d02a",
+          "stdout_sha256": "9c932e977a587af03f2ecd6b03ef76d25d203a8e7ff74e847281935541da3a84",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 220,
+          "control_reply_bytes": 792,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 1,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.010270875005517155,
+          "number": 4,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 0,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "3a42b05b36595fe89797c47a26cdc9f0a507e56eb755654498bf1b7c9e7f195a",
+          "private_program_receipt_sha256": "d50cfa8c96a5c80a311e2e1b62f64adc2c11199f1d49f76135739ddae8fa0963",
+          "stdout_sha256": "456a20cba22e8978b2fc1ee691d9ee4118317cf834ba92f9cdaa36cdea807cca",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 287,
+          "control_reply_bytes": 811,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0013294160016812384,
+          "number": 5,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 0,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "bc50367a1728f9f82e28c23f7c52742839739b6208d912ff40a157a1bed67e00",
+          "private_program_receipt_sha256": "0711d3989cb027c51a12383488c9fefa59d69524287fe7b1ce8c727f2cbafcf6",
+          "stdout_sha256": "4db4a6436f19af597afc6b28bb96c6c6228420d5ce3965f2c4890ab32a9595b7",
+          "stdout_truncated": false,
+          "control_requests": 1,
+          "control_request_bytes": 61,
+          "control_reply_bytes": 53,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 2,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.020071915991138667,
+          "number": 6,
+          "budget": {
+            "limit": 20,
+            "spent": 10,
+            "pending": 0,
+            "available": 10,
+            "stopped": false
+          },
+          "program_sha256": "ff3b786425e471c10bee0471e2c82f297a7785a1a41d00e90c4adaf991b8854b",
+          "private_program_receipt_sha256": "36527730438251ed6ee7f093d3387a648badb45837e590da90486d8fa401c5ac",
+          "stdout_sha256": "3afe9439614d7bc1299181e45e9a90a8db7f705e7304768ef196e9a3139830e1",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 560,
+          "control_reply_bytes": 2035,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 3,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0481696669885423,
+          "number": 7,
+          "budget": {
+            "limit": 20,
+            "spent": 13,
+            "pending": 0,
+            "available": 7,
+            "stopped": false
+          },
+          "program_sha256": "e9e165e04a5f3cff118071cede2fc2ffbe199d933d602324e922cb47dd5a9c90",
+          "private_program_receipt_sha256": "cd45b1eeeb23746104c8b462b589ceed201d637e97cf43e7c62f51e651a70e4a",
+          "stdout_sha256": "4d9aef73e33f941437e69d6160aada7c29d155194b9fcfcf5d3de928536edcac",
+          "stdout_truncated": false,
+          "control_requests": 8,
+          "control_request_bytes": 1155,
+          "control_reply_bytes": 2515,
+          "client_setup_included": false
+        }
+      ],
+      "initialization_attempts": 1,
+      "owned_bridge_pid": 15871,
+      "initial_world_confirmed": true,
+      "world_initialization_wall_seconds": 1.8148435840266757,
+      "active_wall_seconds": 2.218818833003752,
+      "python_cleanup": {
+        "session_id": "harness-api-session-ab9f1abe7fa54bc4a292328ccc012d04",
+        "namespace_scope": "one_task",
+        "image": "docker.io/library/python@sha256:c3729439afc4ec3f3e159e0c86aeabfadac8030ef46838a0256383d0511c5f5e",
+        "status": "closed",
+        "container_removed": true,
+        "programs": [
+          {
+            "program_index": 1,
+            "record_name": "program_01_view_setup",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.1598424160038121,
+            "session_usable": true
+          },
+          {
+            "program_index": 2,
+            "record_name": "program_01",
+            "status": "ok",
+            "api_requests": 6,
+            "wall_seconds": 0.13615979099995457,
+            "session_usable": true
+          },
+          {
+            "program_index": 3,
+            "record_name": "program_02",
+            "status": "ok",
+            "api_requests": 1,
+            "wall_seconds": 0.011841874977108091,
+            "session_usable": true
+          },
+          {
+            "program_index": 4,
+            "record_name": "program_03",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.0014585830213036388,
+            "session_usable": true
+          },
+          {
+            "program_index": 5,
+            "record_name": "program_04",
+            "status": "ok",
+            "api_requests": 1,
+            "wall_seconds": 0.009770709002623335,
+            "session_usable": true
+          },
+          {
+            "program_index": 6,
+            "record_name": "program_05",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.0007915000023785979,
+            "session_usable": true
+          },
+          {
+            "program_index": 7,
+            "record_name": "program_06",
+            "status": "ok",
+            "api_requests": 2,
+            "wall_seconds": 0.01954083301825449,
+            "session_usable": true
+          },
+          {
+            "program_index": 8,
+            "record_name": "program_07",
+            "status": "ok",
+            "api_requests": 3,
+            "wall_seconds": 0.04765016702003777,
+            "session_usable": true
+          }
+        ],
+        "process_memory_checkpointed": false,
+        "controls": {
+          "pinned_reference": true,
+          "pinned_image_id": true,
+          "network_none": true,
+          "readonly_root": true,
+          "no_host_mounts": true,
+          "unprivileged": true,
+          "nonroot": true,
+          "drop_caps": true,
+          "no_new_privileges": true,
+          "memory_limit": true,
+          "cpu_limit": true,
+          "process_limit": true,
+          "no_daemon_logs": true,
+          "owned_label": true
+        },
+        "explicit_read_view_protocol": true,
+        "oom_killed": false,
+        "container_exit_code": 0,
+        "cleanup_wall_seconds": 0.06953158299438655
+      },
+      "container_controls": {
+        "pinned_reference": true,
+        "pinned_image_id": true,
+        "network_none": true,
+        "readonly_root": true,
+        "no_host_mounts": true,
+        "unprivileged": true,
+        "nonroot": true,
+        "drop_caps": true,
+        "no_new_privileges": true,
+        "memory_limit": true,
+        "cpu_limit": true,
+        "process_limit": true,
+        "no_daemon_logs": true,
+        "owned_label": true
+      },
+      "bridge_cleanup": {
+        "process_stopped": true,
+        "graceful": true,
+        "transport_failed": false
+      },
+      "cleanup_wall_seconds": 0.9977609580091666,
+      "full_wall_seconds": 3.2165805000113323,
+      "budget": {
+        "limit": 20,
+        "spent": 13,
+        "pending": 0,
+        "available": 7,
+        "stopped": false
+      },
+      "cleanup_errors": [],
+      "api_rows_recorded": 13,
+      "api_names": {
+        "supervisor__show_account_passwords": 1,
+        "supervisor__show_profile": 1,
+        "spotify__login": 1,
+        "spotify__show_song_library": 3,
+        "spotify__show_song_privates": 1,
+        "spotify__show_song": 5,
+        "spotify__like_song": 1
+      },
+      "exact_reuses": 5,
+      "coalesced_reuses": 0,
+      "materialization_cache_reuses": 0,
+      "surviving_host_views": 0,
+      "bridge_attempts": 14,
+      "typed_requests_started": 13,
+      "typed_status_counts": {
+        "returned": 13
+      },
+      "owned_bridge_absent": true
+    },
+    {
+      "policy": "deferred",
+      "status": "complete",
+      "programs": [
+        {
+          "status": "ok",
+          "api_requests": 6,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.30954545899294317,
+          "number": 1,
+          "budget": {
+            "limit": 20,
+            "spent": 6,
+            "pending": 0,
+            "available": 14,
+            "stopped": false
+          },
+          "program_sha256": "66446ff9d6b946dc798b186340b79d64e6182c8c228c4278bac1c41c9b207421",
+          "private_program_receipt_sha256": "71de9f560331fd5268bbedae2c540141c4772432ace92fd39ba7e2acce460bfc",
+          "stdout_sha256": "e12fda6700e202e234547a7f731360c96cadcbdca45ca366f75ee69cfb2da033",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 1281,
+          "control_reply_bytes": 2256,
+          "client_setup_included": true
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0019322079897392541,
+          "number": 2,
+          "budget": {
+            "limit": 20,
+            "spent": 6,
+            "pending": 2,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "aa99e09c1a6896ee0731def195a97ed5c116662cc7002b8c2a35ee8b2eb3884e",
+          "private_program_receipt_sha256": "62b4407853038411cd0b8079ff1ae53949c96f582c29af4fac1a0dd6173412eb",
+          "stdout_sha256": "09bb8e6145cab3e155b9ec24ce1f42c8ef2fd5075b428e360c887eadb98f53bf",
+          "stdout_truncated": false,
+          "control_requests": 2,
+          "control_request_bytes": 224,
+          "control_reply_bytes": 444,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 2,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.01892641599988565,
+          "number": 3,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 0,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "440207a659675871526ea723c007b876b0723a4e7229efd5530a4971f2672d2d",
+          "private_program_receipt_sha256": "2f7a18fd10feaf4c33e9a42fb66bb6c7a898070e50500f114539e6dccc5d91f4",
+          "stdout_sha256": "9c932e977a587af03f2ecd6b03ef76d25d203a8e7ff74e847281935541da3a84",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 220,
+          "control_reply_bytes": 792,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.002417708979919553,
+          "number": 4,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 1,
+            "available": 11,
+            "stopped": false
+          },
+          "program_sha256": "3a42b05b36595fe89797c47a26cdc9f0a507e56eb755654498bf1b7c9e7f195a",
+          "private_program_receipt_sha256": "c89f444b584e6e6b7e48794f779b93490649b9a82e6e06aa2ff41464f2983667",
+          "stdout_sha256": "456a20cba22e8978b2fc1ee691d9ee4118317cf834ba92f9cdaa36cdea807cca",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 287,
+          "control_reply_bytes": 459,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0015583339845761657,
+          "number": 5,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 0,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "bc50367a1728f9f82e28c23f7c52742839739b6208d912ff40a157a1bed67e00",
+          "private_program_receipt_sha256": "3f15993c9bb9f5ced63a8cf6269266750f7e9360fa2f4b5f783af6f6d25538c7",
+          "stdout_sha256": "4db4a6436f19af597afc6b28bb96c6c6228420d5ce3965f2c4890ab32a9595b7",
+          "stdout_truncated": false,
+          "control_requests": 1,
+          "control_request_bytes": 61,
+          "control_reply_bytes": 53,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 3,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.028113958018366247,
+          "number": 6,
+          "budget": {
+            "limit": 20,
+            "spent": 11,
+            "pending": 0,
+            "available": 9,
+            "stopped": false
+          },
+          "program_sha256": "ff3b786425e471c10bee0471e2c82f297a7785a1a41d00e90c4adaf991b8854b",
+          "private_program_receipt_sha256": "33a772dc91c866c08c23d1826ee442c3b7effed6f1acf4510bcad5cc88d13849",
+          "stdout_sha256": "3afe9439614d7bc1299181e45e9a90a8db7f705e7304768ef196e9a3139830e1",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 560,
+          "control_reply_bytes": 1683,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 5,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.06317512498935685,
+          "number": 7,
+          "budget": {
+            "limit": 20,
+            "spent": 16,
+            "pending": 0,
+            "available": 4,
+            "stopped": false
+          },
+          "program_sha256": "e9e165e04a5f3cff118071cede2fc2ffbe199d933d602324e922cb47dd5a9c90",
+          "private_program_receipt_sha256": "5a413e3a8e918f7bfd50de6950f6db9fc978e2564f425c26d116f25b45b4909f",
+          "stdout_sha256": "4d9aef73e33f941437e69d6160aada7c29d155194b9fcfcf5d3de928536edcac",
+          "stdout_truncated": false,
+          "control_requests": 8,
+          "control_request_bytes": 1155,
+          "control_reply_bytes": 2163,
+          "client_setup_included": false
+        }
+      ],
+      "initialization_attempts": 1,
+      "owned_bridge_pid": 15911,
+      "initial_world_confirmed": true,
+      "world_initialization_wall_seconds": 1.7576022079738323,
+      "active_wall_seconds": 2.192397583014099,
+      "python_cleanup": {
+        "session_id": "harness-api-session-dddd84c2043142bf8196c604406a1f52",
+        "namespace_scope": "one_task",
+        "image": "docker.io/library/python@sha256:c3729439afc4ec3f3e159e0c86aeabfadac8030ef46838a0256383d0511c5f5e",
+        "status": "closed",
+        "container_removed": true,
+        "programs": [
+          {
+            "program_index": 1,
+            "record_name": "program_01_view_setup",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.17070187497301959,
+            "session_usable": true
+          },
+          {
+            "program_index": 2,
+            "record_name": "program_01",
+            "status": "ok",
+            "api_requests": 6,
+            "wall_seconds": 0.13495195799623616,
+            "session_usable": true
+          },
+          {
+            "program_index": 3,
+            "record_name": "program_02",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.0014468749868683517,
+            "session_usable": true
+          },
+          {
+            "program_index": 4,
+            "record_name": "program_03",
+            "status": "ok",
+            "api_requests": 2,
+            "wall_seconds": 0.018359625013545156,
+            "session_usable": true
+          },
+          {
+            "program_index": 5,
+            "record_name": "program_04",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.001939750014571473,
+            "session_usable": true
+          },
+          {
+            "program_index": 6,
+            "record_name": "program_05",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.0007746249902993441,
+            "session_usable": true
+          },
+          {
+            "program_index": 7,
+            "record_name": "program_06",
+            "status": "ok",
+            "api_requests": 3,
+            "wall_seconds": 0.027564042015001178,
+            "session_usable": true
+          },
+          {
+            "program_index": 8,
+            "record_name": "program_07",
+            "status": "ok",
+            "api_requests": 5,
+            "wall_seconds": 0.06265895802062005,
+            "session_usable": true
+          }
+        ],
+        "process_memory_checkpointed": false,
+        "controls": {
+          "pinned_reference": true,
+          "pinned_image_id": true,
+          "network_none": true,
+          "readonly_root": true,
+          "no_host_mounts": true,
+          "unprivileged": true,
+          "nonroot": true,
+          "drop_caps": true,
+          "no_new_privileges": true,
+          "memory_limit": true,
+          "cpu_limit": true,
+          "process_limit": true,
+          "no_daemon_logs": true,
+          "owned_label": true
+        },
+        "explicit_read_view_protocol": true,
+        "oom_killed": false,
+        "container_exit_code": 0,
+        "cleanup_wall_seconds": 0.06465487499372102
+      },
+      "container_controls": {
+        "pinned_reference": true,
+        "pinned_image_id": true,
+        "network_none": true,
+        "readonly_root": true,
+        "no_host_mounts": true,
+        "unprivileged": true,
+        "nonroot": true,
+        "drop_caps": true,
+        "no_new_privileges": true,
+        "memory_limit": true,
+        "cpu_limit": true,
+        "process_limit": true,
+        "no_daemon_logs": true,
+        "owned_label": true
+      },
+      "bridge_cleanup": {
+        "process_stopped": true,
+        "graceful": true,
+        "transport_failed": false
+      },
+      "cleanup_wall_seconds": 1.0158652499958407,
+      "full_wall_seconds": 3.2082632910169195,
+      "budget": {
+        "limit": 20,
+        "spent": 16,
+        "pending": 0,
+        "available": 4,
+        "stopped": false
+      },
+      "cleanup_errors": [],
+      "api_rows_recorded": 16,
+      "api_names": {
+        "supervisor__show_account_passwords": 1,
+        "supervisor__show_profile": 1,
+        "spotify__login": 1,
+        "spotify__show_song_library": 3,
+        "spotify__show_song_privates": 1,
+        "spotify__show_song": 8,
+        "spotify__like_song": 1
+      },
+      "exact_reuses": 0,
+      "coalesced_reuses": 0,
+      "materialization_cache_reuses": 0,
+      "surviving_host_views": 0,
+      "bridge_attempts": 17,
+      "typed_requests_started": 16,
+      "typed_status_counts": {
+        "returned": 16
+      },
+      "owned_bridge_absent": true
+    },
+    {
+      "policy": "coalesced",
+      "status": "complete",
+      "programs": [
+        {
+          "status": "ok",
+          "api_requests": 6,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.31251912500010803,
+          "number": 1,
+          "budget": {
+            "limit": 20,
+            "spent": 6,
+            "pending": 0,
+            "available": 14,
+            "stopped": false
+          },
+          "program_sha256": "66446ff9d6b946dc798b186340b79d64e6182c8c228c4278bac1c41c9b207421",
+          "private_program_receipt_sha256": "12ccfab60e628705b2d930a8eb538ae3b4c6766c52d3ac6fa916d212da489189",
+          "stdout_sha256": "e12fda6700e202e234547a7f731360c96cadcbdca45ca366f75ee69cfb2da033",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 1281,
+          "control_reply_bytes": 2256,
+          "client_setup_included": true
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.001975791994482279,
+          "number": 2,
+          "budget": {
+            "limit": 20,
+            "spent": 6,
+            "pending": 1,
+            "available": 13,
+            "stopped": false
+          },
+          "program_sha256": "aa99e09c1a6896ee0731def195a97ed5c116662cc7002b8c2a35ee8b2eb3884e",
+          "private_program_receipt_sha256": "5dd5970bd069e2789218798b021d4f494d148e68e0eba60cd7ded04ba2a4ffa1",
+          "stdout_sha256": "09bb8e6145cab3e155b9ec24ce1f42c8ef2fd5075b428e360c887eadb98f53bf",
+          "stdout_truncated": false,
+          "control_requests": 2,
+          "control_request_bytes": 224,
+          "control_reply_bytes": 444,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 1,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.010808417020598426,
+          "number": 3,
+          "budget": {
+            "limit": 20,
+            "spent": 7,
+            "pending": 0,
+            "available": 13,
+            "stopped": false
+          },
+          "program_sha256": "440207a659675871526ea723c007b876b0723a4e7229efd5530a4971f2672d2d",
+          "private_program_receipt_sha256": "5cdda7526e7cf78a1fb919d39b132fe8ed558599ab2dcbd8a662f02055df198b",
+          "stdout_sha256": "9c932e977a587af03f2ecd6b03ef76d25d203a8e7ff74e847281935541da3a84",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 220,
+          "control_reply_bytes": 792,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.002143875026376918,
+          "number": 4,
+          "budget": {
+            "limit": 20,
+            "spent": 7,
+            "pending": 1,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "3a42b05b36595fe89797c47a26cdc9f0a507e56eb755654498bf1b7c9e7f195a",
+          "private_program_receipt_sha256": "6e28e0f11f5c2e1835de6b2337328e64548ecaf39b816326744431eaa0361960",
+          "stdout_sha256": "456a20cba22e8978b2fc1ee691d9ee4118317cf834ba92f9cdaa36cdea807cca",
+          "stdout_truncated": false,
+          "control_requests": 3,
+          "control_request_bytes": 287,
+          "control_reply_bytes": 459,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 0,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0011388340208213776,
+          "number": 5,
+          "budget": {
+            "limit": 20,
+            "spent": 7,
+            "pending": 0,
+            "available": 13,
+            "stopped": false
+          },
+          "program_sha256": "bc50367a1728f9f82e28c23f7c52742839739b6208d912ff40a157a1bed67e00",
+          "private_program_receipt_sha256": "3bda39afd2fe2837a881dac1a06438fe5dc613c2be387b97119f521f83f10871",
+          "stdout_sha256": "4db4a6436f19af597afc6b28bb96c6c6228420d5ce3965f2c4890ab32a9595b7",
+          "stdout_truncated": false,
+          "control_requests": 1,
+          "control_request_bytes": 61,
+          "control_reply_bytes": 53,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 1,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.012080457992851734,
+          "number": 6,
+          "budget": {
+            "limit": 20,
+            "spent": 8,
+            "pending": 0,
+            "available": 12,
+            "stopped": false
+          },
+          "program_sha256": "ff3b786425e471c10bee0471e2c82f297a7785a1a41d00e90c4adaf991b8854b",
+          "private_program_receipt_sha256": "8b7a02a3a97980957311dfef1a80005aa7a88a306a94eaa2a31979f8721567d3",
+          "stdout_sha256": "3afe9439614d7bc1299181e45e9a90a8db7f705e7304768ef196e9a3139830e1",
+          "stdout_truncated": false,
+          "control_requests": 6,
+          "control_request_bytes": 560,
+          "control_reply_bytes": 1683,
+          "client_setup_included": false
+        },
+        {
+          "status": "ok",
+          "api_requests": 4,
+          "unknown_effects": false,
+          "declared_complete": false,
+          "wall_seconds": 0.0558699160174001,
+          "number": 7,
+          "budget": {
+            "limit": 20,
+            "spent": 12,
+            "pending": 0,
+            "available": 8,
+            "stopped": false
+          },
+          "program_sha256": "e9e165e04a5f3cff118071cede2fc2ffbe199d933d602324e922cb47dd5a9c90",
+          "private_program_receipt_sha256": "d79bdec5ebb6b4f80163acde5041af5ff83a28e75305aa1e2875913d8d914c88",
+          "stdout_sha256": "4d9aef73e33f941437e69d6160aada7c29d155194b9fcfcf5d3de928536edcac",
+          "stdout_truncated": false,
+          "control_requests": 8,
+          "control_request_bytes": 1155,
+          "control_reply_bytes": 2163,
+          "client_setup_included": false
+        }
+      ],
+      "initialization_attempts": 1,
+      "owned_bridge_pid": 15935,
+      "initial_world_confirmed": true,
+      "world_initialization_wall_seconds": 1.7566503339912742,
+      "active_wall_seconds": 2.1622291669773404,
+      "python_cleanup": {
+        "session_id": "harness-api-session-ab682e4be3a34227a707049ad81c8f8b",
+        "namespace_scope": "one_task",
+        "image": "docker.io/library/python@sha256:c3729439afc4ec3f3e159e0c86aeabfadac8030ef46838a0256383d0511c5f5e",
+        "status": "closed",
+        "container_removed": true,
+        "programs": [
+          {
+            "program_index": 1,
+            "record_name": "program_01_view_setup",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.17343237498425879,
+            "session_usable": true
+          },
+          {
+            "program_index": 2,
+            "record_name": "program_01",
+            "status": "ok",
+            "api_requests": 6,
+            "wall_seconds": 0.1351247500278987,
+            "session_usable": true
+          },
+          {
+            "program_index": 3,
+            "record_name": "program_02",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.001511250011390075,
+            "session_usable": true
+          },
+          {
+            "program_index": 4,
+            "record_name": "program_03",
+            "status": "ok",
+            "api_requests": 1,
+            "wall_seconds": 0.010177999996813014,
+            "session_usable": true
+          },
+          {
+            "program_index": 5,
+            "record_name": "program_04",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.001670083001954481,
+            "session_usable": true
+          },
+          {
+            "program_index": 6,
+            "record_name": "program_05",
+            "status": "ok",
+            "api_requests": 0,
+            "wall_seconds": 0.0007154589984565973,
+            "session_usable": true
+          },
+          {
+            "program_index": 7,
+            "record_name": "program_06",
+            "status": "ok",
+            "api_requests": 1,
+            "wall_seconds": 0.011423875024775043,
+            "session_usable": true
+          },
+          {
+            "program_index": 8,
+            "record_name": "program_07",
+            "status": "ok",
+            "api_requests": 4,
+            "wall_seconds": 0.05536133298301138,
+            "session_usable": true
+          }
+        ],
+        "process_memory_checkpointed": false,
+        "controls": {
+          "pinned_reference": true,
+          "pinned_image_id": true,
+          "network_none": true,
+          "readonly_root": true,
+          "no_host_mounts": true,
+          "unprivileged": true,
+          "nonroot": true,
+          "drop_caps": true,
+          "no_new_privileges": true,
+          "memory_limit": true,
+          "cpu_limit": true,
+          "process_limit": true,
+          "no_daemon_logs": true,
+          "owned_label": true
+        },
+        "explicit_read_view_protocol": true,
+        "oom_killed": false,
+        "container_exit_code": 0,
+        "cleanup_wall_seconds": 0.06236379101756029
+      },
+      "container_controls": {
+        "pinned_reference": true,
+        "pinned_image_id": true,
+        "network_none": true,
+        "readonly_root": true,
+        "no_host_mounts": true,
+        "unprivileged": true,
+        "nonroot": true,
+        "drop_caps": true,
+        "no_new_privileges": true,
+        "memory_limit": true,
+        "cpu_limit": true,
+        "process_limit": true,
+        "no_daemon_logs": true,
+        "owned_label": true
+      },
+      "bridge_cleanup": {
+        "process_stopped": true,
+        "graceful": true,
+        "transport_failed": false
+      },
+      "cleanup_wall_seconds": 1.0350200830143876,
+      "full_wall_seconds": 3.1972496669914108,
+      "budget": {
+        "limit": 20,
+        "spent": 12,
+        "pending": 0,
+        "available": 8,
+        "stopped": false
+      },
+      "cleanup_errors": [],
+      "api_rows_recorded": 12,
+      "api_names": {
+        "supervisor__show_account_passwords": 1,
+        "supervisor__show_profile": 1,
+        "spotify__login": 1,
+        "spotify__show_song_library": 3,
+        "spotify__show_song_privates": 1,
+        "spotify__show_song": 4,
+        "spotify__like_song": 1
+      },
+      "exact_reuses": 0,
+      "coalesced_reuses": 4,
+      "materialization_cache_reuses": 1,
+      "surviving_host_views": 0,
+      "bridge_attempts": 13,
+      "typed_requests_started": 12,
+      "typed_status_counts": {
+        "returned": 12
+      },
+      "owned_bridge_absent": true
+    }
+  ],
+  "model_calls": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": false,
+  "database_contents_inspected": false,
+  "saved_model_programs_executed": false,
+  "task_success_or_cost_improvement_measured": false,
+  "automatic_retries": 0,
+  "public_contract_verified": "appworld-song-library-public-fields-v1",
+  "public_schema_sha256": {
+    "api_docs/function_calling/amazon.json": "641103cdbfa64da0832bf73b7db4e846bcf99f649bf10641d508d2e006a67f5b",
+    "api_docs/standard/amazon.json": "861de558da60362f54a0c988b699010c3f819852cc4662e0ff59d3acecfa193b",
+    "api_docs/function_calling/api_docs.json": "5b08688dd5b4dec208f4251b5c33269b3049517c7c4451fd98d49c67477e291e",
+    "api_docs/standard/api_docs.json": "3e372889cb736f46d0db3793a5fdfb96cda58995135070be887c502c52d33c52",
+    "api_docs/function_calling/file_system.json": "68b087cb4c15677e87e772448a28eca85e01ebf4fdfeec313696d0778f068ad5",
+    "api_docs/standard/file_system.json": "5a8c956e16d7c9c77b466ed1d15422d9caa4d8a9097b6d3bf1c269aa80435f6b",
+    "api_docs/function_calling/gmail.json": "4a0ee65205fb5e5363d24f7e9e5ba8884063b23f2a28e5d7b7da4829e3974553",
+    "api_docs/standard/gmail.json": "ca148872e2d6008b5863fab3dd7c12969272a8c39ed485ba6f955ae9a059078e",
+    "api_docs/function_calling/phone.json": "afd6a33ebf9ea91aeb738f840bc607e5af57b86c944f96c9d871467ef6d225a9",
+    "api_docs/standard/phone.json": "50db5f08b0b87cd9ee60c9c05c31a0c058fbadb6be480cd717294c5c048bea84",
+    "api_docs/function_calling/simple_note.json": "53414bc70fbece5ba2ce5f1e6f5a50a41084704a410ce45597130350ab773a3f",
+    "api_docs/standard/simple_note.json": "d0e3155726ef151d6035db7c146b835b8dc7855155e4ff9786d392513b3ddb30",
+    "api_docs/function_calling/splitwise.json": "d52b852f982c9a4ccd1eb453a5cb035af8128875eab9fa85b0fbbe8606cc16b2",
+    "api_docs/standard/splitwise.json": "f300328cce3c3ec17319543c1e3def61ab59325eacff4db230bf29b72cc09381",
+    "api_docs/function_calling/spotify.json": "7194c0cc18a48e479f65192ba732e098174498ccc904cdb2dfa4d371e365d9c3",
+    "api_docs/standard/spotify.json": "cf630ccff1aedf0c055b2bcb3b81a43882e35f066e615be49bc251dba3f09be1",
+    "api_docs/function_calling/supervisor.json": "e9b6c983f7b92686d530349e7d4d7afb8a3332e24ff2219789e6380d8c136ce9",
+    "api_docs/standard/supervisor.json": "a829691be9050223cc6ce0735fd201ab1563e24c9b36acfdcc5509036d2f97fb",
+    "api_docs/function_calling/todoist.json": "88b67e50dec1f6ae8dc3ac82a5a1a0d9ec91e11ea004fe9bdeeca0572de90086",
+    "api_docs/standard/todoist.json": "347582910cdeedf52480d34fac9ba5a55afa0177d2fdc3b1f239fd408b34c5dc",
+    "api_docs/function_calling/venmo.json": "dc69706b9c8ccc59fa8e28740abe36c35d3fc2cf3dca37cdd501ad413f37f615",
+    "api_docs/standard/venmo.json": "ec9e9d637d5ec93c38bb84aae6008bf507d23367b5854f75b03184de5726b8a2"
+  },
+  "runtime_source_sha256": {
+    "environment.py": "ad650588158727c4ebe72a080638ec0174c33af8a8b9e9b81f3d9bfda55d3fd9",
+    "requester.py": "9660a3ab9bf222c64d4f265a6551d375368faf652b783e3ab0996389e5137bec",
+    "collections/apis.py": "597aa608dd2447b8e77805490baa0289d549fb79c6d3d2b382637713e5a4eefe",
+    "common/safety_guard.py": "fa105c1bc55bc9fc3dba70f414bdfcb43e05fcede06e63477ceb712037044da7",
+    "apps/api_docs/apis.py": "3a1a10581092d40f1258dc594e68e0d08deb844e7fda4932c5c0d4460c16705f",
+    "apps/phone/apis.py": "b32c231f29515f0c77175e6cb3bd3cd91254237545f2230eb5166a102e250338",
+    "apps/api_lib.py": "573657c3db8d99def6ee92b6833fbc2fedd894be41031fe38feebab49e597485",
+    "apps/spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "apps/spotify/models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6",
+    "apps/supervisor/apis.py": "d9796e20cd5f4ebe21e06f7347f73ab399164d73451edbaa658cd7ff66ddaaf5",
+    "apps/supervisor/models.py": "8c6848a1d97b384b36460ce5669b9f4eb707b24aa80bf8488241c2ce7fc71d68",
+    "apps/model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172"
+  },
+  "all_seven_observations_equal": true,
+  "wall_seconds": 9.706176291016163,
+  "environment_API_requests": 41,
+  "recorded_program_attempts": 21,
+  "successful_programs": 21,
+  "all_program_slots": [
+    {
+      "policy": "eager",
+      "number": 1,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 2,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 3,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 4,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 5,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 6,
+      "status": "ok"
+    },
+    {
+      "policy": "eager",
+      "number": 7,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 1,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 2,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 3,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 4,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 5,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 6,
+      "status": "ok"
+    },
+    {
+      "policy": "deferred",
+      "number": 7,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 1,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 2,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 3,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 4,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 5,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 6,
+      "status": "ok"
+    },
+    {
+      "policy": "coalesced",
+      "number": 7,
+      "status": "ok"
+    }
+  ]
+}

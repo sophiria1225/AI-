@@ -1,0 +1,53 @@
+{
+  "conditions": [
+    {
+      "policy": "eager",
+      "environment_API_requests": 13,
+      "pending": 0,
+      "exact_reuses": 5,
+      "coalesced_reuses": 0,
+      "materialization_cache_reuses": 0,
+      "control_requests": 29,
+      "control_request_bytes": 3788,
+      "control_reply_bytes": 9262,
+      "full_wall_seconds": 3.2165805000113323,
+      "cleanup_wall_seconds": 0.9977609580091666
+    },
+    {
+      "policy": "deferred",
+      "environment_API_requests": 16,
+      "pending": 0,
+      "exact_reuses": 0,
+      "coalesced_reuses": 0,
+      "materialization_cache_reuses": 0,
+      "control_requests": 29,
+      "control_request_bytes": 3788,
+      "control_reply_bytes": 7850,
+      "full_wall_seconds": 3.2082632910169195,
+      "cleanup_wall_seconds": 1.0158652499958407
+    },
+    {
+      "policy": "coalesced",
+      "environment_API_requests": 12,
+      "pending": 0,
+      "exact_reuses": 0,
+      "coalesced_reuses": 4,
+      "materialization_cache_reuses": 1,
+      "control_requests": 29,
+      "control_request_bytes": 3788,
+      "control_reply_bytes": 7850,
+      "full_wall_seconds": 3.1972496669914108,
+      "cleanup_wall_seconds": 1.0350200830143876
+    }
+  ],
+  "all_seven_observations_equal": true,
+  "environment_API_requests": 41,
+  "handwritten_programs": 21,
+  "bootstrap_programs": 3,
+  "model_generations": 0,
+  "evaluations": 0,
+  "task_quality_measured": false,
+  "novel_method_claim": false,
+  "complete_response_cache_does_not_cover_ordinary_call_api": true,
+  "remaining_advantage_requires_stronger_cache_control": true
+}
