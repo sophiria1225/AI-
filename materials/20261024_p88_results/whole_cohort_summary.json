@@ -1,0 +1,73 @@
+{
+  "totals": [
+    {
+      "reasoning_policy": "unlimited",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 74,
+      "known_total_tokens": 807463,
+      "unknown_usage_calls": 1,
+      "input_tokens": 773785,
+      "output_tokens": 33678,
+      "cached_input_tokens": 673826,
+      "api_requests": 190,
+      "invocation_exceptions": 9,
+      "setup_wall_seconds": 7.562676915957127,
+      "wall_seconds": 2961.315686875023,
+      "cleanup_wall_seconds": 4.659104834019672,
+      "full_wall_seconds": 2973.5495868759754,
+      "full_logical_tokens": null,
+      "known_uncached_input_tokens": 99959
+    },
+    {
+      "reasoning_policy": "half",
+      "planned": 4,
+      "measured": 4,
+      "evaluated": 4,
+      "successes": 3,
+      "failures": 1,
+      "unmeasured": 0,
+      "model_calls": 76,
+      "known_total_tokens": 881697,
+      "unknown_usage_calls": 0,
+      "input_tokens": 849976,
+      "output_tokens": 31721,
+      "cached_input_tokens": 747123,
+      "api_requests": 209,
+      "invocation_exceptions": 11,
+      "setup_wall_seconds": 7.233564875001321,
+      "wall_seconds": 2874.886023124971,
+      "cleanup_wall_seconds": 4.405286251014331,
+      "full_wall_seconds": 2886.538817958033,
+      "full_logical_tokens": 881697,
+      "known_uncached_input_tokens": 102853
+    }
+  ],
+  "contributions": {
+    "both_successful": {
+      "task_count": 3,
+      "half_minus_unlimited_tokens": null
+    },
+    "both_failed": {
+      "task_count": 1,
+      "half_minus_unlimited_tokens": null
+    },
+    "discordant": {
+      "task_count": 0,
+      "half_minus_unlimited_tokens": null
+    },
+    "unevaluated": {
+      "task_count": 0,
+      "half_minus_unlimited_tokens": null
+    }
+  },
+  "development_gate_met": false,
+  "all_planned_rows": 8,
+  "half_minus_unlimited_whole_task_tokens": null,
+  "paired_success_losses": 0,
+  "paired_success_gains": 0
+}
