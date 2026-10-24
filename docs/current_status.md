@@ -31,6 +31,7 @@
 - 閉じた429生成の引数不正３件は出力上限4,096に達し、P83全６入力には同じ遅延文法があった。[全件診断](../materials/20261024_tool_grammar_boundary/README.md)／[固定解析器の合成再現](../materials/20261024_synthetic_parser_boundary/README.md)。
 - 時間通知・ID正規化・費用指標の不一致・変換順序には近接研究がある。[時間通知](time_observation_contribution_scope_20261024.md)／[参照ID](identifier_prior_and_exposure_20261024.md)／[費用評価](cost_proxy_prior_review_20261024.md)／[履歴変換](../materials/20261024_history_conversion_priors/README.md)。通常部品や実装件数を新規性に置き換えない。
 - [外部３ライブラリの固定版９ファイル](../materials/20261024_framework_reference_review/README.md)では、smolagentsの本文転記、AutoGen通常経路の専用欄保持、Pydantic AI添付経路の出所タグを確認した。すべてのIDが不要とは扱わず、外部の生成・品質・費用は未検証とする。
+- [終了済みHの20条件・全24群間比較](../materials/20261024_closed_reference_cohorts/README.md)では、成功３課題の全要求・公開出力列が群間でも一致した。CSVは全６対で最初の13生成が一致し、14生成目で差があった。P82のH両反復の14生成目はP83統一入力C/Dと要求JSONが一致するが、両条件は未達。時期の異なる群の事後照合であり、同時割付の因果比較やP84の実結果ではない。
 
 ## 原稿と期限
 

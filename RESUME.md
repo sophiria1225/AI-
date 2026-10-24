@@ -51,4 +51,6 @@ P84が閉じた後、準備済み`build_closed_control_draft.py`では区間を�
 
 P84実行中に[外部３ライブラリの９ファイル](materials/20261024_framework_reference_review/README.md)を固定版で静的に確認した。本文へIDを含める経路は他にもあるが、添付の出所を表す用途もあり一括削除しない。外部実装は実行していない。元コードは私有の`.runtime/framework_source_review_20261024`に保持し、公開物にはURL・hash・読んだ行範囲だけを載せた。
 
+[終了済みHの20条件と全24群間比較](materials/20261024_closed_reference_cohorts/README.md)も一度集計した。P82のH書出し両反復の14生成目は、P83の保存統一入力C/Dと完全な要求JSONが一致するが、両方未達。P84はcacheを無効化した別の診断なのでwarm状態の再現としない。P84途中応答は読んでいない。最終稿にはこの接続と未達も記載し、入力整合だけで品質回復を主張しない。既存の準備処理はこの追加分析より前の固定版なので、出力は保存して必要な追記を別版へ行う。
+
 GitHub変更先は`sophiria1225/AI-`と[専用Project](https://github.com/users/sophiria1225/projects/1)のみ。実モデル開始とmain統合は正確なHEADのpush/PR両CI・ジョブ成功後。全115件の作業ボードを部分集合で上書きしない。以前の引き継ぎは[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/RESUME.md)に保存した。
