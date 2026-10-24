@@ -1,0 +1,77 @@
+{
+  "phase": "reversible_read_views_component",
+  "created_at": "2026-10-24T06:25:09.479059+00:00",
+  "test_results": {
+    "returncode": 0,
+    "wall_seconds": 4.2008942080137786,
+    "completed_at": "2026-10-24T06:23:25.484722+00:00",
+    "log_sha256": "199a67d52dff7cafac35d73c94865850b17c5573755750479052616c1229095a"
+  },
+  "full_suite_tests": 1394,
+  "new_boundary_tests": 18,
+  "operation_alphabet": [
+    "read",
+    "mutate",
+    "inspect",
+    "discard"
+  ],
+  "exhaustive_length": 4,
+  "exhaustive_sequences": 256,
+  "compared_deferred_policies": [
+    "conservative_barrier_with_complete_cache",
+    "certified_inverse_effect_with_identical_complete_cache"
+  ],
+  "independent_expected_values": "Eager complete snapshots; full surviving dictionaries observed at each inspection and at end.",
+  "all_valid_contract_trace_values_equal": true,
+  "all_valid_contract_trace_world_states_equal": true,
+  "all_valid_contract_trace_candidate_api_counts_no_higher": true,
+  "false_contract_counterexample": {
+    "old_counter": 17,
+    "recounted_counter": 5,
+    "incorrectly_attested_delta": 1,
+    "reconstructed_old_counter": 4,
+    "contract_violation_detected": false
+  },
+  "default_effect_authority": "none",
+  "live_effect_exemptions_enabled": false,
+  "novel_method_claim": false,
+  "task_quality_established": false,
+  "measured_real_savings": null,
+  "model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluator_calls": 0,
+  "saved_recorded_code_executions": 0,
+  "task_databases_read": 0,
+  "reserved_scenarios_read": 0,
+  "prior_passing_checks_retained": [
+    {
+      "record": "reversible_views_first_tests_20261024",
+      "returncode": 0,
+      "wall_seconds": 0.07587204201263376,
+      "completed_at": "2026-10-24T06:17:10.472173+00:00",
+      "log_sha256": "8d792d81c28f14e81434cb2a175feb8a800363e60faf05e9aa008104cb37a9c2"
+    },
+    {
+      "record": "reversible_views_full_tests_20261024",
+      "returncode": 0,
+      "wall_seconds": 4.230727750022197,
+      "completed_at": "2026-10-24T06:18:53.224382+00:00",
+      "log_sha256": "b327d031f341a3573eabf2769f099e7bac25c61b2bf03512d48761eb4dd8e67a"
+    },
+    {
+      "record": "reversible_views_final_tests_20261024",
+      "returncode": 0,
+      "wall_seconds": 4.219704916991759,
+      "completed_at": "2026-10-24T06:19:57.997691+00:00",
+      "log_sha256": "77ebb0a111b23e5b7cffeffa39a56562e400d461a17913a7b0a8c48cdae88427"
+    },
+    {
+      "record": "reversible_views_final_tests_v02_20261024",
+      "returncode": 0,
+      "wall_seconds": 4.233111666020704,
+      "completed_at": "2026-10-24T06:21:47.421987+00:00",
+      "log_sha256": "60ea37d201bb31c1b054ba06167f6d64f4377260ae52acfba994ce33ff2e7564"
+    }
+  ],
+  "review_changes": "Shared complete materialization reuse given to both policies; explicit API error/unknown tests; full-object finite comparison; false-attestation counterexample."
+}
