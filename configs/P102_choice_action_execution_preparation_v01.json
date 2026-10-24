@@ -1,0 +1,298 @@
+{
+  "phase": "P102",
+  "created_at": "2026-10-24T14:04:14.380704+00:00",
+  "execution_ready": false,
+  "implementation_ready": false,
+  "source_phase": "P101",
+  "source_batch": "records/context_pilot/P101_choice_context_v01",
+  "required_closed_pipeline": "records/context_pilot/P101_pipeline_v01",
+  "required_closed_audit": "reports/P101_choice_context.json",
+  "schedule": [
+    {
+      "id": "call_001",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_P80_ORIGINAL__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_002",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_P80_ORIGINAL__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_003",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_R2_ORIGINAL__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_004",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_R2_ORIGINAL__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_005",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_P80_NORMALIZED__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_006",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_P80_NORMALIZED__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_007",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_R2_NORMALIZED__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_008",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_R2_NORMALIZED__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_009",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_NATIVE_IDS_CONTROL__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_010",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_NATIVE_IDS_CONTROL__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_011",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_CONTENT_CONTROL__required",
+      "repetition": 1
+    },
+    {
+      "id": "call_012",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_CONTENT_CONTROL__auto",
+      "repetition": 1
+    },
+    {
+      "id": "call_013",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_CONTENT_CONTROL__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_014",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_CONTENT_CONTROL__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_015",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_NATIVE_IDS_CONTROL__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_016",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_NATIVE_IDS_CONTROL__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_017",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_R2_NORMALIZED__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_018",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_R2_NORMALIZED__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_019",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_P80_NORMALIZED__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_020",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_P80_NORMALIZED__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_021",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_R2_ORIGINAL__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_022",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_R2_ORIGINAL__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_023",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_P80_ORIGINAL__required",
+      "repetition": 2
+    },
+    {
+      "id": "call_024",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_P80_ORIGINAL__auto",
+      "repetition": 2
+    },
+    {
+      "id": "call_025",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_P80_NORMALIZED__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_026",
+      "case": "P83_P80_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_P80_NORMALIZED__required",
+      "repetition": 3
+    },
+    {
+      "id": "call_027",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_CONTENT_CONTROL__required",
+      "repetition": 3
+    },
+    {
+      "id": "call_028",
+      "case": "P83_CONTENT_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_CONTENT_CONTROL__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_029",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_P80_ORIGINAL__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_030",
+      "case": "P83_P80_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_P80_ORIGINAL__required",
+      "repetition": 3
+    },
+    {
+      "id": "call_031",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "required",
+      "condition": "P83_R2_NORMALIZED__required",
+      "repetition": 3
+    },
+    {
+      "id": "call_032",
+      "case": "P83_R2_NORMALIZED",
+      "tool_choice": "auto",
+      "condition": "P83_R2_NORMALIZED__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_033",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "required",
+      "condition": "P83_R2_ORIGINAL__required",
+      "repetition": 3
+    },
+    {
+      "id": "call_034",
+      "case": "P83_R2_ORIGINAL",
+      "tool_choice": "auto",
+      "condition": "P83_R2_ORIGINAL__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_035",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "auto",
+      "condition": "P83_NATIVE_IDS_CONTROL__auto",
+      "repetition": 3
+    },
+    {
+      "id": "call_036",
+      "case": "P83_NATIVE_IDS_CONTROL",
+      "tool_choice": "required",
+      "condition": "P83_NATIVE_IDS_CONTROL__required",
+      "repetition": 3
+    }
+  ],
+  "planned_slots": 36,
+  "independent_contexts": 1,
+  "prefix_source": "records/context_pilot/BOC_P80_04_NOT_EXPOSED",
+  "task_id": "6104387_1",
+  "world_seed": 42,
+  "original_prefix_programs": 12,
+  "original_prefix_api_requests": 28,
+  "active_deadline_seconds": 1800,
+  "per_condition_deadline_seconds": 180,
+  "max_api_requests_per_condition": 80,
+  "max_api_requests_total": 2880,
+  "program_timeout_seconds": 30,
+  "bridge_timeout_seconds": 30,
+  "max_file_bytes": 16777216,
+  "observation_page_characters": 24000,
+  "model_generations": 0,
+  "evaluator_calls": 0,
+  "reserved_scenarios_read": 0,
+  "automatic_retries": 0,
+  "original_full_state_restored": false,
+  "task_quality_measured": false,
+  "novel_method_claim": false,
+  "unavailable_sources_preserved": true,
+  "all_known_outputs_attempted_in_fixed_order": true,
+  "source_sha256": {
+    "docs/experiments/P102_choice_action_execution.md": "1e8e4af37ca1aafae88d60a43cb64d9ea45fd2cfbbe00f2e86676ec6f88225c2",
+    "configs/P101_choice_context_preparation_v01.json": "d01da2df374cdbca970e9d9047533a8d88f351ebfd44c95134e3624530a26b80",
+    "configs/P94_saved_action_execution_v01.json": "bdbe290f30a2467e01abd436ffda02ea7e0ede4b62d02d060ad050dcdcf504de",
+    "scripts/choice_context_replay.py": "418f8b93ba80600bcb18f74f8c66de16ffde03608e0e3f619d74c7b5a20cacc0",
+    "scripts/run_saved_action_execution.py": "bf78440b75cf7414a0f2bae66d5eb57e54fff820db58bebead06fc1281abcc4e",
+    "scripts/matched_live_prefix.py": "9e571ffed230e7f499f9fba36052f26ca6f93adb8f098fd9acc2eb5469348c70",
+    "scripts/code_agent_interface.py": "68750222ee36a58f5afb2419d56f31f6056c7974bd6b909098a42e334afd8241",
+    "scripts/public_action_structure.py": "48e23bb58a456019533c3f57ea108063ad62e83213e51085eb15c99ca5f7a864"
+  }
+}
