@@ -14,6 +14,8 @@
 
 [制御通信と別の実行器](../materials/20261024_deferred_view_runtime/README.md)の別プロセス検査は完了した。固定headの両CI/job、P88の全件終了と所有推論器停止の後に、準備した有限のコンテナ確認を新規出力先で一度行う。手書きの模擬値を使うため、成功しても実課題の節約としない。その後は実サービスの公開契約・返却済み部分値の認定を具体化する。
 
+[公開応答契約の取得器](../materials/20261024_public_contract_read_views/README.md)はP37の既存契約を使い、両方式の完全応答再利用まで接続した。コンテナ確認後は、この取得器を実サービスへ接続する有限の確認を計画する。変更前の全取得が削減を消す場合も残し、未確認の変更例外を導入して見かけの効果を作らない。
+
 [終了済みH群の照合](../materials/20261024_closed_reference_cohorts/README.md)では、P83統一入力がP82のH書出し両反復に実際に使われても未達だった。同じ入力修正だけを再度の課題実行の根拠にしない。これは事後照合であり、同時割付の正規化の因果実験ではない。
 
 [P82全結果](P82_findings.md)／[P84全結果](P84_findings.md)／[現在状態](current_status.md)／[引き継ぎ](../RESUME.md)。実行中だった時点の作業順は[固定版](https://github.com/sophiria1225/AI-/blob/ed4a6a5d0756b9e419e064947d79c166e82cd74a/docs/next_actions.md)に残す。
