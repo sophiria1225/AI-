@@ -1,0 +1,92 @@
+% Closed P82/P84 results with observed resource accounting; not submission-ready.
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用別稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+状態保持型LLMエージェントの全24実行を解析した. 同一の公開出力が形式拒否された14生成と，構文が異なっても同じAPI要求列となった４課題37生成を確認した. 表示，実操作，最終成果を区別する必要性を示す.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，状態保持，時間通知，費用評価
+
+\section{問題設定と関連研究}
+状態保持型LLMエージェントの費用を減らすには，操作と最終成果を損なわない制御が必要である．しかし，入力表現をそろえて出力が安定しても，有効な操作を提出できたとは限らない．CodeAct\cite{codeact}型のコード行動とAppWorld\cite{appworld}を対象に，表現の一致と実操作の対応を調べる．
+
+時間通知と期限強制\cite{clock}，時間適応\cite{timely}，数値的非決定性\cite{nondeterminism}，ツール列・引数・出力の反復照合\cite{consistency}，ハーネス探索\cite{beyondprompts}，実行形式\cite{localprotocol}と情報提示\cite{delivery}，出典記録\cite{repro}，ID改名と正規化\cite{canonical}は既に扱われている．論理tokenと実費用\cite{costproxy}，cacheと圧縮・遅延\cite{capc,cacheeval}も区別が必要である．
+
+本稿は，不正呼出しの文章化で通信参照が通常文へ移る経路，保存１文脈の全18出力の実行，既知４課題24実行の全426生成の記録解析を結び付ける．一致した出力の形式拒否と，異なる構文から同じ実API要求列が生じる例を示す．正規化の新方式や一般的な高速化を提案するものではない．
+
+\section{共通の履歴処理と通知}
+公開履歴と返却済み推論を$h$，呼出しIDと結果IDの対応を保って初出順に統一する処理を$C$，表示処理を$R$とする．不正引数の呼出しを$R$が文章化した後では，構造上の参照欄だけの統一は文章内IDを変更できない．共通履歴を$R(C(h))$とし，通常文，引数，コード，観測，エラー，返却推論は変えず元記録を保持する．重複・欠落・孤立参照は拒否する．長い観測の先頭ページと参照先の表示も全条件で共通とする．これは通常の正規化順序の修正であり，品質維持の保証ではない．
+
+仕事上限$B=1800$秒と，生成直前の実残時間を整数秒にした$r$を用いる．Mは毎回$r$を表示，Hは非表示を通知，Lは$2r>B$ならH，それ以外はMとする．整数化により半分時点より１秒未満早く切り替わり得る．現在の通知だけを要求へ付け，履歴に蓄積せず，過去内容や進行中の生成は変更しない．実期限は全条件で単調時計から強制する．残token・API・生成回数の表示は共通である．
+
+全仕事の論理費用$T=\sum_j(I_j+O_j)$は全入力，出力，制御，失敗，回復，cache入力を含む．cache除外入力，出力，API数，実時間は別に集計し，終端使用量の不明を０や別反復で補わない．
+
+\section{比較の手順}
+\subsection{通知比較と保存文脈の実行}
+写真移動，電気代精算，返金，曲情報書出しの既知４課題をM/H/Lで２回ずつ初期化して実行する．全24条件で履歴処理は共通である．Mac Studio M3 Ultra・256 GiB，AppWorld 0.1.3.post1，MiniMax-M3 IQ4\_XS，llama.cpp b11669を用いる．入力枠65,536，１スロット，持続Python，型付きAPI返却，通常例外とし，温度1.0，top-p 0.95，環境seed42，モデルseed57から生成ごとに１増やす．反復１の課題別順序はMHL/HLM/LMH/LHM，反復２は各組の逆順とする．
+
+各条件80生成，450,000論理token，1,800作業秒，写真160・他80 APIを上限とする．出力上限は4,096と残予算の小さい方，通信待ちは600秒と残時間の小さい方である．初回はcache再利用０を確認し，以後は通常のprefix cacheを使う．最終状態を独立評価器で各１回判定し，基準・結果をモデルへ返さない．Lの固定採用基準は，各反復でM/Hそれぞれに対し全件評価・使用量既知・監査一致，成功喪失０，共通成功１課題以上，全４課題の論理費用減を満たすこととする．全４比較で成立を要求し，閾値探索や成功部分だけの選択はしない．
+
+以前のM/H反復を見た後，書出しで文章化ID差が初めて現れた保存文脈を選んだ．元入力A/B，表示前統一C/D，Aの構造化参照だけを改名したN，診断文を足したXを固定する．token列はC/DとA/Nで一致し，A/BとA/Xで異なる．各３回計18生成をseed70，温度1，出力上限4,096で固定順に測る．全要求をcold入力とし，元のwarm状態は再現しない．空出力，途中切れ，揺れ，欠測を除いて安定と判定しない．
+
+全18出力は新規環境で各１回，先行12コード・28 APIの実要求・返答・標準出力・例外・schemaを保存記録と照合後，通常実行口へ渡す．保存返答による代用や本文からのコード救済をしない．不一致・不明時は停止し補充しない．双方の提出と実行がなければ，空API列同士を有効操作の一致としない．元のDB・プロセス全体の復元ではない．
+
+\subsection{閉じた全24条件の記録解析}
+上の24実行の全生成を事後解析する．各課題６実行の全15組，計60組を生成序数で対応付け，片側終了後も残す．公開出力は本文・関数名・引数・終了理由，構文は位置情報だけを外したAST，実API列は送信receiptを持つ全要求の名前・引数を比較する．認証値も保持し，JSON objectのキー順・整形だけを統一する．全Python内API記録を外側の実行記録へ一度だけ対応付け，元監査の費用・欠測を照合する．生成前のAPI要求・返答・例外・schema列が同じ範囲も別集計するが，Python変数やDB全体の一致とはしない．両方空のAPI列は非空要求の一致へ数えず，記録を読み直すだけでモデル・API・コード・評価を再実行しない．
+
+\section{全仕事の結果}
+\input{papers/202610_letter/execution_evidence_cohort/whole_task.tex}
+\input{papers/202610_letter/execution_evidence_cohort/trajectories.tex}
+\input{papers/202610_letter/execution_evidence_cohort/observed_resources.tex}
+\input{papers/202610_letter/execution_evidence_cohort/cross_cohort.tex}
+
+\section{保存文脈の出力と実操作}
+\input{papers/202610_letter/execution_evidence_cohort/local_replay.tex}
+
+\section{全生成における表示と実要求}
+\input{papers/202610_letter/execution_evidence_cohort/cohort.tex}
+
+\section{考察と適用範囲}
+出力一致には実行口で拒否された生成が含まれ，構文差だけでは実API要求の差を判定できなかった．公開出力や構文の比較には，提出・実行状態と実要求を添える必要がある．API列の一致自体も正常完了や正解を保証しない．既存研究が区別する行動再現性指標を新方式とせず，本実装での対応と失敗の具体的なデータとして位置付ける．
+
+独立した課題は調整に用いた既知４つで，24実行，60組，生成数を独立課題数へ読み替えない．保存文脈は事後に選んだ１つで，全群解析もその観察後の二次解析である．入力・API履歴の一致は完全な実行状態の復元でなく，同じseedにも数値実行，cache，ホスト負荷の変動が残る．通知文の長さと情報の効果は分離していない．非表示は生成コードの時刻参照を禁じず，表示開始に至らないLも残す．参照統一は全条件共通なので，その因果的な品質効果は識別できない．局所API差を全仕事の削減にせず，未達・欠測と再構成費を残す．全条件と出典を公開する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\section{結論}
+\input{papers/202610_letter/execution_evidence_cohort/conclusion.tex}
+
+% The verified bibliography is retained from the closed prior-review draft.
+\begin{thebibliography}{99}
+\raggedright
+\bibitem{codeact} X. Wang, Y. Chen, L. Yuan, Y. Zhang, Y. Li, H. Peng, and H. Ji, ``Executable code actions elicit better LLM agents,'' Proc. ICML, PMLR, vol.235, pp.50208--50232, Vienna, Austria, July 2024.
+\bibitem{appworld} H. Trivedi, T. Khot, M. Hartmann, R. Manku, V. Dong, E. Li, S. Gupta, A. Sabharwal, and N. Balasubramanian, ``AppWorld: a controllable world of apps and people for benchmarking interactive coding agents,'' Proc. ACL, vol.1, pp.16022--16076, Bangkok, Thailand, Aug. 2024.
+\bibitem{clock} A. Wang, N. Madan, V. Sobal, M. Trager, M. Kleinman, E. Mansimov, W. Xia, and S. Soatto, ``On the Clock: Towards Punctual and Productive Time-Budgeted AI Agents,'' arXiv:2610.10833v1, 2026.
+\bibitem{timely} Y. Ma, L. Li, Y. Chen, P. Li, X. Li, Q. Guo, D. Lin, and K. Chen, ``Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic,'' Proc. ACL, vol.1, pp.4619--4636, San Diego, USA, July 2026.
+\bibitem{nondeterminism} J. Yuan, H. Li, X. Ding, W. Xie, Y.-J. Li, W. Zhao, K. Wan, J. Shi, X. Hu, and Z. Liu, ``Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference,'' Advances in Neural Information Processing Systems, vol.38, 2025, doi:10.52202/085713-5653.
+\bibitem{repro} P. Pattnayak and A. Bhatia, ``ReproEvalCard: A Reporting Standard for Reproducible Evaluation of LLM Pipelines,'' Proc. ACL, vol.2, pp.238--249, San Diego, USA, July 2026.
+\bibitem{consistency} A. Yagubyan, ``How Consistent Are LLM Agents? Measuring Behavioral Reproducibility in Multi-Step Tool-Calling Pipelines,'' arXiv:2605.28840v1, 2026.
+\bibitem{beyondprompts} C. Zhao, H. Ruan, W. Chen, P.-f. Tu, U. Abbasi, and J. Hesch, ``Beyond Prompts: Measuring and Optimizing LLM Tool-Agent Harnesses,'' arXiv:2609.05736v1, 2026.
+\bibitem{localprotocol} R. Agarwal, ``Measuring Local SLM Agents as Systems: Protocol Effects on Quality and Resource Use,'' preprint, 2026, doi:10.5281/zenodo.21903714.
+\bibitem{delivery} K. Zhang, S. Chundur, J. P. Owusu, M. J. Abdolhosseini Qomi, and M. Raissi, ``Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy,'' arXiv:2610.26836v1, 2026.
+\bibitem{canonical} A. J. Mercado and A. Lomuscio, ``Formal Verification of Agentic Systems over Operational Data,'' arXiv:2608.03609v1, 2026.
+\bibitem{costproxy} S. Weinberger and A. Hozez, ``Token Reduction Is Not Cost Reduction,'' arXiv:2607.12161v5, 2026.
+\bibitem{capc} Y. Song, ``Cache-Aware Prompt Compression: A Two-Tier Cost Model for LLM API Caching,'' arXiv:2607.15516v1, 2026.
+\bibitem{cacheeval} E. Lumer, F. Nizar, A. Jangiti, K. Frank, A. Gulati, M. Phadate, and V. K. Subbiah, ``Don't Break the Cache: An Evaluation of Prompt Caching for Long-Horizon Agentic Tasks,'' arXiv:2601.06007v2, 2026.
+\end{thebibliography}
+
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Keywords}\quad LLM agents, harness engineering, state retention, time notices, cost evaluation
+
+\noindent\textbf{Summary draft}\quad We analyzed 24 recorded runs of a stateful LLM agent. Matching public outputs included 14 rejected generations; different syntax produced identical API requests in 37 generations across four known tasks. These observations distinguish output agreement, actual execution, and task outcomes without establishing general quality or cost improvements.
+\end{document}
