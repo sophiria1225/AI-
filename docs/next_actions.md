@@ -9,7 +9,7 @@ P111の既知４課題×全保持・直近保持・実行記録選別、全12条
 1. P110の規則と全件結果を保持する. 適用可能性と入力短縮は確認したが、元の成功を新方式の品質へ転記しない. 規則の事後調整やseed探索をしない.
 2. P111の同じ既知４課題×３方式を固定計画で実行中. 全12条件と所有サーバーを閉じてから監査と総費用比較を行う. 同じモデル、公開指示、API経路、予算通知、課題予算、初回cache無効化を使う. 選別と復旧の制御時間を仕事時間に含める.
 3. 全条件・全失敗・不明使用量・未実行を保持する. 一部の短い成功例だけを取り出さず、両対照に対する成否、全論理token、実測cache、時間、APIと生成回数を確認する. 安い未達を便益としない.
-4. ICLR、StateComp、ContextRender、TRACE、Agent-Controlled Forgettingと重なる一般構想を新規性へ含めない. 未見12課題は方式選定へ使わない.
+4. ICLR、StateComp、ContextRender、TRACE、Agent-Controlled Forgettingに加え、[追加照合](receipt_history_additional_priors_20261025.md)のShortReasoning、Sentry、AgentRewindと重なる一般構想を新規性へ含めない. [技術説明](../materials/20261025_harness_technical/README.md)を実装と研究仮説の対応に用いる. 未見12課題は方式選定へ使わない.
 5. Projectとmaterialsは結果がまとまった単位で更新する. P107〜P110は閉鎖済み、P111は実行中. 原稿は保留し、教授への送信や投稿を勝手に行わない.
 
 閉じた実験と監査を再実行しない. 各作業は同じ完全headのpush・pull_request両workflowと両accounting-and-syntax job成功を確認してから進める. `.runtime/research_ledger_names.json`の全台帳と固定計画の指紋を保持する. 変更先は自分の研究リポジトリと専用Projectのみ.
