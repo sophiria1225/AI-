@@ -1,0 +1,192 @@
+{
+  "phase": "native_reasoning_budget_synthetic_check",
+  "status": "complete",
+  "started_at": "2026-10-24T03:54:46.439500+00:00",
+  "source_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+  "source_archive_sha256": "1d4a987d9bd048f6e93107e838026438df70fbde237fc0c69c63d600512b4bd9",
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "source_sha256": {
+    "tests/test-reasoning-budget.cpp": "1499e08757ff9e6f52ddd84134a1454346e92cd78a3dc5a9141f8ba775f57979",
+    "common/reasoning-budget.h": "bef856179c9e76b779139e6fd712199aab2efd3e49facbe8ed6e8691dee69cd8",
+    "common/reasoning-budget.cpp": "55c730c85e7e2353d44542b5582a0046ffc503aa828cbd58f2bc6a7d957b48b2",
+    "common/unicode.h": "219b9257ac567a3e6bcf0f552c9a9ddc01d46a15eb4d2829ae5e069e643f0ec5",
+    "common/unicode.cpp": "191c00abab788e59e83e29fb877047fcbac1f4d6088c5e9962d38ac2e694686c"
+  },
+  "repo_source_sha256": {
+    "reports/P73_renderer_build.json": "acc8c2063049f2a9ab264a37caec7890525edde1d16f431513a7b642376d155f",
+    "reports/output_budget_backend_scope_20261024.json": "6e2919e1281bcb01247b16d677521cb1a48218f9cbc74050fedb61100f6c0259",
+    "scripts/probe_native_reasoning_budget.cpp": "43f82ebbf2a7498845a18fa48a6585c806d3d7f3b41fec7f7847f3a9e285b93a",
+    "scripts/check_native_reasoning_budget.py": "5260f73f118e1c4a7cf76e3b1ea59d53ddaa71d8cdac908f877021819f77fbac"
+  },
+  "library_sha256": {
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml-base.0.27.0.dylib": "35851d2f742b8bdda2ea9707ae4f9b8a8970d38b387ccdeb09fce518c64fda54",
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml-blas.0.27.0.dylib": "12aefdc8dd4873d69554dc85a0dd09fffef9828e1fc9ecf6b48913ef2106b33a",
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml-cpu.0.27.0.dylib": "f29b0322166bc9ea2a1f2482f9cd034959013228831f5bfd06aa770b75dd4d12",
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml-metal.0.27.0.dylib": "448d7eafb7906c4bbd445cac28fad15ae9311b4315461283742a2fb1af2a5653",
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml-rpc.0.27.0.dylib": "547ac08b705a96e82ddb9fcfc2529472f97f5da1957984b3a7652cd5875d452d",
+    ".runtime/llama.cpp/b11669/llama-b11669/libggml.0.27.0.dylib": "a97bc40525aea78834fdf28197b5b21f149b6d5ac2d3b615b95b86f775a69477",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-batched-bench-impl.dylib": "55883543101b508dd945509c55860f7badd4286d669283e13afdfc2f54dbf623",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-bench-impl.dylib": "698a7614525fae1a2d854bf4dba05f23d127b9916d156694775467904fac647d",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-cli-impl.dylib": "e9abe35a81bd5346fcd53160c25836447b8d7b566cf8673aee661b4e7a278bf6",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-common.0.7.0.dylib": "725c24d32d0abd5fd6d2baf589d5294bfea90c072ed4db99cb62fe88d4ed7f42",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-completion-impl.dylib": "49f60dda87db4094b98141a5c7adc4321400ee957a12736765176cdca275eabb",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-fit-params-impl.dylib": "14b8f4a2858391b0f576a8fc5439fb6b9aa69eb36c82e9bfcdb28fd0df23a3ac",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-perplexity-impl.dylib": "743af2c79af7d04bfc4676ff0587a339a3792e2452041db84f44d050e8e6de92",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-quantize-impl.dylib": "582dadbf515289d7a5dd5aa27be5fdcbe58cad0a2eb4eaa72a15087ad9d26864",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama-server-impl.dylib": "f1fb36acea8df4eefd90aafe30af16a1a87d7f8b45da3576a3d64100cf18a435",
+    ".runtime/llama.cpp/b11669/llama-b11669/libllama.0.7.0.dylib": "7d461aace0a3ace6d5733bde2ec2d03b54f00ef620a6f3bbedb735eb1cbb5035",
+    ".runtime/llama.cpp/b11669/llama-b11669/libmtmd.0.7.0.dylib": "b59316a5d3ad780edfe98df05bf4a3f24fd17eb9cc4d5c53324d5ef6882465b2"
+  },
+  "stages": [
+    {
+      "name": "upstream",
+      "mode": "compile",
+      "exit_code": 0,
+      "wall_seconds": 0.5278452089987695,
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++17",
+        "-O2",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/common",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/include",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/ggml/include",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/tests/test-reasoning-budget.cpp",
+        "-L",
+        "/Users/tp26013/AI-/.runtime/llama.cpp/b11669/llama-b11669",
+        "-Wl,-rpath,/Users/tp26013/AI-/.runtime/llama.cpp/b11669/llama-b11669",
+        "-lllama-common",
+        "-lllama",
+        "-lggml",
+        "-lggml-base",
+        "-o",
+        "/Users/tp26013/AI-/.runtime/native_reasoning_budget_check_v02_20261024/upstream"
+      ],
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "upstream",
+      "mode": "execute",
+      "exit_code": 0,
+      "wall_seconds": 0.062335916998563334,
+      "command": [
+        "/Users/tp26013/AI-/.runtime/native_reasoning_budget_check_v02_20261024/upstream"
+      ],
+      "log_sha256": "770233fae44b79f0f32b088f9484f6746b4467b2a7745ab958c3f190ccd527cc"
+    },
+    {
+      "name": "fixed_2048",
+      "mode": "compile",
+      "exit_code": 0,
+      "wall_seconds": 0.44034420800744556,
+      "command": [
+        "/usr/bin/clang++",
+        "-std=c++17",
+        "-O2",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/common",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/include",
+        "-I",
+        "/Users/tp26013/AI-/.runtime/p73-template-sources/llama.cpp-620d2225cc436ab0b001e3200e590e3b286ef9ab/ggml/include",
+        "/Users/tp26013/AI-/.runtime/worktrees/p84-prep/scripts/probe_native_reasoning_budget.cpp",
+        "-L",
+        "/Users/tp26013/AI-/.runtime/llama.cpp/b11669/llama-b11669",
+        "-Wl,-rpath,/Users/tp26013/AI-/.runtime/llama.cpp/b11669/llama-b11669",
+        "-lllama-common",
+        "-lllama",
+        "-lggml",
+        "-lggml-base",
+        "-o",
+        "/Users/tp26013/AI-/.runtime/native_reasoning_budget_check_v02_20261024/fixed_2048"
+      ],
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fixed_2048",
+      "mode": "execute",
+      "exit_code": 0,
+      "wall_seconds": 0.20781087499926798,
+      "command": [
+        "/Users/tp26013/AI-/.runtime/native_reasoning_budget_check_v02_20261024/fixed_2048"
+      ],
+      "log_sha256": "f1d8bc5ff9cb3f2dc0bed180c20b6ecbe56fb25bd1c5687c052314a4838615e8"
+    }
+  ],
+  "live_server_contacted": false,
+  "experimental_records_read": false,
+  "model_forward_passes": 0,
+  "model_generations": 0,
+  "vocabulary_loads": 0,
+  "tokenizations": 0,
+  "environment_api_requests": 0,
+  "task_evaluations": 0,
+  "actual_P88_usage_or_outcomes_inferred": false,
+  "upstream_sampler_cases_passed": 12,
+  "upstream_utf8_helper_passed": true,
+  "upstream_binary_sha256": "c28b1a5314513972e58df234ec146cbfd650a773112ad35947d441204955b3ab",
+  "fixed_2048_probe": {
+    "synthetic_cases": [
+      {
+        "case": "natural_end_before_budget",
+        "budget_per_block": 2048,
+        "synthetic_global_output_limit": -1,
+        "accepted_synthetic_tokens": 9,
+        "synthetic_payload_tokens": 8,
+        "forced_end_tokens": 0,
+        "new_start_tokens": 0,
+        "sampler_apply_calls": 10,
+        "state_at_end": "DONE",
+        "uses_real_vocabulary": false
+      },
+      {
+        "case": "one_full_block_then_forced_end",
+        "budget_per_block": 2048,
+        "synthetic_global_output_limit": -1,
+        "accepted_synthetic_tokens": 2049,
+        "synthetic_payload_tokens": 2048,
+        "forced_end_tokens": 1,
+        "new_start_tokens": 0,
+        "sampler_apply_calls": 2050,
+        "state_at_end": "DONE",
+        "uses_real_vocabulary": false
+      },
+      {
+        "case": "reopened_block_at_total_limit",
+        "budget_per_block": 2048,
+        "synthetic_global_output_limit": 4096,
+        "accepted_synthetic_tokens": 4096,
+        "synthetic_payload_tokens": 4094,
+        "forced_end_tokens": 1,
+        "new_start_tokens": 1,
+        "sampler_apply_calls": 4096,
+        "state_at_end": "COUNTING",
+        "uses_real_vocabulary": false
+      },
+      {
+        "case": "total_limit_smaller_than_block_budget",
+        "budget_per_block": 2048,
+        "synthetic_global_output_limit": 1024,
+        "accepted_synthetic_tokens": 1024,
+        "synthetic_payload_tokens": 1024,
+        "forced_end_tokens": 0,
+        "new_start_tokens": 0,
+        "sampler_apply_calls": 1024,
+        "state_at_end": "COUNTING",
+        "uses_real_vocabulary": false
+      }
+    ],
+    "model_forward_passes": 0,
+    "model_generations": 0,
+    "vocabulary_loads": 0,
+    "tokenizations": 0,
+    "environment_api_requests": 0,
+    "task_evaluations": 0,
+    "limitations": "Handwritten token IDs and logits. No real UTF-8 token pieces, HTTP request path, model outputs, task quality or whole-task savings are tested."
+  },
+  "fixed_2048_binary_sha256": "32fc7ba4d5246b608e364a0a1ee6f4a2090b8ef3261d1ed4d030d7fb29dcde9d",
+  "wall_seconds": 1.2408495839918032,
+  "finished_at": "2026-10-24T03:54:47.681035+00:00"
+}
