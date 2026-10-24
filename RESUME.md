@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P109でP107全42入力・42プログラム・106 APIを追加実行なしで点検し、不一致０。各14回の作者取得に先行する同じIDの名前観測は、指定した公開返答の範囲では０。通常の完全応答キャッシュ候補は各２回のアルバム取得。最後の入力は過去推論42,523文字・実行結果42,475文字で、文字数をtokenや不要性へ換算しない。元の両条件は未達のまま。次は型付き実行領収を使う推論履歴の表示制御を準備し、全保持・直近保持との差を固定する。新規性・品質を保った削減は未成立。原稿は保留、未見12課題は未閲覧。 [P109全件資料](materials/20261025_p109_results/README.md)。
+P110で既知４課題・P99全８実行の148保存要求×３表示、444入力を計数し不一致０。全保持の147既知入力は元実測と一致し、不明１件は不明のまま保持。実行記録による選別は96境界で短縮し、20境界で原文推論を再表示。元の成功３課題の仮想入力合計差は約1.44〜3.16%で、単純な直近保持より小さい。接頭辞も崩れるため実測cacheと時間を確認する必要がある。仮想入力の合計を全仕事削減へ転記しない。次は同じ既知４課題×全保持・直近保持・実行記録選別の有限比較を準備。新規性・品質を保った削減は未成立。原稿保留、未見12課題は未閲覧。 [P110全件資料](materials/20261025_p110_results/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,10 +19,11 @@ P109でP107全42入力・42プログラム・106 APIを追加実行なしで点�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p109-results-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p110-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
+| P110の固定計数木 | `.runtime/worktrees/p110-run`、`73389b3ec2b00eee52235660254260ec59bd5090` |
 | Python 3.12 | `.runtime/p3_ci_venv/bin/python` |
 | 図の生成環境 | `.runtime/reporting-venv/bin/python` |
 
@@ -47,3 +48,5 @@ P98/P103の入力、公開出力、提出コード、API列の対応は実証材
 変更先は `sophiria1225/AI-` と専用[Project 1](https://github.com/users/sophiria1225/projects/1)だけ. Projectは全120件を保持し、部分同期後も全件からtask boardを生成する. 同じ完全SHAのpush・pull_request両workflowと両`accounting-and-syntax` job成功後にmergeや新しい実記録処理へ進む. 生のモデル推論、完全履歴、正解、認証情報はGitへ登録しない.
 
 P109は全件終了済みで、`.runtime/P109_analysis_once_start.json`と`P109_analysis_once_end.json`を保持する. [P109所見](docs/P109_findings.md)と[先行方式の確認](docs/receipt_history_prior_scope_20261025.md)を次の準備の前提にする. まだ新しい履歴制御の性能比較を開始していない.
+
+P110も全444入力の計数を終了した. `.runtime/P110_analysis_once_start.json`と`P110_analysis_once_end.json`を保持. [所見](docs/P110_findings.md)を前提に、次の全仕事比較を準備する. P110はモデル性能の測定ではない.
