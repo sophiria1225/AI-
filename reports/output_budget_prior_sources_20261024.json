@@ -1,0 +1,61 @@
+{
+  "reviewed_at": "2026-10-24T02:16:11.558669+00:00",
+  "search_queries": [
+    "site.arxiv.org \"tool\" \"reasoning budget\" \"agent\" 2026",
+    "site.arxiv.org \"budget forcing\" s1"
+  ],
+  "sources": [
+    {
+      "title": "s1: Simple test-time scaling",
+      "url": "https://arxiv.org/html/2501.19393v3",
+      "reviewed": [
+        "abstract",
+        "section 3.1 including baselines"
+      ],
+      "not_reviewed": [
+        "full results",
+        "appendix examples",
+        "implementation reproduction"
+      ],
+      "scope": "Thinking termination by delimiter is established prior work; no new-method claim for a fixed budget knob."
+    },
+    {
+      "title": "Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints",
+      "url": "https://arxiv.org/html/2610.28409v1",
+      "reviewed": [
+        "abstract",
+        "section 3.1-3.2 through policy definition",
+        "sections 11.4-11.5"
+      ],
+      "not_reviewed": [
+        "full results",
+        "full appendix",
+        "code or trained policies"
+      ],
+      "scope": "Trains resource-conditioned policies on AppWorld; token cost covers generated thinking/actions, not input. Does not provide an experimental result for this harness."
+    },
+    {
+      "title": "AgentCollab: A Self-Evaluation-Driven Collaboration Paradigm for Efficient LLM Agents",
+      "url": "https://arxiv.org/abs/2603.26034",
+      "reviewed": [
+        "abstract only"
+      ],
+      "not_reviewed": [
+        "method",
+        "results",
+        "code"
+      ],
+      "scope": "Abstract already describes self-reflection-based model escalation and budget increases from recent failures; cannot claim generic adaptive budgeting is absent."
+    }
+  ],
+  "retrieval_failure": [
+    {
+      "url": "https://arxiv.org/html/2501.19393v6",
+      "status": 404,
+      "correction": "Read abstract page to establish actual v3; then read v3."
+    }
+  ],
+  "primary_sources_only_for_claims": true,
+  "exhaustive_novelty_search": false,
+  "external_experiments_reproduced": false
+}

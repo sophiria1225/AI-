@@ -1,0 +1,232 @@
+{
+  "created_at": "2026-10-24T02:16:11.557580+00:00",
+  "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+  "source_archive_sha256": "1d4a987d9bd048f6e93107e838026438df70fbde237fc0c69c63d600512b4bd9",
+  "archive_provenance": "reports/P73_renderer_build.json",
+  "files": [
+    {
+      "path": "common/arg.cpp",
+      "sha256": "a10b6e6af910366c5c1abb89e47a7c6711fc1f10708b5fbfd8b59ba1a11d0f4a",
+      "reviewed_line_ranges": [
+        [
+          3720,
+          3775
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/arg.cpp"
+    },
+    {
+      "path": "tools/server/server-common.cpp",
+      "sha256": "fcb05757dd6a25d349024fd57df9b05c7ff77902cd17d1b70b9f41ac54f6c45c",
+      "reviewed_line_ranges": [
+        [
+          1410,
+          1455
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/tools/server/server-common.cpp"
+    },
+    {
+      "path": "tools/server/server-schema.cpp",
+      "sha256": "1f9d7b73b4363b90b08de0360b0a5ce0b3d152750bfb8d587a367e90c7904050",
+      "reviewed_line_ranges": [
+        [
+          325,
+          383
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/tools/server/server-schema.cpp"
+    },
+    {
+      "path": "common/reasoning-budget.cpp",
+      "sha256": "55c730c85e7e2353d44542b5582a0046ffc503aa828cbd58f2bc6a7d957b48b2",
+      "reviewed_line_ranges": [
+        [
+          1,
+          325
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/reasoning-budget.cpp"
+    },
+    {
+      "path": "common/sampling.cpp",
+      "sha256": "e88c45dfdc58ef2e86b5519aac68c83ced333952ade7d4bd8fca5f1ce5bbea02",
+      "reviewed_line_ranges": [
+        [
+          300,
+          325
+        ],
+        [
+          455,
+          505
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/sampling.cpp"
+    },
+    {
+      "path": "tools/server/server-context.cpp",
+      "sha256": "4ed2e401a9e566b2caf2dd208582fbd42a6b230d516b1b9d56be130cbad3caa6",
+      "reviewed_line_ranges": [
+        [
+          470,
+          500
+        ],
+        [
+          2005,
+          2055
+        ],
+        [
+          2920,
+          2945
+        ],
+        [
+          4458,
+          4505
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/tools/server/server-context.cpp"
+    },
+    {
+      "path": "common/parsers/minimax-m3.cpp",
+      "sha256": "3f335b93c94345c2fe48ff47463d057396f505f6e1b50e1e320b9f88655e566d",
+      "reviewed_line_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/parsers/minimax-m3.cpp"
+    },
+    {
+      "path": "common/chat.cpp",
+      "sha256": "ff909135550742869afd69d132d8e123d45b875b950607696fc196e5b15e722b",
+      "reviewed_line_ranges": [
+        [
+          1686,
+          1703
+        ]
+      ],
+      "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/chat.cpp"
+    }
+  ],
+  "local_adapter": {
+    "path": "scripts/local_llama.py",
+    "sha256": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "reviewed_line_ranges": [
+      [
+        1,
+        105
+      ]
+    ]
+  },
+  "saved_render_source_sha256": "383e0de2f1f62c8a6986de0244a5be9dcf6117271d9ed1b508a3404ed5ea05fa",
+  "saved_render_controls": [
+    {
+      "input": "P83_P80_ORIGINAL",
+      "private_rendering_sha256": "95ee591e938bc6b1c9e49384d2648873f6ffd0ea89511bfe73a69c863344f6fd",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    },
+    {
+      "input": "P83_R2_ORIGINAL",
+      "private_rendering_sha256": "2d29ef74fe23057381f595f6470a3fb71953a1a58c3cb1ab8dee9e1b3293215e",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    },
+    {
+      "input": "P83_P80_NORMALIZED",
+      "private_rendering_sha256": "9e7e0df5f9de9c4d826657bf7bff6373d07531a5956e3598e9b6c5c5024b64a4",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    },
+    {
+      "input": "P83_R2_NORMALIZED",
+      "private_rendering_sha256": "32856bf91d54f74a16c395fa2f845c531b895fd64e4879878fc454605a083509",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    },
+    {
+      "input": "P83_NATIVE_IDS_CONTROL",
+      "private_rendering_sha256": "7789cf7a300ca2543a07c3724d9aace687f843508108d238b9853b183b0d2e22",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    },
+    {
+      "input": "P83_CONTENT_CONTROL",
+      "private_rendering_sha256": "a2b88191ada3592671ff1df3bdcd4b1cca689a4557b176bc7112d9e7c77b0f90",
+      "session_controls_sha256": "8fa557fd36eee4adcdcb227f8183d548654eb1152c07184f6edf6cadb4ce7b2c",
+      "parsed_non_message_parameters_sha256": "2b66e85062c49a241479cbd9ef8ad474fa5083e3379baf5dd848e0fc50f64f29",
+      "parsed_budget_fields": {
+        "reasoning_budget_tokens": -1,
+        "reasoning_budget_start_tag": "<mm:think>",
+        "reasoning_budget_end_tags": [
+          "</mm:think>"
+        ],
+        "reasoning_budget_message": "",
+        "reasoning_control": false
+      },
+      "format": "peg-minimax-m3"
+    }
+  ],
+  "new_renderings": 0,
+  "new_generations": 0,
+  "review_scope": "Pinned source inspection and six hash-verified saved P83 controls. No live budget intervention or sampling test. Original private histories were not printed.",
+  "findings": [
+    "Output max counts every generated token across reasoning and public output; reaching it does not require a complete action.",
+    "reasoning_budget_tokens has a thinking_budget_tokens alias and is passed only if the session exposes thinking end tags.",
+    "MiniMax-M3 exposes thinking start/end tags. The six saved P83 controls all had budget -1 and reasoning_control false.",
+    "The sampler forces an ending token sequence when the per-block budget expires. UTF-8 completion and the ending sequence can add tokens. A later thinking start can open another full budget window.",
+    "Lazy grammar is suppressed during active thinking and receives the matching ending sequence on transition; grammar existence does not guarantee completion before total cap.",
+    "Changing the budget can change reasoning and action selection. It cannot establish preserved task quality from static inspection."
+  ]
+}
