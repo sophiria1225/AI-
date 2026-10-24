@@ -1,0 +1,63 @@
+{
+  "phase": "joined_public_read_source_scope",
+  "checked_at": "2026-10-24T06:38:18.401527+00:00",
+  "public_implementation_sha256": {
+    "apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6"
+  },
+  "reviewed_lines": {
+    "apis_py": [
+      [
+        443,
+        481
+      ],
+      [
+        728,
+        770
+      ],
+      [
+        1051,
+        1096
+      ]
+    ],
+    "models_py": [
+      [
+        141,
+        202
+      ],
+      [
+        203,
+        325
+      ]
+    ]
+  },
+  "admitted_sources": [
+    "spotify__show_song_library",
+    "spotify__show_song",
+    "spotify__show_album",
+    "spotify__show_playlist"
+  ],
+  "album_song_fields": [
+    "song_id",
+    "title"
+  ],
+  "playlist_song_fields": [
+    "song_id",
+    "title"
+  ],
+  "playlist_artist_join": "Only the exact observed Song.artists ID order and uniquely known names in the same conservative epoch.",
+  "album_artist_id_order_assumed": false,
+  "derived_album_id": false,
+  "derived_duration": false,
+  "new_readonly_exemptions": [],
+  "new_mutation_exemptions": [],
+  "transitive_all_api_proof_complete": false,
+  "task_database_reads": 0,
+  "conditions": [
+    "Pinned public serializers",
+    "Trusted already-returned observations",
+    "Isolated execution scope",
+    "Conservative invalidation and all changes intercepted",
+    "Pure total deferred read premise remains conditional"
+  ]
+}
