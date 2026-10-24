@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P110で既知４課題・P99全８実行の148保存要求×３表示、444入力を計数し不一致０。全保持の147既知入力は元実測と一致し、不明１件は不明のまま保持。実行記録による選別は96境界で短縮し、20境界で原文推論を再表示。元の成功３課題の仮想入力合計差は約1.44〜3.16%で、単純な直近保持より小さい。接頭辞も崩れるため実測cacheと時間を確認する必要がある。仮想入力の合計を全仕事削減へ転記しない。次は同じ既知４課題×全保持・直近保持・実行記録選別の有限比較を準備。新規性・品質を保った削減は未成立。原稿保留、未見12課題は未閲覧。 [P110全件資料](materials/20261025_p110_results/README.md)。
+P111の既知４課題×全保持・直近保持・実行記録選別、全12条件の比較を開始。初期12要求の計数が完了し、各課題で３方式の完全要求とtoken数が一致。不一致０。各80生成・450,000論理token・1,800仕事秒を上限に、同じAPI経路と公開指示で独立実行する。全条件と所有サーバーの閉鎖後に品質と総費用を比較し、途中結果で規則を変更しない。P110の仮想入力差は実測の全仕事削減ではない。新規性と品質維持の証明は未成立。原稿保留、未見12課題は未閲覧。 [P111開始資料](materials/20261025_p111_execution/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,11 +19,12 @@ P110で既知４課題・P99全８実行の148保存要求×３表示、444入�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p110-results-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p111-running-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
 | P110の固定計数木 | `.runtime/worktrees/p110-run`、`73389b3ec2b00eee52235660254260ec59bd5090` |
+| P111の固定実行木 | `.runtime/worktrees/p111-run`、`a00e87087b93e2b1d3fd506bc40b988979027768` |
 | Python 3.12 | `.runtime/p3_ci_venv/bin/python` |
 | 図の生成環境 | `.runtime/reporting-venv/bin/python` |
 
@@ -47,6 +48,8 @@ P98/P103の入力、公開出力、提出コード、API列の対応は実証材
 
 変更先は `sophiria1225/AI-` と専用[Project 1](https://github.com/users/sophiria1225/projects/1)だけ. Projectは全120件を保持し、部分同期後も全件からtask boardを生成する. 同じ完全SHAのpush・pull_request両workflowと両`accounting-and-syntax` job成功後にmergeや新しい実記録処理へ進む. 生のモデル推論、完全履歴、正解、認証情報はGitへ登録しない.
 
-P109は全件終了済みで、`.runtime/P109_analysis_once_start.json`と`P109_analysis_once_end.json`を保持する. [P109所見](docs/P109_findings.md)と[先行方式の確認](docs/receipt_history_prior_scope_20261025.md)を次の準備の前提にする. まだ新しい履歴制御の性能比較を開始していない.
+P109は全件終了済みで、`.runtime/P109_analysis_once_start.json`と`P109_analysis_once_end.json`を保持する. [P109所見](docs/P109_findings.md)と[先行方式の確認](docs/receipt_history_prior_scope_20261025.md)を次の準備の前提にする. P109完了時点では新しい履歴制御の性能比較は未開始だった. 最新は冒頭のP111開始状態を参照.
 
 P110も全444入力の計数を終了した. `.runtime/P110_analysis_once_start.json`と`P110_analysis_once_end.json`を保持. [所見](docs/P110_findings.md)を前提に、次の全仕事比較を準備する. P110はモデル性能の測定ではない.
+
+P111は `.runtime/run_close_p111_once.py` から一度だけ起動. `.runtime/P111_pipeline_once_start.json`を保持し、終了時に同wrapperがpipeline終了、全記録監査、所有session点検を一度ずつ行う. `.runtime/P111_pipeline_once_end.json`と`P111_closure_once_end.json`ができるまで再起動しない. ユーザー停止は `.runtime/P111.stop` へ反映し、所有プロセスを確認して止める. 実行木と固定計画を編集中に書き換えない.
