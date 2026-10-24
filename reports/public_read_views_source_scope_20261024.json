@@ -1,0 +1,33 @@
+{
+  "phase": "public_source_read_for_finite_live_view_check",
+  "created_at": "2026-10-24T05:35:27.773715+00:00",
+  "source_sha256": {
+    "apps/spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "apps/spotify/models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6",
+    "apps/supervisor/apis.py": "d9796e20cd5f4ebe21e06f7347f73ab399164d73451edbaa658cd7ff66ddaaf5"
+  },
+  "source_root": "installed pinned AppWorld package",
+  "read_ranges": {
+    "apps/spotify/apis.py": [
+      "443-557: public song detail, user-specific flags, like/unlike",
+      "1434-1473: first-page song-library serializer",
+      "1955-2031: review alternatives inspected but not selected",
+      "2662-2755: playback alternative inspected but not selected"
+    ],
+    "apps/spotify/models.py": [
+      "141-202: complete and shortened Song serializer",
+      "501-539: SongLike hook recounts song likes"
+    ],
+    "apps/supervisor/apis.py": [
+      "76-101: public profile",
+      "145-180: authorized benchmark account passwords"
+    ]
+  },
+  "selected": "Observed liked flag selects one toggle. SongLike hook updates Song.like_count; verify old/new public values at runtime.",
+  "new_read_only_exemptions": 0,
+  "full_transitive_effect_proof": false,
+  "task_or_secret_contents_read_for_design": false,
+  "model_calls": 0,
+  "environment_api_requests": 0,
+  "task_evaluations": 0
+}

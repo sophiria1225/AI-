@@ -63,3 +63,5 @@ Lは既知分だけでMより197,929論理token多い。一方、Mには第２�
 [表示前の参照統一](scripts/protocol_stable_history.py)、[後半の時間表示](scripts/late_time_observation.py)、[P82の固定実行系](scripts/run_late_clock_pipeline.py)、[P84の固定計画](docs/experiments/P84_fallback_output.md)、[条件付き接続](docs/P84_continuation_decision_20261024.md)、[作業ボード](docs/task_board.md)。半分閾値、参照正規化、記録整備をそれ自体で新規手法とはしない。
 
 [研究目的](docs/research_objective_20261022.md)／[金曜時点の判断表](docs/letter_friday_decisions_20261022.md)／[アカウント引き継ぎ](docs/handoff_20261022_account_switch.md)。過去の詳細な経過は[更新前READMEの固定版](https://github.com/sophiria1225/AI-/blob/6e38556bcff00b2cfb509da6a645e736f5fcce23/README.md)に保存されている。
+
+実AppWorld接続の有限な確認を準備した。既知CSV課題の独立した初期世界２個、同じ完全応答キャッシュを持つ即時／遅延、各手書き６プログラムと初期化１回。公開認証・一覧の取得費を含め、各API上限12・全体24・能動300秒・モデルと独立評価０に固定。別名保持、次の実行での未知項目、完全キャッシュ再利用、未使用参照の破棄、変更前の値を確認する。５境界検査と全1,358検査が通過。実サービスはまだ未実行で、固定headの両CI/job成功後に一度だけ実行する。 [準備資料](materials/20261024_public_read_views_live_preparation/README.md)。

@@ -72,3 +72,5 @@ P80/P81の[資源別稿](../papers/202610_letter/resource_prior_review/README.md
 [教授用案](../materials/20261023_professor_brief/README.md)の日英題名と456字あらましは保持。IEICE論文誌Dレター、分野D140624・D140803・D240706の案。著者・所属・順序と現行公式様式の確認は未完了。外部送信・投稿は行っていない。
 
 [次の作業](next_actions.md)／[同じMacでの引き継ぎ](../RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。更新前の記録は[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/docs/current_status.md)と各結果台帳に残す。
+
+実AppWorld接続の有限な確認を準備した。既知CSV課題の独立した初期世界２個、同じ完全応答キャッシュを持つ即時／遅延、各手書き６プログラムと初期化１回。公開認証・一覧の取得費を含め、各API上限12・全体24・能動300秒・モデルと独立評価０に固定。別名保持、次の実行での未知項目、完全キャッシュ再利用、未使用参照の破棄、変更前の値を確認する。５境界検査と全1,358検査が通過。実サービスはまだ未実行で、固定headの両CI/job成功後に一度だけ実行する。 [準備資料](../materials/20261024_public_read_views_live_preparation/README.md)。
