@@ -1,7 +1,7 @@
 # AIハーネス研究
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P98全件実証稿を保存済みの学会用ミラーでも本文４頁＋英文要旨１頁に組版し、全５頁の数値・欠測・文字を確認した。表は8pt/10pt、はみ出し・警告・引用未定義０。元稿の実験結果、日英題名、105字/47語の要旨、14文献を保持した。公式クラス一致と著者情報は未確認。P97は実行継続、P99は終了後に開始する通常対照の準備まで。新手法は未成立。 [現在の原稿](papers/202610_letter/execution_evidence_cohort/README.md)／[学会用ミラー予行](materials/20261024_p98_ieice_preview/README.md)／[通常対照の全件報告準備](materials/20261024_p99_reporting_preparation/README.md)。保留12課題は未閲覧、教授向け456字あらましは変更していない。
+P97は全12条件中11条件を終え最後のCSV事実通知を実行中。P99の通常auto/required比較は実装・全件報告・原稿化まで準備し、全1,578検査成功。合成組版は本文３頁＋英文１頁で確認したが、実験成績として公開しない。P97が閉じて最終計画を固定するまでP99は開始しない。現在の原稿はP98全件実証稿と学会用ミラー予行で、新手法は未確立。 [現在の原稿](papers/202610_letter/execution_evidence_cohort/README.md)／[学会用ミラー予行](materials/20261024_p98_ieice_preview/README.md)／[次の比較の原稿化準備](materials/20261024_p99_manuscript_preparation/README.md)。保留12課題は未閲覧。日英題名と教授向け456字あらましを保持し、著者情報と公式クラスの確認は残る。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 必要な情報・処理と最終成果の品質を保ち、不要な取得・共有・モデル呼出し・実行・検証を減らす。制御・失敗・再取得を含む仕事全体の費用で評価する。

@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-10-24T11:53:12.465797+00:00",
+  "purpose": "Sources for the ordinary tool-choice manuscript preparation, not a novelty claim.",
+  "papers": [
+    {
+      "title": "Grammar-Constrained Decoding for Structured NLP Tasks without Finetuning",
+      "authors": [
+        "Saibo Geng",
+        "Martin Josifoski",
+        "Maxime Peyrard",
+        "Robert West"
+      ],
+      "year": 2023,
+      "venue": "EMNLP",
+      "pages": "10932–10952",
+      "doi": "10.18653/v1/2023.emnlp-main.674",
+      "url": "https://aclanthology.org/2023.emnlp-main.674/",
+      "scope_read": "Official abstract and bibliographic metadata only.",
+      "supported_claim": "Grammar-constrained output and input-dependent grammars are prior work; abstract reports structured NLP tasks.",
+      "not_claimed": "No reproduction or whole-task AppWorld cost comparison."
+    },
+    {
+      "title": "Grammar-Aligned Decoding",
+      "authors": [
+        "Kanghee Park",
+        "Jiayu Wang",
+        "Taylor Berg-Kirkpatrick",
+        "Nadia Polikarpova",
+        "Loris D'Antoni"
+      ],
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems",
+      "volume": 37,
+      "doi": "10.52202/079017-0774",
+      "url": "https://papers.nips.cc/paper_files/paper/2024/hash/2bdc2267c3d7d01523e2e17ac0a754f3-Abstract-Conference.html",
+      "scope_read": "Official abstract and metadata only.",
+      "supported_claim": "Grammar conformity and constrained sampling distribution are distinguished; GAD/ASAp is existing work.",
+      "not_claimed": "No theorem verification, implementation reproduction, or comparison against ASAp.",
+      "bibtex_attempt": {
+        "url": "https://papers.nips.cc/paper_files/paper/24012-/bibtex",
+        "result": "Web tool unsupported application/x-bibtex content type; no page range inferred."
+      }
+    }
+  ],
+  "backend": {
+    "repository": "ggml-org/llama.cpp",
+    "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+    "path": "common/parsers/minimax-m3.cpp",
+    "sha256": "3f335b93c94345c2fe48ff47463d057396f505f6e1b50e1e320b9f88655e566d",
+    "lines_read": [
+      176,
+      228
+    ],
+    "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/common/parsers/minimax-m3.cpp",
+    "observed": "Required choice makes tool_calls nonoptional and grammar_lazy false when grammar is included; auto permits optional tools.",
+    "inference": "These source conditions do not by themselves guarantee completion under a finite output cap, Python correctness, or whole-task success.",
+    "model_or_API_probe_run": false
+  },
+  "reused_bibliography": "papers/202610_letter/execution_evidence_cohort/draft.tex",
+  "new_model_generations": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "novel_method_claim": false
+}
