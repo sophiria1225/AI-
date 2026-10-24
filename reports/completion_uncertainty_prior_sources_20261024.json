@@ -1,0 +1,106 @@
+{
+  "reviewed_on": "2026-10-24",
+  "purpose": "Assess whether candidate-set completion and selective verification provide a concrete new control beyond prior work; no method adopted.",
+  "sources": [
+    {
+      "title": "Evidence-Carrying Termination",
+      "url": "https://arxiv.org/html/2608.23623v1",
+      "reviewed": [
+        "Closed-loop confirmation design and result tables",
+        "Cost comparison",
+        "Limitations and artifact/audit scope"
+      ],
+      "prior_read_scope": "Contract, verifier, benchmark and related work were already reviewed.",
+      "scope": "Trusted contract is not authored by acting agent. Closed-loop trajectories use independent planner calls; supported completion and incremental cost are different endpoints.",
+      "not_claimed": [
+        "Automatic coverage of natural-language intent",
+        "Efficiency superiority",
+        "Experimental reproduction"
+      ]
+    },
+    {
+      "title": "Automating Requirements Formalization: Using LLMs and Low-Complexity Distinguishing Traces for Semantic Validation",
+      "url": "https://cs.stanford.edu/~trippel/pubs/mendoza_ICSE26.pdf",
+      "official_abstract": "https://conf.researchr.org/details/icse-2026/icse-2026-research-track/287/Automating-Requirements-Formalization-Using-LLMs-and-Low-Complexity-Distinguishing-T",
+      "artifact_readme": "https://github.com/dmmendo/ARTEMIS/blob/main/readme.txt",
+      "discovery_source": "https://github.com/NASA-SW-VnV/fret/blob/master/PUBLICATIONS.md",
+      "reviewed": [
+        "Official abstract and search-indexed introduction/contributions retained from prior review",
+        "Search-indexed section 2.2/2.3 excerpts, opening of section 3",
+        "Search-indexed sections 7.1 and 7.2 excerpt",
+        "Reference 42 identifying author artifact",
+        "Artifact root listing and readme.txt"
+      ],
+      "not_reviewed": [
+        "Full algorithm text in sections 3 through 6",
+        "All experiments and appendix",
+        "Artifact algorithms or reproduction"
+      ],
+      "scope": "Structured natural language candidates and human distinguishing-trace judgments are existing work; search-indexed excerpts are not a full PDF reading."
+    },
+    {
+      "title": "Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners",
+      "url": "https://arxiv.org/html/2307.01928v2",
+      "reviewed": [
+        "Abstract",
+        "Section 2",
+        "Sections 3.1 through 3.3",
+        "Opening of section 4"
+      ],
+      "not_reviewed": [
+        "All experiments",
+        "Appendix proofs",
+        "Code or reproduction"
+      ],
+      "scope": "Calibration coverage requires its sampling and supervision assumptions. The multi-step construction uses sequence-level calibration. Uncalibrated consensus is not this guarantee."
+    },
+    {
+      "title": "Strategic Verification for Long-Running LLM Agents",
+      "url": "https://www.preprints.org/manuscript/202608.2057",
+      "version": "v1",
+      "reviewed": [
+        "Abstract and opening introduction",
+        "Sections 3.4 through 4.4",
+        "Sections 6.2 through 6.7",
+        "Section 7 result/table excerpts and table 2 caption"
+      ],
+      "not_reviewed": [
+        "All implementation material",
+        "Experimental reproduction"
+      ],
+      "scope": "Value-based scheduling and verifier escalation are prior conceptual mechanisms. Tables 1 and 2 explicitly state that values are not empirical findings/results; do not cite them as measured performance.",
+      "reported_example_values_used_as_empirical_evidence": false
+    }
+  ],
+  "retrieval_limitations": [
+    {
+      "url": "https://cs.stanford.edu/people/trippel/pubs/mendoza_ICSE26.pdf",
+      "result": "Web fetch timeout; full PDF not read."
+    },
+    {
+      "url": "https://www-cs.stanford.edu/people/trippel/pubs/mendoza_ICSE26.pdf",
+      "result": "Author URL discovered via NASA publication list also timed out."
+    },
+    {
+      "url": "https://api.github.com/repos/dmmendo/ARTEMIS/contents/README.md",
+      "result": "404; inspected root listing and read the actual readme.txt instead."
+    },
+    {
+      "url": "https://arxiv.org/html/2307.01928v3",
+      "result": "404; abstract metadata identified v2, which was then read."
+    },
+    {
+      "result": "A search output at context compaction was not retained. Another broad batch output was truncated.",
+      "followup": "No claims rely on unseen output; exact sources were opened and read subsequently."
+    }
+  ],
+  "rejected_general_hypothesis": "Stop when all generated candidate contracts are supported, with selective additional observations.",
+  "rejection_scope": "Candidate-set coverage, common omissions, conflicting requirements, strong same-budget baselines and total costs are unresolved; conjunction alone is not a novel theorem.",
+  "primary_sources_only_for_claims": true,
+  "exhaustive_novelty_search": false,
+  "external_experiments_reproduced": false,
+  "new_model_generations": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0,
+  "reserved_scenarios_read": 0
+}
