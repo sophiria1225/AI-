@@ -36,6 +36,8 @@
 
 P80/P81の[14文献の資源別稿](../papers/202610_letter/resource_prior_review/README.md)と[ミラー予行](../materials/20261024_prior_review_mirror_preview/README.md)は本文４頁＋英文１頁を確認済み。P82結果稿を追加し、P84が閉じた後に全件統合稿の実数表と結論を作る。準備した条件付き区間の欄には推定値を代入せず、失敗理由を明記する。
 
+[観測資源と終了判定を統合する処理](../materials/20261024_observed_control_preparation/README.md)を追加した。両側欠測の差や局所診断の判定不能を誤った確定値・無差へ変えない。全1232検査を通過し、P84合成値で本文４頁＋英文１頁の私有予行を確認した。実数稿はまだ生成していない。
+
 [教授用案](../materials/20261023_professor_brief/README.md)の日英題名と456字あらましは保持。IEICE論文誌Dレター、分野D140624・D140803・D240706の案。著者・所属・順序と現行公式様式の確認は未完了。外部送信・投稿は行っていない。
 
 [次の作業](next_actions.md)／[同じMacでの引き継ぎ](../RESUME.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)。更新前の記録は[固定版](https://github.com/sophiria1225/AI-/blob/76436a4a66adcdbec9be9e5b98660bae9b9ee1d1/docs/current_status.md)と各結果台帳に残す。

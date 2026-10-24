@@ -36,6 +36,7 @@ Lは既知分だけでMより197,929論理token多い。一方、Mには第２�
 | [P82実結果稿](papers/202610_letter/late_time_control/RESULTS.md) | 全24条件・全４採否・全８表示開始位置を収録。本文３頁＋英文１頁を全頁確認 |
 | [P82の全件資料](materials/20261024_p82_results_final/README.md) | 題名だけの表紙＋全７内容頁。全24条件・426生成・不明４件を保持 |
 | [全件終了後の統合稿の準備](papers/202610_letter/closed_control_integration/README.md) | P82全24条件とP84全18予定枠を区別して収録する処理。実数表は未生成。合成値で本文３頁＋英文１頁を確認 |
+| [観測資源と終了判定の統合準備](materials/20261024_observed_control_preparation/README.md) | 欠測の片側境界・未確定、判定不能・一致・差を区別して実結果のあらましと結論を作る。実数稿はP84終了後 |
 | [参照統一と文章化の１頁図](materials/20261024_protocol_order_figure/README.md) | 処理の順序とP83で確認した範囲を図解。入力一致を成果品質へ読み替えない |
 | [教授用の題名・あらまし](materials/20261023_professor_brief/README.md) | 合意した日英題名と456字あらましを保存。著者・所属・順序は未確定 |
 | [P81の７枚資料](materials/20261024_p81_results/README.md) | 成否・全費用・経路の照合を全件掲載 |
