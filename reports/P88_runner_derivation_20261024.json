@@ -1,0 +1,72 @@
+{
+  "phase": "P88_runner_derivation",
+  "created_at": "2026-10-24T03:21:45.152558+00:00",
+  "derivations": [
+    {
+      "source": "scripts/local_llama.py",
+      "source_sha256": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+      "derived": "scripts/fixed_budget_local_llama.py",
+      "derived_sha256": "4ac43105b446ff89c515de484a1b46b5d412b90817eab5e441b4424ec25d2f84"
+    },
+    {
+      "source": "scripts/residual_output_budget.py",
+      "source_sha256": "5f96aa7d26d45ada35e10c6b39fe36a9ed71da96019095b495efd9a01c552cd4",
+      "derived": "scripts/fixed_budget_residual.py",
+      "derived_sha256": "cbf7f8cdc93c99c10f3700571267339ce847e05fe45089c3b075371658cc5eb7"
+    },
+    {
+      "source": "scripts/stable_clock_observation.py",
+      "source_sha256": "05f33d0acd9db35939bb52ecc7b055df8a6224341ed9ba81642648a71c50df1e",
+      "derived": "scripts/fixed_budget_inference.py",
+      "derived_sha256": "dc3f35bddbd82061f9021eb0d50eac04256a767426b1eaf74e9f1b9bb6617a15"
+    },
+    {
+      "source": "scripts/run_late_clock_cell.py",
+      "source_sha256": "004f70241c4d09e26c353869bf80204abb801b6ecca635eda477201def821760",
+      "derived": "scripts/run_whole_task_reasoning_budget_cell.py",
+      "derived_sha256": "9293eb422c511a785652d01bf6a50dd6120802f31ed14c2dd570bd53978ae627"
+    },
+    {
+      "source": "scripts/run_late_clock_comparison.py",
+      "source_sha256": "b85f324f9dcfa8709e24cba1027a35df615031eee465a79cac1e9562d68ceadb",
+      "derived": "scripts/run_whole_task_reasoning_budget.py",
+      "derived_sha256": "6a722a64b254204822bb0433fd016404095980d1a5e37d099b60ba9cc82a36a2"
+    },
+    {
+      "source": "scripts/run_late_clock_pipeline.py",
+      "source_sha256": "ca80a1e1cbe352c506e0de8a9e461a5da7fdf7015760733bb9e7d78a3d78afbb",
+      "derived": "scripts/run_whole_task_reasoning_budget_pipeline.py",
+      "derived_sha256": "6980697625fdae1a7251aaa70e3eeaab01ed5fcf7e44c51959a118f9742529e7"
+    },
+    {
+      "source": "scripts/audit_late_clock_comparison.py",
+      "source_sha256": "662a8070520594f02c55b0de938a8d98f3d6db5d30a33379710356730d48bbc6",
+      "derived": "scripts/audit_whole_task_reasoning_budget.py",
+      "derived_sha256": "51e5dd7924e14a08085b218b4fa5fe16de9ef7d4ee6d0757a3f60e0fcbf84cd3"
+    },
+    {
+      "source": "scripts/inspect_late_clock_session.py",
+      "source_sha256": "3cb577ec10d50a124236378afb2962bc42c22c669c6cb94484616caebec792ac",
+      "derived": "scripts/inspect_whole_task_reasoning_budget_session.py",
+      "derived_sha256": "e28159e9f8ffc8fffc6ec5b0f4916af3d391ac60acabf2514869d3f1ce7f881f"
+    }
+  ],
+  "unchanged_function_ast": {
+    "count_input": true,
+    "model_call": true,
+    "residual_call": true
+  },
+  "transport_change": "New payload_for adds exactly one explicit per-block reasoning budget; counting and generation use it. Original modules remain unchanged.",
+  "wrapper_method_resolution": [
+    "FixedBudgetInference",
+    "StableClockInference",
+    "FixedBudgetResidualInference",
+    "ResidualInference",
+    "Inference"
+  ],
+  "no_process_global_monkey_patch": true,
+  "preparation_fixture_correction": "The first two preflight unit tests lacked the synthetic repo/reports directory. The fixture was corrected; both tests then passed. No actual preflight or model/API call occurred.",
+  "new_model_calls": 0,
+  "environment_api_requests": 0,
+  "evaluations": 0
+}
