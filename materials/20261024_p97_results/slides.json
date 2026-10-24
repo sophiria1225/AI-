@@ -1,0 +1,50 @@
+[
+  {
+    "title": "通常の回復通知を、課題の完了まで比較する",
+    "body": "<table class=\"\"><tr><th>条件</th><th>追加する回復通知</th></tr><tr><td>N 通知なし</td><td>なし。共通の検出と記録は行う</td></tr><tr><td>G 一般通知</td><td>残った要求と保持したPython変数を見直す</td></tr><tr><td>F 事実通知</td><td>再観測の事実と限界を示し、同じ見直しを促す</td></tr></table><p class=\"body\">既知４課題 ×３条件、各１回。再観測が２境界連続した直後に最大１回。</p>",
+    "takeaway": "P96の由来追跡は単純対照と同等だった。P97も新提案として扱わない。",
+    "notes": "reasoning -1、持続Python、全返却推論、残り実時間非表示を共通化。初期12入力を確認し、各課題の３要求は同一。全読取・API権限は残し、通知文だけを一時入力に加える。文量差と計算費用も評価に含む。"
+  },
+  {
+    "title": "全12条件の結果と、失敗を含めた費用",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>成否</th><th>全仕事token</th><th>生成</th><th>API</th><th>仕事秒</th></tr><tr><td>写真移動</td><td>N</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>500.6</td></tr><tr><td>写真移動</td><td>G</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>500.5</td></tr><tr><td>写真移動</td><td>F</td><td>成功</td><td>135,628</td><td>16</td><td>99</td><td>500.9</td></tr><tr><td>精算</td><td>G</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>355.1</td></tr><tr><td>精算</td><td>F</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>355.4</td></tr><tr><td>精算</td><td>N</td><td>成功</td><td>211,110</td><td>24</td><td>25</td><td>355.2</td></tr><tr><td>返金</td><td>F</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>327.3</td></tr><tr><td>返金</td><td>N</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>326.8</td></tr><tr><td>返金</td><td>G</td><td>成功</td><td>102,087</td><td>13</td><td>13</td><td>326.8</td></tr><tr><td>曲情報の書出し</td><td>N</td><td>未達</td><td>320,456＋不明1</td><td>20</td><td>42</td><td>1,799.3</td></tr><tr><td>曲情報の書出し</td><td>G</td><td>未達</td><td>348,819＋不明1</td><td>21</td><td>79</td><td>1,799.7</td></tr><tr><td>曲情報の書出し</td><td>F</td><td>未達</td><td>423,816</td><td>23</td><td>79</td><td>1,723.1</td></tr></table>",
+    "takeaway": "使用量不明は０にせず、未実行・未評価を失敗数へ混ぜない。",
+    "notes": "初期状態から１回ずつ独立に実行し、公式最終状態で１回評価。評価の基準・結果はモデルへ戻さない。CSVが本当に完了したかもこの表で確認する。"
+  },
+  {
+    "title": "同じ課題の成否と、全仕事費用",
+    "body": "<img class=\"cost-figure\" src=\"figures/P97_whole_task_costs.svg\" alt=\"全12条件の費用と成否\">",
+    "takeaway": "塗りは成功。三角は不明が残る既知小計。早く未達で終えた差も残す。",
+    "notes": "全論理入力＋出力で比較する。cacheを含める。tokenの削減と経過時間や金額の削減は同一ではない。"
+  },
+  {
+    "title": "全４課題で、３つの対照を判定する",
+    "body": "<table class=\"\"><tr><th>比較（右−左）</th><th>全論理token差</th><th>課題別の成功評価</th><th>通常対照の基準</th></tr><tr><td>G−N</td><td>未確定</td><td>喪失なし</td><td>未達</td></tr><tr><td>F−N</td><td>未確定</td><td>喪失なし</td><td>未達</td></tr><tr><td>F−G</td><td>未確定</td><td>喪失なし</td><td>未達</td></tr></table><p class=\"body\">同じ通知前入力で両通知を送った課題数：1<br>事実通知の便益候補：基準未達</p>",
+    "takeaway": "全12評価・使用量確定、成功喪失なし、両成功１件以上、全費用減を要求。",
+    "notes": "事実通知にはnoneとgenericの両対照への基準と同じ前史での実送信も必要。成立しても既知４課題の通常対照の結果で、独立な新手法、一般的品質維持、採録の根拠へ自動昇格しない。"
+  },
+  {
+    "title": "成功仕事と失敗仕事の費用差を分ける",
+    "body": "<table class=\"results\"><tr><th>比較</th><th>成否の区分</th><th>課題数</th><th>全論理token差</th></tr><tr><td>G−N</td><td>両成功</td><td>3</td><td>未確定</td></tr><tr><td>G−N</td><td>両未達</td><td>1</td><td>未確定</td></tr><tr><td>G−N</td><td>成否相違</td><td>0</td><td>未確定</td></tr><tr><td>G−N</td><td>未評価あり</td><td>0</td><td>未確定</td></tr><tr><td>F−N</td><td>両成功</td><td>3</td><td>未確定</td></tr><tr><td>F−N</td><td>両未達</td><td>1</td><td>未確定</td></tr><tr><td>F−N</td><td>成否相違</td><td>0</td><td>未確定</td></tr><tr><td>F−N</td><td>未評価あり</td><td>0</td><td>未確定</td></tr><tr><td>F−G</td><td>両成功</td><td>3</td><td>未確定</td></tr><tr><td>F−G</td><td>両未達</td><td>1</td><td>未確定</td></tr><tr><td>F−G</td><td>成否相違</td><td>0</td><td>未確定</td></tr><tr><td>F−G</td><td>未評価あり</td><td>0</td><td>未確定</td></tr></table>",
+    "takeaway": "失敗を安く終えただけの差を、成功仕事の改善へ読み替えない。",
+    "notes": "全件使用量が既知なら区分の差を足すと全課題の差になる。不明があれば選んだ既知部分を全体の寄与として表示しない。"
+  },
+  {
+    "title": "cache、出力、呼出しを別に残す",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>N 通知なし</th><th>G 一般通知</th><th>F 事実通知</th></tr><tr><td>既知の全入力token</td><td>737,825</td><td>765,274</td><td>841,168</td></tr><tr><td>既知入力のcache再利用</td><td>640,804</td><td>666,850</td><td>739,068</td></tr><tr><td>既知のcache除外入力</td><td>97,021</td><td>98,424</td><td>102,100</td></tr><tr><td>既知の出力token</td><td>31,456</td><td>32,370</td><td>31,473</td></tr><tr><td>生成試行</td><td>73</td><td>74</td><td>76</td></tr><tr><td>API要求</td><td>179</td><td>216</td><td>216</td></tr><tr><td>使用量不明の生成</td><td>1</td><td>1</td><td>0</td></tr></table>",
+    "takeaway": "通知、推論、失敗、回復を含む。既知小計に不明生成は含まれない。",
+    "notes": "共通の検出・保存費用は全条件で仕事時間に含む。観測処理の小計は全制御費用ではない。noneは無計測の実行ではない。"
+  },
+  {
+    "title": "検出候補と、通知の送信試行を区別する",
+    "body": "<table class=\"results\"><tr><th>課題</th><th>条件</th><th>候補境界（exact/drop/origin）</th><th>回復通知の送信試行</th></tr><tr><td>写真移動</td><td>N</td><td>0/0/0</td><td>なし</td></tr><tr><td>写真移動</td><td>G</td><td>0/0/0</td><td>なし</td></tr><tr><td>写真移動</td><td>F</td><td>0/0/0</td><td>なし</td></tr><tr><td>精算</td><td>G</td><td>0/0/0</td><td>なし</td></tr><tr><td>精算</td><td>F</td><td>0/0/0</td><td>なし</td></tr><tr><td>精算</td><td>N</td><td>0/0/0</td><td>なし</td></tr><tr><td>返金</td><td>F</td><td>0/0/0</td><td>なし</td></tr><tr><td>返金</td><td>N</td><td>0/0/0</td><td>なし</td></tr><tr><td>返金</td><td>G</td><td>0/0/0</td><td>なし</td></tr><tr><td>曲情報の書出し</td><td>N</td><td>0/1/1</td><td>なし</td></tr><tr><td>曲情報の書出し</td><td>G</td><td>0/1/1</td><td>call_009</td></tr><tr><td>曲情報の書出し</td><td>F</td><td>0/1/1</td><td>call_009</td></tr></table>",
+    "takeaway": "入力予算で拒否された通知を、モデルへの送信試行として数えない。",
+    "notes": "監視対象APIを含む既知課題はCSVの１つ。他の３課題を検出の陰性例として数えない。影の検出器も全境界を保存。認証引数除外は観測の比較だけで、認証・将来の値・進捗の保証ではない。"
+  },
+  {
+    "title": "ロードから終了までの資源を残す",
+    "body": "<table class=\"\"><tr><th>計測対象</th><th>実測値</th></tr><tr><td>所有推論器の稼働秒</td><td>8,959.43</td></tr><tr><td>モデルロード秒（稼働時間に含む）</td><td>10.06</td></tr><tr><td>計測済みセルのsetup＋仕事＋cleanup秒</td><td>8,907.74</td></tr><tr><td>独立評価秒（稼働時間に含む）</td><td>20.92</td></tr><tr><td>推論器の最大実測RSS GiB</td><td>220.16</td></tr><tr><td>最大システムswap GiB</td><td>0.00</td></tr></table>",
+    "takeaway": "所有サーバ停止とPID不在を確認。重なる時間は二重加算しない。",
+    "notes": "１セル上限80生成/450000 token/1800仕事秒。全12セル予約960生成/5400000 token/1200 API、所有サーバ32400秒。ホスト上で軽量な編集・資料準備を実施し、排他的な速度測定ではない。RSSはGPU全体の使用量ではない。"
+  }
+]

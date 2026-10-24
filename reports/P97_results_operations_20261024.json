@@ -1,0 +1,170 @@
+{
+  "recorded_at": "2026-10-24T12:28:02.802048+00:00",
+  "original_closure": {
+    "status": "stopped",
+    "started_at": "2026-10-24T10:32:10.533495+00:00",
+    "audit_head": "46dcfd3f3d2b79214b8601618f40ee6083e67452",
+    "report_head": "86c06cba5a2fc4eca6e03eafc7ef90d0c4809bbd",
+    "new_model_calls": 0,
+    "new_API_requests": 0,
+    "new_evaluations": 0,
+    "stages": [
+      {
+        "name": "audit",
+        "exit_code": 0,
+        "wall_seconds": 1.0183177499857266,
+        "log_sha256": "da5a9b1abfc25b7cd4fbf3a87a5eed7f0ee4a44feae39404d74fdb88e42ef321"
+      },
+      {
+        "name": "server_session",
+        "exit_code": 0,
+        "wall_seconds": 0.5054891250038054,
+        "log_sha256": "e73b788ca7ee184cb83c2c22f5c80424d758f6a1a50d0a3baa2f9b231cfd26ec"
+      },
+      {
+        "name": "notice_ledger",
+        "exit_code": 0,
+        "wall_seconds": 0.5068242090055719,
+        "log_sha256": "ca9e7cce2e353d49e9af90d9e41634b6e33390093fb5f9f829d5eaee1a8926a2"
+      },
+      {
+        "name": "report",
+        "exit_code": 1,
+        "wall_seconds": 2.0310224580171052,
+        "log_sha256": "70631898db57d52021608287feb45b834e2b029c767f1ad7a61693dc030af9f1"
+      }
+    ],
+    "wall_seconds": 6327.015349124995,
+    "verified_ci": [
+      {
+        "run": 40083296816,
+        "event": "push",
+        "head": "46dcfd3f3d2b79214b8601618f40ee6083e67452",
+        "job": 120841066421,
+        "success": true
+      },
+      {
+        "run": 40083323439,
+        "event": "pull_request",
+        "head": "46dcfd3f3d2b79214b8601618f40ee6083e67452",
+        "job": 120841144582,
+        "success": true
+      },
+      {
+        "run": 40083874189,
+        "event": "push",
+        "head": "86c06cba5a2fc4eca6e03eafc7ef90d0c4809bbd",
+        "job": 120842733893,
+        "success": true
+      },
+      {
+        "run": 40083877455,
+        "event": "pull_request",
+        "head": "86c06cba5a2fc4eca6e03eafc7ef90d0c4809bbd",
+        "job": 120842744912,
+        "success": true
+      }
+    ],
+    "error_type": "RuntimeError",
+    "error": "stage_failed:report"
+  },
+  "original_manuscript_handoff": {
+    "status": "stopped",
+    "started_at": "2026-10-24T11:09:12.243075+00:00",
+    "head": "397579704aad07c60eeb7488dddf41fd63535610",
+    "stages": [],
+    "new_model_calls": 0,
+    "new_API_requests": 0,
+    "new_evaluations": 0,
+    "wall_seconds": 4111.9886899580015,
+    "error_type": "RuntimeError",
+    "error": "closed_report_failed_no_manuscript"
+  },
+  "manuscript_recovery": {
+    "status": "complete_pending_visual_review",
+    "started_at": "2026-10-24T12:20:59.708725+00:00",
+    "head": "397579704aad07c60eeb7488dddf41fd63535610",
+    "stages": [
+      {
+        "name": "build",
+        "wall_seconds": 0.5138894169940613,
+        "exit_code": 0,
+        "log_sha256": "9543e4b792a187ca871d626682a4bf6841cae10ff16343519d42f06abf1270c6"
+      },
+      {
+        "name": "render",
+        "wall_seconds": 1.0234794169955421,
+        "exit_code": 0,
+        "log_sha256": "61dc1a0d3798ba4454c632308137870b4f87aed3eac70f5b2af8cd4d21529c54"
+      }
+    ],
+    "new_model_calls": 0,
+    "new_API_requests": 0,
+    "new_evaluations": 0,
+    "wall_seconds": 4.2410544579906855,
+    "reason": "Original reporting stopped on layout overlap; first manuscript build from the already closed audit, without repeating generation/API/evaluation/audit.",
+    "closed_reporting_state_sha256": "bba68bed2c8068b286cf9aa564f571bc43f000f4470ec50f0b6e14f1ba2088d2",
+    "verified_ci": [
+      {
+        "workflow": 40087296810,
+        "event": "push",
+        "job": 120852725833,
+        "head": "397579704aad07c60eeb7488dddf41fd63535610",
+        "success": true
+      },
+      {
+        "workflow": 40087396599,
+        "event": "pull_request",
+        "job": 120853016515,
+        "head": "397579704aad07c60eeb7488dddf41fd63535610",
+        "success": true
+      }
+    ],
+    "copied_report_sha256": {
+      "P97_comparison": "f7e2b2de2cc1653bd2d04c1b1dec401b45276ed377edb95199199da7f4dffa92",
+      "P97_server_session": "5184b4928abab049ce7bfa0eb2e050e4b2778f5d647aa734e6c44ee14ddb3de8",
+      "P97_notice_ledger": "b2e10bc5c9559370b19d9916b068d59f0c82780a6ba9bfd4ad5ba4d68db4b4ee"
+    },
+    "finished_at": "2026-10-24T12:21:03.949620+00:00",
+    "pdf_sha256": "d972ea0500dc37f8bb8d628e6da2baa9a164ead26f0a310ded6d9ad61efe369d"
+  },
+  "initial_report_failure": {
+    "pages": [
+      2,
+      5,
+      7
+    ],
+    "reason": "table overlaps takeaway",
+    "layout_sha256": "0c70fd6bced5270829dfa0a6d3574532c123904e7b52183c8bbdcbc2715d0fe8",
+    "private_output_preserved": true
+  },
+  "layout_v02": {
+    "pdf_sha256": "98672e1e03e915256df398775dc6251967eff190e79cb7f3d9487a4257e60ada",
+    "renderer_sha256": "09993e7a56e1f72ecaca25a6fe8c99cb4c1fc2cdfd35d2d3610c18d5d8c0082e",
+    "all_eight_pages_reviewed": true,
+    "remaining_issue": "Quality display reused a joint cost-completeness flag although all task outcomes were known.",
+    "private_output_preserved": true
+  },
+  "layout_v03": {
+    "pdf_sha256": "5e17acc0b3c08ff19274c5154a96f3a9cfe0ce9dddcaa342c8cf5cbd9681d4eb",
+    "renderer_sha256": "6271c625a5ce6a25c60f9d89848d6c55dbfe4ac543265f535bcd48e938df19fa",
+    "all_eight_pages_reviewed": true,
+    "preserved_content_files": 7,
+    "correction": "Spacing plus success labels derived from final Boolean evaluations. Frozen audit, numeric CSV, gates and missing usage are unchanged."
+  },
+  "model_attempts": 223,
+  "known_token_subtotal": 2439566,
+  "unknown_usage_attempts": 2,
+  "environment_API_requests": 611,
+  "final_evaluations": 12,
+  "audit_runs": 1,
+  "notice_ledger_runs": 1,
+  "server_session_inspections": 1,
+  "additional_model_calls_for_reporting": 0,
+  "additional_API_requests_for_reporting": 0,
+  "additional_evaluations_for_reporting": 0,
+  "reserved_scenarios_read": 0,
+  "intermediate_result_exposure_record": "reports/P97_operational_output_deviation_20261024.json",
+  "intermediate_results_fully_blinded_until_closure": false,
+  "outcome_adaptive_protocol_changes": false
+}
