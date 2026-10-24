@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-24",
+  "scope": "Focused primary-source reading, not full proofs or reproduction",
+  "sources": [
+    {
+      "title": "Resource Analysis for Lazy Evaluation with Polynomial Potential",
+      "authors": ["Sara Moreira", "Pedro Vasconcelos", "Mario Florido"],
+      "venue": "IFL 2020",
+      "url": "https://www.dcc.fc.up.pt/~pbv/research/ifl_2020.pdf",
+      "doi": "10.1145/3462172.3462196",
+      "read_scope": "Abstract, introduction, background and section 2.4; incidental surrounding text through section 3.2",
+      "relevance": "Prior treatment of costs attached to delayed computation and prepayment. No novelty claimed for reservation alone."
+    },
+    {
+      "title": "Persistent Amortised Analysis, Operationally",
+      "author": "Anton Lorenzen",
+      "venue": "ICALP 2026",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol374-icalp2026/html/LIPIcs.ICALP.2026.185/LIPIcs.ICALP.2026.185.html",
+      "doi": "10.4230/LIPIcs.ICALP.2026.185",
+      "read_scope": "Abstract and introduction; related work section 6 including mutable references, with incidental section 5.3",
+      "relevance": "Prior credit-based reasoning for shared thunks; restrictions concerning mutable references. No equivalence theorem for our API runtime inferred."
+    }
+  ],
+  "inference": "Reservation, sharing and lazy evaluation by themselves are not a defensible novelty claim. An API/LLM setting requires an additional verified difference and task-level evidence.",
+  "full_proofs_checked": false,
+  "external_implementation_reproduced": false,
+  "model_calls": 0,
+  "environment_api_requests": 0,
+  "task_evaluations": 0
+}
