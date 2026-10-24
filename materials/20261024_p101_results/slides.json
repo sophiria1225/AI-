@@ -1,0 +1,44 @@
+[
+  {
+    "title": "保存６入力と提出設定を全36枠で比較する",
+    "body": "<table class=\"results\"><tr><th>記号</th><th>保存文脈の表現</th></tr><tr><td>A</td><td>P80元入力</td></tr><tr><td>B</td><td>別反復の元入力</td></tr><tr><td>C</td><td>Aを表示前に統一</td></tr><tr><td>D</td><td>Bを表示前に統一</td></tr><tr><td>N</td><td>構造上の参照だけ変更</td></tr><tr><td>X</td><td>診断文を加えた対照</td></tr></table><p class=\"body\">各入力をauto / requiredで３反復。seed 70、出力上限4,096、全要求cold。</p>",
+    "takeaway": "既知CSVの保存１文脈。静的な提出形式を確認し、生成コードは実行しない。",
+    "notes": "P83で事後選定した全６入力を保持。P99とは別の局所診断。cache_prompt=falseとtool_choice以外の保存要求欄は変更しない。36生成・105万論理token以内。失敗・未実行を補充しない。新手法・課題成功・全仕事削減の証明ではない。"
+  },
+  {
+    "title": "実入力のtoken列と生成制約を分ける",
+    "body": "<div class=\"two\"><div><h3>auto</h3><table class=\"results\"><tr><th>入力</th><th>token</th><th>入力列hash</th><th>制約hash</th></tr><tr><td>A</td><td>22,669</td><td>a28869323a</td><td>8fa557fd36</td></tr><tr><td>B</td><td>22,667</td><td>21ee57b783</td><td>8fa557fd36</td></tr><tr><td>C</td><td>22,650</td><td>06620d6248</td><td>8fa557fd36</td></tr><tr><td>D</td><td>22,650</td><td>06620d6248</td><td>8fa557fd36</td></tr><tr><td>N</td><td>22,669</td><td>a28869323a</td><td>8fa557fd36</td></tr><tr><td>X</td><td>22,676</td><td>5c26cbb890</td><td>8fa557fd36</td></tr></table></div><div><h3>required</h3><table class=\"results\"><tr><th>入力</th><th>token</th><th>入力列hash</th><th>制約hash</th></tr><tr><td>A</td><td>22,669</td><td>a28869323a</td><td>e3206e2e40</td></tr><tr><td>B</td><td>22,667</td><td>21ee57b783</td><td>e3206e2e40</td></tr><tr><td>C</td><td>22,650</td><td>06620d6248</td><td>e3206e2e40</td></tr><tr><td>D</td><td>22,650</td><td>06620d6248</td><td>e3206e2e40</td></tr><tr><td>N</td><td>22,669</td><td>a28869323a</td><td>e3206e2e40</td></tr><tr><td>X</td><td>22,676</td><td>5c26cbb890</td><td>e3206e2e40</td></tr></table></div></div><p class=\"body\">全12入力を語彙専用描画とサーバ計数で照合。hashは表示用の先頭10桁。</p>",
+    "takeaway": "同じ計数でも同じ入力とは限らない。照合は省略前の完全なhashで行う。",
+    "notes": "prompt、token列、生成制約、その他の設定を別々に比較。語彙専用処理は推論contextを作らずdecode０。全66組の入力比較をCSVへ保存。requiredとautoの入力同一性を前提にしない。"
+  },
+  {
+    "title": "全36枠の終端と提出形式を残す",
+    "body": "<div class=\"three\"><div><h3>反復1</h3><table class=\"results\"><tr><th>入力/設定</th><th>出力T</th><th>記録の状態</th></tr><tr><td>A/a</td><td>679</td><td>形式整合</td></tr><tr><td>A/r</td><td>679</td><td>形式整合</td></tr><tr><td>B/r</td><td>289</td><td>形式整合</td></tr><tr><td>B/a</td><td>289</td><td>形式整合</td></tr><tr><td>C/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>C/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>D/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>D/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>N/a</td><td>679</td><td>形式整合</td></tr><tr><td>N/r</td><td>679</td><td>形式整合</td></tr><tr><td>X/r</td><td>565</td><td>形式整合</td></tr><tr><td>X/a</td><td>565</td><td>形式整合</td></tr></table></div><div><h3>反復2</h3><table class=\"results\"><tr><th>入力/設定</th><th>出力T</th><th>記録の状態</th></tr><tr><td>X/a</td><td>565</td><td>形式整合</td></tr><tr><td>X/r</td><td>565</td><td>形式整合</td></tr><tr><td>N/r</td><td>679</td><td>形式整合</td></tr><tr><td>N/a</td><td>679</td><td>形式整合</td></tr><tr><td>D/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>D/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>C/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>C/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>B/a</td><td>289</td><td>形式整合</td></tr><tr><td>B/r</td><td>289</td><td>形式整合</td></tr><tr><td>A/r</td><td>679</td><td>形式整合</td></tr><tr><td>A/a</td><td>679</td><td>形式整合</td></tr></table></div><div><h3>反復3</h3><table class=\"results\"><tr><th>入力/設定</th><th>出力T</th><th>記録の状態</th></tr><tr><td>C/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>C/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>X/r</td><td>565</td><td>形式整合</td></tr><tr><td>X/a</td><td>565</td><td>形式整合</td></tr><tr><td>A/a</td><td>679</td><td>形式整合</td></tr><tr><td>A/r</td><td>679</td><td>形式整合</td></tr><tr><td>D/r</td><td>4,096</td><td>途中切れ</td></tr><tr><td>D/a</td><td>1,316</td><td>本文のみ</td></tr><tr><td>B/r</td><td>289</td><td>形式整合</td></tr><tr><td>B/a</td><td>289</td><td>形式整合</td></tr><tr><td>N/a</td><td>679</td><td>形式整合</td></tr><tr><td>N/r</td><td>679</td><td>形式整合</td></tr></table></div></div>",
+    "takeaway": "a＝auto、r＝required。「形式整合」は静的確認で、実行成功ではない。",
+    "notes": "固定順序の全枠。途中切れ、本文のみ、形式不整合、使用量不明、未実行を分ける。入力・出力・費用・hashは全36件CSVに保存。不明を０へ代入しない。既知の途中切れも費用へ含める。"
+  },
+  {
+    "title": "出力一致と静的な提出形式は別に数える",
+    "body": "<div class=\"two\"><div><h3>auto</h3><table class=\"results\"><tr><th>入力</th><th>公開出力</th><th>形式整合</th><th>本文のみ</th><th>不明</th></tr><tr><td>A</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>B</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>C</td><td>同じ</td><td>0/3</td><td>3</td><td>0</td></tr><tr><td>D</td><td>同じ</td><td>0/3</td><td>3</td><td>0</td></tr><tr><td>N</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>X</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr></table></div><div><h3>required</h3><table class=\"results\"><tr><th>入力</th><th>公開出力</th><th>形式整合</th><th>本文のみ</th><th>不明</th></tr><tr><td>A</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>B</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>C</td><td>判定不可</td><td>0/3</td><td>3</td><td>0</td></tr><tr><td>D</td><td>判定不可</td><td>0/3</td><td>3</td><td>0</td></tr><tr><td>N</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr><tr><td>X</td><td>同じ</td><td>3/3</td><td>0</td><td>0</td></tr></table></div></div>",
+    "takeaway": "３回の本文が同じでもツール提出がない場合を、良好な操作の再現と呼ばない。",
+    "notes": "公開出力の同じ／異なるは３回とも既知・完全・非空の場合だけ。形式整合にはJSON、宣言インタフェース形、Python ASTの確認と非途中切れを要求する。span存在、Pythonの意味、外部作用、課題品質は未確認。"
+  },
+  {
+    "title": "固定した対照を、全66組の中で確認する",
+    "body": "<div class=\"two\"><div><h3>設定内の元入力・同一入力対照</h3><table class=\"results\"><tr><th>対照</th><th>入力列</th><th>公開一致</th><th>構文一致</th></tr><tr><td>A/B a</td><td>異なる</td><td>0/9</td><td>0/9</td></tr><tr><td>C/D a</td><td>同じ</td><td>9/9</td><td>0/0</td></tr><tr><td>A/N a</td><td>同じ</td><td>9/9</td><td>9/9</td></tr><tr><td>A/B r</td><td>異なる</td><td>0/9</td><td>0/9</td></tr><tr><td>C/D r</td><td>同じ</td><td>9/9</td><td>0/0</td></tr><tr><td>A/N r</td><td>同じ</td><td>9/9</td><td>9/9</td></tr></table></div><div><h3>同じ入力のauto / required</h3><table class=\"results\"><tr><th>入力</th><th>入力列</th><th>生成制約</th><th>公開一致</th></tr><tr><td>A</td><td>同じ</td><td>異なる</td><td>9/9</td></tr><tr><td>B</td><td>同じ</td><td>異なる</td><td>9/9</td></tr><tr><td>C</td><td>同じ</td><td>異なる</td><td>0/9</td></tr><tr><td>D</td><td>同じ</td><td>異なる</td><td>0/9</td></tr><tr><td>N</td><td>同じ</td><td>異なる</td><td>9/9</td></tr><tr><td>X</td><td>同じ</td><td>異なる</td><td>9/9</td></tr></table></div></div>",
+    "takeaway": "一致数／比較可能対数。全66組を保存し、組数を独立標本数へ読み替えない。",
+    "notes": "ここは事前指定したA/B、C/D、A/Nと同一入力の設定間比較。その他を含む全66組と条件内全36対はJSON/CSVに保持。構文hashの比較と完全な静的提出の件数は別指標。空の行動同士を有効操作の一致に数えない。"
+  },
+  {
+    "title": "不明費用と生成以外の資源も残す",
+    "body": "<table class=\"results\"><tr><th>設定</th><th>生成試行</th><th>既知の論理token</th><th>不明試行</th><th>未実行</th></tr><tr><td>auto</td><td>18</td><td>422,475</td><td>0</td><td>0</td></tr><tr><td>required</td><td>18</td><td>439,155</td><td>0</td><td>0</td></tr></table><div class=\"two\"><div><table class=\"results\"><tr><th>資源・時間</th><th>記録値</th></tr><tr><td>所有サーバ秒</td><td>9914.319</td></tr><tr><td>ロード秒</td><td>10.065</td></tr><tr><td>全パイプライン秒</td><td>9914.456</td></tr></table></div><div><table class=\"results\"><tr><th>資源・時間</th><th>記録値</th></tr><tr><td>保存された生成秒の合計</td><td>9881.603</td></tr><tr><td>sampled RSSピーク GiB</td><td>219.83</td></tr><tr><td>system swapピーク bytes</td><td>0</td></tr></table></div></div>",
+    "takeaway": "論理tokenはcached inputも含む。部分時間は重なりがあるため二重加算しない。",
+    "notes": "生成の既知費用合計は使用量が判明した枠だけ。不明試行を別記し、設定間の正確な費用差を補完しない。サーバ滞在にはロード・描画・計数・生成・待機を含む。RSSは全ユニファイドGPU割当量ではない。編集等のホスト負荷は排他的に固定していない。"
+  },
+  {
+    "title": "この診断から言える範囲を限定する",
+    "body": "<p class=\"lead\">全36枠：監査済み 36、使用量不明 0、未実行 0。</p><table class=\"results\"><tr><th>確認する段階</th><th>この診断の範囲</th></tr><tr><td>入力</td><td>実token列・生成制約を保存して照合</td></tr><tr><td>次の出力</td><td>公開内容、JSON、インタフェースの形、Python構文</td></tr><tr><td>実行と最終成果</td><td>生成コード・環境API・課題評価は実行しない</td></tr><tr><td>一般性</td><td>事後に選んだ既知CSVの１文脈・１モデル環境</td></tr></table>",
+    "takeaway": "新手法、一般品質維持、課題全体の費用削減を成立済みとは扱わない。",
+    "notes": "同じseedでも数値実行、cache状態、ホスト負荷が同一とは限らない。cold要求は毎回のGPU再起動を意味しない。旧P84/P87の欠測・未実行を置き換えない。P99の全仕事比較、P98の24実行事後解析と区別して原稿へ接続する。"
+  }
+]
