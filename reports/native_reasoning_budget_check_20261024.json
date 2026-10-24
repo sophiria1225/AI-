@@ -1,0 +1,51 @@
+{
+  "phase": "native_reasoning_budget_backend_check",
+  "created_at": "2026-10-24T03:56:10.654832+00:00",
+  "source_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+  "result": "complete_after_compile_interface_correction",
+  "actual_result_file": "materials/20261024_native_reasoning_budget_check/native_results.json",
+  "actual_result_sha256": "2da789a8eb994737dc96685e69e1a6d0a14ee7dda4fb94c676fb82f43c0cd3e6",
+  "first_attempt": {
+    "status": "failed",
+    "status_sha256": "8cd543d677cd3ef9ee12b991f6ec6133eb7eb95849501415b8a7bf2372bd3e0f",
+    "wall_seconds": 1.5862235839886125,
+    "upstream_sampler_cases_passed": 12,
+    "upstream_utf8_helper_passed": true,
+    "probe_executed": false,
+    "failed_stage": "fixed_2048 compile",
+    "compile_log_sha256": "62159dcfa25d3c8eabb79ea51af37d9b705ed1af5979412381fa4f5225621ed6",
+    "error": "common/json.h exposes common_json rather than nlohmann::ordered_json.",
+    "correction": "Changed the local probe alias to common_json. No upstream source or shared library changed."
+  },
+  "corrected_attempt": {
+    "status_sha256": "2da789a8eb994737dc96685e69e1a6d0a14ee7dda4fb94c676fb82f43c0cd3e6",
+    "wall_seconds": 1.2408495839918032,
+    "upstream_suite_repeated_as_runner_integration_check": true,
+    "unique_upstream_sampler_cases": 12,
+    "unique_fixed_2048_cases": 4,
+    "upstream_utf8_helper_passed": true
+  },
+  "scope": {
+    "synthetic_token_ids": true,
+    "synthetic_logits": true,
+    "real_vocab_or_utf8_sampler_path": false,
+    "global_output_limit": "Probe loop stops feeding synthetic tokens at the stated count; server HTTP max_tokens enforcement is not tested.",
+    "real_model_behavior": false,
+    "neural_forward_passes": 0,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "task_evaluations": 0,
+    "live_P88_server_contacted": false,
+    "actual_P88_outcomes_read": false
+  },
+  "header_comment_note": "The header describes DONE as passthrough forever; the implementation and its existing re-arm test permit a new start sequence. Behavior is attributed to the pinned implementation, not that comment.",
+  "verification": {
+    "python_syntax": true,
+    "native_library_header_hashes_checked": true,
+    "initial_compile_failure_preserved": true
+  },
+  "source_sha256": {
+    "scripts/probe_native_reasoning_budget.cpp": "43f82ebbf2a7498845a18fa48a6585c806d3d7f3b41fec7f7847f3a9e285b93a",
+    "scripts/check_native_reasoning_budget.py": "5260f73f118e1c4a7cf76e3b1ea59d53ddaa71d8cdac908f877021819f77fbac"
+  }
+}
