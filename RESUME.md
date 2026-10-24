@@ -45,6 +45,8 @@ P84終了後は、所有推論器停止・PID不在を確認し、出力がま�
 
 P84が閉じた後、準備済み`build_closed_control_draft.py`では区間を明示的に省略する`--without-resource-intervals`を使い、失敗理由を記録する。実結果のあらまし・結論と観測計数集計は別版で統合する。固定済み原稿や出典台帳を上書きしない。
 
+続いて`build_observed_control_draft.py`を一度実行し、`papers/202610_letter/observed_control_results`へ観測資源と実結果のあらまし・結論を作る。[追加処理の準備](materials/20261024_observed_control_preparation/README.md)は６境界検査・全1232検査を通過した。P84合成値を使った私有予行で本文４頁＋英文１頁を確認しただけで、実結果稿は未生成。実結果は既存の`render_bound_letter_draft.py`で新しい私有出力先へ組版し、全頁を確認する。
+
 教授用の日英題名・456字あらましは保持。著者・所属・順序は未設定、現行公式クラスの確認も未完了。外部送信・投稿は行っていない。新規性や採録見込みを実装数で判断しない。保留12課題は未閲覧のまま維持する。
 
 P84実行中に[外部３ライブラリの９ファイル](materials/20261024_framework_reference_review/README.md)を固定版で静的に確認した。本文へIDを含める経路は他にもあるが、添付の出所を表す用途もあり一括削除しない。外部実装は実行していない。元コードは私有の`.runtime/framework_source_review_20261024`に保持し、公開物にはURL・hash・読んだ行範囲だけを載せた。
