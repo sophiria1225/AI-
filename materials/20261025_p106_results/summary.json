@@ -1,0 +1,42 @@
+{
+  "conditions": [
+    {
+      "policy": "eager_cached",
+      "environment_API_requests": 12,
+      "ordinary_complete_reuses": 1,
+      "pending": 0,
+      "exact_reuses": 5,
+      "coalesced_reuses": 0,
+      "materialization_cache_reuses": 0,
+      "control_requests": 29,
+      "control_request_bytes": 3788,
+      "control_reply_bytes": 9262,
+      "full_wall_seconds": 3.1351708750007674,
+      "cleanup_wall_seconds": 0.9334177499986254
+    },
+    {
+      "policy": "coalesced_cached",
+      "environment_API_requests": 12,
+      "ordinary_complete_reuses": 0,
+      "pending": 0,
+      "exact_reuses": 0,
+      "coalesced_reuses": 4,
+      "materialization_cache_reuses": 1,
+      "control_requests": 29,
+      "control_request_bytes": 3788,
+      "control_reply_bytes": 7850,
+      "full_wall_seconds": 3.1711305000062566,
+      "cleanup_wall_seconds": 1.0252108749991748
+    }
+  ],
+  "all_seven_observations_equal": true,
+  "environment_API_requests": 24,
+  "handwritten_programs": 14,
+  "bootstrap_programs": 2,
+  "model_generations": 0,
+  "evaluations": 0,
+  "task_quality_measured": false,
+  "novel_method_claim": false,
+  "complete_response_cache_covers_ordinary_target_call_in_both_policies": true,
+  "equal_API_count_in_this_handwritten_sequence": true
+}
