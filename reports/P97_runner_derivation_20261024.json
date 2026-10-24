@@ -1,0 +1,31 @@
+{
+  "phase": "P97_preparation",
+  "derivations": [
+    {
+      "source": "scripts/stable_clock_observation.py",
+      "target": "scripts/recovery_notice_inference.py",
+      "source_sha256": "05f33d0acd9db35939bb52ecc7b055df8a6224341ed9ba81642648a71c50df1e"
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget_cell.py",
+      "target": "scripts/run_recovery_notice_cell.py",
+      "source_sha256": "9293eb422c511a785652d01bf6a50dd6120802f31ed14c2dd570bd53978ae627"
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget.py",
+      "target": "scripts/run_recovery_notice_comparison.py",
+      "source_sha256": "6a722a64b254204822bb0433fd016404095980d1a5e37d099b60ba9cc82a36a2"
+    },
+    {
+      "source": "scripts/run_whole_task_reasoning_budget_pipeline.py",
+      "target": "scripts/run_recovery_notice_pipeline.py",
+      "source_sha256": "6980697625fdae1a7251aaa70e3eeaab01ed5fcf7e44c51959a118f9742529e7"
+    },
+    {
+      "source": "scripts/audit_whole_task_reasoning_budget.py",
+      "target": "scripts/audit_recovery_notice_comparison.py",
+      "source_sha256": "51e5dd7924e14a08085b218b4fa5fe16de9ef7d4ee6d0757a3f60e0fcbf84cd3"
+    }
+  ],
+  "scope": "New files only; frozen predecessors unchanged. Synthetic integration, admission, notice and audit checks required before execution."
+}
