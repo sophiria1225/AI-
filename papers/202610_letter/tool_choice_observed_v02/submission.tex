@@ -1,0 +1,15 @@
+\begin{table}[tb]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{生成数と外側の実行記録数は異なる単位．不明応答を提出なしへ数えない．}
+\begin{tabular}{lrr}
+観測単位 & A & R \\ \hline
+応答既知の生成 & 72 & 75 \\
+応答不明の生成 & 1 & 0 \\
+既知で提出なし & 3 & 1 \\
+既知で上限到達 & 2 & 2 \\
+形式拒否の記録 & 4 & 2 \\
+Python例外の記録 & 11 & 12 \\
+提出後未実行の記録 & 0 & 0 \\
+\hline\end{tabular}
+\end{table}
+出力上限到達と形式拒否は重なり得る．構造化提出にPython例外やAPI送信が含まれる場合があり，形式の改善を最終成果の代替にしない．全生成記録と全API送信の対応を監査した．
