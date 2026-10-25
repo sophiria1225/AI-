@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P115の全79要求×４表示=316入力を一度だけ計数し、実測79入力と全件一致、欠測・不一致０。成功した共通３課題では非再入力による局所省略39,005 tokenに対し、過去全保持からの実測総費用は126,371増、会計残差165,376。残差は特定原因の因果効果ではない。全４課題の省略量98,019を全仕事の削減実績へ転記しない。P114は3/4成功・1,000,544 token、非再入力を低費用の標準方式に採用しない。P111の不明２と選別の採用基準未達を維持。次は公開観測・操作の増加源を絞り、具体的な介入を固定する。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P115_findings.md)。
+P116は全16条件・283要求・820 API・614私有ファイルの点検を一度だけ完了。観測本文5,427,957文字のうち再送4,871,930文字。同一API再要求50件、返答も一致31件、既存６読取区間の再要求19件。精算の非再入力条件は同一API再要求０だが、18,446文字の観測を18回表示し、観測本文の47.75%を占めた。文字数と再要求をそのまま安全な省略・token削減とは扱わない。次は観測の内容と出典を全条件で確認する。元の未知使用量２とP111の採用基準未達を保持。追加生成・API・評価０。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P116_findings.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P115の全79要求×４表示=316入力を一度だけ計数し、実測79入力
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p116-observation-profile-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p116-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -74,4 +74,8 @@ P115は全79要求×４表示=316入力を一度だけ計数し、全件資料�
 
 次は、推論を省いても増えた公開観測や操作の内訳を全件で絞り、具体的に減らす処理と通常対照を定める. 現時点で次の新モデル実験は開始していない. 診断件数を新規性や品質維持の証明に置き換えず、閾値・seed変更で好成績を探さない. [技術説明](materials/20261025_harness_technical/README.md)、[追加原典](docs/reasoning_state_and_cache_prior_scope_20261025.md)を継承する. 原稿と未見12課題には進まず、ユーザー停止に直ちに従う.
 
-P116は全16条件の観測再送と同一API要求を点検する準備段階. `configs/P116_observation_growth_v01.json`に614私有ファイルと診断コードを固定した. 新規10件・全1,849テスト通過. 同一head両CI成功後に `.runtime/worktrees/p116-run` で一度だけ処理する. `.runtime/P116_analysis_once_start.json`、`P116_collection_once_end.json`と公開report/failureの存在を確認し、重ねて起動しない. 次のモデル実験は未開始. [計画](docs/experiments/P116_observation_growth.md).
+P116は全16条件・283要求・820 API・614私有ファイルの点検と全件資料を一度だけ終了した. 固定実行木は `.runtime/worktrees/p116-run`、`ee4748bdf1fc52e58665c1bebd651c5eb110bd35`. `.runtime/P116_analysis_once_start.json`、`P116_collection_once_end.json`、`P116_editor_artifacts_once_end.json`を保持し、診断・資料生成・回収を再実行しない. 完全報告SHAは `5f8ea54cea0649d14769e97f0d62efa2b70f601ef25de499400ec75dffd3458d`.
+
+全1,849テスト通過. PR488の同一headについてpush workflow40148738864/job121035586259、pull_request workflow40148769750/job121035675149の成功を確認して実施した. mergeは `a6c2bdfc11b7aff0e91030a2fae3a717fa45f6e8`. P115結果のPR487はhead `f03837cc8816c1d4a2d087d87dceb5c14f1e33a5`、merge `030a3fd00b93bafe68b6a6449ab7cc6235798bc8`で閉鎖済み.
+
+[P116所見](docs/P116_findings.md)と[全件資料](materials/20261025_p116_results/README.md)を参照する. 精算の非再入力条件は同一API再取得０だが、大きな観測を繰り返し入力していた. CSVの同一読取再取得と同じ原因へまとめない. 次は観測の内容と出典を全条件で確認し、既存の文書省略・状態保持・通常キャッシュとの差を整理する. 次のモデル実験は未開始. 原稿と未見12課題は保留し、ユーザー停止に直ちに従う.
