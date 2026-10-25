@@ -36,7 +36,9 @@ def prepare(storage, root):
         'reports/P124_projection_replay.json', 'reports/P124_projection_replay_independent_audit.json',
         'docs/experiments/P125_whole_task_projection.md',
         'reports/P125_prior_static_coverage_20261026.json',
-        'docs/P125_prior_static_coverage_20261026.md'))
+        'docs/P125_prior_static_coverage_20261026.md',
+        'reports/P125_prior_applicability_gap_20261026.json',
+        'docs/P125_prior_applicability_gap_20261026.md'))
     plan.update(source_sha256={str(path.relative_to(root)): sha(path) for path in sorted(paths)},
         predecessor_closure=predecessor, created_at=datetime.now(timezone.utc).isoformat(),
         receipt_guide_sha256=hashlib.sha256(RECEIPT_GUIDE.encode()).hexdigest(),
