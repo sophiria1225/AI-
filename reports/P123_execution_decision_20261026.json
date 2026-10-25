@@ -1,0 +1,84 @@
+{
+  "phase": "P123_independent_execution_decision",
+  "created_at": "2026-10-25T19:32:14.385513+00:00",
+  "user_requested_resume": true,
+  "user_authorized_continuation_until_stop": true,
+  "independent_fixed_comparison_approved_as_research_decision": true,
+  "runtime_launch_authorized_by_this_report": false,
+  "historical_predecessor_review_preserved": true,
+  "historical_next_predeclared_comparison_may_be_bound": false,
+  "predecessor_evaluated_conditions": 24,
+  "predecessor_audit_errors": [],
+  "predecessor_closure": {
+    "audit_sha256": "ccac65fb9f210193cc70ae9e39b9c276eda95e2b6165f431b7e3f5fab4fa4c8e",
+    "pipeline_status_sha256": "c3d259305667f6da112d02f97dccdf3fc55807e721ff310a4c854191b4a8e899",
+    "server_final_sha256": "f04adf2a602a5828b6034ae3bc50e0165a37209eb38c61606a0bc9111071ecaa"
+  },
+  "predecessor_process_checks": [
+    {
+      "role": "pid",
+      "pid": 81128,
+      "signal_zero_state": "absent"
+    },
+    {
+      "role": "supervisor_pid",
+      "pid": 81127,
+      "signal_zero_state": "absent"
+    }
+  ],
+  "predecessor_runner_validation": {
+    "passed": false,
+    "error_type": "PermissionError",
+    "errno": 1,
+    "operation": "ps",
+    "permission_failure_not_process_presence": true
+  },
+  "local_listener_capability": {
+    "available": false,
+    "error_type": "PermissionError",
+    "errno": 1
+  },
+  "unknown_usage": {
+    "run_id": "BOC_P122_R03_04_INLINE_CHECKPOINT",
+    "call": "call_024",
+    "input_tokens": null,
+    "output_tokens": null,
+    "known_run_subtotal_tokens": 388363,
+    "exact_P122_total_tokens": null,
+    "unknown_effect_requests": 0,
+    "cleanup_confirmed": true,
+    "execution_events_from_unknown_call": 0,
+    "error_kind": "timeout",
+    "timeout_scope": "run_wall",
+    "private_evidence_sha256": {
+      "summary.json": "47442af45b4da505e202353b852a44ba6bef0d6801dac534c753fac41363f182",
+      "call_024/response.json": "b834ba8ca16c0bee416a39933e9b8538c67cc1bb2b3ca6ce1a058890918cbcaa",
+      "events.json": "6f07f2eb0b8aea63469cfb1813d5a242d5444fb5eb73800fa0bdf28b35864e6f"
+    }
+  },
+  "prior_ledgers_verified": 172,
+  "prior_bindings_verified": 2007,
+  "fixed_spec_unchanged": true,
+  "conditions_selected_from_P122_outcomes": false,
+  "planned_conditions": 12,
+  "unique_known_tasks": 4,
+  "novel_method_claim": false,
+  "general_quality_preservation_claim": false,
+  "statistical_noninferiority_claim": false,
+  "new_model_calls": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "new_native_counts": 0,
+  "unseen_tasks_read": 0,
+  "manuscript_changed": false,
+  "source_sha256": {
+    "docs/P123_execution_decision_20261026.md": "a33044ce5ee9010e0cde599f9a25ebd8ca7511f26a70c0532b3e9b9a476a43e9",
+    "docs/experiments/P123_whole_task_rolling_checkpoint.md": "af08099df2cbe7afa034dc7db36044190e8dc2d4699c28d4761ea5325c5655f8",
+    "reports/P122_comparison.json": "ccac65fb9f210193cc70ae9e39b9c276eda95e2b6165f431b7e3f5fab4fa4c8e",
+    "reports/P122_server_session.json": "deb60e31128250a1a2c57ec882cf624927d953647e0cd40f77c77e84a2f026f5",
+    "reports/P122_review_for_fixed_P123.json": "035f53e9955ff36d46bc0b3764de24c7507ed9c30e6e4ce48761220e8e198e00",
+    "docs/P122_findings.md": "3ef6ef894ae06d7e700c41403927ba73447cba33647b41a02e0e28c82adb53fc",
+    "materials/20261025_p122_results/summary.json": "5109c2a33711f3c78a04a8a31d740f09dcbc8adc4273fdf951cd4067701e8a64",
+    "materials/20261025_p122_results/build_manifest.json": "d3b132935f4b072a6dda26c2f4585478725265e94a7f1a8dc9aeb2629f3305b2"
+  }
+}
