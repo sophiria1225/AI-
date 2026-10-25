@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P116は全16条件・283要求・820 API・614私有ファイルの点検を一度だけ完了。観測本文5,427,957文字のうち再送4,871,930文字。同一API再要求50件、返答も一致31件、既存６読取区間の再要求19件。精算の非再入力条件は同一API再要求０だが、18,446文字の観測を18回表示し、観測本文の47.75%を占めた。文字数と再要求をそのまま安全な省略・token削減とは扱わない。次は観測の内容と出典を全条件で確認する。元の未知使用量２とP111の採用基準未達を保持。追加生成・API・評価０。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P116_findings.md)。
+P117は全16条件・283要求・263観測と22公開API仕様ファイルの照合を一度だけ完了。原spanとの完全対応261、未認識・ページ表示２、出力全体が完全な公開仕様と一致４。一致した観測の累積346,604文字の95.79%は精算１件に集中し、その出力は36関数の仕様に一致した。値の一致は変数の由来・不要性・安全な省略・token削減の証明ではない。この１件を狙う追加モデル生成は見送り、通常対照と先行方式との差を絞る。PAIRの同状態からの圧縮前後比較と検査配分も既存方式として確認。未知使用量２とP111採用基準未達を保持。追加生成・API・評価０。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P117_findings.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P116は全16条件・283要求・820 API・614私有ファイルの点検を一�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p117-metadata-observations-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p117-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -80,4 +80,10 @@ P116は全16条件・283要求・820 API・614私有ファイルの点検と全�
 
 [P116所見](docs/P116_findings.md)と[全件資料](materials/20261025_p116_results/README.md)を参照する. 精算の非再入力条件は同一API再取得０だが、大きな観測を繰り返し入力していた. CSVの同一読取再取得と同じ原因へまとめない. 次は観測の内容と出典を全条件で確認し、既存の文書省略・状態保持・通常キャッシュとの差を整理する. 次のモデル実験は未開始. 原稿と未見12課題は保留し、ユーザー停止に直ちに従う.
 
-P117は全263観測と公開API仕様の照合を準備済み. `configs/P117_public_metadata_observations_v01.json`に315私有ファイルとソースを固定した. 新規10件・全1,859テスト通過. 同一head両CI成功後に `.runtime/worktrees/p117-run` で一度だけ処理する. `.runtime/P117_analysis_once_start.json`、`P117_collection_once_end.json`、公開report/failureを確認し、重ねて起動しない. 次のモデル実験は未開始. [計画](docs/experiments/P117_public_metadata_observations.md).
+P117は全16条件・283要求・263観測の固定公開API仕様への照合と全件資料を一度だけ終了した. 固定実行木は `.runtime/worktrees/p117-run`、`12faef73fea288862f78ce7f8e92b8f3cbb281dc`. `.runtime/P117_analysis_once_start.json`、`P117_collection_once_end.json`、`P117_editor_artifacts_once_end.json`を保持し、処理を繰り返さない. 315私有ファイル、22公開仕様ファイル、422公開ソースを固定し、エラー０、追加生成・API・評価０. 完全報告SHAは `99894bcf6c8b2f657049cf818ecd940855b0b357f686157e2876216b43526089`.
+
+全1,859テスト通過. PR490の同一headについてpush workflow40149758036/job121038617175、pull_request workflow40149821152/job121038807778の成功を確認して実施した. mergeは `14a7889db51768ab5a5dd16056eb683d23ff91e0`. P116結果のPR489はhead `1b62e698a5d112d72ddb2716ec01218f13ecbaf6`、merge `f11e965b7eb0064cba9c5c1b1a363ef4867cdf13`で閉鎖済み.
+
+準備時は既存literal解析コードの指紋不足を実記録処理前に検出した. `.runtime/P117_preparation_bookkeeping_failure_v01.json`と原準備スクリプトを保持し、そのソースを追加してから初回の点検を実施した. 終了済み診断の再試行ではない.
+
+[P117所見](docs/P117_findings.md)と[全件資料](materials/20261025_p117_results/README.md)を参照する. ４件の仕様一致量の大部分は精算１件で、この一致だけを根拠とした追加モデル生成は見送る. [PAIRとの範囲比較](docs/counterfactual_adaptation_prior_scope_20261025.md)も継承する. 次は制御に使う実行情報と通常対照との差を具体化する. 次のモデル実験は未開始. 原稿と未見12課題は保留し、ユーザー停止に直ちに従う.
