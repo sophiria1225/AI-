@@ -1,5 +1,7 @@
 # 再開の入口：P123実行中、2026年10月26日
 
+P124は閉鎖済み。固定応答再生で全20プログラムの出力・方式間境界が一致し、通常cache68対提案57の保存backend応答だった。[全結果](docs/P124_findings.md)と[独立監査](docs/P124_independent_audit.md)。P123は07:07 JST時点で9/12条件終了、途中の成否・費用は未読。P125は`.runtime/worktrees/p125-projection-online`で準備中、実行未開始。P123全件回収後に4既知課題×2方式の有限比較へ進む準備を継続する。P124の実行木`p124-projection-prep`は再生時の固定bytesを保持する。
+
 **2026-10-26 05:49 JST確認：P123を2026-10-26 05:47 JSTに開始し、固定12条件を実行中.** [PR512](https://github.com/sophiria1225/AI-/pull/512)の完全head `df45b1d9f32f8f547b54ea107f10e7534ba73e68`でpush・pull_request両CIと両jobが成功した. 24 native入力計数とactivationも完了し、wrapper・管理プロセス・推論serverの生存を確認. 途中成否と費用はまだ読んでいない.
 
 ユーザーは「時間がないので実験を行い、止めてと言うまで継続する」「最終目標までの認識と作業を詳しく書く」と再指示した. [認識と実験方針](docs/research_execution_route_20261026.md)を読む. 最終目標は最終性能維持と全仕事token削減、その機構の新規性. まだ達成していない.
