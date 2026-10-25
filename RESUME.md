@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P119の通常要約比較を固定。既知４課題で別呼出し要約と行動の応答に含める要約を各１回、計８条件。古い完結履歴のみを対象にし、原指示、直近２回、今回のコードと結果、以後の全履歴を保持する。追加指示・schema・全出力・失敗・後続処理を同じ80呼出し・450,000 token・1,800仕事秒へ含める。全1,936テスト成功、476ソース固定、生成未開始。原応答と実行コードの対応と全費用を保存記録から照合する。P118の通常要約4/4成功と費用基準未達を比較の前提にし、P111不明２件とP118不明１件を保持。同時出力自体は新規性とせず、原稿と未見12課題は保留。 [固定計画](docs/experiments/P119_whole_task_inline_checkpoint.md).
+P119の固定８条件を実行中。通常の別呼出し要約と行動の応答に含める要約を、既知４課題で各１回比較する。同一headの両workflow・両job成功後、12入力の事前計数を通過した。追加指示・schema・全出力・失敗・後続処理を同じ仕事費用に含め、成功損失を許さない。全閉鎖後の全８条件図と全４対の費用分解を準備し、全1,940テスト成功、合成図を目視。中間成否は未読。P118の通常要約4/4成功と費用基準未達、P111不明２件とP118不明１件を保持。原稿と未見12課題は保留、新規性と一般的品質維持は未確立。 [集計規則](docs/experiments/P119_reporting.md).
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P119の通常要約比較を固定。既知４課題で別呼出し要約と行�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p119-inline-checkpoint-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p119-report-preparation-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -123,3 +123,11 @@ P119は[通常の別呼出し要約対同時出力要約](configs/P119_whole_tas
 同じ完全headのpush・pull_request両workflowと両accounting-and-syntax job成功後、`.runtime/worktrees/p119-run`から有限pipelineを一度だけ起動する. ８初回入力＋通常要約１入力＋合成inline３入力の12件を語彙計数し、各条件80呼出し・450,000 token・1,800仕事秒内で固定順に実行する. 所有server21,600秒. 全８枠とserverが閉じてから全件照合、session費用、全件資料を作る. 中間成否を見て条件を変えず、不明を埋める再試行をしない. ユーザー停止を優先する.
 
 P118の通常要約側をそのまま比較に残す. 同時出力側との差には、要約時点、指示、schema、出力枠の競合、後続行動も含まれる. 専用要約の入力37,350 tokenを今回の節約へ転用しない. 同時出力や形式検査の存在だけを新規性としない. 原稿と未見12課題は保留する.
+
+P119はPR496、head `391e2921beeb8f53cd87b086289729609a4b5c62`の両workflowと両job成功後に一度だけ起動済み. mergeは`32bf29dc19444866fcf5ca021287c56c7c40b52c`、2026-10-25T04:25:02Z. [開始記録](reports/P119_execution_start_20261025.json)に12入力の事前計数と指紋を保存した. ８初期入力、別呼出し要約１入力、合成inline３入力を確認し、固定順の全８条件を実行中. 中間成否は読んでいない.
+
+実行木は`.runtime/worktrees/p119-run`. `.runtime/run_close_p119_once.py`がpipeline終了後に監査、session点検、全件資料を一度だけ作る. `.runtime/P119_pipeline_once_start.json`、`P119_pipeline_child_once.json`、`P119_pending_execution_handoff.json`を確認し、同じ処理を重ねて起動しない. 状態確認には`.runtime/read_p119_operational_status.py`を使う. 停止指示には`.runtime/P119.stop`と所有processで対応する.
+
+全閉鎖後の[図と対比較](configs/P119_reporting_v01.json)も準備した. 新規４件を含む全1,940テストと構文検査成功、73ソースを固定. 合成previewを目視したが、実データ図は未生成で、実際の図の目視が別途必要. `.runtime/P119_synthetic_figure_review_once.json`は実結果のレビューではない. 155台帳・1,704指紋が不変. 実行器と予算を変えていない.
+
+`.runtime/P119_closure_once_end.json`の全閉鎖後、専用collectorで全件資料を一度だけ回収する. 図と対比較もその集計headの両workflow・両job成功後に行う. 途中成否を見て条件や対象を変えず、未知を埋める再試行をしない. 原稿と未見12課題は保留する.

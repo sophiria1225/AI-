@@ -1,0 +1,143 @@
+{
+  "phase": "P119_execution_start",
+  "recorded_at": "2026-10-25T04:31:54.047621+00:00",
+  "preparation_merge": {
+    "pr": 496,
+    "url": "https://github.com/sophiria1225/AI-/pull/496",
+    "head": "391e2921beeb8f53cd87b086289729609a4b5c62",
+    "merge_commit": "32bf29dc19444866fcf5ca021287c56c7c40b52c",
+    "merged_at": "2026-10-25T04:25:02Z",
+    "both_workflows_and_jobs_success": true,
+    "ci": [
+      {
+        "id": 40161707125,
+        "head_sha": "391e2921beeb8f53cd87b086289729609a4b5c62",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 121074462848
+      },
+      {
+        "id": 40161667080,
+        "head_sha": "391e2921beeb8f53cd87b086289729609a4b5c62",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 121074343341
+      }
+    ]
+  },
+  "plan_sha256": "eac9de222e892c343fe905ba233f772ebd5c835422ef7f2aa2c9a9447c045400",
+  "preflight_sha256": "bf3a4850174562a2e670aa8dfab70ec7a5239d724d77bb78514be1117f49e8b0",
+  "activation_sha256": "a0354345b9f971824fc0b8fffc72624c6bc6bdfeb0f2f77b81e24c5f68990560",
+  "pipeline_start_record_sha256": "6f475f616872a12a9855d3c96e8c65d1db506d0b5d54456fe53573ae24eb2ea3",
+  "preflight_source_bindings": 1205,
+  "initial_native_inputs": [
+    {
+      "task_id": "34d9492_1",
+      "conditions": {
+        "single_checkpoint": {
+          "input_tokens": 3115,
+          "model_messages_sha256": "d5cfc99f525ccbd5105f5d25fe9de39380f64ef83cb78207f4fda8e0137eb632",
+          "count_request_sha256": "c2c9f7022e3ea10a6b3b6deb3586a843d0bf645a0a4ae1ca23f5be90cc6e962e"
+        },
+        "inline_checkpoint": {
+          "input_tokens": 3115,
+          "model_messages_sha256": "d5cfc99f525ccbd5105f5d25fe9de39380f64ef83cb78207f4fda8e0137eb632",
+          "count_request_sha256": "c2c9f7022e3ea10a6b3b6deb3586a843d0bf645a0a4ae1ca23f5be90cc6e962e"
+        }
+      }
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "conditions": {
+        "single_checkpoint": {
+          "input_tokens": 3104,
+          "model_messages_sha256": "c6d9c228f44da06c1e7fcb26e7cad195be3e50418d5744c69aaa916aedb0d727",
+          "count_request_sha256": "d4ba2418de88c7c355c3db43ea35b311177cd6aa01e1d446b5a265adf34b251a"
+        },
+        "inline_checkpoint": {
+          "input_tokens": 3104,
+          "model_messages_sha256": "c6d9c228f44da06c1e7fcb26e7cad195be3e50418d5744c69aaa916aedb0d727",
+          "count_request_sha256": "d4ba2418de88c7c355c3db43ea35b311177cd6aa01e1d446b5a265adf34b251a"
+        }
+      }
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "conditions": {
+        "single_checkpoint": {
+          "input_tokens": 3077,
+          "model_messages_sha256": "b4564965cc9d135dc34542945148b87d3ede59e0bd943a1c3203b396177d2923",
+          "count_request_sha256": "8a0205a32b11b6726c207f3875d0b6addb78218f1b7e15350ef95d4d56f30540"
+        },
+        "inline_checkpoint": {
+          "input_tokens": 3077,
+          "model_messages_sha256": "b4564965cc9d135dc34542945148b87d3ede59e0bd943a1c3203b396177d2923",
+          "count_request_sha256": "8a0205a32b11b6726c207f3875d0b6addb78218f1b7e15350ef95d4d56f30540"
+        }
+      }
+    },
+    {
+      "task_id": "6104387_1",
+      "conditions": {
+        "single_checkpoint": {
+          "input_tokens": 3123,
+          "model_messages_sha256": "397a52b7c145401e1ff9016010fe371137873420f478b21db4ee0ed76052c6fb",
+          "count_request_sha256": "16e9f8b645e6dde8c71498a779887e1c1f1c8f7066d515e0bc1d7003c99de8e0"
+        },
+        "inline_checkpoint": {
+          "input_tokens": 3123,
+          "model_messages_sha256": "397a52b7c145401e1ff9016010fe371137873420f478b21db4ee0ed76052c6fb",
+          "count_request_sha256": "16e9f8b645e6dde8c71498a779887e1c1f1c8f7066d515e0bc1d7003c99de8e0"
+        }
+      }
+    }
+  ],
+  "summary_transport": {
+    "input_tokens": 371,
+    "wall_seconds": 0.002049707982223481,
+    "method": "llama.cpp /v1/chat/completions/input_tokens",
+    "request_sha256": "9b0887538c5c5ed17f4f704c468d2c0e411ae60efa24076c64527d769cfbb91e"
+  },
+  "inline_synthetic_transports": [
+    {
+      "name": "inline_offer",
+      "request_sha256": "ce5f6f012f0fadca44e8ce4509f1720eb498cf6f56c3d4dd555139b7783365ea",
+      "synthetic_only": true,
+      "input_tokens": 1526,
+      "wall_seconds": 0.007428417011396959,
+      "method": "llama.cpp /v1/chat/completions/input_tokens"
+    },
+    {
+      "name": "ordinary_after_inline",
+      "request_sha256": "cb12555a639acb82275aebc1186e9277617e4f6c17c02dd5a0c61609bd1d109c",
+      "synthetic_only": true,
+      "input_tokens": 1099,
+      "wall_seconds": 0.006441917008487508,
+      "method": "llama.cpp /v1/chat/completions/input_tokens"
+    },
+    {
+      "name": "compacted_after_inline",
+      "request_sha256": "d41718f94f6549c008962955849b49df2b633016cd269aa0e14bc81160b7f1f6",
+      "synthetic_only": true,
+      "input_tokens": 1078,
+      "wall_seconds": 0.005832166993059218,
+      "method": "llama.cpp /v1/chat/completions/input_tokens"
+    }
+  ],
+  "preflight_wall_seconds": 0.10817233400302939,
+  "preflight_native_count_requests": 12,
+  "preflight_model_generations": 0,
+  "preflight_environment_API_requests": 0,
+  "preflight_evaluations": 0,
+  "fixed_eight_cell_pipeline_started": true,
+  "individual_intermediate_outcomes_read": false,
+  "all_conditions_closed_at_this_record": false,
+  "model_performance_result": false,
+  "reserved_scenarios_read": 0,
+  "manuscript_changed": false,
+  "novel_method_claim": false,
+  "original_P111_two_unknown_calls_preserved": true,
+  "original_P118_one_unknown_call_preserved": true
+}
