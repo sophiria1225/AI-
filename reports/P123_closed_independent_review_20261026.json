@@ -1,0 +1,1311 @@
+{
+  "status": "pass",
+  "phase": "P123_closed_independent_review",
+  "reviewed_at": "2026-10-25T23:18:17.463650+00:00",
+  "collector_end_seen_before_read": true,
+  "collector_ended_at": "2026-10-25T23:15:55.086157+00:00",
+  "collector_end_sha256": "35dfd6391682bca46e436a423f3270ff349d77b6b9be1bba60be5f864b9d3913",
+  "model_seed": 57,
+  "world_seed": 42,
+  "repetitions": 1,
+  "planned_rows": 12,
+  "evaluated_rows": 12,
+  "successful_rows": 12,
+  "all_known_tokens": 2516107,
+  "unknown_usage_calls": 0,
+  "common_success_task_slots": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "by_policy": {
+    "single_checkpoint": {
+      "successes": 4,
+      "known_tokens": 893529,
+      "unknown_usage_calls": 0,
+      "model_calls": 86,
+      "API_requests": 217,
+      "input_tokens": 868760,
+      "output_tokens": 24769,
+      "focus_calls": 2,
+      "focus_tokens": 39874,
+      "checkpoint_installations_by_slot": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "checkpoint_installations_total": 2,
+      "full_wall_seconds": 2772.5153353750356
+    },
+    "rolling_separate": {
+      "successes": 4,
+      "known_tokens": 785656,
+      "unknown_usage_calls": 0,
+      "model_calls": 85,
+      "API_requests": 216,
+      "input_tokens": 760248,
+      "output_tokens": 25408,
+      "focus_calls": 3,
+      "focus_tokens": 59530,
+      "checkpoint_installations_by_slot": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "checkpoint_installations_total": 3,
+      "full_wall_seconds": 2973.521157332929
+    },
+    "rolling_inline": {
+      "successes": 4,
+      "known_tokens": 836922,
+      "unknown_usage_calls": 0,
+      "model_calls": 88,
+      "API_requests": 207,
+      "input_tokens": 808686,
+      "output_tokens": 28236,
+      "focus_calls": 0,
+      "focus_tokens": 0,
+      "checkpoint_installations_by_slot": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "checkpoint_installations_total": 3,
+      "full_wall_seconds": 3106.774827874964
+    }
+  },
+  "differences": {
+    "rolling_inline_minus_single_checkpoint": {
+      "tokens": -56607,
+      "percent_of_baseline": -6.335216876005144,
+      "per_slot": [
+        -10497,
+        0,
+        0,
+        -46110
+      ]
+    },
+    "rolling_inline_minus_rolling_separate": {
+      "tokens": 51266,
+      "percent_of_baseline": 6.525247691101449,
+      "per_slot": [
+        -10497,
+        0,
+        0,
+        61763
+      ]
+    },
+    "rolling_separate_minus_single_checkpoint": {
+      "tokens": -107873,
+      "percent_of_baseline": -12.072691541069176,
+      "per_slot": [
+        0,
+        0,
+        0,
+        -107873
+      ]
+    }
+  },
+  "repeated_control_exercised": {
+    "rolling_separate": true,
+    "rolling_inline": true
+  },
+  "development_gate_met": false,
+  "rows": [
+    {
+      "task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "checkpoint_policy": "single_checkpoint",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "api_requests": 102,
+      "checkpoint_installations": 1
+    },
+    {
+      "task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "checkpoint_policy": "rolling_separate",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "api_requests": 102,
+      "checkpoint_installations": 1
+    },
+    {
+      "task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "checkpoint_policy": "rolling_inline",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 16,
+      "known_total_tokens": 129374,
+      "unknown_usage_calls": 0,
+      "api_requests": 102,
+      "checkpoint_installations": 1
+    },
+    {
+      "task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "checkpoint_policy": "rolling_separate",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "api_requests": 25,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "checkpoint_policy": "rolling_inline",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "api_requests": 25,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "checkpoint_policy": "single_checkpoint",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "api_requests": 25,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "checkpoint_policy": "rolling_inline",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "api_requests": 13,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "checkpoint_policy": "single_checkpoint",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "api_requests": 13,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "checkpoint_policy": "rolling_separate",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "api_requests": 13,
+      "checkpoint_installations": 0
+    },
+    {
+      "task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "checkpoint_policy": "single_checkpoint",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 32,
+      "known_total_tokens": 440461,
+      "unknown_usage_calls": 0,
+      "api_requests": 77,
+      "checkpoint_installations": 1
+    },
+    {
+      "task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "checkpoint_policy": "rolling_separate",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 31,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "api_requests": 76,
+      "checkpoint_installations": 2
+    },
+    {
+      "task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "checkpoint_policy": "rolling_inline",
+      "success": true,
+      "record_status": "evaluated",
+      "model_calls": 35,
+      "known_total_tokens": 394351,
+      "unknown_usage_calls": 0,
+      "api_requests": 67,
+      "checkpoint_installations": 2
+    }
+  ],
+  "aggregate_CSV_counts": {
+    "conditions": 12,
+    "model_calls": 259,
+    "controls": 247,
+    "roles": 24,
+    "pairs": 8
+  },
+  "checks": [
+    {
+      "check": "preserve_independent_review",
+      "passed": true
+    },
+    {
+      "check": "collector_end_exists_before_result_read",
+      "passed": true
+    },
+    {
+      "check": "collector_complete",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:reports/P123_initial_checks.json",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:reports/P123_activation_v01.json",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:reports/P123_comparison.json",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:reports/P123_server_session.json",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/README.md",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/all_conditions.csv",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/all_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/all_model_calls.csv",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/all_pairs.csv",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/role_costs.csv",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/summary.json",
+      "passed": true
+    },
+    {
+      "check": "collector_copy_hash:materials/20261025_p123_results/build_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "material_source_hash:reports/P123_comparison.json",
+      "passed": true
+    },
+    {
+      "check": "material_source_hash:reports/P123_server_session.json",
+      "passed": true
+    },
+    {
+      "check": "material_source_hash:configs/P123_whole_task_rolling_checkpoint_v01.json",
+      "passed": true
+    },
+    {
+      "check": "material_source_hash:scripts/build_rolling_checkpoint_summary.py",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:README.md",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:all_conditions.csv",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:all_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:all_model_calls.csv",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:all_pairs.csv",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:role_costs.csv",
+      "passed": true
+    },
+    {
+      "check": "material_artifact_hash:summary.json",
+      "passed": true
+    },
+    {
+      "check": "plan_bound_to_audit",
+      "passed": true
+    },
+    {
+      "check": "fixed_helper_hash:scripts/whole_task_rolling_checkpoint.py",
+      "passed": true
+    },
+    {
+      "check": "fixed_helper_hash:scripts/rolling_checkpoint_history.py",
+      "passed": true
+    },
+    {
+      "check": "fixed_helper_hash:scripts/rolling_checkpoint_inference.py",
+      "passed": true
+    },
+    {
+      "check": "closed_pipeline_hash",
+      "passed": true
+    },
+    {
+      "check": "closed_server_hash",
+      "passed": true
+    },
+    {
+      "check": "pipeline_server_closed",
+      "passed": true
+    },
+    {
+      "check": "owned_supervisor_identity",
+      "passed": true
+    },
+    {
+      "check": "closed_pid_absent",
+      "passed": true
+    },
+    {
+      "check": "closed_supervisor_pid_absent",
+      "passed": true
+    },
+    {
+      "check": "session_audit_hash",
+      "passed": true
+    },
+    {
+      "check": "session_pipeline_hash",
+      "passed": true
+    },
+    {
+      "check": "session_server_hash",
+      "passed": true
+    },
+    {
+      "check": "session_closed_attestation",
+      "passed": true
+    },
+    {
+      "check": "all_twelve_fixed_ordered_slots",
+      "passed": true
+    },
+    {
+      "check": "twelve_evaluated_no_audit_errors",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_SINGLE_CHECKPOINT:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_SINGLE_CHECKPOINT:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_01_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_SINGLE_CHECKPOINT:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_SINGLE_CHECKPOINT:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_SINGLE_CHECKPOINT:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_ROLLING_SEPARATE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_ROLLING_SEPARATE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_01_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_SEPARATE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_SEPARATE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_SEPARATE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_ROLLING_INLINE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_01_ROLLING_INLINE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_01_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_INLINE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_INLINE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_01_ROLLING_INLINE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_ROLLING_SEPARATE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_ROLLING_SEPARATE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_02_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_SEPARATE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_SEPARATE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_SEPARATE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_ROLLING_INLINE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_ROLLING_INLINE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_02_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_INLINE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_INLINE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_ROLLING_INLINE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_SINGLE_CHECKPOINT:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_02_SINGLE_CHECKPOINT:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_02_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_SINGLE_CHECKPOINT:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_SINGLE_CHECKPOINT:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_02_SINGLE_CHECKPOINT:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_ROLLING_INLINE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_ROLLING_INLINE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_03_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_INLINE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_INLINE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_INLINE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_SINGLE_CHECKPOINT:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_SINGLE_CHECKPOINT:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_03_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_SINGLE_CHECKPOINT:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_SINGLE_CHECKPOINT:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_SINGLE_CHECKPOINT:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_ROLLING_SEPARATE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_03_ROLLING_SEPARATE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_03_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_SEPARATE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_SEPARATE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_03_ROLLING_SEPARATE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_SINGLE_CHECKPOINT:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_SINGLE_CHECKPOINT:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_04_SINGLE_CHECKPOINT",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_SINGLE_CHECKPOINT:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_SINGLE_CHECKPOINT:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_SINGLE_CHECKPOINT:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_ROLLING_SEPARATE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_ROLLING_SEPARATE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_04_ROLLING_SEPARATE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_SEPARATE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_SEPARATE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_SEPARATE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "row_input_output_sum:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_call_count:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_unknown_count:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_tokens:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_all_request_API_count:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_ROLLING_INLINE:agent",
+      "passed": true
+    },
+    {
+      "check": "row_role_totals:BOC_P123_04_ROLLING_INLINE:focus",
+      "passed": true
+    },
+    {
+      "check": "installations_from_control_events:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "installed_boolean:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "bounded_installation_count:BOC_P123_04_ROLLING_INLINE",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_INLINE:summary.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_INLINE:usage.json",
+      "passed": true
+    },
+    {
+      "check": "raw_hash_only:BOC_P123_04_ROLLING_INLINE:evaluation.json",
+      "passed": true
+    },
+    {
+      "check": "all_conditions.csv_row_count",
+      "passed": true
+    },
+    {
+      "check": "all_conditions.csv_all_cells",
+      "passed": true
+    },
+    {
+      "check": "all_model_calls.csv_row_count",
+      "passed": true
+    },
+    {
+      "check": "all_model_calls.csv_all_cells",
+      "passed": true
+    },
+    {
+      "check": "all_controls.csv_row_count",
+      "passed": true
+    },
+    {
+      "check": "all_controls.csv_all_cells",
+      "passed": true
+    },
+    {
+      "check": "role_costs.csv_row_count",
+      "passed": true
+    },
+    {
+      "check": "role_costs.csv_all_cells",
+      "passed": true
+    },
+    {
+      "check": "all_pairs.csv_row_count",
+      "passed": true
+    },
+    {
+      "check": "all_pairs.csv_all_cells",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:all_twelve_complete_with_known_usage",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:success_counts",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:total_tokens_by_policy",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:common_success_tasks",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:common_success_tokens_by_policy",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:comparisons",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:repeated_control_exercised",
+      "passed": true
+    },
+    {
+      "check": "independent_recalculation:development_gate_met",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:planned_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:accounted_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:evaluated_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:successful_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:recorded_known_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:recorded_unknown_usage_calls",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:exact_all_condition_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:ordinary_control_criteria_met",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:repeated_control_exercised",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:common_success_tasks",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:comparisons",
+      "passed": true
+    },
+    {
+      "check": "materials_overview:model_calls_in_materials",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:planned_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:accounted_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:evaluated_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:successful_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:recorded_known_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:recorded_unknown_usage_calls",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:single_checkpoint:exact_all_condition_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:planned_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:accounted_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:evaluated_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:successful_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:recorded_known_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:recorded_unknown_usage_calls",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_separate:exact_all_condition_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:planned_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:accounted_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:evaluated_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:successful_conditions",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:recorded_known_tokens",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:recorded_unknown_usage_calls",
+      "passed": true
+    },
+    {
+      "check": "materials_policy:rolling_inline:exact_all_condition_tokens",
+      "passed": true
+    },
+    {
+      "check": "all_cell_full_wall_total",
+      "passed": true
+    },
+    {
+      "check": "server_time_components_no_double_count",
+      "passed": true
+    },
+    {
+      "check": "session_evaluations_completed",
+      "passed": true
+    }
+  ],
+  "source_hashes": {
+    "reports/P123_comparison.json": "73d55305300ae6cb332213f08f8a813a40ab17f82a9a167e3fbbf1bb17fb6147",
+    "reports/P123_server_session.json": "659c6964867ec752a7f82b7f13d1a560619759c2bbab23d36e9f731d2d19df4b",
+    "configs/P123_whole_task_rolling_checkpoint_v01.json": "b4bb3fabb6d1b97dc67f3f17f1a3a97bafccfd13f2ce02c70da73d54d6962b0e",
+    "scripts/build_rolling_checkpoint_summary.py": "487aac7666f47fb9424492205930e652f99c5a090ebbb5a33a0043ce42aabb80",
+    "scripts/whole_task_rolling_checkpoint.py": "43b3e738806032bbd293d1879223bd22b3c0df9d5da09aa2ff03c61de3af04c6",
+    "independent_review_script": "d1177ef1756a67c2de59038ede3998b28ddf856b967cfe9df8de96e88e96ba5d"
+  },
+  "artifact_hashes": {
+    "README.md": "af2ece355558470134469f181f9a64cbd80b6e529b2def998255be96b77a0813",
+    "all_conditions.csv": "0e772e832a3b4e404762f64e51eb7c2aaa83eaf978462aade8585f97d53a6068",
+    "all_controls.csv": "8cd505f863d974a6353730802f7efef343702ecc553695045f348066b84bf2c3",
+    "all_model_calls.csv": "25ba9864722a4f43c1cfdf39c58b6da450a4703f8c29c21eaa6251393825408a",
+    "all_pairs.csv": "277a9aad4c3895199e2a75c67e81538809550b82233dd0dbd4f678d35def3f0e",
+    "role_costs.csv": "d39d09d37ff2c5972f145498f745b2624c6024beb3f7ea457f00609cced55553",
+    "summary.json": "2e37af2c2667cbee6741450ddfeadcf871a498a0d6bc909dc35a83c7b3540061"
+  },
+  "all_three_policies_succeeded_on_this_known_cohort": true,
+  "general_quality_preservation_established": false,
+  "runtime_wall_time_not_added_to_tokens": true,
+  "semantic_equivalence_established": false,
+  "novelty_established": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "original_task_contents_read": false,
+  "generated_code_read": false,
+  "reasoning_or_summary_text_read": false,
+  "evaluation_contents_interpreted": false,
+  "raw_trial_files_hashed_only": true
+}
