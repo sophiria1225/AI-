@@ -1,14 +1,14 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P120/P121の実験と診断は終了し、本文・文献４頁＋英文１頁の作業稿を作成した. 写真では別呼出し要約と同じく成功し、139,871→129,374 token（7.50%減）. CSVでは成功を失い、全４課題は別要約4/4対同時要約3/4で、全体の採用基準は未達. 同じ既知４課題の24実行であり、独立した24課題ではない. 全24実行の表と974入力の既存診断を元の公開記録へ照合済み. 新規性と一般的な品質維持は未確立. 現在は原稿の検討を進め、新たなモデル方式は予定していない. [主張と根拠の点検](docs/checkpoint_letter_review_20261025.md).
+P122の反復確認を固定した. ユーザーの最新指示により、P120の写真7.50%減が生成のばらつきか、特定課題に限るかを調べる. 既知４課題×２方式×seed基数57/157/257の計24条件、中央の反復で方式順を反転. 要約方法と各条件の予算はP120のまま. 新規15件を含む全1,998テストと構文検査成功、モデル生成はCI待ちで未開始. 全３対の差の平均、中央値、範囲、標準偏差と成否を併記する. P120全体は4/4対3/4成功で性能維持未達. 失敗で短く終わった差を節約にしない. ３固定設定を統計的非劣性や未見課題への一般化とせず、未見12課題は使用しない. 現行原稿は保持し、まとまった結果の後に別版で更新する. [固定計画](docs/experiments/P122_checkpoint_replication.md).
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 最新の目的と指示
 
 最終目標は、必要な情報と処理、最終成果の品質を維持し、不要な取得、共有、モデル呼出し、実行、検証を減らすこと. 制御、失敗、再取得を含む全仕事で評価する. 履歴短縮や記録の厳密さ自体を新規性に置き換えない.
 
-ユーザーは停止を指示するまで作業継続を希望している. 停止指示はない. 10月25日に「今日ぐらいで実験を終えて原稿を書き始めたい」と指示されたため、P120/P121を閉じて執筆を再開した. **現在は原稿の検討を進める段階である.** 新しいモデル方式はこの区切りでは予定せず、結果を見た閾値、seed、予算の探索をしない. [区切り](docs/letter_experiment_cutoff_20261025.md).
+ユーザーは停止を指示するまで作業継続を希望している. 停止指示はない. 10月25日にP120/P121で一度区切って原稿を書いた後、「誤差か、特定のパターンだけかを確認して実行を続ける」と指示された. **現在はP122の反復確認を進める.** P120の方法と１条件の予算を固定したまま、同じ設定１組と別seed２組を全４課題で比較する. 過去の区切りはこの新しい反復確認を禁止する指示ではない. [現在の計画](docs/experiments/P122_checkpoint_replication.md).
 
 10月31日までのレター投稿が目標. 著者、所属、著者順は未確認. 教授への送信と学会投稿は行っていない. 過去の原稿保留や実験待機は現在の指示ではない.
 
@@ -17,7 +17,7 @@ P120/P121の実験と診断は終了し、本文・文献４頁＋英文１頁�
 | 用途 | 場所 |
 |---|---|
 | 編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p107-prep` |
-| 現在のブランチ | `research/checkpoint-letter-review-20261025` |
+| 現在のブランチ | `research/p122-checkpoint-replication-20261025` |
 | モデル、AppWorld、私有記録、終了印 | `/Users/tp26013/AI-` |
 | Python | `/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python` |
 | PDFと図の環境 | `/Users/tp26013/AI-/.runtime/reporting-venv/bin/python` |
@@ -39,7 +39,7 @@ P120の全８条件、所有server、監査、収集、図の生成と目視、�
 
 私有`.runtime`の `P120_closure_once_end.json`、`P120_collection_wait_once_end.json`、`P121_collection_once_end.json`、`P121_editor_artifacts_once_end.json`、`P121_letter_publication_once_end.json`、`P121_letter_merge_once.json`を参照する. 古いwrapper、watcher、collector、publisherをもう一度起動しない. serverの自然な閉鎖はユーザーによる研究停止指示ではない.
 
-最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在165台帳、1,944指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
+最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在166台帳、1,958指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
 
 ## 主張の範囲
 
@@ -51,7 +51,7 @@ P118全保持CSVの不明１要求と、P111の不明２要求を保持する. P
 
 ## 次に進めること
 
-[次の作業](docs/next_actions.md)に従い、主張、先行研究との差、著者情報と公式様式の残件を整理する. 原稿の科学的な不足を、組版や実装件数で解消したとしない. 新規のモデル実験や固定した実記録処理を行う場合は、有限計画と同じ完全headのpush・pull_request両workflow、両accounting-and-syntax job成功を確認してから進める.
+P122の同じ完全headのpush・pull_request両workflow、両accounting-and-syntax job成功後、専用の `.runtime/worktrees/p122-run` から有限pipelineを一度だけ起動する. 全24条件とserverの閉鎖後に全件監査と資料化を行う. P122の停止印は `.runtime/P122.stop`、最新の進行引き継ぎは `.runtime/P122_pending_execution_handoff.json`. P120/P121の終了済みwrapperを再起動しない. 詳細は[次の作業](docs/next_actions.md).
 
 生のプロンプト、私有推論、完全履歴、正解、モデル重み、認証情報をGitへ登録しない. 停止指示が来た場合は従う. [AGENTS](AGENTS.md)／[現在状態](docs/current_status.md).
 
