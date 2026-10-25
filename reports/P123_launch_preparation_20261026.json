@@ -1,0 +1,60 @@
+{
+  "phase": "P123_launch_preparation",
+  "created_at": "2026-10-25T19:39:34.451321+00:00",
+  "publication_completed": false,
+  "PR_created": false,
+  "CI_triggered": false,
+  "model_experiment_started": false,
+  "observed_blockers": [
+    {
+      "operation": "ps via unchanged predecessor_closed and sources",
+      "error": "PermissionError",
+      "errno": 1
+    },
+    {
+      "operation": "local TCP listener bind",
+      "error": "PermissionError",
+      "errno": 1
+    },
+    {
+      "operation": "git ls-remote origin main",
+      "error": "Could not resolve host: github.com",
+      "exit_code": 128
+    },
+    {
+      "operation": "GitHub connector create_tree",
+      "http_status": 403,
+      "error": "Resource not accessible by integration"
+    }
+  ],
+  "launcher": {
+    "path": ".runtime/finish_p123_prepared_20261026.py",
+    "sha256": "6d06c63c06565cccc61576d2a0eb25b9138f7a803cf33ca47776e62dd70c5b2b",
+    "requires_explicit_execute_flag": true,
+    "source_and_CI_guards_unchanged": true,
+    "extra_experiments_after_fixed_batch": 0,
+    "successful_execution_in_this_session": false
+  },
+  "launcher_negative_tests": {
+    "tests_run": 6,
+    "exit_code": 0,
+    "log_sha256": "5ba8c752632d327a5ef8ee6d3031c55c396d96a4138cd19c77ea82c9d14f56d2",
+    "test_source_sha256": "ede24186fa799ae66950336045e2fd99c9497010f15849d5c6f85246c29c5a7c",
+    "cases": [
+      "wrong_head",
+      "wrong_repository",
+      "check_mode_no_writes",
+      "permission_denial_no_marker",
+      "failed_CI_no_model",
+      "one_CI_event_insufficient"
+    ],
+    "publication_and_model_operations_mocked": true
+  },
+  "new_model_calls": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "new_native_counts": 0,
+  "source_sha256": {
+    "docs/P123_launch_20261026.md": "336ed041a6eee23cab33c766b4928f9f3f1a2305cc17637e537fdb3f014e8930"
+  }
+}
