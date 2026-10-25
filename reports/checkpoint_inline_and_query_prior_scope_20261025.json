@@ -69,6 +69,44 @@
       "timing": "Algorithm 1 validates and applies state patch before selected action executes",
       "boundary": "sufficient state premise; schema alone does not establish semantic completeness; future relevance and history-dependent objectives remain limits",
       "P119_is_not_SKILL_state_reproduction": true
+    },
+    {
+      "source": "https://arxiv.org/html/2606.16707v1",
+      "title": "User as Code: Executable Memory for Personalized Agents",
+      "version": "2606.16707v1",
+      "reviewed_sections": [
+        "3.2",
+        "3.3",
+        "4.3.1"
+      ],
+      "read_scope": "primary HTML sections; no implementation reproduction",
+      "overlap": [
+        "append-only extracted facts converted to typed Python",
+        "computation and constraint checks over code-readable state"
+      ],
+      "cost_boundary": "one-time structuring and later queries distinguished; single-query and repeated-use costs differ",
+      "interpretation": "computing checkpoint values from variables alone is not treated as a distinct method",
+      "P119_is_not_UaC_reproduction": true,
+      "raw_html_sha256": "202e4445feb8b302bf5a853ebfeedd319237817d8c46896e54e8a77a85c8e70c"
+    },
+    {
+      "source": "https://arxiv.org/html/2609.26891v1",
+      "title": "Harness as a Language: A Minimalist Agent Framework With Maximal Expressivity",
+      "version": "2609.26891v1",
+      "reviewed_sections": [
+        "2",
+        "4.1",
+        "Appendix B",
+        "Appendix C.1"
+      ],
+      "read_scope": "primary HTML sections; no implementation reproduction or comparative performance claim",
+      "overlap": [
+        "prompt and REPL history accessible as variables",
+        "history reference, progress summary and state passed to next invoke"
+      ],
+      "interpretation": "archive and next-call context separation alone is not treated as a distinct method",
+      "P119_is_not_JAZ_reproduction": true,
+      "raw_html_sha256": "28520c1e699e2d010406b2fa9560197001d1cda7c526d29f7e28c60818e3fb57"
     }
   ],
   "raw_source_fetch_records": {
@@ -104,6 +142,24 @@
       "bytes": 351815,
       "sha256": "842f76a8b64f5b168823779497c3ff4d4145d55bce505bbbbfb19c5ac31984a2",
       "completed_at": "2026-10-25T05:25:24.655820+00:00"
+    },
+    "uac_v1": {
+      "url": "https://arxiv.org/html/2606.16707v1",
+      "fetched_at": "2026-10-25T05:47:56.570268+00:00",
+      "retries": 0,
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2606.16707v1",
+      "bytes": 740737,
+      "sha256": "202e4445feb8b302bf5a853ebfeedd319237817d8c46896e54e8a77a85c8e70c"
+    },
+    "jaz_v1": {
+      "url": "https://arxiv.org/html/2609.26891v1",
+      "fetched_at": "2026-10-25T05:47:56.570172+00:00",
+      "retries": 0,
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2609.26891v1",
+      "bytes": 750104,
+      "sha256": "28520c1e699e2d010406b2fa9560197001d1cda7c526d29f7e28c60818e3fb57"
     }
   },
   "P119_intermediate_outcomes_read": false,
@@ -113,5 +169,5 @@
   "evaluations": 0,
   "manuscript_changed": false,
   "candidate_scope": "same-response memory generation and generic executable evidence checks overlap prior work; a distinct retention rule remains undefined",
-  "updated_at": "2026-10-25T05:26:16.554594+00:00"
+  "updated_at": "2026-10-25T05:48:30.663889+00:00"
 }
