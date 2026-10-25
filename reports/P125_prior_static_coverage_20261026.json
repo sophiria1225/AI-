@@ -1,0 +1,819 @@
+{
+  "kind": "static_AST_admission_only",
+  "status": "complete",
+  "limits": {
+    "max_programs": 5000,
+    "max_seconds": 30
+  },
+  "fixed_compiler_sha256": "1837f4984b88326f4fea754bf8244783774eec7c6a30c974159895e2dedf774b",
+  "P122_comparison_sha256": "ccac65fb9f210193cc70ae9e39b9c276eda95e2b6165f431b7e3f5fab4fa4c8e",
+  "diagnostic_script_sha256": "6fbe7a4f564880f3ed7d55d5d69dc78d135dcc8a976be82c718afaf766c0e58d",
+  "python_version": "3.12.13",
+  "rows": [
+    {
+      "run_id": "BOC_P122_R01_01_SINGLE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 16,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 14,
+        "unsupported_program_effect": 2
+      },
+      "program_manifest_sha256": "34ed77f6cf98b613682084d64f224265317071eab2a262aa1fb23515d7727c14"
+    },
+    {
+      "run_id": "BOC_P122_R01_01_INLINE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 16,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 14,
+        "unsupported_program_effect": 2
+      },
+      "program_manifest_sha256": "83048616acfc0d3d9f4c626272adbf87f791ece0d43f4e763398667da2d60753"
+    },
+    {
+      "run_id": "BOC_P122_R01_02_INLINE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 24
+      },
+      "program_manifest_sha256": "1fc1f0be7d01c7ac21764ca0c532a648791a96a623cb39415d8c428a21f76145"
+    },
+    {
+      "run_id": "BOC_P122_R01_02_SINGLE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 24
+      },
+      "program_manifest_sha256": "3e7c76f3df585f435b4142ed7780971844014d2932be6dd2632ebaedc6381a46"
+    },
+    {
+      "run_id": "BOC_P122_R01_03_SINGLE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 13,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 13
+      },
+      "program_manifest_sha256": "19ded1cb136681f95f7ec0649d6ed2b8a99f3acd7771f7fc6fdf2fad4db50db2"
+    },
+    {
+      "run_id": "BOC_P122_R01_03_INLINE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 13,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 13
+      },
+      "program_manifest_sha256": "e224f36d71ece29dd27907f77420435a8b2098cb8020f3b654b64a8a9104e3cc"
+    },
+    {
+      "run_id": "BOC_P122_R01_04_INLINE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 28,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 3,
+        "unsupported_program_effect": 25
+      },
+      "program_manifest_sha256": "02f6100413ef41d654f7fe32a5dbc1302f8d2815bf44c8d8f3d01cb98724b773"
+    },
+    {
+      "run_id": "BOC_P122_R01_04_SINGLE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 57,
+      "repetition": 1,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 31,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 24
+      },
+      "program_manifest_sha256": "6823e89ef1b3f9de6a63e7ff5f4954352d0b7eb1179c300eb164c5787b433906"
+    },
+    {
+      "run_id": "BOC_P122_R02_01_INLINE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 17,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 1,
+        "unsupported_program_effect": 16
+      },
+      "program_manifest_sha256": "ad0849dd2f4697f7da5cbe6eb5448bdcd0f3a8562988dc6821916cb43a4f15cc"
+    },
+    {
+      "run_id": "BOC_P122_R02_01_SINGLE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 19,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "unsupported_program_effect": 19
+      },
+      "program_manifest_sha256": "d36db6d64db86762623bd4a436d78f2d4f63d57c1217afa22ec7e4293cdbaeec"
+    },
+    {
+      "run_id": "BOC_P122_R02_02_SINGLE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 21,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 1,
+        "unsupported_program_effect": 20
+      },
+      "program_manifest_sha256": "3269d795ad091def312d695c1a6f37b2511ce068684270fb5016bbbd204471ac"
+    },
+    {
+      "run_id": "BOC_P122_R02_02_INLINE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 21,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "unsupported_program_effect": 21
+      },
+      "program_manifest_sha256": "64f3c06181186ceeef81fc9c35526f778be96ecd2bccdae7848a9ed92b91e11d"
+    },
+    {
+      "run_id": "BOC_P122_R02_03_INLINE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 10,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 10
+      },
+      "program_manifest_sha256": "885abfd429762ee003d8453a928ff8c680f0c21e269492b014bf8d426f5bb881"
+    },
+    {
+      "run_id": "BOC_P122_R02_03_SINGLE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 10,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 10
+      },
+      "program_manifest_sha256": "0f1035441e264fffb6343d30fe5bc3934cda6400402b27cb2b685405c2484365"
+    },
+    {
+      "run_id": "BOC_P122_R02_04_SINGLE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 10,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 1
+      },
+      "program_manifest_sha256": "294e97771f4a72ba0331934a4cf809f16da8f1ce8480feb42bbbe648b5b01af2"
+    },
+    {
+      "run_id": "BOC_P122_R02_04_INLINE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 157,
+      "repetition": 2,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 10,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 1
+      },
+      "program_manifest_sha256": "2dce0df909d2854cc4a137e756e650b9ce7f3dfa2b2c984b0f51bd9991499f7f"
+    },
+    {
+      "run_id": "BOC_P122_R03_01_SINGLE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 14,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 12,
+        "unsupported_program_effect": 2
+      },
+      "program_manifest_sha256": "a1aa5c1cdb438214a2bf8b6cdac34c0eeeea56a68336aa5495fb0fc87f43a256"
+    },
+    {
+      "run_id": "BOC_P122_R03_01_INLINE_CHECKPOINT",
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 15,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 12,
+        "unsupported_program_effect": 3
+      },
+      "program_manifest_sha256": "79f234caadb6b45e3ae0daa3fcf49393972952ef6cd8cd67a638923ce24871de"
+    },
+    {
+      "run_id": "BOC_P122_R03_02_INLINE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 26,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 26
+      },
+      "program_manifest_sha256": "92b32a3fe7ce73a31ddad285a768c0a815ea84bb2263b6f183e056fa5de311f7"
+    },
+    {
+      "run_id": "BOC_P122_R03_02_SINGLE_CHECKPOINT",
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 26,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 26
+      },
+      "program_manifest_sha256": "5a7ce7b30d1bc6abb1b55ec7f812115bbffa6309163d34684c06a24ddb5d3397"
+    },
+    {
+      "run_id": "BOC_P122_R03_03_SINGLE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 11,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 11
+      },
+      "program_manifest_sha256": "35119d4c959f1c9f269d3b5af839e572312b84a21da16a9728dcc96df3bcffcc"
+    },
+    {
+      "run_id": "BOC_P122_R03_03_INLINE_CHECKPOINT",
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 11,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 11
+      },
+      "program_manifest_sha256": "0a73490d616f65c41aa5c9130a83a8e2e9d39c7921a098d66ef63c2abf87977c"
+    },
+    {
+      "run_id": "BOC_P122_R03_04_INLINE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "programs": 22,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 9,
+        "unsupported_program_effect": 13
+      },
+      "program_manifest_sha256": "cc5bba391a7ce3d95df519c29f098fec79e26a664ce7f804d43e6f6beef376c9"
+    },
+    {
+      "run_id": "BOC_P122_R03_04_SINGLE_CHECKPOINT",
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "model_seed": 257,
+      "repetition": 3,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 17
+      },
+      "program_manifest_sha256": "d7597fb4377f5163e2bd6c4a9b45766e3132d211413cce8e9d4e27b722df1753"
+    }
+  ],
+  "saved_code_executions": 0,
+  "runtime_value_guard_executions": 0,
+  "model_calls": 0,
+  "environment_API_requests": 0,
+  "tokenizer_calls": 0,
+  "evaluator_calls": 0,
+  "P123_reads": 0,
+  "unseen_scenario_reads": 0,
+  "P125_conditions_changed": false,
+  "static_eligible_is_not_proof_of_partial_hit_or_savings": true,
+  "total": {
+    "runs": 24,
+    "programs": 432,
+    "static_eligible_programs": 4,
+    "static_candidate_sites": 4,
+    "static_fallback_reasons": {
+      "no_supported_loop": 262,
+      "unsupported_program_effect": 166
+    }
+  },
+  "by_task": [
+    {
+      "known_task_slot": 1,
+      "task_id_sha256": "abc7887647b99a905011cb6a0384d9b5f100ac0c19b3af2da4b62b1294989bc3",
+      "runs": 6,
+      "programs": 97,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 53,
+        "unsupported_program_effect": 44
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "task_id_sha256": "3dd1552a041fc2a6401a6fae7a82eaea111ed94ffa85bfe8a48d741d56c9e21f",
+      "runs": 6,
+      "programs": 142,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 101,
+        "unsupported_program_effect": 41
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "task_id_sha256": "d7dee2632fc7e6e1885943b68eca2ec16f1097488983eea47045bca586aff05f",
+      "runs": 6,
+      "programs": 68,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 68
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "task_id_sha256": "ea980c2b3fe30c2479b7eeec44e1abfba374a3b34b0811d567fe70de3ee51086",
+      "runs": 6,
+      "programs": 125,
+      "static_eligible_programs": 4,
+      "static_candidate_sites": 4,
+      "static_fallback_reasons": {
+        "no_supported_loop": 40,
+        "unsupported_program_effect": 81
+      }
+    }
+  ],
+  "by_seed": [
+    {
+      "model_seed": 57,
+      "runs": 8,
+      "programs": 165,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 112,
+        "unsupported_program_effect": 53
+      }
+    },
+    {
+      "model_seed": 157,
+      "runs": 8,
+      "programs": 118,
+      "static_eligible_programs": 4,
+      "static_candidate_sites": 4,
+      "static_fallback_reasons": {
+        "no_supported_loop": 36,
+        "unsupported_program_effect": 78
+      }
+    },
+    {
+      "model_seed": 257,
+      "runs": 8,
+      "programs": 149,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 114,
+        "unsupported_program_effect": 35
+      }
+    }
+  ],
+  "by_legacy_policy": [
+    {
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 12,
+      "programs": 213,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 130,
+        "unsupported_program_effect": 81
+      }
+    },
+    {
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 12,
+      "programs": 219,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 132,
+        "unsupported_program_effect": 85
+      }
+    }
+  ],
+  "by_task_seed_policy": [
+    {
+      "known_task_slot": 1,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 16,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 14,
+        "unsupported_program_effect": 2
+      }
+    },
+    {
+      "known_task_slot": 1,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 16,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 14,
+        "unsupported_program_effect": 2
+      }
+    },
+    {
+      "known_task_slot": 1,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 17,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 1,
+        "unsupported_program_effect": 16
+      }
+    },
+    {
+      "known_task_slot": 1,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 19,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "unsupported_program_effect": 19
+      }
+    },
+    {
+      "known_task_slot": 1,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 15,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 12,
+        "unsupported_program_effect": 3
+      }
+    },
+    {
+      "known_task_slot": 1,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 14,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 12,
+        "unsupported_program_effect": 2
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 24
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 24
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 21,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "unsupported_program_effect": 21
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 21,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 1,
+        "unsupported_program_effect": 20
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 26,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 26
+      }
+    },
+    {
+      "known_task_slot": 2,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 26,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 26
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 13,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 13
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 13,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 13
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 10,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 10
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 10,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 10
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 11,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 11
+      }
+    },
+    {
+      "known_task_slot": 3,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 11,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 11
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 28,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 3,
+        "unsupported_program_effect": 25
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 57,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 31,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 24
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 10,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 1
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 157,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 10,
+      "static_eligible_programs": 2,
+      "static_candidate_sites": 2,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 1
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "inline_checkpoint",
+      "runs": 1,
+      "programs": 22,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 9,
+        "unsupported_program_effect": 13
+      }
+    },
+    {
+      "known_task_slot": 4,
+      "model_seed": 257,
+      "legacy_checkpoint_policy": "single_checkpoint",
+      "runs": 1,
+      "programs": 24,
+      "static_eligible_programs": 0,
+      "static_candidate_sites": 0,
+      "static_fallback_reasons": {
+        "no_supported_loop": 7,
+        "unsupported_program_effect": 17
+      }
+    }
+  ],
+  "wall_seconds": 0.266640790970996,
+  "program_manifest_sha256": "50714bbf4617739c091eb646bd430bc0ba66c59663df695d2c08483c3400d4a9",
+  "hashed_programs": 432
+}

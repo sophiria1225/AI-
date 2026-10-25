@@ -1,4 +1,4 @@
-# 再開の入口：P123閉鎖、P125準備中（2026-10-26 08:16 JST）
+# 再開の入口：P123閉鎖、P125計画固定済み（2026-10-26）
 
 P123は全12条件を終了し、3方式とも既知4課題で4/4成功、使用量不明0、監査エラー0。総logical入力＋出力tokenは単発893,529、別呼出し反復785,656、同時反復836,922。別呼出し反復は単発より12.07%少ない。同時反復は別呼出し反復より6.53%多いため、事前の採用判定はfalseを保持する。
 
@@ -7,7 +7,7 @@ P123は全12条件を終了し、3方式とも既知4課題で4/4成功、使用
 ## 次に動かすもの
 
 - P125準備木：`/Users/tp26013/AI-/.runtime/worktrees/p125-projection-online`、branch `research/p125-projection-online-20261026`、draft PR517。
-- P125はモデル未開始、plan作成前。P123結果公開後にmainをmergeして `scripts/prepare_whole_task_projection.py --storage-root /Users/tp26013/AI-` を一度実行する。旧source hash、P124全1095implementation、P123閉鎖12件を確認する。
+- P125はモデル未開始、plan固定済み。`configs/P125_whole_task_projection_v01.json`は1,125 sourcesとP123/P124閉鎖結果を束縛。prepareは既に一度成功しており再実行しない。
 - 最終plan/headの両CI後に `p125-run` を別作成し、`.runtime/run_close_p125_once_20261026.py --expected-head <固定head>` を一度だけ実行。pipeline→audit→session→全8資料まで行う。
 - 運用reader：`.runtime/read_projection_study_operational_status.py`。途中の成否・費用で変更しない。8条件の完了を研究完了と扱わず、全件を判断して次の有限比較へ進む。
 
