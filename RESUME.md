@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P114を固定headから開始。初回４要求はP111の各３方式と完全要求・native入力数・予算・モデル設定がすべて一致。既知４課題の通常public_only対照を固定順で実行中。全４条件と所有server閉鎖後に結果を比較する。P111全12条件は過去参照、採用基準未達と不明使用量２を保持。全1,828検査・両workflow・両job成功済み。原稿保留、未見12課題未閲覧、実結果の図は未生成。 [開始記録](materials/20261025_p114_running/README.md)。
+P114は既知４課題の通常public_only対照を実行中。全件成否を読む前にP115の入力差診断を準備した。全４条件の全保存要求を４表示で計数し、表示の省略量と過去P111を参照した全仕事の費用差を区別する。11追加検査を含む全1,839検査成功。P114の途中成否は未閲覧。閉鎖・監査・全記録の指紋固定・計画の両CI成功後にのみ計数する。新規生成、API、評価０。新規性と一般的品質維持は未確立。原稿保留、未見12課題未閲覧を維持。 [診断の準備](materials/20261025_p115_preparation/README.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P114を固定headから開始。初回４要求はP111の各３方式と完全�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p114-running-reporting-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p115-input-diagnostic-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -65,3 +65,5 @@ P114は[固定計画](configs/P114_whole_task_public_only_history_v01.json)と[�
 P111は全12条件を過去参照としてそのまま使う. 同時実行対照でも未見確認でもない. P76の途中継続とP25のnative toolは同じ初期構成の対照へ読み替えない. 最初の４要求はP111の各３方式の完全要求・計数・予算通知と照合する. 直前や失敗時の推論も送信時に省くが、完全保存履歴と公開情報・状態は保持する. 生成の推論予算は変えない.
 
 同じ完全headのpush・pull_request両workflowと両accounting-and-syntax job成功を確認し、`.runtime/worktrees/p114-run`から一度だけ起動済み. 実行headは`c74c579c1addad248cffcdb9639178b20d5b46b6`. `.runtime/run_close_p114_once.py`がpipeline後にaudit・session・全件reportを一度だけ実行する. 起動を重ねない. 新しい停止指示があればP114の停止印と所有プロセスを扱う. 所有server閉鎖後に全４条件と全12過去条件を整理する. P111の不明使用量２、採用基準未達と先行研究上の限界を維持する. 条件探索、再試行、未見12課題の閲覧をしない. 原稿は保留し、停止指示があれば直ちに従う.
+
+P115はP114閉鎖後の入力差診断を準備した段階. 完全計画のbindとcountは未開始. [固定範囲](docs/experiments/P115_realized_history_inputs.md)を同一headの両CIで確認し、閉鎖した全４条件の全記録をbindingした後、計画の両CIを経て一度だけ計数する. 生の推論や完全要求はGitへ登録しない.
