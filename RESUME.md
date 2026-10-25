@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P118の通常対照比較を固定。既知４課題で全保持と１回要約を各１回、計８条件を準備した。16,384 native token以上の最初の機会に古い完結ターンを要約し、元指示と直近２ターン、Python状態、完全保存履歴を保持する。要約と実行役は80呼出し・450,000 token・1,800仕事秒の同じ枠を使い、不正・打切り・不採用要約の費用も含める。全1,880テスト成功、444ソース固定、生成未開始。現構成での通常要約の比較であり、新提案やPAIR再現ではない。P111〜P117と未知使用量２、P111採用基準未達を保持。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [固定計画](docs/experiments/P118_whole_task_single_checkpoint.md)。
+P118の通常要約対全保持、既知４課題×２方式の８条件を開始した。同じ完全headの両workflow・両job成功、８初回入力の課題内一致、空tool要約経路１入力の計数を確認済み。要約も共有する80呼出し・450,000 token・1,800仕事秒の各上限で計上する。全条件と所有serverが閉じてから成否と総費用を読む。途中の成否で方式を変更しない。SJCの要約出典判定、TypeCompactの型別保持、SelfCompactの適応判断も既存方式として照合した。P111〜P117と未知使用量２、P111採用基準未達を保持。原稿と未見12課題は保留、新規性と一般的品質維持は未確立。 [固定計画](docs/experiments/P118_whole_task_single_checkpoint.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P118の通常対照比較を固定。既知４課題で全保持と１回要約�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/structured-checkpoint-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/checkpoint-prior-review-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -97,3 +97,9 @@ P118は[固定計画](configs/P118_whole_task_single_checkpoint_v01.json)と[準
 P118計画の`predecessor_results_publication`は継承元PR439の歴史的記録. 今回の直前結果公開は`latest_results_publication`のPR491、head `5f4dcb08c4ee348425f04fc77736d763ac3c1e52`、merge `d44d66d44deceb210877fdc4fe86486a341c1a29`. 実行前の閉鎖条件はP114の監査・serverとP117の全件診断を明示的に照合する. 過去PRを今回のCI根拠に使わない.
 
 通常要約が有効でも、それ自体は新規性ではない. P14とは課題・実行経路・更新規則が違い、差を要約頻度だけへ帰属させない. P111の基準未達と未知２件、原稿保留、未見12課題の分離、ユーザー停止優先を維持する.
+
+P118はhead `a22cedb40f99b99fd4a488fdc131e62361fccbbd`、固定実行木`.runtime/worktrees/p118-run`から一度だけ起動済み. PR492の同じheadの両workflow・両job成功後に進めた. mergeは`d908e080d3b77ec8a7159a3439b2a120225295c8`. 直前段落の「未開始」は準備時点の記録であり、現在は実行中. [開始の公開記録](reports/P118_execution_start_20261025.json)を参照する.
+
+`.runtime/run_close_p118_once.py`が有限pipeline終了後にaudit・session・全件資料を一度だけ作る. `.runtime/P118_pipeline_once_start.json`、`P118_pipeline_child_once.json`、`P118_pending_execution_handoff.json`を確認してから扱い、起動を重ねない. 中間は`.runtime/read_p118_operational_status.py`の運用状態だけ読む. `.runtime/P118_closure_once_end.json`で全閉鎖を確認後、`.runtime/collect_p118_closed_once.py --expected-head a22cedb40f99b99fd4a488fdc131e62361fccbbd`を一度だけ実行する. collectorの開始・終了印も確認し、失敗時は自動再試行しない. ユーザー停止には直ちに停止印と所有プロセスで対応する.
+
+[要約の出典判定と型別保持の原典照合](docs/checkpoint_source_and_type_prior_scope_20261025.md)を追加した. この調査でP118の固定条件や実行ソースを変更していない. 単純な要約選別や型別保持を新手法の中核へ読み替えない.

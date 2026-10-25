@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-10-25T02:03:33.324624+00:00",
+  "preparation_merge": {
+    "pr": 492,
+    "head": "a22cedb40f99b99fd4a488fdc131e62361fccbbd",
+    "merge_commit": "d908e080d3b77ec8a7159a3439b2a120225295c8",
+    "merged_at": "2026-10-25T01:58:58Z",
+    "push_workflow": 40152635498,
+    "push_job": 121047189040,
+    "PR_workflow": 40152644488,
+    "PR_job": 121047213931,
+    "both_workflows_and_jobs_success": true
+  },
+  "fixed_run": ".runtime/worktrees/p118-run",
+  "pipeline_start": {
+    "started_at": "2026-10-25T01:58:50.894584+00:00",
+    "source_head": "a22cedb40f99b99fd4a488fdc131e62361fccbbd",
+    "plan_sha256": "f7a9918ffce5029e131b09a2d1e0d5595a88b434e8d5e8e5f9fbb462461387ca",
+    "wrapper_sha256": "bb131f2a1bff6e130d216640adaa875255dee17865e21a8dfc616e4fcbca3dee",
+    "wrapper_pid": 49608,
+    "ci": [
+      {
+        "id": 40152644488,
+        "head_sha": "a22cedb40f99b99fd4a488fdc131e62361fccbbd",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 121047213931
+      },
+      {
+        "id": 40152635498,
+        "head_sha": "a22cedb40f99b99fd4a488fdc131e62361fccbbd",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "successful_job_id": 121047189040
+      }
+    ],
+    "original_P111_gate_and_unknown_usage_unchanged": true
+  },
+  "plan_sha256": "f7a9918ffce5029e131b09a2d1e0d5595a88b434e8d5e8e5f9fbb462461387ca",
+  "initial_checks_sha256": "498105d1173155dddefe77b89517d205804555799eb4d665eac44f846bf7ff46",
+  "activation_sha256": "795faffb39721edcb9c1fff9023d5f618dd962afae3190e314b4210b90de5b79",
+  "all_eight_initial_inputs_matched_within_task": true,
+  "input_count_requests": 8,
+  "summary_transport_input_count_requests": 1,
+  "failed_input_count_requests": 0,
+  "preflight_model_generations": 0,
+  "preflight_API_requests": 0,
+  "preflight_evaluations": 0,
+  "initial_input_tokens": [
+    {
+      "task_id": "34d9492_1",
+      "full": 3115,
+      "single_checkpoint": 3115
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "full": 3104,
+      "single_checkpoint": 3104
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "full": 3077,
+      "single_checkpoint": 3077
+    },
+    {
+      "task_id": "6104387_1",
+      "full": 3123,
+      "single_checkpoint": 3123
+    }
+  ],
+  "summary_transport_input_tokens": 371,
+  "preflight_wall_seconds": 0.08659533300669864,
+  "operational_stage": "batch",
+  "planned_conditions": 8,
+  "intermediate_outcomes_or_summary_text_read": false,
+  "conditions_changed_after_start": false,
+  "manuscript_changed": false,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false
+}
