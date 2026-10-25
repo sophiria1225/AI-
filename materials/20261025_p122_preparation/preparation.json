@@ -1,0 +1,203 @@
+{
+  "created_at": "2026-10-25T09:41:27.941006+00:00",
+  "phase": "P122",
+  "status": "prepared_waiting_exact_head_CI",
+  "planned_conditions": 24,
+  "known_tasks": 4,
+  "repetitions": 3,
+  "model_seed_bases": [
+    57,
+    157,
+    257
+  ],
+  "world_seed": 42,
+  "new_tests_passed": 15,
+  "all_tests_passed": 1998,
+  "test_wall_seconds": 13.411,
+  "test_log_sha256": "ed4195f51fbe2a6a1db59e42a2ad446c1ebe7fc7383e0ebc2074bac9b1f02a56",
+  "syntax_check_passed": true,
+  "fixed_plan_sources": 520,
+  "frozen_files_at_preflight": 1259,
+  "plan_sha256": "d0632b73d9388d40565ae9d75f5c3f3994ca0f427b270e51052fb6dced7b2892",
+  "initial_unit_test_failure": "Standalone test module missed scripts import path; fixed before data processing. Seven synthetic worker tests had passed; corrected targeted suite passed all15.",
+  "baseline_worker_configuration_equivalence_checked_for_all_24_slots": true,
+  "actual_seed_propagation_and_stop_usage_guards_tested_with_synthetic_I_O": true,
+  "model_generations_started": false,
+  "additional_API_requests": 0,
+  "additional_tokenizer_counts": 0,
+  "reserved_scenarios_read": 0,
+  "prior_P120_pooled_into_primary_analysis": false,
+  "novel_method_claim": false,
+  "statistical_significance_claim": false,
+  "general_quality_preservation_claim": false,
+  "schedule": [
+    {
+      "run_id": "BOC_P122_R01_01_SINGLE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_01_INLINE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_02_INLINE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_02_SINGLE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_03_SINGLE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_03_INLINE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_04_INLINE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R01_04_SINGLE_CHECKPOINT",
+      "repetition": 1,
+      "model_seed": 57,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_01_INLINE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_01_SINGLE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_02_SINGLE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_02_INLINE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_03_INLINE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_03_SINGLE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_04_SINGLE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R02_04_INLINE_CHECKPOINT",
+      "repetition": 2,
+      "model_seed": 157,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_01_SINGLE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_01_INLINE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "34d9492_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_02_INLINE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_02_SINGLE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "3c13f5a_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_03_SINGLE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "single_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_03_INLINE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "60d0b5b_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_04_INLINE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "inline_checkpoint"
+    },
+    {
+      "run_id": "BOC_P122_R03_04_SINGLE_CHECKPOINT",
+      "repetition": 3,
+      "model_seed": 257,
+      "task_id": "6104387_1",
+      "checkpoint_policy": "single_checkpoint"
+    }
+  ]
+}
