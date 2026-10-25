@@ -46,7 +46,7 @@ python3.12 scripts/probe_automatic_projection_replay.py \
   --prepare-only
 ```
 
-準備時に public schema provenance、10 programs の順序、原 input/result/wire/events/spans と現 implementation hashes を確認する。実行 repo と指定 repo の resolve 一致を要求し、scripts / tests 内の全 Python source、固定 container config、この replay 仕様書を manifest に束縛する。実行時も全 hash を再照合し、終了時に implementation hash が変わっていれば不成立とする。同じ引数から `--prepare-only` を除き、新規 private `--output` directory を指定すると最大 20 programs の replay に進む。既存 output / manifest を上書きしない。public AppWorld serializer の固定 hash も実行前に照合する。
+準備時に、保存された全 10 input の `api_schemas` 各項目と現 public schema の完全一致、10 programs の順序、原 input/result/wire/events/spans と現 implementation hashes を確認する。元 run にない provenance ファイルは要求しない。現 schema ファイル hash は manifest に束縛する。source_identity / comparison_plan / plan / summary も束縛し、元 run の終了時刻、cleanup 完了、container 除去、bridge 正常終了、未知作用なしを確認する。実行 repo と指定 repo の resolve 一致を要求し、scripts / tests 内の全 Python source、固定 container config、この replay 仕様書を manifest に束縛する。実行時も全 hash を再照合し、終了時に implementation hash が変わっていれば不成立とする。同じ引数から `--prepare-only` を除き、新規 private `--output` directory を指定すると最大 20 programs の replay に進む。既存 output / manifest を上書きしない。public AppWorld serializer の固定 hash も実行前に照合する。
 
 最小検査は `test_automatic_projection_replay.py`。合成 host controls と trusted snapshot を検査し、保存プログラムや Docker は実行しない。対応する compiler / runtime の検査も実行担当が source 固定前に確認する。
 

@@ -331,12 +331,15 @@ class AutomaticProjectionProgram:
         self.execution_scope, self.verified_contract = execution_scope, verified_contract
         self.host = None
 
+    def make_channel(self, channel):
+        return ProjectionApiChannel(channel, self.budget)
+
     def __call__(self, source, observations, channel, *, storage_root, record_dir,
                  timeout=90, on_record=lambda row: None):
         began = time.monotonic()
         plan = compiler.plan_projection(source)
         before = self.budget.snapshot()
-        wrapped = ProjectionApiChannel(channel, self.budget)
+        wrapped = self.make_channel(channel)
         if self.host is None:
             self.host = self.host_class(wrapped, policy=self.policy,
                 execution_scope=self.execution_scope, verified_contract=self.verified_contract)
