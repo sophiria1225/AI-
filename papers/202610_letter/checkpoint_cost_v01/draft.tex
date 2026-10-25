@@ -1,0 +1,33 @@
+\documentclass[uplatex,a4paper,twocolumn,10pt]{jsarticle}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath}
+\usepackage{url}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9}
+\title{状態保持型LLMエージェントにおける\newline 情報保持と実行制御の評価}
+\author{検討用原稿・著者情報未設定}
+\date{}
+\begin{document}
+\raggedbottom
+\maketitle
+\noindent\textbf{あらまし案}\quad
+履歴要約を既知４課題で比較した. 同時要約は写真で別呼出し要約より総tokenを7.50\%減らし成功したが，CSVは未達だった. 全24実行と974入力の計数から，入力短縮と作成費用，最終成果の関係を調べた.
+
+\noindent\textbf{キーワード}\quad LLMエージェント，ハーネスエンジニアリング，情報保持，実行制御，費用評価
+
+\input{papers/202610_letter/checkpoint_cost_v01/static_body}
+\input{papers/202610_letter/checkpoint_cost_v01/closed_results}
+\input{papers/202610_letter/checkpoint_cost_v01/input_diagnosis}
+\input{papers/202610_letter/checkpoint_cost_v01/limitations}
+\input{papers/202610_letter/checkpoint_cost_v01/conclusion}
+\input{papers/202610_letter/checkpoint_cost_v01/references}
+
+\clearpage
+\onecolumn
+\noindent\textbf{Title}\quad Evaluating Information Retention and Execution Control in Stateful LLM Agents
+
+\noindent\textbf{Authors}\quad 未設定
+
+\noindent\textbf{Keywords}\quad LLM agents, harness engineering, information retention, execution control, cost evaluation
+
+\noindent\textbf{Summary draft}\quad We compare checkpoint policies across four known tasks. Required inline summaries reduced total tokens by 7.50\% on the photo task relative to separate summaries, while preserving success, but failed on CSV export. An analysis of 24 runs and 974 inputs separates input reduction, summary cost, and task outcomes.
+\end{document}

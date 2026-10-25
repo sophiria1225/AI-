@@ -1,0 +1,228 @@
+{
+  "created_at": "2026-10-25T08:01:53.726368+00:00",
+  "source_sha256": {
+    "reports/P121_checkpoint_inputs.json": "59a434d8d95a95cf022179d0bf5294d267a50b53e12dbe352afcb66d90106c74",
+    "configs/P121_checkpoint_inputs_v01.json": "d26dde0f823843fb638daf045355a7b1ab298ca9e492759042d4544138899731",
+    "reports/P118_comparison.json": "25d37fd0d64441b92134a769d13e66298037e53fcb092acbc570c8edeb8a1f77",
+    "reports/P118_server_session.json": "e715c3408f7da3758fad25f8fc1ec24bbe27e9423aeca7329639327c0c75d0f4",
+    "reports/P119_comparison.json": "b6fa3dda80c953752df919981f30e329faeafd3fd86c5c9d285bfaab11227f70",
+    "reports/P119_server_session.json": "29070337ed0a1231424aba8b84142095fd0538fc7372a5fd9331bceab36c7690",
+    "reports/P120_comparison.json": "fce22de04744767b42d77cd36f3c4337e049fac7e699e979c104d6c7360224d7",
+    "reports/P120_server_session.json": "5cd2fba50228dae5553111aa2571f6fac091e893979bbcb4188a600f71d2aa49"
+  },
+  "groups": [
+    {
+      "source_phase": "P118",
+      "policies": [
+        "full",
+        "single_checkpoint"
+      ],
+      "original_gate_met": false,
+      "arms": {
+        "full": {
+          "successes": 3,
+          "known_total_tokens": 807463,
+          "unknown_usage_calls": 1,
+          "model_calls": 74,
+          "API_requests": 190,
+          "installed_conditions": 0,
+          "common_success_known_tokens": 448825
+        },
+        "single_checkpoint": {
+          "successes": 4,
+          "known_total_tokens": 893529,
+          "unknown_usage_calls": 0,
+          "model_calls": 86,
+          "API_requests": 217,
+          "installed_conditions": 2,
+          "common_success_known_tokens": 453068
+        }
+      },
+      "exact_whole_task_difference": null,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "success_losses": []
+    },
+    {
+      "source_phase": "P119",
+      "policies": [
+        "single_checkpoint",
+        "inline_checkpoint"
+      ],
+      "original_gate_met": false,
+      "arms": {
+        "single_checkpoint": {
+          "successes": 4,
+          "known_total_tokens": 893529,
+          "unknown_usage_calls": 0,
+          "model_calls": 86,
+          "API_requests": 217,
+          "installed_conditions": 2,
+          "common_success_known_tokens": 453068
+        },
+        "inline_checkpoint": {
+          "successes": 3,
+          "known_total_tokens": 777092,
+          "unknown_usage_calls": 0,
+          "model_calls": 74,
+          "API_requests": 217,
+          "installed_conditions": 0,
+          "common_success_known_tokens": 449398
+        }
+      },
+      "exact_whole_task_difference": -116437,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "success_losses": [
+        "6104387_1"
+      ]
+    },
+    {
+      "source_phase": "P120",
+      "policies": [
+        "single_checkpoint",
+        "inline_checkpoint"
+      ],
+      "original_gate_met": false,
+      "arms": {
+        "single_checkpoint": {
+          "successes": 4,
+          "known_total_tokens": 893529,
+          "unknown_usage_calls": 0,
+          "model_calls": 86,
+          "API_requests": 217,
+          "installed_conditions": 2,
+          "common_success_known_tokens": 453068
+        },
+        "inline_checkpoint": {
+          "successes": 3,
+          "known_total_tokens": 880644,
+          "unknown_usage_calls": 0,
+          "model_calls": 81,
+          "API_requests": 205,
+          "installed_conditions": 2,
+          "common_success_known_tokens": 442571
+        }
+      },
+      "exact_whole_task_difference": -12885,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "success_losses": [
+        "6104387_1"
+      ]
+    }
+  ],
+  "installed_conditions": [
+    {
+      "source_phase": "P118",
+      "task": "写真",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 15434,
+      "C": 18455,
+      "D_minus_C": -3021,
+      "requests_after_installation": 2,
+      "hypothetical_task_budget_overflow": false,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P118",
+      "task": "CSV",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 200507,
+      "C": 21419,
+      "D_minus_C": 179088,
+      "requests_after_installation": 19,
+      "hypothetical_task_budget_overflow": true,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P119",
+      "task": "写真",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 15434,
+      "C": 18455,
+      "D_minus_C": -3021,
+      "requests_after_installation": 2,
+      "hypothetical_task_budget_overflow": false,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P119",
+      "task": "CSV",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 200507,
+      "C": 21419,
+      "D_minus_C": 179088,
+      "requests_after_installation": 19,
+      "hypothetical_task_budget_overflow": true,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P120",
+      "task": "写真",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 15434,
+      "C": 18455,
+      "D_minus_C": -3021,
+      "requests_after_installation": 2,
+      "hypothetical_task_budget_overflow": false,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P120",
+      "task": "写真",
+      "policy": "inline_checkpoint",
+      "actual_success": true,
+      "D": 8023,
+      "C": 0,
+      "D_minus_C": null,
+      "requests_after_installation": 1,
+      "hypothetical_task_budget_overflow": false,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P120",
+      "task": "CSV",
+      "policy": "single_checkpoint",
+      "actual_success": true,
+      "D": 200507,
+      "C": 21419,
+      "D_minus_C": 179088,
+      "requests_after_installation": 19,
+      "hypothetical_task_budget_overflow": true,
+      "whole_task_savings_claim": false
+    },
+    {
+      "source_phase": "P120",
+      "task": "CSV",
+      "policy": "inline_checkpoint",
+      "actual_success": false,
+      "D": 163335,
+      "C": 0,
+      "D_minus_C": null,
+      "requests_after_installation": 15,
+      "hypothetical_task_budget_overflow": true,
+      "whole_task_savings_claim": false
+    }
+  ],
+  "source_conditions": 24,
+  "unique_known_tasks": 4,
+  "statistical_equivalence_claim": false,
+  "causal_effect_estimate": null,
+  "new_method_claim": false,
+  "builder_sha256": "567f1c5fceb3001001e825f7e67f47d7f8fe4b9f7fb8fad9f8c3241e544af781"
+}
