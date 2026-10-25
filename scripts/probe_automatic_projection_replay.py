@@ -321,11 +321,34 @@ def prepare_manifest(storage, repo, data):
     require_empty_observations(selected)
     names = [f'call_{i:03d}_01' for i in range(1, PROGRAM_COUNT + 1)]
     require([p['name'] for p in selected] == names, 'fixed_prefix_inventory_differs')
-    files = {name: file_sha(trial / name) for name in ('events.json', 'spans.json', 'summary.json', 'provenance.json')}
+    summary = read(trial / 'summary.json')
+    identity = read(trial / 'source_identity.json')
+    comparison = read(trial / 'comparison_plan.json')
+    require(summary.get('phase') == 'P122' and summary.get('run_id') == FIXED_RUN
+            and summary.get('checkpoint_policy') == 'single_checkpoint'
+            and summary.get('cleanup_confirmed') is True and bool(summary.get('finished_at'))
+            and summary.get('setup', {}).get('status') == 'initial_public_state_matched'
+            and summary.get('stop_reason') in ('api_request_limit', 'agent_declared_complete',
+                'model_call_limit', 'token_limit', 'wall_limit', 'wall_limit_during_model_call')
+            and summary.get('unknown_effect_requests') == 0
+            and summary.get('python_session', {}).get('status') == 'closed'
+            and summary.get('python_session', {}).get('container_removed') is True
+            and summary.get('bridge_cleanup') == {'process_stopped': True, 'graceful': True,
+                                                  'transport_failed': False}
+            and comparison.get('experiment') == 'P122'
+            and identity.get('task_id') == summary.get('task_id')
+            and identity.get('known_public_task_sha256') == summary.get('initial_public_task_sha256'),
+            'fixed_run_must_be_closed_with_matching_source_identity')
+    schemas = {tool['function']['name']: tool['function'] for tool in tools}
+    for program in selected:
+        saved = program['source'].get('api_schemas')
+        require(type(saved) is dict and all(name in schemas and canonical(schema) == canonical(schemas[name])
+                                           for name, schema in saved.items()),
+                'saved_public_schema_map_differs')
+    files = {name: file_sha(trial / name) for name in ('events.json', 'spans.json', 'summary.json',
+              'source_identity.json', 'comparison_plan.json', 'plan.json')}
     for program in selected:
         files.update(program['source_sha256'])
-    provenance = read(trial / 'provenance.json')
-    require(provenance['public_schema_hashes'] == schema_hashes, 'public_schema_provenance_differs')
     return {'phase': 'P124', 'kind': 'fixed_saved_response_prefix_replay', 'run_id': FIXED_RUN,
             'programs': names, 'policies': list(POLICIES), 'total_generated_programs': 20,
             'total_seconds': TOTAL_SECONDS, 'program_seconds': PROGRAM_SECONDS,

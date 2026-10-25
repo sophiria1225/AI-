@@ -1,10 +1,14 @@
 """Unit validation only: trusted host controls, no saved-code or Docker launch."""
 from copy import deepcopy
 from pathlib import Path
+import json
+import tempfile
+from unittest.mock import patch
 import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+import probe_automatic_projection_replay as replay
 from automatic_field_projection import plan_projection
 from automatic_projection_runtime import ProjectionWireClient, ProjectionApiChannel
 from field_read_contract import CONTRACT_ID, FIELDS
@@ -58,6 +62,53 @@ def setup(policy):
 
 
 class ProjectionReplayTests(unittest.TestCase):
+    def test_prepare_uses_saved_schema_maps_and_closed_summary_without_provenance(self):
+        with tempfile.TemporaryDirectory() as temp:
+            base = Path(temp)
+            repo, storage, data = base / 'repo', base / 'storage', base / 'data'
+            trial = storage / 'records/context_pilot' / replay.FIXED_RUN
+            trial.mkdir(parents=True)
+            for relative in ('scripts/probe.py', 'tests/test_probe.py',
+                             'configs/python_export_image_v01.json',
+                             'docs/experiments/P124_projection_replay.md'):
+                path = repo / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('synthetic fixture')
+            schema = {'name': 'spotify__show_song', 'parameters': {'type': 'object',
+                       'properties': {'song_id': {}}}}
+            tools = [{'type': 'function', 'function': schema}]
+            summary = {'phase': 'P122', 'run_id': replay.FIXED_RUN,
+                'checkpoint_policy': 'single_checkpoint', 'cleanup_confirmed': True,
+                'finished_at': 'synthetic-closed', 'setup': {'status': 'initial_public_state_matched'},
+                'stop_reason': 'api_request_limit', 'unknown_effect_requests': 0,
+                'python_session': {'status': 'closed', 'container_removed': True},
+                'bridge_cleanup': {'process_stopped': True, 'graceful': True, 'transport_failed': False},
+                'task_id': 'synthetic-task', 'initial_public_task_sha256': 'fixture-hash'}
+            records = {'summary.json': summary, 'events.json': [], 'spans.json': {},
+                'source_identity.json': {'task_id': 'synthetic-task', 'known_public_task_sha256': 'fixture-hash'},
+                'comparison_plan.json': {'experiment': 'P122'}, 'plan.json': {}}
+            for name, value in records.items():
+                (trial / name).write_text(json.dumps(value))
+            programs = [{'name': 'call_' + str(i).zfill(3) + '_01',
+                'source': {'observations': [], 'api_schemas': {'spotify__show_song': deepcopy(schema)}},
+                'source_sha256': {}} for i in range(1, 11)]
+            with patch.object(replay, 'ROOT', repo), \
+                 patch.object(replay, 'SOURCES', ('configs/python_export_image_v01.json',)), \
+                 patch.object(replay, 'load_public_tools', return_value=(tools, {'schema.json': 'fixed'}, [])), \
+                 patch.object(replay, 'load_programs', return_value=programs):
+                manifest = replay.prepare_manifest(storage, repo, data)
+                self.assertNotIn('provenance.json', manifest['private_files'])
+                self.assertIn('source_identity.json', manifest['private_files'])
+                self.assertEqual(manifest['schema_files'], {'schema.json': 'fixed'})
+                programs[-1]['source']['api_schemas']['spotify__show_song']['parameters'] = {}
+                with self.assertRaisesRegex(ValueError, 'schema_map_differs'):
+                    replay.prepare_manifest(storage, repo, data)
+                programs[-1]['source']['api_schemas']['spotify__show_song'] = deepcopy(schema)
+                summary['cleanup_confirmed'] = False
+                (trial / 'summary.json').write_text(json.dumps(summary))
+                with self.assertRaisesRegex(ValueError, 'must_be_closed'):
+                    replay.prepare_manifest(storage, repo, data)
+
     def test_fixed_prefix_cannot_reinject_original_observations(self):
         require_empty_observations([{'source': {'observations': []}} for _ in range(10)])
         for observations in ([{'saved_full_reply': {'extra': True}}], {}, None, ()):
