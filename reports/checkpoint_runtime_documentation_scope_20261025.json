@@ -1,0 +1,56 @@
+{
+  "reviewed_at": "2026-10-25T02:39:22Z",
+  "scope": "Official runtime documentation only; not source-code reproduction or method evaluation",
+  "sources": [
+    {
+      "name": "Docker Agent Budget",
+      "url": "https://docker.github.io/docker-agent/configuration/budget/",
+      "browser_read": true,
+      "local_archive_fetch_status": 200,
+      "local_archive_bytes": 49311,
+      "local_archive_sha256": "2b9348978bebd7aa402845ae558c2a18564af5d7a3be774c98aa0db69d9c36f4",
+      "reviewed_sections": [
+        "A name is one shared pot",
+        "Limits are checked at turn boundaries",
+        "max_tokens here is not the model's max_tokens"
+      ],
+      "findings": [
+        "Compaction calls use the run-wide and named budgets, including dedicated compaction models.",
+        "Limits are checked between turns and may overshoot by an in-flight turn.",
+        "Cumulative token usage is distinguished from context length and per-response output caps."
+      ],
+      "source_code_reproduced": false
+    },
+    {
+      "name": "Yielded Agent Context management",
+      "url": "https://yielded.dev/agent/guide/context-management/",
+      "browser_read": true,
+      "page_last_updated": "2026-10-21",
+      "local_archive_fetch_status": "HTTPError",
+      "local_archive_sha256": null,
+      "fetch_retried": false,
+      "reviewed_sections": [
+        "Overview",
+        "Choose limits",
+        "Compaction",
+        "Recall application-owned sources",
+        "Limit tool output"
+      ],
+      "findings": [
+        "Retained history, working prompt, and application-owned memory are distinguished.",
+        "Compaction preserves protected instructions and complete tool pairs; summary work consumes the Run budget.",
+        "Retained excerpts and notes are reference material, not trusted instructions."
+      ],
+      "source_code_reproduced": false
+    }
+  ],
+  "interpretation": "Shared budget accounting and retained-history/prompt separation are ordinary infrastructure, not the proposed novel contribution. Documentation-level overlap does not prove all implementation details or future extensions equivalent.",
+  "P118_sources_or_conditions_changed": false,
+  "intermediate_P118_outcomes_read": false,
+  "new_model_calls": 0,
+  "new_API_requests": 0,
+  "new_evaluations": 0,
+  "manuscript_changed": false,
+  "reserved_scenarios_read": 0,
+  "novel_method_claim": false
+}
