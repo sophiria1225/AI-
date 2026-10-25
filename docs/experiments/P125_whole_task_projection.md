@@ -1,6 +1,6 @@
 # P125: 部分応答再利用の全仕事比較
 
-状態: 実装準備中。P124の全20プログラム一致、P123の全12条件の評価・監査・所有server閉鎖を確認し、source/planと同一head CIを固定してから開始する。原稿はユーザーが執筆する。
+状態: P124の全20プログラム一致、P123の全12条件の評価・監査・所有server閉鎖を確認済み。source/planと同一head CIを固定してから開始する。原稿はユーザーが執筆する。
 
 ## 目的と比較条件
 
@@ -39,3 +39,7 @@ receipt表示の普通の短縮だけで勝ったと誤解しないため、同�
 基本的なprogram slicing、query projection、semantic caching、lazy evaluationは先行する。今回の技術対象は、現在の生成codeの需要・既観測API間契約・永続interpreter境界での完全root・後続取得と失敗の費用を組み合わせた限定ハーネス制御である。新しいcache原理や汎用compilerとは記載しない。
 
 [基本技術と8件の先行範囲](../automatic_projection_prior_scope_20261026.md)に加え、[直接近い3件の一次論文比較](../automatic_projection_direct_prior_20261026.md)を保存した。生成Python最適化、自動cache、遅延materialization一般は既存である。通常receiptの段階開示でtoken差が消える可能性も、結果解釈と次比較の論点として残す。
+
+## P123閉鎖後の実行判断
+
+P123（seed57）は3方式とも4/4成功・未知使用量0で、単発893,529、別反復785,656、同時反復836,922 token。別反復が最小だった。P125は結果を見る前に用意したseed157・単発checkpoint共通の8条件を維持し、projectionの追加効果を測る。この比較だけで、P123の別反復という強い通常構成を上回ったとは言わない。P123とはseed・cache・receipt条件も異なるため費用を直接比較・合算しない。全件閉鎖後、実発動と品質/費用を見て、別反復や普通のreceipt段階開示を共通にした次比較が必要かを判断する。
