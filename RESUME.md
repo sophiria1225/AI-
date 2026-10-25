@@ -19,7 +19,7 @@ P116は全16条件・283要求・820 API・614私有ファイルの点検を一�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p116-results-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p117-metadata-observations-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -79,3 +79,5 @@ P116は全16条件・283要求・820 API・614私有ファイルの点検と全�
 全1,849テスト通過. PR488の同一headについてpush workflow40148738864/job121035586259、pull_request workflow40148769750/job121035675149の成功を確認して実施した. mergeは `a6c2bdfc11b7aff0e91030a2fae3a717fa45f6e8`. P115結果のPR487はhead `f03837cc8816c1d4a2d087d87dceb5c14f1e33a5`、merge `030a3fd00b93bafe68b6a6449ab7cc6235798bc8`で閉鎖済み.
 
 [P116所見](docs/P116_findings.md)と[全件資料](materials/20261025_p116_results/README.md)を参照する. 精算の非再入力条件は同一API再取得０だが、大きな観測を繰り返し入力していた. CSVの同一読取再取得と同じ原因へまとめない. 次は観測の内容と出典を全条件で確認し、既存の文書省略・状態保持・通常キャッシュとの差を整理する. 次のモデル実験は未開始. 原稿と未見12課題は保留し、ユーザー停止に直ちに従う.
+
+P117は全263観測と公開API仕様の照合を準備済み. `configs/P117_public_metadata_observations_v01.json`に315私有ファイルとソースを固定した. 新規10件・全1,859テスト通過. 同一head両CI成功後に `.runtime/worktrees/p117-run` で一度だけ処理する. `.runtime/P117_analysis_once_start.json`、`P117_collection_once_end.json`、公開report/failureを確認し、重ねて起動しない. 次のモデル実験は未開始. [計画](docs/experiments/P117_public_metadata_observations.md).
