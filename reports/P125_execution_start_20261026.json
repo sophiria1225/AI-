@@ -1,0 +1,138 @@
+{
+  "phase": "P125_execution_start",
+  "checked_at": "2026-10-25T23:27:56.870812+00:00",
+  "status_at_check": "batch_running",
+  "started_at": "2026-10-25T23:25:13.768400+00:00",
+  "started_at_jst": "2026-10-26T08:25:13.768400+09:00",
+  "pipeline_started_at": "2026-10-25T23:25:16.081367+00:00",
+  "activated_at": "2026-10-25T23:25:41.649845+00:00",
+  "run_source_head": "2c11ceaa65b47b27cd23df8a943ab3d745b94461",
+  "preparation_PR": 517,
+  "preparation_PR_url": "https://github.com/sophiria1225/AI-/pull/517",
+  "main_merge_commit": "f717c9376f546ecadadd7c37ad391eb7ac2c4c2d",
+  "run_worktree": ".runtime/worktrees/p125-run",
+  "preparation_worktree": ".runtime/worktrees/p125-projection-online",
+  "plan_sha256": "ced105be387250c9338deac1f4bda45acb636c47398396e7cc304d46b87c242b",
+  "fixed_plan_source_count": 1125,
+  "activation_source_count_including_plan": 1126,
+  "all_activation_sources_match_fixed_run_tree": true,
+  "ci": [
+    {
+      "id": 40244541945,
+      "head_sha": "2c11ceaa65b47b27cd23df8a943ab3d745b94461",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121323222799
+    },
+    {
+      "id": 40244538429,
+      "head_sha": "2c11ceaa65b47b27cd23df8a943ab3d745b94461",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121323212275
+    }
+  ],
+  "preflight": {
+    "status": "complete",
+    "all_eight_inputs_checked": true,
+    "input_count_requests": 8,
+    "summary_input_count_requests": 1,
+    "failed_input_count_requests": 0,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "reserved_scenarios_read": 0
+  },
+  "all_four_initial_pairs_identical": true,
+  "all_eight_conditions_frozen_before_generation": true,
+  "completed_setup_stages": [
+    {
+      "mode": "preflight",
+      "exit_code": 0,
+      "wall_seconds": 14.364746375009418
+    },
+    {
+      "mode": "activation",
+      "exit_code": 0,
+      "wall_seconds": 0.14935999998124316
+    }
+  ],
+  "server_owned": true,
+  "owned_processes_at_check": {
+    "wrapper": {
+      "pid": 18471,
+      "ppid": 73173,
+      "alive": true,
+      "expected_command_matches": true,
+      "expected_parent_matches": null
+    },
+    "pipeline": {
+      "pid": 18486,
+      "ppid": 18471,
+      "alive": true,
+      "expected_command_matches": true,
+      "expected_parent_matches": true
+    },
+    "server_supervisor": {
+      "pid": 18508,
+      "ppid": 18486,
+      "alive": true,
+      "expected_command_matches": true,
+      "expected_parent_matches": true
+    },
+    "server": {
+      "pid": 18509,
+      "ppid": 18508,
+      "alive": true,
+      "expected_command_matches": true,
+      "expected_parent_matches": true
+    },
+    "batch_stage": {
+      "pid": 19717,
+      "ppid": 18486,
+      "alive": true,
+      "expected_command_matches": true,
+      "expected_parent_matches": true
+    }
+  },
+  "fixed_design": {
+    "model_seed": 157,
+    "world_seed": 42,
+    "max_cells": 8,
+    "max_calls": 80,
+    "max_total_tokens": 450000,
+    "max_wall_seconds": 1800,
+    "max_model_calls": 640,
+    "max_reserved_tokens": 3600000,
+    "max_reserved_environment_api_requests": 800,
+    "max_evaluator_calls": 8,
+    "server_max_lifetime_seconds": 21600,
+    "checkpoint_policy": "single_checkpoint",
+    "automatic_retries": 0
+  },
+  "source_sha256": {
+    ".runtime/P125_pipeline_once_start.json": "0e144ae6378b01079bcaf97bc964c92ace20d6d4f2e36a1b2b8121d9e48c6f21",
+    ".runtime/P125_pipeline_child_once.json": "d48b34a3463ec97410561341a3d5778d6e3ab0c2d720123ef4b363aaa610e9b5",
+    ".runtime/P125_final_CI_20261026.json": "81fa87b5fe14a6b1b21d3d501196dc838d8bfcab133938c7009106e56fd5e529",
+    ".runtime/worktrees/p125-run/reports/P125_initial_checks.json": "be4033f2c97e1341e9dc5601dd319d72281ce87f597d86e231bbefdd7891d510",
+    ".runtime/worktrees/p125-run/reports/P125_activation_v01.json": "a1832ca2ee54a3bebf71ead29589e5c054a43c62c8d0d27a255b3fc292123ca5",
+    ".runtime/worktrees/p125-run/configs/P125_whole_task_projection_v01.json": "ced105be387250c9338deac1f4bda45acb636c47398396e7cc304d46b87c242b",
+    "records/context_pilot/P125_pipeline_v01/status.json": "53a86eb3df0403ee402e73c2f2b491efdb21ac6c45a4231ab689d21cbd197122",
+    "records/context_pilot/P125_pipeline_v01/server_runtime.json": "e6c71c5feda84e78bf2b7c143f5ea2cf7a6750228afc8fc6a18d2d862cec483d",
+    ".runtime/run_close_p125_once_20261026.py": "e92042e5689e27d7c84e2502da3bbc21e117dc92ca527f50d6325d0fa219c7bd",
+    ".runtime/research_ledger_names.json": "062feb5ead5d1552998319c02c637df9a5340d2f62b8816c0b80609dab2abd4f"
+  },
+  "P123_all_twelve_evaluated": true,
+  "P123_original_development_gate": false,
+  "P125_results_final": false,
+  "intermediate_outcomes_or_usage_read": false,
+  "model_messages_or_generated_task_code_read": false,
+  "additional_model_calls": 0,
+  "additional_environment_API_requests": 0,
+  "additional_evaluations": 0,
+  "manuscript_changed": false,
+  "global_ledger_list_changed": false,
+  "global_ledger_count_retained": 177
+}
