@@ -1,62 +1,48 @@
-# 研究と実行の引き継ぎ
+# 再開の入口：2026年10月26日
 
-<!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P122全24枠とserverを閉じて全件確認した. 反復採用基準は未達. 新規性、一般的品質維持、非劣性は未確立. 未知使用量または未完了があるため次の生成は開始せず、全件を保存した. [全件資料と判断](https://github.com/sophiria1225/AI-/blob/main/docs/P122_findings.md).
-<!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
+**まず[詳細な引き継ぎ](docs/handoff_20261026_context_transfer.md)を読む. P122は終了・公開済み、P123は未開始、実験は現在停止している.** ユーザーはコンテキスト移行のため本資料を依頼した. 本作成中に新しいモデル生成、API実行、評価、native入力計数は行っていない.
 
-## 最新の目的と指示
+最終目標は、最終タスクの性能を保ち、要約・制御・失敗・再取得を含む仕事全体の入力＋出力トークンを減らすハーネス制御. 新規性と性能を保った全体削減は未確立. ユーザーの「止めてと言うまで実験を進める」という指示を引き継ぐ. 現在動いていると説明してはいけない.
 
-最終目標は、必要な情報と処理、最終成果の品質を維持し、不要な取得、共有、モデル呼出し、実行、検証を減らすこと. 制御、失敗、再取得を含む全仕事で評価する. 履歴短縮や記録の厳密さ自体を新規性に置き換えない.
+## 停止と結果
 
-ユーザーは停止を指示するまで作業継続を希望している. 停止指示はない. 10月25日にP120/P121で一度区切って原稿を書いた後、「誤差か、特定のパターンだけかを確認して実行を続ける」と指示された. **現在はP122の反復確認を進める.** P120の方法と１条件の予算を固定したまま、同じ設定１組と別seed２組を全４課題で比較する. 過去の区切りはこの新しい反復確認を禁止する指示ではない. [現在の計画](docs/experiments/P122_checkpoint_replication.md).
+P122は10/25 23:22:57 JSTに全24条件を終了. 所有server閉鎖、全件監査、資料作成、回収、PR510での公開まで完了した. 別要約10/12対同時要約9/12成功. 写真の３対は全て両側成功だが、同時−別の差は−10,497、−32,865、+2,349 token. CSVで成功損失があり、seed257の最後の要求はtimeoutで使用量不明.
 
-10月31日までのレター投稿が目標. 著者、所属、著者順は未確認. 教授への送信と学会投稿は行っていない. 過去の原稿保留や実験待機は現在の指示ではない.
+使用量全件既知を求めた自動継続条件により、23:24:38 JSTに `closed_results_need_research_review_no_P123_generation` で終了した. ユーザーの停止指示ではない. P123のconfig、実機事前計数、activation、生成は存在しない. 不明値や古いfalse判定を変更せず、次の独立実験の判断を別に記録する.
 
-## 現在の作業木
+[全件所見](docs/P122_findings.md)／[P122資料](materials/20261025_p122_results/README.md)／[現在の証拠](reports/context_handoff_20261026_snapshot.json).
+
+## 作業木と保存先
 
 | 用途 | 場所 |
 |---|---|
-| 編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p107-prep` |
-| 現在のブランチ | `research/rolling-checkpoint-continuation-20261025` |
-| モデル、AppWorld、私有記録、終了印 | `/Users/tp26013/AI-` |
-| Python | `/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python` |
-| PDFと図の環境 | `/Users/tp26013/AI-/.runtime/reporting-venv/bin/python` |
-| 原稿 | `papers/202610_letter/checkpoint_cost_v01/` |
+| 今回の編集木 | `/Users/tp26013/AI-/.runtime/worktrees/context-handoff-20261026` |
+| branch | `docs/context-handoff-20261026` |
+| モデル・AppWorld・私有記録 | `/Users/tp26013/AI-` |
+| 軽量Python | `/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python` |
+| 図表・PDF Python | `/Users/tp26013/AI-/.runtime/reporting-venv/bin/python` |
+| P122固定実行木 | `.runtime/worktrees/p122-run`、head `5ddbba8c8b4614bc9856202942dc28caf5b204f7` |
+| P122結果 | PR510、merge `4200a464d8aaed187a4361fa7055759b6c5bcbfb` |
+| 旧編集木 | `.runtime/worktrees/p107-prep`、終了済みP122の回収物が未追跡のまま存在 |
+| P123実行木 | `.runtime/worktrees/p123-run`、現在は未作成 |
 
-ストレージ用checkoutと固定実行木の追跡済みファイルを編集しない. `git status`、現在のbranch、確認済みoriginを確認して作業する. 変更先は `sophiria1225/AI-` と専用[Project 1](https://github.com/users/sophiria1225/projects/1)のみ. Projectの全120件を保持し、部分同期の前後も全件から作業ボードを生成する.
+ストレージcheckoutと固定実行木の追跡ファイルを編集しない. 新しい作業は最新mainから別worktreeを作る. 旧編集木の未追跡回収物はPR510公開済みの同一成果物で、消去や再生成は不要. 変更先は `sophiria1225/AI-` と専用Project 1のみ.
 
-## 終了済み処理を再実行しない
+## 次に行うこと
 
-P120の全８条件、所有server、監査、収集、図の生成と目視、全対比較は終了. P121のbinding、全974入力の計数、資料作成、収集も終了. 原稿の生成、全５頁の目視と公開も終了し、PR503はmerge済みである.
+1. AGENTS、本引き継ぎ、実プロセスと開始・終了印、branch・origin・dirty状態を確認する.
+2. P122の24評価、監査エラー０、未知１要求、作用・後始末・server閉鎖の根拠を使い、独立P123の実行判断を新文書へ記録する. 古い自動継続を再起動しない.
+3. [P123の既定仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md)の３方式×４課題、12条件のconfigを作る. `make_plan()`は利用可能だが、既存所見を作り直す`prepare()`は実行しない.
+4. ソースと新判断を固定し、PRの同一完全headでpush・pull_request両workflowと両`accounting-and-syntax` jobの成功を確認する.
+5. 固定実行木と収集先の指紋整合を確認して、準備済みP123 wrapperを一度だけ起動する. 旧collectorは宛先が`p107-prep`固定なので、新編集木との整合を先に解決する.
+6. 実行中は運用状態だけ確認する. 全12枠とserver閉鎖後に全件を監査・資料化し、次の有限な研究判断へ進む. Projectとmaterialsを更新する.
 
-| 処理 | 固定head／公開結果 |
-|---|---|
-| P120モデル比較 | `d2306e6461cf4aaadf739584d724fcdb05247edf`、`p120-run`、[所見](docs/P120_findings.md) |
-| P120資料化 | `665aa195383c192beed8cd4da5c383e8632bfe2f`、`p120-report` |
-| P121 binding | `e89a9bb39c03d951b819cbe3712c2f6825bee1d5`、`p121-bind` |
-| P121計数 | `925b4315e6dc573a6a5f4dd28066ff4e2c764d16`、`p121-run`、[所見](docs/P121_findings.md) |
-| 原稿の公開 | [PR503](https://github.com/sophiria1225/AI-/pull/503)、head `f3a2b63c9ec7c603be26ac8b48d7738400ca6525`、merge `263dad32be21463deaf4467a9efe6b7eb4db0fba` |
+詳しい予算、採否、コマンド、終了後の分岐は[引き継ぎ第7–12節](docs/handoff_20261026_context_transfer.md)と[次の作業](docs/next_actions.md).
 
-私有`.runtime`の `P120_closure_once_end.json`、`P120_collection_wait_once_end.json`、`P121_collection_once_end.json`、`P121_editor_artifacts_once_end.json`、`P121_letter_publication_once_end.json`、`P121_letter_merge_once.json`を参照する. 古いwrapper、watcher、collector、publisherをもう一度起動しない. serverの自然な閉鎖はユーザーによる研究停止指示ではない.
+## 保存を守る
 
-最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在170台帳、1,989指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
+現在の公開指紋は、既存171台帳・2,004指紋に今回の３成果物を加え、172台帳・2,007指紋. 一覧は `.runtime/research_ledger_names.json`. 束縛済みのbytesは保持し、変更が必要なら別版にする. P120/P121/P122、過去の不明要求と失敗、旧原稿を置き換えない. 未見12課題を開かない.
 
-## 主張の範囲
+現在の私有入口は `.runtime/context_handoff_20261026.json`. 公開確認は `.runtime/context_handoff_20261026_publication.json`. 運用readerは `.runtime/read_checkpoint_study_operational_status.py`. `.runtime/P122_to_P123_continuation_status.json`は終了済みの歴史的記録である. 古い「continuation armed」という記述を現在へ適用しない.
 
-写真の7.50%削減は別呼出し要約との１対比較. P120全体は4/4対3/4成功で採用基準未達. 精算と返金は要約が起動せず差０. 成功３課題の小計、入力差D、要約専用呼出しの省略を、全課題の品質維持や要約費用０へ読み替えない.
-
-P118全保持CSVの不明１要求と、P111の不明２要求を保持する. P121で入力を計数できても終端の総使用量は補完しない. 未見12課題の要求文、データ、正解は未閲覧. 既知４課題の順次開発を未見評価とはしない. 通常の同時生成や構造化状態には先行研究があり、新規性は未確立である. [主張と根拠の点検](docs/checkpoint_letter_review_20261025.md).
-
-原稿の本文と文献は４頁、英文要旨１頁. 公式クラス未使用で、著者情報も未設定. 公式クラスの過去の403や検証画面を別経路で回避しない. 教授用459字案は`.`を使い、中黒なし. 古い456字案と旧原稿は保存する.
-
-## 次に進めること
-
-P122はhead `5ddbba8c8b4614bc9856202942dc28caf5b204f7`、専用の `.runtime/worktrees/p122-run` から一度だけ起動済み. 両CIと初回入力確認は終了. `.runtime/run_close_p122_once.py`が全24条件とserver閉鎖後に監査、session計上、全件資料を作る. 開始印 `.runtime/P122_pipeline_once_start.json` と終了印 `P122_closure_once_end.json`を確認し、再起動しない. 運用状態は `.runtime/read_p122_operational_status.py`、引き継ぎは `.runtime/P122_pending_execution_handoff.json`. 中間の成否や費用を読まない. 全件終了後は `.runtime/collect_p122_closed_once.py`で一度だけ資料を回収する. 停止印は `.runtime/P122.stop`. P120/P121の終了済みwrapperを再起動しない. 詳細は[次の作業](docs/next_actions.md).
-
-再要約候補は共有予算付き推論、実課題worker、全件監査、有限driverまで接続済み. 追加26件を含む全2,037テストが成功した. [比較仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md)と[準備資料](materials/20261025_rolling_checkpoint_connection/README.md)を参照する. 実機事前計数とP123生成は未開始で、実行用configも未作成. P122全件閉鎖と結果確認後、閉鎖記録を結び付けた計画を固定し、同一headの両CIと事前計数を通して12条件へ進む. P122実行木に新部品を読み込ませない.
-
-生のプロンプト、私有推論、完全履歴、正解、モデル重み、認証情報をGitへ登録しない. 停止指示が来た場合は従う. [AGENTS](AGENTS.md)／[現在状態](docs/current_status.md).
-
-詳細な経緯は[整理前RESUMEの固定版](https://github.com/sophiria1225/AI-/blob/263dad32be21463deaf4467a9efe6b7eb4db0fba/RESUME.md)へ保存されている. 各時点の「未開始」「次は」「原稿保留」を現在の状態へ適用しない. [10月22日の引き継ぎ](docs/handoff_20261022_account_switch.md)も履歴として保持する.
-
-継続処理の稼働状態は `.runtime/P122_to_P123_continuation_status.json`. 存在する場合は同じ処理を再起動しない. 専用作業木は `.runtime/worktrees/p122-followup`. 停止印は `.runtime/checkpoint_continuation.stop` と各実験の停止印. 新しい終了資料と有限計画は専用木から公開され、編集木へは新しい証拠ファイルだけを同一bytesで回収する. 私有引き継ぎの現在phaseを優先する.
+原稿は `papers/202610_letter/checkpoint_cost_v01/`、PDF SHA-256は `ac0a375b9601e7c84fc33976b8ae736deace9d7ee252556a726f567b2d535ef3`. P122未反映、著者・所属・公式クラスは未完了. 10/31投稿目標. 教授用459字、句点`.`、中黒なしの希望を維持する. 教授への送信と学会投稿は未実施.
