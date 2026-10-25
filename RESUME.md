@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-目標は性能を維持した全仕事tokenの削減. 最新の閉じたP120比較は別要約4/4対同時要約3/4成功で未達. P122の固定24条件を継続中. 再要約を共有予算付き推論、実課題worker、保存記録監査へ接続し、単発別要約・反復別要約・反復同時要約の12条件比較を準備した. 追加26件を含む全2,037テストと構文検査が成功. 実機の事前計数とP123生成は未実施. P122全件閉鎖と確認後に、有限計画、同一headの両CI、事前計数を確定して進める. 要約の意味保存、品質維持、新規性は未確立. P122の途中成否、原稿、未見12課題は扱いを変えない. [次の比較仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md).
+P122の固定24条件を継続中. 停止指示まで実験を進めるため、全件閉鎖後の再計算、固定計画の公開と両CI、P123の既定12条件実行へ接続する処理を準備した. 全2,043テスト成功. 途中成否は未閲覧でP123生成は未開始. 最新の閉じたP120比較は別要約4/4対同時要約3/4で、性能維持と全仕事token削減の両立は未達. 未知使用量・未評価・監査異常があれば次生成へ進めず保存する. 新規性、一般的品質維持、非劣性は未確立. [継続手順](docs/checkpoint_continuation_20261025.md).
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 最新の目的と指示
@@ -17,7 +17,7 @@
 | 用途 | 場所 |
 |---|---|
 | 編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p107-prep` |
-| 現在のブランチ | `research/rolling-checkpoint-live-20261025` |
+| 現在のブランチ | `research/rolling-checkpoint-continuation-20261025` |
 | モデル、AppWorld、私有記録、終了印 | `/Users/tp26013/AI-` |
 | Python | `/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python` |
 | PDFと図の環境 | `/Users/tp26013/AI-/.runtime/reporting-venv/bin/python` |
@@ -39,7 +39,7 @@ P120の全８条件、所有server、監査、収集、図の生成と目視、�
 
 私有`.runtime`の `P120_closure_once_end.json`、`P120_collection_wait_once_end.json`、`P121_collection_once_end.json`、`P121_editor_artifacts_once_end.json`、`P121_letter_publication_once_end.json`、`P121_letter_merge_once.json`を参照する. 古いwrapper、watcher、collector、publisherをもう一度起動しない. serverの自然な閉鎖はユーザーによる研究停止指示ではない.
 
-最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在169台帳、1,983指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
+最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在170台帳、1,989指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
 
 ## 主張の範囲
 
@@ -58,3 +58,5 @@ P122はhead `5ddbba8c8b4614bc9856202942dc28caf5b204f7`、専用の `.runtime/wor
 生のプロンプト、私有推論、完全履歴、正解、モデル重み、認証情報をGitへ登録しない. 停止指示が来た場合は従う. [AGENTS](AGENTS.md)／[現在状態](docs/current_status.md).
 
 詳細な経緯は[整理前RESUMEの固定版](https://github.com/sophiria1225/AI-/blob/263dad32be21463deaf4467a9efe6b7eb4db0fba/RESUME.md)へ保存されている. 各時点の「未開始」「次は」「原稿保留」を現在の状態へ適用しない. [10月22日の引き継ぎ](docs/handoff_20261022_account_switch.md)も履歴として保持する.
+
+継続処理の稼働状態は `.runtime/P122_to_P123_continuation_status.json`. 存在する場合は同じ処理を再起動しない. 専用作業木は `.runtime/worktrees/p122-followup`. 停止印は `.runtime/checkpoint_continuation.stop` と各実験の停止印. 新しい終了資料と有限計画は専用木から公開され、編集木へは新しい証拠ファイルだけを同一bytesで回収する. 私有引き継ぎの現在phaseを優先する.
