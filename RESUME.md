@@ -19,7 +19,7 @@ P115の全79要求×４表示=316入力を一度だけ計数し、実測79入力
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p115-results-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p116-observation-profile-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -73,3 +73,5 @@ P115は全79要求×４表示=316入力を一度だけ計数し、全件資料�
 [P115所見](docs/P115_findings.md)と[全316入力](materials/20261025_p115_results/README.md)を参照する. 成功３課題の局所省略は39,005 token、過去fullとの実測増分は126,371. CSVの仮想full費用484,362は仕事予算450,000を超えるため実行済み・実行可能なfull軌跡ではない. 元のP111未知使用量２を補完しない.
 
 次は、推論を省いても増えた公開観測や操作の内訳を全件で絞り、具体的に減らす処理と通常対照を定める. 現時点で次の新モデル実験は開始していない. 診断件数を新規性や品質維持の証明に置き換えず、閾値・seed変更で好成績を探さない. [技術説明](materials/20261025_harness_technical/README.md)、[追加原典](docs/reasoning_state_and_cache_prior_scope_20261025.md)を継承する. 原稿と未見12課題には進まず、ユーザー停止に直ちに従う.
+
+P116は全16条件の観測再送と同一API要求を点検する準備段階. `configs/P116_observation_growth_v01.json`に614私有ファイルと診断コードを固定した. 新規10件・全1,849テスト通過. 同一head両CI成功後に `.runtime/worktrees/p116-run` で一度だけ処理する. `.runtime/P116_analysis_once_start.json`、`P116_collection_once_end.json`と公開report/failureの存在を確認し、重ねて起動しない. 次のモデル実験は未開始. [計画](docs/experiments/P116_observation_growth.md).
