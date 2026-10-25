@@ -1,0 +1,643 @@
+{
+  "phase": "P122",
+  "planned_conditions": 24,
+  "accounted_conditions": 24,
+  "evaluated_conditions": 24,
+  "successful_conditions": 19,
+  "recorded_known_tokens": 4623544,
+  "recorded_unknown_usage_calls": 1,
+  "exact_all_condition_tokens": null,
+  "all_conditions_accounted": true,
+  "unknown_usage_is_not_zero": true,
+  "by_policy": {
+    "single_checkpoint": {
+      "planned_conditions": 12,
+      "accounted_conditions": 12,
+      "evaluated_conditions": 12,
+      "successful_conditions": 10,
+      "recorded_known_tokens": 2365604,
+      "recorded_unknown_usage_calls": 0,
+      "exact_all_condition_tokens": 2365604,
+      "all_conditions_accounted": true,
+      "unknown_usage_is_not_zero": true
+    },
+    "inline_checkpoint": {
+      "planned_conditions": 12,
+      "accounted_conditions": 12,
+      "evaluated_conditions": 12,
+      "successful_conditions": 9,
+      "recorded_known_tokens": 2257940,
+      "recorded_unknown_usage_calls": 1,
+      "exact_all_condition_tokens": null,
+      "all_conditions_accounted": true,
+      "unknown_usage_is_not_zero": true
+    }
+  },
+  "by_repetition": {
+    "1": {
+      "planned_conditions": 8,
+      "accounted_conditions": 8,
+      "evaluated_conditions": 8,
+      "successful_conditions": 7,
+      "recorded_known_tokens": 1774173,
+      "recorded_unknown_usage_calls": 0,
+      "exact_all_condition_tokens": 1774173,
+      "all_conditions_accounted": true,
+      "unknown_usage_is_not_zero": true
+    },
+    "2": {
+      "planned_conditions": 8,
+      "accounted_conditions": 8,
+      "evaluated_conditions": 8,
+      "successful_conditions": 6,
+      "recorded_known_tokens": 1105476,
+      "recorded_unknown_usage_calls": 0,
+      "exact_all_condition_tokens": 1105476,
+      "all_conditions_accounted": true,
+      "unknown_usage_is_not_zero": true
+    },
+    "3": {
+      "planned_conditions": 8,
+      "accounted_conditions": 8,
+      "evaluated_conditions": 8,
+      "successful_conditions": 6,
+      "recorded_known_tokens": 1743895,
+      "recorded_unknown_usage_calls": 1,
+      "exact_all_condition_tokens": null,
+      "all_conditions_accounted": true,
+      "unknown_usage_is_not_zero": true
+    }
+  },
+  "task_summaries": [
+    {
+      "task_id": "34d9492_1",
+      "pairs": [
+        {
+          "repetition": 1,
+          "model_seed": 57,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": -10497,
+          "difference_percent_of_separate": -7.504772254434443,
+          "separate_installed": true,
+          "inline_installed": true
+        },
+        {
+          "repetition": 2,
+          "model_seed": 157,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": -32865,
+          "difference_percent_of_separate": -17.52996335589586,
+          "separate_installed": true,
+          "inline_installed": true
+        },
+        {
+          "repetition": 3,
+          "model_seed": 257,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": 2349,
+          "difference_percent_of_separate": 1.7434869739478958,
+          "separate_installed": true,
+          "inline_installed": true
+        }
+      ],
+      "all_three_cost_pairs_exact": true,
+      "both_successful_in_all_three_pairs": true,
+      "available_cost_differences": {
+        "n": 3,
+        "values": [
+          -10497,
+          -32865,
+          2349
+        ],
+        "mean": -13671,
+        "median": -10497,
+        "minimum": -32865,
+        "maximum": 2349,
+        "sample_standard_deviation": 17820.273735271297
+      },
+      "all_three_cost_differences": {
+        "n": 3,
+        "values": [
+          -10497,
+          -32865,
+          2349
+        ],
+        "mean": -13671,
+        "median": -10497,
+        "minimum": -32865,
+        "maximum": 2349,
+        "sample_standard_deviation": 17820.273735271297
+      },
+      "all_three_percentage_differences": {
+        "n": 3,
+        "values": [
+          -7.504772254434443,
+          -17.52996335589586,
+          1.7434869739478958
+        ],
+        "mean": -7.7637495454608025,
+        "median": -7.504772254434443,
+        "minimum": -17.52996335589586,
+        "maximum": 1.7434869739478958,
+        "sample_standard_deviation": 9.639334719377116
+      },
+      "success_preserving_reduction_in_all_three": false
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "pairs": [
+        {
+          "repetition": 1,
+          "model_seed": 57,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": 0,
+          "difference_percent_of_separate": 0.0,
+          "separate_installed": false,
+          "inline_installed": false
+        },
+        {
+          "repetition": 2,
+          "model_seed": 157,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": -6469,
+          "difference_percent_of_separate": -2.9535441159684965,
+          "separate_installed": true,
+          "inline_installed": false
+        },
+        {
+          "repetition": 3,
+          "model_seed": 257,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": -4964,
+          "difference_percent_of_separate": -1.8922586645929584,
+          "separate_installed": true,
+          "inline_installed": false
+        }
+      ],
+      "all_three_cost_pairs_exact": true,
+      "both_successful_in_all_three_pairs": true,
+      "available_cost_differences": {
+        "n": 3,
+        "values": [
+          0,
+          -6469,
+          -4964
+        ],
+        "mean": -3811,
+        "median": -4964,
+        "minimum": -6469,
+        "maximum": 0,
+        "sample_standard_deviation": 3385.12141584316
+      },
+      "all_three_cost_differences": {
+        "n": 3,
+        "values": [
+          0,
+          -6469,
+          -4964
+        ],
+        "mean": -3811,
+        "median": -4964,
+        "minimum": -6469,
+        "maximum": 0,
+        "sample_standard_deviation": 3385.12141584316
+      },
+      "all_three_percentage_differences": {
+        "n": 3,
+        "values": [
+          0.0,
+          -2.9535441159684965,
+          -1.8922586645929584
+        ],
+        "mean": -1.615267593520485,
+        "median": -1.8922586645929584,
+        "minimum": -2.9535441159684965,
+        "maximum": 0.0,
+        "sample_standard_deviation": 1.4961279194418635
+      },
+      "success_preserving_reduction_in_all_three": false
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "pairs": [
+        {
+          "repetition": 1,
+          "model_seed": 57,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": 0,
+          "difference_percent_of_separate": 0.0,
+          "separate_installed": false,
+          "inline_installed": false
+        },
+        {
+          "repetition": 2,
+          "model_seed": 157,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": 0,
+          "difference_percent_of_separate": 0.0,
+          "separate_installed": false,
+          "inline_installed": false
+        },
+        {
+          "repetition": 3,
+          "model_seed": 257,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": true,
+          "both_successful": true,
+          "success_lost": false,
+          "difference_tokens": 0,
+          "difference_percent_of_separate": 0.0,
+          "separate_installed": false,
+          "inline_installed": false
+        }
+      ],
+      "all_three_cost_pairs_exact": true,
+      "both_successful_in_all_three_pairs": true,
+      "available_cost_differences": {
+        "n": 3,
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0,
+        "sample_standard_deviation": 0.0
+      },
+      "all_three_cost_differences": {
+        "n": 3,
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0,
+        "sample_standard_deviation": 0.0
+      },
+      "all_three_percentage_differences": {
+        "n": 3,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "sample_standard_deviation": 0.0
+      },
+      "success_preserving_reduction_in_all_three": false
+    },
+    {
+      "task_id": "6104387_1",
+      "pairs": [
+        {
+          "repetition": 1,
+          "model_seed": 57,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": true,
+          "inline_success": false,
+          "both_successful": false,
+          "success_lost": true,
+          "difference_tokens": -2388,
+          "difference_percent_of_separate": -0.5421592377077653,
+          "separate_installed": true,
+          "inline_installed": true
+        },
+        {
+          "repetition": 2,
+          "model_seed": 157,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "separate_success": false,
+          "inline_success": false,
+          "both_successful": false,
+          "success_lost": false,
+          "difference_tokens": 0,
+          "difference_percent_of_separate": 0.0,
+          "separate_installed": false,
+          "inline_installed": false
+        },
+        {
+          "repetition": 3,
+          "model_seed": 257,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "separate_success": false,
+          "inline_success": false,
+          "both_successful": false,
+          "success_lost": false,
+          "difference_tokens": null,
+          "difference_percent_of_separate": null,
+          "separate_installed": true,
+          "inline_installed": true
+        }
+      ],
+      "all_three_cost_pairs_exact": false,
+      "both_successful_in_all_three_pairs": false,
+      "available_cost_differences": {
+        "n": 2,
+        "values": [
+          -2388,
+          0
+        ],
+        "mean": -1194,
+        "median": -1194.0,
+        "minimum": -2388,
+        "maximum": 0,
+        "sample_standard_deviation": 1688.5709934734755
+      },
+      "all_three_cost_differences": null,
+      "all_three_percentage_differences": null,
+      "success_preserving_reduction_in_all_three": false
+    }
+  ],
+  "repetition_summaries": [
+    {
+      "repetition": 1,
+      "model_seed": 57,
+      "all_eight_complete_with_known_usage": true,
+      "paired_results": [
+        {
+          "task_id": "34d9492_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": -10497,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "3c13f5a_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 0,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "60d0b5b_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 0,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "6104387_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": false,
+          "success_lost": true,
+          "success_gained": false,
+          "both_successful": false,
+          "inline_checkpoint_minus_single_checkpoint_tokens": -2388,
+          "invocation_exceptions_observed": 0
+        }
+      ],
+      "paired_success_losses": 1,
+      "paired_success_gains": 0,
+      "paired_successful_tasks": 3,
+      "inline_checkpoint_minus_single_checkpoint_whole_task_tokens": -12885,
+      "invocation_exceptions_observed": 0,
+      "development_gate_met": false,
+      "general_quality_preservation_claim": false,
+      "novel_method_claim": false,
+      "paired_successful_token_difference": -10497,
+      "inline_checkpoint_offer_calls": 2,
+      "inline_checkpoint_installations": 2,
+      "required_inline_control_exercised": true,
+      "planned_rows": 8,
+      "independent_tasks": 4,
+      "repetitions": 1,
+      "all_checkpoint_prompt_schema_output_and_agent_costs_included": true,
+      "previous_missing_slots_filled": false,
+      "interpretation": "A new paired comparison of ordinary separate and required inline checkpoints on four known development tasks. Scheduling, schema, instructions, output allocation and subsequent actions may differ. It does not isolate a semantic guard or identify cost savings with eliminated summary input."
+    },
+    {
+      "repetition": 2,
+      "model_seed": 157,
+      "all_eight_complete_with_known_usage": true,
+      "paired_results": [
+        {
+          "task_id": "34d9492_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": -32865,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "3c13f5a_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": -6469,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "60d0b5b_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 0,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "6104387_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": false,
+          "inline_checkpoint_success": false,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": false,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 0,
+          "invocation_exceptions_observed": 0
+        }
+      ],
+      "paired_success_losses": 0,
+      "paired_success_gains": 0,
+      "paired_successful_tasks": 3,
+      "inline_checkpoint_minus_single_checkpoint_whole_task_tokens": -39334,
+      "invocation_exceptions_observed": 0,
+      "development_gate_met": true,
+      "general_quality_preservation_claim": false,
+      "novel_method_claim": false,
+      "paired_successful_token_difference": -39334,
+      "inline_checkpoint_offer_calls": 2,
+      "inline_checkpoint_installations": 1,
+      "required_inline_control_exercised": true,
+      "planned_rows": 8,
+      "independent_tasks": 4,
+      "repetitions": 1,
+      "all_checkpoint_prompt_schema_output_and_agent_costs_included": true,
+      "previous_missing_slots_filled": false,
+      "interpretation": "A new paired comparison of ordinary separate and required inline checkpoints on four known development tasks. Scheduling, schema, instructions, output allocation and subsequent actions may differ. It does not isolate a semantic guard or identify cost savings with eliminated summary input."
+    },
+    {
+      "repetition": 3,
+      "model_seed": 257,
+      "all_eight_complete_with_known_usage": false,
+      "paired_results": [
+        {
+          "task_id": "34d9492_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 2349,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "3c13f5a_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": -4964,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "60d0b5b_1",
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "single_checkpoint_success": true,
+          "inline_checkpoint_success": true,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": true,
+          "inline_checkpoint_minus_single_checkpoint_tokens": 0,
+          "invocation_exceptions_observed": 0
+        },
+        {
+          "task_id": "6104387_1",
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "single_checkpoint_success": false,
+          "inline_checkpoint_success": false,
+          "success_lost": false,
+          "success_gained": false,
+          "both_successful": false,
+          "inline_checkpoint_minus_single_checkpoint_tokens": null,
+          "invocation_exceptions_observed": 0
+        }
+      ],
+      "paired_success_losses": 0,
+      "paired_success_gains": 0,
+      "paired_successful_tasks": 3,
+      "inline_checkpoint_minus_single_checkpoint_whole_task_tokens": null,
+      "invocation_exceptions_observed": 0,
+      "development_gate_met": false,
+      "general_quality_preservation_claim": false,
+      "novel_method_claim": false,
+      "paired_successful_token_difference": null,
+      "inline_checkpoint_offer_calls": 3,
+      "inline_checkpoint_installations": 2,
+      "required_inline_control_exercised": true,
+      "planned_rows": 8,
+      "independent_tasks": 4,
+      "repetitions": 1,
+      "all_checkpoint_prompt_schema_output_and_agent_costs_included": true,
+      "previous_missing_slots_filled": false,
+      "interpretation": "A new paired comparison of ordinary separate and required inline checkpoints on four known development tasks. Scheduling, schema, instructions, output allocation and subsequent actions may differ. It does not isolate a semantic guard or identify cost savings with eliminated summary input."
+    }
+  ],
+  "replication_gate_met": false,
+  "photo_reduction_repeated_with_success": false,
+  "model_seeds": [
+    57,
+    157,
+    257
+  ],
+  "unique_known_tasks": 4,
+  "all_model_and_summary_costs_included": true,
+  "model_calls_in_materials": 442,
+  "paired_comparisons": 12,
+  "prior_P120_pooled_into_primary_analysis": false,
+  "novel_method_claim": false,
+  "statistical_significance_claim": false,
+  "inferential_noninferiority_claim": false,
+  "general_quality_preservation_claim": false,
+  "confidence_intervals_reported": false,
+  "new_model_API_evaluation_or_tokenizer_calls": 0
+}
