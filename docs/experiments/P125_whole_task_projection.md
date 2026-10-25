@@ -37,3 +37,5 @@ receipt表示の普通の短縮だけで勝ったと誤解しないため、同�
 全8枠を閉鎖するまで途中の成功・tokenを見て条件を変えない。全体結果を見てから次の有限実験を判断する。このplanには追加16枠や自動拡張を含めない。4つの既知task・1反復による開発比較であり、統計的非劣性、未見課題への汎化、技術新規性の成立、採択可能性は別途の検討事項である。
 
 基本的なprogram slicing、query projection、semantic caching、lazy evaluationは先行する。今回の技術対象は、現在の生成codeの需要・既観測API間契約・永続interpreter境界での完全root・後続取得と失敗の費用を組み合わせた限定ハーネス制御である。新しいcache原理や汎用compilerとは記載しない。
+
+[基本技術と8件の先行範囲](../automatic_projection_prior_scope_20261026.md)に加え、[直接近い3件の一次論文比較](../automatic_projection_direct_prior_20261026.md)を保存した。生成Python最適化、自動cache、遅延materialization一般は既存である。通常receiptの段階開示でtoken差が消える可能性も、結果解釈と次比較の論点として残す。
