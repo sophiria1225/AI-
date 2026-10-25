@@ -6,7 +6,7 @@
 
 生成Pythonの限定ループから需要fieldを認識し、同task/revisionで既に得た別APIの応答が十分なときだけ、中間反復の完全readを省く。最後の元rootは元位置で完全な実dictにする。P124の固定応答再生では通常完全cacheの68取得に対し57取得、全20プログラムのstdout/errorと方式間の境界が一致した。ただし実タスク品質や総トークン削減は未測定であり、ここで検証する。
 
-比較軸は `eager_cached` と `automatic_projection_cached` のみ。通常complete-response cache、stateful `call_api` interface、公開schemaのエラー補助、型付きAPI応答、単発checkpoint、元archiveでの全返却reasoning保持、receiptのcolumns/rows表示を共通にする。checkpoint後のモデル入力では古い履歴を要約に置換するが、全費用と元archiveは保持する。元のAPI記録とread_spanは保持する。モデルに明示的read_viewを選ばせない。実装の内部metadataを新しいモデル入力にはしない。
+比較軸は `eager_cached` と `automatic_projection_cached` のみ。通常complete-response cache（公開実装を照合した `spotify__show_song` の同一要求・同一scope/epochに限定）、stateful `call_api` interface、公開schemaのエラー補助、型付きAPI応答、単発checkpoint、元archiveでの全返却reasoning保持、receiptのcolumns/rows表示を共通にする。checkpoint後のモデル入力では古い履歴を要約に置換するが、全費用と元archiveは保持する。他API一般へのcache拡張は行わない。元のAPI記録とread_spanは保持する。モデルに明示的read_viewを選ばせない。実装の内部metadataを新しいモデル入力にはしない。
 
 receipt表示の普通の短縮だけで勝ったと誤解しないため、同じ簡潔化を対照にも適用する。省略したfull API本文は元々そのままLLM履歴へ入っていたわけではない。直接差は実際に発生したreceipt indexとその後の再入力、間接差はAPI予算・行動・補修turnの変化として測る。API回数、wire byte、wall timeは総logical tokenと別に報告する。
 
