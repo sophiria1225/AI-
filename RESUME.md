@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P114の通常public_only対照は全４条件終了、3/4成功、79生成、1,000,544 token、未知使用量０、210 API。過去P111の直近保持555,031より全仕事費用は80.27%増。共通成功３課題でも全保持より28.16%高く、記述上の費用・品質条件は未達。全16条件の実データ図を目視確認し、不明を残すP111の元結果と採用基準未達を保持。P115は結果閲覧前に範囲を固定し、閉鎖後に405公開出典・197私有ファイル・79要求×４表示=316入力をbinding済み。計数は未開始。新規性と一般的品質維持は未確立、原稿保留、未見12課題未閲覧。 [全件所見](docs/P114_findings.md)。
+P115の全79要求×４表示=316入力を一度だけ計数し、実測79入力と全件一致、欠測・不一致０。成功した共通３課題では非再入力による局所省略39,005 tokenに対し、過去全保持からの実測総費用は126,371増、会計残差165,376。残差は特定原因の因果効果ではない。全４課題の省略量98,019を全仕事の削減実績へ転記しない。P114は3/4成功・1,000,544 token、非再入力を低費用の標準方式に採用しない。P111の不明２と選別の採用基準未達を維持。次は公開観測・操作の増加源を絞り、具体的な介入を固定する。原稿保留、未見12課題未閲覧、新規性と一般的品質維持は未確立。 [全件所見](docs/P115_findings.md)。
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P114の通常public_only対照は全４条件終了、3/4成功、79生成、1,0
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p114-results-p115-binding-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p115-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -64,8 +64,12 @@ P114は全４条件と所有serverの閉鎖、監査、session費用確認、全
 
 `.runtime/await_p114_collect_bind_p115_once.py`は閉鎖後に収集とP115 bindingを一度だけ終了した. `.runtime/P114_collection_P115_binding_wait_once_end.json`、`P115_binding_once_end.json`を確認し、collectorやbindを重ねて動かさない. serverのrequested_stopは有限比較後の閉鎖理由であり、ユーザーの研究停止指示ではない.
 
-P115は `configs/P115_realized_history_inputs_v01.json`に405公開ソース、197私有ファイル、全79要求×４表示=316入力を固定済み. 全件の結果を読む前の準備PR485はhead `77ecc51f0529e1edc01af2d4ded86a7bd963bdd2`、両workflow・両job成功、merge `48e774d186fc39ca9fc838a12b42d834ff9e6d4f`. この準備head上でP114閉鎖後にbindした. 計数はまだ行っていない.
+P115は全79要求×４表示=316入力を一度だけ計数し、全件資料と編集木への回収も終了した. 固定実行木は `.runtime/worktrees/p115-run`、`748d3a12268d2b37bd550920383e4adac7c5d75f`. 405公開ソース、197私有ファイルを固定し、全79実入力と一致、欠測・不一致０、４renderer停止、追加生成・API・評価０. `.runtime/P115_analysis_once_start.json`、`P115_collection_once_end.json`、`P115_editor_artifacts_once_end.json`を保持し、count、report、collectorを再実行しない.
 
-完全計画の同一headのpush・pull_request両workflowと両accounting-and-syntax job成功後、専用固定木 `.runtime/worktrees/p115-run`を作り、`.runtime/run_p115_bound_once.py --repo-root FIXED_TREE --head FULL_SHA`から一度だけcountと全件reportを行う. `.runtime/P115_analysis_once_start.json`、`P115_collection_once_end.json`、結果・failureを確認し、再実行しない. 完了後は `.runtime/collect_p115_editor_artifacts_once.py`で指紋を照合して結果を編集木へ回収する. これらのprivate helperは準備済み・未起動.
+最初の `.runtime/run_p115_bound_once.py` は資料フォルダーの不在確認に旧P112名が残っており、実計数より前で停止した. `.runtime/P115_wrapper_preflight_failure_v01.json`と原wrapperを保持. この１か所だけを修正した `.runtime/run_p115_bound_v02_once.py`で初めての実計数を完了した. 固定済み実験ソースは変更していない. 診断結果SHAは`1ce3f8b0a45c7eac37eb5567d5c1b05cb397959bd209f617a28c751e0b8e66f8`.
 
-[全16条件の図](materials/20261025_p114_figures/README.md)と[P114所見](docs/P114_findings.md)、[P115固定範囲](docs/experiments/P115_realized_history_inputs.md)を参照する. 仮想入力の費用を別方式の全仕事実測へ転記しない. [計画保持とKV制御の追加原典確認](docs/reasoning_state_and_cache_prior_scope_20261025.md)も参照する. 原稿と未見12課題には進まず、ユーザーの停止指示には直ちに従う.
+準備PR485はhead `77ecc51f0529e1edc01af2d4ded86a7bd963bdd2`、merge `48e774d186fc39ca9fc838a12b42d834ff9e6d4f`. P114結果・P115 bindingのPR486はhead `748d3a12268d2b37bd550920383e4adac7c5d75f`、merge `4902a7d979538251c38044a9d9cd9e2020880293`. それぞれ同一headのpush・pull_request両workflowと両accounting-and-syntax job成功後に進めた.
+
+[P115所見](docs/P115_findings.md)と[全316入力](materials/20261025_p115_results/README.md)を参照する. 成功３課題の局所省略は39,005 token、過去fullとの実測増分は126,371. CSVの仮想full費用484,362は仕事予算450,000を超えるため実行済み・実行可能なfull軌跡ではない. 元のP111未知使用量２を補完しない.
+
+次は、推論を省いても増えた公開観測や操作の内訳を全件で絞り、具体的に減らす処理と通常対照を定める. 現時点で次の新モデル実験は開始していない. 診断件数を新規性や品質維持の証明に置き換えず、閾値・seed変更で好成績を探さない. [技術説明](materials/20261025_harness_technical/README.md)、[追加原典](docs/reasoning_state_and_cache_prior_scope_20261025.md)を継承する. 原稿と未見12課題には進まず、ユーザー停止に直ちに従う.
