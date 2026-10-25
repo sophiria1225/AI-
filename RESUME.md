@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P118の通常要約対全保持、既知４課題×２方式の８条件を開始した。同じ完全headの両workflow・両job成功、８初回入力の課題内一致、空tool要約経路１入力の計数を確認済み。要約も共有する80呼出し・450,000 token・1,800仕事秒の各上限で計上する。全条件と所有serverが閉じてから成否と総費用を読む。途中の成否で方式を変更しない。SJCの要約出典判定、TypeCompactの型別保持、SelfCompactの適応判断も既存方式として照合した。P111〜P117と未知使用量２、P111採用基準未達を保持。原稿と未見12課題は保留、新規性と一般的品質維持は未確立。 [固定計画](docs/experiments/P118_whole_task_single_checkpoint.md)。
+P118の全８条件を閉鎖し、通常の一度だけの要約は4/4、全保持は3/4成功した。CSVも要約条件では440,461 token・77 APIで完了。要約は写真とCSVの２件で採用され、精算と返金は起動なし。要約条件の全費用は893,529 token、全保持は既知807,463＋不明１件。両側成功３課題では要約込みで4,243 token増え、事前の削減基準は未達。全160要求・407 API・８評価を保持し、全件監査不一致０、図を目視した。通常要約の成功経路を今後の品質比較へ残し、専用要約の費用を減らす候補の規則と対照を具体化する。P111の未知２件と基準未達を保持。原稿と未見12課題は保留、新規性と一般的品質維持は未確立。 [全件所見](docs/P118_findings.md).
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 目的と現在の指示
@@ -19,7 +19,7 @@ P118の通常要約対全保持、既知４課題×２方式の８条件を開�
 | 用途 | 場所 |
 |---|---|
 | モデル、AppWorld、私有記録 | `/Users/tp26013/AI-` |
-| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/checkpoint-prior-review-20261025` |
+| 今回の結果編集木 | `.runtime/worktrees/p107-prep`、`research/p118-results-20261025` |
 | P107の固定実行木 | `.runtime/worktrees/p107-run`、`983bdebed74654b5fa80af8a61a98d0af4147458` |
 | P108の固定点検木 | `.runtime/worktrees/p108-run`、`4695ca867d13b23be6c0ba10dabf413d0843b316` |
 | P109の固定点検木 | `.runtime/worktrees/p109-run`、`21a58c4c47f80e872aab095c6ec056a9cf0a7993` |
@@ -103,3 +103,15 @@ P118はhead `a22cedb40f99b99fd4a488fdc131e62361fccbbd`、固定実行木`.runtim
 `.runtime/run_close_p118_once.py`が有限pipeline終了後にaudit・session・全件資料を一度だけ作る. `.runtime/P118_pipeline_once_start.json`、`P118_pipeline_child_once.json`、`P118_pending_execution_handoff.json`を確認してから扱い、起動を重ねない. 中間は`.runtime/read_p118_operational_status.py`の運用状態だけ読む. `.runtime/P118_closure_once_end.json`で全閉鎖を確認後、`.runtime/collect_p118_closed_once.py --expected-head a22cedb40f99b99fd4a488fdc131e62361fccbbd`を一度だけ実行する. collectorの開始・終了印も確認し、失敗時は自動再試行しない. ユーザー停止には直ちに停止印と所有プロセスで対応する.
 
 [要約の出典判定と型別保持の原典照合](docs/checkpoint_source_and_type_prior_scope_20261025.md)を追加した. この調査でP118の固定条件や実行ソースを変更していない. 単純な要約選別や型別保持を新手法の中核へ読み替えない.
+
+P118の閉鎖後回収と図生成は、`.runtime/await_p118_collect_figure_once.py`が有限の待機を開始済み. `P118_collection_wait_once_start.json`と`P118_collection_wait_once_end.json`で管理する. 上記collectorを手動で重ねて起動しない. 図の固定木は`.runtime/worktrees/p118-report`、head `7d0d1fe92ac98507d31256a7bad269a5d95a777c`、PR493の同一head両workflow・両job成功済み. 実データPNGは全閉鎖後に生成し、必ず目視してから公開する.
+
+費用分解と要約前の完全要求SHA照合も[別の有限集計](docs/experiments/P118_pair_controls.md)として準備した. 固定木は`.runtime/worktrees/p118-pairs`、head `c0f0e622e2a984a27c8fbae59081bc8bfc7f5904`、PR494の両workflow・両job成功済み. `.runtime/await_p118_pair_controls_once.py`が回収完了を待機中で、`P118_pair_wait_once_start.json`と`P118_pair_wait_once_end.json`を確認する. この集計も手動で重ねない. 現在の編集branchと所有processの最新情報は`.runtime/P118_pending_execution_handoff.json`を優先する. 未知・失敗を保持し、全８条件と全４対をまとめてからProject・materialsへ反映する.
+
+P118の全８条件、所有server、監査、session確認、全件資料、実データ図、全４対の費用分解は一度だけ終了した. `.runtime/P118_closure_once_end.json`、`P118_report_collector_once_end.json`、`P118_figure_collection_once_end.json`、`P118_pair_collection_once_end.json`、`P118_collection_wait_once_end.json`、`P118_pair_wait_once_end.json`を保持する. ２つの待機processは完了済みで、collector・描画・対比較を手動で再起動しない. 実PNGは`.runtime/P118_figure_visual_review_once.json`で目視を記録した.
+
+[全件所見](docs/P118_findings.md)のとおり、通常要約4/4、全保持3/4成功. 写真とCSVで要約を採用し、精算と返金では起動していない. CSV要約は440,461 token、77 APIで完了. 全保持CSVは時間上限で最後の使用量１件が不明. 全160要求・407 API・８評価を残す. 要約条件合計893,529 token、全保持既知807,463＋不明１件. 両側成功３件の導出差は+4,243 tokenで、固定監査の全８件既知を前提とするnullと採用基準未達を変更しない.
+
+完全監査SHAは`25d37fd0d64441b92134a769d13e66298037e53fcb092acbc570c8edeb8a1f77`. 事前固定した３つの完全headで実行し、PR492・493・494のそれぞれ同一head両workflow・両job成功を確認した. 全件閉鎖後の図と対比較で追加モデル生成・API・独立評価は０. 元のP111不明２件は別の要求として保持する.
+
+通常要約で４件を完了した経路を、今後の品質の比較対象へ残す. [同じ応答に引き継ぎ情報を載せる候補](docs/inline_checkpoint_candidate_scope_20261025.md)は検討範囲のみで、方式の実装・性能・独自性は未確立. 専用要約のinput 37,350 tokenをそのまま将来の節約実績へ使わない. 追加指示、schema、出力、形式不備、後続行動を含む通常対照を具体化する. 次のモデル実験はまだ開始していない. 原稿と未見12課題は保留し、ユーザー停止を優先する.
