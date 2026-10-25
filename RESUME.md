@@ -1,7 +1,7 @@
 # 研究と実行の引き継ぎ
 
 <!-- CURRENT_EVIDENCE_SNAPSHOT -->
-目標は性能を維持した全仕事tokenの削減. P120は別要約4/4対同時要約3/4成功で、この目標は未達. 写真１対の成功と7.50%減少を全体の改善とはしない. P122の全24条件は固定したまま実行中. 終了済みP120では同時要約CSVの入力が11,110から25,687 tokenへ再膨張したため、必要時に再要約する共通制御部を準備した. 最大３機会、各機会間に新しい完結３回、元依頼と直近２回を保持. 新規13件を含む全2,011テスト成功. 共有予算付き推論と実課題workerへの接続は未実装で、追加モデル実験、性能改善、新規性の成立とはしない. P122の途中結果、原稿、未見12課題は扱いを変えない. [次の制御部と限界](docs/rolling_checkpoint_candidate_20261025.md).
+目標は性能を維持した全仕事tokenの削減. 最新の閉じたP120比較は別要約4/4対同時要約3/4成功で未達. P122の固定24条件を継続中. 再要約を共有予算付き推論、実課題worker、保存記録監査へ接続し、単発別要約・反復別要約・反復同時要約の12条件比較を準備した. 追加26件を含む全2,037テストと構文検査が成功. 実機の事前計数とP123生成は未実施. P122全件閉鎖と確認後に、有限計画、同一headの両CI、事前計数を確定して進める. 要約の意味保存、品質維持、新規性は未確立. P122の途中成否、原稿、未見12課題は扱いを変えない. [次の比較仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md).
 <!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
 
 ## 最新の目的と指示
@@ -17,7 +17,7 @@
 | 用途 | 場所 |
 |---|---|
 | 編集木 | `/Users/tp26013/AI-/.runtime/worktrees/p107-prep` |
-| 現在のブランチ | `research/rolling-checkpoint-core-20261025` |
+| 現在のブランチ | `research/rolling-checkpoint-live-20261025` |
 | モデル、AppWorld、私有記録、終了印 | `/Users/tp26013/AI-` |
 | Python | `/Users/tp26013/AI-/.runtime/p3_ci_venv/bin/python` |
 | PDFと図の環境 | `/Users/tp26013/AI-/.runtime/reporting-venv/bin/python` |
@@ -39,7 +39,7 @@ P120の全８条件、所有server、監査、収集、図の生成と目視、�
 
 私有`.runtime`の `P120_closure_once_end.json`、`P120_collection_wait_once_end.json`、`P121_collection_once_end.json`、`P121_editor_artifacts_once_end.json`、`P121_letter_publication_once_end.json`、`P121_letter_merge_once.json`を参照する. 古いwrapper、watcher、collector、publisherをもう一度起動しない. serverの自然な閉鎖はユーザーによる研究停止指示ではない.
 
-最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在168台帳、1,965指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
+最新の私有引き継ぎは `.runtime/checkpoint_letter_writing_handoff_20261025.json`. 公開台帳の一覧は `.runtime/research_ledger_names.json`. 現在169台帳、1,983指紋であり、終了済み結果、固定入力、旧原稿のbytesを保持する. 新しい版が必要な場合は旧版を上書きせず別版にする.
 
 ## 主張の範囲
 
@@ -53,7 +53,7 @@ P118全保持CSVの不明１要求と、P111の不明２要求を保持する. P
 
 P122はhead `5ddbba8c8b4614bc9856202942dc28caf5b204f7`、専用の `.runtime/worktrees/p122-run` から一度だけ起動済み. 両CIと初回入力確認は終了. `.runtime/run_close_p122_once.py`が全24条件とserver閉鎖後に監査、session計上、全件資料を作る. 開始印 `.runtime/P122_pipeline_once_start.json` と終了印 `P122_closure_once_end.json`を確認し、再起動しない. 運用状態は `.runtime/read_p122_operational_status.py`、引き継ぎは `.runtime/P122_pending_execution_handoff.json`. 中間の成否や費用を読まない. 全件終了後は `.runtime/collect_p122_closed_once.py`で一度だけ資料を回収する. 停止印は `.runtime/P122.stop`. P120/P121の終了済みwrapperを再起動しない. 詳細は[次の作業](docs/next_actions.md).
 
-再要約候補は `scripts/rolling_checkpoint_history.py` の純粋制御部まで. 13件の新規合成検査と全2,011テストが成功したが、推論アダプター、実課題worker、全件監査への接続は未実装. 初回の既存部品との一致と繰返し更新の保持範囲を検査した. [設計と未実施範囲](docs/rolling_checkpoint_candidate_20261025.md). P122へ読み込ませたり、途中で差し替えたりしない.
+再要約候補は共有予算付き推論、実課題worker、全件監査、有限driverまで接続済み. 追加26件を含む全2,037テストが成功した. [比較仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md)と[準備資料](materials/20261025_rolling_checkpoint_connection/README.md)を参照する. 実機事前計数とP123生成は未開始で、実行用configも未作成. P122全件閉鎖と結果確認後、閉鎖記録を結び付けた計画を固定し、同一headの両CIと事前計数を通して12条件へ進む. P122実行木に新部品を読み込ませない.
 
 生のプロンプト、私有推論、完全履歴、正解、モデル重み、認証情報をGitへ登録しない. 停止指示が来た場合は従う. [AGENTS](AGENTS.md)／[現在状態](docs/current_status.md).
 
