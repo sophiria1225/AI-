@@ -10,7 +10,7 @@ P123は全12条件を終了し、3方式とも既知4課題で4/4成功、使用
 
 P124の固定応答再生は全20programの出力・方式間境界が一致し、通常完全cache68対提案57の保存backend応答だった。これは実API/model0の局所検証で、全仕事の品質・tokenの実測ではない（[P124所見](docs/P124_findings.md)）。
 
-次はP125の既知4課題×2方式・seed157で、自動field projectionの追加効果を全仕事で測る。[準備PR517](https://github.com/sophiria1225/AI-/pull/517)。P125の有限計画を1,125 source filesとP123/P124閉鎖証拠へ固定済み。既知4課題×2方式・seed157、各80 model呼出/450,000 tokens/1,800作業秒、全体8評価・800 API・server6時間。最終headのpush/PR両CI後に一度開始する。モデルはまだ未開始。単発checkpointを共通にした事前比較であり、今回最小だった別反復を上回ったと解釈しない。
+P125は2026-10-26 08:25 JSTに開始済み。既知4課題×2方式・seed157で、自動field projectionの追加効果を全仕事で測る。実行head `2c11ceaa65b47b27cd23df8a943ab3d745b94461` のpush/PR両CI成功を確認し、[PR517](https://github.com/sophiria1225/AI-/pull/517)をmerge済み。1,125 source filesとP123/P124閉鎖証拠へ固定した8条件を実行している。初期入力8件と要約transport1件の計数、activationが完了。08:27 JSTにwrapper・pipeline・所有server・batchの生存を確認した。途中の成否・使用量・モデル本文は未読で、P125の結果は未確定。各80 model呼出/450,000 tokens/1,800作業秒、全体8評価・800 API・server6時間の上限を維持する。 [開始記録](reports/P125_execution_start_20261026.json)。単発checkpointを共通にした事前比較であり、今回最小だった別反復を上回ったと解釈しない。
 
 ## 目的と継続方針
 
