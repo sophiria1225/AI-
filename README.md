@@ -1,37 +1,38 @@
 # AIハーネス研究
 
-<!-- CURRENT_EVIDENCE_SNAPSHOT -->
-P122全24枠とserverを閉じて全件確認した. 反復採用基準は未達. 新規性、一般的品質維持、非劣性は未確立. 未知使用量または未完了があるため次の生成は開始せず、全件を保存した. [全件資料と判断](https://github.com/sophiria1225/AI-/blob/main/docs/P122_findings.md).
-<!-- END_CURRENT_EVIDENCE_SNAPSHOT -->
+必要な情報と最終成果の品質を保ち、不要な取得、共有、モデル呼出し、実行、検証を減らす. 要約、制御、失敗、再取得を含む仕事全体の入力＋出力トークンで評価する.
 
-必要な情報と処理、最終成果の品質を保ち、不要な取得、共有、モデル呼出し、実行、検証を減らす. 制御、失敗、再取得を含む仕事全体の費用で評価する.
+## 現在の状態：2026年10月26日
 
-## 現在の作業
-
-2026年10月25日の最新指示により、P120の観測差のばらつきと成功損失をP122で反復確認する. P120/P121と原稿作成は終了済み. P122は同じheadの両CI成功と初回入力確認後、専用固定木で実行中. [準備資料](materials/20261025_p122_preparation/README.md). 並行して[再要約の実行接続と比較準備](materials/20261025_rolling_checkpoint_connection/README.md)まで完了した. 実課題での効果確認は未実施.
+**P122は全24条件を終了・公開済み. 現在の実験プロセスは停止し、P123は未開始である.** コンテキスト移行用の[詳細な引き継ぎ](docs/handoff_20261026_context_transfer.md)を作成した. 次の会話はこの文書と[RESUME](RESUME.md)から再開する.
 
 | 項目 | 結果と限界 |
 |---|---|
-| P118: 全保持と別呼出し要約 | 成功3/4対4/4. 共通成功３課題の総tokenは要約側で約0.95%増. 全保持CSVの使用量不明１要求を保持 |
-| P119: 別呼出しと任意の同時要約 | 成功4/4対3/4. 同時要約は要求２、採用０ |
-| P120: 別呼出しと必須の同時要約 | 成功4/4対3/4. 同時要約は要求２、採用２. 写真で7.50%減、CSVで成功損失 |
-| P121: 保存行動列上の入力差 | 全24枠、487保存要求、974入力. 既知486要求で元の入力計数と一致. 不明１要求の総使用量は補完しない |
+| P122成功 | 別呼出し要約10/12、同時要約9/12. 同じ既知４課題の３設定反復 |
+| P122費用 | 別要約2,365,604 token、同時要約は既知2,257,940＋不明１要求. 正確な全体削減率は出さない |
+| 写真 | ３対とも両側成功. 同時−別の差は−10,497、−32,865、+2,349 token. 全３設定で削減したわけではない |
+| CSV | seed57で同時方式が成功を失った. 残る２設定は両側失敗 |
+| 継続停止 | 10/25 23:24 JST、使用量全件既知を要求した自動継続条件で終了. ユーザーの停止指示ではない |
+| P123 | 単発別要約、反復別要約、反復同時要約の12条件. 実装・仕様は準備済み、実行config・実機事前計数・生成は未開始 |
+| 研究上の結論 | 性能を保った全体費用削減、統計的非劣性、新規手法の独自性は未確立 |
 
-[全保持との比較](docs/P118_findings.md)／[任意欄](docs/P119_findings.md)／[必須欄](docs/P120_findings.md)／[入力差と要約費用](docs/P121_findings.md). ３群の採用基準は全て未達である.
+[P122全件](docs/P122_findings.md)／[全件資料](materials/20261025_p122_results/README.md)／[状態確認](reports/context_handoff_20261026_snapshot.json)／[P123の既定仕様](docs/experiments/P123_whole_task_rolling_checkpoint.md).
+
+次はP122の未知使用量と歴史的なfalse判定を保持し、独立したP123の実行判断を新しく記録する. 計画を固定し、同一headの両CI、固定実行木、回収先を確認してから開始する. 終了済みP122や古い自動継続を再起動しない. [詳しい次作業](docs/next_actions.md).
 
 ## 原稿と資料
 
-- [現在のPDFとソース](papers/202610_letter/checkpoint_cost_v01/README.md): 日英題名を維持. 本文・文献４頁、英文１頁の全５頁を目視済み. 公式誌面クラスは未使用.
-- [全24条件の表](papers/202610_letter/checkpoint_cost_v01/all_conditions.csv)／[P120全件の図](materials/20261025_p120_figures/README.md)／[P121の全件資料](materials/20261025_p121_results/README.md).
-- [教授用459字あらまし](papers/202610_letter/checkpoint_cost_v01/professor_abstract_ja.txt): 句点は`.`、中黒なし. 本文用の短い要旨とは別案.
-- [原稿の主張と研究上の残件](docs/checkpoint_letter_review_20261025.md): 数値上の正結果と、未確立の新規性を区別.
+- [現稿PDFとソース](papers/202610_letter/checkpoint_cost_v01/README.md)：日英題名を維持. 本文・文献４頁＋英文１頁、全頁目視済み. P122は未反映.
+- [教授用459字あらまし](papers/202610_letter/checkpoint_cost_v01/professor_abstract_ja.txt)：句点は`.`、中黒なし. 原稿用の短い要旨とは別案.
+- [原稿の主張点検](docs/checkpoint_letter_review_20261025.md)：P120写真１対の7.50%削減という当時の観測を保持. 最新の反復結果はP122を参照.
+- [今回の移行資料](materials/20261026_context_handoff/README.md)：停止原因、研究目的、再開手順、実装と未実施部分を整理.
 
-著者、所属、公式様式は未完了. 教授への送信や学会投稿は行っていない. 10月31日までのレター投稿を目標とし、採択を保証しない. [投稿情報](papers/202610_letter/checkpoint_cost_v01/submission_metadata.json).
+10月31日までのレター投稿を目標とする. 著者、所属、公式様式は未完了. 教授への送信と学会投稿は未実施. 原稿はまとまった結果で次版へ更新する. 採択は保証しない.
 
-## 継続と保存
+## 保存と作業範囲
 
-[RESUME](RESUME.md)に現在の作業木、終了済み処理、再実行しない処理をまとめた. [現在の状態](docs/current_status.md)／[次の作業](docs/next_actions.md)／[作業ボード](docs/task_board.md)／[専用Project](https://github.com/users/sophiria1225/projects/1).
+[現在の状態](docs/current_status.md)／[作業ボード](docs/task_board.md)／[専用Project](https://github.com/users/sophiria1225/projects/1)／[最終目標](docs/research_objective_20261022.md)／[AGENTS](AGENTS.md).
 
-変更先は `sophiria1225/AI-` と専用Projectのみ. 元の成否、欠測、固定条件、全公開指紋を保持する. 未見12課題は未閲覧. 終了済みの実験を再試行せず、新しいモデル比較には事前の条件と有限予算が必要である.
+変更先は `sophiria1225/AI-` と専用Projectのみ. 既存の全結果、失敗、未知使用量、固定指紋、旧原稿を保持する. 未見12課題は未閲覧. ユーザーの停止まで継続する指示を引き継ぐが、今回の資料作成では新実験を起動していない.
 
-過去の実行中表示や原稿保留の指示は、[整理前READMEの固定版](https://github.com/sophiria1225/AI-/blob/263dad32be21463deaf4467a9efe6b7eb4db0fba/README.md)に残す. その当時の次の作業を現在の指示として再実行しない. [最終目標](docs/research_objective_20261022.md)と[10月22日のアカウント引き継ぎ](docs/handoff_20261022_account_switch.md)も保持している.
+過去の「実行中」や古い次作業は[PR510時点の記録](https://github.com/sophiria1225/AI-/blob/4200a464d8aaed187a4361fa7055759b6c5bcbfb/README.md)に残す. 現在の運用状態として再適用しない.
