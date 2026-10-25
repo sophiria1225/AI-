@@ -412,6 +412,8 @@ https://github.com/sophiria1225/AI-/blob/main/docs/research_execution_route_2026
 最新方針：今後約24時間（10/27 06時頃まで）で主要実験をまとめ原稿へ進む. 主候補と対照を絞り、機構比較・必要な反復・事前固定した確認評価を優先する. 正結果や採択は保証せず、失敗・不明を保存する.
 履歴確認：P0–P123を実装・条件・実測・採否に対応づけて読み直した. 原稿はユーザーが執筆し、こちらは実験と結果・根拠の整理を担当. 通常メッセージでは実験を止めない.
 https://github.com/sophiria1225/AI-/blob/main/docs/research_history_review_20261026.md
+P124：限定ASTによる既観測field再利用を固定prefixで各10program再生。全20出力・境界一致、通常完全cache68対57保存backend応答（純減11、16.176%）。実API/model0、最終品質・総tokens未測定。独立監査で200control返答とcacheを再構成。P123は実行継続、P125既知4課題×2方式の全仕事比較を準備。
+https://github.com/sophiria1225/AI-/blob/main/docs/P124_findings.md
 
 **なぜ行うか**: 10月31日の投稿完了に向け、今週中にあらましと主要実験をそろえる。既存方式の接続だけでなく、観測した問題と具体的な機構差を４ページで説明できる主張へ絞る。
 
@@ -425,6 +427,8 @@ https://github.com/sophiria1225/AI-/blob/main/docs/current_status.md
 最新方針：今後約24時間（10/27 06時頃まで）で主要実験をまとめ原稿へ進む. 主候補と対照を絞り、機構比較・必要な反復・事前固定した確認評価を優先する. 正結果や採択は保証せず、失敗・不明を保存する.
 履歴確認：P0–P123を実装・条件・実測・採否に対応づけて読み直した. 原稿はユーザーが執筆し、こちらは実験と結果・根拠の整理を担当. 通常メッセージでは実験を止めない.
 https://github.com/sophiria1225/AI-/blob/main/docs/research_history_review_20261026.md
+P124：限定ASTによる既観測field再利用を固定prefixで各10program再生。全20出力・境界一致、通常完全cache68対57保存backend応答（純減11、16.176%）。実API/model0、最終品質・総tokens未測定。独立監査で200control返答とcacheを再構成。P123は実行継続、P125既知4課題×2方式の全仕事比較を準備。
+https://github.com/sophiria1225/AI-/blob/main/docs/P124_findings.md
 
 **なぜ行うか**: 方式名だけでなく、何が変わり何が改善・悪化したかを今週の主要結果として示す。既存のP7は１状態の探索であり、そのまま主評価にしない。
 
