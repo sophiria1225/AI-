@@ -407,6 +407,14 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P126再生閉鎖・P127準備（2026-10-26）】
+P126の保存応答再生は全48件が比較条件を満たして閉鎖した。各記録で保存backend応答80→67（13減、16.25%）、合計26 partial hit。通常境界44件は40正常終了と4既知エラー、方式間22境界が一致し、残る4件は記録末尾で停止した。制御往復bytesは各103,385→104,832へ増えた。実model/API/評価/tokenizerは0で、タスク完了・品質維持・全仕事token削減・新規性の実証ではない。
+
+次はP127の既知4課題×2方式。両方式に同じ通常join・明示field取得・完全cache・別呼出し反復checkpointを与え、自動region変換の追加効果を測る。seed157、各80 model呼出し・450,000 token・1,800作業秒、全8評価・880 API・server6時間。CSV上限は両方式とも120とする新比較で、P125の80を改変しない。source・計画・CIを固定してから一度だけ開始する。現時点では実モデル未開始。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P126_findings.md
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P127_whole_task_region_projection.md
+
+【以下は以前の経過】
 【最新：P125全8条件閉鎖・機構未発動（2026-10-26）】
 通常cacheと自動projectionは各3/4成功、総logical入力＋出力766,875 tokenで一致。使用量不明0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常complete-cache hitは0、契約失敗も0。CSVは両方式ともAPI上限80で失敗し、固定development gateはfalseを保持する。全8合計1,533,750 token・154 model呼出し・488実API・8独立評価。元wrapper、所有server、collectorは閉鎖済みで再実行しない。独立audit v01のswap数値型比較による失敗とv02修正を保存する。
 閉鎖後診断ではCSV実取得25件の既存library provider候補0。既存ordinary joinには必要2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定。join自体は新規機構ではない。seed変更やID guard追加だけを根拠に再実験しない。次の有限比較は未固定、新しい実験は未開始。原稿はユーザーが執筆し、こちらは実験・全件結果・再現根拠を整理する。
@@ -434,6 +442,14 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P126再生閉鎖・P127準備（2026-10-26）】
+P126の保存応答再生は全48件が比較条件を満たして閉鎖した。各記録で保存backend応答80→67（13減、16.25%）、合計26 partial hit。通常境界44件は40正常終了と4既知エラー、方式間22境界が一致し、残る4件は記録末尾で停止した。制御往復bytesは各103,385→104,832へ増えた。実model/API/評価/tokenizerは0で、タスク完了・品質維持・全仕事token削減・新規性の実証ではない。
+
+次はP127の既知4課題×2方式。両方式に同じ通常join・明示field取得・完全cache・別呼出し反復checkpointを与え、自動region変換の追加効果を測る。seed157、各80 model呼出し・450,000 token・1,800作業秒、全8評価・880 API・server6時間。CSV上限は両方式とも120とする新比較で、P125の80を改変しない。source・計画・CIを固定してから一度だけ開始する。現時点では実モデル未開始。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P126_findings.md
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P127_whole_task_region_projection.md
+
+【以下は以前の経過】
 【最新：P125全8条件閉鎖・機構未発動（2026-10-26）】
 通常cacheと自動projectionは各3/4成功、総logical入力＋出力766,875 tokenで一致。使用量不明0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常complete-cache hitは0、契約失敗も0。CSVは両方式ともAPI上限80で失敗し、固定development gateはfalseを保持する。全8合計1,533,750 token・154 model呼出し・488実API・8独立評価。元wrapper、所有server、collectorは閉鎖済みで再実行しない。独立audit v01のswap数値型比較による失敗とv02修正を保存する。
 閉鎖後診断ではCSV実取得25件の既存library provider候補0。既存ordinary joinには必要2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定。join自体は新規機構ではない。seed変更やID guard追加だけを根拠に再実験しない。次の有限比較は未固定、新しい実験は未開始。原稿はユーザーが執筆し、こちらは実験・全件結果・再現根拠を整理する。
