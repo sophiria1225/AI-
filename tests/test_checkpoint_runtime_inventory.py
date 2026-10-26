@@ -117,9 +117,13 @@ class CheckpointInventoryTests(unittest.TestCase):
     def test_both_modes_capture_same_packet_only_on_exposes_it(self):
         off, snapshot, packet = self.prepared('off'); on, _, other = self.prepared()
         self.assertEqual(packet, other)
-        messages = [dict(role='user', content='synthetic task')]
+        messages = [dict(role='system', content='synthetic system'), dict(role='user', content='synthetic task')]
         self.assertEqual(off.view(messages, revision=1), messages)
-        self.assertEqual(len(on.view(messages, revision=1)), len(messages) + 1)
+        displayed = on.view(messages, revision=1)
+        self.assertEqual(len(displayed), len(messages))
+        self.assertEqual(displayed[1:], messages[1:])
+        self.assertNotEqual(displayed[0]['content'], messages[0]['content'])
+        with self.assertRaises(ValueError): on.view([dict(role='user', content='no system')], revision=1)
         for controller in (off, on): controller.submitted(revision=1, call_id='call_010')
         self.assertEqual((off.summary()['prepared'], on.summary()['prepared']), (1, 1))
         self.assertEqual((off.summary()['exposed'], on.summary()['exposed']), (0, 1))
@@ -144,7 +148,7 @@ class CheckpointInventoryTests(unittest.TestCase):
         self.assertEqual(digest(count_view), digest(send_view))
         self.assertEqual(messages, original)
         self.assertEqual(controller.pending['packet'], original_packet)
-        count_view[-1]['content'] = 'tampered returned copy'
+        count_view[0]['content'] = 'tampered returned copy'
         self.assertEqual(controller.view(messages, revision=1), send_view)
 
     def test_focus_never_receives_notice_and_unsent_preparation_remains_pending(self):

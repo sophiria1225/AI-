@@ -153,7 +153,10 @@ class CheckpointInventory:
         require(type(revision) is int and revision == self.pending['packet']['checkpoint_revision'],
                 'inventory_view_revision_changed')
         if self.mode == 'checkpoint_inventory':
-            result.append(deepcopy(self.pending['message']))
+            require(type(result) is list and result and type(result[0]) is dict
+                and result[0].get('role') == 'system' and type(result[0].get('content')) is str,
+                'first_system_message_required_for_inventory')
+            result[0]['content'] += '\n\n' + self.pending['message']['content']
         return result
 
     def submitted(self, *, revision, call_id):
