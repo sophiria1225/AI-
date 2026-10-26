@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P127全8条件閉鎖・機構未発動 2026-10-26 13:08 JST】
+P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
+全8合計1,390,434 token・136 model呼出・490 API・8評価。独立監査67,270 checks PASS。旧固定sourceと後処理v01修正来歴を保持。全132 sourceのAST診断も終了。全66対同値、対象取得は完全応答の永続dict保存により拒否。構文緩和だけで安全な小改善は確認できず、次のモデル実験を採択しない。追加seedや不成立条件の反復は自動開始しない。新モデル比較は未開始。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P127_findings.md
+
+【以下は以前の経過】
 【最新：P127全8条件を開始 2026-10-26 11:45 JST】
 P127は2026-10-26 11:45 JSTに開始した。実行head `0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0` のpush/PR両CI成功後、PR521をmerge済み。1,142 source filesを固定し、初期8入力と要約transport1件の計数・activationが完了した。既知4課題×2方式・seed157・共通の通常join/明示field/完全cache/別呼出し反復で、自動region変換の追加効果を測る。全8条件と所有serverの閉鎖前に成否・費用・本文を読んで条件を変えない。結果は未確定。 各80 model呼出・450,000 token・1,800作業秒、全880 API・8評価・所有server6時間。原稿はユーザーが執筆、普通のメッセージでは実験を止めず、明示停止に従う。
 https://github.com/sophiria1225/AI-/blob/main/reports/P127_execution_start_20261026.json
@@ -447,6 +453,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P127全8条件閉鎖・機構未発動 2026-10-26 13:08 JST】
+P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
+全8合計1,390,434 token・136 model呼出・490 API・8評価。独立監査67,270 checks PASS。旧固定sourceと後処理v01修正来歴を保持。全132 sourceのAST診断も終了。全66対同値、対象取得は完全応答の永続dict保存により拒否。構文緩和だけで安全な小改善は確認できず、次のモデル実験を採択しない。追加seedや不成立条件の反復は自動開始しない。新モデル比較は未開始。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P127_findings.md
+
+【以下は以前の経過】
 【最新：P127全8条件を開始 2026-10-26 11:45 JST】
 P127は2026-10-26 11:45 JSTに開始した。実行head `0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0` のpush/PR両CI成功後、PR521をmerge済み。1,142 source filesを固定し、初期8入力と要約transport1件の計数・activationが完了した。既知4課題×2方式・seed157・共通の通常join/明示field/完全cache/別呼出し反復で、自動region変換の追加効果を測る。全8条件と所有serverの閉鎖前に成否・費用・本文を読んで条件を変えない。結果は未確定。 各80 model呼出・450,000 token・1,800作業秒、全880 API・8評価・所有server6時間。原稿はユーザーが執筆、普通のメッセージでは実験を止めず、明示停止に従う。
 https://github.com/sophiria1225/AI-/blob/main/reports/P127_execution_start_20261026.json
