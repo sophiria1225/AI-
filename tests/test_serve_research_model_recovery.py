@@ -43,7 +43,7 @@ class RecoveryPortTest(unittest.TestCase):
             self.assertTrue((out/'summary.json').is_file())
             self.assertTrue((out/'serve_research_model_recovery.py').is_file())
             self.assertFalse((implementation/'.runtime/model_server.json').exists())
-            self.assertEqual(popen.call_args.args[0][0],str(storage/'bin/backend'))
+            self.assertEqual(popen.call_args.args[0][0],str(storage.resolve()/'bin/backend'))
             child.terminate.assert_not_called();child.kill.assert_not_called()
 
     def test_missing_inspector_fails_closed(self):
