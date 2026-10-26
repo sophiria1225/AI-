@@ -1,6 +1,6 @@
 # 研究の作業ボード
 
-更新日: 2026-10-26T21:49:22.171495+00:00
+更新日: 2026-10-27
 
 番号はIssueに対応する固定ID。前段の結果に応じて段階的に進める。
 
@@ -407,6 +407,11 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【準備：2026-10-27 P133継続中、P134の6条件を固定へ】
+P133は開始済みの4条件を変更せず継続。P134は対象ID×不足fieldをcheckpoint後に一度提示する候補で、raw anchor／残件数／対象と不足field×seed57/157、既知CSV1課題の6条件を準備。主2方式は同じ証拠・明示query・guide、rawはP123元interface、全方式で観測/capture共通。各80calls/450k tokens/1800秒/API80、server6h・18時上限。P133全4閉鎖/回収とP134source固定/両CI成功が起動条件。途中効能未読で条件選択せず、全失敗/unknown/未実施を保存。有効性と新規性は未確認、原稿はユーザー担当。通常会話で止めず明示停止に従う。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P134_whole_task_observed_obligations.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 06:48:09 JST P133 actor送信を確認】
 P133 wrapper06:46:23.979開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。要求/生成本文・usage・task成否は未読。時点付きbatch確認であり、全4完了や改善を意味しない。固定head66d9eb71、両CI成功、既知CSV1課題×seed57/157×rolling separate/empirical payback。共通P123 guide/full receipt/API80、各80calls/450k tokens/1800秒、server4時間・12:30 JST上限。初回要約同一、追加要約の実測費用予測による採否だけ比較。通常controller校正であり新規性未主張。
 ユーザーの就寝中継続許可を保持し、以前の06時目安は停止条件でない。通常会話で止めず明示停止に従う。P133開始189台帳/2290束縛を固定、後続globalを遡及適用しない。P130/P131失敗・空白、P132両失敗/unknown1/gate falseを保存。全4閉鎖後に未知と失敗を残して監査・図表化する。原稿はユーザー担当、一般品質維持・全仕事token減・新規技術の中心主張は未達。
@@ -503,6 +508,11 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【準備：2026-10-27 P133継続中、P134の6条件を固定へ】
+P133は開始済みの4条件を変更せず継続。P134は対象ID×不足fieldをcheckpoint後に一度提示する候補で、raw anchor／残件数／対象と不足field×seed57/157、既知CSV1課題の6条件を準備。主2方式は同じ証拠・明示query・guide、rawはP123元interface、全方式で観測/capture共通。各80calls/450k tokens/1800秒/API80、server6h・18時上限。P133全4閉鎖/回収とP134source固定/両CI成功が起動条件。途中効能未読で条件選択せず、全失敗/unknown/未実施を保存。有効性と新規性は未確認、原稿はユーザー担当。通常会話で止めず明示停止に従う。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P134_whole_task_observed_obligations.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 06:48:09 JST P133 actor送信を確認】
 P133 wrapper06:46:23.979開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。要求/生成本文・usage・task成否は未読。時点付きbatch確認であり、全4完了や改善を意味しない。固定head66d9eb71、両CI成功、既知CSV1課題×seed57/157×rolling separate/empirical payback。共通P123 guide/full receipt/API80、各80calls/450k tokens/1800秒、server4時間・12:30 JST上限。初回要約同一、追加要約の実測費用予測による採否だけ比較。通常controller校正であり新規性未主張。
 ユーザーの就寝中継続許可を保持し、以前の06時目安は停止条件でない。通常会話で止めず明示停止に従う。P133開始189台帳/2290束縛を固定、後続globalを遡及適用しない。P130/P131失敗・空白、P132両失敗/unknown1/gate falseを保存。全4閉鎖後に未知と失敗を残して監査・図表化する。原稿はユーザー担当、一般品質維持・全仕事token減・新規技術の中心主張は未達。

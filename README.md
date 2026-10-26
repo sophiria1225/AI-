@@ -8,9 +8,9 @@ P133は06:46:23.979 JSTに開始し、06:48:09 JSTにrootが最初のactor送信
 
 最強の既存positiveはP123通常rolling separateが既知4/4成功を保って単発要約比12.07%の全仕事tokenを削減した観測である。同時反復の新候補は強い通常対照より高費用だった。既存方式の効用と新技術の成立を分け、一般品質維持・新規性の中心主張は未達とする。[P123所見](docs/P123_findings.md)。
 
-並行して、成功API返答に基づく対象ごとの未充足fieldをcheckpoint越しに保持する候補を別に検証する。P132の旧monitorのunknownを維持し、公開契約で正当化できるpartition合成を別versionへ分離する。P133へ途中で機構を混入せず、将来の比較は通常進捗チェックリストと同じ証拠・予算を使う。
+並行してP134を準備する。成功した型付きAPI返答だけから対象ID×必要fieldの未充足を保持し、accepted checkpointの次actorに一度だけ提示する。従来のraw anchor／残件数のみ／対象と不足field、既知CSV1課題×seed57/157の6条件。主比較の2方式は同じ証拠・明示query・guide、rawはP123元interfaceを維持する。全方式で観測とcaptureを共通化し、unknown/open列挙を残件0にしない。各80calls/450000tokens/1800作業秒/API80、所有server6時間・18:00 JSTまで。P133全4枠とserver閉鎖・collector完了、P134 source固定・両CI成功後にだけ開始する。P133途中効能に基づく条件変更はせず、全失敗・不明費用・未実施を保持する。P134はまだモデル未実行で、有効性・新規性は未確認。[P134仕様](docs/experiments/P134_whole_task_observed_obligations.md)。
 
-既存run/prep・失敗・不明費用は不変。P132開始snapshot186台帳/2231束縛、公開後global189/2290を区別する。P133開始snapshotも189台帳/2290束縛に固定し、将来台帳を遡及適用しない。P130/P131の起動前失敗と約3時間の空白は保存済み。モデルは単一serverで直列、保存生成codeはhost実行しない。未見12課題は別確認計画まで未閲覧。
+既存run/prep・失敗・不明費用は不変。P132開始snapshot186台帳/2231束縛、公開後global189/2290を区別する。P133開始snapshotも189台帳/2290束縛に固定し、後続global190/2300を遡及適用しない。P134は開始前に自身の台帳snapshotを固定する。P130/P131の起動前失敗と約3時間の空白は保存済み。モデルは単一serverで直列、保存生成codeはhost実行しない。未見12課題は別確認計画まで未閲覧。
 
 変更先はsophiria1225/AI-と[専用Project1](https://github.com/users/sophiria1225/projects/1)のみ。生prompt・推論・生成task code・課題値・認証・評価器本文は公開しない。原稿・教授への連絡・投稿は行わない。
 
