@@ -407,9 +407,11 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
-【最新運用：2026-10-27 08:18 JST P135実行を確認】
-P135 wrapper08:15:47 JST開始。source d87880f、plan5a5b5338、1498source、PR540同head両CI成功。preflight/activation成功、最初のraw actor要求ファイルとmodel slot処理中を確認し、全6条件を固定のまま直列実行する。途中成否・費用・生成本文は未読。raw/counts/entity×seed57/157、既知CSV1課題、各80calls450k tokens1800秒API80、server6h・18時上限。P133復旧証明とP134未開始失敗を起動前に検証、P134と科学条件・core・guide・tools・予算は同じ。開始190台帳/2300束縛へ後続globalを遡及しない。P133は独立検算16788項目と図相互確認PASS、両方式各1/2成功434623tokens・見送り0・差0/gatefalse。元報告失敗0/0/1とdata-only復旧を公開中。新規性・一般品質維持・新方式の全仕事削減は未確立。全6閉鎖後、全費用・品質・表示到達と表示の実測入力負担/field mask冗長性を検算する。通常会話で止めず明示停止に従う。原稿本文はユーザー担当。
+【最新：2026-10-27 P133全4公開済み／P135全6実行中（開始確認08:18 JST）】
+P135 wrapper08:15:47 JST開始。source d87880f、plan5a5b5338、1498source、PR540同head両CI成功。08:18:19 JST時点でpreflight/activation成功、最初のraw actor要求ファイルとmodel slot処理中を確認し、全6条件の有限比較を固定のまま直列実行中。途中成否・費用・生成本文は未読。raw/counts/entity×seed57/157、既知CSV1課題、各80calls450k tokens1800秒API80、server6h・18時上限。P133復旧証明とP134未開始失敗を起動前に検証、P134と科学条件・core・guide・tools・予算は同じ。開始190台帳/2300束縛へ後続globalを遡及しない。P133は独立検算16788項目と図相互確認PASS、両方式各1/2成功434623tokens・見送り0・差0/gatefalse。全4閉鎖・元報告失敗0/0/1とdata-only復旧をPR542で公開済み。新規性・一般品質維持・新方式の全仕事削減は未確立。全6閉鎖後、全費用・品質・表示到達と表示の実測入力負担/field mask冗長性を検算する。通常会話で止めず明示停止に従う。原稿本文はユーザー担当。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_execution_start_20261027.md
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P133_findings.md
+https://github.com/sophiria1225/AI-/pull/542
 
 【以下は過去時点の記録】
 【最新：2026-10-27 P133全4閉鎖・別報告回収、P135同条件復旧へ】
@@ -518,9 +520,11 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
-【最新運用：2026-10-27 08:18 JST P135実行を確認】
-P135 wrapper08:15:47 JST開始。source d87880f、plan5a5b5338、1498source、PR540同head両CI成功。preflight/activation成功、最初のraw actor要求ファイルとmodel slot処理中を確認し、全6条件を固定のまま直列実行する。途中成否・費用・生成本文は未読。raw/counts/entity×seed57/157、既知CSV1課題、各80calls450k tokens1800秒API80、server6h・18時上限。P133復旧証明とP134未開始失敗を起動前に検証、P134と科学条件・core・guide・tools・予算は同じ。開始190台帳/2300束縛へ後続globalを遡及しない。P133は独立検算16788項目と図相互確認PASS、両方式各1/2成功434623tokens・見送り0・差0/gatefalse。元報告失敗0/0/1とdata-only復旧を公開中。新規性・一般品質維持・新方式の全仕事削減は未確立。全6閉鎖後、全費用・品質・表示到達と表示の実測入力負担/field mask冗長性を検算する。通常会話で止めず明示停止に従う。原稿本文はユーザー担当。
+【最新：2026-10-27 P133全4公開済み／P135全6実行中（開始確認08:18 JST）】
+P135 wrapper08:15:47 JST開始。source d87880f、plan5a5b5338、1498source、PR540同head両CI成功。08:18:19 JST時点でpreflight/activation成功、最初のraw actor要求ファイルとmodel slot処理中を確認し、全6条件の有限比較を固定のまま直列実行中。途中成否・費用・生成本文は未読。raw/counts/entity×seed57/157、既知CSV1課題、各80calls450k tokens1800秒API80、server6h・18時上限。P133復旧証明とP134未開始失敗を起動前に検証、P134と科学条件・core・guide・tools・予算は同じ。開始190台帳/2300束縛へ後続globalを遡及しない。P133は独立検算16788項目と図相互確認PASS、両方式各1/2成功434623tokens・見送り0・差0/gatefalse。全4閉鎖・元報告失敗0/0/1とdata-only復旧をPR542で公開済み。新規性・一般品質維持・新方式の全仕事削減は未確立。全6閉鎖後、全費用・品質・表示到達と表示の実測入力負担/field mask冗長性を検算する。通常会話で止めず明示停止に従う。原稿本文はユーザー担当。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_execution_start_20261027.md
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P133_findings.md
+https://github.com/sophiria1225/AI-/pull/542
 
 【以下は過去時点の記録】
 【最新：2026-10-27 P133全4閉鎖・別報告回収、P135同条件復旧へ】
