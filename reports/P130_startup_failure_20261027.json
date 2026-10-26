@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-26T16:27:05.003276+00:00",
+  "scope": "operational metadata and source only",
+  "failure_stage": "owned server supervisor port availability check before model subprocess spawn",
+  "port": 8011,
+  "exception": "OSError: [Errno 48] Address already in use",
+  "failed_at_utc": "2026-10-26T16:07:04.458326+00:00",
+  "pipeline_stage_count": 0,
+  "P130_task_directories": 0,
+  "model_runtime_spawned": false,
+  "model_generation_dispatched": false,
+  "tokenizer_preflight_dispatched": false,
+  "task_API_or_evaluator_dispatched": false,
+  "zero_call_basis": "fixed source control flow plus absence of P130 task/batch/server record directories; usage records were not read",
+  "port_current_lsof_matches": 0,
+  "port_current_netstat_matches": 0,
+  "port_owner_at_failure": "unknown; TIME_WAIT or transient listener is possible but unproven",
+  "recorded_pids_absent": [
+    54476,
+    72869,
+    72890,
+    72915,
+    63479,
+    63480
+  ],
+  "waiting_pids_present": [
+    55006,
+    55878
+  ],
+  "source_head": "8d60aaedac3ccdb4d2f5cca760574f3ea5c13507",
+  "latest_start_utc": "2026-10-26T17:00:00+00:00",
+  "changes": 0,
+  "retries": 0,
+  "model_API_evaluator_Docker_calls": 0,
+  "actual_task_results_or_usage_read": false,
+  "source_sha256": {
+    "configs/P130_whole_task_checkpoint_inventory_v01.json": "d377fe711a329e0ba5c7d017b33e094180f889be1d7f77e8f7aab210375bdb76",
+    "scripts/serve_research_model.py": "2fc5a76b621bd57917d65d61fa135d6d13b0f723a05f9b8bccd3b1a8c0e3f9a5",
+    "scripts/run_whole_task_checkpoint_inventory_pipeline.py": "be81f9293ff4071970c2c90acd5a6cc5c6c0612faa771217d55c1ffa744aac82"
+  },
+  "private_diagnostic_sha256": "cb3f08b48f426e1b57bc77e3659dd12d1f692f0a30ee4c3e80b4b1ec25017d5e",
+  "original_failure_overwritten": false
+}
