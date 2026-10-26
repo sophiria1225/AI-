@@ -1,0 +1,17 @@
+phase,arm,model_seeds,independent_tasks,planned_conditions,evaluated_conditions,successful_conditions,known_input_tokens,known_output_tokens,known_token_subtotal,unknown_usage_calls,exact_total_tokens,model_calls,environment_api_requests,mechanism_metric,mechanism_count,fixed_phase_gate
+P123,single_checkpoint,57,4,4,4,4,868760,24769,893529,0,893529,86,217,checkpoint_installations,2,False
+P123,rolling_separate,57,4,4,4,4,760248,25408,785656,0,785656,85,216,checkpoint_installations,3,False
+P123,rolling_inline,57,4,4,4,4,808686,28236,836922,0,836922,88,207,checkpoint_installations,3,False
+P125,eager_cached,157,4,4,4,3,743463,23412,766875,0,766875,77,244,projection_hits,0,False
+P125,automatic_projection_cached,157,4,4,4,3,743463,23412,766875,0,766875,77,244,projection_hits,0,False
+P127,explicit_joined_fields,157,4,4,4,3,673911,21306,695217,0,695217,68,245,projection_hits,0,False
+P127,automatic_region_joined_fields,157,4,4,4,3,673911,21306,695217,0,695217,68,245,projection_hits,0,False
+P128,full,57;157,4,8,8,6,1661794,58782,1720576,1,,157,511,receipt_disclosures,0,False
+P128,disclose,57;157,4,8,8,6,1550089,58786,1608875,1,,160,541,receipt_disclosures,109,False
+P129,off,57;157,1,2,2,1,486896,27600,514496,1,,42,186,grounding_repairs,0,False
+P129,feedback,57;157,1,2,2,1,486896,27600,514496,1,,42,186,grounding_repairs,0,False
+P129,repair,57;157,1,2,2,1,486896,27600,514496,1,,42,186,grounding_repairs,0,False
+P132,off,57,1,1,1,0,164442,6571,171013,0,171013,14,120,inventory_notice_actor_calls,0,False
+P132,checkpoint_inventory,57,1,1,1,0,197899,15743,213642,1,,18,47,inventory_notice_actor_calls,2,False
+P133,rolling_separate,57;157,1,2,2,1,417694,16929,434623,0,434623,41,156,payback_rejections,0,False
+P133,empirical_payback,57;157,1,2,2,1,417694,16929,434623,0,434623,41,156,payback_rejections,0,False

@@ -14,4 +14,4 @@ P133開始snapshot189台帳/2290束縛と、その後のglobal190/2300を分離�
 
 変更先はsophiria1225/AI-と[専用Project1](https://github.com/users/sophiria1225/projects/1)のみ。raw prompt・reasoning・生成task code・課題値・認証・評価器本文は公開しない。原稿執筆・教授への連絡・投稿は行わない。
 
-[P135開始記録](docs/experiments/P135_execution_start_20261027.md)。
+[引継ぎ後の実験結果一覧・主張可能範囲](docs/closed_results_index_20261027.md)／[P135開始記録](docs/experiments/P135_execution_start_20261027.md)。

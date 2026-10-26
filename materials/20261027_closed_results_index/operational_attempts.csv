@@ -1,0 +1,5 @@
+phase,status,planned_conditions,evaluated_conditions,successful_conditions,known_token_subtotal,unknown_usage_calls,exact_total_tokens,model_calls,environment_api_requests,evaluator_calls,reason
+P130,not_started_operational_failure,4,0,,,,,0,0,0,server port検査でmodel subprocess前に停止
+P131,not_started_operational_failure,2,0,,,,,0,0,0,旧supervisor識別が新basenameを拒否し計数・生成前に停止
+P134,not_started_operational_failure,6,0,,,,,0,0,0,P133 report障害で前件queueが停止、model/server/preflight/task未開始
+P135,start_record_only_no_closed_results_in_index,6,,,,,,,,,08:15:47 JST開始、08:18:19 JST処理確認。この一覧に閉鎖結果未収録、途中成果未読
