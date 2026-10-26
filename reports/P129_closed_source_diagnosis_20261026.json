@@ -1,0 +1,243 @@
+{
+  "phase": "P129_closed_source_diagnosis",
+  "status": "complete",
+  "scope": "Known closed P118/P123/P127 CSV traces only; no P128 outcomes used. Ordinary pre-write evidence, not live counterfactual success.",
+  "rows": [
+    {
+      "run_id": "BOC_P118_04_SINGLE_CHECKPOINT",
+      "writes": [
+        {
+          "event_ordinal": 98,
+          "call": "call_026",
+          "status": "supported",
+          "reasons": [],
+          "csv": {
+            "status": "supported",
+            "reasons": [],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 0,
+            "duplicate_rows": 0,
+            "missing_pairs": 0,
+            "extra_pairs": 0
+          },
+          "repair_available": false,
+          "original_arguments_sha256": "fd3ae9544e880db4c880b03b0706232377dbd93ce36959ffba76f3e61a7b1754",
+          "replacement_arguments_sha256": null
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "495ff0843dfcb373465d3d1a5043c414bd228a5e56337740980278cad857694a",
+        "events.json": "3aab6d6651a27016d06506594daf11e6816e77350a605ed1efaaae86af08b6d5",
+        "usage.json": "48a4c8bb9975a5fb8518fb5af3b145745c3eae56cd305211c015bd6970f8d925"
+      }
+    },
+    {
+      "run_id": "BOC_P123_04_SINGLE_CHECKPOINT",
+      "writes": [
+        {
+          "event_ordinal": 98,
+          "call": "call_026",
+          "status": "supported",
+          "reasons": [],
+          "csv": {
+            "status": "supported",
+            "reasons": [],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 0,
+            "duplicate_rows": 0,
+            "missing_pairs": 0,
+            "extra_pairs": 0
+          },
+          "repair_available": false,
+          "original_arguments_sha256": "fd3ae9544e880db4c880b03b0706232377dbd93ce36959ffba76f3e61a7b1754",
+          "replacement_arguments_sha256": null
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "495ff0843dfcb373465d3d1a5043c414bd228a5e56337740980278cad857694a",
+        "events.json": "0e5f2f49444c83b59b0caacd73511c4ea0dc66a42a1655db24221093f750b33d",
+        "usage.json": "4d1f70059cff7162f896045e9a7ea58bf31f299886939af4e0e1abdc5a2268aa"
+      }
+    },
+    {
+      "run_id": "BOC_P123_04_ROLLING_SEPARATE",
+      "writes": [
+        {
+          "event_ordinal": 92,
+          "call": "call_024",
+          "status": "unknown",
+          "reasons": [
+            "write_scope_or_argument_shape_unverified"
+          ],
+          "csv": null,
+          "repair_available": false,
+          "original_arguments_sha256": "6d26e41cfadf0e885647e203a3ecc8f25bffe2bc23ebad2306519d2fa7d2c039",
+          "replacement_arguments_sha256": null
+        },
+        {
+          "event_ordinal": 100,
+          "call": "call_028",
+          "status": "supported",
+          "reasons": [],
+          "csv": {
+            "status": "supported",
+            "reasons": [],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 0,
+            "duplicate_rows": 0,
+            "missing_pairs": 0,
+            "extra_pairs": 0
+          },
+          "repair_available": false,
+          "original_arguments_sha256": "fd3ae9544e880db4c880b03b0706232377dbd93ce36959ffba76f3e61a7b1754",
+          "replacement_arguments_sha256": null
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "9a8b3d9381d3094e3c06866451254b19d75f59e30a1ec34524d2aa67a8597f98",
+        "events.json": "2b8bbd6edcf8d508f50eaccc9341c17e770509661ce4d39420aeeebd828a91a5",
+        "usage.json": "4bebbe5be64146397c890fb737511a8dccdb8b78b67f268bd989773bf7478bfd"
+      }
+    },
+    {
+      "run_id": "BOC_P123_04_ROLLING_INLINE",
+      "writes": [
+        {
+          "event_ordinal": 93,
+          "call": "call_030",
+          "status": "supported",
+          "reasons": [],
+          "csv": {
+            "status": "supported",
+            "reasons": [],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 0,
+            "duplicate_rows": 0,
+            "missing_pairs": 0,
+            "extra_pairs": 0
+          },
+          "repair_available": false,
+          "original_arguments_sha256": "5454a81468c153d10c460c8a8754d7764267a7c59b64d1997dc233a1a610d9ee",
+          "replacement_arguments_sha256": null
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "5895437c27bd626a4e84d07ed7a4097c629d7a411ac7b40138a208c9ab9f753a",
+        "events.json": "82ab38acf815a08849a6a93a0160590e0f4955afd27eb2d46c959dc30488a8c4",
+        "usage.json": "43fa14245e84ed95f8ea13901c160771c3a42b0202e3d18ca4c12c1d1639833c"
+      }
+    },
+    {
+      "run_id": "BOC_P127_04_EXPLICIT_JOINED_FIELDS",
+      "writes": [
+        {
+          "event_ordinal": 138,
+          "call": "call_025",
+          "status": "contradicted",
+          "reasons": [
+            "write_payload_differs_from_complete_observed_sources"
+          ],
+          "csv": {
+            "status": "contradicted",
+            "reasons": [
+              "write_payload_differs_from_complete_observed_sources"
+            ],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 2,
+            "duplicate_rows": 1,
+            "missing_pairs": 72,
+            "extra_pairs": 70
+          },
+          "repair_available": true,
+          "original_arguments_sha256": "ec380d0a15db0fceb12bd65d3453d50e25f9b4a7353996d5c842968a31a366f8",
+          "replacement_arguments_sha256": "bf3d838513572834ee306011a8555bfa3ed8ce142f604377c307800e2b97be8e"
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "345253e9669b246d1d7675ff079a52c202f9f97c4693a8e8f258353a8a7ab9cb",
+        "events.json": "dcbee86ba77d3e170005854509cfc179b8e94421ac28f3e352fe68d673ae1027",
+        "usage.json": "9b2c15612f36938d64ca5e37c3cccd121e56f33721cf5fcf82fb99d047daa3c8"
+      }
+    },
+    {
+      "run_id": "BOC_P127_04_AUTOMATIC_REGION_JOINED_FIELDS",
+      "writes": [
+        {
+          "event_ordinal": 138,
+          "call": "call_025",
+          "status": "contradicted",
+          "reasons": [
+            "write_payload_differs_from_complete_observed_sources"
+          ],
+          "csv": {
+            "status": "contradicted",
+            "reasons": [
+              "write_payload_differs_from_complete_observed_sources"
+            ],
+            "expected_rows": 72,
+            "header_matches": true,
+            "rows": 72,
+            "malformed_rows": 2,
+            "duplicate_rows": 1,
+            "missing_pairs": 72,
+            "extra_pairs": 70
+          },
+          "repair_available": true,
+          "original_arguments_sha256": "ec380d0a15db0fceb12bd65d3453d50e25f9b4a7353996d5c842968a31a366f8",
+          "replacement_arguments_sha256": "bf3d838513572834ee306011a8555bfa3ed8ce142f604377c307800e2b97be8e"
+        }
+      ],
+      "source_file_sha256": {
+        "public_task.json": "6f8b5ab0b4aa1658b08448679a8903a7a8d350158830b454f9d98ccea2ccbc21",
+        "spans.json": "345253e9669b246d1d7675ff079a52c202f9f97c4693a8e8f258353a8a7ab9cb",
+        "events.json": "ed24e8e7ab2faac69250b2d9657b0a42432074458be7ddf93e83d9b97384ab91",
+        "usage.json": "abc8c16f3a5dfccd0935b13924f4e02e67de330c83f5f64a8a15896d35eba949"
+      }
+    }
+  ],
+  "write_status_counts": {
+    "supported": 4,
+    "unknown": 1,
+    "contradicted": 2
+  },
+  "final_write_status_counts": {
+    "supported": 4,
+    "contradicted": 2
+  },
+  "diagnostic_source_sha256": "c8534d5cd584a4b6574545904b9994fd8490770c225fc4ffd4142a19139c9d5f",
+  "diagnostic_script_sha256": "35e3139d22c88ef899c4ba8e95e107102f74c545f9a59793071cb2222d83d7ce",
+  "source_sha256": {
+    "scripts/public_output_grounding.py": "8942b4c65bf09a572453266d64227398f9255e934ad848e63de786d849b2f535",
+    "reports/P118_comparison.json": "25d37fd0d64441b92134a769d13e66298037e53fcb092acbc570c8edeb8a1f77",
+    "reports/P123_comparison.json": "73d55305300ae6cb332213f08f8a813a40ab17f82a9a167e3fbbf1bb17fb6147",
+    "reports/P127_comparison.json": "6837377ca43d6ac6ab59952f0a0d433b0917df144b20fc02852f74370350a937"
+  },
+  "additional_model_calls": 0,
+  "additional_API_calls": 0,
+  "additional_evaluator_calls": 0,
+  "additional_tokenizer_calls": 0,
+  "saved_generated_code_executions": 0,
+  "unseen_tasks_read": 0,
+  "raw_task_values_or_program_text_published": false,
+  "original_source_inputs_unchanged": true,
+  "official_outcomes_relabelled": false,
+  "counterfactual_repairs_dispatched": false,
+  "token_or_quality_improvement_established": false,
+  "novel_method_claim": false,
+  "normalizer_correction": "The request does not specify artist order, so artist multisets are compared within a CSV cell. Earlier overly strict diagnostic versions remain preserved privately."
+}
