@@ -2,16 +2,17 @@
 
 必要な情報と最終成果の品質を保ち、要約・制御・失敗・再取得を含む仕事全体のlogical入力＋出力トークンを減らすハーネス制御を研究する。
 
-## 現在の状態：P128全16条件閉鎖、P129実行・P130予約を継続
+## 現在の状態：P129全6条件閉鎖、出力修復は未発動
 
-P128は2026-10-26 22:20 JSTに全16評価・所有server停止・回収・独立監査・図生成を完了。full/discloseは各6/8成功だが、seed57で成功損失1、seed157で改善1。unknown usageは各1（計2）で全体token差は不明、固定gateはfalse。独立監査109,295 checks PASS、監査エラー0・契約停止0。成功件数の合計一致と既知費用小計の減少を、品質維持・全仕事削減の成立とは扱わない。
+P129は2026-10-27 01:07 JSTに全6評価・所有server停止・回収・独立監査・図生成を完了。off/feedback/repairは各1/2成功。seed57は全方式で作業時間切れ・219,344既知token＋usage1件不明、seed157は全方式成功・295,152 token。feedback拒否・修復提案・実送信修復・保存確認済み修復は全0、固定gate false。共通成功の費用差は0、未知3件を含む総費用差は未確定。独立監査79,576 checks PASSは方式採用と別である。
 
-[全件所見](docs/experiments/P128_findings.md)／[全16条件](materials/20261026_p128_results/README.md)／[実図](materials/20261026_p128_results/figures/README.md)／[解釈](materials/20261026_p128_results/INTERPRETATION.md)。共通成功5対の費用は1,078,497→936,656。seed157単独では3/4→4/4、全849,469→833,441だが、seed57の脱落・未知を含む全体へ一般化しない。通常receipt disclosureの効率校正で、新規性は未成立。
+[全件所見](docs/experiments/P129_findings.md)／[全6条件](materials/20261026_p129_results/README.md)／[実図](materials/20261026_p129_results/figures/README.md)／[会計・再現](materials/20261026_p129_results/INTERPRETATION.md)。通常の出力根拠検証の校正で、新規性・一般品質維持・全仕事削減は未成立。
 
-P129の固定6条件は22:20 JSTに既存queueから開始し、P130固定4条件の予約も維持する。普通の質問で止めず、明示停止へ従う。旧run/prepと元wrapperを編集・再起動しない。[現在の状態](docs/current_status.md)に固定予算・snapshot・後続条件を記録する。
+後続P130の予約queueは01:07 JSTに起動試行1回後 `failed_no_retry` で終了した。全4条件の閉鎖は確認されておらず、原因と実行範囲を運用metadataから確認する。元失敗記録・固定sourceを保持し、元queue/prepare/wrapperを重複起動しない。普通の質問は停止扱いにせず、明示停止へ従う。[現在の状態](docs/current_status.md)。
 
 ## 以前の結果との区別
 
+- [P128](docs/experiments/P128_findings.md)は各6/8成功でも成功損失1/改善1、unknown2で総費用差不明・gate false。共通成功5対の減少とseed157単独の改善を全体へ一般化しない。
 - [P127](docs/experiments/P127_findings.md)は各3/4成功・695,217 tokenで差0、全132 programで自動機構未発動、gate false。
 - [P126](docs/experiments/P126_findings.md)は保存prefix再生48件が一致、13取得省略×2記録、control bytes増加。実model/API/評価0で、online品質・token効果ではない。
 - [P125](docs/P125_findings.md)は両3/4成功・各766,875 token、全146 programで機構未発動。CSVはAPI80で失敗しgate false。
