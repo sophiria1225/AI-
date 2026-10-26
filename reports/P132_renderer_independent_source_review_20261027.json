@@ -1,0 +1,103 @@
+{
+  "phase": "P132_renderer_independent_source_review",
+  "status": "pass_limited_source_review",
+  "reviewed_at": "2026-10-26T19:59:22.554065+00:00",
+  "renderer_sha256": "26ba450901eff3d1c35cb379b0e0fac3d48f7cf43e5ad3b0fb4401187c8b03aa",
+  "checks_count": 20,
+  "checks": [
+    {
+      "check": "Collector complete is the first actual metadata gate; public cohort files are read only after closure and independent-review PASS.",
+      "passed": true
+    },
+    {
+      "check": "Fixed launcher, collector, independent-review source and plan constants match present source bytes.",
+      "passed": true
+    },
+    {
+      "check": "Fixed head71aaa1c and plan16982554 must match closure/start/review provenance.",
+      "passed": true
+    },
+    {
+      "check": "Closure requires audit/session/report stages and successful session/report; structured audit errors remain represented.",
+      "passed": true
+    },
+    {
+      "check": "Independent review requires all checks passed, zero new experimental calls and matching collector hash.",
+      "passed": true
+    },
+    {
+      "check": "Closed batch and stopped/absent owned-process attestations are required before plotting.",
+      "passed": true
+    },
+    {
+      "check": "Two unique fixed run IDs, one known task and exact integer replication1/seed57 are required.",
+      "passed": true
+    },
+    {
+      "check": "Public raw rows, material rows and CSV identities and fields must match.",
+      "passed": true
+    },
+    {
+      "check": "Missing or audit-error slots retain null measurements rather than zeros.",
+      "passed": true
+    },
+    {
+      "check": "Unknown usage makes exact total and nested exact input/output/cached totals null.",
+      "passed": true
+    },
+    {
+      "check": "Row-derived all-policy-replication and comparison aggregates are independently recomputed.",
+      "passed": true
+    },
+    {
+      "check": "Cheap failures, quality gain/loss and common success are separated in pair groups.",
+      "passed": true
+    },
+    {
+      "check": "Gate requires both evaluated with known costs, both successful, lower total/common costs, actual on exposure and intact contracts.",
+      "passed": true
+    },
+    {
+      "check": "Exposure cannot exceed captures; captures cannot exceed accepted installations; off exposure must be zero.",
+      "passed": true
+    },
+    {
+      "check": "Captured packets without dispatched actor input do not count as exposure; missing/incomplete capture accounting uses NA/known subtotal.",
+      "passed": true
+    },
+    {
+      "check": "Capture wall time stays separate from count panels and is bounded by task wall time; overlapping times are not stacked.",
+      "passed": true
+    },
+    {
+      "check": "Official task success can coexist with a labeled contract stop.",
+      "passed": true
+    },
+    {
+      "check": "Only public relative source paths and hashes are exported; no prompt/state/evaluator content or saved code execution.",
+      "passed": true
+    },
+    {
+      "check": "New output directory is mandatory; synthetic mode cannot receive actual artifact paths.",
+      "passed": true
+    },
+    {
+      "check": "One task/one seed/two conditions and lack of general quality, novelty or timing claim are explicit.",
+      "passed": true
+    }
+  ],
+  "blockers_found": [],
+  "method": "Source inspection of load_closed, validate_rows, aggregates/criteria and rendering branches, plus hash comparison of source constants. No actual loader or renderer invocation.",
+  "actual_records_read": false,
+  "actual_load_invoked": false,
+  "renderer_reexecuted": false,
+  "synthetic_tests_reexecuted": false,
+  "actual_PNGs_inspected": false,
+  "additional_model_API_tokenizer_evaluator_calls": 0,
+  "source_changed": false,
+  "limitations": [
+    "Visual readability of actual PNG/PDF must be checked after all closed gates.",
+    "The renderer trusts hash-bound closed review attestations for prior process absence and inventory records; it does not independently reconstruct live Python state.",
+    "This review does not treat audit/renderer consistency as method efficacy or novelty."
+  ]
+}

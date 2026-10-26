@@ -1,6 +1,6 @@
 # 研究の作業ボード
 
-更新日: 2026-10-26T19:28:55.150163+00:00
+更新日: 2026-10-27
 
 番号はIssueに対応する固定ID。前段の結果に応じて段階的に進める。
 
@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：2026-10-27 05:11 JST P132全2条件閉鎖】
+offは公式失敗/171,013確定token/14model/120API上限、onも失敗/213,642既知token＋unknown1/18model/47API/モデル呼出中時間上限。全384,655既知＋unknown1、32model/167API/2評価、共通成功0・総費用差null・gate false。inventory捕捉/実提示off1/0・on2/2で機構到達は確認、成功維持＋総token削減は未実証。契約停止・監査エラー0、独立監査56,861checks PASS。所有server閉鎖、追加model cohort未起動。
+P130/P131の生成前失敗・約3h8m空白と元sourceを保持、P132開始186/2231へ後続globalを適用しない。単一既知CSV/seed57の通常utility比較で新規性・一般品質・時機優位を主張しない。次は閉鎖公開証拠に限る有限診断、盲目的seed追加や同条件再試行をしない。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P132_findings.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 04:27 JST頃 P132 actor送信を確認】
 P132 wrapper04:26:12開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。本文/生成内容/task成否/usageは未読。時点付きbatch進行確認であり、全2完了や改善を意味しない。固定head71aaa1c、両CI成功、同じ既知CSV1課題×seed57×inventory off/on、各80calls/450k tokens/1800秒/120 API、server5400秒・06時上限。
 P130のmodel前port失敗と約3h8m空白、P131の生成前supervisor識別失敗はそのまま保持。P132開始snapshot186/2231と後続global187/2241を区別し、旧run/prepを変更しない。閉鎖資料はP129まで整備済み、最終目標の新規性・一般精度維持・全仕事token減は未達。P128片seed/subsetを全体効果にしない。原稿はユーザー担当。
@@ -491,6 +497,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：2026-10-27 05:11 JST P132全2条件閉鎖】
+offは公式失敗/171,013確定token/14model/120API上限、onも失敗/213,642既知token＋unknown1/18model/47API/モデル呼出中時間上限。全384,655既知＋unknown1、32model/167API/2評価、共通成功0・総費用差null・gate false。inventory捕捉/実提示off1/0・on2/2で機構到達は確認、成功維持＋総token削減は未実証。契約停止・監査エラー0、独立監査56,861checks PASS。所有server閉鎖、追加model cohort未起動。
+P130/P131の生成前失敗・約3h8m空白と元sourceを保持、P132開始186/2231へ後続globalを適用しない。単一既知CSV/seed57の通常utility比較で新規性・一般品質・時機優位を主張しない。次は閉鎖公開証拠に限る有限診断、盲目的seed追加や同条件再試行をしない。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P132_findings.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 04:27 JST頃 P132 actor送信を確認】
 P132 wrapper04:26:12開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。本文/生成内容/task成否/usageは未読。時点付きbatch進行確認であり、全2完了や改善を意味しない。固定head71aaa1c、両CI成功、同じ既知CSV1課題×seed57×inventory off/on、各80calls/450k tokens/1800秒/120 API、server5400秒・06時上限。
 P130のmodel前port失敗と約3h8m空白、P131の生成前supervisor識別失敗はそのまま保持。P132開始snapshot186/2231と後続global187/2241を区別し、旧run/prepを変更しない。閉鎖資料はP129まで整備済み、最終目標の新規性・一般精度維持・全仕事token減は未達。P128片seed/subsetを全体効果にしない。原稿はユーザー担当。

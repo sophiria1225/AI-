@@ -1,0 +1,11 @@
+# P132の会計と主張範囲
+
+同じ既知CSV1課題・seed57・inventory off/onの全2枠を残す。両方が公式失敗、共通成功0、gate false。offは171,013 logical入力＋出力tokenを確定できる。onは213,642既知小計と使用量不明1件を保持し、総費用と差はnullのままにする。全体384,655も既知小計であり確定総量ではない。onの既知小計がoffを42,629上回ることは観測値だが、これを正確な総費用差や改善率へ換算しない。
+
+全32 model呼出し（agent/focus込み）、167実API、2独立評価。offはAPI120上限、onはAPI47時点でmodel呼出中の作業時間上限に達した。API減は仕事未完了と切り離せず、成功した仕事の省力化として採用しない。write check・feedback拒否・修復は全0。正常な会計・契約と、最終課題の成功は別である。
+
+両条件はcheckpoint採用ごとに同じ捕捉処理を使い、offでは1回捕捉・提示0、onでは2回捕捉・実actor提示2だった。captured/preparedだけでは実提示に数えない。onの契約失敗0・会計完全Trueは、capture後のモデル呼出し1件のusage不明を解消しない。正確なinput/output/cached合計も、unknownがあればnullを保持する。
+
+server約2,706秒、cell全体約2,670秒、捕捉・制御・評価の時刻区間は重なるため加算して新しい総時間を作らない。captureの値・namespaceを保存Pythonの再実行で再証明したものではなく、typed request/reply、nonce、source境界、元hash、実actor入力を照合した。独立監査は純粋formatter/checker/公開monitorを共有し、producer auditorや生成codeは再実行しない。
+
+P130のmodel起動前port失敗とP131のtokenizer/生成前identity失敗は別の失敗記録として保持。P132は元計画先頭seedを時間予算で使った新attemptで、旧結果を同じ反復へプールしない。既知1課題1seedであり、一般品質・新規性・提示時機の優位性は主張しない。原稿はユーザー担当。
