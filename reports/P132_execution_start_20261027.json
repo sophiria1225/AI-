@@ -1,0 +1,75 @@
+{
+  "phase": "P132_execution_start",
+  "recorded_at": "2026-10-26T19:28:55.148731+00:00",
+  "scope": "Time-qualified operational status only; outcomes, usage and generated content not read.",
+  "fixed_execution_head": "71aaa1c5290000902f2cc51ce406f3b47eeb7327",
+  "plan_sha256": "16982554d89ba5d64dc47545c74e956604a9a1d22aa1ddcab645d9282ca1b50a",
+  "plan_source_count": 1242,
+  "planned_slots": 2,
+  "model_seeds": [
+    57
+  ],
+  "independent_tasks": 1,
+  "wrapper_started_at": "2026-10-26T19:26:12.616183+00:00",
+  "operational_snapshot": {
+    "observed_at": "2026-10-26T19:27:55.913872+00:00",
+    "operational": {
+      "phase": "P132_pipeline",
+      "status": "batch",
+      "git_commit": "71aaa1c5290000902f2cc51ce406f3b47eeb7327",
+      "server_owned": true,
+      "server_supervisor_pid": 77352,
+      "stage_pid": 78713,
+      "started_at": "2026-10-26T19:26:15.257793+00:00",
+      "source_sha256": "2976ce29cc8d658516a61c9327e38e5b97f0fe227800dfd2ffea30a75bdd5d72"
+    },
+    "operational_source_sha256": "8eb3e31e6320b3b476b2426eb7f90553dfc4ed0654fc4991f9b6bb4ca9f30227",
+    "stages": [
+      {
+        "mode": "preflight",
+        "exit_code": 0,
+        "wall_seconds": 15.846745416987687
+      },
+      {
+        "mode": "activation",
+        "exit_code": 0,
+        "wall_seconds": 0.25253704201895744
+      }
+    ]
+  },
+  "first_actor_dispatch_confirmation": {
+    "observer": "root coordinating agent",
+    "reported_time_jst": "2026-10-27T04:27:00+09:00",
+    "reported_time_is_approximate": true,
+    "request_file_created": true,
+    "request_contents_read": false,
+    "model_slot_is_processing": true,
+    "model_pid": 77355,
+    "observation_is_not_task_completion_or_success": true
+  },
+  "cell_limits": {
+    "shared_model_calls": 80,
+    "logical_tokens": 450000,
+    "work_seconds": 1800,
+    "actual_API_requests": 120
+  },
+  "server_max_lifetime_seconds": 5400,
+  "deadline_jst": "2026-10-27T06:00:00+09:00",
+  "P132_start_ledger_count": 186,
+  "P132_start_binding_count": 2231,
+  "P132_start_registry_sha256": "24bcbecaa65cc330a5314ca269d0e33e2f9a5835f9c24a3fa69717447e370374",
+  "global_at_publication_before_append": {
+    "ledgers": 187,
+    "bindings": 2241,
+    "sha256": "714cec93b9f11e10eca8fd8f7e6d118178c9fbe068810e91a4efef36f1b34bcc"
+  },
+  "start_snapshot_not_replaced_by_later_global": true,
+  "original_P130_and_P131_failures_preserved": true,
+  "all_two_conditions_complete_claim": false,
+  "task_success_or_cost_effect_claim": false,
+  "general_quality_preservation_established": false,
+  "whole_job_token_reduction_established": false,
+  "novel_method_established": false,
+  "status_publication_model_API_tokenizer_evaluation_calls": 0,
+  "manuscript_written": false
+}

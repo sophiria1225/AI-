@@ -1,6 +1,6 @@
 # 研究の作業ボード
 
-更新日: 2026-10-26T19:21:11.491779+00:00
+更新日: 2026-10-26T19:28:55.150163+00:00
 
 番号はIssueに対応する固定ID。前段の結果に応じて段階的に進める。
 
@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新運用：2026-10-27 04:27 JST頃 P132 actor送信を確認】
+P132 wrapper04:26:12開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。本文/生成内容/task成否/usageは未読。時点付きbatch進行確認であり、全2完了や改善を意味しない。固定head71aaa1c、両CI成功、同じ既知CSV1課題×seed57×inventory off/on、各80calls/450k tokens/1800秒/120 API、server5400秒・06時上限。
+P130のmodel前port失敗と約3h8m空白、P131の生成前supervisor識別失敗はそのまま保持。P132開始snapshot186/2231と後続global187/2241を区別し、旧run/prepを変更しない。閉鎖資料はP129まで整備済み、最終目標の新規性・一般精度維持・全仕事token減は未達。P128片seed/subsetを全体効果にしない。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P132_execution_start_20261027.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 P130起動前失敗とP131開始】
 P130は01:07 JST、port8011のbind検査でmodel本体/preflight/task/評価前に停止。元失敗を保持しTIME_WAIT原因は未確定。約3時間8分の空白後、04:15:31 JSTに新P131固定2条件（同じ既知CSV、seed57、inventory off/on）を起動した。固定head d312a0d、両CI成功、各80calls/450k tokens/1800秒/120 API、server6000秒・06時上限。P131は04:16 JST、旧lease検査が新supervisor名を拒否してpreflight停止。所有server停止済み、actor生成/tokenizer count/task API/評価0。元失敗を保持しP132新attempt修正を別に準備。task成否/usage/生成内容は未読。
 開始snapshot186/2231不変。原稿用の閉鎖資料はP129まで整備済みだが、新規手法・一般精度維持・全仕事token削減は未達。P128片seed/共通成功subsetを全体効果にしない。通常会話で止めず明示停止へ従う。原稿はユーザー担当。
@@ -485,6 +491,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新運用：2026-10-27 04:27 JST頃 P132 actor送信を確認】
+P132 wrapper04:26:12開始、preflight/activation通過後、rootが最初のactor要求ファイルとmodel slot処理中を確認。本文/生成内容/task成否/usageは未読。時点付きbatch進行確認であり、全2完了や改善を意味しない。固定head71aaa1c、両CI成功、同じ既知CSV1課題×seed57×inventory off/on、各80calls/450k tokens/1800秒/120 API、server5400秒・06時上限。
+P130のmodel前port失敗と約3h8m空白、P131の生成前supervisor識別失敗はそのまま保持。P132開始snapshot186/2231と後続global187/2241を区別し、旧run/prepを変更しない。閉鎖資料はP129まで整備済み、最終目標の新規性・一般精度維持・全仕事token減は未達。P128片seed/subsetを全体効果にしない。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P132_execution_start_20261027.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 P130起動前失敗とP131開始】
 P130は01:07 JST、port8011のbind検査でmodel本体/preflight/task/評価前に停止。元失敗を保持しTIME_WAIT原因は未確定。約3時間8分の空白後、04:15:31 JSTに新P131固定2条件（同じ既知CSV、seed57、inventory off/on）を起動した。固定head d312a0d、両CI成功、各80calls/450k tokens/1800秒/120 API、server6000秒・06時上限。P131は04:16 JST、旧lease検査が新supervisor名を拒否してpreflight停止。所有server停止済み、actor生成/tokenizer count/task API/評価0。元失敗を保持しP132新attempt修正を別に準備。task成否/usage/生成内容は未読。
 開始snapshot186/2231不変。原稿用の閉鎖資料はP129まで整備済みだが、新規手法・一般精度維持・全仕事token削減は未達。P128片seed/共通成功subsetを全体効果にしない。通常会話で止めず明示停止へ従う。原稿はユーザー担当。
