@@ -111,7 +111,9 @@ def validate_preflight(storage, root, pre, plan, original, prepared):
                 and value['input_tokens'] > 0 and type(value.get('wall_seconds')) in (int, float)
                 and math.isfinite(value['wall_seconds']) and value['wall_seconds'] >= 0)
     for (replication, item), row in zip([(rep, item) for rep in (1, 2) for item in prepared], pre['rows'], strict=True):
-        if (type(row) is not dict or row.get('replication') != replication or row.get('model_seed') != SEEDS[replication - 1]
+        if (type(row) is not dict or type(row.get('replication')) is not int
+                or type(row.get('model_seed')) is not int
+                or row.get('replication') != replication or row.get('model_seed') != SEEDS[replication - 1]
                 or row.get('source_run') != item['source_run']
                 or row.get('task_id') != item['task_id'] or type(row.get('conditions')) is not dict
                 or set(row['conditions']) != set(MODES)):

@@ -78,6 +78,8 @@ class DisclosurePreflightTests(unittest.TestCase):
                     if activation_mutations:
                         changes = (
                             ('changed_seed', lambda p: p['rows'][4].update(model_seed=57)),
+                            ('boolean_replication', lambda p: p['rows'][0].update(replication=True)),
+                            ('floating_seed', lambda p: p['rows'][0].update(model_seed=57.0)),
                             ('changed_replication', lambda p: p['rows'][4].update(replication=1)),
                             ('old_phase', lambda p: p.update(phase='P125_preflight')),
                             ('missing_conditions', lambda p: p.update(rows=[])),

@@ -109,7 +109,8 @@ def summarize(rows, errors):
     require(len(tasks) == 4 and len(actual) == 16 and set(actual) ==
         {(rep, task, mode) for rep in (1, 2) for task in tasks for mode in MODES},
         'all_sixteen_P128_slots_required')
-    require(all(type(r['replication']) is int and r['model_seed'] == SEEDS[r['replication'] - 1]
+    require(all(type(r['replication']) is int and type(r['model_seed']) is int
+                and r['model_seed'] == SEEDS[r['replication'] - 1]
                 for r in rows), 'fixed_P128_row_seeds_required')
     per_seed, pairs = [], []
     aliases = dict(zip(MODES, ('measured', 'not_exposed')))
