@@ -83,6 +83,7 @@ def validate_plan(plan):
                  'scripts/checkpoint_inventory_inference.py','scripts/run_whole_task_checkpoint_inventory_cell.py',
                  'scripts/audit_whole_task_checkpoint_inventory.py',
                  'docs/experiments/P130_whole_task_checkpoint_inventory.md',
+                 'reports/P130_closed_source_diagnosis_20261026.json',
                  PREDECESSOR_REPORT,'reports/P127_server_session.json'):
         value=plan.get('source_sha256',{}).get(name)
         require(type(value) is str and len(value)==64 and all(c in '0123456789abcdef' for c in value),

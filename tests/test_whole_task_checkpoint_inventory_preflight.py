@@ -23,6 +23,7 @@ def synthetic_plan():
                  'scripts/run_whole_task_checkpoint_inventory_cell.py',
                  'scripts/audit_whole_task_checkpoint_inventory.py',
                  'docs/experiments/P130_whole_task_checkpoint_inventory.md',
+                 'reports/P130_closed_source_diagnosis_20261026.json',
                  'reports/P127_comparison.json', 'reports/P127_server_session.json'):
         plan['source_sha256'][name] = 'a' * 64
     return plan

@@ -30,6 +30,7 @@ def prepare(storage, root):
     paths.update(root / name for name in (plan['source_plan'], 'configs/python_export_image_v01.json',
         'reports/P123_comparison.json', 'reports/P123_server_session.json',
         'reports/P127_comparison.json', 'reports/P127_server_session.json',
+        'reports/P130_closed_source_diagnosis_20261026.json',
         'docs/experiments/P130_whole_task_checkpoint_inventory.md'))
     plan.update(source_sha256={str(path.relative_to(root)): sha(path) for path in sorted(paths)},
         predecessor_closure=predecessor, created_at=datetime.now(timezone.utc).isoformat(),
