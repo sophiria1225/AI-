@@ -407,6 +407,13 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P125全8条件閉鎖・機構未発動（2026-10-26）】
+通常cacheと自動projectionは各3/4成功、総logical入力＋出力766,875 tokenで一致。使用量不明0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常complete-cache hitは0、契約失敗も0。CSVは両方式ともAPI上限80で失敗し、固定development gateはfalseを保持する。全8合計1,533,750 token・154 model呼出し・488実API・8独立評価。元wrapper、所有server、collectorは閉鎖済みで再実行しない。独立audit v01のswap数値型比較による失敗とv02修正を保存する。
+閉鎖後診断ではCSV実取得25件の既存library provider候補0。既存ordinary joinには必要2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定。join自体は新規機構ではない。seed変更やID guard追加だけを根拠に再実験しない。次の有限比較は未固定、新しい実験は未開始。原稿はユーザーが執筆し、こちらは実験・全件結果・再現根拠を整理する。
+https://github.com/sophiria1225/AI-/blob/main/docs/P125_findings.md
+https://github.com/sophiria1225/AI-/blob/main/docs/P125_independent_audit.md
+
+【以下は更新前の経過。開始・実行中の記載は当時の記録であり、現在の稼働状態ではない】
 2026-10-26：最終目標と到達までの方針を詳しく記録. 性能維持と要約・制御・失敗を含む全仕事token削減、その機構の新規性が目的. P123は強い通常対照の固定12条件であり、通過だけで新規性を主張しない. 全件結果後に次の１因子比較か必要な反復へ絞る. 未見12は予約で確認計画は未完成. 原稿はまとまった結果で次版へ反映.
 https://github.com/sophiria1225/AI-/blob/main/docs/research_execution_route_20261026.md
 最新方針：今後約24時間（10/27 06時頃まで）で主要実験をまとめ原稿へ進む. 主候補と対照を絞り、機構比較・必要な反復・事前固定した確認評価を優先する. 正結果や採択は保証せず、失敗・不明を保存する.
@@ -427,6 +434,13 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P125全8条件閉鎖・機構未発動（2026-10-26）】
+通常cacheと自動projectionは各3/4成功、総logical入力＋出力766,875 tokenで一致。使用量不明0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常complete-cache hitは0、契約失敗も0。CSVは両方式ともAPI上限80で失敗し、固定development gateはfalseを保持する。全8合計1,533,750 token・154 model呼出し・488実API・8独立評価。元wrapper、所有server、collectorは閉鎖済みで再実行しない。独立audit v01のswap数値型比較による失敗とv02修正を保存する。
+閉鎖後診断ではCSV実取得25件の既存library provider候補0。既存ordinary joinには必要2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定。join自体は新規機構ではない。seed変更やID guard追加だけを根拠に再実験しない。次の有限比較は未固定、新しい実験は未開始。原稿はユーザーが執筆し、こちらは実験・全件結果・再現根拠を整理する。
+https://github.com/sophiria1225/AI-/blob/main/docs/P125_findings.md
+https://github.com/sophiria1225/AI-/blob/main/docs/P125_independent_audit.md
+
+【以下は更新前の経過。開始・実行中の記載は当時の記録であり、現在の稼働状態ではない】
 2026-10-26 05:48 JST確認：P123を05:47に開始. PR512の同一headでpush・pull_request両CIと両job成功、24 native計数・activation完了、固定12条件が実行中. wrapper・管理プロセス・server生存を確認. 途中成否・費用は未読. 古い公開launcherの認証失敗を保持し、既存gh認証で公開後に元wrapperを一度だけ起動. 全12枠とserver閉鎖後に全件監査・回収・採否を行い、停止指示まで次の有限な判断を続ける.
 https://github.com/sophiria1225/AI-/pull/512
 https://github.com/sophiria1225/AI-/blob/main/docs/current_status.md
