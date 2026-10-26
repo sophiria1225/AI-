@@ -1,31 +1,22 @@
-# 次の作業：P132全件結果を保持し、公開証拠に限る有限診断へ
+# 次の作業：固定比較を実行し、coverage候補を別に検証
 
-## 最新：P132全2条件閉鎖、実提示2回でも両失敗
+2026-10-27朝、ユーザーは就寝中も実験を続けるよう明示した。以前の06:00目安は作業停止条件ではない。通常の会話で実行を止めず、明示停止に従う。各cohortは条件・有限予算・source・両CIを固定する。原稿本文はユーザーが執筆する。
 
-P132は2026-10-27 05:11 JSTに全2評価・所有server・collector・独立監査を閉鎖した。offは171,013 token・API120上限で失敗、onは213,642既知token＋usage1件不明・API47・時間上限で失敗した。共通成功0、正確な総費用差null、固定gate false。inventory捕捉/実提示はoff1/0・on2/2。契約停止・元監査エラー0、独立監査56,861 checks PASSを方式採用と混同しない。[全件所見](experiments/P132_findings.md)／[全2条件・図](../materials/20261027_p132_results/figures/README.md)。
+P133は準備中で、まだモデル生成を開始していない。P123で成功した元のguide/full receipt/API80/rolling separateを共通にし、通常制御対追加要約の実測費用予測による採否を比較する。既知CSV1課題×固定seed57/157×2方式の4条件、各80calls/450000tokens/1800作業秒、所有server4時間・12:30 JSTまで。初回要約は同じ、2回目以降の予測は保証ではない。全失敗・unknown・未実施を保持し、通常校正を新規性と言い換えない。[P133仕様](experiments/P133_whole_task_checkpoint_payback.md)。
 
-所有modelは停止済みで、追加model cohortは未起動。開始186台帳/2,231束縛と後続globalを分離し、元run/prep・P130/P131失敗・unknownを保持する。一般品質維持と全仕事token削減、新規性の最終目標は未達。通常会話を停止指示と扱わず、次は閉鎖証拠の有限診断と主張範囲の整理を進める。新model比較は別の有限計画・source/CI・全件採否を固定する。原稿はユーザー担当。
+直近P132は05:11 JSTに全2評価と所有serverを閉鎖、05:28に結果公開を完了した。offは171013確定token/API上限、onは213642既知token＋unknown1/時間上限、両失敗・共通成功0・gate false。一覧はonで2回提示された。現在所有モデルは停止済み。[P132所見](experiments/P132_findings.md)／[図表](../materials/20261027_p132_results/figures/README.md)。
 
-## 以下は過去時点の運用記録
+最強の既存positiveはP123通常rolling separateが既知4/4成功を保って単発要約比12.07%の全仕事tokenを削減した観測である。同時反復の新候補は強い通常対照より高費用だった。既存方式の効用と新技術の成立を分け、一般品質維持・新規性の中心主張は未達とする。[P123所見](P123_findings.md)。
 
-## 最新運用：P132の最初のactor送信を04:27 JST頃に確認
+並行して、成功API返答に基づく対象ごとの未充足fieldをcheckpoint越しに保持する候補を別に検証する。P132の旧monitorのunknownを維持し、公開契約で正当化できるpartition合成を別versionへ分離する。P133へ途中で機構を混入せず、将来の比較は通常進捗チェックリストと同じ証拠・予算を使う。
 
-P132は04:26:12 JSTに開始し、preflight/activationを通過。rootが最初のactor要求ファイルの作成とmodel slot処理中を確認した。時点付きの進行確認であり、全2条件の完了や品質・費用の改善ではない。要求本文・生成内容・task成否・usageは未読。同じ既知CSV1課題×seed57×inventory off/on、server最大5,400秒・06:00 JSTまでの固定比較を進める。[開始記録](experiments/P132_execution_start_20261027.md)。
+既存run/prep・失敗・不明費用は不変。P132開始snapshot186台帳/2231束縛、公開後global189/2290を区別する。新P133も自身の開始snapshotを固定し、将来台帳を遡及適用しない。P130/P131の起動前失敗と約3時間の空白は保存済み。モデルは単一serverで直列、保存生成codeはhost実行しない。未見12課題は別確認計画まで未閲覧。
 
-P132開始snapshot186台帳/2,231束縛と、その後のglobal台帳を区別する。P130/P131の失敗と約3時間の空白を保持し、凍結run/prepを変更しない。閉鎖後は全枠・unknownを残して監査・図・費用比較をまとめる。原稿はユーザー担当で、新規性、一般精度維持と全仕事token削減の最終目標は未達。通常会話で止めず明示停止へ従う。
+1. P133の実worker→監査→公開行テスト、元P123基準との入力一致、所有server/leaseの接続を確認しsourceを固定する。
+2. 同headのpush/PR CI両成功後、4条件を一度実行。故障監視を継続し、終了と研究目標達成を混同しない。
+3. 全4条件・未知費用・予測の実適用と空振りを回収して監査・図表・専用Projectへ反映する。
+4. 取得coverage候補を公開契約と反例で検証し、通過した場合だけ別の有限比較を固定する。成功例のみの選別、seed探索、既存失敗の置換はしない。
 
-## 過去の運用記録：P130/P131の生成前失敗
+変更先はsophiria1225/AI-と[専用Project1](https://github.com/users/sophiria1225/projects/1)のみ。生prompt・推論・生成task code・課題値・認証・評価器本文は公開しない。原稿・教授への連絡・投稿は行わない。
 
-P130は01:07 JSTにport検査でmodel本体・task処理前に停止した。約3時間8分の空白後、P131固定2条件を04:15:31 JSTに起動したが、04:16 JSTに旧lease検査が新supervisor名を拒否してpreflightで停止した。所有serverは停止済み、actor生成・tokenizer count・task API・評価は0。元記録を保持し、新P132 attemptの修正を別に準備する。task成否・usage・生成内容は未読。
-
-閉鎖済み原稿資料はP129まで整備済み。新規性、一般的な精度維持と全仕事token削減の最終目標は未達。P128の片seedや共通成功subsetを全体効果へ一般化しない。原稿はユーザー担当。通常会話で作業を止めず、明示停止へ従う。[時点付き経過](experiments/P131_execution_status_20261027.md)。
-
-以下はP129公開時点の記録。P130の未確認事項は上記の起動前失敗診断で更新し、元失敗を保持する。
-
-1. P129全6閉鎖、各mode1/2成功、介入0、unknown3、全体gate falseを保持する。元cohort・元監査・collector・rendererを再実行しない。共通成功差0と総費用差nullを区別する。
-2. P130予約queueの失敗markerと起動範囲を運用metadataから確認する。全4評価を完了済み扱いせず、元失敗/固定sourceを残す。再実行や条件変更は行わず、必要な運用対応を具体化してから別記録へ分離する。単一serverを共有し、通常会話は停止扱いにしない。
-3. 公開結果・実図・独立監査のhash/全枠/unknownを確認し、最新mainとglobal台帳を用いて別results treeからPR/両CI/公開/Project同期まで進める。各reserved snapshotは不変。R32/R33の履歴を保持する。
-4. 10/27 06時頃までに主要実験と全件資料をまとめる。通常機能の校正を新規性とせず、同じ課題の2seedを独立課題数へ換算しない。成功損失・unknownを除外せず、弱い対照や盲目的seed追加へ退かない。
-5. 原稿はユーザーが執筆する。未見12課題は固定確認計画前に開かず、生成task code・課題値・認証・推論/evaluator本文を公開しない。実験終了と研究目標の達成を区別する。
-
-[現在](current_status.md)／[P129所見](experiments/P129_findings.md)／[全6条件](../materials/20261026_p129_results/README.md)／[P128所見](experiments/P128_findings.md)／[再開入口](../RESUME.md)。
+[P128所見](experiments/P128_findings.md)／[P129所見](experiments/P129_findings.md)／[P130/P131経過](experiments/P131_execution_status_20261027.md)／[P0–P123履歴](research_history_review_20261026.md)。
