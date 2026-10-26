@@ -103,7 +103,7 @@ class ProjectionPreflightTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'implementation_changed'):
                     driver.predecessor_closed(storage, root)
 
-    def exercise(self, mismatch=False):
+    def exercise(self, mismatch=False, activation_mutations=False):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / 'root'; root.mkdir(); (root / 'reports').mkdir()
             storage = Path(tmp) / 'storage'; storage.mkdir()
@@ -137,8 +137,52 @@ class ProjectionPreflightTests(unittest.TestCase):
                     for index in range(0, 8, 2): self.assertEqual(captured[index], captured[index + 1])
                     self.assertTrue(all('api_receipts' in row[1][0]['content'] and 'read_fields' in row[1][0]['content'] for row in captured[:8]))
                     self.assertTrue(all(result[key] == 0 for key in ('model_generations', 'environment_api_requests', 'evaluator_calls')))
+                    if activation_mutations:
+                        changes = (
+                            ('old_phase', lambda p: p.update(phase='P125_preflight')),
+                            ('missing_conditions', lambda p: p.update(rows=[])),
+                            ('duplicate_task', lambda p: p['rows'].__setitem__(1, deepcopy(p['rows'][0]))),
+                            ('old_policy', lambda p: p['rows'][0]['conditions'].update(eager_cached={})),
+                            ('generated', lambda p: p.update(model_generations=1)),
+                            ('environment_API', lambda p: p.update(environment_api_requests=1)),
+                            ('evaluation', lambda p: p.update(evaluator_calls=1)),
+                            ('reserved_read', lambda p: p.update(reserved_scenarios_read=1)),
+                            ('missing_usage', lambda p: p['rows'][0]['conditions'][POLICIES[0]].pop('input_tokens')),
+                            ('boolean_usage', lambda p: p['rows'][0]['conditions'][POLICIES[0]].update(input_tokens=True)),
+                            ('nonfinite_count_time', lambda p: p['rows'][0]['conditions'][POLICIES[0]].update(wall_seconds=float('nan'))),
+                            ('missing_summary_usage', lambda p: p['summary_transport'].pop('input_tokens')),
+                            ('changed_source', lambda p: p.update(source_hashes={})),
+                            ('changed_admission', lambda p: p['rows'][0]['conditions'][POLICIES[0]].update(admission={'admitted':True})),
+                        )
+                        for label, change in changes:
+                            candidate = deepcopy(result); change(candidate)
+                            (root / driver.PREFLIGHT).write_text(json.dumps(candidate))
+                            with self.subTest(label=label), self.assertRaises(ValueError):
+                                driver.activate(storage, root)
+                            self.assertFalse((root / driver.ACTIVATION).exists())
+                        (root / driver.PREFLIGHT).write_text(json.dumps(result))
+                        # Even a self-consistent saved hash cannot authorize a
+                        # different request transport from the fixed condition.
+                        path = storage / 'records/context_pilot/P127_preflight_v01' / (
+                            plan['known_tasks'][0]['source_run'] + '_' + POLICIES[0] + '_request_private.json')
+                        original_bytes = path.read_bytes()
+                        request = json.loads(original_bytes)
+                        request['tool_choice'] = 'required'
+                        path.write_text(json.dumps(request))
+                        candidate = deepcopy(result)
+                        candidate['rows'][0]['conditions'][POLICIES[0]]['count_request_sha256'] = driver.sha(path)
+                        (root / driver.PREFLIGHT).write_text(json.dumps(candidate))
+                        with self.assertRaisesRegex(ValueError, 'count_input_request_or_usage'):
+                            driver.activate(storage, root)
+                        self.assertFalse((root / driver.ACTIVATION).exists())
+                        path.write_bytes(original_bytes)
+                        (root / driver.PREFLIGHT).write_text(json.dumps(result))
                     driver.activate(storage, root)
-                    self.assertTrue(json.loads((root / driver.ACTIVATION).read_text())['all_eight_conditions_frozen_before_generation'])
+                    activation = json.loads((root / driver.ACTIVATION).read_text())
+                    self.assertTrue(activation['all_eight_conditions_frozen_before_generation'])
+                    driver.validate_activation(storage, root, activation)
+                    with self.assertRaises(ValueError):
+                        driver.validate_activation(storage, root, {**activation, 'phase': 'P125'})
                 with self.assertRaises(FileExistsError): driver.preflight(storage, root)
 
     def test_all_initial_inputs_and_common_summary_transport_before_activation(self):
@@ -146,6 +190,9 @@ class ProjectionPreflightTests(unittest.TestCase):
 
     def test_pair_mismatch_is_preserved_and_cannot_activate(self):
         self.exercise(mismatch=True)
+
+    def test_activation_requires_fixed_identities_saved_requests_and_zero_execution(self):
+        self.exercise(activation_mutations=True)
 
     def test_plan_cannot_extend_budget_change_quality_gate_or_drop_shared_controls(self):
         plan = synthetic_plan(); validate_plan(plan)

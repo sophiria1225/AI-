@@ -1,6 +1,7 @@
 """Finite P127 comparison with common cache, receipt format and checkpoint."""
 import argparse
 import datetime as dt
+import math
 import os
 from pathlib import Path
 import signal
@@ -119,6 +120,83 @@ def frozen_hashes(root):
     return {str(p.relative_to(root)): sha(p) for p in sorted(set(paths))}
 
 
+def validate_preflight(storage, root, pre, plan, original, prepared):
+    """Validate saved counts/identities without recounting or generating anything."""
+    validate_plan(plan)
+    required = dict(phase='P127_preflight', status='complete', all_eight_inputs_checked=True,
+        input_count_requests=8, summary_input_count_requests=1, failed_input_count_requests=0,
+        model_generations=0, environment_api_requests=0, evaluator_calls=0, reserved_scenarios_read=0)
+    if (type(pre) is not dict or any(type(pre.get(k)) is not type(v) or pre[k] != v
+            for k, v in required.items()) or pre.get('source_hashes') != frozen_hashes(root)
+            or pre.get('research_resume') != check_resume(storage)):
+        raise ValueError('P127_preparation_incomplete_or_stale')
+    if (type(pre.get('rows')) is not list or len(pre['rows']) != 4
+            or len(prepared) != 4 or any(prepared[i]['task_id'] != task['task_id']
+                or prepared[i]['source_run'] != task['source_run']
+                for i, task in enumerate(plan['known_tasks']))):
+        raise ValueError('all_four_P127_preflight_task_identities_required')
+    folder = storage / 'records/context_pilot/P127_preflight_v01'
+    def count_record(value):
+        return (type(value) is dict and type(value.get('input_tokens')) is int
+                and value['input_tokens'] > 0 and type(value.get('wall_seconds')) in (int, float)
+                and math.isfinite(value['wall_seconds']) and value['wall_seconds'] >= 0)
+    for item, row in zip(prepared, pre['rows'], strict=True):
+        if (type(row) is not dict or row.get('source_run') != item['source_run']
+                or row.get('task_id') != item['task_id'] or type(row.get('conditions')) is not dict
+                or set(row['conditions']) != set(POLICIES)):
+            raise ValueError('exact_P127_pair_identity_required')
+        base, formatting = initial_conversation(original, item['public_task']).for_model()
+        if formatting != {'text_fallback_turns': 0, 'paged_spans': 0}:
+            raise ValueError('unexpected_initial_formatting')
+        pair = []
+        for policy in POLICIES:
+            entry = row['conditions'][policy]
+            config = config_for(original, plan, item['task_id'], policy)
+            state = task_snapshot(config, [], 0, 0)
+            supplied, visible = make_notification(base, state, policy, wall_limit=plan['max_wall_seconds'])
+            cfg = {**config['model'], 'temperature': original['agent_temperature'],
+                'seed': plan['model_seed'], 'num_predict': original['max_output_tokens'], 'cache_prompt': False}
+            message_path = folder / (item['source_run'] + '_' + policy + '_private.json')
+            request_path = folder / (item['source_run'] + '_' + policy + '_request_private.json')
+            if (not count_record(entry) or entry.get('reasoning_budget_tokens') != -1
+                    or type(entry.get('reasoning_budget_tokens')) is not int
+                    or entry.get('tool_choice') != 'auto'
+                    or entry.get('base_messages_sha256') != digest(base)
+                    or entry.get('model_messages_sha256') != digest(supplied)
+                    or digest(entry.get('measured_state')) != digest(state)
+                    or digest(entry.get('visible_state')) != digest(visible)
+                    or entry.get('input_sha256') != sha(message_path)
+                    or digest(read(message_path)) != digest(supplied)
+                    or entry.get('count_request_sha256') != sha(request_path)
+                    or digest(read(request_path)) != digest(payload_for(cfg, supplied, CODE_TOOLS))):
+                raise ValueError('P127_count_input_request_or_usage_changed')
+            expected_admission = admission(plan['max_total_tokens'], entry['input_tokens'],
+                cfg['num_predict'], cfg['num_ctx'], 'residual')
+            if digest(entry.get('admission')) != digest(expected_admission) or not expected_admission['admitted']:
+                raise ValueError('P127_initial_admission_changed')
+            pair.append((entry['input_tokens'], supplied, visible, read(request_path)))
+        if pair[0] != pair[1]:
+            raise ValueError('both_initial_inputs_must_match')
+    sample = [{'role': 'system', 'content': SUMMARY_PROMPT}, {'role': 'user',
+        'content': '{"original_instructions_and_task":[],"older_history":[],"recent_context":[]}'}]
+    cfg = {**config['model'], 'temperature': config['draft_temperature'],
+           'seed': plan['model_seed'], 'num_predict': config['max_output_tokens'], 'cache_prompt': True}
+    path = folder / 'summary_transport_request_private.json'
+    counted = pre.get('summary_transport')
+    if (not count_record(counted) or counted.get('request_sha256') != sha(path)
+            or digest(read(path)) != digest(summary_payload(cfg, sample, []))):
+        raise ValueError('P127_summary_count_transport_or_usage_changed')
+
+
+def validate_activation(storage, root, freeze):
+    if (freeze.get('phase') != 'P127'
+            or freeze.get('all_eight_conditions_frozen_before_generation') is not True
+            or freeze.get('source_hashes') != frozen_hashes(root)
+            or freeze.get('preflight_sha256') != sha(root / PREFLIGHT)
+            or freeze.get('research_resume') != check_resume(storage)):
+        raise ValueError('frozen_P127_sources_or_resumption_changed')
+
+
 def preflight(storage, root):
     folder = storage / 'records/context_pilot/P127_preflight_v01'
     target = root / PREFLIGHT
@@ -219,12 +297,11 @@ def preflight(storage, root):
 def activate(storage, root):
     if (root / ACTIVATION).exists():
         raise FileExistsError('preserve_P127_activation')
+    if (storage / '.runtime/P127.stop').exists():
+        raise InterruptedError('explicit_P127_stop_before_activation')
+    plan, original, _, prepared = sources(storage, root)
     pre = read(root / PREFLIGHT)
-    if (pre['status'] != 'complete' or not pre['all_eight_inputs_checked']
-            or pre['input_count_requests'] != 8 or pre['summary_input_count_requests'] != 1
-            or pre['failed_input_count_requests']
-            or pre['source_hashes'] != frozen_hashes(root)):
-        raise ValueError('P127_preparation_incomplete_or_stale')
+    validate_preflight(storage, root, pre, plan, original, prepared)
     write_json(root / ACTIVATION, {'phase': 'P127', 'source_hashes': pre['source_hashes'],
         'preflight_sha256': sha(root / PREFLIGHT), 'research_resume': check_resume(storage),
         'all_eight_conditions_frozen_before_generation': True,
@@ -256,10 +333,8 @@ def bounded_cell(storage, root, plan, number, arm, rid, folder):
 def run(storage, root):
     plan, original, _, prepared = sources(storage, root)
     freeze, pre = read(root / ACTIVATION), read(root / PREFLIGHT)
-    if (freeze['source_hashes'] != frozen_hashes(root)
-            or freeze['preflight_sha256'] != sha(root / PREFLIGHT)
-            or freeze['research_resume'] != check_resume(storage)):
-        raise ValueError('frozen_P127_sources_or_resumption_changed')
+    validate_preflight(storage, root, pre, plan, original, prepared)
+    validate_activation(storage, root, freeze)
     max_cell = sum(plan[key] for key in ('max_setup_seconds', 'max_wall_seconds',
         'max_cleanup_seconds', 'max_idle_wait_seconds', 'max_evaluation_seconds'))
     identity, end = live_identity(storage, original, plan['max_cells'] * max_cell)
@@ -351,8 +426,9 @@ if __name__ == '__main__':
         plan, original, tools, prepared = sources(args.storage_root, args.repo_root)
         # Every worker requires the already frozen eight-cell activation.
         frozen = read(args.repo_root / ACTIVATION)
-        if frozen['source_hashes'] != frozen_hashes(args.repo_root):
-            raise ValueError('P127_worker_sources_changed')
+        pre = read(args.repo_root / PREFLIGHT)
+        validate_preflight(args.storage_root, args.repo_root, pre, plan, original, prepared)
+        validate_activation(args.storage_root, args.repo_root, frozen)
         run_cell(args.storage_root, args.repo_root, plan, original, tools,
                  prepared[args.cell - 1], ERROR_POLICY, cell_id(args.cell, args.arm),
                  projection_policy=args.arm)
