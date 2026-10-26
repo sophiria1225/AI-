@@ -1,8 +1,14 @@
-# 再開の入口：P125全8条件閉鎖、機構未発動（2026-10-26）
+# 再開の入口：P126再生閉鎖、P127全仕事比較の開始準備（2026-10-26）
 
 まず[P125所見](docs/P125_findings.md)と[独立再計算](docs/P125_independent_audit.md)を読む。全8条件を独立評価し、両方式とも3/4成功・総logical入力＋出力766,875 token。未知使用量0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常cache hitは0、契約失敗0、固定gateはfalse。CSVは両方式ともAPI上限80で失敗した。
 
-既存library providerはCSV実取得25件の必要値を持たず、候補0。既存ordinary joinには必要2項目が13件でそろう候補があるが、実API・全仕事tokenの削減は未測定。次の比較条件は未固定、新しい実験は未開始である。seed変更や共通ID guardだけを根拠に同じ比較を繰り返さない。
+P126の保存応答再生は全48件が比較条件を満たして閉鎖した。各記録で保存backend応答80→67（13減、16.25%）、合計26 partial hit。通常境界44件は40正常終了と4既知エラー、方式間22境界が一致し、残る4件は記録末尾で停止した。制御往復bytesは各103,385→104,832へ増えた。実model/API/評価/tokenizerは0で、タスク完了・品質維持・全仕事token削減・新規性の実証ではない。
+
+次はP127の既知4課題×2方式。両方式に同じ通常join・明示field取得・完全cache・別呼出し反復checkpointを与え、自動region変換の追加効果を測る。seed157、各80 model呼出し・450,000 token・1,800作業秒、全8評価・880 API・server6時間。CSV上限は両方式とも120とする新比較で、P125の80を改変しない。source・計画・CIを固定してから一度だけ開始する。現時点では実モデル未開始。
+
+[P126所見](docs/experiments/P126_findings.md)／[P126資料](materials/20261026_p126_results/README.md)／[P127有限計画](docs/experiments/P127_whole_task_region_projection.md)。
+
+P126はrun source `855da82d412e01d5026bf854a2462d3bda0752a5`、固定木 `p126-region-projection-prep`、記録 `P126_region_replay_v01`。再生を再実行しない。次の編集木は `p127-region-online`。P127の開始後は `p127-run` と開始markerを確認し、prepare/pipeline/wrapperを再起動しない。
 
 ## 閉鎖済みP125を再起動しない
 

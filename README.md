@@ -8,7 +8,11 @@ P125は全8条件と所有serverを閉鎖した。通常cacheと自動projection
 
 [P125全結果](docs/P125_findings.md)／[独立再計算](docs/P125_independent_audit.md)／[全8条件の資料](materials/20261026_p125_results/README.md)。元wrapper・collectorを再実行せず、失敗と機構未発動を含む全件結果を保存する。
 
-閉鎖後診断では、CSVの実show_song取得25件に既存library providerの再利用候補は0。既実装の通常joinなら必要な2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定である。ID guard追加や構文の受理拡張だけで改善すると判断しない。次の有限比較は未固定で、新しい実験はまだ開始していない。
+P126の保存応答再生は全48件が比較条件を満たして閉鎖した。各記録で保存backend応答80→67（13減、16.25%）、合計26 partial hit。通常境界44件は40正常終了と4既知エラー、方式間22境界が一致し、残る4件は記録末尾で停止した。制御往復bytesは各103,385→104,832へ増えた。実model/API/評価/tokenizerは0で、タスク完了・品質維持・全仕事token削減・新規性の実証ではない。
+
+次はP127の既知4課題×2方式。両方式に同じ通常join・明示field取得・完全cache・別呼出し反復checkpointを与え、自動region変換の追加効果を測る。seed157、各80 model呼出し・450,000 token・1,800作業秒、全8評価・880 API・server6時間。CSV上限は両方式とも120とする新比較で、P125の80を改変しない。source・計画・CIを固定してから一度だけ開始する。現時点では実モデル未開始。
+
+[P126所見](docs/experiments/P126_findings.md)／[P126資料](materials/20261026_p126_results/README.md)／[P127有限計画](docs/experiments/P127_whole_task_region_projection.md)。
 
 P123は全12条件を終了し、3方式とも既知4課題で4/4成功、使用量不明0、監査エラー0。総logical入力＋出力tokenは単発893,529、別呼出し反復785,656、同時反復836,922。別呼出し反復は単発より12.07%少ない。同時反復は別呼出し反復より6.53%多いため、事前の採用判定はfalseを保持する。
 
