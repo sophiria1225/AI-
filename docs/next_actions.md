@@ -1,9 +1,9 @@
-# 次の作業：P129→P130を継続し全件を閉じる
+# 次の作業：P129全件結果を保持し、P130運用失敗を確認する
 
-1. P128は全16枠閉鎖済み。全体gate false、成功損失1/改善1、unknown usage2を保持し、元cohort・元監査・collectorを再実行しない。公開結果と図の全件性・hash・未知表示を確認する。
-2. P129固定6条件を継続し、全枠回収・所有server停止後にP130固定4条件へ進む。通常会話で止めず、明示停止へ従う。元queueを重複起動せず、単一serverを共有する。
-3. P129/P130閉鎖後に独立監査・全件図・品質遷移・全体/共通成功費用をまとめる。unknownを0にせず、repair提案/実送信/厳密成功、inventory capture/実actor提示/host費用を区別する。先行phaseの成否で条件を再選択しない。
-4. 各reserved snapshotと旧global台帳のbytesを保ち、結果専用treeでPR/CI/公開を進める。公開するたび最新globalと他担当の追記を確認する。R32/R33・Project・再開手順を同期する。
-5. 原稿はユーザーが執筆。10/27 06時頃まで主要実験と全件資料をまとめる。通常機能を新規性とせず、2seedを独立課題数に換算せず、未見12課題を固定確認計画前に開かない。既存の成功損失・未知費用を改善済み扱いしない。
+1. P129全6閉鎖、各mode1/2成功、介入0、unknown3、全体gate falseを保持する。元cohort・元監査・collector・rendererを再実行しない。共通成功差0と総費用差nullを区別する。
+2. P130予約queueの失敗markerと起動範囲を運用metadataから確認する。全4評価を完了済み扱いせず、元失敗/固定sourceを残す。再実行や条件変更は行わず、必要な運用対応を具体化してから別記録へ分離する。単一serverを共有し、通常会話は停止扱いにしない。
+3. 公開結果・実図・独立監査のhash/全枠/unknownを確認し、最新mainとglobal台帳を用いて別results treeからPR/両CI/公開/Project同期まで進める。各reserved snapshotは不変。R32/R33の履歴を保持する。
+4. 10/27 06時頃までに主要実験と全件資料をまとめる。通常機能の校正を新規性とせず、同じ課題の2seedを独立課題数へ換算しない。成功損失・unknownを除外せず、弱い対照や盲目的seed追加へ退かない。
+5. 原稿はユーザーが執筆する。未見12課題は固定確認計画前に開かず、生成task code・課題値・認証・推論/evaluator本文を公開しない。実験終了と研究目標の達成を区別する。
 
-[現在](current_status.md)／[P128所見](experiments/P128_findings.md)／[P128全件](../materials/20261026_p128_results/README.md)／[再開入口](../RESUME.md)。
+[現在](current_status.md)／[P129所見](experiments/P129_findings.md)／[全6条件](../materials/20261026_p129_results/README.md)／[P128所見](experiments/P128_findings.md)／[再開入口](../RESUME.md)。

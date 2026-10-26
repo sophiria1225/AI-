@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P129全6条件閉鎖 2026-10-27 01:07 JST】
+off/feedback/repair各1/2成功。seed57は各219,344既知token＋unknown1・失敗、seed157は各295,152token・成功。共通成功差0、総費用差null、固定gate false。全126 model/558 API/6評価、監査エラー・契約停止0、独立監査79,576 checks PASS。write checkはseed57各0/seed157各1で元内容supported、feedback/repair介入0。通常校正で新規性・一般品質・全仕事削減は未成立。
+P130予約queueは01:07に起動試行1回後failed_no_retryで終了。全4閉鎖は未確認、原因/実行範囲を運用metadataから確認し元失敗を保持。旧queue/run/sourceを再実行・改変せず、未知と未実施を残す。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P129_findings.md
+
+【以下は過去時点の記録】
 【最新：P128全16条件閉鎖 2026-10-26 22:20 JST】
 全16評価、独立監査109,295 checks PASS、監査エラー0・契約停止0。full/discloseは各6/8成功だがseed57で成功損失1、seed157で改善1。unknown usage各1（計2）のため総費用差は不明、固定gate false。既知小計1,720,576対1,608,875を確定削減としない。共通成功5対の既知費用1,078,497→936,656は部分集合の所見。seed157は3/4→4/4、全849,469→833,441、共通674,162→591,255。実disclosure109／最終turn115、共通成功上65、read_span0。通常手法の効率校正で新規性・一般品質は未確立。
 元run/source/監査/collector/図v01を保持。結果は別treeで公開。P129は固定6条件を22:20 JSTに既存queueから開始、P130固定4条件予約も維持。通常会話では止めず、明示停止へ従う。途中の成否で条件を変更せず全枠・未知を残す。原稿はユーザー担当。
@@ -473,6 +479,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P129全6条件閉鎖 2026-10-27 01:07 JST】
+off/feedback/repair各1/2成功。seed57は各219,344既知token＋unknown1・失敗、seed157は各295,152token・成功。共通成功差0、総費用差null、固定gate false。全126 model/558 API/6評価、監査エラー・契約停止0、独立監査79,576 checks PASS。write checkはseed57各0/seed157各1で元内容supported、feedback/repair介入0。通常校正で新規性・一般品質・全仕事削減は未成立。
+P130予約queueは01:07に起動試行1回後failed_no_retryで終了。全4閉鎖は未確認、原因/実行範囲を運用metadataから確認し元失敗を保持。旧queue/run/sourceを再実行・改変せず、未知と未実施を残す。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P129_findings.md
+
+【以下は過去時点の記録】
 【最新：P128全16条件閉鎖 2026-10-26 22:20 JST】
 全16評価、独立監査109,295 checks PASS、監査エラー0・契約停止0。full/discloseは各6/8成功だがseed57で成功損失1、seed157で改善1。unknown usage各1（計2）のため総費用差は不明、固定gate false。既知小計1,720,576対1,608,875を確定削減としない。共通成功5対の既知費用1,078,497→936,656は部分集合の所見。seed157は3/4→4/4、全849,469→833,441、共通674,162→591,255。実disclosure109／最終turn115、共通成功上65、read_span0。通常手法の効率校正で新規性・一般品質は未確立。
 元run/source/監査/collector/図v01を保持。結果は別treeで公開。P129は固定6条件を22:20 JSTに既存queueから開始、P130固定4条件予約も維持。通常会話では止めず、明示停止へ従う。途中の成否で条件を変更せず全枠・未知を残す。原稿はユーザー担当。
