@@ -42,7 +42,7 @@ RUNTIME_COUNTS = ('program_attempts', 'program_evidence_records', 'static_eligib
     'known_control_reply_bytes', 'schema_deliveries', 'known_schema_reply_wire_bytes')
 RUNTIME_TIMES = ('program_wall_seconds', 'control_wall_seconds_including_backend',
                  'projection_lookup_wall_seconds')
-RUNTIME_FLAGS = ('control_accounting_complete', 'schema_accounting_complete')
+RUNTIME_FLAGS = ('control_accounting_complete', 'schema_accounting_complete', 'execution_trace_accounting_complete')
 FIELDS = ('run_id', 'task_id', 'projection_policy', 'checkpoint_policy', 'record_status',
           'success', 'stop_reason', *COUNT_FIELDS, 'exact_total_tokens', *TIME_FIELDS,
           'checkpoint_installed', 'checkpoint_opportunity', 'checkpoint_installations', 'projection_contract_failed',
@@ -115,7 +115,10 @@ def public_row(row):
             'explicit_contract_failure_flag_or_unstarted_runtime_required')
     require(row.get('projection_hits') is None or integer(row['projection_hits']), 'invalid_projection_hit_count')
     require(type(row.get('checkpoint_installed')) is bool, 'explicit_checkpoint_flag_required')
-    for key in ('stop_reason', 'checkpoint_opportunity'):
+    opportunities = row.get('checkpoint_opportunity')
+    require(integer(opportunities) and opportunities <= 3, 'bounded_rolling_opportunity_count_required')
+    result['checkpoint_opportunity'] = opportunities
+    for key in ('stop_reason',):
         value = row.get(key)
         require(value is None or type(value) is str and bool(re.fullmatch('[a-z][a-z0-9_]*', value)),
                 'public_controller_status_only')

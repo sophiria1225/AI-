@@ -63,7 +63,7 @@ class ProjectionReportingTests(unittest.TestCase):
             'cached_input_tokens': 0, 'projection_hits': int(projected),
             'setup_wall_seconds': 0.1, 'wall_seconds': 1.0,
             'cleanup_wall_seconds': 0.2, 'full_wall_seconds': 1.3,
-            'checkpoint_installed': False, 'checkpoint_opportunity': None, 'checkpoint_installations': 0,
+            'checkpoint_installed': False, 'checkpoint_opportunity': 0, 'checkpoint_installations': 0,
             'projection_contract_failed': False, 'projection_runtime': runtime,
             'summary_sha256': 'a' * 64, 'usage_sha256': 'b' * 64,
             'evaluation_sha256': 'c' * 64}
@@ -102,6 +102,7 @@ class ProjectionReportingTests(unittest.TestCase):
         self.assertEqual(result['common_successful_tasks'], 4)
         self.assertTrue(result['audited_criteria']['development_gate_met'])
         self.assertFalse(result['novel_method_claim'])
+
         self.assertEqual(result['by_policy'][reporting.POLICIES[1]]['measures']['api_requests']
                          ['exact_all_condition_total'], 4)
         with (target / 'conditions.csv').open() as handle:
@@ -118,6 +119,24 @@ class ProjectionReportingTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             reporting.build(self.root)
         self.assertEqual(before, {p.name: p.read_bytes() for p in target.iterdir()})
+
+    def test_rolling_auditor_integer_opportunities_preserve_zero_and_reject_coercions(self):
+        # audit_rolling_checkpoint_trace returns control.opportunities (int),
+        # including zero when no summary was offered, not the single string enum.
+        for count in (0, 1, 3):
+            row = copy.deepcopy(self.rows[0])
+            row['checkpoint_opportunity'] = count
+            result = reporting.public_row(row)
+            self.assertEqual(result['checkpoint_opportunity'], count)
+            self.assertIs(type(result['checkpoint_opportunity']), int)
+            self.assertTrue(result['execution_trace_accounting_complete'])
+        for value in (None, False, True, 1.0, '1', -1, 4):
+            row = copy.deepcopy(self.rows[0]); row['checkpoint_opportunity'] = value
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                reporting.public_row(row)
+        row = copy.deepcopy(self.rows[0]); del row['checkpoint_opportunity']
+        with self.assertRaises(ValueError):
+            reporting.public_row(row)
 
     def test_unknown_usage_and_control_keep_subtotals_without_exact_totals(self):
         self.rows[0]['unknown_usage_calls'] = 1
