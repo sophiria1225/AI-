@@ -1,0 +1,84 @@
+{
+  "phase": "P133_execution_start",
+  "recorded_at": "2026-10-26T21:49:22.169690+00:00",
+  "scope": "Time-qualified operational start only; no in-progress efficacy, usage or generated content read.",
+  "fixed_execution_head": "66d9eb71a1e6b8ee10b377be3bf52dca82d06cca",
+  "plan_sha256": "357c59a73ed9637e9171d6729f8f4210533fef90d598ec667fa1d7154d09d986",
+  "plan_source_count": 1459,
+  "planned_slots": 4,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "independent_tasks": 1,
+  "wrapper_started_at": "2026-10-26T21:46:23.979266+00:00",
+  "wrapper_pid": 84616,
+  "pipeline_pid": 84634,
+  "operational_snapshot": {
+    "observed_at": "2026-10-26T21:49:15.559407+00:00",
+    "source_status_sha256": "ef7702a19467c0ffa7bcdc3896d68746d9db94084b0d8c4485afcbdf10e73fa2",
+    "operational": {
+      "phase": "P133_pipeline",
+      "status": "batch",
+      "git_commit": "66d9eb71a1e6b8ee10b377be3bf52dca82d06cca",
+      "server_owned": true,
+      "server_supervisor_pid": 84654,
+      "started_at": "2026-10-26T21:46:26.351113+00:00"
+    },
+    "stages": [
+      {
+        "exit_code": 0,
+        "wall_seconds": 18.12162237497978
+      },
+      {
+        "exit_code": 0,
+        "wall_seconds": 0.25637483299942687
+      }
+    ]
+  },
+  "first_actor_dispatch_confirmation": {
+    "observer": "root coordinating agent",
+    "reported_time_jst": "2026-10-27T06:48:09+09:00",
+    "reported_time_is_approximate": false,
+    "pipeline_stage": "batch",
+    "active_cell": "BOC_P133_R01_01_ROLLING_SEPARATE",
+    "request_file_created": true,
+    "request_contents_read": false,
+    "generated_contents_read": false,
+    "usage_and_task_outcomes_read": false,
+    "model_slot_is_processing": true,
+    "response_file_count_at_observation": 0,
+    "preflight_exit_code": 0,
+    "preflight_wall_seconds": 18.122,
+    "activation_exit_code": 0,
+    "activation_wall_seconds": 0.256,
+    "observation_is_not_task_completion_or_success": true
+  },
+  "cell_limits": {
+    "shared_model_calls": 80,
+    "logical_tokens": 450000,
+    "work_seconds": 1800,
+    "actual_API_requests": 80
+  },
+  "server_max_lifetime_seconds": 14400,
+  "deadline_jst": "2026-10-27T12:30:00+09:00",
+  "P133_start_ledger_count": 189,
+  "P133_start_binding_count": 2290,
+  "P133_start_registry_sha256": "faf32c32f3bf658dcf983df745baead5653a4f7f9e379c06c14ed1c152d37de6",
+  "global_at_publication_before_append": {
+    "ledgers": 189,
+    "bindings": 2290,
+    "sha256": "faf32c32f3bf658dcf983df745baead5653a4f7f9e379c06c14ed1c152d37de6"
+  },
+  "start_snapshot_not_replaced_by_later_global": true,
+  "user_continuation_while_asleep_authorized": true,
+  "earlier_0600_target_is_not_a_stop_instruction": true,
+  "original_P130_P131_failures_and_closed_P132_results_preserved": true,
+  "all_four_conditions_complete_claim": false,
+  "task_success_or_cost_effect_claim": false,
+  "general_quality_preservation_established": false,
+  "whole_job_token_reduction_established": false,
+  "novel_method_established": false,
+  "status_publication_model_API_tokenizer_evaluation_calls": 0,
+  "manuscript_written": false
+}
