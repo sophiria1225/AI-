@@ -38,5 +38,20 @@
   "manuscript_written": false,
   "general_quality_preservation_established": false,
   "whole_job_token_reduction_established": false,
-  "novel_method_established": false
+  "novel_method_established": false,
+  "failure_diagnosis": {
+    "failure_stage": "preflight live supervisor identity check before tokenizer preflight",
+    "exception": "ValueError: model supervisor process identity differs",
+    "cause": "legacy lease_remaining requires basename serve_research_model.py; fixed cohort launches serve_research_model_recovery.py",
+    "readiness_succeeded": true,
+    "server_stopped": true,
+    "pipeline_exit": 1,
+    "actor_generation_dispatched": false,
+    "tokenizer_preflight_dispatched": false,
+    "task_API_or_evaluator_dispatched": false,
+    "read_only_health_requests_may_have_occurred": true,
+    "zero_call_basis": "fixed source raises in live_identity before preflight directory creation and before input count dispatch; no task/batch directory"
+  },
+  "failure_diagnosis_source": "reports/P131_preflight_identity_failure_20261027.json",
+  "P132_new_attempt_preparation": "A new isolated attempt is planned; original P131 namespace and failures remain unchanged."
 }

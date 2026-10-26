@@ -2,7 +2,7 @@
 
 ## 最新運用：P130起動前失敗、P131は開始後の停止を確認
 
-P130は01:07 JSTにport検査でmodel本体・task処理前に停止した。約3時間8分の空白後、P131固定2条件を04:15:31 JSTに起動したが、開始後の運用metadataは`stopped`である。全条件完了やactor生成を断定せず、元記録を保持して停止原因・実行範囲を確認する。途中の成否・usage・生成内容は未読。
+P130は01:07 JSTにport検査でmodel本体・task処理前に停止した。約3時間8分の空白後、P131固定2条件を04:15:31 JSTに起動したが、04:16 JSTに旧lease検査が新supervisor名を拒否してpreflightで停止した。所有serverは停止済み、actor生成・tokenizer count・task API・評価は0。元記録を保持し、新P132 attemptの修正を別に準備する。task成否・usage・生成内容は未読。
 
 閉鎖済み原稿資料はP129まで整備済み。新規性、一般的な精度維持と全仕事token削減の最終目標は未達。P128の片seedや共通成功subsetを全体効果へ一般化しない。原稿はユーザー担当。通常会話で作業を止めず、明示停止へ従う。[時点付き経過](docs/experiments/P131_execution_status_20261027.md)。
 
