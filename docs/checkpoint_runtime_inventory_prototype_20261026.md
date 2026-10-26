@@ -1,0 +1,31 @@
+# P130 preparation: ordinary runtime inventory after checkpoint acceptance
+
+This prototype tests a limited utility hypothesis, not a new state-management method. The existing [P33 inventory](../scripts/runtime_inventory.py) already exposes binding names, types and container lengths without values. P33 added it at a fixed early boundary; its inventory arm did not preserve task success while reducing total cost against full history. Those negative results remain in [P33 findings](P33_findings.md).
+
+## Closed evidence motivating the boundary
+
+An AST and lexical-only diagnostic of both closed P127 CSV policies inspected all 54 saved programs, checked every source hash against the closed public comparison and confirmed the 27 paired sources are identical. It did not execute generated code or interpret model reasoning.
+
+| Observation | Supported inference | Limit |
+|---|---|---|
+| Programs `call_014_01` and `call_015_01` completed normally; their source stores complete song responses in a persistent dictionary and constructs a separate CSV string. | The existing Python state provides a plausible reuse path. | No saved full namespace snapshot proves the final in-memory contents. |
+| Before the second checkpoint, the dictionary and CSV binding names occur 6 and 3 times in the `call_017` input's code-history fields. After acceptance, both have zero occurrences in the entire inputs of calls 19, 20, 23 and 24. | The checkpoint removed these direct name cues from the visible input. | Lexical absence is not proof of forgetting or a causal failure explanation. |
+| No subsequent source reads or rebinds the metadata dictionary. Call 24 creates a different 72-entry literal dictionary; call 25 overwrites the CSV binding with a literal. No `globals`, `locals`, `dir` or `vars` call appears. | Name/type/length disclosure is a bounded ordinary intervention worth comparing. | The model may still fail despite the notice; it was free to inspect Python or archived records. |
+
+The earlier public-data diagnosis already established a mismatch between acquired metadata and the written CSV. The new diagnosis does not claim that the earlier complete CSV artifact was correct: saved stdout contains only portions, and no full artifact was reconstructed. Private reproducibility files are `AI_P130_runtime_inventory_diagnosis_20261026.py/.json` under `/private/tmp`; JSON SHA256 is `8d5fbbf88cb5459027f2f8efb781ab33c9dd46e9eafc411b9bd2e2675a011eb7`. It contains hashes, counts and binding-name hashes, not original names, task values, code or reasoning.
+
+## Prototype boundary and interface
+
+`collect_inventory(namespace)` reads a trusted exact `dict` namespace synchronously. It lists exact builtin dict/list/tuple/set/frozenset containers and str/int/float/bool/None scalars. Only containers have lengths. It omits private/reserved names, non-ASCII/non-identifier or long names, subclasses, modules, functions and custom objects. It never calls repr/getattr or traverses values. Nested custom objects and cycles are not inspected. Aliases can appear as separate bindings. The namespace is limited to 4,096 bindings, with the first 128 eligible names shown in sorted order and truncation explicit. The frozen P33 validator and 128-entry schema are reused.
+
+`CheckpointInventory` accepts only a new accepted checkpoint revision. Both off and checkpoint_inventory modes capture at the same boundary. `prepare` binds a copied snapshot to execution scope, revision, program index and source-history hash. `view` produces a transient actor-input copy; only the on mode appends the notice to the first system message's text, without adding a new message role. Focus input and archived history remain unchanged. Repeated counting and sending views use the same pending metadata. `submitted` closes that revision once, including a sent request whose usage later becomes unknown. Preparing a notice alone is not paid exposure.
+
+The trusted engine/host must authenticate the capture, ensure no intervening Python program, preserve control/wall-cost records and bind the final request to the exact counted bytes. The prototype does not establish these live transport guarantees. Invalid/oversized capture raises instead of inventing an empty inventory; the finite worker must retain any failure and unknown cost. Names and container lengths are metadata, not a guarantee that a binding is relevant, complete, current, safe to use or sufficient for task success. Trusted Python and standard-library integrity, a synchronous kernel and the absence of hostile interpreter instrumentation are assumptions; this is not a security sandbox.
+
+## Known overlap and bounded comparison
+
+[CaveAgent v4, sections 3.1.1–3.1.2](https://arxiv.org/html/2601.01569v4) supplies variable metadata and keeps objects in a persistent Python runtime, with explicit inspection of selected values. [Evaluating Agents Across Runtime Contracts v3, Appendix A.3 and E.2](https://arxiv.org/html/2603.01209v3) exposes active variable names without values and tests naming retained variables after interruption. Variable visibility and partial inspection are therefore ordinary controls; this prototype does not establish novelty, replicate either full system, or inherit their effect sizes.
+
+The proposed four-cell comparison is one known CSV task × off/on × fixed seeds 57/157, with common feedback guard, explicit joined fields, full receipts and rolling checkpoints. Both arms retain ordinary `read_span` and Python namespace inspection. All actor/focus input including the notice, output, failed repair and control costs must count. This can test incremental utility under a shared setup. It cannot identify superiority of checkpoint timing over an early fixed inventory; that would require a contemporaneous third arm, which is not part of this four-cell candidate. P128/P129 outcomes are not used to choose seeds or this mechanism.
+
+Fourteen synthetic tests cover callback avoidance, aliases/cycles, scalar secrecy, truncation, P33 validation, same capture across arms, one exposure per accepted revision, immutable count/send views, focus exclusion and pending unsent notices. They are implementation checks, not evidence of task-quality or token improvements. No live study was launched by this prototype task.
