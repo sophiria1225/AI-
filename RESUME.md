@@ -1,32 +1,23 @@
-# 再開の入口：P126再生閉鎖、P127全仕事比較が実行中（2026-10-26）
+# 再開の入口：P127全8条件閉鎖・未発動原因を診断（2026-10-26）
 
-まず[P125所見](docs/P125_findings.md)と[独立再計算](docs/P125_independent_audit.md)を読む。全8条件を独立評価し、両方式とも3/4成功・総logical入力＋出力766,875 token。未知使用量0、元監査エラー0。全146 programで静的受理・変換・partial hit・通常cache hitは0、契約失敗0、固定gateはfalse。CSVは両方式ともAPI上限80で失敗した。
+P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
 
-P126の保存応答再生は全48件が比較条件を満たして閉鎖した。各記録で保存backend応答80→67（13減、16.25%）、合計26 partial hit。通常境界44件は40正常終了と4既知エラー、方式間22境界が一致し、残る4件は記録末尾で停止した。制御往復bytesは各103,385→104,832へ増えた。実model/API/評価/tokenizerは0で、タスク完了・品質維持・全仕事token削減・新規性の実証ではない。
+[全件所見](docs/experiments/P127_findings.md)／[全8条件資料](materials/20261026_p127_results/README.md)／[実図](materials/20261026_p127_results/figures/README.md)／[会計注記](materials/20261026_p127_results/INTERPRETATION.md)。
 
-次はP127の既知4課題×2方式。両方式に同じ通常join・明示field取得・完全cache・別呼出し反復checkpointを与え、自動region変換の追加効果を測る。seed157、各80 model呼出し・450,000 token・1,800作業秒、全8評価・880 API・server6時間。CSV上限は両方式とも120とする新比較で、P125の80を改変しない。P127は2026-10-26 11:45 JSTに開始した。実行head `0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0` のpush/PR両CI成功後、PR521をmerge済み。1,142 source filesを固定し、初期8入力と要約transport1件の計数・activationが完了した。既知4課題×2方式・seed157・共通の通常join/明示field/完全cache/別呼出し反復で、自動region変換の追加効果を測る。全8条件と所有serverの閉鎖前に成否・費用・本文を読んで条件を変えない。結果は未確定。
+## 再起動しないもの
 
-[P126所見](docs/experiments/P126_findings.md)／[P126資料](materials/20261026_p126_results/README.md)／[P127有限計画](docs/experiments/P127_whole_task_region_projection.md)。
+P127は11:45 JSTに一度開始し、13:08 JSTに閉鎖した。実行head `0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0`、plan SHA `49edf3731b6d4caf79ef7b90f84b928cb7269ebb541148687e444c2bb9557bff`。`p127-run` と `p127-region-online` は凍結済みで編集しない。prepare、pipeline、wrapper、collector、独立監査、図の自動後処理を再起動しない。
 
-P126はrun source `855da82d412e01d5026bf854a2462d3bda0752a5`、固定木 `p126-region-projection-prep`、記録 `P126_region_replay_v01`。再生を再実行しない。次の編集木は `p127-region-online`。P127の開始後は `p127-run` と開始markerを確認し、prepare/pipeline/wrapperを再起動しない。
+[閉鎖marker](reports/P127_closure_once_end.json)はaudit/session/reportすべてexit0、[collector](reports/P127_report_collector_once_end.json)と[後処理v02](reports/P127_closed_review_wait_v02_end.json)はcomplete。所有server停止と所有PID不在を閉鎖後監査で確認した。後処理v01は待機中だけ期限判定を修正し、model実験は中断していない。[修正記録](reports/P127_closed_review_wait_v01_prelaunch_correction.json)。
 
-## 閉鎖済みP125を再起動しない
+結果公開木は `p127-results`。元結果と図は同bytesのcopy、解釈・会計注記は追加fileへ分離する。P127には開始snapshot179台帳/2,122束縛を使用した。後で増えたglobal台帳を旧凍結木へ当て、新file不足を破損と扱わない。
 
-- 08:25 JSTに一度開始し、10:12 JSTに全8条件と所有serverを閉鎖した。[開始記録](reports/P125_execution_start_20261026.json)。実行head `2c11ceaa65b47b27cd23df8a943ab3d745b94461`、PR517 merge `f717c9376f546ecadadd7c37ad391eb7ac2c4c2d`。元条件・seed・採用規則を事後変更しない。
-- 固定run木は `/Users/tp26013/AI-/.runtime/worktrees/p125-run`、準備木は `/Users/tp26013/AI-/.runtime/worktrees/p125-projection-online`。両木のsourceを編集しない。prepare・pipeline・wrapperを再実行しない。
-- `.runtime/P125_closure_once_end.json` のaudit/session/reportは全exit 0、`.runtime/P125_report_collector_once_end.json` はcomplete。server stoppedと所有PID不在を確認済み。元collectorを再実行しない。結果公開用の編集木は `p125-results`。
-- planの1,125 sourcesとplan自身を含む1,126 bindingsを照合済み。独立audit v02は全件再計算で一致した。初回v01のswap 0.0/int 0比較による失敗と修正来歴を保持し、元実験を再実行したものと扱わない。
-- 全8合計1,533,750 token・154 model呼出し・488実API・8独立評価を保存する。P124の保存再生での11取得差をP125へ移して計上しない。実験バッチの終了を研究目標の達成と扱わない。
-- 旧177台帳と2,056 source束縛を保持し、閉鎖結果の26 filesを束縛する `P125_results_provenance_20261026` を追加する。global一覧は178件となる。旧固定実行木へ最新一覧を当て、新file不足を旧記録破損と扱わない。
+## 次に行うこと
 
-## 閉鎖済みP123を再起動しない
+[全132 sourceのAST診断](docs/experiments/P127_admission_diagnosis.md)は終了。対象2 program/方式は完全応答を永続dictへ保存するため拒否され、構文緩和だけで安全な取得省略にできない。限定したmechanism gapがなければ同条件反復・seed探索をしない。次のモデル比較は結果に根拠がある有限計画に限定し、source/CI/全条件/予算/採否/期限内閉鎖を固定して説明してから実施する。単一local serverを共有する。現在新モデル比較は未開始。
 
-実行head `df45b1d9f32f8f547b54ea107f10e7534ba73e68`、run木 `p123-run`、回収木 `p123-prep`。`.runtime/P123_closure_once_end.json` と `.runtime/P123_report_collector_once_end.json` はcomplete。collectorは自動待機経由で一度終了、再実行不要。旧174台帳・2013bindingsを照合済み。新規の結果公開木は `p123-results`。
+[次の作業](docs/next_actions.md)／[現在の状態](docs/current_status.md)。原稿はユーザー担当。普通のメッセージは停止扱いにせず、明示停止を優先する。未見12課題は確認計画固定前の未閲覧を維持する。
 
-[P123所見](docs/P123_findings.md)：3方式各4/4成功、使用量不明0、監査エラー0。単発893,529、別反復785,656、同時反復836,922 tokenで、同時反復の固定gateはfalse。P124は全20program一致・保存backend68対57、実モデル/API0の局所検証（[所見](docs/P124_findings.md)）。
+## 旧記録
 
-P123/P124/P125の固定実行木と旧束縛sourceを編集しない。新台帳をglobal一覧へ登録する際は、最新の作業木に全sourceがあることを照合する。旧回収木へ最新一覧を当てて新file不足を旧記録破損と扱わない。
-
-原稿はユーザーが執筆し、こちらは主要実験と全結果・採否・再現根拠を担当。普通のメッセージでは実験を止めず、明示停止には所有processの閉鎖まで対応する。未見12課題、過去の失敗・未知費用・原稿を保持する。[現状](docs/current_status.md)／[次の作業](docs/next_actions.md)／[履歴レビュー](docs/research_history_review_20261026.md)。
-
-[P127開始記録](reports/P127_execution_start_20261026.json)。既存prepare/pipeline/wrapperは再実行しない。
+[P126](docs/experiments/P126_findings.md)は保存prefix48件の局所再生、[P125](docs/P125_findings.md)は両3/4成功・766,875 token・機構未発動、[P123](docs/P123_findings.md)は各4/4成功・同時反復gate false、[P124](docs/P124_findings.md)は保存20 program再生。全旧wrapper/collectorを再実行しない。旧失敗・未知費用・原稿・固定sourceを保持し、条件の異なるphaseを同一反復へプールしない。

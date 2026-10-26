@@ -1,0 +1,60 @@
+{
+  "phase": "P127_publication_validation",
+  "created_at": "2026-10-26T04:20:19.501790+00:00",
+  "unit_tests": {
+    "status": "pass",
+    "tests_run": 2256,
+    "failures": 0,
+    "errors": 0,
+    "wall_seconds": 31.631,
+    "environment": "Existing CI virtual environment with the pinned mini-swe-agent checkout available at the CI vendor location",
+    "final_log_sha256": "72d7587ef99178b6275e38d00a221ce45f04295e20c48d7f218ff1dfc64b633c"
+  },
+  "prior_local_setup_attempts": [
+    {
+      "interpreter": "system Python 3.12",
+      "tests_run": 2233,
+      "errors": 6,
+      "cause": "docker dependency unavailable"
+    },
+    {
+      "interpreter": "existing CI virtual environment",
+      "tests_run": 2244,
+      "errors": 4,
+      "cause": "minisweagent import path unavailable"
+    },
+    {
+      "interpreter": "CI virtual environment with pinned vendor import path",
+      "tests_run": 2256,
+      "errors": 8,
+      "cause": "CI vendor template location absent in the new worktree"
+    }
+  ],
+  "setup_fix": "Expose the existing pinned vendor checkout in the ignored local vendor directory; no tracked implementation changes",
+  "compileall_status": "pass",
+  "git_diff_check_status": "pass",
+  "prior_global_ledger_count_verified": 180,
+  "prior_global_bindings_verified": 2123,
+  "p127_launch_snapshot_ledger_count": 179,
+  "p127_launch_snapshot_bindings": 2122,
+  "all_prior_bound_bytes_unchanged": true,
+  "tracking_task_count": 120,
+  "tracking_task_content_changes": [
+    "R32",
+    "R33"
+  ],
+  "additional_live_model_calls": 0,
+  "additional_environment_API_requests": 0,
+  "additional_evaluations": 0,
+  "experiment_reexecuted": false,
+  "manuscript_changed": false,
+  "public_figure_loader": {
+    "status": "pass",
+    "environment": "Existing reporting virtual environment with matplotlib",
+    "bound_public_sources": 1151,
+    "rows": 8,
+    "development_gate_met": false,
+    "renderer_reexecuted": false,
+    "preliminary_system_interpreter_import": "matplotlib unavailable; no loader result or figure produced"
+  }
+}
