@@ -1,0 +1,61 @@
+{
+  "phase": "P132_actual_figures_independent_review",
+  "status": "pass",
+  "reviewed_at": "2026-10-26T20:14:17.551618+00:00",
+  "checks_passed": 5239,
+  "checks_total": 5239,
+  "failures": [],
+  "collector_complete_and_independent_pass_seen_before_figure_read": true,
+  "private_independent_review_checks_passed": 56861,
+  "fixed_execution_head": "71aaa1c5290000902f2cc51ce406f3b47eeb7327",
+  "fixed_plan_sha256": "16982554d89ba5d64dc47545c74e956604a9a1d22aa1ddcab645d9282ca1b50a",
+  "renderer_sha256": "26ba450901eff3d1c35cb379b0e0fac3d48f7cf43e5ad3b0fb4401187c8b03aa",
+  "original_figure_manifest_sha256": "ee31efb13d1779fb459872452a0adf40cff9e36b17cb09f08daab3e1bd9127f1",
+  "original_figure_data_sha256": "5502f044a7354ad8430eb930ba68d7ded47fca00575ac6413752f7ad8092030c",
+  "figure_source_bindings_checked": 1251,
+  "all_two_slots_retained": true,
+  "official_success_by_mode": {
+    "off": false,
+    "checkpoint_inventory": false
+  },
+  "known_total_tokens_by_mode": {
+    "off": 171013,
+    "checkpoint_inventory": 213642
+  },
+  "unknown_usage_calls_by_mode": {
+    "off": 0,
+    "checkpoint_inventory": 1
+  },
+  "exact_token_difference": null,
+  "common_success_pairs": 0,
+  "development_gate_met": false,
+  "captures_by_mode": {
+    "off": 1,
+    "checkpoint_inventory": 2
+  },
+  "actor_exposures_by_mode": {
+    "off": 0,
+    "checkpoint_inventory": 2
+  },
+  "contract_failure_cells": 0,
+  "actual_PNGs_visually_inspected": [
+    "p132_tokens_quality.png",
+    "p132_inventory_exposure_cost.png"
+  ],
+  "visual_findings": [
+    "Both failures and both planned slots are visible.",
+    "On-side total is labeled unknown at the known subtotal213642; off is exact171013.",
+    "No common success is displayed as missing/not applicable, not a zero cost.",
+    "Capture1/2 and actor exposure0/2 are separate from capture time; no stacked time or token-saving implication.",
+    "Labels, legends and conservative scope notes are readable without overlap."
+  ],
+  "PDF_review": "Artifact hashes and PDF magic checked; PNG renderings visually inspected.",
+  "original_figures_changed": false,
+  "renderer_producer_auditor_or_reviewer_reexecuted": false,
+  "raw_generated_code_or_evaluator_text_read": false,
+  "additional_model_API_tokenizer_evaluation_calls": 0,
+  "limitations": [
+    "Aggregate/hash and display review only; raw private runtime/evaluator contents are not independently replayed.",
+    "Audit consistency and observed exposure do not establish efficiency, task success, general quality or novelty."
+  ]
+}

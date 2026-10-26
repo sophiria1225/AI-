@@ -1,0 +1,69 @@
+{
+  "phase": "P132_public_redraw_independent_source_review",
+  "status": "pass_limited_source_review",
+  "reviewed_at": "2026-10-26T20:03:34.694371+00:00",
+  "redraw_source_sha256": "6e1b44aecbc179e2fa3944e2a7e3d38695d067b34c37300b289cadebeb3008b7",
+  "fixed_renderer_sha256": "26ba450901eff3d1c35cb379b0e0fac3d48f7cf43e5ad3b0fb4401187c8b03aa",
+  "checks_count": 12,
+  "checks": [
+    {
+      "check": "Separately supplied published manifest digest is mandatory and checked before data import.",
+      "passed": true
+    },
+    {
+      "check": "Only the exact fixed original renderer source hash can be executed; its __main__ is not invoked.",
+      "passed": true
+    },
+    {
+      "check": "No load_closed call exists; no raw closure/review/trial path is required.",
+      "passed": true
+    },
+    {
+      "check": "Bounded regular input files reject leaf symlinks; duplicate JSON keys and nonfinite constants are rejected.",
+      "passed": true
+    },
+    {
+      "check": "Exact original manifest field/artifact domains and data digest are checked.",
+      "passed": true
+    },
+    {
+      "check": "One task/seed57/two slots and shared-feedback scope are fixed.",
+      "passed": true
+    },
+    {
+      "check": "Original renderer validate_rows recomputes all row aggregates and utility gate.",
+      "passed": true
+    },
+    {
+      "check": "Unknown and missing totals, capture versus actual exposure, and unsuccessful outcomes retain original semantics.",
+      "passed": true
+    },
+    {
+      "check": "Only public relative historical source names and metadata hash labels are preserved.",
+      "passed": true
+    },
+    {
+      "check": "New output directory is required and original input bytes are rechecked unchanged after rendering.",
+      "passed": true
+    },
+    {
+      "check": "Redraw manifest distinguishes original hashes, newly rendered artifact hashes and lack of general PNG/PDF byte-identity guarantee.",
+      "passed": true
+    },
+    {
+      "check": "README and flags explicitly deny fresh closure/audit certification or independent authenticity of a caller-supplied digest.",
+      "passed": true
+    }
+  ],
+  "blockers_found": [],
+  "method": "Source/AST inspection only; neither loader nor renderer nor synthetic tests executed.",
+  "actual_results_read": false,
+  "raw_trial_records_read": false,
+  "source_modified": false,
+  "additional_model_API_tokenizer_evaluator_calls": 0,
+  "limitations": [
+    "The user must obtain the expected original manifest digest from the publication; arbitrary self-consistent data and its own digest do not authenticate scientific claims.",
+    "Historical source and closure bindings are retained, not independently revalidated.",
+    "Actual figure readability remains a separate closed-result check."
+  ]
+}
