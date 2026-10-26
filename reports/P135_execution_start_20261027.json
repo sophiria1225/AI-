@@ -1,0 +1,93 @@
+{
+  "phase": "P135_execution_start",
+  "recorded_at": "2026-10-26T23:18:19.063415+00:00",
+  "scope": "Time-qualified operational start only; in-progress costs, success and generated contents are not inspected.",
+  "fixed_execution_head": "d87880f474c05541d8d0cde0ec318fd262d9fa0e",
+  "plan_sha256": "5a5b5338773f4a5b80ab61f9ccae9a3591c4f42ef8f458f2c38e4bc8894d8a2e",
+  "plan_source_count": 1498,
+  "planned_slots": 6,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "independent_tasks": 1,
+  "wrapper_started_at": "2026-10-26T23:15:47.444542+00:00",
+  "wrapper_pid": 94449,
+  "pipeline_pid": 94466,
+  "server_supervisor_pid": 94488,
+  "model_server_pid": 94491,
+  "operational_snapshot": {
+    "observed_at": "2026-10-26T23:18:19.063415+00:00",
+    "source_status_sha256": "052dc6f73e024f1fca84bcee906af293c13d0e398c8c067cc6819f3c69d4940a",
+    "phase": "P135_pipeline",
+    "status": "batch",
+    "server_owned": true,
+    "stages": [
+      {
+        "mode": "preflight",
+        "exit_code": 0,
+        "wall_seconds": 18.531632792029995
+      },
+      {
+        "mode": "activation",
+        "exit_code": 0,
+        "wall_seconds": 0.26269149995641783
+      }
+    ],
+    "completed_slots": 0
+  },
+  "first_actor_dispatch_confirmation": {
+    "active_cell": "BOC_P135_R01_01_RAW_ANCHOR",
+    "first_request_file_created": true,
+    "request_contents_read": false,
+    "generated_contents_read": false,
+    "usage_and_task_outcomes_read": false,
+    "model_slot_is_processing": true,
+    "observation_is_not_task_completion_or_success": true
+  },
+  "cell_limits": {
+    "shared_model_calls": 80,
+    "logical_tokens": 450000,
+    "work_seconds": 1800,
+    "actual_API_requests": 80
+  },
+  "server_max_lifetime_seconds": 21600,
+  "deadline_jst": "2026-10-27T18:00:00+09:00",
+  "P135_start_ledger_count": 190,
+  "P135_start_binding_count": 2300,
+  "P135_start_registry_sha256": "73a6f58f43c59bf09ca935a6cfab83dc7bde086d4cb1066af79b171a5db9f732",
+  "reserved_snapshot_sha256": "52cfe1ecc0ca4aa004ed3965c10041d0346144b0d382fab2339399a895aaf0fb",
+  "start_snapshot_not_replaced_by_later_global": true,
+  "P133_reporting_recovery_required_and_validated": true,
+  "P133_original_report_failure_preserved": true,
+  "P134_unstarted_queue_failure_validated": true,
+  "scientific_conditions_unchanged_from_prepared_P134": true,
+  "P133_aggregate_results_known_before_launch": true,
+  "P133_results_used_to_select_conditions": false,
+  "source_preparation_PR": 540,
+  "source_merge_commit": "7016f149baeac85aa2fe5765bd2d6d70de519361",
+  "exact_head_CI": [
+    {
+      "id": 40418197314,
+      "head_sha": "d87880f474c05541d8d0cde0ec318fd262d9fa0e",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121905693169
+    },
+    {
+      "id": 40418153031,
+      "head_sha": "d87880f474c05541d8d0cde0ec318fd262d9fa0e",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121905547574
+    }
+  ],
+  "user_continuation_while_asleep_authorized": true,
+  "all_six_conditions_complete_claim": false,
+  "task_success_or_cost_effect_claim": false,
+  "novel_method_established": false,
+  "status_publication_model_API_tokenizer_evaluation_calls": 0,
+  "manuscript_written": false
+}
