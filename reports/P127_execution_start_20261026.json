@@ -1,0 +1,54 @@
+{
+  "phase": "P127_execution_started",
+  "started_at": "2026-10-26T02:45:02.995802+00:00",
+  "confirmed_at": "2026-10-26T02:46:02.690121+00:00",
+  "source_commit": "0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0",
+  "preparation_PR": 521,
+  "preparation_merge": "3db23717bcc1cee8d9acd803086c9ef4a5802df4",
+  "CI": [
+    {
+      "id": 40260464511,
+      "head_sha": "0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121371534235
+    },
+    {
+      "id": 40260431795,
+      "head_sha": "0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121371437686
+    }
+  ],
+  "plan_sha256": "49edf3731b6d4caf79ef7b90f84b928cb7269ebb541148687e444c2bb9557bff",
+  "bound_implementation_sources": 1142,
+  "model_author": "MiniMaxAI/MiniMax-M3",
+  "quantization": "IQ4_XS",
+  "model_seed": 157,
+  "world_seed": 42,
+  "planned_conditions": 8,
+  "initial_input_count_requests": 8,
+  "summary_transport_input_count_requests": 1,
+  "preflight_sha256": "dcd4fb87e44b513ffe7682d16ebef0d9d5f8700a79865967f7450a96d474af16",
+  "activation_sha256": "5e54f1923877f09d0fba6a23bcc9a9995ba9abc263cf519bc20fe26e3159a211",
+  "all_conditions_frozen_before_generation": true,
+  "finite_limits": {
+    "max_model_calls": 640,
+    "max_reserved_tokens": 3600000,
+    "max_reserved_environment_api_requests": 880,
+    "max_evaluator_calls": 8,
+    "server_max_lifetime_seconds": 21600
+  },
+  "source_sha256": {
+    "configs/P127_whole_task_region_projection_v01.json": "49edf3731b6d4caf79ef7b90f84b928cb7269ebb541148687e444c2bb9557bff",
+    "docs/experiments/P127_whole_task_region_projection.md": "e46bdcb0e670d3e8456cda8b744a10d3584082b98ea674b9a2c0f57fa02c64bc"
+  },
+  "wrapper_sha256": "7084a35912a283654cc20b8070e17880bfb2cc90c7970427ad70624f61356307",
+  "prior_ledger_snapshot_count": 179,
+  "partial_outcomes_read": false,
+  "outcome_status": "not_yet_closed_or_audited",
+  "automatic_retry_allowed": false
+}
