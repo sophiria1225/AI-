@@ -407,6 +407,11 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：2026-10-27 P133全4閉鎖・別報告回収、P135同条件復旧へ】
+P133は各方式1/2成功・434623 tokens、unknown0、要約見送り0で同値、gatefalse。全4/server停止とaudit0/session0後、reportが固定public source materials6/papers1を拒否して終了1。別data-only recoveryで全4回収、追加model/API/eval/tokenizer0。旧sourceと失敗を保持。P134queueはこの失敗を検知しmodel/server/preflight/task0で停止。P135へ同6条件（raw/counts/entity×seed57/157、80calls450k1800sAPI80）を移し、機構・guide・tools・予算不変で前件と報告pathだけ修正。実1483source全件を含むreport結合検査を追加。P135はまだモデル未開始、source/両CI後に一度実行する。新規性・一般品質維持・新方式の全仕事削減は未確立。通常会話で止めず明示停止に従う、原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_whole_task_observed_obligations.md
+
+【以下は過去時点の記録】
 【準備：2026-10-27 P133継続中、P134の6条件を固定へ】
 P133は開始済みの4条件を変更せず継続。P134は対象ID×不足fieldをcheckpoint後に一度提示する候補で、raw anchor／残件数／対象と不足field×seed57/157、既知CSV1課題の6条件を準備。主2方式は同じ証拠・明示query・guide、rawはP123元interface、全方式で観測/capture共通。各80calls/450k tokens/1800秒/API80、server6h・18時上限。P133全4閉鎖/回収とP134source固定/両CI成功が起動条件。途中効能未読で条件選択せず、全失敗/unknown/未実施を保存。有効性と新規性は未確認、原稿はユーザー担当。通常会話で止めず明示停止に従う。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P134_whole_task_observed_obligations.md
@@ -508,6 +513,11 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：2026-10-27 P133全4閉鎖・別報告回収、P135同条件復旧へ】
+P133は各方式1/2成功・434623 tokens、unknown0、要約見送り0で同値、gatefalse。全4/server停止とaudit0/session0後、reportが固定public source materials6/papers1を拒否して終了1。別data-only recoveryで全4回収、追加model/API/eval/tokenizer0。旧sourceと失敗を保持。P134queueはこの失敗を検知しmodel/server/preflight/task0で停止。P135へ同6条件（raw/counts/entity×seed57/157、80calls450k1800sAPI80）を移し、機構・guide・tools・予算不変で前件と報告pathだけ修正。実1483source全件を含むreport結合検査を追加。P135はまだモデル未開始、source/両CI後に一度実行する。新規性・一般品質維持・新方式の全仕事削減は未確立。通常会話で止めず明示停止に従う、原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_whole_task_observed_obligations.md
+
+【以下は過去時点の記録】
 【準備：2026-10-27 P133継続中、P134の6条件を固定へ】
 P133は開始済みの4条件を変更せず継続。P134は対象ID×不足fieldをcheckpoint後に一度提示する候補で、raw anchor／残件数／対象と不足field×seed57/157、既知CSV1課題の6条件を準備。主2方式は同じ証拠・明示query・guide、rawはP123元interface、全方式で観測/capture共通。各80calls/450k tokens/1800秒/API80、server6h・18時上限。P133全4閉鎖/回収とP134source固定/両CI成功が起動条件。途中効能未読で条件選択せず、全失敗/unknown/未実施を保存。有効性と新規性は未確認、原稿はユーザー担当。通常会話で止めず明示停止に従う。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P134_whole_task_observed_obligations.md
