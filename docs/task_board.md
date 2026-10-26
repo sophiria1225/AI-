@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P128全16条件を実行中 2026-10-26 18:06 JST開始】
+既知4課題×receipt full/disclose×固定seed57/157。head 0c29b754b23c8ca97ead6e9319661395b6c603a9、push/PR両CI成功、PR524 merge済。1,162 sources固定、初期16＋要約transport2件、activation完了、実model応答が進行している。全1,280 shared model呼出・7.2M token・1,760 API・16評価、server11時間・10/27 06時まで。各seedで成功損失なしと全課題/共通成功のtoken減を要求。通常の効率校正で新規性は未主張、結果未確定。
+P127後の無起動時間を作った進め方を修正し、通常質問を停止扱いにしない。稼働中にCSV出力検証と新規技術候補の次の有限比較を並行準備する。P128途中結果で条件を変更せず、閉鎖後全16枠を監査・回収する。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/reports/P128_execution_start_20261026.json
+
+【以下は当時の経過。新実験未開始等の記載は現在の状態ではない】
 【最新：P127全8条件閉鎖・機構未発動 2026-10-26 13:08 JST】
 P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
 全8合計1,390,434 token・136 model呼出・490 API・8評価。独立監査67,270 checks PASS。旧固定sourceと後処理v01修正来歴を保持。全132 sourceのAST診断も終了。全66対同値、対象取得は完全応答の永続dict保存により拒否。構文緩和だけで安全な小改善は確認できず、次のモデル実験を採択しない。追加seedや不成立条件の反復は自動開始しない。新モデル比較は未開始。
@@ -453,6 +459,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P128全16条件を実行中 2026-10-26 18:06 JST開始】
+既知4課題×receipt full/disclose×固定seed57/157。head 0c29b754b23c8ca97ead6e9319661395b6c603a9、push/PR両CI成功、PR524 merge済。1,162 sources固定、初期16＋要約transport2件、activation完了、実model応答が進行している。全1,280 shared model呼出・7.2M token・1,760 API・16評価、server11時間・10/27 06時まで。各seedで成功損失なしと全課題/共通成功のtoken減を要求。通常の効率校正で新規性は未主張、結果未確定。
+P127後の無起動時間を作った進め方を修正し、通常質問を停止扱いにしない。稼働中にCSV出力検証と新規技術候補の次の有限比較を並行準備する。P128途中結果で条件を変更せず、閉鎖後全16枠を監査・回収する。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/reports/P128_execution_start_20261026.json
+
+【以下は当時の経過。新実験未開始等の記載は現在の状態ではない】
 【最新：P127全8条件閉鎖・機構未発動 2026-10-26 13:08 JST】
 P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
 全8合計1,390,434 token・136 model呼出・490 API・8評価。独立監査67,270 checks PASS。旧固定sourceと後処理v01修正来歴を保持。全132 sourceのAST診断も終了。全66対同値、対象取得は完全応答の永続dict保存により拒否。構文緩和だけで安全な小改善は確認できず、次のモデル実験を採択しない。追加seedや不成立条件の反復は自動開始しない。新モデル比較は未開始。
