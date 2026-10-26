@@ -1,0 +1,66 @@
+{
+  "phase": "P130_fixed_continuation_reserved",
+  "queued_at": "2026-10-26T10:30:51.208756+00:00",
+  "confirmed_at": "2026-10-26T10:32:06.756839+00:00",
+  "source_commit": "8d60aaedac3ccdb4d2f5cca760574f3ea5c13507",
+  "preparation_PR": 528,
+  "preparation_merge": "d18018b95addf430087ea37bbfeeadb7a6817355",
+  "CI": [
+    {
+      "id": 40307698658,
+      "head_sha": "8d60aaedac3ccdb4d2f5cca760574f3ea5c13507",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121520804751
+    },
+    {
+      "id": 40307694738,
+      "head_sha": "8d60aaedac3ccdb4d2f5cca760574f3ea5c13507",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121520789915
+    }
+  ],
+  "planned_conditions": 4,
+  "independent_tasks": 1,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "modes": [
+    "off",
+    "checkpoint_inventory"
+  ],
+  "common_grounding_mode": "feedback",
+  "primary_comparison": [
+    "off",
+    "checkpoint_inventory"
+  ],
+  "model_generations_started": false,
+  "waiting_for": "P129 all-slot collection and owned server closure",
+  "latest_start_UTC": "2026-10-26T17:00:00+00:00",
+  "deadline_jst": "2026-10-27T06:00:00+09:00",
+  "queue_source_sha256": "0266044244dff6de594bea372c5c8281fd2d55dc2df5a47f6a4ae7e28d82178f",
+  "wrapper_sha256": "980ace188466a883e943ce524e922bd52a4e19c6933db8cc5612c4b50b4c16d1",
+  "collector_sha256": "c4ff13b831de39a04c6d8f2be886dcef0de35dd88bbea9fe9d7d36d2cbf15f28",
+  "reserved_ledger_count": 183,
+  "reserved_binding_count": 2158,
+  "reserved_snapshot_sha256": "2442665f508644b3f953d5c8dee834ce39f6c663f0492d98dbf7f3ad4f08f0e5",
+  "plan_sha256": "d377fe711a329e0ba5c7d017b33e094180f889be1d7f77e8f7aab210375bdb76",
+  "source_sha256": {
+    "configs/P130_whole_task_checkpoint_inventory_v01.json": "d377fe711a329e0ba5c7d017b33e094180f889be1d7f77e8f7aab210375bdb76",
+    "docs/experiments/P130_whole_task_checkpoint_inventory.md": "693d69e584276b7b97116e6716d2be5153438e7bd8af5f97949ea12cfba940bb",
+    "reports/P130_closed_source_diagnosis_20261026.json": "9626162d7dd12f0fbaebbaec195494de876e4cf9e6c9f75e08bee735150e41b5"
+  },
+  "P129_outcomes_used_for_selection": false,
+  "P128_first_three_rows_seen_after_condition_selection": true,
+  "ordinary_messages_stop_experiment": false,
+  "explicit_stop_stops_running_and_queued_work": true,
+  "automatic_retries": 0,
+  "prior_results_pooled": false,
+  "novel_method_claim": false,
+  "timing_superiority_claim": false,
+  "manuscript_changed": false
+}

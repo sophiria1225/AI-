@@ -407,6 +407,10 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【追加：P130固定・自動継続予約 2026-10-26 19:30 JST】
+P128全16条件を実行中のまま、P129全6条件の次にP130全4条件を予約。CSV1課題×inventory off/on×seed57/157、共通grounding feedback、両条件同capture費用。head 8d60aaedac3ccdb4d2f5cca760574f3ea5c13507、1,205sources、合成78testsとpush/PR両CI成功、PR528merge済み。全320model呼出/1.8M tokens/480API/4評価、server4時間が06時までに収まる02時以前だけP129全枠閉鎖後に起動。P130生成は予約時点で0、183台帳/2,158束縛のsnapshotを保存。通常会話では停止せず明示停止を全稼働/待機へ反映。通常inventoryの効用校正であり新規性・時機優位は未確立。全4known・成功脱落0・全体/共通成功token減・実表示・全契約整合を要求する。
+https://github.com/sophiria1225/AI-/blob/main/reports/P130_continuation_reserved_20261026.json
+
 【追加：P129固定・自動起動予約 2026-10-26 18:54 JST】
 P128を実行しながら、CSV1課題×off/feedback/repair×固定seed57/157の6条件をsource/plan/CIへ固定。PR526 merge済み。P128全16枠回収・所有server閉鎖後に一度自動起動する待機process稼働中。主比較はrepair対普通feedback、offは補助品質対照。未知は修復せずdelete非介入。原wire/effectivepayload/告知/全費用を監査。P129生成は予約時点で未開始。明示停止は稼働/予約双方へ反映、普通の質問は停止扱いにしない。採択用新規性は未確立。
 https://github.com/sophiria1225/AI-/blob/main/reports/P129_continuation_reserved_20261026.json
@@ -462,6 +466,10 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 **他候補の扱い**: 広いデータ導入、多数のモデル比較、万能な再編システムの完成を先行させない。圧縮後の再取得費用や適応的圧縮という既知の一般論だけを新規性にしない。
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
+
+【追加：P130固定・自動継続予約 2026-10-26 19:30 JST】
+P128全16条件を実行中のまま、P129全6条件の次にP130全4条件を予約。CSV1課題×inventory off/on×seed57/157、共通grounding feedback、両条件同capture費用。head 8d60aaedac3ccdb4d2f5cca760574f3ea5c13507、1,205sources、合成78testsとpush/PR両CI成功、PR528merge済み。全320model呼出/1.8M tokens/480API/4評価、server4時間が06時までに収まる02時以前だけP129全枠閉鎖後に起動。P130生成は予約時点で0、183台帳/2,158束縛のsnapshotを保存。通常会話では停止せず明示停止を全稼働/待機へ反映。通常inventoryの効用校正であり新規性・時機優位は未確立。全4known・成功脱落0・全体/共通成功token減・実表示・全契約整合を要求する。
+https://github.com/sophiria1225/AI-/blob/main/reports/P130_continuation_reserved_20261026.json
 
 【追加：P129固定・自動起動予約 2026-10-26 18:54 JST】
 P128を実行しながら、CSV1課題×off/feedback/repair×固定seed57/157の6条件をsource/plan/CIへ固定。PR526 merge済み。P128全16枠回収・所有server閉鎖後に一度自動起動する待機process稼働中。主比較はrepair対普通feedback、offは補助品質対照。未知は修復せずdelete非介入。原wire/effectivepayload/告知/全費用を監査。P129生成は予約時点で未開始。明示停止は稼働/予約双方へ反映、普通の質問は停止扱いにしない。採択用新規性は未確立。
