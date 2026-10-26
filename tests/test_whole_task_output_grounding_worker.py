@@ -107,7 +107,7 @@ def fixture(storage,mode,*,replication=1,unknown_model=False,unknown_write=False
                 arguments=json.dumps({'code':programs[agent_index],'span_ids':[]})))]) if tools else deepcopy(VALID_CHECKPOINT))
         tokens=count(config,messages,tools,timeout)['input_tokens']
         response=dict(status='ok',input_tokens=tokens,output_tokens=20,wall_seconds=0,cached_input_tokens=0,
-                      message=message,done_reason='tool_calls',
+                      message=message,done_reason='tool_calls' if tools else 'stop',
                       timings=dict(cache_n=0,prompt_n=tokens,predicted_n=20,prompt_ms=1,predicted_ms=1))
         (output/'response.json').write_text(json.dumps(response));return response
     tools=[tool(name,{k:{} for k in fields}) for name,fields in FIELDS.items()]
@@ -144,6 +144,7 @@ class OutputGroundingWorkerTests(unittest.TestCase):
             d=fixture(Path(temp),'repair',checkpoint=True);r=d['result']
             self.assertEqual(r['stop_reason'],'agent_declared_complete')
             self.assertGreater(r['usage_by_role']['focus']['calls'],0)
+            self.assertGreater(r['checkpoint_control']['installations'],0)
             self.assertEqual(r['output_grounding']['grounding_repairs'],1)
             self.assertEqual(r['known_total_tokens'],sum(v['input_tokens']+v['output_tokens'] for v in r['usage_by_role'].values()))
             self.assertEqual(r['model_calls'],len(d['captured_requests']))
