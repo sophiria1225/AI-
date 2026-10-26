@@ -1,0 +1,488 @@
+{
+  "P128_or_P129_outcomes_used_for_selection": false,
+  "additional_API_calls": 0,
+  "additional_Docker_calls": 0,
+  "additional_evaluator_calls": 0,
+  "additional_model_calls": 0,
+  "additional_tokenizer_calls": 0,
+  "causal_effect_established": false,
+  "conclusion": "The observed syntax and lexical omission support a bounded ordinary inventory utility comparison; failure causation and benefit are not established.",
+  "evidence_phase": "P127",
+  "hypothesis": "ordinary_checkpoint_inventory_utility_after_direct_binding_name_cues_disappear",
+  "independent_tasks": 1,
+  "kind": "closed_predecessor_source_diagnosis",
+  "known_task_scope": "CSV_task_slot_04_two_policies_same_saved_sources",
+  "limitations": [
+    "lexical absence does not prove model forgot or inventory would repair failure",
+    "AST stores/loads are syntax, not a reconstructed runtime namespace",
+    "no full serialized CSV snapshot was reconstructed; printed prefixes/suffixes do not establish complete artifact correctness",
+    "normal inventory already exists in P33; this diagnoses checkpoint timing, not novelty",
+    "P33 and P127 use different conditions; cross-phase differences are not a timing experiment",
+    "Four-cell off/on candidate tests ordinary utility with shared feedback, not superiority against an early fixed inventory",
+    "Lexical counting includes message fields without interpreting private reasoning"
+  ],
+  "novel_method_claim": false,
+  "paired_source_hashes_identical": true,
+  "phase": "P130",
+  "prior_control": {
+    "CSV_failed_in_all_arms": true,
+    "boundary": "fixed_after_eight_responses",
+    "full_history_total_tokens": 242640,
+    "inventory_already_implemented": true,
+    "inventory_development_gate_met": false,
+    "masked_total_tokens": 377272,
+    "masked_with_inventory_total_tokens": 327269,
+    "phase": "P33",
+    "successes_each": 2,
+    "tasks": 4
+  },
+  "private_binding_names_published": false,
+  "private_diagnostic_script_sha256": "115d4e2242da1fe48e924dd5eade7de0dcf45f7aa248e8427007efeb1613c5e7",
+  "private_diagnostic_sha256": "8d5fbbf88cb5459027f2f8efb781ab33c9dd46e9eafc411b9bd2e2675a011eb7",
+  "private_generated_code_published": false,
+  "private_input_file_count": 123,
+  "private_input_manifest_sha256": "9a565b9e7154d821f552b9467996a33d055c8bd9fc5b35c223434ea948103a27",
+  "private_input_paths_published": false,
+  "private_reasoning_published": false,
+  "private_values_published": false,
+  "prototype_scope": "exact builtin binding names/types/container lengths only; no values/scalar lengths/custom objects",
+  "reserved_scenarios_read": 0,
+  "rows": [
+    {
+      "bindings_by_structural_role": {
+        "full_metadata_map": {
+          "after_call_015": {
+            "deletes": 0,
+            "loads": 0,
+            "stores": 0
+          },
+          "syntactic_reference_programs": [
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_014_01",
+              "source_sha256": "da885a7c7665feb9aebb7574fc5899012ea4af3c33bdedf810ebf41b5309fbba",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_015_01",
+              "source_sha256": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+              "stores": 1
+            }
+          ]
+        },
+        "serialized_csv": {
+          "after_call_015": {
+            "deletes": 0,
+            "loads": 5,
+            "stores": 2
+          },
+          "syntactic_reference_programs": [
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 3,
+              "program": "call_015_01",
+              "source_sha256": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 3,
+              "program": "call_024_01",
+              "source_sha256": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_025_01",
+              "source_sha256": "1d9db9595305e3d645ea5289cd9700838d9633b1673c6984f1716ba4135dffc6",
+              "stores": 1
+            }
+          ]
+        }
+      },
+      "checkpoint_decisions": [
+        {
+          "accepted": true,
+          "after_model_calls": 8,
+          "cutoff": 12,
+          "reason": "shorter_native_input",
+          "revision": 1
+        },
+        {
+          "accepted": true,
+          "after_model_calls": 18,
+          "cutoff": 30,
+          "reason": "shorter_native_input",
+          "revision": 2
+        }
+      ],
+      "final_serialized_binding_literal_overwrite": true,
+      "large_literal_dictionaries": [
+        {
+          "literal_dictionary_entries": 72,
+          "program": "call_024_01",
+          "source_sha256": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681"
+        }
+      ],
+      "lexical_visibility": [
+        {
+          "call": "call_017",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 6
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 3
+            }
+          }
+        },
+        {
+          "call": "call_019",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_020",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_023",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_024",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_025",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 3
+            }
+          }
+        }
+      ],
+      "namespace_discovery_calls": {},
+      "programs": 27,
+      "run_id": "BOC_P127_04_EXPLICIT_JOINED_FIELDS",
+      "source_sha256_by_program": {
+        "call_001_01": "e35e7acee76aecd42089f1fc748b3bd0774f4515b01a5708e4708cc1bf9967a4",
+        "call_002_01": "7f3f109f22135bb7f8c2b106f31e7fa875027c762af29e29bfa49d5dd8d3a013",
+        "call_003_01": "57bb30cf3bdee2f1e856e04ca1ace1e8778d3d61951b7f19218e43e0b3de4eae",
+        "call_004_01": "195defe5e3107c4c08ed743faa4a0eb9f7262e2c4db5bc9c59749fceb2c0c5ed",
+        "call_005_01": "a14fbc9d18e5a856f6469a470ffee3b43ddd019010549e6f7b5eb8a733ac48e2",
+        "call_006_01": "68c6ce4f75e5240d6b8c337b87a523573c3357a14f4bc961921d890b26f68285",
+        "call_007_01": "0ba85a607685aa0c63f363e811b56aac0e33bd5c2e36fa06761f1ed384e5065f",
+        "call_009_01": "f2be1a5cbbd70b0ab9580051cc3abdb53b61d7a94ac5b00dfdba9e851825c2fb",
+        "call_010_01": "869bfd067a8bc7ac559d333f081e0e262770b1cbc43b29f9e4343f4debcb4c96",
+        "call_011_01": "7442457c1049d2ca43500744edfeb9776d098a6dc0f2f991b1b05a273446e052",
+        "call_012_01": "5cf12a4800a292b20df6d06b9ed1bf05ec1d4ce310395b3993da1280b5077501",
+        "call_013_01": "8f35dc4e7916e9a9ef8bc554e2134a3bc8c6d1ac0904cd58f36451b869bbb4f6",
+        "call_014_01": "da885a7c7665feb9aebb7574fc5899012ea4af3c33bdedf810ebf41b5309fbba",
+        "call_015_01": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+        "call_016_01": "4afe98771f74575595f69a34ff0d442e4dc8fa3cadca0869c740918ba8dec8e8",
+        "call_017_01": "b691fa2bc6383c4c3517e0648c97869f897d16efb905ea1296934c1f84ceab6b",
+        "call_019_01": "01a6aabbaf953f3cb16104fc8bd93ca6380c0fe5c78d96793ac805f2eaa623fd",
+        "call_020_01": "406e88620f85c43f1e7c5fc59b3c4eb21c8367adc5e604bb00e90e52bf1c57f8",
+        "call_021_01": "d40e5c4d23a44aab86d1d64ab5485b90c4d0243d5d75224ddd4382bf661e7bbf",
+        "call_022_01": "d1bdcd31ff7fbba2f3fdc3fede28065af6871f2cee512d7fd777b35ff49222d0",
+        "call_023_01": "e9985680a2508c070594db09a9ddbe0e3866f89ebe2ddae7c4dc877279174308",
+        "call_024_01": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681",
+        "call_025_01": "1d9db9595305e3d645ea5289cd9700838d9633b1673c6984f1716ba4135dffc6",
+        "call_026_01": "e89810bf95acf2f6cb919267f6da31955f907ad2a1dca08514f4210a6e4414b8",
+        "call_027_01": "8f1b16e24ebbe8e4bbf167cb491de3686fb8c4995503a5debd61f6a73c16a7e6",
+        "call_028_01": "9d19a42b9a021d62912a3c198012898973027e48c8543d62dc903cd07469331a",
+        "call_029_01": "774e7901114b08136a79f6a4f1e41399209febba106d1a9ad754f99a9fc908ac"
+      }
+    },
+    {
+      "bindings_by_structural_role": {
+        "full_metadata_map": {
+          "after_call_015": {
+            "deletes": 0,
+            "loads": 0,
+            "stores": 0
+          },
+          "syntactic_reference_programs": [
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_014_01",
+              "source_sha256": "da885a7c7665feb9aebb7574fc5899012ea4af3c33bdedf810ebf41b5309fbba",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_015_01",
+              "source_sha256": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+              "stores": 1
+            }
+          ]
+        },
+        "serialized_csv": {
+          "after_call_015": {
+            "deletes": 0,
+            "loads": 5,
+            "stores": 2
+          },
+          "syntactic_reference_programs": [
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 3,
+              "program": "call_015_01",
+              "source_sha256": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 3,
+              "program": "call_024_01",
+              "source_sha256": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681",
+              "stores": 1
+            },
+            {
+              "deletes": 0,
+              "execution_status": "ok",
+              "loads": 2,
+              "program": "call_025_01",
+              "source_sha256": "1d9db9595305e3d645ea5289cd9700838d9633b1673c6984f1716ba4135dffc6",
+              "stores": 1
+            }
+          ]
+        }
+      },
+      "checkpoint_decisions": [
+        {
+          "accepted": true,
+          "after_model_calls": 8,
+          "cutoff": 12,
+          "reason": "shorter_native_input",
+          "revision": 1
+        },
+        {
+          "accepted": true,
+          "after_model_calls": 18,
+          "cutoff": 30,
+          "reason": "shorter_native_input",
+          "revision": 2
+        }
+      ],
+      "final_serialized_binding_literal_overwrite": true,
+      "large_literal_dictionaries": [
+        {
+          "literal_dictionary_entries": 72,
+          "program": "call_024_01",
+          "source_sha256": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681"
+        }
+      ],
+      "lexical_visibility": [
+        {
+          "call": "call_017",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 6
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 3
+            }
+          }
+        },
+        {
+          "call": "call_019",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_020",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_023",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_024",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            }
+          }
+        },
+        {
+          "call": "call_025",
+          "lexical_occurrences": {
+            "full_metadata_map": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 0
+            },
+            "serialized_csv": {
+              "content": 0,
+              "reasoning_content": 0,
+              "tool_calls": 3
+            }
+          }
+        }
+      ],
+      "namespace_discovery_calls": {},
+      "programs": 27,
+      "run_id": "BOC_P127_04_AUTOMATIC_REGION_JOINED_FIELDS",
+      "source_sha256_by_program": {
+        "call_001_01": "e35e7acee76aecd42089f1fc748b3bd0774f4515b01a5708e4708cc1bf9967a4",
+        "call_002_01": "7f3f109f22135bb7f8c2b106f31e7fa875027c762af29e29bfa49d5dd8d3a013",
+        "call_003_01": "57bb30cf3bdee2f1e856e04ca1ace1e8778d3d61951b7f19218e43e0b3de4eae",
+        "call_004_01": "195defe5e3107c4c08ed743faa4a0eb9f7262e2c4db5bc9c59749fceb2c0c5ed",
+        "call_005_01": "a14fbc9d18e5a856f6469a470ffee3b43ddd019010549e6f7b5eb8a733ac48e2",
+        "call_006_01": "68c6ce4f75e5240d6b8c337b87a523573c3357a14f4bc961921d890b26f68285",
+        "call_007_01": "0ba85a607685aa0c63f363e811b56aac0e33bd5c2e36fa06761f1ed384e5065f",
+        "call_009_01": "f2be1a5cbbd70b0ab9580051cc3abdb53b61d7a94ac5b00dfdba9e851825c2fb",
+        "call_010_01": "869bfd067a8bc7ac559d333f081e0e262770b1cbc43b29f9e4343f4debcb4c96",
+        "call_011_01": "7442457c1049d2ca43500744edfeb9776d098a6dc0f2f991b1b05a273446e052",
+        "call_012_01": "5cf12a4800a292b20df6d06b9ed1bf05ec1d4ce310395b3993da1280b5077501",
+        "call_013_01": "8f35dc4e7916e9a9ef8bc554e2134a3bc8c6d1ac0904cd58f36451b869bbb4f6",
+        "call_014_01": "da885a7c7665feb9aebb7574fc5899012ea4af3c33bdedf810ebf41b5309fbba",
+        "call_015_01": "7278507574ad02e0ebcab801cea820b30fdd209756af212874eb8f12f8a65608",
+        "call_016_01": "4afe98771f74575595f69a34ff0d442e4dc8fa3cadca0869c740918ba8dec8e8",
+        "call_017_01": "b691fa2bc6383c4c3517e0648c97869f897d16efb905ea1296934c1f84ceab6b",
+        "call_019_01": "01a6aabbaf953f3cb16104fc8bd93ca6380c0fe5c78d96793ac805f2eaa623fd",
+        "call_020_01": "406e88620f85c43f1e7c5fc59b3c4eb21c8367adc5e604bb00e90e52bf1c57f8",
+        "call_021_01": "d40e5c4d23a44aab86d1d64ab5485b90c4d0243d5d75224ddd4382bf661e7bbf",
+        "call_022_01": "d1bdcd31ff7fbba2f3fdc3fede28065af6871f2cee512d7fd777b35ff49222d0",
+        "call_023_01": "e9985680a2508c070594db09a9ddbe0e3866f89ebe2ddae7c4dc877279174308",
+        "call_024_01": "efce1d9035f2ad1e8a63a83cb9aae9b43f1741e2d59f7007184ad82138fb0681",
+        "call_025_01": "1d9db9595305e3d645ea5289cd9700838d9633b1673c6984f1716ba4135dffc6",
+        "call_026_01": "e89810bf95acf2f6cb919267f6da31955f907ad2a1dca08514f4210a6e4414b8",
+        "call_027_01": "8f1b16e24ebbe8e4bbf167cb491de3686fb8c4995503a5debd61f6a73c16a7e6",
+        "call_028_01": "9d19a42b9a021d62912a3c198012898973027e48c8543d62dc903cd07469331a",
+        "call_029_01": "774e7901114b08136a79f6a4f1e41399209febba106d1a9ad754f99a9fc908ac"
+      }
+    }
+  ],
+  "saved_generated_programs_executed": 0,
+  "source_sha256": {
+    "docs/P33_findings.md": "7b2ec1909e8be9798b2b4c52ad21a754a229837a339ffb197dc8938053a70ba0",
+    "docs/checkpoint_runtime_inventory_prototype_20261026.md": "80d50820d2ded805c32b05d26c539c605d91504ee065727f38d0506b3947fbe9",
+    "docs/experiments/P127_admission_diagnosis.md": "e1b367854c66e40ddf5a99b25eaff74ad823bcd0eccc874b0a0325b5f085caee",
+    "docs/experiments/P127_findings.md": "94ba7788acb3b7d1a72688fdd57ef8660fe7c1ee420112b6295e1a7a81f7eff5",
+    "reports/P127_comparison.json": "6837377ca43d6ac6ab59952f0a0d433b0917df144b20fc02852f74370350a937",
+    "reports/P33_comparison.json": "722cf575147ea5bac87e49dc420493126c65c6e76b2f26b72c81a9375b650ce4",
+    "scripts/handoff_output_views.py": "b59414470b92c78193294ea02cbbc7cb917a662cbe8139789ed52d1ed1db7a37",
+    "scripts/runtime_inventory.py": "c50e035cba89353f7584bd96b0ac81c3c878895186c5ddf6d900d077e2f1e7c2"
+  },
+  "task_success_improvement_established": false,
+  "timing_superiority_claim": false,
+  "total_programs": 54,
+  "version": 1,
+  "whole_job_token_reduction_established": false
+}
