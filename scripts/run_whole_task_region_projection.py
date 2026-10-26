@@ -104,7 +104,7 @@ def predecessor_closed(storage, root):
     for name, expected in implementation.items():
         path = Path(name)
         if (path.is_absolute() or '..' in path.parts or not path.parts
-                or path.parts[0] not in ('scripts', 'tests')
+                or path.parts[0] not in ('scripts', 'tests', 'configs', 'docs')
                 or not (root / path).resolve().is_relative_to(root.resolve())
                 or sha(root / path) != expected):
             raise ValueError('P126_verified_implementation_changed')

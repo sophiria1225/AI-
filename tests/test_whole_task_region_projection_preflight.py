@@ -74,18 +74,19 @@ class ProjectionPreflightTests(unittest.TestCase):
                     server_final_sha256=driver.sha(folder / 'server_final.json')))
                 write(root / f'reports/{phase}_server_session.json', dict(phase=phase, status='stopped',
                     owned_processes_absent=True, audit_source_sha256=driver.sha(report)))
-            paths = ('region_field_projection.py', 'region_projection_runtime.py',
-                     'demand_joined_read_adapter.py', 'joined_public_read_views.py')
+            paths = ('scripts/region_field_projection.py', 'scripts/region_projection_runtime.py',
+                     'scripts/demand_joined_read_adapter.py', 'scripts/joined_public_read_views.py',
+                     'configs/python_export_image_v01.json', 'docs/experiments/P126_region_projection_replay.md')
             for name in paths:
-                path = root / 'scripts' / name
-                path.parent.mkdir(exist_ok=True)
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text('# synthetic implementation\n')
             replay = dict(phase='P126', status='complete', all_original_sources_accounted=True,
                 observed_region_partial_hits=13, unobserved_suffix_executed=False,
                 original_sources_changed=False, additional_model_calls=0,
                 additional_API_requests=0, additional_evaluations=0, replay_audit_errors=[],
                 normal_path_synthetic_contract_tests_passed=True,
-                source_sha256={f'scripts/{name}': driver.sha(root / 'scripts' / name) for name in paths})
+                source_sha256={name: driver.sha(root / name) for name in paths})
             path = root / driver.REPLAY_REPORT
             write(path, replay)
             with patch.object(driver.subprocess, 'run', return_value=SimpleNamespace(returncode=1, stdout='')):
@@ -99,7 +100,12 @@ class ProjectionPreflightTests(unittest.TestCase):
                     with self.subTest(key=key), self.assertRaises(ValueError):
                         driver.predecessor_closed(storage, root)
                 write(path, replay)
-                (root / 'scripts' / paths[0]).write_text('# mutated synthetic implementation\n')
+                for invalid in ('../escape.py', 'scripts/../../escape.py', str(root / paths[0])):
+                    write(path, {**replay, 'source_sha256': {**replay['source_sha256'], invalid: 'a' * 64}})
+                    with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, 'implementation_changed'):
+                        driver.predecessor_closed(storage, root)
+                write(path, replay)
+                (root / paths[0]).write_text('# mutated synthetic implementation\n')
                 with self.assertRaisesRegex(ValueError, 'implementation_changed'):
                     driver.predecessor_closed(storage, root)
 
