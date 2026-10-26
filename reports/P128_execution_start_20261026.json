@@ -1,0 +1,63 @@
+{
+  "phase": "P128_execution_started",
+  "started_at": "2026-10-26T09:06:20.912377+00:00",
+  "confirmed_at": "2026-10-26T09:11:54.111265+00:00",
+  "source_commit": "0c29b754b23c8ca97ead6e9319661395b6c603a9",
+  "preparation_PR": 524,
+  "preparation_merge": "b04a6f3dc2f9f7a848e75a790bc6fa930f9d7b90",
+  "CI": [
+    {
+      "id": 40296676845,
+      "head_sha": "0c29b754b23c8ca97ead6e9319661395b6c603a9",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121484310856
+    },
+    {
+      "id": 40296637581,
+      "head_sha": "0c29b754b23c8ca97ead6e9319661395b6c603a9",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121484181303
+    }
+  ],
+  "plan_sha256": "8b061a77f3e778716e0a846ea3be46e05ec6012aecd826c44b8c9b84bf006d00",
+  "bound_implementation_sources": 1162,
+  "model_author": "MiniMaxAI/MiniMax-M3",
+  "quantization": "IQ4_XS",
+  "model_seeds": [
+    57,
+    157
+  ],
+  "world_seed": 42,
+  "planned_conditions": 16,
+  "independent_tasks": 4,
+  "initial_input_count_requests": 16,
+  "summary_transport_input_count_requests": 2,
+  "preflight_sha256": "235a58705138302f226f1e84dda445c00d962058d6b0669a3d31449feaf61f22",
+  "activation_sha256": "6f8695472269b9d4dc46ca643990bd6d1cf89962f37749e2eae6c72d5e649d12",
+  "all_conditions_frozen_before_generation": true,
+  "finite_limits": {
+    "max_model_calls": 1280,
+    "max_reserved_tokens": 7200000,
+    "max_reserved_environment_api_requests": 1760,
+    "max_evaluator_calls": 16,
+    "server_max_lifetime_seconds": 39600,
+    "deadline_jst": "2026-10-27T06:00:00+09:00"
+  },
+  "source_sha256": {
+    "configs/P128_whole_task_receipt_disclosure_v01.json": "8b061a77f3e778716e0a846ea3be46e05ec6012aecd826c44b8c9b84bf006d00",
+    "docs/experiments/P128_whole_task_receipt_disclosure.md": "5cb1001b411555aa3900ccecef985e1ef1cbd04bf616e558fe8001cb0cb56594"
+  },
+  "wrapper_sha256": "66bc5b5ab0fcbd7292a016713295ec954b0f2ca0691fe45f1dec6f79d0b3b1b6",
+  "prior_ledger_snapshot_count": 181,
+  "partial_task_results_or_private_model_content_read": false,
+  "operational_liveness_counters_read": true,
+  "outcome_status": "not_yet_closed_or_audited",
+  "automatic_retry_allowed": false,
+  "ordinary_messages_stop_experiment": false,
+  "next_comparison_preparation_in_parallel": true,
+  "novel_method_claim": false
+}
