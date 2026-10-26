@@ -2,18 +2,17 @@
 
 必要な情報と最終成果の品質を保ち、要約・制御・失敗・再取得を含む仕事全体のlogical入力＋出力トークンを減らすハーネス制御を研究する。
 
-## 現在の状態：2026年10月26日、P127全8条件閉鎖
+## 現在の状態：P128全16条件閉鎖、P129実行・P130予約を継続
 
-P127は2026-10-26 13:08 JSTに全8条件・所有server・collector・後処理を閉鎖した。両方式とも3/4成功、全仕事logical入力＋出力695,217 token、共通成功352,584 tokenで差0。全132 programで静的受理・変換・automatic partial hit・明示field要求は0、CSVの通常完全cache hitは各72。使用量不明0、契約停止0、監査エラー0、固定gateはfalse。CSVは両方式とも117 APIで完了宣言したが独立評価は失敗した。
+P128は2026-10-26 22:20 JSTに全16評価・所有server停止・回収・独立監査・図生成を完了。full/discloseは各6/8成功だが、seed57で成功損失1、seed157で改善1。unknown usageは各1（計2）で全体token差は不明、固定gateはfalse。独立監査109,295 checks PASS、監査エラー0・契約停止0。成功件数の合計一致と既知費用小計の減少を、品質維持・全仕事削減の成立とは扱わない。
 
-[全件所見](docs/experiments/P127_findings.md)／[全8条件資料](materials/20261026_p127_results/README.md)／[実図](materials/20261026_p127_results/figures/README.md)／[会計注記](materials/20261026_p127_results/INTERPRETATION.md)。
+[全件所見](docs/experiments/P128_findings.md)／[全16条件](materials/20261026_p128_results/README.md)／[実図](materials/20261026_p128_results/figures/README.md)／[解釈](materials/20261026_p128_results/INTERPRETATION.md)。共通成功5対の費用は1,078,497→936,656。seed157単独では3/4→4/4、全849,469→833,441だが、seed57の脱落・未知を含む全体へ一般化しない。通常receipt disclosureの効率校正で、新規性は未成立。
 
-全条件合計1,390,434 token・136 model呼出し・490実API・8独立評価を保存した。閉鎖後独立監査は67,270 checksでPASS。実行head `0219f774326e7e4e2fdacc6aaaf0c45ea381cfc0` と1,142 sourcesを固定したまま、元wrapper・collector・監査・描画を再起動しない。後処理v01の待機制御修正来歴も保持し、model再実験と混同しない。
-
-[全132 sourceのAST診断](docs/experiments/P127_admission_diagnosis.md)も終了した。対象取得は完全応答を永続dictへ保存するため拒否され、構文を緩めるだけで安全に取得を省ける根拠はなかった。追加seedや同条件反復を自動開始しない。限定した機構差と強い通常対照に対する効果経路が見つかった場合だけ、別の有限比較を固定する。新規機構によるtoken削減、一般的品質維持、新規性は未確立。
+P129の固定6条件は22:20 JSTに既存queueから開始し、P130固定4条件の予約も維持する。普通の質問で止めず、明示停止へ従う。旧run/prepと元wrapperを編集・再起動しない。[現在の状態](docs/current_status.md)に固定予算・snapshot・後続条件を記録する。
 
 ## 以前の結果との区別
 
+- [P127](docs/experiments/P127_findings.md)は各3/4成功・695,217 tokenで差0、全132 programで自動機構未発動、gate false。
 - [P126](docs/experiments/P126_findings.md)は保存prefix再生48件が一致、13取得省略×2記録、control bytes増加。実model/API/評価0で、online品質・token効果ではない。
 - [P125](docs/P125_findings.md)は両3/4成功・各766,875 token、全146 programで機構未発動。CSVはAPI80で失敗しgate false。
 - [P123](docs/P123_findings.md)は3方式各4/4成功。単発893,529、別反復785,656、同時反復836,922 token。強い通常対照である別反復より同時反復は多く、固定gate false。

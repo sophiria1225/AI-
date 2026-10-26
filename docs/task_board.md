@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：P128全16条件閉鎖 2026-10-26 22:20 JST】
+全16評価、独立監査109,295 checks PASS、監査エラー0・契約停止0。full/discloseは各6/8成功だがseed57で成功損失1、seed157で改善1。unknown usage各1（計2）のため総費用差は不明、固定gate false。既知小計1,720,576対1,608,875を確定削減としない。共通成功5対の既知費用1,078,497→936,656は部分集合の所見。seed157は3/4→4/4、全849,469→833,441、共通674,162→591,255。実disclosure109／最終turn115、共通成功上65、read_span0。通常手法の効率校正で新規性・一般品質は未確立。
+元run/source/監査/collector/図v01を保持。結果は別treeで公開。P129は固定6条件を22:20 JSTに既存queueから開始、P130固定4条件予約も維持。通常会話では止めず、明示停止へ従う。途中の成否で条件を変更せず全枠・未知を残す。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P128_findings.md
+
+【以下は過去時点の記録。実行中・未開始等は当時の状態】
 【追加：P130固定・自動継続予約 2026-10-26 19:30 JST】
 P128全16条件を実行中のまま、P129全6条件の次にP130全4条件を予約。CSV1課題×inventory off/on×seed57/157、共通grounding feedback、両条件同capture費用。head 8d60aaedac3ccdb4d2f5cca760574f3ea5c13507、1,205sources、合成78testsとpush/PR両CI成功、PR528merge済み。全320model呼出/1.8M tokens/480API/4評価、server4時間が06時までに収まる02時以前だけP129全枠閉鎖後に起動。P130生成は予約時点で0、183台帳/2,158束縛のsnapshotを保存。通常会話では停止せず明示停止を全稼働/待機へ反映。通常inventoryの効用校正であり新規性・時機優位は未確立。全4known・成功脱落0・全体/共通成功token減・実表示・全契約整合を要求する。
 https://github.com/sophiria1225/AI-/blob/main/reports/P130_continuation_reserved_20261026.json
@@ -467,6 +473,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：P128全16条件閉鎖 2026-10-26 22:20 JST】
+全16評価、独立監査109,295 checks PASS、監査エラー0・契約停止0。full/discloseは各6/8成功だがseed57で成功損失1、seed157で改善1。unknown usage各1（計2）のため総費用差は不明、固定gate false。既知小計1,720,576対1,608,875を確定削減としない。共通成功5対の既知費用1,078,497→936,656は部分集合の所見。seed157は3/4→4/4、全849,469→833,441、共通674,162→591,255。実disclosure109／最終turn115、共通成功上65、read_span0。通常手法の効率校正で新規性・一般品質は未確立。
+元run/source/監査/collector/図v01を保持。結果は別treeで公開。P129は固定6条件を22:20 JSTに既存queueから開始、P130固定4条件予約も維持。通常会話では止めず、明示停止へ従う。途中の成否で条件を変更せず全枠・未知を残す。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P128_findings.md
+
+【以下は過去時点の記録。実行中・未開始等は当時の状態】
 【追加：P130固定・自動継続予約 2026-10-26 19:30 JST】
 P128全16条件を実行中のまま、P129全6条件の次にP130全4条件を予約。CSV1課題×inventory off/on×seed57/157、共通grounding feedback、両条件同capture費用。head 8d60aaedac3ccdb4d2f5cca760574f3ea5c13507、1,205sources、合成78testsとpush/PR両CI成功、PR528merge済み。全320model呼出/1.8M tokens/480API/4評価、server4時間が06時までに収まる02時以前だけP129全枠閉鎖後に起動。P130生成は予約時点で0、183台帳/2,158束縛のsnapshotを保存。通常会話では停止せず明示停止を全稼働/待機へ反映。通常inventoryの効用校正であり新規性・時機優位は未確立。全4known・成功脱落0・全体/共通成功token減・実表示・全契約整合を要求する。
 https://github.com/sophiria1225/AI-/blob/main/reports/P130_continuation_reserved_20261026.json
