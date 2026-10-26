@@ -1,0 +1,44 @@
+{
+  "status": "diagnosed",
+  "phase": "P131_preflight_identity_failure",
+  "checked_at": "2026-10-26T19:19:06.062169+00:00",
+  "fixed_head": "d312a0d0b51928ac96150b3863cff75d7577eae9",
+  "failure_stage": "preflight live supervisor identity check before tokenizer preflight",
+  "exception": "ValueError: model supervisor process identity differs",
+  "cause": "legacy lease_remaining requires basename serve_research_model.py; fixed cohort launches serve_research_model_recovery.py",
+  "readiness_succeeded": true,
+  "server_stopped": true,
+  "pipeline_exit": 1,
+  "pipeline_stages": [
+    {
+      "mode": "preflight",
+      "exit_code": 1,
+      "wall_seconds": 16.7510633339989
+    }
+  ],
+  "preflight_directory_exists": false,
+  "batch_directory_exists": false,
+  "task_directories": 0,
+  "actor_generation_dispatched": false,
+  "tokenizer_preflight_dispatched": false,
+  "task_API_or_evaluator_dispatched": false,
+  "read_only_health_requests_may_have_occurred": true,
+  "zero_call_basis": "fixed source raises in live_identity before preflight directory creation and before input count dispatch; no task/batch directory",
+  "actual_task_results_or_usage_read": false,
+  "original_failure_modified": false,
+  "automatic_retry": false,
+  "proposed_correction": "new exact recovery supervisor identity adapter; preserve fixed model provenance, idle and lease checks in a new attempt with fresh plan/source/CI",
+  "deadline_constraint": "Two full cells reserve 4680 seconds after preflight; a new total lease must remain within 06:00 JST and cannot silently reuse P131 namespace",
+  "source_sha256": {
+    ".runtime/P131_pipeline_once_start.json": "2b3286864711a065badb4a20ae44b692d78214ca124a6e0d4c98b0c366627451",
+    ".runtime/P131_pipeline_once_end.json": "4b3180bbb9f4c09f24169d2517089f1b2c37813e913c816d07eb41c800e54083",
+    "records/context_pilot/P131_pipeline_v01/status.json": "734266c277f2aa532fbb7ba73acf0526bb874be8fd46d8e7a6c0389ef80bc605",
+    "records/context_pilot/P131_pipeline_v01/preflight.log": "e7d494b65515a206c5705e2f5c6684082b99fe0e2078c541d523bb8f75026299",
+    "records/context_pilot/P131_pipeline_v01/server_supervisor.log": "b4bea2f4ce33aa85b07b6dd72a2787e80280679c74f925c28e14e576a8036188",
+    "scripts/run_event_view_probe.py": "a5e4397b5a076244dbe45ac2a3b35030485b75d49f2fe7a1a6875055681bdc11",
+    "scripts/probe_inference_cache.py": "73d4a561dfc50b099558d14aa1d05f81ae2fd3a8adb5a53a758ab6d3354093ee",
+    "scripts/run_whole_task_checkpoint_inventory_recovery.py": "eac09f8cf011e9ad89adb8245698c681bc5d6ef5ea22b93007d846cbb0f0422b",
+    "scripts/serve_research_model_recovery.py": "e2b95b612426a318821c6295be156122deaebbdda074c10fbd727f0502a82d68"
+  },
+  "publication_scope": "Operational failure only; no private task data, prompts, code or values."
+}
