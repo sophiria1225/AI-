@@ -77,7 +77,7 @@ def listener_pids(port):
 
 
 def probe_reusable_loopback_port(port):
-    """Reject live listeners, then test the same reuse-address bind as the backend.
+    """Reject live listeners, then test a reuse-address bind without listening.
 
     SO_REUSEADDR allows an old connection's TIME_WAIT state; SO_REUSEPORT is
     never enabled. This is not a reservation: the backend must still bind and
