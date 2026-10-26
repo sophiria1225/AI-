@@ -407,6 +407,10 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【追加：P129固定・自動起動予約 2026-10-26 18:54 JST】
+P128を実行しながら、CSV1課題×off/feedback/repair×固定seed57/157の6条件をsource/plan/CIへ固定。PR526 merge済み。P128全16枠回収・所有server閉鎖後に一度自動起動する待機process稼働中。主比較はrepair対普通feedback、offは補助品質対照。未知は修復せずdelete非介入。原wire/effectivepayload/告知/全費用を監査。P129生成は予約時点で未開始。明示停止は稼働/予約双方へ反映、普通の質問は停止扱いにしない。採択用新規性は未確立。
+https://github.com/sophiria1225/AI-/blob/main/reports/P129_continuation_reserved_20261026.json
+
 【最新：P128全16条件を実行中 2026-10-26 18:06 JST開始】
 既知4課題×receipt full/disclose×固定seed57/157。head 0c29b754b23c8ca97ead6e9319661395b6c603a9、push/PR両CI成功、PR524 merge済。1,162 sources固定、初期16＋要約transport2件、activation完了、実model応答が進行している。全1,280 shared model呼出・7.2M token・1,760 API・16評価、server11時間・10/27 06時まで。各seedで成功損失なしと全課題/共通成功のtoken減を要求。通常の効率校正で新規性は未主張、結果未確定。
 P127後の無起動時間を作った進め方を修正し、通常質問を停止扱いにしない。稼働中にCSV出力検証と新規技術候補の次の有限比較を並行準備する。P128途中結果で条件を変更せず、閉鎖後全16枠を監査・回収する。原稿はユーザー担当。
@@ -458,6 +462,10 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 **他候補の扱い**: 広いデータ導入、多数のモデル比較、万能な再編システムの完成を先行させない。圧縮後の再取得費用や適応的圧縮という既知の一般論だけを新規性にしない。
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
+
+【追加：P129固定・自動起動予約 2026-10-26 18:54 JST】
+P128を実行しながら、CSV1課題×off/feedback/repair×固定seed57/157の6条件をsource/plan/CIへ固定。PR526 merge済み。P128全16枠回収・所有server閉鎖後に一度自動起動する待機process稼働中。主比較はrepair対普通feedback、offは補助品質対照。未知は修復せずdelete非介入。原wire/effectivepayload/告知/全費用を監査。P129生成は予約時点で未開始。明示停止は稼働/予約双方へ反映、普通の質問は停止扱いにしない。採択用新規性は未確立。
+https://github.com/sophiria1225/AI-/blob/main/reports/P129_continuation_reserved_20261026.json
 
 【最新：P128全16条件を実行中 2026-10-26 18:06 JST開始】
 既知4課題×receipt full/disclose×固定seed57/157。head 0c29b754b23c8ca97ead6e9319661395b6c603a9、push/PR両CI成功、PR524 merge済。1,162 sources固定、初期16＋要約transport2件、activation完了、実model応答が進行している。全1,280 shared model呼出・7.2M token・1,760 API・16評価、server11時間・10/27 06時まで。各seedで成功損失なしと全課題/共通成功のtoken減を要求。通常の効率校正で新規性は未主張、結果未確定。

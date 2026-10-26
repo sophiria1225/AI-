@@ -1,0 +1,63 @@
+{
+  "phase": "P129_fixed_continuation_reserved",
+  "queued_at": "2026-10-26T09:54:22.583534+00:00",
+  "confirmed_at": "2026-10-26T10:03:41.368016+00:00",
+  "source_commit": "35640e5a447f99f182293e6e26033b25c640061c",
+  "preparation_PR": 526,
+  "preparation_merge": "8bf84465f9f33d8fa8f907e1820ebb5d9acb153d",
+  "CI": [
+    {
+      "id": 40302270115,
+      "head_sha": "35640e5a447f99f182293e6e26033b25c640061c",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121502756382
+    },
+    {
+      "id": 40302263206,
+      "head_sha": "35640e5a447f99f182293e6e26033b25c640061c",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121502734511
+    }
+  ],
+  "planned_conditions": 6,
+  "independent_tasks": 1,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "modes": [
+    "off",
+    "feedback",
+    "repair"
+  ],
+  "primary_comparison": [
+    "feedback",
+    "repair"
+  ],
+  "model_generations_started": false,
+  "waiting_for": "P128 all-slot collection and owned server closure",
+  "latest_start_UTC": "2026-10-26T15:00:00+00:00",
+  "deadline_jst": "2026-10-27T06:00:00+09:00",
+  "queue_source_sha256": "0ed3b2b39e9c45ff86bf1f5d6fe244ffbac5cc914a7fd0fc44c0f38e53078109",
+  "wrapper_sha256": "707e8cc679d515d8a1932a13cd5e4464e1ff5d958afbfe705d626b6b68f8880f",
+  "collector_sha256": "c54da2c69f4e1dd0e274ae05d4178bdb9d188804b24b1ab756b601f61ce408a3",
+  "reserved_ledger_count": 182,
+  "reserved_binding_count": 2157,
+  "reserved_snapshot_sha256": "80a74c43b8e38f0f443f6c5f33ea7ad8037553345754a8ca6df611e28f0b63fb",
+  "plan_sha256": "f2d546c56b568b3c8b11a2b785ec10b6c93c5f8dea9b3d9a9395c677d091168f",
+  "source_sha256": {
+    "configs/P129_whole_task_output_grounding_v01.json": "f2d546c56b568b3c8b11a2b785ec10b6c93c5f8dea9b3d9a9395c677d091168f",
+    "docs/experiments/P129_whole_task_output_grounding.md": "cbe9bd9752ff86ad977b43060de26991b00b9c02351654e35293e95c1ba2b005"
+  },
+  "P128_outcomes_used_for_selection": false,
+  "ordinary_messages_stop_experiment": false,
+  "stop_marker_stops_running_and_queued_work": true,
+  "automatic_retries": 0,
+  "prior_results_pooled": false,
+  "novel_method_claim": false,
+  "manuscript_changed": false
+}
