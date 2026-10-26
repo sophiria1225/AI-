@@ -109,7 +109,7 @@ class ProjectionPreflightTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'implementation_changed'):
                     driver.predecessor_closed(storage, root)
 
-    def exercise(self, mismatch=False, activation_mutations=False):
+    def exercise(self, mismatch=False, activation_mutations=False, worker_runtime_checks=False):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / 'root'; root.mkdir(); (root / 'reports').mkdir()
             storage = Path(tmp) / 'storage'; storage.mkdir()
@@ -189,6 +189,36 @@ class ProjectionPreflightTests(unittest.TestCase):
                     driver.validate_activation(storage, root, activation)
                     with self.assertRaises(ValueError):
                         driver.validate_activation(storage, root, {**activation, 'phase': 'P125'})
+                    if worker_runtime_checks:
+                        required = sum(plan[key] for key in ('max_setup_seconds', 'max_wall_seconds',
+                            'max_cleanup_seconds', 'max_idle_wait_seconds', 'max_evaluation_seconds'))
+                        with patch.object(driver, 'run_cell', return_value={'synthetic': True}) as worker:
+                            with patch.object(driver, 'live_identity', return_value=({'fixture': True}, 999999)) as live:
+                                self.assertEqual(driver.run_worker(storage, root, 1, POLICIES[0]), {'synthetic': True})
+                                live.assert_called_once_with(storage, original, required)
+                                worker.assert_called_once()
+                                self.assertEqual(worker.call_args.args[5], prepared[0])
+                                self.assertEqual(worker.call_args.kwargs, {'projection_policy': POLICIES[0]})
+                            worker.reset_mock()
+                            with patch.object(driver, 'live_identity', return_value=({'fixture': False}, 999999)):
+                                with self.assertRaisesRegex(ValueError, 'prepared_model_identity_changed'):
+                                    driver.run_worker(storage, root, 1, POLICIES[0])
+                            worker.assert_not_called()
+                            # The shared live checker verifies ownership, idle
+                            # slots and sufficient lease. Every rejection must
+                            # precede cell setup, API dispatch or generation.
+                            for reason in ('owned_runtime_changed', 'server_not_idle', 'insufficient_lease'):
+                                with self.subTest(reason=reason), patch.object(driver, 'live_identity', side_effect=ValueError(reason)):
+                                    with self.assertRaisesRegex(ValueError, reason):
+                                        driver.run_worker(storage, root, 1, POLICIES[0])
+                                worker.assert_not_called()
+                            (storage / '.runtime').mkdir()
+                            (storage / '.runtime/P127.stop').touch()
+                            with patch.object(driver, 'live_identity') as live:
+                                with self.assertRaisesRegex(InterruptedError, 'explicit_P127_stop'):
+                                    driver.run_worker(storage, root, 1, POLICIES[0])
+                                live.assert_not_called()
+                            worker.assert_not_called()
                 with self.assertRaises(FileExistsError): driver.preflight(storage, root)
 
     def test_all_initial_inputs_and_common_summary_transport_before_activation(self):
@@ -199,6 +229,9 @@ class ProjectionPreflightTests(unittest.TestCase):
 
     def test_activation_requires_fixed_identities_saved_requests_and_zero_execution(self):
         self.exercise(activation_mutations=True)
+
+    def test_single_worker_rechecks_owned_live_identity_and_lease_before_cell_setup(self):
+        self.exercise(worker_runtime_checks=True)
 
     def test_plan_cannot_extend_budget_change_quality_gate_or_drop_shared_controls(self):
         plan = synthetic_plan(); validate_plan(plan)

@@ -330,6 +330,24 @@ def bounded_cell(storage, root, plan, number, arm, rid, folder):
     return read(storage / 'records/context_pilot' / rid / 'summary.json')
 
 
+def run_worker(storage, root, number, arm):
+    """Recheck frozen preparation and the owned live runtime before any cell."""
+    rid = cell_id(number, arm)
+    if (storage / '.runtime/P127.stop').exists():
+        raise InterruptedError('explicit_P127_stop')
+    plan, original, tools, prepared = sources(storage, root)
+    frozen, pre = read(root / ACTIVATION), read(root / PREFLIGHT)
+    validate_preflight(storage, root, pre, plan, original, prepared)
+    validate_activation(storage, root, frozen)
+    max_cell = sum(plan[key] for key in ('max_setup_seconds', 'max_wall_seconds',
+        'max_cleanup_seconds', 'max_idle_wait_seconds', 'max_evaluation_seconds'))
+    identity, _ = live_identity(storage, original, max_cell)
+    if identity != pre.get('model_identity'):
+        raise ValueError('prepared_model_identity_changed')
+    return run_cell(storage, root, plan, original, tools, prepared[number - 1],
+                    ERROR_POLICY, rid, projection_policy=arm)
+
+
 def run(storage, root):
     plan, original, _, prepared = sources(storage, root)
     freeze, pre = read(root / ACTIVATION), read(root / PREFLIGHT)
@@ -423,15 +441,7 @@ if __name__ == '__main__':
     if args.cell is not None:
         if args.arm is None:
             parser.error('--cell requires --arm')
-        plan, original, tools, prepared = sources(args.storage_root, args.repo_root)
-        # Every worker requires the already frozen eight-cell activation.
-        frozen = read(args.repo_root / ACTIVATION)
-        pre = read(args.repo_root / PREFLIGHT)
-        validate_preflight(args.storage_root, args.repo_root, pre, plan, original, prepared)
-        validate_activation(args.storage_root, args.repo_root, frozen)
-        run_cell(args.storage_root, args.repo_root, plan, original, tools,
-                 prepared[args.cell - 1], ERROR_POLICY, cell_id(args.cell, args.arm),
-                 projection_policy=args.arm)
+        run_worker(args.storage_root, args.repo_root, args.cell, args.arm)
     elif args.preflight:
         result = preflight(args.storage_root, args.repo_root)
         print({k: result[k] for k in ('status', 'input_count_requests', 'failed_input_count_requests')})
