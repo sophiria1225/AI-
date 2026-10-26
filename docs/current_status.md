@@ -1,5 +1,15 @@
 # 現在の研究状態：P128全16条件を実行中（2026-10-26 18:06 JST開始）
 
+## P130も固定し、自動継続を予約済み（19:30 JST）
+
+P128全16条件を実行中のまま、P129全6条件に続くP130全4条件も固定した。CSV既知1課題×inventory off/on×seed57/157、共通grounding feedback。checkpoint後の変数名・組込み型・コンテナ長だけを一度表示する通常inventoryの効用を測る。値は表示せず、両条件で同じcapture費用を計上する。P33等との重複を保持し、新規性や提示時機の優位性は主張しない。
+
+P130 head `8d60aaedac3ccdb4d2f5cca760574f3ea5c13507`、1,205 sources、合成78testsとpush/PR両CI成功、PR528 merge済み。P129の全6枠回収・所有server停止後に一度だけ起動する待機processを19:30 JSTに開始した。予約時点のP130 model生成は0。各80呼出/450k tokens/1800作業秒/120 API、全320呼出/1.8M tokens/480 API/4評価。4時間server leaseが06:00 JSTまでに収まる02:00 JST以前だけ起動する。
+
+P130の開始snapshotは183台帳/2,158束縛。後から増えるglobal registryを凍結木に適用しない。P128/P129/P130の実行木と元wrapper/queueを変更・重複起動しない。通常の会話で実行を止めず、明示停止を全稼働・待機処理へ反映する。全枠・不明費用・失敗を残して独立検算し、原稿用の全件資料へつなげる。P128の最初3行を運用確認で表示した事実はP130仕様に記録し、それ以前に選んだ4条件を変更していない。
+
+[予約記録](../reports/P130_continuation_reserved_20261026.json)／[比較仕様](../docs/experiments/P130_whole_task_checkpoint_inventory.md)。
+
 ## P129も固定し、自動起動を予約済み（18:54 JST）
 
 P128の実行を続けながら、CSV既知1課題×off/feedback/repair×seed57/157のP129全6条件も固定した。head `35640e5a447f99f182293e6e26033b25c640061c`、1,182 sources、両CI成功、PR526 merge済み。P128全16枠の回収と所有server閉鎖後、P129を一度だけ起動する待機processが稼働している。P128の成否で条件を選ばず、同じserverを重複起動しない。P129のmodel生成はこの予約時点では未開始。
