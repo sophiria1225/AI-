@@ -1,6 +1,6 @@
 # 研究の作業ボード
 
-更新日: 2026-10-26
+更新日: 2026-10-26T19:21:11.491779+00:00
 
 番号はIssueに対応する固定ID。前段の結果に応じて段階的に進める。
 
@@ -407,6 +407,12 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新運用：2026-10-27 P130起動前失敗とP131開始】
+P130は01:07 JST、port8011のbind検査でmodel本体/preflight/task/評価前に停止。元失敗を保持しTIME_WAIT原因は未確定。約3時間8分の空白後、04:15:31 JSTに新P131固定2条件（同じ既知CSV、seed57、inventory off/on）を起動した。固定head d312a0d、両CI成功、各80calls/450k tokens/1800秒/120 API、server6000秒・06時上限。P131は04:16 JST、旧lease検査が新supervisor名を拒否してpreflight停止。所有server停止済み、actor生成/tokenizer count/task API/評価0。元失敗を保持しP132新attempt修正を別に準備。task成否/usage/生成内容は未読。
+開始snapshot186/2231不変。原稿用の閉鎖資料はP129まで整備済みだが、新規手法・一般精度維持・全仕事token削減は未達。P128片seed/共通成功subsetを全体効果にしない。通常会話で止めず明示停止へ従う。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P131_execution_status_20261027.md
+
+【以下は過去時点の記録】
 【最新：P129全6条件閉鎖 2026-10-27 01:07 JST】
 off/feedback/repair各1/2成功。seed57は各219,344既知token＋unknown1・失敗、seed157は各295,152token・成功。共通成功差0、総費用差null、固定gate false。全126 model/558 API/6評価、監査エラー・契約停止0、独立監査79,576 checks PASS。write checkはseed57各0/seed157各1で元内容supported、feedback/repair介入0。通常校正で新規性・一般品質・全仕事削減は未成立。
 P130予約queueは01:07に起動試行1回後failed_no_retryで終了。全4閉鎖は未確認、原因/実行範囲を運用metadataから確認し元失敗を保持。旧queue/run/sourceを再実行・改変せず、未知と未実施を残す。原稿はユーザー担当。
@@ -479,6 +485,12 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新運用：2026-10-27 P130起動前失敗とP131開始】
+P130は01:07 JST、port8011のbind検査でmodel本体/preflight/task/評価前に停止。元失敗を保持しTIME_WAIT原因は未確定。約3時間8分の空白後、04:15:31 JSTに新P131固定2条件（同じ既知CSV、seed57、inventory off/on）を起動した。固定head d312a0d、両CI成功、各80calls/450k tokens/1800秒/120 API、server6000秒・06時上限。P131は04:16 JST、旧lease検査が新supervisor名を拒否してpreflight停止。所有server停止済み、actor生成/tokenizer count/task API/評価0。元失敗を保持しP132新attempt修正を別に準備。task成否/usage/生成内容は未読。
+開始snapshot186/2231不変。原稿用の閉鎖資料はP129まで整備済みだが、新規手法・一般精度維持・全仕事token削減は未達。P128片seed/共通成功subsetを全体効果にしない。通常会話で止めず明示停止へ従う。原稿はユーザー担当。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P131_execution_status_20261027.md
+
+【以下は過去時点の記録】
 【最新：P129全6条件閉鎖 2026-10-27 01:07 JST】
 off/feedback/repair各1/2成功。seed57は各219,344既知token＋unknown1・失敗、seed157は各295,152token・成功。共通成功差0、総費用差null、固定gate false。全126 model/558 API/6評価、監査エラー・契約停止0、独立監査79,576 checks PASS。write checkはseed57各0/seed157各1で元内容supported、feedback/repair介入0。通常校正で新規性・一般品質・全仕事削減は未成立。
 P130予約queueは01:07に起動試行1回後failed_no_retryで終了。全4閉鎖は未確認、原因/実行範囲を運用metadataから確認し元失敗を保持。旧queue/run/sourceを再実行・改変せず、未知と未実施を残す。原稿はユーザー担当。

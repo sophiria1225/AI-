@@ -1,5 +1,13 @@
 # 現在の研究状態：P129全6条件閉鎖、通常修復の介入なし
 
+## 最新運用：P130起動前失敗、P131は開始後の停止を確認
+
+P130は01:07 JSTにport検査でmodel本体・task処理前に停止した。約3時間8分の空白後、P131固定2条件を04:15:31 JSTに起動したが、04:16 JSTに旧lease検査が新supervisor名を拒否してpreflightで停止した。所有serverは停止済み、actor生成・tokenizer count・task API・評価は0。元記録を保持し、新P132 attemptの修正を別に準備する。task成否・usage・生成内容は未読。
+
+閉鎖済み原稿資料はP129まで整備済み。新規性、一般的な精度維持と全仕事token削減の最終目標は未達。P128の片seedや共通成功subsetを全体効果へ一般化しない。原稿はユーザー担当。通常会話で作業を止めず、明示停止へ従う。[時点付き経過](experiments/P131_execution_status_20261027.md)。
+
+以下はP129公開時点の記録。P130の未確認事項は上記の起動前失敗診断で更新し、元失敗を保持する。
+
 P129は2026-10-27 01:07 JSTに全6評価、所有server停止、collector、独立監査・図生成を完了。各mode1/2成功、seed57全失敗・各219,344既知token＋unknown1、seed157全成功・各295,152 token。全体は1,543,488既知token＋unknown3、126 model呼出し、558 API、6評価。共通成功費用差0、総費用差null、固定gate false。元監査エラー0・契約停止0、独立監査79,576 checks PASS。
 
 [所見](experiments/P129_findings.md)／[全件資料](../materials/20261026_p129_results/README.md)／[図](../materials/20261026_p129_results/figures/README.md)／[独立監査集約](../reports/P129_closed_independent_audit_20261026.json)。seed57は対象write check0、seed157は各1で元内容supported。feedback拒否・修復の全段階は0で、通常cache/explicit fieldを修復効果へ数えない。
