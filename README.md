@@ -4,13 +4,19 @@
 
 ## 現在の状態：2026年10月26日
 
+P125は全8条件と所有serverを閉鎖した。通常cacheと自動projectionは、各3/4成功、総logical入力＋出力766,875 tokenで完全一致。使用量不明0、監査エラー0。全146 programで静的受理・変換・partial hit・通常complete-cache hitはすべて0、契約失敗も0だった。提案機構の追加効果は示せず、固定の採用gateはfalseを保持する。CSVは両方式ともAPI上限80で失敗した。
+
+[P125全結果](docs/P125_findings.md)／[独立再計算](docs/P125_independent_audit.md)／[全8条件の資料](materials/20261026_p125_results/README.md)。元wrapper・collectorを再実行せず、失敗と機構未発動を含む全件結果を保存する。
+
+閉鎖後診断では、CSVの実show_song取得25件に既存library providerの再利用候補は0。既実装の通常joinなら必要な2項目が13件でそろう候補があるが、実API削減・全仕事token削減・最終品質は未測定である。ID guard追加や構文の受理拡張だけで改善すると判断しない。次の有限比較は未固定で、新しい実験はまだ開始していない。
+
 P123は全12条件を終了し、3方式とも既知4課題で4/4成功、使用量不明0、監査エラー0。総logical入力＋出力tokenは単発893,529、別呼出し反復785,656、同時反復836,922。別呼出し反復は単発より12.07%少ない。同時反復は別呼出し反復より6.53%多いため、事前の採用判定はfalseを保持する。
 
 [P123全結果](docs/P123_findings.md)／[全12条件の資料](materials/20261025_p123_results/README.md)／[参考図](materials/20261026_p123_figures/README.md)／[独立再計算](docs/P123_independent_audit.md)。
 
 P124の固定応答再生は全20programの出力・方式間境界が一致し、通常完全cache68対提案57の保存backend応答だった。これは実API/model0の局所検証で、全仕事の品質・tokenの実測ではない（[P124所見](docs/P124_findings.md)）。
 
-P125は2026-10-26 08:25 JSTに開始済み。既知4課題×2方式・seed157で、自動field projectionの追加効果を全仕事で測る。実行head `2c11ceaa65b47b27cd23df8a943ab3d745b94461` のpush/PR両CI成功を確認し、[PR517](https://github.com/sophiria1225/AI-/pull/517)をmerge済み。1,125 source filesとP123/P124閉鎖証拠へ固定した8条件を実行している。初期入力8件と要約transport1件の計数、activationが完了。08:27 JSTにwrapper・pipeline・所有server・batchの生存を確認した。途中の成否・使用量・モデル本文は未読で、P125の結果は未確定。各80 model呼出/450,000 tokens/1,800作業秒、全体8評価・800 API・server6時間の上限を維持する。 [開始記録](reports/P125_execution_start_20261026.json)。単発checkpointを共通にした事前比較であり、今回最小だった別反復を上回ったと解釈しない。
+P125はseed157・共通単発checkpointの固定比較である。seed57・別のcache/表示条件で行ったP123との一因子比較ではなく、P123の別反復を上回った結果とは解釈しない。
 
 ## 目的と継続方針
 

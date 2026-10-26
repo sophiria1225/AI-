@@ -1,0 +1,249 @@
+{
+  "kind": "closed_P125_mechanism_diagnosis",
+  "source_head": "2c11ceaa65b47b27cd23df8a943ab3d745b94461",
+  "plan_sha256": "ced105be387250c9338deac1f4bda45acb636c47398396e7cc304d46b87c242b",
+  "closure_gate_passed": true,
+  "additional_execution": {
+    "model": 0,
+    "API": 0,
+    "tokenizer": 0,
+    "evaluator": 0,
+    "saved_code": 0
+  },
+  "interpretation": {
+    "all_programs": 146,
+    "static_eligible": 0,
+    "transformed": 0,
+    "partial_hits": 0,
+    "ordinary_cache_hits": 0,
+    "contract_failures": 0,
+    "all_pairs_program_sources_identical": true,
+    "existing_A_plus_grounding_next_experiment_supported": false,
+    "reason": "no_existing_provider_prefix_fields_on_actual_target_dispatches; existing_field_reuse_already_in_generated_code",
+    "general_lazy_proxy_required_by_observed_consumers": false,
+    "minimum_ast_widening_alone_has_observed_reuse_opportunity": false
+  },
+  "mechanism_source_sha256": {
+    "automatic_field_projection.py": "1837f4984b88326f4fea754bf8244783774eec7c6a30c974159895e2dedf774b",
+    "automatic_projection_runtime.py": "36e3cdf357ea85161c6973a7e447f1e427db21351be3e331682c87e37a780162",
+    "public_contract_read_views.py": "5b00e3e7cb9b80baceeceeeff60227cfac9ee86f640917bfc0bf111bef9e944b",
+    "field_read_contract.py": "cc7ff1f8ab452a5ed7cb562a93941a4d1f85db663c841d545cd01732ea04b44a"
+  },
+  "diagnostic_script_sha256": [
+    "88d280d702698ec742f2e26c8031fd92a6a8457667f1961e96a7995ab71a2408",
+    "b35b03cb815818cc6c583fc79dea543021339c746c00147757608eb35944d1a8"
+  ],
+  "conditions": [
+    {
+      "condition": "C01",
+      "task_slot": "T1",
+      "projection_policy": "eager_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 17,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 4,
+        "no_supported_loop": 13
+      },
+      "execution_reasons": {
+        "ordinary_eager_control": 14
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 17
+      }
+    },
+    {
+      "condition": "C02",
+      "task_slot": "T1",
+      "projection_policy": "automatic_projection_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 17,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 4,
+        "no_supported_loop": 13
+      },
+      "execution_reasons": {
+        "namespace_guard_or_static_fallback": 14
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 17
+      }
+    },
+    {
+      "condition": "C03",
+      "task_slot": "T2",
+      "projection_policy": "eager_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 25,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 25
+      },
+      "execution_reasons": {
+        "ordinary_eager_control": 20
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 25
+      }
+    },
+    {
+      "condition": "C04",
+      "task_slot": "T2",
+      "projection_policy": "automatic_projection_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 25,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 25
+      },
+      "execution_reasons": {
+        "namespace_guard_or_static_fallback": 20
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 25
+      }
+    },
+    {
+      "condition": "C05",
+      "task_slot": "T3",
+      "projection_policy": "eager_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 19,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 19
+      },
+      "execution_reasons": {
+        "ordinary_eager_control": 15
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 19
+      }
+    },
+    {
+      "condition": "C06",
+      "task_slot": "T3",
+      "projection_policy": "automatic_projection_cached",
+      "record_status": "evaluated",
+      "final_success": true,
+      "stop_reason": "agent_declared_complete",
+      "program_count": 19,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 19
+      },
+      "execution_reasons": {
+        "namespace_guard_or_static_fallback": 15
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 19
+      }
+    },
+    {
+      "condition": "C07",
+      "task_slot": "T4",
+      "projection_policy": "eager_cached",
+      "record_status": "evaluated",
+      "final_success": false,
+      "stop_reason": "api_request_limit",
+      "program_count": 12,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 12
+      },
+      "execution_reasons": {
+        "ordinary_eager_control": 10
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 12
+      }
+    },
+    {
+      "condition": "C08",
+      "task_slot": "T4",
+      "projection_policy": "automatic_projection_cached",
+      "record_status": "evaluated",
+      "final_success": false,
+      "stop_reason": "api_request_limit",
+      "program_count": 12,
+      "static_eligible": 0,
+      "transformed": 0,
+      "static_reasons": {
+        "unsupported_program_effect": 12
+      },
+      "execution_reasons": {
+        "namespace_guard_or_static_fallback": 10
+      },
+      "partial_hits": 0,
+      "ordinary_complete_cache_hits": 0,
+      "ordinary_cache_program_partition_exact": true,
+      "projection_contract_failed": false,
+      "static_evidence_missing": 0,
+      "AST_status_counts": {
+        "parsed": 12
+      }
+    }
+  ],
+  "private_diagnostic_result_sha256": "9a6a31a61ea98f0e551718435dcec9b523c9eee7e8c779aa92d9f51774952ce2",
+  "private_source_files_hashed": 495,
+  "same_program_source_sequence_by_task": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T4": true
+  },
+  "generated_sources_or_private_paths_published": false
+}

@@ -1,0 +1,35 @@
+{
+  "phase": "P125_results_publication_validation",
+  "created_at": "2026-10-26T01:35:08.798677+00:00",
+  "checks": {
+    "old_177_ledgers_match": true,
+    "all_collector_files_match": true,
+    "figure_manifest_and_renderer_match": true,
+    "all_8_evaluated": true,
+    "no_unknown_usage": true,
+    "original_gate_false": true,
+    "all_checks_independent_v02_pass": true,
+    "no_raw_private_paths_in_new_aggregate_exports": true
+  },
+  "prior_ledger_count": 177,
+  "prior_source_bindings": 2056,
+  "full_suite": {
+    "tests": 2146,
+    "status": "pass",
+    "log_sha256": "dd5dc93029b315f065a30b7623f7ececca8b9d930f8bd0c44cdbf20a953314d7",
+    "initial_attempt": {
+      "status": "failed",
+      "import_errors": 4,
+      "cause": "Pinned mini-swe-agent vendor checkout not linked in new worktree.",
+      "log_sha256": "98d9bfc0dadbaecbce17b29a4944fb26f28dca278a3474c4197e97008bfc5125",
+      "log_preserved": true
+    },
+    "environment_correction": "Linked existing pinned vendor checkout; no tracked source change.",
+    "vendor_commit": "04d809ceab9df28f9adaed044884180159172930"
+  },
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "manuscript_changed": false
+}

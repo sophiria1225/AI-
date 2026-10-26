@@ -1,0 +1,795 @@
+{
+  "phase": "P125",
+  "fixed_slots": 8,
+  "rows": [
+    {
+      "task_number": 1,
+      "task_label": "Photo",
+      "policy": "eager_cached",
+      "known_logical_tokens": 150394,
+      "exact_logical_tokens": 150394,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 107,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 1,
+      "task_label": "Photo",
+      "policy": "automatic_projection_cached",
+      "known_logical_tokens": 150394,
+      "exact_logical_tokens": 150394,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 107,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 2,
+      "task_label": "Expenses",
+      "policy": "eager_cached",
+      "known_logical_tokens": 264724,
+      "exact_logical_tokens": 264724,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 33,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 2,
+      "task_label": "Expenses",
+      "policy": "automatic_projection_cached",
+      "known_logical_tokens": 264724,
+      "exact_logical_tokens": 264724,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 33,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 3,
+      "task_label": "Refund",
+      "policy": "eager_cached",
+      "known_logical_tokens": 203369,
+      "exact_logical_tokens": 203369,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 24,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 3,
+      "task_label": "Refund",
+      "policy": "automatic_projection_cached",
+      "known_logical_tokens": 203369,
+      "exact_logical_tokens": 203369,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": true,
+      "evaluation_label": "Success",
+      "api_requests": 24,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 4,
+      "task_label": "CSV",
+      "policy": "eager_cached",
+      "known_logical_tokens": 148388,
+      "exact_logical_tokens": 148388,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": false,
+      "evaluation_label": "Failure",
+      "api_requests": 80,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    },
+    {
+      "task_number": 4,
+      "task_label": "CSV",
+      "policy": "automatic_projection_cached",
+      "known_logical_tokens": 148388,
+      "exact_logical_tokens": 148388,
+      "unknown_usage_calls": 0,
+      "record_status": "evaluated",
+      "success": false,
+      "evaluation_label": "Failure",
+      "api_requests": 80,
+      "projection_hits": 0,
+      "projection_contract_failed": false
+    }
+  ],
+  "audit_error_count": 0,
+  "known_logical_token_subtotal": 1533750,
+  "exact_all_condition_tokens": 1533750,
+  "audited_criteria": {
+    "all_eight_complete_with_known_usage": true,
+    "paired_results": [
+      {
+        "task_id": "34d9492_1",
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "eager_cached_success": true,
+        "automatic_projection_cached_success": true,
+        "success_lost": false,
+        "success_gained": false,
+        "both_successful": true,
+        "automatic_projection_cached_minus_eager_cached_tokens": 0,
+        "invocation_exceptions_observed": 0
+      },
+      {
+        "task_id": "3c13f5a_1",
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "eager_cached_success": true,
+        "automatic_projection_cached_success": true,
+        "success_lost": false,
+        "success_gained": false,
+        "both_successful": true,
+        "automatic_projection_cached_minus_eager_cached_tokens": 0,
+        "invocation_exceptions_observed": 0
+      },
+      {
+        "task_id": "60d0b5b_1",
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "eager_cached_success": true,
+        "automatic_projection_cached_success": true,
+        "success_lost": false,
+        "success_gained": false,
+        "both_successful": true,
+        "automatic_projection_cached_minus_eager_cached_tokens": 0,
+        "invocation_exceptions_observed": 0
+      },
+      {
+        "task_id": "6104387_1",
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "eager_cached_success": false,
+        "automatic_projection_cached_success": false,
+        "success_lost": false,
+        "success_gained": false,
+        "both_successful": false,
+        "automatic_projection_cached_minus_eager_cached_tokens": 0,
+        "invocation_exceptions_observed": 0
+      }
+    ],
+    "paired_success_losses": 0,
+    "paired_success_gains": 0,
+    "paired_successful_tasks": 3,
+    "automatic_projection_cached_minus_eager_cached_whole_task_tokens": 0,
+    "invocation_exceptions_observed": 0,
+    "development_gate_met": false,
+    "general_quality_preservation_claim": false,
+    "novel_method_claim": false,
+    "paired_successful_token_difference": 0,
+    "both_failed_token_difference": 0,
+    "projection_hits_on_common_success": 0,
+    "projection_contract_failure_cells": 0,
+    "mechanism_contracts_intact": true,
+    "planned_rows": 8,
+    "independent_tasks": 4,
+    "repetitions": 1,
+    "model_seed": 157,
+    "summary_failure_and_recovery_costs_included": true,
+    "prior_results_pooled": false,
+    "interpretation": "Known-task development comparison. Both all-task and common-success whole-job tokens must decrease, with no baseline success lost and actual projection on a common success. API savings, formatting bytes and cheap failures are not token-goal success."
+  },
+  "by_policy": {
+    "eager_cached": {
+      "planned_conditions": 4,
+      "accounted_conditions": 4,
+      "evaluated_conditions": 4,
+      "successful_conditions": 3,
+      "known_token_subtotal": 766875,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 766875,
+      "all_condition_usage_known": true,
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 244,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 244
+        },
+        "model_calls": {
+          "known_subtotal": 77,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 77
+        },
+        "input_tokens": {
+          "known_subtotal": 743463,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 743463
+        },
+        "output_tokens": {
+          "known_subtotal": 23412,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 23412
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 540832,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 540832
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 7.4638063330203295,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 7.4638063330203295
+        },
+        "wall_seconds": {
+          "known_subtotal": 3177.8032076260424,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 3177.8032076260424
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 4.6927469579386525,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 4.6927469579386525
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 3189.973305875028,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 3189.973305875028
+        },
+        "program_attempts": {
+          "known_subtotal": 73,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 73
+        },
+        "program_evidence_records": {
+          "known_subtotal": 73,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 73
+        },
+        "static_eligible_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "transformed_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "ordinary_complete_cache_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_requests": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_partial_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_complete_lookup_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_misses": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_failure_events": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "known_control_requests": {
+          "known_subtotal": 307,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 307
+        },
+        "known_control_request_bytes": {
+          "known_subtotal": 88273,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 88273
+        },
+        "known_control_reply_bytes": {
+          "known_subtotal": 183726,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 183726
+        },
+        "schema_deliveries": {
+          "known_subtotal": 281,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 281
+        },
+        "known_schema_reply_wire_bytes": {
+          "known_subtotal": 351264,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 351264
+        },
+        "program_wall_seconds": {
+          "known_subtotal": 6.517773921834305,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 6.517773921834305
+        },
+        "control_wall_seconds_including_backend": {
+          "known_subtotal": 4.197511832229793,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 4.197511832229793
+        },
+        "projection_lookup_wall_seconds": {
+          "known_subtotal": 0.0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0.0
+        }
+      }
+    },
+    "automatic_projection_cached": {
+      "planned_conditions": 4,
+      "accounted_conditions": 4,
+      "evaluated_conditions": 4,
+      "successful_conditions": 3,
+      "known_token_subtotal": 766875,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 766875,
+      "all_condition_usage_known": true,
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 244,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 244
+        },
+        "model_calls": {
+          "known_subtotal": 77,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 77
+        },
+        "input_tokens": {
+          "known_subtotal": 743463,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 743463
+        },
+        "output_tokens": {
+          "known_subtotal": 23412,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 23412
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 540832,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 540832
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 7.581713249965105,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 7.581713249965105
+        },
+        "wall_seconds": {
+          "known_subtotal": 3176.9449347920017,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 3176.9449347920017
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 4.724962292064447,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 4.724962292064447
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 3189.2663672079216,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 3189.2663672079216
+        },
+        "program_attempts": {
+          "known_subtotal": 73,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 73
+        },
+        "program_evidence_records": {
+          "known_subtotal": 73,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 73
+        },
+        "static_eligible_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "transformed_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "ordinary_complete_cache_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_requests": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_partial_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_complete_lookup_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_misses": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "projection_failure_events": {
+          "known_subtotal": 0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0
+        },
+        "known_control_requests": {
+          "known_subtotal": 307,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 307
+        },
+        "known_control_request_bytes": {
+          "known_subtotal": 88981,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 88981
+        },
+        "known_control_reply_bytes": {
+          "known_subtotal": 183726,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 183726
+        },
+        "schema_deliveries": {
+          "known_subtotal": 281,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 281
+        },
+        "known_schema_reply_wire_bytes": {
+          "known_subtotal": 351264,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 351264
+        },
+        "program_wall_seconds": {
+          "known_subtotal": 6.460869585920591,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 6.460869585920591
+        },
+        "control_wall_seconds_including_backend": {
+          "known_subtotal": 4.173816912283655,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 4.173816912283655
+        },
+        "projection_lookup_wall_seconds": {
+          "known_subtotal": 0.0,
+          "reported_conditions": 4,
+          "exact_all_condition_total": 0.0
+        }
+      }
+    }
+  },
+  "common_successful_tasks": 3,
+  "common_success_costs_by_policy": {
+    "eager_cached": {
+      "planned_conditions": 3,
+      "accounted_conditions": 3,
+      "evaluated_conditions": 3,
+      "successful_conditions": 3,
+      "known_token_subtotal": 618487,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 618487,
+      "all_condition_usage_known": true,
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 164,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 164
+        },
+        "model_calls": {
+          "known_subtotal": 64,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 64
+        },
+        "input_tokens": {
+          "known_subtotal": 601794,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 601794
+        },
+        "output_tokens": {
+          "known_subtotal": 16693,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 16693
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 444976,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 444976
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 5.592763124033809,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 5.592763124033809
+        },
+        "wall_seconds": {
+          "known_subtotal": 2374.2232611670042,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2374.2232611670042
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 3.599979374965187,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 3.599979374965187
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 2383.4259306250024,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2383.4259306250024
+        },
+        "program_attempts": {
+          "known_subtotal": 61,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 61
+        },
+        "program_evidence_records": {
+          "known_subtotal": 61,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 61
+        },
+        "static_eligible_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "transformed_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "ordinary_complete_cache_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_requests": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_partial_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_complete_lookup_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_misses": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_failure_events": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "known_control_requests": {
+          "known_subtotal": 215,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 215
+        },
+        "known_control_request_bytes": {
+          "known_subtotal": 66530,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 66530
+        },
+        "known_control_reply_bytes": {
+          "known_subtotal": 108088,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 108088
+        },
+        "schema_deliveries": {
+          "known_subtotal": 190,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 190
+        },
+        "known_schema_reply_wire_bytes": {
+          "known_subtotal": 223110,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 223110
+        },
+        "program_wall_seconds": {
+          "known_subtotal": 4.813522379903588,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 4.813522379903588
+        },
+        "control_wall_seconds_including_backend": {
+          "known_subtotal": 2.979359291086439,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2.979359291086439
+        },
+        "projection_lookup_wall_seconds": {
+          "known_subtotal": 0.0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0.0
+        }
+      }
+    },
+    "automatic_projection_cached": {
+      "planned_conditions": 3,
+      "accounted_conditions": 3,
+      "evaluated_conditions": 3,
+      "successful_conditions": 3,
+      "known_token_subtotal": 618487,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 618487,
+      "all_condition_usage_known": true,
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 164,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 164
+        },
+        "model_calls": {
+          "known_subtotal": 64,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 64
+        },
+        "input_tokens": {
+          "known_subtotal": 601794,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 601794
+        },
+        "output_tokens": {
+          "known_subtotal": 16693,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 16693
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 444976,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 444976
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 5.685183249996044,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 5.685183249996044
+        },
+        "wall_seconds": {
+          "known_subtotal": 2375.122697916988,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2375.122697916988
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 3.6621601250371896,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 3.6621601250371896
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 2384.481470165949,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2384.481470165949
+        },
+        "program_attempts": {
+          "known_subtotal": 61,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 61
+        },
+        "program_evidence_records": {
+          "known_subtotal": 61,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 61
+        },
+        "static_eligible_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "transformed_programs": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "ordinary_complete_cache_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_requests": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_partial_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_complete_lookup_hits": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_lookup_misses": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "projection_failure_events": {
+          "known_subtotal": 0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0
+        },
+        "known_control_requests": {
+          "known_subtotal": 215,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 215
+        },
+        "known_control_request_bytes": {
+          "known_subtotal": 67118,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 67118
+        },
+        "known_control_reply_bytes": {
+          "known_subtotal": 108088,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 108088
+        },
+        "schema_deliveries": {
+          "known_subtotal": 190,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 190
+        },
+        "known_schema_reply_wire_bytes": {
+          "known_subtotal": 223110,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 223110
+        },
+        "program_wall_seconds": {
+          "known_subtotal": 4.795472791942302,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 4.795472791942302
+        },
+        "control_wall_seconds_including_backend": {
+          "known_subtotal": 2.9771028670948,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 2.9771028670948
+        },
+        "projection_lookup_wall_seconds": {
+          "known_subtotal": 0.0,
+          "reported_conditions": 3,
+          "exact_all_condition_total": 0.0
+        }
+      }
+    }
+  },
+  "unknown_usage_is_not_zero": true,
+  "outcome_based_selection": false,
+  "general_quality_preservation_claim": false,
+  "novel_method_claim": false
+}
