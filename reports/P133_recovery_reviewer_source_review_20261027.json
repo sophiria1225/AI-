@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "scope": "Post-execution source-only review of separate P133 reporting recovery closure; not a pre-execution approval",
+  "reviewed_source_sha256": "7b497da4c3defad00e46d35881e4aecf295c660a73ed4ca910c088461243ca80",
+  "unchanged_functions": {
+    "criteria": true,
+    "inspect_cell": true,
+    "session_check": true,
+    "forecast": true
+  },
+  "closure_checks": [
+    "Recovery completion is first experiment read and hash-fixed.",
+    "Original failed report and unstarted collector/reviewer/renderer remain distinct.",
+    "Original head/plan/CI/start snapshot and 1459 source bindings retained.",
+    "New recovery builder/test checked against committed bytes.",
+    "Original stopped model and supervisor positive PIDs absent.",
+    "Original arithmetic/history limitations unchanged."
+  ],
+  "actual_review_rerun": false,
+  "actual_result_JSON_read": false,
+  "new_model_API_tokenizer_evaluator_calls": 0
+}

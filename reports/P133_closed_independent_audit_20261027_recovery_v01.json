@@ -1,0 +1,205 @@
+{
+  "status": "pass",
+  "phase": "P133",
+  "reviewed_at": "2026-10-26T23:09:39.638935+00:00",
+  "fixed_head": "66d9eb71a1e6b8ee10b377be3bf52dca82d06cca",
+  "plan_sha256": "357c59a73ed9637e9171d6729f8f4210533fef90d598ec667fa1d7154d09d986",
+  "reporting_recovery_complete_seen_before_trial_read": true,
+  "reporting_recovery_complete_sha256": "73b982c18522739eb1b8fbf5e695727bae053969d7f4842ba23d451bc247c20b",
+  "reporting_recovery_source_head": "309e2eb7d6be27dde63d97912d9bfb690e8da7db",
+  "original_report_failure_preserved": true,
+  "original_collector_started": false,
+  "original_review_script_sha256": "97d0a16237a844e05dc70dd6dab4235a8ed5fd7d2103ba5f2452eeb2bf1d8178",
+  "start_registry_ledgers": 189,
+  "start_registry_bindings": 2290,
+  "all_conditions": {
+    "planned_conditions": 4,
+    "accounted_conditions": 4,
+    "evaluated_conditions": 4,
+    "successful_conditions": 2,
+    "known_token_subtotal": 869246,
+    "recorded_unknown_usage_calls": 0,
+    "unknown_usage_count_missing_conditions": 0,
+    "exact_total_tokens": 869246,
+    "all_condition_usage_known": true
+  },
+  "by_policy": {
+    "rolling_separate": {
+      "planned_conditions": 2,
+      "accounted_conditions": 2,
+      "evaluated_conditions": 2,
+      "successful_conditions": 1,
+      "known_token_subtotal": 434623,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 434623,
+      "all_condition_usage_known": true
+    },
+    "empirical_payback": {
+      "planned_conditions": 2,
+      "accounted_conditions": 2,
+      "evaluated_conditions": 2,
+      "successful_conditions": 1,
+      "known_token_subtotal": 434623,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 434623,
+      "all_condition_usage_known": true
+    }
+  },
+  "independent_criteria": {
+    "all_four_complete_with_known_usage": true,
+    "paired_results": [
+      {
+        "replication": 1,
+        "model_seed": 57,
+        "baseline_success": true,
+        "payback_success": true,
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "both_successful": true,
+        "success_lost": false,
+        "empirical_minus_baseline_tokens": 0
+      },
+      {
+        "replication": 2,
+        "model_seed": 157,
+        "baseline_success": false,
+        "payback_success": false,
+        "both_evaluated": true,
+        "both_usage_known": true,
+        "both_successful": false,
+        "success_lost": false,
+        "empirical_minus_baseline_tokens": 0
+      }
+    ],
+    "paired_success_losses": 0,
+    "paired_successful_task_seed_pairs": 1,
+    "empirical_minus_baseline_whole_task_tokens": 0,
+    "paired_successful_token_difference": 0,
+    "payback_rejections_on_common_success": 0,
+    "mechanism_contracts_intact": true,
+    "development_gate_met": false
+  },
+  "development_gate_met": false,
+  "independent_memory_sample_coverage": {
+    "memory_sample_count": 765,
+    "missing_rss_samples": 0,
+    "missing_swap_samples": 0,
+    "observed_rss_peak_or_null": 233360162816,
+    "observed_swap_peak_or_null": 227079618.56,
+    "baseline_system_swap_bytes": 227079618.56
+  },
+  "audit_errors_preserved": 0,
+  "runtime_actor_reexecuted": false,
+  "producer_auditor_reexecuted": false,
+  "native_history_reconstruction_uses_fixed_producer_audit": true,
+  "forecast_arithmetic_recomputed_without_producer_policy": true,
+  "host_clock_observation_is_not_independent_clock": true,
+  "private_reasoning_inspected_semantically": false,
+  "evaluation_text_read": false,
+  "database_contents_read": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "forecast_is_guarantee": false,
+  "novelty_established": false,
+  "review_script_sha256": "7b497da4c3defad00e46d35881e4aecf295c660a73ed4ca910c088461243ca80",
+  "checks_passed": 16788,
+  "check_count": 16788,
+  "rows": [
+    {
+      "run_id": "BOC_P133_R01_01_ROLLING_SEPARATE",
+      "record_status": "evaluated",
+      "raw_usage_recomputed": true,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973
+        }
+      },
+      "payback_events": 2,
+      "actual_unstarted_rejections": 0
+    },
+    {
+      "run_id": "BOC_P133_R01_01_EMPIRICAL_PAYBACK",
+      "record_status": "evaluated",
+      "raw_usage_recomputed": true,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973
+        }
+      },
+      "payback_events": 2,
+      "actual_unstarted_rejections": 0
+    },
+    {
+      "run_id": "BOC_P133_R02_01_EMPIRICAL_PAYBACK",
+      "record_status": "evaluated",
+      "raw_usage_recomputed": true,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "payback_events": 0,
+      "actual_unstarted_rejections": 0
+    },
+    {
+      "run_id": "BOC_P133_R02_01_ROLLING_SEPARATE",
+      "record_status": "evaluated",
+      "raw_usage_recomputed": true,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "payback_events": 0,
+      "actual_unstarted_rejections": 0
+    }
+  ],
+  "original_private_review_sha256": "c0a367d3c7a4216a78670d997e0c8510f8ebdcc631c6c4000b345a2b42752f70",
+  "private_source_mapping_sha256": "e9d67664ab537de5ee32bcc887b1622f2e66865bcdc74b5f5ea0c52fab85e4ca",
+  "source_file_count": 6431,
+  "private_source_paths_omitted": true,
+  "private_check_labels_omitted": true,
+  "raw_task_values_or_generated_code_included": false,
+  "audit_consistency_pass_does_not_imply_method_adoption": true,
+  "public_summary_scope": "Fixed all-slot accounting, saved typed dispatch, independent forecast arithmetic and bounded claims; native history reconstruction relies on the fixed producer auditor."
+}
