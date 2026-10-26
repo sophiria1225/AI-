@@ -1,0 +1,35 @@
+{
+  "status": "pass_all_discovered_tests_covered",
+  "new_focused_tests": 6,
+  "local_distinct_tests_passed_across_environment_corrections": 2750,
+  "single_clean_full_suite_claimed": false,
+  "attempts": [
+    {
+      "kind": "system_python_full_discovery",
+      "tests_reported": 2727,
+      "passed": 2721,
+      "errors": 6,
+      "cause": "Missing docker/jinja2 dependencies in system Python",
+      "log_sha256": "7e62ea58f32c609c40c632faf89e9c362c3ac372481a8c59f77677c23949615f"
+    },
+    {
+      "kind": "six_previously_unimportable_modules_project_venv",
+      "tests_reported": 17,
+      "passed": 13,
+      "errors": 4,
+      "cause": "Shared vendor directory not linked in new publication worktree",
+      "log_sha256": "ca0ea377ed94d26a68ce134bc558c1c29daf1a004a3b63d48c306d1809794264"
+    },
+    {
+      "kind": "four_remaining_modules_after_shared_vendor_link",
+      "tests_reported": 16,
+      "passed": 16,
+      "errors": 0,
+      "log_sha256": "8f131de9c7fbe63a7ab0b5c36c6ea8d75461192560416cc97f3a46485f5689ff"
+    }
+  ],
+  "production_source_changed_to_fix_test_environment": false,
+  "test_fixture_model_transports_are_synthetic": true,
+  "actual_model_API_evaluator_tokenizer_calls": 0,
+  "clean_push_and_PR_CI_required_before_merge": true
+}
