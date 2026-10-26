@@ -1,0 +1,13 @@
+# 局所射影と共通の明示field取得の接続
+
+この実装は比較用runtimeで、モデル実験を起動しない。通常条件 `explicit_joined_fields` と追加条件 `automatic_region_joined_fields` は、同じ既存join、public source検証、scope/epoch、通常complete cache、public schema feedback、`read_fields` 能力とguideを持つ。追加条件だけが限定loopの自動変換を使う。joinやfield指定自体を新規技術に数えない。
+
+`read_fields` はpublic show_songの必要fieldを明示して要求する通常能力である。必要値が既観測ならfield dictを返し、不足またはcomplete-cache候補なら通常call/cache/receipt経路を通る。返すdictは完全API返答ではなく、full cacheへ登録しない。入力の指定誤りは実APIを呼ばず回復可能な拒否とし、trusted authorityの型・epoch・権限などの不一致は停止する。旧read_viewのhandleは露出しない。
+
+自動条件では元sourceを保存し、hostと隔離Pythonの両側で同じplanを作る。全体を組み立てた変換sourceは検査用artifactで、実際に実行した単一sourceとは呼ばない。各segmentの原文・候補hash、選択hash、完了boolと各regionの入場理由を記録する。program/source/planの対応、exact intのindex、0から連続するhit区間、hostが実観測したlookup数を照合する。
+
+通常完了とPython例外の両方でexecution reportを保存する。partial後の例外はsticky stopとなる。hard timeoutやprocess消失でreportを失っても、hostが当該programのpartial hitを観測していれば同じく停止する。元のtimeout等は `underlying_execution_status` と `underlying_execution_error` に保持し、欠けたreportを0件の正常な実行と扱わない。`execution_trace_accounting_complete` は各programにreportが1件ある場合だけ真となる。
+
+合成のwire検証では、動的loop、次cellのfull root、両方式の同じ明示field取得、通常cacheのmiss/hit、入力拒否後の回復、partial後例外、作用前SyntaxError、後のfull取得の支払、partial後hard timeoutを調べる。実タスクの生成コード、モデル、実API、tokenizer、評価器をこの検証で実行していない。
+
+意味保存は[compilerの限定した正常経路と信頼境界](region_field_projection_prototype_20261026.md)に従う。trusted engineや標準ライブラリ全体の敵対的改変に耐える一般セキュリティ機構ではない。外部hostのauthority・API予算・wire検査とは別の仮定である。保存prefixの再生も未観測の続きや最終品質を保証しない。全仕事の費用と成功率は、別の固定したモデル比較で評価する。
