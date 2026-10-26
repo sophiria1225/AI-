@@ -1,6 +1,12 @@
 # 現在の研究状態：P129全6条件閉鎖、通常修復の介入なし
 
-## 最新運用：P130起動前失敗、P131は開始後の停止を確認
+## 最新運用：P132の最初のactor送信を04:27 JST頃に確認
+
+P132は04:26:12 JSTに開始し、preflight/activationを通過。rootが最初のactor要求ファイルの作成とmodel slot処理中を確認した。時点付きの進行確認であり、全2条件の完了や品質・費用の改善ではない。要求本文・生成内容・task成否・usageは未読。同じ既知CSV1課題×seed57×inventory off/on、server最大5,400秒・06:00 JSTまでの固定比較を進める。[開始記録](experiments/P132_execution_start_20261027.md)。
+
+P132開始snapshot186台帳/2,231束縛と、その後のglobal台帳を区別する。P130/P131の失敗と約3時間の空白を保持し、凍結run/prepを変更しない。閉鎖後は全枠・unknownを残して監査・図・費用比較をまとめる。原稿はユーザー担当で、新規性、一般精度維持と全仕事token削減の最終目標は未達。通常会話で止めず明示停止へ従う。
+
+## 過去の運用記録：P130/P131の生成前失敗
 
 P130は01:07 JSTにport検査でmodel本体・task処理前に停止した。約3時間8分の空白後、P131固定2条件を04:15:31 JSTに起動したが、04:16 JSTに旧lease検査が新supervisor名を拒否してpreflightで停止した。所有serverは停止済み、actor生成・tokenizer count・task API・評価は0。元記録を保持し、新P132 attemptの修正を別に準備する。task成否・usage・生成内容は未読。
 
