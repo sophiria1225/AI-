@@ -1,0 +1,71 @@
+{
+  "phase": "P139_ED_task4_second_checkpoint_scalar_diagnosis",
+  "status": "complete",
+  "recorded_at": "2026-10-27T13:12:39.027410+00:00",
+  "run_id": "BOC_P139_04_EXPOSURE_DELTA",
+  "input_sha256": {
+    "reports/P139_comparison.json": "a0c017af89096eddccc7a5185f922acb0a0a3e904459b0fbf14a750655bf9318",
+    "closed_worker_summary": "429741e86fa12891163a763e0d25c35df58b4d2ef64a56ad2f9f2328a442c9a8"
+  },
+  "summary_hash_matches_closed_audit": true,
+  "reference_key": "checkpoint_control.decisions[1]",
+  "second_opportunity_scalar_values": {
+    "opportunity_index": 2,
+    "mode": "separate",
+    "accepted": false,
+    "reason": "no_structurally_valid_checkpoint",
+    "close_status": "invalid_summary",
+    "revision": 1,
+    "cutoff": 22,
+    "ordinary_input_tokens": null,
+    "compacted_input_tokens": null,
+    "delta_requested": true,
+    "delta_applied": false,
+    "fragment_count": 1
+  },
+  "worker_scalar_values": {
+    "stop_reason": "wall_limit_during_model_call",
+    "model_calls": 31,
+    "known_total_tokens": 408927,
+    "unknown_usage_calls": 1,
+    "wall_seconds": 1799.9857130000019,
+    "full_wall_seconds": 1803.6167338329833,
+    "cleanup_confirmed": true
+  },
+  "checkpoint_scalar_values": {
+    "opportunities": 2,
+    "max_opportunities": 2,
+    "installations": 1,
+    "pending_stage": null,
+    "separate_summary_calls": 2
+  },
+  "fixed_source_sha256": {
+    "checkpoint_representation_p139.py": "8cc12812f5413f8157e99591108ea53bf0af91bdfff64639baf24481f0f231e9",
+    "single_checkpoint_history.py": "cc323921dbe28341160210cfdb78b55e649e3714404e32fd0efde4c4852b203a",
+    "checkpoint_representation_inference_p139.py": "c7b896bc2508954a3188fa8c99c12ce36e1cec358d857f43ed366592ebb276a5",
+    "run_whole_task_checkpoint_representation_cell_p139.py": "37bfa53c60d234d11b7ddef7d7c0d3c2d07f7b942d2f5f8e03b37411d2a5119f"
+  },
+  "source_path_explanation": {
+    "worker_save": "run_whole_task_checkpoint_representation_cell_p139.py:210-215 saves checkpoint_summary() under checkpoint_control",
+    "decision_save": "checkpoint_representation_inference_p139.py:167-179 includes the checkpoint events as decisions",
+    "parser_catch": "checkpoint_representation_p139.py:237-243 maps parse_checkpoint ValueError/TypeError/RecursionError to invalid_summary",
+    "rejection": "checkpoint_representation_p139.py:267-269 records no_structurally_valid_checkpoint for invalid_summary",
+    "separate_combined_budget_branch": "checkpoint_representation_p139.py:250-255 uses combined_summary_budget after a parsed value exists; that is not the recorded close_status"
+  },
+  "interpretation": [
+    "The second paid focus was rejected structurally before a native shorter-input decision. The first summary and its cutoff remained installed.",
+    "The specific parse failure is not identified by this scalar record. Combined fragment budget overflow is not the recorded rejection category.",
+    "The later wall-limit termination remains a distinct observed event; this record does not prove that structural rejection caused official failure."
+  ],
+  "scope": {
+    "private_worker_summary_parsed_only_for_listed_metadata": true,
+    "generated_message_or_summary_field_values_inspected": false,
+    "worker_log_read": false,
+    "error_private_read": false,
+    "existing_parser_or_producer_executed": false,
+    "additional_model_API_evaluation_tokenizer_calls": 0,
+    "saved_generated_code_executed": false,
+    "original_records_modified": false
+  },
+  "additional_structural_diagnostic": "Separately authorized and not yet executed when this record was saved."
+}
