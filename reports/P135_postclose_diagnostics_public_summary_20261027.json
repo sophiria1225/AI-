@@ -1,0 +1,612 @@
+{
+  "phase": "P135",
+  "analysis": "closed_supplementary_diagnostics_public_aggregate",
+  "status": "complete",
+  "created_at": "2026-10-27T01:05:56.216704+00:00",
+  "fixed_head": "d87880f474c05541d8d0cde0ec318fd262d9fa0e",
+  "fixed_plan_sha256": "5a5b5338773f4a5b80ab61f9ccae9a3591c4f42ef8f458f2c38e4bc8894d8a2e",
+  "fixed_development_gate_met": false,
+  "all_six_slots_retained": true,
+  "independent_closed_review_sha256": "52742c28f2a2e816f8b5f5768b9076348816e13de7b9da0c537901eeeb8c48ec",
+  "original_postclose_plan_sha256": "b8e05744a08bb1c2f2919cac6462498a75dc4be053f8e7a3ddaadb2049014c6d",
+  "original_plan_unchanged": true,
+  "execution_record_sha256": "a6bba0fd40f00f3867a9e4432a3bcbaee9d07559155fbbd44cb01e065c4c847a",
+  "sequential_execution": [
+    {
+      "name": "notice_input_cost",
+      "source_file": "supplement_p135_notice_cost_20261027.py",
+      "source_sha256": "c31772e14501a09f8c635cecad0c649cf19451d7b33ed988d5f9956619af5d1a",
+      "actual_cli_option": "--closed-once",
+      "exit_code": 0,
+      "output_status": "complete",
+      "output_sha256": "c00b32827510c377bb7afa45d85dfebe9d12eae75a3e84238dd2d9affcce7f16",
+      "retry_attempted": false
+    },
+    {
+      "name": "field_mask_redundancy",
+      "source_file": "AI_P135_field_mask_redundancy_20261027_v02.py",
+      "source_sha256": "e2c4522f5d0270ce1f60a3429e16d32cb2a513492adc9488dade8da0ccb2fc01",
+      "actual_cli_option": "--analyse-closed-once",
+      "exit_code": 0,
+      "output_status": "complete",
+      "output_sha256": "d0325d0d1d17cbc7f461be8af4412c1f802c7fb6020a9e70f6a31e20b05e6a00",
+      "retry_attempted": false
+    },
+    {
+      "name": "pre_notice_trajectory",
+      "source_file": "AI_P135_pre_notice_trajectory_20261027.py",
+      "source_sha256": "68a2867c01e8398c72f4b2711c54f63dca87ef871d43a126895b199a5c8f773d",
+      "actual_cli_option": "--analyse-closed-once",
+      "exit_code": 0,
+      "output_status": "complete",
+      "output_sha256": "c9aeff70fb768dc2ec64a6b5e4651aeadefceb23c40aacc59127fd62854def8d",
+      "retry_attempted": false
+    }
+  ],
+  "cli_correction": {
+    "job": "field_mask_redundancy",
+    "planned_option": "--closed-once",
+    "actual_fixed_source_option": "--analyse-closed-once",
+    "discovered_before_execution": true,
+    "source_or_analysis_logic_changed": false
+  },
+  "notice_measurements_complete": true,
+  "notice_audit_error_cells": 0,
+  "notice_checks_passed": 3368,
+  "notice_check_count": 3368,
+  "initial_native_counts": [
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "raw_anchor_initial_native_input_tokens": 3123,
+      "counts_only_initial_native_input_tokens": 3506,
+      "entity_fields_initial_native_input_tokens": 3506,
+      "common_guide_and_tool_initial_native_input_delta": 383,
+      "primary_initial_input_delta": 0,
+      "extrapolated_to_later_calls": false,
+      "query_marginal_tokens": null
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "raw_anchor_initial_native_input_tokens": 3123,
+      "counts_only_initial_native_input_tokens": 3506,
+      "entity_fields_initial_native_input_tokens": 3506,
+      "common_guide_and_tool_initial_native_input_delta": 383,
+      "primary_initial_input_delta": 0,
+      "extrapolated_to_later_calls": false,
+      "query_marginal_tokens": null
+    }
+  ],
+  "trajectory_audit_error_cells": 0,
+  "all_six_trajectory_records_accounted": true,
+  "cells": [
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "raw_anchor",
+      "record_status": "evaluated",
+      "success": true,
+      "whole_job_known_tokens": 332588,
+      "whole_job_unknown_usage_calls": 0,
+      "whole_job_exact_tokens": 332588,
+      "measurement_status": "measured",
+      "capture_count": 2,
+      "groups": {
+        "paid_known": {
+          "captures": 2,
+          "measured_native_differences": 2,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [
+        {
+          "capture_index": 0,
+          "checkpoint_revision": 1,
+          "after_model_calls": 13,
+          "exposure_status": "paid_known",
+          "measurement_status": "measured",
+          "native_counted_notice_input_delta": 0,
+          "terminal_notice_input_delta": 0
+        },
+        {
+          "capture_index": 1,
+          "checkpoint_revision": 2,
+          "after_model_calls": 23,
+          "exposure_status": "paid_known",
+          "measurement_status": "measured",
+          "native_counted_notice_input_delta": 0,
+          "terminal_notice_input_delta": 0
+        }
+      ],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 2,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": [
+          {
+            "checkpoint_revision": 1,
+            "enumeration": "closed",
+            "pending_entities": 47,
+            "displayed_entities": 0,
+            "missing_title": 44,
+            "missing_artists": 47,
+            "aggregates_determine_every_pending_mask": false,
+            "aggregate_compatible_assignments": 16215,
+            "assignments_after_disclosed_prefix": 16215,
+            "field_mapping_restricts_assignments": false,
+            "actual_notice_dispatch": false,
+            "actual_entity_rows_disclosed": 0
+          },
+          {
+            "checkpoint_revision": 2,
+            "enumeration": "closed",
+            "pending_entities": 0,
+            "displayed_entities": 0,
+            "missing_title": 0,
+            "missing_artists": 0,
+            "aggregates_determine_every_pending_mask": true,
+            "aggregate_compatible_assignments": 1,
+            "assignments_after_disclosed_prefix": 1,
+            "field_mapping_restricts_assignments": false,
+            "actual_notice_dispatch": false,
+            "actual_entity_rows_disclosed": 0
+          }
+        ]
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": null,
+        "observed_call_count": 31,
+        "actor_calls": 29,
+        "focus_calls": 2
+      }
+    },
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "counts_only",
+      "record_status": "evaluated",
+      "success": false,
+      "whole_job_known_tokens": 77242,
+      "whole_job_unknown_usage_calls": 0,
+      "whole_job_exact_tokens": 77242,
+      "measurement_status": "measured",
+      "capture_count": 0,
+      "groups": {
+        "paid_known": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 0,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": []
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": null,
+        "observed_call_count": 8,
+        "actor_calls": 8,
+        "focus_calls": 0
+      }
+    },
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "entity_fields",
+      "record_status": "evaluated",
+      "success": false,
+      "whole_job_known_tokens": 77242,
+      "whole_job_unknown_usage_calls": 0,
+      "whole_job_exact_tokens": 77242,
+      "measurement_status": "measured",
+      "capture_count": 0,
+      "groups": {
+        "paid_known": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 0,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": []
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": null,
+        "observed_call_count": 8,
+        "actor_calls": 8,
+        "focus_calls": 0
+      }
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "entity_fields",
+      "record_status": "evaluated",
+      "success": false,
+      "whole_job_known_tokens": 225495,
+      "whole_job_unknown_usage_calls": 1,
+      "whole_job_exact_tokens": null,
+      "measurement_status": "measured",
+      "capture_count": 2,
+      "groups": {
+        "paid_known": {
+          "captures": 2,
+          "measured_native_differences": 2,
+          "exact_native_counted_delta": 224,
+          "exact_terminal_input_delta": 224
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [
+        {
+          "capture_index": 0,
+          "checkpoint_revision": 1,
+          "after_model_calls": 10,
+          "exposure_status": "paid_known",
+          "measurement_status": "measured",
+          "native_counted_notice_input_delta": 112,
+          "terminal_notice_input_delta": 112
+        },
+        {
+          "capture_index": 1,
+          "checkpoint_revision": 2,
+          "after_model_calls": 15,
+          "exposure_status": "paid_known",
+          "measurement_status": "measured",
+          "native_counted_notice_input_delta": 112,
+          "terminal_notice_input_delta": 112
+        }
+      ],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 2,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": [
+          {
+            "checkpoint_revision": 1,
+            "enumeration": "unknown",
+            "pending_entities": null,
+            "displayed_entities": 0,
+            "missing_title": null,
+            "missing_artists": null,
+            "aggregates_determine_every_pending_mask": null,
+            "aggregate_compatible_assignments": null,
+            "assignments_after_disclosed_prefix": null,
+            "field_mapping_restricts_assignments": null,
+            "actual_notice_dispatch": true,
+            "actual_entity_rows_disclosed": 0
+          },
+          {
+            "checkpoint_revision": 2,
+            "enumeration": "unknown",
+            "pending_entities": null,
+            "displayed_entities": 0,
+            "missing_title": null,
+            "missing_artists": null,
+            "aggregates_determine_every_pending_mask": null,
+            "aggregate_compatible_assignments": null,
+            "assignments_after_disclosed_prefix": null,
+            "field_mapping_restricts_assignments": null,
+            "actual_notice_dispatch": true,
+            "actual_entity_rows_disclosed": 0
+          }
+        ]
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": 11,
+        "observed_call_count": 20,
+        "actor_calls": 18,
+        "focus_calls": 2
+      }
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "counts_only",
+      "record_status": "evaluated",
+      "success": false,
+      "whole_job_known_tokens": 197744,
+      "whole_job_unknown_usage_calls": 1,
+      "whole_job_exact_tokens": null,
+      "measurement_status": "measured",
+      "capture_count": 1,
+      "groups": {
+        "paid_known": {
+          "captures": 1,
+          "measured_native_differences": 1,
+          "exact_native_counted_delta": 107,
+          "exact_terminal_input_delta": 107
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [
+        {
+          "capture_index": 0,
+          "checkpoint_revision": 1,
+          "after_model_calls": 10,
+          "exposure_status": "paid_known",
+          "measurement_status": "measured",
+          "native_counted_notice_input_delta": 107,
+          "terminal_notice_input_delta": 107
+        }
+      ],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 1,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": [
+          {
+            "checkpoint_revision": 1,
+            "enumeration": "unknown",
+            "pending_entities": null,
+            "displayed_entities": 0,
+            "missing_title": null,
+            "missing_artists": null,
+            "aggregates_determine_every_pending_mask": null,
+            "aggregate_compatible_assignments": null,
+            "assignments_after_disclosed_prefix": null,
+            "field_mapping_restricts_assignments": null,
+            "actual_notice_dispatch": true,
+            "actual_entity_rows_disclosed": 0
+          }
+        ]
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": 11,
+        "observed_call_count": 17,
+        "actor_calls": 15,
+        "focus_calls": 2
+      }
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "raw_anchor",
+      "record_status": "evaluated",
+      "success": false,
+      "whole_job_known_tokens": 102035,
+      "whole_job_unknown_usage_calls": 0,
+      "whole_job_exact_tokens": 102035,
+      "measurement_status": "measured",
+      "capture_count": 0,
+      "groups": {
+        "paid_known": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "paid_unknown": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        },
+        "prepared_not_dispatched": {
+          "captures": 0,
+          "measured_native_differences": 0,
+          "exact_native_counted_delta": 0,
+          "exact_terminal_input_delta": 0
+        }
+      },
+      "notice_costs": [],
+      "field_mask": {
+        "status": "accounted",
+        "checkpoint_captures": 0,
+        "actual_entity_exposure_opportunities": 0,
+        "aggregate_redundant_field_mask_exposures": 0,
+        "field_mapping_restrictive_exposures": 0,
+        "opportunities": []
+      },
+      "trajectory": {
+        "diagnosis_status": "accounted",
+        "first_actual_notice_call": null,
+        "observed_call_count": 10,
+        "actor_calls": 10,
+        "focus_calls": 0
+      }
+    }
+  ],
+  "primary_pairs": [
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "baseline": "counts_only",
+      "candidate": "entity_fields",
+      "diagnosis_status": "compared",
+      "first_exact_record_divergence": {
+        "call_index": 1,
+        "classification": "assistant_output_or_completion_status_difference",
+        "different_components": [
+          "response_bytes_equal"
+        ],
+        "relative_to_first_actual_notice": "no_actual_notice"
+      },
+      "first_request_divergence": null,
+      "first_assistant_completion_divergence": {
+        "call_index": 1,
+        "classification": "assistant_output_or_completion_status_difference",
+        "different_components": [
+          "assistant_completion_equal"
+        ],
+        "relative_to_first_actual_notice": "no_actual_notice"
+      },
+      "pre_notice_request_and_assistant_sequence_equal": false,
+      "first_actual_notice_calls": [
+        null,
+        null
+      ],
+      "first_notice_dispatch_aligned": false,
+      "pre_notice_compared_calls": 8,
+      "comparison_window": "all_observed_calls_no_notice",
+      "prefix_evidence_status": "observed_prior_dispatches",
+      "pre_notice_request_sequence_equal": true,
+      "pre_notice_request_bytes_equal": true,
+      "pre_notice_response_bytes_equal": false,
+      "pre_notice_assistant_completion_equal": false,
+      "neither_arm_dispatched_notice": true,
+      "first_notice_comparisons": []
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "baseline": "counts_only",
+      "candidate": "entity_fields",
+      "diagnosis_status": "compared",
+      "first_exact_record_divergence": {
+        "call_index": 1,
+        "classification": "assistant_output_or_completion_status_difference",
+        "different_components": [
+          "response_bytes_equal"
+        ],
+        "relative_to_first_actual_notice": "pre_notice"
+      },
+      "first_request_divergence": {
+        "call_index": 11,
+        "classification": "request_payload_or_presence_divergence",
+        "different_components": [
+          "request_equal"
+        ],
+        "relative_to_first_actual_notice": "at_first_notice"
+      },
+      "first_assistant_completion_divergence": {
+        "call_index": 1,
+        "classification": "assistant_output_or_completion_status_difference",
+        "different_components": [
+          "assistant_completion_equal"
+        ],
+        "relative_to_first_actual_notice": "pre_notice"
+      },
+      "pre_notice_request_and_assistant_sequence_equal": false,
+      "first_actual_notice_calls": [
+        11,
+        11
+      ],
+      "first_notice_dispatch_aligned": true,
+      "pre_notice_compared_calls": 10,
+      "comparison_window": "before_earliest_notice",
+      "prefix_evidence_status": "observed_prior_dispatches",
+      "pre_notice_request_sequence_equal": true,
+      "pre_notice_request_bytes_equal": true,
+      "pre_notice_response_bytes_equal": false,
+      "pre_notice_assistant_completion_equal": false,
+      "neither_arm_dispatched_notice": false,
+      "first_notice_comparisons": [
+        {
+          "call_index": 11,
+          "status": "verified_same_global_dispatch",
+          "base_payload_equal": true,
+          "full_notice_equal": false,
+          "handle_differs": true,
+          "handle_only_notice_difference": true,
+          "entity_rows_or_selection_metadata_differ": false,
+          "common_descriptor_equal_after_handle_removal": true,
+          "difference_limited_to_handle_and_entity_row_block": false,
+          "left_is_first_notice": true,
+          "right_is_first_notice": true,
+          "both_are_first_notice": true,
+          "global_ordinal_alignment_is_not_state_equivalence": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "All supplementary computations use the frozen six-condition cohort after collector completion and independent review PASS. No diagnostic was retried.",
+    "Whole-job unknown usage remains unknown. Measured automatic-notice input deltas are already included in whole-job cost and are never subtracted.",
+    "The 383-token shared guide/tool delta is from one saved initial native count per seed and is not extrapolated to later calls.",
+    "All actual entity-row exposures were zero. Unknown main-arm enumeration leaves mask-assignment quantities null; zero exposures is not evidence of zero potential field information.",
+    "The restricted mask comparison conditions on aggregate counts and the same pending IDs. Its assignment counts are not model entropy, marginal token cost, causal utility, quality or novelty.",
+    "The first seed-157 request divergence occurred at the aligned first notice, with equal notice-stripped payload and a handle-only notice difference. This does not establish that handles caused later behavior.",
+    "Full response and assistant-completion hashes differ from the first call. Opaque identifiers and metadata were not normalized, so these hashes do not establish a semantic generated-program difference.",
+    "No observed benefit is attributable to entity-field information when no entity rows were exposed. The fixed development gate remains false.",
+    "Explicit-query marginal token cost was not measured; zero environment API requests does not imply free model input."
+  ],
+  "model_API_tokenizer_evaluator_calls": 0,
+  "saved_generated_program_execution": 0,
+  "primary_gate_or_whole_costs_changed": false,
+  "private_paths_or_task_values_disclosed": false
+}

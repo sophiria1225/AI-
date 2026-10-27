@@ -1,0 +1,255 @@
+{
+  "status": "pass",
+  "scope": "Independent arithmetic from closed public rows/CSV/summary plus source-only API interpretation; no producer auditor rerun.",
+  "all_six": {
+    "conditions": 6,
+    "successes": 1,
+    "known_token_subtotal": 1012346,
+    "unknown_calls": 2,
+    "exact_total_tokens": null,
+    "model_calls": 94,
+    "api_requests": 364,
+    "notice_actor_calls": 3,
+    "entity_rows_exposed": 0,
+    "queries": 0
+  },
+  "by_policy": {
+    "raw_anchor": {
+      "conditions": 2,
+      "successes": 1,
+      "known_token_subtotal": 434623,
+      "unknown_calls": 0,
+      "exact_total_tokens": 434623,
+      "model_calls": 41,
+      "api_requests": 156,
+      "notice_actor_calls": 0,
+      "entity_rows_exposed": 0,
+      "queries": 0
+    },
+    "counts_only": {
+      "conditions": 2,
+      "successes": 0,
+      "known_token_subtotal": 274986,
+      "unknown_calls": 1,
+      "exact_total_tokens": null,
+      "model_calls": 25,
+      "api_requests": 103,
+      "notice_actor_calls": 1,
+      "entity_rows_exposed": 0,
+      "queries": 0
+    },
+    "entity_fields": {
+      "conditions": 2,
+      "successes": 0,
+      "known_token_subtotal": 302737,
+      "unknown_calls": 1,
+      "exact_total_tokens": null,
+      "model_calls": 28,
+      "api_requests": 105,
+      "notice_actor_calls": 2,
+      "entity_rows_exposed": 0,
+      "queries": 0
+    }
+  },
+  "comparisons": {
+    "primary": {
+      "baseline": "counts_only",
+      "candidate": "entity_fields",
+      "pairs": [
+        {
+          "replication": 1,
+          "model_seed": 57,
+          "transition": "both_failed",
+          "exact_token_difference": 0
+        },
+        {
+          "replication": 2,
+          "model_seed": 157,
+          "transition": "both_failed",
+          "exact_token_difference": null
+        }
+      ],
+      "success_losses": 0,
+      "success_gains": 0,
+      "common_success_pairs": 0,
+      "exact_all_token_difference": null,
+      "exact_common_token_difference": null
+    },
+    "auxiliary": {
+      "baseline": "raw_anchor",
+      "candidate": "entity_fields",
+      "pairs": [
+        {
+          "replication": 1,
+          "model_seed": 57,
+          "transition": "quality_loss",
+          "exact_token_difference": -255346
+        },
+        {
+          "replication": 2,
+          "model_seed": 157,
+          "transition": "both_failed",
+          "exact_token_difference": null
+        }
+      ],
+      "success_losses": 1,
+      "success_gains": 0,
+      "common_success_pairs": 0,
+      "exact_all_token_difference": null,
+      "exact_common_token_difference": null
+    }
+  },
+  "rows": [
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "raw_anchor",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "model_calls": 31,
+      "api_requests": 76,
+      "checkpoint_installations": 2,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 2,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "unknown"
+    },
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "counts_only",
+      "success": false,
+      "stop_reason": "api_request_limit",
+      "known_total_tokens": 77242,
+      "unknown_usage_calls": 0,
+      "model_calls": 8,
+      "api_requests": 80,
+      "checkpoint_installations": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "unknown"
+    },
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "entity_fields",
+      "success": false,
+      "stop_reason": "api_request_limit",
+      "known_total_tokens": 77242,
+      "unknown_usage_calls": 0,
+      "model_calls": 8,
+      "api_requests": 80,
+      "checkpoint_installations": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "unknown"
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "entity_fields",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 225495,
+      "unknown_usage_calls": 1,
+      "model_calls": 20,
+      "api_requests": 25,
+      "checkpoint_installations": 2,
+      "obligation_notice_actor_calls": 2,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 2,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "unknown"
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "counts_only",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 197744,
+      "unknown_usage_calls": 1,
+      "model_calls": 17,
+      "api_requests": 23,
+      "checkpoint_installations": 1,
+      "obligation_notice_actor_calls": 1,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 1,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "unknown"
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "raw_anchor",
+      "success": false,
+      "stop_reason": "api_request_limit",
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "model_calls": 10,
+      "api_requests": 80,
+      "checkpoint_installations": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_queries": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_final_enumeration": "closed"
+    }
+  ],
+  "gate": false,
+  "mechanism_contracts_intact": true,
+  "source_sha256": {
+    "reports/P135_comparison.json": "dbe9c2d3e8cc98d77b5fa362ce17fd4528aa312ed3e666147708c6d7fbc21f0b",
+    "materials/20261027_p135_results/conditions.csv": "6e030547381062cc445bd14fd4de065f4510de1fe707d8b5861012681269f8eb",
+    "materials/20261027_p135_results/summary.json": "ee805050fa96a3dd8da81e4a2aea407ce9749cd9cded4e663f6c9a9df33554c8",
+    "docs/experiments/P135_whole_task_observed_obligations.md": "0189113aed482bd2fc2cd48457295cbd065118ef14b31924da4182c068c705bf",
+    "scripts/public_output_grounding.py": "8942b4c65bf09a572453266d64227398f9255e934ad848e63de786d849b2f535",
+    "scripts/partitioned_export_monitor.py": "3a68cd2a3335b0b8d5f348ff7b174a366ed2ce6c46fc84fd81ec0225332dc007",
+    "scripts/observed_field_obligations.py": "117426c47439da29ba916d048df3f401742fecf9315e3f00f8c37fb80f0f21e8"
+  },
+  "public_implementation_sha256": {
+    "apps/api_lib.py": "573657c3db8d99def6ee92b6833fbc2fedd894be41031fe38feebab49e597485",
+    "apps/spotify/apis.py": "eaa23bb250094ee3ff50330d3b75bdac86999394611a15b0b44934c90464b3f1",
+    "apps/spotify/models.py": "e35f8c4cd5fcd090d8e6d187bce0ee4c2e1e2f3202ec719186d0e663a13430a6",
+    "apps/model_lib.py": "183a19463be31cd1a40a11022e24349f232595ca4b3612fa9d4b3a33bcf6c172"
+  },
+  "collector_marker_sha256": "52a1d2bf48a3967bd3d211197408e753876274827f8468b8adfea093661da783",
+  "review_source_sha256": "aba57ca280739fb06154b643342d594d6cef754ba3cef8b4734c937516e549ac",
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_tokenizer_calls": 0,
+  "additional_evaluations": 0,
+  "generated_code_executed": 0,
+  "supplementary_diagnostics_executed": 0,
+  "original_artifacts_modified": false,
+  "interpretation": "No entity rows were exposed; primary common success is empty; one success is lost against raw. Current field-display efficacy and quality-preserving token savings are unestablished. A changed, raw-initial-input finite design could test the still-unreached mechanism; no blind repeated seeds.",
+  "source_only_addendum": {
+    "api": "spotify__show_liked_playlists",
+    "source_mutation_in_endpoint_or_playlist_serializer": false,
+    "read_scope": "authenticated PlaylistLike links, distinct from owned playlist library",
+    "current_monitor_handling": "unhandled_source_effect on successful returned dispatch",
+    "add_to_READS_alone_repairs_returned_branch": false,
+    "may_extend_target_union_from_this_read": false,
+    "retroactive_result_repair": false,
+    "scope_limit": "Application source and shared serializer/auth path only, not a proof about arbitrary external mutations or all framework instrumentation."
+  }
+}
