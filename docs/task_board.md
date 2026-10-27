@@ -407,6 +407,11 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【結果一覧 v02：P135/P136の閉鎖値を追補】
+元7cohort56行を保持し正規公開12行だけを追加、9cohort68予定・63評価。unknown8呼出しとusage件数欠測5条件を分離、P136別補足223145は非加算。P137は固定開始記録と予定4未収録placeholderのみ、現在の進捗や結果は示さず、旧欠測/gateを置換しない。phase横断効果や独立標本へpoolしない。
+https://github.com/sophiria1225/AI-/blob/main/docs/closed_results_index_20261027_v02.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 12:31 JST P137実処理確認】
 P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この記録に閉鎖結果は未収録で、実行中の成否・usage・生成内容は読まない。
 seed57はfields単独、seed157だけが3方式の記述的比較。P136の元6行・欠測・gate falseは置換・合算しない。新P137の採用判定も行わない。初期raw interface・機構は同じで、timeoutの記録経路とworker終了状態を修正。各80calls/450000tokens/1800作業秒/API80、全4最大320calls/1800000tokens/API320/評価4、server4時間・18:00 JST上限。開始196台帳/2433束縛・1547 sourceを固定する。
@@ -545,6 +550,11 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【結果一覧 v02：P135/P136の閉鎖値を追補】
+元7cohort56行を保持し正規公開12行だけを追加、9cohort68予定・63評価。unknown8呼出しとusage件数欠測5条件を分離、P136別補足223145は非加算。P137は固定開始記録と予定4未収録placeholderのみ、現在の進捗や結果は示さず、旧欠測/gateを置換しない。phase横断効果や独立標本へpoolしない。
+https://github.com/sophiria1225/AI-/blob/main/docs/closed_results_index_20261027_v02.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 12:31 JST P137実処理確認】
 P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この記録に閉鎖結果は未収録で、実行中の成否・usage・生成内容は読まない。
 seed57はfields単独、seed157だけが3方式の記述的比較。P136の元6行・欠測・gate falseは置換・合算しない。新P137の採用判定も行わない。初期raw interface・機構は同じで、timeoutの記録経路とworker終了状態を修正。各80calls/450000tokens/1800作業秒/API80、全4最大320calls/1800000tokens/API320/評価4、server4時間・18:00 JST上限。開始196台帳/2433束縛・1547 sourceを固定する。

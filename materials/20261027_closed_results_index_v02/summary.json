@@ -1,0 +1,434 @@
+{
+  "status": "private_preparation_not_publication",
+  "source_index_closed_cohorts": 7,
+  "source_index_planned_conditions": 56,
+  "added_closed_cohorts": 2,
+  "added_planned_conditions": 12,
+  "prepared_closed_cohorts": 9,
+  "prepared_closed_planned_conditions": 68,
+  "prepared_index_row_accounting": {
+    "planned_conditions": 68,
+    "accounted_conditions": 63,
+    "evaluated_conditions": 63,
+    "successful_conditions": 43,
+    "failed_evaluated_conditions": 20,
+    "incomplete_worker_conditions": 1,
+    "not_run_conditions": 4,
+    "known_token_subtotal": 12912065,
+    "recorded_unknown_usage_calls": 8,
+    "unknown_usage_count_missing_conditions": 5,
+    "exact_total_tokens": null,
+    "model_call_known_subtotal": 1231,
+    "model_call_missing_conditions": 5,
+    "API_request_known_subtotal": 4147,
+    "API_request_missing_conditions": 5
+  },
+  "accounting_total_is_not_independent_samples_or_effect_estimate": true,
+  "no_cross_phase_or_seed_statistical_pooling": true,
+  "added_phases": {
+    "P135": {
+      "planned_conditions": 6,
+      "accounted_conditions": 6,
+      "evaluated_conditions": 6,
+      "successful_conditions": 1,
+      "failed_evaluated_conditions": 5,
+      "incomplete_worker_conditions": 0,
+      "not_run_conditions": 0,
+      "known_token_subtotal": 1012346,
+      "recorded_unknown_usage_calls": 2,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": null,
+      "model_call_known_subtotal": 94,
+      "model_call_missing_conditions": 0,
+      "API_request_known_subtotal": 364,
+      "API_request_missing_conditions": 0,
+      "fixed_development_gate": false,
+      "audit_errors": 0,
+      "independent_tasks": 1,
+      "model_seeds": [
+        57,
+        157
+      ],
+      "source_report": "reports/P135_comparison.json",
+      "primary_comparison": {
+        "baseline": "counts_only",
+        "candidate": "entity_fields",
+        "paired_results": [
+          {
+            "replication": 1,
+            "model_seed": 57,
+            "baseline_success": false,
+            "candidate_success": false,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "both_successful": false,
+            "success_lost": false,
+            "quality_transition": "both_failed",
+            "candidate_minus_baseline_tokens": 0
+          },
+          {
+            "replication": 2,
+            "model_seed": 157,
+            "baseline_success": false,
+            "candidate_success": false,
+            "both_evaluated": true,
+            "both_usage_known": false,
+            "both_successful": false,
+            "success_lost": false,
+            "quality_transition": "both_failed",
+            "candidate_minus_baseline_tokens": null
+          }
+        ],
+        "both_seeds_evaluated": true,
+        "both_seeds_usage_known": false,
+        "paired_success_losses": 0,
+        "paired_successful_task_seed_pairs": 0,
+        "candidate_minus_baseline_whole_task_tokens": null,
+        "paired_successful_token_difference": null,
+        "costs_by_quality_transition": {
+          "common_success": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_gain": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_loss": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "both_failed": {
+            "pairs": 2,
+            "candidate_minus_baseline_tokens": null
+          },
+          "not_both_evaluated": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          }
+        }
+      },
+      "raw_anchor_comparison": {
+        "baseline": "raw_anchor",
+        "candidate": "entity_fields",
+        "paired_results": [
+          {
+            "replication": 1,
+            "model_seed": 57,
+            "baseline_success": true,
+            "candidate_success": false,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "both_successful": false,
+            "success_lost": true,
+            "quality_transition": "quality_loss",
+            "candidate_minus_baseline_tokens": -255346
+          },
+          {
+            "replication": 2,
+            "model_seed": 157,
+            "baseline_success": false,
+            "candidate_success": false,
+            "both_evaluated": true,
+            "both_usage_known": false,
+            "both_successful": false,
+            "success_lost": false,
+            "quality_transition": "both_failed",
+            "candidate_minus_baseline_tokens": null
+          }
+        ],
+        "both_seeds_evaluated": true,
+        "both_seeds_usage_known": false,
+        "paired_success_losses": 1,
+        "paired_successful_task_seed_pairs": 0,
+        "candidate_minus_baseline_whole_task_tokens": null,
+        "paired_successful_token_difference": null,
+        "costs_by_quality_transition": {
+          "common_success": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_gain": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_loss": {
+            "pairs": 1,
+            "candidate_minus_baseline_tokens": null
+          },
+          "both_failed": {
+            "pairs": 1,
+            "candidate_minus_baseline_tokens": null
+          },
+          "not_both_evaluated": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          }
+        }
+      },
+      "no_paired_success_loss_against_either_control": false,
+      "mechanism_contracts_intact": true
+    },
+    "P136": {
+      "planned_conditions": 6,
+      "accounted_conditions": 1,
+      "evaluated_conditions": 1,
+      "successful_conditions": 1,
+      "failed_evaluated_conditions": 0,
+      "incomplete_worker_conditions": 1,
+      "not_run_conditions": 4,
+      "known_token_subtotal": 332588,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 5,
+      "exact_total_tokens": null,
+      "model_call_known_subtotal": 31,
+      "model_call_missing_conditions": 5,
+      "API_request_known_subtotal": 76,
+      "API_request_missing_conditions": 5,
+      "fixed_development_gate": false,
+      "audit_errors": 0,
+      "independent_tasks": 1,
+      "model_seeds": [
+        57,
+        157
+      ],
+      "source_report": "reports/P136_comparison.json",
+      "primary_comparison": {
+        "baseline": "ids_only",
+        "candidate": "entity_fields",
+        "paired_results": [
+          {
+            "replication": 1,
+            "model_seed": 57,
+            "baseline_success": null,
+            "candidate_success": null,
+            "both_evaluated": false,
+            "both_usage_known": false,
+            "both_successful": null,
+            "success_lost": null,
+            "quality_transition": "not_both_evaluated",
+            "candidate_minus_baseline_tokens": null
+          },
+          {
+            "replication": 2,
+            "model_seed": 157,
+            "baseline_success": null,
+            "candidate_success": null,
+            "both_evaluated": false,
+            "both_usage_known": false,
+            "both_successful": null,
+            "success_lost": null,
+            "quality_transition": "not_both_evaluated",
+            "candidate_minus_baseline_tokens": null
+          }
+        ],
+        "both_seeds_evaluated": false,
+        "both_seeds_usage_known": false,
+        "paired_success_losses": null,
+        "paired_successful_task_seed_pairs": null,
+        "candidate_minus_baseline_whole_task_tokens": null,
+        "paired_successful_token_difference": null,
+        "costs_by_quality_transition": {
+          "common_success": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_gain": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_loss": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "both_failed": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "not_both_evaluated": {
+            "pairs": 2,
+            "candidate_minus_baseline_tokens": null
+          }
+        }
+      },
+      "raw_anchor_comparison": {
+        "baseline": "raw_anchor",
+        "candidate": "entity_fields",
+        "paired_results": [
+          {
+            "replication": 1,
+            "model_seed": 57,
+            "baseline_success": true,
+            "candidate_success": null,
+            "both_evaluated": false,
+            "both_usage_known": false,
+            "both_successful": null,
+            "success_lost": null,
+            "quality_transition": "not_both_evaluated",
+            "candidate_minus_baseline_tokens": null
+          },
+          {
+            "replication": 2,
+            "model_seed": 157,
+            "baseline_success": null,
+            "candidate_success": null,
+            "both_evaluated": false,
+            "both_usage_known": false,
+            "both_successful": null,
+            "success_lost": null,
+            "quality_transition": "not_both_evaluated",
+            "candidate_minus_baseline_tokens": null
+          }
+        ],
+        "both_seeds_evaluated": false,
+        "both_seeds_usage_known": false,
+        "paired_success_losses": null,
+        "paired_successful_task_seed_pairs": null,
+        "candidate_minus_baseline_whole_task_tokens": null,
+        "paired_successful_token_difference": null,
+        "costs_by_quality_transition": {
+          "common_success": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_gain": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "quality_loss": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "both_failed": {
+            "pairs": 0,
+            "candidate_minus_baseline_tokens": null
+          },
+          "not_both_evaluated": {
+            "pairs": 2,
+            "candidate_minus_baseline_tokens": null
+          }
+        }
+      },
+      "no_paired_success_loss_against_either_control": null,
+      "mechanism_contracts_intact": false
+    }
+  },
+  "all_nine_fixed_phase_gates_false": true,
+  "P136_supplementary_223145_added_to_certified_table": false,
+  "P136_missing_worker_tokens_remain_null": true,
+  "P137": {
+    "phase": "P137",
+    "status": "not_included_placeholder_only",
+    "planned_conditions": 4,
+    "evaluated_conditions": null,
+    "successful_conditions": null,
+    "known_token_subtotal": null,
+    "unknown_usage_calls": null,
+    "exact_total_tokens": null,
+    "development_gate_met": null,
+    "actual_outcome_usage_payload_read": false,
+    "does_not_assert_current_execution_status": true
+  },
+  "prior_P135_operational_placeholder_superseded_only_in_this_private_preparation": true,
+  "unchanged_replays": [
+    {
+      "phase": "P124",
+      "kind": "saved_response_prefix_replay",
+      "attempted_programs": 20,
+      "matched_regular_boundary_programs": 20,
+      "paired_regular_boundaries": 10,
+      "frontier_programs": 0,
+      "automatic_partial_hits": 22,
+      "traces": 1,
+      "baseline_saved_backend_per_trace": 68,
+      "treatment_saved_backend_per_trace": 57,
+      "additional_model_calls": 0,
+      "environment_api_requests": 0,
+      "evaluator_calls": 0,
+      "whole_job_token_effect": null,
+      "task_success_effect": null
+    },
+    {
+      "phase": "P126",
+      "kind": "saved_response_frontier_replay",
+      "attempted_programs": 48,
+      "matched_regular_boundary_programs": 44,
+      "paired_regular_boundaries": 22,
+      "regular_boundary_ok_programs": 40,
+      "regular_boundary_known_error_programs": 4,
+      "frontier_programs": 4,
+      "automatic_partial_hits": 26,
+      "traces": 2,
+      "baseline_saved_backend_per_trace": 80,
+      "treatment_saved_backend_per_trace": 67,
+      "additional_model_calls": 0,
+      "environment_api_requests": 0,
+      "evaluator_calls": 0,
+      "whole_job_token_effect": null,
+      "task_success_effect": null
+    }
+  ],
+  "unchanged_prior_operational_failures": [
+    {
+      "phase": "P130",
+      "status": "not_started_operational_failure",
+      "planned_conditions": 4,
+      "evaluated_conditions": 0,
+      "successful_conditions": null,
+      "known_token_subtotal": null,
+      "unknown_usage_calls": null,
+      "exact_total_tokens": null,
+      "model_calls": 0,
+      "environment_api_requests": 0,
+      "evaluator_calls": 0,
+      "reason": "server port検査でmodel subprocess前に停止"
+    },
+    {
+      "phase": "P131",
+      "status": "not_started_operational_failure",
+      "planned_conditions": 2,
+      "evaluated_conditions": 0,
+      "successful_conditions": null,
+      "known_token_subtotal": null,
+      "unknown_usage_calls": null,
+      "exact_total_tokens": null,
+      "model_calls": 0,
+      "environment_api_requests": 0,
+      "evaluator_calls": 0,
+      "reason": "旧supervisor識別が新basenameを拒否し計数・生成前に停止"
+    },
+    {
+      "phase": "P134",
+      "status": "not_started_operational_failure",
+      "planned_conditions": 6,
+      "evaluated_conditions": 0,
+      "successful_conditions": null,
+      "known_token_subtotal": null,
+      "unknown_usage_calls": null,
+      "exact_total_tokens": null,
+      "model_calls": 0,
+      "environment_api_requests": 0,
+      "evaluator_calls": 0,
+      "reason": "P133 report障害で前件queueが停止、model/server/preflight/task未開始"
+    }
+  ],
+  "old_P133_reporting_recovery_preserved": {
+    "original_execution_head": "66d9eb71a1e6b8ee10b377be3bf52dca82d06cca",
+    "reporting_recovery_head": "309e2eb7d6be27dde63d97912d9bfb690e8da7db",
+    "original_stage_exits": [
+      0,
+      0,
+      1
+    ],
+    "original_collector_started": false,
+    "original_failure_sha256": "894662be4e4f6d37964e24f7626312b6f49b72d613fa2584a8e35c45f0c04b08",
+    "independent_audit": "reports/P133_closed_independent_audit_20261027_recovery_v01.json",
+    "additional_model_API_evaluator_tokenizer_calls": 0
+  },
+  "schema_note": "Missing observation counts are explicit. Known subtotal 0 with accounted_conditions 0 is an empty reported subtotal, never zero execution cost. Unreported P135 field-row counts remain null rather than inferred.",
+  "scientific_interpretation": "P135 has no successful primary pair and one quality loss against raw. P136 has no evaluated primary pair; incomplete worker costs remain outside its certified total. Neither phase establishes a field-disclosure benefit.",
+  "new_model_API_evaluator_tokenizer_calls": 0,
+  "saved_generated_code_executions": 0,
+  "original_reports_audits_index_modified": false,
+  "manuscript_written": false
+}
