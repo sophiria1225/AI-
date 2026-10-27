@@ -1,0 +1,54 @@
+{
+  "phase": "P138",
+  "status": "pass",
+  "scope": "Display/hash/visual review of the first actual rendering; not an independent scientific re-audit",
+  "checks": {
+    "twelve_unique_slots": true,
+    "all_twelve_evaluated": true,
+    "conditions_are_exact_display_projections": true,
+    "comparisons_are_exact_display_projections": true,
+    "both_fixed_gates_retained_false": true,
+    "unknown_two_conditions_not_zero_imputed": true,
+    "all_and_common_fixed_differences_stay_null": true,
+    "fixed_mode_exact_totals_not_reconstructed": true,
+    "task_four_pair_differences_stay_null": true,
+    "known_success_pair_differences_are_displayed_zero": true,
+    "outcome_counts_4_3_3": true,
+    "real_data_flag": true,
+    "all_five_rendered_artifact_hashes_match": true,
+    "both_standalone_PDF_headers": true,
+    "input_summary_hash_matches": true,
+    "adapter_complete_and_bound_sources": true,
+    "both_PNGs_visually_inspected_readable": true
+  },
+  "checks_passed": 17,
+  "checks_total": 17,
+  "adapter_invocations": 1,
+  "adapter_exit_code": 0,
+  "renderer_retries": 0,
+  "additional_model_API_evaluation_tokenizer_calls": 0,
+  "saved_generated_program_execution": 0,
+  "raw_trial_content_read": false,
+  "source_sha256": {
+    "summary.json": "82a0554c091e9e7da4c718a6e22789f435a695006cdfa0f0aee4b0b15c8da1e2",
+    "figure_data.json": "8199d41f0be3532bf259707beed5f2104144da4874da2a9c966253d55f50001d",
+    "output_manifest.json": "87cf03b0f9ae966870a40d23038189d71bbed82f2f888b0ee5659489fcabd710",
+    "closed_data_adapter_manifest.json": "6e7b3b534436c61e7e791c6cf2ad0ab2cb6c6926031f8f7f8591b2b70d7672bd"
+  },
+  "visual_review": {
+    "PNGs": 2,
+    "PDF_headers_checked": 2,
+    "PDFs_separately_rasterized": false,
+    "all_twelve_slots_visible": true,
+    "unknown_is_known_lower_bound": true,
+    "null_is_not_estimable": true,
+    "labels_clipped_or_overlapping": false
+  },
+  "interpretation_limits": [
+    "Four known tasks and one seed, not twelve independent tasks.",
+    "Failure and incomplete usage cannot establish cost savings at preserved success.",
+    "Fixed aggregate nulls are retained even where successful subset components are individually known.",
+    "A selected common-success subset is not an all-task quality result.",
+    "The renderer does not reconstruct causal cost effects or novelty."
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "phase": "P138_closed_independent_review",
+  "status": "pass",
+  "created_at": "2026-10-27T08:15:25.258648+00:00",
+  "fixed_head": "919b34e9c1a50729bbd83527263e21a407b04499",
+  "plan_sha256": "52ef2cbf864a581f4f3b93500d961f982a5a19b3e40ffb818df8225f487669cb",
+  "review_source_sha256": "5fc45f8c8c50557418771c6ca84b7e718156fc1a4bba0ce85072ec7d75af7e83",
+  "original_end_sha256": "6883f5fe02b11121b8b94e4a252c4ab11201f197d5ba448a85c490e17ce410e9",
+  "original_audit_sha256": "97aff4150e8761b60c5cc0196e802b52027de917eed50b76cc767695ad480d71",
+  "planned_slots": 12,
+  "evaluated_slots": 12,
+  "source_files": 1563,
+  "source_trees_verified": 2,
+  "collector_artifacts": 10,
+  "start_registry_ledgers": 199,
+  "start_registry_bindings": 2497,
+  "success_counts": {
+    "rolling_separate": 4,
+    "fixed_interval": 3,
+    "prefix_exposure": 3
+  },
+  "known_token_subtotals_by_mode": {
+    "rolling_separate": 785656,
+    "fixed_interval": 689271,
+    "prefix_exposure": 740529
+  },
+  "fixed_total_tokens_by_mode": {
+    "rolling_separate": null,
+    "fixed_interval": null,
+    "prefix_exposure": null
+  },
+  "recorded_unknown_usage_calls": 2,
+  "usage_count_missing_conditions": 0,
+  "rows": [
+    {
+      "task_slot": 1,
+      "run_id": "BOC_P138_01_ROLLING_SEPARATE",
+      "mode": "rolling_separate",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 139871,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "model_calls": 17,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 1,
+      "paid_focuses": 1,
+      "focus_costs": [
+        {
+          "call_ordinal": 15,
+          "cost": 18455
+        }
+      ],
+      "offered_after_calls": [
+        14
+      ],
+      "extra_native_counts": 1,
+      "signed_delta_sum": 498,
+      "positive_delta_sum": 498,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 498,
+      "final_previous_focus_cost": 18455,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 14,
+        "known_paid_focus": 1,
+        "known_paid_actor": 2
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 1,
+      "run_id": "BOC_P138_01_FIXED_INTERVAL",
+      "mode": "fixed_interval",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 139871,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "model_calls": 17,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 1,
+      "paid_focuses": 1,
+      "focus_costs": [
+        {
+          "call_ordinal": 15,
+          "cost": 18455
+        }
+      ],
+      "offered_after_calls": [
+        14
+      ],
+      "extra_native_counts": 1,
+      "signed_delta_sum": 498,
+      "positive_delta_sum": 498,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 498,
+      "final_previous_focus_cost": 18455,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 14,
+        "known_paid_focus": 1,
+        "known_paid_actor": 2
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 1,
+      "run_id": "BOC_P138_01_PREFIX_EXPOSURE",
+      "mode": "prefix_exposure",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 139871,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "model_calls": 17,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 1,
+      "paid_focuses": 1,
+      "focus_costs": [
+        {
+          "call_ordinal": 15,
+          "cost": 18455
+        }
+      ],
+      "offered_after_calls": [
+        14
+      ],
+      "extra_native_counts": 1,
+      "signed_delta_sum": 498,
+      "positive_delta_sum": 498,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 498,
+      "final_previous_focus_cost": 18455,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 14,
+        "known_paid_focus": 1,
+        "known_paid_actor": 2
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 2,
+      "run_id": "BOC_P138_02_FIXED_INTERVAL",
+      "mode": "fixed_interval",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 211110,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "model_calls": 24,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 24
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 2,
+      "run_id": "BOC_P138_02_PREFIX_EXPOSURE",
+      "mode": "prefix_exposure",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 211110,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "model_calls": 24,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 24
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 2,
+      "run_id": "BOC_P138_02_ROLLING_SEPARATE",
+      "mode": "rolling_separate",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 211110,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "model_calls": 24,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 24
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 3,
+      "run_id": "BOC_P138_03_PREFIX_EXPOSURE",
+      "mode": "prefix_exposure",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 102087,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "model_calls": 13,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 13
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 3,
+      "run_id": "BOC_P138_03_ROLLING_SEPARATE",
+      "mode": "rolling_separate",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 102087,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "model_calls": 13,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 13
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 3,
+      "run_id": "BOC_P138_03_FIXED_INTERVAL",
+      "mode": "fixed_interval",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 102087,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "model_calls": 13,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "paid_focuses": 0,
+      "focus_costs": [],
+      "offered_after_calls": [],
+      "extra_native_counts": 0,
+      "signed_delta_sum": 0,
+      "positive_delta_sum": 0,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": null,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 13
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 4,
+      "run_id": "BOC_P138_04_ROLLING_SEPARATE",
+      "mode": "rolling_separate",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 332588,
+      "input_tokens": 319446,
+      "output_tokens": 13142,
+      "cached_input_tokens": 235825,
+      "model_calls": 31,
+      "api_requests": 76,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973
+        }
+      },
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "paid_focuses": 2,
+      "focus_costs": [
+        {
+          "call_ordinal": 13,
+          "cost": 21419
+        },
+        {
+          "call_ordinal": 23,
+          "cost": 19656
+        }
+      ],
+      "offered_after_calls": [
+        12,
+        22
+      ],
+      "extra_native_counts": 15,
+      "signed_delta_sum": 66718,
+      "positive_delta_sum": 66718,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 16354,
+      "final_previous_focus_cost": 19656,
+      "contract_failed": false,
+      "exposure_accounting_complete": true,
+      "actual_decision_differences": {
+        "rolling_separate": 0,
+        "fixed_interval": 11
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 12,
+        "known_paid_focus": 2,
+        "known_paid_actor": 17
+      },
+      "unknown_call_ordinals": []
+    },
+    {
+      "task_slot": 4,
+      "run_id": "BOC_P138_04_FIXED_INTERVAL",
+      "mode": "fixed_interval",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 236203,
+      "unknown_usage_calls": 1,
+      "exact_total_tokens": null,
+      "input_tokens": 219765,
+      "output_tokens": 16438,
+      "cached_input_tokens": 133831,
+      "model_calls": 22,
+      "api_requests": 41,
+      "usage_by_role": {
+        "agent": {
+          "calls": 19,
+          "unknown_usage": 1,
+          "input_tokens": 174061,
+          "output_tokens": 12117
+        },
+        "focus": {
+          "calls": 3,
+          "unknown_usage": 0,
+          "input_tokens": 45704,
+          "output_tokens": 4321
+        }
+      },
+      "stop_reason": "wall_limit_during_model_call",
+      "checkpoint_installations": 2,
+      "paid_focuses": 3,
+      "focus_costs": [
+        {
+          "call_ordinal": 13,
+          "cost": 21419
+        },
+        {
+          "call_ordinal": 17,
+          "cost": 13382
+        },
+        {
+          "call_ordinal": 21,
+          "cost": 15224
+        }
+      ],
+      "offered_after_calls": [
+        12,
+        16,
+        20
+      ],
+      "extra_native_counts": 4,
+      "signed_delta_sum": 9607,
+      "positive_delta_sum": 9607,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 0,
+      "final_previous_focus_cost": 15224,
+      "contract_failed": false,
+      "exposure_accounting_complete": false,
+      "actual_decision_differences": {
+        "rolling_separate": 2,
+        "fixed_interval": 0
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 12,
+        "known_paid_focus": 3,
+        "known_paid_actor": 6,
+        "unknown_terminal": 1
+      },
+      "unknown_call_ordinals": [
+        22
+      ]
+    },
+    {
+      "task_slot": 4,
+      "run_id": "BOC_P138_04_PREFIX_EXPOSURE",
+      "mode": "prefix_exposure",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 287461,
+      "unknown_usage_calls": 1,
+      "exact_total_tokens": null,
+      "input_tokens": 272267,
+      "output_tokens": 15194,
+      "cached_input_tokens": 191532,
+      "model_calls": 28,
+      "api_requests": 76,
+      "usage_by_role": {
+        "agent": {
+          "calls": 26,
+          "unknown_usage": 1,
+          "input_tokens": 237057,
+          "output_tokens": 12034
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35210,
+          "output_tokens": 3160
+        }
+      },
+      "stop_reason": "wall_limit_during_model_call",
+      "checkpoint_installations": 2,
+      "paid_focuses": 2,
+      "focus_costs": [
+        {
+          "call_ordinal": 13,
+          "cost": 21419
+        },
+        {
+          "call_ordinal": 20,
+          "cost": 16951
+        }
+      ],
+      "offered_after_calls": [
+        12,
+        19
+      ],
+      "extra_native_counts": 11,
+      "signed_delta_sum": 37724,
+      "positive_delta_sum": 37724,
+      "negative_delta_count": 0,
+      "final_accumulated_exposure": 15418,
+      "final_previous_focus_cost": 16951,
+      "contract_failed": false,
+      "exposure_accounting_complete": false,
+      "actual_decision_differences": {
+        "rolling_separate": 1,
+        "fixed_interval": 8
+      },
+      "event_status_counts": {
+        "known_actor_before_first_paid_focus": 12,
+        "known_paid_focus": 2,
+        "known_paid_actor": 13,
+        "unknown_terminal": 1
+      },
+      "unknown_call_ordinals": [
+        28
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "rolling_separate",
+      "all_four_pairs_complete_with_known_usage": false,
+      "all_task_token_difference": null,
+      "common_success_token_difference": null,
+      "changed_decision_on_common_success": false,
+      "comparison_gate_met": false,
+      "common_success_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "pairs": [
+        {
+          "baseline": "rolling_separate",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 1
+        },
+        {
+          "baseline": "rolling_separate",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 2
+        },
+        {
+          "baseline": "rolling_separate",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 3
+        },
+        {
+          "baseline": "rolling_separate",
+          "baseline_success": true,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": true,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "decision_differences": 1,
+          "task_slot": 4
+        }
+      ],
+      "descriptive_common_known_pair_delta_not_fixed_gate_value": 0
+    },
+    {
+      "baseline": "fixed_interval",
+      "all_four_pairs_complete_with_known_usage": false,
+      "all_task_token_difference": null,
+      "common_success_token_difference": null,
+      "changed_decision_on_common_success": false,
+      "comparison_gate_met": false,
+      "common_success_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "pairs": [
+        {
+          "baseline": "fixed_interval",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 1
+        },
+        {
+          "baseline": "fixed_interval",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 2
+        },
+        {
+          "baseline": "fixed_interval",
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "decision_differences": 0,
+          "task_slot": 3
+        },
+        {
+          "baseline": "fixed_interval",
+          "baseline_success": false,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": false,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "decision_differences": 8,
+          "task_slot": 4
+        }
+      ],
+      "descriptive_common_known_pair_delta_not_fixed_gate_value": 0
+    }
+  ],
+  "primary_utility_gate_met": false,
+  "both_control_development_gate_met": false,
+  "total_model_calls": 243,
+  "total_API_requests": 613,
+  "total_known_tokens": 2215456,
+  "total_extra_native_counts": 33,
+  "checks_passed": 15073,
+  "check_labels_sha256": "b7f51b6ddb11771542c9cd530eecabeb25706adc7858e8c8666cacc4aeeef07e",
+  "input_bindings_sha256": "9f25e08cae500d0e62fdffd804397d146f5d11f35256e4de025e0423bbc3c24c",
+  "reviewed_unknown_calls": 2,
+  "all_original_inputs_unchanged": true,
+  "original_results_modified": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "producer_auditor_builder_renderer_executions": 0,
+  "saved_generated_program_executions": 0,
+  "limitations": [
+    "This independently checks saved dispatch/usage metadata, arithmetic, hash linkage and policy decisions. It does not re-run original auditors, reconstruct message text, render/tokenize requests or execute generated task code.",
+    "Native count correctness, actual request-to-counterfactual message construction, whole-turn grammar and checkpoint formatter/parser semantics remain dependent on frozen producer/auditor code and recorder evidence. Only recorded hashes and numeric differences were cross-linked here.",
+    "Request/response files were byte-hashed without parsing their bodies. Terminal usage numbers were checked against admission/usage ledgers, not re-extracted from raw model response bodies. No credential, private reasoning or evaluator body was interpreted.",
+    "Official success booleans and evaluation-summary hashes are preserved; evaluator execution and database content were not independently inspected.",
+    "PID absence is checked at review time and may conservatively reject reused PIDs. Server wall/RSS/swap detailed arithmetic is not re-audited here; the original session report is hash-bound.",
+    "Actual-dispatch decision differences concern each realized history, not another-policy rollout or proof of achievable savings. All common-success fixed aggregates retain the preregistered complete-pair null rule.",
+    "Only one seed on four known tasks. False scientific gates are results, not integrity-review failures; no novelty, preserved quality or amortization guarantee follows."
+  ]
+}
