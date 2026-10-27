@@ -407,6 +407,8 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+P137全4閉鎖・成功0。既知674129＋unknown1、厳密総費用null。seed157各102035/双方失敗差0・共通成功0、seed57 fields単独368024＋unknown1。採用評価false/P136非合算。docs/experiments/P137_findings.md参照。
+
 【結果一覧 v02：P135/P136の閉鎖値を追補】
 元7cohort56行を保持し正規公開12行だけを追加、9cohort68予定・63評価。unknown8呼出しとusage件数欠測5条件を分離、P136別補足223145は非加算。P137は固定開始記録と予定4未収録placeholderのみ、現在の進捗や結果は示さず、旧欠測/gateを置換しない。phase横断効果や独立標本へpoolしない。
 https://github.com/sophiria1225/AI-/blob/main/docs/closed_results_index_20261027_v02.md
@@ -549,6 +551,8 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 **他候補の扱い**: 広いデータ導入、多数のモデル比較、万能な再編システムの完成を先行させない。圧縮後の再取得費用や適応的圧縮という既知の一般論だけを新規性にしない。
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
+
+P137全4閉鎖・成功0。既知674129＋unknown1、厳密総費用null。seed157各102035/双方失敗差0・共通成功0、seed57 fields単独368024＋unknown1。採用評価false/P136非合算。docs/experiments/P137_findings.md参照。
 
 【結果一覧 v02：P135/P136の閉鎖値を追補】
 元7cohort56行を保持し正規公開12行だけを追加、9cohort68予定・63評価。unknown8呼出しとusage件数欠測5条件を分離、P136別補足223145は非加算。P137は固定開始記録と予定4未収録placeholderのみ、現在の進捗や結果は示さず、旧欠測/gateを置換しない。phase横断効果や独立標本へpoolしない。

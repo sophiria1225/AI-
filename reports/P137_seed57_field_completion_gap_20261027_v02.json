@@ -1,0 +1,324 @@
+{
+  "phase": "P137",
+  "diagnostic": "seed57_observed_field_completion_vs_saved_execution_gap",
+  "status": "complete_limited_postclosure_diagnostic",
+  "replication": 1,
+  "model_seed": 57,
+  "mode": "entity_fields",
+  "same_cohort_paired_comparison": false,
+  "fixed_review_sha256": "9997c9f484aa2c10d58555dc1f50d382b33162845f189edf242ff5d411d45813",
+  "original_report_sha256": "f65d5502c61f5e67a39a83f94d2c0f22cc0e3384d1f4e318bb9bd4872732811e",
+  "original_official_success": false,
+  "original_stop_reason": "wall_limit_during_model_call",
+  "original_record_status": "evaluated",
+  "original_unknown_usage_calls": 1,
+  "captures": [
+    {
+      "capture_index": 0,
+      "checkpoint_revision": 1,
+      "after_record_count": 40,
+      "last_observed_program_call": "call_012",
+      "enumeration": "closed",
+      "taint_reason_count": 0,
+      "source_complete": {
+        "song": true,
+        "album": true,
+        "playlist": true
+      },
+      "counts": {
+        "target_entities": 72,
+        "complete_entities": 25,
+        "pending_entities": 47,
+        "missing_title": 44,
+        "missing_artists": 47,
+        "missing_artist_name_entities": 3,
+        "retired_field_obligations": 53
+      },
+      "all_required_fields_observed": false,
+      "official_task_success_claimed_by_capture": false,
+      "notice_model_call": "call_014",
+      "notice_dispatched": true,
+      "notice_terminal_usage_recorded": true,
+      "notice_usage_unknown": false,
+      "displayed_ID_rows": 16,
+      "displayed_missing_field_rows": 16,
+      "packet_sha256": "efcd0dfba70e943d6bdea1fff462bf845d91ca12d78acbc336e7f906e0b658e6"
+    },
+    {
+      "capture_index": 1,
+      "checkpoint_revision": 2,
+      "after_record_count": 80,
+      "last_observed_program_call": "call_021",
+      "enumeration": "closed",
+      "taint_reason_count": 0,
+      "source_complete": {
+        "song": true,
+        "album": true,
+        "playlist": true
+      },
+      "counts": {
+        "target_entities": 72,
+        "complete_entities": 72,
+        "pending_entities": 0,
+        "missing_title": 0,
+        "missing_artists": 0,
+        "missing_artist_name_entities": 0,
+        "retired_field_obligations": 144
+      },
+      "all_required_fields_observed": true,
+      "official_task_success_claimed_by_capture": false,
+      "notice_model_call": "call_023",
+      "notice_dispatched": true,
+      "notice_terminal_usage_recorded": true,
+      "notice_usage_unknown": false,
+      "displayed_ID_rows": 0,
+      "displayed_missing_field_rows": 0,
+      "packet_sha256": "f76b24bae710a8c65bda87f4b43376530ffe1d27d324bec298570a670e48bd57"
+    }
+  ],
+  "observed_output_actions": {
+    "file_create_or_update_sent_requests": 0,
+    "spotify_account_deletion_sent_requests": 0,
+    "endpoints_checked": [
+      "file_system__create_file",
+      "file_system__update_file",
+      "spotify__delete_account"
+    ],
+    "no_sent_output_write_or_account_deletion_observed": true
+  },
+  "terminal_boundary": {
+    "last_saved_API_call": "call_033",
+    "last_saved_API_endpoint": "file_system__directory_exists",
+    "last_saved_API_typed_status": "returned",
+    "directory_result_value_interpreted": false,
+    "next_model_call": "call_034",
+    "next_model_usage_status": "unknown",
+    "new_action_from_unknown_completion_inferred": false
+  },
+  "conclusion": "Required title/artists information was observed for all 72 targets at the second saved capture, but no file create/update or account deletion was sent in the saved API record. Subsequent recorded execution remained in file-service discovery/authentication/directory operations and ended at a model-call wall limit. Field coverage is not evidence of a completed CSV or account cleanup.",
+  "limitations": [
+    "This reads saved capture/dispatch/API metadata and 11 later program ASTs; it does not recompute field values or re-audit the full trace.",
+    "Returned denotes a typed API return, not proof that the directory existed or a task subgoal succeeded.",
+    "No output file or task database was read. Absence of the listed recorded API writes is not a universal proof about arbitrary filesystem effects.",
+    "Syntax call sites include unreached calls and are not dispatch counts. The AST filter is finite, not a general side-effect analysis.",
+    "The unknown final model completion supplies no evidence of any later action. Its usage remains unknown.",
+    "Official failure and the fixed gate are retained; this is not a redefinition of success or a new causal/quality claim.",
+    "No new cost is added to the certified table; checkpoint field counts and resource cleanup do not replace the task account-deletion requirement."
+  ],
+  "operations": {
+    "model_calls": 0,
+    "API_requests": 0,
+    "tokenizer_calls": 0,
+    "evaluations": 0,
+    "saved_generated_code_executions": 0,
+    "producer_auditor_reruns": 0,
+    "private_reasoning_semantically_read": 0,
+    "evaluation_body_reads": 0,
+    "database_reads": 0,
+    "heldout_task_reads": 0,
+    "original_artifact_edits": 0
+  },
+  "regular_accounting_modified": false,
+  "new_candidate_proposed": false,
+  "diagnostic_revision": 2,
+  "prior_diagnostic_sha256": "ecc6024a389974f1a6823be87b0645be1d06921741c08bc45b8a76eecbac3825",
+  "revision_change": "Adds sanitized classification of the five post-capture execution errors from already-bound public tool observations; original counts and results unchanged.",
+  "new_input_files_for_revision": [],
+  "post_second_capture": {
+    "Python_programs": 11,
+    "normal_programs": 6,
+    "execution_error_programs": 5,
+    "API_records": 12,
+    "sent_API_requests": 11,
+    "returned_API_requests": 7,
+    "raised_API_requests": 4,
+    "unsent_tool_rejections": 1,
+    "API_endpoint_status_counts": [
+      {
+        "endpoint": "api_docs__show_api_descriptions",
+        "sent": true,
+        "typed_status": "returned",
+        "effects_unknown": false,
+        "count": 1
+      },
+      {
+        "endpoint": "api_docs__show_api_doc",
+        "sent": true,
+        "typed_status": "returned",
+        "effects_unknown": false,
+        "count": 2
+      },
+      {
+        "endpoint": "file_system__directory_exists",
+        "sent": true,
+        "typed_status": "raised",
+        "effects_unknown": false,
+        "count": 3
+      },
+      {
+        "endpoint": "file_system__directory_exists",
+        "sent": true,
+        "typed_status": "returned",
+        "effects_unknown": false,
+        "count": 1
+      },
+      {
+        "endpoint": "file_system__list_directory",
+        "sent": false,
+        "typed_status": null,
+        "effects_unknown": false,
+        "count": 1
+      },
+      {
+        "endpoint": "file_system__login",
+        "sent": true,
+        "typed_status": "raised",
+        "effects_unknown": false,
+        "count": 1
+      },
+      {
+        "endpoint": "file_system__login",
+        "sent": true,
+        "typed_status": "returned",
+        "effects_unknown": false,
+        "count": 2
+      },
+      {
+        "endpoint": "supervisor__show_account_passwords",
+        "sent": true,
+        "typed_status": "returned",
+        "effects_unknown": false,
+        "count": 1
+      }
+    ],
+    "program_calls": [
+      {
+        "call": "call_023",
+        "execution_status": "ok"
+      },
+      {
+        "call": "call_024",
+        "execution_status": "execution_error"
+      },
+      {
+        "call": "call_025",
+        "execution_status": "ok"
+      },
+      {
+        "call": "call_026",
+        "execution_status": "ok"
+      },
+      {
+        "call": "call_027",
+        "execution_status": "execution_error"
+      },
+      {
+        "call": "call_028",
+        "execution_status": "execution_error"
+      },
+      {
+        "call": "call_029",
+        "execution_status": "ok"
+      },
+      {
+        "call": "call_030",
+        "execution_status": "execution_error"
+      },
+      {
+        "call": "call_031",
+        "execution_status": "ok"
+      },
+      {
+        "call": "call_032",
+        "execution_status": "execution_error"
+      },
+      {
+        "call": "call_033",
+        "execution_status": "ok"
+      }
+    ],
+    "finite_AST_check": {
+      "parsed_programs": 11,
+      "direct_open_or_write_or_CSV_writer_syntax_sites": 0,
+      "scope": "Only listed post-second-capture program ASTs; not general side-effect proof."
+    }
+  },
+  "post_second_capture_error_classification": [
+    {
+      "call": "call_024",
+      "outer_exception_class": "RuntimeError",
+      "API_endpoint": "file_system__list_directory",
+      "API_request_sent": false,
+      "API_typed_status": null,
+      "HTTP_status": null,
+      "classification": "tool_not_in_supplied_public_schema",
+      "interpretation": "The requested tool was rejected before dispatch. This does not establish that the endpoint is globally nonexistent.",
+      "NameError_observed": false,
+      "SyntaxError_observed": false,
+      "TypeError_observed": false
+    },
+    {
+      "call": "call_027",
+      "outer_exception_class": "RuntimeError",
+      "API_endpoint": "file_system__directory_exists",
+      "API_request_sent": true,
+      "API_typed_status": "raised",
+      "HTTP_status": 401,
+      "classification": "authentication_token_missing_or_invalid",
+      "interpretation": "The API reported an absent or invalid authentication token; no credential value or more specific cause is inferred.",
+      "NameError_observed": false,
+      "SyntaxError_observed": false,
+      "TypeError_observed": false
+    },
+    {
+      "call": "call_028",
+      "outer_exception_class": "RuntimeError",
+      "API_endpoint": "file_system__login",
+      "API_request_sent": true,
+      "API_typed_status": "raised",
+      "HTTP_status": 401,
+      "classification": "login_credentials_rejected",
+      "interpretation": "The API rejected the supplied credentials; their content and origin are not disclosed.",
+      "NameError_observed": false,
+      "SyntaxError_observed": false,
+      "TypeError_observed": false
+    },
+    {
+      "call": "call_030",
+      "outer_exception_class": "RuntimeError",
+      "API_endpoint": "file_system__directory_exists",
+      "API_request_sent": true,
+      "API_typed_status": "raised",
+      "HTTP_status": 401,
+      "classification": "authentication_token_missing_or_invalid",
+      "interpretation": "The API reported an absent or invalid authentication token; no credential value or more specific cause is inferred.",
+      "NameError_observed": false,
+      "SyntaxError_observed": false,
+      "TypeError_observed": false
+    },
+    {
+      "call": "call_032",
+      "outer_exception_class": "RuntimeError",
+      "API_endpoint": "file_system__directory_exists",
+      "API_request_sent": true,
+      "API_typed_status": "raised",
+      "HTTP_status": 401,
+      "classification": "authentication_token_missing_or_invalid",
+      "interpretation": "The API reported an absent or invalid authentication token; no credential value or more specific cause is inferred.",
+      "NameError_observed": false,
+      "SyntaxError_observed": false,
+      "TypeError_observed": false
+    }
+  ],
+  "error_classification_summary": {
+    "not_in_supplied_public_schema": 1,
+    "HTTP_401_authentication_token_missing_or_invalid": 3,
+    "HTTP_401_login_credentials_rejected": 1,
+    "undefined_symbol_error_observed": 0,
+    "argument_schema_error_observed": 0,
+    "environment_IO_error_observed": 0,
+    "syntax_error_observed": 0,
+    "zero_observed_categories_are_not_global_absence_proofs": true
+  },
+  "cost_table_changes": 0
+}

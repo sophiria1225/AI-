@@ -1,8 +1,10 @@
-# 現在の研究状態：P137全4条件の追加観測を開始
+# 現在の研究状態：P137全4評価・成功0、結果公開
+
+P137は全4条件を閉鎖・評価し成功0。seed57 fieldsは368,024既知tokens＋unknown1、seed157の3方式は各102,035確定で双方失敗の差0・共通成功0組。全体既知674,129＋unknown1で厳密総費用null。seed57単独／seed157だけの記述的比較、採用評価false・旧P136非合算を保持。 [P137閉鎖結果](experiments/P137_findings.md)。追加seedや同条件反復で救済せず、原稿本文は未変更。
 
 [閉鎖結果一覧 v02](closed_results_index_20261027_v02.md)：元7cohort・56行を保持しP135/P136の12行だけを追加、計9cohort・68予定条件／63評価。記録済unknown8呼出しとusage件数欠測5条件を分け、P136補足223,145は非加算。P137は固定開始リンクと「本一覧に未収録」の4予定placeholderのみ。phase横断の合計を効果や独立標本へ解釈しない。
 
-P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この記録に閉鎖結果は未収録で、実行中の成否・usage・生成内容は読まない。 [P137開始記録](experiments/P137_execution_start_20261027.md)。
+開始時点の記録：P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この開始公開時点では閉鎖結果を未収録とし、当時の実行中の成否・usage・生成内容は読まずに記録した。 [P137開始記録](experiments/P137_execution_start_20261027.md)。
 
 seed57はfields単独、seed157だけが3方式の記述的比較。P136の元6行・欠測・gate falseは置換・合算しない。新P137の採用判定も行わない。初期raw interface・機構は同じで、timeoutの記録経路とworker終了状態を修正。各80calls/450000tokens/1800作業秒/API80、全4最大320calls/1800000tokens/API320/評価4、server4時間・18:00 JST上限。開始196台帳/2433束縛・1547 sourceを固定する。
 

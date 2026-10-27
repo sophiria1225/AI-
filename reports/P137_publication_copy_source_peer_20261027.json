@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "scope": "Limited independent source and version-diff review of the P137 publication packaging and copy protocol.",
+  "source_sha256": {
+    "p137_publication_packaging_20261027.py": "4d9d10305d12027e9d06581ab685efb9b921d6679fa09d4e37a25759137309ef",
+    "copy_p137_results_once_20261027.py": "8e78221497b3b8cbc1b6a4647b401595e3cda089ea9a46f000c249d40bfb2306"
+  },
+  "checks": [
+    "P137 fixed head, plan, 1547 source count and original 196/2433 snapshot",
+    "Four explicit condition identities and order; seed57 unpaired flag retained",
+    "Three terminal markers precede results and figure reads",
+    "Root-provided expected independent review output SHA required",
+    "Fixed reviewer, waiter and collector lineage and closure byte binding",
+    "Original audit errors preserved as exact nonnegative integers",
+    "Fixed completed figure manifest and data bytes",
+    "Eight collector, nine figure and one renderer file allowlist",
+    "Original run/prep source and ledger bytes verified",
+    "No old P135 supplementary copy accepted",
+    "Private review rows, source paths and free-form check labels omitted",
+    "Public rows validated using fixed renderer strict schema without rendering",
+    "P137 server PID obtained from session-bound stopped server metadata",
+    "Exact positive owned PIDs must be absent; no process control",
+    "Ancestor symlink rejection and strict relative paths",
+    "Parsed objects and byte hashes use same input reads",
+    "Exclusive once/staging/destination creation; failures retained without retry",
+    "Read-only source review only; no copier invocation"
+  ],
+  "check_count": 18,
+  "blockers": [],
+  "actual_copy_executed": false,
+  "producer_or_renderer_reexecuted": false,
+  "additional_model_API_evaluation_tokenizer_calls": 0,
+  "limits": [
+    "Trusted local operation, not a sandbox against malicious concurrent writers or modified standard libraries.",
+    "Nested aggregate contents still require the separate numerical and human privacy review.",
+    "Source-only approval does not assert actual copy completion."
+  ]
+}

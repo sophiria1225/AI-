@@ -1,0 +1,715 @@
+{
+  "status": "pass",
+  "phase": "P137",
+  "reviewed_at": "2026-10-27T04:18:54.798997+00:00",
+  "fixed_head": "a6c088f8f382521010ff264ffe22f52d2146314e",
+  "plan_sha256": "9b8b020c83bf1d996b4d977a628831c46da4d7a0e469a3cf2b8f0e18916720f1",
+  "collector_complete_seen_before_trial_read": true,
+  "collector_end_sha256": "9433a7b5439c5e195cdb40d09647da1df83dfe01eef2937dd730ecb631cce2ac",
+  "start_registry_ledgers": 196,
+  "start_registry_bindings": 2433,
+  "all_conditions": {
+    "measures": {
+      "api_requests": {
+        "known_subtotal": 311,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 311
+      },
+      "model_calls": {
+        "known_subtotal": 64,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 64
+      },
+      "input_tokens": {
+        "known_subtotal": 646903,
+        "reported_conditions": 4,
+        "exact_all_condition_total": null
+      },
+      "output_tokens": {
+        "known_subtotal": 27226,
+        "reported_conditions": 4,
+        "exact_all_condition_total": null
+      },
+      "cached_input_tokens": {
+        "known_subtotal": 497206,
+        "reported_conditions": 4,
+        "exact_all_condition_total": null
+      },
+      "setup_wall_seconds": {
+        "known_subtotal": 7.247287832084112,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 7.247287832084112
+      },
+      "wall_seconds": {
+        "known_subtotal": 2896.2046727489796,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 2896.2046727489796
+      },
+      "cleanup_wall_seconds": {
+        "known_subtotal": 4.6686745000770316,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 4.6686745000770316
+      },
+      "full_wall_seconds": {
+        "known_subtotal": 2908.14040225005,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 2908.14040225005
+      },
+      "obligation_runtime_wall_seconds": {
+        "known_subtotal": 0.0151763676549308,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 0.0151763676549308
+      },
+      "obligation_notice_actor_calls": {
+        "known_subtotal": 2,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 2
+      },
+      "obligation_entity_rows_exposed": {
+        "known_subtotal": 16,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 16
+      },
+      "obligation_field_rows_exposed": {
+        "known_subtotal": 16,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 16
+      },
+      "obligation_checkpoint_captures": {
+        "known_subtotal": 2,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 2
+      },
+      "obligation_queries": {
+        "known_subtotal": 0,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 0
+      },
+      "obligation_query_rejections": {
+        "known_subtotal": 0,
+        "reported_conditions": 4,
+        "exact_all_condition_total": 0
+      }
+    },
+    "planned_conditions": 4,
+    "accounted_conditions": 4,
+    "evaluated_conditions": 4,
+    "successful_conditions": 0,
+    "known_token_subtotal": 674129,
+    "recorded_unknown_usage_calls": 1,
+    "unknown_usage_count_missing_conditions": 0,
+    "exact_total_tokens": null,
+    "all_condition_usage_known": false
+  },
+  "by_policy": {
+    "raw_anchor": {
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 80,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 80
+        },
+        "model_calls": {
+          "known_subtotal": 10,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 10
+        },
+        "input_tokens": {
+          "known_subtotal": 98248,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 98248
+        },
+        "output_tokens": {
+          "known_subtotal": 3787,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 3787
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 81914,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 81914
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 1.8160314580309205,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 1.8160314580309205
+        },
+        "wall_seconds": {
+          "known_subtotal": 365.55414108297555,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 365.55414108297555
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 0.9955923749948852,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0.9955923749948852
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 368.36860099999467,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 368.36860099999467
+        },
+        "obligation_runtime_wall_seconds": {
+          "known_subtotal": 0.0035238760174252093,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0.0035238760174252093
+        },
+        "obligation_notice_actor_calls": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_entity_rows_exposed": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_field_rows_exposed": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_checkpoint_captures": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_queries": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_query_rejections": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        }
+      },
+      "planned_conditions": 1,
+      "accounted_conditions": 1,
+      "evaluated_conditions": 1,
+      "successful_conditions": 0,
+      "known_token_subtotal": 102035,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 102035,
+      "all_condition_usage_known": true
+    },
+    "ids_only": {
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 80,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 80
+        },
+        "model_calls": {
+          "known_subtotal": 10,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 10
+        },
+        "input_tokens": {
+          "known_subtotal": 98248,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 98248
+        },
+        "output_tokens": {
+          "known_subtotal": 3787,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 3787
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 81914,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 81914
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 1.8229349160101265,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 1.8229349160101265
+        },
+        "wall_seconds": {
+          "known_subtotal": 365.4782933749957,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 365.4782933749957
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 1.009256292018108,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 1.009256292018108
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 368.31368083303096,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 368.31368083303096
+        },
+        "obligation_runtime_wall_seconds": {
+          "known_subtotal": 0.003533455717843026,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0.003533455717843026
+        },
+        "obligation_notice_actor_calls": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_entity_rows_exposed": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_field_rows_exposed": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_checkpoint_captures": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_queries": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        },
+        "obligation_query_rejections": {
+          "known_subtotal": 0,
+          "reported_conditions": 1,
+          "exact_all_condition_total": 0
+        }
+      },
+      "planned_conditions": 1,
+      "accounted_conditions": 1,
+      "evaluated_conditions": 1,
+      "successful_conditions": 0,
+      "known_token_subtotal": 102035,
+      "recorded_unknown_usage_calls": 0,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": 102035,
+      "all_condition_usage_known": true
+    },
+    "entity_fields": {
+      "measures": {
+        "api_requests": {
+          "known_subtotal": 151,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 151
+        },
+        "model_calls": {
+          "known_subtotal": 44,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 44
+        },
+        "input_tokens": {
+          "known_subtotal": 450407,
+          "reported_conditions": 2,
+          "exact_all_condition_total": null
+        },
+        "output_tokens": {
+          "known_subtotal": 19652,
+          "reported_conditions": 2,
+          "exact_all_condition_total": null
+        },
+        "cached_input_tokens": {
+          "known_subtotal": 333378,
+          "reported_conditions": 2,
+          "exact_all_condition_total": null
+        },
+        "setup_wall_seconds": {
+          "known_subtotal": 3.608321458043065,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 3.608321458043065
+        },
+        "wall_seconds": {
+          "known_subtotal": 2165.1722382910084,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 2165.1722382910084
+        },
+        "cleanup_wall_seconds": {
+          "known_subtotal": 2.6638258330640383,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 2.6638258330640383
+        },
+        "full_wall_seconds": {
+          "known_subtotal": 2171.4581204170245,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 2171.4581204170245
+        },
+        "obligation_runtime_wall_seconds": {
+          "known_subtotal": 0.008119035919662565,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 0.008119035919662565
+        },
+        "obligation_notice_actor_calls": {
+          "known_subtotal": 2,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 2
+        },
+        "obligation_entity_rows_exposed": {
+          "known_subtotal": 16,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 16
+        },
+        "obligation_field_rows_exposed": {
+          "known_subtotal": 16,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 16
+        },
+        "obligation_checkpoint_captures": {
+          "known_subtotal": 2,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 2
+        },
+        "obligation_queries": {
+          "known_subtotal": 0,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 0
+        },
+        "obligation_query_rejections": {
+          "known_subtotal": 0,
+          "reported_conditions": 2,
+          "exact_all_condition_total": 0
+        }
+      },
+      "planned_conditions": 2,
+      "accounted_conditions": 2,
+      "evaluated_conditions": 2,
+      "successful_conditions": 0,
+      "known_token_subtotal": 470059,
+      "recorded_unknown_usage_calls": 1,
+      "unknown_usage_count_missing_conditions": 0,
+      "exact_total_tokens": null,
+      "all_condition_usage_known": false
+    }
+  },
+  "independent_criteria": {
+    "all_four_complete_with_known_usage": false,
+    "all_four_evaluated": true,
+    "primary_comparison": {
+      "baseline": "ids_only",
+      "candidate": "entity_fields",
+      "scope": "same_cohort_seed157_only",
+      "paired_results": [
+        {
+          "replication": 2,
+          "model_seed": 157,
+          "baseline_success": false,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "both_successful": false,
+          "success_lost": false,
+          "quality_transition": "both_failed",
+          "candidate_minus_baseline_tokens": 0
+        }
+      ],
+      "comparable_model_seeds": [
+        157
+      ],
+      "both_pairs_evaluated": true,
+      "both_pairs_usage_known": true,
+      "paired_success_losses": 0,
+      "paired_successful_task_seed_pairs": 0,
+      "candidate_minus_baseline_whole_task_tokens": 0,
+      "paired_successful_token_difference": null,
+      "costs_by_quality_transition": {
+        "common_success": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "quality_gain": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "quality_loss": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "both_failed": {
+          "pairs": 1,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "not_both_evaluated": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        }
+      }
+    },
+    "raw_anchor_comparison": {
+      "baseline": "raw_anchor",
+      "candidate": "entity_fields",
+      "scope": "same_cohort_seed157_only",
+      "paired_results": [
+        {
+          "replication": 2,
+          "model_seed": 157,
+          "baseline_success": false,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "both_successful": false,
+          "success_lost": false,
+          "quality_transition": "both_failed",
+          "candidate_minus_baseline_tokens": 0
+        }
+      ],
+      "comparable_model_seeds": [
+        157
+      ],
+      "both_pairs_evaluated": true,
+      "both_pairs_usage_known": true,
+      "paired_success_losses": 0,
+      "paired_successful_task_seed_pairs": 0,
+      "candidate_minus_baseline_whole_task_tokens": 0,
+      "paired_successful_token_difference": null,
+      "costs_by_quality_transition": {
+        "common_success": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "quality_gain": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "quality_loss": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "both_failed": {
+          "pairs": 1,
+          "candidate_minus_baseline_tokens": 0
+        },
+        "not_both_evaluated": {
+          "pairs": 0,
+          "candidate_minus_baseline_tokens": 0
+        }
+      }
+    },
+    "no_paired_success_loss_against_either_control": true,
+    "field_rows_exposed_on_primary_common_success": null,
+    "mechanism_contracts_intact": true,
+    "seed57_unpaired_result": {
+      "run_id": "BOC_P137_R01_01_ENTITY_FIELDS",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 368024,
+      "unknown_usage_calls": 1,
+      "obligation_field_rows_exposed": 16
+    },
+    "planned_rows": 4,
+    "independent_tasks": 1,
+    "repetitions": 2,
+    "balanced_repetitions": false,
+    "model_seeds": [
+      57,
+      157
+    ],
+    "development_gate_met": false,
+    "scientific_adoption_evaluated": false,
+    "original_P136_gate_replaced": false,
+    "prior_results_pooled": false,
+    "novel_method_claim": false,
+    "general_quality_preservation_claim": false,
+    "audit_errors_present": false,
+    "interpretation": "Four originally unrun slots only; no P136 row is replaced. Seed157 has one within-cohort three-arm descriptive comparison. Seed57 entity-fields is unpaired. All failures, unknown usage, summary/disclosure costs remain. No original six-slot adoption gate is evaluated or passed."
+  },
+  "development_gate_met": false,
+  "scientific_adoption_evaluated": false,
+  "prior_results_pooled": false,
+  "seed57_is_unpaired": true,
+  "independent_memory_sample_coverage": {
+    "memory_sample_count": 590,
+    "missing_rss_samples": 0,
+    "missing_swap_samples": 0,
+    "observed_rss_peak_or_null": 235841748992,
+    "observed_swap_peak_or_null": 218691010.56,
+    "baseline_system_swap_bytes": 218691010.56
+  },
+  "audit_errors_preserved": 0,
+  "runtime_actor_reexecuted": false,
+  "producer_auditor_reexecuted": false,
+  "native_history_reconstruction_uses_fixed_producer_audit": true,
+  "obligation_prefix_and_actor_exposure_recomputed": true,
+  "queries_verified_empty": true,
+  "notice_encoder_and_public_monitor_shared_with_producer": true,
+  "host_clock_observation_is_not_independent_clock": true,
+  "private_reasoning_inspected_semantically": false,
+  "evaluation_text_read": false,
+  "database_contents_read": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "observed_field_completion_is_not_official_task_success": true,
+  "novelty_established": false,
+  "public_snapshot_handles_exposed": false,
+  "initial_query_guide_and_tool_added": false,
+  "common_notice_bytes_not_assumed_identical": true,
+  "first_divergence_not_attributed_to_entity_content_alone": true,
+  "review_script_sha256": "7b58a7b2dbb5dd6a629445ac79cf59432798eead443e8f3a0b078a41ae71f47e",
+  "checks_passed": 46808,
+  "check_count": 46808,
+  "rows": [
+    {
+      "run_id": "BOC_P137_R01_01_ENTITY_FIELDS",
+      "replication": 1,
+      "model_seed": 57,
+      "obligation_mode": "entity_fields",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 368024,
+      "unknown_usage_calls": 1,
+      "api_requests": 71,
+      "model_calls": 34,
+      "checkpoint_installations": 2,
+      "obligation_checkpoint_captures": 2,
+      "obligation_notice_actor_calls": 2,
+      "obligation_entity_rows_exposed": 16,
+      "obligation_field_rows_exposed": 16,
+      "obligation_queries": 0,
+      "obligation_query_rejections": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_runtime_wall_seconds": 0.004605283960700035,
+      "obligation_final_enumeration": "closed",
+      "usage_by_role": {
+        "agent": {
+          "calls": 32,
+          "unknown_usage": 1,
+          "input_tokens": 312693,
+          "output_tokens": 13377
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 39466,
+          "output_tokens": 2488
+        }
+      },
+      "exact_total_tokens": null
+    },
+    {
+      "run_id": "BOC_P137_R02_01_ENTITY_FIELDS",
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "entity_fields",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "api_requests": 80,
+      "model_calls": 10,
+      "checkpoint_installations": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_field_rows_exposed": 0,
+      "obligation_queries": 0,
+      "obligation_query_rejections": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_runtime_wall_seconds": 0.00351375195896253,
+      "obligation_final_enumeration": "closed",
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "exact_total_tokens": 102035
+    },
+    {
+      "run_id": "BOC_P137_R02_01_IDS_ONLY",
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "ids_only",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "api_requests": 80,
+      "model_calls": 10,
+      "checkpoint_installations": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_field_rows_exposed": 0,
+      "obligation_queries": 0,
+      "obligation_query_rejections": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_runtime_wall_seconds": 0.003533455717843026,
+      "obligation_final_enumeration": "closed",
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "exact_total_tokens": 102035
+    },
+    {
+      "run_id": "BOC_P137_R02_01_RAW_ANCHOR",
+      "replication": 2,
+      "model_seed": 157,
+      "obligation_mode": "raw_anchor",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "api_requests": 80,
+      "model_calls": 10,
+      "checkpoint_installations": 0,
+      "obligation_checkpoint_captures": 0,
+      "obligation_notice_actor_calls": 0,
+      "obligation_entity_rows_exposed": 0,
+      "obligation_field_rows_exposed": 0,
+      "obligation_queries": 0,
+      "obligation_query_rejections": 0,
+      "obligation_contract_failed": false,
+      "obligation_accounting_complete": true,
+      "obligation_runtime_wall_seconds": 0.0035238760174252093,
+      "obligation_final_enumeration": "closed",
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "exact_total_tokens": 102035
+    }
+  ],
+  "original_private_review_sha256": "9997c9f484aa2c10d58555dc1f50d382b33162845f189edf242ff5d411d45813",
+  "private_source_mapping_sha256": "4b3c5d7f7bf4a4e7bf2e28095f094d6c808d6403477a126abe5608433e5eb8ab",
+  "private_source_mapping_entries": 9932,
+  "private_source_paths_omitted": true,
+  "private_check_labels_omitted": true,
+  "rows_are_validated_public_figure_projection": true,
+  "raw_task_values_or_generated_code_included": false,
+  "audit_consistency_pass_does_not_imply_method_adoption": true,
+  "public_summary_scope": "All four fixed slots; seed57 unpaired and seed157 within-cohort descriptive comparisons only and whole-job costs; shared public monitor/notice encoder and fixed producer history audit remain dependencies. Private paths, raw API/model contents and generated code are omitted."
+}
