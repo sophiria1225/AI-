@@ -1,0 +1,66 @@
+{
+  "phase": "P139",
+  "status_at_observation": "running",
+  "wrapper_started_at": "2026-10-27T09:22:59.611656+00:00",
+  "observed_at": "2026-10-27T09:25:06.353786+00:00",
+  "source_head": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+  "source_PR": 557,
+  "source_merge": "5925713dd307217857e4d18e7813d305bcd9d055",
+  "plan_sha256": "e05b7a0fc0128d972cc2a63afe013fd21d28127c3a74ef9632918b2586b17657",
+  "fixed_source_files": 1617,
+  "planned_conditions": 16,
+  "completed_conditions_at_observation": 0,
+  "active_at_observation": "BOC_P139_01_THRESHOLD_RECURSIVE",
+  "model": "MiniMaxAI/MiniMax-M3",
+  "quantization": "IQ4_XS",
+  "first_actor_request_file_exists": true,
+  "first_actor_response_file_exists": true,
+  "first_actor_raw_response_file_exists": true,
+  "slot_processing": [
+    true
+  ],
+  "preflight": {
+    "status": "complete",
+    "input_count_requests": 16,
+    "summary_input_count_requests": 4,
+    "representation_actor_input_count_requests": 2,
+    "failed_input_count_requests": 0,
+    "model_generations": 0
+  },
+  "preflight_sha256": "55dc21f9639065674e8252d1913cd70d3a05ac6ce533baef81dcca57ddd117c0",
+  "activation_sha256": "8af23468f11fbb345c4a20519466bde6f568b5cdb8d461a66f878704ac546f94",
+  "start_reserved_ledgers": 201,
+  "start_reserved_bindings": 2545,
+  "start_reserved_snapshot_sha256": "835ab1d494b9e6fec72c9d8a2210605efb15dd31912077c59be1c552ee4a9500",
+  "registry_sha256": "5eed51c0593d87cfbf54c3530d673454c52b746af70a4e1290874a8bfce546c0",
+  "wrapper_sha256": "d8b27a4273957cafbf5fa0866a5cfdb07f7a9e5e141da6b12c2f9fa1f71e3e91",
+  "CI": [
+    {
+      "id": 40479755198,
+      "head_sha": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 122106798927
+    },
+    {
+      "id": 40479728642,
+      "head_sha": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 122106713424
+    }
+  ],
+  "private_start_marker_sha256": "4a8762f341de5f1dd0a97429d4c798bb5ff727a0fe96aeb229a688cbe94ed1ac",
+  "private_launch_confirmation_sha256": "a8b8ac8569904bcaa3a0bfc7c9d258b413fff8bd7bed2305958adb6f870fd880",
+  "all_conditions_complete": false,
+  "results_evaluated_for_publication": false,
+  "live_outcomes_usage_or_generated_content_inspected": false,
+  "new_method_success_claim": false,
+  "new_method_novelty_established": false,
+  "prior_results_pooled": false,
+  "manuscript_changed": false,
+  "model_absolute_deadline_jst": "2026-10-28T08:00:00+09:00",
+  "report_target_jst": "2026-10-28T09:00:00+09:00"
+}
