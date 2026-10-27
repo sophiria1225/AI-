@@ -407,6 +407,13 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新運用：2026-10-27 10:47 JST P136実処理確認】
+P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。
+全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。
+source e65fa22d、plan ff442f59、PR546同head両CI成功。P135全6閉鎖/固定gate falseを保持し、研究全体の目標は継続中。閉鎖後に失敗・unknown・詳細行の非適用を含め独立検算する。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P136_execution_start_20261027.md
+
+【以下は過去時点の記録】
 【最新：2026-10-27 P135全6閉鎖・固定gate false】
 P135は09:58 JSTに全6評価・所有server停止・collector・独立検算18274項目PASS・図生成を閉鎖。raw1/2成功・exact434623、counts/entity各0/2成功・known274986/302737＋unknown各1。全94model/364API/6eval、known1012346＋unknown2、正確な全費用差null。主common成功0、rawへの成功喪失1、詳細entity表示行/query全0。captureと通知露出は別（seed157 counts1/entity2通知）、品質保持と独自技術の削減は未確認。元d87880f/1498source/開始190台帳2300束縛を保存し、P133報告失敗・別回収とP134未開始失敗を消さない。結果を救う追加seed/ids-onlyは起動せず、保留12は未読。原稿はユーザー担当。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_findings.md
@@ -524,6 +531,13 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新運用：2026-10-27 10:47 JST P136実処理確認】
+P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。
+全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。
+source e65fa22d、plan ff442f59、PR546同head両CI成功。P135全6閉鎖/固定gate falseを保持し、研究全体の目標は継続中。閉鎖後に失敗・unknown・詳細行の非適用を含め独立検算する。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P136_execution_start_20261027.md
+
+【以下は過去時点の記録】
 【最新：2026-10-27 P135全6閉鎖・固定gate false】
 P135は09:58 JSTに全6評価・所有server停止・collector・独立検算18274項目PASS・図生成を閉鎖。raw1/2成功・exact434623、counts/entity各0/2成功・known274986/302737＋unknown各1。全94model/364API/6eval、known1012346＋unknown2、正確な全費用差null。主common成功0、rawへの成功喪失1、詳細entity表示行/query全0。captureと通知露出は別（seed157 counts1/entity2通知）、品質保持と独自技術の削減は未確認。元d87880f/1498source/開始190台帳2300束縛を保存し、P133報告失敗・別回収とP134未開始失敗を消さない。結果を救う追加seed/ids-onlyは起動せず、保留12は未読。原稿はユーザー担当。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P135_findings.md

@@ -1,0 +1,46 @@
+{
+  "phase": "P136_execution_start_validation",
+  "status": "pass",
+  "validated_at": "2026-10-27T01:48:41.421424+00:00",
+  "operational_observation_at": "2026-10-27T01:47:22.472987+00:00",
+  "source_checks": {
+    "p136-run": 1527,
+    "p136-prep": 1527
+  },
+  "start_ledgers_unchanged": 194,
+  "start_bindings_unchanged": 2389,
+  "exact_start_metadata_copies": {
+    "P136_start_live_observation_20261027.json": "6b89cb0b6c27ab58cac24788f19abe36c7ff0a87b4a61882329c7f123d079ad5",
+    "P136_pipeline_once_start.json": "d6e3ab7c9c917ffd88e47753e9c962c7a0b11e55fd1e36db5556ba8ba3458795",
+    "P136_pipeline_child_once.json": "f06e57259a7b0635429ad11c6265cccec45864c48c82528e721c64a70bf870f2",
+    "P136_closed_review_wait_once_start.json": "488752df163051f4ab3a56b57df50e39e526dd29aa1c538fc7fc6b67a7d5836b",
+    "P136_figure_wait_once_start.json": "d92c508007ec06793425da0d8f90128049fc307f674528bcf7b961e12bf33ef8"
+  },
+  "registry_bytes_unchanged": true,
+  "historical_live_process_confirmation_from_bound_root_observation": true,
+  "native_request_exists_without_contents_read": true,
+  "preflight_and_activation_exit_zero": true,
+  "exact_head_two_CI_events_success": true,
+  "waiter_started_not_review_or_figure_completed": true,
+  "intermediate_results_usage_captures_read": false,
+  "new_model_API_tokenizer_evaluation_calls": 0,
+  "frozen_sources_modified": false,
+  "start_binding_entries": 2389,
+  "distinct_bound_paths": 2270,
+  "validation_history": [
+    {
+      "attempt": 1,
+      "status": "stopped_before_public_copy",
+      "reason": "validator incorrectly compared distinct bound paths with total ledger binding entries",
+      "public_files_copied": 0,
+      "original_failure_preserved": true,
+      "source_sha256": "161e996724e15d38b31e25b5b950474ef2e5e5f517a4de6bfb1bdb0f0110541c"
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "reason": "count ledger entries and distinct paths separately; verify every expected hash",
+      "additional_model_API_tokenizer_evaluation_calls": 0
+    }
+  ]
+}
