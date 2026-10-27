@@ -1,0 +1,334 @@
+{
+  "status": "pass",
+  "phase": "P141_closed_metadata_review",
+  "fixed_head": "5cab33a2e239f3e6d90e63e32c54ba0764b1c594",
+  "plan_sha256": "5dd2581f4aae9fc8831768018a9fe00835c74e8b4f8506d0b77bda5f155ac18d",
+  "original_end_sha256": "c7f99e85f41465831fbf3973b5c0b2ac319a106a998d414b094132c9402c5177",
+  "planned_slots": 3,
+  "evaluated_slots": 3,
+  "record_status_counts": {
+    "evaluated": 3
+  },
+  "source_files": 1736,
+  "start_registry_ledgers": 205,
+  "start_registry_bindings": 2652,
+  "rows": [
+    {
+      "task_slot": 1,
+      "task_id": "6104387_1",
+      "mode": "threshold_recursive",
+      "object_timing_mode": "threshold_recursive",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "run_id": "BOC_P141_01_THRESHOLD_RECURSIVE",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "input_tokens": 319446,
+      "output_tokens": 13142,
+      "model_calls": 31,
+      "api_requests": 76,
+      "checkpoint_installations": 2,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "cached_input_tokens": 235825,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973
+        }
+      }
+    },
+    {
+      "task_slot": 1,
+      "task_id": "6104387_1",
+      "mode": "threshold_delta_object",
+      "object_timing_mode": "threshold_delta_object",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "run_id": "BOC_P141_01_THRESHOLD_DELTA_OBJECT",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 329781,
+      "unknown_usage_calls": 0,
+      "input_tokens": 316696,
+      "output_tokens": 13085,
+      "model_calls": 30,
+      "api_requests": 78,
+      "checkpoint_installations": 2,
+      "actual_delta_actor_calls": 7,
+      "actual_delta_known_actor_calls": 7,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 1,
+      "object_prompt_offers": 1,
+      "object_prompt_dispatched_focus_calls": 1,
+      "object_prompt_known_focus_calls": 1,
+      "object_prompt_unknown_focus_calls": 0,
+      "cached_input_tokens": 232109,
+      "usage_by_role": {
+        "agent": {
+          "calls": 28,
+          "unknown_usage": 0,
+          "input_tokens": 278414,
+          "output_tokens": 10346
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38282,
+          "output_tokens": 2739
+        }
+      }
+    },
+    {
+      "task_slot": 1,
+      "task_id": "6104387_1",
+      "mode": "exposure_delta_object",
+      "object_timing_mode": "exposure_delta_object",
+      "checkpoint_representation_mode": "exposure_delta_object",
+      "run_id": "BOC_P141_01_EXPOSURE_DELTA_OBJECT",
+      "record_status": "evaluated",
+      "success": false,
+      "known_total_tokens": 317920,
+      "unknown_usage_calls": 1,
+      "input_tokens": 301874,
+      "output_tokens": 16046,
+      "model_calls": 31,
+      "api_requests": 78,
+      "checkpoint_installations": 2,
+      "actual_delta_actor_calls": 11,
+      "actual_delta_known_actor_calls": 10,
+      "actual_delta_unknown_actor_calls": 1,
+      "delta_installations": 1,
+      "object_prompt_offers": 1,
+      "object_prompt_dispatched_focus_calls": 1,
+      "object_prompt_known_focus_calls": 1,
+      "object_prompt_unknown_focus_calls": 0,
+      "cached_input_tokens": 220398,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 1,
+          "input_tokens": 266484,
+          "output_tokens": 14104
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35390,
+          "output_tokens": 1942
+        }
+      }
+    }
+  ],
+  "independent_criteria": {
+    "planned_rows": 3,
+    "independent_tasks": 1,
+    "repetitions": 1,
+    "model_seed": 57,
+    "original_task_slot": 4,
+    "diagnostic_task_slot": 1,
+    "diagnostic_only": true,
+    "all_three_complete_with_known_usage": false,
+    "evaluated_conditions": 3,
+    "success_counts": {
+      "threshold_recursive": 1,
+      "threshold_delta_object": 1,
+      "exposure_delta_object": 0
+    },
+    "unevaluated_counts": {
+      "threshold_recursive": 0,
+      "threshold_delta_object": 0,
+      "exposure_delta_object": 0
+    },
+    "known_token_subtotals_by_mode": {
+      "threshold_recursive": 332588,
+      "threshold_delta_object": 329781,
+      "exposure_delta_object": 317920
+    },
+    "total_tokens_by_mode": {
+      "threshold_recursive": null,
+      "threshold_delta_object": null,
+      "exposure_delta_object": null
+    },
+    "usage_count_missing_conditions": 0,
+    "recorded_unknown_usage_calls": 1,
+    "audit_errors_count": 0,
+    "comparisons": [
+      {
+        "name": "object_timing",
+        "baseline": "threshold_delta_object",
+        "candidate": "exposure_delta_object",
+        "pairs": [
+          {
+            "task_id": "6104387_1",
+            "baseline": "threshold_delta_object",
+            "candidate": "exposure_delta_object",
+            "candidate_minus_baseline_tokens": null,
+            "candidate_object_prompt_known_focus_calls": 1,
+            "candidate_delta_known_actor_calls": 10,
+            "baseline_success": true,
+            "candidate_success": false,
+            "success_lost": true,
+            "both_successful": false,
+            "strict_prefix_match": false,
+            "canonical_prefix_match": true,
+            "actual_timing_dispatch_diverged": true,
+            "both_timing_dispatches_known": true,
+            "both_evaluated": true,
+            "both_usage_known": false
+          }
+        ],
+        "descriptive_only": true,
+        "all_pairs_complete_with_known_usage": false,
+        "all_task_token_difference": null,
+        "common_success_tasks": [],
+        "common_success_token_difference": null,
+        "timing_prefix_identity": {
+          "boundary_present": true,
+          "after_model_calls": 19,
+          "strict_match": false,
+          "canonical_match": true,
+          "actual_dispatch_diverged": true,
+          "both_dispatches_known": true,
+          "reason": "first_observed_timing_decision_divergence",
+          "version": "P141_first_timing_dispatch_prefix_v1"
+        },
+        "representation_prefix_identity": null,
+        "scientific_adoption_evaluated": false,
+        "comparison_gate_met": false
+      },
+      {
+        "name": "strong_control",
+        "baseline": "threshold_recursive",
+        "candidate": "exposure_delta_object",
+        "pairs": [
+          {
+            "task_id": "6104387_1",
+            "baseline": "threshold_recursive",
+            "candidate": "exposure_delta_object",
+            "candidate_minus_baseline_tokens": null,
+            "candidate_object_prompt_known_focus_calls": 1,
+            "candidate_delta_known_actor_calls": 10,
+            "baseline_success": true,
+            "candidate_success": false,
+            "success_lost": true,
+            "both_successful": false,
+            "strict_prefix_match": null,
+            "canonical_prefix_match": null,
+            "actual_timing_dispatch_diverged": null,
+            "both_timing_dispatches_known": null,
+            "both_evaluated": true,
+            "both_usage_known": false
+          }
+        ],
+        "descriptive_only": true,
+        "all_pairs_complete_with_known_usage": false,
+        "all_task_token_difference": null,
+        "common_success_tasks": [],
+        "common_success_token_difference": null,
+        "timing_prefix_identity": null,
+        "representation_prefix_identity": null,
+        "scientific_adoption_evaluated": false,
+        "comparison_gate_met": false
+      },
+      {
+        "name": "representation_prompt_bundle",
+        "baseline": "threshold_recursive",
+        "candidate": "threshold_delta_object",
+        "pairs": [
+          {
+            "task_id": "6104387_1",
+            "baseline": "threshold_recursive",
+            "candidate": "threshold_delta_object",
+            "candidate_minus_baseline_tokens": -2807,
+            "candidate_object_prompt_known_focus_calls": 1,
+            "candidate_delta_known_actor_calls": 7,
+            "baseline_success": true,
+            "candidate_success": true,
+            "success_lost": false,
+            "both_successful": true,
+            "strict_prefix_match": false,
+            "canonical_prefix_match": true,
+            "actual_timing_dispatch_diverged": null,
+            "both_timing_dispatches_known": null,
+            "both_evaluated": true,
+            "both_usage_known": true
+          }
+        ],
+        "descriptive_only": true,
+        "all_pairs_complete_with_known_usage": true,
+        "all_task_token_difference": -2807,
+        "common_success_tasks": [
+          "6104387_1"
+        ],
+        "common_success_token_difference": -2807,
+        "timing_prefix_identity": null,
+        "representation_prefix_identity": {
+          "strict_match": false,
+          "canonical_match": true,
+          "version": "P140_validated_transport_reference_identity_v1",
+          "reason": "equal_modulo_validated_transport_references"
+        },
+        "scientific_adoption_evaluated": false,
+        "comparison_gate_met": false
+      }
+    ],
+    "scientific_adoption_evaluated": false,
+    "development_gate_met": false,
+    "prior_results_pooled": false,
+    "unknown_usage_imputed": false,
+    "all_original_four_task_confirmation_replaced": false,
+    "reserved_confirmation_replaced": false,
+    "exposure_is_guaranteed_savings": false,
+    "competitive_ratio_claim": false,
+    "novel_method_claim": false,
+    "general_quality_preservation_claim": false,
+    "independent_replication_claim": false
+  },
+  "saved_diagnostic_reason_labels": [],
+  "checks_passed": 21057,
+  "private_bindings_sha256": "779f8dda09e389adc72384a3d9134ae10082d94ec2d7149a9aced1182478c3ea",
+  "original_results_modified": false,
+  "limitations": [
+    "For invalid representation identity, the hash-bound original nonempty diagnostic label is retained; its error taxonomy is not independently re-derived. Strict/canonical eligibility and all other comparison fields remain independently checked.",
+    "Timing comparison ends at the first observed predicate difference and requires actual role divergence there; no later favorable boundary is selected. Wall-time equivalence is not established.",
+    "All P141 comparisons are posthoc single-known-task descriptions; scientific adoption remains false regardless of costs or success.",
+    "This is a metadata/hash/arithmetic cross-check, not a second execution of the producer or original audit.",
+    "Request and response bodies are only byte-hashed. Message semantics, credentials, evaluator text and database contents are not inspected.",
+    "Recorded native counts and assistant-message hashes depend on the frozen original recorder/auditor; their contents are not independently re-tokenized or parsed.",
+    "Strict prefix and validated transport-ID canonical comparisons are reported separately. Canonical metadata, ID grammar, archive reconstruction and ID-only normalization rely on the frozen original trace auditor, not independent body inspection here.",
+    "Only identity metadata type/count/raw-digest bindings, recorded canonical equality and all other fixed prefix fields are checked independently. This cannot prove the canonical digest was correctly derived or semantic/hidden-state equivalence.",
+    "Missing conditions and unknown calls remain distinct. No pooled cross-cohort claim, novelty finding or future savings guarantee is established."
+  ],
+  "review_source_sha256": "c8732d6bbae4b2a0fed6a9d2ecfb5489607e6120597f2278fc887f7c889f26e2",
+  "finished_at": "2026-10-27T18:36:45.870712+00:00",
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "producer_auditor_builder_executions": 0,
+  "projection_of_sha256": "0ac629c74830ca272582d7b8061fae11a605a040fbc9081c8df19e41095358d7",
+  "projection_source_sha256": "f1df1514965b03803a12bbd9b7b6a4d14192ee239fcd3a8723bab633cd435020",
+  "projection_kind": "Explicit recursive whitelist; not same-byte original result or a new audit.",
+  "omitted_fields": [
+    "private_source_bindings",
+    "unrecognized_fields_at_all_schema_levels",
+    "nonfixed_saved_diagnostic_reason_text"
+  ],
+  "private_binding_entries_omitted": 3724,
+  "projection_scope": "Preserves all three rows, role costs, unknown/missing/null, all three descriptive comparisons and fixed false adoption flags. No scientific recalculation, live closure check, native recount or canonical reconstruction. Saved nonfixed diagnostic labels are represented only by hashes; their semantics were not independently re-derived."
+}

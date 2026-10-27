@@ -1,0 +1,43 @@
+{
+  "phase": "P141_results_staging_validation",
+  "status": "pass",
+  "recorded_at": "2026-10-27T18:43:02.703587+00:00",
+  "publication_base": "43ece9112511b00a8a9b7a5cef3b033e209eb571",
+  "previous_ledgers_verified": 206,
+  "previous_bindings_verified": 2674,
+  "previous_registry_sha256": "00004aac0d8bc70495d433fb2825fd1e88e84b33d98e8285b7d3c953dc3c089a",
+  "frozen_source_files_verified_per_tree": 1736,
+  "frozen_trees_checked": [
+    "execution",
+    "preparation",
+    "publication"
+  ],
+  "source_plan_sha256": "5dd2581f4aae9fc8831768018a9fe00835c74e8b4f8506d0b77bda5f155ac18d",
+  "original_producer_files_bound_to_end_manifest": 10,
+  "same_byte_figure_files": 5,
+  "safe_public_projection_files": 1,
+  "copy_manifest_sha256": "1c97e343e3c1aa988580637f8582d2b1ef3c17060a01cc9271ba6138bbf737e5",
+  "claim_scope_sha256": "899664e8398be801b17d54e23e0d0369aab7abcfe9b0eb1206d3eee331a07d85",
+  "privacy_scope": "Copied public aggregate artifacts and figure metadata: no private absolute paths or private source binding map; raw records, generated bodies and evaluation text were not opened.",
+  "private_checker_published": false,
+  "producer_checker_renderer_reexecuted": false,
+  "additional_model_API_native_evaluator_calls": 0,
+  "old_ledgers_changed": false,
+  "global_registry_changed": false,
+  "findings_not_yet_reviewed_in_this_record": true,
+  "commit_push_performed": false,
+  "validation_attempt_history": [
+    {
+      "attempt": 1,
+      "status": "stopped_before_copy",
+      "cause": "Reviewer assumed a preparation directory name rather than reading the original start record. A missing old source file rejected the check.",
+      "files_copied": 0,
+      "original_artifact_failure": false
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "correction": "Used original immutable start record preparation and execution directory bindings. No source or result was changed."
+    }
+  ]
+}
