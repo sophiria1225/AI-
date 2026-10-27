@@ -1,5 +1,7 @@
 # 再開の入口：P137未実施4条件の追加観測を開始、成果未収録
 
+[閉鎖結果一覧 v02](docs/closed_results_index_20261027_v02.md)：元7cohort・56行を保持しP135/P136の12行だけを追加、計9cohort・68予定条件／63評価。記録済unknown8呼出しとusage件数欠測5条件を分け、P136補足223,145は非加算。P137は固定開始リンクと「本一覧に未収録」の4予定placeholderのみ。phase横断の合計を効果や独立標本へ解釈しない。
+
 P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この記録に閉鎖結果は未収録で、実行中の成否・usage・生成内容は読まない。 [P137開始記録](docs/experiments/P137_execution_start_20261027.md)。
 
 seed57はfields単独、seed157だけが3方式の記述的比較。P136の元6行・欠測・gate falseは置換・合算しない。新P137の採用判定も行わない。初期raw interface・機構は同じで、timeoutの記録経路とworker終了状態を修正。各80calls/450000tokens/1800作業秒/API80、全4最大320calls/1800000tokens/API320/評価4、server4時間・18:00 JST上限。開始196台帳/2433束縛・1547 sourceを固定する。

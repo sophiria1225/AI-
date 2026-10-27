@@ -1,0 +1,13 @@
+phase,comparison,scope,model_seed,baseline,treatment,paired_conditions,evaluated_pairs,success_losses,success_gains,baseline_exact_total_tokens,treatment_exact_total_tokens,exact_total_delta_tokens,common_success_pairs,descriptive_common_success_delta_tokens,fixed_gate_common_success_delta_tokens,fixed_phase_gate,observed_quality_transitions,empty_common_success_not_zero
+P135,primary,fixed_cohort,,counts_only,entity_fields,2,2,0,0,,,,0,,,False,57:both_failed;157:both_failed,True
+P135,primary,seed,57,counts_only,entity_fields,1,1,0,0,77242,77242,0,0,,,False,57:both_failed,True
+P135,primary,seed,157,counts_only,entity_fields,1,1,0,0,,,,0,,,False,157:both_failed,True
+P135,raw_anchor,fixed_cohort,,raw_anchor,entity_fields,2,2,1,0,434623,,,0,,,False,57:quality_loss;157:both_failed,True
+P135,raw_anchor,seed,57,raw_anchor,entity_fields,1,1,1,0,332588,77242,-255346,0,,,False,57:quality_loss,True
+P135,raw_anchor,seed,157,raw_anchor,entity_fields,1,1,0,0,102035,,,0,,,False,157:both_failed,True
+P136,primary,fixed_cohort,,ids_only,entity_fields,2,0,,,,,,,,,False,57:not_both_evaluated;157:not_both_evaluated,True
+P136,primary,seed,57,ids_only,entity_fields,1,0,,,,,,,,,False,57:not_both_evaluated,True
+P136,primary,seed,157,ids_only,entity_fields,1,0,,,,,,,,,False,157:not_both_evaluated,True
+P136,raw_anchor,fixed_cohort,,raw_anchor,entity_fields,2,0,,,,,,,,,False,57:not_both_evaluated;157:not_both_evaluated,True
+P136,raw_anchor,seed,57,raw_anchor,entity_fields,1,0,,,332588,,,,,,False,57:not_both_evaluated,True
+P136,raw_anchor,seed,157,raw_anchor,entity_fields,1,0,,,,,,,,,False,157:not_both_evaluated,True
