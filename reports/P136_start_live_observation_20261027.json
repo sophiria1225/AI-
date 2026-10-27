@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-10-27T01:47:22.472987+00:00",
+  "phase": "P136",
+  "status": "running",
+  "source_head": "e65fa22d32bd63e80005e7bf807b2c91624e6824",
+  "plan_sha256": "ff442f59f9012af6932974469fc5b2fbcb08afc3e8dd9cba4a480a9cc5f36f6a",
+  "wrapper_started_at": "2026-10-27T01:46:31.191753+00:00",
+  "wrapper_pid": 9296,
+  "pipeline_pid": 9311,
+  "server_pid": 9338,
+  "server_supervisor_pid": 9335,
+  "stage_pid": 10998,
+  "batch_started_at": "2026-10-27T01:47:05.572644+00:00",
+  "active_condition": "BOC_P136_R01_01_RAW_ANCHOR",
+  "first_actor_request_exists": true,
+  "first_actor_request_sha256": "16e9f8b645e6dde8c71498a779887e1c1f1c8f7066d515e0bc1d7003c99de8e0",
+  "model_slot_is_processing": true,
+  "preflight_activation_stages": [
+    {
+      "mode": "preflight",
+      "exit_code": 0,
+      "wall_seconds": 19.35789562499849
+    },
+    {
+      "mode": "activation",
+      "exit_code": 0,
+      "wall_seconds": 0.5871291669900529
+    }
+  ],
+  "source_ci_both_pass": true,
+  "reserved_snapshot_sha256": "12a6f8f9c5677ec9c09d4dd61a18e0fed7276d7ceabdf45df998ee0c3058a707",
+  "reserved_ledgers": 194,
+  "reserved_bindings": 2389,
+  "source_files": 1527,
+  "metadata_only": true,
+  "intermediate_outcomes_usage_captures_read": false,
+  "wrapper_session_id": 20842,
+  "source_pr": 546,
+  "source_merge": "4b97270d28eea0126386f23875f56bbc4f0a828a",
+  "evidence_sha256": {
+    ".runtime/P136_pipeline_once_start.json": "d6e3ab7c9c917ffd88e47753e9c962c7a0b11e55fd1e36db5556ba8ba3458795",
+    ".runtime/P136_pipeline_child_once.json": "f06e57259a7b0635429ad11c6265cccec45864c48c82528e721c64a70bf870f2",
+    ".runtime/P136_caffeinate_wrapper_guard_20261027.json": "1b7c0259eb235fe176d25b4d7643323194b1c6a008aea1258ab383f4712b131a",
+    ".runtime/worktrees/p136-run/reports/P136_initial_checks.json": "79ac5170067276c94bec69318fdf66ac7d5cc25ba48d678d47fad14a7dbc5e63",
+    ".runtime/worktrees/p136-run/reports/P136_activation_v01.json": "f75421f772966d0dc91860b45f40d5689af75e49e90e137494e03b27d403b822"
+  }
+}

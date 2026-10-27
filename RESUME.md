@@ -1,4 +1,8 @@
-# 再開の入口：P135全6閉鎖、品質保持・削減は未確認
+# 再開の入口：P136全6条件を開始、閉鎖結果は未収録
+
+P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。[P136開始記録](docs/experiments/P136_execution_start_20261027.md)。
+
+全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。
 
 P135は2026-10-27 09:58 JSTに全6条件・所有server・集計を閉鎖した。rawは1/2成功・434,623 tokensで費用既知、counts/entityは各0/2成功・既知小計274,986/302,737 tokensにunknown各1件。主比較の共通成功0、rawへの成功喪失1、詳細entity表示行とqueryは全0、固定gate false。独立検算18,274項目PASSは会計整合の確認であり、方式採用ではない。[P135全6条件の結果と限界](docs/experiments/P135_findings.md)。
 
@@ -10,7 +14,7 @@ P134の待機queueはこの報告失敗を検知し、モデル・server・prefl
 
 P135は従来のraw anchor／残件数のみ／対象IDと不足fieldの3方式×seed57/157、既知CSV1課題の6条件。全方式でtyped観測とcaptureは共通、主2方式のguide/query能力は同じ、rawは元P123 interfaceを保持する。accepted checkpoint後の次actorへ一度だけ有料表示し、open/unknown列挙を残件0にしない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。P133復旧証明とP134モデル0、source固定、両CI成功を起動前に確認済み。全6条件の閉鎖後に集計・独立検算を完了した。
 
-次の比較では、対象列挙の効果とfield対応付けの効果を区別する。全pending対象の不足fieldが同じなら、集約件数からfield maskは一意であり、field情報が増えたとは言えない。既存FOCUS等にもentity保持・救済がある。新規性、一般品質維持、新方式の全仕事token削減は未確立で、少数seedや共通成功だけを一般効果へ広げない。P123の通常rollingは既知4/4成功で単発比12.07%減を観測済み。原稿用の全条件・失敗・不明費用・機構到達を整理する。
+P136では、対象列挙の効果とfield対応付けの効果を区別する。全pending対象の不足fieldが同じなら、集約件数からfield maskは一意であり、field情報が増えたとは言えない。既存FOCUS等にもentity保持・救済がある。新規性、一般品質維持、新方式の全仕事token削減は未確立で、少数seedや共通成功だけを一般効果へ広げない。P123の通常rollingは既知4/4成功で単発比12.07%減を観測済み。原稿用の全条件・失敗・不明費用・機構到達を整理する。
 
 P133開始snapshot189台帳/2290束縛と、その後のglobal190/2300を分離する。P134の未実行予約snapshot190/2300も保存し、P135の開始snapshotも190/2300で固定し、その後のglobal増加を遡及しない。元run/prepと失敗は変更しない。モデルは単一serverで直列、保存された生成Pythonはhost実行しない。保留12シナリオは要求文・データ・正解を未閲覧のまま保つ。
 

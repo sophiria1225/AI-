@@ -1,0 +1,124 @@
+{
+  "phase": "P136_execution_start",
+  "recorded_at": "2026-10-27T01:47:22.472987+00:00",
+  "scope": "Time-qualified operational start only; no in-progress task outcomes, usage, capture or generated contents inspected.",
+  "fixed_execution_head": "e65fa22d32bd63e80005e7bf807b2c91624e6824",
+  "plan_sha256": "ff442f59f9012af6932974469fc5b2fbcb08afc3e8dd9cba4a480a9cc5f36f6a",
+  "plan_source_count": 1527,
+  "planned_slots": 6,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "independent_tasks": 1,
+  "modes": [
+    "raw_anchor",
+    "ids_only",
+    "entity_fields"
+  ],
+  "wrapper_started_at": "2026-10-27T01:46:31.191753+00:00",
+  "wrapper_pid": 9296,
+  "pipeline_pid": 9311,
+  "server_supervisor_pid": 9335,
+  "model_server_pid": 9338,
+  "operational_snapshot": {
+    "observed_at": "2026-10-27T01:47:22.472987+00:00",
+    "root_observation_sha256": "6b89cb0b6c27ab58cac24788f19abe36c7ff0a87b4a61882329c7f123d079ad5",
+    "status": "running",
+    "active_condition": "BOC_P136_R01_01_RAW_ANCHOR",
+    "batch_started_at": "2026-10-27T01:47:05.572644+00:00",
+    "preflight_activation_stages": [
+      {
+        "mode": "preflight",
+        "exit_code": 0,
+        "wall_seconds": 19.35789562499849
+      },
+      {
+        "mode": "activation",
+        "exit_code": 0,
+        "wall_seconds": 0.5871291669900529
+      }
+    ]
+  },
+  "first_actor_dispatch_confirmation": {
+    "first_request_file_created": true,
+    "request_sha256": "16e9f8b645e6dde8c71498a779887e1c1f1c8f7066d515e0bc1d7003c99de8e0",
+    "model_slot_is_processing": true,
+    "request_contents_read": false,
+    "generated_contents_read": false,
+    "usage_task_outcomes_and_captures_read": false,
+    "observation_is_not_task_completion_or_success": true
+  },
+  "cell_limits": {
+    "shared_model_calls": 80,
+    "logical_tokens": 450000,
+    "work_seconds": 1800,
+    "actual_API_requests": 80
+  },
+  "cohort_maxima": {
+    "shared_model_calls": 480,
+    "logical_tokens": 2700000,
+    "actual_API_requests": 480,
+    "evaluations": 6
+  },
+  "server_max_lifetime_seconds": 21600,
+  "deadline_jst": "2026-10-27T18:00:00+09:00",
+  "P136_start_ledger_count": 194,
+  "P136_start_binding_count": 2389,
+  "P136_start_registry_sha256": "9eb05212e506ecef59f54a151fd60def976a2a74d8f25ba9acfea9ae77c869a7",
+  "reserved_snapshot_sha256": "12a6f8f9c5677ec9c09d4dd61a18e0fed7276d7ceabdf45df998ee0c3058a707",
+  "start_snapshot_not_replaced_by_later_global": true,
+  "source_preparation_PR": 546,
+  "source_merge_commit": "4b97270d28eea0126386f23875f56bbc4f0a828a",
+  "exact_head_CI": [
+    {
+      "id": 40433515047,
+      "head_sha": "e65fa22d32bd63e80005e7bf807b2c91624e6824",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121956619017
+    },
+    {
+      "id": 40433425538,
+      "head_sha": "e65fa22d32bd63e80005e7bf807b2c91624e6824",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121956329512
+    }
+  ],
+  "initial_guide_and_tools_identical_all_modes": true,
+  "public_query_interface_added": false,
+  "public_snapshot_handle_added": false,
+  "automatic_disclosure_only_after_accepted_checkpoint": true,
+  "P135_original_results_and_gate_unchanged": true,
+  "closed_review_waiter": {
+    "started_at": "2026-10-27T01:46:43.127445+00:00",
+    "pid": 9367,
+    "source_sha256": "225053d65b6b5ebb148cd40d8df21ccbea1fba4143b41856cf44168ae4172583",
+    "reviewer_source_sha256": "c6581939766317f47671b9948f2c36b463e35a4b01415b3fc8e5fd811f4c3fc8",
+    "maximum_wait_seconds": 43200,
+    "start_record_sha256": "488752df163051f4ab3a56b57df50e39e526dd29aa1c538fc7fc6b67a7d5836b",
+    "review_completion_claimed": false
+  },
+  "figure_waiter": {
+    "started_at": "2026-10-27T01:47:14.768546+00:00",
+    "pid": 11057,
+    "source_sha256": "5c02a3856889f52d540c2aefd7e03cad4ac9dfb9b9bb68977fe604de10e70225",
+    "renderer_source_sha256": "36a6102b0c43ec750f5f7174c0bc086222d5f6a7024800ca25746dc1875c5a62",
+    "maximum_wait_seconds": 43200,
+    "start_record_sha256": "d92c508007ec06793425da0d8f90128049fc307f674528bcf7b961e12bf33ef8",
+    "figure_completion_claimed": false
+  },
+  "existing_continuation_instruction_applied": true,
+  "new_individual_authorization_claimed": false,
+  "all_six_conditions_complete_claim": false,
+  "task_success_or_cost_effect_claim": false,
+  "novel_method_established": false,
+  "status_publication_model_API_tokenizer_evaluation_calls": 0,
+  "manuscript_written": false,
+  "same_prefix_selector_for_primary_comparison": true,
+  "selection_is_conditional_on_same_closed_pending_ids": true,
+  "independent_run_ID_sequences_measured_equal_claim": false
+}
