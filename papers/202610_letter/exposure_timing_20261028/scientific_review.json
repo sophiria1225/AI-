@@ -1,0 +1,87 @@
+{
+  "status": "pass",
+  "review_type": "independent_science_and_claims_review_of_initial_manuscript_draft",
+  "reviewed_at_utc": "2026-10-27T18:46:22.377557+00:00",
+  "manuscript_sha256": {
+    "papers/202610_letter/exposure_timing_20261028/main.tex": "c6ad81c127f6b782ba680b42997c0bff1a77d24e07a6b2c452c59f97c004c22a",
+    "papers/202610_letter/exposure_timing_20261028/results_p141.tex": "63339f68c61ff0a1bb3b32fa57afcc1c0502185e76fcc34056bafaabe6bb49e4",
+    "papers/202610_letter/exposure_timing_20261028/references.tex": "b8039c0f1eb87dc2d6ea5bb3b5d8de0d4c3b9b1f7701f45da11f22564cf4f38f"
+  },
+  "source_sha256": {
+    "reports/P123_comparison.json": "73d55305300ae6cb332213f08f8a813a40ab17f82a9a167e3fbbf1bb17fb6147",
+    "reports/P140_comparison.json": "38a69db936af1376d629859b05350f6f5c6de36262e75222d84caf3524139746",
+    "configs/P123_whole_task_rolling_checkpoint_v01.json": "b4bb3fabb6d1b97dc67f3f17f1a3a97bafccfd13f2ce02c70da73d54d6962b0e",
+    "configs/P140_whole_task_checkpoint_delta_envelope_v01.json": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+    "configs/P141_object_timing_v01.json": "5dd2581f4aae9fc8831768018a9fe00835c74e8b4f8506d0b77bda5f155ac18d",
+    "scripts/checkpoint_object_timing_p141.py": "d238c0cd90e65575a1e1c27578209974f8614046629c1f0b5f4ca679b6f9d293",
+    "scripts/checkpoint_representation_p139.py": "8cc12812f5413f8157e99591108ea53bf0af91bdfff64639baf24481f0f231e9",
+    "scripts/checkpoint_prefix_exposure.py": "134ecdf959a5d63696c62d601c0d79e7c786ae8d187a599d2d3ec04e16a5d037",
+    "scripts/rolling_checkpoint_inference.py": "d099e55d1cb727875fd18b1447abd9bb8e250127c234564440eb5463fd98ab6b",
+    "scripts/whole_task_checkpoint_delta_envelope_p140.py": "0e9f6da468c317fef8bb1ce2e518cef16939a8a35065fa3a27e44cdf6ca4f21e",
+    "scripts/whole_task_object_timing_p141.py": "d916b1415fed4d9c5464286223f00475bf63cf722bdc0e77682a51675e50ecd5",
+    "reports/P141_comparison.json": "d91323b14c9f0e5e094fb6a6cc69aafedd0e176f081fd20a525f82aab9cf38ae"
+  },
+  "important_mistakes_found": [],
+  "checks": {
+    "P123_all12_success_and_zero_unknown": true,
+    "P123_three_totals": {
+      "single_checkpoint": 893529,
+      "rolling_separate": 785656,
+      "rolling_inline": 836922
+    },
+    "P123_separate_vs_single_percent": 12.072691541069176,
+    "P123_difference_confined_to_task4_for_separate_vs_single": true,
+    "P123_max3_exception_and_actual_max2_installs": true,
+    "P140_all12_success_known_unknown_and_no_delta_first3": true,
+    "P140_known_subtotals": {
+      "threshold_recursive": 785656,
+      "exposure_delta": 861995,
+      "exposure_delta_object": 770988
+    },
+    "P141_all3_success_known_unknown": true,
+    "P141_TDO_vs_TR_difference": -2807,
+    "P141_TDO_vs_TR_reduction_percent": 0.8439871552792043,
+    "P141_actor_focus_difference": [
+      -2753,
+      -54
+    ],
+    "P141_first_boundary_and_actual_dispatch_flags_preserved": true,
+    "P141_canonical_not_strict_and_not_semantic_equivalence": true,
+    "no_P140_P123_pooling_into_P141_four_task_confirmation": true,
+    "unknown_usage_not_filled_or_used_as_exact_savings": true,
+    "posthoc_one_known_task_one_seed_fixed_order_scope_explicit": true,
+    "causal_sole_failure_claim_absent": true,
+    "scientific_adoption_or_general_noninferiority_claim_absent": true,
+    "field32_each_combined8192_individual2048": true,
+    "role_local_seed57_increment_world42_API160_first_task_else80": true,
+    "reference_first_citation_order_complete": [
+      "yao2023react",
+      "wang2024codeact",
+      "jiang2024longllmlingua",
+      "kang2026acon",
+      "xu2026tokenpilot",
+      "singh2026tca",
+      "trivedi2024appworld"
+    ],
+    "all_reference_authors_retained": true,
+    "official_published_references": 6,
+    "explicit_preprint_references": 1,
+    "eabstract_typography_only_shortening_included": true
+  },
+  "reference_evidence_sha256": "b2d973cdfaee32397d32f4ebc8e0af915a6aeb5c76cf28773de466a08d69f14d",
+  "limitations": [
+    "Review is scientific arithmetic, source and prose consistency; it is not acceptance, publication priority, or statistical evidence certification.",
+    "Closed P123/P140/P141 audit rows and saved metadata are relied on; original producer, auditor, checker, native token counter, model and evaluator were not rerun.",
+    "Protocol-ID canonical validity, native-input binding and official outcomes rely on fixed original audit; no raw request/response, private reasoning, generated code, DB, gold or evaluator body read.",
+    "Hardware is supplementary current-host source context, not an independent proof that all prior requests used unchanged hardware.",
+    "Author details, journal submission metadata, final page/figure typography and PDF compilation are outside this science review.",
+    "Bibliographic titles/authors/venues/month/pages were checked against official sources; missing publisher DOIs or page fields were not fabricated. TCA remains explicitly preprint.",
+    "No further experiment is selected, started or recommended as part of this deliverable."
+  ],
+  "manuscript_edited": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_native_counts": 0,
+  "additional_evaluations": 0,
+  "reserved_task_reads": 0
+}

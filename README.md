@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+2026-10-28：ユーザーの最終指示に従い、モデル実験はP141を終了点とした。和文Dレターの初稿を作成した（本文・文献4頁＋末尾英文1頁）。[初稿PDF](papers/202610_letter/exposure_timing_20261028/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/exposure_timing_20261028/source_bundle.zip)／[編集用TeX](papers/202610_letter/exposure_timing_20261028/main.tex)／[実測根拠と主張範囲](papers/202610_letter/exposure_timing_20261028/EVIDENCE.md)／[書式上の確認事項](papers/202610_letter/exposure_timing_20261028/FORMAT.md)。著者情報は仮欄、現公式クラス最新版との照合は未了で、投稿は行っていない。以下は各過去時点の記録である。
+
 2026-10-28 P141全3条件を閉鎖・評価：通常閾値TRと閾値object delta TDOは成功し、TDOの確定logical I/OはTRより2,807少なかった。累積再提示量EDOは失敗・unknown1で確定差null。単一既知課題の事後診断で採用評価は実施せず、全gate false・元4課題と保留12の確認範囲を維持する。[結果と限界](docs/experiments/P141_findings.md)／[資料・図の索引](docs/experiments/P141_results_20261028_index.md)。以下は各過去時点の記録である。
 
 [保留12課題の実行接続の準備](docs/reserved_confirmation_integration_20261028.md)：全24枠の予定表、初期状態の照合、有限なreference初期化・終了処理を実装した。合成データでの検証であり、確認実験は未起動。候補の適格性、worker・preflight・全24枠の監査への接続は残る。

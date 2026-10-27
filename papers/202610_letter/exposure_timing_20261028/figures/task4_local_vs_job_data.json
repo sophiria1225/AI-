@@ -1,0 +1,66 @@
+{
+  "scope": "closed_P140_Task4_local_mechanism_and_same_cohort_outcomes",
+  "actual_data": true,
+  "task_label": "Task 4",
+  "model_seed": 57,
+  "local": {
+    "opportunity": 2,
+    "after_model_calls": 20,
+    "current_view_native_tokens": 14027,
+    "delta_view_native_tokens": 6058,
+    "accepted": true,
+    "installed_actor_call": "call_021",
+    "installed_actor_input_tokens": 6058,
+    "native_recount_performed": false,
+    "source_count_binding_relied_on": true
+  },
+  "rows": [
+    {
+      "method": "TR",
+      "success": true,
+      "known_input_tokens": 319446,
+      "known_output_tokens": 13142,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "exact_total_tokens": 332588,
+      "model_calls": 31,
+      "api_requests": 76,
+      "stop_reason": "agent_declared_complete"
+    },
+    {
+      "method": "EDO",
+      "success": false,
+      "known_input_tokens": 301874,
+      "known_output_tokens": 16046,
+      "known_total_tokens": 317920,
+      "unknown_usage_calls": 1,
+      "exact_total_tokens": null,
+      "model_calls": 31,
+      "api_requests": 78,
+      "stop_reason": "wall_limit_during_model_call"
+    }
+  ],
+  "exact_whole_job_difference": null,
+  "quality_preservation_established": false,
+  "source_gates": {
+    "primary_utility_gate_met": false,
+    "unchanged_delta_control_gate_met": false,
+    "both_control_development_gate_met": false
+  },
+  "historical_P123_scalar_match_only": true,
+  "prior_cohort_values_pooled": false,
+  "sources": {
+    "reports/P140_comparison.json": "38a69db936af1376d629859b05350f6f5c6de36262e75222d84caf3524139746",
+    "materials/20261028_p140_results/model_calls.csv": "b4b249c96f0e1658088efe89692a57d0c8ddd0cec576fd26f86a71e05f9852b9",
+    "materials/20261028_p140_results/conditions.csv": "23d38de3382aa933d22688de467c6413482385f1d03d4a516063edfdc3a1c3b6",
+    "reports/P123_comparison.json": "73d55305300ae6cb332213f08f8a813a40ab17f82a9a167e3fbbf1bb17fb6147"
+  },
+  "source_locations": [
+    "P140 rows[Task4 EDO].checkpoint_controls[checkpoint_decided,opportunity_index=2]",
+    "P140 model_calls[EDO,call_021]",
+    "P140 condition rows[Task4 TR,EDO]",
+    "P123 rows[Task4 rolling_separate] used only for historical scalar equality"
+  ],
+  "P141_reads": 0,
+  "new_model_API_native_evaluator_calls": 0
+}
