@@ -1,0 +1,49 @@
+{
+  "fixed_source_head": "5cab33a2e239f3e6d90e63e32c54ba0764b1c594",
+  "scope": "source_only_no_experiment_result_reads",
+  "sources": {
+    "scripts/single_checkpoint_history.py": {
+      "sha256": "cc323921dbe28341160210cfdb78b55e649e3714404e32fd0efde4c4852b203a",
+      "locations": "constants TRIGGER_INPUT_TOKENS, RECENT_TURNS, MAX_SUMMARY_CHARACTERS; parse_checkpoint"
+    },
+    "scripts/checkpoint_object_timing_p141.py": {
+      "sha256": "d238c0cd90e65575a1e1c27578209974f8614046629c1f0b5f4ca679b6f9d293",
+      "locations": "base_mode_for; DeltaEnvelopeCheckpoint.begin; OBJECT_DELTA_SUMMARY_PROMPT"
+    },
+    "scripts/checkpoint_representation_p139.py": {
+      "sha256": "8cc12812f5413f8157e99591108ea53bf0af91bdfff64639baf24481f0f231e9",
+      "locations": "trigger_decision; validate_fragment_budget; RepresentationCheckpoint; eligible_prefix_views"
+    },
+    "scripts/checkpoint_prefix_exposure.py": {
+      "sha256": "134ecdf959a5d63696c62d601c0d79e7c786ae8d187a599d2d3ec04e16a5d037",
+      "locations": "PrefixExposureLedger.record_actor; record_focus; record_actor_measurement_failure"
+    },
+    "scripts/checkpoint_object_timing_inference_p141.py": {
+      "sha256": "b6c1a1ba68b9d87a1ae6376b24f0b9d255f95c848ae7230d15f71e560c2ed621",
+      "locations": "_maybe_offer; envelope_summary"
+    },
+    "scripts/checkpoint_representation_inference_p139.py": {
+      "sha256": "c7b896bc2508954a3188fa8c99c12ce36e1cec358d857f43ed366592ebb276a5",
+      "locations": "call; _record_representation_view"
+    },
+    "scripts/rolling_checkpoint_inference.py": {
+      "sha256": "d099e55d1cb727875fd18b1447abd9bb8e250127c234564440eb5463fd98ab6b",
+      "locations": "_summarize_separately; _resolve"
+    },
+    "scripts/run_whole_task_object_timing_cell_p141.py": {
+      "sha256": "caea485b37942cd7eb7faf535f69f7fa4fbabc0e88a65c4689ca92a2724862af",
+      "locations": "_run_cell; run_cell"
+    },
+    "scripts/checkpoint_attempt_usage.py": {
+      "sha256": "d69448c5261c1659c9f81c8a484c178f7cefba6a51d7bd6fd1ee5fa0ef2df2d9",
+      "locations": "attempt_usage"
+    },
+    "scripts/run_whole_task_object_timing_p141.py": {
+      "sha256": "29fbee5503bb113247387b2ffd7fe9ab289c32fab201e0f9d99531e696a33b48",
+      "locations": "run, worker closure/server idle and official evaluation"
+    }
+  },
+  "actual_P141_data_reads": 0,
+  "experiment_execution_calls": 0,
+  "figure_visual_review": "Final 130 x 45 mm PNG inspected; no clipped or overlapping label observed. Vector PDF intended at native width."
+}
