@@ -1,5 +1,9 @@
 # AIハーネス研究
 
+P137は2026-10-27 12:29:26 JSTに開始した。12:31:46 JST時点で最初のfields57条件のactor要求保存とmodel slot処理中を確認（その時点0/4完了）。P136で未実施だったfields57→fields157→IDs157→raw157の4条件だけを追加観測する。この記録に閉鎖結果は未収録で、実行中の成否・usage・生成内容は読まない。 [P137開始記録](docs/experiments/P137_execution_start_20261027.md)。
+
+seed57はfields単独、seed157だけが3方式の記述的比較。P136の元6行・欠測・gate falseは置換・合算しない。新P137の採用判定も行わない。初期raw interface・機構は同じで、timeoutの記録経路とworker終了状態を修正。各80calls/450000tokens/1800作業秒/API80、全4最大320calls/1800000tokens/API320/評価4、server4時間・18:00 JST上限。開始196台帳/2433束縛・1547 sourceを固定する。
+
 P136は予定6行を保持して停止・集計を閉鎖した。評価完了1件（raw seed57成功・332,588 tokens）、worker未完1件、未実施4件。全仕事総費用・方式間比較はnull、固定gate false。独立検算57,099項目PASSは欠測を含む記録整合の確認であり、全6評価や方式採用を意味しない。 [P136の結果・欠測と限界](docs/experiments/P136_findings.md)。
 
 全方式の初期raw guide/toolsを揃え、accepted checkpoint後だけIDsまたは同じ選択規則のIDs＋不足fieldを提示する有限比較だった。新query・公開handleはない。開始194台帳/2389束縛と1527 source、元失敗・欠測・図を保持する。途中workerの使用量と停止機序は別補足として扱い、認証済み全仕事表へ加算せず、費用0ともみなさない。 [時点付き開始記録](docs/experiments/P136_execution_start_20261027.md)。

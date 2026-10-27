@@ -1,0 +1,58 @@
+{
+  "phase": "P137_execution_start_publication_peer",
+  "status": "pass",
+  "blocking_findings": [],
+  "source_sha256": {
+    "README.md": "73ebc4b91871eaa087b0da9c788843549694418a0188335044babe127224ff8a",
+    "RESUME.md": "2e4bf9c5a6c48664ad8961900e7e80eaf10880c29d231a699e8ce5ac4e8803ea",
+    "docs/current_status.md": "bee3bbad53e78cf5e9623b66093ebbeaaf4268d801bd92601a8c9c470c4c7e92",
+    "docs/experiments/P137_execution_start_20261027.md": "438c9e4f1823203ded4dea6d00da0677e02928bcaa5eecd63eb67a224c708f29",
+    "docs/next_actions.md": "bc245d881f78799d35a299745edb6f53c8257db31ce3b7ce72c836d9ce28b40d",
+    "docs/task_board.md": "d372e1c3a5158064b79275002f903671377df810bdec4deafa7a4dc37b8e5b9b",
+    "reports/P137_closed_review_wait_once_start.json": "a2744d273f9c47a3d775490cc58424d9225e0e1914a443718d2e2001f074e0f8",
+    "reports/P137_execution_start_20261027.json": "dfb5fbf288a3642b9ae62d79520b781b2edb2087d9c4abd6681a040b20582cff",
+    "reports/P137_execution_start_validation_20261027.json": "436a653d249a342e016202e943e6fecc4f5de681b0ea4e27b25c68263cd975ed",
+    "reports/P137_figure_wait_once_start.json": "2d8357a9cd7a25b5f79ed9a23c0f62e08d8e8c3aec0d0a91ead82ec2d74bc252",
+    "reports/P137_pipeline_child_once.json": "2196a2e1c189fd716c70bcb2239127723021b023c8b05455b9b4096c5a1345e8",
+    "reports/P137_pipeline_once_start.json": "76c0f5523cab19e86289b01b0d776653770e67142603d03ff788e8447caee227",
+    "reports/P137_start_live_observation_20261027.json": "4e282bea3c29f2bf2a084a83559ac47cdefcf53e6acd059c909523d18ec3fd6f",
+    "tracking/tasks.json": "48f6002bc38ab1429a397daba38dbed818a74993b802397026fc2a858880b55e"
+  },
+  "base_commit": "e64d9e591b13dea864ae37f6b4dae9325b365c0a",
+  "fixed_execution_head": "a6c088f8f382521010ff264ffe22f52d2146314e",
+  "plan_sha256": "9b8b020c83bf1d996b4d977a628831c46da4d7a0e469a3cf2b8f0e18916720f1",
+  "observation_at": "2026-10-27T03:31:46.682224+00:00",
+  "checks_passed": 5787,
+  "check_count": 5787,
+  "checks_summary": {
+    "same_byte_operational_copies": 5,
+    "old_ledgers_unchanged": 196,
+    "old_bindings_unchanged": 2433,
+    "run_sources_verified": 1547,
+    "prep_sources_verified": 1547,
+    "tracking_tasks": 120,
+    "other_tasks_unchanged": 118,
+    "time_qualified_start_not_completion": true,
+    "seed57_unpaired_seed157_only": true,
+    "original_P136_no_replacement_or_pooling": true,
+    "no_in_progress_effect_or_success_claim": true,
+    "no_private_paths_or_task_payload_published": true
+  },
+  "review_process_note": "Initial read-only probe used unstaged git diff during concurrent staging and stopped at file-count assertion before writing a report. This final check uses the declared base commit and confirms the same 14 unchanged draft files. No experiment or source was changed.",
+  "limits": [
+    "Verifies author-bound root operational observation; no new live server or request inspection.",
+    "12:31:46 JST observation is not a current-liveness or completed-outcome assertion.",
+    "A start/watch marker is not an audit pass or completed rendering.",
+    "No outcome, usage, generated payload or capture record was read."
+  ],
+  "actions": {
+    "actual_model_API_tokenizer_evaluator_calls": 0,
+    "actual_task_outcomes_read": 0,
+    "actual_usage_or_generated_payload_read": 0,
+    "actual_captures_read": 0,
+    "renderer_or_reviewer_runs": 0,
+    "source_edits": 0,
+    "ledger_edits": 0,
+    "publication_actions": 0
+  }
+}

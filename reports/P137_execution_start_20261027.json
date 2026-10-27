@@ -1,0 +1,133 @@
+{
+  "phase": "P137_execution_start",
+  "recorded_at": "2026-10-27T03:31:46.682224+00:00",
+  "scope": "Time-qualified operational start only; no in-progress outcomes, usage, API values, generated contents or capture records inspected.",
+  "fixed_execution_head": "a6c088f8f382521010ff264ffe22f52d2146314e",
+  "plan_sha256": "9b8b020c83bf1d996b4d977a628831c46da4d7a0e469a3cf2b8f0e18916720f1",
+  "plan_source_count": 1547,
+  "planned_slots": 4,
+  "model_seeds": [
+    57,
+    157
+  ],
+  "independent_tasks": 1,
+  "modes": [
+    "raw_anchor",
+    "ids_only",
+    "entity_fields"
+  ],
+  "fixed_slot_order": [
+    {
+      "model_seed": 57,
+      "mode": "entity_fields"
+    },
+    {
+      "model_seed": 157,
+      "mode": "entity_fields"
+    },
+    {
+      "model_seed": 157,
+      "mode": "ids_only"
+    },
+    {
+      "model_seed": 157,
+      "mode": "raw_anchor"
+    }
+  ],
+  "balanced_repetitions": false,
+  "seed57_is_unpaired": true,
+  "paired_comparison_scope": "same_cohort_seed157_only",
+  "wrapper_started_at": "2026-10-27T03:29:26.115412+00:00",
+  "wrapper_pid": 19868,
+  "pipeline_pid": 19889,
+  "operational_snapshot": {
+    "observed_at": "2026-10-27T03:31:46.682224+00:00",
+    "root_observation_sha256": "4e282bea3c29f2bf2a084a83559ac47cdefcf53e6acd059c909523d18ec3fd6f",
+    "status": "running",
+    "active_condition": "BOC_P137_R01_01_ENTITY_FIELDS",
+    "completed_conditions": 0
+  },
+  "first_actor_dispatch_confirmation": {
+    "first_request_file_created": true,
+    "model_slot_is_processing": true,
+    "request_contents_read": false,
+    "generated_contents_read": false,
+    "usage_task_outcomes_and_captures_read": false,
+    "observation_is_not_task_completion_or_success": true
+  },
+  "cell_limits": {
+    "shared_model_calls": 80,
+    "logical_tokens": 450000,
+    "work_seconds": 1800,
+    "actual_API_requests": 80
+  },
+  "cohort_maxima": {
+    "shared_model_calls": 320,
+    "logical_tokens": 1800000,
+    "actual_API_requests": 320,
+    "evaluations": 4
+  },
+  "server_max_lifetime_seconds": 14400,
+  "deadline_jst": "2026-10-27T18:00:00+09:00",
+  "P137_start_ledger_count": 196,
+  "P137_start_binding_count": 2433,
+  "P137_start_registry_sha256": "f9c561fcf6b1b09f9694d3eae6f2819b53118121e3a81d4499bba74b7713934b",
+  "reserved_snapshot_sha256": "88ba8861e3c4775953c420810fe919c0a3e1a7a410bf3a328d75e925bdf40b1d",
+  "start_snapshot_not_replaced_by_later_global": true,
+  "source_preparation_PR": 550,
+  "source_merge_commit": "e64d9e591b13dea864ae37f6b4dae9325b365c0a",
+  "exact_head_CI": [
+    {
+      "id": 40443984614,
+      "head_sha": "a6c088f8f382521010ff264ffe22f52d2146314e",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121990731093
+    },
+    {
+      "id": 40443923791,
+      "head_sha": "a6c088f8f382521010ff264ffe22f52d2146314e",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 121990532787
+    }
+  ],
+  "initial_guide_and_tools_identical_all_modes": true,
+  "public_query_interface_added": false,
+  "public_snapshot_handle_added": false,
+  "automatic_disclosure_only_after_accepted_checkpoint": true,
+  "selection_is_conditional_on_same_pending_ids": true,
+  "P136_original_six_rows_and_gate_unchanged": true,
+  "prior_results_pooled": false,
+  "original_P136_gate_replaced": false,
+  "development_gate_evaluated": false,
+  "scientific_adoption_evaluated": false,
+  "catchable_timeout_handler_and_worker_exit_recording_applied_to_new_execution_only": true,
+  "closed_review_waiter": {
+    "started_at": "2026-10-27T03:29:24.791765+00:00",
+    "pid": 19879,
+    "source_sha256": "b2439c236798be24d8173982cb8783be13b040c7bdac889412a45afc8c7edc06",
+    "reviewer_source_sha256": "7b58a7b2dbb5dd6a629445ac79cf59432798eead443e8f3a0b078a41ae71f47e",
+    "maximum_wait_seconds": 43200,
+    "start_record_sha256": "a2744d273f9c47a3d775490cc58424d9225e0e1914a443718d2e2001f074e0f8",
+    "review_completion_claimed": false
+  },
+  "figure_waiter": {
+    "started_at": "2026-10-27T03:29:25.969128+00:00",
+    "pid": 19887,
+    "source_sha256": "1a3d17dd7f6f06a7b5db7dda4643660b2c8e412318a6d6acdf9308582bc1ceee",
+    "renderer_source_sha256": "fd2d3e63500fb0f1d927663028230b3760518b00efca9184e05515179b5e3e81",
+    "maximum_wait_seconds": 43200,
+    "start_record_sha256": "2d8357a9cd7a25b5f79ed9a23c0f62e08d8e8c3aec0d0a91ead82ec2d74bc252",
+    "figure_completion_claimed": false
+  },
+  "existing_continuation_instruction_applied": true,
+  "new_individual_authorization_claimed": false,
+  "all_four_conditions_complete_claim": false,
+  "task_success_or_cost_effect_claim": false,
+  "novel_method_established": false,
+  "status_publication_model_API_tokenizer_evaluation_calls": 0,
+  "manuscript_written": false
+}
