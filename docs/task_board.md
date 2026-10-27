@@ -407,6 +407,10 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+2026-10-27 14:32:49 JST確認：P138は14:31:09 JSTに開始済み。固定4課題×3方式の12条件、0/12完了・最初の写真/rolling条件が実処理中。最初のactor送信・応答保存・model slot処理を確認した。途中成否・usage・生成内容は未読。source919b34e9／plan52ef2cbf／1563source、同head両CI成功、開始199台帳2497束縛。これは観測時点の開始記録で、方式の成功や新規性の確立ではない。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_execution_start_20261027.md
+
+【以下は以前の時点付き記録】
 2026-10-27 14:26 JST時点：P138の実装・有限比較を準備中。既知4課題×16k閾値／固定3turn／累積raw-prefix再提示量の3方式、seed57、全12条件。保存入力11件の計数でCSVの初回判断差after19（E22,306／直前focus21,419）を確認したが、全仕事の削減・成功・新規性は未実証。最初のtemplate参照誤りを残し合計26 native描画・モデル生成0。新コホートは未開始で、source固定・全体検査・同head両CIを経て起動する。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_prefix_exposure_draft_20261027.md
 
@@ -556,6 +560,10 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+2026-10-27 14:32:49 JST確認：P138は14:31:09 JSTに開始済み。固定4課題×3方式の12条件、0/12完了・最初の写真/rolling条件が実処理中。最初のactor送信・応答保存・model slot処理を確認した。途中成否・usage・生成内容は未読。source919b34e9／plan52ef2cbf／1563source、同head両CI成功、開始199台帳2497束縛。これは観測時点の開始記録で、方式の成功や新規性の確立ではない。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_execution_start_20261027.md
+
+【以下は以前の時点付き記録】
 2026-10-27 14:26 JST時点：P138の実装・有限比較を準備中。既知4課題×16k閾値／固定3turn／累積raw-prefix再提示量の3方式、seed57、全12条件。保存入力11件の計数でCSVの初回判断差after19（E22,306／直前focus21,419）を確認したが、全仕事の削減・成功・新規性は未実証。最初のtemplate参照誤りを残し合計26 native描画・モデル生成0。新コホートは未開始で、source固定・全体検査・同head両CIを経て起動する。
 https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_prefix_exposure_draft_20261027.md
 
