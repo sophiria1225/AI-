@@ -1,8 +1,8 @@
-# 次の作業：P136の全6閉鎖と独立検算
+# 次の作業：未完記録を保持し、停止経路の修正を検証
 
-P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。[P136開始記録](experiments/P136_execution_start_20261027.md)。
+P136は予定6行を保持して停止・集計を閉鎖した。評価完了1件（raw seed57成功・332,588 tokens）、worker未完1件、未実施4件。全仕事総費用・方式間比較はnull、固定gate false。独立検算57,099項目PASSは欠測を含む記録整合の確認であり、全6評価や方式採用を意味しない。 [P136の結果・欠測と限界](experiments/P136_findings.md)。
 
-全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。
+全方式の初期raw guide/toolsを揃え、accepted checkpoint後だけIDsまたは同じ選択規則のIDs＋不足fieldを提示する有限比較だった。新query・公開handleはない。開始194台帳/2389束縛と1527 source、元失敗・欠測・図を保持する。途中workerの使用量と停止機序は別補足として扱い、認証済み全仕事表へ加算せず、費用0ともみなさない。 [時点付き開始記録](experiments/P136_execution_start_20261027.md)。
 
 P135は2026-10-27 09:58 JSTに全6条件・所有server・集計を閉鎖した。rawは1/2成功・434,623 tokensで費用既知、counts/entityは各0/2成功・既知小計274,986/302,737 tokensにunknown各1件。主比較の共通成功0、rawへの成功喪失1、詳細entity表示行とqueryは全0、固定gate false。独立検算18,274項目PASSは会計整合の確認であり、方式採用ではない。[P135全6条件の結果と限界](experiments/P135_findings.md)。
 
@@ -14,15 +14,15 @@ P134の待機queueはこの報告失敗を検知し、モデル・server・prefl
 
 P135は従来のraw anchor／残件数のみ／対象IDと不足fieldの3方式×seed57/157、既知CSV1課題の6条件。全方式でtyped観測とcaptureは共通、主2方式のguide/query能力は同じ、rawは元P123 interfaceを保持する。accepted checkpoint後の次actorへ一度だけ有料表示し、open/unknown列挙を残件0にしない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。P133復旧証明とP134モデル0、source固定、両CI成功を起動前に確認済み。全6条件の閉鎖後に集計・独立検算を完了した。
 
-P136では、対象列挙の効果とfield対応付けの効果を区別する。全pending対象の不足fieldが同じなら、集約件数からfield maskは一意であり、field情報が増えたとは言えない。既存FOCUS等にもentity保持・救済がある。新規性、一般品質維持、新方式の全仕事token削減は未確立で、少数seedや共通成功だけを一般効果へ広げない。P123の通常rollingは既知4/4成功で単発比12.07%減を観測済み。原稿用の全条件・失敗・不明費用・機構到達を整理する。
+P136は対象列挙とfield対応付けを区別する設計だったが、比較未完のため追加寄与を判断できない。全pending対象の不足fieldが同じなら、集約件数からfield maskは一意であり、field情報が増えたとは言えない。既存FOCUS等にもentity保持・救済がある。新規性、一般品質維持、新方式の全仕事token削減は未確立で、少数seedや共通成功だけを一般効果へ広げない。P123の通常rollingは既知4/4成功で単発比12.07%減を観測済み。原稿用の全条件・失敗・不明費用・機構到達を整理する。
 
 P133開始snapshot189台帳/2290束縛と、その後のglobal190/2300を分離する。P134の未実行予約snapshot190/2300も保存し、P135の開始snapshotも190/2300で固定し、その後のglobal増加を遡及しない。元run/prepと失敗は変更しない。モデルは単一serverで直列、保存された生成Pythonはhost実行しない。保留12シナリオは要求文・データ・正解を未閲覧のまま保つ。
 
 変更先はsophiria1225/AI-と[専用Project1](https://github.com/users/sophiria1225/projects/1)のみ。raw prompt・reasoning・生成task code・課題値・認証・評価器本文は公開しない。原稿執筆・教授への連絡・投稿は行わない。
 
-1. [P135の全6結果](experiments/P135_findings.md)を、品質喪失・未知費用・詳細表示未発動を保持して判断に反映する。元実験・監査・図を再実行しない。
-2. 閉鎖後の補助診断で、通知到達、列挙のunknown、field情報の追加寄与と直接表示費用を分ける。診断は公式成功や新規性の証明ではない。
-3. P136の初期interface共通・checkpoint後だけの別設計を、全6閉鎖後に判定する。P135の結果を追加seedで救済せず、元gate・失敗・unknownを保持する。P136も共通成功だけの費用や少数seedを一般効果へ広げない。
-4. 保留12シナリオは手法・比較方式・評価仕様の固定前には開かない。ユーザーの明示停止まで研究作業を継続し、原稿本文はユーザーが担当する。
+1. [P136の予定6行](experiments/P136_findings.md)を、評価1・worker未完1・未実施4・全仕事nullのまま判断資料へ残す。元実験・監査・図を再実行しない。
+2. 途中workerの保存usage・未終端要求・停止経路を補足診断で分離する。認証済み全仕事会計を復元したとはせず、元null/gateを変更しない。
+3. 停止経路の修正と限定的な復旧比較は、既存の継続指示の範囲でsource・条件・有限予算を別に固定する。未完P136を成功した実験に上書きせず、開始は実証跡が得られてから記録する。
+4. P135の品質喪失・未知費用・詳細表示未発動も保持する。保留12シナリオは固定前に開かず、原稿本文はユーザーが担当する。
 
 [P135開始記録](experiments/P135_execution_start_20261027.md)。

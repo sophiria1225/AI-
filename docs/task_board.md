@@ -407,6 +407,13 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+【最新：2026-10-27 P136予定6行を閉鎖・比較未完】
+P136は予定6行を保持して停止・集計を閉鎖した。評価完了1件（raw seed57成功・332,588 tokens）、worker未完1件、未実施4件。全仕事総費用・方式間比較はnull、固定gate false。独立検算57,099項目PASSは欠測を含む記録整合の確認であり、全6評価や方式採用を意味しない。
+全方式の初期raw guide/toolsを揃え、accepted checkpoint後だけIDsまたは同じ選択規則のIDs＋不足fieldを提示する有限比較だった。新query・公開handleはない。開始194台帳/2389束縛と1527 source、元失敗・欠測・図を保持する。途中workerの使用量と停止機序は別補足として扱い、認証済み全仕事表へ加算せず、費用0ともみなさない。
+元pipeline終了1、audit/session/report0/0/0。原source e65fa22d/plan ff442f59、科学gate不変更。停止経路の修正は別有限仕様で扱い、研究全体の目標は継続中。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P136_findings.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 10:47 JST P136実処理確認】
 P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。
 全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。
@@ -531,6 +538,13 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+【最新：2026-10-27 P136予定6行を閉鎖・比較未完】
+P136は予定6行を保持して停止・集計を閉鎖した。評価完了1件（raw seed57成功・332,588 tokens）、worker未完1件、未実施4件。全仕事総費用・方式間比較はnull、固定gate false。独立検算57,099項目PASSは欠測を含む記録整合の確認であり、全6評価や方式採用を意味しない。
+全方式の初期raw guide/toolsを揃え、accepted checkpoint後だけIDsまたは同じ選択規則のIDs＋不足fieldを提示する有限比較だった。新query・公開handleはない。開始194台帳/2389束縛と1527 source、元失敗・欠測・図を保持する。途中workerの使用量と停止機序は別補足として扱い、認証済み全仕事表へ加算せず、費用0ともみなさない。
+元pipeline終了1、audit/session/report0/0/0。原source e65fa22d/plan ff442f59、科学gate不変更。停止経路の修正は別有限仕様で扱い、研究全体の目標は継続中。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P136_findings.md
+
+【以下は過去時点の記録】
 【最新運用：2026-10-27 10:47 JST P136実処理確認】
 P136は2026-10-27 10:46:31 JSTに開始した。10:47:22 JST時点でpreflight/activation成功、最初のraw anchorのactor要求保存とmodel slot処理中を確認。既知CSV1課題のraw／IDs／IDs＋fields×seed57/157、全6条件を固定し、途中の成否・費用・captureは読まない。この記録に閉鎖結果は未収録。
 全方式で初期raw guide/toolsと観測・captureを揃え、accepted checkpoint後だけ主2方式へ提示し、同じclosed pending-ID列を条件に同じprefixを選び、fields側だけ不足fieldを加える。新query・公開handleはない。各80calls/450000tokens/1800作業秒/API80、server6時間・18:00 JST上限。開始194台帳/2389束縛と1527 sourceを固定し、待機開始を監査・図完成と混同しない。

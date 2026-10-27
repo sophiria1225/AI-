@@ -1,0 +1,34 @@
+{
+  "phase": "P136_first_notice_diagnostic_public_projection",
+  "status": "complete_with_unavailable_pairs",
+  "original_result_sha256": "23f571cca946a62659988387a143a4b17ec9a1e19027d9612a4b5dfd1c063463",
+  "diagnostic_source_sha256": "577612693e034cdb86ea5196b49d9173476cc7169d273c92ae4f6ce132102d58",
+  "diagnostic_executed_once": true,
+  "independent_review_output_sha256": "531018f4be5732ea298b9410b4503fa55cf7f2ab3fed9c3cb59ec2f93b6f0bfb",
+  "fixed_head": "e65fa22d32bd63e80005e7bf807b2c91624e6824",
+  "fixed_plan_sha256": "ff442f59f9012af6932974469fc5b2fbcb08afc3e8dd9cba4a480a9cc5f36f6a",
+  "primary_pairs": [
+    {
+      "replication": 1,
+      "model_seed": 57,
+      "diagnosis_status": "unavailable"
+    },
+    {
+      "replication": 2,
+      "model_seed": 157,
+      "diagnosis_status": "unavailable"
+    }
+  ],
+  "all_six_accounted": false,
+  "diagnostic_error_cells": 0,
+  "additional_model_API_tokenizer_evaluator_calls": 0,
+  "saved_program_execution": 0,
+  "original_costs_or_scientific_gate_changed": false,
+  "causal_field_information_effect_established": false,
+  "novelty_established": false,
+  "private_source_paths_task_values_IDs_request_hashes_included": false,
+  "limits": [
+    "Both main pairs are unavailable; a completed diagnostic is not a completed comparison.",
+    "No mask-information or causal-effect result can be concluded from unavailable pairs."
+  ]
+}
