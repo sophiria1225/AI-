@@ -1,0 +1,15 @@
+# 時間切れを記録できる新worker入口の準備
+
+P136の第2条件は、19番目のモデル要求を書いた後、応答・終端usage・worker summaryを残さず終了した。固定入口にはSIGTERM/SIGINTのhandlerだけがあり、既存transportはSIGALRMを設定する。実workerの終了signalは保存されていないため、当該停止をSIGALRMと断定しない。
+
+固定transportと手書きの待機関数を使う子プロセスでは、default SIGALRMでexit −14、requestだけが残り、finallyへ到達しないことを再現した。同じ試験でSIGALRMをTimeoutErrorへ変換すると、responseと未知usageが保存され、呼出側のfinallyへ到達する。モデル・API・保存生成コードは実行していない。
+
+新しい `inference_timeout_handler` contextを追加した。今後の新workerはmain threadのdispatchをこのcontextで包む。既存adapterが要求単位のalarm・時間上限・送信・記録を担当し、contextは期限signalを捕捉可能な例外へ変換する。終了時にはalarmを解除し、元のhandlerを戻す。呼出元で独立に設定した外側alarmとの入れ子は対象外。
+
+**この追加だけでは既存workerへ接続されない。新しい実験はまだ開始していない。** 過去のP136実装・記録・不明usageは保存し、失われた実使用量を推定値で置き換えない。要求本文、出力上限、reasoning budget、時間予算、tokenizer、モデルは変更しない。SIGKILLや記録先障害まで記録を保証する機能ではない。
+
+最初に既存adapterを直接修正した案は、過去実験のsource固定検査に失敗したため採用しなかった。3 adapterを元のbytesへ戻し、新moduleとして分離した。actorのtool-choice経路に加え、rolling separate focusが使うfixed-budget経路も試験した。
+
+検証は実alarmを使う子プロセスの3試験・3 adapter、独立した3境界試験、最終版の全2,826試験、compileallが通過した。新workerへの接続時には、その入口から時間切れ記録と後始末まで到達することを別途確認する。
+
+出所：[独立レビュー](../reports/inference_timeout_recording_review_20261027.json)。P136の科学的比較は未完了であり、この運用修正を性能改善や新規性の成果とは数えない。
