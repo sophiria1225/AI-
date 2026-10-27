@@ -1,0 +1,186 @@
+{
+  "schema": "P140_current_host_hardware_snapshot_v1",
+  "status": "complete",
+  "observation_scope": "Selected current-host hardware and OS facts collected after P140 launch; supplementary environment context only.",
+  "collection_started_at_utc": "2026-10-27T15:52:35.643861+00:00",
+  "collection_finished_at_utc": "2026-10-27T15:52:35.703028+00:00",
+  "collection_started_at_jst": "2026-10-28T00:52:35.643861+09:00",
+  "collection_finished_at_jst": "2026-10-28T00:52:35.703028+09:00",
+  "observed_fields": {
+    "hardware_model": {
+      "value": "Mac15,14",
+      "unit": "model_identifier"
+    },
+    "physical_memory_bytes": {
+      "value": 274877906944,
+      "unit": "bytes"
+    },
+    "physical_cpu_cores": {
+      "value": 28,
+      "unit": "cores"
+    },
+    "logical_cpu_count": {
+      "value": 28,
+      "unit": "logical_CPUs"
+    },
+    "cpu_brand_string": {
+      "value": "Apple M3 Ultra",
+      "unit": "vendor_string"
+    },
+    "machine_architecture": {
+      "value": "arm64",
+      "unit": "architecture_identifier"
+    },
+    "os_product_name": {
+      "value": "macOS",
+      "unit": "product_name"
+    },
+    "os_product_version": {
+      "value": "27.0.1",
+      "unit": "version_string"
+    },
+    "os_build_version": {
+      "value": "26A434",
+      "unit": "build_identifier"
+    }
+  },
+  "arithmetic_conversion": {
+    "physical_memory_GiB": 256,
+    "unit": "GiB",
+    "definition": "physical_memory_bytes / 2**30; unit conversion only, not GPU memory or model residency."
+  },
+  "command_evidence": [
+    {
+      "field": "hardware_model",
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.model"
+      ],
+      "exit_code": 0,
+      "stdout": "Mac15,14",
+      "started_at_utc": "2026-10-27T15:52:35.643986+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.647067+00:00"
+    },
+    {
+      "field": "physical_memory_bytes",
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.memsize"
+      ],
+      "exit_code": 0,
+      "stdout": "274877906944",
+      "started_at_utc": "2026-10-27T15:52:35.647093+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.649508+00:00"
+    },
+    {
+      "field": "physical_cpu_cores",
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.physicalcpu"
+      ],
+      "exit_code": 0,
+      "stdout": "28",
+      "started_at_utc": "2026-10-27T15:52:35.649534+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.652009+00:00"
+    },
+    {
+      "field": "logical_cpu_count",
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.logicalcpu"
+      ],
+      "exit_code": 0,
+      "stdout": "28",
+      "started_at_utc": "2026-10-27T15:52:35.652033+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.654448+00:00"
+    },
+    {
+      "field": "cpu_brand_string",
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "exit_code": 0,
+      "stdout": "Apple M3 Ultra",
+      "started_at_utc": "2026-10-27T15:52:35.654474+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.656824+00:00"
+    },
+    {
+      "field": "machine_architecture",
+      "command": [
+        "uname",
+        "-m"
+      ],
+      "exit_code": 0,
+      "stdout": "arm64",
+      "started_at_utc": "2026-10-27T15:52:35.656849+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.660584+00:00"
+    },
+    {
+      "field": "os_product_name",
+      "command": [
+        "sw_vers",
+        "-productName"
+      ],
+      "exit_code": 0,
+      "stdout": "macOS",
+      "started_at_utc": "2026-10-27T15:52:35.660614+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.671018+00:00"
+    },
+    {
+      "field": "os_product_version",
+      "command": [
+        "sw_vers",
+        "-productVersion"
+      ],
+      "exit_code": 0,
+      "stdout": "27.0.1",
+      "started_at_utc": "2026-10-27T15:52:35.671057+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.680329+00:00"
+    },
+    {
+      "field": "os_build_version",
+      "command": [
+        "sw_vers",
+        "-buildVersion"
+      ],
+      "exit_code": 0,
+      "stdout": "26A434",
+      "started_at_utc": "2026-10-27T15:52:35.680366+00:00",
+      "finished_at_utc": "2026-10-27T15:52:35.702992+00:00"
+    }
+  ],
+  "provenance": {
+    "collection_method": "Nine selected read-only local OS utility invocations, each with a 10-second command timeout. No full profiler or system dump.",
+    "command_display": "Command arrays retain utility basename and exact flags; invocations used fixed standard OS system executable locations. Host-specific paths are not retained.",
+    "field_selection": "Only the nine enumerated outputs were captured; no unrestricted sysctl/uname/profiler output."
+  },
+  "privacy_scope": {
+    "serial_numbers_read_or_saved": false,
+    "UUIDs_read_or_saved": false,
+    "hostname_or_username_read_or_saved": false,
+    "account_or_private_path_identifiers_saved": false,
+    "network_information_read_or_saved": false,
+    "full_profiler_dump_read_or_saved": false
+  },
+  "limits": [
+    "This is a current-host observation after launch, not proof of unchanged hardware or OS for every earlier request.",
+    "This supplementary snapshot is not a source-map, preregistration or prelaunch hardware binding.",
+    "Physical memory capacity is not available/free memory, GPU memory, model allocation or model residency. No GPU model or core-count inference was made.",
+    "No P140 outcomes, usage, generated requests/responses or server query was accessed for this snapshot."
+  ],
+  "executions": {
+    "read_only_system_fact_queries": 9,
+    "model_generations": 0,
+    "API_requests": 0,
+    "native_token_counts": 0,
+    "evaluations": 0,
+    "server_queries": 0,
+    "runtime_changes": 0
+  }
+}

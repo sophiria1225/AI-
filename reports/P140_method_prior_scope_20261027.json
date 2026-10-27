@@ -1,0 +1,171 @@
+{
+  "document_type": "public_safe_bounded_primary_source_comparison",
+  "phase": "P140",
+  "prepared_at": "2026-10-27T23:10:19.612861+09:00",
+  "review_started_at": "2026-10-27T23:02:37+09:00",
+  "timing_and_integrity": {
+    "prepared_after_P140_launch": true,
+    "P140_intermediate_or_closed_results_read": false,
+    "is_launch_preregistration": false,
+    "existing_P139_post_exposure_note_reused": true,
+    "scope": "This literature note does not repair prior study blinding, alter a fixed gate, or establish an experimental result."
+  },
+  "reused_note": {
+    "repository_path": "reports/P139_method_prior_scope_20261027.json",
+    "sha256": "3919295a50fee380a21cf16aad0597361c4be536385edf91202ff31923d98863",
+    "not_reopened": [
+      "StateComp v1 method/Appendix E",
+      "SelfCompact v2 method/Appendix C",
+      "Hermes micro-compaction documentation"
+    ],
+    "prior_findings_reused": "Adaptive triggers, cumulative cost accounting, shorter-view acceptance and incremental summary maintenance already overlap with prior work. This review adds closer state-retention and cost-trigger comparisons."
+  },
+  "target_under_comparison": {
+    "E": "After already-dispatched actor calls with known terminal usage, accumulate max(0, native(full actual actor input) - native(the same input with only newly eligible raw prefix removed)). Prior summary, system/task, recent tail, tools and budget context remain in the count-only view; no counterfactual view is dispatched.",
+    "C": "Latest known paid focus logical input plus output. A known paid invalid or nonshrinking focus still updates C and resets E. Unsent opportunities do neither; unknown usage stops the task.",
+    "trigger": "First opportunity retains the shared length trigger. Repeat offer uses E >= C subject to frozen freshness, retention and maximum-two-opportunity rules; no current unsent or predicted future charge is added.",
+    "representation": "Only the eligible second opportunity, after first-summary acceptance, can append a delta while retaining the prior note bytes. Full combined-view native shortening and size/context/budget constraints still apply.",
+    "excluded_novelty": "Explicitly asking for a JSON object is output-contract clarification, not a new compaction or memory algorithm."
+  },
+  "bounded_search": {
+    "new_queries": 11,
+    "new_substantive_primary_bodies": 6,
+    "distinct_works_or_implementations": 5,
+    "primary_only_relied_on": true,
+    "selection": "One pinned official memory implementation and its documentation, one official compaction cookbook, and three primary papers about summarization or end-to-end memory/compression cost.",
+    "discovery_limit": "The first four search queries returned mixed domains; nonprimary results were not opened or used. Subsequent seven queries used primary-domain filters. No broad citation-chain or whole-repository survey was performed.",
+    "blocked_or_unverified": [
+      "OpenReview OHVzruJl5k PDF was blocked; later-version hybrid-method search snippets were not treated as verified evidence. The reviewed Complexity Trap evidence is arXiv v1 only.",
+      "Anthropic notebook main link did not render substantive code in the browser; conclusions use the official rendered cookbook, whose revision was not pinned.",
+      "Mastra commit fixes the inspected bytes, not historical publication priority. Commit history and prior-art dates were not audited."
+    ]
+  },
+  "primary_sources": [
+    {
+      "id": "mastra_om",
+      "title": "Mastra Observational Memory",
+      "urls": [
+        "https://github.com/mastra-ai/mastra/blob/b59da216b35097e5adc14914e5cae76f811ee8ec/docs/src/content/en/docs/memory/observational-memory.mdx",
+        "https://github.com/mastra-ai/mastra/blob/b59da216b35097e5adc14914e5cae76f811ee8ec/packages/memory/src/processors/observational-memory/observational-memory.ts"
+      ],
+      "commit": "b59da216b35097e5adc14914e5cae76f811ee8ec",
+      "source_sha256": {
+        "docs/src/content/en/docs/memory/observational-memory.mdx": "504f754fdd32efbd76feddd60bc204cd6298cc9de63b8b0f2f241a2d6bcd11e6",
+        "packages/memory/src/processors/observational-memory/observational-memory.ts": "7399a983983beac23760394e84c7392f921edd78c76f7d7506fd5ccecee73563"
+      },
+      "viewed_scope": [
+        "Documentation: observation/reflection thresholds, append/cache behavior, buffering and failure policy",
+        "Implementation: meetsObservationThreshold lines 1348-1357; replaceOrAppendThreadSection lines 2208-2268; wrapObservations lines 2273-2293; status trigger lines 3150-3155"
+      ],
+      "observed_rule": "Observation threshold compares pending plus unobserved message tokens with a configured/dynamic threshold. Reflection compares observation size with its own threshold; buffering and idle/provider options add other activation paths.",
+      "retention": "Thread-scope wrapObservations returns existing observations followed by a separator and new observations. Resource scope can merge a thread/date section. Reflection rewrites the accumulated observations.",
+      "overlap": "Direct counterevidence to treating preservation of old compressed text plus appended new observations as a new primitive.",
+      "difference": "The inspected trigger is backlog/size based, not the repeated paid native-deletion differences E versus prior focus fee C. P140 limits delta to its eligible second opportunity.",
+      "accounting_limit": "Cache reuse motivates stable prefixes; no full cost or competitive guarantee was established from these sections. Delegated storage/buffering modules and every call path were not audited."
+    },
+    {
+      "id": "anthropic_session_memory",
+      "title": "Session memory compaction — Claude Cookbook",
+      "urls": [
+        "https://platform.claude.com/cookbook/misc-session-memory-compaction"
+      ],
+      "version": "Official rendered page as accessed; mutable, not commit-pinned",
+      "viewed_scope": [
+        "_should_update_memory",
+        "_update_session_memory",
+        "_background_memory_update",
+        "context token usage and cache handling"
+      ],
+      "observed_rule": "After a response, compare current context tokens minus tokens at last memory update with a fixed minimum-growth threshold. Initial memory and later context compaction have separate thresholds.",
+      "retention": "Only new messages are selected for the update, but the demonstration regenerates the entire memory from existing memory plus those messages, then replaces session_memory. Unsummarized messages are retained.",
+      "overlap": "Proactive incremental updates, token-informed scheduling and cache-conscious summary calls are existing engineering mechanisms.",
+      "difference": "Current context growth is not a sum of repeated paid prefix exposures, and the trigger does not compare with the last summary input/output charge. This demonstration rewrites memory rather than preserving prior note bytes.",
+      "accounting_limit": "The example reads response usage and cached input for context size. A complete end-to-end comparison matching P140 logical IO was not established from the inspected code."
+    },
+    {
+      "id": "complexity_trap",
+      "title": "The Complexity Trap: Simple Observation Masking Is as Efficient as LLM Summarization for Agent Context Management",
+      "urls": [
+        "https://arxiv.org/html/2508.21433v1"
+      ],
+      "version": "v1",
+      "viewed_scope": [
+        "Section 3.1, summary equations 5-6",
+        "Section 5.2, summarization costs",
+        "Appendix D.2, N/M configuration"
+      ],
+      "observed_rule": "Summarization is scheduled by accumulated turns, retaining a recent tail; the main implementation uses N=21 summarized turns and M=10 retained turns.",
+      "retention": "Previous summary and newly eligible turns produce a replacement summary. The actor receives that summary plus recent turns, rather than an immutable sequence of old and delta summaries.",
+      "overlap": "Summary scheduling, raw-tail retention, a simple masking control and accounting for summary overhead and trajectory elongation are established.",
+      "difference": "The inspected schedule is turn-count based, not retrospective native-deletion exposure versus the preceding focus bill.",
+      "accounting_limit": "Provider/cache-sensitive cost analysis is not identical to unpriced logical input plus output. No later-version hybrid trigger or whole implementation was verified."
+    },
+    {
+      "id": "compression_gateway_cost",
+      "title": "An Empirical Cost Attribution of Context-Compression Gateways in Multi-Turn Coding Agents: Why Compression Rate Is Not the End-to-End Saving",
+      "urls": [
+        "https://arxiv.org/html/2609.22114v1"
+      ],
+      "version": "v1",
+      "viewed_scope": [
+        "Sections 2.1-2.2 and session-cost definition",
+        "Content floor ablation",
+        "Repeated-history, recall and accounting discussion"
+      ],
+      "observed_rule": "Content compression is enabled by a minimum segment-token floor; history summarization addresses context-window pressure. Repeated resubmission makes local reductions accumulate, while recalls and changed trajectories alter end-to-end savings.",
+      "retention": "Exact source recall is supported; that is not evidence of immutable prior-summary preservation. The inspected method does not specify such a summary-state rule.",
+      "overlap": "Cumulative repeated-input cost, non-destructive access, separating compression effects and whole-session attribution are prior concerns.",
+      "difference": "The inspected methods do not turn the past native-deletion exposure sum into an E >= previous-focus-cost execution predicate.",
+      "accounting_limit": "Reported bills distinguish provider cache/input/output tiers. Inclusion of every local compressor compute cost was not established; no numerical performance claim is imported."
+    },
+    {
+      "id": "total_recall_cost",
+      "title": "Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems",
+      "urls": [
+        "https://arxiv.org/html/2608.11879v1"
+      ],
+      "version": "v1",
+      "viewed_scope": [
+        "Sections 3.1 and 3.3, systems and cost model",
+        "Section 4.2",
+        "Appendix B, break-even computation"
+      ],
+      "observed_rule": "Break-even is measured after the run: cumulative memory-system cost becomes lower than full history and remains lower at later measured turns. This evaluates systems; it is not an online compaction command.",
+      "retention": "The benchmark inherits the selected memory systems; it introduces no single immutable-checkpoint/delta update rule in these sections.",
+      "overlap": "Memory overhead, repeated transcript presentation and cumulative amortization are explicitly studied.",
+      "difference": "An ex-post cumulative-cost crossing against full history is distinct from deciding now using E and the last focus charge C.",
+      "accounting_limit": "The fitted cost variable sums input across ingest/retrieval/answer and tracks output separately. Cost dialogues and recall-accuracy tasks are separate benchmarks, unlike one task final-success/whole-job pair."
+    }
+  ],
+  "assessment": {
+    "closest_new_representation_overlap": "Pinned Mastra thread-scope append path is a concrete close match to keeping existing compressed text and adding new text. Its reflection/resource paths also prevent an overbroad claim that all Mastra state is immutable.",
+    "exact_EC_rule_found_in_viewed_sections": false,
+    "meaning_of_negative_search": "Only the inspected methods lack a confirmed exact E/C predicate. This is neither an absence proof nor evidence that the rule or its combination is novel.",
+    "supportable_difference": "The precise retrospective native-deletion positive-part accumulator and previous-known-focus threshold can be described as a concrete implementation-level control difference from these inspected backlog, fixed-interval and ex-post accounting mechanisms.",
+    "combination_judgment": "The representation component substantially overlaps existing append-oriented memory. Combining it with a specific observed-cost heuristic remains an unestablished novelty hypothesis; a new formula or two existing components together do not by themselves establish a research contribution.",
+    "not_ski_rental_guarantee": "E measures past count-only deletion exposure, not achievable future summary savings. C is a previous charge, not a bound on the next one; trajectory and representation can change. Competitive ratio, payback and quality preservation do not follow.",
+    "controls_not_mechanism_novelty": "Complete role accounting, native-shorter acceptance, matched-prefix checks and four-arm attribution controls can strengthen an empirical comparison but are not themselves proof of a novel memory mechanism.",
+    "scope": "Known development tasks at the selected seed and maximum two opportunities; no broad noninferiority, statistical timing-by-representation synergy, independent replication, first-method or held-out claim is supported by this literature note.",
+    "new_mechanism_or_experiment_recommended_here": false,
+    "novelty_established": false
+  },
+  "operations": {
+    "P140_result_reads": 0,
+    "heldout_reads": 0,
+    "new_model_calls": 0,
+    "environment_API_calls": 0,
+    "native_tokenizer_calls": 0,
+    "evaluations": 0,
+    "generated_task_code_executions": 0,
+    "tracked_edits": 0,
+    "plan_changes": 0,
+    "public_repository_writes": 0,
+    "web_and_public_source_reads_only": true
+  },
+  "publication_safety": {
+    "contains_private_absolute_paths": false,
+    "contains_task_values_or_credentials": false,
+    "contains_interim_or_final_P140_outcomes": false,
+    "output_is_exclusive_new_private_file": true
+  }
+}
