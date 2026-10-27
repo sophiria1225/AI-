@@ -1,0 +1,2150 @@
+{
+  "phase": "P138_task4_API_progress_metadata_diagnosis",
+  "status": "complete",
+  "created_at": "2026-10-27T08:36:13.674571+00:00",
+  "source_sha256": "2b2c34ab19ed0f5b2971ba11b34f0ab0f72c1e2c172fe5af8173f82491385a3f",
+  "original_end_sha256": "6883f5fe02b11121b8b94e4a252c4ab11201f197d5ba448a85c490e17ce410e9",
+  "original_audit_sha256": "97aff4150e8761b60c5cc0196e802b52027de917eed50b76cc767695ad480d71",
+  "prior_independent_review_sha256": "c58855bdb487b2a0cc2311c8a1f986efda2a7490d0aaec0c4dde33376065ce87",
+  "rows": [
+    {
+      "mode": "rolling_separate",
+      "run_id": "BOC_P138_04_ROLLING_SEPARATE",
+      "official_success": true,
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "model_calls": 31,
+      "total_api_attempts": 78,
+      "sent": 76,
+      "returned": 73,
+      "raised": 3,
+      "unsent": 2,
+      "effects_unknown_count": 0,
+      "endpoint_status_counts": [
+        {
+          "endpoint": "api_docs__show_api_descriptions",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "supervisor__show_profile",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "supervisor__show_account_passwords",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 8
+        },
+        {
+          "endpoint": "file_system__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "raised",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 6
+        },
+        {
+          "endpoint": "spotify__show_album_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_playlist_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_song",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__show_album",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 6
+        },
+        {
+          "endpoint": "spotify__show_playlist",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 7
+        },
+        {
+          "endpoint": "spotify__show_artist",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 27
+        },
+        {
+          "endpoint": "file_system__create_file",
+          "sent": false,
+          "typed_status": null,
+          "count": 1
+        },
+        {
+          "endpoint": "file_system__create_file",
+          "sent": true,
+          "typed_status": "raised",
+          "count": 1
+        },
+        {
+          "endpoint": "file_system__login",
+          "sent": true,
+          "typed_status": "raised",
+          "count": 1
+        },
+        {
+          "endpoint": "file_system__create_file",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__delete_account",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "file_system__read_file",
+          "sent": false,
+          "typed_status": null,
+          "count": 1
+        },
+        {
+          "endpoint": "supervisor__complete_task",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        }
+      ],
+      "api_by_model_call": [
+        {
+          "model_call_ordinal": 1,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_descriptions",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 2,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "supervisor__show_profile",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 3,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 4,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 5,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 6,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 7,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 8,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 10,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 12,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 15,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 18,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_artist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 27
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 20,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 22,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__create_file",
+              "sent": false,
+              "typed_status": null,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 24,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 25,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 26,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 27,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 28,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 29,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__delete_account",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 30,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__read_file",
+              "sent": false,
+              "typed_status": null,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 31,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "supervisor__complete_task",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "program_count": 29,
+      "program_status_counts": {
+        "ok": 23,
+        "execution_error": 6
+      },
+      "program_status_sequence": [
+        {
+          "model_call_ordinal": 1,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 2,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 3,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 4,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 5,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 6,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 7,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 8,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 9,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 10,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 11,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 12,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 14,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 15,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 16,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 17,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 18,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 19,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 20,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 21,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 22,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 24,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 25,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 26,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 27,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 28,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 29,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 30,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 31,
+          "status": "ok",
+          "declared_complete": true
+        }
+      ],
+      "nonprogram_model_tool_events": [],
+      "after_focus_boundaries": [
+        {
+          "after_paid_focus_call": 13,
+          "programs": 17,
+          "program_status_counts": {
+            "ok": 12,
+            "execution_error": 5
+          },
+          "api_attempts": 50,
+          "sent": 48,
+          "returned": 46,
+          "raised": 2,
+          "unsent": 2,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            },
+            {
+              "endpoint": "spotify__show_artist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 27
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            },
+            {
+              "endpoint": "file_system__create_file",
+              "sent": false,
+              "typed_status": null,
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__delete_account",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__read_file",
+              "sent": false,
+              "typed_status": null,
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__complete_task",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "after_paid_focus_call": 23,
+          "programs": 8,
+          "program_status_counts": {
+            "execution_error": 3,
+            "ok": 5
+          },
+          "api_attempts": 8,
+          "sent": 7,
+          "returned": 5,
+          "raised": 2,
+          "unsent": 1,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__create_file",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__delete_account",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__read_file",
+              "sent": false,
+              "typed_status": null,
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__complete_task",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "completion_endpoint_reach": {
+        "file_system__create_file": {
+          "attempts": 3,
+          "sent": 2,
+          "returned": 1,
+          "raised": 1,
+          "unsent": 1,
+          "model_call_ordinals": [
+            22,
+            24,
+            28
+          ]
+        },
+        "file_system__update_file": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "spotify__delete_account": {
+          "attempts": 1,
+          "sent": 1,
+          "returned": 1,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": [
+            29
+          ]
+        },
+        "supervisor__complete_task": {
+          "attempts": 1,
+          "sent": 1,
+          "returned": 1,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": [
+            31
+          ]
+        }
+      },
+      "api_declared_complete_count": 1,
+      "http_methods": null,
+      "endpoint_status_sequence_sha256": "41e0e1bb51e2c1fbcfa59f7ef2def079b275cde39837f3ab9e758fe279122247"
+    },
+    {
+      "mode": "fixed_interval",
+      "run_id": "BOC_P138_04_FIXED_INTERVAL",
+      "official_success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 236203,
+      "unknown_usage_calls": 1,
+      "model_calls": 22,
+      "total_api_attempts": 41,
+      "sent": 41,
+      "returned": 39,
+      "raised": 2,
+      "unsent": 0,
+      "effects_unknown_count": 0,
+      "endpoint_status_counts": [
+        {
+          "endpoint": "api_docs__show_api_descriptions",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "supervisor__show_profile",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "supervisor__show_account_passwords",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 8
+        },
+        {
+          "endpoint": "file_system__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "raised",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 4
+        },
+        {
+          "endpoint": "spotify__show_album_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_playlist_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_song",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__show_album",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 6
+        },
+        {
+          "endpoint": "spotify__show_playlist",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 7
+        }
+      ],
+      "api_by_model_call": [
+        {
+          "model_call_ordinal": 1,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_descriptions",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 2,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "supervisor__show_profile",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 3,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 4,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 5,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 6,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 7,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 8,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 10,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 12,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 15,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 20,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "program_count": 17,
+      "program_status_counts": {
+        "ok": 14,
+        "execution_error": 3
+      },
+      "program_status_sequence": [
+        {
+          "model_call_ordinal": 1,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 2,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 3,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 4,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 5,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 6,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 7,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 8,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 9,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 10,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 11,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 12,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 14,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 15,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 16,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 19,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 20,
+          "status": "execution_error",
+          "declared_complete": false
+        }
+      ],
+      "nonprogram_model_tool_events": [
+        {
+          "model_call_ordinal": 18,
+          "stage": "model_tool",
+          "public_tool_name": null,
+          "structured_status": null
+        }
+      ],
+      "after_focus_boundaries": [
+        {
+          "after_paid_focus_call": 13,
+          "programs": 5,
+          "program_status_counts": {
+            "ok": 3,
+            "execution_error": 2
+          },
+          "api_attempts": 13,
+          "sent": 13,
+          "returned": 12,
+          "raised": 1,
+          "unsent": 0,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "after_paid_focus_call": 17,
+          "programs": 2,
+          "program_status_counts": {
+            "execution_error": 2
+          },
+          "api_attempts": 1,
+          "sent": 1,
+          "returned": 0,
+          "raised": 1,
+          "unsent": 0,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "after_paid_focus_call": 21,
+          "programs": 0,
+          "program_status_counts": {},
+          "api_attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "endpoint_status_counts": []
+        }
+      ],
+      "completion_endpoint_reach": {
+        "file_system__create_file": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "file_system__update_file": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "spotify__delete_account": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "supervisor__complete_task": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        }
+      },
+      "api_declared_complete_count": 0,
+      "http_methods": null,
+      "endpoint_status_sequence_sha256": "12fe800a924d8f7eb5b5b85c94f2669af5856cafb305f3da567e6d7d9fbce28d"
+    },
+    {
+      "mode": "prefix_exposure",
+      "run_id": "BOC_P138_04_PREFIX_EXPOSURE",
+      "official_success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 287461,
+      "unknown_usage_calls": 1,
+      "model_calls": 28,
+      "total_api_attempts": 76,
+      "sent": 76,
+      "returned": 73,
+      "raised": 3,
+      "unsent": 0,
+      "effects_unknown_count": 0,
+      "endpoint_status_counts": [
+        {
+          "endpoint": "api_docs__show_api_descriptions",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "supervisor__show_profile",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "supervisor__show_account_passwords",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 9
+        },
+        {
+          "endpoint": "file_system__login",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 1
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "raised",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 4
+        },
+        {
+          "endpoint": "spotify__show_album_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_playlist_library",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 3
+        },
+        {
+          "endpoint": "spotify__show_song",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 2
+        },
+        {
+          "endpoint": "spotify__show_album",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 6
+        },
+        {
+          "endpoint": "spotify__show_playlist",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 7
+        },
+        {
+          "endpoint": "spotify__show_artist",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 27
+        },
+        {
+          "endpoint": "api_docs__show_api_doc",
+          "sent": true,
+          "typed_status": "returned",
+          "count": 6
+        }
+      ],
+      "api_by_model_call": [
+        {
+          "model_call_ordinal": 1,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_descriptions",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 2,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "supervisor__show_profile",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "supervisor__show_account_passwords",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 3,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "file_system__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 4,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 5,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 6,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 7,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 8,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist_library",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 10,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_song",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 12,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 15,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 18,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_artist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 27
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 21,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 22,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 23,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 24,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 25,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 26,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "model_call_ordinal": 27,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "program_count": 25,
+      "program_status_counts": {
+        "ok": 21,
+        "execution_error": 4
+      },
+      "program_status_sequence": [
+        {
+          "model_call_ordinal": 1,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 2,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 3,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 4,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 5,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 6,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 7,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 8,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 9,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 10,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 11,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 12,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 14,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 15,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 16,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 17,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 18,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 19,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 21,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 22,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 23,
+          "status": "execution_error",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 24,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 25,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 26,
+          "status": "ok",
+          "declared_complete": false
+        },
+        {
+          "model_call_ordinal": 27,
+          "status": "ok",
+          "declared_complete": false
+        }
+      ],
+      "nonprogram_model_tool_events": [],
+      "after_focus_boundaries": [
+        {
+          "after_paid_focus_call": 13,
+          "programs": 13,
+          "program_status_counts": {
+            "ok": 10,
+            "execution_error": 3
+          },
+          "api_attempts": 48,
+          "sent": 48,
+          "returned": 46,
+          "raised": 2,
+          "unsent": 0,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_album",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 5
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 2
+            },
+            {
+              "endpoint": "spotify__show_playlist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            },
+            {
+              "endpoint": "spotify__show_artist",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 27
+            },
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 2
+            },
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "after_paid_focus_call": 20,
+          "programs": 7,
+          "program_status_counts": {
+            "execution_error": 2,
+            "ok": 5
+          },
+          "api_attempts": 9,
+          "sent": 9,
+          "returned": 7,
+          "raised": 2,
+          "unsent": 0,
+          "endpoint_status_counts": [
+            {
+              "endpoint": "spotify__show_song_library",
+              "sent": true,
+              "typed_status": "raised",
+              "count": 2
+            },
+            {
+              "endpoint": "spotify__login",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 1
+            },
+            {
+              "endpoint": "api_docs__show_api_doc",
+              "sent": true,
+              "typed_status": "returned",
+              "count": 6
+            }
+          ]
+        }
+      ],
+      "completion_endpoint_reach": {
+        "file_system__create_file": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "file_system__update_file": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "spotify__delete_account": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        },
+        "supervisor__complete_task": {
+          "attempts": 0,
+          "sent": 0,
+          "returned": 0,
+          "raised": 0,
+          "unsent": 0,
+          "model_call_ordinals": []
+        }
+      },
+      "api_declared_complete_count": 0,
+      "http_methods": null,
+      "endpoint_status_sequence_sha256": "b8b41532e733e26bd321168ab27cb4f58f6621f545df0479782c99f89b618dd2"
+    }
+  ],
+  "comparisons": [
+    {
+      "left_mode": "rolling_separate",
+      "right_mode": "fixed_interval",
+      "API_endpoint_status_only_sequence": {
+        "common_prefix_items": 40,
+        "left_length": 78,
+        "right_length": 41,
+        "all_sequence_equal": false,
+        "first_differing_ordinal": 41,
+        "prefix_exhaustion_without_observed_mismatch": false,
+        "first_left_metadata": {
+          "endpoint": "spotify__show_artist",
+          "sent": true,
+          "typed_status": "returned",
+          "effects_unknown": false,
+          "declared_complete": false
+        },
+        "first_right_metadata": {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "raised",
+          "effects_unknown": false,
+          "declared_complete": false
+        }
+      },
+      "original_model_request_hash_role_sequence": {
+        "common_prefix_items": 16,
+        "left_length": 31,
+        "right_length": 22,
+        "all_sequence_equal": false,
+        "first_differing_ordinal": 17,
+        "prefix_exhaustion_without_observed_mismatch": false,
+        "first_left_role": "agent",
+        "first_right_role": "focus"
+      }
+    },
+    {
+      "left_mode": "rolling_separate",
+      "right_mode": "prefix_exposure",
+      "API_endpoint_status_only_sequence": {
+        "common_prefix_items": 67,
+        "left_length": 78,
+        "right_length": 76,
+        "all_sequence_equal": false,
+        "first_differing_ordinal": 68,
+        "prefix_exhaustion_without_observed_mismatch": false,
+        "first_left_metadata": {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "returned",
+          "effects_unknown": false,
+          "declared_complete": false
+        },
+        "first_right_metadata": {
+          "endpoint": "spotify__show_song_library",
+          "sent": true,
+          "typed_status": "raised",
+          "effects_unknown": false,
+          "declared_complete": false
+        }
+      },
+      "original_model_request_hash_role_sequence": {
+        "common_prefix_items": 19,
+        "left_length": 31,
+        "right_length": 28,
+        "all_sequence_equal": false,
+        "first_differing_ordinal": 20,
+        "prefix_exhaustion_without_observed_mismatch": false,
+        "first_left_role": "agent",
+        "first_right_role": "focus"
+      }
+    }
+  ],
+  "input_file_bindings_sha256": "438acf074baabe629659b95a24b32ad705fd0c22280c78f60ce8d47f0f01252b",
+  "observation": "Equal API request totals do not imply equal task progress: threshold reached returned create_file/delete_account/complete_task, whereas exposure did not send any of those endpoints and ended after documentation reads with an unknown model call.",
+  "limits": [
+    "Only structured event/span metadata was selected; action arguments, task values, API observation bodies, stdout, error text, generated code, credentials, model reasoning and evaluator bodies were not interpreted or output.",
+    "API sequence equality uses endpoint/sent/typed status/effects/declaration metadata only and deliberately excludes arguments, values, nonce, raw-reply hashes and model-call numbering. It is not semantic identity or current-state identity.",
+    "Original request hash equality is taken from the already-bound producer audit, without opening request bodies; exact hash mismatch does not identify its semantic cause. Assistant-output equality was not tested.",
+    "Returned writes and task-complete calls establish recorded endpoint reach, not content correctness, database equivalence or sufficient task requirements. Absence means no recorded dispatch to those named endpoints; terminal unknown is retained.",
+    "After-focus counts are cumulative suffixes and overlap; do not add them together. Paid focus and accepted checkpoint counts remain distinct.",
+    "HTTP methods are not recorded in this selected metadata and remain null. No response error classes or authentication causes are inferred from typed raised.",
+    "The first two schema-inspection snippets encountered dict spans and nullable actions; the final census handles both and no original record was changed. This is a separate bounded diagnostic, not a rerun of the original auditor.",
+    "This does not isolate the causal contribution of summary timing, summary representation, subsequent sampling/behavior or wall-clock exhaustion, and does not authorize a new experiment or replace original cost/gates."
+  ],
+  "raw_values_or_individual_credential_hashes_published": false,
+  "original_results_modified": false,
+  "additional_model_API_evaluator_tokenizer_calls": 0,
+  "saved_generated_program_executions": 0
+}
