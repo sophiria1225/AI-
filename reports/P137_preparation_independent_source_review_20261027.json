@@ -1,0 +1,102 @@
+{
+  "phase": "P137_preparation_independent_source_review",
+  "status": "pass",
+  "blocking_findings": [],
+  "source_head_before_new_plan": "5ca8d717ff9e9bd7d5b0f59f7984a210fe6e582c",
+  "source_sha256": {
+    "docs/experiments/P137_remaining_late_obligations.md": "1c9b9224c1bfe445d00bd61c8dcfc1d2971feba3b060f1dfac6faaba1b8edaef",
+    "scripts/audit_whole_task_remaining_late_obligations_p137.py": "787e2cb9d0a349f097e9ee1e534923a23eec6bde3d29897eb6410604d9726ddc",
+    "scripts/build_remaining_late_obligations_summary_p137.py": "fcd413654cf7f91cd39aa433b0eb6804c97a31f0f21d92a500361d598c7a1833",
+    "scripts/inspect_whole_task_remaining_late_obligations_session_p137.py": "4c10422a97742b9ee93447fac21480281a39b251575872d9fa90ea41aed32663",
+    "scripts/prepare_whole_task_remaining_late_obligations_p137.py": "1813655d9a1d5bfd61244d9d7c23d580b4f36b5e38f5ac23dccf2863338ad4af",
+    "scripts/remaining_late_obligation_server_identity_p137.py": "852233621f173dc26ac55587d0b2e2855d59b3b15ae11efbe22b351a33fb53ee",
+    "scripts/run_whole_task_remaining_late_obligations_cell_p137.py": "173e3596172ed097983f8bd11450ea6c8e97db0f766b468a16a72e4465b123cf",
+    "scripts/run_whole_task_remaining_late_obligations_p137.py": "7d27c8ba286bae6283d842e3a05e6cf37f1add88e19264f8b4ea250792969a32",
+    "scripts/run_whole_task_remaining_late_obligations_pipeline_p137.py": "90814d0fc8598cba46f78674da88c684ea85485c3ee6fe56cf68e4f95cf73406",
+    "scripts/whole_task_remaining_late_obligations_p137.py": "993170eabda7d1406cb8afae47696b129c4192e09ebb1e4677c2b7e94ffcd5dd",
+    "tests/remaining_late_obligations_worker_fixture_p137.py": "19e8b449362a7e2f6ce7e30b36239c5df9be5c5aaca97e59eb5b6b1979aa3516",
+    "tests/test_remaining_late_obligations_p137_closure.py": "eb0f736a59b91735c8e7f7c9267171aa6a764bc21e78d839cdb15b0300e531f6",
+    "tests/test_remaining_late_obligations_p137_launch.py": "4e3d1494cc58d8748cbca2467dab3a22183c278fea31dc9ae684abb9ff224564",
+    "tests/test_remaining_late_obligations_p137_plan.py": "82b42e02a787b2c6fe9bb865a283fbf5c4b63ebb066089f66550cc8d426830e7",
+    "tests/test_remaining_late_obligations_p137_worker.py": "b35ac480b7f3df9d70e55e153e5e3e2ca0439b7b3515722771c3c8c29f76680f",
+    "tests/test_whole_task_remaining_late_obligations_p137_reporting.py": "9c933471b9be430d78a0f2683d284c47096fa41af814a52a77e35b3ecc96ea00"
+  },
+  "private_ops_source_sha256": {
+    "run_close_p137_once_20261027.py": "01b790eb78e380ab60228535c6c8ef23e3d09b4f2705870a3f299a5ec01e8419",
+    "collect_p137_closed_independent_20261027_once.py": "3cfdfba93cb0d5bb9fda4446ab095ecd45b074f92790b8e0f81c8ebc670d647e"
+  },
+  "source_scope": "New P137 modules, their directly necessary fixed predecessors, specified tests, protocol and two unarmed operational scripts.",
+  "checks": {
+    "four_originally_not_run_slots_and_fixed_order": true,
+    "seed157_same_cohort_only_comparisons_seed57_unpaired": true,
+    "no_prior_P136_rows_replaced_or_pooled": true,
+    "development_gate_and_scientific_adoption_always_false": true,
+    "shared_P136_core_tools_guide_budget_and_native_counting_preserved": true,
+    "actor_and_focus_alarm_context_records_unknown_without_imputation": true,
+    "unknown_cleanup_idle_evaluate_next_sequence": true,
+    "cleanup_or_idle_failure_stops_and_retains_remaining_slots": true,
+    "worker_signal_exit_saved_before_parent_raises": true,
+    "P136_collector_first_exact_hash_lineage_original_failure_and_null_preserved": true,
+    "P136_old_frozen_sources_both_trees_verified_by_launch_source": true,
+    "P136_cleanup_sidecar_separate_from_original_incomplete_record": true,
+    "prepared_launch_proof_rechecked_before_server_count_and_cell": true,
+    "same_head_both_CI_events_and_owned_server_lease": true,
+    "18JST_full_outer_deadline_checked_before_server_spawn": true,
+    "all_four_evaluated_unevaluated_unknown_missing_auditerror_retained": true,
+    "whole_job_known_input_plus_output_no_cached_deduction": true,
+    "unknown_total_and_nested_input_output_cached_exact_null": true,
+    "comparison_costs_exclude_seed57_entity_row": true,
+    "public_path_strict_relative_symlink_and_exact_seven_extras": true,
+    "private_ops_exclusive_start_end_no_retry_and_fixed_four_IDs": true,
+    "private_ops_closure_timeouts_clamped_to_remaining_outer": true,
+    "tracked_existing_sources_unmodified": true
+  },
+  "verification": {
+    "author_test_cases_reexecuted": 42,
+    "author_test_breakdown": {
+      "worker": 6,
+      "plan": 7,
+      "closure": 4,
+      "launch": 13,
+      "reporting": 12
+    },
+    "launch_reporting_final_run": {
+      "cases": 25,
+      "seconds": 3.232,
+      "status": "pass",
+      "log_sha256": "cff4ad51d06e96961d5acd5c9744f957d8e909db7b0293d0f7d9c4be613721c4"
+    },
+    "additional_independent_worker_to_auditor_cases": 2,
+    "additional_cases": [
+      {
+        "role": "agent",
+        "unknown_calls": 1,
+        "known_total_tokens": 0,
+        "cleanup_confirmed": true
+      },
+      {
+        "role": "focus",
+        "unknown_calls": 1,
+        "known_total_tokens": 27552,
+        "cleanup_confirmed": true
+      }
+    ],
+    "actual_P136_frozen_source_map_checked_with_new_pure_validator": 1527,
+    "exact_extra_public_paths_in_that_map": 7,
+    "model_calls": 0,
+    "environment_API_calls": 0,
+    "native_counter_calls": 0,
+    "evaluator_calls": 0,
+    "saved_generated_code_executions": 0,
+    "actual_P137_result_reads": 0,
+    "operational_launches": 0
+  },
+  "limits": [
+    "Review applies to these source hashes before the new P137 plan is generated. Root must validate every path/hash in the actual new plan and freeze clean HEAD plus both CI events before launch.",
+    "The final live predecessor proof was source-reviewed; this reviewer did not execute Docker, production proof or live identity. Author reports a successful read-only proof on the same driver hash.",
+    "A pre-activation/readiness failure without closed batch does not automatically yield a four-row collector result; the wrapper preserves failure and reports not_ready_no_retry.",
+    "Timeout interception improves recording through legacy handlers; it does not recover missing backend usage, guarantee cleanup or prove the cause of the old P136 worker exit.",
+    "Expected trusted local filesystem and intact Python/compiler environment; this is not a malicious concurrent-writer or general sandbox proof.",
+    "No result, novelty, quality-preservation, token-saving or whole-trajectory equality conclusion is implied."
+  ]
+}
