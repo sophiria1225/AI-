@@ -1,0 +1,145 @@
+{
+  "phase": "P139_method_prior_scope",
+  "document_type": "public_safe_derived_method_comparison",
+  "prepared_at": "2026-10-27T20:00:59.746866+09:00",
+  "projected_at": "2026-10-27T11:03:41.721514+00:00",
+  "private_original_sha256": "097ac43f953592a0c32b30295e2e26d7155cbf0a2be8191e7888558ad9761fc9",
+  "timing_disclosure": {
+    "prepared_after_parent_reported_interim_exposure": true,
+    "parent_reported_exposure_at": "2026-10-27T19:44:59+09:00",
+    "parent_reported_exposed_rows": 9,
+    "this_reviewer_read_interim_outcomes_usage_traces": false,
+    "is_launch_preregistration": false,
+    "implementation_plan_or_condition_changes": 0,
+    "integrity_disclosure_is_separate": "The parent-reported exposure is not erased by this reviewer remaining blind; this note neither certifies nor repairs study blinding."
+  },
+  "frozen_design": {
+    "source_head": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+    "plan_sha256": "e05b7a0fc0128d972cc2a63afe013fd21d28127c3a74ef9632918b2586b17657",
+    "spec_path": "docs/experiments/P139_checkpoint_representation_draft_20261027.md",
+    "spec_sha256": "c0ef1fce1b054d593dd7b229c084145fda796c0e987e68afe30292c3b107c36a",
+    "scope": "Known four tasks, seed 57, four timing-by-representation arms, sixteen planned cells, at most two checkpoint opportunities in every arm. Seed/task development scope selected using prior activation evidence. Old cohorts and controls are not pooled.",
+    "treatment_precision": "Initial focus packet is shared. Delta is eligible only at the second opportunity when the first summary was accepted; opportunity two need not be dispatched or accepted. Accepted delta preserves the prior note bytes and adds a new note. No third opportunity exists.",
+    "exposure_rule": "E sums positive parts of observed native actor-input token differences when deleting only newly eligible raw history from otherwise identical count-only views. Only already dispatched, known terminal actor calls contribute. C is the latest known paid focus logical input plus output. Repeated exposure timing offers at E >= C, with shared freshness/retention/opportunity limits. Neither current unsent input nor predicted future savings is added.",
+    "acceptance_and_cost": "The complete proposed actor view must be natively shorter and satisfy combined size/context/budget constraints. Byte retention does not verify summary truth. Every role logical input plus output is counted; cached input is not deducted. Unknown and missing costs remain distinct from zero."
+  },
+  "search_scope": {
+    "new_search_queries": 0,
+    "primary_bodies_viewed": 3,
+    "selection": "Two directly relevant papers and the official incremental-summary implementation document. TurnCost was reused only through the prior local review, not reverified here; Hermes was selected instead to inspect the immutable-note versus rewritten-running-summary distinction.",
+    "scope_limit": "Targeted method-section comparison, not a systematic novelty search or priority review. No search absence is evidence of novelty.",
+    "prior_notes_reused": [
+      {
+        "source_kind": "private_prior_review",
+        "source_label": "AI_P138_prefix_exposure_primary_boundary_review_20261027.json",
+        "sha256": "de85238703f5f0bd9b042a9c1e783e88a134a3d0a477a7e2c55f5d9d40cd309b"
+      },
+      {
+        "source_kind": "private_prior_review",
+        "source_label": "AI_P138_retrospective_compaction_additional_prior_20261027.json",
+        "sha256": "df5bee9303280f981ce25ffc70429acdae216fdcf1a3ebaf4ea6d671c94eb5e3"
+      },
+      {
+        "source_kind": "published_repository_note",
+        "source_label": "checkpoint_source_and_type_prior_scope_20261025.md",
+        "sha256": "198c79e4c74db8a9925b2cc6b7760725610b70180708052d66739f88d719185f"
+      },
+      {
+        "source_kind": "published_repository_note",
+        "source_label": "memory_cost_review_20261021.md",
+        "sha256": "8019f034247bf79ab1d19c5b0e688f11262936454d6afb6dd963770702c651bc"
+      },
+      {
+        "source_kind": "published_repository_note",
+        "source_label": "receipt_history_cache_prior_scope_20261025.md",
+        "sha256": "f9d2174358dfe2bbcd2907319c384395d26049d5780b8a342d8b2b9662363949"
+      }
+    ]
+  },
+  "verified_primary_sources": [
+    {
+      "id": "statecomp",
+      "title": "StateComp: Learning When to Compress History in Long Horizon Agents",
+      "url": "https://arxiv.org/html/2609.27298v1",
+      "version": "v1",
+      "kind": "primary paper",
+      "viewed_scope": [
+        "Section 4.2 trigger and minimum-span gates",
+        "Appendix E.2 shorter-view acceptance",
+        "Appendix E.3 fidelity limitation",
+        "Appendix E.4 fixed-sequence accounting"
+      ],
+      "evidence": "READY scores and span gates determine execution. A summary must be valid and shorter under the same serialization/tokenizer; this does not imply semantic fidelity. Appendix E.4 subtracts summary input/output cost from cumulative subsequent input reductions on a fixed sequence and warns that online behavior may change.",
+      "overlap": "Cost-inclusive compression, shorter-view validation and cumulative savings accounting are established.",
+      "difference_in_viewed_method": "P139 uses past counterfactual deletion-view exposure versus the previous focus charge to offer a future second compaction. That differs from the READY gate and from accounting for realized later savings after a replacement.",
+      "inference_limit": "The accounting identity does not establish payback or competitiveness of the P139 trigger; no exact-match absence outside the inspected sections is asserted."
+    },
+    {
+      "id": "selfcompact",
+      "title": "Self-Compacting Language Model Agents",
+      "url": "https://arxiv.org/html/2606.23525v2",
+      "version": "v2",
+      "kind": "primary paper",
+      "viewed_scope": [
+        "Section 3 summarizer/trigger/compaction loop and cost analysis",
+        "Appendix C all-call token accounting"
+      ],
+      "evidence": "A periodic same-model rubric chooses whether to summarize. Summarization instructions are appended to reuse context, and the resulting summary replaces the prior trajectory. The comparison includes fixed-interval compaction, additional calls and cache-aware cost accounting.",
+      "overlap": "Adaptive compaction, fixed-interval controls and counting summarizer overhead are not new.",
+      "difference_in_viewed_method": "P139 uses a deterministic measured E/C trigger rather than a semantic rubric. Its eligible second delta keeps the old note bytes. Appending an instruction for cache reuse is not the same representation as preserving an old summary and adding a delta.",
+      "inference_limit": "Logical token reduction is distinct from monetary savings. These differences do not establish that immutable delta memory is new."
+    },
+    {
+      "id": "hermes",
+      "title": "Hermes Agent micro-compaction",
+      "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/developer-guide/micro-compaction.md",
+      "version": "Mutable main documentation; commit and historical priority not verified",
+      "kind": "official implementation documentation",
+      "viewed_scope": [
+        "How micro-compaction works",
+        "Preserved head and tail",
+        "Defragmentation",
+        "Failure handling",
+        "Cadence/configuration and cache-cost warning"
+      ],
+      "evidence": "The documented loop summarizes an old unsummarized exchange together with the running summary, replacing the latter with an updated summary. A threshold triggers later defragmentation. The document describes cadence controls and warns that history rewriting can harm cache reuse.",
+      "overlap": "Incremental summary maintenance and cost-conscious compaction cadence already exist.",
+      "difference_in_viewed_method": "The documented running summary is rewritten; P139 preserves the first note bytes and adds a delta only at its eligible second opportunity.",
+      "inference_limit": "This is a narrow comparison with the documented algorithm, not a whole-repository or historical-priority audit. Incremental or append-only memory in general is not claimed new."
+    }
+  ],
+  "claim_limits": {
+    "current_conclusion": "There are narrow, testable control and representation differences, amid substantial known compaction and incremental-memory overlap. The bounded source review does not establish technical novelty. Frozen controls can support a scoped empirical comparison after closure; they cannot substitute for a novelty argument or statistical interaction analysis.",
+    "safe_mechanism_statements": [
+      "The frozen E/C trigger is a concrete retrospective exposure heuristic that can be compared with the frozen threshold control. E is a positive-part count difference, not a claim of recoverable future savings; C does not bound the next summary cost.",
+      "The second-opportunity delta policy tests retaining one previous summary verbatim while summarizing new raw history. It changes representation under common acceptance limits, without proving fidelity, freshness or conflict resolution.",
+      "Limiting every arm to two opportunities removes a possible third-trigger feedback from changed delta summary cost. It does not align threshold and exposure timing, force activation, or ensure every representation pair has a matched observed prefix."
+    ],
+    "experimental_controls_are_not_novelty": true,
+    "gate_is_not_statistical_interaction": "Passing the fixed primary/both-control dominance gates, or success of all four arms, is not a statistical timing-by-representation interaction, synergy, broad noninferiority, novelty, or independent replication.",
+    "gate_vs_interaction_reason": "Dominance tests inequalities against controls. An interaction concerns whether a representation contrast changes with timing; those are different propositions.",
+    "development_scope_limit": "Four known development tasks at one selected seed do not establish a population interaction, a noninferiority margin/test, or an independent confirmatory replication. A zero observed loss is not a general quality guarantee.",
+    "observed_prefix_limit": "Recorded prefix matching constrains observed differences before treatment. It does not certify all hidden runtime state or semantic equivalence; opaque output identifiers can also cause strict hash mismatch. A missing or mismatched proof must remain a limitation, not be repaired by assuming equivalence.",
+    "unproven_claims": [
+      "First adaptive, cost-triggered, amortized or incremental compaction method.",
+      "A novel immutable/delta-memory mechanism merely because the three viewed methods differ.",
+      "Ski-rental competitiveness, guaranteed payback, future savings or semantic preservation.",
+      "Statistical synergy, broad noninferiority, general task success, held-out generalization or independent replication.",
+      "Novelty from strong controls, source binding, matched-prefix checks or complete accounting alone."
+    ]
+  },
+  "reviewer_operations": {
+    "new_model_calls": 0,
+    "native_counts": 0,
+    "environment_API_calls": 0,
+    "evaluations": 0,
+    "heldout_reads": 0,
+    "interim_result_reads": 0,
+    "tracked_edits": 0,
+    "new_experiments_or_candidates": 0,
+    "private_output_exclusive": true
+  },
+  "actual_outcomes_evaluated_in_this_note": false,
+  "novelty_established": false,
+  "related_integrity_disclosure": "reports/P139_interim_exposure_disclosure_20261027.json"
+}

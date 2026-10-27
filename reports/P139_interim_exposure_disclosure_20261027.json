@@ -1,0 +1,47 @@
+{
+  "phase": "P139_interim_exposure_disclosure",
+  "recorded_at": "2026-10-27T10:56:52.323531+00:00",
+  "document_type": "public_safe_derived_disclosure_not_original_execution_result",
+  "fixed_source_head": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+  "fixed_plan_sha256": "e05b7a0fc0128d972cc2a63afe013fd21d28127c3a74ef9632918b2586b17657",
+  "event_at_utc": "2026-10-27T10:44:59Z",
+  "event_at_jst": "2026-10-27T19:44:59+09:00",
+  "root_interim_outcomes_exposed": true,
+  "exposure_scope": {
+    "completed_rows": 9,
+    "planned_rows": 16,
+    "fields": [
+      "success",
+      "stop_reason",
+      "usage_totals",
+      "operational_metadata"
+    ],
+    "generated_task_content_or_reasoning_read": false,
+    "source_label": "batch/status.json"
+  },
+  "cause": "Root monitoring command printed full batch status object instead of selecting operational fields.",
+  "operator_report": {
+    "condition_order_budget_or_execution_changes_based_on_exposure": false,
+    "reruns_or_retries_triggered": 0,
+    "evidence_level": "operator_self_report_as_of_this_disclosure"
+  },
+  "source_only_peer_review": {
+    "status": "pass_with_explicit_scope_limits",
+    "scope": "Reviewed fixed driver serialization, fixed protocol, watcher flag scope and the disclosure bytes; did not inspect actual interim status or full execution history.",
+    "no_adaptive_change_independently_verified": false
+  },
+  "limitations": [
+    "No claim that the operator remained unaware of interim outcomes until full cohort closure.",
+    "Process-local interim_results_inspected=false flags do not establish operator blinding.",
+    "Analyses or interpretations chosen after exposure must acknowledge the exposure.",
+    "This disclosure does not establish causal efficacy, independent replication, general noninferiority or novelty."
+  ],
+  "fixed_analysis_policy": "Retain original condition order, budgets, all sixteen planned rows, unknown/null accounting and predefined gates; no rule change because of the exposure.",
+  "source_digests": {
+    "private_original_operator_disclosure_sha256": "8e26a39ab265e06ad6d78c78343a18bfc721d9b4b6ec15afcdc27713aa66155f",
+    "private_source_only_peer_review_sha256": "e5818ee2b602a32bdd41aca76d3f452238f281442ce037803f97befdeee81fee"
+  },
+  "public_wording_ja": "運用確認中の2026年10月27日19:44:59 JST、担当者が状態ファイル全体を表示し、全条件閉鎖前に9完了条件の成否・使用量を閲覧した。担当者は、この閲覧に基づく条件・順序・予算・実行方法の変更や再試行を行わなかったと報告している。事前固定した全条件の集計を保持するが、担当者が閉鎖まで途中結果を知らなかったとは主張しない。",
+  "scientific_outcome_values_included": false,
+  "closed_cohort_or_runtime_history_certified": false
+}

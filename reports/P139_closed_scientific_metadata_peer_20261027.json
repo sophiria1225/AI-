@@ -1,0 +1,1176 @@
+{
+  "status": "pass",
+  "phase": "P139_closed_scientific_metadata_peer",
+  "created_at": "2026-10-27T12:59:01.325767+00:00",
+  "input_sha256": {
+    "audit": "a0c017af89096eddccc7a5185f922acb0a0a3e904459b0fbf14a750655bf9318",
+    "summary": "e7ee9bd537b27fd843fd6ff1be80eded9f8af9c084ccec4cbe420cedac626ef9",
+    "conditions": "f9abc7ebb268ae07938e16991fe44d2a8d13c2d34943777382b1df0f464800f1",
+    "pairs": "95c8562cfb92bd5b4a67df5cdeae59f7cbc7a35ed901030e8b1c9dc77b2f5574",
+    "calls": "24e756d68e1abf4f119af0bc92812acbd62d3f968fe491333dfc2f4db0511060",
+    "existing_checker": "cc4a797be7d5bcdb02c9c093dbf8ebea0930e67292593b22acaa943e960e494c"
+  },
+  "checks_passed": 1107,
+  "scope": "Independent arithmetic and literal public metadata/CSV comparison only; no producer, checker, renderer, model, API, tokenizer or evaluator rerun.",
+  "planned": 16,
+  "evaluated": 16,
+  "successes": 14,
+  "failures": 2,
+  "usage_missing_conditions": 0,
+  "unknown_calls": 2,
+  "success_counts": {
+    "threshold_recursive": 4,
+    "threshold_delta": 4,
+    "exposure_recursive": 3,
+    "exposure_delta": 3
+  },
+  "known_token_subtotals_by_mode": {
+    "threshold_recursive": 785656,
+    "threshold_delta": 804223,
+    "exposure_recursive": 740529,
+    "exposure_delta": 861995
+  },
+  "fixed_total_tokens_by_mode": {
+    "threshold_recursive": null,
+    "threshold_delta": null,
+    "exposure_recursive": null,
+    "exposure_delta": null
+  },
+  "totals": {
+    "input_tokens": 3086271,
+    "output_tokens": 106132,
+    "cached_input_tokens": 2415390,
+    "known_total_tokens": 3192403,
+    "model_calls": 338,
+    "api_requests": 863
+  },
+  "usage_by_role": {
+    "agent": {
+      "calls": 326,
+      "unknown_usage": 2,
+      "input_tokens": 2870363,
+      "output_tokens": 90121
+    },
+    "focus": {
+      "calls": 12,
+      "unknown_usage": 0,
+      "input_tokens": 215908,
+      "output_tokens": 16011
+    }
+  },
+  "conditions": [
+    {
+      "task_slot": 1,
+      "mode": "threshold_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 1,
+      "mode": "threshold_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 1,
+      "mode": "exposure_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 1,
+      "mode": "exposure_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 17,
+      "known_total_tokens": 139871,
+      "unknown_usage_calls": 0,
+      "input_tokens": 133393,
+      "output_tokens": 6478,
+      "cached_input_tokens": 89756,
+      "api_requests": 102,
+      "usage_by_role": {
+        "agent": {
+          "calls": 16,
+          "unknown_usage": 0,
+          "input_tokens": 116105,
+          "output_tokens": 5311
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 17288,
+          "output_tokens": 1167
+        }
+      },
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 2,
+      "mode": "threshold_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 2,
+      "mode": "exposure_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 2,
+      "mode": "exposure_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 2,
+      "mode": "threshold_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 24,
+      "known_total_tokens": 211110,
+      "unknown_usage_calls": 0,
+      "input_tokens": 208249,
+      "output_tokens": 2861,
+      "cached_input_tokens": 187407,
+      "api_requests": 25,
+      "usage_by_role": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 208249,
+          "output_tokens": 2861
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 3,
+      "mode": "exposure_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 3,
+      "mode": "exposure_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 3,
+      "mode": "threshold_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 3,
+      "mode": "threshold_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 13,
+      "known_total_tokens": 102087,
+      "unknown_usage_calls": 0,
+      "input_tokens": 99160,
+      "output_tokens": 2927,
+      "cached_input_tokens": 81674,
+      "api_requests": 13,
+      "usage_by_role": {
+        "agent": {
+          "calls": 13,
+          "unknown_usage": 0,
+          "input_tokens": 99160,
+          "output_tokens": 2927
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "checkpoint_installations": 0,
+      "delta_installations": 0,
+      "fragment_count": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 4,
+      "mode": "exposure_delta",
+      "success": false,
+      "record_status": "evaluated",
+      "stop_reason": "wall_limit_during_model_call",
+      "model_calls": 31,
+      "known_total_tokens": 408927,
+      "unknown_usage_calls": 1,
+      "input_tokens": 392446,
+      "output_tokens": 16481,
+      "cached_input_tokens": 301372,
+      "api_requests": 74,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 1,
+          "input_tokens": 357170,
+          "output_tokens": 13259
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35276,
+          "output_tokens": 3222
+        }
+      },
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 1,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": false,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": false
+    },
+    {
+      "task_slot": 4,
+      "mode": "threshold_recursive",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 31,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "input_tokens": 319446,
+      "output_tokens": 13142,
+      "cached_input_tokens": 235825,
+      "api_requests": 76,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973
+        }
+      },
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 3,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 4,
+      "mode": "threshold_delta",
+      "success": true,
+      "record_status": "evaluated",
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 32,
+      "known_total_tokens": 351155,
+      "unknown_usage_calls": 0,
+      "input_tokens": 338904,
+      "output_tokens": 12251,
+      "cached_input_tokens": 251313,
+      "api_requests": 77,
+      "usage_by_role": {
+        "agent": {
+          "calls": 30,
+          "unknown_usage": 0,
+          "input_tokens": 300736,
+          "output_tokens": 10263
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38168,
+          "output_tokens": 1988
+        }
+      },
+      "checkpoint_installations": 2,
+      "delta_installations": 1,
+      "fragment_count": 2,
+      "actual_delta_actor_calls": 9,
+      "actual_delta_known_actor_calls": 9,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 0,
+      "actual_decision_differences_from_exposure": 3,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": true,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": true
+    },
+    {
+      "task_slot": 4,
+      "mode": "exposure_recursive",
+      "success": false,
+      "record_status": "evaluated",
+      "stop_reason": "wall_limit_during_model_call",
+      "model_calls": 28,
+      "known_total_tokens": 287461,
+      "unknown_usage_calls": 1,
+      "input_tokens": 272267,
+      "output_tokens": 15194,
+      "cached_input_tokens": 191532,
+      "api_requests": 76,
+      "usage_by_role": {
+        "agent": {
+          "calls": 26,
+          "unknown_usage": 1,
+          "input_tokens": 237057,
+          "output_tokens": 12034
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35210,
+          "output_tokens": 3160
+        }
+      },
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "fragment_count": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "actual_decision_differences_from_threshold": 1,
+      "actual_decision_differences_from_exposure": 0,
+      "prefix_exposure_contract_failed": false,
+      "prefix_exposure_accounting_complete": false,
+      "checkpoint_representation_contract_failed": false,
+      "checkpoint_representation_accounting_complete": false
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "primary_utility",
+      "baseline": "threshold_recursive",
+      "candidate": "exposure_delta",
+      "quality_transitions": {
+        "success_to_success": 3,
+        "success_to_failure": 1
+      },
+      "fixed_all_difference": null,
+      "fixed_common_difference": null,
+      "common_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "descriptive_known_common_baseline": 453068,
+      "descriptive_known_common_candidate": 453068,
+      "descriptive_known_common_difference": 0,
+      "changed_on_common": false,
+      "activated_prefix_match": null,
+      "gate": false,
+      "pairs": [
+        {
+          "task_slot": 1,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 2,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 3,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 4,
+          "baseline_success": true,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": true,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "actual_timing_decision_differences": 1,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": true
+        }
+      ]
+    },
+    {
+      "name": "representation_at_exposure",
+      "baseline": "exposure_recursive",
+      "candidate": "exposure_delta",
+      "quality_transitions": {
+        "success_to_success": 3,
+        "failure_to_failure": 1
+      },
+      "fixed_all_difference": null,
+      "fixed_common_difference": null,
+      "common_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "descriptive_known_common_baseline": 453068,
+      "descriptive_known_common_candidate": 453068,
+      "descriptive_known_common_difference": 0,
+      "changed_on_common": false,
+      "activated_prefix_match": true,
+      "gate": false,
+      "pairs": [
+        {
+          "task_slot": 1,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 2,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 3,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 4,
+          "baseline_success": false,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": false,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": false,
+          "actual_intervention": false
+        }
+      ]
+    },
+    {
+      "name": "timing_with_delta",
+      "baseline": "threshold_delta",
+      "candidate": "exposure_delta",
+      "quality_transitions": {
+        "success_to_success": 3,
+        "success_to_failure": 1
+      },
+      "fixed_all_difference": null,
+      "fixed_common_difference": null,
+      "common_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "descriptive_known_common_baseline": 453068,
+      "descriptive_known_common_candidate": 453068,
+      "descriptive_known_common_difference": 0,
+      "changed_on_common": false,
+      "activated_prefix_match": null,
+      "gate": false,
+      "pairs": [
+        {
+          "task_slot": 1,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 2,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 3,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 4,
+          "baseline_success": true,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": true,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "actual_timing_decision_differences": 1,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": true
+        }
+      ]
+    },
+    {
+      "name": "representation_at_threshold",
+      "baseline": "threshold_recursive",
+      "candidate": "threshold_delta",
+      "quality_transitions": {
+        "success_to_success": 4
+      },
+      "fixed_all_difference": 18567,
+      "fixed_common_difference": 18567,
+      "common_task_slots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "descriptive_known_common_baseline": 785656,
+      "descriptive_known_common_candidate": 804223,
+      "descriptive_known_common_difference": 18567,
+      "changed_on_common": false,
+      "activated_prefix_match": false,
+      "gate": false,
+      "pairs": [
+        {
+          "task_slot": 1,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 2,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 3,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 4,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 18567,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 9,
+          "representation_prefix_match": false,
+          "actual_intervention": false
+        }
+      ]
+    },
+    {
+      "name": "timing_with_recursive",
+      "baseline": "threshold_recursive",
+      "candidate": "exposure_recursive",
+      "quality_transitions": {
+        "success_to_success": 3,
+        "success_to_failure": 1
+      },
+      "fixed_all_difference": null,
+      "fixed_common_difference": null,
+      "common_task_slots": [
+        1,
+        2,
+        3
+      ],
+      "descriptive_known_common_baseline": 453068,
+      "descriptive_known_common_candidate": 453068,
+      "descriptive_known_common_difference": 0,
+      "changed_on_common": false,
+      "activated_prefix_match": null,
+      "gate": false,
+      "pairs": [
+        {
+          "task_slot": 1,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 2,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 3,
+          "baseline_success": true,
+          "candidate_success": true,
+          "both_evaluated": true,
+          "both_usage_known": true,
+          "success_lost": false,
+          "both_successful": true,
+          "candidate_minus_baseline_tokens": 0,
+          "actual_timing_decision_differences": 0,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": false
+        },
+        {
+          "task_slot": 4,
+          "baseline_success": true,
+          "candidate_success": false,
+          "both_evaluated": true,
+          "both_usage_known": false,
+          "success_lost": true,
+          "both_successful": false,
+          "candidate_minus_baseline_tokens": null,
+          "actual_timing_decision_differences": 1,
+          "candidate_delta_known_actor_calls": 0,
+          "representation_prefix_match": null,
+          "actual_intervention": true
+        }
+      ]
+    }
+  ],
+  "within_timing_task4_prefix_metadata": [
+    {
+      "modes": [
+        "threshold_recursive",
+        "threshold_delta"
+      ],
+      "task_slot": 4,
+      "prior_calls": 22,
+      "request_hash_matches": 22,
+      "assistant_message_hash_matches": 1,
+      "strict_prefix_match": false,
+      "all_other_fixed_prefix_fields_equal": true,
+      "mismatch_cause": "Unknown: message bodies and opaque identifiers not inspected."
+    },
+    {
+      "modes": [
+        "exposure_recursive",
+        "exposure_delta"
+      ],
+      "task_slot": 4,
+      "prior_calls": 19,
+      "request_hash_matches": 19,
+      "assistant_message_hash_matches": 1,
+      "strict_prefix_match": false,
+      "all_other_fixed_prefix_fields_equal": true,
+      "mismatch_cause": "Unknown: message bodies and opaque identifiers not inspected."
+    }
+  ],
+  "threshold_representation_cost_contrast": {
+    "task_slot": 4,
+    "whole_job_difference": 18567,
+    "actor_difference": 19486,
+    "focus_difference": -919,
+    "strict_prefix_match": false,
+    "causal_effect_established": false
+  },
+  "supportable_claims": [
+    "All16 evaluated; threshold recursive/delta succeed4/4, exposure recursive/delta3/4. Task4 is the lost success for each exposure arm versus its respective threshold control.",
+    "All five comparison gates and primary/combined gates are false. Operational review PASS is distinct from scientific adoption.",
+    "Tasks1–3 each have identical costs across all four arms:139871,211110,102087; descriptive common subtotal453068 and difference0, with no compared intervention on common success. Fixed common aggregates involving unknown Task4 remain null.",
+    "The fully known threshold representation contrast preserves four observed successes but costs18567 more logical tokens, entirely in Task4: focus cost drops919 while actor cost rises19486. One delta installation reaches nine known actor calls, but strict prior-prefix match is false; this is descriptive rather than an isolated causal representation effect.",
+    "Exposure-delta has no delta installation or actor exposure; Task4 known408927 plus one unknown actor call is not an exact total. Exposure-recursive Task4 known287461 also has one unknown actor call. These known subtotal differences are not exact effect estimates.",
+    "Within each timing pair, second-opportunity metadata and all prior request hashes match while most assistant hashes differ; metadata alone cannot identify the cause or semantic significance."
+  ],
+  "limitations": [
+    "Parent-reported interim exposure to9 rows at19:44:59 JST remains disclosed. This review reads results only after closure; it is not a confirmatory experiment and does not restore blinding.",
+    "Recorded native counts, parsed assistant hashes and runtime/E-C reconstruction depend on the already-run frozen producer/auditor/checker. Underlying request/response bodies and raw traces were not read.",
+    "Known subtotals, descriptive fully known common subsets and fixed null aggregate fields remain separate; unknowns are not imputed and cache is not subtracted.",
+    "The exposure-representation all-activated-prefixes-match=True is vacuous with zero delta activity; it is not evidence of achieved matched treatment.",
+    "Four selected known tasks and one development seed do not establish novelty, synergy, general noninferiority, independent replication or semantic preservation. Prior cohorts are not pooled."
+  ],
+  "validation_history": [
+    {
+      "attempt": 1,
+      "status": "local_review_script_type_error",
+      "reason": "JSON equality helper was called on a Python set before row verification; no result artifact was written and no original artifact changed."
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "change": "Set membership uses explicit set equality; all scientific checks rerun from the same six allowed inputs."
+    }
+  ],
+  "new_model_calls": 0,
+  "new_API_calls": 0,
+  "new_native_counts": 0,
+  "new_evaluations": 0,
+  "existing_checker_executions": 0,
+  "existing_renderer_executions": 0,
+  "raw_trace_or_request_response_reads": 0,
+  "original_edits": 0
+}
