@@ -1,5 +1,12 @@
 # AIハーネス研究
 
+2026-10-27 14:26 JST時点：P138の実装・有限比較を準備中。既知4課題×16k閾値／固定3turn／累積raw-prefix再提示量の3方式、seed57、全12条件。保存入力11件の計数でCSVの初回判断差after19（E22,306／直前focus21,419）を確認したが、全仕事の削減・成功・新規性は未実証。最初のtemplate参照誤りを残し合計26 native描画・モデル生成0。新コホートは未開始で、source固定・全体検査・同head両CIを経て起動する。
+
+[P138比較仕様](docs/experiments/P138_prefix_exposure_draft_20261027.md)／[候補と先行範囲](docs/checkpoint_prefix_exposure_candidate_20261027.md)。主対照への成功損失なし・全仕事token減と、固定間隔対照への追加価値を別gateで判定する。原稿はユーザー担当。通常メッセージで研究は止めず、明示停止に従う。
+
+以下はP137閉鎖までの記録。旧失敗・欠測・採否は保持する。
+
+
 P137は全4条件を閉鎖・評価し成功0。seed57 fieldsは368,024既知tokens＋unknown1、seed157の3方式は各102,035確定で双方失敗の差0・共通成功0組。全体既知674,129＋unknown1で厳密総費用null。seed57単独／seed157だけの記述的比較、採用評価false・旧P136非合算を保持。 [P137閉鎖結果](docs/experiments/P137_findings.md)。追加seedや同条件反復で救済せず、原稿本文は未変更。
 
 [閉鎖結果一覧 v02](docs/closed_results_index_20261027_v02.md)：元7cohort・56行を保持しP135/P136の12行だけを追加、計9cohort・68予定条件／63評価。記録済unknown8呼出しとusage件数欠測5条件を分け、P136補足223,145は非加算。P137は固定開始リンクと「本一覧に未収録」の4予定placeholderのみ。phase横断の合計を効果や独立標本へ解釈しない。

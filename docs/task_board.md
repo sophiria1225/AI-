@@ -407,6 +407,10 @@ P11〜P13の全4件比較、目的、構成図、再取得・保持生成・中�
 
 ## R32 10月末レターの新規性を一つに絞り、今週の比較を固定する
 
+2026-10-27 14:26 JST時点：P138の実装・有限比較を準備中。既知4課題×16k閾値／固定3turn／累積raw-prefix再提示量の3方式、seed57、全12条件。保存入力11件の計数でCSVの初回判断差after19（E22,306／直前focus21,419）を確認したが、全仕事の削減・成功・新規性は未実証。最初のtemplate参照誤りを残し合計26 native描画・モデル生成0。新コホートは未開始で、source固定・全体検査・同head両CIを経て起動する。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_prefix_exposure_draft_20261027.md
+
+【以下は既存の時点付き記録】
 P137全4閉鎖・成功0。既知674129＋unknown1、厳密総費用null。seed157各102035/双方失敗差0・共通成功0、seed57 fields単独368024＋unknown1。採用評価false/P136非合算。docs/experiments/P137_findings.md参照。
 
 【結果一覧 v02：P135/P136の閉鎖値を追補】
@@ -552,6 +556,10 @@ https://github.com/sophiria1225/AI-/blob/main/reports/P125_execution_start_20261
 
 ## R33 レター候補機構の限定比較・悪影響・原記録を検証する
 
+2026-10-27 14:26 JST時点：P138の実装・有限比較を準備中。既知4課題×16k閾値／固定3turn／累積raw-prefix再提示量の3方式、seed57、全12条件。保存入力11件の計数でCSVの初回判断差after19（E22,306／直前focus21,419）を確認したが、全仕事の削減・成功・新規性は未実証。最初のtemplate参照誤りを残し合計26 native描画・モデル生成0。新コホートは未開始で、source固定・全体検査・同head両CIを経て起動する。
+https://github.com/sophiria1225/AI-/blob/main/docs/experiments/P138_prefix_exposure_draft_20261027.md
+
+【以下は既存の時点付き記録】
 P137全4閉鎖・成功0。既知674129＋unknown1、厳密総費用null。seed157各102035/双方失敗差0・共通成功0、seed57 fields単独368024＋unknown1。採用評価false/P136非合算。docs/experiments/P137_findings.md参照。
 
 【結果一覧 v02：P135/P136の閉鎖値を追補】
