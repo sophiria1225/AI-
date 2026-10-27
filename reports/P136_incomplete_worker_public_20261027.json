@@ -1,0 +1,208 @@
+{
+  "phase": "P136_incomplete_worker_supplement",
+  "status": "limited_data_only_diagnostic",
+  "source_diagnostic_sha256": "fa7b6d279a82447b8f4c18d409b1b438610a2c216d15215eaff5cc6d671e44ee",
+  "handwritten_probe_sha256": "8608467088f10f118adec285f2007d75b7ec7dbd2d19981c42868c11e15324dc",
+  "original_cohort_outputs_changed": false,
+  "original_scientific_gate_changed": false,
+  "original_planned_slots": [
+    {
+      "run_id": "BOC_P136_R01_01_RAW_ANCHOR",
+      "record_status": "evaluated",
+      "success": true,
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0
+    },
+    {
+      "run_id": "BOC_P136_R01_01_IDS_ONLY",
+      "record_status": "incomplete_worker",
+      "success": null,
+      "known_total_tokens": null,
+      "unknown_usage_calls": null
+    },
+    {
+      "run_id": "BOC_P136_R01_01_ENTITY_FIELDS",
+      "record_status": "not_run",
+      "success": null,
+      "known_total_tokens": null,
+      "unknown_usage_calls": null
+    },
+    {
+      "run_id": "BOC_P136_R02_01_ENTITY_FIELDS",
+      "record_status": "not_run",
+      "success": null,
+      "known_total_tokens": null,
+      "unknown_usage_calls": null
+    },
+    {
+      "run_id": "BOC_P136_R02_01_IDS_ONLY",
+      "record_status": "not_run",
+      "success": null,
+      "known_total_tokens": null,
+      "unknown_usage_calls": null
+    },
+    {
+      "run_id": "BOC_P136_R02_01_RAW_ANCHOR",
+      "record_status": "not_run",
+      "success": null,
+      "known_total_tokens": null,
+      "unknown_usage_calls": null
+    }
+  ],
+  "operational_chain": {
+    "pipeline_exit_code": 1,
+    "audit_session_report_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "collector_complete": true,
+    "independent_review_passed": true,
+    "completed_evaluated_conditions": 1,
+    "incomplete_worker_conditions": 1,
+    "not_run_conditions": 4,
+    "review_pass_is_scientific_success": false
+  },
+  "incomplete_cell": {
+    "model_seed": 57,
+    "policy": "ids_only",
+    "known_terminal_calls": 18,
+    "known_token_subtotal": 223145,
+    "known_usage_by_role": {
+      "agent": {
+        "known_calls": 16,
+        "input_tokens": 166303,
+        "output_tokens": 13417,
+        "recorded_call_wall_seconds": 1128.9300020009978
+      },
+      "focus": {
+        "known_calls": 2,
+        "input_tokens": 38342,
+        "output_tokens": 5083,
+        "recorded_call_wall_seconds": 631.8857941660099
+      }
+    },
+    "raw_response_usage_equality_checked": true,
+    "dispatch_evidence_calls": 19,
+    "dispatched_without_terminal_record": [
+      "call_019"
+    ],
+    "supplementary_unknown_attempts": 1,
+    "original_usage_recorded_unknown_calls": 0,
+    "exact_total_tokens": null,
+    "official_success": null,
+    "api_requests_in_saved_events": 47,
+    "summary_missing": true,
+    "terminal_usage_file_missing": true,
+    "stored_session_status": "active",
+    "stored_container_removed": false,
+    "current_container_liveness_not_checked_by_this_diagnostic": true
+  },
+  "notice_evidence": {
+    "capture_count": 2,
+    "captures": [
+      {
+        "index": 0,
+        "after_records": 40,
+        "after_model_calls": 13,
+        "enumeration": "closed",
+        "counts": {
+          "target_entities": 72,
+          "complete_entities": 25,
+          "pending_entities": 47,
+          "missing_title": 44,
+          "missing_artists": 47,
+          "missing_artist_name_entities": 3,
+          "retired_field_obligations": 53
+        },
+        "displayed_ID_rows": 16,
+        "displayed_field_rows": 0,
+        "source_complete": {
+          "song": true,
+          "album": true,
+          "playlist": true
+        },
+        "taint_reasons": []
+      },
+      {
+        "index": 1,
+        "after_records": 63,
+        "after_model_calls": 18,
+        "enumeration": "closed",
+        "counts": {
+          "target_entities": 72,
+          "complete_entities": 49,
+          "pending_entities": 23,
+          "missing_title": 0,
+          "missing_artists": 23,
+          "missing_artist_name_entities": 14,
+          "retired_field_obligations": 121
+        },
+        "displayed_ID_rows": 16,
+        "displayed_field_rows": 0,
+        "source_complete": {
+          "song": true,
+          "album": true,
+          "playlist": true
+        },
+        "taint_reasons": []
+      }
+    ],
+    "actual_saved_request_notices": [
+      {
+        "call_id": "call_014",
+        "capture_index": 0,
+        "displayed_ID_rows": 16,
+        "displayed_field_rows": 0,
+        "terminal_usage_known": true,
+        "saved_view_present": true
+      },
+      {
+        "call_id": "call_019",
+        "capture_index": 1,
+        "displayed_ID_rows": 16,
+        "displayed_field_rows": 0,
+        "terminal_usage_known": false,
+        "saved_view_present": false
+      }
+    ],
+    "known_terminal_notice_calls": 1,
+    "known_terminal_notice_ID_rows": 16,
+    "request_attempt_notice_calls": 2,
+    "request_attempt_notice_ID_rows": 32,
+    "field_rows": 0,
+    "API_prefix_reauthenticated": false,
+    "formatter_shared_with_producer": true,
+    "pending_decrease_is_task_success_proof": false
+  },
+  "supplementary_known_subtotal": {
+    "audited_first_condition": 332588,
+    "incomplete_second_condition_raw_terminal_subtotal": 223145,
+    "sum": 555733,
+    "exact_whole_job_total": null,
+    "replaces_audited_cohort_aggregate": false
+  },
+  "failure_mechanism": {
+    "fixed_driver_SIGALRM_handler_registered": false,
+    "production_transport_arms_SIGALRM": true,
+    "handwritten_default_entry_returncode": -14,
+    "handwritten_default_response_usage_finally_saved": false,
+    "handwritten_timeout_handler_entry_returncode": 0,
+    "handwritten_timeout_handler_response_usage_finally_saved": true,
+    "actual_worker_exit_signal_recorded": false,
+    "conclusion": "Missing SIGALRM handler is a reproduced source mechanism consistent with the saved failure; the real worker signal exit code was not retained."
+  },
+  "limits": [
+    "This supplement does not complete the missing final worker accounting or certify its full trace.",
+    "The nineteenth saved request is evidence of a client attempt; acceptance and final generated usage remain unknown.",
+    "The four not-run slots and all original null fields remain present.",
+    "No additional evaluator was run; the incomplete condition has no official success result.",
+    "No runtime repair or experiment retry was performed by this diagnostic."
+  ],
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_tokenizer_calls": 0,
+  "additional_evaluations": 0,
+  "producer_auditor_rerun": false,
+  "saved_generated_code_executions": 0
+}

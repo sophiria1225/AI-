@@ -1,0 +1,7 @@
+P135のraw seed157は、checkpoint前にAPI上限80へ到達した。10回の実測trigger入力は最大14,202で、閾値16,384未満だった。call001–008で20 API、call009で12、call010で48を使用し、最後のPython programも正常終了した。全80 APIが正常返答で、CSV書込・退会へのAPI送信はなかった。workerは次のmodel callとcheckpoint計数より前にAPI上限を検査するため、未実施call011の入力サイズは不明である。
+
+成功したraw seed57も同じ分母に保持する。76 API（正常73・例外3）と未送信の形式エラー2件、31 model calls／focus2回、checkpoint2回で成功した。取得の内訳は異なり、seed157の個別song取得59回に対し、seed57は個別song2回、album/playlist詳細13回、artist取得27回を経て、file作成・退会・完了へ到達した。どの取得戦略が成功を起こすかを分離した実験ではない。
+
+P135 raw157の80件のAPI名・全引数・返値/status・call対応と10件のprogram sourceは、既存P122 seed157の保存列と一致した。これは旧診断へ接続する根拠であり、P122/P123/P133を新たな独立例として加算しない。rootの限定peerはこの同一性と主要集計を再確認し、HTTP method解析や旧typed-ID census自体は再実行していない。
+
+この閉鎖軌跡には、accepted checkpoint後だけに介入する方式の開始機会がない。ただし、実行中P136の成否を予測したり、追加seed・予算増・新方式を採用したりする結論ではない。原P135結果・費用・gateは不変である。
