@@ -1,0 +1,92 @@
+{
+  "phase": "P140",
+  "status_at_observation": "running",
+  "wrapper_started_at": "2026-10-27T13:46:56.813061+00:00",
+  "observed_at": "2026-10-27T13:52:14.067991+00:00",
+  "source_head": "827298fa4219aa4e500d604dfb771f6fe6b815c8",
+  "source_PR": 560,
+  "source_merge": "872048e5b53f29a38b947ed06a14ce88b5c2586a",
+  "plan_sha256": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+  "fixed_source_files": 1675,
+  "activation_bound_files_including_plan": 1676,
+  "planned_conditions": 12,
+  "completed_conditions_at_observation": 0,
+  "active_at_observation": "BOC_P140_01_THRESHOLD_RECURSIVE",
+  "operational_status": {
+    "phase": "P140_operational_progress",
+    "batch": {
+      "status": "running",
+      "completed_slots": 0,
+      "planned_slots": 12,
+      "active_run": "BOC_P140_01_THRESHOLD_RECURSIVE"
+    },
+    "pipeline": {
+      "status": "batch",
+      "server_stopped": false
+    },
+    "wrapper": {
+      "status": "running"
+    }
+  },
+  "first_actor_request_file_exists": true,
+  "first_actor_response_file_exists": true,
+  "first_actor_request_sha256": "c2c9f7022e3ea10a6b3b6deb3586a843d0bf645a0a4ae1ca23f5be90cc6e962e",
+  "first_actor_response_sha256": "ebf5016455bfa75c93bad65bd5b5e9a87347b22c608f7f37042f534736a0c44f",
+  "request_response_content_inspected": false,
+  "preflight": {
+    "status": "complete",
+    "input_count_requests": 12,
+    "summary_input_count_requests": 4,
+    "representation_actor_input_count_requests": 2,
+    "failed_input_count_requests": 0,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "reserved_scenarios_read": 0,
+    "all_twelve_inputs_checked": true
+  },
+  "activation_complete_before_generation": true,
+  "preflight_sha256": "657b1d743b389782347fed6698951de2817d4ba59371e61d8d4542bca733e475",
+  "activation_sha256": "8a95458aa6f409df74e6451a7007b66a15cfd86829abf84bfac065a278fde7f6",
+  "start_reserved_ledgers": 203,
+  "start_reserved_bindings": 2592,
+  "start_reserved_snapshot_sha256": "57c64c0d21d23c8c5d0de8e869ac6e0206deffe967a8e90e914ab56c1460e7e2",
+  "registry_sha256": "8bc0fd1055734af77faf08296f7e3d361ef5d2e7d769e8890e98a617ec8b4fa3",
+  "wrapper_sha256": "2790fa52b37c3cbb7ac8cd7180c6d6ca36c1351b51c61b7eb3aa2dcb0f37d326",
+  "start_marker_sha256": "b4fbeff6332c0b470d31f43859cf5176ae3552824c0db6133af84c748581c85d",
+  "operational_monitor_sha256": "c5280eca757569784eb8b5371cc9c09052e9697eeb979e8351879b1d83971a73",
+  "CI": [
+    {
+      "id": 40514411940,
+      "head_sha": "827298fa4219aa4e500d604dfb771f6fe6b815c8",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 122224466176,
+      "all_steps_success": true,
+      "step_count": 13
+    },
+    {
+      "id": 40514449435,
+      "head_sha": "827298fa4219aa4e500d604dfb771f6fe6b815c8",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "successful_job_id": 122224597764,
+      "all_steps_success": true,
+      "step_count": 13
+    }
+  ],
+  "CI_read_only_review_sha256": "4c6458b1d57ba76e2481106372f344e36d4d7e9acc13be909db46594d670fb79",
+  "all_conditions_complete": false,
+  "results_evaluated_for_publication": false,
+  "live_outcomes_usage_or_generated_content_inspected": false,
+  "new_method_success_claim": false,
+  "new_method_novelty_established": false,
+  "independent_replication_claim": false,
+  "prior_results_pooled": false,
+  "manuscript_changed": false,
+  "model_absolute_deadline_jst": "2026-10-28T08:00:00+09:00",
+  "report_processing_target_jst": "2026-10-28T08:55:00+09:00",
+  "report_target_jst": "2026-10-28T09:00:00+09:00"
+}
