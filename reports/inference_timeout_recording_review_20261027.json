@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "scope": "New main-thread timeout-handler context preparation only; no new worker entrypoint or experiment cohort connected.",
+  "source_sha256": {
+    "scripts/inference_timeout_handler.py": "189ec4bb35439e37d216ed3f95866352958c3855b0ca31606fb05ed3219009f9",
+    "tests/test_local_llama_alarm.py": "fa2ea10d157b6da505c7d940230a3992ff001f8f6f9745fca33cfbc3c2ddfa52"
+  },
+  "old_adapters_byte_identical_to_base": true,
+  "old_adapter_sha256": {
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/tool_choice_local_llama.py": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+    "scripts/fixed_budget_local_llama.py": "4ac43105b446ff89c515de484a1b46b5d412b90817eab5e441b4424ec25d2f84"
+  },
+  "frozen_P136_adapters_match_original_plan": {
+    "p136-prep": true,
+    "p136-run": true
+  },
+  "finding_history": [
+    {
+      "id": "F1",
+      "finding": "Initial patch omitted the rolling separate-focus path via FixedBudgetResidualInference and fixed_budget_local_llama.",
+      "resolution": "Final new context is exercised with all three unchanged adapters, including fixed-budget focus."
+    },
+    {
+      "id": "F2",
+      "finding": "Editing original adapters invalidated prior source bindings; parent full-suite verification rejected that implementation.",
+      "resolution": "Original adapters restored byte-for-byte. Final diff consists only of a new context module and new tests. Earlier edited-adapter test passes do not certify the final design."
+    }
+  ],
+  "checks": [
+    "New context installs SIGALRM -> TimeoutError(local_inference_deadline); existing adapters retain alarm duration, dispatch, payload, recording and usage interpretation.",
+    "Finally cancels this scope process alarm and restores the caller handler on success, error, timeout and propagated interruption.",
+    "Default SIGALRM no longer terminates the handwritten child before response.json when the new context surrounds existing model_call.",
+    "Timeout usage remains null and no request retry is added; successful terminal usage remains unchanged.",
+    "Both run_wall and call timeout scopes were exercised without extending the existing timeout calculation."
+  ],
+  "validation": {
+    "author_tests_rerun": 3,
+    "author_adapter_cases": 9,
+    "author_adapters": [
+      "local_llama",
+      "tool_choice_local_llama",
+      "fixed_budget_local_llama"
+    ],
+    "additional_independent_tests": 3,
+    "all_pass": true,
+    "independent_cases": [
+      "Custom caller handler under real focus timeout",
+      "SIG_IGN caller under real local timeout and call scope",
+      "KeyboardInterrupt propagation with alarm cancellation and handler restoration"
+    ],
+    "independent_test_sha256": "0d896acae5ab2f14d0f140dbc497fe9c6811121177c5c7a38b144f9c2f9aeab8"
+  },
+  "limits": [
+    "Requires a new main-thread worker to enter the context; existing workers and frozen experiments are not changed or repaired by merely adding this file.",
+    "Scope owns the process alarm and intentionally does not preserve an independently armed enclosing timer.",
+    "Does not restore missing past receipts or exact unknown usage and does not guarantee recording after SIGKILL or filesystem failure."
+  ],
+  "operations": {
+    "model_API_tokenizer_evaluation_calls": 0,
+    "actual_experiment_results_read": 0,
+    "new_cohort_runs": 0,
+    "repository_edits_by_reviewer": 0,
+    "commits_by_reviewer": 0
+  }
+}
