@@ -1,0 +1,6127 @@
+{
+  "phase": "P139_actual_figures_independent_review",
+  "status": "pass_with_publication_caption_clarification",
+  "recorded_at": "2026-10-27T12:57:17.987529+00:00",
+  "reviewer": "grounding_adversarial_review",
+  "source_and_artifact_sha256": {
+    "operational/main_end": "c0a56ec7eaa0905f937cbede2ee1510fbe0010b7ecd13b8f446563c460601a1e",
+    "operational/postclose_end": "f07936b462693b48908dd8b8ad731551591c70572283de5974c726b565ce31fe",
+    "reports/P139_comparison.json": "a0c017af89096eddccc7a5185f922acb0a0a3e904459b0fbf14a750655bf9318",
+    "reports/P139_server_session.json": "1a07a13e26c2e4735c53d21cd4d4a981c90f74eeeb8ee0e34901e1642ac34970",
+    "renderer_source": "1570b9bb2fb4dbee1ef6fe331fa9e67edbf65d50c850b42d5f3de790d387dc73",
+    "fixed_helper_source": "a72c465c8101486d0f982d854adfd3548bcc05edd94176542fd8894e9b40416f",
+    "materials/pairs.csv": "95c8562cfb92bd5b4a67df5cdeae59f7cbc7a35ed901030e8b1c9dc77b2f5574",
+    "materials/summary.json": "e7ee9bd537b27fd843fd6ff1be80eded9f8af9c084ccec4cbe420cedac626ef9",
+    "materials/build_manifest.json": "525c13c4d6436c142e0b5c27a4a1dedc839204050a897c0ddad813c23ea8f9e6",
+    "materials/README.md": "5b715039f9d077d95137a32cd35556833f756ab9ad3e62a59cce7b469ee2841c",
+    "materials/conditions.csv": "f9abc7ebb268ae07938e16991fe44d2a8d13c2d34943777382b1df0f464800f1",
+    "materials/model_calls.csv": "24e756d68e1abf4f119af0bc92812acbd62d3f968fe491333dfc2f4db0511060",
+    "figures/whole_job_cost.pdf": "cd24924e62c73306781d27224d600183cbc02cae888da29936485347a8dfee4d",
+    "figures/paired_comparisons.pdf": "d9aeb083934f723bdeb3af71bc7d07e5ea9bc2eeb40195680d577a922a4a2e87",
+    "figures/paired_comparisons.png": "e6afee04d56aa1b6386d0573f5504f958a500dd8a3af97029854c835d824abc4",
+    "figures/whole_job_cost.png": "e5c8ab3f068d4de2615b2dd61922c91bf38af77a7d94d9364405e910e07b959e",
+    "figures/output_manifest.json": "0ae530c82d8e71a956f1d3dfe5f37adf4ffc07c793ea8ebf418ea5ae5cf41498",
+    "figures/figure_data.json": "f32e34936418e8b7b455cd139195858f578dc56aa1d56924aa4782206046da9f"
+  },
+  "data_checks_passed": 1483,
+  "data_checks_failed": 0,
+  "failed_checks": [],
+  "conditions": 16,
+  "evaluated": 16,
+  "successes": 14,
+  "failures": 2,
+  "not_run": 0,
+  "missing_usage_conditions": 0,
+  "recorded_unknown_usage_calls": 2,
+  "known_token_subtotal_all_conditions": 3192403,
+  "exact_total": null,
+  "comparisons": 5,
+  "pair_rows": 20,
+  "by_mode": {
+    "threshold_recursive": {
+      "successes": 4,
+      "known_tokens": 785656,
+      "unknown_usage_calls": 0,
+      "fixed_exact_total": null
+    },
+    "threshold_delta": {
+      "successes": 4,
+      "known_tokens": 804223,
+      "unknown_usage_calls": 0,
+      "fixed_exact_total": null
+    },
+    "exposure_recursive": {
+      "successes": 3,
+      "known_tokens": 740529,
+      "unknown_usage_calls": 1,
+      "fixed_exact_total": null
+    },
+    "exposure_delta": {
+      "successes": 3,
+      "known_tokens": 861995,
+      "unknown_usage_calls": 1,
+      "fixed_exact_total": null
+    }
+  },
+  "comparison_summary": [
+    {
+      "name": "primary_utility",
+      "all_task_token_difference": null,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "common_success_token_difference": null,
+      "changed_intervention_on_common_success": false,
+      "comparison_gate_met": false
+    },
+    {
+      "name": "representation_at_exposure",
+      "all_task_token_difference": null,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "common_success_token_difference": null,
+      "changed_intervention_on_common_success": false,
+      "comparison_gate_met": false
+    },
+    {
+      "name": "timing_with_delta",
+      "all_task_token_difference": null,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "common_success_token_difference": null,
+      "changed_intervention_on_common_success": false,
+      "comparison_gate_met": false
+    },
+    {
+      "name": "representation_at_threshold",
+      "all_task_token_difference": 18567,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1",
+        "6104387_1"
+      ],
+      "common_success_token_difference": 18567,
+      "changed_intervention_on_common_success": false,
+      "comparison_gate_met": false
+    },
+    {
+      "name": "timing_with_recursive",
+      "all_task_token_difference": null,
+      "common_success_tasks": [
+        "34d9492_1",
+        "3c13f5a_1",
+        "60d0b5b_1"
+      ],
+      "common_success_token_difference": null,
+      "changed_intervention_on_common_success": false,
+      "comparison_gate_met": false
+    }
+  ],
+  "actual_visual_review": {
+    "whole_job_cost.png": "All sixteen cells and four mode legends readable; fourteen exact successful costs and two failed known-lower-bound bars retained. Unknown usage and accounting incomplete are explicitly labeled. Fixed mode exact totals remain null with a visible explanation.",
+    "paired_comparisons.png": "All five comparisons and twenty paired rows readable with no observed text overlap or clipping. Failure transitions, null aggregates, common-success selection, prefix evidence and false fixed gates are visible. Positive threshold representation cost difference is not labeled a saving.",
+    "synthetic_figures_opened": false,
+    "PDF_scope": {
+      "whole_job_cost.pdf": {
+        "pages": 1,
+        "page_points": [
+          1224.0,
+          864.0
+        ],
+        "text_spans_outside_page": 0,
+        "text_extracted": true,
+        "rasterization_performed": false
+      },
+      "paired_comparisons.pdf": {
+        "pages": 1,
+        "page_points": [
+          1224.0,
+          1080.0
+        ],
+        "text_spans_outside_page": 0,
+        "text_extracted": true,
+        "rasterization_performed": false
+      }
+    }
+  },
+  "publication_clarifications": [
+    {
+      "severity": "caption_required_before_standalone_publication",
+      "issue": "The table heading Actual intervention denotes the fixed comparison-qualified predicate. It is not a direct count or a statement that no delta message was delivered.",
+      "concrete_example": "Task 4 threshold_delta has one delta installation and nine known actor calls containing delta, while its threshold representation pair has prefix_match=false and fixed actual_intervention=false.",
+      "suggested_caption": "Actual intervention is the fixed comparison eligibility predicate. Representation comparisons require both known delta exposure and observed prefix agreement. False therefore need not mean that no delta was delivered; Task 4 threshold/delta had 9 known delta actor calls but did not satisfy prefix agreement.",
+      "original_figures_or_fixed_values_changed": false
+    },
+    {
+      "severity": "existing_disclosure_must_be_linked",
+      "issue": "Root viewed nine completed rows before full closure. Historical process-local false flags in original metadata do not establish global operator blinding. Link the separately preserved exposure disclosure; no global blinding claim is made in this review."
+    }
+  ],
+  "claim_limits": [
+    "Known four-task seed57 development factorial, not independent task replication or a general quality/novelty result.",
+    "Null fixed aggregate differences stay null even when a known common-success subset can be described separately.",
+    "Positive or negative known-subtotal differences involving unknown calls are not exact whole-job treatment differences.",
+    "Representation prefix values and intervention eligibility are compared with the fixed audit; raw prefix evidence and native counts are not independently replayed.",
+    "all_activated_representation_prefixes_match=true can be vacuous when no candidate delta actor calls were observed; it is not observed matching-prefix evidence.",
+    "Unknown failed runs retain their known costs and cannot support a preserved-quality saving claim."
+  ],
+  "scope": {
+    "closed_root_authorization_received": true,
+    "closed_aggregate_audit_and_materials_read": true,
+    "raw_trial_requests_responses_or_generated_bodies_read": false,
+    "saved_generated_code_executed": false,
+    "producer_auditor_checker_or_renderer_reexecuted": false,
+    "native_counts_recomputed": false,
+    "additional_model_API_evaluation_tokenizer_calls": 0,
+    "live_PIDs_independently_rechecked": false,
+    "recorded_closure_hashes_verified": true,
+    "all_1617_source_bytes_rehashed_in_this_review": false,
+    "full_source_graph_verification_relied_on_fixed_build_and_postclose_chain": true,
+    "independent_gate_policy_redefinition": false,
+    "original_artifact_edits": false
+  },
+  "review_process_note": "An initial read-only inspection used the wrong comparison key paired_results and raised KeyError before writing any review artifact. The correct existing key pairs was then used; no producer or renderer was rerun.",
+  "checks": [
+    {
+      "check": "root_reviewed_main_end_sha",
+      "pass": true
+    },
+    {
+      "check": "root_reviewed_postclose_sha",
+      "pass": true
+    },
+    {
+      "check": "main_complete",
+      "pass": true
+    },
+    {
+      "check": "main_stages",
+      "pass": true
+    },
+    {
+      "check": "main_pipeline_success",
+      "pass": true
+    },
+    {
+      "check": "main_audit_success",
+      "pass": true
+    },
+    {
+      "check": "main_session_success",
+      "pass": true
+    },
+    {
+      "check": "main_report_success",
+      "pass": true
+    },
+    {
+      "check": "postclose_complete",
+      "pass": true
+    },
+    {
+      "check": "postclose_stages",
+      "pass": true
+    },
+    {
+      "check": "postclose_independent_review_success",
+      "pass": true
+    },
+    {
+      "check": "postclose_figures_success",
+      "pass": true
+    },
+    {
+      "check": "postclose_binds_main",
+      "pass": true
+    },
+    {
+      "check": "postclose_binds_figure_manifest",
+      "pass": true
+    },
+    {
+      "check": "renderer_hash",
+      "pass": true
+    },
+    {
+      "check": "fixed_renderer_hash",
+      "pass": true
+    },
+    {
+      "check": "actual_not_synthetic",
+      "pass": true
+    },
+    {
+      "check": "actual_manifest_not_synthetic",
+      "pass": true
+    },
+    {
+      "check": "recorded_source_count",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:reports/P139_initial_checks.json",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:reports/P139_activation_v01.json",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:reports/P139_comparison.json",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:reports/P139_server_session.json",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/README.md",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/build_manifest.json",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/conditions.csv",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/model_calls.csv",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/pairs.csv",
+      "pass": true
+    },
+    {
+      "check": "closure_copy_hash:materials/20261027_p139_results/summary.json",
+      "pass": true
+    },
+    {
+      "check": "build_source_hash:reports/P139_comparison.json",
+      "pass": true
+    },
+    {
+      "check": "build_source_hash:reports/P139_server_session.json",
+      "pass": true
+    },
+    {
+      "check": "build_source_hash:configs/P139_whole_task_checkpoint_representation_v01.json",
+      "pass": true
+    },
+    {
+      "check": "build_source_hash:scripts/build_checkpoint_representation_summary_p139.py",
+      "pass": true
+    },
+    {
+      "check": "build_artifact_hash:README.md",
+      "pass": true
+    },
+    {
+      "check": "build_artifact_hash:conditions.csv",
+      "pass": true
+    },
+    {
+      "check": "build_artifact_hash:model_calls.csv",
+      "pass": true
+    },
+    {
+      "check": "build_artifact_hash:pairs.csv",
+      "pass": true
+    },
+    {
+      "check": "build_artifact_hash:summary.json",
+      "pass": true
+    },
+    {
+      "check": "figure_artifact_hash:figure_data.json",
+      "pass": true
+    },
+    {
+      "check": "figure_artifact_hash:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure_artifact_hash:paired_comparisons.png",
+      "pass": true
+    },
+    {
+      "check": "figure_artifact_hash:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "figure_artifact_hash:whole_job_cost.png",
+      "pass": true
+    },
+    {
+      "check": "figure_build_manifest_hash",
+      "pass": true
+    },
+    {
+      "check": "figure_summary_hash",
+      "pass": true
+    },
+    {
+      "check": "figure_build_source_maps",
+      "pass": true
+    },
+    {
+      "check": "figure_build_artifact_maps",
+      "pass": true
+    },
+    {
+      "check": "audit_errors_empty",
+      "pass": true
+    },
+    {
+      "check": "session_stopped",
+      "pass": true
+    },
+    {
+      "check": "session_binds_audit",
+      "pass": true
+    },
+    {
+      "check": "audit_recorded_owned_absence",
+      "pass": true
+    },
+    {
+      "check": "session_recorded_owned_absence",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:usage_count_missing_conditions",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:unknown_usage_imputed",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:all_sixteen_complete_with_known_usage",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:cached_input_deducted",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:total_tokens_by_mode",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:all_model_roles_included",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:recorded_unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:combination_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:phase",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:success_counts",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:prior_results_pooled",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:model_seed",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:comparisons",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:known_token_subtotals_by_mode",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:conditions",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:independent_tasks",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:primary_utility_gate_met",
+      "pass": true
+    },
+    {
+      "check": "figure_summary:both_control_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:comparisons",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:success_counts",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:known_token_subtotals_by_mode",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:total_tokens_by_mode",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:usage_count_missing_conditions",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:recorded_unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:primary_utility_gate_met",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:both_control_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:combination_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "summary_audit:development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "all16_rows",
+      "pass": true
+    },
+    {
+      "check": "all16_unique_ids",
+      "pass": true
+    },
+    {
+      "check": "all16_identity_product",
+      "pass": true
+    },
+    {
+      "check": "all_evaluated",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_01_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_01_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_THRESHOLD_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_01_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_01_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_01_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_01_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_01_EXPOSURE_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_01_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_01_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_02_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_02_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_02_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_02_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_EXPOSURE_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_02_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_02_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_02_THRESHOLD_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_02_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_02_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_03_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_03_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_EXPOSURE_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_03_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_03_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_03_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_03_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_03_THRESHOLD_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_03_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_03_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_04_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_04_EXPOSURE_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_04_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_04_THRESHOLD_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_THRESHOLD_DELTA:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_04_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_04_THRESHOLD_DELTA",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:run_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:task_id",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:record_status",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:success",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:model_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:api_requests",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "audited_public_field:BOC_P139_04_EXPOSURE_RECURSIVE:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "input_plus_output:BOC_P139_04_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "cached_not_deducted:BOC_P139_04_EXPOSURE_RECURSIVE",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv_row_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:0:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:1:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:2:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:3:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:4:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:5:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:6:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:7:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:8:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:9:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:10:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:11:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:12:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:13:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:14:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:run_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:task_id",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:checkpoint_representation_mode",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:record_status",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:success",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:stop_reason",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:model_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:known_total_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:unknown_usage_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:output_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:cached_input_tokens",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:api_requests",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:checkpoint_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:actual_decision_differences_from_threshold",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:actual_decision_differences_from_exposure",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:delta_installations",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:fragment_count",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:actual_delta_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:actual_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:actual_delta_unknown_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:checkpoint_representation_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:checkpoint_representation_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:prefix_exposure_contract_failed",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:prefix_exposure_accounting_complete",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "conditions.csv:15:full_wall_seconds",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv_row_count",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:0:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:1:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:2:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:3:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:4:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:5:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:6:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:7:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:8:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:9:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:10:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:11:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:12:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:13:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:14:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:15:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:16:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:17:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:18:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:task_id",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:baseline",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:candidate",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:baseline_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:candidate_success",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:both_evaluated",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:both_usage_known",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:success_lost",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:both_successful",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:candidate_minus_baseline_tokens",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:actual_timing_decision_differences",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:candidate_delta_known_actor_calls",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:representation_prefix_match",
+      "pass": true
+    },
+    {
+      "check": "pairs.csv:19:actual_intervention",
+      "pass": true
+    },
+    {
+      "check": "success_count:threshold_recursive",
+      "pass": true
+    },
+    {
+      "check": "known_subtotal:threshold_recursive",
+      "pass": true
+    },
+    {
+      "check": "fixed_mode_null:threshold_recursive",
+      "pass": true
+    },
+    {
+      "check": "success_count:threshold_delta",
+      "pass": true
+    },
+    {
+      "check": "known_subtotal:threshold_delta",
+      "pass": true
+    },
+    {
+      "check": "fixed_mode_null:threshold_delta",
+      "pass": true
+    },
+    {
+      "check": "success_count:exposure_recursive",
+      "pass": true
+    },
+    {
+      "check": "known_subtotal:exposure_recursive",
+      "pass": true
+    },
+    {
+      "check": "fixed_mode_null:exposure_recursive",
+      "pass": true
+    },
+    {
+      "check": "success_count:exposure_delta",
+      "pass": true
+    },
+    {
+      "check": "known_subtotal:exposure_delta",
+      "pass": true
+    },
+    {
+      "check": "fixed_mode_null:exposure_delta",
+      "pass": true
+    },
+    {
+      "check": "unknown_calls_two",
+      "pass": true
+    },
+    {
+      "check": "missing_counts_zero",
+      "pass": true
+    },
+    {
+      "check": "five_comparisons",
+      "pass": true
+    },
+    {
+      "check": "four_pairs:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "pair_tasks:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "pair_known:primary_utility:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:primary_utility:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:primary_utility:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:primary_utility:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:primary_utility:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:primary_utility:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:primary_utility:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:primary_utility:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:primary_utility:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:primary_utility:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:primary_utility:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:primary_utility:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:primary_utility:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:primary_utility:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:primary_utility:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:primary_utility:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "common_task_membership:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "fixed_all_difference:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "fixed_common_difference:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "comparison_fixed_gate_false:primary_utility",
+      "pass": true
+    },
+    {
+      "check": "four_pairs:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "pair_tasks:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_exposure:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_exposure:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_exposure:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_exposure:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_exposure:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_exposure:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_exposure:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_exposure:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_exposure:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_exposure:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_exposure:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_exposure:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_exposure:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_exposure:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_exposure:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_exposure:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "common_task_membership:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "fixed_all_difference:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "fixed_common_difference:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "comparison_fixed_gate_false:representation_at_exposure",
+      "pass": true
+    },
+    {
+      "check": "four_pairs:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "pair_tasks:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_delta:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_delta:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_delta:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_delta:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_delta:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_delta:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_delta:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_delta:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_delta:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_delta:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_delta:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_delta:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_delta:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_delta:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_delta:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_delta:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "common_task_membership:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "fixed_all_difference:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "fixed_common_difference:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "comparison_fixed_gate_false:timing_with_delta",
+      "pass": true
+    },
+    {
+      "check": "four_pairs:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "pair_tasks:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_threshold:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_threshold:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_threshold:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_threshold:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_threshold:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_threshold:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_threshold:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_threshold:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_threshold:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_threshold:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_threshold:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_threshold:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:representation_at_threshold:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:representation_at_threshold:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:representation_at_threshold:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:representation_at_threshold:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "common_task_membership:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "fixed_all_difference:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "fixed_common_difference:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "comparison_fixed_gate_false:representation_at_threshold",
+      "pass": true
+    },
+    {
+      "check": "four_pairs:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "pair_tasks:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_recursive:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_recursive:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_recursive:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_recursive:34d9492_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_recursive:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_recursive:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_recursive:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_recursive:3c13f5a_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_recursive:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_recursive:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_recursive:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_recursive:60d0b5b_1",
+      "pass": true
+    },
+    {
+      "check": "pair_known:timing_with_recursive:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_diff:timing_with_recursive:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_quality_loss:timing_with_recursive:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "pair_both_success:timing_with_recursive:6104387_1",
+      "pass": true
+    },
+    {
+      "check": "common_task_membership:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "fixed_all_difference:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "fixed_common_difference:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "comparison_fixed_gate_false:timing_with_recursive",
+      "pass": true
+    },
+    {
+      "check": "primary_utility_gate_met",
+      "pass": true
+    },
+    {
+      "check": "both_control_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "combination_development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "development_gate_met",
+      "pass": true
+    },
+    {
+      "check": "PDF_single_page:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_text_not_clipped:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_actual_labels:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_null_labels:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_no_private_path:whole_job_cost.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_14_success_labels",
+      "pass": true
+    },
+    {
+      "check": "PDF_2_failure_labels",
+      "pass": true
+    },
+    {
+      "check": "PDF_two_unknown_labels",
+      "pass": true
+    },
+    {
+      "check": "PDF_four_identical_known_task_costs:139871",
+      "pass": true
+    },
+    {
+      "check": "PDF_four_identical_known_task_costs:211110",
+      "pass": true
+    },
+    {
+      "check": "PDF_four_identical_known_task_costs:102087",
+      "pass": true
+    },
+    {
+      "check": "PDF_task4_known_cost:332588",
+      "pass": true
+    },
+    {
+      "check": "PDF_task4_known_cost:351155",
+      "pass": true
+    },
+    {
+      "check": "PDF_task4_lower_bound:287461",
+      "pass": true
+    },
+    {
+      "check": "PDF_task4_lower_bound:408927",
+      "pass": true
+    },
+    {
+      "check": "PDF_single_page:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_text_not_clipped:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_actual_labels:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_null_labels:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_no_private_path:paired_comparisons.pdf",
+      "pass": true
+    },
+    {
+      "check": "PDF_five_pair_rows_task1",
+      "pass": true
+    },
+    {
+      "check": "PDF_five_pair_rows_task2",
+      "pass": true
+    },
+    {
+      "check": "PDF_five_pair_rows_task3",
+      "pass": true
+    },
+    {
+      "check": "PDF_five_pair_rows_task4",
+      "pass": true
+    },
+    {
+      "check": "PDF_three_quality_losses",
+      "pass": true
+    },
+    {
+      "check": "figure_json_private_paths_absent:figure_data.json",
+      "pass": true
+    },
+    {
+      "check": "figure_json_private_paths_absent:output_manifest.json",
+      "pass": true
+    }
+  ]
+}
