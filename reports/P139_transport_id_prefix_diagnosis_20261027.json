@@ -1,0 +1,702 @@
+{
+  "phase": "P139_closed_prefix_structure_identity_diagnosis",
+  "status": "complete",
+  "created_at": "2026-10-27T22:22:08.740481+09:00",
+  "parent_authorized_after_full_closure": true,
+  "selected_scope": "Exactly the two Task4 same-timing pre-second-opportunity prefixes identified by the frozen P139 public audit; no post-treatment output comparison or other task selection.",
+  "original_audit_sha256": "a0c017af89096eddccc7a5185f922acb0a0a3e904459b0fbf14a750655bf9318",
+  "original_source_head": "a203874f0fafbaa76f76cfab3603eb43c623916f",
+  "source_sha256": {
+    "scripts/audit_checkpoint_representation_trace_p139.py": "8fe8f30a77389df005004c0ecc6189ef3536ee2e8eb3c74ad550b30b5dac8624",
+    "scripts/whole_task_checkpoint_representation_p139.py": "a72c465c8101486d0f982d854adfd3548bcc05edd94176542fd8894e9b40416f",
+    "scripts/receipt_reasoning_history.py": "426fe56d9eb41b827f9d48fd6f1d36e0bcab4e89d5acab28d0fa1115d97edd69",
+    "scripts/local_llama.py": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+    "scripts/tool_choice_local_llama.py": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+    "scripts/fixed_budget_local_llama.py": "4ac43105b446ff89c515de484a1b46b5d412b90817eab5e441b4424ec25d2f84",
+    "scripts/protocol_stable_history.py": "4b45be2b2f67cb86f9acb5ac963224eebcbb59234ebadfa085579f35cb074abb",
+    "scripts/budget_visibility_comparison.py": "ccc89603b0778d7d4c251c7fb984627ccc85c707579c6e6dbccb7e4d44a15f6f",
+    "scripts/native_conversation.py": "5764e9eda68cd60f96a104a58d32cc3454f7157fc1c0661fea2e1fac5dd916f3",
+    "scripts/reasoning_history.py": "4da76b04bf42aab7c78b9ce3b71ee73e20ad812c648c3173613ced7cf8ac8fdc",
+    "scripts/late_clock_comparison.py": "1cff4fbd4a871f10100e5119145e571bae3bdb7afeee83b9c34fa8e65cfd635a"
+  },
+  "private_bindings_sha256": "b088ad039c394856ba1389e4bbf27055d3a7bad88d791e307a6a40c601872645",
+  "private_input_files_bound": 247,
+  "pairs": [
+    {
+      "task_slot": 4,
+      "modes": [
+        "threshold_recursive",
+        "threshold_delta"
+      ],
+      "counts": {
+        "request_protocol_reference_fields_checked": 480,
+        "request_protocol_reference_fields_canonical": 480,
+        "prior_call_pairs": 22,
+        "request_sha_equal": 22,
+        "exact_assistant_message_equal": 1,
+        "assistant_equal_except_tool_call_id": 22
+      },
+      "message_path_equality": {
+        "/@keys": {
+          "present_both": 22,
+          "equal": 22,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/content": {
+          "present_both": 22,
+          "equal": 22,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/reasoning_content": {
+          "present_both": 22,
+          "equal": 22,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/role": {
+          "present_both": 22,
+          "equal": 22,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/@keys": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/@keys": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/arguments": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/name": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/id": {
+          "present_both": 21,
+          "equal": 0,
+          "different": 21,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/type": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/@length": {
+          "present_both": 21,
+          "equal": 21,
+          "different": 0,
+          "missing_one_side": 0
+        }
+      },
+      "raw_response_top_level_difference_counts": {
+        "id": 22,
+        "choices": 21,
+        "timings": 22,
+        "created": 22
+      },
+      "saved_response_top_level_difference_counts": {
+        "wall_seconds": 22,
+        "timings": 22,
+        "message": 21
+      },
+      "call_metadata": [
+        {
+          "call_id": "call_001",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_002",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_003",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_004",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_005",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_006",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_007",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_008",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_009",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_010",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_011",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_012",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_013",
+          "role": "focus",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": true,
+          "different_structure_paths": [],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_014",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_015",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_016",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_017",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_018",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_019",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_020",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_021",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_022",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        }
+      ],
+      "original_strict_prefix_match": false,
+      "original_strict_prefix_result_modified": false
+    },
+    {
+      "task_slot": 4,
+      "modes": [
+        "exposure_recursive",
+        "exposure_delta"
+      ],
+      "counts": {
+        "request_protocol_reference_fields_checked": 372,
+        "request_protocol_reference_fields_canonical": 372,
+        "prior_call_pairs": 19,
+        "request_sha_equal": 19,
+        "exact_assistant_message_equal": 1,
+        "assistant_equal_except_tool_call_id": 19
+      },
+      "message_path_equality": {
+        "/@keys": {
+          "present_both": 19,
+          "equal": 19,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/content": {
+          "present_both": 19,
+          "equal": 19,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/reasoning_content": {
+          "present_both": 19,
+          "equal": 19,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/role": {
+          "present_both": 19,
+          "equal": 19,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/@keys": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/@keys": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/arguments": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/function/name": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/id": {
+          "present_both": 18,
+          "equal": 0,
+          "different": 18,
+          "missing_one_side": 0
+        },
+        "/tool_calls/*/type": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        },
+        "/tool_calls/@length": {
+          "present_both": 18,
+          "equal": 18,
+          "different": 0,
+          "missing_one_side": 0
+        }
+      },
+      "raw_response_top_level_difference_counts": {
+        "id": 19,
+        "choices": 18,
+        "timings": 19,
+        "created": 19
+      },
+      "saved_response_top_level_difference_counts": {
+        "wall_seconds": 19,
+        "timings": 19,
+        "message": 18
+      },
+      "call_metadata": [
+        {
+          "call_id": "call_001",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_002",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_003",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_004",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_005",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_006",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_007",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_008",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_009",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_010",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_011",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_012",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_013",
+          "role": "focus",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": true,
+          "different_structure_paths": [],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_014",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_015",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_016",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_017",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_018",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        },
+        {
+          "call_id": "call_019",
+          "role": "agent",
+          "request_sha_equal": true,
+          "exact_assistant_message_equal": false,
+          "different_structure_paths": [
+            "/tool_calls/0/id"
+          ],
+          "assistant_equal_except_tool_call_id": true
+        }
+      ],
+      "original_strict_prefix_match": false,
+      "original_strict_prefix_result_modified": false
+    }
+  ],
+  "source_mechanism": [
+    {
+      "source": "scripts/audit_checkpoint_representation_trace_p139.py",
+      "lines": [
+        672,
+        679,
+        713
+      ],
+      "finding": "The known assistant digest covers response.message, which is checked equal to raw_response.choices[0].message. The prefix records that digest without protocol-ID normalization. Raw envelope id/created/timings and saved wall_seconds are outside this digest."
+    },
+    {
+      "source": "scripts/receipt_reasoning_history.py",
+      "lines": [
+        14
+      ],
+      "finding": "digest uses canonical JSON key ordering and compact UTF-8 serialization. It normalizes JSON serialization only, not string values or tool-call IDs."
+    },
+    {
+      "source": "scripts/protocol_stable_history.py",
+      "lines": [
+        14,
+        15,
+        19,
+        20
+      ],
+      "finding": "The model input view canonicalizes the validated archival protocol before ordinary rendering; archival values remain raw."
+    },
+    {
+      "source": "scripts/budget_visibility_comparison.py",
+      "lines": [
+        17,
+        23,
+        24,
+        28,
+        32
+      ],
+      "finding": "canonical_messages validates nonempty unique call IDs, binds one result to each prior call, rejects missing/unbound/repeated returns, and renames only tool_calls[].id/tool_call_id in first-appearance order."
+    },
+    {
+      "source": "scripts/whole_task_checkpoint_representation_p139.py",
+      "lines": [
+        121,
+        126,
+        170,
+        174
+      ],
+      "finding": "The fixed strict criterion compares prior raw-output digest sequence and all stated checkpoint/cutoff/E/C state. Its false outcomes are unchanged."
+    }
+  ],
+  "conclusion": "For these41 recorded message pairs, all39 unequal message digests are explained by /tool_calls/0/id only. Other JSON values, including content, opaque reasoning_content, role, function name/arguments and order, compare exactly. All41 prior request file hashes match; all852 request protocol-reference fields inspected have the canonical transport-reference form. This diagnoses a mismatch between raw-output identity hashing and already canonicalized model-input references. It does not establish hidden-state identity or general semantic equivalence.",
+  "normalization_used_for_diagnosis": "A temporary in-memory copy replaces only structured tool_calls[i].id with a position marker and checks canonical JSON equality. It is not written to any original record, sent to a model, or substituted for the frozen P139 decision. Arguments/content/reasoning are compared as opaque strings without parsing or normalization.",
+  "future_attribution_requirements": [
+    "Declare a new criterion before the next run and disclose its selection after this known development diagnosis. Retain the original strict output-hash result alongside the new result.",
+    "Permit only a validated bijection of structured transport tool-call IDs with paired result references, using the existing complete-turn grammar and first-appearance order. Empty, duplicate, unmatched or unbound references fail closed.",
+    "Require all other fields and types exactly equal: role, order, content, opaque reasoning_content, function name/arguments, call/terminal status, actual request hashes and recorded first-checkpoint/cutoff/E/C/summary state. No text rewriting, JSON-argument reformatting, code alpha-renaming or semantic normalization.",
+    "Keep absent boundaries, unknown prior terminal usage and incomplete evidence ineligible. Recorded reference equivalence is not a general causal or semantic preservation proof."
+  ],
+  "limitations": [
+    "This is a closed-data structural diagnostic selected after the P139 result; it cannot retroactively convert P139 prefix false to true or alter adoption gates.",
+    "Opaque reasoning and generated arguments were loaded and compared for exact equality, never interpreted, printed, emitted or executed.",
+    "Response wrapper timing/id differences are observed metadata, not proof of their generation cause. No server randomness/hidden state was reconstructed."
+  ],
+  "operations": {
+    "model_calls": 0,
+    "API_calls": 0,
+    "native_counts": 0,
+    "evaluator_calls": 0,
+    "generated_code_executions": 0,
+    "producer_or_auditor_reruns": 0,
+    "original_edits": 0,
+    "raw_values_or_bodies_emitted": 0,
+    "reasoning_semantically_inspected": false,
+    "read_only_passes": 2
+  }
+}

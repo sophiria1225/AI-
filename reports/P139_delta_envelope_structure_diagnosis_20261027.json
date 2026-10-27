@@ -1,0 +1,53 @@
+{
+  "phase": "P139_focus020_structure_diagnosis",
+  "status": "complete",
+  "source_sha256": "5763e6f473bbb5389ae9cb11ba02788733267c5104d0b35ff87fdf8219a07e68",
+  "diagnostic_execution_count": 1,
+  "existing_parse_checkpoint_invocations": 1,
+  "additional_model_API_evaluation_tokenizer_calls": 0,
+  "saved_generated_code_executions": 0,
+  "original_producer_audit_or_summary_regenerated": false,
+  "original_files_modified": false,
+  "generated_text_or_field_values_emitted": false,
+  "private_reasoning_accessed": false,
+  "run_id": "BOC_P139_04_EXPOSURE_DELTA",
+  "call_id": "call_020",
+  "input_sha256": {
+    "closed_audit": "a0c017af89096eddccc7a5185f922acb0a0a3e904459b0fbf14a750655bf9318",
+    "normalized_focus_response": "860805add806107d537e4cd6f258ea477a28b0141b81b6e8d0d6aa3edd4f2006",
+    "fixed_plan": "e05b7a0fc0128d972cc2a63afe013fd21d28127c3a74ef9632918b2586b17657"
+  },
+  "parser_source_sha256": {
+    "scripts/single_checkpoint_history.py": "cc323921dbe28341160210cfdb78b55e649e3714404e32fd0efde4c4852b203a",
+    "scripts/receipt_reasoning_history.py": "426fe56d9eb41b827f9d48fd6f1d36e0bcab4e89d5acab28d0fa1115d97edd69"
+  },
+  "structure": {
+    "message_is_dict": true,
+    "assistant_role": true,
+    "finish_reason_is_stop": true,
+    "tool_calls_present": false,
+    "content_type": "str",
+    "content_characters": 3247,
+    "content_character_limit": 8192,
+    "json_decode_succeeded": true,
+    "json_decode_error_offset": null,
+    "duplicate_key_count": 0,
+    "missing_required_fields": null,
+    "unexpected_top_level_key_count": null,
+    "required_field_structure": {},
+    "starts_with_markdown_fence": false,
+    "json_root_type": "list",
+    "first_parser_failure_category_by_source_order": "json_root_not_object"
+  },
+  "original_parser_result": {
+    "accepted": false,
+    "exception_type": "ValueError"
+  },
+  "content_scope": "Only saved normalized call020 message.content was structurally parsed in memory; no text or field values are emitted. raw_response, other calls, reasoning, programs, evaluator and DB are not inspected.",
+  "limitations": [
+    "This diagnoses the first structural rejection category only, not summary truth or task correctness.",
+    "No prior checkpoint content was read; available combined-fragment residual budget was not measured.",
+    "Repair success, causal task improvement and a new online comparison are not established."
+  ],
+  "finished_at": "2026-10-27T13:14:50.420907+00:00"
+}
