@@ -1,0 +1,1472 @@
+{
+  "status": "complete",
+  "kind": "bounded_closed_scalar_failure_diagnosis_not_a_new_experiment_or_audit",
+  "phase": "P140",
+  "task_id": "6104387_1",
+  "created_at_utc": "2026-10-27T16:34:46.386108+00:00",
+  "closure_proof_sha256": "fb06c392c10850a339743959844df0b00a5b000d7bb811ca58cf91a9690710e3",
+  "original_checker_sha256": "9f28caf8e4498c3dbea3f3096496d2b80ba57ea4a2a3b51c7550f29cdc563c2e",
+  "source_bindings": [
+    {
+      "scope": "storage_root",
+      "path": ".runtime/P140_root_closure_confirmation_20261028.json",
+      "sha256": "fb06c392c10850a339743959844df0b00a5b000d7bb811ca58cf91a9690710e3",
+      "fields_used": [
+        "checker_status",
+        "checker_sha256",
+        "summary_sha256",
+        "main_end_sha256",
+        "postclose_end_sha256",
+        "owned_recorded_pids_absent"
+      ]
+    },
+    {
+      "scope": "private_checker",
+      "path": "AI_P140_closed_metadata_review_20261028.json",
+      "sha256": "9f28caf8e4498c3dbea3f3096496d2b80ba57ea4a2a3b51c7550f29cdc563c2e",
+      "fields_used": [
+        "status",
+        "private_source_bindings (file hashes only)"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "reports/P140_comparison.json",
+      "sha256": "38a69db936af1376d629859b05350f6f5c6de36262e75222d84caf3524139746",
+      "fields_used": [
+        "rows[task_id=6104387_1] scalar fields/usage_by_role/checkpoint_controls",
+        "three scientific gates"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "materials/20261028_p140_results/summary.json",
+      "sha256": "822563458ef3ab114fd6d5a66eba2114f572ae179b5c9a878191f051bdd6b8d5",
+      "fields_used": [
+        "conditions",
+        "source_sha256",
+        "three scientific gates"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "materials/20261028_p140_results/conditions.csv",
+      "sha256": "23d38de3382aa933d22688de467c6413482385f1d03d4a516063edfdc3a1c3b6",
+      "fields_used": [
+        "Task4 scalar columns only"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "materials/20261028_p140_results/model_calls.csv",
+      "sha256": "b4b249c96f0e1658088efe89692a57d0c8ddd0cec576fd26f86a71e05f9852b9",
+      "fields_used": [
+        "Task4 scalar columns only"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_THRESHOLD_RECURSIVE/usage.json",
+      "sha256": "0f5e1c938e77ed34ac644e96ef3dadf99714c19e90949406ce867561a7c52814",
+      "fields_used": [
+        "id",
+        "role",
+        "status",
+        "input_tokens",
+        "output_tokens",
+        "cached_input_tokens",
+        "wall_seconds",
+        "finish_reason",
+        "timeout_scope",
+        "error_kind",
+        "predicted_input_tokens",
+        "output_cap"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_THRESHOLD_RECURSIVE/admissions.json",
+      "sha256": "d69fb49480f89ef8a816d0c0f0e8e6016f4c0c73413aab4adc9b8700b640b070",
+      "fields_used": [
+        "next_call_id",
+        "role",
+        "status",
+        "model_attempted",
+        "model_request_started",
+        "count_wall_seconds",
+        "remaining_tokens",
+        "input_tokens",
+        "configured_output_limit",
+        "context_limit",
+        "selected_output_cap",
+        "admitted",
+        "exception_type"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_THRESHOLD_RECURSIVE/budget_observations.json",
+      "sha256": "72dcf3788fd7518d957cf00c8b54b66d976d6adc94b67c9543e669accc1a0ae3",
+      "fields_used": [
+        "next_call_id",
+        "measured_state.remaining",
+        "measured_state.used",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_THRESHOLD_RECURSIVE/rolling_controls.json",
+      "sha256": "642ac39e22bb831587433bd39d96d69f4319b6db89f96c9b2bf9a0110898e40c",
+      "fields_used": [
+        "status",
+        "after_model_calls",
+        "opportunity_index",
+        "summary_calls",
+        "summary_known_tokens",
+        "unknown_usage_calls",
+        "control_wall_seconds",
+        "accepted",
+        "reason",
+        "close_status",
+        "ordinary_input_tokens",
+        "compacted_input_tokens",
+        "delta_requested",
+        "delta_applied",
+        "fragment_count"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_THRESHOLD_RECURSIVE/checkpoint_representation_views.json",
+      "sha256": "60b28d69fab465e08f3a9acc9818cf66c26c399d5868a47104c0a899fa899702",
+      "fields_used": [
+        "next_call_id",
+        "checkpoint_revision",
+        "fragment_count",
+        "delta_view",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA/usage.json",
+      "sha256": "c6d62285cf41e1e55bec21dcb21478b5824f322055e2fc38a11580add1eac12f",
+      "fields_used": [
+        "id",
+        "role",
+        "status",
+        "input_tokens",
+        "output_tokens",
+        "cached_input_tokens",
+        "wall_seconds",
+        "finish_reason",
+        "timeout_scope",
+        "error_kind",
+        "predicted_input_tokens",
+        "output_cap"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA/admissions.json",
+      "sha256": "e82c477bc9e0e2035090be2d36aff4907ec9b846e23f758cecceffc77b84b5e6",
+      "fields_used": [
+        "next_call_id",
+        "role",
+        "status",
+        "model_attempted",
+        "model_request_started",
+        "count_wall_seconds",
+        "remaining_tokens",
+        "input_tokens",
+        "configured_output_limit",
+        "context_limit",
+        "selected_output_cap",
+        "admitted",
+        "exception_type"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA/budget_observations.json",
+      "sha256": "61e522a4bf9582d13f3ce68c0a5ae5b44075418863b10027e631b00f3641a52b",
+      "fields_used": [
+        "next_call_id",
+        "measured_state.remaining",
+        "measured_state.used",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA/rolling_controls.json",
+      "sha256": "66525fb696391289c0d5addc754c162d7c4b0712dbf205d499e147d2b998975a",
+      "fields_used": [
+        "status",
+        "after_model_calls",
+        "opportunity_index",
+        "summary_calls",
+        "summary_known_tokens",
+        "unknown_usage_calls",
+        "control_wall_seconds",
+        "accepted",
+        "reason",
+        "close_status",
+        "ordinary_input_tokens",
+        "compacted_input_tokens",
+        "delta_requested",
+        "delta_applied",
+        "fragment_count"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA/checkpoint_representation_views.json",
+      "sha256": "8e680eab15d5d04005d00f9de365341e3209ca9ff645c7d71db1d04f62b289f3",
+      "fields_used": [
+        "next_call_id",
+        "checkpoint_revision",
+        "fragment_count",
+        "delta_view",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA_OBJECT/usage.json",
+      "sha256": "07379c477b6b99b1d1dfdba3506692a0a72acae8ccfd783b1bc7d4c7aee6f12d",
+      "fields_used": [
+        "id",
+        "role",
+        "status",
+        "input_tokens",
+        "output_tokens",
+        "cached_input_tokens",
+        "wall_seconds",
+        "finish_reason",
+        "timeout_scope",
+        "error_kind",
+        "predicted_input_tokens",
+        "output_cap"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA_OBJECT/admissions.json",
+      "sha256": "cbaa98c58649b092a27b525e8ce70cc35ed5e63e1bc0154ce651b842cad0b612",
+      "fields_used": [
+        "next_call_id",
+        "role",
+        "status",
+        "model_attempted",
+        "model_request_started",
+        "count_wall_seconds",
+        "remaining_tokens",
+        "input_tokens",
+        "configured_output_limit",
+        "context_limit",
+        "selected_output_cap",
+        "admitted",
+        "exception_type"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA_OBJECT/budget_observations.json",
+      "sha256": "6af17f2ad5138fd798041a78d2cb89ec8312d4de57781bb596e0ef35ecd59f80",
+      "fields_used": [
+        "next_call_id",
+        "measured_state.remaining",
+        "measured_state.used",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA_OBJECT/rolling_controls.json",
+      "sha256": "6160c40ba84554834b50b62c28fef3867baae227196a6e5a618975b0514f9cbe",
+      "fields_used": [
+        "status",
+        "after_model_calls",
+        "opportunity_index",
+        "summary_calls",
+        "summary_known_tokens",
+        "unknown_usage_calls",
+        "control_wall_seconds",
+        "accepted",
+        "reason",
+        "close_status",
+        "ordinary_input_tokens",
+        "compacted_input_tokens",
+        "delta_requested",
+        "delta_applied",
+        "fragment_count"
+      ]
+    },
+    {
+      "scope": "storage_root",
+      "path": "records/context_pilot/BOC_P140_04_EXPOSURE_DELTA_OBJECT/checkpoint_representation_views.json",
+      "sha256": "d1d7dea16c482e40c86fd59be06be46e14b8da45f6e0b9df5a52431193960bad",
+      "fields_used": [
+        "next_call_id",
+        "checkpoint_revision",
+        "fragment_count",
+        "delta_view",
+        "model_attempted",
+        "terminal_usage_recorded",
+        "usage_unknown"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "scripts/tool_choice_residual.py",
+      "sha256": "65ac0c5318d31e140a593513833f644e88da29fe9839b8f21c9d24e5fdf56560",
+      "fields_used": [
+        "source-only accounting/count/timeout/snapshot semantics; never executed"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "scripts/tool_choice_local_llama.py",
+      "sha256": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+      "fields_used": [
+        "source-only accounting/count/timeout/snapshot semantics; never executed"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "scripts/local_llama.py",
+      "sha256": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+      "fields_used": [
+        "source-only accounting/count/timeout/snapshot semantics; never executed"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "scripts/run_whole_task_checkpoint_delta_envelope_cell_p140.py",
+      "sha256": "2d9bf3dd264adfec3d8c71c6cd2259208efbd8e1b2107274832820e632811bc5",
+      "fields_used": [
+        "source-only accounting/count/timeout/snapshot semantics; never executed"
+      ]
+    },
+    {
+      "scope": "fixed_run_root",
+      "path": "scripts/audit_checkpoint_delta_envelope_trace_p140.py",
+      "sha256": "089f48a191bff24a7f5835fec69750690ee2adb745eefabbb6072de0d3b46d6e",
+      "fields_used": [
+        "source-only accounting/count/timeout/snapshot semantics; never executed"
+      ]
+    }
+  ],
+  "saved_file_binding_checks": [
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "file": "usage.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "file": "admissions.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "file": "budget_observations.json",
+      "original_checker_file_hash_binding_present": false,
+      "matches_original_checker_binding": null
+    },
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "file": "rolling_controls.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "file": "checkpoint_representation_views.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "file": "usage.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "file": "admissions.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "file": "budget_observations.json",
+      "original_checker_file_hash_binding_present": false,
+      "matches_original_checker_binding": null
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "file": "rolling_controls.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "file": "checkpoint_representation_views.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "file": "usage.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "file": "admissions.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "file": "budget_observations.json",
+      "original_checker_file_hash_binding_present": false,
+      "matches_original_checker_binding": null
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "file": "rolling_controls.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "file": "checkpoint_representation_views.json",
+      "original_checker_file_hash_binding_present": true,
+      "matches_original_checker_binding": true
+    }
+  ],
+  "modes": [
+    {
+      "run_id": "BOC_P140_04_THRESHOLD_RECURSIVE",
+      "task_id": "6104387_1",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "known_total_tokens": 332588,
+      "unknown_usage_calls": 0,
+      "model_calls": 31,
+      "api_requests": 76,
+      "wall_seconds": 1518.6189049999812,
+      "full_wall_seconds": 1521.8524024999933,
+      "setup_wall_seconds": 1.873037499957718,
+      "cleanup_wall_seconds": 1.3568794170278125,
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "exact_total_tokens": 332588,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 0,
+          "input_tokens": 281344,
+          "output_tokens": 10169,
+          "known_logical_io_tokens": 291513,
+          "model_call_wall_seconds_including_unknown": 1002.3492326239939
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 38102,
+          "output_tokens": 2973,
+          "known_logical_io_tokens": 41075,
+          "model_call_wall_seconds_including_unknown": 511.652135042008
+        }
+      },
+      "focus_calls": [
+        {
+          "id": "call_013",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 20062,
+          "output_tokens": 1357,
+          "cached_input_tokens": 156,
+          "wall_seconds": 258.9757065830054,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 20062,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 21419
+        },
+        {
+          "id": "call_023",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 18040,
+          "output_tokens": 1616,
+          "cached_input_tokens": 156,
+          "wall_seconds": 252.67642845900264,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 18040,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 19656
+        }
+      ],
+      "checkpoint_scalar_events": [
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 12,
+          "opportunity_index": 1,
+          "summary_calls": 1,
+          "summary_known_tokens": 21419,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 259.1428008750081
+        },
+        {
+          "status": "checkpoint_decided",
+          "after_model_calls": 13,
+          "opportunity_index": 1,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 17696,
+          "compacted_input_tokens": 7143,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 22,
+          "opportunity_index": 2,
+          "summary_calls": 1,
+          "summary_known_tokens": 19656,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 252.8266289170133
+        },
+        {
+          "status": "checkpoint_decided",
+          "after_model_calls": 23,
+          "opportunity_index": 2,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 16474,
+          "compacted_input_tokens": 6002,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ],
+      "after_second_focus": {
+        "calls": 8,
+        "known_calls": 8,
+        "unknown_calls": 0,
+        "known_input_tokens": 55971,
+        "known_output_tokens": 902,
+        "known_logical_io_tokens": 56873,
+        "model_call_wall_seconds_including_unknown": 130.99670287489425,
+        "first_actor_remaining_wall_seconds_snapshot": 413,
+        "calls_scalar": [
+          {
+            "id": "call_024",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6002,
+            "output_tokens": 93,
+            "cached_input_tokens": 156,
+            "wall_seconds": 50.73396791698178,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6002,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_025",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6219,
+            "output_tokens": 141,
+            "cached_input_tokens": 5765,
+            "wall_seconds": 12.392727041966282,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6219,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_026",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6462,
+            "output_tokens": 73,
+            "cached_input_tokens": 5982,
+            "wall_seconds": 8.375337457982823,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6462,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_027",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6894,
+            "output_tokens": 91,
+            "cached_input_tokens": 6225,
+            "wall_seconds": 11.353483332961332,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6894,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_028",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7194,
+            "output_tokens": 209,
+            "cached_input_tokens": 6657,
+            "wall_seconds": 17.302783542021643,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7194,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_029",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7520,
+            "output_tokens": 109,
+            "cached_input_tokens": 6957,
+            "wall_seconds": 11.596049625019077,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7520,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_030",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7735,
+            "output_tokens": 114,
+            "cached_input_tokens": 7283,
+            "wall_seconds": 10.951946624962147,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7735,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_031",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7945,
+            "output_tokens": 72,
+            "cached_input_tokens": 7498,
+            "wall_seconds": 8.290407332999166,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7945,
+            "output_cap": 4096
+          }
+        ]
+      },
+      "final_call": {
+        "usage": {
+          "id": "call_031",
+          "role": "agent",
+          "status": "ok",
+          "input_tokens": 7945,
+          "output_tokens": 72,
+          "cached_input_tokens": 7498,
+          "wall_seconds": 8.290407332999166,
+          "finish_reason": "tool_calls",
+          "timeout_scope": "run_wall",
+          "error_kind": null,
+          "predicted_input_tokens": 7945,
+          "output_cap": 4096
+        },
+        "admission": {
+          "model_attempted": true,
+          "model_request_started": true,
+          "status": "generated",
+          "count_wall_seconds": 0.02893241698620841,
+          "remaining_tokens": 125429,
+          "input_tokens": 7945,
+          "configured_output_limit": 4096,
+          "selected_output_cap": 4096,
+          "context_limit": 65536,
+          "admitted": true,
+          "exception_type": null
+        },
+        "remaining_at_actor_snapshot": {
+          "api_calls": 5,
+          "model_calls": 50,
+          "logical_input_plus_output_tokens": 125429,
+          "wall_seconds_at_snapshot": 289
+        },
+        "used_at_actor_snapshot": {
+          "api_calls": 75,
+          "model_calls": 30,
+          "logical_input_plus_output_tokens": 324571
+        },
+        "representation_view": {
+          "checkpoint_revision": 2,
+          "fragment_count": 1,
+          "delta_view": false,
+          "model_attempted": true,
+          "terminal_usage_recorded": true,
+          "usage_unknown": false
+        },
+        "native_input_available_without_body_read": true,
+        "native_input_source": "usage.predicted_input_tokens == admissions.input_tokens; original producer/checker binding relied upon; no recount or wire-body verification",
+        "exact_dispatch_remaining_wall_seconds": null,
+        "exact_dispatch_remaining_wall_limitation": "Only the earlier integer actor snapshot and per-call wall are used; response timeout_seconds/body was not read."
+      }
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA",
+      "task_id": "6104387_1",
+      "checkpoint_representation_mode": "exposure_delta",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 408927,
+      "unknown_usage_calls": 1,
+      "model_calls": 31,
+      "api_requests": 74,
+      "wall_seconds": 1799.9347064589965,
+      "full_wall_seconds": 1803.5516289579682,
+      "setup_wall_seconds": 1.8606564159854315,
+      "cleanup_wall_seconds": 1.7518385829753242,
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "exact_total_tokens": null,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 1,
+          "input_tokens": 357170,
+          "output_tokens": 13259,
+          "known_logical_io_tokens": 370429,
+          "model_call_wall_seconds_including_unknown": 1296.2521786247962
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35276,
+          "output_tokens": 3222,
+          "known_logical_io_tokens": 38498,
+          "model_call_wall_seconds_including_unknown": 499.0837789590005
+        }
+      },
+      "focus_calls": [
+        {
+          "id": "call_013",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 20062,
+          "output_tokens": 1357,
+          "cached_input_tokens": 156,
+          "wall_seconds": 258.36152916698484,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 20062,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 21419
+        },
+        {
+          "id": "call_020",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 15214,
+          "output_tokens": 1865,
+          "cached_input_tokens": 156,
+          "wall_seconds": 240.72224979201565,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 15214,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 17079
+        }
+      ],
+      "checkpoint_scalar_events": [
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 12,
+          "opportunity_index": 1,
+          "summary_calls": 1,
+          "summary_known_tokens": 21419,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 258.52127099997597
+        },
+        {
+          "status": "checkpoint_decided",
+          "after_model_calls": 13,
+          "opportunity_index": 1,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 17696,
+          "compacted_input_tokens": 7143,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 19,
+          "opportunity_index": 2,
+          "summary_calls": 1,
+          "summary_known_tokens": 17079,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 240.7890518750064
+        }
+      ],
+      "after_second_focus": {
+        "calls": 11,
+        "known_calls": 10,
+        "unknown_calls": 1,
+        "known_input_tokens": 176471,
+        "known_output_tokens": 4945,
+        "known_logical_io_tokens": 181416,
+        "model_call_wall_seconds_including_unknown": 513.2182280408451,
+        "first_actor_remaining_wall_seconds_snapshot": 514,
+        "calls_scalar": [
+          {
+            "id": "call_021",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 14027,
+            "output_tokens": 294,
+            "cached_input_tokens": 156,
+            "wall_seconds": 130.53489020798588,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 14027,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_022",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 14440,
+            "output_tokens": 71,
+            "cached_input_tokens": 13790,
+            "wall_seconds": 10.369964040990453,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 14440,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_023",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 14803,
+            "output_tokens": 550,
+            "cached_input_tokens": 14203,
+            "wall_seconds": 39.98080616700463,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 14803,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_024",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 15648,
+            "output_tokens": 1191,
+            "cached_input_tokens": 14566,
+            "wall_seconds": 84.92251554201357,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 15648,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_025",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 17243,
+            "output_tokens": 1567,
+            "cached_input_tokens": 15411,
+            "wall_seconds": 115.12949695799034,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 17243,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_026",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 18906,
+            "output_tokens": 135,
+            "cached_input_tokens": 17006,
+            "wall_seconds": 25.24560650001513,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 18906,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_027",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 19662,
+            "output_tokens": 335,
+            "cached_input_tokens": 18669,
+            "wall_seconds": 30.821836499962956,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 19662,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_028",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 20118,
+            "output_tokens": 298,
+            "cached_input_tokens": 19425,
+            "wall_seconds": 25.45284229196841,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 20118,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_029",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 20518,
+            "output_tokens": 229,
+            "cached_input_tokens": 19881,
+            "wall_seconds": 20.503832457994577,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 20518,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_030",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 21106,
+            "output_tokens": 275,
+            "cached_input_tokens": 20281,
+            "wall_seconds": 25.253453957964666,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 21106,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_031",
+            "role": "agent",
+            "status": "error",
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "wall_seconds": 5.002983416954521,
+            "finish_reason": null,
+            "timeout_scope": "run_wall",
+            "error_kind": "timeout",
+            "predicted_input_tokens": 21562,
+            "output_cap": 4096
+          }
+        ]
+      },
+      "final_call": {
+        "usage": {
+          "id": "call_031",
+          "role": "agent",
+          "status": "error",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "wall_seconds": 5.002983416954521,
+          "finish_reason": null,
+          "timeout_scope": "run_wall",
+          "error_kind": "timeout",
+          "predicted_input_tokens": 21562,
+          "output_cap": 4096
+        },
+        "admission": {
+          "model_attempted": true,
+          "model_request_started": true,
+          "status": "stopped",
+          "count_wall_seconds": 0.05855983297806233,
+          "remaining_tokens": 41073,
+          "input_tokens": 21562,
+          "configured_output_limit": 4096,
+          "selected_output_cap": 4096,
+          "context_limit": 65536,
+          "admitted": true,
+          "exception_type": "BudgetStop"
+        },
+        "remaining_at_actor_snapshot": {
+          "api_calls": 6,
+          "model_calls": 50,
+          "logical_input_plus_output_tokens": 41073,
+          "wall_seconds_at_snapshot": 5
+        },
+        "used_at_actor_snapshot": {
+          "api_calls": 74,
+          "model_calls": 30,
+          "logical_input_plus_output_tokens": 408927
+        },
+        "representation_view": {
+          "checkpoint_revision": 1,
+          "fragment_count": 1,
+          "delta_view": false,
+          "model_attempted": true,
+          "terminal_usage_recorded": true,
+          "usage_unknown": true
+        },
+        "native_input_available_without_body_read": true,
+        "native_input_source": "usage.predicted_input_tokens == admissions.input_tokens; original producer/checker binding relied upon; no recount or wire-body verification",
+        "exact_dispatch_remaining_wall_seconds": null,
+        "exact_dispatch_remaining_wall_limitation": "Only the earlier integer actor snapshot and per-call wall are used; response timeout_seconds/body was not read."
+      }
+    },
+    {
+      "run_id": "BOC_P140_04_EXPOSURE_DELTA_OBJECT",
+      "task_id": "6104387_1",
+      "checkpoint_representation_mode": "exposure_delta_object",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "known_total_tokens": 317920,
+      "unknown_usage_calls": 1,
+      "model_calls": 31,
+      "api_requests": 78,
+      "wall_seconds": 1799.1164046669728,
+      "full_wall_seconds": 1802.0255862079794,
+      "setup_wall_seconds": 1.8815883329953067,
+      "cleanup_wall_seconds": 1.0239513749838807,
+      "checkpoint_installations": 2,
+      "delta_installations": 1,
+      "actual_delta_actor_calls": 11,
+      "actual_delta_known_actor_calls": 10,
+      "actual_delta_unknown_actor_calls": 1,
+      "exact_total_tokens": null,
+      "usage_by_role": {
+        "agent": {
+          "calls": 29,
+          "unknown_usage": 1,
+          "input_tokens": 266484,
+          "output_tokens": 14104,
+          "known_logical_io_tokens": 280588,
+          "model_call_wall_seconds_including_unknown": 1376.1428063777857
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 35390,
+          "output_tokens": 1942,
+          "known_logical_io_tokens": 37332,
+          "model_call_wall_seconds_including_unknown": 418.7391192080104
+        }
+      },
+      "focus_calls": [
+        {
+          "id": "call_013",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 20062,
+          "output_tokens": 1357,
+          "cached_input_tokens": 156,
+          "wall_seconds": 258.60561670799507,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 20062,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 21419
+        },
+        {
+          "id": "call_020",
+          "role": "focus",
+          "status": "ok",
+          "input_tokens": 15328,
+          "output_tokens": 585,
+          "cached_input_tokens": 156,
+          "wall_seconds": 160.1335025000153,
+          "finish_reason": "stop",
+          "timeout_scope": "call",
+          "error_kind": null,
+          "predicted_input_tokens": 15328,
+          "output_cap": 4096,
+          "known_logical_io_tokens": 15913
+        }
+      ],
+      "checkpoint_scalar_events": [
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 12,
+          "opportunity_index": 1,
+          "summary_calls": 1,
+          "summary_known_tokens": 21419,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 258.75499495799886
+        },
+        {
+          "status": "checkpoint_decided",
+          "after_model_calls": 13,
+          "opportunity_index": 1,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 17696,
+          "compacted_input_tokens": 7143,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "status": "separate_summary_closed",
+          "after_model_calls": 19,
+          "opportunity_index": 2,
+          "summary_calls": 1,
+          "summary_known_tokens": 15913,
+          "unknown_usage_calls": 0,
+          "control_wall_seconds": 160.2531270419713
+        },
+        {
+          "status": "checkpoint_decided",
+          "after_model_calls": 20,
+          "opportunity_index": 2,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 14027,
+          "compacted_input_tokens": 6058,
+          "delta_requested": true,
+          "delta_applied": true,
+          "fragment_count": 2
+        }
+      ],
+      "after_second_focus": {
+        "calls": 11,
+        "known_calls": 10,
+        "unknown_calls": 1,
+        "known_input_tokens": 85785,
+        "known_output_tokens": 5790,
+        "known_logical_io_tokens": 91575,
+        "model_call_wall_seconds_including_unknown": 597.8676212089485,
+        "first_actor_remaining_wall_seconds_snapshot": 599,
+        "calls_scalar": [
+          {
+            "id": "call_021",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6058,
+            "output_tokens": 386,
+            "cached_input_tokens": 156,
+            "wall_seconds": 68.21777520905016,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6058,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_022",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 6570,
+            "output_tokens": 284,
+            "cached_input_tokens": 5821,
+            "wall_seconds": 22.75990683294367,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 6570,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_023",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7121,
+            "output_tokens": 598,
+            "cached_input_tokens": 6333,
+            "wall_seconds": 42.217236750002485,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7121,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_024",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 7834,
+            "output_tokens": 107,
+            "cached_input_tokens": 6884,
+            "wall_seconds": 14.070727708982304,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 7834,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_025",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 8017,
+            "output_tokens": 753,
+            "cached_input_tokens": 7597,
+            "wall_seconds": 48.22329291701317,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 8017,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_026",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 8919,
+            "output_tokens": 193,
+            "cached_input_tokens": 7780,
+            "wall_seconds": 20.97522670798935,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 8919,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_027",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 9483,
+            "output_tokens": 355,
+            "cached_input_tokens": 8682,
+            "wall_seconds": 28.144817833963316,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 9483,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_028",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 9981,
+            "output_tokens": 203,
+            "cached_input_tokens": 9246,
+            "wall_seconds": 18.55693274998339,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 9981,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_029",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 10408,
+            "output_tokens": 579,
+            "cached_input_tokens": 9744,
+            "wall_seconds": 40.56370908295503,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 10408,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_030",
+            "role": "agent",
+            "status": "ok",
+            "input_tokens": 11394,
+            "output_tokens": 2332,
+            "cached_input_tokens": 10171,
+            "wall_seconds": 151.13545187504496,
+            "finish_reason": "tool_calls",
+            "timeout_scope": "run_wall",
+            "error_kind": null,
+            "predicted_input_tokens": 11394,
+            "output_cap": 4096
+          },
+          {
+            "id": "call_031",
+            "role": "agent",
+            "status": "error",
+            "input_tokens": null,
+            "output_tokens": null,
+            "cached_input_tokens": null,
+            "wall_seconds": 143.0025435410207,
+            "finish_reason": null,
+            "timeout_scope": "run_wall",
+            "error_kind": "timeout",
+            "predicted_input_tokens": 13801,
+            "output_cap": 4096
+          }
+        ]
+      },
+      "final_call": {
+        "usage": {
+          "id": "call_031",
+          "role": "agent",
+          "status": "error",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "wall_seconds": 143.0025435410207,
+          "finish_reason": null,
+          "timeout_scope": "run_wall",
+          "error_kind": "timeout",
+          "predicted_input_tokens": 13801,
+          "output_cap": 4096
+        },
+        "admission": {
+          "model_attempted": true,
+          "model_request_started": true,
+          "status": "stopped",
+          "count_wall_seconds": 0.040105124993715435,
+          "remaining_tokens": 132080,
+          "input_tokens": 13801,
+          "configured_output_limit": 4096,
+          "selected_output_cap": 4096,
+          "context_limit": 65536,
+          "admitted": true,
+          "exception_type": "BudgetStop"
+        },
+        "remaining_at_actor_snapshot": {
+          "api_calls": 2,
+          "model_calls": 50,
+          "logical_input_plus_output_tokens": 132080,
+          "wall_seconds_at_snapshot": 143
+        },
+        "used_at_actor_snapshot": {
+          "api_calls": 78,
+          "model_calls": 30,
+          "logical_input_plus_output_tokens": 317920
+        },
+        "representation_view": {
+          "checkpoint_revision": 2,
+          "fragment_count": 2,
+          "delta_view": true,
+          "model_attempted": true,
+          "terminal_usage_recorded": true,
+          "usage_unknown": true
+        },
+        "native_input_available_without_body_read": true,
+        "native_input_source": "usage.predicted_input_tokens == admissions.input_tokens; original producer/checker binding relied upon; no recount or wire-body verification",
+        "exact_dispatch_remaining_wall_seconds": null,
+        "exact_dispatch_remaining_wall_limitation": "Only the earlier integer actor snapshot and per-call wall are used; response timeout_seconds/body was not read."
+      }
+    }
+  ],
+  "unchanged_scientific_gates": {
+    "primary_utility_gate_met": false,
+    "unchanged_delta_control_gate_met": false,
+    "both_control_development_gate_met": false
+  },
+  "conditional_wall_extension_arithmetic": {
+    "reference_exact_success_tokens": 332588,
+    "ED_known_prefix_exceeds_reference_by": 76339,
+    "ED_cannot_beat_reference_by_only_appending_nonnegative_cost_to_same_prefix": true,
+    "EDO_known_prefix_tokens": 317920,
+    "EDO_reference_minus_known_prefix_tokens": 14668,
+    "EDO_final_planned_native_input_tokens": 13801,
+    "EDO_selected_output_cap": 4096,
+    "EDO_known_prefix_plus_same_planned_input": 331721,
+    "strictly_lower_maximum_integer_output_plus_all_later_logical_IO_tokens": 866,
+    "same_input_zero_output_hypothetical_total": 331721,
+    "same_input_full_cap_no_later_calls_hypothetical_total": 335817,
+    "actual_unknown_contribution": null,
+    "actual_final_input_tokens": null,
+    "actual_final_output_tokens": null,
+    "actual_whole_job_total_tokens": null,
+    "statement": "For the already observed EDO known prefix, a hypothetical normally completed call with the same 13,801-token input leaves at most 866 output-plus-later logical I/O tokens to finish strictly below 332,588. Arithmetic does not exclude that narrow possibility, but neither completion nor output length nor sufficient remaining task actions is established. These numbers are not lower/upper bounds assigned to the actual unknown usage. A larger cap from the outset may change budget-visible inputs and the trajectory, so this frozen-prefix calculation does not predict a rerun."
+  },
+  "observed_findings": [
+    "EDO second paid focus was known, its delta was installed, and ten known plus one unknown actor dispatch used the two-fragment view; non-activation does not explain this cell.",
+    "EDO stopped with a run-wall timeout after an earlier 143-second remaining-wall snapshot; token/API/call budgets still had positive scalar headroom.",
+    "ED second paid focus has no second checkpoint_decided scalar record in the inspected controls and no delta installation. Its semantic/schema rejection cause is not inferred here.",
+    "Known role totals include actor and focus input plus output without subtracting cached input; unknown calls are retained separately."
+  ],
+  "prudent_next_test_implications": [
+    "A wall-only extension is not supported as an established token-saving repair. ED is already over the reference with its known prefix; EDO has only a narrow conditional same-input completion margin.",
+    "Any later decision should separately predeclare completion/quality, full logical cost including paid summaries and unknown handling, and whether a changed wall budget alters visible inputs. No next study, candidate, seed or budget is chosen by this diagnosis."
+  ],
+  "limitations": [
+    "Scalar-only read; no task semantics, generated Python, messages, reasoning, credentials, DB, evaluator body, gold or reserved task data inspected.",
+    "Saved count/admission correspondence relies on the fixed original producer/auditor/checker; no native recount, request-body reparse, backend acceptance proof or independent terminal recovery.",
+    "An unknown response retains null input/output/cache and exact job total; planned input/output cap is not measured actual paid usage.",
+    "The integer remaining-wall snapshot is taken before native count/admission; exact dispatch remaining time was not recovered.",
+    "Wall times are observed host durations, not controlled causal effects; summary shorter tokens or successful installation does not establish semantic preservation or task completion.",
+    "P140 closed gates and all original records remain unchanged."
+  ],
+  "actions": {
+    "new_model_calls": 0,
+    "new_API_requests": 0,
+    "native_tokenizer_calls": 0,
+    "evaluations": 0,
+    "producer_auditor_checker_renderer_reruns": 0,
+    "saved_generated_code_execution": 0,
+    "request_or_response_body_reads": 0,
+    "original_records_modified": false,
+    "unknown_usage_imputed": false,
+    "next_study_selected": false
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "document_type": "public_safe_single_historical_revision_addendum",
+  "prepared_at": "2026-10-27T23:14:24.733678+09:00",
+  "supplements": {
+    "source_label": "AI_P140_EC_delta_closest_primary_scope_20261027.json",
+    "sha256": "ef48bc124caa7d6187b647cf6d1ac4e4104ee7c5eb137909f2273b57c4b173cb",
+    "original_unchanged": true
+  },
+  "question": "Was the inspected thread-scope old-observation-plus-new-observation operation present in a version before 2026-10-27T00:00:00Z?",
+  "selection": {
+    "method": "GitHub commits API, fixed reachable head, exact file path, until cutoff, per_page=1; inspect one returned revision only.",
+    "history_head": "b59da216b35097e5adc14914e5cae76f811ee8ec",
+    "cutoff_utc": "2026-10-27T00:00:00Z",
+    "query_url": "https://api.github.com/repos/mastra-ai/mastra/commits?sha=b59da216b35097e5adc14914e5cae76f811ee8ec&path=packages%2Fmemory%2Fsrc%2Fprocessors%2Fobservational-memory%2Fobservational-memory.ts&until=2026-10-27T00%3A00%3A00Z&per_page=1",
+    "response_sha256": "be5391d2d20d284aee8a787a91e9141d1bac275f94a02cecd64580d00ab04e1e",
+    "returned_revisions": 1,
+    "initial_default_branch_query_returned_same_commit": true
+  },
+  "selected_revision": {
+    "commit": "501b207b1b6300af44b5b8f40ff33adfe7a9d195",
+    "commit_url": "https://github.com/mastra-ai/mastra/commit/501b207b1b6300af44b5b8f40ff33adfe7a9d195",
+    "author_date_utc": "2026-10-26T14:34:50Z",
+    "committer_date_utc": "2026-10-26T14:34:50Z",
+    "both_dates_before_cutoff": true,
+    "source_url": "https://github.com/mastra-ai/mastra/blob/501b207b1b6300af44b5b8f40ff33adfe7a9d195/packages/memory/src/processors/observational-memory/observational-memory.ts",
+    "raw_url": "https://raw.githubusercontent.com/mastra-ai/mastra/501b207b1b6300af44b5b8f40ff33adfe7a9d195/packages/memory/src/processors/observational-memory/observational-memory.ts",
+    "source_sha256": "7399a983983beac23760394e84c7392f921edd78c76f7d7506fd5ccecee73563",
+    "source_bytes": 190512,
+    "whole_file_sha256_matches_previous_reviewed_head": true
+  },
+  "function": {
+    "name": "wrapObservations",
+    "line_numbering": "1-based raw UTF-8 file lines",
+    "first_line": 2453,
+    "last_line_inclusive": 2474,
+    "sha256_including_indentation_and_final_lf": "949dfc9897c8e0e33583de4c2f4cced2ae209373c943314ecafe85806b514bdf",
+    "bytes": 774,
+    "thread_branch_first_line": 2471,
+    "thread_branch_last_line_inclusive": 2473,
+    "thread_branch_sha256_including_indentation_and_final_lf": "2f29ff6721ddcec50659c17df6e59d91c62ec7160bde6e55d8c1bf1c6475492e",
+    "exact_append_expression_present": true,
+    "interpretation": "In the non-resource/thread path, existingObservations is preserved as the output prefix, followed by two line feeds and grouped new observations. Retrieval can wrap the new text; the resource path is different.",
+    "source_anchor_url": "https://github.com/mastra-ai/mastra/blob/501b207b1b6300af44b5b8f40ff33adfe7a9d195/packages/memory/src/processors/observational-memory/observational-memory.ts#L2453-L2474",
+    "line_reference_clarification": "The earlier note used browser-rendered line offsets 2273-2293. Those are not raw GitHub source line numbers. The exact raw-file function is lines 2453-2474 and the append branch is lines 2471-2473; use these pinned source anchors and byte hashes."
+  },
+  "conclusion": {
+    "historical_overlap_confirmed_before_requested_cutoff": true,
+    "earliest_introduction_established": false,
+    "scope": "The selected commit is timestamped 2026-10-26T14:34:50Z, before the requested pre-P139 cutoff. This confirms the append operation in that historical snapshot. It does not date its first introduction, every deployed release, or the entire E/C-plus-delta combination.",
+    "effect_on_prior_assessment": "The representation-overlap observation is supported by a pre-cutoff revision, rather than only the newer HEAD. No E >= previous-focus-cost trigger or novelty conclusion follows from this check."
+  },
+  "limitations": [
+    "Git commit dates are repository metadata, not independently archived public-availability timestamps.",
+    "Only one file revision and one function were inspected; no exhaustive ancestry or introduction search.",
+    "No code execution or delegated state/reflection-path audit."
+  ],
+  "operations": {
+    "P140_result_reads": 0,
+    "heldout_reads": 0,
+    "new_model_calls": 0,
+    "environment_API_calls": 0,
+    "evaluations": 0,
+    "tokenizer_calls": 0,
+    "tracked_edits": 0,
+    "original_note_edits": 0,
+    "public_repository_writes": 0,
+    "public_GitHub_metadata_and_source_reads_only": true
+  }
+}

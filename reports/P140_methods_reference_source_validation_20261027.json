@@ -1,0 +1,264 @@
+{
+  "schema": "P140_methods_reference_source_validation_v1",
+  "status": "PASS",
+  "created_at": "2026-10-27T14:44:52.690869+00:00",
+  "document": "materials/20261028_p140_results/methods_reference.md",
+  "document_sha256": "444a6b903077c87ce2bb8a67bb2a6a40f050ce8c70335398d6431f744ab79336",
+  "fixed_execution_head": "827298fa4219aa4e500d604dfb771f6fe6b815c8",
+  "plan_sha256": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+  "plan_source_count": 1675,
+  "preflight_activation_binding_count": 1676,
+  "source_references": [
+    {
+      "id": "S01",
+      "path": "configs/P140_whole_task_checkpoint_delta_envelope_v01.json",
+      "sha256": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+      "in_plan_source_map": false,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S02",
+      "path": "configs/P123_whole_task_rolling_checkpoint_v01.json",
+      "sha256": "b4bb3fabb6d1b97dc67f3f17f1a3a97bafccfd13f2ce02c70da73d54d6962b0e",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S03",
+      "path": "configs/P29_stateful_code_v01.json",
+      "sha256": "501cb346e7dbfbeace99a16c06923d09543fc0a82bfb2d3ead87413abe549898",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S04",
+      "path": "configs/models/minimax_m3_iq4_selection.json",
+      "sha256": "66fcce6347cfa18a0bc8cba3643048c1a136620fb2c4d4c4db87c051b8abd83c",
+      "in_plan_source_map": false,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S05",
+      "path": "scripts/run_whole_task_checkpoint_delta_envelope_pipeline_p140.py",
+      "sha256": "cf0f5c893adee77c0b3a755013bcb056aa3e5cd56a5d84851c76d308079eb9f9",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S06",
+      "path": "scripts/serve_research_model_recovery.py",
+      "sha256": "e2b95b612426a318821c6295be156122deaebbdda074c10fbd727f0502a82d68",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S07",
+      "path": "scripts/checkpoint_delta_envelope_server_identity_p140.py",
+      "sha256": "47d6f5d41277a1a4e2eca88f4898cd3dcf92c1ac5845dc28234405cbb36bd121",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S08",
+      "path": "scripts/model_provenance.py",
+      "sha256": "bafb2f78c0bbf49573afeaafc833906d7ae2d93d679bad321ea1fb27b46fd4b3",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S09",
+      "path": "scripts/run_whole_task_checkpoint_delta_envelope_p140.py",
+      "sha256": "4bddba239f7d73c4225b7ecec05da79a04a841bf52141337611d8a25138cffd6",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S10",
+      "path": "scripts/whole_task_checkpoint_delta_envelope_p140.py",
+      "sha256": "0e9f6da468c317fef8bb1ce2e518cef16939a8a35065fa3a27e44cdf6ca4f21e",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S11",
+      "path": "scripts/api_error_comparison.py",
+      "sha256": "211e4044e2f3d1a09dc2944fdeba9395ac5d8544acde3c4e5841ae5c5169029b",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S12",
+      "path": "scripts/local_llama.py",
+      "sha256": "0c2eda98d5a031ea4b045cd272a9eca3a9263c9bc1f4d310636387b807197467",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S13",
+      "path": "scripts/tool_choice_local_llama.py",
+      "sha256": "e230f8997786f4df97aebfbe9b34ac0ec44a31c59f8c9c853dcbbbfa2ab6e3fd",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S14",
+      "path": "scripts/fixed_budget_local_llama.py",
+      "sha256": "4ac43105b446ff89c515de484a1b46b5d412b90817eab5e441b4424ec25d2f84",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S15",
+      "path": "scripts/tool_choice_residual.py",
+      "sha256": "65ac0c5318d31e140a593513833f644e88da29fe9839b8f21c9d24e5fdf56560",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S16",
+      "path": "scripts/fixed_budget_residual.py",
+      "sha256": "cbf7f8cdc93c99c10f3700571267339ce847e05fe45089c3b075371658cc5eb7",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S17",
+      "path": "scripts/residual_output_budget.py",
+      "sha256": "5f96aa7d26d45ada35e10c6b39fe36a9ed71da96019095b495efd9a01c552cd4",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S18",
+      "path": "scripts/rolling_checkpoint_inference.py",
+      "sha256": "d099e55d1cb727875fd18b1447abd9bb8e250127c234564440eb5463fd98ab6b",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S19",
+      "path": "scripts/checkpoint_representation_p139.py",
+      "sha256": "8cc12812f5413f8157e99591108ea53bf0af91bdfff64639baf24481f0f231e9",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S20",
+      "path": "scripts/checkpoint_delta_envelope_p140.py",
+      "sha256": "7c9f5390e034b8bc3b82f4575b0b8880d5fe3b09c383166fab5f83058e65db1d",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S21",
+      "path": "scripts/checkpoint_delta_envelope_inference_p140.py",
+      "sha256": "c115aad68d31f42738a3714ddbf8817a87d8d1f89c1746204a95487f3881456a",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S22",
+      "path": "scripts/checkpoint_prefix_exposure.py",
+      "sha256": "134ecdf959a5d63696c62d601c0d79e7c786ae8d187a599d2d3ec04e16a5d037",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S23",
+      "path": "scripts/checkpoint_representation_inference_p139.py",
+      "sha256": "c7b896bc2508954a3188fa8c99c12ce36e1cec358d857f43ed366592ebb276a5",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S24",
+      "path": "scripts/checkpoint_prefix_identity_p140.py",
+      "sha256": "9b6700a4f9978be3ac76a2555dce2e428e3248f1d218aeb78adc68cb6180419a",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S25",
+      "path": "scripts/evaluate_context_trial.py",
+      "sha256": "993670d699d58d24211be30f61cda113c99c7244ffe87b86b16d623c967c3fa4",
+      "in_plan_source_map": true,
+      "fixed_commit_bytes_checked": true
+    },
+    {
+      "id": "S26",
+      "path": "reports/P140_initial_checks.json",
+      "sha256": "657b1d743b389782347fed6698951de2817d4ba59371e61d8d4542bca733e475",
+      "in_plan_source_map": false,
+      "fixed_commit_bytes_checked": false
+    },
+    {
+      "id": "S27",
+      "path": "reports/P140_activation_v01.json",
+      "sha256": "8a95458aa6f409df74e6451a7007b66a15cfd86829abf84bfac065a278fde7f6",
+      "in_plan_source_map": false,
+      "fixed_commit_bytes_checked": false
+    }
+  ],
+  "fixed_commit_source_files_verified": 25,
+  "direct_plan_source_files_verified": 23,
+  "model_selection_binding": {
+    "direct_plan_source_map_member": false,
+    "fixed_commit_bytes_match": true,
+    "P29_model_selection_reference_checked": true,
+    "saved_preflight_revision_runtime_match": true,
+    "saved_preflight_context": 65536,
+    "slot_and_KV_claim_basis": "Completed preflight plus the fixed identity-check and supervisor code, not a fresh live query."
+  },
+  "checks": {
+    "frozen_source_bytes_match_public_preparation_and_run": true,
+    "preflight_and_activation_source_maps_match_plan_plus_plan_file": true,
+    "activation_binds_preflight_hash": true,
+    "sampling_values_explicit_and_role_seed_formula_checked": true,
+    "unspecified_sampling_not_filled": true,
+    "C_known_paid_focus_reset_and_positive_actor_E_checked": true,
+    "second_prompt_only_and_parser_limits_checked": true,
+    "whole_role_cache_unknown_accounting_scope_checked": true,
+    "official_final_success_definition_not_recomputed": true,
+    "posthoc_independence_and_prefix_limits_stated": true,
+    "relative_source_links_resolve": true,
+    "no_private_absolute_path_or_secret_literal_found": true,
+    "no_result_table_or_reduction_or_adoption_value": true,
+    "existing_three_reports_unchanged": true,
+    "tracked_files_unchanged": true,
+    "git_diff_check_passed": true
+  },
+  "existing_three_reports_sha256": {
+    "P140_method_prior_historical_addendum_20261027.json": "1794a3a54ce0824d9fc59799cbe21d26cbcb04e014c03021cc72b67e0a0ede7b",
+    "P140_method_prior_scope_20261027.json": "ef48bc124caa7d6187b647cf6d1ac4e4104ee7c5eb137909f2273b57c4b173cb",
+    "P140_reserved_confirmation_feasibility_20261027.json": "83925cf91266947c68894ce5efc6f9d528fe86758655651e237d198f4f5ec4a3"
+  },
+  "peer_review": {
+    "reviewer": "grounding_adversarial_review",
+    "status": "PASS",
+    "document_sha256": "444a6b903077c87ce2bb8a67bb2a6a40f050ce8c70335398d6431f744ab79336",
+    "mandatory_changes": 0,
+    "scope": "Limited source-only wording and 27 reference hashes; S04 fixed commit and completed S26/S27 identity only. No independent test count claimed."
+  },
+  "allowed_operational_records_read": [
+    "reports/P140_initial_checks.json",
+    "reports/P140_activation_v01.json"
+  ],
+  "operational_read_scope": "Completed preflight/activation identity, completion flags and source/hash bindings only; no batch/worker results or generated request-response content.",
+  "executions": {
+    "model_generations": 0,
+    "API_requests": 0,
+    "native_token_counts": 0,
+    "evaluations": 0,
+    "saved_generated_code": 0,
+    "producer_or_checker_or_renderer": 0,
+    "live_server_queries": 0
+  },
+  "no_P140_interim_outcome_usage_or_generated_body_read": true,
+  "reserved_scenarios_or_gold_read": false,
+  "limits": [
+    "This is a methods fact sheet, not an outcome audit or a scientific-validity certification.",
+    "Fixed configuration and completed preflight attestations do not independently re-observe the current server or prove every later request.",
+    "No evaluator body, database, credential, private reasoning or model weight was inspected."
+  ],
+  "binding_preparation_record_sha256": "fb3bbf6c6669dfbd5a6a929441d65efd75453b4b754e4b273d6ae45cf3f9a36c"
+}

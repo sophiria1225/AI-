@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "record_type": "source_only_reserved_confirmation_feasibility_review",
+  "created_at_utc": "2026-10-27T14:22:18.914335+00:00",
+  "status": "pass_limited_source_and_arithmetic_review",
+  "public_safe": true,
+  "fixed_P140_source_head": "827298fa4219aa4e500d604dfb771f6fe6b815c8",
+  "fixed_P140_plan_sha256": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+  "fixed_P140_source_count": 1675,
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "523eb4dde8a3d54c1ae0a908ec18280de75285eb6a423ecf42010251522ebab4",
+      "reviewed_sections": [
+        "Repository and Project scope; preserve records; publication exclusions"
+      ],
+      "listed_in_fixed_P140_source_map": false
+    },
+    {
+      "path": "docs/letter_scenario_reservation_20261021.md",
+      "sha256": "76d40240afc85a4d421fcd5efcc4fdffdfdfea3caa894155d7594fec2eedf145",
+      "reviewed_sections": [
+        "Lines 3-11: original reservation, variant, use conditions and limitations"
+      ],
+      "line_interval": [
+        3,
+        11
+      ],
+      "listed_in_fixed_P140_source_map": false
+    },
+    {
+      "path": "docs/letter_evaluation_scope_20261021.md",
+      "sha256": "360cc056c83b0850c7eef2fd8114346adc7c177ce85cad70bed8305cc339cd26",
+      "reviewed_sections": [
+        "Lines 3-19: reservation does not establish general quality preservation",
+        "Lines 21-27: time arithmetic and separate confirmation protocol required"
+      ],
+      "line_interval": [
+        3,
+        27
+      ],
+      "listed_in_fixed_P140_source_map": false
+    },
+    {
+      "path": "docs/evaluation_design.md",
+      "sha256": "6188a7e8ecdac94fe240bb2ee6d86ce449fb83e4ec0dba630b0361454dc72ba5",
+      "reviewed_sections": [
+        "Lines 3-19: fix comparison, quality and complete cost before confirmation",
+        "Lines 35-42: development and confirmation sequence"
+      ],
+      "line_interval": [
+        3,
+        42
+      ],
+      "listed_in_fixed_P140_source_map": false
+    },
+    {
+      "path": "docs/handoff_20261026_context_transfer.md",
+      "sha256": "08ea03e7b3b09fbf6d85d3081382648c0f3566e0bf3a6be69dd74409679415d5",
+      "reviewed_sections": [
+        "Section 13, lines 434-441: reserved requirements/data/answers remain unread; development repetition is not confirmation"
+      ],
+      "line_interval": [
+        434,
+        441
+      ],
+      "listed_in_fixed_P140_source_map": false
+    },
+    {
+      "path": "docs/experiments/P140_checkpoint_delta_envelope_draft_20261027.md",
+      "sha256": "15bd549a0fb6a66949337e619915a4561c15d3816dfc2fefa8c656b3d2ed9a2a",
+      "reviewed_sections": [
+        "Lines 3-17: posthoc known-task scope and fixed budgets",
+        "Lines 19-27: separate comparisons, both-gate adoption, attribution and generalization limits"
+      ],
+      "line_interval": [
+        3,
+        27
+      ],
+      "listed_in_fixed_P140_source_map": true,
+      "fixed_plan_binding_matches": true
+    },
+    {
+      "path": "scripts/whole_task_checkpoint_delta_envelope_p140.py",
+      "sha256": "0e9f6da468c317fef8bb1ce2e518cef16939a8a35065fa3a27e44cdf6ca4f21e",
+      "reviewed_sections": [
+        "MODES/TASKS; run_order; worker_config; fixed_fields; validate_plan, lines 14-109"
+      ],
+      "line_interval": [
+        14,
+        109
+      ],
+      "listed_in_fixed_P140_source_map": true,
+      "fixed_plan_binding_matches": true
+    },
+    {
+      "path": "scripts/run_whole_task_checkpoint_delta_envelope_p140.py",
+      "sha256": "4bddba239f7d73c4225b7ecec05da79a04a841bf52141337611d8a25138cffd6",
+      "reviewed_sections": [
+        "run, lines 334-410: full lifetime reservation and serial cell/idle/evaluation loop"
+      ],
+      "line_interval": [
+        334,
+        410
+      ],
+      "listed_in_fixed_P140_source_map": true,
+      "fixed_plan_binding_matches": true
+    },
+    {
+      "path": "scripts/run_whole_task_checkpoint_delta_envelope_pipeline_p140.py",
+      "sha256": "cf0f5c893adee77c0b3a755013bcb056aa3e5cd56a5d84851c76d308079eb9f9",
+      "reviewed_sections": [
+        "Lines 80-158: readiness, preflight/activation/batch caps, absolute-deadline and cleanup checks"
+      ],
+      "line_interval": [
+        80,
+        158
+      ],
+      "listed_in_fixed_P140_source_map": true,
+      "fixed_plan_binding_matches": true
+    },
+    {
+      "path": "configs/P140_whole_task_checkpoint_delta_envelope_v01.json",
+      "sha256": "635730afeb8baa5c34d80ddb12a9f85b7823944b4c72064c0a46621327d163dc",
+      "reviewed_sections": [
+        "Selected scalar budget/deadline fields; source-map size and matching source hashes only"
+      ]
+    }
+  ],
+  "evidence_scope": {
+    "independently_checked": [
+      "Listed policy/source text and byte hashes",
+      "Frozen P140 head/plan identifiers and selected cap scalars",
+      "Serial runner structure and full-lifetime admission formula",
+      "Time arithmetic and original reservation wording"
+    ],
+    "root_supplied_context_not_independently_verified": [
+      "P140 is running at the 23:04 JST planning reference time",
+      "P140 completion time is unknown",
+      "09:00 JST is the requested materials target"
+    ],
+    "not_established": [
+      "Current or future P140 outcomes",
+      "P140 primary or secondary gate result",
+      "Actual untouched status or membership of the reserved set",
+      "Actual future confirmation duration",
+      "A ready-to-launch 24-cell confirmation protocol",
+      "General quality preservation or statistical power"
+    ]
+  },
+  "original_confirmation_scope": {
+    "reserved_scenarios": 12,
+    "variant_per_scenario": 1,
+    "partition_basis": "Original policy uses official-train scenario identifiers; one scenario is not split across development and confirmation by selecting different variants.",
+    "original_full_scope_must_be_preserved": true,
+    "scope_fidelity_statement_ja": "今回の都合で全12シナリオを4課題へ縮小した場合、当初の全12確認の完了条件を満たさず、全12の確認完了として扱えない。これは別設計として事前固定された未見4課題の独立性一般を否定するものではない。",
+    "variant_fidelity_statement_ja": "既知開発課題の別variantだけを確認群にすることは、同一シナリオを別群へ移さないという元の予約規約に適合しない。variant一般の独立性について普遍的な結論を述べない。",
+    "limits": [
+      "Official-train internal holdout, not official-test evidence",
+      "No claim of pretraining exclusion or transfer across applications",
+      "Twelve is a reservation size, not a guaranteed sample size for general quality preservation",
+      "Repeated seeds do not increase the number of independent scenarios"
+    ]
+  },
+  "hypothetical_serial_schedule": {
+    "authorization_or_launch_plan": false,
+    "scenarios": 12,
+    "arms": 2,
+    "repetitions": 1,
+    "parallel_workers": 1,
+    "cells": 24,
+    "per_cell_caps_seconds": {
+      "max_setup_seconds": 120,
+      "max_wall_seconds": 1800,
+      "max_cleanup_seconds": 180,
+      "max_idle_wait_seconds": 60,
+      "max_evaluation_seconds": 180
+    },
+    "per_cell_reserved_seconds": 2340,
+    "formula": "12 * 2 * 1 * (120 + 1800 + 180 + 60 + 180)",
+    "cell_budget_sum_seconds": 56160,
+    "cell_budget_sum_hours_minutes": "15h36m",
+    "work_only_budget_seconds": 43200,
+    "planning_reference_jst": "2026-10-27T23:04:00+09:00",
+    "materials_target_jst": "2026-10-28T09:00:00+09:00",
+    "reference_to_target_seconds": 35760,
+    "reference_to_target_hours_minutes": "9h56m",
+    "hypothetical_end_if_started_at_reference_and_every_cell_used_its_cap_jst": "2026-10-28T14:40:00+09:00",
+    "cell_budget_exceeds_reference_window_seconds": 20400,
+    "excluded_overhead": [
+      "Waiting for current P140 complete closure and review",
+      "Protocol/source preparation, validation and CI",
+      "Server startup, readiness and preflight/activation",
+      "Exceptional termination/cleanup grace beyond cell budget components",
+      "Final closure, collection, independent review and figures"
+    ],
+    "existing_pipeline_stage_allowances_seconds": {
+      "server_readiness": 900,
+      "preflight": 480,
+      "activation": 60
+    },
+    "existing_stage_allowances_are_not_a_validated_new_24_cell_preflight_budget": true,
+    "interpretation": "The 15h36m value is the sum of reserved per-cell upper budgets, not a duration forecast, minimum duration, or complete process-wide upper bound. Actual runs may finish earlier; completion by 09:00 cannot be guaranteed under the stated caps and serial design."
+  },
+  "design_constraints": {
+    "P140_current_adoption_rule": "Both fixed comparison gates are required. A primary-only pass is a separate limited development observation and does not establish combined adoption or independent confirmation.",
+    "current_runner_is_not_a_reserved_confirmation_runner": true,
+    "runner_reason": "Its helper validates four known tasks, three development modes and twelve cells; the batch reserves the full cell budget and executes cells serially.",
+    "before_reserved_requirements_are_opened": [
+      "Fix the candidate and the single primary baseline from closed development evidence",
+      "Retain all twelve originally reserved scenarios and variant 1",
+      "Fix model, seed, repetitions, run order, work/API/token limits and finite lifetime/deadline",
+      "Fix quality criterion, tolerance if any, statistical procedure and whole-job cost measure",
+      "Fix exclusions, stop/failure/unknown/missing accounting and retain all planned rows",
+      "Freeze and validate a separate confirmation plan without changing the completed development gate"
+    ],
+    "not_recommended": [
+      "Task selection or reducing twelve to four while calling the original confirmation complete",
+      "Shortening caps or introducing parallelism to preserve a 09:00 completion claim",
+      "Repeating until success or selecting favorable seeds",
+      "Using the reserved group for pilot tuning, failure search or rescue of an unsuccessful development gate"
+    ],
+    "appropriate_09_00_scope": "Audited development results and their limitations; a separately fixed confirmation plan if warranted. Label independent confirmation as not yet completed unless all originally planned confirmation work has actually completed."
+  },
+  "proposed_public_wording_ja": "独立確認用には全12シナリオ・各variant 1を保留している。12シナリオ×2方式を同じ条件上限・直列で実行する場合、各条件の予約時間合計は15時間36分で、起動・事前検査・回収・監査等は別途必要となる。この算術は実時間の予測ではなく、09時までの独立確認完了を保証できないことを示す。今回の都合で4課題へ縮小しても当初の全12確認の完了とは扱わない。確認を実施する場合は、未閲覧群の要求文を開く前に比較と判定手順を別途固定する。",
+  "scope_exclusions_and_actions": {
+    "reserved_id_list_files_opened": false,
+    "reserved_requirements_read": false,
+    "reserved_data_or_gold_read": false,
+    "P140_interim_outcomes_usage_generated_contents_read": false,
+    "P140_runtime_or_terminal_markers_read": false,
+    "model_calls": 0,
+    "environment_API_calls": 0,
+    "evaluator_calls": 0,
+    "native_tokenizer_calls": 0,
+    "producer_checker_renderer_runs": 0,
+    "server_operations": 0,
+    "runtime_or_bound_source_edits": 0,
+    "repository_writes": 0,
+    "publication_or_commit_operations": 0,
+    "only_new_artifact": "This exclusive review JSON; file-byte reads, JSON scalar selection, read-only git HEAD and arithmetic only."
+  }
+}
