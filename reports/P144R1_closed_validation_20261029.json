@@ -1,0 +1,317 @@
+{
+  "status": "pass",
+  "checked_at": "2026-10-28T15:51:55.051434+00:00",
+  "method": "Independent arithmetic from all twelve usage files and official evaluation records; no producer summarizer imported. Raw metadata checked without semantic reading of generated bodies.",
+  "report_sha256": "7c5bdaa2085821854fecdfde045b5f2810f9d5898f228b92c8678ba4c1f24b11",
+  "evaluated_conditions": 12,
+  "remaining_ten_completed": true,
+  "known_token_subtotals_by_mode": {
+    "threshold_recursive": 522372,
+    "threshold_delta_object": 666686,
+    "threshold_delta_update": 911767
+  },
+  "unknown_usage_calls_by_mode": {
+    "threshold_recursive": 0,
+    "threshold_delta_object": 1,
+    "threshold_delta_update": 0
+  },
+  "success_counts": {
+    "threshold_recursive": 3,
+    "threshold_delta_object": 3,
+    "threshold_delta_update": 3
+  },
+  "report_global_total_tokens_by_mode": {
+    "threshold_recursive": null,
+    "threshold_delta_object": null,
+    "threshold_delta_update": null
+  },
+  "independent_exact_update_vs_recursive": {
+    "all_eight_usage_known": true,
+    "all_task_token_difference": 389395,
+    "percent_difference": 74.54362025529699,
+    "common_success_token_difference": 79762,
+    "pairs": [
+      {
+        "task_id": "34d9492_1",
+        "baseline_success": true,
+        "update_success": true,
+        "difference": -12271
+      },
+      {
+        "task_id": "3c13f5a_1",
+        "baseline_success": true,
+        "update_success": true,
+        "difference": 92033
+      },
+      {
+        "task_id": "60d0b5b_1",
+        "baseline_success": true,
+        "update_success": true,
+        "difference": 0
+      },
+      {
+        "task_id": "6104387_1",
+        "baseline_success": false,
+        "update_success": false,
+        "difference": 309633
+      }
+    ]
+  },
+  "database_hash_files_verified": 156,
+  "all_twelve_workers_exit_zero": true,
+  "all_twelve_cleanup_confirmed": true,
+  "pipeline_finished_at": "2026-10-28T09:21:13.703204+00:00",
+  "reporting_finished_at": "2026-10-28T09:21:14.964364+00:00",
+  "audit_errors_count": 0,
+  "update_installations_total": 0,
+  "actual_changed_old_known_actor_calls_total": 0,
+  "development_gate_met": false,
+  "scientific_adoption_gate_met": false,
+  "additional_model_calls": 0,
+  "additional_environment_API_calls": 0,
+  "additional_evaluator_calls": 0,
+  "source_mutations": 0,
+  "limits": [
+    "Known4tasks,one fixedseed; original2/new10 span separate server sessions.",
+    "APP has one unknown model-call usage; preserve global totals and APP comparison differences as null.",
+    "PrimaryUPD/TR pairwiseeight usages are known, but observed cost increase is not a causal effect claim.",
+    "Updates were requested but no explicit update installed and no changed old state exposed to known actor calls.",
+    "Saved metadata and arithmetic verified; independent semantic trace replay or official reevaluation was not performed."
+  ],
+  "phase": "P144R1_closed_validation_public",
+  "public_source": "reports/P144R1_continuation.json",
+  "private_independent_receipt_sha256": "2c1995080df3cf074cc402a71e6038f0102d1093e58f6533cd4c0d6cf8e26ce2",
+  "distilled_at": "2026-10-28T16:09:43.740076+00:00",
+  "recorded_processes_absent": true,
+  "private_paths_or_bodies_published": false,
+  "rows": [
+    {
+      "run_id": "BOC_P144_01_THRESHOLD_RECURSIVE",
+      "task_id": "34d9492_1",
+      "mode": "threshold_recursive",
+      "official_success": true,
+      "known_token_subtotal": 163103,
+      "unknown_usage_calls": 0,
+      "model_calls": 19,
+      "api_requests": 100,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "40d8fcf73236e9f1161455df3dcc96d9e880f3ce07c0944e6be4d0ae6d6eb905",
+        "usage.json": "934270c26fdefbc66988f4f19bffe432ec41acba7835b2948ad719394f76e038",
+        "evaluation.json": "7b8708d4287f314b8790f09b942faff976b3c80478424b72c93aaf3f1d4ebcf5",
+        "state_update_views.json": "63033fcc83e4f9f9e199864516d17c1964988dda080b2d9e42a52e4832110559"
+      }
+    },
+    {
+      "run_id": "BOC_P144_01_THRESHOLD_DELTA_OBJECT",
+      "task_id": "34d9492_1",
+      "mode": "threshold_delta_object",
+      "official_success": true,
+      "known_token_subtotal": 138772,
+      "unknown_usage_calls": 0,
+      "model_calls": 17,
+      "api_requests": 100,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "80adf9c30c20f28f6b97eb77655ac4e5510863fa9749db925c55fe0815187df9",
+        "usage.json": "1c43c38b034421a8a608b18b696c28a73bf0e48feeae0b0c5f20e9c39a23a6b5",
+        "evaluation.json": "40d7c4e0a2724c57783bf4c23c72ee9b282eef6b1742958ed3ed0a8c0b709fb1",
+        "state_update_views.json": "0ba2856878b2feb0130cbb96c65b0b8669fefe6b7bf61e788d32fc71900af232"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_01_THRESHOLD_DELTA_UPDATE",
+      "task_id": "34d9492_1",
+      "mode": "threshold_delta_update",
+      "official_success": true,
+      "known_token_subtotal": 150832,
+      "unknown_usage_calls": 0,
+      "model_calls": 17,
+      "api_requests": 100,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "edb9d5b05014ccba6b6f63a0aae40f0d5b1087704fe8820be18e90203bfaec89",
+        "usage.json": "f18666f0a033ba8caf41000ef58fb6c050f0f876204e97b8ae4f38885074a76a",
+        "evaluation.json": "a4b2ca3b9ad9b66ebf400ef7259e5291b442f213b4f0656cb05c6b4cd6afe859",
+        "state_update_views.json": "1431f5f680d70dffdd619cb494d221f8c677661f400cb180cb71bbc83417b172"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_02_THRESHOLD_DELTA_OBJECT",
+      "task_id": "3c13f5a_1",
+      "mode": "threshold_delta_object",
+      "official_success": true,
+      "known_token_subtotal": 218852,
+      "unknown_usage_calls": 0,
+      "model_calls": 29,
+      "api_requests": 26,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "4eaaf890b3f6b8f1f282fa0bdce67c49604e723369d39ab83d0a6c3c892620c4",
+        "usage.json": "90434a6a90dbc2e128d951f8d7359f954fca44d44e2f7f8f986a93be171a7ee7",
+        "evaluation.json": "e540f830bada7b143f2f4977462620323a98c2df2eee22be5e211d373bd67398",
+        "state_update_views.json": "8951c476b527e0363ff8aae6e206c4d960b4525cbee8a5b5246ac8a7f9e4cca3"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_02_THRESHOLD_DELTA_UPDATE",
+      "task_id": "3c13f5a_1",
+      "mode": "threshold_delta_update",
+      "official_success": true,
+      "known_token_subtotal": 297895,
+      "unknown_usage_calls": 0,
+      "model_calls": 28,
+      "api_requests": 26,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "ceda303812de81a034df1c689131f485bc022b9c26cf3efb0cdfb486c7a03bf9",
+        "usage.json": "00d5d53d5924cab181691aea5676aa290c5ade1c1aa7a1b58a4fe5954dc7ed2a",
+        "evaluation.json": "fec1bbe095d85d5dfa3cb2f0bab7f12df7f5c4ed3c64132b3c2392656398eb26",
+        "state_update_views.json": "7602a531bfd17bdb4904ee3b278b1fe03c4b90f59285a5faf6965c8480975c1c"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_02_THRESHOLD_RECURSIVE",
+      "task_id": "3c13f5a_1",
+      "mode": "threshold_recursive",
+      "official_success": true,
+      "known_token_subtotal": 205862,
+      "unknown_usage_calls": 0,
+      "model_calls": 27,
+      "api_requests": 29,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "0eb3ba0490b12f09c7359820fa7b0b8846e42c5a8eef64fe3a04fa7bd4e1af3f",
+        "usage.json": "5266864ee34140755f1c4c153a8c3502819fd638a1a448f38beb3ec27d21677a",
+        "evaluation.json": "b20f571c9f9b89018da332f3c3f13408f39953ff978b85bf203754e354418b30",
+        "state_update_views.json": "59cbbd3f58e22b8a40dbae9a3ee12465f0172ad9be9837824c8f06ed6ae1b628"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_03_THRESHOLD_DELTA_UPDATE",
+      "task_id": "60d0b5b_1",
+      "mode": "threshold_delta_update",
+      "official_success": true,
+      "known_token_subtotal": 61415,
+      "unknown_usage_calls": 0,
+      "model_calls": 11,
+      "api_requests": 11,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "53642449bc26f29ee52005129263f8a24c20ba629f18d1c0917a229e3b9255ec",
+        "usage.json": "4ac18b43134ac6bfcba305566819ed0a0fe5e859f43362d863fe197c4d14025d",
+        "evaluation.json": "5d068afec18a039f89bace1e10e377f91ee001f900fe3c5a4017858f1c9c9e31",
+        "state_update_views.json": "8a9c8d7f216740645733c367c53f59f86cdcebefe4689b67ca5dce2333e7e599"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_03_THRESHOLD_RECURSIVE",
+      "task_id": "60d0b5b_1",
+      "mode": "threshold_recursive",
+      "official_success": true,
+      "known_token_subtotal": 61415,
+      "unknown_usage_calls": 0,
+      "model_calls": 11,
+      "api_requests": 11,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "b197ccf366ca2a7720203d01c830ba0ebab0bdbb9ee3032157f28674894ae2e9",
+        "usage.json": "1af2f22683575724ea6581df96fed9508e47d9a850f55d6e88306fae07c29b43",
+        "evaluation.json": "dba431cc1c018ede54175ecc204c8dd08246fe4c72a2da8a5a746e9e60a7fe87",
+        "state_update_views.json": "8a9c8d7f216740645733c367c53f59f86cdcebefe4689b67ca5dce2333e7e599"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_03_THRESHOLD_DELTA_OBJECT",
+      "task_id": "60d0b5b_1",
+      "mode": "threshold_delta_object",
+      "official_success": true,
+      "known_token_subtotal": 61415,
+      "unknown_usage_calls": 0,
+      "model_calls": 11,
+      "api_requests": 11,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "0a098a92d9e4dd4df248021ac59abd8f0e4fad12cca286f32da2fedfeb7cc7e6",
+        "usage.json": "c74982ed9d969f3eba34e5b470cf84512e70479f7d58d05bb70e3d1ec8f44b12",
+        "evaluation.json": "a425b5b6d8b6b1cf1fb5e4436a352f7cf1552286f26334719211e9e06e9b5c5d",
+        "state_update_views.json": "8a9c8d7f216740645733c367c53f59f86cdcebefe4689b67ca5dce2333e7e599"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_04_THRESHOLD_RECURSIVE",
+      "task_id": "6104387_1",
+      "mode": "threshold_recursive",
+      "official_success": false,
+      "known_token_subtotal": 91992,
+      "unknown_usage_calls": 0,
+      "model_calls": 12,
+      "api_requests": 80,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "20f68fa078b8bdbe473f109826cdb63090da296c7e0f9fcd4f9f0648edf547cd",
+        "usage.json": "0a392df411b3cf0e33e2dc7fa2c18b58eda266c949cc19c2e1c35e9dbb83f3ca",
+        "evaluation.json": "7c7ded6b13e82487381c7519d9a63c92b9ba3d8ecc219aa1976458b9f68e5bec",
+        "state_update_views.json": "b9133266acf489ba1e387216091094b5ae7c10719801a9cc6ed04ec7f4a078e6"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_04_THRESHOLD_DELTA_UPDATE",
+      "task_id": "6104387_1",
+      "mode": "threshold_delta_update",
+      "official_success": false,
+      "known_token_subtotal": 401625,
+      "unknown_usage_calls": 0,
+      "model_calls": 26,
+      "api_requests": 80,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "c25c235f0d7288d4cb13af5b309d9305bd55e488d23e17edb625a09ba29188f2",
+        "usage.json": "ccd928474a60fda63a79f53dccf4777162bf6ff0cb01d333da83e19e91ad9a25",
+        "evaluation.json": "df8ea8cc6dcdc619bdfef6aab1ea04915a7e81ddb1921b927deb5a9eca20537d",
+        "state_update_views.json": "a04cdd5cb1d4f5b71172a411e5b9db8fb2211635e9c72479ed462ed9f6528c72"
+      }
+    },
+    {
+      "run_id": "BOC_P144R1_04_THRESHOLD_DELTA_OBJECT",
+      "task_id": "6104387_1",
+      "mode": "threshold_delta_object",
+      "official_success": false,
+      "known_token_subtotal": 247647,
+      "unknown_usage_calls": 1,
+      "model_calls": 22,
+      "api_requests": 73,
+      "worker_exit_code": 0,
+      "cleanup_confirmed": true,
+      "database_hash_files_verified": 13,
+      "source_sha256": {
+        "summary.json": "3ce0360bd6229ddf632c9ae677f4fa316a68fb3b8ceb0ac9c78df2c02fb39469",
+        "usage.json": "9ae6d7c673135eb840612be90542f825d68119594c2c2b486a857a2695b568b4",
+        "evaluation.json": "ea618e05c09fb9e849e4d602318e5f82d626db09b46c37cdba09f213e2ed81d8",
+        "state_update_views.json": "29e2c957045a687f50fc986f308d2002ec69d91191f68d9c0149535d86784fe5"
+      }
+    }
+  ]
+}
