@@ -1,0 +1,660 @@
+{
+  "phase": "P147_closed_results_20261029",
+  "status": "complete",
+  "source_commit": "012aa3f9faba0dbaa38a4e829915ef04c6886d58",
+  "source_plan": "configs/P147_indexed_update_v01.json",
+  "source_plan_sha256": "afb0b1c3aeabac556f462f0fd7f58e1e1e8192bf6aecdcd499acca20d4f22ee1",
+  "closed_at_utc": "2026-10-28T19:17:58.528371+00:00",
+  "candidate": "schema_indexed_bounded",
+  "model_seed": 257,
+  "world_seed": 42,
+  "tasks_are_previously_known": true,
+  "rows": [
+    {
+      "run_id": "BOC_P147_01_TR",
+      "task_slot": 1,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 5,
+      "fail_count": 0,
+      "input_tokens": 152394,
+      "output_tokens": 10709,
+      "known_total_tokens": 163103,
+      "cached_input_tokens": 96633,
+      "model_calls": 19,
+      "api_requests": 100,
+      "roles": {
+        "agent": {
+          "calls": 17,
+          "input_tokens": 131815,
+          "output_tokens": 7014
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 20579,
+          "output_tokens": 3695
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0
+    },
+    {
+      "run_id": "BOC_P147_01_UPDATE_INDEXED",
+      "task_slot": 1,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 5,
+      "fail_count": 0,
+      "input_tokens": 125353,
+      "output_tokens": 10838,
+      "known_total_tokens": 136191,
+      "cached_input_tokens": 72717,
+      "model_calls": 17,
+      "api_requests": 100,
+      "roles": {
+        "agent": {
+          "calls": 15,
+          "input_tokens": 104543,
+          "output_tokens": 6223
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 20810,
+          "output_tokens": 4615
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 3
+    },
+    {
+      "run_id": "BOC_P147_02_UPDATE_INDEXED",
+      "task_slot": 2,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 6,
+      "fail_count": 0,
+      "input_tokens": 170080,
+      "output_tokens": 5264,
+      "known_total_tokens": 175344,
+      "cached_input_tokens": 117837,
+      "model_calls": 25,
+      "api_requests": 23,
+      "roles": {
+        "agent": {
+          "calls": 23,
+          "input_tokens": 148944,
+          "output_tokens": 3121
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 21136,
+          "output_tokens": 2143
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 10
+    },
+    {
+      "run_id": "BOC_P147_02_TR",
+      "task_slot": 2,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 6,
+      "fail_count": 0,
+      "input_tokens": 199634,
+      "output_tokens": 6228,
+      "known_total_tokens": 205862,
+      "cached_input_tokens": 144106,
+      "model_calls": 27,
+      "api_requests": 29,
+      "roles": {
+        "agent": {
+          "calls": 25,
+          "input_tokens": 178729,
+          "output_tokens": 4060
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 20905,
+          "output_tokens": 2168
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0
+    },
+    {
+      "run_id": "BOC_P147_03_TR",
+      "task_slot": 3,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 7,
+      "fail_count": 0,
+      "input_tokens": 60168,
+      "output_tokens": 1247,
+      "known_total_tokens": 61415,
+      "cached_input_tokens": 50025,
+      "model_calls": 11,
+      "api_requests": 11,
+      "roles": {
+        "agent": {
+          "calls": 11,
+          "input_tokens": 60168,
+          "output_tokens": 1247
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0
+    },
+    {
+      "run_id": "BOC_P147_03_UPDATE_INDEXED",
+      "task_slot": 3,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 7,
+      "fail_count": 0,
+      "input_tokens": 60168,
+      "output_tokens": 1247,
+      "known_total_tokens": 61415,
+      "cached_input_tokens": 50025,
+      "model_calls": 11,
+      "api_requests": 11,
+      "roles": {
+        "agent": {
+          "calls": 11,
+          "input_tokens": 60168,
+          "output_tokens": 1247
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 0,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0
+    },
+    {
+      "run_id": "BOC_P147_04_UPDATE_INDEXED",
+      "task_slot": 4,
+      "arm": "UPDATE_INDEXED",
+      "success": false,
+      "pass_count": 0,
+      "fail_count": 10,
+      "input_tokens": 192870,
+      "output_tokens": 17870,
+      "known_total_tokens": 210740,
+      "cached_input_tokens": 133389,
+      "model_calls": 19,
+      "api_requests": 80,
+      "roles": {
+        "agent": {
+          "calls": 17,
+          "input_tokens": 174509,
+          "output_tokens": 15204
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 18361,
+          "output_tokens": 2666
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "api_request_limit",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 10
+    },
+    {
+      "run_id": "BOC_P147_04_TR",
+      "task_slot": 4,
+      "arm": "TR",
+      "success": false,
+      "pass_count": 0,
+      "fail_count": 10,
+      "input_tokens": 85437,
+      "output_tokens": 6555,
+      "known_total_tokens": 91992,
+      "cached_input_tokens": 41041,
+      "model_calls": 12,
+      "api_requests": 80,
+      "roles": {
+        "agent": {
+          "calls": 10,
+          "input_tokens": 67307,
+          "output_tokens": 3634
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 18130,
+          "output_tokens": 2921
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "api_request_limit",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "task_slot": 1,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 163103,
+      "UPDATE_INDEXED_total_tokens": 136191,
+      "token_difference": -26912,
+      "percent_difference": -16.50000306554754,
+      "TR_model_calls": 19,
+      "UPDATE_INDEXED_model_calls": 17,
+      "TR_api_requests": 100,
+      "UPDATE_INDEXED_api_requests": 100,
+      "candidate_changed_old_actor_calls": 3,
+      "both_successful": true,
+      "success_loss": false
+    },
+    {
+      "task_slot": 2,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 205862,
+      "UPDATE_INDEXED_total_tokens": 175344,
+      "token_difference": -30518,
+      "percent_difference": -14.82449407855748,
+      "TR_model_calls": 27,
+      "UPDATE_INDEXED_model_calls": 25,
+      "TR_api_requests": 29,
+      "UPDATE_INDEXED_api_requests": 23,
+      "candidate_changed_old_actor_calls": 10,
+      "both_successful": true,
+      "success_loss": false
+    },
+    {
+      "task_slot": 3,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 61415,
+      "UPDATE_INDEXED_total_tokens": 61415,
+      "token_difference": 0,
+      "percent_difference": 0.0,
+      "TR_model_calls": 11,
+      "UPDATE_INDEXED_model_calls": 11,
+      "TR_api_requests": 11,
+      "UPDATE_INDEXED_api_requests": 11,
+      "candidate_changed_old_actor_calls": 0,
+      "both_successful": true,
+      "success_loss": false
+    },
+    {
+      "task_slot": 4,
+      "TR_success": false,
+      "UPDATE_INDEXED_success": false,
+      "TR_total_tokens": 91992,
+      "UPDATE_INDEXED_total_tokens": 210740,
+      "token_difference": 118748,
+      "percent_difference": 129.08513783807288,
+      "TR_model_calls": 12,
+      "UPDATE_INDEXED_model_calls": 19,
+      "TR_api_requests": 80,
+      "UPDATE_INDEXED_api_requests": 80,
+      "candidate_changed_old_actor_calls": 10,
+      "both_successful": false,
+      "success_loss": false
+    }
+  ],
+  "aggregate_by_arm": {
+    "TR": {
+      "input_tokens": 497633,
+      "output_tokens": 24739,
+      "cached_input_tokens": 331805,
+      "known_total_tokens": 522372,
+      "model_calls": 69,
+      "api_requests": 220,
+      "unknown_usage_calls": 0,
+      "successes": 3
+    },
+    "UPDATE_INDEXED": {
+      "input_tokens": 548471,
+      "output_tokens": 35219,
+      "cached_input_tokens": 373968,
+      "known_total_tokens": 583690,
+      "model_calls": 72,
+      "api_requests": 214,
+      "unknown_usage_calls": 0,
+      "successes": 3
+    }
+  },
+  "probe_rows": [
+    {
+      "task_slot": 1,
+      "input_tokens": 11814,
+      "output_tokens": 1749,
+      "cached_input_tokens": 0,
+      "patch_valid": true,
+      "changed_old_items": 7,
+      "ordinary_actor_input_tokens": 11371,
+      "compacted_actor_input_tokens": 7889,
+      "shorter_full_actor_input": true
+    },
+    {
+      "task_slot": 2,
+      "input_tokens": 11616,
+      "output_tokens": 895,
+      "cached_input_tokens": 1424,
+      "patch_valid": true,
+      "changed_old_items": 4,
+      "ordinary_actor_input_tokens": 11430,
+      "compacted_actor_input_tokens": 4781,
+      "shorter_full_actor_input": true
+    },
+    {
+      "task_slot": 4,
+      "input_tokens": 9305,
+      "output_tokens": 1459,
+      "cached_input_tokens": 1424,
+      "patch_valid": true,
+      "changed_old_items": 13,
+      "ordinary_actor_input_tokens": 8636,
+      "compacted_actor_input_tokens": 5815,
+      "shorter_full_actor_input": true
+    }
+  ],
+  "probe_known_total_tokens": 36838,
+  "overall_known_total_tokens": 1142900,
+  "whole_task_model_calls": 141,
+  "probe_model_calls": 3,
+  "environment_api_requests": 434,
+  "official_evaluations": 8,
+  "unknown_usage_calls": 0,
+  "interrupted_or_missing_runs": 0,
+  "automatic_retries": 0,
+  "gate_components": {
+    "probe_gate_passed": true,
+    "all_eight_evaluated_known_usage": true,
+    "no_paired_success_loss": true,
+    "old_state_change_reaches_actor_on_common_success": true,
+    "common_success_token_difference": -57430,
+    "common_success_cost_lower": true,
+    "all_four_token_difference": 61318,
+    "all_four_cost_lower": false,
+    "development_gate_met": false
+  },
+  "mechanism_evidence": {
+    "initial_actor_payload_identical_between_arms_all_four": true,
+    "first_focus_payload_identical_between_arms_all_three_activated_tasks": true,
+    "native_first_focus_reasoning_budget": -1,
+    "update_focus_reasoning_budget": 2048,
+    "output_cap": 4096,
+    "strict_indexed_to_original_parser_replay_valid_on_three_whole_task_updates": true,
+    "changed_old_summary_verified_in_actual_actor_request_messages": true,
+    "changed_old_actor_calls_by_task": [
+      3,
+      10,
+      0,
+      10
+    ],
+    "update_installations_by_task": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "first_checkpoint_is_not_mislabeled_update": true,
+    "semantic_fidelity_independently_proven": false
+  },
+  "csv_cost_decomposition": [
+    {
+      "arm": "TR",
+      "sections": {
+        "before_second_focus": {
+          "model_calls": 8,
+          "input_tokens": 55554,
+          "output_tokens": 2990,
+          "known_total_tokens": 58544,
+          "api_requests": 17
+        },
+        "second_focus": {
+          "model_calls": 1,
+          "input_tokens": 9074,
+          "output_tokens": 1714,
+          "known_total_tokens": 10788,
+          "api_requests": 0
+        },
+        "after_second_focus": {
+          "model_calls": 3,
+          "input_tokens": 20809,
+          "output_tokens": 1851,
+          "known_total_tokens": 22660,
+          "api_requests": 63
+        }
+      },
+      "actor_steps": [
+        {
+          "call_id": "call_001",
+          "input_tokens": 3123,
+          "output_tokens": 186,
+          "api_requests": 3
+        },
+        {
+          "call_id": "call_002",
+          "input_tokens": 6193,
+          "output_tokens": 347,
+          "api_requests": 6
+        },
+        {
+          "call_id": "call_003",
+          "input_tokens": 8404,
+          "output_tokens": 169,
+          "api_requests": 2
+        },
+        {
+          "call_id": "call_005",
+          "input_tokens": 6560,
+          "output_tokens": 169,
+          "api_requests": 0
+        },
+        {
+          "call_id": "call_006",
+          "input_tokens": 6991,
+          "output_tokens": 94,
+          "api_requests": 1
+        },
+        {
+          "call_id": "call_007",
+          "input_tokens": 7289,
+          "output_tokens": 336,
+          "api_requests": 1
+        },
+        {
+          "call_id": "call_008",
+          "input_tokens": 7938,
+          "output_tokens": 482,
+          "api_requests": 4
+        },
+        {
+          "call_id": "call_010",
+          "input_tokens": 5544,
+          "output_tokens": 694,
+          "api_requests": 3
+        },
+        {
+          "call_id": "call_011",
+          "input_tokens": 6375,
+          "output_tokens": 279,
+          "api_requests": 2
+        },
+        {
+          "call_id": "call_012",
+          "input_tokens": 8890,
+          "output_tokens": 878,
+          "api_requests": 58
+        }
+      ]
+    },
+    {
+      "arm": "UPDATE_INDEXED",
+      "sections": {
+        "before_second_focus": {
+          "model_calls": 8,
+          "input_tokens": 55554,
+          "output_tokens": 2990,
+          "known_total_tokens": 58544,
+          "api_requests": 17
+        },
+        "second_focus": {
+          "model_calls": 1,
+          "input_tokens": 9305,
+          "output_tokens": 1459,
+          "known_total_tokens": 10764,
+          "api_requests": 0
+        },
+        "after_second_focus": {
+          "model_calls": 10,
+          "input_tokens": 128011,
+          "output_tokens": 13421,
+          "known_total_tokens": 141432,
+          "api_requests": 63
+        }
+      },
+      "actor_steps": [
+        {
+          "call_id": "call_001",
+          "input_tokens": 3123,
+          "output_tokens": 186,
+          "api_requests": 3
+        },
+        {
+          "call_id": "call_002",
+          "input_tokens": 6193,
+          "output_tokens": 347,
+          "api_requests": 6
+        },
+        {
+          "call_id": "call_003",
+          "input_tokens": 8404,
+          "output_tokens": 169,
+          "api_requests": 2
+        },
+        {
+          "call_id": "call_005",
+          "input_tokens": 6560,
+          "output_tokens": 169,
+          "api_requests": 0
+        },
+        {
+          "call_id": "call_006",
+          "input_tokens": 6991,
+          "output_tokens": 94,
+          "api_requests": 1
+        },
+        {
+          "call_id": "call_007",
+          "input_tokens": 7289,
+          "output_tokens": 336,
+          "api_requests": 1
+        },
+        {
+          "call_id": "call_008",
+          "input_tokens": 7938,
+          "output_tokens": 482,
+          "api_requests": 4
+        },
+        {
+          "call_id": "call_010",
+          "input_tokens": 5815,
+          "output_tokens": 643,
+          "api_requests": 5
+        },
+        {
+          "call_id": "call_011",
+          "input_tokens": 7106,
+          "output_tokens": 208,
+          "api_requests": 3
+        },
+        {
+          "call_id": "call_012",
+          "input_tokens": 8150,
+          "output_tokens": 709,
+          "api_requests": 17
+        },
+        {
+          "call_id": "call_013",
+          "input_tokens": 9754,
+          "output_tokens": 1055,
+          "api_requests": 17
+        },
+        {
+          "call_id": "call_014",
+          "input_tokens": 11498,
+          "output_tokens": 1694,
+          "api_requests": 17
+        },
+        {
+          "call_id": "call_015",
+          "input_tokens": 13844,
+          "output_tokens": 728,
+          "api_requests": 2
+        },
+        {
+          "call_id": "call_016",
+          "input_tokens": 15086,
+          "output_tokens": 165,
+          "api_requests": 1
+        },
+        {
+          "call_id": "call_017",
+          "input_tokens": 15875,
+          "output_tokens": 2851,
+          "api_requests": 0
+        },
+        {
+          "call_id": "call_018",
+          "input_tokens": 18798,
+          "output_tokens": 2985,
+          "api_requests": 0
+        },
+        {
+          "call_id": "call_019",
+          "input_tokens": 22085,
+          "output_tokens": 2383,
+          "api_requests": 1
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "positive_scope": "Indexed one-action-per-old-index decoding was structurally valid and installed on all three activated whole-task cases. Photo and settlement retained success while total task tokens fell 16.50% and 14.82%; refund did not activate the mechanism and was unchanged.",
+    "primary_result": "Across all four predetermined tasks success remained 3/4 per arm, but total logical tokens rose 61,318 (11.7384%) and model calls rose from 69 to 72. The predetermined development gate therefore failed.",
+    "CSV_limit": "Both arms reached the same 80 API request budget and failed all 10 task tests. Candidate used 19 versus 12 model calls and 210,740 versus 91,992 logical tokens. Metadata does not identify a semantic failure cause.",
+    "common_success_scope": "The three common-success tasks save 57,430 tokens (13.3440%), a secondary predefined comparison that does not replace the all-task result. No failed task was excluded from primary totals.",
+    "focus_cost_scope": "Photo and settlement focus costs increase by 1,151 and 206 tokens; their net reductions arise from actor-side trajectories and input cost, not omitted summarizer accounting.",
+    "claims_not_established": [
+      "General accuracy preservation/statistical noninferiority",
+      "Overall token reduction on this fixed four-task cohort",
+      "Unseen-task generalization",
+      "Novelty relative to literature",
+      "Semantic equivalence of all materialized summary items",
+      "Isolated causal contribution of schema versus prompt versus reasoning cap"
+    ]
+  },
+  "private_audit_sha256": "011a40cc12ed126dfd9b90f7b299fe4e48dee6669321eeeae1d99e09d87a71c3",
+  "private_payloads_published": false,
+  "general_quality_preservation_established": false,
+  "novelty_established": false,
+  "independent_unseen_tasks": false,
+  "logical_cached_input_deducted": false,
+  "prior_P145_cost_not_in_this_phase_total": 147313
+}
