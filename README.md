@@ -1,8 +1,8 @@
 # AIハーネス研究
 
-2026-10-29版の原稿 **v05**：閉鎖済みの成果と通常の反復要約対照を維持し、正式出版文献を12件へ増補しました。PDFは本文4頁＋英文1頁、Wordは編集用1段組です。著者情報は未設定で、投稿はまだ行っていません。
+2026-10-29版の原稿 **v06**：Wordを、電子情報通信学会の公式「和文論文誌D・レター」テンプレートから作り直しました。公式の本文・見出しスタイルと2段組を使用しています。閉鎖済みの実測値と12件の正式出版文献を保持し、進行中の実験結果は加えていません。著者・所属は未設定で、投稿はまだ行っていません。
 
-[原稿PDF](papers/202610_letter/harness_efficiency_20261029_v05/manuscript.pdf) ／ [Word（.docx）](papers/202610_letter/harness_efficiency_20261029_v05/manuscript.docx) ／ [TeX・Word変換コード・全図候補ZIP](papers/202610_letter/harness_efficiency_20261029_v05/source_bundle.zip) ／ [編集用TeX](papers/202610_letter/harness_efficiency_20261029_v05/main.tex) ／ [実測根拠と再生成手順](papers/202610_letter/harness_efficiency_20261029_v05/README.md)。
+[公式Dレター書式のWord（.docx）](papers/202610_letter/harness_efficiency_20261029_v06/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v06/manuscript.pdf) ／ [原稿・再生成コード・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v06/source_bundle.zip) ／ [取得元・書式・検証内容](papers/202610_letter/harness_efficiency_20261029_v06/FORMAT.md)。
 
 日本語構成図は**全4案完成・採用待ち**です。[比較一覧PNG](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png) ／ [案1：二つの実験](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_01_two_studies.png) ／ [案2：要約3方式](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_02_summary_comparison.png) ／ [案3：実行と評価の境界](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_03_execution_boundary.png) ／ [案4：1段向け](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_04_single_column.png)。各案のSVG・PDFもZIPに同梱し、本文図は選択前のため既存図を維持しています。
 

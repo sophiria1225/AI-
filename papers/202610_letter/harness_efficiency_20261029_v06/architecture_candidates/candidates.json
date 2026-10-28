@@ -1,0 +1,80 @@
+{
+  "status": "candidates_not_adopted",
+  "language": "ja",
+  "font_name": "Hiragino Sans W3",
+  "font_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+  "svg_text": "outlines",
+  "pdf_fonttype": 42,
+  "scientific_source": "harness_efficiency_20261029_v04/main.tex",
+  "source_commit": "b6ce22771bd959c125b6c47208e015eac5eec2dc",
+  "studies_combined": false,
+  "eval_answers_fed_to_llm": false,
+  "generated_experimental_data": false,
+  "candidates": [
+    {
+      "id": "candidate_01_two_studies",
+      "title": "案1：独立した二つの実験の構成",
+      "description_ja": "上段に入力履歴の制御、下段に完了後継続の制御を配置。二つは別実験であり、組合せ方式の効果は示さない。研究全体を初めて説明するときに向く。",
+      "width_mm": 180,
+      "height_mm": 166,
+      "intended_paper_width_mm": 180,
+      "png": "candidate_01_two_studies.png",
+      "svg": "candidate_01_two_studies.svg",
+      "pdf": "candidate_01_two_studies.pdf"
+    },
+    {
+      "id": "candidate_02_summary_comparison",
+      "title": "案2：要約3方式の並列比較",
+      "description_ja": "要約機会、要約候補の生成役、採否判定、次の課題実行入力を3列で比較。反復要約と同時生成方式の違いを最も直接説明できる。実験Bは含めない。",
+      "width_mm": 180,
+      "height_mm": 137,
+      "intended_paper_width_mm": 180,
+      "png": "candidate_02_summary_comparison.png",
+      "svg": "candidate_02_summary_comparison.svg",
+      "pdf": "candidate_02_summary_comparison.pdf"
+    },
+    {
+      "id": "candidate_03_execution_boundary",
+      "title": "案3：実行と評価の境界を示す時系列",
+      "description_ja": "左からハーネス・LLM・環境・公式評価器の順。上から下へ処理が進む。実行中に評価の正解を使わず、終了後の状態で成功を測ることを明確にする。",
+      "width_mm": 180,
+      "height_mm": 160,
+      "intended_paper_width_mm": 180,
+      "png": "candidate_03_execution_boundary.png",
+      "svg": "candidate_03_execution_boundary.svg",
+      "pdf": "candidate_03_execution_boundary.pdf"
+    },
+    {
+      "id": "candidate_04_single_column",
+      "title": "案4：レター1段向けの簡潔な構成",
+      "description_ja": "85 mm幅を前提とする省スペース案。二つの作用点と共通の測定だけに絞る。方式の詳細は本文で説明し、全体像を小さく載せたい場合に向く。",
+      "width_mm": 85,
+      "height_mm": 147,
+      "intended_paper_width_mm": 85,
+      "png": "candidate_04_single_column.png",
+      "svg": "candidate_04_single_column.svg",
+      "pdf": "candidate_04_single_column.pdf"
+    }
+  ],
+  "notes_ja": [
+    "全図は説明用の候補であり、本文への採用は未確定。",
+    "LLMの呼出し配置や制御の位置を表し、モデル内部構造は表さない。",
+    "SVG/PDFはベクタ形式。PNGは300 dpi。フォントファイルは配布しない。"
+  ],
+  "sha256": {
+    "candidate_01_two_studies.pdf": "cbac392417a241a25141f7039f8b45010ef9121b557727c571279d49fa7f6f15",
+    "candidate_01_two_studies.png": "3bcafaef1c2da8656bed9c8219f526aa8609e77733dd316309250215a26518f6",
+    "candidate_01_two_studies.svg": "8a65bcea977091e4015f14120f32c5da1a6a68ad32f43636ba414275972e5728",
+    "candidate_02_summary_comparison.pdf": "e44686dfe69a71a9c7f37567d8e2fa0df2b9ae75e608cbe56439a9230972dc6c",
+    "candidate_02_summary_comparison.png": "3d25c5311de02ef49d453dbb8cc522fd501cb947b4537a8a2d6f87bc14e863cb",
+    "candidate_02_summary_comparison.svg": "506a7a475b3631725af3c2c73e070803e19237b52b3c841a3c4e0bccd02409b1",
+    "candidate_03_execution_boundary.pdf": "82d8adf3a63bc9b5cc475d233a6378cd7245d24f4cad7d6e23c3989da277fd21",
+    "candidate_03_execution_boundary.png": "54c51ac04ed96f0a3cb78c692b859cd7bde6529e2ac6366ad83c1e6270ef9cab",
+    "candidate_03_execution_boundary.svg": "aa1598a4e220f433eb2bc4d1cf79a948ee33181639ac4123588d218c501c20bf",
+    "candidate_04_single_column.pdf": "de1b5b60a9db1faf502c52a2340639408ce90f5b37c1b7ad7371fe5b851c347c",
+    "candidate_04_single_column.png": "b468fb39113264b1047055a2d7388146d172063b7a5be4d198eb08bb816a088b",
+    "candidate_04_single_column.svg": "6367562255dff339a1a64b034655b1412179e02af5b7742c84801b19f9e07f95",
+    "contact_sheet.png": "5acfa92a6c53b4433c7a606a9486816582d4442bcdf39acf5649db0aece9b635",
+    "render_candidates.py": "fd2b0537705bf397ea983842447f4a553f78adf58174303c913f195cab8d78a9"
+  }
+}
