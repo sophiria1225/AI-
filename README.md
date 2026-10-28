@@ -1,10 +1,20 @@
 # AIハーネス研究
 
-2026-10-28 最新：利用者の明示的な再開依頼に従い、電源断前に未実行だった10条件をP144R1として継続する背景処理を16:00:18 JSTに起動した。16:03:58 JSTにモデル生成中であることを確認し、その時点では新規分 0/10条件を評価完了、BOC_P144R1_01_THRESHOLD_DELTA_UPDATE が処理中。停止前に実行を終えた2条件は再生成せず、評価待ちだった1条件を保存済みの状態から1回だけ公式評価した。途中の成否・費用による条件変更は行っていない。既知4課題・MiniMax-M3 IQ4_XS・seed257/world42・元の固定科学条件を継承する。新しいserver sessionでの継続を区別し、開始は改善・新規性の証明ではない。モデル期限は本日23:15、結果処理23:59。通常メッセージでは背景実行を止めず、明示停止に従う。[再開時点の記録](docs/experiments/P144R1_execution_start_20261028.md)。
+2026-10-29版の原稿 **v05**：閉鎖済みの成果と通常の反復要約対照を維持し、正式出版文献を12件へ増補しました。PDFは本文4頁＋英文1頁、Wordは編集用1段組です。著者情報は未設定で、投稿はまだ行っていません。
 
-[原稿v03 PDF](papers/202610_letter/harness_efficiency_20261028_v03/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/harness_efficiency_20261028_v03/source_bundle.zip)。原稿v03は閉鎖済みの実測を扱い、P144/P144R1の途中結果を含まない。以下の開始・停止記載は各過去時点の記録であり、最新状態はこの再開記録を参照する。
+[原稿PDF](papers/202610_letter/harness_efficiency_20261029_v05/manuscript.pdf) ／ [Word（.docx）](papers/202610_letter/harness_efficiency_20261029_v05/manuscript.docx) ／ [TeX・Word変換コード・全図候補ZIP](papers/202610_letter/harness_efficiency_20261029_v05/source_bundle.zip) ／ [編集用TeX](papers/202610_letter/harness_efficiency_20261029_v05/main.tex) ／ [実測根拠と再生成手順](papers/202610_letter/harness_efficiency_20261029_v05/README.md)。
 
-2026-10-28 最新：ユーザーの再開・原稿作成依頼に従い、P144の既知4課題×通常再帰要約／追記／明示的状態更新の固定12条件を14:21:42 JSTに開始した。14:23:41 JSTの保存運用記録は0/12・最初の要求fileあり。途中成否・usage・生成内容は未読で、成果・新規性は未確定。実験はバックグラウンドで有限に継続し、通常メッセージでは停止せず、明示停止に従う。モデルは本日23:15まで、結果・原稿は23:59締切。[P144開始記録と固定条件](docs/experiments/P144_execution_start_20261028.md)。
+日本語構成図は**全4案完成・採用待ち**です。[比較一覧PNG](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png) ／ [案1：二つの実験](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_01_two_studies.png) ／ [案2：要約3方式](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_02_summary_comparison.png) ／ [案3：実行と評価の境界](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_03_execution_boundary.png) ／ [案4：1段向け](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_04_single_column.png)。各案のSVG・PDFもZIPに同梱し、本文図は選択前のため既存図を維持しています。
+
+P145は **2026-10-29 01:40 JST開始**、保存入力12条件による出力形式の局所検証です。稼働確認は **01:42 JST時点**の観測であり、最終結果や全課題の成功・費用削減を示すものではありません。この途中結果は原稿に入れていません。[固定条件](https://github.com/sophiria1225/AI-/blob/6d82a69541767721b3077bd1e831fb8c44b60a89/docs/experiments/P145_update_transport_20261029.md) ／ [PR #578](https://github.com/sophiria1225/AI-/pull/578)。
+
+以下は過去の日付の開始・停止・結果記録です。「実行中」「本日」「最新」は各記録を作成した当時を指し、現在も稼働しているという意味ではありません。
+
+2026-10-28の実行開始時点の記録：利用者の明示的な再開依頼に従い、電源断前に未実行だった10条件をP144R1として継続する背景処理を16:00:18 JSTに起動した。16:03:58 JSTにモデル生成中であることを確認し、その時点では新規分 0/10条件を評価完了、BOC_P144R1_01_THRESHOLD_DELTA_UPDATE が処理中。停止前に実行を終えた2条件は再生成せず、評価待ちだった1条件を保存済みの状態から1回だけ公式評価した。途中の成否・費用による条件変更は行っていない。既知4課題・MiniMax-M3 IQ4_XS・seed257/world42・元の固定科学条件を継承する。新しいserver sessionでの継続を区別し、開始は改善・新規性の証明ではない。モデル期限は本日23:15、結果処理23:59。通常メッセージでは背景実行を止めず、明示停止に従う。[再開時点の記録](docs/experiments/P144R1_execution_start_20261028.md)。
+
+[原稿v03 PDF](papers/202610_letter/harness_efficiency_20261028_v03/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/harness_efficiency_20261028_v03/source_bundle.zip)。原稿v03は閉鎖済みの実測を扱い、P144/P144R1の途中結果を含まない。以下の開始・停止記載は各過去時点の記録であり、再開時点の詳細はその記録を参照する。
+
+2026-10-28の実行開始時点の記録：ユーザーの再開・原稿作成依頼に従い、P144の既知4課題×通常再帰要約／追記／明示的状態更新の固定12条件を14:21:42 JSTに開始した。14:23:41 JSTの保存運用記録は0/12・最初の要求fileあり。途中成否・usage・生成内容は未読で、成果・新規性は未確定。実験はバックグラウンドで有限に継続し、通常メッセージでは停止せず、明示停止に従う。モデルは本日23:15まで、結果・原稿は23:59締切。[P144開始記録と固定条件](docs/experiments/P144_execution_start_20261028.md)。
 
 [原稿v03 PDF](papers/202610_letter/harness_efficiency_20261028_v03/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/harness_efficiency_20261028_v03/source_bundle.zip)／[実測根拠](papers/202610_letter/harness_efficiency_20261028_v03/EVIDENCE.md)。閉鎖済みの通常ハーネス制御の実測を扱う校正稿で、P144結果を含まない。著者情報は仮欄、投稿は未実施。旧v01/v02は保持する。
 
