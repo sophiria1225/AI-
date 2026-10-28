@@ -1,10 +1,10 @@
 # AIハーネス研究
 
-2026-10-29版の原稿 **v06**：Wordを、電子情報通信学会の公式「和文論文誌D・レター」テンプレートから作り直しました。公式の本文・見出しスタイルと2段組を使用しています。閉鎖済みの実測値と12件の正式出版文献を保持し、進行中の実験結果は加えていません。著者・所属は未設定で、投稿はまだ行っていません。
+2026-10-29版の原稿 **v07**：あらましを115字で「何を行い、何ができたか」を述べる文章へ改稿し、図1を日本語で描き直しました。履歴を短くして入力する制御と、作業完了を確認して次の生成を止める制御を、別々の実験として示します。Wordは電子情報通信学会・和文論文誌Dレターの公式テンプレートを継承しています。著者・所属は未設定、投稿は未実施です。
 
-[公式Dレター書式のWord（.docx）](papers/202610_letter/harness_efficiency_20261029_v06/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v06/manuscript.pdf) ／ [原稿・再生成コード・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v06/source_bundle.zip) ／ [取得元・書式・検証内容](papers/202610_letter/harness_efficiency_20261029_v06/FORMAT.md)。
+[Word原稿](papers/202610_letter/harness_efficiency_20261029_v07/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v07/manuscript.pdf) ／ [日本語の図1 PNG](papers/202610_letter/harness_efficiency_20261029_v07/figures/control_points.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v07/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v07/README.md)。原稿の実測値と12件の正式出版文献はv06から保持し、追加実験の結果はこの書式・図の改稿へ混ぜていません。
 
-日本語構成図は**全4案完成・採用待ち**です。[比較一覧PNG](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png) ／ [案1：二つの実験](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_01_two_studies.png) ／ [案2：要約3方式](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_02_summary_comparison.png) ／ [案3：実行と評価の境界](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_03_execution_boundary.png) ／ [案4：1段向け](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_04_single_column.png)。各案のSVG・PDFもZIPに同梱し、本文図は選択前のため既存図を維持しています。
+旧構成図4案は比較用に保存しています。[旧4案一覧](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)。v07の図1は今回の修正要望に基づく新しい図であり、旧4案のいずれかをユーザーが選んだ扱いにはしていません。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 
