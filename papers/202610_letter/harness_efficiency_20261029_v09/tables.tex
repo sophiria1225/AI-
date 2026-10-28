@@ -1,0 +1,38 @@
+% Single-column tables; scientific values unchanged from v08.
+\newcommand{\SummaryResultsTable}{%
+\begin{table}[!ht]
+\caption{実験Aの課題別総トークン数}
+\ecaption{Total tokens by task in study A.}
+\label{tab:summary}
+\centering\fontsize{7}{9}\selectfont
+\begin{tabular*}{65mm}{@{\extracolsep{\fill}}lrrr@{}}\hline
+課題 & Single & Separate & Inline\\\hline
+写真操作 & 139,871 & 139,871 & 129,374\\
+精算 & 211,110 & 211,110 & 211,110\\
+返金 & 102,087 & 102,087 & 102,087\\
+CSV処理 & 440,461 & 332,588 & 394,351\\\hline
+合計 & 893,529 & 785,656 & 836,922\\\hline
+\end{tabular*}
+\par\smallskip\begin{minipage}{65mm}\fontsize{7}{9}\selectfont
+各方式は4課題すべてで成功した．全12実行でトークン使用量の欠測はなかった．
+\end{minipage}
+\end{table}}
+
+\newcommand{\TerminationResultsTable}{%
+\begin{table}[!ht]
+\caption{実験Bの総トークン数と呼出し回数}
+\ecaption{Total tokens and call counts in study B.}
+\label{tab:termination}
+\centering\fontsize{7}{9}\selectfont
+\begin{tabular*}{65mm}{@{\extracolsep{\fill}}llrrr@{}}\hline
+API条件 & 終了方法 & 総トークン数 & \shortstack{モデル\\呼出し数} & \shortstack{API\\要求数}\\\hline
+文書必須 & 通常継続 & 130,439 & 15 & 104\\
+文書必須 & 完了判定 & 91,116 & 13 & 100\\[2pt]
+名前参照 & 通常継続 & 151,664 & 14 & 103\\
+名前参照 & 完了判定 & 112,233 & 12 & 99\\\hline
+\end{tabular*}
+\par\smallskip\begin{minipage}{65mm}\fontsize{7}{9}\selectfont
+同じ写真課題を用いた全4実行が成功した．トークン使用量の欠測はなかった．\par
+文書必須：API文書の取得が必須．名前参照：公開API名からのアクセスを許可．完了判定：API実行記録に基づく終了制御．
+\end{minipage}
+\end{table}}
