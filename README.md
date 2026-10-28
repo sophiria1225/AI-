@@ -1,10 +1,12 @@
 # AIハーネス研究
 
-2026-10-29版の原稿 **v08**：「はじめに」で社会背景・技術背景と研究課題を説明し、その後に「関連研究」を独立節として設けました。図1は日本語の分かりやすさを保ちながら、履歴の保存と入力、要約の生成・検査・採用、操作実行、完了判定を示す詳細なアーキテクチャ図に更新しました。115字のあらましを維持し、Wordは電子情報通信学会・和文論文誌Dレターの公式テンプレートを継承しています。著者・所属は未設定、投稿は未実施です。
+2026-10-29版の原稿 **v09**：改訂指示書に沿って文章・図表・段組を修正しました。「API実行記録」「総トークン数」「モデル呼出し数」に用語を統一し、考察を結果の解釈から始めています。図1は独立に評価するA/Bの二つのパネル、結果図は実験別の片段図2・図3にしました。式と説明、見出しと本文のまとまり、表の改行と数値の配置も調整しています。あらましは108字。Wordは和文論文誌Dレターの公式テンプレートを継承し、著者・所属は未設定、投稿は未実施です。
 
-[Word原稿](papers/202610_letter/harness_efficiency_20261029_v08/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v08/manuscript.pdf) ／ [詳細化した図1 PNG](papers/202610_letter/harness_efficiency_20261029_v08/figures/control_points.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v08/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v08/README.md)。原稿の実測値と12件の正式出版文献はv07から保持し、追加実験の結果はこの背景・構成・図の改稿へ混ぜていません。
+[Word原稿](papers/202610_letter/harness_efficiency_20261029_v09/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v09/manuscript.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261029_v09/figures/control_points.png) ／ [図2：実験A](papers/202610_letter/harness_efficiency_20261029_v09/figures/result_summary.png) ／ [図3：実験B](papers/202610_letter/harness_efficiency_20261029_v09/figures/result_termination.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v09/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v09/README.md)。実測値・実験条件・12件の正式出版文献を保持し、P147/P148の結果はこの編集改稿へ加えていません。
 
-v07時点の[図1の2案比較](materials/20261029_fig1_redesign/README.md)と[旧構成図4案](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)も比較用に保存しています。v08は「分かりやすさを保ち、より詳しく」という要望に沿った新しい詳細図です。履歴要約と終了判断は独立した実験として示し、両者を組み合わせた効果を測った図にはしていません。
+主版であるWord校正PDFは本文・文献4ページ＋末尾英文1ページです。別組版のTeX PDFは本文・文献5ページ＋末尾英文1ページで、Word版とページ数が異なります。詳しい書式確認は[FORMAT.md](papers/202610_letter/harness_efficiency_20261029_v09/FORMAT.md)に記載しています。
+
+過去の[原稿v08](papers/202610_letter/harness_efficiency_20261029_v08/README.md)、[図1の2案比較](materials/20261029_fig1_redesign/README.md)、[旧構成図4案](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)は保持しています。v09の配布一式には現在使う3図を収録し、過去の候補は旧版から参照できます。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 

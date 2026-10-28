@@ -1,0 +1,126 @@
+{
+  "version": "v09",
+  "status": "pass",
+  "compared_with": "v08",
+  "change_scope": "Editorial wording, figure organization, table formatting and layout; no new experiment or evaluation",
+  "body_sections": [
+    "1\tはじめに",
+    "2\t関連研究",
+    "3\t制御と評価指標",
+    "4\t実験A：要約の呼出し配置",
+    "5\t実験B：API実行記録に基づく終了",
+    "6\t考察と限界",
+    "7\tむすび"
+  ],
+  "japanese_abstract_chars": 108,
+  "english_abstract_words": 42,
+  "word_tex_abstracts_synchronized": true,
+  "no_percentage_details_in_abstracts": true,
+  "editorial_instruction_checks": {
+    "L01": "Figure 1 with bilingual caption at page 2 top, followed by continuous two-column text; no body above it.",
+    "L02": "Figures 2 and 3 split into 65 mm single-column plots near studies A/B; table 2 remains with B.",
+    "L03": "Section 3.2 lead-in, native summation and first explanation share one column; independent right equation number; heading/body and short-ending checks completed.",
+    "G02": "Japanese condition labels and CSV/other-three legend; zero-based thousand-token axes; success statements in captions; no pooled A/B effect.",
+    "T01": "All four tasks and sum retained; integer values right aligned and top rule above sum; success/missing-usage note retained.",
+    "T02": "Short Japanese labels, meaningful two-line headers, vertically aligned cells, all original tokens/model/API counts; condition definitions in notes.",
+    "W01": "Title line break at meaning boundary; supplied abstract 108 Japanese characters and synchronized 42-word English; author details remain pending.",
+    "W02": "Purpose paragraph separates history-call placement, observed API-record termination, final success and total usage; social/technical background retained.",
+    "W03": "Same twelve formal references grouped by input compression, memory/long sessions and termination; explicit method names replace evaluative labels.",
+    "W04": "Defines actor/focus and Single/Separate/Inline; history adoption retains uncompressed remainder; all programs execute before completion check; A/B independent.",
+    "W05": "Defines p/Cp/Ic/Oc/Tp, all actor/focus usage including rejected/failed calls, unknown not zero, official final success and logical-token interpretation.",
+    "W06": "Preserves all model/seed/threshold/budget values; identifies output tokens vs characters and fresh-turn origin at previous opportunity closure regardless of adoption.",
+    "W07": "Preserves all twelve runs, per-task counts, adoptions and Separate/Inline comparisons including Inline higher cost.",
+    "W08": "Same initial state/model/seed/instructions/tool description/budgets per API condition; API clock and handwritten request-specific rule; time fields documented in EVIDENCE.",
+    "W09": "Preserves executed-operation prefix and thirteen DB hashes, failure of strict full request/response prefix, two model/four API difference, one-run limits.",
+    "W10": "Discussion begins with interpretation; posthoc known-development limits remain; additional failed/unknown cases point to existing supplement and EVIDENCE section.",
+    "W11": "Conclusion keeps concrete A/B results and independent scope; final phrase is not stranded.",
+    "W12": "Reader-facing terminology standardized without rewriting historical source records."
+  },
+  "unchanged_scientific_files": {
+    "results_data.json": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+    "P144R1_results_data.json": "12ae2f39e21683582f088fe2daf84f75f92e634fc6f03c603dc71bb52db3a47d",
+    "P144R1_all_conditions.csv": "610a8e4334048f5067f63945958cbe3a28067b733caa49745dda4daa4dda4531",
+    "supplemental_results.tex": "606731a758f780161cb99b7f36d94fe712d8539ed2cd4f16b6a800e3a3455577",
+    "supplemental_results.pdf": "2e544067c03525c9fee43d1b8891dba991dc4988bf02d83230f0b87d0144ffaa",
+    "references.tex": "154929c2579f2035b6223e7dfcb5e156aa66c152e2e583ca63a291089d088aef",
+    "references.bib": "7a9e82c1f429bd3a1403a1fdfb0a71d8136b599bb01bc561c15560ae429d8569",
+    "prepare_evidence.py": "8f34e2e308cf100a2c753d0f7da8e4fcd97706cc5f40b36069bca514aa4aa7c1",
+    "evidence_sources.json": "777c2f2dd76a95bfcbda0005e5721b78364d20f65d2677bf43ad5df9ece1efcc"
+  },
+  "scientific_table_numeric_rows": {
+    "A": [
+      [
+        139871,
+        139871,
+        129374
+      ],
+      [
+        211110,
+        211110,
+        211110
+      ],
+      [
+        102087,
+        102087,
+        102087
+      ],
+      [
+        440461,
+        332588,
+        394351
+      ],
+      [
+        893529,
+        785656,
+        836922
+      ]
+    ],
+    "B": [
+      [
+        130439,
+        15,
+        104
+      ],
+      [
+        91116,
+        13,
+        100
+      ],
+      [
+        151664,
+        14,
+        103
+      ],
+      [
+        112233,
+        12,
+        99
+      ]
+    ]
+  },
+  "all_table_numeric_values_match_v08": true,
+  "references_unchanged": 12,
+  "scientific_scope_and_negative_limits_preserved": true,
+  "new_experiment_results_added": false,
+  "P147_P148_results_in_main": false,
+  "implementation_checks": {
+    "fresh_turn_origin": "Previous summary opportunity closure including rejected/invalid; task start for initial opportunity.",
+    "focus_4096_unit": "Output tokens; independent from 8192 summary characters.",
+    "actor_history": "Accepted summary plus uncompressed remaining history; two recent closed turns retained verbatim at summary creation.",
+    "clock": "Environment API phone.get_current_date_and_time date/time fields.",
+    "time_fields": "reports/P66_completion_audit.json rows wall_seconds/full_wall_seconds; controller.wall_seconds only hash/check subtotal.",
+    "semantic_source_peer_receipt_sha256": "0ca9609fb204328b97c3bb9b26e7868155e97a5a34aee47f839d5f5ef36ef60d"
+  },
+  "source_sha256": {
+    "main.tex": "cffeb8b9b6df2cb43305256c035f915538156234b973676d48024fb94a82b5c2",
+    "word_source.tex": "cffeb8b9b6df2cb43305256c035f915538156234b973676d48024fb94a82b5c2",
+    "abstracts.tex": "2af65631074c87a659bdfcba83cbc65f5d910d13ae12bdbc52da6721a45eb1a6",
+    "word_content.json": "46f528a3ce3c255dce5f4f306adad4911ee7050eda22ca6efd61da2a265a5440",
+    "tables.tex": "687209577aa5aeb595d1184edba2e83b29862e0a88a1bd1ecc3eb58ee93f6a12",
+    "build_word.py": "b0bc74264fa92216ba4744d4955bce92cb7032b3a4bf8a4f94ff35255866005e",
+    "reference_update.json": "f5b318522a75d86c71d42f73e193703c31422cc98dc3c42a4f9a35b8820e589b",
+    "figures/control_points.pdf": "f319b314bb45d51b3b714b4917b29090e240452546308b60b9baa13cee187771",
+    "figures/result_summary.pdf": "25fa15a1b7e5b034e0e12def5ed8d83745fd00d4141318bab7b6309205adac2c",
+    "figures/result_termination.pdf": "d027d90f4976d101a3736500d8fe6106fd5e2660e60e667ab3c5d7f6df517d38"
+  }
+}
