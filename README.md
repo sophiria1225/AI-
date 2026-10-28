@@ -4,7 +4,7 @@
 
 [Word原稿](papers/202610_letter/harness_efficiency_20261029_v07/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v07/manuscript.pdf) ／ [日本語の図1 PNG](papers/202610_letter/harness_efficiency_20261029_v07/figures/control_points.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v07/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v07/README.md)。原稿の実測値と12件の正式出版文献はv06から保持し、追加実験の結果はこの書式・図の改稿へ混ぜていません。
 
-旧構成図4案は比較用に保存しています。[旧4案一覧](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)。v07の図1は今回の修正要望に基づく新しい図であり、旧4案のいずれかをユーザーが選んだ扱いにはしていません。
+今回の[図1の2案比較](materials/20261029_fig1_redesign/README.md)も公開しています。旧構成図4案は比較用に保存しています。[旧4案一覧](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)。v07の図1は今回の修正要望に基づく新しい図であり、旧4案のいずれかをユーザーが選んだ扱いにはしていません。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 
