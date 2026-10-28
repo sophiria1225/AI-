@@ -1,0 +1,98 @@
+\documentclass[letter]{ieicej}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[fleqn]{amsmath}
+\usepackage{newtxtext}
+\usepackage[varg]{newtxmath}
+\usepackage{url}
+\typeofletter{研究速報}
+\field{}
+\jtitle{LLMエージェントの履歴要約と終了制御による実行費用の評価}
+\etitle{Evaluating Execution Cost of History Summarization and Termination Control for LLM Agents}
+\authorlist{\authorentry{著者未設定}{Author details pending}{}{}\MembershipNumber{}}
+\jalcdoi{???????????}
+\begin{document}
+\maketitle
+\input{abstracts.tex}
+
+\section{はじめに}
+日常業務のデータ整理や事務処理の負担を軽減するため，大規模言語モデル（LLM）による作業支援が研究されている．文章の回答生成に加え，外部アプリケーションを操作する複数手順の実行も対象となる．例えば写真の整理や精算では，対象の検索，状態の変更，結果の確認を連続して行う必要がある．推論と行動を繰り返すReAct\cite{yao2023react}や，コードを行動として実行するCodeAct\cite{wang2024codeact}は，このような対話的処理を支える技術である．
+
+一方，実行が長くなると，過去の操作と観測を次の生成へ繰り返し入力する費用が増える．また，作業が終わった後も確認や生成を続ければ，成果を増やさずに資源を消費し得る．履歴を短くするだけでは必要な情報を失うおそれがあり，早く止めるだけでは未完了となり得るため，最終成功と実行全体の費用を同時に調べる必要がある．
+
+本稿では，モデルを再学習せずに実行を管理するハーネスの二つの作用点を評価する．履歴要約の呼出し配置と，実行中に観測可能なAPI結果の記録（以下，公開記録）に基づく終了判断を別々に比較し，要約生成や失敗の費用も含めて，既知課題で成功を保つ削減がどこまで得られるかを明らかにする．
+
+\section{関連研究}
+入力圧縮では，長文中の情報の位置が性能に影響すること\cite{liu2024lost}を背景に，LLMLingua\cite{jiang2023llmlingua}は予算制御とトークン選別，LLMLingua-2\cite{pan2024llmlingua2}は蒸留データによるトークン分類，LongLLMLingua\cite{jiang2024longllmlingua}は長文の重要情報を残す圧縮を扱う．本稿では，要約をいつ，どの呼出しで作るかを，課題全体の成功と費用を測る比較軸とする．
+
+長期実行では，ACON\cite{kang2026acon}は観測・履歴の圧縮方針を最適化し，TokenPilot\cite{xu2026tokenpilot}は入力の圧縮とキャッシュ継続性を扱う．Generative Agents\cite{park2023generative}は経験の記憶・抽象化・検索，Reflexion\cite{shinn2023reflexion}は言語的フィードバックの後続試行への利用を扱う．本稿では専用要約の費用も含め，通常の反復要約を強い対照に呼出し配置の影響を検証する．
+
+終了制御では，Runaway\cite{lu2025runaway}が終了指示と外部の完了検証を検討している．本稿では公開記録から得られる完了の根拠を公開証拠と呼び，既知の要求文型に対する検査を対象とする．通常継続に対する最終成功，API要求，論理入出力の差を評価する．
+
+\section{制御と評価指標}
+\subsection{ハーネスの二つの作用点}
+図\ref{fig:architecture}に制御の構成を示す．実験Aでは完全履歴をホストに保存し，行動生成を担うactorには未要約時の履歴，採用後には要約と残る直近履歴を提示する．別呼出し反復は専用のfocus呼出しで要約を更新し，同時反復はactorが行動と要約候補を同じ応答に出す．候補の検査と採用はホストで行う．
+
+実験Bでは応答内の全プログラムの実行後，次の生成前にAPI記録から完了の根拠を検査する．揃えば通常の完了APIを1回送り，未知・未対応・矛盾があれば継続する．完了はモデルの自己申告でなく公開記録で判定し，Aとの組合せ効果は評価しない．
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=130mm]{figures/control_points.pdf}
+\caption{共通実行経路と独立に評価する二つの制御点．Aは専用要約の例，Bは応答内の全操作実行後の完了判定を示す．}
+\ecaption{Shared execution path and independently evaluated controls: dedicated summarization (A) and completion checks after executing a response (B).}
+\label{fig:architecture}
+\end{figure*}
+
+\subsection{全呼出しを含む費用と最終成功}
+条件$p$のモデル呼出し集合を$\mathcal C_p$とし，実際の入力$I_c$と出力$O_c$から
+\begin{equation}
+ T_p=\sum_{c\in\mathcal C_p}(I_c+O_c)
+ \label{eq:cost}
+\end{equation}
+を求める．actorとfocus，不採用要約，失敗時の既知使用量も含め，cached inputを控除しない．論理トークン数は金銭課金や実行時間そのものではない\cite{xu2026tokenpilot}．圧縮役を含む費用評価はACON\cite{kang2026acon}にも存在し，会計方法自体を新規技術とはしない．局所的な入力削減と，生成全体の費用削減も区別する．
+
+品質は，課題終了後の状態に対するAppWorld\cite{trivedi2024appworld}の公式評価器の成功・失敗で測る．評価の正解や詳細を実行中のモデルへ返さない．成功数の一致だけでなく，同じ課題の成功を失っていないかを確認する．不明使用量がある場合は既知小計と件数を残し，0へ補完しない．異なる実験の費用や課題数は合算しない．
+
+\section{実験A：要約の呼出し配置}
+\subsection{条件}
+写真操作，精算，返金，CSV処理の既知4課題に対し，単発別要約（Single），別呼出し反復（Separate），同時反復（Inline）を各1回，計12条件実行した．全条件は同じMiniMax-M3（GGUF，IQ4\_XS），llama.cpp b11669，文脈長65,536を用いた．model seedの基点は57，world seedは42で，呼出しの役割・順序に従いseedを増分した．
+
+要約機会の入力長閾値は16,384トークン，直近2ターンを保持し，反復では新規完了ターン3以上を要求する．単発の最大機会数は1，反復は3である．要約は合計8,192文字以下とし，次のactor入力全体が短くなる場合に採用する．単発と別呼出し反復はfocus出力上限4,096で，focus費用も式\eqref{eq:cost}へ含める．
+
+各条件の上限は80モデル要求，450,000トークン，作業1,800秒で，環境APIは写真160，他3課題80要求とした．actor温度1.0，focus温度0.7，並列実行数1，KV cache q8\_0，計算機はApple M3 Ultra・メモリ256 GiBである．実装と全条件の記録を公開する\footnote{\url{https://github.com/sophiria1225/AI-}}．
+
+\subsection{全4課題の結果}
+表\ref{tab:summary}に全12条件の費用を示す．全方式が4/4成功し，使用量不明は0だった．SeparateはSingleより107,873トークン（12.07\%）少なかった．この差は全てCSVの440,461から332,588への減少であり，他3課題は同値である．要約採用回数も，CSVはSingleの1回に対して両反復方式が2回，写真は全方式1回，精算・返金は0回だった．したがって，全4課題で一様に改善した結果ではない．
+
+InlineはSingleより6.34\%少なかったが，強いSeparate対照より51,266トークン（6.53\%）多かった．写真だけではInlineが10,497少ない一方，CSVではSeparateより61,763多く，この増加が上回った．専用要約呼出しを無くすことと，全仕事を安くすることは同義ではない．図\ref{fig:results}（a）はCSV以外の3課題とCSVを分けてこの内訳を示す．
+
+\input{tables.tex}
+
+\section{実験B：公開証拠に基づく終了}
+\subsection{条件}
+同じ既知写真課題について，API文書取得を必須とするinterfaceと，公開API名からのアクセスを許すinterfaceの2条件を比較した．各interfaceで，既に閉鎖した通常継続を対照に，同じ初期状態・モデル・seed・案内・予算から新たに終了制御を各1回実行した．seedの基点は42であり，実験Aとは別の履歴・設定である．同じMiniMax-M3 IQ4\_XSとllama.cpp b11669を用い，上限は80要求，450,000トークン，作業1,800秒，API160要求である．
+
+制御は既知1要求文型の手書き検査である．完全な元集合，移動前の日時，公開時計，対象全件の移動先，名前保持などの公開根拠を検査する．支持が揃った最初の生成境界で，通常の完了通知を1回だけ送る．未知作用や不確定な集合を完了扱いにせず，未来の応答・正解を利用しない．判定，保存，通知を含む実行時間と，通知APIを計上する．
+
+\subsection{成功を保った局所的な削減}
+表\ref{tab:termination}と図\ref{fig:results}（b）に全4観測を示す．文書取得必須では130,439から91,116へ30.15\%，公開名アクセスでは151,664から112,233へ26.00\%減った．両対照・両制御とも公式成功，使用量不明0で，各条件2生成・4API要求が少なかった．完了通知は省かず，対象の移動後に続いていた4回の確認APIと，それに伴う生成を実行しなかった．
+
+実行した公開API等の前半記録は対照と一致し，最終13データベースのhashも全て一致した．ただし，要求・モデル応答全文のstrict prefix一致は不成立であり，その事前基準を変更しない．手書きの既知要求文型による各1回の比較であって，平均因果効果や汎用の終了保証ではない．
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=130mm]{figures/separate_studies.pdf}
+\caption{別々の実験における費用．（a）全4課題は各方式4/4成功，（b）同じ写真課題の全4観測は成功．二つの縦軸と集計範囲は異なる．}
+\ecaption{Costs in separate studies. All conditions succeed; the axes and aggregation scopes differ.}
+\label{fig:results}
+\end{figure*}
+
+\section{考察と限界}
+後続の表示・状態更新方式では，通常対照への追加改善は確立していない．正例へ合算せず，未達・使用量不明を含む条件と不採用理由を公開記録・補足資料に残す．
+
+本稿は閉鎖済み開発実験から，正例と直接対照を事後に整理した評価である．既知課題，単一モデル量子化，少数のseedと反復，手書き完了規則に限定され，未見課題への独立確認ではない．12.07\%と26--30\%を同じ母集団の平均にせず，一般的な品質維持，統計的非劣性，新しい圧縮・終了原理の成立は主張しない．今後は具体的な候補と対照を固定して，適用範囲と失敗を含む全件を別に検証する必要がある．
+
+\section{むすび}
+履歴要約の呼出し配置と公開証拠による終了制御を，別々の既知条件で評価した．成功を保つ削減と通常対照より費用が大きい方式を示し，専用呼出し数だけでなく最終成功と全費用を合わせて調べる必要性を確認した．
+
+\input{references.tex}
+\end{document}

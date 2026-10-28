@@ -1,0 +1,24 @@
+{
+  "variant": "detailed_architecture",
+  "width_mm": 130,
+  "height_mm": 85,
+  "minimum_font_pt": 7.0,
+  "line_width_pt": 0.65,
+  "text_clipping": [],
+  "text_overlaps": [],
+  "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+  "font_name": "Hiragino Sans",
+  "vector_text_representation": "outlined glyph paths; no external font dependency",
+  "outputs": {
+    "control_points.png": "fcba9399f6e7ea43c147168d02d4ff5088f007fcf76b562c251ec745c897d8e8",
+    "control_points.svg": "f35b06c912ce9e034ad5bd0a67c3d677da8d45d29f5856ac06a3a383caf07c83",
+    "control_points.pdf": "5097ae55ba8a8f747ee461a13ca2ffaa295fcedb72310c359ae7ec8621c9fdc8",
+    "control_points.eps": "c597b93ffe0d58aa09c6c771b9e2497c6f362a34fe9a6accff1852868780cf8a"
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "controls_A_B_independently_evaluated": true,
+  "diagram_A_scope": "Dedicated summary example; Inline co-generates action and summary.",
+  "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+  "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+  "evaluator_scope": "After the task run only; no answer flows into the running model."
+}
