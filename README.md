@@ -6,7 +6,9 @@
 
 日本語構成図は**全4案完成・採用待ち**です。[比較一覧PNG](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png) ／ [案1：二つの実験](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_01_two_studies.png) ／ [案2：要約3方式](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_02_summary_comparison.png) ／ [案3：実行と評価の境界](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_03_execution_boundary.png) ／ [案4：1段向け](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/candidate_04_single_column.png)。各案のSVG・PDFもZIPに同梱し、本文図は選択前のため既存図を維持しています。
 
-P145は **2026-10-29 01:40 JST開始**、保存入力12条件による出力形式の局所検証です。稼働確認は **01:42 JST時点**の観測であり、最終結果や全課題の成功・費用削減を示すものではありません。この途中結果は原稿に入れていません。[固定条件](https://github.com/sophiria1225/AI-/blob/6d82a69541767721b3077bd1e831fb8c44b60a89/docs/experiments/P145_update_transport_20261029.md) ／ [PR #578](https://github.com/sophiria1225/AI-/pull/578)。
+P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
+
+P147は **02:17:38 JSTに開始**しました。**02:18:07.726 JST時点**では保存入力3件の最初の1件を処理中（1送信・0/3完了、全4課題8試行は未開始）。3件の固定条件を全て満たしたときだけ通常反復要約対照付きの8試行へ進みます。これは時刻付きの開始観測で、最終結果や現在の稼働状態を示すものではありません。[P147開始記録](docs/experiments/P147_execution_start_20261029.md) ／ [固定仕様](docs/experiments/P147_indexed_update_20261029.md)。原稿v05には未閉鎖結果を混ぜていません。
 
 以下は過去の日付の開始・停止・結果記録です。「実行中」「本日」「最新」は各記録を作成した当時を指し、現在も稼働しているという意味ではありません。
 

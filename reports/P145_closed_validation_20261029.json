@@ -1,0 +1,85 @@
+{
+  "phase": "P145_closed_validation",
+  "status": "closed_independently_verified",
+  "source_peer_receipt_sha256": "667565d8fb8e22482e7b4406065e6e5966a1ad6ae81b965a5d06a107681d16df",
+  "source_report_sha256": "375d2177ec50c9f7535d7e4f63784a0c2ef5b281fcb58dd5e6434efe71d158c5",
+  "checked_at_utc": "2026-10-28T17:08:18.438076+00:00",
+  "publication_prepared_at_utc": "2026-10-28T17:17:07.231807+00:00",
+  "pipeline_commit": "b762510151fe17ae59caf7e0b24825da8b8d35de",
+  "plan_sha256": "13cec1a94f856c127f3b15560f6728d42f0487df6b6d3c7cf1ceb99aea8d5d61",
+  "independent_scalar_arithmetic": {
+    "input_tokens": 129944,
+    "output_tokens": 17369,
+    "known_logical_tokens": 147313,
+    "cached_input_tokens": 100131,
+    "known_calls": 12
+  },
+  "fixed_conditions": 12,
+  "saved_input_cases": 3,
+  "transport_factorial_arms": 4,
+  "valid_patches": 0,
+  "unknown_usage_calls": 0,
+  "parser_rejection_counts": {
+    "update_finish_stop_required": 1,
+    "duplicate_update_index": 6,
+    "invalid_update_operations": 5
+  },
+  "per_arm": {
+    "native_unlimited": {
+      "calls": 3,
+      "known_logical_tokens": 38557,
+      "valid_patches": 0
+    },
+    "schema_unlimited": {
+      "calls": 3,
+      "known_logical_tokens": 37100,
+      "valid_patches": 0
+    },
+    "native_bounded": {
+      "calls": 3,
+      "known_logical_tokens": 35200,
+      "valid_patches": 0
+    },
+    "schema_bounded": {
+      "calls": 3,
+      "known_logical_tokens": 36456,
+      "valid_patches": 0
+    }
+  },
+  "all_fixed_schedule_12_exact_once": true,
+  "all_requests_match_frozen_saved_payload_plus_only_preregistered_factors": true,
+  "native_count_request_digest_and_raw_terminal_usage_match": true,
+  "raw_response_reparsed_and_equal_saved_parsed_response": true,
+  "public_source_bindings_unchanged": 3813,
+  "private_source_bindings_unchanged": 20,
+  "candidate_for_whole_task": "schema_bounded",
+  "candidate_patch_valid_count": 0,
+  "mechanism_preflight_passed": false,
+  "P146_eligible": false,
+  "P146_full_task_pipeline_started": false,
+  "task_success_evaluated": false,
+  "whole_task_savings_established": false,
+  "novelty_established": false,
+  "pipeline_started_at": "2026-10-28T16:40:08.951277+00:00",
+  "pipeline_finished_at": "2026-10-28T17:03:36.261223+00:00",
+  "batch_finished_at": "2026-10-28T17:03:35.504704+00:00",
+  "server_stopped": true,
+  "owned_processes_absent": true,
+  "server_exit_code": 0,
+  "supervisor_exit_code": 0,
+  "source_before_after_preserved": true,
+  "new_model_generations_by_review": 0,
+  "new_native_tokenizer_calls_by_review": 0,
+  "new_task_API_calls_by_review": 0,
+  "new_evaluator_calls_by_review": 0,
+  "saved_programs_executed_by_review": 0,
+  "private_generated_text_disclosed": false,
+  "old_artifacts_modified": false,
+  "scientific_limits": [
+    "Saved second-focus inputs were selected after prior failures, not independent unseen tasks.",
+    "No task actions or official task evaluators were run by P145.",
+    "All twelve terminal usages are known; invalid output remains charged.",
+    "Schema structure compliance alone did not satisfy the unchanged complete/disjoint-index parser.",
+    "Native counting of hypothetical materialized actor inputs was not reached because every patch was invalid."
+  ]
+}
