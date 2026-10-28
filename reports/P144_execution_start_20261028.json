@@ -1,0 +1,151 @@
+{
+  "phase": "P144",
+  "status_at_observation": "running",
+  "wrapper_started_at": "2026-10-28T05:21:42.677776+00:00",
+  "wrapper_pid": 27362,
+  "observed_at": "2026-10-28T14:23:41.213870+09:00",
+  "observation_is_not_current_live_status": true,
+  "source_head": "6868405b1764104fb75ad77d55cf5791a9da08c6",
+  "source_PR": 572,
+  "source_merge": "36330a3d4301e6bed6b46c0c18bda8ec4a2cf6ee",
+  "plan_sha256": "890d43434cc4125dd16fa610e4f5c8fb052306c940aaaa0940fb983942ca595f",
+  "fixed_source_files": 1861,
+  "activation_bound_files_including_plan": 1862,
+  "planned_conditions": 12,
+  "completed_conditions_at_observation": 0,
+  "active_at_observation": "BOC_P144_01_THRESHOLD_RECURSIVE",
+  "first_actor_request_file_exists": true,
+  "first_actor_response_file_exists": false,
+  "file_existence_is_not_task_success": true,
+  "request_response_content_inspected": false,
+  "separate_slot_observation": {
+    "observed_at_jst": "2026-10-28T14:23:57+09:00",
+    "slot": 0,
+    "processing": true,
+    "authority": "reported by root; separate time from the saved file-existence observation",
+    "requeried_by_publication_author": false
+  },
+  "known_task_count": 4,
+  "model_seed": 257,
+  "world_seed": 42,
+  "modes": [
+    "threshold_recursive",
+    "threshold_delta_object",
+    "threshold_delta_update"
+  ],
+  "execution_order_by_task": [
+    [
+      "threshold_recursive",
+      "threshold_delta_object",
+      "threshold_delta_update"
+    ],
+    [
+      "threshold_delta_object",
+      "threshold_delta_update",
+      "threshold_recursive"
+    ],
+    [
+      "threshold_delta_update",
+      "threshold_recursive",
+      "threshold_delta_object"
+    ],
+    [
+      "threshold_recursive",
+      "threshold_delta_update",
+      "threshold_delta_object"
+    ]
+  ],
+  "execution_order_randomized": false,
+  "host_and_order_effects_excluded": false,
+  "seed_selection": "Fixed next increment after57/157; no outcome-driven seed search; known tasks remain development scope.",
+  "preflight": {
+    "status": "complete",
+    "input_count_requests": 12,
+    "summary_input_count_requests": 6,
+    "representation_actor_input_count_requests": 3,
+    "failed_input_count_requests": 0,
+    "model_generations": 0,
+    "environment_api_requests": 0,
+    "evaluator_calls": 0,
+    "reserved_scenarios_read": 0,
+    "all_twelve_inputs_checked": true
+  },
+  "native_preflight_count": 21,
+  "activation_complete_before_generation": true,
+  "activation_time": "2026-10-28T05:23:32.543896+00:00",
+  "preflight_sha256": "9c0401f85e7070c1a6c52c208cc2d3fe4e42a5ac29ec0051644370ed60c9ef5e",
+  "activation_sha256": "a7d00d341687d6a4791cae2b9cc157633e734c17d542811745d35332aa4f1914",
+  "source_local_tests": {
+    "passed": 3328,
+    "seconds": 127.161,
+    "receipt_sha256": "49f252dc1c674c1958018e407c590e9b2e779e22cde0e141c56fde7255c1e371",
+    "authority": "root source-validation receipt; no full-suite rerun for this publication",
+    "earlier_failures_preserved": true,
+    "historical_clock_scope": "Six named synthetic P142/P143 tests only, preserving original IDs/results/bound bytes; not model runtime time."
+  },
+  "CI": [
+    {
+      "run_id": 40637057356,
+      "event": "pull_request",
+      "head_sha": "6868405b1764104fb75ad77d55cf5791a9da08c6",
+      "workflow_path": ".github/workflows/checks.yml",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "job_id": 122646337584,
+      "job_name": "accounting-and-syntax",
+      "step_count": 13,
+      "all_steps_success": true
+    },
+    {
+      "run_id": 40636990449,
+      "event": "push",
+      "head_sha": "6868405b1764104fb75ad77d55cf5791a9da08c6",
+      "workflow_path": ".github/workflows/checks.yml",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "job_id": 122646123214,
+      "job_name": "accounting-and-syntax",
+      "step_count": 13,
+      "all_steps_success": true
+    }
+  ],
+  "CI_root_receipt_sha256": "0d89b1d25223c20d7e5b806b1d59cdc65cda39e0031bc8aee0e2aca288db3c2b",
+  "original_start_marker_sha256": "f15a0e7296731e6272296c291102d5d21f2563712cf75a44999284d692740044",
+  "wrapper_sha256": "6bd2b2aee23060eea5a31f33ff227d4b20fff84f5e742d6e73842aa4f248b39c",
+  "original_operational_JSONL_first_line_sha256": "b4d066825acff8616a3ed329c1bd12557a8d4b6e9839d243e8e297b07c17cf68",
+  "operational_line_hash_excludes_newline": true,
+  "start_reserved_ledgers": 212,
+  "start_reserved_bindings": 2836,
+  "start_reserved_snapshot_sha256": "fd5c186f74f08c712486b80cabc9494f5e295e299d965608ba66340268fb06e6",
+  "registry_sha256": "ee506354ab8c838951aabc1978404bd220492a885718ef63a2d42c3bed0dcf81",
+  "original_start_snapshot_replaced": false,
+  "scientific_adoption_evaluated": false,
+  "development_eligibility_evaluated": true,
+  "development_gate_met": null,
+  "prior_results_pooled": false,
+  "reserved_confirmation_replaced": false,
+  "live_outcomes_usage_or_generated_content_inspected_by_publication_author": false,
+  "root_reported_scientific_outcomes_inspected": false,
+  "root_noninspection_independently_verified": false,
+  "new_method_success_claim": false,
+  "new_method_novelty_established": false,
+  "independent_replication_claim": false,
+  "root_reported_reserved_scenarios_read": 0,
+  "latest_launch_jst": "2026-10-28T16:15:00+09:00",
+  "model_absolute_deadline_jst": "2026-10-28T23:15:00+09:00",
+  "report_and_manuscript_deadline_jst": "2026-10-28T23:59:00+09:00",
+  "background_execution": true,
+  "ordinary_chat_message_cancels_execution": false,
+  "explicit_stop_honored": true,
+  "latest_user_instruction": "Resume finite experiments through today and prepare the manuscript in parallel; older stop/manuscript-owner notices are historical.",
+  "paper": {
+    "path": "papers/202610_letter/harness_efficiency_20261028_v03/manuscript.pdf",
+    "sha256": "297d89ea9562444468ca7e1c9128e6ea51a753df10da98a2ab135cbb1e34c498",
+    "PR": 573,
+    "merged_head": "2f99715e794b27a7d60a7f197e5810a6880e4a4a",
+    "uses_P144_results": false,
+    "submission_performed": false
+  },
+  "additional_model_API_native_evaluation_calls_for_publication": 0,
+  "scope": "Start and finite-plan publication only. Completed preflight/activation and immutable public sources were inspected; no cohort row, worker usage, request/response body or reserved task data was read."
+}

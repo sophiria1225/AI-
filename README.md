@@ -1,5 +1,11 @@
 # AIハーネス研究
 
+2026-10-28 最新：ユーザーの再開・原稿作成依頼に従い、P144の既知4課題×通常再帰要約／追記／明示的状態更新の固定12条件を14:21:42 JSTに開始した。14:23:41 JSTの保存運用記録は0/12・最初の要求fileあり。途中成否・usage・生成内容は未読で、成果・新規性は未確定。実験はバックグラウンドで有限に継続し、通常メッセージでは停止せず、明示停止に従う。モデルは本日23:15まで、結果・原稿は23:59締切。[P144開始記録と固定条件](docs/experiments/P144_execution_start_20261028.md)。
+
+[原稿v03 PDF](papers/202610_letter/harness_efficiency_20261028_v03/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/harness_efficiency_20261028_v03/source_bundle.zip)／[実測根拠](papers/202610_letter/harness_efficiency_20261028_v03/EVIDENCE.md)。閉鎖済みの通常ハーネス制御の実測を扱う校正稿で、P144結果を含まない。著者情報は仮欄、投稿は未実施。旧v01/v02は保持する。
+
+以下の「P141で実験停止」「原稿はユーザー担当」等は各過去時点の記録である。現在は本日の再開・原稿作成依頼を優先し、古い停止・分担を現在の指示へ読み替えない。
+
 2026-10-28：ユーザーの最終指示に従い、モデル実験はP141を終了点とした。和文Dレターの初稿を作成した（本文・文献4頁＋末尾英文1頁）。[初稿PDF](papers/202610_letter/exposure_timing_20261028/manuscript.pdf)／[TeX・図一式ZIP](papers/202610_letter/exposure_timing_20261028/source_bundle.zip)／[編集用TeX](papers/202610_letter/exposure_timing_20261028/main.tex)／[実測根拠と主張範囲](papers/202610_letter/exposure_timing_20261028/EVIDENCE.md)／[書式上の確認事項](papers/202610_letter/exposure_timing_20261028/FORMAT.md)。著者情報は仮欄、現公式クラス最新版との照合は未了で、投稿は行っていない。以下は各過去時点の記録である。
 
 2026-10-28 P141全3条件を閉鎖・評価：通常閾値TRと閾値object delta TDOは成功し、TDOの確定logical I/OはTRより2,807少なかった。累積再提示量EDOは失敗・unknown1で確定差null。単一既知課題の事後診断で採用評価は実施せず、全gate false・元4課題と保留12の確認範囲を維持する。[結果と限界](docs/experiments/P141_findings.md)／[資料・図の索引](docs/experiments/P141_results_20261028_index.md)。以下は各過去時点の記録である。
