@@ -1,0 +1,9 @@
+# P143: early-threshold coverage on four known tasks
+
+All eight planned cells remain in [conditions.csv](conditions.csv), including failures, unknown usage and cells not completed. [Pairs](pairs.csv) retains all four task-matched comparisons. [Model calls](model_calls.csv) includes all actor and focus attempts. [Summary](summary.json) preserves the fixed development eligibility criteria and separate success-loss and common-success comparisons.
+
+Both policies use the fixed 8192-token first/repeat threshold, maximum two checkpoint opportunities and the same per-task budgets. The candidate uses the explicit object-delta contract. This post-P142 coverage study reuses seed157 on all four known tasks with 1200 work seconds per cell; no older cohort is pooled or replaced. It does not use the reserved twelve tasks and is not a reserved-task confirmation or independent population sample. Selection followed the closed P142 non-activation finding. Because threshold and work budget both differ from P142, cross-phase differences cannot identify a threshold effect.
+
+Known logical input plus output includes cached input, paid rejected summaries and failed calls with known usage. Unknown or missing values remain null and are not zero. Exact whole-cohort differences require all four paired usages known; an empty common-success group has a null cost difference. Lower known subtotals in incomplete records are not a measured saving.
+
+Strict prefix identity and validated transport-ID canonical identity are reported separately. Actual known object-focus dispatch and subsequent delta-bearing actor input are required where intervention is claimed. Absent or invalid evidence cannot establish attribution. The paired comparison is of the representation-plus-prompt bundle, not an object-prompt effect in isolation; it establishes no semantic fidelity, general quality guarantee, novelty or statistical interaction. Audit errors remain visible.
