@@ -1,0 +1,89 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage{newtxtext}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{url}
+\title{Supplementary results: all twelve P144/P144R1 conditions}
+\author{Author details pending}
+\date{29 October 2026}
+\begin{document}
+\maketitle
+\noindent
+This supplement accompanies the v04 letter draft. It reports a closed
+development comparison on four known tasks (model seed 257, world seed 42).
+It is separate from the positive P123 and P64/P66 studies in the letter.
+The original two executions (session S0) and ten continuation executions
+(session S1) are linked without hiding the user-requested shutdown.
+The second S0 execution was evaluated once from its saved state after resumption;
+neither S0 execution was regenerated.
+
+\begin{table}[ht]
+\centering
+\caption{All twelve physical run identities, in execution order.
+Tokens are known logical input plus output, including cached input and focus
+calls. Unknown calls are counted separately, never imputed as zero.}
+\label{tab:all}
+\setlength{\tabcolsep}{4pt}
+\small
+\begin{tabular}{@{}lccrr@{}}
+\toprule
+Physical run ID & Session & Success & Known tokens & Unknown calls\\
+\midrule
+\texttt{BOC\_P144\_01\_THRESHOLD\_RECURSIVE} & S0 & Yes & 163,103 & 0\\
+\texttt{BOC\_P144\_01\_THRESHOLD\_DELTA\_OBJECT} & S0 & Yes & 138,772 & 0\\
+\texttt{BOC\_P144R1\_01\_THRESHOLD\_DELTA\_UPDATE} & S1 & Yes & 150,832 & 0\\
+\texttt{BOC\_P144R1\_02\_THRESHOLD\_DELTA\_OBJECT} & S1 & Yes & 218,852 & 0\\
+\texttt{BOC\_P144R1\_02\_THRESHOLD\_DELTA\_UPDATE} & S1 & Yes & 297,895 & 0\\
+\texttt{BOC\_P144R1\_02\_THRESHOLD\_RECURSIVE} & S1 & Yes & 205,862 & 0\\
+\texttt{BOC\_P144R1\_03\_THRESHOLD\_DELTA\_UPDATE} & S1 & Yes & 61,415 & 0\\
+\texttt{BOC\_P144R1\_03\_THRESHOLD\_RECURSIVE} & S1 & Yes & 61,415 & 0\\
+\texttt{BOC\_P144R1\_03\_THRESHOLD\_DELTA\_OBJECT} & S1 & Yes & 61,415 & 0\\
+\texttt{BOC\_P144R1\_04\_THRESHOLD\_RECURSIVE} & S1 & No & 91,992 & 0\\
+\texttt{BOC\_P144R1\_04\_THRESHOLD\_DELTA\_UPDATE} & S1 & No & 401,625 & 0\\
+\texttt{BOC\_P144R1\_04\_THRESHOLD\_DELTA\_OBJECT} & S1 & No & 247,647 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Task slots 01--04 denote photo operations, settlement, refund, and CSV processing.
+RECURSIVE (TR), DELTA\_OBJECT (APP), and DELTA\_UPDATE (UPD) denote ordinary
+recursive summarization, append-style state, and explicit state-update requests.
+All three modes succeeded on 3/4 tasks; all failed on CSV. The TR and UPD CSV
+runs reached the API cap. APP CSV stopped during a model call at the wall-time
+limit and retains one unknown-usage call.
+
+\begin{table}[ht]
+\centering
+\caption{Preserved mode-level accounting. The original global exact-total
+fields remain null because the three-mode cohort has unknown usage.}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Mode & Successes & Known subtotal & Unknown calls & Global exact total\\
+\midrule
+TR & 3/4 & 522,372 & 0 & null\\
+APP & 3/4 & 666,686 & 1 & null\\
+UPD & 3/4 & 911,767 & 0 & null\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+The separately defined TR--UPD comparison has known usage in all eight cells.
+UPD uses 389,395 more tokens (+74.54\%) over all four tasks and 79,762 more over
+the three common-success tasks. These exact pairwise differences do not fill
+the null three-mode totals or the missing APP comparison differences.
+Three known-usage focus calls requested explicit updates, but zero updates
+were installed and zero changed old-state items reached subsequent known-usage
+actor calls. No efficacy or novelty claim follows. The split server sessions
+also prevent interpreting this as an isolated causal effect of the mechanism.
+
+\medskip\noindent\footnotesize
+Evidence: \path{reports/P144R1_continuation.json} and
+\path{reports/P144R1_closed_validation_20261029.json}.
+All rows and preserved source hashes are available in
+\path{P144R1_all_conditions.csv} and \path{P144R1_results_data.json}.
+This standalone supplement is distinct from the four-page letter body;
+journal acceptance of supplementary files has not been established.
+\end{document}
