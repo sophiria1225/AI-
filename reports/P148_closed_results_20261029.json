@@ -1,0 +1,831 @@
+{
+  "phase": "P148_closed_results_20261029",
+  "status": "complete",
+  "source_commit": "fe8945c1a448feafb09af04d006403161d98c35f",
+  "source_plan": "configs/P148_indexed_update_v01.json",
+  "source_plan_sha256": "88d01e57a894b198048f92ab4d3cfc33a666c87d09db1abff168954b7b28e1fb",
+  "source_comparison_report_sha256": "f7743796941f8ea2f8c02b6a062380794fe9fdeb92d376bd23b197aec2940890",
+  "closed_at_utc": "2026-10-28T22:57:11.635724+00:00",
+  "closed_at_jst": "2026-10-29T07:57:11.635724+09:00",
+  "candidate": "schema_indexed_bounded",
+  "model_seed": 357,
+  "model_seed_is_per_role_base": true,
+  "per_call_seed_rule": "base seed plus the number of preceding model calls of the same role",
+  "world_seed": 42,
+  "model": {
+    "model_alias": "minimax-m3-iq4xs",
+    "model_revision": "2ee48e5fcf21a2522ee2fb9ffaa15592ec5498e6",
+    "quantization": "IQ4_XS",
+    "ctx_size": 65536,
+    "cache_type_k": "q8_0",
+    "cache_type_v": "q8_0",
+    "model_name": "MiniMax-M3",
+    "backend": "llama.cpp",
+    "runtime": {
+      "release": "v0.7.0",
+      "binary_tag": "b11669",
+      "commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+      "asset_sha256": "dbed55493d72bc1ba2babc8770d669c2289b5bc4ee9fb2a4dfc158d45b7d13fd"
+    },
+    "thinking_mode": "enabled",
+    "agent_temperature": 1.0,
+    "focus_temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "call_timeout_seconds": 600,
+    "cache_prompt": true
+  },
+  "protocol": {
+    "max_calls": 80,
+    "max_total_tokens": 450000,
+    "max_output_tokens": 4096,
+    "max_wall_seconds": 1800,
+    "api_budget_by_task_slot": [
+      160,
+      80,
+      80,
+      80
+    ],
+    "trigger_input_tokens": 8192,
+    "retained_recent_turns": 2,
+    "rolling_checkpoint_max_opportunities": 2,
+    "rolling_min_fresh_turns": 3,
+    "max_summary_characters": 8192,
+    "actor_reasoning_budget_tokens": -1,
+    "first_focus_reasoning_budget_tokens": -1,
+    "update_focus_reasoning_budget_tokens": 2048,
+    "history_policy": "all_returned_reasoning_from_start",
+    "time_visibility": "not_exposed",
+    "automatic_retries": 0
+  },
+  "execution_order": [
+    {
+      "task_slot": 1,
+      "mode": "threshold_recursive",
+      "run_id": "BOC_P148_01_TR"
+    },
+    {
+      "task_slot": 1,
+      "mode": "threshold_delta_update",
+      "run_id": "BOC_P148_01_UPDATE_INDEXED"
+    },
+    {
+      "task_slot": 2,
+      "mode": "threshold_delta_update",
+      "run_id": "BOC_P148_02_UPDATE_INDEXED"
+    },
+    {
+      "task_slot": 2,
+      "mode": "threshold_recursive",
+      "run_id": "BOC_P148_02_TR"
+    },
+    {
+      "task_slot": 3,
+      "mode": "threshold_recursive",
+      "run_id": "BOC_P148_03_TR"
+    },
+    {
+      "task_slot": 3,
+      "mode": "threshold_delta_update",
+      "run_id": "BOC_P148_03_UPDATE_INDEXED"
+    },
+    {
+      "task_slot": 4,
+      "mode": "threshold_delta_update",
+      "run_id": "BOC_P148_04_UPDATE_INDEXED"
+    },
+    {
+      "task_slot": 4,
+      "mode": "threshold_recursive",
+      "run_id": "BOC_P148_04_TR"
+    }
+  ],
+  "tasks_are_previously_known": true,
+  "known_tasks": 4,
+  "repetitions_per_task_and_arm": 1,
+  "rows": [
+    {
+      "run_id": "BOC_P148_01_TR",
+      "task_slot": 1,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 5,
+      "fail_count": 0,
+      "input_tokens": 119903,
+      "output_tokens": 7263,
+      "known_total_tokens": 127166,
+      "cached_input_tokens": 66620,
+      "model_calls": 16,
+      "api_requests": 103,
+      "roles": {
+        "agent": {
+          "calls": 14,
+          "input_tokens": 96825,
+          "output_tokens": 4748,
+          "cached_input_tokens": 66308,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 23078,
+          "output_tokens": 2515,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0,
+      "task_label_ja": "写真操作"
+    },
+    {
+      "run_id": "BOC_P148_01_UPDATE_INDEXED",
+      "task_slot": 1,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 5,
+      "fail_count": 0,
+      "input_tokens": 119042,
+      "output_tokens": 7522,
+      "known_total_tokens": 126564,
+      "cached_input_tokens": 66574,
+      "model_calls": 16,
+      "api_requests": 103,
+      "roles": {
+        "agent": {
+          "calls": 14,
+          "input_tokens": 95733,
+          "output_tokens": 4678,
+          "cached_input_tokens": 66262,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 23309,
+          "output_tokens": 2844,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 2,
+      "task_label_ja": "写真操作"
+    },
+    {
+      "run_id": "BOC_P148_02_UPDATE_INDEXED",
+      "task_slot": 2,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 6,
+      "fail_count": 0,
+      "input_tokens": 169291,
+      "output_tokens": 4856,
+      "known_total_tokens": 174147,
+      "cached_input_tokens": 117939,
+      "model_calls": 22,
+      "api_requests": 19,
+      "roles": {
+        "agent": {
+          "calls": 20,
+          "input_tokens": 148103,
+          "output_tokens": 3469,
+          "cached_input_tokens": 117627,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 21188,
+          "output_tokens": 1387,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 11,
+      "task_label_ja": "精算"
+    },
+    {
+      "run_id": "BOC_P148_02_TR",
+      "task_slot": 2,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 6,
+      "fail_count": 0,
+      "input_tokens": 173578,
+      "output_tokens": 4245,
+      "known_total_tokens": 177823,
+      "cached_input_tokens": 121953,
+      "model_calls": 23,
+      "api_requests": 22,
+      "roles": {
+        "agent": {
+          "calls": 21,
+          "input_tokens": 152621,
+          "output_tokens": 3065,
+          "cached_input_tokens": 121641,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 20957,
+          "output_tokens": 1180,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0,
+      "task_label_ja": "精算"
+    },
+    {
+      "run_id": "BOC_P148_03_TR",
+      "task_slot": 3,
+      "arm": "TR",
+      "success": true,
+      "pass_count": 7,
+      "fail_count": 0,
+      "input_tokens": 82350,
+      "output_tokens": 2685,
+      "known_total_tokens": 85035,
+      "cached_input_tokens": 57030,
+      "model_calls": 14,
+      "api_requests": 11,
+      "roles": {
+        "agent": {
+          "calls": 13,
+          "input_tokens": 73362,
+          "output_tokens": 1680,
+          "cached_input_tokens": 56874,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 1,
+          "input_tokens": 8988,
+          "output_tokens": 1005,
+          "cached_input_tokens": 156,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 1,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0,
+      "task_label_ja": "返金"
+    },
+    {
+      "run_id": "BOC_P148_03_UPDATE_INDEXED",
+      "task_slot": 3,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 7,
+      "fail_count": 0,
+      "input_tokens": 82350,
+      "output_tokens": 2685,
+      "known_total_tokens": 85035,
+      "cached_input_tokens": 57030,
+      "model_calls": 14,
+      "api_requests": 11,
+      "roles": {
+        "agent": {
+          "calls": 13,
+          "input_tokens": 73362,
+          "output_tokens": 1680,
+          "cached_input_tokens": 56874,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 1,
+          "input_tokens": 8988,
+          "output_tokens": 1005,
+          "cached_input_tokens": 156,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 1,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0,
+      "task_label_ja": "返金"
+    },
+    {
+      "run_id": "BOC_P148_04_UPDATE_INDEXED",
+      "task_slot": 4,
+      "arm": "UPDATE_INDEXED",
+      "success": true,
+      "pass_count": 10,
+      "fail_count": 0,
+      "input_tokens": 337419,
+      "output_tokens": 17241,
+      "known_total_tokens": 354660,
+      "cached_input_tokens": 272696,
+      "model_calls": 26,
+      "api_requests": 64,
+      "roles": {
+        "agent": {
+          "calls": 24,
+          "input_tokens": 319080,
+          "output_tokens": 14932,
+          "cached_input_tokens": 272384,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 18339,
+          "output_tokens": 2309,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "agent_declared_complete",
+      "checkpoint_installations": 2,
+      "update_installations": 1,
+      "changed_old_actor_calls": 18,
+      "task_label_ja": "CSV処理"
+    },
+    {
+      "run_id": "BOC_P148_04_TR",
+      "task_slot": 4,
+      "arm": "TR",
+      "success": false,
+      "pass_count": 0,
+      "fail_count": 10,
+      "input_tokens": 227808,
+      "output_tokens": 9784,
+      "known_total_tokens": 237592,
+      "cached_input_tokens": 174150,
+      "model_calls": 23,
+      "api_requests": 80,
+      "roles": {
+        "agent": {
+          "calls": 21,
+          "input_tokens": 209700,
+          "output_tokens": 7173,
+          "cached_input_tokens": 173838,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 2,
+          "input_tokens": 18108,
+          "output_tokens": 2611,
+          "cached_input_tokens": 312,
+          "unknown_usage": 0
+        }
+      },
+      "unknown_usage_calls": 0,
+      "stop_reason": "api_request_limit",
+      "checkpoint_installations": 2,
+      "update_installations": 0,
+      "changed_old_actor_calls": 0,
+      "task_label_ja": "CSV処理"
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "task_slot": 1,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 127166,
+      "UPDATE_INDEXED_total_tokens": 126564,
+      "token_difference": -602,
+      "percent_difference": -0.47339697717943474,
+      "both_successful": true,
+      "success_loss": false,
+      "candidate_changed_old_actor_calls": 2,
+      "task_label_ja": "写真操作",
+      "TR_model_calls": 16,
+      "TR_api_requests": 103,
+      "UPDATE_INDEXED_model_calls": 16,
+      "UPDATE_INDEXED_api_requests": 103
+    },
+    {
+      "task_slot": 2,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 177823,
+      "UPDATE_INDEXED_total_tokens": 174147,
+      "token_difference": -3676,
+      "percent_difference": -2.06722414985688,
+      "both_successful": true,
+      "success_loss": false,
+      "candidate_changed_old_actor_calls": 11,
+      "task_label_ja": "精算",
+      "TR_model_calls": 23,
+      "TR_api_requests": 22,
+      "UPDATE_INDEXED_model_calls": 22,
+      "UPDATE_INDEXED_api_requests": 19
+    },
+    {
+      "task_slot": 3,
+      "TR_success": true,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 85035,
+      "UPDATE_INDEXED_total_tokens": 85035,
+      "token_difference": 0,
+      "percent_difference": 0.0,
+      "both_successful": true,
+      "success_loss": false,
+      "candidate_changed_old_actor_calls": 0,
+      "task_label_ja": "返金",
+      "TR_model_calls": 14,
+      "TR_api_requests": 11,
+      "UPDATE_INDEXED_model_calls": 14,
+      "UPDATE_INDEXED_api_requests": 11
+    },
+    {
+      "task_slot": 4,
+      "TR_success": false,
+      "UPDATE_INDEXED_success": true,
+      "TR_total_tokens": 237592,
+      "UPDATE_INDEXED_total_tokens": 354660,
+      "token_difference": 117068,
+      "percent_difference": 49.27270278460554,
+      "both_successful": false,
+      "success_loss": false,
+      "candidate_changed_old_actor_calls": 18,
+      "task_label_ja": "CSV処理",
+      "TR_model_calls": 23,
+      "TR_api_requests": 80,
+      "UPDATE_INDEXED_model_calls": 26,
+      "UPDATE_INDEXED_api_requests": 64
+    }
+  ],
+  "aggregate_by_arm": {
+    "TR": {
+      "input_tokens": 603639,
+      "output_tokens": 23977,
+      "cached_input_tokens": 419753,
+      "known_total_tokens": 627616,
+      "model_calls": 76,
+      "api_requests": 216,
+      "unknown_usage_calls": 0,
+      "successes": 3,
+      "roles": {
+        "agent": {
+          "calls": 69,
+          "input_tokens": 532508,
+          "output_tokens": 16666,
+          "cached_input_tokens": 418661,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 7,
+          "input_tokens": 71131,
+          "output_tokens": 7311,
+          "cached_input_tokens": 1092,
+          "unknown_usage": 0
+        }
+      }
+    },
+    "UPDATE_INDEXED": {
+      "input_tokens": 708102,
+      "output_tokens": 32304,
+      "cached_input_tokens": 514239,
+      "known_total_tokens": 740406,
+      "model_calls": 78,
+      "api_requests": 197,
+      "unknown_usage_calls": 0,
+      "successes": 4,
+      "roles": {
+        "agent": {
+          "calls": 71,
+          "input_tokens": 636278,
+          "output_tokens": 24759,
+          "cached_input_tokens": 513147,
+          "unknown_usage": 0
+        },
+        "focus": {
+          "calls": 7,
+          "input_tokens": 71824,
+          "output_tokens": 7545,
+          "cached_input_tokens": 1092,
+          "unknown_usage": 0
+        }
+      }
+    }
+  },
+  "primary_all_four": {
+    "task_count": 4,
+    "TR_total_tokens": 627616,
+    "UPDATE_INDEXED_total_tokens": 740406,
+    "token_difference": 112790,
+    "percent_difference": 17.971179829704788
+  },
+  "common_success_subset": {
+    "task_slots": [
+      1,
+      2,
+      3
+    ],
+    "task_count": 3,
+    "TR_total_tokens": 390024,
+    "UPDATE_INDEXED_total_tokens": 385746,
+    "token_difference": -4278,
+    "percent_difference": -1.0968555781182696,
+    "primary_result_replaced": false
+  },
+  "all_phase_accounting": {
+    "known_total_tokens": 1368022,
+    "input_tokens": 1311741,
+    "output_tokens": 56281,
+    "cached_input_tokens_included_not_deducted": 933992,
+    "unknown_usage_calls": 0,
+    "model_calls": 154,
+    "environment_API_calls": 413
+  },
+  "whole_task_model_calls": 154,
+  "new_probe_model_calls": 0,
+  "new_probe_known_total_tokens": 0,
+  "inherited_P147_probe": {
+    "model_calls": 3,
+    "known_total_tokens": 36838,
+    "qualification_passed": true,
+    "cost_included_in_P148_total": false
+  },
+  "prior_P147_results_pooled": false,
+  "prior_P147_development_gate_met": false,
+  "environment_api_requests": 413,
+  "official_evaluations": 8,
+  "preflight_native_input_count_requests": 8,
+  "preflight_model_generations": 0,
+  "unknown_usage_calls": 0,
+  "interrupted_or_missing_runs": 0,
+  "automatic_retries": 0,
+  "gate_components": {
+    "all_eight_evaluated_known_usage": true,
+    "no_paired_success_loss": true,
+    "old_state_change_reaches_actor_on_common_success": true,
+    "common_success_token_difference": -4278,
+    "common_success_cost_lower": true,
+    "all_four_token_difference": 112790,
+    "all_four_cost_lower": false,
+    "development_gate_met": false
+  },
+  "mechanism_evidence": {
+    "initial_actor_payload_identical_between_arms_all_four": true,
+    "first_focus_payload_identical_between_arms_all_four": true,
+    "initial_actor_payload_differs_from_P147_only_by_seed_all_four": true,
+    "strict_indexed_to_unchanged_parser_replay_valid": true,
+    "accepted_indexed_updates": [
+      {
+        "task_slot": 1,
+        "task_label_ja": "写真操作",
+        "strict_valid": true,
+        "accepted": true,
+        "operation_counts": {
+          "kept_old_items": 14,
+          "update_operations": 2,
+          "unchanged_update_operations": 0,
+          "updated_old_items": 2,
+          "deleted_old_items": 11,
+          "added_items": 7,
+          "changed_old_items": 13,
+          "final_items": 23
+        },
+        "input_tokens": 12407,
+        "output_tokens": 1647,
+        "changed_old_actor_calls": 2
+      },
+      {
+        "task_slot": 2,
+        "task_label_ja": "精算",
+        "strict_valid": true,
+        "accepted": true,
+        "operation_counts": {
+          "kept_old_items": 15,
+          "update_operations": 3,
+          "unchanged_update_operations": 0,
+          "updated_old_items": 3,
+          "deleted_old_items": 4,
+          "added_items": 13,
+          "changed_old_items": 7,
+          "final_items": 31
+        },
+        "input_tokens": 10650,
+        "output_tokens": 865,
+        "changed_old_actor_calls": 11
+      },
+      {
+        "task_slot": 4,
+        "task_label_ja": "CSV処理",
+        "strict_valid": true,
+        "accepted": true,
+        "operation_counts": {
+          "kept_old_items": 26,
+          "update_operations": 1,
+          "unchanged_update_operations": 0,
+          "updated_old_items": 1,
+          "deleted_old_items": 3,
+          "added_items": 12,
+          "changed_old_items": 4,
+          "final_items": 39
+        },
+        "input_tokens": 8901,
+        "output_tokens": 1088,
+        "changed_old_actor_calls": 18
+      }
+    ],
+    "update_installations_by_task": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "changed_old_items_by_task": [
+      13,
+      7,
+      0,
+      4
+    ],
+    "changed_old_actor_calls_by_task": [
+      2,
+      11,
+      0,
+      18
+    ],
+    "checkpoint_installations_each_arm_by_task": [
+      2,
+      2,
+      1,
+      2
+    ],
+    "first_checkpoint_is_not_mislabeled_update": true,
+    "semantic_fidelity_independently_proven": false
+  },
+  "cost_difference_by_role": {
+    "agent": 111863,
+    "focus": 927
+  },
+  "closure": {
+    "all_eight_completed": true,
+    "owned_server_stopped": true,
+    "owned_worker_and_evaluation_processes_stopped": true,
+    "cleanup_errors": 0,
+    "worker_timeouts": 0,
+    "forced_group_kills": 0,
+    "server_exit_code": 0,
+    "supervisor_exit_code": 0,
+    "pipeline_finished_at_utc": "2026-10-28T22:57:11.635724+00:00",
+    "batch_finished_at_utc": "2026-10-28T22:57:07.245136+00:00"
+  },
+  "frozen_source_snapshot": {
+    "ledger_count": 219,
+    "binding_count": 3118,
+    "registry_sha256": "19c6c2bc2b37537ba91d24b68fd778c58d65bacbb2f1dcdd110f92845ef3432e",
+    "global_registry_current_count_not_substituted": true
+  },
+  "evidence": {
+    "closed_record_audit_sha256": "b70814eb675ee5f7a45d71709335b55fee142b6654c718128076b21bba57278e",
+    "audit_script_sha256": "88684618f0d541c9d4d8179513f2019ea084a0f4c95d308742f357dc8ae155a4",
+    "source_public_bindings_checked": 4004,
+    "source_private_bindings_checked": 572,
+    "all_frozen_bindings_unchanged": true,
+    "run_evidence_sha256": {
+      "BOC_P148_01_TR": {
+        "summary_sha256": "f0ae94978279744fc366db6b7379c3af0e9f166344a6fb05da89d0ac924d4fc0",
+        "usage_sha256": "63ae1eecbbe0c0f99c542e5ea66e42374056e8654ea856adcd1c68a298aaa791",
+        "terminal_usage_sha256": "63ae1eecbbe0c0f99c542e5ea66e42374056e8654ea856adcd1c68a298aaa791",
+        "admissions_sha256": "06f94f317004ef820f78352e468a6a350f48628a2aa2f3f3be179d67fc3b4b36",
+        "events_sha256": "d832f6cd98f69cd43c2c3fe873367a6868be64ff76d7142915cccbc399f2c44e",
+        "evaluation_sha256": "24a80954fd13775a52453b6a3f438fe354c050f90d260c53321083eac6a0befe",
+        "evaluation_private_sha256": "9e9ceba63535d532b0b70f63a2218c5f0e910f76f62d5c2533a4f96dd8cfb5fd",
+        "rolling_controls_sha256": "d644bfdb370819c9de4e16a462ff6dc34edc9e5cb567ec01a3b1c7520bd8850c",
+        "state_update_views_sha256": "4a0aafb1e9d0d6d3df7dfc0ea6343b7be665057346854bcc9fcf473d160c1838",
+        "indexed_update_conversions_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "BOC_P148_01_UPDATE_INDEXED": {
+        "summary_sha256": "ffcf1d1d876896f6a026f479722be35ab735d346d0976ec46cafb072f2200e55",
+        "usage_sha256": "8455acfefb6c641fc8de8567ea153cf49aad050e13402fe9fe96b25765eed2d8",
+        "terminal_usage_sha256": "8455acfefb6c641fc8de8567ea153cf49aad050e13402fe9fe96b25765eed2d8",
+        "admissions_sha256": "a94b0c43345c166ee49a745bf0e414bceaa393a1d752cfb55fca2989a25dc451",
+        "events_sha256": "2a60e93d2f2ff51dfac509555bf2712f2918c60d638403a3f98af57f91fd731d",
+        "evaluation_sha256": "9c3190bdedcde72b1355525d70a700496ff481703141176fd4c2e22e9fac53b6",
+        "evaluation_private_sha256": "9e9ceba63535d532b0b70f63a2218c5f0e910f76f62d5c2533a4f96dd8cfb5fd",
+        "rolling_controls_sha256": "6f99207b44ab332c3ea84cc0bd5bf2e3f4029d7ffca9341788fc2d2fddb1e7e5",
+        "state_update_views_sha256": "59b981830b9c78e59722f1418e1e2a17e686700145956a07fba2f6f91868442c",
+        "indexed_update_conversions_sha256": "5b3bcad6c30d10deaa3c12e78c7080bb5e87b0c9871a5aa73f987cb11c3870c7"
+      },
+      "BOC_P148_02_UPDATE_INDEXED": {
+        "summary_sha256": "0e5988158021b592668bbb38f515ff2c6628dcb4bf06372eb1db6ff02b647604",
+        "usage_sha256": "5172d4519555fcf7b844add01a4c9e0c671e5e2b2e76838814148bd5584bfe8d",
+        "terminal_usage_sha256": "5172d4519555fcf7b844add01a4c9e0c671e5e2b2e76838814148bd5584bfe8d",
+        "admissions_sha256": "38cc2857261b71502fbe594613fa1828b5d374d50fb7afd9d98b4e42d17d266b",
+        "events_sha256": "137467800e814e748d188ada3e311b2b1b0f00823682937dc861626e2216a68c",
+        "evaluation_sha256": "f9fd1dc1167da8c20a73d4d538e5be54d5abae4cf16e31f5d9c7f34b3a2ecf19",
+        "evaluation_private_sha256": "b0936ef2411515da4413cca913b91ef61fee5363d9f3e57eaab69706bc6bbc72",
+        "rolling_controls_sha256": "16385caa7538f3e61e07f8d7f16d8c1156d158a564aff3e60ede5ebd3af48ceb",
+        "state_update_views_sha256": "1f8002b6c07ffa25b78a75b749ef53871ecda54c6bf2689377878294ffc556ba",
+        "indexed_update_conversions_sha256": "15d7d16b2bc6ba2b2880a2d9ad3a58b2abfacc1042ba7ca0e33882b65e88c7e2"
+      },
+      "BOC_P148_02_TR": {
+        "summary_sha256": "e89f21bbe7925b532d6c76e89146f99cb0fa0cc11b7d3f1f9d370cfb7f1af991",
+        "usage_sha256": "dcfc03aa1df7f75c010a5e7869edde6bce0c60bc93383a0edd79fb5691936c34",
+        "terminal_usage_sha256": "dcfc03aa1df7f75c010a5e7869edde6bce0c60bc93383a0edd79fb5691936c34",
+        "admissions_sha256": "53c790670b971eea28bbfc04be498dd177b4f563fe5fdac504b19ed106ded5f6",
+        "events_sha256": "63321931b5b941a4f395e0baf0d9716096d905180ad9e1b0c70a355766cb4490",
+        "evaluation_sha256": "b053a0ec86e51fd512a9a5e0b6c5e6f3359c745ec9f2bb761854237e9aa9dc36",
+        "evaluation_private_sha256": "b0936ef2411515da4413cca913b91ef61fee5363d9f3e57eaab69706bc6bbc72",
+        "rolling_controls_sha256": "d8918edb8ec1fa1dd6c1d22b571ef6499b5172e4bafd5a88212f4b08bccf7412",
+        "state_update_views_sha256": "9980d02591c34766f23aaa90b9406debed34e879a59e011a2201d95c8568f6df",
+        "indexed_update_conversions_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "BOC_P148_03_TR": {
+        "summary_sha256": "7407dde59680fb565a98d399b13620179dd87816e5e8bf7745b9bbcdcf8364fc",
+        "usage_sha256": "18edd9b2bdb2eb3504f63aca9274cf97756fa6b259962c213b15321044fbee49",
+        "terminal_usage_sha256": "18edd9b2bdb2eb3504f63aca9274cf97756fa6b259962c213b15321044fbee49",
+        "admissions_sha256": "e66279503552d0b707ef03da6b7ab3af7a5c6ffde421e035fb99676675073683",
+        "events_sha256": "ba3e811ef5bbe495165e9f9bb694a953eb3df03654354ac561df0890120d83de",
+        "evaluation_sha256": "05a9d88fa67de87b1943166df9625fc8968045447f833816b86cd96557706d17",
+        "evaluation_private_sha256": "ffd0c87762e4473719ccf67bf2472d34d1a442d131aa4cdef9927d1b2981e430",
+        "rolling_controls_sha256": "751c303995abf5a3d923ade48ced5a47bad4f45e683f4140d4bf6c6a657bfbd3",
+        "state_update_views_sha256": "129d97e8562952ecad7acc784a9b12ba667b73a33194c9713c6345db46c4fc23",
+        "indexed_update_conversions_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "BOC_P148_03_UPDATE_INDEXED": {
+        "summary_sha256": "5c372a6951fdd64055c22a4554f1cc9fd5d7ab5d50a2eac2ec62ca165a101409",
+        "usage_sha256": "f61063da8977800c8aad304d84d4b7a3a9776f53261f6d4bc71eda69534687bb",
+        "terminal_usage_sha256": "f61063da8977800c8aad304d84d4b7a3a9776f53261f6d4bc71eda69534687bb",
+        "admissions_sha256": "67d611bf5afa0d493d22794da0a4360c567aacf24c36ca06f2a68d1100cb3ad4",
+        "events_sha256": "3de186c98f1167e8297d8aa52caed2b99e91eb9542b15f740ce630c3da475eb3",
+        "evaluation_sha256": "ca0786c79038906113c74dfb7d696b33bb77e9bc866455f7bccef83be16debef",
+        "evaluation_private_sha256": "ffd0c87762e4473719ccf67bf2472d34d1a442d131aa4cdef9927d1b2981e430",
+        "rolling_controls_sha256": "112e599262e9125f7bdac141fe1678c91fda22ff7e5c12cd57eb917574fce38b",
+        "state_update_views_sha256": "129d97e8562952ecad7acc784a9b12ba667b73a33194c9713c6345db46c4fc23",
+        "indexed_update_conversions_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "BOC_P148_04_UPDATE_INDEXED": {
+        "summary_sha256": "54d8a4d174849608412a51bde98e35143111859012fd1740be516277faad83fc",
+        "usage_sha256": "a192a1a335aafa046f422023c177c6c9cba9cf6667ad464d633af7ebe128492e",
+        "terminal_usage_sha256": "a192a1a335aafa046f422023c177c6c9cba9cf6667ad464d633af7ebe128492e",
+        "admissions_sha256": "17b9166cb84aac8240dfd04c12647e7d3440bb20b5cf6fa51cb803de5d450196",
+        "events_sha256": "76ba012e2b8960a9f4c670ad143654f521aed8c58149abefa403908ec63ab9be",
+        "evaluation_sha256": "c3d72bc0bbe38206254367ee91fee76599fcc1e1a55b3b22cd7dce11d5abfcc2",
+        "evaluation_private_sha256": "6bf8d1c360c7859dd796401e9316b598d1b81f6999af875c93c4132838aaac9d",
+        "rolling_controls_sha256": "c1b9fdfd2f3a44616a2492c6e9cd6e3f05cdc06f7abd5df82a03ba7beb0e5d1f",
+        "state_update_views_sha256": "492390cf5f41a5efb3e9187a16332399a1f59aefbfd8540a0c2da61674cdfcee",
+        "indexed_update_conversions_sha256": "40ddda0e113afbb72326ee151fb1958612b4f68d9178c440d8def08c091cd074"
+      },
+      "BOC_P148_04_TR": {
+        "summary_sha256": "d0651818e6d1491daf4109376dea4cb3bac54a87cfbe31301069f658f8867462",
+        "usage_sha256": "3d99d86341785f8e7298496bc54d4d222fc5cdc71896b4108ce4f52fe79df7cc",
+        "terminal_usage_sha256": "3d99d86341785f8e7298496bc54d4d222fc5cdc71896b4108ce4f52fe79df7cc",
+        "admissions_sha256": "f05dba368d88cf91057ef5eb9d6e7f5fd96edf67e8b178e7cf23f364f7b2f79b",
+        "events_sha256": "17f96addc1b27feb4005b9a0ad0c8fa62783617d8ddbd06abb707127fb1d8cfd",
+        "evaluation_sha256": "a02824bcd7ff85729484cc28f641cee2eb5fc1373c2adf76f0540a82ecdb1cad",
+        "evaluation_private_sha256": "22bc184d7624edbcc9c852e45ab740a8b75b73e854ae0f3f92147aa0735eebf2",
+        "rolling_controls_sha256": "12cad12ee52ab549a0c3eb675e9ad280a824c0b2261724292eebe234f0f8fb5b",
+        "state_update_views_sha256": "cc642188a6729d81148307aeec1b3a4fa2e298262c53a7b7bf42d8149093ceb4",
+        "indexed_update_conversions_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      }
+    },
+    "pipeline_status_sha256": "9cd50acf4ddda37f48114c9841072f030875b4cc466d1719a4e159ae62b4f3bc",
+    "batch_status_sha256": "1509a87c52e2734d526d8465c458b65440790f86f77747a52476ca1e97a14031",
+    "server_final_sha256": "153eb4e6a477150b7e60b0975b4e9cd86560d8a7506cd64ae57b0fde143a5622"
+  },
+  "review_roles": {
+    "closed_record_audit": "Completed before publication drafting by a reviewer separate from the P148 implementation author.",
+    "publication_report_author": "The same agent that performed the closed-record audit.",
+    "author_consistency_validation": "Self-check of this publication projection; not a second independent audit.",
+    "separate_publication_peer_review": "Recorded separately by another reviewer; not claimed by this report author."
+  },
+  "interpretation": {
+    "positive_observation": "For the fixed known four-task cohort at seed357, success is 3/4 for TR and 4/4 for UPDATE_INDEXED. The CSV task succeeds only for UPDATE_INDEXED in this comparison.",
+    "primary_cost_result": "Across all four tasks, total tokens increase from 627616 to 740406 (+112790, +17.9711798297%). The predefined development gate is false.",
+    "secondary_common_success_result": "The three tasks successful in both arms use 390024 versus 385746 tokens (-4278, -1.0968555781%); this does not replace the primary all-task comparison.",
+    "CSV_quality_cost_scope": "CSV changes from failed at 80 API requests and 237592 tokens to successful at 64 API requests and 354660 tokens. This is a success/cost tradeoff, not a same-success token reduction.",
+    "isolated_causality": "The second-update prompt, indexed schema and reasoning cap are one fixed candidate package. Their individual causal contributions are not isolated.",
+    "claims_not_established": [
+      "Overall token reduction on this fixed four-task cohort",
+      "General accuracy preservation or statistical noninferiority",
+      "Unseen-task generalization",
+      "Semantic equivalence of every summary item",
+      "Independent new principle or novelty relative to literature",
+      "Monetary or wall-clock cost reduction"
+    ]
+  },
+  "private_payloads_published": false,
+  "private_absolute_paths_published": false,
+  "process_identifiers_published": false,
+  "logical_cached_input_deducted": false,
+  "general_quality_preservation_established": false,
+  "novelty_established": false,
+  "independent_unseen_tasks": false,
+  "manuscript_v10_scientific_results_include_P148": false,
+  "additional_model_tokenizer_API_evaluator_calls_for_this_publication": 0,
+  "old_experiment_records_modified": false
+}
