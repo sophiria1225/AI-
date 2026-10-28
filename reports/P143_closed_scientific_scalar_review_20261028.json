@@ -1,0 +1,777 @@
+{
+  "status": "PASS",
+  "phase": "P143_closed_scalar_scientific_interpretation",
+  "created_at": "2026-10-28T03:29:23.913491+00:00",
+  "source_sha256": {
+    "reports/P143_comparison.json": "e67f77642fc416b881a4f8de6844676c14319ad246fbffcec9aaacf011f6e3b8",
+    "materials/20261028_p143_results/summary.json": "1634c2ce24055ae01a25fe71b482d75ff64e18b1dbc621f4ca19cd87b6db848f",
+    "materials/20261028_p143_results/conditions.csv": "d8325e9116fd235f5d5120003d18a1149910addbbc22525f3af59cc3e81e31a2",
+    "materials/20261028_p143_results/pairs.csv": "6eff6ad7f891333f1eed8bf9e45deacaba32d06f8fe701e0ea4f71f959055468",
+    "materials/20261028_p143_results/model_calls.csv": "07cbb3658721ce790838db97589284df8fd454b797f7774139274e0b295df9e0",
+    "AI_P143_closed_metadata_review_20261028.json": "835485c3e1dbaf96b81609710cfaa17d3cb84c67150a24f4ba99a44749938fc6"
+  },
+  "checks_passed": 613,
+  "scope": "Independent arithmetic from closed public audit request-check scalars and published tables; fixed checker read as supporting metadata, not rerun.",
+  "rows": [
+    {
+      "run_id": "BOC_P143_01_THRESHOLD_RECURSIVE",
+      "task_id": "34d9492_1",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 22,
+      "input_tokens": 189389,
+      "output_tokens": 10627,
+      "cached_input_tokens": 133109,
+      "known_total_tokens": 200016,
+      "unknown_usage_calls": 0,
+      "api_requests": 104,
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "photo",
+      "role_costs": {
+        "agent": {
+          "calls": 20,
+          "unknown_usage": 0,
+          "input_tokens": 169828,
+          "output_tokens": 6466,
+          "known_total_tokens": 176294
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 19561,
+          "output_tokens": 4161,
+          "known_total_tokens": 23722
+        }
+      },
+      "individual_exact_tokens": 200016,
+      "focus_calls": [
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 9186,
+          "output_tokens": 1135,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "input_tokens": 10375,
+          "output_tokens": 3026,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 10,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8221,
+          "compacted_input_tokens": 5929,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "opportunity_index": 2,
+          "after_model_calls": 14,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 9789,
+          "compacted_input_tokens": 7843,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_01_THRESHOLD_DELTA_OBJECT",
+      "task_id": "34d9492_1",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "wall_limit_during_model_call",
+      "model_calls": 19,
+      "input_tokens": 137092,
+      "output_tokens": 12102,
+      "cached_input_tokens": 84938,
+      "known_total_tokens": 149194,
+      "unknown_usage_calls": 1,
+      "api_requests": 98,
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 1,
+      "object_prompt_known_focus_calls": 1,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "photo",
+      "role_costs": {
+        "agent": {
+          "calls": 17,
+          "unknown_usage": 1,
+          "input_tokens": 117351,
+          "output_tokens": 6871,
+          "known_total_tokens": 124222
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 19741,
+          "output_tokens": 5231,
+          "known_total_tokens": 24972
+        }
+      },
+      "individual_exact_tokens": null,
+      "focus_calls": [
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 9186,
+          "output_tokens": 1135,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_014",
+          "status": "ok",
+          "input_tokens": 10555,
+          "output_tokens": 4096,
+          "finish_reason": "length"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 10,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8221,
+          "compacted_input_tokens": 5929,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_02_THRESHOLD_DELTA_OBJECT",
+      "task_id": "3c13f5a_1",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 26,
+      "input_tokens": 212966,
+      "output_tokens": 5095,
+      "cached_input_tokens": 156401,
+      "known_total_tokens": 218061,
+      "unknown_usage_calls": 0,
+      "api_requests": 24,
+      "checkpoint_installations": 2,
+      "delta_installations": 1,
+      "actual_delta_actor_calls": 13,
+      "actual_delta_known_actor_calls": 13,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 1,
+      "object_prompt_known_focus_calls": 1,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "settlement",
+      "role_costs": {
+        "agent": {
+          "calls": 24,
+          "unknown_usage": 0,
+          "input_tokens": 191548,
+          "output_tokens": 3740,
+          "known_total_tokens": 195288
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 21418,
+          "output_tokens": 1355,
+          "known_total_tokens": 22773
+        }
+      },
+      "individual_exact_tokens": 218061,
+      "focus_calls": [
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "input_tokens": 11298,
+          "output_tokens": 619,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "input_tokens": 10120,
+          "output_tokens": 736,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 9,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 10401,
+          "compacted_input_tokens": 8359,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "opportunity_index": 2,
+          "after_model_calls": 13,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 9545,
+          "compacted_input_tokens": 5014,
+          "delta_requested": true,
+          "delta_applied": true,
+          "fragment_count": 2
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_02_THRESHOLD_RECURSIVE",
+      "task_id": "3c13f5a_1",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 24,
+      "input_tokens": 177656,
+      "output_tokens": 4827,
+      "cached_input_tokens": 124581,
+      "known_total_tokens": 182483,
+      "unknown_usage_calls": 0,
+      "api_requests": 25,
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "settlement",
+      "role_costs": {
+        "agent": {
+          "calls": 22,
+          "unknown_usage": 0,
+          "input_tokens": 156418,
+          "output_tokens": 3240,
+          "known_total_tokens": 159658
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 21238,
+          "output_tokens": 1587,
+          "known_total_tokens": 22825
+        }
+      },
+      "individual_exact_tokens": 182483,
+      "focus_calls": [
+        {
+          "call_id": "call_009",
+          "status": "ok",
+          "input_tokens": 11298,
+          "output_tokens": 619,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_013",
+          "status": "ok",
+          "input_tokens": 9940,
+          "output_tokens": 968,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 9,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 10401,
+          "compacted_input_tokens": 8359,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "opportunity_index": 2,
+          "after_model_calls": 13,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 9545,
+          "compacted_input_tokens": 4655,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_03_THRESHOLD_RECURSIVE",
+      "task_id": "60d0b5b_1",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 11,
+      "input_tokens": 66834,
+      "output_tokens": 2089,
+      "cached_input_tokens": 44065,
+      "known_total_tokens": 68923,
+      "unknown_usage_calls": 0,
+      "api_requests": 11,
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "refund",
+      "role_costs": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 58099,
+          "output_tokens": 1457,
+          "known_total_tokens": 59556
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 8735,
+          "output_tokens": 632,
+          "known_total_tokens": 9367
+        }
+      },
+      "individual_exact_tokens": 68923,
+      "focus_calls": [
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 8735,
+          "output_tokens": 632,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 10,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8558,
+          "compacted_input_tokens": 4296,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_03_THRESHOLD_DELTA_OBJECT",
+      "task_id": "60d0b5b_1",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": true,
+      "stop_reason": "agent_declared_complete",
+      "model_calls": 11,
+      "input_tokens": 66834,
+      "output_tokens": 2089,
+      "cached_input_tokens": 44065,
+      "known_total_tokens": 68923,
+      "unknown_usage_calls": 0,
+      "api_requests": 11,
+      "checkpoint_installations": 1,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "refund",
+      "role_costs": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 58099,
+          "output_tokens": 1457,
+          "known_total_tokens": 59556
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 8735,
+          "output_tokens": 632,
+          "known_total_tokens": 9367
+        }
+      },
+      "individual_exact_tokens": 68923,
+      "focus_calls": [
+        {
+          "call_id": "call_010",
+          "status": "ok",
+          "input_tokens": 8735,
+          "output_tokens": 632,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 10,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8558,
+          "compacted_input_tokens": 4296,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_04_THRESHOLD_DELTA_OBJECT",
+      "task_id": "6104387_1",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "api_request_limit",
+      "model_calls": 14,
+      "input_tokens": 103624,
+      "output_tokens": 6523,
+      "cached_input_tokens": 57571,
+      "known_total_tokens": 110147,
+      "unknown_usage_calls": 0,
+      "api_requests": 80,
+      "checkpoint_installations": 2,
+      "delta_installations": 1,
+      "actual_delta_actor_calls": 6,
+      "actual_delta_known_actor_calls": 6,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 1,
+      "object_prompt_known_focus_calls": 1,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "CSV",
+      "role_costs": {
+        "agent": {
+          "calls": 12,
+          "unknown_usage": 0,
+          "input_tokens": 85701,
+          "output_tokens": 4202,
+          "known_total_tokens": 89903
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 17923,
+          "output_tokens": 2321,
+          "known_total_tokens": 20244
+        }
+      },
+      "individual_exact_tokens": 110147,
+      "focus_calls": [
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 8984,
+          "output_tokens": 810,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "input_tokens": 8939,
+          "output_tokens": 1511,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 4,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8864,
+          "compacted_input_tokens": 6414,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "opportunity_index": 2,
+          "after_model_calls": 8,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8542,
+          "compacted_input_tokens": 5930,
+          "delta_requested": true,
+          "delta_applied": true,
+          "fragment_count": 2
+        }
+      ]
+    },
+    {
+      "run_id": "BOC_P143_04_THRESHOLD_RECURSIVE",
+      "task_id": "6104387_1",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": false,
+      "stop_reason": "api_request_limit",
+      "model_calls": 21,
+      "input_tokens": 185937,
+      "output_tokens": 8250,
+      "cached_input_tokens": 132823,
+      "known_total_tokens": 194187,
+      "unknown_usage_calls": 0,
+      "api_requests": 80,
+      "checkpoint_installations": 2,
+      "delta_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0,
+      "task_label": "CSV",
+      "role_costs": {
+        "agent": {
+          "calls": 19,
+          "unknown_usage": 0,
+          "input_tokens": 168194,
+          "output_tokens": 6013,
+          "known_total_tokens": 174207
+        },
+        "focus": {
+          "calls": 2,
+          "unknown_usage": 0,
+          "input_tokens": 17743,
+          "output_tokens": 2237,
+          "known_total_tokens": 19980
+        }
+      },
+      "individual_exact_tokens": 194187,
+      "focus_calls": [
+        {
+          "call_id": "call_004",
+          "status": "ok",
+          "input_tokens": 8984,
+          "output_tokens": 810,
+          "finish_reason": "stop"
+        },
+        {
+          "call_id": "call_008",
+          "status": "ok",
+          "input_tokens": 8759,
+          "output_tokens": 1427,
+          "finish_reason": "stop"
+        }
+      ],
+      "checkpoint_decisions": [
+        {
+          "opportunity_index": 1,
+          "after_model_calls": 4,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8864,
+          "compacted_input_tokens": 6414,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        },
+        {
+          "opportunity_index": 2,
+          "after_model_calls": 8,
+          "accepted": true,
+          "reason": "shorter_native_input",
+          "close_status": "structurally_valid",
+          "ordinary_input_tokens": 8542,
+          "compacted_input_tokens": 5168,
+          "delta_requested": false,
+          "delta_applied": false,
+          "fragment_count": 1
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "task_id": "34d9492_1",
+      "task_label": "photo",
+      "TR_success": true,
+      "TDO_success": false,
+      "both_usage_known": false,
+      "TDO_minus_TR_tokens": null,
+      "TDO_minus_TR_percent": null,
+      "role_exact_differences": null,
+      "strict_prefix_match": false,
+      "canonical_prefix_match": true,
+      "qualified_actual_intervention": false
+    },
+    {
+      "task_id": "3c13f5a_1",
+      "task_label": "settlement",
+      "TR_success": true,
+      "TDO_success": true,
+      "both_usage_known": true,
+      "TDO_minus_TR_tokens": 35578,
+      "TDO_minus_TR_percent": 19.4966106431832,
+      "role_exact_differences": {
+        "agent": 35630,
+        "focus": -52
+      },
+      "strict_prefix_match": false,
+      "canonical_prefix_match": true,
+      "qualified_actual_intervention": true
+    },
+    {
+      "task_id": "60d0b5b_1",
+      "task_label": "refund",
+      "TR_success": true,
+      "TDO_success": true,
+      "both_usage_known": true,
+      "TDO_minus_TR_tokens": 0,
+      "TDO_minus_TR_percent": 0.0,
+      "role_exact_differences": {
+        "agent": 0,
+        "focus": 0
+      },
+      "strict_prefix_match": null,
+      "canonical_prefix_match": null,
+      "qualified_actual_intervention": false
+    },
+    {
+      "task_id": "6104387_1",
+      "task_label": "CSV",
+      "TR_success": false,
+      "TDO_success": false,
+      "both_usage_known": true,
+      "TDO_minus_TR_tokens": -84040,
+      "TDO_minus_TR_percent": -43.27787133021263,
+      "role_exact_differences": {
+        "agent": -84304,
+        "focus": 264
+      },
+      "strict_prefix_match": false,
+      "canonical_prefix_match": true,
+      "qualified_actual_intervention": true
+    }
+  ],
+  "cohort": {
+    "planned": 8,
+    "evaluated": 8,
+    "success_counts": {
+      "threshold_recursive": 3,
+      "threshold_delta_object": 2
+    },
+    "known_token_subtotals_by_mode": {
+      "threshold_recursive": 645609,
+      "threshold_delta_object": 546325
+    },
+    "whole_cohort_known_token_subtotal": 1191934,
+    "fixed_total_tokens_by_mode": {
+      "threshold_recursive": null,
+      "threshold_delta_object": null
+    },
+    "recorded_unknown_calls": 1,
+    "missing_usage_conditions": 0,
+    "total_model_calls": 148,
+    "total_API_requests": 433,
+    "role_known_subtotals": {
+      "agent": {
+        "calls": 134,
+        "unknown_usage": 1,
+        "input_tokens": 1005238,
+        "output_tokens": 33446
+      },
+      "focus": {
+        "calls": 14,
+        "unknown_usage": 0,
+        "input_tokens": 135094,
+        "output_tokens": 18156
+      }
+    },
+    "object_prompt_dispatched_task_count": 3,
+    "delta_installed_and_delivered_task_count": 2,
+    "qualified_intervention_common_success_task_count": 1,
+    "fixed_all_task_difference": null,
+    "fixed_common_success_difference": null,
+    "development_gate_met": false,
+    "scientific_adoption_evaluated": false
+  },
+  "descriptive_common_success_subset": {
+    "task_ids": [
+      "3c13f5a_1",
+      "60d0b5b_1"
+    ],
+    "exact_subtotals": {
+      "threshold_recursive": 251406,
+      "threshold_delta_object": 286984
+    },
+    "TDO_minus_TR_tokens": 35578,
+    "replaces_fixed_common_success_field": false
+  },
+  "photo_second_focus": {
+    "saved_call_id": "call_014",
+    "known_input_tokens": 10555,
+    "known_output_tokens": 4096,
+    "known_total_tokens": 14651,
+    "finish_reason": "length",
+    "checkpoint_decided_event_present": false,
+    "delta_installations": 0,
+    "delta_actor_calls": 0,
+    "exact_nonadoption_reason_available": false,
+    "reason_limit": "Public audit has no second checkpoint_decided entry or explicit parser/budget rejection reason. Output-cap termination is observed; malformed JSON, array/object mismatch, combined budget overflow and causal failure mechanism are not inferred."
+  },
+  "supportable_claims_ja": [
+    "3課題で変更した第二focusを実送信し、2課題でdeltaを採用・後続actorへ配信した。実配信への到達は確認できるが、同品質の全仕事費用削減は支持されない。",
+    "精算では両方式成功し、TDOは35,578 tokens増加した。actor費用が35,630増え、focus費用は52減った。圧縮処理の費用増加だけでは説明できない観測だが、軌跡の意味上の原因は調べていない。",
+    "返金は第二focus非発動で両方式68,923 tokens。同値を変更機構の有効性証拠にしない。",
+    "CSVはTDOが84,040 tokens少ない一方、両方式ともAPI80で失敗した。失敗終了までの実費差であり、成功課題の効率改善ではない。",
+    "写真はTR成功・TDO失敗で、TDOは149,194既知tokens＋未知1呼出し。低い既知小計を削減率や正確な全費用差へ変換しない。",
+    "局所の要約採用とdelta配信は、後続仕事全体の費用削減や品質維持を保証しない。8,192閾値と1,200秒の同時事後変更・既知4課題・単一既使用seedであり、相間因果効果や一般化を主張しない。"
+  ],
+  "limitations": [
+    "Only public scalar metadata and tables read; no model messages, request/response body, generated task code, evaluator body, DB contents or reserved tasks.",
+    "Official success, native counts, actual-view hash binding and canonical transport-ID derivation inherit the original frozen audit; not independently reproduced here.",
+    "Canonical prefix=True is not strict equality, hidden-state equality or an independent replication.",
+    "Descriptive known common subset arithmetic is separate from the fixed all-four-known common field, which stays null.",
+    "This review does not select a new study, relax a gate or turn known failure-path savings into successful efficacy."
+  ],
+  "producer_checker_model_API_native_evaluator_executions": 0,
+  "original_records_modified": false
+}

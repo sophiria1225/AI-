@@ -1,0 +1,74 @@
+{
+  "phase": "P143_paper_v02_source_preparation",
+  "status": "fixed_P143_source_results_unread",
+  "fixed_experiment_head": "85a8d3b6f5e676fe3ab6a94118a9f87c0d11e0c3",
+  "fixed_plan_sha256": "eb77daca5dbeb818577c09dee577d25caa41eae2ae095b5d5acf5deac5b13510",
+  "paper_base_head": "5842a2653b29d40e5ce57f234e6b345935a23c29",
+  "source_snapshot_sha256": {
+    "scripts/checkpoint_early_threshold_p143.py": "032ace7fdb8e6f0eaf2d8f1b30aa49500ee7237204d660b16b1e62966fda400b",
+    "scripts/checkpoint_early_threshold_inference_p143.py": "c3c093a04922aaf4d59608341533ffab66c076153c0c4231c41cf10e36c5e10c",
+    "scripts/audit_early_threshold_trace_p143.py": "e4e647aae9f3b86826e5841b5df4488eeedda0514b2afb4412d4ac64a59d6bef",
+    "scripts/whole_task_threshold_object_p143.py": "26f210b68b589f70663740c47c5e6972f3926b064b2c671dc4722ce0ee1aec3d",
+    "scripts/build_early_threshold_summary_p143.py": "c763b47d6d0a97ca772d1332c767d7c7353f2901001c081591fe588f2128a9af",
+    "docs/experiments/P143_threshold_object_confirmation_20261028.md": "8cb432aa48b8a71a31b5f70988f05efd808c8e61b9e935780f39344047f9765b",
+    "configs/P143_threshold_object_v01.json": "eb77daca5dbeb818577c09dee577d25caa41eae2ae095b5d5acf5deac5b13510"
+  },
+  "prior_closed_P142_source_sha256": {
+    "reports/P142_comparison.json": "e417478542045448ebe2274a280cd2b7efe3e04753121d4840bbbeac95090915",
+    "reports/P142_closed_metadata_review_public_20261028.json": "0a5364f6e30fc7a888837adf0a418d0d999bcf604212ad6bc9bd3c7fc6557ad8",
+    "reports/P142_results_provenance_20261028.json": "f181685ef1fc6a73b00ef31e6ffe66b5e7e081eb3b4ad0b927b6def5e18a4615",
+    "materials/20261028_p142_results/summary.json": "72e6d1e5ecc3fac6b33555b8cedb96247871cc3568c33201235f27f3fd1a85b8",
+    "docs/experiments/P142_findings.md": "52f7d9d203b3e5af241f569c9909d78ae265d245b9b5b8624f99bfc4d6bc8428"
+  },
+  "prior_P142_scalar_context": {
+    "planned": 8,
+    "evaluated": 8,
+    "known_costs": true,
+    "success_each": 3,
+    "total_cost_each": 572405,
+    "actual_delta_intervention_tasks": 0,
+    "all_task_cost_difference": 0,
+    "common_success_cost_difference": 0,
+    "development_gate": false
+  },
+  "design": {
+    "known_tasks": 4,
+    "modes": [
+      "threshold_recursive",
+      "threshold_delta_object"
+    ],
+    "seed": 157,
+    "trigger_tokens": 8192,
+    "work_seconds": 1200,
+    "threshold_selected_after_P142_nonactivation": true,
+    "cross_cohort_effect_attribution": false,
+    "old_results_pooled": false
+  },
+  "P143_actual_results_or_usage_or_status_reads": 0,
+  "reserved_task_reads": 0,
+  "experimental_calls": 0,
+  "prior_P142_source_snapshot_sha256": {
+    "references.bib": "b0a8cdf6f1ee230bcfd044f67bee0c35e909183f4e5e7c8c379074e9dadc1861",
+    "EVIDENCE.md": "da1f56ba25f09f5b16e86614c9cf530c9a04a26f566dca8abd76aacb36205af8",
+    "prepare_p142_result_text.py": "8ea6796a806fd2a1aec218f2529f740e603972f42ea6f7ed153970aa3fae90a2",
+    "main.tex": "4119ed2838cc69ae0bc6229ccb90e5ead7fe448d8ff654134d9601e36a7b09e3",
+    "results_p142.tex": "d63d1170292a556d834d6f41b9dc588bc889dc3472c2a78c2d7d465f9f51fe38",
+    "README.md": "764781a684494d3897cf9cd0f359a4f6a9e6281cd8042b4ecce205e8bce315b5",
+    "build.sh": "1ee7e17fa3bb250e0ca00564a603e29259936f939fe0e24d4940fdd9b1e1e65d",
+    ".gitignore": "2c6706e0d554b0d746122134c6cdfe0c4a810544136d4431d7c1f423b2f2b0f4",
+    "FORMAT.md": "c698cfdb03e53037ad13482e4d303e9270543ebf6eb4d2034c87e6b7c3175845",
+    "abstracts_p142.tex": "402040e4ddfdf9769d8afc34c3d3c80e354030f5bfe5362724e70ab915fd7da2",
+    "preparation_sources.json": "4999c20b3d7f87631a4006d6b964d39c3e6d275b326e7be900ccebfea74e7a8b",
+    "references.tex": "b8039c0f1eb87dc2d6ea5bb3b5d8de0d4c3b9b1f7701f45da11f22564cf4f38f",
+    "figures/p142_cost_source.py": "0b27bca748e71115047ed82f539ba113db82446ad38bfd9c199f4172cbe03bfb",
+    "figures/architecture_source.py": "77d1f884fbc686789a7ea5f6d205f9fa49c3fe6ac6ad78707f9da228c6f3a491"
+  },
+  "limitations": [
+    "Source/plan bindings authenticate fixed design only, not closed results or efficacy.",
+    "Actual P143 input remains blocked until root confirms closure and supplies approved manifest and summary hashes.",
+    "Original v01 and closed P142 artifacts remain unchanged."
+  ],
+  "frozen_source_count": 1820,
+  "source_bindings_replaced_after_root_freeze": true,
+  "old_unfrozen_binding_sha256": "552ae3230e8fbc1eadacb4db4e3688203613f5f9ed451681df3e74857a1bad5a"
+}
