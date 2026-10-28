@@ -1,0 +1,565 @@
+{
+  "status": "pass",
+  "phase": "P142_closed_metadata_review",
+  "fixed_head": "fd54c691c7cd2cfabd1c8c279ef0e6f710dfb773",
+  "plan_sha256": "122a8fe0b4fe723dba21cc20e5f053e960ac542e9d1180dcccff8703ad4697e5",
+  "original_end_sha256": "69c00ed9e4347bbd502c7a99f7a312d0dd304642348f9dc1e7efb9035af13894",
+  "planned_slots": 8,
+  "evaluated_slots": 8,
+  "record_status_counts": {
+    "evaluated": 8
+  },
+  "source_files": 1783,
+  "start_registry_ledgers": 208,
+  "start_registry_bindings": 2730,
+  "rows": [
+    {
+      "task_slot": 1,
+      "run_id": "BOC_P142_01_THRESHOLD_RECURSIVE",
+      "task_id": "34d9492_1",
+      "mode": "threshold_recursive",
+      "object_timing_mode": "threshold_recursive",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 179228,
+      "output_tokens": 8251,
+      "cached_input_tokens": 126600,
+      "model_calls": 20,
+      "known_total_tokens": 187479,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 19,
+          "unknown_usage": 0,
+          "input_tokens": 157881,
+          "output_tokens": 7137
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 21347,
+          "output_tokens": 1114
+        }
+      },
+      "api_requests": 105,
+      "checkpoint_installations": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 1,
+      "run_id": "BOC_P142_01_THRESHOLD_DELTA_OBJECT",
+      "task_id": "34d9492_1",
+      "mode": "threshold_delta_object",
+      "object_timing_mode": "threshold_delta_object",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 179228,
+      "output_tokens": 8251,
+      "cached_input_tokens": 126600,
+      "model_calls": 20,
+      "known_total_tokens": 187479,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 19,
+          "unknown_usage": 0,
+          "input_tokens": 157881,
+          "output_tokens": 7137
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 21347,
+          "output_tokens": 1114
+        }
+      },
+      "api_requests": 105,
+      "checkpoint_installations": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 2,
+      "run_id": "BOC_P142_02_THRESHOLD_DELTA_OBJECT",
+      "task_id": "3c13f5a_1",
+      "mode": "threshold_delta_object",
+      "object_timing_mode": "threshold_delta_object",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 215106,
+      "output_tokens": 3919,
+      "cached_input_tokens": 171389,
+      "model_calls": 22,
+      "known_total_tokens": 219025,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 21,
+          "unknown_usage": 0,
+          "input_tokens": 196434,
+          "output_tokens": 3032
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 18672,
+          "output_tokens": 887
+        }
+      },
+      "api_requests": 23,
+      "checkpoint_installations": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 2,
+      "run_id": "BOC_P142_02_THRESHOLD_RECURSIVE",
+      "task_id": "3c13f5a_1",
+      "mode": "threshold_recursive",
+      "object_timing_mode": "threshold_recursive",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 215106,
+      "output_tokens": 3919,
+      "cached_input_tokens": 171389,
+      "model_calls": 22,
+      "known_total_tokens": 219025,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 21,
+          "unknown_usage": 0,
+          "input_tokens": 196434,
+          "output_tokens": 3032
+        },
+        "focus": {
+          "calls": 1,
+          "unknown_usage": 0,
+          "input_tokens": 18672,
+          "output_tokens": 887
+        }
+      },
+      "api_requests": 23,
+      "checkpoint_installations": 1,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 3,
+      "run_id": "BOC_P142_03_THRESHOLD_RECURSIVE",
+      "task_id": "60d0b5b_1",
+      "mode": "threshold_recursive",
+      "object_timing_mode": "threshold_recursive",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 62361,
+      "output_tokens": 1505,
+      "cached_input_tokens": 51671,
+      "model_calls": 10,
+      "known_total_tokens": 63866,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 62361,
+          "output_tokens": 1505
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "api_requests": 11,
+      "checkpoint_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 3,
+      "run_id": "BOC_P142_03_THRESHOLD_DELTA_OBJECT",
+      "task_id": "60d0b5b_1",
+      "mode": "threshold_delta_object",
+      "object_timing_mode": "threshold_delta_object",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": true,
+      "input_tokens": 62361,
+      "output_tokens": 1505,
+      "cached_input_tokens": 51671,
+      "model_calls": 10,
+      "known_total_tokens": 63866,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 62361,
+          "output_tokens": 1505
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "api_requests": 11,
+      "checkpoint_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 4,
+      "run_id": "BOC_P142_04_THRESHOLD_DELTA_OBJECT",
+      "task_id": "6104387_1",
+      "mode": "threshold_delta_object",
+      "object_timing_mode": "threshold_delta_object",
+      "checkpoint_representation_mode": "threshold_delta_object",
+      "record_status": "evaluated",
+      "success": false,
+      "input_tokens": 98248,
+      "output_tokens": 3787,
+      "cached_input_tokens": 81914,
+      "model_calls": 10,
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "api_requests": 80,
+      "checkpoint_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    },
+    {
+      "task_slot": 4,
+      "run_id": "BOC_P142_04_THRESHOLD_RECURSIVE",
+      "task_id": "6104387_1",
+      "mode": "threshold_recursive",
+      "object_timing_mode": "threshold_recursive",
+      "checkpoint_representation_mode": "threshold_recursive",
+      "record_status": "evaluated",
+      "success": false,
+      "input_tokens": 98248,
+      "output_tokens": 3787,
+      "cached_input_tokens": 81914,
+      "model_calls": 10,
+      "known_total_tokens": 102035,
+      "unknown_usage_calls": 0,
+      "usage_by_role": {
+        "agent": {
+          "calls": 10,
+          "unknown_usage": 0,
+          "input_tokens": 98248,
+          "output_tokens": 3787
+        },
+        "focus": {
+          "calls": 0,
+          "unknown_usage": 0,
+          "input_tokens": 0,
+          "output_tokens": 0
+        }
+      },
+      "api_requests": 80,
+      "checkpoint_installations": 0,
+      "actual_delta_actor_calls": 0,
+      "actual_delta_known_actor_calls": 0,
+      "actual_delta_unknown_actor_calls": 0,
+      "delta_installations": 0,
+      "object_prompt_offers": 0,
+      "object_prompt_dispatched_focus_calls": 0,
+      "object_prompt_known_focus_calls": 0,
+      "object_prompt_unknown_focus_calls": 0
+    }
+  ],
+  "role_known_subtotals": {
+    "agent": {
+      "calls": 120,
+      "unknown_usage": 0,
+      "input_tokens": 1029848,
+      "output_tokens": 30922
+    },
+    "focus": {
+      "calls": 4,
+      "unknown_usage": 0,
+      "input_tokens": 80038,
+      "output_tokens": 4002
+    }
+  },
+  "cohort_exact_tokens": 1144810,
+  "independent_criteria": {
+    "planned_rows": 8,
+    "independent_tasks": 4,
+    "repetitions": 1,
+    "model_seed": 157,
+    "all_eight_complete_with_known_usage": true,
+    "evaluated_conditions": 8,
+    "success_counts": {
+      "threshold_recursive": 3,
+      "threshold_delta_object": 3
+    },
+    "unevaluated_counts": {
+      "threshold_recursive": 0,
+      "threshold_delta_object": 0
+    },
+    "known_token_subtotals_by_mode": {
+      "threshold_recursive": 572405,
+      "threshold_delta_object": 572405
+    },
+    "total_tokens_by_mode": {
+      "threshold_recursive": 572405,
+      "threshold_delta_object": 572405
+    },
+    "usage_count_missing_conditions": 0,
+    "recorded_unknown_usage_calls": 0,
+    "comparisons": [
+      {
+        "name": "representation_prompt_bundle",
+        "baseline": "threshold_recursive",
+        "candidate": "threshold_delta_object",
+        "pairs": [
+          {
+            "task_id": "34d9492_1",
+            "baseline": "threshold_recursive",
+            "candidate": "threshold_delta_object",
+            "baseline_success": true,
+            "candidate_success": true,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "success_lost": false,
+            "both_successful": true,
+            "candidate_minus_baseline_tokens": 0,
+            "candidate_object_prompt_known_focus_calls": 0,
+            "candidate_delta_known_actor_calls": 0,
+            "strict_prefix_match": null,
+            "canonical_prefix_match": null,
+            "actual_intervention": false,
+            "representation_prefix_identity": {
+              "strict_match": null,
+              "canonical_match": null,
+              "reason": "boundary_absent",
+              "version": "P140_validated_transport_reference_identity_v1"
+            }
+          },
+          {
+            "task_id": "3c13f5a_1",
+            "baseline": "threshold_recursive",
+            "candidate": "threshold_delta_object",
+            "baseline_success": true,
+            "candidate_success": true,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "success_lost": false,
+            "both_successful": true,
+            "candidate_minus_baseline_tokens": 0,
+            "candidate_object_prompt_known_focus_calls": 0,
+            "candidate_delta_known_actor_calls": 0,
+            "strict_prefix_match": null,
+            "canonical_prefix_match": null,
+            "actual_intervention": false,
+            "representation_prefix_identity": {
+              "strict_match": null,
+              "canonical_match": null,
+              "reason": "boundary_absent",
+              "version": "P140_validated_transport_reference_identity_v1"
+            }
+          },
+          {
+            "task_id": "60d0b5b_1",
+            "baseline": "threshold_recursive",
+            "candidate": "threshold_delta_object",
+            "baseline_success": true,
+            "candidate_success": true,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "success_lost": false,
+            "both_successful": true,
+            "candidate_minus_baseline_tokens": 0,
+            "candidate_object_prompt_known_focus_calls": 0,
+            "candidate_delta_known_actor_calls": 0,
+            "strict_prefix_match": null,
+            "canonical_prefix_match": null,
+            "actual_intervention": false,
+            "representation_prefix_identity": {
+              "strict_match": null,
+              "canonical_match": null,
+              "reason": "boundary_absent",
+              "version": "P140_validated_transport_reference_identity_v1"
+            }
+          },
+          {
+            "task_id": "6104387_1",
+            "baseline": "threshold_recursive",
+            "candidate": "threshold_delta_object",
+            "baseline_success": false,
+            "candidate_success": false,
+            "both_evaluated": true,
+            "both_usage_known": true,
+            "success_lost": false,
+            "both_successful": false,
+            "candidate_minus_baseline_tokens": 0,
+            "candidate_object_prompt_known_focus_calls": 0,
+            "candidate_delta_known_actor_calls": 0,
+            "strict_prefix_match": null,
+            "canonical_prefix_match": null,
+            "actual_intervention": false,
+            "representation_prefix_identity": {
+              "strict_match": null,
+              "canonical_match": null,
+              "reason": "boundary_absent",
+              "version": "P140_validated_transport_reference_identity_v1"
+            }
+          }
+        ],
+        "all_pairs_complete_with_known_usage": true,
+        "all_four_pairs_complete_with_known_usage": true,
+        "all_task_token_difference": 0,
+        "all_task_token_difference_pct": 0.0,
+        "common_success_tasks": [
+          "34d9492_1",
+          "3c13f5a_1",
+          "60d0b5b_1"
+        ],
+        "common_success_token_difference": 0,
+        "success_loss_tasks": [],
+        "changed_intervention_on_common_success": false,
+        "all_activated_canonical_prefixes_match": true,
+        "observed_utility_criteria_met": false,
+        "comparison_gate_met": false,
+        "attribution_prefix_required": true
+      }
+    ],
+    "audit_errors_count": 0,
+    "development_gate_met": false,
+    "scientific_adoption_evaluated": false,
+    "reserved_confirmation_replaced": false,
+    "all_original_four_task_confirmation_replaced": false,
+    "prior_results_pooled": false,
+    "unknown_usage_imputed": false,
+    "novel_method_claim": false,
+    "general_quality_preservation_claim": false,
+    "independent_replication_claim": false,
+    "exposure_is_guaranteed_savings": false,
+    "competitive_ratio_claim": false
+  },
+  "checks_passed": 37634,
+  "private_bindings_sha256": "87f9d6ebbee61c3e6638585cd35a3d9141e5abfdda43c0b435d4e5f2beba0375",
+  "original_results_modified": false,
+  "additional_model_calls": 0,
+  "additional_API_requests": 0,
+  "additional_evaluations": 0,
+  "additional_tokenizer_calls": 0,
+  "producer_auditor_builder_executions": 0,
+  "limitations": [
+    "For invalid representation identity, the hash-bound original nonempty diagnostic label is retained; its error taxonomy is not independently re-derived. Strict/canonical eligibility and all other comparison fields remain independently checked.",
+    "Both arms use the same threshold timing. Per-cell timing metadata is checked; no between-arm timing-effect claim or wall-time equivalence is established.",
+    "P142 is a fixed eight-cell development cohort on four known tasks and reused seed157; its development gate is recomputed without waiver. Scientific adoption remains false.",
+    "This is a metadata/hash/arithmetic cross-check, not a second execution of the producer or original audit.",
+    "Request/response/evaluation bodies are not opened. Their saved hashes and official outcome scalars are inherited from the fixed original auditor; this is not independent evaluation or raw-response parsing.",
+    "Recorded native counts and assistant-message hashes depend on the frozen original recorder/auditor; their contents are not independently re-tokenized or parsed.",
+    "Strict prefix and validated transport-ID canonical comparisons are reported separately. Canonical metadata, ID grammar, archive reconstruction and ID-only normalization rely on the frozen original trace auditor, not independent body inspection here.",
+    "Only identity metadata type/count/raw-digest bindings, recorded canonical equality and all other fixed prefix fields are checked independently. This cannot prove the canonical digest was correctly derived or semantic/hidden-state equivalence.",
+    "Missing conditions and unknown calls remain distinct. No pooled cross-cohort claim, novelty finding or future savings guarantee is established."
+  ],
+  "review_source_sha256": "cb06446b80b809d627b5409805b43d0f68c252330d636745d43fdc7a423bd9d9",
+  "finished_at": "2026-10-28T01:16:21.647367+00:00",
+  "public_projection_provenance": {
+    "original_private_review_sha256": "07575e4385705fd3390794adedf3e14a67383cc965fe596acf94df279558bf46",
+    "projection": "explicit_top_level_whitelist; scalar rows and fixed comparison metadata retained",
+    "included_original_fields": [
+      "status",
+      "phase",
+      "fixed_head",
+      "plan_sha256",
+      "original_end_sha256",
+      "planned_slots",
+      "evaluated_slots",
+      "record_status_counts",
+      "source_files",
+      "start_registry_ledgers",
+      "start_registry_bindings",
+      "rows",
+      "role_known_subtotals",
+      "cohort_exact_tokens",
+      "independent_criteria",
+      "checks_passed",
+      "private_bindings_sha256",
+      "original_results_modified",
+      "additional_model_calls",
+      "additional_API_requests",
+      "additional_evaluations",
+      "additional_tokenizer_calls",
+      "producer_auditor_builder_executions",
+      "limitations",
+      "review_source_sha256",
+      "finished_at"
+    ],
+    "excluded_private_path_binding_count": 5537,
+    "excluded_diagnostic_label_count": 0,
+    "excluded_diagnostic_labels_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "original_checker_reexecuted": false,
+    "native_counts_and_canonical_prefix_depend_on_frozen_auditor": true
+  }
+}
