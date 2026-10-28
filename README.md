@@ -1,18 +1,18 @@
 # AIハーネス研究
 
-2026-10-29版の原稿 **v09**：改訂指示書に沿って文章・図表・段組を修正しました。「API実行記録」「総トークン数」「モデル呼出し数」に用語を統一し、考察を結果の解釈から始めています。図1は独立に評価するA/Bの二つのパネル、結果図は実験別の片段図2・図3にしました。式と説明、見出しと本文のまとまり、表の改行と数値の配置も調整しています。あらましは108字。Wordは和文論文誌Dレターの公式テンプレートを継承し、著者・所属は未設定、投稿は未実施です。
+2026-10-29版の原稿 **v10**：達成した成果を先に示す文章へ改稿しました。あらましは103字で、何を評価し、何を達成したかを記載しています。独立した「考察と限界」節をなくし、成果の意味を実験結果へまとめました。既知4課題の成功を保った反復要約の12.07%削減と、同じ写真課題の2条件における終了制御の26.00–30.15%削減を中心に述べています。比較上の増加、要求・応答の完全一致が不成立だった事実、既知課題・少数試行の事後整理という範囲は簡潔に残しています。
 
-[Word原稿](papers/202610_letter/harness_efficiency_20261029_v09/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v09/manuscript.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261029_v09/figures/control_points.png) ／ [図2：実験A](papers/202610_letter/harness_efficiency_20261029_v09/figures/result_summary.png) ／ [図3：実験B](papers/202610_letter/harness_efficiency_20261029_v09/figures/result_termination.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v09/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v09/README.md)。実測値・実験条件・12件の正式出版文献を保持し、P147/P148の結果はこの編集改稿へ加えていません。
+[Word原稿](papers/202610_letter/harness_efficiency_20261029_v10/manuscript.docx) ／ [同じWordから出力した校正PDF](papers/202610_letter/harness_efficiency_20261029_v10/manuscript.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261029_v10/figures/control_points.png) ／ [図2：実験A](papers/202610_letter/harness_efficiency_20261029_v10/figures/result_summary.png) ／ [図3：実験B](papers/202610_letter/harness_efficiency_20261029_v10/figures/result_termination.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v10/source_bundle.zip) ／ [原稿の説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v10/README.md)。実測値・実験条件・12件の正式出版文献・3図を保持し、P147/P148は主原稿へ追加していません。Wordは和文論文誌Dレターの公式テンプレートに基づきます。著者・所属は未設定、投稿は未実施です。書式と組版の確認は[FORMAT.md](papers/202610_letter/harness_efficiency_20261029_v10/FORMAT.md)に記載しています。
 
-主版であるWord校正PDFは本文・文献4ページ＋末尾英文1ページです。別組版のTeX PDFは本文・文献5ページ＋末尾英文1ページで、Word版とページ数が異なります。詳しい書式確認は[FORMAT.md](papers/202610_letter/harness_efficiency_20261029_v09/FORMAT.md)に記載しています。
+Word校正PDF・TeX PDFはいずれも本文・文献4ページ＋末尾英文1ページです。
 
-過去の[原稿v08](papers/202610_letter/harness_efficiency_20261029_v08/README.md)、[図1の2案比較](materials/20261029_fig1_redesign/README.md)、[旧構成図4案](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)は保持しています。v09の配布一式には現在使う3図を収録し、過去の候補は旧版から参照できます。
+前版の[原稿v09](papers/202610_letter/harness_efficiency_20261029_v09/README.md)、[原稿v08](papers/202610_letter/harness_efficiency_20261029_v08/README.md)、[図1の2案比較](materials/20261029_fig1_redesign/README.md)、[旧構成図4案](papers/202610_letter/harness_efficiency_20261029_v05/architecture_candidates/contact_sheet.png)は保持しています。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 
 P147は **2026-10-29 04:17:58 JSTに全8条件を終了**しました。両方式3/4成功、未知使用量0。写真・精算で更新方式の局所削減を観測した一方、CSVは両方式失敗し、全4課題の合計は通常反復522,372→更新583,690 tokens（＋11.74%）。事前の全体削減ゲートは不成立です。[全条件・費用・機構の確定結果](docs/experiments/P147_closed_results_20261029.md) ／ [機械可読結果](reports/P147_closed_results_20261029.json)。
 
-P148は **2026-10-29 06:02:07 JSTに開始**し、**06:04:45 JSTに最初の条件が処理中であることを確認**しました。観測時点は0/8条件完了、request 8件・response 7件の保存ファイルが存在しました。方式・既知4課題・閾値・予算を保った固定seed357の比較で、probe再生成は0です。運用上のモデル停止上限は11:00 JSTで、全条件の完了時刻を保証するものではありません。[開始時点の記録](docs/experiments/P148_execution_start_20261029.md) ／ [固定仕様](docs/experiments/P148_seed357_replication_20261029.md)。原稿v07の成果物は変更していません。
+P148は **2026-10-29 07:57:11 JSTに予定8条件の実行・評価と終了処理を完了**しました。更新方式はCSVでも成功し、通常反復の3/4成功に対して4/4成功でした。全4課題の総トークン数は627,616→740,406（＋17.97%）、両方式が成功した3課題では390,024→385,746（−1.10%）です。使用量の欠測は0。成功数の増加を観測しましたが、事前の全4課題での費用削減基準は満たしていません。[全8条件の確定結果](docs/experiments/P148_closed_results_20261029.md) ／ [機械可読結果](reports/P148_closed_results_20261029.json) ／ [開始時点の記録](docs/experiments/P148_execution_start_20261029.md)。P147とは別のseed357の比較として扱い、過去の結果やprobe費用を合算しません。終了処理後の新しいモデル実験は起動していません。
 
 以下は過去の日付の開始・停止・結果記録です。「実行中」「本日」「最新」は各記録を作成した当時を指し、現在も稼働しているという意味ではありません。
 
