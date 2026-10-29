@@ -1,0 +1,74 @@
+{
+  "version": "v18",
+  "status": "pass",
+  "compared_with": "v17",
+  "change_scope": "Figure 1 call intervals, adoption timing and completion branch labels revised; manuscript text, title, abstracts, tables and workbook unchanged from v17",
+  "japanese_abstract_chars": 116,
+  "english_abstract_words_conservative": 39,
+  "manuscript_content_items_exactly_match_v17": true,
+  "tex_prose_exactly_matches_v17": true,
+  "tex_layout_only_change": "Keep the paragraph following Table 2 in one column using minipage; no prose changed",
+  "unchanged_scientific_files": {
+    "abstracts.tex": "f2533c864b5fdc5cfc7efb51b333c448d1511402021704839dc61e012b6860ca",
+    "tables.tex": "45dcfb67cd2b10212c8ce0115f69fd989e78755d6405b361cbc26bee9ea32977",
+    "results_tables.xlsx": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+    "create_results_tables.py": "c3c3513aa250719c2d1f4c294b29ac784db5a210f20af2dc8b24e4b4258713e8",
+    "excel_tables_manifest.json": "58e9301fcaba87f6807a90ba5f940cb6477f5ec8e3491fa149a217dfd65b1944",
+    "references.tex": "154929c2579f2035b6223e7dfcb5e156aa66c152e2e583ca63a291089d088aef",
+    "references.bib": "7a9e82c1f429bd3a1403a1fdfb0a71d8136b599bb01bc561c15560ae429d8569",
+    "results_data.json": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+    "P144R1_results_data.json": "12ae2f39e21683582f088fe2daf84f75f92e634fc6f03c603dc71bb52db3a47d",
+    "P144R1_all_conditions.csv": "610a8e4334048f5067f63945958cbe3a28067b733caa49745dda4daa4dda4531",
+    "supplemental_results.tex": "606731a758f780161cb99b7f36d94fe712d8539ed2cd4f16b6a800e3a3455577",
+    "supplemental_results.pdf": "2e544067c03525c9fee43d1b8891dba991dc4988bf02d83230f0b87d0144ffaa",
+    "prepare_evidence.py": "8f34e2e308cf100a2c753d0f7da8e4fcd97706cc5f40b36069bca514aa4aa7c1",
+    "evidence_sources.json": "777c2f2dd76a95bfcbda0005e5721b78364d20f65d2677bf43ad5df9ece1efcc"
+  },
+  "editable_table_numeric_data_exactly_match_v17": true,
+  "method_names": [
+    "専用1回方式",
+    "専用反復方式",
+    "行動併記方式"
+  ],
+  "termination_condition_names": [
+    "通常継続",
+    "終了制御"
+  ],
+  "completion_check_name": "完了判定",
+  "native_results_workbook": "results_tables.xlsx",
+  "native_results_workbook_sha256": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+  "native_chart_count": 0,
+  "figure_caption_count": 1,
+  "table_caption_count": 2,
+  "figure_and_table_captions_number_and_short_Japanese_title_only": true,
+  "new_experiment_results_added": false,
+  "model_API_evaluator_calls": 0,
+  "body_supplement_file_directions_absent": true,
+  "English_method_names_absent_from_manuscript_body": true,
+  "parenthetical_explanations_absent_except_equation_structure": true,
+  "strict_prefix_mismatch_and_posthoc_scope_preserved": true,
+  "pages": {
+    "Word": "5 body + 1 English",
+    "TeX": "5 body + 1 English"
+  },
+  "source_sha256": {
+    "main.tex": "2d743ba3c6939a34225bc35747c108da18e236943e40a2f928fd4c2eafb38b0c",
+    "word_source.tex": "2d743ba3c6939a34225bc35747c108da18e236943e40a2f928fd4c2eafb38b0c",
+    "abstracts.tex": "f2533c864b5fdc5cfc7efb51b333c448d1511402021704839dc61e012b6860ca",
+    "tables.tex": "45dcfb67cd2b10212c8ce0115f69fd989e78755d6405b361cbc26bee9ea32977",
+    "word_content.json": "b0574423008dca7881b3b5136095401d6535b060e5189212850fee2f24ebb10e",
+    "build_word.py": "8411fd4c37b48563a88219342d25815f682d44564c7135f98020ae7bf6852bc1",
+    "reference_update.json": "3be197e45b2f901813bdb00de0ef162331d529a7e310ce409f53f768e90ae321",
+    "results_tables.xlsx": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+    "figures/control_points.png": "89dddedbfe2b4fc4de3f0d4b1273f930b105945df7e9664cedc4e113d5d2a66f",
+    "REVISION.md": "5592ea978d9f570b1bec462db83f8b5e245e7448d7e36ca603bcec5734928b81"
+  },
+  "implementation_checks": {
+    "opportunity_limits_not_installations": "dedicated once 1; dedicated repeated and action-combined 3",
+    "fresh_turn_origin": "previous opportunity closed, whether accepted or rejected",
+    "repeated_summary_inputs": "previous accepted summary and newly old unsummarized history",
+    "simultaneous_current_action_results": "not included in generated summary; retained verbatim in following input",
+    "acceptance": "host structural, length and whole-next-input strict shortening; no semantic verifier",
+    "termination": "after all programs execute, known-template hand-written completion check; no added model judge"
+  }
+}
