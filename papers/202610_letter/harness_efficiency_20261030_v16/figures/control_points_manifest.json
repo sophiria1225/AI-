@@ -1,0 +1,38 @@
+{
+  "variant": "independent_control_flows",
+  "width_mm": 130,
+  "height_mm": 65,
+  "minimum_font_pt": 7.0,
+  "line_width_pt": 0.65,
+  "text_clipping": [],
+  "text_overlaps": [],
+  "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+  "font_name": "Hiragino Sans",
+  "vector_text_representation": "outlined glyph paths; no external font dependency",
+  "outputs": {
+    "control_points.png": "fbc8702ab6c15b8fc0a1f0e6f7052226afe33b4f377f04d0f0bc62b7829f8e61",
+    "control_points.svg": "9f46a65fe1e9a1aa939a9fc843e12545f05ecd85ead9c0ddddb8eb33337fa692",
+    "control_points.pdf": "1e8cf563c3dbd5b8f7717fe063ab381ce7b352e69ae25099a4ddbca2a1967675",
+    "control_points.eps": "d2924731437c568445acdd9c3be74be93309e624c2e674f6c843c261d73a7090"
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "controls_A_B_independently_evaluated": true,
+  "diagram_A_scope": "要約候補の生成は機能を示す。同時要約は行動と同じ応答内に候補を出力し，追加モデル呼出しは行わない。方式と機会上限1/3/3は本文3.1に示す。",
+  "panel_titles": [
+    "実験A：入力履歴の更新",
+    "実験B：終了判断"
+  ],
+  "method_names": [
+    "単回要約",
+    "反復要約",
+    "同時要約"
+  ],
+  "summary_opportunity_limits": [
+    1,
+    3,
+    3
+  ],
+  "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+  "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+  "evaluator_scope": "After the task run only; no answer flows into the running model."
+}
