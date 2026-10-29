@@ -1,12 +1,12 @@
 # AIハーネス研究
 
-2026-10-29版の原稿 **v11**：確定した実験A/Bに基づき、研究目的と提案手法の処理手順を明確にしました。第3節は「提案手法」です。既存の履歴要約を用いる呼出し・候補採否制御と、既知の要求に対するAPI実行記録からの終了判断を、ハーネスの具体的手順として説明します。両制御は独立に評価しています。
+2026-10-29版の原稿 **v12**：図表キャプションを番号と短い日本語の名称にそろえ、必要な説明は本文にまとめました。第3章「提案手法」の手順は、括弧付きの番号列挙から接続詞でつながる文章へ改めました。履歴要約とAPI実行記録に基づく終了判断を独立に評価する構成を維持しています。
 
-[Word原稿](papers/202610_letter/harness_efficiency_20261029_v11/manuscript.docx) ／ [校正PDF](papers/202610_letter/harness_efficiency_20261029_v11/manuscript.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261029_v11/figures/control_points.png) ／ [図2：実験A](papers/202610_letter/harness_efficiency_20261029_v11/figures/result_summary.png) ／ [図3：実験B](papers/202610_letter/harness_efficiency_20261029_v11/figures/result_termination.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v11/source_bundle.zip) ／ [説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v11/README.md)。既知4課題の成功を保った反復要約の12.07%削減と、同じ写真課題の2条件における終了制御の26.00–30.15%削減が主結果です。実測値・実験条件・12文献・3図はv10から保持し、追加実験を行っていません。Wordは和文論文誌Dレターの公式テンプレートに基づきます。著者・所属は未設定、投稿は未実施です。[書式確認](papers/202610_letter/harness_efficiency_20261029_v11/FORMAT.md)。
+[Word原稿](papers/202610_letter/harness_efficiency_20261029_v12/manuscript.docx) ／ [校正PDF](papers/202610_letter/harness_efficiency_20261029_v12/manuscript.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261029_v12/figures/control_points.png) ／ [図2：実験A](papers/202610_letter/harness_efficiency_20261029_v12/figures/result_summary.png) ／ [図3：実験B](papers/202610_letter/harness_efficiency_20261029_v12/figures/result_termination.png) ／ [TeX・Word・図一式ZIP](papers/202610_letter/harness_efficiency_20261029_v12/source_bundle.zip) ／ [説明・再生成手順](papers/202610_letter/harness_efficiency_20261029_v12/README.md)。既知4課題の成功を保った反復要約の12.07%削減と、同じ写真課題の2条件における終了制御の26.00–30.15%削減が主結果です。実測値・実験条件・12文献・3図・あらましはv11から保持し、追加実験を行っていません。Wordは和文論文誌Dレターの公式テンプレートに基づきます。著者・所属は未設定、投稿は未実施です。[書式確認](papers/202610_letter/harness_efficiency_20261029_v12/FORMAT.md)。
 
-Word校正PDFは本文・文献4ページ＋末尾英文1ページ、別組版のTeX PDFは本文・文献5ページ＋末尾英文1ページです。
+Word校正PDFとTeX PDFはいずれも本文・文献4ページ＋末尾英文1ページです。
 
-既存の反復要約を基礎にした、ハーネスの実装・比較評価です。P147/P148の状態更新方式は別の開発実験として記録し、主原稿に追加していません。前版の[原稿v10](papers/202610_letter/harness_efficiency_20261029_v10/README.md)、[原稿v09](papers/202610_letter/harness_efficiency_20261029_v09/README.md)、[原稿v08](papers/202610_letter/harness_efficiency_20261029_v08/README.md)、[図1の2案比較](materials/20261029_fig1_redesign/README.md)も保持しています。
+既存の反復要約を基礎にした、ハーネスの実装・比較評価です。P147/P148の状態更新方式は別の開発実験として記録し、主原稿に追加していません。前版の[原稿v11](papers/202610_letter/harness_efficiency_20261029_v11/README.md)、[原稿v10](papers/202610_letter/harness_efficiency_20261029_v10/README.md)、[原稿v09](papers/202610_letter/harness_efficiency_20261029_v09/README.md)、[原稿v08](papers/202610_letter/harness_efficiency_20261029_v08/README.md)、[図1の2案比較](materials/20261029_fig1_redesign/README.md)も保持しています。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 
