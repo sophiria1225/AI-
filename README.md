@@ -1,14 +1,14 @@
 # AIハーネス研究
 
-2026-10-30版の原稿 **v18**：図1を処理の流れに絞りました。採否条件・全履歴保存の説明箱を外し、三方式を同じターンの区間で比較します。行動と要約候補の生成を一つの箱で示し、専用反復方式と行動併記方式の繰返し表現を統一しました。実験Bは完了条件の照合、分岐条件、終了と次の生成を分けて示します。図の詳細説明は既存の3.1節・3.2節に集約し、実測値・条件を維持しています。
+2026-10-30版の原稿 **v19**：方法説明を学術文体に整え、終了制御の手順を複数の文に分けました。専用1回方式の上限と、要約機会数・採用回数・モデル呼出し数の違いを明示しています。通常継続との要求・応答の照合は、その目的を5.1節で説明し、不一致だった事実と解釈を5.2節に残しました。むすびには今回の比較から得られる実行管理上の意義を加えました。図1・結果表・Excel・実測値・条件はv18から維持しています。句読点は源ファイルと両PDFを照合し、全角「．」「，」が保持されていることを確認しています。
 
-[Word原稿](papers/202610_letter/harness_efficiency_20261030_v18/manuscript.docx) ／ [校正PDF](papers/202610_letter/harness_efficiency_20261030_v18/manuscript.pdf) ／ [TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v18/manuscript_tex.pdf) ／ [図1：処理の比較](papers/202610_letter/harness_efficiency_20261030_v18/figures/control_points.png) ／ [Excel：結果表](papers/202610_letter/harness_efficiency_20261030_v18/results_tables.xlsx) ／ [Word・TeX・Excel・図一式ZIP](papers/202610_letter/harness_efficiency_20261030_v18/source_bundle.zip) ／ [変更内容・再生成手順](papers/202610_letter/harness_efficiency_20261030_v18/README.md)。
+[Word原稿](papers/202610_letter/harness_efficiency_20261030_v19/manuscript.docx) ／ [校正PDF](papers/202610_letter/harness_efficiency_20261030_v19/manuscript.pdf) ／ [TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v19/manuscript_tex.pdf) ／ [図1：処理の比較](papers/202610_letter/harness_efficiency_20261030_v19/figures/control_points.png) ／ [Excel：結果表](papers/202610_letter/harness_efficiency_20261030_v19/results_tables.xlsx) ／ [Word・TeX・Excel・図一式ZIP](papers/202610_letter/harness_efficiency_20261030_v19/source_bundle.zip) ／ [変更内容・再生成手順](papers/202610_letter/harness_efficiency_20261030_v19/README.md)。
 
 既知4課題の全12実行で成功を確認しました。専用反復方式の総トークン数は専用1回方式より12.07%少なく、この差はCSV処理で生じました。他の3課題では両方式は同じ値です。写真操作では行動併記方式が他の2方式より10,497トークン少なく、4課題合計では専用反復方式より6.53%多くなりました。独立した終了制御の実験では、同じ写真課題の2条件で26.00–30.15%の削減を観測しました。いずれも各条件1回の比較であり、未知課題や統計的優位性へ一般化しません。
 
-実測値・モデル・seed・閾値・予算・12文献は維持し、追加実験は行っていません。総トークン数はキャッシュ入力を含む論理トークン数で、課金額や実行時間そのものではありません。終了制御の要求・応答列が対照の先頭部分に完全一致するという事前基準は不成立であり、開発実験を事後に整理した評価であることも本文に残しています。Wordは和文論文誌Dレターの公式テンプレートに基づきます。著者・所属は未設定、投稿は未実施です。[投稿形式・残る確認事項](papers/202610_letter/harness_efficiency_20261030_v18/FORMAT.md)。
+実測値・モデル・seed・閾値・予算・12文献は維持し、追加実験は行っていません。総トークン数はキャッシュ入力を含む論理トークン数で、課金額や実行時間そのものではありません。終了制御の要求・応答列が対照の先頭部分に完全一致するという事前基準は不成立であり、開発実験を事後に整理した評価であることも本文に残しています。Wordは和文論文誌Dレターの公式テンプレートに基づきます。著者・所属は未設定、投稿は未実施です。[投稿形式・残る確認事項](papers/202610_letter/harness_efficiency_20261030_v19/FORMAT.md)。
 
-和文あらましは116字、英文要旨は39語です。Word・TeXとも本文・文献5ページと英文要旨1ページです。[公式の投稿しおり](https://www.ieice.org/jpn/shiori/iss_2.html)を2026-10-30に確認し、末尾英文は標準ページ数に含まれず、初回投稿時に5ページ以上のレターには超過理由書が必要であることを記録しました。
+和文あらましは115字、英文要旨は39語です。Word・TeXとも本文・文献5ページと英文要旨1ページです。[公式の投稿しおり](https://www.ieice.org/jpn/shiori/iss_2.html)を2026-10-30に確認し、末尾英文は標準ページ数に含まれず、初回投稿時に5ページ以上のレターには超過理由書が必要であることを記録しました。
 
 既存の履歴要約を基礎にしたハーネスの実装・比較評価です。P147/P148の状態更新方式は別の開発実験として記録し、主原稿に追加していません。[前版v17](papers/202610_letter/harness_efficiency_20261030_v17/README.md)、[v16](papers/202610_letter/harness_efficiency_20261030_v16/README.md)、[v15](papers/202610_letter/harness_efficiency_20261030_v15/README.md)、[v14](papers/202610_letter/harness_efficiency_20261029_v14/README.md)を含む過去の原稿・実験記録はそのまま保持しています。
 
