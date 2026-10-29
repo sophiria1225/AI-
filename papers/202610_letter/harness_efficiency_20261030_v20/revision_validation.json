@@ -1,0 +1,78 @@
+{
+  "version": "v20",
+  "status": "pass",
+  "compared_with": "v19",
+  "change_scope": "Figure 1 role colors and repetition labels revised; manuscript text, captions, abstracts, measurements, conditions, tables and workbook unchanged from v19",
+  "japanese_abstract_chars": 115,
+  "english_abstract_words_conservative": 39,
+  "manuscript_content_items_exactly_match_v19": true,
+  "manuscript_source_bytes_exactly_match_v19": true,
+  "scientific_or_prose_changes": false,
+  "unchanged_scientific_files": {
+    "main.tex": "bab23cfa937ed230aff14ce423f5e2109400f92e43c0017083894abc351a5976",
+    "word_source.tex": "bab23cfa937ed230aff14ce423f5e2109400f92e43c0017083894abc351a5976",
+    "abstracts.tex": "17bd70e9a323816413e171d2b23cfcefab88db7021926be636f321340a9bf8f7",
+    "tables.tex": "45dcfb67cd2b10212c8ce0115f69fd989e78755d6405b361cbc26bee9ea32977",
+    "results_tables.xlsx": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+    "create_results_tables.py": "c3c3513aa250719c2d1f4c294b29ac784db5a210f20af2dc8b24e4b4258713e8",
+    "excel_tables_manifest.json": "58e9301fcaba87f6807a90ba5f940cb6477f5ec8e3491fa149a217dfd65b1944",
+    "references.tex": "154929c2579f2035b6223e7dfcb5e156aa66c152e2e583ca63a291089d088aef",
+    "references.bib": "7a9e82c1f429bd3a1403a1fdfb0a71d8136b599bb01bc561c15560ae429d8569",
+    "results_data.json": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+    "P144R1_results_data.json": "12ae2f39e21683582f088fe2daf84f75f92e634fc6f03c603dc71bb52db3a47d",
+    "P144R1_all_conditions.csv": "610a8e4334048f5067f63945958cbe3a28067b733caa49745dda4daa4dda4531",
+    "supplemental_results.tex": "606731a758f780161cb99b7f36d94fe712d8539ed2cd4f16b6a800e3a3455577",
+    "supplemental_results.pdf": "2e544067c03525c9fee43d1b8891dba991dc4988bf02d83230f0b87d0144ffaa",
+    "prepare_evidence.py": "8f34e2e308cf100a2c753d0f7da8e4fcd97706cc5f40b36069bca514aa4aa7c1",
+    "evidence_sources.json": "777c2f2dd76a95bfcbda0005e5721b78364d20f65d2677bf43ad5df9ece1efcc"
+  },
+  "editable_table_numeric_data_exactly_match_v19": true,
+  "method_names": [
+    "専用1回方式",
+    "専用反復方式",
+    "行動併記方式"
+  ],
+  "termination_condition_names": [
+    "通常継続",
+    "終了制御"
+  ],
+  "completion_check_name": "完了判定",
+  "native_results_workbook": "results_tables.xlsx",
+  "native_results_workbook_sha256": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+  "native_chart_count": 0,
+  "figure_caption_count": 1,
+  "table_caption_count": 2,
+  "figure_and_table_captions_number_and_short_Japanese_title_only": true,
+  "new_experiment_results_added": false,
+  "model_API_evaluator_calls": 0,
+  "body_supplement_file_directions_absent": true,
+  "English_method_names_absent_from_manuscript_body": true,
+  "parenthetical_explanations_absent_except_equation_structure": true,
+  "strict_prefix_mismatch_and_posthoc_scope_preserved": true,
+  "strict_prefix_criterion_purpose_defined_before_results": true,
+  "fullwidth_Japanese_punctuation_preserved": true,
+  "pages": {
+    "Word": "5 body + 1 English",
+    "TeX": "5 body + 1 English"
+  },
+  "source_sha256": {
+    "main.tex": "bab23cfa937ed230aff14ce423f5e2109400f92e43c0017083894abc351a5976",
+    "word_source.tex": "bab23cfa937ed230aff14ce423f5e2109400f92e43c0017083894abc351a5976",
+    "abstracts.tex": "17bd70e9a323816413e171d2b23cfcefab88db7021926be636f321340a9bf8f7",
+    "tables.tex": "45dcfb67cd2b10212c8ce0115f69fd989e78755d6405b361cbc26bee9ea32977",
+    "word_content.json": "316ec6368fb405f5aa2a5a7bc7f70862f974dcb2f0c7dd0962d1e2cb5dc1c5e4",
+    "build_word.py": "355057f75fbb23399cf27f60d00c21a234de146bdb9d3ba474728a778c356b76",
+    "reference_update.json": "0e666725af2edb7b20862bba5aa737f8ef751544fbecc7f46cd75c43a5b0d29c",
+    "results_tables.xlsx": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+    "figures/control_points.png": "fe861ba1616c3fcdb0dee2b03a3e22c8dbb0562b9772b6d13b2c5f1b08aaa35d",
+    "REVISION.md": "04f2992de0786ff3a25f8905c5d0c8a8cdd3cf08366dc72e32ff159f307967cc"
+  },
+  "implementation_checks": {
+    "opportunity_limits_not_installations": "dedicated once 1; dedicated repeated and action-combined 3",
+    "fresh_turn_origin": "previous opportunity closed, whether accepted or rejected",
+    "repeated_summary_inputs": "currently old unsummarized history and the existing accepted summary when available",
+    "simultaneous_current_action_results": "not included in generated summary; retained verbatim in following input",
+    "acceptance": "host structural, length and whole-next-input strict shortening; no semantic verifier",
+    "termination": "after all programs execute, known-template hand-written completion check; no added model judge"
+  }
+}
