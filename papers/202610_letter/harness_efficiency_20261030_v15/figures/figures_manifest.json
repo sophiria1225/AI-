@@ -1,0 +1,310 @@
+{
+  "version": "v15",
+  "scope": "Independent P123 and P64/P66 studies; no pooled effect",
+  "source_sha256": "f4a3db163f0aab1c84e08b04135e3ea2bd3fb92c77f31f20ddf7fefef33d5984",
+  "architecture_source_sha256": "5c9de749fdff858d6ffee022ecd7d0f839c3ae720e0734e82c99e718ba321806",
+  "data_sha256": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+  "outputs": {
+    "control_points.png": "fbc8702ab6c15b8fc0a1f0e6f7052226afe33b4f377f04d0f0bc62b7829f8e61",
+    "control_points.svg": "9f46a65fe1e9a1aa939a9fc843e12545f05ecd85ead9c0ddddb8eb33337fa692",
+    "control_points.pdf": "1e8cf563c3dbd5b8f7717fe063ab381ce7b352e69ae25099a4ddbca2a1967675",
+    "control_points.eps": "d2924731437c568445acdd9c3be74be93309e624c2e674f6c843c261d73a7090",
+    "result_photo.pdf": "b8e7ae3fe891010795fb3f57d71f43e4bae2065662c6058450510075cd4ec3fc",
+    "result_photo.png": "9e1ca74cea6e6aca06198b48736732d8b3593c6fc2f9eec424f2801ec14672a9",
+    "result_photo.svg": "0f15c6984d624be91c2a5c285eace726c8b344c1a915746332f53507e4236267",
+    "result_photo.eps": "c3dee20d77d368d5994bc56e192dd8602d8fc7011c92a328663e2d162c13160c",
+    "result_settlement.pdf": "81794acc3f217ad70257f3f53fe934eda78678f5b80b83cd780ec19e246e1921",
+    "result_settlement.png": "747240260d81619bb4ae408b7a6920eb8634398d31ed7834c43ee98a14a0e3fc",
+    "result_settlement.svg": "fac0b5e790fbfaab05f5de6df1645bbe7a733595b0e6620d6392ad1bf14fb9f7",
+    "result_settlement.eps": "46ac563d52a615a045a49e7c3940f4fde2205ab2f3d54b70e2bf81ec0e84a2cf",
+    "result_refund.pdf": "a9dc91eb701b5d3159544e12c9e9fefe0193ed4ab54d279b6f6337af86c12778",
+    "result_refund.png": "15d743fa092954214324223e39009309f6439d0be544e96efd51d8bee63b6961",
+    "result_refund.svg": "88199eeaeb67342497ad59a13f19d5420e997f060da7f6a0149476aaf4c179fd",
+    "result_refund.eps": "23cf1af833cbf1c3227f81c14f331a3da6b49993cc535c08ddcefc6b9c3c62be",
+    "result_csv.pdf": "6b745c70d3fe0d8a20451696ff20fadcaf0eea0c4fb0bbdf36a3a9c5925f6d14",
+    "result_csv.png": "3ad145ae84ba43e1ede2f931ce77f70afa02375c6b0f21b56682b0a940150446",
+    "result_csv.svg": "9ac5e9847f297cf94ebeaef4a7251518433efe94b81e458a63076ed4867fbce1",
+    "result_csv.eps": "9c4381234da6d208cee937125edff696e982e67de78afd3cf95bdc73910a6552",
+    "result_termination.pdf": "e7779425f0214441999912664314d63df2ecff0cce16f0860d2fdf6d97fa8053",
+    "result_termination.png": "70dfbab1b19b52f7b3e1a4810ed49b70c63d5c937b12821eb68d6e829e8ed234",
+    "result_termination.svg": "4e6784767e16362e36e8fdc8fa3149ebddf90edd1f4763a92530a64d647520a0",
+    "result_termination.eps": "57c5e8c7b7b596308ec4c6b5152eee96bfb9c6a6d9fedf88c541138f333164fb"
+  },
+  "minimum_font_pt": 7.0,
+  "figures": {
+    "control_points": {
+      "variant": "independent_control_flows",
+      "width_mm": 130,
+      "height_mm": 65,
+      "minimum_font_pt": 7.0,
+      "line_width_pt": 0.65,
+      "text_clipping": [],
+      "text_overlaps": [],
+      "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+      "font_name": "Hiragino Sans",
+      "vector_text_representation": "outlined glyph paths; no external font dependency",
+      "outputs": {
+        "control_points.png": "fbc8702ab6c15b8fc0a1f0e6f7052226afe33b4f377f04d0f0bc62b7829f8e61",
+        "control_points.svg": "9f46a65fe1e9a1aa939a9fc843e12545f05ecd85ead9c0ddddb8eb33337fa692",
+        "control_points.pdf": "1e8cf563c3dbd5b8f7717fe063ab381ce7b352e69ae25099a4ddbca2a1967675",
+        "control_points.eps": "d2924731437c568445acdd9c3be74be93309e624c2e674f6c843c261d73a7090"
+      },
+      "additional_model_API_eval_tokenizer_calls": 0,
+      "controls_A_B_independently_evaluated": true,
+      "diagram_A_scope": "要約候補の生成は機能を示す。同時要約は行動と同じ応答内に候補を出力し，追加モデル呼出しは行わない。方式と機会上限1/3/3は本文3.1に示す。",
+      "panel_titles": [
+        "実験A：入力履歴の更新",
+        "実験B：終了判断"
+      ],
+      "method_names": [
+        "単回要約",
+        "反復要約",
+        "同時要約"
+      ],
+      "summary_opportunity_limits": [
+        1,
+        3,
+        3
+      ],
+      "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+      "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+      "evaluator_scope": "After the task run only; no answer flows into the running model."
+    },
+    "result_photo": {
+      "source_pdf_page": 1,
+      "source_crop_points": [
+        18.0,
+        18.00079345703125,
+        406.6300048828125,
+        301.46575927734375
+      ],
+      "source_crop_mm": [
+        137.10002950032552,
+        100.00014071994357
+      ],
+      "width_mm": 65,
+      "height_mm": 50,
+      "uniform_scale": 0.4741063895966972,
+      "minimum_font_pt": 7.59250020980835,
+      "exported_text": "単回要約反復要約同時要約0100200300400500139.871139.871129.374総トークン数（千トークン）",
+      "colors": [
+        "#4C78A8",
+        "#F28E2B",
+        "#59A14F"
+      ],
+      "y_axis_label": "総トークン数（千トークン）",
+      "y_axis_origin": 0.0,
+      "y_axis_maximum": 500.0,
+      "outputs": {
+        "result_photo.pdf": "b8e7ae3fe891010795fb3f57d71f43e4bae2065662c6058450510075cd4ec3fc",
+        "result_photo.png": "9e1ca74cea6e6aca06198b48736732d8b3593c6fc2f9eec424f2801ec14672a9",
+        "result_photo.svg": "0f15c6984d624be91c2a5c285eace726c8b344c1a915746332f53507e4236267",
+        "result_photo.eps": "c3dee20d77d368d5994bc56e192dd8602d8fc7011c92a328663e2d162c13160c"
+      },
+      "study": "P123",
+      "task_id": "34d9492_1",
+      "methods": [
+        "単回要約",
+        "反復要約",
+        "同時要約"
+      ],
+      "total_tokens": [
+        139871,
+        139871,
+        129374
+      ],
+      "bar_value_labels": "Native value labels update with cell values; thousand tokens with three decimal places preserve exact integer token counts."
+    },
+    "result_settlement": {
+      "source_pdf_page": 2,
+      "source_crop_points": [
+        18.0,
+        18.00079345703125,
+        406.6300048828125,
+        301.46575927734375
+      ],
+      "source_crop_mm": [
+        137.10002950032552,
+        100.00014071994357
+      ],
+      "width_mm": 65,
+      "height_mm": 50,
+      "uniform_scale": 0.4741063895966972,
+      "minimum_font_pt": 7.59250020980835,
+      "exported_text": "単回要約反復要約同時要約0100200300400500211.110211.110211.110総トークン数（千トークン）",
+      "colors": [
+        "#4C78A8",
+        "#F28E2B",
+        "#59A14F"
+      ],
+      "y_axis_label": "総トークン数（千トークン）",
+      "y_axis_origin": 0.0,
+      "y_axis_maximum": 500.0,
+      "outputs": {
+        "result_settlement.pdf": "81794acc3f217ad70257f3f53fe934eda78678f5b80b83cd780ec19e246e1921",
+        "result_settlement.png": "747240260d81619bb4ae408b7a6920eb8634398d31ed7834c43ee98a14a0e3fc",
+        "result_settlement.svg": "fac0b5e790fbfaab05f5de6df1645bbe7a733595b0e6620d6392ad1bf14fb9f7",
+        "result_settlement.eps": "46ac563d52a615a045a49e7c3940f4fde2205ab2f3d54b70e2bf81ec0e84a2cf"
+      },
+      "study": "P123",
+      "task_id": "3c13f5a_1",
+      "methods": [
+        "単回要約",
+        "反復要約",
+        "同時要約"
+      ],
+      "total_tokens": [
+        211110,
+        211110,
+        211110
+      ],
+      "bar_value_labels": "Native value labels update with cell values; thousand tokens with three decimal places preserve exact integer token counts."
+    },
+    "result_refund": {
+      "source_pdf_page": 3,
+      "source_crop_points": [
+        18.0,
+        18.00079345703125,
+        406.6300048828125,
+        301.46575927734375
+      ],
+      "source_crop_mm": [
+        137.10002950032552,
+        100.00014071994357
+      ],
+      "width_mm": 65,
+      "height_mm": 50,
+      "uniform_scale": 0.4741063895966972,
+      "minimum_font_pt": 7.59250020980835,
+      "exported_text": "単回要約反復要約同時要約0100200300400500102.087102.087102.087総トークン数（千トークン）",
+      "colors": [
+        "#4C78A8",
+        "#F28E2B",
+        "#59A14F"
+      ],
+      "y_axis_label": "総トークン数（千トークン）",
+      "y_axis_origin": 0.0,
+      "y_axis_maximum": 500.0,
+      "outputs": {
+        "result_refund.pdf": "a9dc91eb701b5d3159544e12c9e9fefe0193ed4ab54d279b6f6337af86c12778",
+        "result_refund.png": "15d743fa092954214324223e39009309f6439d0be544e96efd51d8bee63b6961",
+        "result_refund.svg": "88199eeaeb67342497ad59a13f19d5420e997f060da7f6a0149476aaf4c179fd",
+        "result_refund.eps": "23cf1af833cbf1c3227f81c14f331a3da6b49993cc535c08ddcefc6b9c3c62be"
+      },
+      "study": "P123",
+      "task_id": "60d0b5b_1",
+      "methods": [
+        "単回要約",
+        "反復要約",
+        "同時要約"
+      ],
+      "total_tokens": [
+        102087,
+        102087,
+        102087
+      ],
+      "bar_value_labels": "Native value labels update with cell values; thousand tokens with three decimal places preserve exact integer token counts."
+    },
+    "result_csv": {
+      "source_pdf_page": 4,
+      "source_crop_points": [
+        18.0,
+        18.00079345703125,
+        406.6300048828125,
+        301.46575927734375
+      ],
+      "source_crop_mm": [
+        137.10002950032552,
+        100.00014071994357
+      ],
+      "width_mm": 65,
+      "height_mm": 50,
+      "uniform_scale": 0.4741063895966972,
+      "minimum_font_pt": 7.59250020980835,
+      "exported_text": "単回要約反復要約同時要約0100200300400500440.461332.588394.351総トークン数（千トークン）",
+      "colors": [
+        "#4C78A8",
+        "#F28E2B",
+        "#59A14F"
+      ],
+      "y_axis_label": "総トークン数（千トークン）",
+      "y_axis_origin": 0.0,
+      "y_axis_maximum": 500.0,
+      "outputs": {
+        "result_csv.pdf": "6b745c70d3fe0d8a20451696ff20fadcaf0eea0c4fb0bbdf36a3a9c5925f6d14",
+        "result_csv.png": "3ad145ae84ba43e1ede2f931ce77f70afa02375c6b0f21b56682b0a940150446",
+        "result_csv.svg": "9ac5e9847f297cf94ebeaef4a7251518433efe94b81e458a63076ed4867fbce1",
+        "result_csv.eps": "9c4381234da6d208cee937125edff696e982e67de78afd3cf95bdc73910a6552"
+      },
+      "study": "P123",
+      "task_id": "6104387_1",
+      "methods": [
+        "単回要約",
+        "反復要約",
+        "同時要約"
+      ],
+      "total_tokens": [
+        440461,
+        332588,
+        394351
+      ],
+      "bar_value_labels": "Native value labels update with cell values; thousand tokens with three decimal places preserve exact integer token counts."
+    },
+    "result_termination": {
+      "source_pdf_page": 5,
+      "source_crop_points": [
+        18.0,
+        18.00079345703125,
+        406.6300048828125,
+        346.4797668457031
+      ],
+      "source_crop_mm": [
+        137.10002950032552,
+        115.88008227878147
+      ],
+      "width_mm": 65,
+      "height_mm": 58,
+      "uniform_scale": 0.4741063895966972,
+      "minimum_font_pt": 7.5791730880737305,
+      "exported_text": "文書必須名前参照05010015030.15% 減26.00% 減通常継続完了判定総トークン数（千トークン）",
+      "colors": [
+        "#4C78A8",
+        "#F28E2B"
+      ],
+      "y_axis_label": "総トークン数（千トークン）",
+      "y_axis_origin": 0.0,
+      "y_axis_maximum": 180.0,
+      "outputs": {
+        "result_termination.pdf": "e7779425f0214441999912664314d63df2ecff0cce16f0860d2fdf6d97fa8053",
+        "result_termination.png": "70dfbab1b19b52f7b3e1a4810ed49b70c63d5c937b12821eb68d6e829e8ed234",
+        "result_termination.svg": "4e6784767e16362e36e8fdc8fa3149ebddf90edd1f4763a92530a64d647520a0",
+        "result_termination.eps": "57c5e8c7b7b596308ec4c6b5152eee96bfb9c6a6d9fedf88c541138f333164fb"
+      },
+      "study": "P64/P66",
+      "ordinary_tokens": [
+        130439,
+        151664
+      ],
+      "controlled_tokens": [
+        91116,
+        112233
+      ],
+      "reduction_percent": [
+        30.146658591372212,
+        25.998918662306153
+      ],
+      "bar_value_labels": "Figure 6 uses native editable text labels calculated when building the workbook; after editing data, update labels to match aggregate D13:E14."
+    }
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "excel_chart_builder_sha256": "e29205d57eca9f752347a36994677afba2eb34db9c8f2e299f9f5bd31c6d17bf",
+  "workbook_sha256": "ef5ffa469aefeece839328911d27d54bff43ea15bf86295e79226bcde525667c",
+  "export_manifest_sha256": "61cdd908287a88d885742c04976152aafc02bdcbd867cbed6dbb97c66b30ec25",
+  "source_export": {
+    "file": "excel_charts_source.pdf",
+    "sha256": "2bcbe0cd2c9ebfb1bcefc24c1bf8a3c695ba7b43182100ac1cdd5653324ffdf1"
+  },
+  "font_family": "Hiragino Sans",
+  "rendering_method": "Native chart XML -> LibreOffice Calc PDF -> vector crop, no independently redrawn plot",
+  "native_Microsoft_Excel_render_verified": false
+}
