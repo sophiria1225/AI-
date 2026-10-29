@@ -1,0 +1,58 @@
+{
+  "version": "v17",
+  "scope": "Three summary-call arrangements in study A and independently evaluated stopping control in study B; results shown in tables only.",
+  "source_sha256": "bf814cdb54f5c540da13c6cb861e31670e560dcb04e0947b6377c1ed532d895d",
+  "architecture_source_sha256": "bf814cdb54f5c540da13c6cb861e31670e560dcb04e0947b6377c1ed532d895d",
+  "data_sha256": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+  "outputs": {
+    "control_points.png": "00b9b45252166f2b9ccf8f55b4780d171c5231d4b15f637cb1ebf5de04309a55",
+    "control_points.svg": "0322238c17ce7a890db92b5e60549f9ee89d47edb2d26fa7b9c12be013854824",
+    "control_points.pdf": "91be5920f9f784a2bb624ac40dcc39c5967c7fb08bae20fbb8bb53da0d283417",
+    "control_points.eps": "177a3358c37061224d3a6f9309f39dee2d0d65d52ab0a261f24c48246f104913"
+  },
+  "minimum_font_pt": 7.0,
+  "figures": {
+    "control_points": {
+      "variant": "independent_control_flows",
+      "width_mm": 130,
+      "height_mm": 110,
+      "minimum_font_pt": 7.0,
+      "line_width_pt": 0.65,
+      "text_clipping": [],
+      "text_overlaps": [],
+      "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+      "font_name": "Hiragino Sans",
+      "vector_text_representation": "outlined glyph paths; no external font dependency",
+      "outputs": {
+        "control_points.png": "00b9b45252166f2b9ccf8f55b4780d171c5231d4b15f637cb1ebf5de04309a55",
+        "control_points.svg": "0322238c17ce7a890db92b5e60549f9ee89d47edb2d26fa7b9c12be013854824",
+        "control_points.pdf": "91be5920f9f784a2bb624ac40dcc39c5967c7fb08bae20fbb8bb53da0d283417",
+        "control_points.eps": "177a3358c37061224d3a6f9309f39dee2d0d65d52ab0a261f24c48246f104913"
+      },
+      "additional_model_API_eval_tokenizer_calls": 0,
+      "controls_A_B_independently_evaluated": true,
+      "diagram_A_scope": "専用方式は要約生成・採否検査・行動生成の順。行動併記方式は同じ応答で行動と候補を生成し，プログラム実行と結果記録の後，次の行動生成前に採否を決める。候補はその新しい実行結果を含まない。",
+      "panel_titles": [
+        "実験A：要約機会での呼出し順序",
+        "実験B：API実行記録に基づく終了制御"
+      ],
+      "method_names": [
+        "専用1回方式",
+        "専用反復方式",
+        "行動併記方式"
+      ],
+      "summary_opportunity_limits": [
+        1,
+        3,
+        3
+      ],
+      "monochrome_encoding": "Action calls: solid gray. Dedicated summary calls: hatched with dashed border. Harness steps: plain white. Inline action and candidate share one gray outer response box with no dedicated-summary hatching.",
+      "B_rule_scope": "Handwritten completion check for the known request type: all target moves and name retention; complete API once when supported, otherwise continue.",
+      "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+      "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+      "evaluator_scope": "After the task run only; no answer flows into the running model."
+    }
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "result_graphs_included": false
+}

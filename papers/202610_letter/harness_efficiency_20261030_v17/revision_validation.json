@@ -1,0 +1,68 @@
+{
+  "version": "v17",
+  "status": "pass",
+  "compared_with": "v16",
+  "user_reference_PDF_matches": "harness_efficiency_20261029_v14/manuscript.pdf",
+  "user_reference_PDF_sha256": "837026acff6d4bd939abf3879ca36f4ccc48a11a32227d5a5954662770dc15d6",
+  "change_scope": "Method names and call arrangement explained; result charts removed; results appear in two editable tables; one revised architecture figure; title and abstracts align with total logical tokens",
+  "japanese_abstract_chars": 116,
+  "english_abstract_words_conservative": 39,
+  "unchanged_scientific_files": {
+    "references.tex": "154929c2579f2035b6223e7dfcb5e156aa66c152e2e583ca63a291089d088aef",
+    "references.bib": "7a9e82c1f429bd3a1403a1fdfb0a71d8136b599bb01bc561c15560ae429d8569",
+    "results_data.json": "b8e21d0ede543508ad5b0f31d8cd189707db7d80b6f0a59215b35e326f1074db",
+    "P144R1_results_data.json": "12ae2f39e21683582f088fe2daf84f75f92e634fc6f03c603dc71bb52db3a47d",
+    "P144R1_all_conditions.csv": "610a8e4334048f5067f63945958cbe3a28067b733caa49745dda4daa4dda4531",
+    "supplemental_results.tex": "606731a758f780161cb99b7f36d94fe712d8539ed2cd4f16b6a800e3a3455577",
+    "supplemental_results.pdf": "2e544067c03525c9fee43d1b8891dba991dc4988bf02d83230f0b87d0144ffaa",
+    "prepare_evidence.py": "8f34e2e308cf100a2c753d0f7da8e4fcd97706cc5f40b36069bca514aa4aa7c1",
+    "evidence_sources.json": "777c2f2dd76a95bfcbda0005e5721b78364d20f65d2677bf43ad5df9ece1efcc"
+  },
+  "editable_table_numeric_data_exactly_match_v16": true,
+  "method_names": [
+    "専用1回方式",
+    "専用反復方式",
+    "行動併記方式"
+  ],
+  "termination_condition_names": [
+    "通常継続",
+    "終了制御"
+  ],
+  "completion_check_name": "完了判定",
+  "native_results_workbook": "results_tables.xlsx",
+  "native_results_workbook_sha256": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+  "native_chart_count": 0,
+  "figure_caption_count": 1,
+  "table_caption_count": 2,
+  "figure_and_table_captions_number_and_short_Japanese_title_only": true,
+  "new_experiment_results_added": false,
+  "model_API_evaluator_calls": 0,
+  "body_supplement_file_directions_absent": true,
+  "English_method_names_absent_from_manuscript_body": true,
+  "parenthetical_explanations_absent_except_equation_structure": true,
+  "strict_prefix_mismatch_and_posthoc_scope_preserved": true,
+  "pages": {
+    "Word": "5 body + 1 English",
+    "TeX": "5 body + 1 English"
+  },
+  "source_sha256": {
+    "main.tex": "18ca87a7201b90dbb4f6291291ede67a31d6581f60f2a5549a17a8af7b5da4fa",
+    "word_source.tex": "18ca87a7201b90dbb4f6291291ede67a31d6581f60f2a5549a17a8af7b5da4fa",
+    "abstracts.tex": "f2533c864b5fdc5cfc7efb51b333c448d1511402021704839dc61e012b6860ca",
+    "tables.tex": "45dcfb67cd2b10212c8ce0115f69fd989e78755d6405b361cbc26bee9ea32977",
+    "word_content.json": "c1d01a4f04b5ebc40c6c2782c4917a903ef8147cd14e11d5261b92ed0a87045b",
+    "build_word.py": "49f642fd015ffa6fef76abb6e435b3c977f5a718481d8a1ca64a713d61b2af69",
+    "reference_update.json": "443d68cc62c7fc8d5253b2b35328cb6d9c8688aed7ac115b798ae19a661be8ca",
+    "results_tables.xlsx": "29030c78ddf64e0a96950519edd2069c27d5d38e7aa12eeb2609c2bb2f6e15f6",
+    "figures/control_points.png": "00b9b45252166f2b9ccf8f55b4780d171c5231d4b15f637cb1ebf5de04309a55",
+    "REVISION.md": "261e4f46bbef5c543decf6f1bb5bc3adccd1caf6627299847df651b9368313d4"
+  },
+  "implementation_checks": {
+    "opportunity_limits_not_installations": "dedicated once 1; dedicated repeated and action-combined 3",
+    "fresh_turn_origin": "previous opportunity closed, whether accepted or rejected",
+    "repeated_summary_inputs": "previous accepted summary and newly old unsummarized history",
+    "simultaneous_current_action_results": "not included in generated summary; retained verbatim in following input",
+    "acceptance": "host structural, length and whole-next-input strict shortening; no semantic verifier",
+    "termination": "after all programs execute, known-template hand-written completion check; no added model judge"
+  }
+}
