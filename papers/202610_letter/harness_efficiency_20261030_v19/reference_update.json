@@ -1,0 +1,174 @@
+{
+  "version": "v16",
+  "checked_at_utc": "2026-10-28T21:13:45.552053+00:00",
+  "reference_count": 12,
+  "new_reference_count": 0,
+  "arxiv_only_references": 0,
+  "author_institution_corroboration": {
+    "park2023generative": "https://research.google/pubs/generative-agents-interactive-simulacra-of-human-behavior/"
+  },
+  "inherited_reference_update": {
+    "source_url": "https://aclanthology.org/2025.findings-emnlp.1304/",
+    "viewed_scope": [
+      "official bibliographic page",
+      "abstract"
+    ],
+    "verified_title": "Runaway is Ashamed, But Helpful: On the Early-Exit Behavior of Large Language Model-based Agents in Embodied Environments",
+    "authors": [
+      "Qingyu Lu",
+      "Liang Ding",
+      "Siyi Cao",
+      "Xuebo Liu",
+      "Kanjian Zhang",
+      "Jinxia Zhang",
+      "Dacheng Tao"
+    ],
+    "venue": "Findings of ACL: EMNLP 2025",
+    "pages": "24014-24027",
+    "doi": "10.18653/v1/2025.findings-emnlp.1304",
+    "supported_statement": "Exit instructions and an external completion verification approach have prior work.",
+    "not_verified": [
+      "author implementation reproduced",
+      "same benchmark or quality/cost endpoint as this paper",
+      "method novelty or superiority"
+    ],
+    "old_paper_bibliographies_modified": false
+  },
+  "inherited_rechecked_primary_urls": [
+    "https://proceedings.mlr.press/v235/wang24h.html",
+    "https://aclanthology.org/2024.acl-long.91/",
+    "https://proceedings.mlr.press/v306/kang26b.html",
+    "https://aclanthology.org/2026.findings-emnlp.899/",
+    "https://aclanthology.org/2025.findings-emnlp.1304/",
+    "https://aclanthology.org/2024.acl-long.850/"
+  ],
+  "inherited_react_recheck": "OpenReview challenge page on this pass; existing v04 published citation retained without inventing a new verification.",
+  "limits": [
+    "Literature positioning only; no external implementation reproduced.",
+    "No superiority over these methods is claimed.",
+    "No exhaustive novelty certification."
+  ],
+  "experimental_data_changed": false,
+  "old_paper_files_modified": false,
+  "v08_related_work_recheck": {
+    "checked_at_utc": "2026-10-28T21:13:45.552053+00:00",
+    "new_references": 0,
+    "source_scope": "Official proceedings abstracts and author-institution publication page; no implementation reproduction or superiority certification",
+    "primary_urls": {
+      "jiang2023llmlingua": "https://aclanthology.org/2023.emnlp-main.825/",
+      "pan2024llmlingua2": "https://aclanthology.org/2024.findings-acl.57/",
+      "jiang2024longllmlingua": "https://aclanthology.org/2024.acl-long.91/",
+      "kang2026acon": "https://proceedings.mlr.press/v306/kang26b.html",
+      "xu2026tokenpilot": "https://aclanthology.org/2026.findings-emnlp.899/",
+      "park2023generative": "https://research.google/pubs/generative-agents-interactive-simulacra-of-human-behavior/",
+      "shinn2023reflexion": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "lu2025runaway": "https://aclanthology.org/2025.findings-emnlp.1304/"
+    },
+    "supported_positioning": [
+      "Input compression: budget/token selection, distilled token classification, important long-context information.",
+      "Long sessions: observation/history compression guidelines and prompt-cache continuity.",
+      "Memory: recorded experiences, abstractions and retrieval; language feedback for later trials.",
+      "Termination: exit instructions and external completion verification."
+    ],
+    "manuscript_contribution_scope": "Call placement and public-evidence termination compared in separate known development conditions; no new compression/memory/termination principle or superiority claim."
+  },
+  "inherited_v05_new_reference_count": 5,
+  "inherited_v05_added": [
+    {
+      "key": "liu2024lost",
+      "primary_url": "https://aclanthology.org/2024.tacl-1.9/",
+      "venue_pages": "TACL 12 (2024), 157–173",
+      "doi": "10.1162/tacl_a_00638",
+      "supported_statement_ja": "関連情報の位置で長文処理性能が変化する。",
+      "checked_scope": "official journal page and abstract"
+    },
+    {
+      "key": "jiang2023llmlingua",
+      "primary_url": "https://aclanthology.org/2023.emnlp-main.825/",
+      "venue_pages": "EMNLP 2023, 13358–13376",
+      "doi": "10.18653/v1/2023.emnlp-main.825",
+      "supported_statement_ja": "トークン単位の圧縮と予算制御を扱う。",
+      "checked_scope": "official proceedings page and abstract"
+    },
+    {
+      "key": "pan2024llmlingua2",
+      "primary_url": "https://aclanthology.org/2024.findings-acl.57/",
+      "venue_pages": "Findings ACL 2024, 963–981",
+      "doi": "10.18653/v1/2024.findings-acl.57",
+      "supported_statement_ja": "蒸留データを用い、圧縮をトークン分類として学習する。",
+      "checked_scope": "official proceedings page and abstract"
+    },
+    {
+      "key": "park2023generative",
+      "primary_url": "https://doi.org/10.1145/3586183.3606763",
+      "venue_pages": "ACM UIST 2023, article 2, 1–22",
+      "doi": "10.1145/3586183.3606763",
+      "supported_statement_ja": "経験の記憶、上位概念への抽象化、動的検索を使う。",
+      "checked_scope": "official ACM indexed publisher result and author-institution page; direct ACM open returned HTTP 403"
+    },
+    {
+      "key": "shinn2023reflexion",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "venue_pages": "NeurIPS 36 (2023), 8634–8652",
+      "doi": "10.52202/075280-0377",
+      "supported_statement_ja": "言語的フィードバックをエピソード記憶に保持し後続試行へ利用する。",
+      "checked_scope": "official proceedings page, abstract, and publisher BibTeX"
+    }
+  ],
+  "added": [],
+  "inherited_v05_checked_at_utc": "2026-10-28T16:34:48.593967+00:00",
+  "reference_history_note": "Five additions belong to v05. v08 rechecked positioning. v09 through v16 retain the same twelve formal references and add none.",
+  "v09_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v08",
+    "scope": "Editorial wording only; inherited primary-source verification retained without claiming a new retrieval."
+  },
+  "v10_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v09",
+    "scope": "Outcome-led editorial revision only; inherited primary-source verification retained without claiming a new retrieval."
+  },
+  "v11_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v10",
+    "scope": "Concrete explanation of previously implemented and evaluated harness control procedures; inherited primary-source verification retained without claiming a new retrieval."
+  },
+  "v12_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v11",
+    "scope": "Short Japanese-only figure/table titles and prose procedures; inherited primary-source verification retained without claiming a new retrieval."
+  },
+  "v13_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v12",
+    "scope": "Readable explanation of existing harness control and revised abstracts; inherited primary-source verification retained without claiming a new retrieval."
+  },
+  "v15_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v14",
+    "scope": "Japanese method terminology, expanded explanation of the existing procedures, and separate task charts; no new literature retrieval or experiment."
+  },
+  "v16_revision": {
+    "new_references": 0,
+    "reference_bytes_unchanged_from": "v15",
+    "scope": "Four task charts grouped into a square figure; existing measurement scope and result interpretation explained further; no new experiment or source retrieval."
+  },
+  "v17_revision": {
+    "reference_count": 12,
+    "reference_bytes_unchanged_from": "v16",
+    "new_references_added": false,
+    "scope": "Terminology, title, abstracts, one architecture figure and two result tables; no new literature claims"
+  },
+  "v18_revision": {
+    "reference_count": 12,
+    "reference_bytes_unchanged_from": "v17",
+    "new_references_added": false,
+    "scope": "Figure 1 layout and labels only; manuscript text and claims unchanged"
+  },
+  "v19_revision": {
+    "reference_count": 12,
+    "reference_bytes_unchanged_from": "v18",
+    "new_references_added": false,
+    "scope": "Prose and explanation order revised; all measurements, conditions, citations and figure assets unchanged"
+  }
+}

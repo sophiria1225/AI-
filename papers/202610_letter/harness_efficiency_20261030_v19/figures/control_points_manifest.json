@@ -1,0 +1,63 @@
+{
+  "variant": "independent_control_flows",
+  "width_mm": 130,
+  "height_mm": 97,
+  "minimum_font_pt": 7.0,
+  "line_width_pt": 0.65,
+  "text_clipping": [],
+  "text_overlaps": [],
+  "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+  "font_name": "Hiragino Sans",
+  "vector_text_representation": "outlined glyph paths; no external font dependency",
+  "outputs": {
+    "control_points.png": "89dddedbfe2b4fc4de3f0d4b1273f930b105945df7e9664cedc4e113d5d2a66f",
+    "control_points.svg": "8f59d801527e2b511d4f1eac78352e8e87626142ea5c37d2dcb985e7f061e437",
+    "control_points.pdf": "cd9d466d10959d4eafe676569dd86f77069bece5765f49b16909d6c66c27b73b",
+    "control_points.eps": "356a9aa4cdf4678c4ed798f23c7033a67319f70d9355e66a7da59ea524004bde"
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "controls_A_B_independently_evaluated": true,
+  "diagram_A_scope": "専用方式は要約生成・採否判定・行動生成の順。行動併記方式は同じ応答で行動と候補を生成し，プログラム実行と結果記録の後，次の行動生成前に採否を決める。候補はその新しい実行結果を含まない。",
+  "panel_titles": [
+    "実験A：要約機会での呼出し順序",
+    "実験B：API実行記録に基づく終了制御"
+  ],
+  "method_names": [
+    "専用1回方式",
+    "専用反復方式",
+    "行動併記方式"
+  ],
+  "summary_opportunity_limits": [
+    1,
+    3,
+    3
+  ],
+  "aligned_columns_mm": {
+    "current_action": [
+      43,
+      69
+    ],
+    "execution_and_record": [
+      73,
+      91
+    ],
+    "next_action": [
+      114,
+      127
+    ]
+  },
+  "current_turn_boundary_x_mm": 93.5,
+  "repetition_notation": "The same repeat marker appears next to both recurrent methods; it denotes a later eligible opportunity, not repetition on every turn.",
+  "details_delegated_to_body": [
+    "candidate format/length/whole-next-input shortening check",
+    "accepted summary plus unsummarized history",
+    "rejection keeps current input representation",
+    "full original history archive",
+    "inline candidate does not contain the current response execution result"
+  ],
+  "monochrome_encoding": "Action calls: solid gray. Dedicated summary calls: hatched with dashed border. Harness steps: plain white. Inline action and candidate share one gray outer response box with no dedicated-summary hatching.",
+  "B_rule_scope": "Handwritten completion check for the known request type: all target moves and name retention; complete API once when supported, otherwise continue.",
+  "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+  "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+  "evaluator_scope": "After the task run only; no answer flows into the running model."
+}
