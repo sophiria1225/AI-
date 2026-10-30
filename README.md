@@ -1,5 +1,7 @@
 # AIハーネス研究
 
+**提出項目2の電子データ**を別フォルダに整理しました。[提出用ZIP](papers/202610_letter/submission/electronic_data_20261030/submission_electronic_data.zip)は1,008,167バイトで、10MB未満です。Word、図1の画像・編集元、Excel結果表・元データ、参考LaTeXソースを収録しています。原稿調整中のv26を収録した準備版で、印刷見本の原稿PDFは含みません。[収録内容・最終稿への更新方法](papers/202610_letter/submission/electronic_data_20261030/README.md)。
+
 2026-10-30版の原稿 **v26**：4.2と5.2は観測した成果で締め、実験後に「6．考察」を追加し、「7．むすび」の最後を今後の発展予定としました。結果の意味と評価範囲を考察にまとめ、各節を否定表現で終えない構成にしています。
 
 [Word原稿](papers/202610_letter/harness_efficiency_20261030_v26/manuscript.docx) ／ [参考校正PDF](papers/202610_letter/harness_efficiency_20261030_v26/manuscript.pdf) ／ [TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v26/manuscript_tex.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261030_v26/figures/control_points.png) ／ [Excel結果表](papers/202610_letter/harness_efficiency_20261030_v26/results_tables.xlsx) ／ [一式ZIP](papers/202610_letter/harness_efficiency_20261030_v26/source_bundle.zip) ／ [変更内容・編集方法](papers/202610_letter/harness_efficiency_20261030_v26/README.md)。
