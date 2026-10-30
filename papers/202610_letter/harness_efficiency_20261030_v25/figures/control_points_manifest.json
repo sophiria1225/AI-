@@ -1,0 +1,306 @@
+{
+  "variant": "independent_control_flows",
+  "width_mm": 130,
+  "height_mm": 97,
+  "minimum_font_pt": 7.0,
+  "line_width_pt": 0.65,
+  "text_clipping": [],
+  "text_overlaps": [],
+  "process_boxes": [
+    {
+      "label": "",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        3,
+        7.5,
+        4,
+        3
+      ]
+    },
+    {
+      "label": "",
+      "role": "summary",
+      "fill": "#FBE3CC",
+      "bounds_mm": [
+        48,
+        7.5,
+        4,
+        3
+      ]
+    },
+    {
+      "label": "",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        94,
+        7.5,
+        4,
+        3
+      ]
+    },
+    {
+      "label": "要約生成",
+      "role": "summary",
+      "fill": "#FBE3CC",
+      "bounds_mm": [
+        3,
+        23,
+        18,
+        7
+      ]
+    },
+    {
+      "label": "採否判定",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        25,
+        23,
+        14,
+        7
+      ]
+    },
+    {
+      "label": "行動生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        43,
+        23,
+        26,
+        7
+      ]
+    },
+    {
+      "label": "実行・記録",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        73,
+        23,
+        18,
+        7
+      ]
+    },
+    {
+      "label": "行動生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        114,
+        23,
+        13,
+        7
+      ]
+    },
+    {
+      "label": "要約生成",
+      "role": "summary",
+      "fill": "#FBE3CC",
+      "bounds_mm": [
+        3,
+        39,
+        18,
+        7
+      ]
+    },
+    {
+      "label": "採否判定",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        25,
+        39,
+        14,
+        7
+      ]
+    },
+    {
+      "label": "行動生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        43,
+        39,
+        26,
+        7
+      ]
+    },
+    {
+      "label": "実行・記録",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        73,
+        39,
+        18,
+        7
+      ]
+    },
+    {
+      "label": "行動生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        114,
+        39,
+        13,
+        7
+      ]
+    },
+    {
+      "label": "行動・要約候補生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        43,
+        55,
+        26,
+        7
+      ]
+    },
+    {
+      "label": "実行・記録",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        73,
+        55,
+        18,
+        7
+      ]
+    },
+    {
+      "label": "行動生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        114,
+        55,
+        13,
+        7
+      ]
+    },
+    {
+      "label": "採否判定",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        97,
+        55,
+        13,
+        7
+      ]
+    },
+    {
+      "label": "API実行記録",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        3,
+        82,
+        29,
+        8
+      ]
+    },
+    {
+      "label": "完了条件の照合",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        36,
+        82,
+        32,
+        8
+      ]
+    },
+    {
+      "label": "完了API呼出し・終了",
+      "role": "harness",
+      "fill": "#FFFFFF",
+      "bounds_mm": [
+        94,
+        76,
+        33,
+        8
+      ]
+    },
+    {
+      "label": "次の生成",
+      "role": "action",
+      "fill": "#DCEAF7",
+      "bounds_mm": [
+        94,
+        87,
+        33,
+        8
+      ]
+    }
+  ],
+  "font_file_sha256": "ff92033a300f55aff2f45f57479a560af2c5467973b425d3f724f870af07f83e",
+  "font_name": "Hiragino Sans",
+  "vector_text_representation": "outlined glyph paths; no external font dependency",
+  "outputs": {
+    "control_points.png": "fe861ba1616c3fcdb0dee2b03a3e22c8dbb0562b9772b6d13b2c5f1b08aaa35d",
+    "control_points.svg": "5540fbb7a2912267b8d35c539c00205bda370f148b347d56c1f6189c02e2dc23",
+    "control_points.pdf": "a1b4c7dd3cc648953fd9caee860f59124defd9177103168e4e5e80f1908c8c61",
+    "control_points.eps": "c0fa2e76a59964f53433f50eafd2972a3e0e1a88a168b404669ba6043f98727e"
+  },
+  "additional_model_API_eval_tokenizer_calls": 0,
+  "controls_A_B_independently_evaluated": true,
+  "diagram_A_scope": "専用方式は要約生成・採否判定・行動生成の順。行動併記方式は同じ応答で行動と候補を生成し，プログラム実行と結果記録の後，次の行動生成前に採否を決める。候補はその新しい実行結果を含まない。",
+  "panel_titles": [
+    "実験A：要約機会での呼出し順序",
+    "実験B：API実行記録に基づく終了制御"
+  ],
+  "method_names": [
+    "専用1回方式",
+    "専用反復方式",
+    "行動併記方式"
+  ],
+  "summary_opportunity_limits": [
+    1,
+    3,
+    3
+  ],
+  "aligned_columns_mm": {
+    "current_action": [
+      43,
+      69
+    ],
+    "execution_and_record": [
+      73,
+      91
+    ],
+    "next_action": [
+      114,
+      127
+    ]
+  },
+  "current_turn_boundary_x_mm": 93.5,
+  "repetition_notation": "Both maximum-three methods use the same text label; no circular repeat icons, return arrows or separate repeat note appear.",
+  "max3_label": "要約機会：条件成立時，最大3回",
+  "role_colors": {
+    "action": "#DCEAF7",
+    "summary": "#FBE3CC",
+    "harness": "#FFFFFF"
+  },
+  "text_and_line_color": "#000000",
+  "hatching": false,
+  "circular_repeat_icons": false,
+  "return_arrows": false,
+  "details_delegated_to_body": [
+    "candidate format/length/whole-next-input shortening check",
+    "accepted summary plus unsummarized history",
+    "rejection keeps current input representation",
+    "full original history archive",
+    "inline candidate does not contain the current response execution result"
+  ],
+  "monochrome_encoding": "Pale blue and pale orange fills may appear similar in grayscale. Process labels, the role legend and chronological placement carry the meaning independently of fill differences; all text, borders and arrows are black. The whole inline action-and-candidate box is one action-generating call.",
+  "B_rule_scope": "Handwritten completion check for the known request type: all target moves and name retention; complete API once when supported, otherwise continue.",
+  "recurrent_summary_input": "Previous accepted summary plus newly eligible older unsummarized history; task and recent context remain intact.",
+  "initial_history_without_summary": "Original history remains visible until a summary is accepted.",
+  "evaluator_scope": "After the task run only; no answer flows into the running model."
+}
