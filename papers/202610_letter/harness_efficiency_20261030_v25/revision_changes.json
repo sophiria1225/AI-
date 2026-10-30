@@ -1,0 +1,46 @@
+{
+  "version": "v25",
+  "source_version": "v24",
+  "source_sha256": "0820c46de2ff53abb52b1e46e7226368d96b2c1a992a1c169e1ff94b6c636910",
+  "output_sha256": "4f553200e9198608135a3516636ed65d02c25da55fdbc4f767b1d3c71320f467",
+  "purpose": "Shorten four explanatory paragraphs after Figure 1 to recover space for eight overflowing reference lines, preserving bibliography and formatting.",
+  "changes": [
+    {
+      "body_child_index": 37,
+      "old": "元の指示と課題は要求の基準として保持し，直近の行動とAPI応答も原文のまま渡す．これにより，古い履歴の提示方法を圧縮しつつ，要求内容と直近の実行結果を参照できる構成とする．",
+      "new": "元の指示と課題，直近の行動とAPI応答は原文で保持し，要約後も要求内容と直近の実行結果を参照できるようにする．",
+      "characters_removed": 31
+    },
+    {
+      "body_child_index": 43,
+      "old": "移動前に対象集合を確定させるのは，一部の写真の移動だけで完了と判断することを避けるためである．作成日時とAPIから取得した現在年は，写真ごとに指定された移動先を照合する際に使う．また，移動後の場所に加えて元の名前の保持を調べることで，指定先へ移すという要求と，名前を変えないという要求を別々に確認する．これらの根拠はモデルの推測や計算機の時刻では補わず，API実行記録から取得する．",
+      "new": "一部の写真の移動だけで完了と判断しないよう，移動前に対象集合を確定する．作成日時とAPIから得た現在年から移動先を照合し，名前の保持も別に確認する．根拠はAPI実行記録から取得し，モデルの推測や計算機の時刻では補わない．",
+      "characters_removed": 81
+    },
+    {
+      "body_child_index": 52,
+      "old": "本指標はキャッシュされた入力も含む論理トークン数であり，金銭的な課金や実際の実行時間を直接表すものではない[8]．要約生成を含む費用評価はACON[7]にも用いられている．実験AとBは独立に集計する．履歴要約は次回入力の長さを，終了制御は次の生成の必要性を管理する．判断材料と変更対象が異なるため，それぞれの制御と対照を独立に比較する．",
+      "new": "本指標はキャッシュされた入力も含む論理トークン数であり，課金額や実行時間を直接表さない[8]．要約生成を含む費用評価はACON[7]にも用いられている．履歴要約は次回入力の長さを，終了制御は次の生成の要否を管理するため，実験AとBは独立に集計・比較する．",
+      "characters_removed": 41
+    },
+    {
+      "body_child_index": 67,
+      "old": "行動併記方式は，4課題合計で専用1回方式より6.34%少なかったものの，専用反復方式より51,266トークン多く，増加率は6.53%であった．専用反復方式との比較では，写真操作で10,497トークン減少した一方，CSV処理で61,763トークン増加した．要約専用の呼出しを省く構成でも，今回の条件では課題全体の総トークン数が最少になるとは限らなかった．表1に課題別の値と合計を併記することで，異なる課題で生じた減少と増加を分けて確認できる．",
+      "new": "行動併記方式は，4課題合計で専用1回方式より6.34%少なかったものの，専用反復方式より51,266トークン多く，増加率は6.53%であった．専用反復方式との比較では，写真操作で10,497トークン減少した一方，CSV処理で61,763トークン増加した．要約専用の呼出しを省く構成でも，今回の条件では課題全体の総トークン数が最少になるとは限らなかった．",
+      "characters_removed": 44
+    }
+  ],
+  "characters_removed": 197,
+  "abstract_characters": 120,
+  "first_page_text_and_figure_order_unchanged": true,
+  "all_other_text_unchanged": true,
+  "data_conditions_tables_figure_equation_references_unchanged": true,
+  "font_sizes_margins_section_settings_unchanged": true,
+  "native_Microsoft_Word_layout_verified": false,
+  "reported_overflow_reference_lines": 8,
+  "Word_source": "manuscript.docx is the editable Word source; main.tex is separately typeset.",
+  "reference_pdf_pages": 7,
+  "reference_pdf_pages_before": 8,
+  "observed_body_lines_removed": 7,
+  "reference_overflow_page_removed": true
+}
