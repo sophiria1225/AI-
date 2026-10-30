@@ -1,0 +1,35 @@
+{
+  "version": "v24",
+  "source_version": "v23",
+  "source_sha256": "4e811d12af9a52888473f29f6d1caed65521e83479213e9a4c0128ae4981fb7a",
+  "output_sha256": "0820c46de2ff53abb52b1e46e7226368d96b2c1a992a1c169e1ff94b6c636910",
+  "purpose": "Finish the proposal overview before Figure 1 and start subsection 3.1 below the figure.",
+  "changes": [
+    {
+      "action": "move_heading",
+      "text": "3.1　入力履歴を短くする制御",
+      "before": "Before the turn definition, above Figure 1",
+      "after": "Immediately after Figure 1 and its caption, at the start of the following two-column section"
+    },
+    {
+      "action": "transfer_paragraph_to_section_3",
+      "old": "まず，課題とこれまでの履歴をモデルへ渡し，次に実行する行動を生成させる．その後，ハーネスが生成されたプログラムを実行し，その行動と結果を履歴に追加する．本稿では，行動生成から実行結果の記録までを1ターンと定義する．",
+      "new": "まず，課題と履歴からモデルが行動を生成し，ハーネスがプログラムを実行して行動と結果を記録する．本稿では，行動生成から実行結果の記録までを1ターンと定義する．",
+      "transferred_characters": 107,
+      "reason": "Explain the common action-generation, execution and recording cycle in the overview; remove its duplicate position within 3.1."
+    },
+    {
+      "action": "clarify_subsection_opening",
+      "old": "こうした繰返しによる入力の長大化を抑えるため，保存した全履歴は維持しつつ，モデルへ渡す古い履歴を要約に置き換える．生成された要約のうち，検査を経て採用される前のものを要約候補と呼ぶ．本稿では，要約の生成のみを目的とするモデル呼出しを専用呼出しと定義し，以下の3方式に比較用の名称を付ける．",
+      "new": "履歴の蓄積による入力の長大化を抑えるため，保存した全履歴は維持しつつ，モデルへ渡す古い履歴を要約に置き換える．生成された要約のうち，検査を経て採用される前のものを要約候補と呼ぶ．本稿では，要約の生成のみを目的とするモデル呼出しを専用呼出しと定義し，以下の3方式に比較用の名称を付ける．",
+      "reason": "Make 3.1 readable independently after the intervening figure."
+    }
+  ],
+  "all_other_text_unchanged": true,
+  "abstract_characters": 120,
+  "data_conditions_tables_figure_equation_references_unchanged": true,
+  "font_sizes_margins_section_settings_unchanged": true,
+  "native_Microsoft_Word_layout_verified": false,
+  "prior_six_line_shortening_retained": true,
+  "Word_source": "manuscript.docx is the editable Word source; main.tex is the separately typeset TeX source."
+}
