@@ -4,9 +4,11 @@
 
 [Word原稿](papers/202610_letter/harness_efficiency_20261030_v27/manuscript.docx) ／ [Word参考校正PDF](papers/202610_letter/harness_efficiency_20261030_v27/manuscript.pdf) ／ [参考TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v27/manuscript_tex.pdf) ／ [17件の対応内容](papers/202610_letter/harness_efficiency_20261030_v27/COMMENT_RESPONSES.md) ／ [編集方法・確認範囲](papers/202610_letter/harness_efficiency_20261030_v27/README.md)。
 
-**提出項目2の電子データもv27へ更新**しました。[提出用ZIP](papers/202610_letter/submission/electronic_data_20261030_v27/submission_electronic_data.zip)は1,008,183バイトで、10MB未満です。Word、図の画像・編集元、Excel表・元データ、参考LaTeXを収録し、原稿PDFは含めていません。原稿調整中の準備版です。[更新方法](papers/202610_letter/submission/electronic_data_20261030_v27/README.md)。
+**提出用ZIPを必要な8ファイルだけに整理**しました。[最新の提出用ZIP](papers/202610_letter/submission/final_20261030/submission_files.zip)は1,198,354バイトで、10MB未満です。利用者指定の「桐生_letter_20261030.pdf」、内容が一致する最終Word、図1のEPSと実際の作成元Python、表1・表2のTXT、Excel、図表作成情報TXTを収録しています。README、参考LaTeX、検証ログ、JSONは含みません。Excelは説明専用シートだけを外し、表・元データ・集計の5シートと式を保持しました。
 
-あらまし120字、実測値、実験条件、図表、式本体、参考文献12件、実験の独立性と評価範囲を維持しました。新しい実験は行っていません。Word校正用PDFは元と同じ本文・文献6頁＋英文1頁、参考TeXは本文・文献5頁＋英文1頁です。Microsoft Word本体の改ページは未確認で、校正用PDFを投稿用PDFとは扱いません。投稿は未実施です。
+[指定の提出PDF](papers/202610_letter/submission/final_20261030/桐生_letter_20261030.pdf) ／ [対応する最終Word](papers/202610_letter/submission/final_20261030/桐生_letter_20261030.docx)。提出PDFは利用者のファイルをそのまま収録し、本文・表・文献・英文要旨、数式、図1がWordと一致することを確認しています。
+
+あらまし120字、実測値、実験条件、図表、式本体、参考文献12件、実験の独立性と評価範囲を維持しました。新しい実験は行っていません。利用者指定の提出PDFは本文・文献5頁＋英文1頁です。別途残している旧校正PDFはLibreOfficeによる本文・文献6頁＋英文1頁、参考TeXは本文・文献5頁＋英文1頁です。今回のZIPには指定の提出PDFだけを収録しました。投稿は未実施です。
 
 既知4課題・各方式1回の全12実行で成功を確認しました。専用反復方式の総トークン数は専用1回方式より12.07%少なく、この差はCSV処理で生じました。他3課題の両方式の値は同じです。独立した終了制御では、同じ写真課題の2条件で26.00–30.15%の削減を観測しました。要求・応答全文の完全一致基準の不成立と、既知課題・少数試行の開発実験の事後整理という限定を保持しています。
 
