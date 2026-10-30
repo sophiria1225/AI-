@@ -1,0 +1,29 @@
+{
+  "source_sha256": "949b4a035e2a612a53c00534640a82b9b87f4450c5e26629ff2a0d2ee944964d",
+  "output_sha256": "4e811d12af9a52888473f29f6d1caed65521e83479213e9a4c0128ae4981fb7a",
+  "changes": [
+    {
+      "body_child_index": 15,
+      "old": "日常業務におけるデータ整理や事務処理の負担を軽減するため，大規模言語モデル（LLM）による作業支援が研究されている．文章の回答生成に加え，外部アプリケーションを操作して複数の手順を実行する処理も対象となる．例えば，写真の整理や精算では，対象の検索，状態の変更，結果の確認を連続して行う必要がある．推論と行動を繰り返すReAct[1]や，コードを行動として実行するCodeAct[2]は，このような対話的処理を支える技術である．",
+      "new": "日常業務のデータ整理や事務処理を支援する大規模言語モデル（LLM）の研究が進んでいる．写真整理や精算では，文章生成に加え，外部アプリケーションで対象の検索，状態の変更，結果の確認を連続して行う必要がある．推論と行動を繰り返すReAct[1]や，コードを行動として実行するCodeAct[2]は，こうした処理を支える．",
+      "characters_removed": 55
+    },
+    {
+      "body_child_index": 24,
+      "old": "比較する3方式には，二つの対応関係がある．まず，専用1回方式と専用反復方式では，要約と行動生成の呼出しを分ける構成を共通としたうえで，要約機会の上限を比較する．次に，専用反復方式と行動併記方式では，要約機会の上限を揃え，候補を別の呼出しで生成する構成と，行動と同じ応答内で生成する構成を比較する．いずれの方式でも，候補の採否はモデルの外側で決定する．このように，生成を担うモデルと入力更新を担うハーネスの役割分担を維持しつつ，候補生成の配置と機会上限を変えた構成を評価する．",
+      "new": "専用1回方式と専用反復方式では，行動と要約の呼出しを分ける構成を共通とし，要約機会の上限を比較する．専用反復方式と行動併記方式では，機会の上限を揃え，要約候補を専用呼出しで生成するか，行動と同じ応答に含めるかを比較する．候補の採否と入力の更新は，いずれもモデルの外側のハーネスが担う．",
+      "characters_removed": 95
+    }
+  ],
+  "characters_removed": 150,
+  "prior_overcut_characters": 530,
+  "characters_restored_vs_previous_local_revision": 380,
+  "abstract_characters": 120,
+  "unchanged_word_parts": 32,
+  "title_author_abstract_format_all_other_paragraphs_preserved": true,
+  "native_Microsoft_Word_rendering_verified": false,
+  "requested_reduction_lines": 6,
+  "source_document": "user-supplied manuscript (9).docx",
+  "output_document": "manuscript.docx",
+  "Word_source": "manuscript.docx is the editable Word source; main.tex is the separately typeset TeX source."
+}
