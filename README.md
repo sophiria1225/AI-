@@ -1,18 +1,16 @@
 # AIハーネス研究
 
-**提出項目2の電子データ**を別フォルダに整理しました。[提出用ZIP](papers/202610_letter/submission/electronic_data_20261030/submission_electronic_data.zip)は1,008,167バイトで、10MB未満です。Word、図1の画像・編集元、Excel結果表・元データ、参考LaTeXソースを収録しています。原稿調整中のv26を収録した準備版で、印刷見本の原稿PDFは含みません。[収録内容・最終稿への更新方法](papers/202610_letter/submission/electronic_data_20261030/README.md)。
+2026-10-30版の原稿 **v27**：利用者のWord原稿に付いた17件のコメントを反映しました。文献引用を文末へ移し、関連研究の比較軸と実験設定の根拠を補い、重複表現・著者記号・節名を修正しました。本文の変数は編集可能なWord数式へ揃え、図表前後に指定の空きを設けています。
 
-2026-10-30版の原稿 **v26**：4.2と5.2は観測した成果で締め、実験後に「6．考察」を追加し、「7．むすび」の最後を今後の発展予定としました。結果の意味と評価範囲を考察にまとめ、各節を否定表現で終えない構成にしています。
+[Word原稿](papers/202610_letter/harness_efficiency_20261030_v27/manuscript.docx) ／ [Word参考校正PDF](papers/202610_letter/harness_efficiency_20261030_v27/manuscript.pdf) ／ [参考TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v27/manuscript_tex.pdf) ／ [17件の対応内容](papers/202610_letter/harness_efficiency_20261030_v27/COMMENT_RESPONSES.md) ／ [編集方法・確認範囲](papers/202610_letter/harness_efficiency_20261030_v27/README.md)。
 
-[Word原稿](papers/202610_letter/harness_efficiency_20261030_v26/manuscript.docx) ／ [参考校正PDF](papers/202610_letter/harness_efficiency_20261030_v26/manuscript.pdf) ／ [TeX版PDF](papers/202610_letter/harness_efficiency_20261030_v26/manuscript_tex.pdf) ／ [図1](papers/202610_letter/harness_efficiency_20261030_v26/figures/control_points.png) ／ [Excel結果表](papers/202610_letter/harness_efficiency_20261030_v26/results_tables.xlsx) ／ [一式ZIP](papers/202610_letter/harness_efficiency_20261030_v26/source_bundle.zip) ／ [変更内容・編集方法](papers/202610_letter/harness_efficiency_20261030_v26/README.md)。
+**提出項目2の電子データもv27へ更新**しました。[提出用ZIP](papers/202610_letter/submission/electronic_data_20261030_v27/submission_electronic_data.zip)は1,008,183バイトで、10MB未満です。Word、図の画像・編集元、Excel表・元データ、参考LaTeXを収録し、原稿PDFは含めていません。原稿調整中の準備版です。[更新方法](papers/202610_letter/submission/electronic_data_20261030_v27/README.md)。
 
-5.2末尾からむすびまでの本文は501字から486字に整理し、考察見出しを追加しても参考PDFのページ数は維持しました。Word参考PDFは本文・文献6頁＋英文要旨1頁、TeX版は本文・文献5頁＋英文要旨1頁で、両方とも参考文献12件が本文最終頁内に収まっています。4.2末尾を除く前半の本文・図配置、あらまし120字、著者情報、既存の書式、全ての実測値と条件、図表、数式、参考文献は維持しました。数値の重複はむすびから外し、結果節と表に残しています。
+あらまし120字、実測値、実験条件、図表、式本体、参考文献12件、実験の独立性と評価範囲を維持しました。新しい実験は行っていません。Word校正用PDFは元と同じ本文・文献6頁＋英文1頁、参考TeXは本文・文献5頁＋英文1頁です。Microsoft Word本体の改ページは未確認で、校正用PDFを投稿用PDFとは扱いません。投稿は未実施です。
 
-考察には完全一致基準の不成立と解釈上の留保、既知課題・単一モデル・少数試行・事後整理という評価範囲を残しています。今後の課題とむすびの発展予定は計画であり、新しく得られた成果とは扱いません。Microsoft Word本体での最終改ページは未確認です。[投稿形式・残る確認事項](papers/202610_letter/harness_efficiency_20261030_v26/FORMAT.md)。投稿は未実施です。
+既知4課題・各方式1回の全12実行で成功を確認しました。専用反復方式の総トークン数は専用1回方式より12.07%少なく、この差はCSV処理で生じました。他3課題の両方式の値は同じです。独立した終了制御では、同じ写真課題の2条件で26.00–30.15%の削減を観測しました。要求・応答全文の完全一致基準の不成立と、既知課題・少数試行の開発実験の事後整理という限定を保持しています。
 
-既知4課題の全12実行で成功を確認しました。専用反復方式の総トークン数は専用1回方式より12.07%少なく、この差はCSV処理で生じました。他の3課題では両方式は同じ値です。写真操作では行動併記方式が他の2方式より10,497トークン少なく、4課題合計では専用反復方式より6.53%多くなりました。独立した終了制御の実験では、同じ写真課題の2条件で26.00–30.15%の削減を観測しました。いずれも各条件1回の比較であり、未知課題や統計的優位性へ一般化しません。
-
-追加実験は行っていません。総トークン数はキャッシュ入力を含む論理トークン数で、課金額や実行時間そのものではありません。終了制御の要求・応答列が対照の先頭部分に完全一致するという事前基準は不成立であり、開発実験を事後に整理した評価であることも本文に残しています。P147/P148の状態更新方式は主原稿に追加していません。[前版v25](papers/202610_letter/harness_efficiency_20261030_v25/README.md)を含む過去の原稿と実験記録は保持しています。
+[前版v26](papers/202610_letter/harness_efficiency_20261030_v26/README.md) と [v26の電子データ](papers/202610_letter/submission/electronic_data_20261030/README.md) は保持しています。以下は過去の実験・公開記録です。
 
 P145は **2026-10-29 02:03:36 JSTに全12条件と所有serverを閉鎖**しました。全使用量既知147,313 tokens・不明0・厳密更新検査合格0。P146の起動条件は成立せず、P146の全課題比較は未実行です。[P145の確定結果と拒否内訳](docs/experiments/P145_closed_results_20261029.md)。
 
